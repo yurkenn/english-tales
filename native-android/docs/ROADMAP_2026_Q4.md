@@ -1,6 +1,6 @@
 # Yurken Stories — önümüzdeki 90 gün
 
-20 Ekim 2026 · [PR, Claude ve canlı içerik kontrolü](PROJECT_AUDIT_2026-10-20.md) · Durum: uygulama planı; aşağıdaki açık işler tamamlanmış sayılmaz. Tek geliştirici akışına göre yaklaşık 12 hafta; Google incelemesi, editör incelemesi ve pilot veri toplama süreleri takvimi kaydırabilir.
+21 Ekim 2026 · [Güncel PR ve yayın kontrolü](PROJECT_AUDIT_2026-10-21.md) · Durum: uygulama planı; aşağıdaki açık işler tamamlanmış sayılmaz. Tek geliştirici akışına göre yaklaşık 12 hafta; Google incelemesi, editör incelemesi ve pilot veri toplama süreleri takvimi kaydırabilir.
 
 ## Ürün yönü
 
@@ -10,10 +10,10 @@
 
 ## Başlangıç noktası
 
-- **20 Ekim canlı Console kontrolü:** 50 / 2.2.0 “In review / Changes in review”; 48 / 2.0.0 “Available on Google Play”. Yönetilen yayın kapalı. Yeni ret görülmedi; başvuru değiştirilmedi. R01’in yayın sonucu Google incelemesini bekliyor. [Güncel kayıt](release-evidence/2026-10-20-play-status.json), [50 başvuru kanıtı](RELEASE_50_STATUS.md).
+- **21 Ekim canlı Console kontrolü:** 50 / 2.2.0 üretimde Active, dağıtım %100; 20 Ekim’de yayımlanmış. Yayımlanmamış değişiklik yok. Dahili kanal 49 / 2.1.0. R01’in Console yayın sonucu doğrulandı; fiziksel telefon ve mağaza sunumu kabulü açık. [Güncel kayıt](release-evidence/2026-10-21-play-status.json), [50 yayın kaydı](RELEASE_50_STATUS.md).
 - 12 arayüz dili, 11 hikâye çevirisi dili, 13 mağaza kaydı. Yeni kullanıcı için dil seçimi mevcut. İngilizce arayüz şu an Türkçe hikâye çevirisi kullanıyor.
 - FSRS, alıştırma basamakları, anlama soruları, dikte, cümle kurma, kişisel kelimeler, favoriler, öneriler, widget ve tablet düzeni kodda mevcut. Bunlar yeniden yapılacak özellikler değil; gerçek kullanım kabulü ve iyileştirme konusudur.
-- #149/#150 birleşti: 11 dilde 1.098 sözlük maddesi paket varlıklarında mevcut. #152 devamında 10 dilde 10.980 karşılığın AI incelemesi tamamlandı; 190 adayın 81’i kabul, 36’sı ret, 73’ü somut kaynak/dil kararına ayrıldı. Koordineli anlam eklemeleriyle 90 hedef dil + 2 Türkçe referans olmak üzere 92 karşılık düzeltildi. `machine-draft` ve insan onayı sınırları korunur; #152 ile ana dala alındı; yeni mağaza paketi henüz yayımlanmadı.
+- #149/#150 birleşti: 11 dilde 1.098 sözlük maddesi paket varlıklarında mevcut. #152 devamında 10 dilde 10.980 karşılığın AI incelemesi tamamlandı; 190 adayın 81’i kabul, 36’sı ret, 73’ü ilk turda kaynak/dil kararına ayrıldı; devam turunda tamamı 72 düzeltme/ekleme ve 1 koruma olarak sonuçlandı. Koordineli anlam eklemeleriyle 90 hedef dil + 2 Türkçe referans olmak üzere 92 karşılık düzeltildi. `machine-draft` ve insan onayı sınırları korunur; #152 ile ana dala alındı; yeni mağaza paketi henüz yayımlanmadı.
 - #147/#148 birleşti; beş mevcut A1/A2 pilotunun sahibi onayı kayıtlı ve güncel canlı revizyonlarında toplam 131 cümle, her cümlede 11 dil karşılığı doğrulandı. Tam UI/çevrimdışı/gerçek hesap kabulü açık; diğer 45 hikâyenin çalışma kelimesi önerileri henüz tamamlanmış sayılmaz. İki yeni klasik taslağı ertelenmiş durumda.
 - #151 birleşti: sade okuyucu, hareketler, kitaplık, tema seçimi ve Phosphor ikonlar mevcut. Ana dal `01defbe` ilk cihaz CI denemesinde zaman aşımına uğradı; aynı kaynağın ikinci denemesi ve önceki PR başlıkları geçti. Son sözlük başlığında ayrı kayıt hatası testi çizim çakışması bulundu; #153/#152 test düzeltmesinin son tam CI sonucu aşağıdaki R00 kaydında doğrulandı.
 - Önceki içerik denetimindeki canlı/paket farkı kapanmış kabul edilmez. Güncel canlı fark sayısı yeniden ölçülmeden tarihsel 39 hikâye bulgusu güncel sayı olarak kullanılmaz.
@@ -21,11 +21,15 @@
 
 ## Paralel çalışma — 20 Ekim ilerlemesi
 
-- **Claude + Codex / R05:** İlk 121 kelimeden sonra kalan 977 kelime beş grupta incelendi: 1.098 × 10 = 10.980 karşılık. 190 adayın tamamı gerekçeli karara sahip (81 kabul / 36 ret / 73 erteleme); retler yanlış pozitif, ertelemeler açık kaynak/dil kararlarıdır. 92 karşılık düzeltildi, lemma/kimlikler ve insan onayı bayrakları korundu. Tam backend 172/172 ve 11 dil varlık eşleşmesi geçti. Son 92 değer ayrı Claude regresyon turunda tekrar incelendi; yeni somut hata bildirilmedi ([kanıt](release-evidence/2026-10-20-glossary-final-regression.json)); bu ana dil onayı değildir. Güncel APK sözlük yükleme testi API36’da 1/1 geçti; son `2e64334` başlığı iki tam CI’da geçti: 336 cihaz testi, 3 yapılandırmalı atlama, 0 hata; 3/3 açılış ölçümü. [Tam inceleme ve düzeltmeler: PR #152](https://github.com/yurkenn/english-tales/pull/152).
+- **Claude + Codex / R05:** İlk 121 kelimeden sonra kalan 977 kelime beş grupta incelendi: 1.098 × 10 = 10.980 karşılık. İlk turda 190 aday 81 kabul / 36 ret / 73 erteleme aldı. Devam turunda bu 73 kayıt da 72 düzeltme/ekleme ve 1 koruma kararıyla tamamlandı; kaynak anlamlarıyla birlikte 225 ek karşılık güncellendi. [Son kararlar ve test kapsamı](GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md). 92 karşılık düzeltildi, lemma/kimlikler ve insan onayı bayrakları korundu. Tam backend 172/172 ve 11 dil varlık eşleşmesi geçti. Son 92 değer ayrı Claude regresyon turunda tekrar incelendi; yeni somut hata bildirilmedi ([kanıt](release-evidence/2026-10-20-glossary-final-regression.json)); bu ana dil onayı değildir. Güncel APK sözlük yükleme testi API36’da 1/1 geçti; son `2e64334` başlığı iki tam CI’da geçti: 336 cihaz testi, 3 yapılandırmalı atlama, 0 hata; 3/3 açılış ölçümü. [Tam inceleme ve düzeltmeler: PR #152](https://github.com/yurkenn/english-tales/pull/152).
 - **Codex / R00:** İlk kullanım zaman aşımı için ekran/durum tanılaması eklendi; orijinal neden kanıtlanmadı. Ayrı kayıt hatası testi çakışması için yalnız o testin zamanlayıcısı düzeltildi. Tekil ve beş tekrarlı koşu; ardından sözlükle birlikte ilk kullanım/kayıt güvenilirliği 19/19 geçti. Güncel [PR #152](https://github.com/yurkenn/english-tales/pull/152) iki tam CI’da, [PR #153](https://github.com/yurkenn/english-tales/pull/153) bağımsız PR CI’da geçti. Sözlük başlığının yerel tam paketi de 336/339 (3 yapılandırmalı atlama) başarılı. Önceki CI kanıtı son kaynak yerine kullanılmaz.
 - #153 (`83d2725`) ve #152 (`b2a8c09`) ana dala birleşti; birleşik ana dal CI’ı ayrıca doğrulanıyor. Canlı içerik ve mağaza yayını yapılmadı; paralel işlerin sonucu fiziksel cihaz kabulünün yerine geçmez.
 
-## R00 — son test düzeltmesiyle tam CI geçti
+## R00 — 21 Ekim regresyonu ve önceki CI kanıtı
+
+21 Ekim `f66f8a9` PR CI 39570936929’da `FirstLaunchReadinessTest` başarısız oldu; aynı kaynak push CI 39570928218 tam geçti. XML iç nedeni artık somut: Compose 1.8.1 test saatinin unconfined devamı IO’dan `LazyColumn` oluştururken `The current thread must have a looper!` hatası verdi. Hazır model ile eski yükleme ağacı bu hatanın sonucu; aşağıdaki eski zaman aşımının tamamının aynı neden olduğu iddia edilmez. Yeni regresyon testi gerçek Activity pencere saatini kullanır; IO bekletme, 0/1 animasyon ölçekleri ve 20 saniyelik görünür dil seçimi kontrolü korunur. [Güncel denetim](PROJECT_AUDIT_2026-10-21.md).
+
+### Önceki test düzeltmeleri ve tam CI kayıtları
 
 **Yeni bulgu:** `050db6b` push CI 39398362194 geçti; PR CI 39398368677 kayıt hatası testinde `SnapshotStateObserver` çizim çakışmasıyla 280 testte durdu. İlk kullanım testi geçti. #153 (`a70ab0e`) ve #152 (`2e64334`) yalnız ilgili teste `StandardTestDispatcher` ve çizilmiş düğme beklemesi ekler; zaman sınırları ve kayıt kontrolleri korunur. Yerel API 36’da 1/1 ve beş ayrı instrumentation sürecinde 5/5 geçti. Sözlük ve testin birleşik `2e64334` başlığında ilk kullanım + kayıt güvenilirliği + UI senaryoları 19/19, atlamasız geçti. [Kanıt](release-evidence/2026-10-20-write-ui-scheduler.json). Son sözlük başlığı [push CI 39442907494](https://github.com/yurkenn/english-tales/actions/runs/39442907494) ve [PR CI 39442917858](https://github.com/yurkenn/english-tales/actions/runs/39442917858) ile tam geçti: 336 cihaz testi, 3 yapılandırmalı atlama, 0 hata; açılış ölçümleri 3/3. Yerel tam paket de aynı 336/339 sonucunu verdi. Eski başarısız koşu kanıtta korunur; iki geçiş bütün aralıklı sorunların sonsuza dek bittiğini kanıtlamaz.
 
@@ -35,7 +39,7 @@
 
 | ID | İş | Bitti sayılma ölçütü |
 |---|---|---|
-| R01 · P0 | 50'nin inceleme sonucunu ve mağazaya teslimini doğrula — 20 Ekim kontrol edildi, hâlâ incelemede | Console ve telefonda Play sürümü kaydı; yeni ad, yerel metinler/görseller ve 13 dil kaydı onaydan sonra kontrol edilmiş. Ret varsa nedeni düzeltilip yeni başvuru kaydedilmiş. |
+| R01 · P0 | 50'nin mağazaya teslimini doğrula — 21 Ekim Console: Active / %100; telefon ve mağaza sunumu kabulü açık | Console ve telefonda Play sürümü kaydı; yeni ad, yerel metinler/görseller ve 13 dil kaydı onaydan sonra kontrol edilmiş. Ret varsa nedeni düzeltilip yeni başvuru kaydedilmiş. |
 | R02 · P0 | Gerçek telefonda eski sürümden güncelleme ve öğrenme yolculuğu | Play üzerinden 48→50; kayıtlı kelime, ilerleme, favoriler ve tekrar planı korunuyor. Misafir ve hesaplı kullanım, iki cihaz eşitlemesi, uçak modu, yeniden açılış, İngilizce TTS kesintisi test edilmiş. Cihaz/OS/sürüm ve sonuç kayıtlı. |
 | R03 · P0 | Erişilebilirlik ve bağlantı kabulü | Aynı Play paketiyle TalkBack ana yolculuğu ve büyük yazı; uygulama kurulu/kurulu değil hikâye bağlantısı, ilk açılıştan gelen bağlantı doğru hikâyeye dönüyor. Play-imzalı universal APK'daki alan adı doğrulaması tek başına uçtan uca kabul sayılmaz. |
 | R04 · P0 | Ölçümü kullanılabilir hale getir | Analytics kapalı→açık→kapalı davranışı ve izin verilen olaylar panelde doğrulanmış; test/üretim ayrımı var. Crashlytics ve Play vitals görünürlüğü kaydedilmiş; örneklem yoksa “veri yok” yazılıyor. Fiziksel cihaz açılış/okuma performansının başlangıç ölçümü var. |
@@ -100,7 +104,7 @@
 
 1. **R00 CI kapısı geçti:** Son #152 başlığı iki tam CI’da başarılı; yerel tam paket de 336 geçti / 3 atlandı / 0 hata. #153 iki bağımsız tam CI’da başarılı; orijinal ilk kullanım zaman aşımının nedeni açık araştırma olarak kalır.
 2. **R01–R04:** 50’nin güncel Play durumunu ve fiziksel cihaz kabulünü kaydet; canlı ölçümü doğrula. #149–#151 için yeni paket/sürüm kodu ayrıca gerekir.
-3. **R05 AI kapsamı tamamlandı:** #152’deki 92 düzeltmenin paket kabulü; 73 açık kaynak/dil kararı ve ana dil örneklemi. Yeni arayüz metinlerinin dil kontrolü ayrıca açık.
+3. **R05 AI kapsamı tamamlandı:** #152’deki 92 düzeltmenin paket kabulü; 73/73 kaynak/dil kararı AI düzeyinde tamamlandı; 225 ek karşılığın yeni paket/CI kabulü ve ana dil örneklemi açık. Yeni arayüz metinlerinin dil kontrolü ayrıca açık.
 4. **R06:** Canlıdaki beş pilotun UI/çevrimdışı/hesap kabulü. Sonra kalan 45 hikâyenin çalışma kelimeleri ve çeviri kaynağı planı; yeni hikâye ekleme ertelendi.
 
 Bu tur yalnız planı ve belge yönlendirmelerini günceller. Yeni kod, içerik yayını, mağaza değişikliği, takip görevi veya reklam harcaması başlatmaz. Her uygulama işinde tek kullanıcı sonucu, ilgili test/kabul, geri dönüş yolu ve yeni kanıt kaydı tutulur.

@@ -1,6 +1,10 @@
 # 50 / 2.2.0 — 19 Ekim 2026
 
-## 20 Ekim takip kontrolü
+## 21 Ekim takip kontrolü
+
+Canlı Play Console salt okunur kontrol edildi: **50 / 2.2.0 üretim kanalında Active, dağıtım %100, 178 ülke/bölge.** Son yayın tarihi 20 Ekim; yayımlanmamış değişiklik yok. Dahili kanal 49 / 2.1.0. Başvuru veya yayın ayarı değiştirilmedi. Crash/ANR oranları için veri henüz yok; bu sıfır hata sonucu değildir. Fiziksel cihazda Play güncellemesi, veri koruma, TalkBack ve bağlantı kabulü açık. Sonraki sözlük/oyun/okuyucu PR’ları bu eski kaynaklı 50 paketine dahil değildir. [21 Ekim kanıtı](release-evidence/2026-10-21-play-status.json).
+
+## 20 Ekim takip kontrolü (tarihsel)
 
 Play Console tekrar salt okunur açıldı: **50 / 2.2.0 hâlâ “In review / Changes in review”; 48 / 2.0.0 “Available on Google Play”.** Yönetilen yayın kapalı, son yayımlama tarihi 16 Ekim. Yeni ret veya tamamlanmış 50 yayını görülmedi. İncelemedeki başvuru, mağaza kaydı ve dağıtım ayarları değiştirilmedi. [Güncel kontrol kaydı](release-evidence/2026-10-20-play-status.json).
 

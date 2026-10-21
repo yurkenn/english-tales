@@ -1,0 +1,169 @@
+```json
+{
+  "reviewedLemmaCount": 40,
+  "reviewedLanguageCount": 11,
+  "reviewedCandidateCount": 73,
+  "findings": [
+    {
+      "lang": "th",
+      "lemma": "eve",
+      "currentProposed": "วันก่อน (คริสต์มาส)",
+      "problem": "Wrong meaning risk that was never flagged. วันก่อน, as in เมื่อวันก่อน, is the everyday expression for 'the other day / a few days ago'. It does not mean 'the evening or day before a special day'. The label does not repair this, because a learner reads วันก่อน as a set phrase. The context is Christmas Eve, which is the night before Christmas.",
+      "replacement": "คืน/วันก่อนวันสำคัญ (คืนก่อนวันคริสต์มาส)",
+      "severity": "medium"
+    },
+    {
+      "lang": "ar",
+      "lemma": "lay",
+      "currentProposed": "استلقى؛ وضع",
+      "problem": "This is a source-expansion gap. All other targets except th received a static-position sense for 'Inside it lay a photograph'. Arabic did not. استلقى is a person lying down and cannot describe a photograph lying in a chest. وضع loosely covers egg-laying (وضع البيض), but an explicit egg sense matches the other targets.",
+      "replacement": "استلقى؛ كان موجودًا (موضوعًا)؛ وضع؛ يبيض (البيض)",
+      "severity": "medium"
+    },
+    {
+      "lang": "ur",
+      "lemma": "wicked",
+      "currentProposed": "بدکار",
+      "problem": "Keeping بدکار is correct, since its evil-doer sense is valid and must not be erased. On its own, though, it does not cover the second context. بدکار is an agent noun or adjective for a wrongdoer. It cannot render the inanimate 'something wicked' (کوئی بدکار چیز is not idiomatic). In the Wild Swans context, about a suspected woman, a lone بدکار also invites the unchastity reading. The fix is additive, not a replacement.",
+      "replacement": "بدکار؛ شیطانی، خبیث",
+      "severity": "medium"
+    },
+    {
+      "lang": "tr",
+      "lemma": "wicked",
+      "currentProposed": "kötü kalpli",
+      "problem": "This is the same structural gap as Urdu. 'kötü kalpli' (evil-hearted) only applies to an animate being. It fits 'a wicked spirit' but not 'her silence hid something wicked' (kötü kalpli bir şey is wrong). Add an inanimate sense and keep the current one.",
+      "replacement": "kötü kalpli; kötü, şeytani",
+      "severity": "low"
+    },
+    {
+      "lang": "ur",
+      "lemma": "unlit",
+      "currentProposed": "جو جلایا نہ گیا ہو (سگار وغیرہ)؛ بغیر روشنی کا",
+      "problem": "The clause is grammatical for سگار, which is masculine. However, the direct جو-passive agrees in gender with its noun, and the label '(سگار وغیرہ)' extends the gloss to feminine items such as سگریٹ and موم بتی, which would need جلائی. The Hindi parallel uses the impersonal जिसे-passive, which is gender-neutral. Using جسے in Urdu does the same and is equally grammatical.",
+      "replacement": "جسے جلایا نہ گیا ہو (سگار وغیرہ)؛ بغیر روشنی کا",
+      "severity": "low"
+    },
+    {
+      "lang": "ur",
+      "lemma": "finnish",
+      "currentProposed": "فن لینڈ کا؛ فن لینڈی",
+      "problem": "The context is 'a wise Finnish woman', which needs فن لینڈ کی. The decision's own rationale cites فن لینڈ کا/کی, but the value gives only masculine کا. Hindi and Urdu glosses elsewhere in this set mark both forms (دیکھتا/دیکھتی).",
+      "replacement": "فن لینڈ کا/کی؛ فن لینڈی",
+      "severity": "low"
+    },
+    {
+      "lang": "tr",
+      "lemma": "doorway",
+      "currentProposed": "kapı aralığı",
+      "problem": "This parallels the accepted Bengali dispositions-1-2.json:42 change. Standing alone, 'kapı aralığı' most readily suggests the gap of an ajar door, as in kapı aralığından baktı. All three contexts are someone standing or waiting in the doorway as a place. 'kapı aralığında' is attested for 'in the doorway', so keep it, but add the unambiguous spatial term first.",
+      "replacement": "kapı girişi, kapı önü; kapı aralığı",
+      "severity": "low"
+    },
+    {
+      "lang": "hi",
+      "lemma": "doorway",
+      "currentProposed": "दरवाज़े का मार्ग",
+      "problem": "This is a stilted calque ('the door's route') that is not used for standing or waiting in a doorway. Hindi says दरवाज़े पर / चौखट पर खड़ा. The value can also be read as 'the way to the door'. Add the natural place term and keep the current one.",
+      "replacement": "द्वार, चौखट (दरवाज़े की खुली जगह); दरवाज़े का मार्ग",
+      "severity": "low"
+    },
+    {
+      "lang": "ur",
+      "lemma": "doorway",
+      "currentProposed": "دروازے کا راستہ",
+      "problem": "This calque has the same problem as the Hindi value. دروازے کا راستہ / دروازے کے راستے naturally reads as 'the way to the door' or 'via the door', not as the opening where someone stands. Urdu says دروازے میں / دہلیز پر کھڑا.",
+      "replacement": "دہلیز، دروازہ (دروازے کی کھلی جگہ)؛ دروازے کا راستہ",
+      "severity": "low"
+    },
+    {
+      "lang": "hi",
+      "lemma": "find",
+      "currentProposed": "ढूँढ़ना; ढूँढ़ लेना, पाना; पता लगाना (find out)",
+      "problem": "The senses are correct, but the order contradicts the decision's own analysis. About 34 of the 37 contexts are completed discovery, yet the search-only verb ढूँढ़ना is the first thing a learner sees. Lead with the resultative sense. No sense is removed.",
+      "replacement": "पाना, ढूँढ़ लेना; ढूँढ़ना; पता लगाना (find out)",
+      "severity": "low"
+    },
+    {
+      "lang": "ur",
+      "lemma": "find",
+      "currentProposed": "ڈھونڈنا؛ ڈھونڈ لینا، پانا؛ پتا لگانا (find out)",
+      "problem": "This has the same ordering issue as the Hindi value. The search-only verb comes first even though the dominant contexts are completed discovery.",
+      "replacement": "پانا، ڈھونڈ لینا؛ ڈھونڈنا؛ پتا لگانا (find out)",
+      "severity": "low"
+    },
+    {
+      "lang": "th",
+      "lemma": "lowered",
+      "currentProposed": "ลดลง; ลดต่ำลง; ก้ม (ศีรษะ)",
+      "problem": "ลดต่ำลง is still intransitive 'become lower / decrease', as in ระดับน้ำลดต่ำลง. It does not supply the transitive physical-lowering sense the rationale claims. The context is covered by ก้ม (ศีรษะ), so ลดต่ำลง is redundant and repeats the decrease sense. Replace it with the transitive split construction.",
+      "replacement": "ลดลง; ลด (มือ/ธง) ลง; ก้ม (ศีรษะ)",
+      "severity": "low"
+    }
+  ],
+  "candidateClosureIssues": [
+    {
+      "id": "2026-10-20-glossary-claude-review.json:35",
+      "issue": "The rationale still argues for the superseded Claude value ครืด ๆ ในลำคอ and does not describe the final value ทำเสียงครางเบา ๆ (แมว). The final value itself is acceptable: หงิง ๆ (whining) and the scraping onomatopoeia are both gone, and the (แมว) label disambiguates คราง from a dog whimpering.",
+      "recommendation": "Close as changed. Rewrite the rationale to justify ทำเสียงครางเบา ๆ (แมว) as the attested Thai purr verb. Optionally add ในลำคอ for precision; this is not required."
+    },
+    {
+      "id": "dispositions-1-2.json:59",
+      "issue": "The rationale states that सुरुचिपूर्ण 'is not a valid sense of graceful here' and cites मनोहर. Both points contradict the final value, which keeps सुरुचिपूर्ण and drops मनोहर. The final value correctly adds bodily elegance and preserves the style/taste sense.",
+      "recommendation": "Close as changed with value 'लालित्यपूर्ण; सुरुचिपूर्ण'. Update the rationale to match the Codex amendment."
+    },
+    {
+      "id": "dispositions-1-2.json:60",
+      "issue": "The rationale says 'دلکش adds the visual-beauty side', but دلکش is not in the final value. The final value 'خوش ادا؛ خوش اسلوب' is valid and preserves the old style sense.",
+      "recommendation": "Close as changed. Remove the دلکش sentence from the rationale."
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:33",
+      "issue": "The decision is 'keep', but the rationale argues for replacing بدکار. Keeping بدکار is correct. However, it does not cover the inanimate 'something wicked', and on its own it invites the unchastity reading in the Wild Swans context.",
+      "recommendation": "Rewrite the rationale to support keeping بدکار. Reopen as an additive change: 'بدکار؛ شیطانی، خبیث'. See the ur/wicked finding."
+    },
+    {
+      "id": "dispositions-5.json:14",
+      "issue": "The rationale describes बिना जलाया हुआ, but the final value is the relative clause जिसे जलाया न गया हो. The final grammar is correct: an impersonal passive with जिसे, which is gender-neutral and unambiguously means 'not ignited'.",
+      "recommendation": "Close as changed. Update the rationale to describe the relative-clause form."
+    },
+    {
+      "id": "dispositions-5.json:17",
+      "issue": "The rationale describes بغیر جلایا ہوا, which is stale. The final جو جلایا نہ گیا ہو is grammatical for سگار but agrees in gender, so it does not fit feminine items under '(سگار وغیرہ)'.",
+      "recommendation": "Change to 'جسے جلایا نہ گیا ہو (سگار وغیرہ)؛ بغیر روشنی کا' and update the rationale."
+    },
+    {
+      "id": "dispositions-1-2.json:54",
+      "issue": "The rationale cites فن لینڈ کا/کی, but the value has only کا. The context refers to a woman.",
+      "recommendation": "Use 'فن لینڈ کا/کی؛ فن لینڈی'."
+    },
+    {
+      "id": "dispositions-3-4.json:19",
+      "issue": "The rationale's claim that ลดต่ำลง conveys physical lowering is inaccurate, because it is an intransitive decrease. The context is covered by ก้ม (ศีรษะ).",
+      "recommendation": "Replace ลดต่ำลง with ลด (มือ/ธง) ลง as in the th/lowered finding, or drop it. The candidate's core fix, ก้ม (ศีรษะ), is valid."
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:8",
+      "issue": "The sense coverage is correct, but the order puts the minority search sense first, against the rationale's own count.",
+      "recommendation": "Reorder to 'पाना, ढूँढ़ लेना; ढूँढ़ना; पता लगाना (find out)'."
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:9",
+      "issue": "This has the same ordering issue as the Hindi candidate.",
+      "recommendation": "Reorder to 'پانا، ڈھونڈ لینا؛ ڈھونڈنا؛ پتا لگانا (find out)'."
+    },
+    {
+      "id": "dispositions-1-2.json:42",
+      "issue": "The Bengali change is valid. Dropping দরজার ফাঁক is justified because, standing alone, it reads as 'gap'. The same reasoning was not applied to Turkish kapı aralığı or to the Hindi and Urdu calques.",
+      "recommendation": "Close bn as changed. Apply the additive tr, hi and ur doorway fixes from the findings."
+    },
+    {
+      "id": "dispositions-3-4.json:18",
+      "issue": "pt-BR is fine. The source expansion for the static 'lay' sense and the egg sense reached every target except ar. Thai is covered acceptably: วาง extends to วางไข่, and วางอยู่ covers the static sense.",
+      "recommendation": "Close pt-BR as changed. Apply the ar/lay finding."
+    }
+  ],
+  "summary": "I audited all 40 lemmas across all 11 languages and checked closure on all 73 candidates. The core fixes are sound. The Hindi relative clause जिसे जलाया न गया हो is grammatical, gender-neutral and unambiguously means 'not ignited', and the lightless sense is preserved. The Thai purr gloss ทำเสียงครางเบา ๆ (แมว) drops the หงิง whining and the scraping/snoring onomatopoeia, and the (แมว) label handles คราง's dog-whimper and pain-moan uses. Urdu wicked rightly keeps بدکار for its evil-doing sense. The graceful values for both languages preserve the old style/taste senses while adding bodily elegance. The transitive/intransitive fixes for soften and spills, the voice fixes for allowed and amazed, the polysemy expansions for blow, end, draw, burst, burn, hide, lay and injured, and the wardrobe, officer, front, god, stream, scarcely, fight, companion, desperately, curled and plain values check out across all languages. I found one concrete wrong meaning that no candidate had caught: Thai eve 'วันก่อน' reads as 'the other day'. I also found one cross-target expansion gap: Arabic lay lacks a static-position sense for the photograph context. Smaller additive issues are: Urdu and Turkish wicked do not cover the inanimate 'something wicked' (I keep بدکار and add a sense); Urdu unlit is better as جسے for gender neutrality; Urdu Finnish lacks the feminine کی for the woman in context; the doorway values in tr, hi and ur are calques or gap-readings; the find values in hi and ur put the minority sense first; and Thai lowered ลดต่ำลง is a redundant intransitive. Several rationales describe superseded Claude values and need rewriting: th purr, hi and ur graceful, ur wicked, and hi and ur unlit. These are optional and not errors: adding 'find out' senses to the other nine targets, since their find verbs are serviceable in context; head-specific senses for lowered in tr, id, ar, vi and bn; and ในลำคอ for Thai purr. I made no external lookups. Dictionary observations were taken as supplied. Native-speaker approval remains false.",
+  "nativeSpeakerApproval": false
+}
+```

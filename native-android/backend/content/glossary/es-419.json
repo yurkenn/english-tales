@@ -2,7 +2,7 @@
  "schemaVersion": 1,
  "lang": "es-419",
  "reviewStatus": "machine-draft",
- "policy": "Machine draft of the tap-glossary meanings, one per Turkish lemma. A Claude review pass over all 1098 entries and Codex adjudication of flagged candidates are recorded in docs/GLOSSARY_FULL_REVIEW_2026-10-20.md. This remains AI-assisted review; unresolved source/language decisions and native-speaker review are still open. sampleApprovedBy is the owner decision to ship a draft, not a claim of native review.",
+ "policy": "Machine draft of the tap-glossary meanings, one per Turkish lemma. The full 1098-entry Claude review and Codex adjudication are recorded in docs/GLOSSARY_FULL_REVIEW_2026-10-20.md. Follow-up decisions for all 73 deferred candidates, coordinated source/target sense expansions and a fresh-context Claude audit are recorded in docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md. This remains AI-assisted review, not native-speaker approval. sampleApprovedBy is the owner decision to ship a draft, not a claim of native review.",
  "entries": [
   {
    "lemma": "a",
@@ -136,7 +136,7 @@
   },
   {
    "lemma": "allowed",
-   "gloss": "permitió",
+   "gloss": "permitió; permitido",
    "source": "claude-draft"
   },
   {
@@ -171,7 +171,7 @@
   },
   {
    "lemma": "amazed",
-   "gloss": "asombrado",
+   "gloss": "asombrado; asombró",
    "source": "claude-draft"
   },
   {
@@ -531,7 +531,7 @@
   },
   {
    "lemma": "blow",
-   "gloss": "golpe",
+   "gloss": "golpe; soplar (el viento)",
    "source": "claude-draft"
   },
   {
@@ -636,7 +636,7 @@
   },
   {
    "lemma": "burn",
-   "gloss": "arder",
+   "gloss": "arder; quemar",
    "source": "claude-draft"
   },
   {
@@ -646,7 +646,7 @@
   },
   {
    "lemma": "burst",
-   "gloss": "reventar",
+   "gloss": "reventar; irrumpir",
    "source": "claude-draft"
   },
   {
@@ -1306,7 +1306,7 @@
   },
   {
    "lemma": "draw",
-   "gloss": "tirar hacia sí",
+   "gloss": "tirar hacia sí; atraer",
    "source": "claude-draft"
   },
   {
@@ -1326,7 +1326,7 @@
   },
   {
    "lemma": "dreams",
-   "gloss": "sueños",
+   "gloss": "sueños; sueña",
    "source": "claude-draft"
   },
   {
@@ -1451,7 +1451,7 @@
   },
   {
    "lemma": "end",
-   "gloss": "fin; final",
+   "gloss": "fin; final; terminar",
    "source": "claude-draft"
   },
   {
@@ -2056,7 +2056,7 @@
   },
   {
    "lemma": "god",
-   "gloss": "dios",
+   "gloss": "dios; Dios (nombre propio: God)",
    "source": "claude-draft"
   },
   {
@@ -2286,7 +2286,7 @@
   },
   {
    "lemma": "hide",
-   "gloss": "esconderse",
+   "gloss": "esconderse; esconder, ocultar",
    "source": "claude-draft"
   },
   {
@@ -2461,7 +2461,7 @@
   },
   {
    "lemma": "injured",
-   "gloss": "herido",
+   "gloss": "herido; hirió, lastimó",
    "source": "claude-draft"
   },
   {
@@ -2681,7 +2681,7 @@
   },
   {
    "lemma": "lay",
-   "gloss": "yació; colocó",
+   "gloss": "yació; colocó; poner (huevos)",
    "source": "claude-draft"
   },
   {
@@ -3221,7 +3221,7 @@
   },
   {
    "lemma": "officer",
-   "gloss": "funcionario; oficial",
+   "gloss": "funcionario; oficial; agente de policía",
    "source": "claude-draft"
   },
   {
@@ -4261,7 +4261,7 @@
   },
   {
    "lemma": "soften",
-   "gloss": "ablandarse",
+   "gloss": "suavizar, ablandar; ablandarse",
    "source": "claude-draft"
   },
   {
@@ -4341,7 +4341,7 @@
   },
   {
    "lemma": "spills",
-   "gloss": "derrama",
+   "gloss": "se derrama; derrama",
    "source": "claude-draft"
   },
   {
@@ -5151,7 +5151,7 @@
   },
   {
    "lemma": "wardrobe",
-   "gloss": "armario",
+   "gloss": "armario; vestuario (ropa de una persona)",
    "source": "claude-draft"
   },
   {

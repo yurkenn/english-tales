@@ -2,7 +2,7 @@
  "schemaVersion": 1,
  "lang": "hi",
  "reviewStatus": "machine-draft",
- "policy": "Machine draft of the tap-glossary meanings, one per Turkish lemma. A Claude review pass over all 1098 entries and Codex adjudication of flagged candidates are recorded in docs/GLOSSARY_FULL_REVIEW_2026-10-20.md. This remains AI-assisted review; unresolved source/language decisions and native-speaker review are still open. sampleApprovedBy is the owner decision to ship a draft, not a claim of native review.",
+ "policy": "Machine draft of the tap-glossary meanings, one per Turkish lemma. The full 1098-entry Claude review and Codex adjudication are recorded in docs/GLOSSARY_FULL_REVIEW_2026-10-20.md. Follow-up decisions for all 73 deferred candidates, coordinated source/target sense expansions and a fresh-context Claude audit are recorded in docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md. This remains AI-assisted review, not native-speaker approval. sampleApprovedBy is the owner decision to ship a draft, not a claim of native review.",
  "entries": [
   {
    "lemma": "a",
@@ -101,7 +101,7 @@
   },
   {
    "lemma": "against",
-   "gloss": "के खिलाफ",
+   "gloss": "के खिलाफ; से/पर (टकराकर: दीवार से)",
    "source": "claude-draft"
   },
   {
@@ -136,7 +136,7 @@
   },
   {
    "lemma": "allowed",
-   "gloss": "अनुमति दी",
+   "gloss": "अनुमति दी; अनुमति मिली",
    "source": "claude-draft"
   },
   {
@@ -171,7 +171,7 @@
   },
   {
    "lemma": "amazed",
-   "gloss": "हैरान",
+   "gloss": "हैरान; हैरान कर दिया",
    "source": "claude-draft"
   },
   {
@@ -531,7 +531,7 @@
   },
   {
    "lemma": "blow",
-   "gloss": "प्रहार, वार",
+   "gloss": "प्रहार, वार; (हवा का) चलना, उड़ा ले जाना",
    "source": "claude-draft"
   },
   {
@@ -636,7 +636,7 @@
   },
   {
    "lemma": "burn",
-   "gloss": "जलना",
+   "gloss": "जलना; जलाना",
    "source": "claude-draft"
   },
   {
@@ -646,7 +646,7 @@
   },
   {
    "lemma": "burst",
-   "gloss": "फट पड़ना",
+   "gloss": "फट पड़ना; (तेज़ी से) घुस पड़ना",
    "source": "claude-draft"
   },
   {
@@ -1071,7 +1071,7 @@
   },
   {
    "lemma": "curled",
-   "gloss": "सिकुड़ गया",
+   "gloss": "(बाल) घुँघराले किए; सिकुड़ गया",
    "source": "claude-draft"
   },
   {
@@ -1221,7 +1221,7 @@
   },
   {
    "lemma": "desperately",
-   "gloss": "बेताबी से",
+   "gloss": "बुरी तरह, बेहद; बेताबी से; हताश होकर",
    "source": "claude-draft"
   },
   {
@@ -1286,7 +1286,7 @@
   },
   {
    "lemma": "doorway",
-   "gloss": "दरवाज़े का मार्ग",
+   "gloss": "द्वार, चौखट (दरवाज़े की खुली जगह); दरवाज़े का मार्ग",
    "source": "claude-draft"
   },
   {
@@ -1306,7 +1306,7 @@
   },
   {
    "lemma": "draw",
-   "gloss": "अपनी ओर खींचना",
+   "gloss": "अपनी ओर खींचना; आकर्षित करना",
    "source": "claude-draft"
   },
   {
@@ -1326,7 +1326,7 @@
   },
   {
    "lemma": "dreams",
-   "gloss": "सपने",
+   "gloss": "सपने; सपना देखता/देखती है",
    "source": "claude-draft"
   },
   {
@@ -1451,7 +1451,7 @@
   },
   {
    "lemma": "end",
-   "gloss": "अंत",
+   "gloss": "अंत; छोर, सिरा; ख़त्म होना",
    "source": "claude-draft"
   },
   {
@@ -1781,7 +1781,7 @@
   },
   {
    "lemma": "find",
-   "gloss": "ढूँढ़ना",
+   "gloss": "पाना, ढूँढ़ लेना; ढूँढ़ना; पता लगाना (find out)",
    "source": "claude-draft"
   },
   {
@@ -1876,7 +1876,7 @@
   },
   {
    "lemma": "fond",
-   "gloss": "शौक़ीन",
+   "gloss": "शौक़ीन; स्नेह/लगाव रखने वाला",
    "source": "claude-draft"
   },
   {
@@ -1951,7 +1951,7 @@
   },
   {
    "lemma": "front",
-   "gloss": "आगे का",
+   "gloss": "आगे का; सामने का हिस्सा",
    "source": "claude-draft"
   },
   {
@@ -2076,7 +2076,7 @@
   },
   {
    "lemma": "graceful",
-   "gloss": "सुरुचिपूर्ण",
+   "gloss": "लालित्यपूर्ण; सुरुचिपूर्ण",
    "source": "claude-draft"
   },
   {
@@ -2286,7 +2286,7 @@
   },
   {
    "lemma": "hide",
-   "gloss": "छिपना",
+   "gloss": "छिपना; छिपाना",
    "source": "claude-draft"
   },
   {
@@ -2461,7 +2461,7 @@
   },
   {
    "lemma": "injured",
-   "gloss": "घायल",
+   "gloss": "घायल; घायल किया, चोट पहुँचाई",
    "source": "claude-draft"
   },
   {
@@ -2681,7 +2681,7 @@
   },
   {
    "lemma": "lay",
-   "gloss": "लेट गया; रखा",
+   "gloss": "लेट गया; पड़ा था; रखा; (अंडे) देना",
    "source": "claude-draft"
   },
   {
@@ -3221,7 +3221,7 @@
   },
   {
    "lemma": "officer",
-   "gloss": "अधिकारी",
+   "gloss": "अधिकारी; पुलिसवाला",
    "source": "claude-draft"
   },
   {
@@ -4261,7 +4261,7 @@
   },
   {
    "lemma": "soften",
-   "gloss": "नरम होना",
+   "gloss": "नरम करना; नरम होना",
    "source": "claude-draft"
   },
   {
@@ -4341,7 +4341,7 @@
   },
   {
    "lemma": "spills",
-   "gloss": "गिराता है (तरल)",
+   "gloss": "छलकता है / गिरता है (तरल); गिराता है",
    "source": "claude-draft"
   },
   {
@@ -4491,7 +4491,7 @@
   },
   {
    "lemma": "stream",
-   "gloss": "नाला",
+   "gloss": "धारा, छोटी नदी; नाला",
    "source": "claude-draft"
   },
   {
@@ -5031,7 +5031,7 @@
   },
   {
    "lemma": "unlit",
-   "gloss": "बिना रोशनी का",
+   "gloss": "जिसे जलाया न गया हो (सिगार आदि); बिना रोशनी का",
    "source": "claude-draft"
   },
   {
@@ -5151,7 +5151,7 @@
   },
   {
    "lemma": "wardrobe",
-   "gloss": "अलमारी",
+   "gloss": "अलमारी; (किसी के) सारे कपड़े, पोशाकें",
    "source": "claude-draft"
   },
   {

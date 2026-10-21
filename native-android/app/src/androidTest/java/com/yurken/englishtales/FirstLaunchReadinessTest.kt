@@ -2,23 +2,39 @@ package com.yurken.englishtales
 
 import android.os.ParcelFileDescriptor
 import android.provider.Settings
-import androidx.compose.ui.test.*
-import androidx.compose.ui.test.junit4.createEmptyComposeRule
+import android.os.SystemClock
+import android.view.accessibility.AccessibilityNodeInfo
 import androidx.lifecycle.ViewModelProvider
 import androidx.test.core.app.ActivityScenario
 import androidx.test.platform.app.InstrumentationRegistry
 import com.yurken.englishtales.data.*
 import org.junit.Assert.*
-import org.junit.Rule
 import org.junit.Test
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
 
 /** The loading UI subscribes before IO publishes readiness, with system motion both off and on. */
 class FirstLaunchReadinessTest {
-    @get:Rule val compose=createEmptyComposeRule()
     private val instrumentation get()=InstrumentationRegistry.getInstrumentation()
     private val context get()=instrumentation.targetContext
+
+    // Keep the real Activity's main-thread recomposer. Compose 1.8's unconfined test clock can
+    // resume composition on the IO thread that publishes ready, where LazyColumn has no Looper.
+    private fun findNode(node: AccessibilityNodeInfo?, matches: (AccessibilityNodeInfo)->Boolean): AccessibilityNodeInfo? {
+        if(node==null) return null
+        if(matches(node)) return node
+        repeat(node.childCount) {findNode(node.getChild(it),matches)?.let {return it}}
+        return null
+    }
+
+    private fun awaitNode(matches: (AccessibilityNodeInfo)->Boolean) {
+        val deadline=SystemClock.uptimeMillis()+20_000
+        while(SystemClock.uptimeMillis()<deadline) {
+            if(findNode(instrumentation.uiAutomation.rootInActiveWindow,matches)!=null) return
+            SystemClock.sleep(50)
+        }
+        throw AssertionError("Expected accessible startup node was not displayed within 20 seconds")
+    }
 
     private fun animationScale(value: Float?) {
         val command=if(value==null) "settings delete global animator_duration_scale"
@@ -63,20 +79,19 @@ class FirstLaunchReadinessTest {
         LearningSyncRuntime.resume()
         val scenario=ActivityScenario.launch(MainActivity::class.java)
         try {
-            val brand=context.getString(R.string.yurken)
-            if(compose.onAllNodesWithContentDescription(brand).fetchSemanticsNodes().isNotEmpty())
-                compose.onNodeWithContentDescription(brand).performClick()
-            compose.waitUntil(20_000) {compose.onAllNodesWithContentDescription(context.getString(R.string.yukleniyor)).fetchSemanticsNodes().isNotEmpty()}
+            // The brand intro runs on the real clock and exits itself; the held restore keeps loading visible.
+            awaitNode {it.contentDescription==context.getString(R.string.yukleniyor)}
             assertTrue("Restore was not reached",entered.await(5,TimeUnit.SECONDS))
             var vm: LearningViewModel?=null
             scenario.onActivity {vm=ViewModelProvider(it)[LearningViewModel::class.java]}
             assertFalse(checkNotNull(vm).ready.value)
             release.countDown()
             try {
-                compose.waitUntil(20_000) {compose.onAllNodesWithTag("language_continue").fetchSemanticsNodes().isNotEmpty()}
+                awaitNode {it.viewIdResourceName=="language_continue" && it.isVisibleToUser}
             } catch (failure: Throwable) {
                 val model=checkNotNull(vm)
-                throw AssertionError("Scale $scale, iteration $iteration: ready=${model.ready.value}, account=${model.account.value.userId}, owner=${model.state.value.ownerId}, writeError=${model.writeError.value}\n"+compose.onRoot(useUnmergedTree=true).printToString(),failure)
+                val window=instrumentation.uiAutomation.rootInActiveWindow
+                throw AssertionError("Scale $scale, iteration $iteration: ready=${model.ready.value}, account=${model.account.value.userId}, owner=${model.state.value.ownerId}, writeError=${model.writeError.value}, window=$window",failure)
             }
             assertTrue(checkNotNull(vm).ready.value)
             assertEquals("guest",checkNotNull(vm).state.value.ownerId)

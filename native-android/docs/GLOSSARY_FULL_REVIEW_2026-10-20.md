@@ -1,5 +1,7 @@
 # Sözlüğün tamamı — AI incelemesi ve düzeltmeler
 
+> **Devam turu:** Aşağıdaki ilk turda ertelenen 73 kayıt artık 72 düzeltme/ekleme ve 1 koruma kararıyla tamamlandı. 225 ek karşılık güncellendi; [son inceleme ve sınırlar](GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md). Aşağıdaki 92 değişiklik ve 73 erteleme sayıları ilk turun tarihsel kaydıdır.
+
 20 Ekim 2026 · **10 dilde 10.980 karşılık incelendi; 92 karşılık değişti. Ana dil onayı ve çözülmemiş kararlar açık.**
 
 ## Kapsam ve yöntem

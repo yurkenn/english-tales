@@ -2,7 +2,7 @@
  "schemaVersion": 1,
  "lang": "pt-BR",
  "reviewStatus": "machine-draft",
- "policy": "Machine draft of the tap-glossary meanings, one per Turkish lemma. A Claude review pass over all 1098 entries and Codex adjudication of flagged candidates are recorded in docs/GLOSSARY_FULL_REVIEW_2026-10-20.md. This remains AI-assisted review; unresolved source/language decisions and native-speaker review are still open. sampleApprovedBy is the owner decision to ship a draft, not a claim of native review.",
+ "policy": "Machine draft of the tap-glossary meanings, one per Turkish lemma. The full 1098-entry Claude review and Codex adjudication are recorded in docs/GLOSSARY_FULL_REVIEW_2026-10-20.md. Follow-up decisions for all 73 deferred candidates, coordinated source/target sense expansions and a fresh-context Claude audit are recorded in docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md. This remains AI-assisted review, not native-speaker approval. sampleApprovedBy is the owner decision to ship a draft, not a claim of native review.",
  "entries": [
   {
    "lemma": "a",
@@ -136,7 +136,7 @@
   },
   {
    "lemma": "allowed",
-   "gloss": "permitiu",
+   "gloss": "permitiu; permitido",
    "source": "claude-draft"
   },
   {
@@ -171,7 +171,7 @@
   },
   {
    "lemma": "amazed",
-   "gloss": "admirado; espantado",
+   "gloss": "admirado; espantado; impressionou, espantou",
    "source": "claude-draft"
   },
   {
@@ -531,7 +531,7 @@
   },
   {
    "lemma": "blow",
-   "gloss": "golpe",
+   "gloss": "golpe; soprar (vento)",
    "source": "claude-draft"
   },
   {
@@ -646,7 +646,7 @@
   },
   {
    "lemma": "burst",
-   "gloss": "estourar",
+   "gloss": "estourar; irromper",
    "source": "claude-draft"
   },
   {
@@ -1306,7 +1306,7 @@
   },
   {
    "lemma": "draw",
-   "gloss": "puxar para si",
+   "gloss": "puxar para si; atrair",
    "source": "claude-draft"
   },
   {
@@ -1326,7 +1326,7 @@
   },
   {
    "lemma": "dreams",
-   "gloss": "sonhos",
+   "gloss": "sonhos; sonha",
    "source": "claude-draft"
   },
   {
@@ -1451,7 +1451,7 @@
   },
   {
    "lemma": "end",
-   "gloss": "fim; final",
+   "gloss": "fim; final; acabar, terminar",
    "source": "claude-draft"
   },
   {
@@ -2056,7 +2056,7 @@
   },
   {
    "lemma": "god",
-   "gloss": "deus",
+   "gloss": "deus; Deus (nome próprio: God)",
    "source": "claude-draft"
   },
   {
@@ -2286,7 +2286,7 @@
   },
   {
    "lemma": "hide",
-   "gloss": "esconder-se",
+   "gloss": "esconder-se; esconder",
    "source": "claude-draft"
   },
   {
@@ -2461,7 +2461,7 @@
   },
   {
    "lemma": "injured",
-   "gloss": "ferido",
+   "gloss": "ferido; feriu, machucou",
    "source": "claude-draft"
   },
   {
@@ -2681,7 +2681,7 @@
   },
   {
    "lemma": "lay",
-   "gloss": "deitou; colocou",
+   "gloss": "deitou(-se); estava (jazia); pôr (ovos), colocar",
    "source": "claude-draft"
   },
   {
@@ -4261,7 +4261,7 @@
   },
   {
    "lemma": "soften",
-   "gloss": "amolecer",
+   "gloss": "amolecer; suavizar",
    "source": "claude-draft"
   },
   {

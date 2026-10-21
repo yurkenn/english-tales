@@ -1,0 +1,1397 @@
+{
+  "baselineCommit": "e29309357042be5cc91700e23988c06f78d1c3ec",
+  "nativeSpeakerApproval": false,
+  "scope": "Previously deferred candidate resolution; not a new review of the whole glossary",
+  "candidates": [
+    {
+      "id": "2026-10-20-glossary-claude-review.json:25",
+      "lang": "th",
+      "lemma": "described",
+      "priorReview": {
+        "findingIndex": 26,
+        "lang": "th",
+        "lemma": "described",
+        "decision": "deferred",
+        "before": "อธิบาย",
+        "after": "อธิบาย",
+        "reason": "All five matches recount a promise, people, families, a life or a journey. บรรยาย is dictionary-supported for describing; อธิบาย can overlap with giving an account/explanation. The catalog supports the candidate but does not establish that the current near-synonym is invalid. Defer the proposed wording to Thai usage review instead of replacing a potentially valid synonym.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "described",
+        "contextMatchCount": 5,
+        "dictionarySources": [
+          "https://dictionary.cambridge.org/dictionary/english-thai/describe"
+        ],
+        "nextAction": "Thai reviewer to determine whether อธิบาย is acceptable as a standalone described gloss across all five accounts or needs บรรยาย added."
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-claude-review.json"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:30",
+      "lang": "ar",
+      "lemma": "god",
+      "priorReview": {
+        "findingIndex": 31,
+        "lang": "ar",
+        "lemma": "god",
+        "decision": "deferred",
+        "before": "إله",
+        "after": "إله",
+        "reason": "All three occurrences are capitalized God in religious story narration; the lookup lemma lowercases it. The current إله is a valid generic deity sense matching Turkish tanrı, while الله adds a proper-name interpretation. Decide the master capitalization/proper-name policy and Arabic religious register before expanding this shared lemma.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "god",
+        "contextMatchCount": 3,
+        "dictionarySources": [],
+        "nextAction": "Resolve generic god versus proper God lookup policy and validate Arabic rendering without implying a theology choice."
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-claude-review.json"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:33",
+      "lang": "ur",
+      "lemma": "wicked",
+      "priorReview": {
+        "findingIndex": 34,
+        "lang": "ur",
+        "lemma": "wicked",
+        "decision": "deferred",
+        "before": "بدکار",
+        "after": "بدکار",
+        "reason": "Both matches concern evil (a spirit; suspected wickedness), consistent with Turkish kötü kalpli. The original بدکار has an evil/immoral sense, while the proposed alternatives vary in connotation. The claimed unwanted sexual connotation is a register concern requiring Urdu judgment; the supplied evidence does not prove the current gloss excludes the intended sense.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "wicked",
+        "contextMatchCount": 2,
+        "dictionarySources": [],
+        "nextAction": "Urdu reviewer to assess register of بدکار for an evil spirit and suspected evil, and whether بدطینت adds useful precision."
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-claude-review.json"
+    },
+    {
+      "id": "dispositions-1-2.json:16",
+      "lang": "tr",
+      "lemma": "companion",
+      "priorReview": {
+        "batch": 1,
+        "candidateIndex": 17,
+        "lang": "tr",
+        "lemma": "companion",
+        "current": "yol arkadaşı",
+        "claudeSuggested": "arkadaş, yoldaş, eşlikçi",
+        "disposition": "defer",
+        "rationale": "Turkish reference owns this narrower travel sense. Both supplied examples require general companionship; coordinate reference expansion with its owner rather than silently declaring the source approved.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "yol arkadaşı",
+        "allEnglishContexts": [
+          "His companion that evening had been his closest friend, Jimmy Wells.",
+          "He admired her from behind a small box and dreamed of being her companion."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-1.json",
+          "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-1-2.json"
+    },
+    {
+      "id": "dispositions-1-2.json:23",
+      "lang": "th",
+      "lemma": "companion",
+      "priorReview": {
+        "batch": 1,
+        "candidateIndex": 24,
+        "lang": "th",
+        "lemma": "companion",
+        "current": "เพื่อนร่วมทาง",
+        "claudeSuggested": "เพื่อน; คู่หู",
+        "disposition": "defer",
+        "rationale": "เพื่อนร่วมทาง can be figurative as well as literal. Native usage judgment is needed before treating this as a substantive error; the replacement คู่หู may itself over-specify a close partner.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "yol arkadaşı",
+        "allEnglishContexts": [
+          "His companion that evening had been his closest friend, Jimmy Wells.",
+          "He admired her from behind a small box and dreamed of being her companion."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-1.json",
+          "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-1-2.json"
+    },
+    {
+      "id": "dispositions-1-2.json:32",
+      "lang": "th",
+      "lemma": "against",
+      "priorReview": {
+        "batch": 1,
+        "candidateIndex": 33,
+        "lang": "th",
+        "lemma": "against",
+        "current": "ต่อต้าน",
+        "claudeSuggested": "กับ; ชน; ต่อต้าน",
+        "disposition": "defer",
+        "rationale": "Physical-contact sense is missing in two examples, but the proposed กับ; ชน mixes with and hitting rather than a clearly safe shared gloss. Coordinate exact Thai wording and Turkish source coverage.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "karşı",
+        "allEnglishContexts": [
+          "Angry and frightened, she threw him against the wall.",
+          "To warm her fingers, she struck a match against the wall.",
+          "The brothers carried Elisa across the sea in a net, racing against the sunset."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-1.json",
+          "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-1-2.json"
+    },
+    {
+      "id": "dispositions-1-2.json:33",
+      "lang": "tr",
+      "lemma": "against",
+      "priorReview": {
+        "batch": 1,
+        "candidateIndex": 34,
+        "lang": "tr",
+        "lemma": "against",
+        "current": "karşı",
+        "claudeSuggested": "karşı; -e (çarpma/dayanma: duvara)",
+        "disposition": "defer",
+        "rationale": "The physical-contact uses are real; racing against sunset adds a time-limit sense too. Source/reference expansion needs coordinated multilingual treatment, not a single unapproved Turkish suffix gloss.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "karşı",
+        "allEnglishContexts": [
+          "Angry and frightened, she threw him against the wall.",
+          "To warm her fingers, she struck a match against the wall.",
+          "The brothers carried Elisa across the sea in a net, racing against the sunset."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-1.json",
+          "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-1-2.json"
+    },
+    {
+      "id": "dispositions-1-2.json:35",
+      "lang": "tr",
+      "lemma": "amazed",
+      "priorReview": {
+        "batch": 1,
+        "candidateIndex": 36,
+        "lang": "tr",
+        "lemma": "amazed",
+        "current": "şaşkın",
+        "claudeSuggested": "şaşkın; hayran bıraktı / şaşırttı",
+        "disposition": "defer",
+        "rationale": "Amazed is a verb in the supplied sentence; current adjective is valid for other uses. Source owner should add the verbal meaning without deleting adjective coverage.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "şaşkın",
+        "allEnglishContexts": [
+          "Their fine stitching amazed him."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-1.json",
+          "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-1-2.json"
+    },
+    {
+      "id": "dispositions-1-2.json:36",
+      "lang": "tr",
+      "lemma": "burn",
+      "priorReview": {
+        "batch": 1,
+        "candidateIndex": 37,
+        "lang": "tr",
+        "lemma": "burn",
+        "current": "yanmak",
+        "claudeSuggested": "yanmak; yakmak",
+        "disposition": "defer",
+        "rationale": "Both transitive nettle burning and intransitive sentenced-to-burn occur. Source owner should add yakmak and preserve yanmak; target changes need separate review.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "yanmak",
+        "allEnglishContexts": [
+          "The nettles would burn her hands, and she must not speak until the work was finished.",
+          "Even after she was sentenced to burn, she continued weaving in prison."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-1.json",
+          "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-1-2.json"
+    },
+    {
+      "id": "dispositions-1-2.json:42",
+      "lang": "bn",
+      "lemma": "doorway",
+      "priorReview": {
+        "batch": 2,
+        "candidateIndex": 5,
+        "lang": "bn",
+        "lemma": "doorway",
+        "current": "দরজার ফাঁক",
+        "claudeSuggested": "দরজার মুখ; দোরগোড়া",
+        "disposition": "defer",
+        "rationale": "Bengali ফাঁক can mean opening/space as well as crack. Whether this phrase misleads in a doorway context is a native usage question; the suggested threshold term may change spatial meaning.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "kapı aralığı",
+        "allEnglishContexts": [
+          "In a dark doorway, he noticed a man waiting with an unlit cigar.",
+          "He was the first policeman who had spoken to Bob in the doorway.",
+          "He saw the dancer still standing in the doorway of the toy castle."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-2.json",
+          "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-1-2.json"
+    },
+    {
+      "id": "dispositions-1-2.json:45",
+      "lang": "tr",
+      "lemma": "dreams",
+      "priorReview": {
+        "batch": 2,
+        "candidateIndex": 8,
+        "lang": "tr",
+        "lemma": "dreams",
+        "current": "rüyalar; hayaller",
+        "claudeSuggested": "rüya görür; hayal eder (fiil) — ad olarak: rüyalar; hayaller",
+        "disposition": "defer",
+        "rationale": "The sole supplied context is third-person singular verb dreams, while all noun glosses are valid English meanings. Source owner needs to add verb coverage, then coordinate all ten target forms; do not delete plural noun meanings.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "rüyalar; hayaller",
+        "allEnglishContexts": [
+          "As she dreams, she moves her real head."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-2.json",
+          "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-1-2.json"
+    },
+    {
+      "id": "dispositions-1-2.json:49",
+      "lang": "ur",
+      "lemma": "enormous",
+      "priorReview": {
+        "batch": 2,
+        "candidateIndex": 12,
+        "lang": "ur",
+        "lemma": "enormous",
+        "current": "عظیم",
+        "claudeSuggested": "بہت بڑا؛ دیوہیکل",
+        "disposition": "defer",
+        "rationale": "عظیم can express magnitude as well as greatness. The mouth example favors physical size, but the proposed change needs Urdu usage confirmation rather than a claim that the current word cannot express size.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "devasa",
+        "allEnglishContexts": [
+          "Then she noticed his enormous mouth."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-2.json",
+          "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-1-2.json"
+    },
+    {
+      "id": "dispositions-1-2.json:53",
+      "lang": "bn",
+      "lemma": "fight",
+      "priorReview": {
+        "batch": 2,
+        "candidateIndex": 16,
+        "lang": "bn",
+        "lemma": "fight",
+        "current": "ঝগড়া করা",
+        "claudeSuggested": "লড়াই করা; মারামারি করা",
+        "disposition": "defer",
+        "rationale": "ঝগড়া করা can describe quarrelling/fighting and the primary English lemma itself includes both. Physical-fight wording may help the lethal giant example, but do not remove a valid quarrel sense; get native disambiguation.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "kavga etmek",
+        "allEnglishContexts": [
+          "Each giant blamed the other, and they fought until both were dead."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-2.json",
+          "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-1-2.json"
+    },
+    {
+      "id": "dispositions-1-2.json:54",
+      "lang": "ur",
+      "lemma": "finnish",
+      "priorReview": {
+        "batch": 2,
+        "candidateIndex": 17,
+        "lang": "ur",
+        "lemma": "finnish",
+        "current": "فنی",
+        "claudeSuggested": "فن لینڈ کا؛ فن لینڈی",
+        "disposition": "defer",
+        "rationale": "The homograph/orthography concern is plausible, but non-native transliteration judgment is not enough to confirm a high-severity error. A native/authoritative Urdu Finland adjective reference is needed.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "Fin, Finli",
+        "allEnglishContexts": [
+          "That woman sent them onward to a wise Finnish woman."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-2.json",
+          "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-1-2.json"
+    },
+    {
+      "id": "dispositions-1-2.json:56",
+      "lang": "hi",
+      "lemma": "fond",
+      "priorReview": {
+        "batch": 2,
+        "candidateIndex": 19,
+        "lang": "hi",
+        "lemma": "fond",
+        "current": "शौक़ीन",
+        "claudeSuggested": "स्नेह रखने वाला; (किसी को) चाहने लगना",
+        "disposition": "defer",
+        "rationale": "शौक़ीन has liking/fondness usage; proposed wording shifts adjective to a verbal expression. The candidate relies on a usage preference, so native validation is required before classifying a substantive error.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "düşkün",
+        "allEnglishContexts": [
+          "He grew fond of her but remembered the woman he believed had saved his life."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-2.json",
+          "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-1-2.json"
+    },
+    {
+      "id": "dispositions-3-4.json:8",
+      "lang": "tr",
+      "lemma": "hide",
+      "priorReview": {
+        "batch": 3,
+        "findingIndex": 9,
+        "lang": "tr",
+        "lemma": "hide",
+        "current": "saklanmak",
+        "initialSuggested": "saklanmak; saklamak",
+        "turkishReference": "saklanmak",
+        "decision": "defer",
+        "suggested": null,
+        "rationale": "Transitive hiding and intransitive hiding are both present. The proposed source expansion is plausible but changes the approved Turkish reference and propagated sense policy.",
+        "sources": [],
+        "confidence": "high",
+        "nextAction": "Separate Turkish-source review before any coordinated source/target sense expansion.",
+        "catalogContexts": [
+          {
+            "storyId": "classic-happy-prince",
+            "sentenceId": "cl-happy-prince-08",
+            "english": "Now he could see the suffering that his comfortable life had hidden from him."
+          },
+          {
+            "storyId": "classic-town-country-mouse",
+            "sentenceId": "cl-town-country-mouse-09",
+            "english": "The mice run and hide in a hole."
+          },
+          {
+            "storyId": "classic-town-country-mouse",
+            "sentenceId": "cl-town-country-mouse-11",
+            "english": "Then another person enters, and they hide once more."
+          },
+          {
+            "storyId": "classic-ass-lion-skin",
+            "sentenceId": "cl-ass-lion-skin-12",
+            "english": "A fine disguise cannot hide who we are forever."
+          },
+          {
+            "storyId": "classic-elves-shoemaker",
+            "sentenceId": "cl-elves-shoemaker-10",
+            "english": "They hid in the workshop and watched the table."
+          },
+          {
+            "storyId": "classic-tom-thumb",
+            "sentenceId": "cl-tom-thumb-07",
+            "english": "On the road, he hid in a mouse hole and waited until the strangers left."
+          },
+          {
+            "storyId": "classic-wolf-seven-kids",
+            "sentenceId": "cl-wolf-seven-kids-10",
+            "english": "The frightened children hid around the house."
+          },
+          {
+            "storyId": "classic-twelve-dancing-princesses",
+            "sentenceId": "cl-twelve-dancing-princesses-08",
+            "english": "The eldest princess opened a hidden door beneath her bed."
+          }
+        ]
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-3-4.json"
+    },
+    {
+      "id": "dispositions-3-4.json:12",
+      "lang": "ar",
+      "lemma": "interrupted",
+      "priorReview": {
+        "batch": 3,
+        "findingIndex": 13,
+        "lang": "ar",
+        "lemma": "interrupted",
+        "current": "مقطوع",
+        "initialSuggested": "منقطع؛ متوقف",
+        "turkishReference": "kesintiye uğramış, yarım kalmış",
+        "decision": "defer",
+        "suggested": null,
+        "rationale": "The current participle can mean cut off or interrupted. The one metaphorical interrupted-day occurrence does not prove it invalid. The proposed near-synonyms require Arabic usage judgment rather than replacing a valid sense.",
+        "sources": [],
+        "confidence": "high",
+        "nextAction": "Arabic reviewer to judge مقطوع against منقطع/متوقف for an interrupted period of activity.",
+        "catalogContexts": [
+          {
+            "storyId": "classic-sleeping-beauty",
+            "sentenceId": "cl-sleeping-beauty-19",
+            "english": "The whole castle woke up and continued its interrupted day."
+          }
+        ]
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-3-4.json"
+    },
+    {
+      "id": "dispositions-3-4.json:19",
+      "lang": "th",
+      "lemma": "lowered",
+      "priorReview": {
+        "batch": 3,
+        "findingIndex": 20,
+        "lang": "th",
+        "lemma": "lowered",
+        "current": "ลดลง",
+        "initialSuggested": "ลดต่ำลง; ก้ม (ศีรษะ)",
+        "turkishReference": "indirdi",
+        "decision": "defer",
+        "suggested": null,
+        "rationale": "The sole head-lowering example favors a physical lowering/bowing verb, but ลดลง is a valid lower/decrease meaning. Replacing it by head-specific ก้ม would narrow a general lemma; a Thai reviewer must decide whether the physical sense needs addition.",
+        "sources": [],
+        "confidence": "high",
+        "nextAction": "Thai reviewer to assess transitiveness of ลดลง and a broad physical-lowering expansion; avoid a head-only replacement.",
+        "catalogContexts": [
+          {
+            "storyId": "classic-ugly-duckling",
+            "sentenceId": "cl-ugly-duckling-24",
+            "english": "But they welcomed him, and when he lowered his head, he saw his reflection."
+          }
+        ]
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-3-4.json"
+    },
+    {
+      "id": "dispositions-3-4.json:24",
+      "lang": "id",
+      "lemma": "plain",
+      "priorReview": {
+        "batch": 4,
+        "findingIndex": 2,
+        "lang": "id",
+        "lemma": "plain",
+        "current": "preman; sederhana",
+        "initialSuggested": "(berpakaian) sipil; sederhana",
+        "turkishReference": "sivil (giyimli); sade",
+        "decision": "defer",
+        "suggested": null,
+        "rationale": "Preman has a recognized civilian/plain-clothes sense as well as the common thug sense. The plain-clothes context selects the former. The proposed sipil wording is clearer but lexical ambiguity alone does not invalidate an established sense; retain pending Indonesian judgment.",
+        "sources": [],
+        "confidence": "high",
+        "nextAction": "Indonesian reviewer to assess whether standalone preman is acceptable as the civilian sense or needs an explicit clothing qualifier.",
+        "catalogContexts": [
+          {
+            "storyId": "classic-after-twenty-years",
+            "sentenceId": "cl-after-twenty-years-23",
+            "english": "The stranger explained that he was a plain-clothes detective."
+          }
+        ]
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-3-4.json"
+    },
+    {
+      "id": "dispositions-3-4.json:32",
+      "lang": "bn",
+      "lemma": "scarcely",
+      "priorReview": {
+        "batch": 4,
+        "findingIndex": 10,
+        "lang": "bn",
+        "lemma": "scarcely",
+        "current": "কদাচিৎ",
+        "initialSuggested": "কোনোমতে; সামান্যই",
+        "turkishReference": "neredeyse hiç, güçlükle",
+        "decision": "defer",
+        "suggested": null,
+        "rationale": "The source needs low degree/barely warmer, while current কদাচিৎ is a valid rare-frequency sense. A degree gloss should be added without dropping frequency; the candidate কোনোমতে can imply difficulty rather than low degree. Bengali dictionary usage overlaps. Do not replace a valid sense with another narrow interpretation.",
+        "sources": [
+          "https://accessibledictionary.gov.bd/english-to-bengali.php?q=hardly"
+        ],
+        "confidence": "high",
+        "nextAction": "Bengali reviewer to approve a degree-based barely/hardly addition alongside the valid rare-frequency sense.",
+        "catalogContexts": [
+          {
+            "storyId": "classic-little-match-girl",
+            "sentenceId": "cl-little-match-girl-08",
+            "english": "And the poor home was scarcely warmer than the street."
+          }
+        ]
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-3-4.json"
+    },
+    {
+      "id": "dispositions-3-4.json:54",
+      "lang": "es-419",
+      "lemma": "spills",
+      "priorReview": {
+        "batch": 4,
+        "findingIndex": 32,
+        "lang": "es-419",
+        "lemma": "spills",
+        "current": "derrama",
+        "initialSuggested": "se derrama; derrama",
+        "turkishReference": "döker",
+        "decision": "defer",
+        "suggested": null,
+        "rationale": "The source döker and current target both express a valid transitive spilling sense; the one catalog milk example is intransitive. Adding an intransitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+        "sources": [],
+        "confidence": "high",
+        "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+        "catalogContexts": [
+          {
+            "storyId": "classic-milkmaid-pail",
+            "sentenceId": "cl-milkmaid-pail-11",
+            "english": "All the milk spills out."
+          }
+        ]
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-3-4.json"
+    },
+    {
+      "id": "dispositions-3-4.json:55",
+      "lang": "id",
+      "lemma": "spills",
+      "priorReview": {
+        "batch": 4,
+        "findingIndex": 33,
+        "lang": "id",
+        "lemma": "spills",
+        "current": "menumpahkan",
+        "initialSuggested": "tumpah; menumpahkan",
+        "turkishReference": "döker",
+        "decision": "defer",
+        "suggested": null,
+        "rationale": "The source döker and current target both express a valid transitive spilling sense; the one catalog milk example is intransitive. Adding an intransitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+        "sources": [],
+        "confidence": "high",
+        "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+        "catalogContexts": [
+          {
+            "storyId": "classic-milkmaid-pail",
+            "sentenceId": "cl-milkmaid-pail-11",
+            "english": "All the milk spills out."
+          }
+        ]
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-3-4.json"
+    },
+    {
+      "id": "dispositions-3-4.json:56",
+      "lang": "ar",
+      "lemma": "spills",
+      "priorReview": {
+        "batch": 4,
+        "findingIndex": 34,
+        "lang": "ar",
+        "lemma": "spills",
+        "current": "يسكب",
+        "initialSuggested": "ينسكب؛ يسكب",
+        "turkishReference": "döker",
+        "decision": "defer",
+        "suggested": null,
+        "rationale": "The source döker and current target both express a valid transitive spilling sense; the one catalog milk example is intransitive. Adding an intransitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+        "sources": [],
+        "confidence": "high",
+        "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+        "catalogContexts": [
+          {
+            "storyId": "classic-milkmaid-pail",
+            "sentenceId": "cl-milkmaid-pail-11",
+            "english": "All the milk spills out."
+          }
+        ]
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-3-4.json"
+    },
+    {
+      "id": "dispositions-3-4.json:57",
+      "lang": "vi",
+      "lemma": "spills",
+      "priorReview": {
+        "batch": 4,
+        "findingIndex": 35,
+        "lang": "vi",
+        "lemma": "spills",
+        "current": "làm đổ",
+        "initialSuggested": "đổ ra; làm đổ",
+        "turkishReference": "döker",
+        "decision": "defer",
+        "suggested": null,
+        "rationale": "The source döker and current target both express a valid transitive spilling sense; the one catalog milk example is intransitive. Adding an intransitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+        "sources": [],
+        "confidence": "high",
+        "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+        "catalogContexts": [
+          {
+            "storyId": "classic-milkmaid-pail",
+            "sentenceId": "cl-milkmaid-pail-11",
+            "english": "All the milk spills out."
+          }
+        ]
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-3-4.json"
+    },
+    {
+      "id": "dispositions-3-4.json:58",
+      "lang": "hi",
+      "lemma": "spills",
+      "priorReview": {
+        "batch": 4,
+        "findingIndex": 36,
+        "lang": "hi",
+        "lemma": "spills",
+        "current": "गिराता है (तरल)",
+        "initialSuggested": "गिरता है / छलकता है (तरल); गिराता है",
+        "turkishReference": "döker",
+        "decision": "defer",
+        "suggested": null,
+        "rationale": "The source döker and current target both express a valid transitive spilling sense; the one catalog milk example is intransitive. Adding an intransitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+        "sources": [],
+        "confidence": "high",
+        "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+        "catalogContexts": [
+          {
+            "storyId": "classic-milkmaid-pail",
+            "sentenceId": "cl-milkmaid-pail-11",
+            "english": "All the milk spills out."
+          }
+        ]
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-3-4.json"
+    },
+    {
+      "id": "dispositions-3-4.json:59",
+      "lang": "ru",
+      "lemma": "spills",
+      "priorReview": {
+        "batch": 4,
+        "findingIndex": 37,
+        "lang": "ru",
+        "lemma": "spills",
+        "current": "проливает",
+        "initialSuggested": "проливается; проливает",
+        "turkishReference": "döker",
+        "decision": "defer",
+        "suggested": null,
+        "rationale": "The source döker and current target both express a valid transitive spilling sense; the one catalog milk example is intransitive. Adding an intransitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+        "sources": [],
+        "confidence": "high",
+        "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+        "catalogContexts": [
+          {
+            "storyId": "classic-milkmaid-pail",
+            "sentenceId": "cl-milkmaid-pail-11",
+            "english": "All the milk spills out."
+          }
+        ]
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-3-4.json"
+    },
+    {
+      "id": "dispositions-3-4.json:60",
+      "lang": "bn",
+      "lemma": "spills",
+      "priorReview": {
+        "batch": 4,
+        "findingIndex": 38,
+        "lang": "bn",
+        "lemma": "spills",
+        "current": "ছড়িয়ে ফেলে",
+        "initialSuggested": "ছলকে পড়ে; ফেলে দেয়",
+        "turkishReference": "döker",
+        "decision": "defer",
+        "suggested": null,
+        "rationale": "The source döker and current target both express a valid transitive spilling sense; the one catalog milk example is intransitive. Adding an intransitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+        "sources": [],
+        "confidence": "high",
+        "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+        "catalogContexts": [
+          {
+            "storyId": "classic-milkmaid-pail",
+            "sentenceId": "cl-milkmaid-pail-11",
+            "english": "All the milk spills out."
+          }
+        ]
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-3-4.json"
+    },
+    {
+      "id": "dispositions-3-4.json:61",
+      "lang": "ur",
+      "lemma": "spills",
+      "priorReview": {
+        "batch": 4,
+        "findingIndex": 39,
+        "lang": "ur",
+        "lemma": "spills",
+        "current": "گراتا ہے (مائع)",
+        "initialSuggested": "گرتا ہے / چھلکتا ہے (مائع)؛ گراتا ہے",
+        "turkishReference": "döker",
+        "decision": "defer",
+        "suggested": null,
+        "rationale": "The source döker and current target both express a valid transitive spilling sense; the one catalog milk example is intransitive. Adding an intransitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+        "sources": [],
+        "confidence": "high",
+        "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+        "catalogContexts": [
+          {
+            "storyId": "classic-milkmaid-pail",
+            "sentenceId": "cl-milkmaid-pail-11",
+            "english": "All the milk spills out."
+          }
+        ]
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-3-4.json"
+    },
+    {
+      "id": "dispositions-3-4.json:62",
+      "lang": "th",
+      "lemma": "spills",
+      "priorReview": {
+        "batch": 4,
+        "findingIndex": 40,
+        "lang": "th",
+        "lemma": "spills",
+        "current": "ทำหก",
+        "initialSuggested": "หก; ทำหก",
+        "turkishReference": "döker",
+        "decision": "defer",
+        "suggested": null,
+        "rationale": "The source döker and current target both express a valid transitive spilling sense; the one catalog milk example is intransitive. Adding an intransitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+        "sources": [],
+        "confidence": "high",
+        "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+        "catalogContexts": [
+          {
+            "storyId": "classic-milkmaid-pail",
+            "sentenceId": "cl-milkmaid-pail-11",
+            "english": "All the milk spills out."
+          }
+        ]
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-3-4.json"
+    },
+    {
+      "id": "dispositions-5.json:14",
+      "lang": "hi",
+      "lemma": "unlit",
+      "priorReview": {
+        "batch": 5,
+        "candidateIndex": 15,
+        "lang": "hi",
+        "lemma": "unlit",
+        "current": "बिना रोशनी का",
+        "claudeSuggested": "बिना जला हुआ; बिना रोशनी का",
+        "disposition": "defer",
+        "rationale": "The not-ignited sense is definitely missing, but suggested बिना जला हुआ needs Hindi grammar validation (transitive passive versus burnt/burning). Preserve the valid lightless sense; apply the safe Turkish correction separately.",
+        "safeReplacement": null,
+        "externalSources": [
+          "https://www.collinsdictionary.com/dictionary/english/unlit"
+        ],
+        "turkishReference": "ışıksız",
+        "allEnglishContexts": [
+          "In a dark doorway, he noticed a man waiting with an unlit cigar."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-5.json",
+          "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-5.json"
+    },
+    {
+      "id": "dispositions-5.json:17",
+      "lang": "ur",
+      "lemma": "unlit",
+      "priorReview": {
+        "batch": 5,
+        "candidateIndex": 18,
+        "lang": "ur",
+        "lemma": "unlit",
+        "current": "بغیر روشنی کا",
+        "claudeSuggested": "بن سلگا؛ بغیر روشنی کا",
+        "disposition": "defer",
+        "rationale": "The not-ignited sense is definitely missing, but the exact Urdu بن سلگا wording requires proficient/native validation. Preserve the valid lightless sense; apply the safe Turkish correction separately.",
+        "safeReplacement": null,
+        "externalSources": [
+          "https://www.collinsdictionary.com/dictionary/english/unlit"
+        ],
+        "turkishReference": "ışıksız",
+        "allEnglishContexts": [
+          "In a dark doorway, he noticed a man waiting with an unlit cigar."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-5.json",
+          "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-5.json"
+    }
+  ],
+  "lemmas": [
+    {
+      "lemma": "against",
+      "currentGlosses": {
+        "tr": "karşı",
+        "es-419": "contra",
+        "pt-BR": "contra",
+        "id": "melawan",
+        "ar": "ضد",
+        "vi": "chống lại",
+        "hi": "के खिलाफ",
+        "ru": "против",
+        "bn": "বিরুদ্ধে",
+        "ur": "کے خلاف",
+        "th": "ต่อต้าน"
+      },
+      "englishContexts": [
+        "Angry and frightened, she threw him against the wall.",
+        "To warm her fingers, she struck a match against the wall.",
+        "The brothers carried Elisa across the sea in a net, racing against the sunset."
+      ]
+    },
+    {
+      "lemma": "amazed",
+      "currentGlosses": {
+        "tr": "şaşkın",
+        "es-419": "asombrado",
+        "pt-BR": "admirado; espantado",
+        "id": "takjub",
+        "ar": "مندهش",
+        "vi": "kinh ngạc",
+        "hi": "हैरान",
+        "ru": "изумлённый",
+        "bn": "বিস্মিত",
+        "ur": "حیران",
+        "th": "ประหลาดใจ"
+      },
+      "englishContexts": [
+        "Their fine stitching amazed him."
+      ]
+    },
+    {
+      "lemma": "burn",
+      "currentGlosses": {
+        "tr": "yanmak",
+        "es-419": "arder",
+        "pt-BR": "queimar",
+        "id": "terbakar",
+        "ar": "يحترق",
+        "vi": "cháy",
+        "hi": "जलना",
+        "ru": "гореть",
+        "bn": "পোড়া",
+        "ur": "جلنا",
+        "th": "ไหม้"
+      },
+      "englishContexts": [
+        "The nettles would burn her hands, and she must not speak until the work was finished.",
+        "Even after she was sentenced to burn, she continued weaving in prison."
+      ]
+    },
+    {
+      "lemma": "companion",
+      "currentGlosses": {
+        "tr": "yol arkadaşı",
+        "es-419": "compañero; compañero de viaje",
+        "pt-BR": "companheiro; companheiro de viagem",
+        "id": "teman; pendamping; teman seperjalanan",
+        "ar": "رفيق؛ رفيق السفر",
+        "vi": "bạn đồng hành",
+        "hi": "साथी",
+        "ru": "спутник",
+        "bn": "সঙ্গী; সহযাত্রী",
+        "ur": "ہم سفر",
+        "th": "เพื่อนร่วมทาง"
+      },
+      "englishContexts": [
+        "His companion that evening had been his closest friend, Jimmy Wells.",
+        "He admired her from behind a small box and dreamed of being her companion."
+      ]
+    },
+    {
+      "lemma": "described",
+      "currentGlosses": {
+        "tr": "anlattı, tarif etti",
+        "es-419": "describió",
+        "pt-BR": "descreveu",
+        "id": "menggambarkan",
+        "ar": "وصف",
+        "vi": "đã mô tả",
+        "hi": "वर्णन किया",
+        "ru": "описал",
+        "bn": "বর্ণনা করল",
+        "ur": "بیان کیا",
+        "th": "อธิบาย"
+      },
+      "englishContexts": [
+        {
+          "storyId": "attic-letter",
+          "sentenceId": "attic-letter-4",
+          "english": "It described a promise to meet beside the old garden gate on the first day of spring."
+        },
+        {
+          "storyId": "classic-bremen-musicians",
+          "sentenceId": "cl-bremen-musicians-23",
+          "english": "The frightened robber described a witch, an armed man, a monster, and a judge."
+        },
+        {
+          "storyId": "classic-happy-prince",
+          "sentenceId": "cl-happy-prince-20",
+          "english": "Each day, he flew over the city and described the hungry families he saw."
+        },
+        {
+          "storyId": "classic-after-twenty-years",
+          "sentenceId": "cl-after-twenty-years-20",
+          "english": "They walked together while Bob described his successful life in the West."
+        },
+        {
+          "storyId": "classic-twelve-dancing-princesses",
+          "sentenceId": "cl-twelve-dancing-princesses-18",
+          "english": "Then he showed the king the branches and cup, and described the secret journey."
+        }
+      ]
+    },
+    {
+      "lemma": "doorway",
+      "currentGlosses": {
+        "tr": "kapı aralığı",
+        "es-419": "vano de la puerta",
+        "pt-BR": "vão da porta",
+        "id": "ambang pintu",
+        "ar": "مدخل الباب",
+        "vi": "ô cửa",
+        "hi": "दरवाज़े का मार्ग",
+        "ru": "дверной проём",
+        "bn": "দরজার ফাঁক",
+        "ur": "دروازے کا راستہ",
+        "th": "ช่องประตู"
+      },
+      "englishContexts": [
+        "In a dark doorway, he noticed a man waiting with an unlit cigar.",
+        "He was the first policeman who had spoken to Bob in the doorway.",
+        "He saw the dancer still standing in the doorway of the toy castle."
+      ]
+    },
+    {
+      "lemma": "dreams",
+      "currentGlosses": {
+        "tr": "rüyalar; hayaller",
+        "es-419": "sueños",
+        "pt-BR": "sonhos",
+        "id": "mimpi",
+        "ar": "أحلام",
+        "vi": "những giấc mơ",
+        "hi": "सपने",
+        "ru": "сны; мечты",
+        "bn": "স্বপ্নগুলো",
+        "ur": "خواب",
+        "th": "ความฝัน"
+      },
+      "englishContexts": [
+        "As she dreams, she moves her real head."
+      ]
+    },
+    {
+      "lemma": "enormous",
+      "currentGlosses": {
+        "tr": "devasa",
+        "es-419": "enorme",
+        "pt-BR": "enorme",
+        "id": "sangat besar",
+        "ar": "ضخم",
+        "vi": "khổng lồ",
+        "hi": "विशाल",
+        "ru": "огромный",
+        "bn": "বিশাল",
+        "ur": "عظیم",
+        "th": "มหึมา"
+      },
+      "englishContexts": [
+        "Then she noticed his enormous mouth."
+      ]
+    },
+    {
+      "lemma": "fight",
+      "currentGlosses": {
+        "tr": "kavga etmek",
+        "es-419": "pelear",
+        "pt-BR": "brigar",
+        "id": "berkelahi",
+        "ar": "يتقاتل",
+        "vi": "đánh nhau",
+        "hi": "लड़ना",
+        "ru": "драться",
+        "bn": "ঝগড়া করা",
+        "ur": "لڑنا",
+        "th": "ต่อสู้"
+      },
+      "englishContexts": [
+        "Each giant blamed the other, and they fought until both were dead."
+      ]
+    },
+    {
+      "lemma": "finnish",
+      "currentGlosses": {
+        "tr": "Fin, Finli",
+        "es-419": "finlandés",
+        "pt-BR": "finlandês",
+        "id": "Finlandia (bahasa/orang)",
+        "ar": "فنلندي",
+        "vi": "người Phần Lan; thuộc Phần Lan",
+        "hi": "फ़िनिश",
+        "ru": "финский",
+        "bn": "ফিনিশ",
+        "ur": "فنی",
+        "th": "ฟินแลนด์; ชาวฟินแลนด์"
+      },
+      "englishContexts": [
+        "That woman sent them onward to a wise Finnish woman."
+      ]
+    },
+    {
+      "lemma": "fond",
+      "currentGlosses": {
+        "tr": "düşkün",
+        "es-419": "aficionado; encariñado",
+        "pt-BR": "apegado; afeiçoado",
+        "id": "menyukai",
+        "ar": "مولع",
+        "vi": "yêu mến",
+        "hi": "शौक़ीन",
+        "ru": "любящий",
+        "bn": "অনুরক্ত",
+        "ur": "دلدادہ",
+        "th": "ชอบพอ"
+      },
+      "englishContexts": [
+        "He grew fond of her but remembered the woman he believed had saved his life."
+      ]
+    },
+    {
+      "lemma": "god",
+      "currentGlosses": {
+        "tr": "tanrı",
+        "es-419": "dios",
+        "pt-BR": "deus",
+        "id": "tuhan",
+        "ar": "إله",
+        "vi": "thần; Chúa",
+        "hi": "ईश्वर",
+        "ru": "бог",
+        "bn": "ঈশ্বর",
+        "ur": "خدا",
+        "th": "พระเจ้า"
+      },
+      "englishContexts": [
+        {
+          "storyId": "classic-happy-prince",
+          "sentenceId": "cl-happy-prince-29",
+          "english": "God asked an angel to bring the two most precious things in the city."
+        },
+        {
+          "storyId": "classic-happy-prince",
+          "sentenceId": "cl-happy-prince-30",
+          "english": "The angel chose the broken heart and the swallow, and God welcomed them into Paradise."
+        },
+        {
+          "storyId": "classic-little-match-girl",
+          "sentenceId": "cl-little-match-girl-19",
+          "english": "A falling star meant that a soul was going to God."
+        }
+      ]
+    },
+    {
+      "lemma": "hide",
+      "currentGlosses": {
+        "tr": "saklanmak",
+        "es-419": "esconderse",
+        "pt-BR": "esconder-se",
+        "id": "bersembunyi",
+        "ar": "يختبئ",
+        "vi": "trốn",
+        "hi": "छिपना",
+        "ru": "прятаться",
+        "bn": "লুকানো",
+        "ur": "چھپنا",
+        "th": "ซ่อนตัว"
+      },
+      "englishContexts": [
+        {
+          "storyId": "classic-happy-prince",
+          "sentenceId": "cl-happy-prince-08",
+          "english": "Now he could see the suffering that his comfortable life had hidden from him."
+        },
+        {
+          "storyId": "classic-town-country-mouse",
+          "sentenceId": "cl-town-country-mouse-09",
+          "english": "The mice run and hide in a hole."
+        },
+        {
+          "storyId": "classic-town-country-mouse",
+          "sentenceId": "cl-town-country-mouse-11",
+          "english": "Then another person enters, and they hide once more."
+        },
+        {
+          "storyId": "classic-ass-lion-skin",
+          "sentenceId": "cl-ass-lion-skin-12",
+          "english": "A fine disguise cannot hide who we are forever."
+        },
+        {
+          "storyId": "classic-elves-shoemaker",
+          "sentenceId": "cl-elves-shoemaker-10",
+          "english": "They hid in the workshop and watched the table."
+        },
+        {
+          "storyId": "classic-tom-thumb",
+          "sentenceId": "cl-tom-thumb-07",
+          "english": "On the road, he hid in a mouse hole and waited until the strangers left."
+        },
+        {
+          "storyId": "classic-wolf-seven-kids",
+          "sentenceId": "cl-wolf-seven-kids-10",
+          "english": "The frightened children hid around the house."
+        },
+        {
+          "storyId": "classic-twelve-dancing-princesses",
+          "sentenceId": "cl-twelve-dancing-princesses-08",
+          "english": "The eldest princess opened a hidden door beneath her bed."
+        }
+      ]
+    },
+    {
+      "lemma": "interrupted",
+      "currentGlosses": {
+        "tr": "kesintiye uğramış, yarım kalmış",
+        "es-419": "interrumpido",
+        "pt-BR": "interrompido",
+        "id": "terputus",
+        "ar": "مقطوع",
+        "vi": "bị gián đoạn",
+        "hi": "बाधित",
+        "ru": "прерванный",
+        "bn": "ব্যাহত",
+        "ur": "منقطع",
+        "th": "ถูกขัดจังหวะ"
+      },
+      "englishContexts": [
+        {
+          "storyId": "classic-sleeping-beauty",
+          "sentenceId": "cl-sleeping-beauty-19",
+          "english": "The whole castle woke up and continued its interrupted day."
+        }
+      ]
+    },
+    {
+      "lemma": "lowered",
+      "currentGlosses": {
+        "tr": "indirdi",
+        "es-419": "bajó",
+        "pt-BR": "abaixou",
+        "id": "menurunkan",
+        "ar": "أنزل",
+        "vi": "đã hạ xuống",
+        "hi": "नीचे किया",
+        "ru": "опустил",
+        "bn": "নামাল",
+        "ur": "نیچے کیا",
+        "th": "ลดลง"
+      },
+      "englishContexts": [
+        {
+          "storyId": "classic-ugly-duckling",
+          "sentenceId": "cl-ugly-duckling-24",
+          "english": "But they welcomed him, and when he lowered his head, he saw his reflection."
+        }
+      ]
+    },
+    {
+      "lemma": "plain",
+      "currentGlosses": {
+        "tr": "sivil (giyimli); sade",
+        "es-419": "de paisano; sencillo",
+        "pt-BR": "à paisana; simples",
+        "id": "preman; sederhana",
+        "ar": "مدني (ملابس)؛ بسيط",
+        "vi": "thường phục; giản dị",
+        "hi": "सादी (वर्दी नहीं); सादा",
+        "ru": "штатский; простой",
+        "bn": "সাদা পোশাকের; সাধারণ",
+        "ur": "سادہ (وردی کے بغیر)؛ سادہ",
+        "th": "ธรรมดา (ไม่สวมเครื่องแบบ); เรียบง่าย"
+      },
+      "englishContexts": [
+        {
+          "storyId": "classic-after-twenty-years",
+          "sentenceId": "cl-after-twenty-years-23",
+          "english": "The stranger explained that he was a plain-clothes detective."
+        }
+      ]
+    },
+    {
+      "lemma": "scarcely",
+      "currentGlosses": {
+        "tr": "neredeyse hiç, güçlükle",
+        "es-419": "apenas",
+        "pt-BR": "mal",
+        "id": "hampir tidak",
+        "ar": "بالكاد",
+        "vi": "hầu như không",
+        "hi": "मुश्किल से",
+        "ru": "едва",
+        "bn": "কদাচিৎ",
+        "ur": "بمشکل",
+        "th": "แทบจะไม่"
+      },
+      "englishContexts": [
+        {
+          "storyId": "classic-little-match-girl",
+          "sentenceId": "cl-little-match-girl-08",
+          "english": "And the poor home was scarcely warmer than the street."
+        }
+      ]
+    },
+    {
+      "lemma": "spills",
+      "currentGlosses": {
+        "tr": "döker",
+        "es-419": "derrama",
+        "pt-BR": "derrama",
+        "id": "menumpahkan",
+        "ar": "يسكب",
+        "vi": "làm đổ",
+        "hi": "गिराता है (तरल)",
+        "ru": "проливает",
+        "bn": "ছড়িয়ে ফেলে",
+        "ur": "گراتا ہے (مائع)",
+        "th": "ทำหก"
+      },
+      "englishContexts": [
+        {
+          "storyId": "classic-milkmaid-pail",
+          "sentenceId": "cl-milkmaid-pail-11",
+          "english": "All the milk spills out."
+        }
+      ]
+    },
+    {
+      "lemma": "unlit",
+      "currentGlosses": {
+        "tr": "yakılmamış; ışıksız",
+        "es-419": "sin encender; sin luz",
+        "pt-BR": "não aceso; sem luz",
+        "id": "belum dinyalakan; tak berlampu",
+        "ar": "غير مشتعل؛ غير مضاء",
+        "vi": "chưa châm lửa; không có đèn sáng",
+        "hi": "बिना रोशनी का",
+        "ru": "незажжённый; неосвещённый",
+        "bn": "না-জ্বালানো; আলোহীন",
+        "ur": "بغیر روشنی کا",
+        "th": "ที่ยังไม่ได้จุด; ไม่มีแสงสว่าง"
+      },
+      "englishContexts": [
+        "In a dark doorway, he noticed a man waiting with an unlit cigar."
+      ]
+    },
+    {
+      "lemma": "wicked",
+      "currentGlosses": {
+        "tr": "kötü kalpli",
+        "es-419": "malvado",
+        "pt-BR": "malvado",
+        "id": "jahat",
+        "ar": "شرير",
+        "vi": "độc ác",
+        "hi": "दुष्ट",
+        "ru": "злой",
+        "bn": "দুষ্ট",
+        "ur": "بدکار",
+        "th": "ชั่วร้าย"
+      },
+      "englishContexts": [
+        {
+          "storyId": "classic-snow-queen",
+          "sentenceId": "cl-snow-queen-01",
+          "english": "A wicked spirit made a mirror that turned beautiful things ugly and kindness into faults."
+        },
+        {
+          "storyId": "classic-wild-swans",
+          "sentenceId": "cl-wild-swans-17",
+          "english": "Although he loved her, his adviser suspected that her silence hid something wicked."
+        }
+      ]
+    }
+  ]
+}
