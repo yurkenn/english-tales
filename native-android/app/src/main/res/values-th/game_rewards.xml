@@ -22,7 +22,13 @@
     <string name="quests_chest_ready">หีบพร้อมแล้ว! แตะเพื่อเปิด</string>
     <string name="quests_chest_opened">เปิดหีบของวันนี้แล้ว พรุ่งนี้มีภารกิจใหม่</string>
     <string name="quests_reward_title">ทำภารกิจครบทุกข้อแล้ว!</string>
-    <string name="quests_reward_text">จำนวนวันที่คุณทำภารกิจครบ: %1$d พรุ่งนี้มาเจอภารกิจใหม่กัน</string>
+    <string name="quests_reward_bonus">คุณได้รับโบนัส %1$d คะแนนจากหีบ!</string>
+    <string name="quests_reward_league">คะแนนนี้นับในลีกประจำสัปดาห์ของคุณด้วย</string>
+    <string name="quests_reward_guest">สร้างบัญชีแล้วคะแนนจากหีบจะนับในลีกประจำสัปดาห์ด้วย</string>
+    <string name="quests_chest_opening">กำลังเปิดหีบ…</string>
+    <string name="quests_chest_syncing">กำลังบันทึกการฝึกของคุณ แตะหีบอีกครั้งเมื่อบันทึกเสร็จ</string>
+    <string name="quests_chest_failed">เปิดหีบไม่ได้ ตรวจสอบการเชื่อมต่ออินเทอร์เน็ตแล้วแตะอีกครั้ง</string>
+    <string name="quests_chest_opened_points">หีบวันนี้ให้ %1$d คะแนน ภารกิจใหม่จะมาพรุ่งนี้</string>
     <string name="streak_milestone_title">สตรีค %1$d วัน!</string>
     <string name="streak_milestone_text">คุณกลับมาทุกวันและเปลวไฟก็โตขึ้น พรุ่งนี้อ่านหรือทบทวนสั้น ๆ ก็รักษาสตรีคไว้ได้</string>
     <string name="reminder_streak_title">สตรีค %1$d วันของคุณกำลังเสี่ยง</string>

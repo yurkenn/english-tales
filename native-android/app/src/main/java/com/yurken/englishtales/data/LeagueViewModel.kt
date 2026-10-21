@@ -26,9 +26,20 @@ sealed interface FriendsUi {
     data object Failed : FriendsUi
 }
 
-class LeagueViewModel internal constructor(application: Application, private val service: LeagueService?) : AndroidViewModel(application) {
-    constructor(application: Application) : this(application,
-        if (LearningSyncRuntime.configured()) LeagueService(LearningSyncHttp(BuildConfig.SUPABASE_URL, BuildConfig.SUPABASE_PUBLISHABLE_KEY), LearningSyncRuntime.accounts(application)) else null)
+/** The daily chest being opened. [Syncing] waits for today's sessions to reach the server, which checks the quests. */
+sealed interface ChestUi {
+    data object Idle : ChestUi
+    data object Opening : ChestUi
+    data object Syncing : ChestUi
+    data class Opened(val points: Int, val league: Boolean) : ChestUi
+    data object Failed : ChestUi
+}
+
+class LeagueViewModel internal constructor(application: Application, private val service: LeagueService?, private val chests: QuestChestService? = null) : AndroidViewModel(application) {
+    constructor(application: Application) : this(application, LearningSyncRuntime.configured(), application)
+    private constructor(application: Application, configured: Boolean, app: Application) : this(application,
+        if (configured) LeagueService(http(), LearningSyncRuntime.accounts(app)) else null,
+        if (configured) QuestChestService(http(), LearningSyncRuntime.accounts(app)) else null)
     private val mutableState = MutableStateFlow<LeagueUi>(if (service == null) LeagueUi.Unavailable else LeagueUi.Guest)
     val state: StateFlow<LeagueUi> = mutableState
     private var user: String? = null
@@ -93,5 +104,69 @@ class LeagueViewModel internal constructor(application: Application, private val
                 }
             })
         }
+    }
+
+    private val mutableChest = MutableStateFlow<ChestUi>(ChestUi.Idle)
+    val chest: StateFlow<ChestUi> = mutableChest
+    /** Bumped whenever the device copy of the chests changes, so the learning snapshot re-reads its points. */
+    private val mutableChestVersion = MutableStateFlow(0)
+    val chestVersion: StateFlow<Int> = mutableChestVersion
+    private var chestDay: String? = null
+
+    /**
+     * Opens [day]'s chest. A guest's chest is rolled on the device; an account asks the server, which checks the
+     * quests itself. When the server has not seen today's sessions yet the chest waits in [ChestUi.Syncing] and
+     * [onSyncNeeded] uploads them; [retryChest] then tries once more.
+     */
+    fun openChest(owner: String, userId: String?, day: String, onSyncNeeded: (() -> Unit)?) {
+        val chests = chests
+        if (mutableChest.value == ChestUi.Opening) return
+        if (userId == null || chests == null) {
+            mutableChest.value = ChestUi.Opened(QuestChests.openLocally(getApplication(), owner, day), league = false)
+            mutableChestVersion.value++
+            return
+        }
+        chestDay = day
+        mutableChest.value = ChestUi.Opening
+        viewModelScope.launch(Dispatchers.IO) {
+            val result = runCatching { chests.open(userId, day) }
+            if (chestDay != day) return@launch
+            result.onSuccess { state ->
+                QuestChests.mirror(getApplication(), userId, state)
+                chestDay = null
+                mutableChest.value = ChestUi.Opened(state.recent.firstOrNull { it.day == day }?.points ?: 0, league = true)
+                mutableChestVersion.value++
+                refresh(userId)
+            }.onFailure {
+                // The quests are not done on the server yet: upload once and retry; a retry that still misses them gives up.
+                if ((it as? LearningSyncFailure)?.code == "55000" && onSyncNeeded != null) { mutableChest.value = ChestUi.Syncing; launch(Dispatchers.Main) { onSyncNeeded() } }
+                else { chestDay = null; mutableChest.value = ChestUi.Failed }
+            }
+        }
+    }
+
+    /** Tries a chest that waited for an upload again; called when a sync finishes. */
+    fun retryChest(owner: String, userId: String?) {
+        val day = chestDay ?: return
+        if (mutableChest.value == ChestUi.Syncing) openChest(owner, userId, day, null)
+    }
+
+    fun dismissChest() { if (mutableChest.value !is ChestUi.Opening && mutableChest.value !is ChestUi.Syncing) mutableChest.value = ChestUi.Idle }
+
+    /** Mirrors the account's chests from the server, so a chest opened on another device shows here too. */
+    fun refreshChests(userId: String?) {
+        val chests = chests ?: return
+        if (userId == null) return
+        viewModelScope.launch(Dispatchers.IO) {
+            runCatching { chests.load(userId) }.onSuccess {
+                val before = QuestChests.total(getApplication(), userId)
+                QuestChests.mirror(getApplication(), userId, it)
+                if (it.total != before) mutableChestVersion.value++
+            }
+        }
+    }
+
+    private companion object {
+        fun http() = LearningSyncHttp(BuildConfig.SUPABASE_URL, BuildConfig.SUPABASE_PUBLISHABLE_KEY)
     }
 }

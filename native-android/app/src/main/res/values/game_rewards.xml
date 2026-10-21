@@ -23,7 +23,13 @@
     <string name="quests_chest_ready">Sandık hazır! Açmak için dokun.</string>
     <string name="quests_chest_opened">Bugünün sandığı açıldı. Yarın yeni görevler var.</string>
     <string name="quests_reward_title">Bütün görevler tamam!</string>
-    <string name="quests_reward_text">Görevlerini bitirdiğin gün sayısı: %1$d. Yarın yeni görevlerle görüşürüz.</string>
+    <string name="quests_reward_bonus">Sandıktan %1$d bonus puan çıktı!</string>
+    <string name="quests_reward_league">Bu puanlar haftalık ligine de sayıldı.</string>
+    <string name="quests_reward_guest">Hesap açarsan sandık puanların haftalık ligde de sayılır.</string>
+    <string name="quests_chest_opening">Sandık açılıyor…</string>
+    <string name="quests_chest_syncing">Çalışmaların kaydediliyor. Bitince sandığa yeniden dokun.</string>
+    <string name="quests_chest_failed">Sandık açılamadı. İnternet bağlantını kontrol edip yeniden dokun.</string>
+    <string name="quests_chest_opened_points">Bugünün sandığından %1$d puan çıktı. Yarın yeni görevler var.</string>
     <string name="streak_milestone_title">%1$d günlük seri!</string>
     <string name="streak_milestone_text">Her gün geldin, alev büyüdü. Yarın da kısa bir okuma ya da tekrar serini sürdürür.</string>
     <string name="reminder_streak_title">%1$d günlük serin tehlikede</string>

@@ -22,7 +22,13 @@
     <string name="quests_chest_ready">The chest is ready! Tap to open.</string>
     <string name="quests_chest_opened">Today’s chest is open. New quests arrive tomorrow.</string>
     <string name="quests_reward_title">All quests done!</string>
-    <string name="quests_reward_text">Days you finished every quest: %1$d. See you tomorrow for new ones.</string>
+    <string name="quests_reward_bonus">You got %1$d bonus points from the chest!</string>
+    <string name="quests_reward_league">These points also count in your weekly league.</string>
+    <string name="quests_reward_guest">Create an account and chest points count in the weekly league too.</string>
+    <string name="quests_chest_opening">Opening the chest…</string>
+    <string name="quests_chest_syncing">Your practice is still saving. Tap the chest again when it is done.</string>
+    <string name="quests_chest_failed">The chest could not open. Check your internet connection and tap again.</string>
+    <string name="quests_chest_opened_points">Today’s chest gave %1$d points. New quests arrive tomorrow.</string>
     <string name="streak_milestone_title">%1$d-day streak!</string>
     <string name="streak_milestone_text">You came back every day and the flame grew. A short read or review tomorrow keeps it going.</string>
     <string name="reminder_streak_title">Your %1$d-day streak is at risk</string>

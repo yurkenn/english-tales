@@ -22,7 +22,13 @@
     <string name="quests_chest_ready">Rương đã sẵn sàng! Chạm để mở.</string>
     <string name="quests_chest_opened">Rương hôm nay đã mở. Ngày mai có nhiệm vụ mới.</string>
     <string name="quests_reward_title">Đã xong mọi nhiệm vụ!</string>
-    <string name="quests_reward_text">Số ngày bạn hoàn thành mọi nhiệm vụ: %1$d. Hẹn gặp ngày mai với nhiệm vụ mới.</string>
+    <string name="quests_reward_bonus">Bạn nhận được %1$d điểm thưởng từ rương!</string>
+    <string name="quests_reward_league">Số điểm này cũng được tính vào giải đấu tuần của bạn.</string>
+    <string name="quests_reward_guest">Tạo tài khoản để điểm từ rương cũng được tính vào giải đấu tuần.</string>
+    <string name="quests_chest_opening">Đang mở rương…</string>
+    <string name="quests_chest_syncing">Bài luyện tập của bạn vẫn đang được lưu. Hãy chạm vào rương lần nữa khi xong.</string>
+    <string name="quests_chest_failed">Không mở được rương. Hãy kiểm tra kết nối mạng rồi chạm lại.</string>
+    <string name="quests_chest_opened_points">Rương hôm nay cho %1$d điểm. Nhiệm vụ mới sẽ có vào ngày mai.</string>
     <string name="streak_milestone_title">Chuỗi %1$d ngày!</string>
     <string name="streak_milestone_text">Bạn quay lại mỗi ngày và ngọn lửa lớn dần. Ngày mai, một bài đọc hay ôn tập ngắn sẽ giữ chuỗi.</string>
     <string name="reminder_streak_title">Chuỗi %1$d ngày của bạn sắp mất</string>

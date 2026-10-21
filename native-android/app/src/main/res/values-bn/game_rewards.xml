@@ -22,7 +22,13 @@
     <string name="quests_chest_ready">সিন্দুক তৈরি! খুলতে ট্যাপ করো।</string>
     <string name="quests_chest_opened">আজকের সিন্দুক খোলা হয়েছে। কাল নতুন মিশন আসবে।</string>
     <string name="quests_reward_title">সব মিশন শেষ!</string>
-    <string name="quests_reward_text">যতদিন সব মিশন শেষ করেছ: %1$d। কাল নতুন মিশনে দেখা হবে।</string>
+    <string name="quests_reward_bonus">সিন্দুক থেকে তুমি %1$d বোনাস পয়েন্ট পেয়েছ!</string>
+    <string name="quests_reward_league">এই পয়েন্টগুলো তোমার সাপ্তাহিক লিগেও গোনা হয়।</string>
+    <string name="quests_reward_guest">অ্যাকাউন্ট খুললে সিন্দুকের পয়েন্ট সাপ্তাহিক লিগেও গোনা হবে।</string>
+    <string name="quests_chest_opening">সিন্দুক খুলছে…</string>
+    <string name="quests_chest_syncing">তোমার অনুশীলন এখনও সংরক্ষণ হচ্ছে। শেষ হলে আবার সিন্দুকে চাপ দাও।</string>
+    <string name="quests_chest_failed">সিন্দুক খোলা গেল না। ইন্টারনেট সংযোগ দেখে আবার চাপ দাও।</string>
+    <string name="quests_chest_opened_points">আজকের সিন্দুক থেকে %1$d পয়েন্ট এসেছে। কাল নতুন কাজ আসবে।</string>
     <string name="streak_milestone_title">%1$d দিনের ধারা!</string>
     <string name="streak_milestone_text">তুমি প্রতিদিন ফিরে এসেছ, শিখা বড় হয়েছে। কাল ছোট একটি পড়া বা রিভিউ ধারাটি ধরে রাখবে।</string>
     <string name="reminder_streak_title">তোমার %1$d দিনের ধারা ঝুঁকিতে</string>

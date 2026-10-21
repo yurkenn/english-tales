@@ -22,7 +22,13 @@
     <string name="quests_chest_ready">Сундук готов! Нажми, чтобы открыть.</string>
     <string name="quests_chest_opened">Сундук на сегодня открыт. Завтра будут новые задания.</string>
     <string name="quests_reward_title">Все задания выполнены!</string>
-    <string name="quests_reward_text">Дней со всеми выполненными заданиями: %1$d. До завтра, будут новые задания.</string>
+    <string name="quests_reward_bonus">Из сундука выпало %1$d бонусных очков!</string>
+    <string name="quests_reward_league">Эти очки засчитаны и в недельной лиге.</string>
+    <string name="quests_reward_guest">Создай аккаунт, и очки из сундука будут считаться в недельной лиге.</string>
+    <string name="quests_chest_opening">Сундук открывается…</string>
+    <string name="quests_chest_syncing">Занятия ещё сохраняются. Когда закончится, нажми на сундук снова.</string>
+    <string name="quests_chest_failed">Не удалось открыть сундук. Проверь интернет и нажми ещё раз.</string>
+    <string name="quests_chest_opened_points">Сегодняшний сундук принёс %1$d очков. Завтра будут новые задания.</string>
     <string name="streak_milestone_title">Серия: %1$d дн.!</string>
     <string name="streak_milestone_text">Ты возвращался каждый день, и пламя разгорелось. Завтра короткое чтение или повторение сохранит серию.</string>
     <string name="reminder_streak_title">Твоя серия (%1$d дн.) под угрозой</string>

@@ -22,7 +22,13 @@
     <string name="quests_chest_ready">صندوق تیار ہے! کھولنے کے لیے ٹیپ کریں۔</string>
     <string name="quests_chest_opened">آج کا صندوق کھل گیا۔ کل نئے مشن آئیں گے۔</string>
     <string name="quests_reward_title">سارے مشن مکمل!</string>
-    <string name="quests_reward_text">جن دنوں آپ نے سارے مشن مکمل کیے: %1$d۔ کل نئے مشنوں کے ساتھ ملتے ہیں۔</string>
+    <string name="quests_reward_bonus">صندوق سے آپ کو %1$d بونس پوائنٹس ملے!</string>
+    <string name="quests_reward_league">یہ پوائنٹس آپ کی ہفتہ وار لیگ میں بھی شمار ہوتے ہیں۔</string>
+    <string name="quests_reward_guest">اکاؤنٹ بنائیں تو صندوق کے پوائنٹس ہفتہ وار لیگ میں بھی شمار ہوں گے۔</string>
+    <string name="quests_chest_opening">صندوق کھل رہا ہے…</string>
+    <string name="quests_chest_syncing">آپ کی مشق ابھی محفوظ ہو رہی ہے۔ مکمل ہونے پر صندوق کو دوبارہ چھوئیں۔</string>
+    <string name="quests_chest_failed">صندوق نہیں کھل سکا۔ انٹرنیٹ کنکشن چیک کریں اور دوبارہ چھوئیں۔</string>
+    <string name="quests_chest_opened_points">آج کے صندوق سے %1$d پوائنٹس ملے۔ کل نئے کام آئیں گے۔</string>
     <string name="streak_milestone_title">%1$d دن کا سلسلہ!</string>
     <string name="streak_milestone_text">آپ ہر دن واپس آئے اور شعلہ بڑھتا گیا۔ کل تھوڑا پڑھنا یا دہرانا اسے جاری رکھے گا۔</string>
     <string name="reminder_streak_title">آپ کا %1$d دن کا سلسلہ خطرے میں ہے</string>

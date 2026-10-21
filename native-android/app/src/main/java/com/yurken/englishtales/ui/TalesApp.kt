@@ -66,7 +66,11 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
     val leagues: LeagueViewModel=viewModel()
     val leagueState by leagues.state.collectAsState()
     val friendState by leagues.friends.collectAsState()
-    LaunchedEffect(account.userId,account.sync.running) {if(!account.sync.running) leagues.refresh(account.userId)}
+    LaunchedEffect(account.userId,account.sync.running) {if(!account.sync.running) {leagues.refresh(account.userId);leagues.refreshChests(account.userId);leagues.retryChest(snapshot.ownerId,account.userId)}}
+    // Chest points are added to the snapshot's points, so a newly opened or mirrored chest re-reads it.
+    val chestState by leagues.chest.collectAsState()
+    val chestVersion by leagues.chestVersion.collectAsState()
+    LaunchedEffect(chestVersion) {if(chestVersion>0) viewModel.refresh()}
     DisposableEffect(lifecycle) {
         val observer=androidx.lifecycle.LifecycleEventObserver {_,event -> when(event) {
             androidx.lifecycle.Lifecycle.Event.ON_START -> viewModel.setForeground(true)
@@ -172,7 +176,11 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
                     if(selectedTab==1) ContentConnectionBar(content)
                     Box(Modifier.weight(1f)) {
                         MainTabs(snapshot,selectedTab,{selectedTab=it},onOpenStory={nav.navigate("story/$it")},onOpenWords={nav.navigate("words")},onLessonComplete=viewModel::completeLesson,onWordReviewed={id,correct -> viewModel.reviewWord(id,correct)},onRead={id -> val revision=snapshot.resumeRevision(id); nav.navigate("reader/$id"+(revision?.let {"?revision=$it"}?:""))},onPractice=::practice,onSettings={nav.navigate("settings")},onAccount={nav.navigate("account")},launchId=launchId,launchWords=launchWords,onLaunchConsumed={launchId=null},onDailyPlan=::dailyPlan,onSessionStart={id,kind,count ->viewModel.beginSession(id,kind,count,null)},onCheckpoint=viewModel::checkpointSession,onSessionAbandoned=viewModel::abandonSession,onCompletedExit=::completedExit,library=library,
-                            league={modifier -> LeagueCard(leagueState,onOpen={nav.navigate("league")},onAccount={nav.navigate("account")},modifier=modifier)})
+                            league={modifier -> LeagueCard(leagueState,onOpen={nav.navigate("league")},onAccount={nav.navigate("account")},modifier=modifier)},
+                            quests={modifier -> DailyQuestsCard(snapshot,chestState,onOpenChest={leagues.openChest(snapshot.ownerId,account.userId,LearningPolicy.dayKey(System.currentTimeMillis())) {
+                                    // A sync that cannot start now is never awaited: retry at once, and a still-missing quest then shows the failure.
+                                    viewModel.syncNow();if(!viewModel.account.value.sync.running) leagues.retryChest(snapshot.ownerId,account.userId)}},
+                                onDismissChest=leagues::dismissChest,modifier=modifier)})
                     }
                 }
             }
@@ -226,14 +234,14 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
 }
 
 @Composable
-internal fun MainTabs(snapshot: LearningSnapshot, selectedTab: Int, onTabSelected: (Int)->Unit, onOpenStory: (String)->Unit,onOpenWords: ()->Unit,onLessonComplete: (Int,String,String,Int,Long)->Unit,onWordReviewed: (String,Boolean)->Unit,onRead: (String)->Unit,onPractice: (List<String>)->Unit,onSettings: ()->Unit,onAccount: ()->Unit,launchId: String?,launchWords: List<String>,onLaunchConsumed: ()->Unit,onDailyPlan: ()->Unit,onSessionStart: (String,String,Int)->Unit,onCheckpoint: (String,Long)->Unit,onSessionAbandoned: (String)->Unit,onCompletedExit: (String,()->Boolean,()->Unit)->Unit,library: LibraryActions?=null,league: (@Composable (Modifier)->Unit)?=null) {
+internal fun MainTabs(snapshot: LearningSnapshot, selectedTab: Int, onTabSelected: (Int)->Unit, onOpenStory: (String)->Unit,onOpenWords: ()->Unit,onLessonComplete: (Int,String,String,Int,Long)->Unit,onWordReviewed: (String,Boolean)->Unit,onRead: (String)->Unit,onPractice: (List<String>)->Unit,onSettings: ()->Unit,onAccount: ()->Unit,launchId: String?,launchWords: List<String>,onLaunchConsumed: ()->Unit,onDailyPlan: ()->Unit,onSessionStart: (String,String,Int)->Unit,onCheckpoint: (String,Long)->Unit,onSessionAbandoned: (String)->Unit,onCompletedExit: (String,()->Boolean,()->Unit)->Unit,library: LibraryActions?=null,league: (@Composable (Modifier)->Unit)?=null,quests: (@Composable (Modifier)->Unit)?=null) {
     var practicing by remember { mutableStateOf(false) }
     // Each tab keeps its saved state while another tab is shown: a reminder or widget tap mid-practice must not drop the session.
     val tabs=rememberSaveableStateHolder()
     Scaffold(containerColor=TaleBackground,bottomBar={ if(!practicing) TalesBottomBar(selectedTab,onTabSelected) }) { padding ->
         // Tabs cross-fade instead of cutting; the practice tab keeps its running session state.
         TaleSwitch(selectedTab) { tab -> tabs.SaveableStateProvider(tab) { when(tab) {
-            0 -> StudyScreen(snapshot,onOpenStory,onOpenWords,padding,onRead,onPractice,league)
+            0 -> StudyScreen(snapshot,onOpenStory,onOpenWords,padding,onRead,onPractice,league,quests)
             1 -> CatalogScreen(snapshot,onOpenStory,padding,library)
             2 -> PracticeScreen(snapshot,onLessonComplete,onWordReviewed,padding,onSessionStart,onCheckpoint,onSessionAbandoned,onSessionActive={practicing=it},launchId=launchId,launchWordIds=launchWords,onLaunchConsumed=onLaunchConsumed,onDailyPlan=onDailyPlan,onCompletedExit=onCompletedExit)
             else -> ProfileScreen(snapshot,onOpenWords,padding,onSettings,onAccount)

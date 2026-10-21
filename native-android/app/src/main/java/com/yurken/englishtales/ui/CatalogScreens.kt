@@ -36,6 +36,7 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.res.stringResource
+import com.yurken.englishtales.data.ChestUi
 import com.yurken.englishtales.data.ReadingTime
 import com.yurken.englishtales.data.ReadingLength
 import com.yurken.englishtales.data.LearningContent
@@ -84,7 +85,7 @@ private fun ChallengeBanner(onClick: () -> Unit) {
 }
 
 @Composable
-fun StudyScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, onOpenWords: () -> Unit, padding: PaddingValues, onRead: (String)->Unit, onPractice: (List<String>)->Unit, league: (@Composable (Modifier)->Unit)?=null) {
+fun StudyScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, onOpenWords: () -> Unit, padding: PaddingValues, onRead: (String)->Unit, onPractice: (List<String>)->Unit, league: (@Composable (Modifier)->Unit)?=null, quests: (@Composable (Modifier)->Unit)?=null) {
     // Q5.6: unfinished stories at the learner's level that they can read most comfortably come first.
     val catalog=LearningContent.stories
     // Ranking tokenizes stories on first use and reruns on every snapshot change, so it runs on Default; the last order stays until the next is ready.
@@ -103,7 +104,9 @@ fun StudyScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, onOpe
         Spacer(Modifier.height(15.dp))
         DailyPlan(snapshot,onRead,onPractice)
         Spacer(Modifier.height(16.dp))
-        DailyQuestsCard(snapshot,Modifier.padding(horizontal=16.dp).appearIn(2))
+        // The chest needs the league service to open on an account, so the app supplies the card; previews show it closed.
+        val questsModifier=Modifier.padding(horizontal=16.dp).appearIn(2)
+        quests?.invoke(questsModifier) ?: DailyQuestsCard(snapshot,ChestUi.Idle,{},{},questsModifier)
         Spacer(Modifier.height(16.dp))
         // The weekly league sits right under the quests: its rank and gap are the daily reason to come back.
         league?.let {it(Modifier.padding(horizontal=16.dp).appearIn(2));Spacer(Modifier.height(16.dp))}
