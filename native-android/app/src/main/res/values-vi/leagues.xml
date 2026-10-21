@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Weekly leagues: home card, league screen, last week's result and the opt-out. -->
+    <string name="league_title">Giải đấu tuần</string>
+    <string name="league_tier_1">Giải Đồng</string>
+    <string name="league_tier_2">Giải Bạc</string>
+    <string name="league_tier_3">Giải Vàng</string>
+    <string name="league_tier_4">Giải Ngọc Bích</string>
+    <string name="league_tier_5">Giải Kim Cương</string>
+    <string name="league_guest">Tạo tài khoản và thi đấu mỗi tuần trong giải 30 người.</string>
+    <string name="league_loading">Đang tải giải đấu…</string>
+    <string name="league_failed">Không tải được giải đấu. Chạm để thử lại.</string>
+    <string name="league_failed_short">Không tải được giải đấu.</string>
+    <string name="league_retry">Thử lại</string>
+    <string name="league_opted_out">Bạn không tham gia giải đấu. Chạm để tham gia.</string>
+    <string name="league_opted_out_screen">Bạn không tham gia giải đấu. Bạn có thể tham gia lại bên dưới.</string>
+    <string name="league_join_hint">Hoàn thành một trò chơi hoặc một truyện trong tuần này để vào giải.</string>
+    <string name="league_rank">Hạng %1$d · %2$d XP</string>
+    <string name="league_to_next">Còn %1$d XP để lên một hạng</string>
+    <string name="league_leading">Bạn đang dẫn đầu, hãy giữ vững!</string>
+    <string name="league_relegation">Bạn đang ở vùng xuống hạng, cố lên!</string>
+    <string name="league_days_left">Còn %1$d ngày</string>
+    <string name="league_hours_left">Còn %1$d giờ</string>
+    <string name="league_rule_up">%1$d người đứng đầu lên giải</string>
+    <string name="league_rule_down">%1$d người cuối xuống giải</string>
+    <string name="league_zone_up_end">Vùng thăng hạng ↑</string>
+    <string name="league_zone_down">Vùng xuống hạng ↓</string>
+    <string name="league_last_promoted">Chúc mừng! Tuần trước bạn đứng hạng %1$d. Giải mới: %2$s</string>
+    <string name="league_last_stayed">Tuần trước bạn đứng hạng %1$d và giữ được giải.</string>
+    <string name="league_last_relegated">Tuần trước bạn đứng hạng %1$d. Giải mới: %2$s. Tuần này hãy trở lại!</string>
+    <string name="league_you">(bạn)</string>
+    <string name="league_xp">%1$d XP</string>
+    <string name="league_how_title">Làm sao để có XP?</string>
+    <string name="league_how">Mỗi câu trả lời đúng trong trò chơi được 5 XP, mỗi truyện đọc xong được 20 XP. Mỗi ngày tính tối đa 500 XP. Bảng xếp hạng cập nhật sau khi tiến độ được đồng bộ. Giải đấu bắt đầu lại vào 00:00 UTC thứ Hai hằng tuần.</string>
+    <string name="league_name_hint">Tên của bạn trong giải là \"%1$s\". Email của bạn không bao giờ hiển thị.</string>
+    <string name="league_change_name">Đổi tên</string>
+    <string name="league_show_me">Hiện tôi trong giải đấu</string>
+    <string name="league_show_me_text">Nếu tắt, bạn rời nhóm tuần này và không ai thấy tên bạn.</string>
+</resources>

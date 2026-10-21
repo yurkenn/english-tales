@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Weekly leagues: home card, league screen, last week's result and the opt-out. -->
+    <string name="league_title">Недельная лига</string>
+    <string name="league_tier_1">Бронзовая лига</string>
+    <string name="league_tier_2">Серебряная лига</string>
+    <string name="league_tier_3">Золотая лига</string>
+    <string name="league_tier_4">Сапфировая лига</string>
+    <string name="league_tier_5">Алмазная лига</string>
+    <string name="league_guest">Создайте аккаунт и соревнуйтесь каждую неделю в лиге из 30 человек.</string>
+    <string name="league_loading">Загрузка лиги…</string>
+    <string name="league_failed">Не удалось загрузить лигу. Нажмите, чтобы повторить.</string>
+    <string name="league_failed_short">Не удалось загрузить лигу.</string>
+    <string name="league_retry">Повторить</string>
+    <string name="league_opted_out">Вы не участвуете в лиге. Нажмите, чтобы вступить.</string>
+    <string name="league_opted_out_screen">Вы не участвуете в лиге. Вернуться можно ниже.</string>
+    <string name="league_join_hint">Завершите игру или историю на этой неделе, чтобы вступить в лигу.</string>
+    <string name="league_rank">Ваше место: %1$d · %2$d XP</string>
+    <string name="league_to_next">До следующего места: %1$d XP</string>
+    <string name="league_leading">Вы на первом месте, удержите его!</string>
+    <string name="league_relegation">Вы в зоне вылета, продолжайте заниматься!</string>
+    <string name="league_days_left">Осталось дней: %1$d</string>
+    <string name="league_hours_left">Осталось часов: %1$d</string>
+    <string name="league_rule_up">Первые %1$d переходят в лигу выше</string>
+    <string name="league_rule_down">Последние %1$d опускаются в лигу ниже</string>
+    <string name="league_zone_up_end">Зона повышения ↑</string>
+    <string name="league_zone_down">Зона вылета ↓</string>
+    <string name="league_last_promoted">Поздравляем! На прошлой неделе ваше место: %1$d. Новая лига: %2$s</string>
+    <string name="league_last_stayed">На прошлой неделе ваше место: %1$d, лига сохранена.</string>
+    <string name="league_last_relegated">На прошлой неделе ваше место: %1$d. Новая лига: %2$s. Вернитесь наверх на этой неделе!</string>
+    <string name="league_you">(вы)</string>
+    <string name="league_xp">%1$d XP</string>
+    <string name="league_how_title">Как заработать XP?</string>
+    <string name="league_how">Каждый верный ответ в игре даёт 5 XP, каждая прочитанная история — 20 XP. В день засчитывается не больше 500 XP. Рейтинг обновляется после синхронизации. Лига обновляется каждый понедельник в 00:00 UTC.</string>
+    <string name="league_name_hint">В лиге вы отображаетесь как «%1$s». Ваш e-mail никому не показывается.</string>
+    <string name="league_change_name">Изменить имя</string>
+    <string name="league_show_me">Показывать меня в лиге</string>
+    <string name="league_show_me_text">Если выключить, вы покинете группу этой недели и ваше имя никто не увидит.</string>
+</resources>

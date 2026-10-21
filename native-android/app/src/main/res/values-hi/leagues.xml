@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Weekly leagues: home card, league screen, last week's result and the opt-out. -->
+    <string name="league_title">साप्ताहिक लीग</string>
+    <string name="league_tier_1">कांस्य लीग</string>
+    <string name="league_tier_2">रजत लीग</string>
+    <string name="league_tier_3">स्वर्ण लीग</string>
+    <string name="league_tier_4">नीलम लीग</string>
+    <string name="league_tier_5">हीरा लीग</string>
+    <string name="league_guest">खाता बनाएँ और हर हफ़्ते 30 लोगों की लीग में मुकाबला करें।</string>
+    <string name="league_loading">लीग लोड हो रही है…</string>
+    <string name="league_failed">लीग लोड नहीं हो सकी। फिर कोशिश करने के लिए टैप करें।</string>
+    <string name="league_failed_short">लीग लोड नहीं हो सकी।</string>
+    <string name="league_retry">फिर कोशिश करें</string>
+    <string name="league_opted_out">आप लीग में नहीं हैं। जुड़ने के लिए टैप करें।</string>
+    <string name="league_opted_out_screen">आप लीग में नहीं हैं। नीचे से फिर जुड़ सकते हैं।</string>
+    <string name="league_join_hint">लीग में जुड़ने के लिए इस हफ़्ते कोई खेल या कहानी पूरी करें।</string>
+    <string name="league_rank">आपका स्थान %1$d · %2$d XP</string>
+    <string name="league_to_next">एक स्थान ऊपर जाने के लिए %1$d XP बाकी</string>
+    <string name="league_leading">आप सबसे आगे हैं, अपनी जगह बनाए रखें!</string>
+    <string name="league_relegation">आप नीचे जाने वाले क्षेत्र में हैं, अभ्यास जारी रखें!</string>
+    <string name="league_days_left">बचे दिन: %1$d</string>
+    <string name="league_hours_left">बचे घंटे: %1$d</string>
+    <string name="league_rule_up">शीर्ष %1$d ऊपर की लीग में जाते हैं</string>
+    <string name="league_rule_down">आख़िरी %1$d नीचे की लीग में जाते हैं</string>
+    <string name="league_zone_up_end">प्रमोशन क्षेत्र ↑</string>
+    <string name="league_zone_down">नीचे जाने का क्षेत्र ↓</string>
+    <string name="league_last_promoted">बधाई! पिछले हफ़्ते आपका स्थान %1$d था। नई लीग: %2$s</string>
+    <string name="league_last_stayed">पिछले हफ़्ते आपका स्थान %1$d था और आपकी लीग बनी रही।</string>
+    <string name="league_last_relegated">पिछले हफ़्ते आपका स्थान %1$d था। नई लीग: %2$s। इस हफ़्ते फिर ऊपर आएँ!</string>
+    <string name="league_you">(आप)</string>
+    <string name="league_xp">%1$d XP</string>
+    <string name="league_how_title">XP कैसे कमाएँ?</string>
+    <string name="league_how">खेल में हर सही जवाब पर 5 XP और हर पूरी कहानी पर 20 XP मिलते हैं। एक दिन में अधिकतम 500 XP गिने जाते हैं। प्रगति सिंक होने के बाद रैंकिंग अपडेट होती है। लीग हर सोमवार 00:00 UTC पर फिर शुरू होती है।</string>
+    <string name="league_name_hint">लीग में आपका नाम \"%1$s\" दिखता है। आपका ईमेल कभी किसी को नहीं दिखाया जाता।</string>
+    <string name="league_change_name">अपना नाम बदलें</string>
+    <string name="league_show_me">मुझे लीग में दिखाएँ</string>
+    <string name="league_show_me_text">बंद करने पर आप इस हफ़्ते के समूह से निकल जाएँगे और आपका नाम किसी को नहीं दिखेगा।</string>
+</resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Weekly leagues: home card, league screen, last week's result and the opt-out. -->
+    <string name="league_title">Liga mingguan</string>
+    <string name="league_tier_1">Liga Perunggu</string>
+    <string name="league_tier_2">Liga Perak</string>
+    <string name="league_tier_3">Liga Emas</string>
+    <string name="league_tier_4">Liga Safir</string>
+    <string name="league_tier_5">Liga Berlian</string>
+    <string name="league_guest">Buat akun dan bersainglah setiap minggu di liga berisi 30 orang.</string>
+    <string name="league_loading">Memuat liga…</string>
+    <string name="league_failed">Liga tidak dapat dimuat. Ketuk untuk mencoba lagi.</string>
+    <string name="league_failed_short">Liga tidak dapat dimuat.</string>
+    <string name="league_retry">Coba lagi</string>
+    <string name="league_opted_out">Kamu tidak ikut liga. Ketuk untuk bergabung.</string>
+    <string name="league_opted_out_screen">Kamu tidak ikut liga. Kamu bisa bergabung lagi di bawah.</string>
+    <string name="league_join_hint">Selesaikan satu permainan atau cerita minggu ini untuk ikut liga.</string>
+    <string name="league_rank">Peringkat %1$d · %2$d XP</string>
+    <string name="league_to_next">%1$d XP lagi untuk naik satu peringkat</string>
+    <string name="league_leading">Kamu di puncak, pertahankan!</string>
+    <string name="league_relegation">Kamu di zona degradasi, terus berlatih!</string>
+    <string name="league_days_left">Sisa hari: %1$d</string>
+    <string name="league_hours_left">Sisa jam: %1$d</string>
+    <string name="league_rule_up">%1$d teratas naik liga</string>
+    <string name="league_rule_down">%1$d terbawah turun liga</string>
+    <string name="league_zone_up_end">Zona promosi ↑</string>
+    <string name="league_zone_down">Zona degradasi ↓</string>
+    <string name="league_last_promoted">Selamat! Minggu lalu kamu peringkat %1$d. Liga baru: %2$s</string>
+    <string name="league_last_stayed">Minggu lalu kamu peringkat %1$d dan tetap di ligamu.</string>
+    <string name="league_last_relegated">Minggu lalu kamu peringkat %1$d. Liga baru: %2$s. Naik lagi minggu ini!</string>
+    <string name="league_you">(kamu)</string>
+    <string name="league_xp">%1$d XP</string>
+    <string name="league_how_title">Bagaimana cara mendapat XP?</string>
+    <string name="league_how">Setiap jawaban benar dalam permainan memberi 5 XP dan setiap cerita yang selesai memberi 20 XP. Paling banyak 500 XP per hari dihitung. Peringkat diperbarui setelah progresmu tersinkron. Liga dimulai ulang setiap Senin pukul 00:00 UTC.</string>
+    <string name="league_name_hint">Namamu di liga adalah \"%1$s\". Email kamu tidak pernah ditampilkan.</string>
+    <string name="league_change_name">Ubah namamu</string>
+    <string name="league_show_me">Tampilkan aku di liga</string>
+    <string name="league_show_me_text">Jika dimatikan, kamu keluar dari grup minggu ini dan namamu tidak terlihat.</string>
+</resources>
