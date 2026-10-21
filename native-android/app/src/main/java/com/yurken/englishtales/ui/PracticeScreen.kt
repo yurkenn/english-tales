@@ -333,7 +333,8 @@ fun GameResult(subtitle: String,points: Int,padding: PaddingValues,onExit: ()->U
     Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState()).padding(16.dp),horizontalAlignment=Alignment.CenterHorizontally) {
         Text(stringResource(R.string.harika_puan_kazandin, points),color=TaleOnPurple,fontSize=14.sp,fontWeight=FontWeight.SemiBold,modifier=Modifier.fillMaxWidth().appearIn(0).background(TalePurple,RoundedCornerShape(14.dp)).padding(14.dp))
         Spacer(Modifier.height(20.dp))
-        TalesMascot(MascotMood.Celebrate,Modifier.size(112.dp).appearIn(1),animate=true)
+        // A flawless session earns the trophy pose.
+        TalesMascot(if(stars==3) MascotMood.Proud else MascotMood.Celebrate,Modifier.size(112.dp).appearIn(1),animate=true)
         // Stars land one by one after the mascot; a flawless session also gets its own line.
         stars?.let {
             Spacer(Modifier.height(8.dp))

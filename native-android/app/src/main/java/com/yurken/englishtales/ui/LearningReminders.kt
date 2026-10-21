@@ -78,6 +78,9 @@ object LearningReminders {
         val open=PendingIntent.getActivity(context,72,Intent(context,MainActivity::class.java).putExtra("daily_plan_request",System.currentTimeMillis()).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP),PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
         @Suppress("DEPRECATION")
         val builder=if(Build.VERSION.SDK_INT>=26) Notification.Builder(context,"daily_learning") else Notification.Builder(context)
+        // The mascot sits beside the line: sleepy when the streak is at risk, reading otherwise.
+        val art=runCatching {android.graphics.BitmapFactory.decodeResource(context.resources,if(streakAtRisk>0) R.drawable.mascot_sleepy else R.drawable.mascot_reading)}.getOrNull()
+        if(art!=null) builder.setLargeIcon(art)
         manager.notify(71,builder.setSmallIcon(R.drawable.ic_notification).setContentTitle(if(streakAtRisk>0) context.getString(R.string.reminder_streak_title,streakAtRisk) else context.getString(R.string.bugunku_hikayen_seni_bekliyor))
             .setContentText(if(league!=null) league else if(streakAtRisk>0 && dueWords==0) context.getString(R.string.reminder_streak_text) else if(dueWords>0) context.resources.getQuantityString(R.plurals.reminder_due_words,dueWords,dueWords) else context.getString(R.string.kisa_bir_okuma_veya_kelime)).setContentIntent(open).setAutoCancel(true).build())
     }
