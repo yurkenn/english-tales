@@ -50,7 +50,10 @@ fun FlashcardGame(liveWords: List<WordInfo>,sessionId: Int,savedIds: Set<String>
     if(word==null) {LaunchedEffect(sessionId) {if(!finished) {finished=true;onLessonComplete(remembered)}};return}
     // A previous card's word must not keep playing over the next one.
     LaunchedEffect(word.id) {narrator.stop()}
+    val displayedIndex=index
     fun next(correct: Boolean) {
+        // A swipe animation may finish after a button already advanced this card.
+        if(finished || index!=displayedIndex) return
         if(word.id in savedIds) onWordReviewed(word.id,correct)
         combo.record(correct)
         if(correct) remembered++
