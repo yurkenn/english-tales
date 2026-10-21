@@ -1,0 +1,10 @@
+<resources>
+    <style name="Theme.EnglishTales" parent="android:style/Theme.Material.NoActionBar">
+        <item name="android:windowBackground">#111316</item>
+        <item name="android:statusBarColor">#111316</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">#111316</item>
+        <item name="android:windowSplashScreenBackground">#111316</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/splash_mascot</item>
+    </style>
+</resources>
