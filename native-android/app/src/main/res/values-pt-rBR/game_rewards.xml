@@ -27,4 +27,8 @@
     <string name="streak_milestone_text">Você voltou todos os dias e a chama cresceu. Amanhã, uma leitura ou revisão curta mantém a sequência.</string>
     <string name="reminder_streak_title">Sua sequência de %1$d dias está em risco</string>
     <string name="reminder_streak_text">Uma revisão curta basta para manter sua sequência.</string>
+    <string name="streak_freeze_chip">%1$d protetores de sequência</string>
+    <string name="streak_freeze_day">Sequência protegida</string>
+    <string name="streak_freeze_info">A cada %1$d dias de estudo você ganha 1 protetor de sequência (até %2$d). Se faltar um dia, ele é usado sozinho e a sequência continua.</string>
+    <string name="streak_freeze_used">Um protetor de sequência cobriu ontem, e sua sequência continua.</string>
 </resources>

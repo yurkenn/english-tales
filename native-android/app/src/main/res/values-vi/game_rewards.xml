@@ -27,4 +27,8 @@
     <string name="streak_milestone_text">Bạn quay lại mỗi ngày và ngọn lửa lớn dần. Ngày mai, một bài đọc hay ôn tập ngắn sẽ giữ chuỗi.</string>
     <string name="reminder_streak_title">Chuỗi %1$d ngày của bạn sắp mất</string>
     <string name="reminder_streak_text">Một lần ôn tập ngắn là đủ để giữ chuỗi.</string>
+    <string name="streak_freeze_chip">%1$d lá chắn chuỗi</string>
+    <string name="streak_freeze_day">Chuỗi được bảo vệ</string>
+    <string name="streak_freeze_info">Cứ %1$d ngày học bạn nhận 1 lá chắn chuỗi (tối đa %2$d). Nếu bỏ lỡ một ngày, lá chắn tự động được dùng và chuỗi vẫn giữ.</string>
+    <string name="streak_freeze_used">Một lá chắn đã bảo vệ hôm qua, chuỗi của bạn vẫn tiếp tục.</string>
 </resources>

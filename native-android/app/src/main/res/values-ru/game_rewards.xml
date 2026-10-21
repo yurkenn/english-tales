@@ -27,4 +27,8 @@
     <string name="streak_milestone_text">Ты возвращался каждый день, и пламя разгорелось. Завтра короткое чтение или повторение сохранит серию.</string>
     <string name="reminder_streak_title">Твоя серия (%1$d дн.) под угрозой</string>
     <string name="reminder_streak_text">Короткого повторения хватит, чтобы сохранить серию.</string>
+    <string name="streak_freeze_chip">Защит серии: %1$d</string>
+    <string name="streak_freeze_day">Серия защищена</string>
+    <string name="streak_freeze_info">Каждые %1$d дн. занятий дают 1 защиту серии (не больше %2$d). Если пропустишь день, защита сработает сама и серия сохранится.</string>
+    <string name="streak_freeze_used">Вчера сработала защита серии, серия продолжается.</string>
 </resources>

@@ -27,4 +27,8 @@
     <string name="streak_milestone_text">Volviste cada día y la llama creció. Mañana, una lectura o un repaso corto la mantiene viva.</string>
     <string name="reminder_streak_title">Tu racha de %1$d días está en peligro</string>
     <string name="reminder_streak_text">Un repaso corto basta para mantener tu racha.</string>
+    <string name="streak_freeze_chip">%1$d protectores de racha</string>
+    <string name="streak_freeze_day">Racha protegida</string>
+    <string name="streak_freeze_info">Cada %1$d días de estudio ganas 1 protector de racha (hasta %2$d). Si faltas un día, se usa solo y tu racha sigue.</string>
+    <string name="streak_freeze_used">Ayer se usó un protector de racha y tu racha sigue.</string>
 </resources>

@@ -27,4 +27,8 @@
     <string name="streak_milestone_text">You came back every day and the flame grew. A short read or review tomorrow keeps it going.</string>
     <string name="reminder_streak_title">Your %1$d-day streak is at risk</string>
     <string name="reminder_streak_text">A short review is enough to keep your streak.</string>
+    <string name="streak_freeze_chip">%1$d streak freezes</string>
+    <string name="streak_freeze_day">Streak protected</string>
+    <string name="streak_freeze_info">Every %1$d study days earn 1 streak freeze (up to %2$d). If you miss a day, a freeze is used automatically and your streak stays.</string>
+    <string name="streak_freeze_used">A streak freeze covered yesterday, so your streak goes on.</string>
 </resources>

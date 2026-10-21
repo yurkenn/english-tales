@@ -131,6 +131,12 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
         seenGoal=snapshot.dailyGoalReached;seenStreak=snapshot.streak
     }
     milestone?.let {StreakMilestoneDialog(it) {milestone=null}}
+    // A freeze spent on yesterday is said once, so a kept streak is not a mystery.
+    val freezeUsed=stringResource(R.string.streak_freeze_used)
+    LaunchedEffect(snapshot.frozenDays,snapshot.ownerId) {
+        val yesterday=LearningPolicy.previousDay(System.currentTimeMillis())
+        if(yesterday in snapshot.frozenDays && GameRecords.noteFreezeShown(rewardContext,snapshot.ownerId,yesterday)) alerts.show(freezeUsed,TaleAlertKind.Info)
+    }
     TaleAlertHost(alerts) {
     LearningWriteHost(writeError,viewModel::retryLearningWrites) {
         NavHost(navController=nav,startDestination=startDestination,enterTransition={taleEnter},exitTransition={taleExit},popEnterTransition={talepopEnter},popExitTransition={talePopExit}) {
