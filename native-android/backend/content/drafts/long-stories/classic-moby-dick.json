@@ -1,0 +1,1926 @@
+{
+  "status": "draft",
+  "kind": "long-story",
+  "source": "long-story-classics-2026-10-22",
+  "reviewedBy": null,
+  "rights": {
+    "credit": "Herman Melville",
+    "sourceTitle": "Moby Dick; Or, The Whale",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/2701",
+    "sourceTextUrl": "https://www.gutenberg.org/cache/epub/2701/pg2701-images.html",
+    "identifiedContributor": {
+      "name": "Herman Melville",
+      "role": "author",
+      "deathYear": 1891
+    },
+    "firstPublished": 1851,
+    "sourceCopyrightStatement": "Public domain in the USA",
+    "checkedOn": "2026-10-22",
+    "adaptation": "New graded B1 retelling written by English Tales, with English Tales translations. No modern abridgement, film script or translation was used.",
+    "turkeyAssessment": "Author died in 1891, more than 70 years before 2026, so the work is out of protection in Turkey and in life+70 countries.",
+    "rightsGuidanceUrl": "https://telifhaklari.ktb.gov.tr/TR-332373/telif-hakki-kac-yil-sureyle-korunur.html",
+    "sourceTextSha256": null,
+    "sourceTextSha256Pending": "Gutenberg is not reachable from the cloud session; record the source text hash on the owner's Mac before publication."
+  },
+  "editorialNotes": [
+    "B1 target: past tense narration, sentences of at most 20 words, about 1,050 words (about 9 minutes of reading).",
+    "Retelling of the novel's main line, told by Ishmael: the inn and Queequeg, the Pequod, Ahab's bone leg, the gold coin on the mast, Starbuck's warning, whaling work, Queequeg's coffin, the ships met at sea, the Rachel, the three-day chase, the sinking and Ishmael saved on the coffin.",
+    "The novel's long chapters on whales and whaling are left out; one line from Ahab's last speech is kept in simple modern English.",
+    "Reading sections are editorial groupings for a future chapter view; the app currently shows the story as one text."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+  },
+  "readingSections": [
+    {
+      "title": "Call me Ishmael",
+      "firstSentenceId": "cl-moby-001",
+      "lastSentenceId": "cl-moby-018"
+    },
+    {
+      "title": "The gold coin",
+      "firstSentenceId": "cl-moby-019",
+      "lastSentenceId": "cl-moby-040"
+    },
+    {
+      "title": "Queequeg's coffin",
+      "firstSentenceId": "cl-moby-041",
+      "lastSentenceId": "cl-moby-062"
+    },
+    {
+      "title": "The White Whale",
+      "firstSentenceId": "cl-moby-063",
+      "lastSentenceId": "cl-moby-086"
+    }
+  ],
+  "story": {
+    "id": "classic-moby-dick",
+    "title": "Moby Dick",
+    "author": "Herman Melville",
+    "level": "B1",
+    "genre": "Macera",
+    "description": "Moby Dick. Genç denizci İsmail, tek bacaklı Kaptan Ahab'ın gemisine katılır; ama kaptanın tek bir amacı vardır: bacağını koparan dev beyaz balinadan intikam almak. B1 düzeyinde uzun uyarlama. Uyarlama ve Türkçe çeviri: English Tales.",
+    "descriptions": {
+      "es-419": "Moby Dick. El joven marinero Ismael se une al barco del capitán Ahab, que tiene una sola pierna; pero el capitán solo quiere una cosa: vengarse de la enorme ballena blanca que se la arrancó. Adaptación larga de nivel B1. Adaptación: English Tales.",
+      "pt-BR": "Moby Dick. O jovem marinheiro Ismael entra no navio do capitão Ahab, que tem uma perna só; mas o capitão só quer uma coisa: vingar-se da enorme baleia branca que a arrancou. Adaptação longa de nível B1. Adaptação: English Tales.",
+      "id": "Moby Dick. Pelaut muda Ismael bergabung dengan kapal Kapten Ahab yang berkaki satu; tetapi sang kapten hanya punya satu tujuan: membalas dendam pada paus putih raksasa yang merenggut kakinya. Adaptasi panjang tingkat B1. Adaptasi: English Tales.",
+      "ar": "موبي ديك. ينضمّ البحّار الشابّ إسماعيل إلى سفينة القبطان أهاب ذي الساق الواحدة؛ لكنّ القبطان لا يريد إلّا شيئًا واحدًا: الانتقام من الحوت الأبيض الهائل الذي قضم ساقه. اقتباس طويل بمستوى B1. الاقتباس: English Tales.",
+      "vi": "Moby Dick. Chàng thủy thủ trẻ Ishmael lên con tàu của thuyền trưởng Ahab một chân; nhưng thuyền trưởng chỉ có một mục đích: báo thù con cá voi trắng khổng lồ đã cắn mất chân ông. Bản phóng tác dài trình độ B1. Phóng tác: English Tales.",
+      "hi": "मोबी डिक। युवा नाविक इश्माएल एक टाँग वाले कप्तान एहैब के जहाज़ पर भर्ती होता है; पर कप्तान का एक ही मक़सद है: उस विशाल सफ़ेद व्हेल से बदला लेना जिसने उनकी टाँग छीन ली। B1 स्तर का लंबा रूपांतरण। रूपांतरण: English Tales.",
+      "ru": "Моби Дик. Молодой моряк Измаил нанимается на судно одноногого капитана Ахава; но у капитана лишь одна цель: отомстить огромному белому киту, который отнял у него ногу. Длинный пересказ уровня B1. Адаптация: English Tales.",
+      "bn": "মোবি ডিক। তরুণ নাবিক ইসমায়েল এক-পা-ওয়ালা ক্যাপ্টেন আহাবের জাহাজে যোগ দেয়; কিন্তু ক্যাপ্টেনের একটাই লক্ষ্য: যে বিশাল সাদা তিমি তাঁর পা কেড়ে নিয়েছে, তার ওপর প্রতিশোধ। B1 স্তরের দীর্ঘ রূপান্তর। রূপান্তর: English Tales.",
+      "ur": "موبی ڈک۔ نوجوان ملاح اسماعیل ایک ٹانگ والے کپتان اہاب کے جہاز پر بھرتی ہوتا ہے؛ مگر کپتان کا ایک ہی مقصد ہے: اس بڑی سفید وہیل سے بدلہ لینا جس نے ان کی ٹانگ چھین لی۔ B1 سطح کی طویل ماخوذ کہانی۔ ماخوذ: English Tales.",
+      "th": "โมบี้ดิก อิชมาเอล กะลาสีหนุ่ม ลงเรือของกัปตันเอแฮบผู้มีขาข้างเดียว แต่กัปตันมีเป้าหมายเดียว คือแก้แค้นวาฬขาวยักษ์ที่กัดขาเขาขาด ฉบับเรียบเรียงยาวระดับ B1 เรียบเรียงโดย English Tales"
+    },
+    "coverKey": "cover_classic_moby_dick",
+    "tags": [
+      "macera"
+    ],
+    "sentences": [
+      {
+        "id": "cl-moby-001",
+        "english": "Call me Ishmael.",
+        "turkish": "Bana İsmail deyin.",
+        "translations": {
+          "es-419": "Llámenme Ismael.",
+          "pt-BR": "Podem me chamar de Ismael.",
+          "id": "Panggil aku Ismael.",
+          "ar": "نادوني إسماعيل.",
+          "vi": "Hãy gọi tôi là Ishmael.",
+          "hi": "मुझे इश्माएल कहिए।",
+          "ru": "Зовите меня Измаил.",
+          "bn": "আমাকে ইসমায়েল বলে ডাকুন।",
+          "ur": "مجھے اسماعیل کہیے۔",
+          "th": "เรียกผมว่าอิชมาเอลก็แล้วกัน"
+        }
+      },
+      {
+        "id": "cl-moby-002",
+        "english": "Some years ago, I had little money and nothing to do on land.",
+        "turkish": "Birkaç yıl önce cebimde pek para yoktu ve karada yapacak hiçbir şeyim yoktu.",
+        "translations": {
+          "es-419": "Hace algunos años, tenía poco dinero y nada que hacer en tierra.",
+          "pt-BR": "Alguns anos atrás, eu tinha pouco dinheiro e nada para fazer em terra.",
+          "id": "Beberapa tahun lalu, uangku sedikit dan aku tak punya kegiatan apa pun di darat.",
+          "ar": "قبل بضع سنوات، كان معي القليل من المال، ولم يكن لديّ ما أفعله على اليابسة.",
+          "vi": "Vài năm trước, tôi có ít tiền và chẳng có việc gì để làm trên đất liền.",
+          "hi": "कुछ साल पहले मेरे पास पैसे कम थे, और ज़मीन पर करने को कुछ नहीं था।",
+          "ru": "Несколько лет назад у меня было мало денег и никаких дел на суше.",
+          "bn": "কয়েক বছর আগে আমার হাতে টাকা ছিল কম, আর ডাঙায় করার মতো কিছুই ছিল না।",
+          "ur": "کچھ سال پہلے میرے پاس پیسے کم تھے، اور خشکی پر کرنے کو کچھ نہیں تھا۔",
+          "th": "หลายปีก่อน ผมมีเงินน้อย และไม่มีอะไรให้ทำบนบก"
+        }
+      },
+      {
+        "id": "cl-moby-003",
+        "english": "So I decided to go to sea again, this time as a sailor on a whaling ship.",
+        "turkish": "Ben de yeniden denize açılmaya karar verdim, bu kez bir balina gemisinde tayfa olarak.",
+        "translations": {
+          "es-419": "Así que decidí volver al mar, esta vez como marinero en un barco ballenero.",
+          "pt-BR": "Então decidi voltar ao mar, desta vez como marinheiro num navio baleeiro.",
+          "id": "Maka aku memutuskan untuk kembali melaut, kali ini sebagai pelaut di kapal pemburu paus.",
+          "ar": "فقرّرت أن أعود إلى البحر، وهذه المرّة بحّارًا على سفينة لصيد الحيتان.",
+          "vi": "Vì thế tôi quyết định ra khơi lần nữa, lần này làm thủy thủ trên một con tàu săn cá voi.",
+          "hi": "इसलिए मैंने फिर से समुद्र में जाने का फ़ैसला किया, इस बार व्हेल पकड़ने वाले जहाज़ पर नाविक बनकर।",
+          "ru": "И я решил снова уйти в море, на этот раз матросом на китобойном судне.",
+          "bn": "তাই আমি আবার সমুদ্রে যাওয়ার সিদ্ধান্ত নিলাম, এবার তিমি-শিকারি জাহাজের নাবিক হয়ে।",
+          "ur": "اس لیے میں نے پھر سے سمندر میں جانے کا فیصلہ کیا، اس بار وہیل پکڑنے والے جہاز پر ملاح بن کر۔",
+          "th": "ผมจึงตัดสินใจออกทะเลอีกครั้ง คราวนี้เป็นกะลาสีบนเรือล่าวาฬ"
+        }
+      },
+      {
+        "id": "cl-moby-004",
+        "english": "It was a cold December night when I arrived in the port of New Bedford.",
+        "turkish": "New Bedford limanına vardığımda soğuk bir aralık gecesiydi.",
+        "translations": {
+          "es-419": "Era una fría noche de diciembre cuando llegué al puerto de New Bedford.",
+          "pt-BR": "Era uma noite fria de dezembro quando cheguei ao porto de New Bedford.",
+          "id": "Malam itu malam Desember yang dingin ketika aku tiba di pelabuhan New Bedford.",
+          "ar": "كانت ليلة باردة من ليالي ديسمبر حين وصلتُ إلى ميناء نيو بيدفورد.",
+          "vi": "Đó là một đêm tháng Mười Hai lạnh giá khi tôi đến cảng New Bedford.",
+          "hi": "दिसंबर की एक ठंडी रात थी जब मैं न्यू बेडफ़र्ड के बंदरगाह पहुँचा।",
+          "ru": "Была холодная декабрьская ночь, когда я приехал в порт Нью-Бедфорд.",
+          "bn": "ডিসেম্বরের এক ঠান্ডা রাতে আমি নিউ বেডফোর্ড বন্দরে পৌঁছলাম।",
+          "ur": "دسمبر کی ایک ٹھنڈی رات تھی جب میں نیو بیڈفورڈ کی بندرگاہ پہنچا۔",
+          "th": "คืนนั้นเป็นคืนเดือนธันวาคมที่หนาวเหน็บ ตอนที่ผมมาถึงท่าเรือนิวเบดฟอร์ด"
+        }
+      },
+      {
+        "id": "cl-moby-005",
+        "english": "The only cheap bed I could find was at a dark little inn by the water.",
+        "turkish": "Bulabildiğim tek ucuz yatak, su kenarındaki karanlık, küçük bir handaydı.",
+        "translations": {
+          "es-419": "La única cama barata que encontré estaba en una posada pequeña y oscura junto al agua.",
+          "pt-BR": "A única cama barata que encontrei ficava numa pequena estalagem escura à beira da água.",
+          "id": "Satu-satunya tempat tidur murah yang bisa kutemukan ada di sebuah penginapan kecil yang gelap di tepi air.",
+          "ar": "كان السرير الرخيص الوحيد الذي وجدته في نُزُل صغير مظلم على شاطئ الماء.",
+          "vi": "Chiếc giường rẻ duy nhất tôi tìm được là ở một quán trọ nhỏ tối tăm bên bờ nước.",
+          "hi": "मुझे जो अकेला सस्ता बिस्तर मिला, वह पानी के किनारे एक छोटी-सी अँधेरी सराय में था।",
+          "ru": "Единственную дешёвую кровать я нашёл в тёмной маленькой гостинице у воды.",
+          "bn": "সবচেয়ে সস্তা যে বিছানাটা পেলাম, সেটা ছিল জলের ধারে এক অন্ধকার ছোট্ট সরাইখানায়।",
+          "ur": "مجھے جو واحد سستا بستر ملا، وہ پانی کے کنارے ایک چھوٹی سی اندھیری سرائے میں تھا۔",
+          "th": "เตียงราคาถูกเตียงเดียวที่ผมหาได้ อยู่ในโรงเตี๊ยมเล็ก ๆ มืด ๆ ริมน้ำ"
+        }
+      },
+      {
+        "id": "cl-moby-006",
+        "english": "The owner said I must share it with a harpooner.",
+        "turkish": "Sahibi, yatağı bir zıpkıncıyla paylaşmam gerektiğini söyledi.",
+        "translations": {
+          "es-419": "El dueño me dijo que debía compartirla con un arponero.",
+          "pt-BR": "O dono disse que eu teria de dividi-la com um arpoador.",
+          "id": "Pemiliknya bilang aku harus berbagi tempat tidur dengan seorang pelempar harpun.",
+          "ar": "قال صاحب النُّزُل إنّ عليّ أن أتقاسمه مع رامي حراب.",
+          "vi": "Ông chủ nói tôi phải ngủ chung giường với một người phóng lao móc.",
+          "hi": "मालिक ने कहा कि मुझे वह बिस्तर एक भाला फेंकने वाले के साथ बाँटना होगा।",
+          "ru": "Хозяин сказал, что мне придётся делить её с гарпунщиком.",
+          "bn": "মালিক বললেন, বিছানাটা আমাকে এক হারপুনওয়ালার সঙ্গে ভাগ করে নিতে হবে।",
+          "ur": "مالک نے کہا کہ مجھے وہ بستر ایک ہارپون پھینکنے والے کے ساتھ بانٹنا ہوگا۔",
+          "th": "เจ้าของบอกว่าผมต้องนอนเตียงเดียวกับนักพุ่งฉมวกคนหนึ่ง"
+        }
+      },
+      {
+        "id": "cl-moby-007",
+        "english": "Late at night, a huge man came in, with dark tattoos all over his face.",
+        "turkish": "Gece geç saatte, yüzü baştan aşağı koyu dövmelerle kaplı iri bir adam içeri girdi.",
+        "translations": {
+          "es-419": "Muy tarde, entró un hombre enorme, con tatuajes oscuros por toda la cara.",
+          "pt-BR": "Tarde da noite, entrou um homem enorme, com tatuagens escuras pelo rosto todo.",
+          "id": "Larut malam, masuklah seorang pria besar dengan tato gelap di seluruh wajahnya.",
+          "ar": "وفي آخر الليل، دخل رجل ضخم يغطّي الوشم الداكن وجهه كلّه.",
+          "vi": "Khuya lắm, một người đàn ông to lớn bước vào, mặt đầy những hình xăm sẫm màu.",
+          "hi": "देर रात एक भारी-भरकम आदमी अंदर आया, जिसके पूरे चेहरे पर गहरे गोदने थे।",
+          "ru": "Поздно ночью вошёл огромный человек с тёмными татуировками по всему лицу.",
+          "bn": "অনেক রাতে বিশাল এক লোক ঢুকল, যার সারা মুখে গাঢ় উল্কি।",
+          "ur": "رات گئے ایک بھاری بھرکم آدمی اندر آیا، جس کے پورے چہرے پر گہرے گودنے تھے۔",
+          "th": "ดึกมากแล้ว ชายร่างยักษ์คนหนึ่งเดินเข้ามา ใบหน้าเต็มไปด้วยรอยสักสีเข้ม"
+        }
+      },
+      {
+        "id": "cl-moby-008",
+        "english": "His name was Queequeg, and he came from an island far away in the South Seas.",
+        "turkish": "Adı Queequeg'di ve uzak Güney Denizleri'ndeki bir adadan geliyordu.",
+        "translations": {
+          "es-419": "Se llamaba Queequeg, y venía de una isla lejana en los Mares del Sur.",
+          "pt-BR": "Seu nome era Queequeg, e ele vinha de uma ilha distante nos Mares do Sul.",
+          "id": "Namanya Queequeg, dan ia berasal dari sebuah pulau yang jauh di Laut Selatan.",
+          "ar": "كان اسمه كويكويغ، وقد جاء من جزيرة بعيدة في بحار الجنوب.",
+          "vi": "Tên anh ta là Queequeg, đến từ một hòn đảo xa xôi ở vùng biển phương Nam.",
+          "hi": "उसका नाम क्वीक्वेग था, और वह दक्षिणी समुद्रों के एक दूर के द्वीप से आया था।",
+          "ru": "Его звали Квикег, и он был родом с далёкого острова в Южных морях.",
+          "bn": "তার নাম কুইকেগ, সে এসেছিল দক্ষিণ সাগরের দূরের এক দ্বীপ থেকে।",
+          "ur": "اس کا نام کوئیکویگ تھا، اور وہ جنوبی سمندروں کے ایک دور دراز جزیرے سے آیا تھا۔",
+          "th": "เขาชื่อควีเควก มาจากเกาะที่ห่างไกลในทะเลใต้"
+        }
+      },
+      {
+        "id": "cl-moby-009",
+        "english": "At first I was afraid of him, but he was gentle and honest.",
+        "turkish": "Önce ondan korktum, ama nazik ve dürüst biriydi.",
+        "translations": {
+          "es-419": "Al principio le tuve miedo, pero era amable y honrado.",
+          "pt-BR": "No começo tive medo dele, mas ele era gentil e honesto.",
+          "id": "Awalnya aku takut padanya, tetapi ia lembut dan jujur.",
+          "ar": "خفتُ منه في البداية، لكنّه كان لطيفًا وأمينًا.",
+          "vi": "Lúc đầu tôi sợ anh ta, nhưng anh ta hiền lành và thật thà.",
+          "hi": "पहले मुझे उससे डर लगा, पर वह नरम दिल और ईमानदार था।",
+          "ru": "Сначала я его боялся, но он оказался добрым и честным.",
+          "bn": "প্রথমে আমি তাকে ভয় পেয়েছিলাম, কিন্তু সে ছিল নরম মনের আর সৎ।",
+          "ur": "پہلے مجھے اس سے ڈر لگا، مگر وہ نرم دل اور ایماندار تھا۔",
+          "th": "ตอนแรกผมกลัวเขา แต่เขาเป็นคนอ่อนโยนและซื่อสัตย์"
+        }
+      },
+      {
+        "id": "cl-moby-010",
+        "english": "By the morning, we were good friends.",
+        "turkish": "Sabaha kadar iyi dost olmuştuk.",
+        "translations": {
+          "es-419": "Por la mañana, ya éramos buenos amigos.",
+          "pt-BR": "De manhã, já éramos bons amigos.",
+          "id": "Menjelang pagi, kami sudah bersahabat baik.",
+          "ar": "ومع الصباح، كنّا قد صرنا صديقين حميمين.",
+          "vi": "Đến sáng, chúng tôi đã thành bạn tốt của nhau.",
+          "hi": "सुबह तक हम अच्छे दोस्त बन चुके थे।",
+          "ru": "К утру мы стали добрыми друзьями.",
+          "bn": "সকাল হতে হতে আমরা ভালো বন্ধু হয়ে গেলাম।",
+          "ur": "صبح تک ہم اچھے دوست بن چکے تھے۔",
+          "th": "พอถึงเช้า เราก็กลายเป็นเพื่อนที่ดีต่อกันแล้ว"
+        }
+      },
+      {
+        "id": "cl-moby-011",
+        "english": "Together we went to the island of Nantucket to look for work.",
+        "turkish": "Birlikte iş aramak için Nantucket adasına gittik.",
+        "translations": {
+          "es-419": "Juntos fuimos a la isla de Nantucket a buscar trabajo.",
+          "pt-BR": "Juntos fomos à ilha de Nantucket procurar trabalho.",
+          "id": "Bersama-sama kami pergi ke Pulau Nantucket untuk mencari pekerjaan.",
+          "ar": "وذهبنا معًا إلى جزيرة نانتاكت بحثًا عن عمل.",
+          "vi": "Chúng tôi cùng nhau đến đảo Nantucket để tìm việc.",
+          "hi": "हम साथ मिलकर काम ढूँढ़ने नैनटकेट द्वीप गए।",
+          "ru": "Вместе мы отправились на остров Нантакет искать работу.",
+          "bn": "আমরা একসঙ্গে কাজের খোঁজে ন্যানটাকেট দ্বীপে গেলাম।",
+          "ur": "ہم ساتھ مل کر کام ڈھونڈنے نینٹکٹ جزیرے گئے۔",
+          "th": "เราไปเกาะแนนทักเก็ตด้วยกันเพื่อหางานทำ"
+        }
+      },
+      {
+        "id": "cl-moby-012",
+        "english": "There we joined an old ship called the Pequod.",
+        "turkish": "Orada Pequod adında eski bir gemiye katıldık.",
+        "translations": {
+          "es-419": "Allí nos unimos a un viejo barco llamado Pequod.",
+          "pt-BR": "Lá entramos para a tripulação de um velho navio chamado Pequod.",
+          "id": "Di sana kami bergabung dengan sebuah kapal tua bernama Pequod.",
+          "ar": "وهناك انضممنا إلى سفينة قديمة اسمها بيكود.",
+          "vi": "Ở đó chúng tôi lên làm việc trên một con tàu cũ tên là Pequod.",
+          "hi": "वहाँ हम पीक्वॉड नाम के एक पुराने जहाज़ में भर्ती हो गए।",
+          "ru": "Там мы нанялись на старое судно под названием «Пекод».",
+          "bn": "সেখানে আমরা পিকোয়াড নামের এক পুরোনো জাহাজে যোগ দিলাম।",
+          "ur": "وہاں ہم پیکوڈ نام کے ایک پرانے جہاز میں بھرتی ہو گئے۔",
+          "th": "ที่นั่นเราได้ลงเรือเก่าลำหนึ่งชื่อพีควอด"
+        }
+      },
+      {
+        "id": "cl-moby-013",
+        "english": "Its sides were decorated with the teeth and bones of whales.",
+        "turkish": "Gemi bordaları balina dişleri ve kemikleriyle süslenmişti.",
+        "translations": {
+          "es-419": "Sus costados estaban adornados con dientes y huesos de ballena.",
+          "pt-BR": "Seus costados eram enfeitados com dentes e ossos de baleia.",
+          "id": "Lambung kapalnya dihiasi gigi dan tulang ikan paus.",
+          "ar": "كانت جوانبها مزيّنة بأسنان الحيتان وعظامها.",
+          "vi": "Mạn tàu được trang trí bằng răng và xương cá voi.",
+          "hi": "उसके किनारे व्हेल के दाँतों और हड्डियों से सजे थे।",
+          "ru": "Её борта были украшены зубами и костями китов.",
+          "bn": "তার দুই পাশ তিমির দাঁত আর হাড় দিয়ে সাজানো ছিল।",
+          "ur": "اس کے کنارے وہیل کے دانتوں اور ہڈیوں سے سجے تھے۔",
+          "th": "กราบเรือประดับด้วยฟันและกระดูกของวาฬ"
+        }
+      },
+      {
+        "id": "cl-moby-014",
+        "english": "\"Who is the captain?\" I asked one of the owners.",
+        "turkish": "\"Kaptan kim?\" diye sordum sahiplerden birine.",
+        "translations": {
+          "es-419": "—¿Quién es el capitán? —le pregunté a uno de los dueños.",
+          "pt-BR": "— Quem é o capitão? — perguntei a um dos donos.",
+          "id": "\"Siapa kaptennya?\" tanyaku kepada salah satu pemilik kapal.",
+          "ar": "سألتُ أحد المالكين: «من هو القبطان؟»",
+          "vi": "\"Ai là thuyền trưởng?\" tôi hỏi một trong những người chủ tàu.",
+          "hi": "मैंने एक मालिक से पूछा, \"कप्तान कौन है?\"",
+          "ru": "«Кто капитан?» — спросил я одного из владельцев.",
+          "bn": "আমি এক মালিককে জিজ্ঞেস করলাম, \"ক্যাপ্টেন কে?\"",
+          "ur": "میں نے ایک مالک سے پوچھا، \"کپتان کون ہے؟\"",
+          "th": "\"ใครเป็นกัปตันครับ\" ผมถามเจ้าของเรือคนหนึ่ง"
+        }
+      },
+      {
+        "id": "cl-moby-015",
+        "english": "\"Captain Ahab. He is a great man, but strange and silent.\"",
+        "turkish": "\"Kaptan Ahab. Büyük bir adamdır, ama tuhaf ve sessizdir.\"",
+        "translations": {
+          "es-419": "—El capitán Ahab. Es un gran hombre, pero extraño y callado.",
+          "pt-BR": "— O capitão Ahab. É um grande homem, mas estranho e calado.",
+          "id": "\"Kapten Ahab. Ia orang hebat, tetapi aneh dan pendiam.\"",
+          "ar": "«القبطان أهاب. إنّه رجل عظيم، لكنّه غريب وصامت».",
+          "vi": "\"Thuyền trưởng Ahab. Ông ấy là người phi thường, nhưng kỳ lạ và ít nói.\"",
+          "hi": "\"कप्तान एहैब। वे एक महान आदमी हैं, पर अजीब और चुप रहने वाले।\"",
+          "ru": "«Капитан Ахав. Великий человек, но странный и молчаливый».",
+          "bn": "\"ক্যাপ্টেন আহাব। তিনি বড় মাপের মানুষ, তবে অদ্ভুত আর চুপচাপ।\"",
+          "ur": "\"کپتان اہاب۔ وہ ایک عظیم آدمی ہیں، مگر عجیب اور خاموش طبیعت۔\"",
+          "th": "\"กัปตันเอแฮบ เขาเป็นคนยิ่งใหญ่ แต่แปลกและเงียบขรึม\""
+        }
+      },
+      {
+        "id": "cl-moby-016",
+        "english": "\"On his last voyage, a whale bit off his leg.\"",
+        "turkish": "\"Son yolculuğunda bir balina bacağını kopardı.\"",
+        "translations": {
+          "es-419": "—En su último viaje, una ballena le arrancó una pierna.",
+          "pt-BR": "— Na última viagem, uma baleia arrancou a perna dele.",
+          "id": "\"Dalam pelayarannya yang terakhir, seekor paus menggigit putus kakinya.\"",
+          "ar": "«في رحلته الأخيرة، قضم حوت ساقه».",
+          "vi": "\"Trong chuyến đi trước, một con cá voi đã cắn đứt chân ông ấy.\"",
+          "hi": "\"पिछली यात्रा में एक व्हेल ने उनकी टाँग काट खाई थी।\"",
+          "ru": "«В прошлом плавании кит откусил ему ногу».",
+          "bn": "\"শেষ সমুদ্রযাত্রায় একটা তিমি কামড়ে তাঁর পা ছিঁড়ে নিয়েছিল।\"",
+          "ur": "\"پچھلے سفر میں ایک وہیل نے ان کی ٹانگ کاٹ کھائی تھی۔\"",
+          "th": "\"ในการเดินทางครั้งก่อน วาฬตัวหนึ่งกัดขาเขาขาด\""
+        }
+      },
+      {
+        "id": "cl-moby-017",
+        "english": "On a cold Christmas morning, the Pequod sailed out into the grey Atlantic.",
+        "turkish": "Soğuk bir Noel sabahı Pequod gri Atlas Okyanusu'na açıldı.",
+        "translations": {
+          "es-419": "Una fría mañana de Navidad, el Pequod salió al gris Atlántico.",
+          "pt-BR": "Numa fria manhã de Natal, o Pequod partiu para o Atlântico cinzento.",
+          "id": "Pada pagi Natal yang dingin, Pequod berlayar ke Samudra Atlantik yang kelabu.",
+          "ar": "وفي صباح عيد ميلاد بارد، أبحرت بيكود إلى الأطلسيّ الرماديّ.",
+          "vi": "Vào một buổi sáng Giáng sinh lạnh giá, tàu Pequod giương buồm ra Đại Tây Dương xám xịt.",
+          "hi": "क्रिसमस की एक ठंडी सुबह पीक्वॉड धूसर अटलांटिक में निकल पड़ा।",
+          "ru": "Холодным рождественским утром «Пекод» вышел в серый Атлантический океан.",
+          "bn": "বড়দিনের এক ঠান্ডা সকালে পিকোয়াড ধূসর আটলান্টিকে পাড়ি দিল।",
+          "ur": "کرسمس کی ایک ٹھنڈی صبح پیکوڈ سرمئی بحرِ اوقیانوس میں روانہ ہوا۔",
+          "th": "เช้าวันคริสต์มาสที่หนาวเหน็บ เรือพีควอดก็แล่นออกสู่มหาสมุทรแอตแลนติกสีเทา"
+        }
+      },
+      {
+        "id": "cl-moby-018",
+        "english": "For many days, the captain stayed in his cabin, and nobody saw him.",
+        "turkish": "Günlerce kaptan kamarasından çıkmadı ve onu kimse görmedi.",
+        "translations": {
+          "es-419": "Durante muchos días, el capitán se quedó en su camarote, y nadie lo vio.",
+          "pt-BR": "Durante muitos dias, o capitão ficou na cabine, e ninguém o viu.",
+          "id": "Selama berhari-hari, kapten tetap di kabinnya, dan tak seorang pun melihatnya.",
+          "ar": "ولأيّام كثيرة، بقي القبطان في قمرته، ولم يره أحد.",
+          "vi": "Suốt nhiều ngày, thuyền trưởng ở lì trong buồng, và không ai trông thấy ông.",
+          "hi": "कई दिनों तक कप्तान अपने केबिन में रहे, और किसी ने उन्हें नहीं देखा।",
+          "ru": "Много дней капитан не выходил из каюты, и никто его не видел.",
+          "bn": "অনেক দিন ক্যাপ্টেন নিজের কেবিনেই রইলেন, কেউ তাঁকে দেখতে পেল না।",
+          "ur": "کئی دن تک کپتان اپنے کیبن میں رہے، اور کسی نے انہیں نہیں دیکھا۔",
+          "th": "หลายวันที่กัปตันอยู่แต่ในห้องพัก และไม่มีใครเห็นเขาเลย"
+        }
+      },
+      {
+        "id": "cl-moby-019",
+        "english": "One morning, I heard a strange sound on the deck: tap, tap, tap.",
+        "turkish": "Bir sabah güvertede tuhaf bir ses duydum: tak, tak, tak.",
+        "translations": {
+          "es-419": "Una mañana oí un ruido extraño en la cubierta: tac, tac, tac.",
+          "pt-BR": "Certa manhã, ouvi um som estranho no convés: toc, toc, toc.",
+          "id": "Suatu pagi, aku mendengar bunyi aneh di geladak: tok, tok, tok.",
+          "ar": "وذات صباح، سمعتُ صوتًا غريبًا على سطح السفينة: طق، طق، طق.",
+          "vi": "Một buổi sáng, tôi nghe thấy một âm thanh lạ trên boong: cộc, cộc, cộc.",
+          "hi": "एक सुबह मैंने डेक पर एक अजीब आवाज़ सुनी: ठक, ठक, ठक।",
+          "ru": "Однажды утром я услышал на палубе странный звук: тук, тук, тук.",
+          "bn": "এক সকালে ডেকের ওপর একটা অদ্ভুত শব্দ শুনলাম: ঠক, ঠক, ঠক।",
+          "ur": "ایک صبح میں نے عرشے پر ایک عجیب آواز سنی: ٹھک، ٹھک، ٹھک۔",
+          "th": "เช้าวันหนึ่ง ผมได้ยินเสียงแปลก ๆ บนดาดฟ้า ก๊อก ก๊อก ก๊อก"
+        }
+      },
+      {
+        "id": "cl-moby-020",
+        "english": "It was Captain Ahab, walking on a leg made of whale bone.",
+        "turkish": "Balina kemiğinden yapılmış bir bacakla yürüyen Kaptan Ahab'dı bu.",
+        "translations": {
+          "es-419": "Era el capitán Ahab, que caminaba con una pierna hecha de hueso de ballena.",
+          "pt-BR": "Era o capitão Ahab, andando com uma perna feita de osso de baleia.",
+          "id": "Itu Kapten Ahab, berjalan dengan kaki yang terbuat dari tulang paus.",
+          "ar": "كان ذلك القبطان أهاب، يمشي على ساق مصنوعة من عظم الحوت.",
+          "vi": "Đó là thuyền trưởng Ahab, bước đi trên một cái chân làm bằng xương cá voi.",
+          "hi": "वे कप्तान एहैब थे, जो व्हेल की हड्डी से बनी टाँग पर चल रहे थे।",
+          "ru": "Это был капитан Ахав, он шёл на ноге из китовой кости.",
+          "bn": "ক্যাপ্টেন আহাব হাঁটছিলেন তিমির হাড়ে তৈরি একটা পায়ে ভর দিয়ে।",
+          "ur": "وہ کپتان اہاب تھے، جو وہیل کی ہڈی سے بنی ٹانگ پر چل رہے تھے۔",
+          "th": "นั่นคือกัปตันเอแฮบ ที่เดินด้วยขาซึ่งทำจากกระดูกวาฬ"
+        }
+      },
+      {
+        "id": "cl-moby-021",
+        "english": "His face was hard and brown, and a long white scar ran down it.",
+        "turkish": "Yüzü sert ve yanıktı, üzerinden uzun beyaz bir yara izi iniyordu.",
+        "translations": {
+          "es-419": "Su cara era dura y morena, y una larga cicatriz blanca la cruzaba.",
+          "pt-BR": "O rosto dele era duro e queimado de sol, e uma longa cicatriz branca o descia.",
+          "id": "Wajahnya keras dan cokelat, dan sebuah bekas luka putih panjang turun di atasnya.",
+          "ar": "كان وجهه قاسيًا أسمر، تنحدر عليه ندبة بيضاء طويلة.",
+          "vi": "Gương mặt ông rắn rỏi và rám nắng, có một vết sẹo trắng dài chạy dọc xuống.",
+          "hi": "उनका चेहरा सख़्त और धूप से झुलसा था, और उस पर एक लंबा सफ़ेद निशान नीचे तक जाता था।",
+          "ru": "Лицо у него было суровое и загорелое, и по нему тянулся длинный белый шрам.",
+          "bn": "তাঁর মুখ ছিল কঠিন আর রোদে পোড়া, তার ওপর দিয়ে নেমে গেছে একটা লম্বা সাদা দাগ।",
+          "ur": "ان کا چہرہ سخت اور دھوپ سے جھلسا ہوا تھا، اور اس پر ایک لمبا سفید نشان نیچے تک جاتا تھا۔",
+          "th": "ใบหน้าของเขาแข็งกร้าวและกรำแดด มีแผลเป็นสีขาวยาวพาดลงมา"
+        }
+      },
+      {
+        "id": "cl-moby-022",
+        "english": "One evening, he called the whole crew together.",
+        "turkish": "Bir akşam bütün tayfaları bir araya topladı.",
+        "translations": {
+          "es-419": "Una tarde, reunió a toda la tripulación.",
+          "pt-BR": "Certa tarde, ele reuniu a tripulação inteira.",
+          "id": "Suatu sore, ia mengumpulkan seluruh awak kapal.",
+          "ar": "وذات مساء، جمع البحّارة كلّهم.",
+          "vi": "Một buổi chiều tối, ông tập hợp toàn bộ thủy thủ đoàn.",
+          "hi": "एक शाम उन्होंने पूरे दल को इकट्ठा किया।",
+          "ru": "Однажды вечером он собрал всю команду.",
+          "bn": "এক সন্ধ্যায় তিনি সব নাবিককে একসঙ্গে ডাকলেন।",
+          "ur": "ایک شام انہوں نے سارے عملے کو اکٹھا کیا۔",
+          "th": "เย็นวันหนึ่ง เขาเรียกลูกเรือทั้งหมดมารวมกัน"
+        }
+      },
+      {
+        "id": "cl-moby-023",
+        "english": "He held up a shining gold coin and nailed it to the mast.",
+        "turkish": "Parlak bir altın parayı havaya kaldırdı ve direğe çiviledi.",
+        "translations": {
+          "es-419": "Levantó una moneda de oro brillante y la clavó en el mástil.",
+          "pt-BR": "Ergueu uma moeda de ouro brilhante e a pregou no mastro.",
+          "id": "Ia mengangkat sekeping koin emas yang berkilau, lalu memakukannya ke tiang kapal.",
+          "ar": "رفع قطعة نقديّة ذهبيّة لامعة وسمّرها في الصاري.",
+          "vi": "Ông giơ lên một đồng tiền vàng sáng lấp lánh rồi đóng đinh nó lên cột buồm.",
+          "hi": "उन्होंने चमकता हुआ सोने का एक सिक्का ऊपर उठाया और उसे मस्तूल पर कील से ठोंक दिया।",
+          "ru": "Он поднял сверкающую золотую монету и прибил её к мачте.",
+          "bn": "তিনি একটা ঝকঝকে সোনার মোহর তুলে ধরলেন, তারপর মাস্তুলে পেরেক দিয়ে গেঁথে দিলেন।",
+          "ur": "انہوں نے چمکتا ہوا سونے کا ایک سکہ اوپر اٹھایا اور اسے مستول پر کیل سے ٹھونک دیا۔",
+          "th": "เขาชูเหรียญทองที่ส่องประกายขึ้น แล้วตอกมันติดกับเสากระโดง"
+        }
+      },
+      {
+        "id": "cl-moby-024",
+        "english": "\"The first man who sees a white whale with a crooked jaw will get this gold!\"",
+        "turkish": "\"Çarpık çeneli beyaz bir balinayı ilk gören adam bu altını alacak!\"",
+        "translations": {
+          "es-419": "—¡El primer hombre que vea una ballena blanca con la mandíbula torcida se llevará este oro!",
+          "pt-BR": "— O primeiro homem que avistar uma baleia branca de mandíbula torta ganhará este ouro!",
+          "id": "\"Orang pertama yang melihat paus putih berahang bengkok akan mendapat emas ini!\"",
+          "ar": "«أوّل رجل يرى حوتًا أبيض ذا فكّ معوجّ سيأخذ هذا الذهب!»",
+          "vi": "\"Người đầu tiên nhìn thấy một con cá voi trắng có cái hàm méo sẽ được số vàng này!\"",
+          "hi": "\"जो आदमी सबसे पहले टेढ़े जबड़े वाली सफ़ेद व्हेल देखेगा, उसे यह सोना मिलेगा!\"",
+          "ru": "«Первый, кто увидит белого кита с кривой челюстью, получит это золото!»",
+          "bn": "\"বাঁকা চোয়ালের সাদা তিমিকে যে প্রথম দেখবে, এই সোনা তার!\"",
+          "ur": "\"جو آدمی سب سے پہلے ٹیڑھے جبڑے والی سفید وہیل دیکھے گا، اسے یہ سونا ملے گا!\"",
+          "th": "\"คนแรกที่เห็นวาฬขาวขากรรไกรเบี้ยว จะได้ทองนี้ไป!\""
+        }
+      },
+      {
+        "id": "cl-moby-025",
+        "english": "Queequeg looked up. \"Is it Moby Dick?\" he asked.",
+        "turkish": "Queequeg başını kaldırdı. \"Moby Dick mi?\" diye sordu.",
+        "translations": {
+          "es-419": "Queequeg levantó la vista. —¿Es Moby Dick? —preguntó.",
+          "pt-BR": "Queequeg ergueu os olhos. — É Moby Dick? — perguntou.",
+          "id": "Queequeg mendongak. \"Apakah itu Moby Dick?\" tanyanya.",
+          "ar": "رفع كويكويغ رأسه وسأل: «أهو موبي ديك؟»",
+          "vi": "Queequeg ngẩng lên. \"Có phải Moby Dick không?\" anh ta hỏi.",
+          "hi": "क्वीक्वेग ने ऊपर देखा। \"क्या वह मोबी डिक है?\" उसने पूछा।",
+          "ru": "Квикег поднял глаза. «Это Моби Дик?» — спросил он.",
+          "bn": "কুইকেগ মুখ তুলে তাকাল। \"সেটা কি মোবি ডিক?\" সে জিজ্ঞেস করল।",
+          "ur": "کوئیکویگ نے اوپر دیکھا۔ \"کیا وہ موبی ڈک ہے؟\" اس نے پوچھا۔",
+          "th": "ควีเควกเงยหน้าขึ้น \"ใช่โมบี้ดิกหรือเปล่า\" เขาถาม"
+        }
+      },
+      {
+        "id": "cl-moby-026",
+        "english": "\"Yes, Moby Dick!\" Ahab shouted. \"He took my leg, and I will have my revenge!\"",
+        "turkish": "\"Evet, Moby Dick!\" diye bağırdı Ahab. \"Bacağımı o aldı ve intikamımı alacağım!\"",
+        "translations": {
+          "es-419": "—¡Sí, Moby Dick! —gritó Ahab—. ¡Él me quitó la pierna, y tendré mi venganza!",
+          "pt-BR": "— Sim, Moby Dick! — gritou Ahab. — Ele levou minha perna, e eu terei minha vingança!",
+          "id": "\"Ya, Moby Dick!\" teriak Ahab. \"Ia mengambil kakiku, dan aku akan membalas dendam!\"",
+          "ar": "صاح أهاب: «نعم، موبي ديك! لقد أخذ ساقي، وسأنال انتقامي!»",
+          "vi": "\"Đúng, Moby Dick!\" Ahab hét lên. \"Nó đã lấy mất chân ta, và ta sẽ báo thù!\"",
+          "hi": "एहैब चिल्लाए, \"हाँ, मोबी डिक! उसने मेरी टाँग ली है, और मैं अपना बदला लूँगा!\"",
+          "ru": "«Да, Моби Дик! — крикнул Ахав. — Он отнял у меня ногу, и я отомщу!»",
+          "bn": "আহাব চেঁচিয়ে উঠলেন, \"হ্যাঁ, মোবি ডিক! ও আমার পা নিয়েছে, আমি প্রতিশোধ নেবই!\"",
+          "ur": "اہاب چلّائے، \"ہاں، موبی ڈک! اس نے میری ٹانگ لی ہے، اور میں اپنا بدلہ لوں گا!\"",
+          "th": "\"ใช่ โมบี้ดิก!\" เอแฮบตะโกน \"มันเอาขาข้าไป และข้าจะต้องแก้แค้นให้ได้!\""
+        }
+      },
+      {
+        "id": "cl-moby-027",
+        "english": "\"I will chase him around the whole world until he dies!\"",
+        "turkish": "\"Ölene kadar onu bütün dünyada kovalayacağım!\"",
+        "translations": {
+          "es-419": "—¡Lo perseguiré por todo el mundo hasta que muera!",
+          "pt-BR": "— Vou persegui-lo pelo mundo inteiro até ele morrer!",
+          "id": "\"Aku akan mengejarnya ke seluruh dunia sampai ia mati!\"",
+          "ar": "«سأطارده حول العالم كلّه حتّى يموت!»",
+          "vi": "\"Ta sẽ đuổi theo nó khắp thế giới cho đến khi nó chết!\"",
+          "hi": "\"मैं उसका पीछा पूरी दुनिया में करूँगा, जब तक वह मर न जाए!\"",
+          "ru": "«Я буду гнаться за ним по всему свету, пока он не умрёт!»",
+          "bn": "\"ও না মরা পর্যন্ত আমি সারা দুনিয়া জুড়ে ওর পিছু নেব!\"",
+          "ur": "\"میں اس کا پیچھا پوری دنیا میں کروں گا، جب تک وہ مر نہ جائے!\"",
+          "th": "\"ข้าจะไล่ล่ามันไปทั่วโลกจนกว่ามันจะตาย!\""
+        }
+      },
+      {
+        "id": "cl-moby-028",
+        "english": "The sailors cheered and drank, and soon they were shouting with him.",
+        "turkish": "Tayfalar alkışladı, içti ve çok geçmeden onunla birlikte bağırıyorlardı.",
+        "translations": {
+          "es-419": "Los marineros aplaudieron y bebieron, y pronto gritaban con él.",
+          "pt-BR": "Os marinheiros aplaudiram e beberam, e logo estavam gritando com ele.",
+          "id": "Para pelaut bersorak dan minum, dan tak lama kemudian mereka ikut berteriak bersamanya.",
+          "ar": "هتف البحّارة وشربوا، وسرعان ما صاروا يصرخون معه.",
+          "vi": "Các thủy thủ reo hò và uống rượu, và chẳng mấy chốc họ cùng hét lên với ông.",
+          "hi": "नाविकों ने जयकार की और पी, और जल्दी ही वे उनके साथ चिल्ला रहे थे।",
+          "ru": "Матросы закричали «ура» и выпили, и скоро они кричали вместе с ним.",
+          "bn": "নাবিকেরা হইহই করে উঠল, মদ খেল, আর শিগগিরই তাঁর সঙ্গে গলা মিলিয়ে চেঁচাতে লাগল।",
+          "ur": "ملاحوں نے نعرے لگائے اور پیا، اور جلد ہی وہ ان کے ساتھ چلّا رہے تھے۔",
+          "th": "พวกกะลาสีโห่ร้องและดื่มกัน ไม่นานก็ตะโกนไปพร้อมกับเขา"
+        }
+      },
+      {
+        "id": "cl-moby-029",
+        "english": "Only Starbuck, the first officer, was not happy.",
+        "turkish": "Yalnızca birinci zabit Starbuck mutlu değildi.",
+        "translations": {
+          "es-419": "Solo Starbuck, el primer oficial, no estaba contento.",
+          "pt-BR": "Só Starbuck, o primeiro oficial, não estava contente.",
+          "id": "Hanya Starbuck, mualim pertama, yang tidak senang.",
+          "ar": "وحده ستاربك، الضابط الأوّل، لم يكن سعيدًا.",
+          "vi": "Chỉ có Starbuck, phó thuyền trưởng thứ nhất, là không vui.",
+          "hi": "सिर्फ़ पहले अफ़सर स्टारबक ख़ुश नहीं थे।",
+          "ru": "Только Старбек, старший помощник, был недоволен.",
+          "bn": "শুধু প্রথম অফিসার স্টারবাক খুশি ছিলেন না।",
+          "ur": "صرف پہلے افسر اسٹاربک خوش نہیں تھے۔",
+          "th": "มีแต่สตาร์บัค ต้นเรือคนที่หนึ่ง ที่ไม่พอใจ"
+        }
+      },
+      {
+        "id": "cl-moby-030",
+        "english": "He was a careful, religious man with a wife and son at home.",
+        "turkish": "Evde karısı ve oğlu olan dikkatli, dindar bir adamdı.",
+        "translations": {
+          "es-419": "Era un hombre prudente y religioso, con esposa e hijo en casa.",
+          "pt-BR": "Era um homem cuidadoso e religioso, com esposa e filho em casa.",
+          "id": "Ia pria yang berhati-hati dan taat beragama, dengan istri dan anak laki-laki di rumah.",
+          "ar": "كان رجلًا حذرًا متديّنًا، له زوجة وابن في البيت.",
+          "vi": "Ông là người cẩn trọng, sùng đạo, ở nhà có vợ và con trai.",
+          "hi": "वे एक सावधान, धार्मिक आदमी थे, जिनकी घर पर पत्नी और बेटा था।",
+          "ru": "Это был осторожный, набожный человек, дома его ждали жена и сын.",
+          "bn": "তিনি ছিলেন সাবধানী, ধর্মভীরু মানুষ, বাড়িতে তাঁর স্ত্রী আর ছেলে।",
+          "ur": "وہ ایک محتاط، دین دار آدمی تھے، جن کی گھر پر بیوی اور بیٹا تھا۔",
+          "th": "เขาเป็นคนรอบคอบและเคร่งศาสนา มีภรรยากับลูกชายรออยู่ที่บ้าน"
+        }
+      },
+      {
+        "id": "cl-moby-031",
+        "english": "\"We came here to hunt whales for oil, not for revenge,\" he said.",
+        "turkish": "\"Buraya intikam için değil, yağ için balina avlamaya geldik,\" dedi.",
+        "translations": {
+          "es-419": "—Vinimos a cazar ballenas por su aceite, no por venganza —dijo.",
+          "pt-BR": "— Viemos caçar baleias pelo óleo, não por vingança — disse ele.",
+          "id": "\"Kita datang ke sini untuk berburu paus demi minyaknya, bukan untuk balas dendam,\" katanya.",
+          "ar": "قال: «جئنا لنصطاد الحيتان من أجل الزيت، لا من أجل الانتقام».",
+          "vi": "\"Chúng ta đến đây săn cá voi để lấy dầu, chứ không phải để báo thù,\" ông nói.",
+          "hi": "उन्होंने कहा, \"हम यहाँ तेल के लिए व्हेल का शिकार करने आए हैं, बदले के लिए नहीं।\"",
+          "ru": "«Мы пришли бить китов ради жира, а не ради мести», — сказал он.",
+          "bn": "তিনি বললেন, \"আমরা এসেছি তেলের জন্য তিমি শিকার করতে, প্রতিশোধ নিতে নয়।\"",
+          "ur": "انہوں نے کہا، \"ہم یہاں تیل کے لیے وہیل کا شکار کرنے آئے ہیں، بدلے کے لیے نہیں۔\"",
+          "th": "\"เรามาล่าวาฬเพื่อเอาน้ำมัน ไม่ได้มาเพื่อแก้แค้น\" เขาพูด"
+        }
+      },
+      {
+        "id": "cl-moby-032",
+        "english": "\"To be angry with a poor animal is madness, sir.\"",
+        "turkish": "\"Zavallı bir hayvana öfkelenmek delilik, efendim.\"",
+        "translations": {
+          "es-419": "—Enojarse con un pobre animal es una locura, señor.",
+          "pt-BR": "— Ficar com raiva de um pobre animal é loucura, senhor.",
+          "id": "\"Marah kepada seekor hewan yang malang itu gila, Tuan.\"",
+          "ar": "«الغضب من حيوان مسكين جنون يا سيّدي».",
+          "vi": "\"Giận dữ với một con vật đáng thương là điên rồ, thưa ông.\"",
+          "hi": "\"एक बेचारे जानवर पर ग़ुस्सा करना पागलपन है, सर।\"",
+          "ru": "«Злиться на бедное животное — безумие, сэр».",
+          "bn": "\"একটা অবোলা জন্তুর ওপর রাগ করা পাগলামি, স্যার।\"",
+          "ur": "\"ایک بے چارے جانور پر غصہ کرنا پاگل پن ہے، جناب۔\"",
+          "th": "\"การโกรธสัตว์น่าสงสารตัวหนึ่งเป็นเรื่องบ้า ท่านกัปตัน\""
+        }
+      },
+      {
+        "id": "cl-moby-033",
+        "english": "Ahab did not listen. He only looked at the sea with burning eyes.",
+        "turkish": "Ahab dinlemedi. Yalnızca alev alev gözlerle denize baktı.",
+        "translations": {
+          "es-419": "Ahab no lo escuchó. Solo miró el mar con ojos ardientes.",
+          "pt-BR": "Ahab não ouviu. Apenas olhou para o mar com olhos ardentes.",
+          "id": "Ahab tidak mendengarkan. Ia hanya menatap laut dengan mata menyala.",
+          "ar": "لم يُصغِ أهاب، بل ظلّ ينظر إلى البحر بعينين ملتهبتين.",
+          "vi": "Ahab không nghe. Ông chỉ nhìn ra biển với đôi mắt rực lửa.",
+          "hi": "एहैब ने नहीं सुना। वे बस जलती आँखों से समुद्र को देखते रहे।",
+          "ru": "Ахав не слушал. Он только смотрел на море горящими глазами.",
+          "bn": "আহাব কানে নিলেন না। তিনি শুধু জ্বলন্ত চোখে সমুদ্রের দিকে তাকিয়ে রইলেন।",
+          "ur": "اہاب نے نہیں سنا۔ وہ بس جلتی آنکھوں سے سمندر کو دیکھتے رہے۔",
+          "th": "เอแฮบไม่ฟัง เขาเอาแต่จ้องทะเลด้วยดวงตาลุกโชน"
+        }
+      },
+      {
+        "id": "cl-moby-034",
+        "english": "That night I understood that our voyage was not about money any more.",
+        "turkish": "O gece yolculuğumuzun artık parayla ilgili olmadığını anladım.",
+        "translations": {
+          "es-419": "Esa noche entendí que nuestro viaje ya no tenía que ver con el dinero.",
+          "pt-BR": "Naquela noite entendi que nossa viagem já não tinha a ver com dinheiro.",
+          "id": "Malam itu aku mengerti bahwa pelayaran kami bukan lagi soal uang.",
+          "ar": "في تلك الليلة فهمتُ أنّ رحلتنا لم تعد من أجل المال.",
+          "vi": "Đêm đó tôi hiểu rằng chuyến đi của chúng tôi không còn vì tiền nữa.",
+          "hi": "उस रात मैं समझ गया कि हमारी यात्रा अब पैसे के लिए नहीं थी।",
+          "ru": "В ту ночь я понял, что наше плавание больше не ради денег.",
+          "bn": "সেই রাতে বুঝলাম, আমাদের সমুদ্রযাত্রা আর টাকার জন্য নয়।",
+          "ur": "اس رات میں سمجھ گیا کہ ہمارا سفر اب پیسے کے لیے نہیں تھا۔",
+          "th": "คืนนั้นผมเข้าใจว่า การเดินทางของเราไม่ได้เกี่ยวกับเงินอีกต่อไปแล้ว"
+        }
+      },
+      {
+        "id": "cl-moby-035",
+        "english": "It was about one man's hate for one white whale.",
+        "turkish": "Bir adamın bir beyaz balinaya duyduğu nefretle ilgiliydi.",
+        "translations": {
+          "es-419": "Tenía que ver con el odio de un hombre por una ballena blanca.",
+          "pt-BR": "Tinha a ver com o ódio de um homem por uma baleia branca.",
+          "id": "Ini soal kebencian seorang pria terhadap seekor paus putih.",
+          "ar": "بل صارت من أجل كراهية رجل واحد لحوت أبيض واحد.",
+          "vi": "Nó là vì lòng căm thù của một con người với một con cá voi trắng.",
+          "hi": "वह एक आदमी की एक सफ़ेद व्हेल के लिए नफ़रत के बारे में थी।",
+          "ru": "Оно было ради ненависти одного человека к одному белому киту.",
+          "bn": "এটা এক মানুষের এক সাদা তিমির প্রতি ঘৃণার ব্যাপার।",
+          "ur": "وہ ایک آدمی کی ایک سفید وہیل سے نفرت کے بارے میں تھا۔",
+          "th": "มันเกี่ยวกับความเกลียดชังของชายคนหนึ่งที่มีต่อวาฬขาวตัวหนึ่ง"
+        }
+      },
+      {
+        "id": "cl-moby-036",
+        "english": "Everybody on the ship had heard stories about Moby Dick.",
+        "turkish": "Gemideki herkes Moby Dick hakkında hikâyeler duymuştu.",
+        "translations": {
+          "es-419": "Todos en el barco habían oído historias sobre Moby Dick.",
+          "pt-BR": "Todos no navio tinham ouvido histórias sobre Moby Dick.",
+          "id": "Semua orang di kapal pernah mendengar cerita tentang Moby Dick.",
+          "ar": "كان كلّ من على السفينة قد سمع حكايات عن موبي ديك.",
+          "vi": "Mọi người trên tàu đều đã nghe những câu chuyện về Moby Dick.",
+          "hi": "जहाज़ पर सबने मोबी डिक के क़िस्से सुन रखे थे।",
+          "ru": "Все на корабле слышали рассказы о Моби Дике.",
+          "bn": "জাহাজের সবাই মোবি ডিকের গল্প শুনেছিল।",
+          "ur": "جہاز پر سب نے موبی ڈک کے قصے سن رکھے تھے۔",
+          "th": "ทุกคนบนเรือเคยได้ยินเรื่องเล่าเกี่ยวกับโมบี้ดิก"
+        }
+      },
+      {
+        "id": "cl-moby-037",
+        "english": "He was bigger than any other whale, and his skin was white like snow.",
+        "turkish": "O, bütün balinalardan daha büyüktü ve derisi kar gibi beyazdı.",
+        "translations": {
+          "es-419": "Era más grande que cualquier otra ballena, y su piel era blanca como la nieve.",
+          "pt-BR": "Era maior que qualquer outra baleia, e sua pele era branca como a neve.",
+          "id": "Ia lebih besar daripada paus mana pun, dan kulitnya putih seperti salju.",
+          "ar": "كان أضخم من أيّ حوت آخر، وجلده أبيض كالثلج.",
+          "vi": "Nó to lớn hơn mọi con cá voi khác, và da nó trắng như tuyết.",
+          "hi": "वह किसी भी दूसरी व्हेल से बड़ी थी, और उसकी खाल बर्फ़ जैसी सफ़ेद थी।",
+          "ru": "Он был больше любого другого кита, а его кожа была белой, как снег.",
+          "bn": "সে অন্য যেকোনো তিমির চেয়ে বড়, তার চামড়া বরফের মতো সাদা।",
+          "ur": "وہ کسی بھی دوسری وہیل سے بڑی تھی، اور اس کی کھال برف جیسی سفید تھی۔",
+          "th": "มันตัวใหญ่กว่าวาฬตัวไหน ๆ และผิวของมันขาวราวกับหิมะ"
+        }
+      },
+      {
+        "id": "cl-moby-038",
+        "english": "Many boats had attacked him, but he had broken them all into pieces.",
+        "turkish": "Birçok sandal ona saldırmıştı, ama o hepsini paramparça etmişti.",
+        "translations": {
+          "es-419": "Muchos botes lo habían atacado, pero él los había hecho pedazos a todos.",
+          "pt-BR": "Muitos botes o tinham atacado, mas ele despedaçou todos.",
+          "id": "Banyak perahu pernah menyerangnya, tetapi ia menghancurkan semuanya berkeping-keping.",
+          "ar": "هاجمته قوارب كثيرة، لكنّه حطّمها كلّها قطعًا.",
+          "vi": "Nhiều chiếc thuyền đã tấn công nó, nhưng nó đã đập tan tất cả.",
+          "hi": "कई नावों ने उस पर हमला किया था, पर उसने सबके टुकड़े-टुकड़े कर दिए थे।",
+          "ru": "Много лодок нападали на него, но он разбивал их все в щепки.",
+          "bn": "অনেক নৌকা তাকে আক্রমণ করেছিল, কিন্তু সে সবগুলোকে টুকরো টুকরো করে দিয়েছিল।",
+          "ur": "کئی کشتیوں نے اس پر حملہ کیا تھا، مگر اس نے سب کے ٹکڑے ٹکڑے کر دیے تھے۔",
+          "th": "เรือเล็กหลายลำเคยโจมตีมัน แต่มันก็ทำลายจนแหลกเป็นชิ้น ๆ ทุกลำ"
+        }
+      },
+      {
+        "id": "cl-moby-039",
+        "english": "Some sailors said he could be in two oceans at the same time.",
+        "turkish": "Bazı tayfalar onun aynı anda iki okyanusta birden olabildiğini söylerdi.",
+        "translations": {
+          "es-419": "Algunos marineros decían que podía estar en dos océanos al mismo tiempo.",
+          "pt-BR": "Alguns marinheiros diziam que ele podia estar em dois oceanos ao mesmo tempo.",
+          "id": "Beberapa pelaut berkata ia bisa berada di dua samudra sekaligus.",
+          "ar": "وقال بعض البحّارة إنّه يستطيع أن يكون في محيطين في الوقت نفسه.",
+          "vi": "Có thủy thủ còn nói nó có thể ở hai đại dương cùng một lúc.",
+          "hi": "कुछ नाविक कहते थे कि वह एक ही समय में दो महासागरों में हो सकती है।",
+          "ru": "Некоторые матросы говорили, что он может быть в двух океанах одновременно.",
+          "bn": "কোনো কোনো নাবিক বলত, সে একই সময়ে দুই মহাসাগরে থাকতে পারে।",
+          "ur": "کچھ ملاح کہتے تھے کہ وہ ایک ہی وقت میں دو سمندروں میں ہو سکتی ہے۔",
+          "th": "กะลาสีบางคนบอกว่ามันอยู่ในมหาสมุทรสองแห่งได้ในเวลาเดียวกัน"
+        }
+      },
+      {
+        "id": "cl-moby-040",
+        "english": "I was afraid, but like the others, I also wanted to see him.",
+        "turkish": "Korkuyordum, ama diğerleri gibi ben de onu görmek istiyordum.",
+        "translations": {
+          "es-419": "Tenía miedo, pero, como los demás, yo también quería verlo.",
+          "pt-BR": "Eu tinha medo, mas, como os outros, também queria vê-lo.",
+          "id": "Aku takut, tetapi seperti yang lain, aku juga ingin melihatnya.",
+          "ar": "كنتُ خائفًا، لكنّني مثل الآخرين كنتُ أريد أن أراه أيضًا.",
+          "vi": "Tôi sợ, nhưng cũng như những người khác, tôi vẫn muốn được thấy nó.",
+          "hi": "मैं डरा हुआ था, पर बाक़ी सबकी तरह मैं भी उसे देखना चाहता था।",
+          "ru": "Мне было страшно, но, как и другим, мне тоже хотелось его увидеть.",
+          "bn": "আমি ভয় পাচ্ছিলাম, কিন্তু অন্যদের মতো আমিও তাকে দেখতে চাইছিলাম।",
+          "ur": "میں ڈرا ہوا تھا، مگر باقی سب کی طرح میں بھی اسے دیکھنا چاہتا تھا۔",
+          "th": "ผมกลัว แต่ก็เหมือนคนอื่น ๆ ผมเองก็อยากเห็นมัน"
+        }
+      },
+      {
+        "id": "cl-moby-041",
+        "english": "For months we sailed across the Atlantic, around Africa and into the Indian Ocean.",
+        "turkish": "Aylarca Atlas Okyanusu'nu geçtik, Afrika'nın çevresini dolaşıp Hint Okyanusu'na girdik.",
+        "translations": {
+          "es-419": "Durante meses navegamos por el Atlántico, rodeamos África y entramos en el océano Índico.",
+          "pt-BR": "Durante meses navegamos pelo Atlântico, contornamos a África e entramos no oceano Índico.",
+          "id": "Berbulan-bulan kami berlayar melintasi Atlantik, mengitari Afrika, lalu masuk ke Samudra Hindia.",
+          "ar": "أبحرنا شهورًا عبر الأطلسيّ، ودُرنا حول أفريقيا ودخلنا المحيط الهنديّ.",
+          "vi": "Suốt nhiều tháng, chúng tôi vượt Đại Tây Dương, vòng qua châu Phi rồi tiến vào Ấn Độ Dương.",
+          "hi": "महीनों तक हम अटलांटिक पार करते रहे, अफ़्रीका का चक्कर लगाकर हिंद महासागर में पहुँचे।",
+          "ru": "Месяцами мы плыли через Атлантику, обогнули Африку и вошли в Индийский океан.",
+          "bn": "মাসের পর মাস আমরা আটলান্টিক পাড়ি দিলাম, আফ্রিকা ঘুরে ভারত মহাসাগরে ঢুকলাম।",
+          "ur": "مہینوں تک ہم بحرِ اوقیانوس پار کرتے رہے، افریقہ کا چکر لگا کر بحرِ ہند میں پہنچے۔",
+          "th": "หลายเดือนที่เราแล่นข้ามแอตแลนติก อ้อมแอฟริกา และเข้าสู่มหาสมุทรอินเดีย"
+        }
+      },
+      {
+        "id": "cl-moby-042",
+        "english": "When a sailor cried, \"There she blows!\", we lowered the small boats.",
+        "turkish": "Bir tayfa \"İşte orada fışkırıyor!\" diye bağırınca küçük sandalları suya indirirdik.",
+        "translations": {
+          "es-419": "Cuando un marinero gritaba «¡Allí sopla!», bajábamos los botes pequeños.",
+          "pt-BR": "Quando um marinheiro gritava \"Lá ela sopra!\", nós descíamos os botes pequenos.",
+          "id": "Ketika seorang pelaut berteriak, \"Itu dia menyembur!\", kami menurunkan perahu-perahu kecil.",
+          "ar": "وحين كان أحد البحّارة يصيح: «هناك تنفث!»، كنّا ننزل القوارب الصغيرة.",
+          "vi": "Mỗi khi một thủy thủ hét lên \"Nó phun nước kìa!\", chúng tôi lại hạ những chiếc thuyền nhỏ xuống.",
+          "hi": "जब कोई नाविक चिल्लाता, \"वह रही, पानी उछाल रही है!\", तो हम छोटी नावें नीचे उतार देते।",
+          "ru": "Когда матрос кричал: «Фонтан!», мы спускали на воду маленькие лодки.",
+          "bn": "কোনো নাবিক যখন চেঁচাত, \"ওই যে জল ছিটোচ্ছে!\", আমরা ছোট নৌকাগুলো জলে নামাতাম।",
+          "ur": "جب کوئی ملاح چلّاتا، \"وہ رہی، پانی اچھال رہی ہے!\"، تو ہم چھوٹی کشتیاں نیچے اتار دیتے۔",
+          "th": "เมื่อกะลาสีคนไหนร้องว่า \"มันพ่นน้ำอยู่ตรงนั้น!\" เราก็หย่อนเรือเล็กลงน้ำ"
+        }
+      },
+      {
+        "id": "cl-moby-043",
+        "english": "We rowed hard toward the whale, and Queequeg stood up with his harpoon.",
+        "turkish": "Balinaya doğru var gücümüzle kürek çekerdik, Queequeg de zıpkınıyla ayağa kalkardı.",
+        "translations": {
+          "es-419": "Remábamos con fuerza hacia la ballena, y Queequeg se ponía de pie con su arpón.",
+          "pt-BR": "Remávamos com força em direção à baleia, e Queequeg se levantava com seu arpão.",
+          "id": "Kami mendayung sekuat tenaga ke arah paus, dan Queequeg berdiri dengan harpunnya.",
+          "ar": "كنّا نجدّف بقوّة نحو الحوت، فيقف كويكويغ ممسكًا بحربته.",
+          "vi": "Chúng tôi chèo hết sức về phía con cá voi, còn Queequeg đứng dậy cầm cây lao móc.",
+          "hi": "हम पूरी ताक़त से व्हेल की ओर नाव खेते, और क्वीक्वेग अपना भाला लेकर खड़ा हो जाता।",
+          "ru": "Мы изо всех сил гребли к киту, а Квикег вставал с гарпуном в руке.",
+          "bn": "আমরা প্রাণপণে তিমির দিকে দাঁড় টানতাম, আর কুইকেগ হারপুন হাতে উঠে দাঁড়াত।",
+          "ur": "ہم پوری طاقت سے وہیل کی طرف کشتی کھیتے، اور کوئیکویگ اپنا ہارپون لے کر کھڑا ہو جاتا۔",
+          "th": "เราพายสุดแรงไปหาวาฬ แล้วควีเควกก็ลุกขึ้นยืนพร้อมฉมวก"
+        }
+      },
+      {
+        "id": "cl-moby-044",
+        "english": "He was the best harpooner on the ship, and he almost never missed.",
+        "turkish": "Gemideki en iyi zıpkıncıydı ve neredeyse hiç ıskalamazdı.",
+        "translations": {
+          "es-419": "Era el mejor arponero del barco, y casi nunca fallaba.",
+          "pt-BR": "Era o melhor arpoador do navio, e quase nunca errava.",
+          "id": "Ia pelempar harpun terbaik di kapal, dan hampir tak pernah meleset.",
+          "ar": "كان أمهر رامي حراب على السفينة، ونادرًا ما كان يخطئ.",
+          "vi": "Anh ta là tay phóng lao giỏi nhất trên tàu, và hầu như không bao giờ trượt.",
+          "hi": "वह जहाज़ का सबसे अच्छा भाला फेंकने वाला था, और उसका निशाना शायद ही कभी चूकता।",
+          "ru": "Он был лучшим гарпунщиком на судне и почти никогда не промахивался.",
+          "bn": "জাহাজে সে-ই ছিল সেরা হারপুনওয়ালা, তার নিশানা প্রায় কখনো ফসকাত না।",
+          "ur": "وہ جہاز کا سب سے اچھا ہارپون باز تھا، اور اس کا نشانہ شاید ہی کبھی چوکتا۔",
+          "th": "เขาเป็นนักพุ่งฉมวกที่เก่งที่สุดบนเรือ และแทบไม่เคยพลาดเลย"
+        }
+      },
+      {
+        "id": "cl-moby-045",
+        "english": "After each hunt, we cut up the whale and boiled its fat into oil.",
+        "turkish": "Her avdan sonra balinayı parçalar, yağını kaynatıp yağ elde ederdik.",
+        "translations": {
+          "es-419": "Después de cada caza, cortábamos la ballena y hervíamos su grasa para sacar aceite.",
+          "pt-BR": "Depois de cada caçada, cortávamos a baleia e fervíamos a gordura para fazer óleo.",
+          "id": "Setelah setiap perburuan, kami memotong paus itu dan merebus lemaknya menjadi minyak.",
+          "ar": "بعد كلّ صيد، كنّا نقطّع الحوت ونغلي شحمه لنصنع منه الزيت.",
+          "vi": "Sau mỗi cuộc săn, chúng tôi xẻ thịt cá voi và nấu mỡ của nó thành dầu.",
+          "hi": "हर शिकार के बाद हम व्हेल को काटते और उसकी चर्बी उबालकर तेल बनाते।",
+          "ru": "После каждой охоты мы разделывали кита и вытапливали из его жира масло.",
+          "bn": "প্রতিবার শিকারের পরে আমরা তিমিটা কেটে তার চর্বি ফুটিয়ে তেল বানাতাম।",
+          "ur": "ہر شکار کے بعد ہم وہیل کو کاٹتے اور اس کی چربی ابال کر تیل بناتے۔",
+          "th": "หลังการล่าแต่ละครั้ง เราจะชำแหละวาฬแล้วต้มไขมันของมันให้เป็นน้ำมัน"
+        }
+      },
+      {
+        "id": "cl-moby-046",
+        "english": "At night the fires burned on the deck, and the ship looked like a picture of hell.",
+        "turkish": "Geceleri güvertede ateşler yanar, gemi bir cehennem resmine benzerdi.",
+        "translations": {
+          "es-419": "De noche ardían los fuegos en la cubierta, y el barco parecía una imagen del infierno.",
+          "pt-BR": "À noite, as fogueiras queimavam no convés, e o navio parecia uma imagem do inferno.",
+          "id": "Pada malam hari api menyala di geladak, dan kapal itu tampak seperti gambaran neraka.",
+          "ar": "وفي الليل كانت النيران تشتعل على السطح، فتبدو السفينة كصورة من الجحيم.",
+          "vi": "Ban đêm lửa cháy rực trên boong, và con tàu trông như một bức tranh địa ngục.",
+          "hi": "रात को डेक पर आग जलती, और जहाज़ नरक की तस्वीर जैसा लगता।",
+          "ru": "Ночью на палубе горели огни, и корабль был похож на картину ада.",
+          "bn": "রাতে ডেকের ওপর আগুন জ্বলত, আর জাহাজটাকে দেখাত নরকের ছবির মতো।",
+          "ur": "رات کو عرشے پر آگ جلتی، اور جہاز دوزخ کی تصویر جیسا لگتا۔",
+          "th": "ตอนกลางคืนไฟลุกโชนบนดาดฟ้า เรือดูราวกับภาพของนรก"
+        }
+      },
+      {
+        "id": "cl-moby-047",
+        "english": "Then Queequeg became very sick with a fever.",
+        "turkish": "Sonra Queequeg ağır bir ateşe yakalandı.",
+        "translations": {
+          "es-419": "Entonces Queequeg cayó muy enfermo de fiebre.",
+          "pt-BR": "Então Queequeg ficou muito doente, com febre.",
+          "id": "Kemudian Queequeg jatuh sakit parah karena demam.",
+          "ar": "ثمّ مرض كويكويغ مرضًا شديدًا بالحمّى.",
+          "vi": "Rồi Queequeg lên cơn sốt nặng.",
+          "hi": "फिर क्वीक्वेग को तेज़ बुख़ार हो गया और वह बहुत बीमार पड़ गया।",
+          "ru": "Потом Квикег тяжело заболел лихорадкой.",
+          "bn": "তারপর কুইকেগ ভীষণ জ্বরে পড়ল।",
+          "ur": "پھر کوئیکویگ کو تیز بخار ہو گیا اور وہ بہت بیمار پڑ گیا۔",
+          "th": "แล้วควีเควกก็ป่วยหนักเป็นไข้"
+        }
+      },
+      {
+        "id": "cl-moby-048",
+        "english": "He grew thinner every day, and we all thought he would die.",
+        "turkish": "Her gün biraz daha zayıflıyordu ve hepimiz öleceğini sanıyorduk.",
+        "translations": {
+          "es-419": "Cada día estaba más delgado, y todos pensábamos que iba a morir.",
+          "pt-BR": "Ficava mais magro a cada dia, e todos achávamos que ele ia morrer.",
+          "id": "Ia makin kurus setiap hari, dan kami semua mengira ia akan mati.",
+          "ar": "كان يزداد نحولًا كلّ يوم، وظننّا جميعًا أنّه سيموت.",
+          "vi": "Anh ta gầy đi từng ngày, và tất cả chúng tôi đều nghĩ anh ta sẽ chết.",
+          "hi": "वह हर दिन और दुबला होता गया, और हम सबको लगा कि वह मर जाएगा।",
+          "ru": "Он худел с каждым днём, и мы все думали, что он умрёт.",
+          "bn": "সে দিন দিন রোগা হয়ে যাচ্ছিল, আমরা সবাই ভাবলাম সে মারা যাবে।",
+          "ur": "وہ ہر دن اور دبلا ہوتا گیا، اور ہم سب کو لگا کہ وہ مر جائے گا۔",
+          "th": "เขาผอมลงทุกวัน และเราทุกคนคิดว่าเขาคงต้องตาย"
+        }
+      },
+      {
+        "id": "cl-moby-049",
+        "english": "He asked the carpenter to make him a coffin, like the canoes of his island.",
+        "turkish": "Marangozdan kendisine, adasındaki kanolara benzeyen bir tabut yapmasını istedi.",
+        "translations": {
+          "es-419": "Le pidió al carpintero que le hiciera un ataúd, como las canoas de su isla.",
+          "pt-BR": "Pediu ao carpinteiro que lhe fizesse um caixão, como as canoas da sua ilha.",
+          "id": "Ia meminta tukang kayu membuatkannya peti mati, seperti kano di pulaunya.",
+          "ar": "طلب من النجّار أن يصنع له تابوتًا يشبه زوارق جزيرته.",
+          "vi": "Anh ta nhờ người thợ mộc đóng cho mình một cỗ quan tài, giống như những chiếc xuồng ở đảo quê.",
+          "hi": "उसने बढ़ई से अपने लिए एक ताबूत बनाने को कहा, अपने द्वीप की डोंगियों जैसा।",
+          "ru": "Он попросил плотника сделать ему гроб, похожий на каноэ его острова.",
+          "bn": "সে ছুতোরকে বলল তার জন্য একটা কফিন বানাতে, তার দ্বীপের ডিঙির মতো।",
+          "ur": "اس نے بڑھئی سے اپنے لیے ایک تابوت بنانے کو کہا، اپنے جزیرے کی ڈونگیوں جیسا۔",
+          "th": "เขาขอให้ช่างไม้ต่อโลงศพให้ แบบเดียวกับเรือแคนูบนเกาะบ้านเกิด"
+        }
+      },
+      {
+        "id": "cl-moby-050",
+        "english": "He lay down in it to see if it was comfortable, and he smiled.",
+        "turkish": "Rahat olup olmadığını görmek için içine uzandı ve gülümsedi.",
+        "translations": {
+          "es-419": "Se acostó dentro para ver si era cómodo, y sonrió.",
+          "pt-BR": "Deitou-se dentro dele para ver se era confortável, e sorriu.",
+          "id": "Ia berbaring di dalamnya untuk mencoba apakah nyaman, lalu tersenyum.",
+          "ar": "استلقى فيه ليرى إن كان مريحًا، ثمّ ابتسم.",
+          "vi": "Anh ta nằm thử vào trong xem có thoải mái không, rồi mỉm cười.",
+          "hi": "वह यह देखने के लिए उसमें लेटा कि वह आरामदेह है या नहीं, और मुस्कुराया।",
+          "ru": "Он лёг в него, чтобы проверить, удобно ли, и улыбнулся.",
+          "bn": "আরাম লাগে কি না দেখতে সে তার ভেতরে শুয়ে পড়ল, আর হাসল।",
+          "ur": "وہ یہ دیکھنے کے لیے اس میں لیٹا کہ وہ آرام دہ ہے یا نہیں، اور مسکرایا۔",
+          "th": "เขานอนลงในโลงเพื่อลองดูว่าสบายไหม แล้วก็ยิ้ม"
+        }
+      },
+      {
+        "id": "cl-moby-051",
+        "english": "But then, to everyone's surprise, he got well again.",
+        "turkish": "Ama sonra, herkesi şaşırtarak yeniden iyileşti.",
+        "translations": {
+          "es-419": "Pero luego, para sorpresa de todos, se curó.",
+          "pt-BR": "Mas então, para surpresa de todos, ele sarou.",
+          "id": "Tetapi kemudian, yang membuat semua orang heran, ia sembuh kembali.",
+          "ar": "لكنّه بعد ذلك، ولدهشة الجميع، شُفي من جديد.",
+          "vi": "Nhưng rồi, trước sự ngạc nhiên của mọi người, anh ta khỏe lại.",
+          "hi": "पर फिर, सबको हैरान करते हुए, वह ठीक हो गया।",
+          "ru": "Но потом, ко всеобщему удивлению, он поправился.",
+          "bn": "কিন্তু তারপর সবাইকে অবাক করে সে আবার সেরে উঠল।",
+          "ur": "مگر پھر، سب کو حیران کرتے ہوئے، وہ ٹھیک ہو گیا۔",
+          "th": "แต่แล้ว เขาก็หายดีอย่างที่ทุกคนคาดไม่ถึง"
+        }
+      },
+      {
+        "id": "cl-moby-052",
+        "english": "\"I decided not to die yet,\" he said simply.",
+        "turkish": "\"Henüz ölmemeye karar verdim,\" dedi sadece.",
+        "translations": {
+          "es-419": "—Decidí no morir todavía —dijo con sencillez.",
+          "pt-BR": "— Decidi não morrer ainda — disse ele, simplesmente.",
+          "id": "\"Aku memutuskan untuk belum mati,\" katanya sederhana.",
+          "ar": "قال ببساطة: «قرّرتُ ألّا أموت الآن».",
+          "vi": "\"Tôi quyết định chưa chết vội,\" anh ta nói đơn giản.",
+          "hi": "उसने सीधे-सादे ढंग से कहा, \"मैंने अभी न मरने का फ़ैसला किया।\"",
+          "ru": "«Я решил пока не умирать», — просто сказал он.",
+          "bn": "সে সহজভাবে বলল, \"ঠিক করলাম, এখনই মরব না।\"",
+          "ur": "اس نے سیدھے سادے انداز میں کہا، \"میں نے ابھی نہ مرنے کا فیصلہ کیا۔\"",
+          "th": "\"ผมตัดสินใจว่ายังไม่ตายตอนนี้\" เขาพูดง่าย ๆ"
+        }
+      },
+      {
+        "id": "cl-moby-053",
+        "english": "Later, the carpenter changed the coffin into a float to save men in the water.",
+        "turkish": "Sonra marangoz tabutu, sudaki adamları kurtarmak için bir can simidine çevirdi.",
+        "translations": {
+          "es-419": "Más tarde, el carpintero convirtió el ataúd en un flotador para salvar a hombres en el agua.",
+          "pt-BR": "Mais tarde, o carpinteiro transformou o caixão numa boia para salvar homens na água.",
+          "id": "Kemudian, tukang kayu mengubah peti mati itu menjadi pelampung untuk menyelamatkan orang di air.",
+          "ar": "وفي ما بعد، حوّل النجّار التابوت إلى عوّامة لإنقاذ الرجال في الماء.",
+          "vi": "Sau đó, người thợ mộc biến cỗ quan tài thành một chiếc phao để cứu người dưới nước.",
+          "hi": "बाद में बढ़ई ने ताबूत को पानी में गिरे लोगों को बचाने वाले तैरते सहारे में बदल दिया।",
+          "ru": "Позже плотник переделал гроб в спасательный буй, чтобы спасать людей в воде.",
+          "bn": "পরে ছুতোর কফিনটাকে জলে পড়া মানুষ বাঁচানোর একটা ভাসমান বয়া বানিয়ে দিল।",
+          "ur": "بعد میں بڑھئی نے تابوت کو پانی میں گرے لوگوں کو بچانے والے تیرتے سہارے میں بدل دیا۔",
+          "th": "ต่อมา ช่างไม้ดัดแปลงโลงศพให้เป็นทุ่นลอยไว้ช่วยคนที่ตกน้ำ"
+        }
+      },
+      {
+        "id": "cl-moby-054",
+        "english": "Every time we met a ship, Ahab asked the same question.",
+        "turkish": "Ne zaman bir gemiyle karşılaşsak, Ahab aynı soruyu sorardı.",
+        "translations": {
+          "es-419": "Cada vez que nos cruzábamos con un barco, Ahab hacía la misma pregunta.",
+          "pt-BR": "Toda vez que encontrávamos um navio, Ahab fazia a mesma pergunta.",
+          "id": "Setiap kali kami bertemu kapal lain, Ahab mengajukan pertanyaan yang sama.",
+          "ar": "كلّما التقينا سفينة، طرح أهاب السؤال نفسه.",
+          "vi": "Mỗi lần gặp một con tàu, Ahab lại hỏi cùng một câu.",
+          "hi": "जब भी हमें कोई जहाज़ मिलता, एहैब वही सवाल पूछते।",
+          "ru": "Каждый раз, встречая судно, Ахав задавал один и тот же вопрос.",
+          "bn": "যখনই কোনো জাহাজের দেখা পেতাম, আহাব একই প্রশ্ন করতেন।",
+          "ur": "جب بھی ہمیں کوئی جہاز ملتا، اہاب وہی سوال پوچھتے۔",
+          "th": "ทุกครั้งที่เราพบเรือลำอื่น เอแฮบจะถามคำถามเดิม"
+        }
+      },
+      {
+        "id": "cl-moby-055",
+        "english": "\"Have you seen the White Whale?\"",
+        "turkish": "\"Beyaz Balina'yı gördünüz mü?\"",
+        "translations": {
+          "es-419": "—¿Han visto a la Ballena Blanca?",
+          "pt-BR": "— Vocês viram a Baleia Branca?",
+          "id": "\"Apakah kalian melihat Paus Putih?\"",
+          "ar": "«هل رأيتم الحوت الأبيض؟»",
+          "vi": "\"Các anh có thấy Cá Voi Trắng không?\"",
+          "hi": "\"क्या तुमने सफ़ेद व्हेल देखी है?\"",
+          "ru": "«Вы видели Белого Кита?»",
+          "bn": "\"তোমরা কি সাদা তিমিটাকে দেখেছ?\"",
+          "ur": "\"کیا تم نے سفید وہیل دیکھی ہے؟\"",
+          "th": "\"พวกเจ้าเห็นวาฬขาวบ้างไหม\""
+        }
+      },
+      {
+        "id": "cl-moby-056",
+        "english": "One captain had lost an arm to Moby Dick. \"Stay away from him,\" he warned.",
+        "turkish": "Bir kaptan Moby Dick yüzünden kolunu kaybetmişti. \"Ondan uzak durun,\" diye uyardı.",
+        "translations": {
+          "es-419": "Un capitán había perdido un brazo por culpa de Moby Dick. —Aléjense de él —advirtió.",
+          "pt-BR": "Um capitão tinha perdido um braço para Moby Dick. — Fiquem longe dele — avisou.",
+          "id": "Seorang kapten pernah kehilangan lengannya karena Moby Dick. \"Jauhi dia,\" ia memperingatkan.",
+          "ar": "كان أحد القباطنة قد فقد ذراعه بسبب موبي ديك، فحذّر قائلًا: «ابتعدوا عنه».",
+          "vi": "Một thuyền trưởng đã mất một cánh tay vì Moby Dick. \"Tránh xa nó ra,\" ông ta cảnh báo.",
+          "hi": "एक कप्तान मोबी डिक की वजह से अपना हाथ खो चुके थे। उन्होंने चेतावनी दी, \"उससे दूर रहो।\"",
+          "ru": "Один капитан потерял из-за Моби Дика руку. «Держитесь от него подальше», — предупредил он.",
+          "bn": "এক ক্যাপ্টেন মোবি ডিকের জন্য একটা হাত হারিয়েছিলেন। তিনি সাবধান করলেন, \"ওর থেকে দূরে থাকো।\"",
+          "ur": "ایک کپتان موبی ڈک کی وجہ سے اپنا بازو کھو چکے تھے۔ انہوں نے خبردار کیا، \"اس سے دور رہو۔\"",
+          "th": "กัปตันคนหนึ่งเสียแขนไปเพราะโมบี้ดิก เขาเตือนว่า \"อยู่ห่างจากมันไว้\""
+        }
+      },
+      {
+        "id": "cl-moby-057",
+        "english": "Ahab only laughed and turned away.",
+        "turkish": "Ahab yalnızca güldü ve arkasını döndü.",
+        "translations": {
+          "es-419": "Ahab solo se rio y se dio la vuelta.",
+          "pt-BR": "Ahab apenas riu e virou as costas.",
+          "id": "Ahab hanya tertawa dan berpaling.",
+          "ar": "لم يفعل أهاب سوى أن ضحك وأدار ظهره.",
+          "vi": "Ahab chỉ cười rồi quay đi.",
+          "hi": "एहैब बस हँसे और मुँह फेर लिया।",
+          "ru": "Ахав только рассмеялся и отвернулся.",
+          "bn": "আহাব শুধু হাসলেন আর মুখ ফিরিয়ে নিলেন।",
+          "ur": "اہاب بس ہنسے اور منہ پھیر لیا۔",
+          "th": "เอแฮบเพียงหัวเราะแล้วหันหลังให้"
+        }
+      },
+      {
+        "id": "cl-moby-058",
+        "english": "Another ship, the Rachel, came to us with sad news.",
+        "turkish": "Başka bir gemi, Rachel, bize üzücü bir haberle geldi.",
+        "translations": {
+          "es-419": "Otro barco, el Rachel, se acercó con tristes noticias.",
+          "pt-BR": "Outro navio, o Rachel, veio até nós com notícias tristes.",
+          "id": "Kapal lain, Rachel, datang kepada kami dengan kabar sedih.",
+          "ar": "وجاءتنا سفينة أخرى، اسمها راحيل، بأخبار حزينة.",
+          "vi": "Một con tàu khác, tàu Rachel, đến gặp chúng tôi với tin buồn.",
+          "hi": "एक और जहाज़, रेचल, हमारे पास दुखभरी ख़बर लेकर आया।",
+          "ru": "Другое судно, «Рахиль», подошло к нам с печальной вестью.",
+          "bn": "আরেকটা জাহাজ, রেচেল, দুঃখের খবর নিয়ে আমাদের কাছে এল।",
+          "ur": "ایک اور جہاز، ریچل، ہمارے پاس دکھ بھری خبر لے کر آیا۔",
+          "th": "เรืออีกลำชื่อเรเชล เข้ามาหาเราพร้อมข่าวร้าย"
+        }
+      },
+      {
+        "id": "cl-moby-059",
+        "english": "\"We saw the White Whale yesterday. One of our boats is lost, and my son is in it!\"",
+        "turkish": "\"Beyaz Balina'yı dün gördük. Sandallarımızdan biri kayıp ve oğlum içinde!\"",
+        "translations": {
+          "es-419": "—Ayer vimos a la Ballena Blanca. ¡Uno de nuestros botes se perdió, y mi hijo va en él!",
+          "pt-BR": "— Vimos a Baleia Branca ontem. Um dos nossos botes sumiu, e meu filho está nele!",
+          "id": "\"Kami melihat Paus Putih kemarin. Salah satu perahu kami hilang, dan anakku ada di dalamnya!\"",
+          "ar": "«رأينا الحوت الأبيض أمس. ضاع أحد قواربنا، وابني فيه!»",
+          "vi": "\"Hôm qua chúng tôi thấy Cá Voi Trắng. Một chiếc thuyền của chúng tôi bị mất, và con trai tôi ở trên đó!\"",
+          "hi": "\"हमने कल सफ़ेद व्हेल देखी। हमारी एक नाव खो गई है, और मेरा बेटा उसमें है!\"",
+          "ru": "«Вчера мы видели Белого Кита. Одна наша лодка пропала, а в ней мой сын!»",
+          "bn": "\"কাল আমরা সাদা তিমিটাকে দেখেছি। আমাদের একটা নৌকা হারিয়ে গেছে, আর তাতে আমার ছেলে আছে!\"",
+          "ur": "\"ہم نے کل سفید وہیل دیکھی۔ ہماری ایک کشتی کھو گئی ہے، اور میرا بیٹا اس میں ہے!\"",
+          "th": "\"เมื่อวานเราเห็นวาฬขาว เรือเล็กของเราหายไปลำหนึ่ง และลูกชายผมอยู่ในนั้น!\""
+        }
+      },
+      {
+        "id": "cl-moby-060",
+        "english": "\"Please help us look for him,\" the captain begged.",
+        "turkish": "\"Lütfen onu aramamıza yardım edin,\" diye yalvardı kaptan.",
+        "translations": {
+          "es-419": "—Por favor, ayúdennos a buscarlo —suplicó el capitán.",
+          "pt-BR": "— Por favor, ajudem-nos a procurá-lo — implorou o capitão.",
+          "id": "\"Tolong bantu kami mencarinya,\" pinta sang kapten.",
+          "ar": "توسّل القبطان: «أرجوكم، ساعدونا في البحث عنه».",
+          "vi": "\"Làm ơn giúp chúng tôi tìm nó,\" người thuyền trưởng van nài.",
+          "hi": "कप्तान ने गिड़गिड़ाकर कहा, \"कृपया उसे ढूँढ़ने में हमारी मदद कीजिए।\"",
+          "ru": "«Прошу вас, помогите нам его найти», — умолял капитан.",
+          "bn": "ক্যাপ্টেন মিনতি করলেন, \"দয়া করে ওকে খুঁজতে আমাদের সাহায্য করুন।\"",
+          "ur": "کپتان نے منت کی، \"مہربانی کر کے اسے ڈھونڈنے میں ہماری مدد کیجیے۔\"",
+          "th": "\"ได้โปรดช่วยเราตามหาเขาด้วย\" กัปตันอ้อนวอน"
+        }
+      },
+      {
+        "id": "cl-moby-061",
+        "english": "But Ahab said no. He did not want to lose a single hour.",
+        "turkish": "Ama Ahab hayır dedi. Tek bir saat bile kaybetmek istemiyordu.",
+        "translations": {
+          "es-419": "Pero Ahab dijo que no. No quería perder ni una sola hora.",
+          "pt-BR": "Mas Ahab disse que não. Não queria perder uma única hora.",
+          "id": "Tetapi Ahab menolak. Ia tak mau kehilangan satu jam pun.",
+          "ar": "لكنّ أهاب رفض، فلم يكن يريد أن يضيّع ساعة واحدة.",
+          "vi": "Nhưng Ahab từ chối. Ông không muốn mất dù chỉ một giờ.",
+          "hi": "पर एहैब ने मना कर दिया। वे एक घंटा भी गँवाना नहीं चाहते थे।",
+          "ru": "Но Ахав отказал. Он не хотел терять ни одного часа.",
+          "bn": "কিন্তু আহাব না বলে দিলেন। তিনি একটা ঘণ্টাও নষ্ট করতে চাইলেন না।",
+          "ur": "مگر اہاب نے انکار کر دیا۔ وہ ایک گھنٹہ بھی گنوانا نہیں چاہتے تھے۔",
+          "th": "แต่เอแฮบปฏิเสธ เขาไม่อยากเสียเวลาแม้แต่ชั่วโมงเดียว"
+        }
+      },
+      {
+        "id": "cl-moby-062",
+        "english": "Starbuck looked at him with fear. \"The old man has a heart of iron,\" he whispered.",
+        "turkish": "Starbuck ona korkuyla baktı. \"İhtiyarın yüreği demirden,\" diye fısıldadı.",
+        "translations": {
+          "es-419": "Starbuck lo miró con miedo. —El viejo tiene un corazón de hierro —susurró.",
+          "pt-BR": "Starbuck olhou para ele com medo. — O velho tem um coração de ferro — sussurrou.",
+          "id": "Starbuck menatapnya dengan takut. \"Orang tua itu berhati besi,\" bisiknya.",
+          "ar": "نظر إليه ستاربك بخوف وهمس: «للعجوز قلب من حديد».",
+          "vi": "Starbuck nhìn ông với vẻ sợ hãi. \"Ông già có trái tim bằng sắt,\" anh thì thầm.",
+          "hi": "स्टारबक ने डर से उनकी ओर देखा। उन्होंने फुसफुसाकर कहा, \"बूढ़े का दिल लोहे का है।\"",
+          "ru": "Старбек со страхом посмотрел на него. «У старика железное сердце», — прошептал он.",
+          "bn": "স্টারবাক ভয়ে তাঁর দিকে তাকালেন। ফিসফিস করে বললেন, \"বুড়োর বুকটা লোহার তৈরি।\"",
+          "ur": "اسٹاربک نے ڈر سے ان کی طرف دیکھا۔ انہوں نے سرگوشی کی، \"بوڑھے کا دل لوہے کا ہے۔\"",
+          "th": "สตาร์บัคมองเขาอย่างหวาดหวั่น แล้วกระซิบว่า \"ตาแก่นั่นใจเป็นเหล็ก\""
+        }
+      },
+      {
+        "id": "cl-moby-063",
+        "english": "One morning, Ahab himself smelled the whale in the wind.",
+        "turkish": "Bir sabah Ahab balinanın kokusunu rüzgârda bizzat kendisi aldı.",
+        "translations": {
+          "es-419": "Una mañana, el propio Ahab olió la ballena en el viento.",
+          "pt-BR": "Certa manhã, o próprio Ahab sentiu o cheiro da baleia no vento.",
+          "id": "Suatu pagi, Ahab sendiri mencium bau paus itu di angin.",
+          "ar": "وذات صباح، شمّ أهاب نفسه رائحة الحوت في الريح.",
+          "vi": "Một buổi sáng, chính Ahab đã ngửi thấy mùi cá voi trong gió.",
+          "hi": "एक सुबह ख़ुद एहैब ने हवा में व्हेल की गंध पहचानी।",
+          "ru": "Однажды утром сам Ахав учуял кита по ветру.",
+          "bn": "এক সকালে আহাব নিজেই বাতাসে তিমির গন্ধ পেলেন।",
+          "ur": "ایک صبح خود اہاب نے ہوا میں وہیل کی بُو پہچانی۔",
+          "th": "เช้าวันหนึ่ง เอแฮบเองที่ได้กลิ่นวาฬลอยมากับลม"
+        }
+      },
+      {
+        "id": "cl-moby-064",
+        "english": "He climbed high up the mast, and he was the first to see him.",
+        "turkish": "Direğin tepesine tırmandı ve onu ilk gören de kendisi oldu.",
+        "translations": {
+          "es-419": "Subió a lo alto del mástil, y fue el primero en verla.",
+          "pt-BR": "Subiu bem alto no mastro, e foi o primeiro a vê-la.",
+          "id": "Ia memanjat tinggi ke atas tiang, dan dialah yang pertama melihatnya.",
+          "ar": "تسلّق إلى أعلى الصاري، فكان أوّل من رآه.",
+          "vi": "Ông leo lên tận đỉnh cột buồm, và là người đầu tiên nhìn thấy nó.",
+          "hi": "वे मस्तूल पर ऊँचे चढ़ गए, और उसे सबसे पहले उन्होंने ही देखा।",
+          "ru": "Он забрался высоко на мачту и первым увидел его.",
+          "bn": "তিনি মাস্তুলের অনেক উঁচুতে উঠলেন, আর তিনিই প্রথম তাকে দেখলেন।",
+          "ur": "وہ مستول پر اونچے چڑھ گئے، اور اسے سب سے پہلے انہوں نے ہی دیکھا۔",
+          "th": "เขาปีนขึ้นไปสูงบนเสากระโดง และเป็นคนแรกที่เห็นมัน"
+        }
+      },
+      {
+        "id": "cl-moby-065",
+        "english": "\"There she blows! It is Moby Dick!\" he cried. The gold coin was his own.",
+        "turkish": "\"İşte orada fışkırıyor! Moby Dick bu!\" diye bağırdı. Altın para kendisinin olmuştu.",
+        "translations": {
+          "es-419": "—¡Allí sopla! ¡Es Moby Dick! —gritó. La moneda de oro era suya.",
+          "pt-BR": "— Lá ela sopra! É Moby Dick! — gritou. A moeda de ouro era dele.",
+          "id": "\"Itu dia menyembur! Itu Moby Dick!\" teriaknya. Koin emas itu menjadi miliknya sendiri.",
+          "ar": "صاح: «هناك تنفث! إنّه موبي ديك!» وصارت القطعة الذهبيّة من نصيبه هو.",
+          "vi": "\"Nó phun nước kìa! Moby Dick đấy!\" ông hét lên. Đồng tiền vàng đã thuộc về chính ông.",
+          "hi": "वे चिल्लाए, \"वह रही! मोबी डिक है!\" सोने का सिक्का उन्हीं का हो गया।",
+          "ru": "«Фонтан! Это Моби Дик!» — закричал он. Золотая монета досталась ему самому.",
+          "bn": "তিনি চেঁচিয়ে উঠলেন, \"ওই যে! মোবি ডিক!\" সোনার মোহরটা তাঁর নিজেরই হল।",
+          "ur": "وہ چلّائے، \"وہ رہی! موبی ڈک ہے!\" سونے کا سکہ انہی کا ہو گیا۔",
+          "th": "\"มันพ่นน้ำอยู่ตรงนั้น! โมบี้ดิก!\" เขาร้อง เหรียญทองตกเป็นของเขาเอง"
+        }
+      },
+      {
+        "id": "cl-moby-066",
+        "english": "The great white back rose from the sea like a hill of snow.",
+        "turkish": "Kocaman beyaz sırt, karla kaplı bir tepe gibi denizden yükseldi.",
+        "translations": {
+          "es-419": "El enorme lomo blanco salió del mar como una colina de nieve.",
+          "pt-BR": "O enorme dorso branco surgiu do mar como uma colina de neve.",
+          "id": "Punggung putih yang besar itu muncul dari laut seperti bukit salju.",
+          "ar": "ارتفع الظهر الأبيض العظيم من البحر كتلّ من الثلج.",
+          "vi": "Tấm lưng trắng khổng lồ nhô lên khỏi mặt biển như một ngọn đồi tuyết.",
+          "hi": "विशाल सफ़ेद पीठ समुद्र से बर्फ़ की पहाड़ी की तरह ऊपर उठी।",
+          "ru": "Огромная белая спина поднялась из моря, как снежный холм.",
+          "bn": "বিশাল সাদা পিঠটা সমুদ্র থেকে বরফের টিলার মতো ভেসে উঠল।",
+          "ur": "بڑی سی سفید پیٹھ سمندر سے برف کی پہاڑی کی طرح ابھری۔",
+          "th": "หลังสีขาวมหึมาโผล่ขึ้นจากทะเลราวกับเนินหิมะ"
+        }
+      },
+      {
+        "id": "cl-moby-067",
+        "english": "For three days we chased him.",
+        "turkish": "Üç gün boyunca onu kovaladık.",
+        "translations": {
+          "es-419": "Durante tres días la perseguimos.",
+          "pt-BR": "Durante três dias nós a perseguimos.",
+          "id": "Selama tiga hari kami mengejarnya.",
+          "ar": "طاردناه ثلاثة أيّام.",
+          "vi": "Suốt ba ngày, chúng tôi đuổi theo nó.",
+          "hi": "तीन दिन तक हमने उसका पीछा किया।",
+          "ru": "Три дня мы гнались за ним.",
+          "bn": "তিন দিন ধরে আমরা তার পিছু নিলাম।",
+          "ur": "تین دن تک ہم نے اس کا پیچھا کیا۔",
+          "th": "เราไล่ตามมันอยู่สามวัน"
+        }
+      },
+      {
+        "id": "cl-moby-068",
+        "english": "On the first day, he bit Ahab's boat in two.",
+        "turkish": "İlk gün Ahab'ın sandalını ısırıp ikiye böldü.",
+        "translations": {
+          "es-419": "El primer día, partió de un mordisco el bote de Ahab en dos.",
+          "pt-BR": "No primeiro dia, ela partiu o bote de Ahab em dois com uma mordida.",
+          "id": "Pada hari pertama, ia menggigit perahu Ahab hingga terbelah dua.",
+          "ar": "في اليوم الأوّل، قضم قارب أهاب فشطره نصفين.",
+          "vi": "Ngày đầu tiên, nó cắn chiếc thuyền của Ahab gãy làm đôi.",
+          "hi": "पहले दिन उसने एहैब की नाव को काटकर दो टुकड़े कर दिए।",
+          "ru": "В первый день он перекусил лодку Ахава пополам.",
+          "bn": "প্রথম দিন সে কামড়ে আহাবের নৌকাটা দু-টুকরো করে দিল।",
+          "ur": "پہلے دن اس نے اہاب کی کشتی کو کاٹ کر دو ٹکڑے کر دیا۔",
+          "th": "วันแรก มันงับเรือเล็กของเอแฮบขาดเป็นสองท่อน"
+        }
+      },
+      {
+        "id": "cl-moby-069",
+        "english": "On the second day, he broke Ahab's bone leg and pulled a man under the water.",
+        "turkish": "İkinci gün Ahab'ın kemik bacağını kırdı ve bir adamı suyun altına çekti.",
+        "translations": {
+          "es-419": "El segundo día, rompió la pierna de hueso de Ahab y arrastró a un hombre bajo el agua.",
+          "pt-BR": "No segundo dia, quebrou a perna de osso de Ahab e puxou um homem para debaixo da água.",
+          "id": "Pada hari kedua, ia mematahkan kaki tulang Ahab dan menarik seorang pria ke dalam air.",
+          "ar": "وفي اليوم الثاني، كسر ساق أهاب العظميّة وسحب رجلًا تحت الماء.",
+          "vi": "Ngày thứ hai, nó làm gãy cái chân xương của Ahab và kéo một người xuống nước.",
+          "hi": "दूसरे दिन उसने एहैब की हड्डी की टाँग तोड़ दी और एक आदमी को पानी के नीचे खींच लिया।",
+          "ru": "На второй день он сломал Ахаву костяную ногу и утащил одного человека под воду.",
+          "bn": "দ্বিতীয় দিন সে আহাবের হাড়ের পা ভেঙে দিল আর একজনকে জলের নিচে টেনে নিল।",
+          "ur": "دوسرے دن اس نے اہاب کی ہڈی کی ٹانگ توڑ دی اور ایک آدمی کو پانی کے نیچے کھینچ لیا۔",
+          "th": "วันที่สอง มันทำขากระดูกของเอแฮบหัก และลากชายคนหนึ่งลงไปใต้น้ำ"
+        }
+      },
+      {
+        "id": "cl-moby-070",
+        "english": "\"Stop, sir!\" Starbuck begged. \"Even God is against us. Let us go home.\"",
+        "turkish": "\"Durun, efendim!\" diye yalvardı Starbuck. \"Tanrı bile bize karşı. Eve dönelim.\"",
+        "translations": {
+          "es-419": "—¡Basta, señor! —suplicó Starbuck—. Hasta Dios está contra nosotros. Volvamos a casa.",
+          "pt-BR": "— Pare, senhor! — implorou Starbuck. — Até Deus está contra nós. Vamos para casa.",
+          "id": "\"Berhenti, Tuan!\" pinta Starbuck. \"Bahkan Tuhan pun melawan kita. Mari kita pulang.\"",
+          "ar": "توسّل ستاربك: «توقّف يا سيّدي! حتّى الله ضدّنا. فلنعُد إلى بيوتنا».",
+          "vi": "\"Dừng lại đi, thưa ông!\" Starbuck van nài. \"Ngay cả Chúa cũng chống lại chúng ta. Hãy về nhà thôi.\"",
+          "hi": "स्टारबक ने विनती की, \"रुकिए, सर! ईश्वर भी हमारे ख़िलाफ़ है। चलिए, घर लौट चलें।\"",
+          "ru": "«Остановитесь, сэр! — умолял Старбек. — Даже Бог против нас. Вернёмся домой».",
+          "bn": "স্টারবাক মিনতি করলেন, \"থামুন, স্যার! ঈশ্বরও আমাদের বিরুদ্ধে। চলুন, বাড়ি ফিরি।\"",
+          "ur": "اسٹاربک نے منت کی، \"رک جائیے، جناب! خدا بھی ہمارے خلاف ہے۔ چلیے، گھر لوٹ چلیں۔\"",
+          "th": "\"พอเถิด ท่าน!\" สตาร์บัคอ้อนวอน \"แม้แต่พระเจ้ายังต่อต้านเรา กลับบ้านกันเถิด\""
+        }
+      },
+      {
+        "id": "cl-moby-071",
+        "english": "But Ahab would not stop.",
+        "turkish": "Ama Ahab durmaya yanaşmadı.",
+        "translations": {
+          "es-419": "Pero Ahab no quiso detenerse.",
+          "pt-BR": "Mas Ahab não quis parar.",
+          "id": "Tetapi Ahab tidak mau berhenti.",
+          "ar": "لكنّ أهاب أبى أن يتوقّف.",
+          "vi": "Nhưng Ahab nhất định không dừng.",
+          "hi": "पर एहैब रुकने को तैयार नहीं थे।",
+          "ru": "Но Ахав не желал останавливаться.",
+          "bn": "কিন্তু আহাব থামতে রাজি হলেন না।",
+          "ur": "مگر اہاب رکنے کو تیار نہیں تھے۔",
+          "th": "แต่เอแฮบไม่ยอมหยุด"
+        }
+      },
+      {
+        "id": "cl-moby-072",
+        "english": "On the third day, the boats went out again, and I was in Ahab's boat.",
+        "turkish": "Üçüncü gün sandallar yeniden açıldı ve ben Ahab'ın sandalındaydım.",
+        "translations": {
+          "es-419": "El tercer día, los botes salieron otra vez, y yo iba en el bote de Ahab.",
+          "pt-BR": "No terceiro dia, os botes saíram de novo, e eu estava no bote de Ahab.",
+          "id": "Pada hari ketiga, perahu-perahu turun lagi, dan aku berada di perahu Ahab.",
+          "ar": "وفي اليوم الثالث، خرجت القوارب من جديد، وكنتُ في قارب أهاب.",
+          "vi": "Ngày thứ ba, các thuyền lại ra khơi, và tôi ở trên thuyền của Ahab.",
+          "hi": "तीसरे दिन नावें फिर निकलीं, और मैं एहैब की नाव में था।",
+          "ru": "На третий день лодки снова вышли, и я был в лодке Ахава.",
+          "bn": "তৃতীয় দিন নৌকাগুলো আবার নামল, আর আমি ছিলাম আহাবের নৌকায়।",
+          "ur": "تیسرے دن کشتیاں پھر نکلیں، اور میں اہاب کی کشتی میں تھا۔",
+          "th": "วันที่สาม เรือเล็กออกไปอีกครั้ง และผมอยู่ในเรือของเอแฮบ"
+        }
+      },
+      {
+        "id": "cl-moby-073",
+        "english": "Ahab threw his harpoon and cried, \"From the heart of hell, I strike at you!\"",
+        "turkish": "Ahab zıpkınını fırlattı ve haykırdı: \"Cehennemin yüreğinden sana vuruyorum!\"",
+        "translations": {
+          "es-419": "Ahab lanzó su arpón y gritó: —¡Desde el corazón del infierno, te golpeo!",
+          "pt-BR": "Ahab lançou o arpão e gritou: — Do coração do inferno, eu te golpeio!",
+          "id": "Ahab melemparkan harpunnya dan berteriak, \"Dari jantung neraka, aku menyerangmu!\"",
+          "ar": "رمى أهاب حربته وصاح: «من قلب الجحيم أضربك!»",
+          "vi": "Ahab phóng cây lao móc và gào lên: \"Từ trái tim địa ngục, ta đâm ngươi!\"",
+          "hi": "एहैब ने अपना भाला फेंका और चीख़े, \"नरक के दिल से मैं तुझ पर वार करता हूँ!\"",
+          "ru": "Ахав метнул гарпун и крикнул: «Из самого сердца ада я бью тебя!»",
+          "bn": "আহাব হারপুন ছুড়ে চিৎকার করলেন, \"নরকের বুক থেকে তোকে আঘাত করছি!\"",
+          "ur": "اہاب نے اپنا ہارپون پھینکا اور چیخے، \"دوزخ کے دل سے میں تجھ پر وار کرتا ہوں!\"",
+          "th": "เอแฮบพุ่งฉมวกออกไปพลางร้องว่า \"จากใจกลางนรก ข้าขอแทงเจ้า!\""
+        }
+      },
+      {
+        "id": "cl-moby-074",
+        "english": "Then Moby Dick turned and swam straight at the Pequod.",
+        "turkish": "O zaman Moby Dick döndü ve dosdoğru Pequod'a doğru yüzdü.",
+        "translations": {
+          "es-419": "Entonces Moby Dick se dio la vuelta y nadó directo hacia el Pequod.",
+          "pt-BR": "Então Moby Dick se virou e nadou direto para o Pequod.",
+          "id": "Lalu Moby Dick berbalik dan berenang lurus ke arah Pequod.",
+          "ar": "عندئذٍ استدار موبي ديك وسبح مباشرة نحو بيكود.",
+          "vi": "Thế rồi Moby Dick quay lại và lao thẳng về phía tàu Pequod.",
+          "hi": "तब मोबी डिक मुड़ी और सीधे पीक्वॉड की ओर तैरी।",
+          "ru": "Тогда Моби Дик развернулся и поплыл прямо на «Пекод».",
+          "bn": "তখন মোবি ডিক ঘুরে সোজা পিকোয়াডের দিকে সাঁতরে গেল।",
+          "ur": "تب موبی ڈک مڑی اور سیدھی پیکوڈ کی طرف تیری۔",
+          "th": "แล้วโมบี้ดิกก็หันกลับ ว่ายตรงเข้าหาเรือพีควอด"
+        }
+      },
+      {
+        "id": "cl-moby-075",
+        "english": "He hit the ship with his huge head, and the wood broke like paper.",
+        "turkish": "Kocaman kafasıyla gemiye vurdu ve tahta kâğıt gibi kırıldı.",
+        "translations": {
+          "es-419": "Golpeó el barco con su enorme cabeza, y la madera se rompió como papel.",
+          "pt-BR": "Bateu no navio com a enorme cabeça, e a madeira se partiu como papel.",
+          "id": "Ia menghantam kapal dengan kepalanya yang besar, dan kayunya patah seperti kertas.",
+          "ar": "ضرب السفينة برأسه الضخم، فتكسّر الخشب كالورق.",
+          "vi": "Nó húc vào con tàu bằng cái đầu khổng lồ, và gỗ vỡ vụn như giấy.",
+          "hi": "उसने अपने विशाल सिर से जहाज़ पर टक्कर मारी, और लकड़ी काग़ज़ की तरह टूट गई।",
+          "ru": "Он ударил корабль огромной головой, и дерево сломалось, как бумага.",
+          "bn": "সে বিশাল মাথা দিয়ে জাহাজে ধাক্কা মারল, আর কাঠ কাগজের মতো ভেঙে গেল।",
+          "ur": "اس نے اپنے بڑے سر سے جہاز کو ٹکر ماری، اور لکڑی کاغذ کی طرح ٹوٹ گئی۔",
+          "th": "มันใช้หัวมหึมากระแทกเรือ และไม้ก็แตกหักเหมือนกระดาษ"
+        }
+      },
+      {
+        "id": "cl-moby-076",
+        "english": "The ship began to sink.",
+        "turkish": "Gemi batmaya başladı.",
+        "translations": {
+          "es-419": "El barco empezó a hundirse.",
+          "pt-BR": "O navio começou a afundar.",
+          "id": "Kapal itu mulai tenggelam.",
+          "ar": "بدأت السفينة تغرق.",
+          "vi": "Con tàu bắt đầu chìm.",
+          "hi": "जहाज़ डूबने लगा।",
+          "ru": "Корабль начал тонуть.",
+          "bn": "জাহাজটা ডুবতে শুরু করল।",
+          "ur": "جہاز ڈوبنے لگا۔",
+          "th": "เรือเริ่มจม"
+        }
+      },
+      {
+        "id": "cl-moby-077",
+        "english": "Ahab threw one more harpoon, but the rope caught around his neck.",
+        "turkish": "Ahab bir zıpkın daha fırlattı, ama halat boynuna dolandı.",
+        "translations": {
+          "es-419": "Ahab lanzó un arpón más, pero la cuerda se le enredó en el cuello.",
+          "pt-BR": "Ahab lançou mais um arpão, mas a corda se enrolou no pescoço dele.",
+          "id": "Ahab melemparkan satu harpun lagi, tetapi talinya membelit lehernya.",
+          "ar": "رمى أهاب حربة أخرى، لكنّ الحبل التفّ حول عنقه.",
+          "vi": "Ahab phóng thêm một cây lao nữa, nhưng sợi dây quấn quanh cổ ông.",
+          "hi": "एहैब ने एक और भाला फेंका, पर रस्सी उनकी गर्दन में फँस गई।",
+          "ru": "Ахав метнул ещё один гарпун, но верёвка захлестнула ему шею.",
+          "bn": "আহাব আরেকটা হারপুন ছুড়লেন, কিন্তু দড়িটা তাঁর গলায় পেঁচিয়ে গেল।",
+          "ur": "اہاب نے ایک اور ہارپون پھینکا، مگر رسی ان کی گردن میں پھنس گئی۔",
+          "th": "เอแฮบพุ่งฉมวกอีกเล่ม แต่เชือกกลับรัดรอบคอของเขา"
+        }
+      },
+      {
+        "id": "cl-moby-078",
+        "english": "In a second, the whale pulled him out of the boat and down into the sea.",
+        "turkish": "Bir anda balina onu sandaldan çekip denizin dibine götürdü.",
+        "translations": {
+          "es-419": "En un segundo, la ballena lo sacó del bote y lo arrastró al fondo del mar.",
+          "pt-BR": "Num segundo, a baleia o arrancou do bote e o levou para o fundo do mar.",
+          "id": "Dalam sekejap, paus itu menariknya keluar dari perahu dan ke dalam laut.",
+          "ar": "وفي لحظة، سحبه الحوت من القارب إلى أعماق البحر.",
+          "vi": "Chỉ trong một giây, con cá voi kéo ông ra khỏi thuyền và xuống lòng biển.",
+          "hi": "एक पल में व्हेल उन्हें नाव से खींचकर समुद्र में नीचे ले गई।",
+          "ru": "В одно мгновение кит выдернул его из лодки и утащил в море.",
+          "bn": "এক নিমেষে তিমিটা তাঁকে নৌকা থেকে টেনে সমুদ্রের তলায় নিয়ে গেল।",
+          "ur": "ایک لمحے میں وہیل انہیں کشتی سے کھینچ کر سمندر میں نیچے لے گئی۔",
+          "th": "ในพริบตาเดียว วาฬก็ลากเขาออกจากเรือและลงไปใต้ทะเล"
+        }
+      },
+      {
+        "id": "cl-moby-079",
+        "english": "I had fallen out of the boat, and I watched everything from the water.",
+        "turkish": "Ben sandaldan düşmüştüm ve her şeyi suyun içinden izledim.",
+        "translations": {
+          "es-419": "Yo me había caído del bote, y lo vi todo desde el agua.",
+          "pt-BR": "Eu tinha caído do bote, e vi tudo de dentro da água.",
+          "id": "Aku sudah terjatuh dari perahu, dan aku menyaksikan semuanya dari dalam air.",
+          "ar": "كنتُ قد سقطتُ من القارب، فشاهدتُ كلّ شيء من الماء.",
+          "vi": "Tôi đã rơi khỏi thuyền, và chứng kiến mọi chuyện từ dưới nước.",
+          "hi": "मैं नाव से गिर चुका था, और मैंने पानी में से सब कुछ देखा।",
+          "ru": "Я выпал из лодки и видел всё из воды.",
+          "bn": "আমি নৌকা থেকে পড়ে গিয়েছিলাম, আর জলের ভেতর থেকে সব দেখলাম।",
+          "ur": "میں کشتی سے گر چکا تھا، اور میں نے پانی میں سے سب کچھ دیکھا۔",
+          "th": "ผมตกจากเรือไปแล้ว และมองเห็นทุกอย่างจากในน้ำ"
+        }
+      },
+      {
+        "id": "cl-moby-080",
+        "english": "The sinking ship made a great circle of water that pulled everything down.",
+        "turkish": "Batan gemi, her şeyi dibe çeken büyük bir girdap oluşturdu.",
+        "translations": {
+          "es-419": "El barco que se hundía formó un gran remolino que lo arrastraba todo al fondo.",
+          "pt-BR": "O navio afundando formou um grande redemoinho que puxava tudo para baixo.",
+          "id": "Kapal yang tenggelam itu membuat pusaran air besar yang menarik segalanya ke bawah.",
+          "ar": "صنعت السفينة الغارقة دوّامة ماء عظيمة تسحب كلّ شيء إلى الأسفل.",
+          "vi": "Con tàu đang chìm tạo ra một xoáy nước lớn hút mọi thứ xuống đáy.",
+          "hi": "डूबते जहाज़ ने पानी का एक बड़ा भँवर बनाया, जो सब कुछ नीचे खींच रहा था।",
+          "ru": "Тонущий корабль образовал огромный водоворот, который тянул всё вниз.",
+          "bn": "ডুবন্ত জাহাজটা জলে একটা বিরাট ঘূর্ণি তৈরি করল, যা সবকিছু নিচে টেনে নিচ্ছিল।",
+          "ur": "ڈوبتے جہاز نے پانی کا ایک بڑا بھنور بنایا، جو سب کچھ نیچے کھینچ رہا تھا۔",
+          "th": "เรือที่กำลังจมทำให้เกิดวังน้ำวนใหญ่ ดูดทุกสิ่งลงไปข้างล่าง"
+        }
+      },
+      {
+        "id": "cl-moby-081",
+        "english": "Then, from the middle of it, something jumped up beside me.",
+        "turkish": "Sonra girdabın ortasından bir şey yanıma fırladı.",
+        "translations": {
+          "es-419": "Entonces, desde el centro, algo saltó a mi lado.",
+          "pt-BR": "Então, do meio dele, alguma coisa saltou ao meu lado.",
+          "id": "Lalu, dari tengah pusaran itu, sesuatu melompat ke permukaan di sampingku.",
+          "ar": "ثمّ، من وسطها، قفز شيء إلى جانبي.",
+          "vi": "Rồi từ giữa xoáy nước, có thứ gì đó bật lên ngay cạnh tôi.",
+          "hi": "फिर उसके बीच से कोई चीज़ उछलकर मेरे पास आ गई।",
+          "ru": "И тут из самой середины рядом со мной выскочило что-то.",
+          "bn": "তারপর তার মাঝখান থেকে কী একটা লাফিয়ে আমার পাশে উঠে এল।",
+          "ur": "پھر اس کے بیچ سے کوئی چیز اچھل کر میرے پاس آ گئی۔",
+          "th": "แล้วจากกลางวังน้ำวนนั้น มีบางอย่างเด้งขึ้นมาข้างตัวผม"
+        }
+      },
+      {
+        "id": "cl-moby-082",
+        "english": "It was Queequeg's coffin.",
+        "turkish": "Queequeg'in tabutuydu.",
+        "translations": {
+          "es-419": "Era el ataúd de Queequeg.",
+          "pt-BR": "Era o caixão de Queequeg.",
+          "id": "Itu peti mati Queequeg.",
+          "ar": "كان تابوت كويكويغ.",
+          "vi": "Đó là cỗ quan tài của Queequeg.",
+          "hi": "वह क्वीक्वेग का ताबूत था।",
+          "ru": "Это был гроб Квикега.",
+          "bn": "সেটা ছিল কুইকেগের কফিন।",
+          "ur": "وہ کوئیکویگ کا تابوت تھا۔",
+          "th": "มันคือโลงศพของควีเควก"
+        }
+      },
+      {
+        "id": "cl-moby-083",
+        "english": "I held on to it and floated for a whole day and a night.",
+        "turkish": "Ona tutundum ve bütün bir gün bir gece suyun üstünde kaldım.",
+        "translations": {
+          "es-419": "Me agarré a él y floté durante todo un día y una noche.",
+          "pt-BR": "Agarrei-me a ele e boiei um dia e uma noite inteiros.",
+          "id": "Aku berpegangan padanya dan terapung-apung sehari semalam.",
+          "ar": "تمسّكتُ به وبقيت طافيًا يومًا كاملًا وليلة.",
+          "vi": "Tôi bám vào nó và trôi nổi suốt một ngày một đêm.",
+          "hi": "मैं उसे पकड़े रहा और पूरा एक दिन और एक रात पानी पर तैरता रहा।",
+          "ru": "Я держался за него и плыл целые сутки.",
+          "bn": "আমি সেটা আঁকড়ে ধরে পুরো একদিন একরাত ভেসে রইলাম।",
+          "ur": "میں اسے پکڑے رہا اور پورا ایک دن اور ایک رات پانی پر تیرتا رہا۔",
+          "th": "ผมเกาะมันไว้ และลอยคออยู่ทั้งวันทั้งคืน"
+        }
+      },
+      {
+        "id": "cl-moby-084",
+        "english": "On the second day, a ship found me. It was the Rachel.",
+        "turkish": "İkinci gün bir gemi beni buldu. Rachel'dı bu.",
+        "translations": {
+          "es-419": "El segundo día, un barco me encontró. Era el Rachel.",
+          "pt-BR": "No segundo dia, um navio me encontrou. Era o Rachel.",
+          "id": "Pada hari kedua, sebuah kapal menemukanku. Itu kapal Rachel.",
+          "ar": "وفي اليوم الثاني، عثرت عليّ سفينة. كانت راحيل.",
+          "vi": "Sang ngày thứ hai, một con tàu tìm thấy tôi. Đó là tàu Rachel.",
+          "hi": "दूसरे दिन एक जहाज़ ने मुझे ढूँढ़ लिया। वह रेचल था।",
+          "ru": "На второй день меня подобрало судно. Это была «Рахиль».",
+          "bn": "দ্বিতীয় দিনে একটা জাহাজ আমাকে খুঁজে পেল। সেটা ছিল রেচেল।",
+          "ur": "دوسرے دن ایک جہاز نے مجھے ڈھونڈ لیا۔ وہ ریچل تھا۔",
+          "th": "วันที่สอง มีเรือลำหนึ่งมาพบผม มันคือเรือเรเชล"
+        }
+      },
+      {
+        "id": "cl-moby-085",
+        "english": "She was still looking for her lost children, but she found only me.",
+        "turkish": "Hâlâ kayıp çocuklarını arıyordu, ama yalnızca beni buldu.",
+        "translations": {
+          "es-419": "Todavía buscaba a sus hijos perdidos, pero solo me encontró a mí.",
+          "pt-BR": "Ainda procurava seus filhos perdidos, mas só encontrou a mim.",
+          "id": "Kapal itu masih mencari anak-anaknya yang hilang, tetapi hanya menemukan aku.",
+          "ar": "كانت لا تزال تبحث عن أبنائها الضائعين، لكنّها لم تجد سواي.",
+          "vi": "Nó vẫn đang tìm những đứa con thất lạc, nhưng chỉ tìm thấy tôi.",
+          "hi": "वह अब भी अपने खोए हुए बच्चों को ढूँढ़ रहा था, पर उसे सिर्फ़ मैं मिला।",
+          "ru": "Она всё ещё искала своих пропавших детей, но нашла только меня.",
+          "bn": "সে তখনো তার হারানো সন্তানদের খুঁজছিল, কিন্তু পেল শুধু আমাকে।",
+          "ur": "وہ اب بھی اپنے کھوئے ہوئے بچوں کو ڈھونڈ رہا تھا، مگر اسے صرف میں ملا۔",
+          "th": "เรือยังคงตามหาลูก ๆ ที่หายไป แต่กลับพบเพียงผม"
+        }
+      },
+      {
+        "id": "cl-moby-086",
+        "english": "I am the only man from the Pequod who lived to tell this story.",
+        "turkish": "Pequod'dan bu hikâyeyi anlatmak için sağ kalan tek adam benim.",
+        "translations": {
+          "es-419": "Soy el único hombre del Pequod que sobrevivió para contar esta historia.",
+          "pt-BR": "Sou o único homem do Pequod que sobreviveu para contar esta história.",
+          "id": "Akulah satu-satunya orang dari Pequod yang selamat untuk menceritakan kisah ini.",
+          "ar": "أنا الرجل الوحيد من بيكود الذي نجا ليروي هذه الحكاية.",
+          "vi": "Tôi là người duy nhất trên tàu Pequod còn sống để kể lại câu chuyện này.",
+          "hi": "पीक्वॉड का मैं अकेला आदमी हूँ जो यह कहानी सुनाने के लिए ज़िंदा बचा।",
+          "ru": "Я единственный человек с «Пекода», который выжил, чтобы рассказать эту историю.",
+          "bn": "পিকোয়াডের আমিই একমাত্র মানুষ, যে এই গল্প বলার জন্য বেঁচে আছে।",
+          "ur": "پیکوڈ کا میں اکیلا آدمی ہوں جو یہ کہانی سنانے کے لیے زندہ بچا۔",
+          "th": "ผมเป็นชายคนเดียวจากเรือพีควอดที่รอดชีวิตมาเล่าเรื่องนี้"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-moby-dick-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "A sailor who becomes a rich captain",
+          "A captain whose hunt for revenge on a white whale destroys his ship",
+          "Two friends who open an inn by the sea",
+          "A whale that saves a lost boy"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-moby-dick-q2",
+        "kind": "detail",
+        "prompt": "What did Ahab nail to the mast?",
+        "options": [
+          "A map of the ocean",
+          "A gold coin",
+          "His old harpoon",
+          "A letter from home"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-moby-dick-q3",
+        "kind": "detail",
+        "prompt": "Why did Queequeg ask for a coffin?",
+        "options": [
+          "He was very sick and thought he would die",
+          "He wanted to sell it in port",
+          "Ahab ordered him to make one",
+          "It was a present for Ishmael"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "classic-moby-dick-q4",
+        "kind": "inference",
+        "prompt": "Why did Starbuck not agree with Ahab?",
+        "options": [
+          "He wanted more money for himself",
+          "He thought hunting one whale for revenge was madness",
+          "He was afraid of Queequeg",
+          "He wanted to be the captain"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-moby-dick-q5",
+        "kind": "inference",
+        "prompt": "How did Ishmael stay alive?",
+        "options": [
+          "He swam to a small island",
+          "Moby Dick carried him to land",
+          "He floated on Queequeg's coffin until a ship found him",
+          "He hid inside the sinking ship"
+        ],
+        "answer": 2
+      }
+    ]
+  },
+  "words": [
+    {
+      "id": "whale",
+      "word": "whale",
+      "translation": "balina",
+      "pronunciation": "/weɪl/",
+      "example": "A whale is the biggest animal in the sea.",
+      "translations": {
+        "es-419": "ballena",
+        "pt-BR": "baleia",
+        "id": "ikan paus",
+        "ar": "حوت",
+        "vi": "cá voi",
+        "hi": "व्हेल",
+        "ru": "кит",
+        "bn": "তিমি",
+        "ur": "وہیل",
+        "th": "วาฬ"
+      }
+    },
+    {
+      "id": "captain",
+      "word": "captain",
+      "translation": "kaptan",
+      "pronunciation": "/ˈkæptɪn/",
+      "example": "The captain told the sailors to get ready.",
+      "translations": {
+        "es-419": "capitán",
+        "pt-BR": "capitão",
+        "id": "kapten",
+        "ar": "قبطان",
+        "vi": "thuyền trưởng",
+        "hi": "कप्तान",
+        "ru": "капитан",
+        "bn": "ক্যাপ্টেন",
+        "ur": "کپتان",
+        "th": "กัปตัน"
+      }
+    },
+    {
+      "id": "sailor",
+      "word": "sailor",
+      "translation": "denizci, tayfa",
+      "pronunciation": "/ˈseɪlə(r)/",
+      "example": "My grandfather was a sailor for twenty years.",
+      "translations": {
+        "es-419": "marinero",
+        "pt-BR": "marinheiro",
+        "id": "pelaut",
+        "ar": "بحّار",
+        "vi": "thủy thủ",
+        "hi": "नाविक",
+        "ru": "моряк, матрос",
+        "bn": "নাবিক",
+        "ur": "ملاح",
+        "th": "กะลาสี"
+      }
+    },
+    {
+      "id": "harpoon",
+      "word": "harpoon",
+      "translation": "zıpkın",
+      "pronunciation": "/hɑːˈpuːn/",
+      "example": "The fisherman threw a harpoon into the water.",
+      "translations": {
+        "es-419": "arpón",
+        "pt-BR": "arpão",
+        "id": "harpun, tombak",
+        "ar": "حَربة",
+        "vi": "cây lao móc",
+        "hi": "भाला (हारपून)",
+        "ru": "гарпун",
+        "bn": "হারপুন",
+        "ur": "ہارپون",
+        "th": "ฉมวก"
+      }
+    },
+    {
+      "id": "revenge",
+      "word": "revenge",
+      "translation": "intikam",
+      "pronunciation": "/rɪˈvendʒ/",
+      "example": "He wanted revenge on the man who hurt his family.",
+      "translations": {
+        "es-419": "venganza",
+        "pt-BR": "vingança",
+        "id": "balas dendam",
+        "ar": "انتقام",
+        "vi": "sự báo thù",
+        "hi": "बदला",
+        "ru": "месть",
+        "bn": "প্রতিশোধ",
+        "ur": "بدلہ، انتقام",
+        "th": "การแก้แค้น"
+      }
+    },
+    {
+      "id": "leg",
+      "word": "leg",
+      "translation": "bacak",
+      "pronunciation": "/leɡ/",
+      "example": "She hurt her leg when she fell off her bike.",
+      "translations": {
+        "es-419": "pierna",
+        "pt-BR": "perna",
+        "id": "kaki",
+        "ar": "ساق",
+        "vi": "chân",
+        "hi": "टाँग, पैर",
+        "ru": "нога",
+        "bn": "পা",
+        "ur": "ٹانگ",
+        "th": "ขา"
+      }
+    },
+    {
+      "id": "ship",
+      "word": "ship",
+      "translation": "gemi",
+      "pronunciation": "/ʃɪp/",
+      "example": "The big ship carried people across the ocean.",
+      "translations": {
+        "es-419": "barco",
+        "pt-BR": "navio",
+        "id": "kapal",
+        "ar": "سفينة",
+        "vi": "con tàu",
+        "hi": "जहाज़",
+        "ru": "корабль, судно",
+        "bn": "জাহাজ",
+        "ur": "جہاز",
+        "th": "เรือ"
+      }
+    },
+    {
+      "id": "sea",
+      "word": "sea",
+      "translation": "deniz",
+      "pronunciation": "/siː/",
+      "example": "We swam in the sea every morning on holiday.",
+      "translations": {
+        "es-419": "mar",
+        "pt-BR": "mar",
+        "id": "laut",
+        "ar": "بحر",
+        "vi": "biển",
+        "hi": "समुद्र",
+        "ru": "море",
+        "bn": "সমুদ্র",
+        "ur": "سمندر",
+        "th": "ทะเล"
+      }
+    },
+    {
+      "id": "inn",
+      "word": "inn",
+      "translation": "han",
+      "pronunciation": "/ɪn/",
+      "example": "He took the goose to an inn, where three sisters wanted to steal its feathers.",
+      "translations": {
+        "es-419": "posada",
+        "pt-BR": "estalagem",
+        "id": "penginapan",
+        "ar": "نُزُل",
+        "vi": "quán trọ",
+        "hi": "सराय",
+        "ru": "постоялый двор",
+        "bn": "সরাইখানা",
+        "ur": "سرائے",
+        "th": "โรงเตี๊ยม"
+      }
+    },
+    {
+      "id": "coffin",
+      "word": "coffin",
+      "translation": "tabut",
+      "pronunciation": "/ˈkɒfɪn/",
+      "example": "This time, the dwarfs could not wake the girl and placed her in a glass coffin.",
+      "translations": {
+        "es-419": "ataúd",
+        "pt-BR": "caixão",
+        "id": "peti mati",
+        "ar": "تابوت",
+        "vi": "quan tài",
+        "hi": "ताबूत",
+        "ru": "гроб",
+        "bn": "কফিন",
+        "ur": "تابوت",
+        "th": "โลงศพ"
+      }
+    },
+    {
+      "id": "gold",
+      "word": "gold",
+      "translation": "altın",
+      "pronunciation": "/ɡəʊld/",
+      "example": "He wants all the gold at once.",
+      "translations": {
+        "es-419": "oro",
+        "pt-BR": "ouro",
+        "id": "emas",
+        "ar": "ذهب",
+        "vi": "vàng",
+        "hi": "सोना",
+        "ru": "золото",
+        "bn": "সোনা",
+        "ur": "سونا",
+        "th": "ทองคำ"
+      }
+    },
+    {
+      "id": "boat",
+      "word": "boat",
+      "translation": "tekne",
+      "pronunciation": "/boʊt/",
+      "example": "A little boat floated away.",
+      "translations": {
+        "es-419": "barco, bote",
+        "pt-BR": "barco",
+        "id": "perahu",
+        "ar": "قارب",
+        "vi": "con thuyền",
+        "hi": "नाव",
+        "ru": "лодка, кораблик",
+        "bn": "নৌকা",
+        "ur": "کشتی",
+        "th": "เรือ"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "whale",
+    "captain",
+    "sailor",
+    "harpoon",
+    "revenge",
+    "leg",
+    "ship",
+    "sea",
+    "inn",
+    "coffin",
+    "gold",
+    "boat"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-moby-dick-q1",
+      "sentenceIds": [
+        "cl-moby-026",
+        "cl-moby-076"
+      ],
+      "rationale": "Ahab chases Moby Dick for revenge, and in the end the whale sinks the Pequod."
+    },
+    {
+      "questionId": "classic-moby-dick-q2",
+      "sentenceIds": [
+        "cl-moby-023"
+      ],
+      "rationale": "He nailed a gold coin to the mast for the first man to see the White Whale."
+    },
+    {
+      "questionId": "classic-moby-dick-q3",
+      "sentenceIds": [
+        "cl-moby-047",
+        "cl-moby-049"
+      ],
+      "rationale": "Queequeg had a bad fever and everyone, even he, expected him to die."
+    },
+    {
+      "questionId": "classic-moby-dick-q4",
+      "sentenceIds": [
+        "cl-moby-031",
+        "cl-moby-032"
+      ],
+      "rationale": "Starbuck says they came for oil, and that anger at an animal is madness."
+    },
+    {
+      "questionId": "classic-moby-dick-q5",
+      "sentenceIds": [
+        "cl-moby-082",
+        "cl-moby-084"
+      ],
+      "rationale": "The coffin, made into a float, came up beside him, and the Rachel found him later."
+    }
+  ],
+  "publicationBlockers": [
+    "Owner (oguz) approval of the English text, questions and translations required.",
+    "Native-speaker language review not done.",
+    "Cover artwork and asset mapping pending.",
+    "Source text hash pending (Gutenberg not reachable from the cloud session).",
+    "Publisher story creation, validation and publication pending."
+  ]
+}
