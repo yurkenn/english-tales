@@ -1,0 +1,2011 @@
+{
+  "status": "draft",
+  "kind": "long-story",
+  "source": "long-story-classics-2026-10-22",
+  "reviewedBy": null,
+  "rights": {
+    "credit": "Gaston Leroux",
+    "sourceTitle": "The Phantom of the Opera",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/175",
+    "sourceTextUrl": "https://www.gutenberg.org/cache/epub/175/pg175-images.html",
+    "identifiedContributor": {
+      "name": "Gaston Leroux",
+      "role": "author",
+      "deathYear": 1927
+    },
+    "firstPublished": 1910,
+    "sourceCopyrightStatement": "Public domain in the USA",
+    "checkedOn": "2026-10-22",
+    "adaptation": "New graded B1 retelling written by English Tales from the public-domain English text, with English Tales translations. No modern abridgement, musical, film script or later translation was used.",
+    "turkeyAssessment": "Author died in 1927, more than 70 years before 2026, so the work is out of protection in Turkey and in life+70 countries.",
+    "rightsGuidanceUrl": "https://telifhaklari.ktb.gov.tr/TR-332373/telif-hakki-kac-yil-sureyle-korunur.html",
+    "sourceTextSha256": null,
+    "sourceTextSha256Pending": "Gutenberg is not reachable from the cloud session; record the source text hash on the owner's Mac before publication."
+  },
+  "editorialNotes": [
+    "B1 target: past tense narration, sentences of at most 20 words, about 1,100 words (about 9 minutes of reading).",
+    "Retelling of the novel's main line: the Ghost's letters, Christine's first triumph, the Angel of Music, the falling chandelier, the house on the lake, the mask, the roof, Christine's disappearance, the Persian, the mirror room, the scorpion and the grasshopper, Christine's kiss, Erik's death notice and the skeleton with the ring.",
+    "The English text of the 1911 translation is public domain; this retelling is new and follows the French plot only. Side plots (the managers' money, Philippe's death) are left out.",
+    "Reading sections are editorial groupings for a future chapter view; the app currently shows the story as one text."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+  },
+  "readingSections": [
+    {
+      "title": "The Angel of Music",
+      "firstSentenceId": "cl-phantom-001",
+      "lastSentenceId": "cl-phantom-020"
+    },
+    {
+      "title": "The house on the lake",
+      "firstSentenceId": "cl-phantom-021",
+      "lastSentenceId": "cl-phantom-041"
+    },
+    {
+      "title": "Under the opera",
+      "firstSentenceId": "cl-phantom-042",
+      "lastSentenceId": "cl-phantom-067"
+    },
+    {
+      "title": "The ghost's kiss",
+      "firstSentenceId": "cl-phantom-068",
+      "lastSentenceId": "cl-phantom-091"
+    }
+  ],
+  "story": {
+    "id": "classic-phantom-opera",
+    "title": "The Phantom of the Opera",
+    "author": "Gaston Leroux",
+    "level": "B1",
+    "genre": "Gizem",
+    "description": "Operadaki Hayalet. Paris Operası'nın altında, maskeli bir dahinin yaşadığı söylenir; genç şarkıcı Christine'e şarkı öğreten gizemli \"Müzik Meleği\" kimdir? Aşk, korku ve merhametle dolu bir hikâye. B1 düzeyinde uzun uyarlama. Uyarlama ve Türkçe çeviri: English Tales.",
+    "descriptions": {
+      "es-419": "El fantasma de la Ópera. Dicen que bajo la Ópera de París vive un genio enmascarado; ¿quién es el misterioso «Ángel de la Música» que enseña a cantar a la joven Christine? Una historia de amor, miedo y compasión. Adaptación larga de nivel B1. Adaptación: English Tales.",
+      "pt-BR": "O fantasma da Ópera. Dizem que sob a Ópera de Paris vive um gênio mascarado; quem é o misterioso \"Anjo da Música\" que ensina a jovem Christine a cantar? Uma história de amor, medo e compaixão. Adaptação longa de nível B1. Adaptação: English Tales.",
+      "id": "Hantu di Gedung Opera. Konon di bawah Gedung Opera Paris tinggal seorang jenius bertopeng; siapakah \"Malaikat Musik\" misterius yang mengajari Christine muda bernyanyi? Kisah tentang cinta, rasa takut, dan belas kasih. Adaptasi panjang tingkat B1. Adaptasi: English Tales.",
+      "ar": "شبح الأوبرا. يُقال إنّ عبقريًّا مقنّعًا يعيش تحت دار أوبرا باريس؛ فمن هو «ملاك الموسيقى» الغامض الذي يعلّم المغنّية الشابّة كريستين الغناء؟ قصّة حبّ وخوف ورحمة. اقتباس طويل بمستوى B1. الاقتباس: English Tales.",
+      "vi": "Bóng ma trong nhà hát. Người ta đồn rằng bên dưới nhà hát Opera Paris có một thiên tài đeo mặt nạ; ai là \"Thiên thần Âm nhạc\" bí ẩn đã dạy cô ca sĩ trẻ Christine hát? Một câu chuyện về tình yêu, nỗi sợ và lòng trắc ẩn. Bản phóng tác dài trình độ B1. Phóng tác: English Tales.",
+      "hi": "द फ़ैंटम ऑफ़ द ओपेरा। कहते हैं, पेरिस ओपेरा के नीचे एक नक़ाबपोश प्रतिभाशाली आदमी रहता है; युवा गायिका क्रिस्टीन को गाना सिखाने वाला रहस्यमय \"संगीत का फ़रिश्ता\" कौन है? प्रेम, डर और दया की कहानी। B1 स्तर का लंबा रूपांतरण। रूपांतरण: English Tales.",
+      "ru": "Призрак Оперы. Говорят, под Парижской оперой живёт гений в маске; кто же таинственный «Ангел музыки», который учит петь молодую Кристину? История о любви, страхе и сострадании. Длинный пересказ уровня B1. Адаптация: English Tales.",
+      "bn": "দ্য ফ্যান্টম অফ দ্য অপেরা। শোনা যায়, প্যারিস অপেরার নিচে এক মুখোশধারী প্রতিভা থাকে; তরুণ গায়িকা ক্রিস্টিনকে গান শেখানো রহস্যময় \"সংগীতের দেবদূত\" আসলে কে? ভালোবাসা, ভয় আর করুণার গল্প। B1 স্তরের দীর্ঘ রূপান্তর। রূপান্তর: English Tales.",
+      "ur": "اوپرا کا بھوت۔ کہا جاتا ہے کہ پیرس اوپرا کے نیچے ایک نقاب پوش ذہین آدمی رہتا ہے؛ نوجوان گلوکارہ کرسٹین کو گانا سکھانے والا پراسرار \"موسیقی کا فرشتہ\" کون ہے؟ محبت، خوف اور رحم کی کہانی۔ B1 سطح کی طویل ماخوذ کہانی۔ ماخوذ: English Tales.",
+      "th": "ปีศาจแห่งโรงอุปรากร เล่ากันว่าใต้โรงโอเปร่าแห่งปารีสมีอัจฉริยะสวมหน้ากากอาศัยอยู่ แล้ว \"เทพแห่งดนตรี\" ลึกลับที่สอนนักร้องสาวคริสตีนร้องเพลงคือใคร เรื่องราวของความรัก ความกลัว และความเมตตา ฉบับเรียบเรียงยาวระดับ B1 เรียบเรียงโดย English Tales"
+    },
+    "coverKey": "cover_classic_phantom_opera",
+    "tags": [
+      "gizem"
+    ],
+    "sentences": [
+      {
+        "id": "cl-phantom-001",
+        "english": "The Paris Opera was the most beautiful theatre in the world.",
+        "turkish": "Paris Operası dünyanın en güzel tiyatrosuydu.",
+        "translations": {
+          "es-419": "La Ópera de París era el teatro más hermoso del mundo.",
+          "pt-BR": "A Ópera de Paris era o teatro mais bonito do mundo.",
+          "id": "Gedung Opera Paris adalah teater paling indah di dunia.",
+          "ar": "كانت دار أوبرا باريس أجمل مسرح في العالم.",
+          "vi": "Nhà hát Opera Paris là nhà hát đẹp nhất thế giới.",
+          "hi": "पेरिस ओपेरा दुनिया का सबसे सुंदर थिएटर था।",
+          "ru": "Парижская опера была самым красивым театром в мире.",
+          "bn": "প্যারিস অপেরা ছিল পৃথিবীর সবচেয়ে সুন্দর থিয়েটার।",
+          "ur": "پیرس اوپرا دنیا کا سب سے خوبصورت تھیٹر تھا۔",
+          "th": "โรงอุปรากรปารีสเป็นโรงละครที่งดงามที่สุดในโลก"
+        }
+      },
+      {
+        "id": "cl-phantom-002",
+        "english": "Above the seats hung a huge chandelier of glass and gold.",
+        "turkish": "Koltukların üstünde camdan ve altından kocaman bir avize asılıydı.",
+        "translations": {
+          "es-419": "Sobre los asientos colgaba una enorme araña de cristal y oro.",
+          "pt-BR": "Sobre as poltronas pendia um enorme lustre de cristal e ouro.",
+          "id": "Di atas kursi-kursi tergantung lampu gantung raksasa dari kaca dan emas.",
+          "ar": "فوق المقاعد، كانت تتدلّى ثريّا ضخمة من الزجاج والذهب.",
+          "vi": "Phía trên hàng ghế treo một chiếc đèn chùm khổng lồ bằng pha lê và vàng.",
+          "hi": "सीटों के ऊपर काँच और सोने का एक विशाल झूमर लटका था।",
+          "ru": "Над креслами висела огромная люстра из стекла и золота.",
+          "bn": "আসনগুলোর ওপরে কাচ আর সোনার এক বিশাল ঝাড়বাতি ঝুলত।",
+          "ur": "نشستوں کے اوپر شیشے اور سونے کا ایک بہت بڑا فانوس لٹکا ہوا تھا۔",
+          "th": "เหนือที่นั่งมีโคมระย้าขนาดมหึมาทำจากแก้วและทองคำห้อยอยู่"
+        }
+      },
+      {
+        "id": "cl-phantom-003",
+        "english": "Under the building there were five floors of dark cellars and an underground lake.",
+        "turkish": "Binanın altında beş kat karanlık mahzen ve bir yeraltı gölü vardı.",
+        "translations": {
+          "es-419": "Debajo del edificio había cinco pisos de sótanos oscuros y un lago subterráneo.",
+          "pt-BR": "Debaixo do prédio havia cinco andares de porões escuros e um lago subterrâneo.",
+          "id": "Di bawah gedung itu ada lima lantai ruang bawah tanah yang gelap dan sebuah danau bawah tanah.",
+          "ar": "تحت المبنى كانت هناك خمسة طوابق من الأقبية المظلمة وبحيرة تحت الأرض.",
+          "vi": "Bên dưới tòa nhà có năm tầng hầm tối tăm và một hồ nước ngầm.",
+          "hi": "इमारत के नीचे अँधेरे तहख़ानों की पाँच मंज़िलें और एक ज़मीन के नीचे की झील थी।",
+          "ru": "Под зданием было пять этажей тёмных подвалов и подземное озеро.",
+          "bn": "ভবনটির নিচে ছিল পাঁচ তলা অন্ধকার মাটির নিচের ঘর আর এক ভূগর্ভস্থ হ্রদ।",
+          "ur": "عمارت کے نیچے اندھیرے تہ خانوں کی پانچ منزلیں اور ایک زیرِ زمین جھیل تھی۔",
+          "th": "ใต้อาคารมีห้องใต้ดินมืด ๆ ห้าชั้นและทะเลสาบใต้ดิน"
+        }
+      },
+      {
+        "id": "cl-phantom-004",
+        "english": "The dancers and workers whispered that a ghost lived there.",
+        "turkish": "Dansçılar ve işçiler orada bir hayaletin yaşadığını fısıldıyordu.",
+        "translations": {
+          "es-419": "Las bailarinas y los trabajadores murmuraban que allí vivía un fantasma.",
+          "pt-BR": "As bailarinas e os trabalhadores cochichavam que ali vivia um fantasma.",
+          "id": "Para penari dan pekerja berbisik-bisik bahwa ada hantu yang tinggal di sana.",
+          "ar": "كانت الراقصات والعمّال يتهامسون بأنّ شبحًا يعيش هناك.",
+          "vi": "Các vũ công và công nhân thì thầm rằng có một bóng ma sống ở đó.",
+          "hi": "नर्तकियाँ और कामगार फुसफुसाते थे कि वहाँ एक भूत रहता है।",
+          "ru": "Балерины и рабочие шептались, что там живёт призрак.",
+          "bn": "নর্তকী আর কর্মীরা ফিসফিস করে বলত সেখানে এক ভূত থাকে।",
+          "ur": "رقاصائیں اور کارکن سرگوشیاں کرتے تھے کہ وہاں ایک بھوت رہتا ہے۔",
+          "th": "เหล่านักเต้นและคนงานกระซิบกันว่ามีผีอาศัยอยู่ที่นั่น"
+        }
+      },
+      {
+        "id": "cl-phantom-005",
+        "english": "Some had seen a man in a black cloak with a face like a skull.",
+        "turkish": "Bazıları siyah pelerinli, yüzü kafatasına benzeyen bir adam görmüştü.",
+        "translations": {
+          "es-419": "Algunos habían visto a un hombre con capa negra y cara de calavera.",
+          "pt-BR": "Alguns tinham visto um homem de capa preta com rosto de caveira.",
+          "id": "Beberapa orang pernah melihat seorang pria berjubah hitam dengan wajah seperti tengkorak.",
+          "ar": "رأى بعضهم رجلًا بعباءة سوداء ووجه كالجمجمة.",
+          "vi": "Vài người đã thấy một người đàn ông mặc áo choàng đen, mặt như đầu lâu.",
+          "hi": "कुछ लोगों ने काले लबादे में खोपड़ी जैसे चेहरे वाला एक आदमी देखा था।",
+          "ru": "Некоторые видели человека в чёрном плаще с лицом, похожим на череп.",
+          "bn": "কেউ কেউ কালো আলখাল্লা পরা, খুলির মতো মুখের এক লোককে দেখেছিল।",
+          "ur": "کچھ لوگوں نے کالے لبادے میں کھوپڑی جیسے چہرے والا ایک آدمی دیکھا تھا۔",
+          "th": "บางคนเคยเห็นชายในเสื้อคลุมสีดำที่มีใบหน้าเหมือนหัวกะโหลก"
+        }
+      },
+      {
+        "id": "cl-phantom-006",
+        "english": "The new managers laughed at these stories.",
+        "turkish": "Yeni müdürler bu hikâyelere güldü.",
+        "translations": {
+          "es-419": "Los nuevos directores se rieron de esas historias.",
+          "pt-BR": "Os novos diretores riram dessas histórias.",
+          "id": "Para manajer baru menertawakan cerita-cerita itu.",
+          "ar": "ضحك المديران الجديدان من هذه الحكايات.",
+          "vi": "Các ông giám đốc mới cười nhạo những chuyện ấy.",
+          "hi": "नए प्रबंधक इन कहानियों पर हँसे।",
+          "ru": "Новые директора смеялись над этими историями.",
+          "bn": "নতুন ম্যানেজাররা এসব গল্প শুনে হাসলেন।",
+          "ur": "نئے منتظمین ان کہانیوں پر ہنسے۔",
+          "th": "ผู้จัดการคนใหม่หัวเราะเยาะเรื่องเล่าเหล่านี้"
+        }
+      },
+      {
+        "id": "cl-phantom-007",
+        "english": "But soon they received polite letters, signed \"The Opera Ghost.\"",
+        "turkish": "Ama çok geçmeden \"Opera Hayaleti\" imzalı kibar mektuplar almaya başladılar.",
+        "translations": {
+          "es-419": "Pero pronto recibieron cartas corteses firmadas por «El Fantasma de la Ópera».",
+          "pt-BR": "Mas logo receberam cartas educadas, assinadas \"O Fantasma da Ópera\".",
+          "id": "Tetapi tak lama kemudian mereka menerima surat-surat sopan bertanda tangan \"Hantu Opera\".",
+          "ar": "لكن سرعان ما وصلتهما رسائل مهذّبة موقّعة باسم «شبح الأوبرا».",
+          "vi": "Nhưng chẳng bao lâu họ nhận được những lá thư lịch sự ký tên \"Bóng Ma Nhà Hát\".",
+          "hi": "पर जल्दी ही उन्हें \"ओपेरा का भूत\" के नाम से दस्तख़त किए हुए विनम्र पत्र मिलने लगे।",
+          "ru": "Но вскоре они стали получать вежливые письма с подписью «Призрак Оперы».",
+          "bn": "কিন্তু শিগগিরই তাঁরা \"অপেরার ভূত\" সই করা ভদ্র চিঠি পেতে লাগলেন।",
+          "ur": "مگر جلد ہی انہیں \"اوپرا کا بھوت\" کے نام سے دستخط شدہ شائستہ خط ملنے لگے۔",
+          "th": "แต่ไม่นานพวกเขาก็ได้รับจดหมายสุภาพลงชื่อว่า \"ผีแห่งโรงอุปรากร\""
+        }
+      },
+      {
+        "id": "cl-phantom-008",
+        "english": "The Ghost asked for money every month and for Box Five at every show.",
+        "turkish": "Hayalet her ay para ve her gösteride Beş Numaralı Loca'yı istiyordu.",
+        "translations": {
+          "es-419": "El Fantasma pedía dinero cada mes y el Palco Cinco en cada función.",
+          "pt-BR": "O Fantasma pedia dinheiro todo mês e o Camarote Cinco em todo espetáculo.",
+          "id": "Hantu itu meminta uang setiap bulan dan Loge Nomor Lima di setiap pertunjukan.",
+          "ar": "كان الشبح يطلب مالًا كلّ شهر والمقصورة رقم خمسة في كلّ عرض.",
+          "vi": "Bóng Ma đòi tiền mỗi tháng và đòi Lô Số Năm trong mọi buổi diễn.",
+          "hi": "भूत हर महीने पैसे और हर शो में बॉक्स नंबर पाँच माँगता था।",
+          "ru": "Призрак требовал денег каждый месяц и ложу номер пять на каждом спектакле.",
+          "bn": "ভূতটি প্রতি মাসে টাকা আর প্রতিটি অনুষ্ঠানে পাঁচ নম্বর বক্স চাইত।",
+          "ur": "بھوت ہر مہینے پیسے اور ہر شو میں باکس نمبر پانچ مانگتا تھا۔",
+          "th": "ผีขอเงินทุกเดือน และขอที่นั่งลอดจ์หมายเลขห้าในทุกการแสดง"
+        }
+      },
+      {
+        "id": "cl-phantom-009",
+        "english": "In the company there was a young Swedish singer called Christine Daaé.",
+        "turkish": "Toplulukta Christine Daaé adında genç bir İsveçli şarkıcı vardı.",
+        "translations": {
+          "es-419": "En la compañía había una joven cantante sueca llamada Christine Daaé.",
+          "pt-BR": "Na companhia havia uma jovem cantora sueca chamada Christine Daaé.",
+          "id": "Di rombongan itu ada seorang penyanyi muda asal Swedia bernama Christine Daaé.",
+          "ar": "كانت في الفرقة مغنّية سويدية شابّة اسمها كريستين داييه.",
+          "vi": "Trong đoàn có một nữ ca sĩ trẻ người Thụy Điển tên Christine Daaé.",
+          "hi": "मंडली में क्रिस्टीन दाए नाम की एक युवा स्वीडिश गायिका थी।",
+          "ru": "В труппе была молодая шведская певица Кристина Даэ.",
+          "bn": "দলে ক্রিস্টিন দায়ে নামে এক তরুণী সুইডিশ গায়িকা ছিল।",
+          "ur": "منڈلی میں کرسٹین دائے نام کی ایک نوجوان سویڈش گلوکارہ تھی۔",
+          "th": "ในคณะมีนักร้องสาวชาวสวีเดนชื่อคริสตีน ดาเอ"
+        }
+      },
+      {
+        "id": "cl-phantom-010",
+        "english": "One night, the star, Carlotta, was ill, and Christine sang in her place.",
+        "turkish": "Bir gece yıldız şarkıcı Carlotta hastaydı ve Christine onun yerine söyledi.",
+        "translations": {
+          "es-419": "Una noche, la estrella, Carlotta, estaba enferma, y Christine cantó en su lugar.",
+          "pt-BR": "Certa noite, a estrela, Carlotta, estava doente, e Christine cantou no lugar dela.",
+          "id": "Suatu malam, sang bintang, Carlotta, sakit, dan Christine bernyanyi menggantikannya.",
+          "ar": "في إحدى الليالي، كانت النجمة كارلوتا مريضة، فغنّت كريستين مكانها.",
+          "vi": "Một đêm, ngôi sao Carlotta bị ốm, và Christine hát thay cô ta.",
+          "hi": "एक रात मुख्य गायिका कार्लोटा बीमार थी, और क्रिस्टीन ने उसकी जगह गाया।",
+          "ru": "Однажды вечером звезда труппы Карлотта заболела, и Кристина пела вместо неё.",
+          "bn": "এক রাতে তারকা গায়িকা কার্লোটা অসুস্থ ছিল, আর ক্রিস্টিন তার জায়গায় গাইল।",
+          "ur": "ایک رات اسٹار گلوکارہ کارلوٹا بیمار تھی، اور کرسٹین نے اس کی جگہ گایا۔",
+          "th": "คืนหนึ่ง คาร์ลอตตาผู้เป็นดาราป่วย คริสตีนจึงร้องแทน"
+        }
+      },
+      {
+        "id": "cl-phantom-011",
+        "english": "Her voice was so pure that people in the audience cried.",
+        "turkish": "Sesi o kadar saftı ki seyirciler ağladı.",
+        "translations": {
+          "es-419": "Su voz era tan pura que el público lloró.",
+          "pt-BR": "A voz dela era tão pura que a plateia chorou.",
+          "id": "Suaranya begitu jernih sampai para penonton menangis.",
+          "ar": "كان صوتها نقيًّا إلى حدّ أنّ الجمهور بكى.",
+          "vi": "Giọng cô trong trẻo đến mức khán giả rơi nước mắt.",
+          "hi": "उसकी आवाज़ इतनी निर्मल थी कि दर्शक रो पड़े।",
+          "ru": "Её голос был так чист, что зрители плакали.",
+          "bn": "তার গলা এত নির্মল ছিল যে দর্শকেরা কেঁদে ফেলল।",
+          "ur": "اس کی آواز اتنی شفاف تھی کہ حاضرین رو پڑے۔",
+          "th": "เสียงของเธอใสบริสุทธิ์จนผู้ชมร้องไห้"
+        }
+      },
+      {
+        "id": "cl-phantom-012",
+        "english": "In one of the boxes sat a young man, Raoul, Viscount of Chagny.",
+        "turkish": "Localardan birinde genç bir adam oturuyordu: Chagny Vikontu Raoul.",
+        "translations": {
+          "es-419": "En uno de los palcos estaba sentado un joven, Raoul, vizconde de Chagny.",
+          "pt-BR": "Num dos camarotes estava sentado um jovem, Raoul, visconde de Chagny.",
+          "id": "Di salah satu loge duduk seorang pemuda, Raoul, Viscount dari Chagny.",
+          "ar": "في إحدى المقصورات جلس شابّ اسمه راؤول، فيكونت شاني.",
+          "vi": "Trong một lô ghế có một chàng trai trẻ, Raoul, Tử tước xứ Chagny.",
+          "hi": "एक बॉक्स में एक नौजवान बैठा था, राउल, शानी का वाइकाउंट।",
+          "ru": "В одной из лож сидел молодой человек, Рауль, виконт де Шаньи.",
+          "bn": "একটা বক্সে বসে ছিল এক তরুণ, রাউল, শানির ভাইকাউন্ট।",
+          "ur": "ایک باکس میں ایک نوجوان بیٹھا تھا، راؤل، شانی کا وائکاؤنٹ۔",
+          "th": "ในลอดจ์หนึ่งมีชายหนุ่มชื่อราอูล ไวเคานต์แห่งชาญีนั่งอยู่"
+        }
+      },
+      {
+        "id": "cl-phantom-013",
+        "english": "He remembered Christine from his childhood, when they played by the sea.",
+        "turkish": "Christine'i çocukluğundan, deniz kıyısında oynadıkları günlerden hatırlıyordu.",
+        "translations": {
+          "es-419": "Recordaba a Christine de su infancia, cuando jugaban junto al mar.",
+          "pt-BR": "Ele se lembrava de Christine da infância, quando brincavam à beira-mar.",
+          "id": "Ia ingat Christine dari masa kecilnya, saat mereka bermain di tepi laut.",
+          "ar": "تذكّر كريستين من أيّام طفولته، حين كانا يلعبان قرب البحر.",
+          "vi": "Anh nhớ Christine từ thuở nhỏ, khi hai người chơi đùa bên bờ biển.",
+          "hi": "उसे बचपन की क्रिस्टीन याद थी, जब वे समुद्र किनारे खेला करते थे।",
+          "ru": "Он помнил Кристину с детства, когда они играли у моря.",
+          "bn": "ছোটবেলায় সমুদ্রের ধারে খেলার দিনগুলো থেকে সে ক্রিস্টিনকে চিনত।",
+          "ur": "اسے بچپن کی کرسٹین یاد تھی، جب وہ سمندر کنارے کھیلا کرتے تھے۔",
+          "th": "เขาจำคริสตีนได้ตั้งแต่สมัยเด็ก ตอนที่พวกเขาเล่นกันริมทะเล"
+        }
+      },
+      {
+        "id": "cl-phantom-014",
+        "english": "After the show, he went to her dressing room door.",
+        "turkish": "Gösteriden sonra onun soyunma odasının kapısına gitti.",
+        "translations": {
+          "es-419": "Después de la función, fue a la puerta de su camerino.",
+          "pt-BR": "Depois do espetáculo, ele foi até a porta do camarim dela.",
+          "id": "Setelah pertunjukan, ia pergi ke pintu ruang rias Christine.",
+          "ar": "بعد العرض، ذهب إلى باب غرفة ملابسها.",
+          "vi": "Sau buổi diễn, anh đến trước cửa phòng thay đồ của cô.",
+          "hi": "शो के बाद वह उसके ड्रेसिंग रूम के दरवाज़े पर गया।",
+          "ru": "После спектакля он подошёл к двери её гримёрной.",
+          "bn": "অনুষ্ঠানের পরে সে তার সাজঘরের দরজায় গেল।",
+          "ur": "شو کے بعد وہ اس کے ڈریسنگ روم کے دروازے پر گیا۔",
+          "th": "หลังการแสดง เขาไปที่หน้าประตูห้องแต่งตัวของเธอ"
+        }
+      },
+      {
+        "id": "cl-phantom-015",
+        "english": "Inside, he heard a man's voice: \"Christine, you must love me!\"",
+        "turkish": "İçeriden bir erkek sesi duydu: \"Christine, beni sevmelisin!\"",
+        "translations": {
+          "es-419": "Dentro oyó una voz de hombre: «¡Christine, debes amarme!».",
+          "pt-BR": "Lá dentro, ouviu uma voz de homem: \"Christine, você precisa me amar!\"",
+          "id": "Dari dalam, ia mendengar suara pria: \"Christine, kau harus mencintaiku!\"",
+          "ar": "سمع في الداخل صوت رجل: «كريستين، يجب أن تحبّيني!»",
+          "vi": "Bên trong, anh nghe giọng một người đàn ông: \"Christine, em phải yêu ta!\"",
+          "hi": "अंदर से उसे एक आदमी की आवाज़ सुनाई दी: \"क्रिस्टीन, तुम्हें मुझसे प्यार करना होगा!\"",
+          "ru": "Изнутри донёсся мужской голос: «Кристина, ты должна любить меня!»",
+          "bn": "ভেতর থেকে সে এক পুরুষের গলা শুনল: \"ক্রিস্টিন, তোমাকে আমায় ভালোবাসতেই হবে!\"",
+          "ur": "اندر سے اسے ایک آدمی کی آواز سنائی دی: \"کرسٹین، تمہیں مجھ سے محبت کرنی ہوگی!\"",
+          "th": "ข้างในเขาได้ยินเสียงผู้ชายพูดว่า \"คริสตีน เธอต้องรักฉัน!\""
+        }
+      },
+      {
+        "id": "cl-phantom-016",
+        "english": "When Christine came out, Raoul went in, but the room was empty.",
+        "turkish": "Christine çıkınca Raoul içeri girdi ama oda boştu.",
+        "translations": {
+          "es-419": "Cuando Christine salió, Raoul entró, pero la habitación estaba vacía.",
+          "pt-BR": "Quando Christine saiu, Raoul entrou, mas o quarto estava vazio.",
+          "id": "Ketika Christine keluar, Raoul masuk, tetapi ruangan itu kosong.",
+          "ar": "حين خرجت كريستين دخل راؤول، لكنّ الغرفة كانت فارغة.",
+          "vi": "Khi Christine ra ngoài, Raoul bước vào, nhưng căn phòng trống không.",
+          "hi": "जब क्रिस्टीन बाहर आई, तो राउल अंदर गया, पर कमरा ख़ाली था।",
+          "ru": "Когда Кристина вышла, Рауль вошёл внутрь, но комната была пуста.",
+          "bn": "ক্রিস্টিন বেরিয়ে এলে রাউল ভেতরে গেল, কিন্তু ঘর ফাঁকা।",
+          "ur": "جب کرسٹین باہر آئی تو راؤل اندر گیا، مگر کمرہ خالی تھا۔",
+          "th": "เมื่อคริสตีนออกมา ราอูลก็เข้าไป แต่ห้องว่างเปล่า"
+        }
+      },
+      {
+        "id": "cl-phantom-017",
+        "english": "Later, Christine told him a strange secret.",
+        "turkish": "Daha sonra Christine ona tuhaf bir sır anlattı.",
+        "translations": {
+          "es-419": "Más tarde, Christine le contó un extraño secreto.",
+          "pt-BR": "Mais tarde, Christine lhe contou um segredo estranho.",
+          "id": "Kemudian, Christine menceritakan sebuah rahasia aneh kepadanya.",
+          "ar": "لاحقًا، أخبرته كريستين بسرّ غريب.",
+          "vi": "Sau đó, Christine kể cho anh một bí mật kỳ lạ.",
+          "hi": "बाद में क्रिस्टीन ने उसे एक अजीब राज़ बताया।",
+          "ru": "Позже Кристина открыла ему странную тайну.",
+          "bn": "পরে ক্রিস্টিন তাকে এক অদ্ভুত গোপন কথা বলল।",
+          "ur": "بعد میں کرسٹین نے اسے ایک عجیب راز بتایا۔",
+          "th": "ต่อมา คริสตีนเล่าความลับแปลก ๆ ให้เขาฟัง"
+        }
+      },
+      {
+        "id": "cl-phantom-018",
+        "english": "\"Before he died, my father promised to send me the Angel of Music.\"",
+        "turkish": "\"Babam ölmeden önce bana Müzik Meleği'ni göndereceğine söz vermişti.\"",
+        "translations": {
+          "es-419": "—Antes de morir, mi padre me prometió enviarme al Ángel de la Música.",
+          "pt-BR": "— Antes de morrer, meu pai prometeu me mandar o Anjo da Música.",
+          "id": "\"Sebelum meninggal, ayahku berjanji akan mengirimkan Malaikat Musik untukku.\"",
+          "ar": "«قبل أن يموت، وعدني أبي بأن يرسل إليّ ملاك الموسيقى».",
+          "vi": "\"Trước khi mất, cha em hứa sẽ gửi Thiên thần Âm nhạc đến với em.\"",
+          "hi": "\"मरने से पहले मेरे पिता ने वादा किया था कि वे मेरे पास संगीत का फ़रिश्ता भेजेंगे।\"",
+          "ru": "«Перед смертью отец обещал прислать ко мне Ангела Музыки».",
+          "bn": "\"মারা যাওয়ার আগে বাবা কথা দিয়েছিলেন আমার কাছে সংগীতের দেবদূত পাঠাবেন।\"",
+          "ur": "\"مرنے سے پہلے میرے والد نے وعدہ کیا تھا کہ وہ میرے پاس موسیقی کا فرشتہ بھیجیں گے۔\"",
+          "th": "\"ก่อนตาย พ่อสัญญาว่าจะส่งเทวดาแห่งดนตรีมาหาฉัน\""
+        }
+      },
+      {
+        "id": "cl-phantom-019",
+        "english": "\"Now an angel comes to my room and teaches me to sing. I hear only his voice.\"",
+        "turkish": "\"Artık odama bir melek geliyor ve bana şarkı söylemeyi öğretiyor. Yalnızca sesini duyuyorum.\"",
+        "translations": {
+          "es-419": "—Ahora un ángel viene a mi cuarto y me enseña a cantar. Solo oigo su voz.",
+          "pt-BR": "— Agora um anjo vem ao meu quarto e me ensina a cantar. Só ouço a voz dele.",
+          "id": "\"Sekarang seorang malaikat datang ke kamarku dan mengajariku bernyanyi. Aku hanya mendengar suaranya.\"",
+          "ar": "«والآن يأتي ملاك إلى غرفتي ويعلّمني الغناء. لا أسمع إلّا صوته».",
+          "vi": "\"Giờ có một thiên thần đến phòng em và dạy em hát. Em chỉ nghe thấy giọng của người.\"",
+          "hi": "\"अब एक फ़रिश्ता मेरे कमरे में आता है और मुझे गाना सिखाता है। मुझे बस उसकी आवाज़ सुनाई देती है।\"",
+          "ru": "«Теперь ко мне в комнату приходит ангел и учит меня петь. Я слышу только его голос».",
+          "bn": "\"এখন এক দেবদূত আমার ঘরে এসে আমাকে গান শেখান। আমি শুধু তাঁর গলা শুনি।\"",
+          "ur": "\"اب ایک فرشتہ میرے کمرے میں آتا ہے اور مجھے گانا سکھاتا ہے۔ مجھے بس اس کی آواز سنائی دیتی ہے۔\"",
+          "th": "\"ตอนนี้มีเทวดามาที่ห้องฉันและสอนฉันร้องเพลง ฉันได้ยินแต่เสียงของเขา\""
+        }
+      },
+      {
+        "id": "cl-phantom-020",
+        "english": "Raoul did not believe in angels, and he was jealous and afraid.",
+        "turkish": "Raoul meleklere inanmıyordu; kıskanıyor ve korkuyordu.",
+        "translations": {
+          "es-419": "Raoul no creía en ángeles, y estaba celoso y asustado.",
+          "pt-BR": "Raoul não acreditava em anjos e estava com ciúme e medo.",
+          "id": "Raoul tidak percaya pada malaikat, dan ia cemburu sekaligus takut.",
+          "ar": "لم يكن راؤول يؤمن بالملائكة، وكان غيورًا خائفًا.",
+          "vi": "Raoul không tin vào thiên thần, và anh vừa ghen vừa sợ.",
+          "hi": "राउल फ़रिश्तों में यक़ीन नहीं करता था, और वह जलन और डर से भरा था।",
+          "ru": "Рауль не верил в ангелов; он ревновал и боялся.",
+          "bn": "রাউল দেবদূতে বিশ্বাস করত না, আর সে ঈর্ষায় ও ভয়ে ভরা ছিল।",
+          "ur": "راؤل فرشتوں پر یقین نہیں رکھتا تھا، اور وہ حسد اور خوف سے بھرا تھا۔",
+          "th": "ราอูลไม่เชื่อเรื่องเทวดา และเขารู้สึกทั้งหึงหวงและหวาดกลัว"
+        }
+      },
+      {
+        "id": "cl-phantom-021",
+        "english": "The managers did not obey the Ghost, and they gave Box Five to other people.",
+        "turkish": "Müdürler Hayalet'in sözünü dinlemedi ve Beş Numaralı Loca'yı başkalarına verdiler.",
+        "translations": {
+          "es-419": "Los directores no obedecieron al Fantasma y le dieron el Palco Cinco a otras personas.",
+          "pt-BR": "Os diretores não obedeceram ao Fantasma e deram o Camarote Cinco a outras pessoas.",
+          "id": "Para manajer tidak menuruti Hantu itu, dan mereka memberikan Loge Nomor Lima kepada orang lain.",
+          "ar": "لم يُطع المديران الشبح، وأعطيا المقصورة رقم خمسة لأشخاص آخرين.",
+          "vi": "Các giám đốc không nghe lời Bóng Ma và đem Lô Số Năm cho người khác.",
+          "hi": "प्रबंधकों ने भूत की बात नहीं मानी, और बॉक्स नंबर पाँच दूसरे लोगों को दे दिया।",
+          "ru": "Директора не послушались Призрака и отдали ложу номер пять другим людям.",
+          "bn": "ম্যানেজাররা ভূতের কথা শুনলেন না, আর পাঁচ নম্বর বক্স অন্যদের দিয়ে দিলেন।",
+          "ur": "منتظمین نے بھوت کی بات نہیں مانی، اور باکس نمبر پانچ دوسرے لوگوں کو دے دیا۔",
+          "th": "ผู้จัดการไม่เชื่อฟังผี และยกลอดจ์หมายเลขห้าให้คนอื่น"
+        }
+      },
+      {
+        "id": "cl-phantom-022",
+        "english": "They also let Carlotta sing the main part again, not Christine.",
+        "turkish": "Ayrıca baş rolü yine Christine'e değil, Carlotta'ya verdiler.",
+        "translations": {
+          "es-419": "También dejaron que Carlotta volviera a cantar el papel principal, en lugar de Christine.",
+          "pt-BR": "Também deixaram Carlotta cantar de novo o papel principal, e não Christine.",
+          "id": "Mereka juga membiarkan Carlotta menyanyikan peran utama lagi, bukan Christine.",
+          "ar": "وسمحا أيضًا لكارلوتا بأن تغنّي الدور الرئيسيّ من جديد، لا كريستين.",
+          "vi": "Họ cũng để Carlotta hát vai chính trở lại, chứ không phải Christine.",
+          "hi": "उन्होंने मुख्य भूमिका फिर से क्रिस्टीन को नहीं, कार्लोटा को दे दी।",
+          "ru": "Ещё они снова дали главную партию Карлотте, а не Кристине.",
+          "bn": "তাঁরা আবার প্রধান ভূমিকায় ক্রিস্টিনকে নয়, কার্লোটাকে গাইতে দিলেন।",
+          "ur": "انہوں نے مرکزی کردار پھر سے کرسٹین کو نہیں، کارلوٹا کو دے دیا۔",
+          "th": "และยังให้คาร์ลอตตากลับมาร้องบทนำ แทนที่จะเป็นคริสตีน"
+        }
+      },
+      {
+        "id": "cl-phantom-023",
+        "english": "That night, as Carlotta sang on the stage, her voice suddenly broke.",
+        "turkish": "O gece Carlotta sahnede şarkı söylerken sesi birden çatladı.",
+        "translations": {
+          "es-419": "Esa noche, mientras Carlotta cantaba en el escenario, su voz se quebró de repente.",
+          "pt-BR": "Naquela noite, enquanto Carlotta cantava no palco, a voz dela falhou de repente.",
+          "id": "Malam itu, saat Carlotta bernyanyi di panggung, suaranya tiba-tiba pecah.",
+          "ar": "في تلك الليلة، وبينما كانت كارلوتا تغنّي على المسرح، انكسر صوتها فجأة.",
+          "vi": "Đêm đó, khi Carlotta đang hát trên sân khấu, giọng cô ta bỗng vỡ.",
+          "hi": "उस रात जब कार्लोटा मंच पर गा रही थी, उसकी आवाज़ अचानक फट गई।",
+          "ru": "В тот вечер, когда Карлотта пела на сцене, её голос вдруг сорвался.",
+          "bn": "সেই রাতে কার্লোটা যখন মঞ্চে গাইছিল, তার গলা হঠাৎ ভেঙে গেল।",
+          "ur": "اس رات جب کارلوٹا اسٹیج پر گا رہی تھی، اس کی آواز اچانک پھٹ گئی۔",
+          "th": "คืนนั้น ขณะที่คาร์ลอตตาร้องเพลงบนเวที เสียงของเธอก็แตกพร่าทันที"
+        }
+      },
+      {
+        "id": "cl-phantom-024",
+        "english": "Instead of a note, there came a sound like a frog.",
+        "turkish": "Bir nota yerine kurbağa sesine benzer bir ses çıktı.",
+        "translations": {
+          "es-419": "En lugar de una nota, salió un sonido como el de una rana.",
+          "pt-BR": "Em vez de uma nota, saiu um som de sapo.",
+          "id": "Bukannya nada, yang keluar malah suara seperti katak.",
+          "ar": "بدلًا من النغمة، خرج صوت يشبه نقيق الضفدع.",
+          "vi": "Thay vì một nốt nhạc, lại phát ra tiếng như ếch kêu.",
+          "hi": "सुर की जगह मेंढक जैसी आवाज़ निकली।",
+          "ru": "Вместо ноты раздалось лягушачье кваканье.",
+          "bn": "সুরের বদলে ব্যাঙের মতো একটা আওয়াজ বেরোল।",
+          "ur": "سُر کی جگہ مینڈک جیسی آواز نکلی۔",
+          "th": "แทนที่จะเป็นตัวโน้ต กลับมีเสียงเหมือนกบร้องออกมา"
+        }
+      },
+      {
+        "id": "cl-phantom-025",
+        "english": "Then a voice laughed high above the theatre: \"She is singing to bring down the chandelier!\"",
+        "turkish": "Sonra tiyatronun yükseklerinde bir ses güldü: \"Avizeyi düşürmek için söylüyor!\"",
+        "translations": {
+          "es-419": "Entonces una voz se rio en lo alto del teatro: «¡Canta para hacer caer la araña!».",
+          "pt-BR": "Então uma voz riu lá no alto do teatro: \"Ela está cantando para derrubar o lustre!\"",
+          "id": "Lalu sebuah suara tertawa tinggi di atas teater: \"Ia bernyanyi untuk menjatuhkan lampu gantung!\"",
+          "ar": "ثمّ ضحك صوت عاليًا فوق المسرح: «إنّها تغنّي لتُسقط الثريّا!»",
+          "vi": "Rồi một giọng cười vang trên cao của nhà hát: \"Cô ta hát để làm rơi đèn chùm đấy!\"",
+          "hi": "तभी थिएटर में ऊपर से एक आवाज़ हँसी: \"वह झूमर गिराने के लिए गा रही है!\"",
+          "ru": "И тут высоко над залом засмеялся голос: «Она поёт так, что люстра сейчас рухнет!»",
+          "bn": "তখন থিয়েটারের অনেক ওপর থেকে একটা গলা হাসল: \"ও তো ঝাড়বাতি নামানোর জন্য গাইছে!\"",
+          "ur": "تبھی تھیٹر میں اوپر سے ایک آواز ہنسی: \"وہ فانوس گرانے کے لیے گا رہی ہے!\"",
+          "th": "แล้วก็มีเสียงหัวเราะดังมาจากเบื้องบนของโรงละคร \"เธอร้องเพลงเพื่อให้โคมระย้าร่วงลงมา!\""
+        }
+      },
+      {
+        "id": "cl-phantom-026",
+        "english": "The great chandelier fell with a terrible crash onto the seats below.",
+        "turkish": "Büyük avize korkunç bir gürültüyle aşağıdaki koltukların üstüne düştü.",
+        "translations": {
+          "es-419": "La gran araña cayó con un estruendo terrible sobre los asientos de abajo.",
+          "pt-BR": "O grande lustre caiu com um estrondo terrível sobre as poltronas lá embaixo.",
+          "id": "Lampu gantung besar itu jatuh dengan suara dahsyat ke kursi-kursi di bawah.",
+          "ar": "سقطت الثريّا الكبيرة بدويّ رهيب على المقاعد في الأسفل.",
+          "vi": "Chiếc đèn chùm lớn rơi xuống hàng ghế bên dưới với một tiếng động khủng khiếp.",
+          "hi": "विशाल झूमर भयानक धमाके के साथ नीचे की सीटों पर आ गिरा।",
+          "ru": "Огромная люстра с ужасным грохотом рухнула на кресла внизу.",
+          "bn": "বিশাল ঝাড়বাতিটা ভয়ংকর শব্দে নিচের আসনগুলোর ওপর আছড়ে পড়ল।",
+          "ur": "بڑا فانوس خوفناک دھماکے کے ساتھ نیچے کی نشستوں پر آ گرا۔",
+          "th": "โคมระย้าขนาดใหญ่ร่วงลงมาบนที่นั่งข้างล่างพร้อมเสียงดังสนั่น"
+        }
+      },
+      {
+        "id": "cl-phantom-027",
+        "english": "The next day, Christine disappeared.",
+        "turkish": "Ertesi gün Christine ortadan kayboldu.",
+        "translations": {
+          "es-419": "Al día siguiente, Christine desapareció.",
+          "pt-BR": "No dia seguinte, Christine desapareceu.",
+          "id": "Keesokan harinya, Christine menghilang.",
+          "ar": "في اليوم التالي، اختفت كريستين.",
+          "vi": "Ngày hôm sau, Christine biến mất.",
+          "hi": "अगले दिन क्रिस्टीन ग़ायब हो गई।",
+          "ru": "На следующий день Кристина исчезла.",
+          "bn": "পরদিন ক্রিস্টিন উধাও হয়ে গেল।",
+          "ur": "اگلے دن کرسٹین غائب ہو گئی۔",
+          "th": "วันรุ่งขึ้น คริสตีนก็หายตัวไป"
+        }
+      },
+      {
+        "id": "cl-phantom-028",
+        "english": "Two weeks later she came back, pale and tired, and she would not explain.",
+        "turkish": "İki hafta sonra solgun ve yorgun döndü ama hiçbir açıklama yapmadı.",
+        "translations": {
+          "es-419": "Dos semanas después volvió, pálida y cansada, y no quiso dar explicaciones.",
+          "pt-BR": "Duas semanas depois, ela voltou, pálida e cansada, e não quis explicar nada.",
+          "id": "Dua minggu kemudian ia kembali, pucat dan lelah, dan tidak mau menjelaskan apa pun.",
+          "ar": "بعد أسبوعين عادت، شاحبة متعبة، ورفضت أن تشرح شيئًا.",
+          "vi": "Hai tuần sau cô trở lại, xanh xao và mệt mỏi, và không chịu giải thích gì.",
+          "hi": "दो हफ़्ते बाद वह लौटी, पीली और थकी हुई, और उसने कुछ भी समझाने से इनकार कर दिया।",
+          "ru": "Через две недели она вернулась бледная и усталая и ничего не хотела объяснять.",
+          "bn": "দুই সপ্তাহ পরে সে ফিরল, ফ্যাকাশে আর ক্লান্ত, কিন্তু কিছুই বোঝাতে চাইল না।",
+          "ur": "دو ہفتے بعد وہ لوٹی، زرد اور تھکی ہوئی، اور اس نے کچھ بھی بتانے سے انکار کر دیا۔",
+          "th": "สองสัปดาห์ต่อมาเธอก็กลับมา หน้าซีดและอ่อนล้า และไม่ยอมอธิบายอะไรเลย"
+        }
+      },
+      {
+        "id": "cl-phantom-029",
+        "english": "At last, high on the roof of the Opera, she told Raoul everything.",
+        "turkish": "Sonunda, Opera'nın damında, yükseklerde Raoul'a her şeyi anlattı.",
+        "translations": {
+          "es-419": "Por fin, en lo alto del tejado de la Ópera, le contó todo a Raoul.",
+          "pt-BR": "Por fim, no alto do telhado da Ópera, ela contou tudo a Raoul.",
+          "id": "Akhirnya, tinggi di atap gedung Opera, ia menceritakan segalanya kepada Raoul.",
+          "ar": "وأخيرًا، على سطح الأوبرا العالي، أخبرت راؤول بكلّ شيء.",
+          "vi": "Cuối cùng, trên mái cao của nhà hát Opera, cô kể hết cho Raoul nghe.",
+          "hi": "आख़िरकार ओपेरा की ऊँची छत पर उसने राउल को सब कुछ बता दिया।",
+          "ru": "Наконец, высоко на крыше Оперы, она всё рассказала Раулю.",
+          "bn": "অবশেষে অপেরার উঁচু ছাদে বসে সে রাউলকে সব বলল।",
+          "ur": "آخرکار اوپرا کی اونچی چھت پر اس نے راؤل کو سب کچھ بتا دیا۔",
+          "th": "ในที่สุด บนหลังคาสูงของโรงอุปรากร เธอก็เล่าทุกอย่างให้ราอูลฟัง"
+        }
+      },
+      {
+        "id": "cl-phantom-030",
+        "english": "\"The voice led me through the mirror in my room, down into the darkness.\"",
+        "turkish": "\"Ses beni odamdaki aynadan geçirip aşağıya, karanlığa götürdü.\"",
+        "translations": {
+          "es-419": "—La voz me llevó a través del espejo de mi cuarto, hacia la oscuridad.",
+          "pt-BR": "— A voz me levou através do espelho do meu quarto, para baixo, para a escuridão.",
+          "id": "\"Suara itu membawaku melewati cermin di kamarku, turun ke dalam kegelapan.\"",
+          "ar": "«قادني الصوت عبر المرآة في غرفتي، نزولًا إلى الظلام».",
+          "vi": "\"Giọng nói dẫn em đi xuyên qua tấm gương trong phòng, xuống bóng tối bên dưới.\"",
+          "hi": "\"वह आवाज़ मुझे मेरे कमरे के आईने के पार, नीचे अँधेरे में ले गई।\"",
+          "ru": "«Голос провёл меня сквозь зеркало в моей комнате, вниз, во тьму».",
+          "bn": "\"সেই গলা আমাকে আমার ঘরের আয়নার ভেতর দিয়ে নিচে অন্ধকারে নিয়ে গেল।\"",
+          "ur": "\"وہ آواز مجھے میرے کمرے کے آئینے کے پار، نیچے اندھیرے میں لے گئی۔\"",
+          "th": "\"เสียงนั้นพาฉันผ่านกระจกในห้อง ลงไปสู่ความมืด\""
+        }
+      },
+      {
+        "id": "cl-phantom-031",
+        "english": "\"We crossed a black underground lake in a little boat.\"",
+        "turkish": "\"Küçük bir kayıkla kapkara bir yeraltı gölünü geçtik.\"",
+        "translations": {
+          "es-419": "—Cruzamos un lago negro subterráneo en un botecito.",
+          "pt-BR": "— Atravessamos um lago negro subterrâneo num barquinho.",
+          "id": "\"Kami menyeberangi danau bawah tanah yang hitam dengan perahu kecil.\"",
+          "ar": "«عبرنا بحيرة سوداء تحت الأرض في قارب صغير».",
+          "vi": "\"Bọn em vượt qua một hồ nước ngầm đen ngòm trên chiếc thuyền nhỏ.\"",
+          "hi": "\"हमने एक छोटी नाव में ज़मीन के नीचे की एक काली झील पार की।\"",
+          "ru": "«Мы переплыли чёрное подземное озеро в маленькой лодке».",
+          "bn": "\"আমরা একটা ছোট নৌকায় এক কালো ভূগর্ভস্থ হ্রদ পার হলাম।\"",
+          "ur": "\"ہم نے ایک چھوٹی کشتی میں ایک کالی زیرِ زمین جھیل پار کی۔\"",
+          "th": "\"เรานั่งเรือลำเล็กข้ามทะเลสาบใต้ดินสีดำ\""
+        }
+      },
+      {
+        "id": "cl-phantom-032",
+        "english": "\"On the other side was a house, full of flowers and music.\"",
+        "turkish": "\"Öbür yakada çiçeklerle ve müzikle dolu bir ev vardı.\"",
+        "translations": {
+          "es-419": "—Al otro lado había una casa llena de flores y de música.",
+          "pt-BR": "— Do outro lado havia uma casa cheia de flores e de música.",
+          "id": "\"Di seberang ada sebuah rumah, penuh bunga dan musik.\"",
+          "ar": "«وعلى الضفّة الأخرى كان هناك بيت مليء بالزهور والموسيقى».",
+          "vi": "\"Bên kia là một ngôi nhà đầy hoa và âm nhạc.\"",
+          "hi": "\"दूसरी तरफ़ फूलों और संगीत से भरा एक घर था।\"",
+          "ru": "«На другом берегу стоял дом, полный цветов и музыки».",
+          "bn": "\"অন্য পারে ছিল একটা বাড়ি, ফুল আর সুরে ভরা।\"",
+          "ur": "\"دوسری طرف پھولوں اور موسیقی سے بھرا ایک گھر تھا۔\"",
+          "th": "\"อีกฝั่งหนึ่งมีบ้านหลังหนึ่งที่เต็มไปด้วยดอกไม้และเสียงดนตรี\""
+        }
+      },
+      {
+        "id": "cl-phantom-033",
+        "english": "\"My angel was a man in a mask. His name was Erik.\"",
+        "turkish": "\"Meleğim maskeli bir adamdı. Adı Erik'ti.\"",
+        "translations": {
+          "es-419": "—Mi ángel era un hombre con máscara. Se llamaba Erik.",
+          "pt-BR": "— Meu anjo era um homem de máscara. O nome dele era Erik.",
+          "id": "\"Malaikatku ternyata seorang pria bertopeng. Namanya Erik.\"",
+          "ar": "«كان ملاكي رجلًا مقنّعًا. اسمه إريك».",
+          "vi": "\"Thiên thần của em là một người đàn ông đeo mặt nạ. Tên ông ấy là Erik.\"",
+          "hi": "\"मेरा फ़रिश्ता एक नक़ाबपोश आदमी था। उसका नाम एरिक था।\"",
+          "ru": "«Мой ангел оказался человеком в маске. Его звали Эрик».",
+          "bn": "\"আমার দেবদূত ছিল মুখোশ পরা এক মানুষ। তার নাম এরিক।\"",
+          "ur": "\"میرا فرشتہ ایک نقاب پوش آدمی تھا۔ اس کا نام ایرک تھا۔\"",
+          "th": "\"เทวดาของฉันคือผู้ชายที่สวมหน้ากาก เขาชื่อเอริก\""
+        }
+      },
+      {
+        "id": "cl-phantom-034",
+        "english": "\"He was a genius of music and building, but he lived hidden from the world.\"",
+        "turkish": "\"Müzikte ve yapı işlerinde bir dâhiydi ama dünyadan saklanarak yaşıyordu.\"",
+        "translations": {
+          "es-419": "—Era un genio de la música y de la construcción, pero vivía escondido del mundo.",
+          "pt-BR": "— Era um gênio da música e da construção, mas vivia escondido do mundo.",
+          "id": "\"Ia jenius dalam musik dan bangunan, tetapi hidup bersembunyi dari dunia.\"",
+          "ar": "«كان عبقريًّا في الموسيقى والبناء، لكنّه عاش مختبئًا عن العالم».",
+          "vi": "\"Ông ấy là thiên tài âm nhạc và kiến trúc, nhưng sống ẩn mình khỏi thế gian.\"",
+          "hi": "\"वह संगीत और इमारतें बनाने में प्रतिभाशाली था, पर दुनिया से छिपकर रहता था।\"",
+          "ru": "«Он был гением музыки и строительства, но жил, скрываясь от мира».",
+          "bn": "\"সে ছিল সংগীত আর স্থাপত্যে এক প্রতিভা, কিন্তু পৃথিবী থেকে লুকিয়ে থাকত।\"",
+          "ur": "\"وہ موسیقی اور تعمیر میں ایک ذہین تھا، مگر دنیا سے چھپ کر رہتا تھا۔\"",
+          "th": "\"เขาเป็นอัจฉริยะด้านดนตรีและการก่อสร้าง แต่ใช้ชีวิตซ่อนตัวจากโลก\""
+        }
+      },
+      {
+        "id": "cl-phantom-035",
+        "english": "\"While he played the organ, I pulled off his mask.\"",
+        "turkish": "\"O org çalarken maskesini çekip çıkardım.\"",
+        "translations": {
+          "es-419": "—Mientras él tocaba el órgano, le arranqué la máscara.",
+          "pt-BR": "— Enquanto ele tocava o órgão, eu arranquei a máscara dele.",
+          "id": "\"Saat ia memainkan orgel, aku menarik lepas topengnya.\"",
+          "ar": "«وبينما كان يعزف على الأرغن، نزعت قناعه».",
+          "vi": "\"Trong lúc ông chơi đàn organ, em đã giật chiếc mặt nạ ra.\"",
+          "hi": "\"जब वह ऑर्गन बजा रहा था, मैंने उसका नक़ाब खींच लिया।\"",
+          "ru": "«Пока он играл на органе, я сорвала с него маску».",
+          "bn": "\"সে যখন অর্গান বাজাচ্ছিল, আমি তার মুখোশ টেনে খুলে ফেললাম।\"",
+          "ur": "\"جب وہ آرگن بجا رہا تھا، میں نے اس کا نقاب کھینچ لیا۔\"",
+          "th": "\"ขณะที่เขาเล่นออร์แกน ฉันดึงหน้ากากของเขาออก\""
+        }
+      },
+      {
+        "id": "cl-phantom-036",
+        "english": "\"His face was like a dead man's face. He was born that way.\"",
+        "turkish": "\"Yüzü bir ölünün yüzü gibiydi. Öyle doğmuştu.\"",
+        "translations": {
+          "es-419": "—Su cara era como la de un muerto. Había nacido así.",
+          "pt-BR": "— O rosto dele era como o de um morto. Ele nasceu assim.",
+          "id": "\"Wajahnya seperti wajah orang mati. Ia memang lahir seperti itu.\"",
+          "ar": "«كان وجهه كوجه رجل ميت. لقد وُلد هكذا».",
+          "vi": "\"Gương mặt ông như mặt người chết. Ông sinh ra đã như vậy.\"",
+          "hi": "\"उसका चेहरा किसी मुर्दे के चेहरे जैसा था। वह पैदा ही ऐसा हुआ था।\"",
+          "ru": "«Лицо у него было как у мертвеца. Он таким родился».",
+          "bn": "\"তার মুখ ছিল মৃত মানুষের মুখের মতো। সে জন্ম থেকেই এমন।\"",
+          "ur": "\"اس کا چہرہ کسی مردے کے چہرے جیسا تھا۔ وہ پیدا ہی ایسا ہوا تھا۔\"",
+          "th": "\"ใบหน้าของเขาเหมือนหน้าคนตาย เขาเกิดมาเป็นอย่างนั้น\""
+        }
+      },
+      {
+        "id": "cl-phantom-037",
+        "english": "\"He let me go only after I promised to wear his gold ring and to come back.\"",
+        "turkish": "\"Ancak altın yüzüğünü takacağıma ve geri döneceğime söz verince gitmeme izin verdi.\"",
+        "translations": {
+          "es-419": "—Solo me dejó ir cuando le prometí llevar su anillo de oro y volver.",
+          "pt-BR": "— Ele só me deixou ir depois que prometi usar o anel de ouro dele e voltar.",
+          "id": "\"Ia membiarkanku pergi hanya setelah aku berjanji memakai cincin emasnya dan kembali.\"",
+          "ar": "«لم يسمح لي بالرحيل إلّا بعد أن وعدته بأن ألبس خاتمه الذهبيّ وأن أعود».",
+          "vi": "\"Ông chỉ để em đi sau khi em hứa sẽ đeo chiếc nhẫn vàng của ông và quay lại.\"",
+          "hi": "\"उसने मुझे तभी जाने दिया जब मैंने उसकी सोने की अँगूठी पहनने और लौटकर आने का वादा किया।\"",
+          "ru": "«Он отпустил меня, только когда я обещала носить его золотое кольцо и вернуться».",
+          "bn": "\"আমি তার সোনার আংটি পরব আর ফিরে আসব, এই কথা দেওয়ার পরই সে আমাকে যেতে দিল।\"",
+          "ur": "\"اس نے مجھے تبھی جانے دیا جب میں نے اس کی سونے کی انگوٹھی پہننے اور لوٹ کر آنے کا وعدہ کیا۔\"",
+          "th": "\"เขายอมให้ฉันไปก็ต่อเมื่อฉันสัญญาว่าจะสวมแหวนทองของเขาและกลับมาหา\""
+        }
+      },
+      {
+        "id": "cl-phantom-038",
+        "english": "\"I am afraid of him, Raoul, but I feel sorry for him too.\"",
+        "turkish": "\"Ondan korkuyorum Raoul, ama ona acıyorum da.\"",
+        "translations": {
+          "es-419": "—Le tengo miedo, Raoul, pero también me da lástima.",
+          "pt-BR": "— Tenho medo dele, Raoul, mas também sinto pena.",
+          "id": "\"Aku takut padanya, Raoul, tetapi aku juga kasihan padanya.\"",
+          "ar": "«أخاف منه يا راؤول، لكنّي أشفق عليه أيضًا».",
+          "vi": "\"Em sợ ông ấy, Raoul ạ, nhưng em cũng thương hại ông ấy.\"",
+          "hi": "\"मुझे उससे डर लगता है, राउल, पर मुझे उस पर तरस भी आता है।\"",
+          "ru": "«Я боюсь его, Рауль, но мне его и жаль».",
+          "bn": "\"আমি তাকে ভয় পাই, রাউল, কিন্তু তার জন্য কষ্টও হয়।\"",
+          "ur": "\"مجھے اس سے ڈر لگتا ہے، راؤل، مگر مجھے اس پر ترس بھی آتا ہے۔\"",
+          "th": "\"ฉันกลัวเขา ราอูล แต่ฉันก็สงสารเขาด้วย\""
+        }
+      },
+      {
+        "id": "cl-phantom-039",
+        "english": "Raoul held her hands. \"After tomorrow's show, we will run away together.\"",
+        "turkish": "Raoul onun ellerini tuttu. \"Yarınki gösteriden sonra birlikte kaçacağız.\"",
+        "translations": {
+          "es-419": "Raoul le tomó las manos. —Después de la función de mañana, huiremos juntos.",
+          "pt-BR": "Raoul segurou as mãos dela. — Depois do espetáculo de amanhã, vamos fugir juntos.",
+          "id": "Raoul menggenggam tangannya. \"Setelah pertunjukan besok, kita akan kabur bersama.\"",
+          "ar": "أمسك راؤول يديها: «بعد عرض الغد، سنهرب معًا».",
+          "vi": "Raoul nắm lấy tay cô. \"Sau buổi diễn ngày mai, chúng ta sẽ cùng nhau trốn đi.\"",
+          "hi": "राउल ने उसके हाथ थाम लिए। \"कल के शो के बाद हम साथ भाग चलेंगे।\"",
+          "ru": "Рауль взял её за руки: «После завтрашнего спектакля мы убежим вместе».",
+          "bn": "রাউল তার হাত ধরল। \"কালকের অনুষ্ঠানের পরে আমরা একসঙ্গে পালিয়ে যাব।\"",
+          "ur": "راؤل نے اس کے ہاتھ تھام لیے۔ \"کل کے شو کے بعد ہم ساتھ بھاگ چلیں گے۔\"",
+          "th": "ราอูลจับมือเธอไว้ \"หลังการแสดงพรุ่งนี้ เราจะหนีไปด้วยกัน\""
+        }
+      },
+      {
+        "id": "cl-phantom-040",
+        "english": "They did not see a dark shape hiding behind a statue on the roof.",
+        "turkish": "Damda bir heykelin arkasına saklanan karanlık bir gölgeyi görmediler.",
+        "translations": {
+          "es-419": "No vieron una figura oscura escondida detrás de una estatua del tejado.",
+          "pt-BR": "Eles não viram um vulto escuro escondido atrás de uma estátua no telhado.",
+          "id": "Mereka tidak melihat sosok gelap yang bersembunyi di balik patung di atap.",
+          "ar": "لم يريا شبحًا مظلمًا يختبئ خلف تمثال على السطح.",
+          "vi": "Họ không nhìn thấy một bóng đen nấp sau bức tượng trên mái nhà.",
+          "hi": "उन्होंने छत पर एक मूर्ति के पीछे छिपी एक अँधेरी आकृति को नहीं देखा।",
+          "ru": "Они не заметили тёмную фигуру, прятавшуюся за статуей на крыше.",
+          "bn": "তারা ছাদের এক মূর্তির পেছনে লুকিয়ে থাকা এক অন্ধকার ছায়ামূর্তিকে দেখতে পেল না।",
+          "ur": "انہوں نے چھت پر ایک مجسمے کے پیچھے چھپی ایک اندھیری شکل کو نہیں دیکھا۔",
+          "th": "พวกเขาไม่เห็นเงาดำที่ซ่อนอยู่หลังรูปปั้นบนหลังคา"
+        }
+      },
+      {
+        "id": "cl-phantom-041",
+        "english": "Erik had heard every word, and he was crying.",
+        "turkish": "Erik her kelimeyi duymuştu ve ağlıyordu.",
+        "translations": {
+          "es-419": "Erik había oído cada palabra, y estaba llorando.",
+          "pt-BR": "Erik tinha ouvido cada palavra e estava chorando.",
+          "id": "Erik telah mendengar setiap kata, dan ia menangis.",
+          "ar": "كان إريك قد سمع كلّ كلمة، وكان يبكي.",
+          "vi": "Erik đã nghe hết từng lời, và hắn đang khóc.",
+          "hi": "एरिक ने हर शब्द सुन लिया था, और वह रो रहा था।",
+          "ru": "Эрик слышал каждое слово и плакал.",
+          "bn": "এরিক প্রতিটা কথা শুনেছিল, আর সে কাঁদছিল।",
+          "ur": "ایرک نے ہر لفظ سن لیا تھا، اور وہ رو رہا تھا۔",
+          "th": "เอริกได้ยินทุกคำ และเขากำลังร้องไห้"
+        }
+      },
+      {
+        "id": "cl-phantom-042",
+        "english": "The next evening, Christine sang the main part in the opera Faust.",
+        "turkish": "Ertesi akşam Christine, Faust operasında baş rolü söyledi.",
+        "translations": {
+          "es-419": "La noche siguiente, Christine cantó el papel principal en la ópera Fausto.",
+          "pt-BR": "Na noite seguinte, Christine cantou o papel principal na ópera Fausto.",
+          "id": "Malam berikutnya, Christine menyanyikan peran utama dalam opera Faust.",
+          "ar": "في المساء التالي، غنّت كريستين الدور الرئيسيّ في أوبرا فاوست.",
+          "vi": "Tối hôm sau, Christine hát vai chính trong vở opera Faust.",
+          "hi": "अगली शाम क्रिस्टीन ने फ़ाउस्ट ओपेरा में मुख्य भूमिका गाई।",
+          "ru": "На следующий вечер Кристина пела главную партию в опере «Фауст».",
+          "bn": "পরের সন্ধ্যায় ক্রিস্টিন ফাউস্ট অপেরায় প্রধান ভূমিকায় গাইল।",
+          "ur": "اگلی شام کرسٹین نے فاؤسٹ اوپرا میں مرکزی کردار گایا۔",
+          "th": "เย็นวันต่อมา คริสตีนร้องบทนำในโอเปร่าเรื่องเฟาสต์"
+        }
+      },
+      {
+        "id": "cl-phantom-043",
+        "english": "The theatre was full, and Raoul waited at the side of the stage.",
+        "turkish": "Tiyatro tıklım tıklımdı ve Raoul sahnenin kenarında bekliyordu.",
+        "translations": {
+          "es-419": "El teatro estaba lleno, y Raoul esperaba a un lado del escenario.",
+          "pt-BR": "O teatro estava lotado, e Raoul esperava ao lado do palco.",
+          "id": "Teater itu penuh, dan Raoul menunggu di samping panggung.",
+          "ar": "كان المسرح ممتلئًا، وكان راؤول ينتظر عند جانب الخشبة.",
+          "vi": "Nhà hát chật kín người, còn Raoul đứng chờ ở bên cánh sân khấu.",
+          "hi": "थिएटर भरा हुआ था, और राउल मंच के किनारे इंतज़ार कर रहा था।",
+          "ru": "Театр был полон, а Рауль ждал сбоку от сцены.",
+          "bn": "থিয়েটার ভরা ছিল, আর রাউল মঞ্চের পাশে অপেক্ষা করছিল।",
+          "ur": "تھیٹر بھرا ہوا تھا، اور راؤل اسٹیج کے کنارے انتظار کر رہا تھا۔",
+          "th": "โรงละครเต็มไปด้วยผู้คน และราอูลรออยู่ข้างเวที"
+        }
+      },
+      {
+        "id": "cl-phantom-044",
+        "english": "In the middle of her song, all the lights suddenly went out.",
+        "turkish": "Şarkısının ortasında bütün ışıklar birden söndü.",
+        "translations": {
+          "es-419": "En medio de su canción, de repente se apagaron todas las luces.",
+          "pt-BR": "No meio da canção dela, de repente todas as luzes se apagaram.",
+          "id": "Di tengah lagunya, tiba-tiba semua lampu padam.",
+          "ar": "وفي منتصف أغنيتها، انطفأت كلّ الأنوار فجأة.",
+          "vi": "Giữa lúc cô đang hát, tất cả đèn bỗng vụt tắt.",
+          "hi": "उसके गाने के बीच में अचानक सारी बत्तियाँ बुझ गईं।",
+          "ru": "Посреди её песни вдруг погас весь свет.",
+          "bn": "তার গানের মাঝখানে হঠাৎ সব আলো নিভে গেল।",
+          "ur": "اس کے گانے کے بیچ میں اچانک ساری بتیاں بجھ گئیں۔",
+          "th": "ระหว่างที่เธอกำลังร้องเพลง ไฟทุกดวงก็ดับลงกะทันหัน"
+        }
+      },
+      {
+        "id": "cl-phantom-045",
+        "english": "When they came back on a moment later, Christine was gone.",
+        "turkish": "Bir an sonra ışıklar yeniden yandığında Christine yoktu.",
+        "translations": {
+          "es-419": "Cuando volvieron a encenderse un momento después, Christine ya no estaba.",
+          "pt-BR": "Quando voltaram a acender um instante depois, Christine tinha sumido.",
+          "id": "Ketika lampu menyala lagi sesaat kemudian, Christine sudah hilang.",
+          "ar": "وحين عادت الأنوار بعد لحظة، كانت كريستين قد اختفت.",
+          "vi": "Khi đèn sáng lại một lúc sau, Christine đã biến mất.",
+          "hi": "एक पल बाद जब बत्तियाँ फिर जलीं, तो क्रिस्टीन वहाँ नहीं थी।",
+          "ru": "Когда через миг свет снова зажёгся, Кристины уже не было.",
+          "bn": "এক মুহূর্ত পরে আলো আবার জ্বলে উঠলে দেখা গেল, ক্রিস্টিন নেই।",
+          "ur": "ایک لمحے بعد جب بتیاں پھر جلیں، تو کرسٹین غائب تھی۔",
+          "th": "เมื่อไฟกลับมาสว่างอีกครู่หนึ่งต่อมา คริสตีนก็หายไปแล้ว"
+        }
+      },
+      {
+        "id": "cl-phantom-046",
+        "english": "Raoul ran through the building, shouting her name like a madman.",
+        "turkish": "Raoul binanın içinde deli gibi onun adını bağırarak koştu.",
+        "translations": {
+          "es-419": "Raoul corrió por todo el edificio, gritando su nombre como un loco.",
+          "pt-BR": "Raoul correu pelo prédio inteiro, gritando o nome dela como um louco.",
+          "id": "Raoul berlari ke seluruh gedung, meneriakkan namanya seperti orang gila.",
+          "ar": "ركض راؤول في أرجاء المبنى، يصرخ باسمها كالمجنون.",
+          "vi": "Raoul chạy khắp tòa nhà, gào tên cô như một người điên.",
+          "hi": "राउल पागलों की तरह उसका नाम पुकारता हुआ पूरी इमारत में दौड़ा।",
+          "ru": "Рауль бегал по всему зданию и, как безумный, выкрикивал её имя.",
+          "bn": "রাউল পাগলের মতো তার নাম ধরে চিৎকার করতে করতে গোটা বাড়িতে ছুটে বেড়াল।",
+          "ur": "راؤل پاگلوں کی طرح اس کا نام پکارتا ہوا پوری عمارت میں دوڑا۔",
+          "th": "ราอูลวิ่งไปทั่วอาคาร ตะโกนเรียกชื่อเธออย่างคนบ้า"
+        }
+      },
+      {
+        "id": "cl-phantom-047",
+        "english": "In a dark corridor, a tall man in a fur hat stopped him.",
+        "turkish": "Karanlık bir koridorda kürk şapkalı uzun boylu bir adam onu durdurdu.",
+        "translations": {
+          "es-419": "En un pasillo oscuro, un hombre alto con un gorro de piel lo detuvo.",
+          "pt-BR": "Num corredor escuro, um homem alto com um gorro de pele o deteve.",
+          "id": "Di sebuah lorong gelap, seorang pria tinggi bertopi bulu menghentikannya.",
+          "ar": "في ممرّ مظلم، أوقفه رجل طويل يلبس قبّعة من الفرو.",
+          "vi": "Trong một hành lang tối, một người đàn ông cao đội mũ lông chặn anh lại.",
+          "hi": "एक अँधेरे गलियारे में फ़र की टोपी पहने एक लंबे आदमी ने उसे रोका।",
+          "ru": "В тёмном коридоре его остановил высокий человек в меховой шапке.",
+          "bn": "একটা অন্ধকার বারান্দায় পশমের টুপি পরা এক লম্বা লোক তাকে থামালেন।",
+          "ur": "ایک اندھیری راہداری میں فر کی ٹوپی پہنے ایک لمبے آدمی نے اسے روکا۔",
+          "th": "ในทางเดินมืด ๆ ชายร่างสูงสวมหมวกขนสัตว์คนหนึ่งหยุดเขาไว้"
+        }
+      },
+      {
+        "id": "cl-phantom-048",
+        "english": "\"People call me the Persian. I knew Erik long ago, in the East.\"",
+        "turkish": "\"Bana İranlı derler. Erik'i yıllar önce Doğu'da tanıdım.\"",
+        "translations": {
+          "es-419": "—Me llaman el Persa. Conocí a Erik hace mucho tiempo, en Oriente.",
+          "pt-BR": "— Me chamam de Persa. Conheci Erik há muito tempo, no Oriente.",
+          "id": "\"Orang memanggilku si Persia. Aku mengenal Erik dulu sekali, di Timur.\"",
+          "ar": "«يسمّونني الفارسيّ. عرفتُ إريك منذ زمن بعيد، في الشرق».",
+          "vi": "\"Người ta gọi tôi là người Ba Tư. Tôi quen Erik từ lâu lắm rồi, ở phương Đông.\"",
+          "hi": "\"लोग मुझे फ़ारसी कहते हैं। मैं एरिक को बहुत पहले, पूरब में जानता था।\"",
+          "ru": "«Меня называют Персом. Я знал Эрика давно, на Востоке».",
+          "bn": "\"লোকে আমাকে পারস্যের লোক বলে ডাকে। অনেক কাল আগে প্রাচ্যে আমি এরিককে চিনতাম।\"",
+          "ur": "\"لوگ مجھے ایرانی کہتے ہیں۔ میں ایرک کو بہت پہلے، مشرق میں جانتا تھا۔\"",
+          "th": "\"คนเรียกผมว่าชาวเปอร์เซีย ผมรู้จักเอริกมานานแล้ว ตั้งแต่อยู่ทางตะวันออก\""
+        }
+      },
+      {
+        "id": "cl-phantom-049",
+        "english": "\"If you want to save her, follow me. Keep one hand up near your face.\"",
+        "turkish": "\"Onu kurtarmak istiyorsan beni izle. Bir elini yüzüne yakın, havada tut.\"",
+        "translations": {
+          "es-419": "—Si quiere salvarla, sígame. Mantenga una mano levantada cerca de la cara.",
+          "pt-BR": "— Se quer salvá-la, siga-me. Mantenha uma mão levantada perto do rosto.",
+          "id": "\"Kalau kau ingin menyelamatkannya, ikuti aku. Angkat satu tanganmu di dekat wajah.\"",
+          "ar": "«إن أردتَ إنقاذها فاتبعني. وأبقِ إحدى يديك مرفوعة قرب وجهك».",
+          "vi": "\"Nếu muốn cứu cô ấy thì hãy theo tôi. Giữ một tay giơ lên gần mặt.\"",
+          "hi": "\"अगर तुम उसे बचाना चाहते हो, तो मेरे पीछे आओ। एक हाथ अपने चेहरे के पास उठाए रखो।\"",
+          "ru": "«Если хотите её спасти, идите за мной. Держите одну руку поднятой у лица».",
+          "bn": "\"ওকে বাঁচাতে চাইলে আমার সঙ্গে এসো। একটা হাত মুখের কাছে তুলে রাখো।\"",
+          "ur": "\"اگر تم اسے بچانا چاہتے ہو تو میرے پیچھے آؤ۔ ایک ہاتھ اپنے چہرے کے پاس اٹھائے رکھو۔\"",
+          "th": "\"ถ้าคุณอยากช่วยเธอ ก็ตามผมมา ยกมือข้างหนึ่งไว้ใกล้ใบหน้า\""
+        }
+      },
+      {
+        "id": "cl-phantom-050",
+        "english": "\"Erik kills people with a thin rope from the darkness.\"",
+        "turkish": "\"Erik insanları karanlıktan ince bir iple öldürür.\"",
+        "translations": {
+          "es-419": "—Erik mata a la gente con una cuerda fina desde la oscuridad.",
+          "pt-BR": "— Erik mata as pessoas com uma corda fina, de dentro da escuridão.",
+          "id": "\"Erik membunuh orang dengan tali tipis dari dalam kegelapan.\"",
+          "ar": "«إريك يقتل الناس بحبل رفيع من قلب الظلام».",
+          "vi": "\"Erik giết người bằng một sợi dây mảnh từ trong bóng tối.\"",
+          "hi": "\"एरिक अँधेरे में से एक पतली रस्सी से लोगों को मार डालता है।\"",
+          "ru": "«Эрик убивает людей тонкой верёвкой из темноты».",
+          "bn": "\"এরিক অন্ধকারের ভেতর থেকে একটা সরু দড়ি দিয়ে মানুষ মারে।\"",
+          "ur": "\"ایرک اندھیرے میں سے ایک پتلی رسی سے لوگوں کو مار ڈالتا ہے۔\"",
+          "th": "\"เอริกฆ่าคนด้วยเชือกเส้นเล็ก ๆ จากในความมืด\""
+        }
+      },
+      {
+        "id": "cl-phantom-051",
+        "english": "They went down, floor after floor, into the cellars under the Opera.",
+        "turkish": "Kat kat aşağı inerek Opera'nın altındaki mahzenlere vardılar.",
+        "translations": {
+          "es-419": "Bajaron, piso tras piso, a los sótanos que había bajo la Ópera.",
+          "pt-BR": "Desceram, andar após andar, até os porões debaixo da Ópera.",
+          "id": "Mereka turun, lantai demi lantai, ke ruang-ruang bawah tanah di bawah Opera.",
+          "ar": "نزلا، طابقًا بعد طابق، إلى الأقبية التي تحت الأوبرا.",
+          "vi": "Họ đi xuống, hết tầng này đến tầng khác, vào các hầm bên dưới nhà hát Opera.",
+          "hi": "वे मंज़िल-दर-मंज़िल नीचे उतरते हुए ओपेरा के नीचे के तहख़ानों में पहुँचे।",
+          "ru": "Они спускались, этаж за этажом, в подвалы под Оперой.",
+          "bn": "তাঁরা তলার পর তলা নেমে অপেরার নিচের মাটির তলার ঘরগুলোয় পৌঁছলেন।",
+          "ur": "وہ منزل در منزل نیچے اترتے ہوئے اوپرا کے نیچے تہ خانوں میں پہنچے۔",
+          "th": "พวกเขาลงไปทีละชั้น ๆ สู่ห้องใต้ดินใต้โรงโอเปร่า"
+        }
+      },
+      {
+        "id": "cl-phantom-052",
+        "english": "The Persian would not cross the lake. \"Erik guards the water,\" he whispered.",
+        "turkish": "İranlı gölü geçmek istemedi. \"Erik suyu korur,\" diye fısıldadı.",
+        "translations": {
+          "es-419": "El Persa no quiso cruzar el lago. —Erik vigila el agua —susurró.",
+          "pt-BR": "O Persa não quis atravessar o lago. — Erik vigia a água — sussurrou.",
+          "id": "Si Persia tidak mau menyeberangi danau. \"Erik menjaga air itu,\" bisiknya.",
+          "ar": "رفض الفارسيّ أن يعبر البحيرة، وهمس: «إريك يحرس الماء».",
+          "vi": "Người Ba Tư không chịu vượt qua hồ. \"Erik canh giữ mặt nước,\" ông thì thầm.",
+          "hi": "फ़ारसी झील पार करने को तैयार नहीं थे। उन्होंने फुसफुसाकर कहा, \"एरिक पानी की रखवाली करता है।\"",
+          "ru": "Перс не захотел переплывать озеро. «Эрик сторожит воду», — прошептал он.",
+          "bn": "পারস্যের লোকটি হ্রদ পার হতে রাজি হলেন না। ফিসফিস করে বললেন, \"এরিক জল পাহারা দেয়।\"",
+          "ur": "ایرانی جھیل پار کرنے پر راضی نہ ہوئے۔ انہوں نے سرگوشی کی، \"ایرک پانی کی رکھوالی کرتا ہے۔\"",
+          "th": "ชาวเปอร์เซียไม่ยอมข้ามทะเลสาบ เขากระซิบว่า \"เอริกเฝ้าน้ำอยู่\""
+        }
+      },
+      {
+        "id": "cl-phantom-053",
+        "english": "Instead, they found a secret door in a wall and climbed through it.",
+        "turkish": "Onun yerine bir duvarda gizli bir kapı bulup içinden geçtiler.",
+        "translations": {
+          "es-419": "En cambio, encontraron una puerta secreta en una pared y pasaron por ella.",
+          "pt-BR": "Em vez disso, encontraram uma porta secreta numa parede e passaram por ela.",
+          "id": "Sebagai gantinya, mereka menemukan pintu rahasia di sebuah dinding dan memanjat masuk.",
+          "ar": "وبدلًا من ذلك، وجدا بابًا سرّيًّا في جدار وتسلّقا عبره.",
+          "vi": "Thay vào đó, họ tìm thấy một cánh cửa bí mật trên tường và trèo qua.",
+          "hi": "इसके बजाय उन्हें एक दीवार में गुप्त दरवाज़ा मिला, और वे उसमें से चढ़कर अंदर गए।",
+          "ru": "Вместо этого они нашли в стене потайную дверь и пролезли в неё.",
+          "bn": "তার বদলে তাঁরা একটা দেয়ালে গোপন দরজা খুঁজে পেলেন আর সেটা দিয়ে ভেতরে ঢুকলেন।",
+          "ur": "اس کے بجائے انہیں ایک دیوار میں خفیہ دروازہ ملا، اور وہ اس میں سے چڑھ کر اندر گئے۔",
+          "th": "พวกเขาจึงหาประตูลับในกำแพงจนเจอ แล้วปีนลอดเข้าไป"
+        }
+      },
+      {
+        "id": "cl-phantom-054",
+        "english": "The door closed behind them, and they were in a room made of mirrors.",
+        "turkish": "Kapı arkalarından kapandı ve kendilerini aynalardan yapılmış bir odada buldular.",
+        "translations": {
+          "es-419": "La puerta se cerró detrás de ellos, y quedaron en una sala hecha de espejos.",
+          "pt-BR": "A porta se fechou atrás deles, e eles ficaram numa sala feita de espelhos.",
+          "id": "Pintu tertutup di belakang mereka, dan mereka berada di ruangan yang terbuat dari cermin.",
+          "ar": "انغلق الباب خلفهما، فإذا هما في غرفة مصنوعة من المرايا.",
+          "vi": "Cánh cửa đóng sập sau lưng, và họ thấy mình ở trong một căn phòng toàn gương.",
+          "hi": "दरवाज़ा उनके पीछे बंद हो गया, और वे शीशों से बने एक कमरे में थे।",
+          "ru": "Дверь закрылась за ними, и они оказались в комнате из зеркал.",
+          "bn": "দরজাটা তাঁদের পেছনে বন্ধ হয়ে গেল, আর তাঁরা আয়নায় তৈরি একটা ঘরে আটকে পড়লেন।",
+          "ur": "دروازہ ان کے پیچھے بند ہو گیا، اور وہ آئینوں سے بنے ایک کمرے میں تھے۔",
+          "th": "ประตูปิดลงข้างหลังพวกเขา และพวกเขาก็อยู่ในห้องที่ทำจากกระจกเงา"
+        }
+      },
+      {
+        "id": "cl-phantom-055",
+        "english": "In the mirrors they saw a forest of iron trees, again and again.",
+        "turkish": "Aynalarda tekrar tekrar demirden ağaçlardan oluşan bir orman gördüler.",
+        "translations": {
+          "es-419": "En los espejos vieron un bosque de árboles de hierro, una y otra vez.",
+          "pt-BR": "Nos espelhos viram uma floresta de árvores de ferro, repetida sem fim.",
+          "id": "Di cermin-cermin itu mereka melihat hutan pohon besi, berulang-ulang.",
+          "ar": "رأيا في المرايا غابة من أشجار الحديد، تتكرّر مرّة بعد مرّة.",
+          "vi": "Trong gương, họ thấy một khu rừng cây sắt, lặp đi lặp lại mãi.",
+          "hi": "शीशों में उन्हें लोहे के पेड़ों का एक जंगल बार-बार दिखाई दिया।",
+          "ru": "В зеркалах они видели лес из железных деревьев, снова и снова.",
+          "bn": "আয়নাগুলোয় তাঁরা বারবার লোহার গাছের একটা বন দেখতে পেলেন।",
+          "ur": "آئینوں میں انہیں لوہے کے درختوں کا ایک جنگل بار بار دکھائی دیا۔",
+          "th": "ในกระจกพวกเขาเห็นป่าต้นไม้เหล็กสะท้อนซ้ำแล้วซ้ำเล่า"
+        }
+      },
+      {
+        "id": "cl-phantom-056",
+        "english": "It was Erik's torture room, and soon it became terribly hot.",
+        "turkish": "Burası Erik'in işkence odasıydı ve kısa sürede korkunç derecede ısındı.",
+        "translations": {
+          "es-419": "Era la sala de tortura de Erik, y pronto empezó a hacer un calor terrible.",
+          "pt-BR": "Era a sala de tortura de Erik, e logo ficou terrivelmente quente.",
+          "id": "Itu ruang penyiksaan Erik, dan tak lama kemudian ruangan itu menjadi sangat panas.",
+          "ar": "كانت تلك غرفة التعذيب الخاصّة بإريك، وسرعان ما صارت حارّة حرارةً رهيبة.",
+          "vi": "Đó là phòng tra tấn của Erik, và chẳng mấy chốc nó nóng khủng khiếp.",
+          "hi": "यह एरिक का यातना-कक्ष था, और जल्दी ही वह भयानक रूप से गरम हो गया।",
+          "ru": "Это была пыточная комната Эрика, и вскоре в ней стало ужасно жарко.",
+          "bn": "এটা ছিল এরিকের নির্যাতনের ঘর, আর শিগগিরই সেটা ভয়ানক গরম হয়ে উঠল।",
+          "ur": "یہ ایرک کا اذیت خانہ تھا، اور جلد ہی وہ بے حد گرم ہو گیا۔",
+          "th": "มันคือห้องทรมานของเอริก และไม่นานห้องก็ร้อนจัดอย่างน่ากลัว"
+        }
+      },
+      {
+        "id": "cl-phantom-057",
+        "english": "Through the wall they could hear Erik and Christine.",
+        "turkish": "Duvarın öbür yanından Erik'le Christine'i duyabiliyorlardı.",
+        "translations": {
+          "es-419": "A través de la pared podían oír a Erik y a Christine.",
+          "pt-BR": "Através da parede, podiam ouvir Erik e Christine.",
+          "id": "Dari balik dinding mereka bisa mendengar Erik dan Christine.",
+          "ar": "ومن خلف الجدار كانا يسمعان إريك وكريستين.",
+          "vi": "Qua bức tường, họ nghe được tiếng Erik và Christine.",
+          "hi": "दीवार के उस पार से उन्हें एरिक और क्रिस्टीन की आवाज़ें सुनाई दे रही थीं।",
+          "ru": "Сквозь стену им были слышны Эрик и Кристина.",
+          "bn": "দেয়ালের ওপাশ থেকে তাঁরা এরিক আর ক্রিস্টিনের কথা শুনতে পাচ্ছিলেন।",
+          "ur": "دیوار کے اس پار سے انہیں ایرک اور کرسٹین کی آوازیں سنائی دے رہی تھیں۔",
+          "th": "ผ่านกำแพง พวกเขาได้ยินเสียงเอริกกับคริสตีน"
+        }
+      },
+      {
+        "id": "cl-phantom-058",
+        "english": "\"I am tired of living like a dead man under the ground,\" Erik said.",
+        "turkish": "\"Yerin altında ölü bir adam gibi yaşamaktan bıktım,\" dedi Erik.",
+        "translations": {
+          "es-419": "—Estoy cansado de vivir como un muerto bajo la tierra —dijo Erik.",
+          "pt-BR": "— Estou cansado de viver como um morto debaixo da terra — disse Erik.",
+          "id": "\"Aku lelah hidup seperti orang mati di bawah tanah,\" kata Erik.",
+          "ar": "قال إريك: «تعبتُ من العيش كرجل ميت تحت الأرض».",
+          "vi": "\"Ta mệt mỏi vì phải sống như một người chết dưới lòng đất,\" Erik nói.",
+          "hi": "एरिक ने कहा, \"मैं ज़मीन के नीचे मुर्दे की तरह जीते-जीते थक गया हूँ।\"",
+          "ru": "«Я устал жить под землёй, как мертвец», — сказал Эрик.",
+          "bn": "এরিক বলল, \"মাটির নিচে মরা মানুষের মতো বেঁচে থেকে আমি ক্লান্ত।\"",
+          "ur": "ایرک نے کہا، \"میں زمین کے نیچے مردے کی طرح جیتے جیتے تھک گیا ہوں۔\"",
+          "th": "\"ฉันเหนื่อยกับการใช้ชีวิตเหมือนคนตายอยู่ใต้ดิน\" เอริกพูด"
+        }
+      },
+      {
+        "id": "cl-phantom-059",
+        "english": "\"I want a wife, like everybody else. I want to walk with her on Sundays.\"",
+        "turkish": "\"Herkes gibi bir karım olsun istiyorum. Pazar günleri onunla yürüyüşe çıkmak istiyorum.\"",
+        "translations": {
+          "es-419": "—Quiero una esposa, como todo el mundo. Quiero pasear con ella los domingos.",
+          "pt-BR": "— Quero uma esposa, como todo mundo. Quero passear com ela aos domingos.",
+          "id": "\"Aku ingin punya istri, seperti orang lain. Aku ingin berjalan-jalan dengannya setiap hari Minggu.\"",
+          "ar": "«أريد زوجة مثل سائر الناس. أريد أن أتنزّه معها أيّام الآحاد».",
+          "vi": "\"Ta muốn có vợ, như bao người khác. Ta muốn cùng nàng đi dạo mỗi Chủ nhật.\"",
+          "hi": "\"मुझे भी बाक़ी सबकी तरह एक पत्नी चाहिए। मैं इतवार को उसके साथ घूमने जाना चाहता हूँ।\"",
+          "ru": "«Я хочу жену, как у всех. Хочу гулять с ней по воскресеньям».",
+          "bn": "\"সবার মতো আমিও একটা বউ চাই। রবিবারে তার সঙ্গে বেড়াতে যেতে চাই।\"",
+          "ur": "\"مجھے بھی سب کی طرح ایک بیوی چاہیے۔ میں اتوار کو اس کے ساتھ گھومنے جانا چاہتا ہوں۔\"",
+          "th": "\"ฉันอยากมีภรรยาเหมือนคนอื่น ๆ ฉันอยากเดินเล่นกับเธอทุกวันอาทิตย์\""
+        }
+      },
+      {
+        "id": "cl-phantom-060",
+        "english": "\"On the table there are two little boxes, a scorpion and a grasshopper.\"",
+        "turkish": "\"Masada iki küçük kutu var: bir akrep ve bir çekirge.\"",
+        "translations": {
+          "es-419": "—Sobre la mesa hay dos cajitas: un escorpión y un saltamontes.",
+          "pt-BR": "— Na mesa há duas caixinhas: um escorpião e um gafanhoto.",
+          "id": "\"Di atas meja ada dua kotak kecil, seekor kalajengking dan seekor belalang.\"",
+          "ar": "«على الطاولة علبتان صغيرتان: عقرب وجرادة».",
+          "vi": "\"Trên bàn có hai chiếc hộp nhỏ, một con bọ cạp và một con châu chấu.\"",
+          "hi": "\"मेज़ पर दो छोटी डिब्बियाँ हैं, एक बिच्छू और एक टिड्डा।\"",
+          "ru": "«На столе две маленькие шкатулки: скорпион и кузнечик».",
+          "bn": "\"টেবিলে দুটো ছোট বাক্স আছে, একটা কাঁকড়াবিছে আর একটা ফড়িং।\"",
+          "ur": "\"میز پر دو چھوٹی ڈبیاں ہیں، ایک بچھو اور ایک ٹڈا۔\"",
+          "th": "\"บนโต๊ะมีกล่องเล็ก ๆ สองใบ เป็นรูปแมงป่องกับตั๊กแตน\""
+        }
+      },
+      {
+        "id": "cl-phantom-061",
+        "english": "\"If you turn the scorpion, you will be my wife.\"",
+        "turkish": "\"Akrebi çevirirsen benim karım olacaksın.\"",
+        "translations": {
+          "es-419": "—Si giras el escorpión, serás mi esposa.",
+          "pt-BR": "— Se você girar o escorpião, será minha esposa.",
+          "id": "\"Jika kau memutar kalajengking, kau akan menjadi istriku.\"",
+          "ar": "«إن أدرتِ العقرب، صرتِ زوجتي».",
+          "vi": "\"Nếu nàng xoay con bọ cạp, nàng sẽ là vợ ta.\"",
+          "hi": "\"अगर तुम बिच्छू घुमाओगी, तो तुम मेरी पत्नी बनोगी।\"",
+          "ru": "«Если повернёшь скорпиона, станешь моей женой».",
+          "bn": "\"কাঁকড়াবিছেটা ঘোরালে তুমি আমার বউ হবে।\"",
+          "ur": "\"اگر تم بچھو گھماؤ گی، تو تم میری بیوی بنو گی۔\"",
+          "th": "\"ถ้าเธอหมุนแมงป่อง เธอจะได้เป็นภรรยาของฉัน\""
+        }
+      },
+      {
+        "id": "cl-phantom-062",
+        "english": "\"If you turn the grasshopper, the whole Opera will fly into the air.\"",
+        "turkish": "\"Çekirgeyi çevirirsen bütün Opera havaya uçacak.\"",
+        "translations": {
+          "es-419": "—Si giras el saltamontes, toda la Ópera volará por los aires.",
+          "pt-BR": "— Se girar o gafanhoto, a Ópera inteira vai voar pelos ares.",
+          "id": "\"Jika kau memutar belalang, seluruh Opera akan meledak ke udara.\"",
+          "ar": "«وإن أدرتِ الجرادة، طارت الأوبرا كلّها في الهواء».",
+          "vi": "\"Nếu nàng xoay con châu chấu, cả nhà hát Opera sẽ nổ tung lên trời.\"",
+          "hi": "\"अगर तुम टिड्डा घुमाओगी, तो पूरा ओपेरा हवा में उड़ जाएगा।\"",
+          "ru": "«Если повернёшь кузнечика, вся Опера взлетит на воздух».",
+          "bn": "\"ফড়িংটা ঘোরালে গোটা অপেরা আকাশে উড়ে যাবে।\"",
+          "ur": "\"اگر تم ٹڈا گھماؤ گی، تو سارا اوپرا ہوا میں اڑ جائے گا۔\"",
+          "th": "\"ถ้าเธอหมุนตั๊กแตน โรงโอเปร่าทั้งหลังจะระเบิดลอยขึ้นฟ้า\""
+        }
+      },
+      {
+        "id": "cl-phantom-063",
+        "english": "\"Under our feet there is enough gunpowder to destroy half of Paris.\"",
+        "turkish": "\"Ayaklarımızın altında Paris'in yarısını yok edecek kadar barut var.\"",
+        "translations": {
+          "es-419": "—Bajo nuestros pies hay pólvora suficiente para destruir medio París.",
+          "pt-BR": "— Debaixo dos nossos pés há pólvora suficiente para destruir metade de Paris.",
+          "id": "\"Di bawah kaki kita ada cukup mesiu untuk menghancurkan separuh kota Paris.\"",
+          "ar": "«تحت أقدامنا من البارود ما يكفي لتدمير نصف باريس».",
+          "vi": "\"Dưới chân chúng ta có đủ thuốc súng để phá hủy nửa thành Paris.\"",
+          "hi": "\"हमारे पैरों के नीचे इतना बारूद है कि आधा पेरिस तबाह हो जाए।\"",
+          "ru": "«Под нашими ногами столько пороха, что хватит разрушить пол-Парижа».",
+          "bn": "\"আমাদের পায়ের নিচে এত বারুদ আছে যে অর্ধেক প্যারিস ধ্বংস হয়ে যাবে।\"",
+          "ur": "\"ہمارے پیروں کے نیچے اتنا بارود ہے کہ آدھا پیرس تباہ ہو جائے۔\"",
+          "th": "\"ใต้เท้าเรามีดินปืนมากพอจะทำลายปารีสได้ครึ่งเมือง\""
+        }
+      },
+      {
+        "id": "cl-phantom-064",
+        "english": "\"You have until eleven o'clock to decide.\"",
+        "turkish": "\"Karar vermek için saat on bire kadar vaktin var.\"",
+        "translations": {
+          "es-419": "—Tienes hasta las once para decidir.",
+          "pt-BR": "— Você tem até as onze horas para decidir.",
+          "id": "\"Kau punya waktu sampai pukul sebelas untuk memutuskan.\"",
+          "ar": "«أمامكِ حتّى الساعة الحادية عشرة لتقرّري».",
+          "vi": "\"Nàng có thời gian đến mười một giờ để quyết định.\"",
+          "hi": "\"तुम्हारे पास फ़ैसला करने के लिए ग्यारह बजे तक का समय है।\"",
+          "ru": "«У тебя есть время до одиннадцати часов, чтобы решить».",
+          "bn": "\"সিদ্ধান্ত নেওয়ার জন্য তোমার হাতে এগারোটা পর্যন্ত সময় আছে।\"",
+          "ur": "\"تمہارے پاس فیصلہ کرنے کے لیے گیارہ بجے تک کا وقت ہے۔\"",
+          "th": "\"เธอมีเวลาตัดสินใจจนถึงห้าทุ่ม\""
+        }
+      },
+      {
+        "id": "cl-phantom-065",
+        "english": "In the mirror room, Raoul and the Persian were almost dying of heat and thirst.",
+        "turkish": "Ayna odasında Raoul ile İranlı sıcaktan ve susuzluktan neredeyse ölüyordu.",
+        "translations": {
+          "es-419": "En la sala de los espejos, Raoul y el Persa casi morían de calor y de sed.",
+          "pt-BR": "Na sala dos espelhos, Raoul e o Persa quase morriam de calor e de sede.",
+          "id": "Di ruang cermin, Raoul dan si Persia hampir mati karena panas dan haus.",
+          "ar": "وفي غرفة المرايا، كاد راؤول والفارسيّ يموتان من الحرّ والعطش.",
+          "vi": "Trong phòng gương, Raoul và người Ba Tư gần như chết vì nóng và khát.",
+          "hi": "शीशों वाले कमरे में राउल और फ़ारसी गर्मी और प्यास से लगभग मर रहे थे।",
+          "ru": "В зеркальной комнате Рауль и Перс почти умирали от жары и жажды.",
+          "bn": "আয়নার ঘরে রাউল আর পারস্যের লোকটি গরমে আর তেষ্টায় প্রায় মরতে বসেছিলেন।",
+          "ur": "آئینوں والے کمرے میں راؤل اور ایرانی گرمی اور پیاس سے تقریباً مر رہے تھے۔",
+          "th": "ในห้องกระจก ราอูลกับชาวเปอร์เซียแทบจะตายเพราะความร้อนและความกระหาย"
+        }
+      },
+      {
+        "id": "cl-phantom-066",
+        "english": "Then they found a trap door in the floor and climbed down into a cellar.",
+        "turkish": "Sonra yerde bir kapak buldular ve aşağıdaki bir mahzene indiler.",
+        "translations": {
+          "es-419": "Entonces encontraron una trampilla en el suelo y bajaron a un sótano.",
+          "pt-BR": "Então encontraram um alçapão no chão e desceram para um porão.",
+          "id": "Lalu mereka menemukan pintu di lantai dan turun ke sebuah ruang bawah tanah.",
+          "ar": "ثمّ وجدا بابًا سرّيًّا في الأرضيّة، فنزلا منه إلى قبو.",
+          "vi": "Rồi họ tìm thấy một cửa sập dưới sàn và leo xuống một căn hầm.",
+          "hi": "फिर उन्हें फ़र्श में एक चोर-दरवाज़ा मिला, और वे नीचे एक तहख़ाने में उतर गए।",
+          "ru": "Потом они нашли в полу люк и спустились в подвал.",
+          "bn": "তারপর তাঁরা মেঝেতে একটা গোপন দরজা পেলেন আর নেমে গেলেন নিচের একটা ঘরে।",
+          "ur": "پھر انہیں فرش میں ایک چور دروازہ ملا، اور وہ نیچے ایک تہ خانے میں اتر گئے۔",
+          "th": "แล้วพวกเขาก็พบประตูกลบนพื้น จึงปีนลงไปในห้องใต้ดิน"
+        }
+      },
+      {
+        "id": "cl-phantom-067",
+        "english": "It was full of barrels, and the barrels were full of gunpowder.",
+        "turkish": "Mahzen fıçılarla doluydu, fıçılar da barutla.",
+        "translations": {
+          "es-419": "Estaba lleno de barriles, y los barriles estaban llenos de pólvora.",
+          "pt-BR": "Estava cheio de barris, e os barris estavam cheios de pólvora.",
+          "id": "Ruangan itu penuh tong, dan tong-tong itu penuh mesiu.",
+          "ar": "كان مليئًا بالبراميل، وكانت البراميل مليئة بالبارود.",
+          "vi": "Căn hầm đầy những thùng gỗ, và những thùng ấy đầy thuốc súng.",
+          "hi": "वह पीपों से भरा था, और पीपे बारूद से भरे थे।",
+          "ru": "Он был полон бочек, а бочки были полны пороха.",
+          "bn": "ঘরটা পিপেয় ভরা, আর পিপেগুলো বারুদে ভরা।",
+          "ur": "وہ پیپوں سے بھرا تھا، اور پیپے بارود سے بھرے تھے۔",
+          "th": "ห้องนั้นเต็มไปด้วยถังไม้ และถังเหล่านั้นก็เต็มไปด้วยดินปืน"
+        }
+      },
+      {
+        "id": "cl-phantom-068",
+        "english": "The Persian called through the wall: \"Christine, do not touch the grasshopper!\"",
+        "turkish": "İranlı duvarın ardından seslendi: \"Christine, çekirgeye dokunma!\"",
+        "translations": {
+          "es-419": "El Persa gritó a través de la pared: —¡Christine, no toque el saltamontes!",
+          "pt-BR": "O Persa gritou através da parede: — Christine, não toque no gafanhoto!",
+          "id": "Si Persia berseru dari balik dinding, \"Christine, jangan sentuh belalang itu!\"",
+          "ar": "نادى الفارسيّ من خلف الجدار: «كريستين، لا تلمسي الجرادة!»",
+          "vi": "Người Ba Tư gọi vọng qua bức tường: \"Christine, đừng chạm vào con châu chấu!\"",
+          "hi": "फ़ारसी ने दीवार के उस पार आवाज़ दी, \"क्रिस्टीन, टिड्डे को मत छूना!\"",
+          "ru": "Перс крикнул сквозь стену: «Кристина, не трогайте кузнечика!»",
+          "bn": "পারস্যের লোকটি দেয়ালের ওপার থেকে ডাকলেন, \"ক্রিস্টিন, ফড়িংটা ছুঁয়ো না!\"",
+          "ur": "ایرانی نے دیوار کے اس پار آواز دی، \"کرسٹین، ٹڈے کو مت چھونا!\"",
+          "th": "ชาวเปอร์เซียตะโกนผ่านกำแพงว่า \"คริสตีน อย่าแตะตั๊กแตนนะ!\""
+        }
+      },
+      {
+        "id": "cl-phantom-069",
+        "english": "Christine was crying, but her hand moved to the scorpion, and she turned it.",
+        "turkish": "Christine ağlıyordu, ama eli akrebe uzandı ve onu çevirdi.",
+        "translations": {
+          "es-419": "Christine lloraba, pero su mano fue hacia el escorpión, y lo giró.",
+          "pt-BR": "Christine chorava, mas sua mão foi até o escorpião, e ela o girou.",
+          "id": "Christine menangis, tetapi tangannya bergerak ke kalajengking, lalu ia memutarnya.",
+          "ar": "كانت كريستين تبكي، لكنّ يدها امتدّت إلى العقرب، فأدارته.",
+          "vi": "Christine đang khóc, nhưng tay cô vẫn đưa tới con bọ cạp và xoay nó.",
+          "hi": "क्रिस्टीन रो रही थी, पर उसका हाथ बिच्छू की ओर बढ़ा, और उसने उसे घुमा दिया।",
+          "ru": "Кристина плакала, но её рука потянулась к скорпиону, и она повернула его.",
+          "bn": "ক্রিস্টিন কাঁদছিল, কিন্তু তার হাত কাঁকড়াবিছের দিকে গেল, আর সে সেটা ঘুরিয়ে দিল।",
+          "ur": "کرسٹین رو رہی تھی، مگر اس کا ہاتھ بچھو کی طرف بڑھا، اور اس نے اسے گھما دیا۔",
+          "th": "คริสตีนร้องไห้อยู่ แต่มือของเธอก็เอื้อมไปที่แมงป่อง แล้วหมุนมัน"
+        }
+      },
+      {
+        "id": "cl-phantom-070",
+        "english": "At once, water from the lake began to pour into the cellar.",
+        "turkish": "Hemen gölden gelen su mahzene dolmaya başladı.",
+        "translations": {
+          "es-419": "Al instante, el agua del lago empezó a entrar a chorros en el sótano.",
+          "pt-BR": "Na mesma hora, a água do lago começou a jorrar dentro do porão.",
+          "id": "Seketika, air dari danau mulai mengalir deras ke ruang bawah tanah itu.",
+          "ar": "وفي الحال، بدأ ماء البحيرة يتدفّق إلى القبو.",
+          "vi": "Lập tức, nước từ hồ bắt đầu tràn ào ạt vào căn hầm.",
+          "hi": "तुरंत झील का पानी तहख़ाने में भरने लगा।",
+          "ru": "Тотчас вода из озера хлынула в подвал.",
+          "bn": "সঙ্গে সঙ্গে হ্রদের জল হু হু করে নিচের ঘরে ঢুকতে লাগল।",
+          "ur": "فوراً جھیل کا پانی تہ خانے میں بھرنے لگا۔",
+          "th": "ทันใดนั้น น้ำจากทะเลสาบก็เริ่มไหลทะลักเข้ามาในห้องใต้ดิน"
+        }
+      },
+      {
+        "id": "cl-phantom-071",
+        "english": "The water covered the gunpowder, but it kept rising around the two men.",
+        "turkish": "Su barutu örttü, ama iki adamın çevresinde yükselmeye devam etti.",
+        "translations": {
+          "es-419": "El agua cubrió la pólvora, pero siguió subiendo alrededor de los dos hombres.",
+          "pt-BR": "A água cobriu a pólvora, mas continuou subindo em volta dos dois homens.",
+          "id": "Air itu menutupi mesiu, tetapi terus naik di sekitar kedua pria itu.",
+          "ar": "غطّى الماء البارود، لكنّه ظلّ يرتفع حول الرجلين.",
+          "vi": "Nước phủ kín thuốc súng, nhưng vẫn tiếp tục dâng lên quanh hai người đàn ông.",
+          "hi": "पानी ने बारूद को ढक लिया, पर वह दोनों आदमियों के चारों ओर बढ़ता ही गया।",
+          "ru": "Вода залила порох, но продолжала подниматься вокруг двух мужчин.",
+          "bn": "জল বারুদ ঢেকে দিল, কিন্তু দুজনের চারপাশে বাড়তেই থাকল।",
+          "ur": "پانی نے بارود کو ڈھک لیا، مگر وہ دونوں آدمیوں کے چاروں طرف بڑھتا ہی گیا۔",
+          "th": "น้ำท่วมดินปืนจนมิด แต่ก็ยังสูงขึ้นเรื่อย ๆ รอบตัวชายทั้งสอง"
+        }
+      },
+      {
+        "id": "cl-phantom-072",
+        "english": "Soon it reached their chins, and Raoul was sure he would die.",
+        "turkish": "Çok geçmeden su çenelerine ulaştı ve Raoul öleceğinden emindi.",
+        "translations": {
+          "es-419": "Pronto les llegó a la barbilla, y Raoul estaba seguro de que iba a morir.",
+          "pt-BR": "Logo chegou ao queixo deles, e Raoul teve certeza de que ia morrer.",
+          "id": "Tak lama kemudian air sampai ke dagu mereka, dan Raoul yakin ia akan mati.",
+          "ar": "وسرعان ما بلغ ذقنيهما، وأيقن راؤول أنّه سيموت.",
+          "vi": "Chẳng mấy chốc nước đã ngập tới cằm, và Raoul chắc rằng mình sẽ chết.",
+          "hi": "जल्दी ही पानी उनकी ठोड़ी तक पहुँच गया, और राउल को यक़ीन हो गया कि वह मर जाएगा।",
+          "ru": "Скоро вода дошла им до подбородка, и Рауль был уверен, что умрёт.",
+          "bn": "শিগগিরই জল তাঁদের থুতনি পর্যন্ত উঠে এল, আর রাউল নিশ্চিত হল যে সে মারা যাবে।",
+          "ur": "جلد ہی پانی ان کی ٹھوڑی تک پہنچ گیا، اور راؤل کو یقین ہو گیا کہ وہ مر جائے گا۔",
+          "th": "ไม่นานน้ำก็สูงถึงคาง และราอูลก็มั่นใจว่าเขาต้องตายแน่"
+        }
+      },
+      {
+        "id": "cl-phantom-073",
+        "english": "Then the water stopped, and Erik pulled them out, half dead.",
+        "turkish": "Sonra su durdu ve Erik onları yarı ölü halde dışarı çekti.",
+        "translations": {
+          "es-419": "Entonces el agua se detuvo, y Erik los sacó, medio muertos.",
+          "pt-BR": "Então a água parou, e Erik os puxou para fora, meio mortos.",
+          "id": "Lalu air berhenti, dan Erik menarik mereka keluar dalam keadaan setengah mati.",
+          "ar": "ثمّ توقّف الماء، وسحبهما إريك إلى الخارج وهما نصف ميّتين.",
+          "vi": "Rồi nước ngừng dâng, và Erik kéo họ ra, người đã gần như chết.",
+          "hi": "फिर पानी रुक गया, और एरिक ने उन्हें अधमरी हालत में बाहर खींच लिया।",
+          "ru": "Потом вода остановилась, и Эрик вытащил их еле живыми.",
+          "bn": "তারপর জল থামল, আর এরিক তাঁদের আধমরা অবস্থায় টেনে বের করল।",
+          "ur": "پھر پانی رک گیا، اور ایرک نے انہیں ادھ مری حالت میں باہر کھینچ لیا۔",
+          "th": "แล้วน้ำก็หยุด และเอริกก็ดึงพวกเขาออกมาในสภาพปางตาย"
+        }
+      },
+      {
+        "id": "cl-phantom-074",
+        "english": "Days later, Erik came to the Persian's flat, thin and weak.",
+        "turkish": "Günler sonra Erik, zayıf ve bitkin bir halde İranlı'nın evine geldi.",
+        "translations": {
+          "es-419": "Días después, Erik llegó al piso del Persa, flaco y débil.",
+          "pt-BR": "Dias depois, Erik apareceu no apartamento do Persa, magro e fraco.",
+          "id": "Beberapa hari kemudian, Erik datang ke rumah si Persia, kurus dan lemah.",
+          "ar": "وبعد أيّام، جاء إريك إلى شقّة الفارسيّ نحيلًا ضعيفًا.",
+          "vi": "Mấy ngày sau, Erik tìm đến căn hộ của người Ba Tư, gầy gò và yếu ớt.",
+          "hi": "कुछ दिन बाद एरिक दुबला और कमज़ोर-सा फ़ारसी के घर आया।",
+          "ru": "Через несколько дней Эрик, худой и слабый, пришёл в квартиру Перса.",
+          "bn": "কয়েক দিন পরে রোগা আর দুর্বল এরিক পারস্যের লোকটির বাসায় এল।",
+          "ur": "کچھ دن بعد ایرک دبلا اور کمزور سا ایرانی کے گھر آیا۔",
+          "th": "หลายวันต่อมา เอริกมาหาชาวเปอร์เซียที่ห้องพัก ทั้งผอมและอ่อนแรง"
+        }
+      },
+      {
+        "id": "cl-phantom-075",
+        "english": "\"I am going to die soon,\" he said, \"and I want to tell you something.\"",
+        "turkish": "\"Yakında öleceğim,\" dedi, \"ve sana bir şey anlatmak istiyorum.\"",
+        "translations": {
+          "es-419": "—Voy a morir pronto —dijo—, y quiero contarte algo.",
+          "pt-BR": "— Vou morrer em breve — disse ele —, e quero lhe contar uma coisa.",
+          "id": "\"Aku akan segera mati,\" katanya, \"dan aku ingin memberitahumu sesuatu.\"",
+          "ar": "قال: «سأموت قريبًا، وأريد أن أخبرك بشيء».",
+          "vi": "\"Ta sắp chết rồi,\" hắn nói, \"và ta muốn kể cho ông nghe một chuyện.\"",
+          "hi": "उसने कहा, \"मैं जल्दी ही मरने वाला हूँ, और मैं आपको कुछ बताना चाहता हूँ।\"",
+          "ru": "«Я скоро умру, — сказал он, — и хочу тебе кое-что рассказать».",
+          "bn": "সে বলল, \"আমি শিগগিরই মরব, আর আপনাকে একটা কথা বলতে চাই।\"",
+          "ur": "اس نے کہا، \"میں جلد ہی مرنے والا ہوں، اور میں آپ کو کچھ بتانا چاہتا ہوں۔\"",
+          "th": "\"ฉันกำลังจะตายในไม่ช้า\" เขาพูด \"และฉันอยากเล่าอะไรให้คุณฟัง\""
+        }
+      },
+      {
+        "id": "cl-phantom-076",
+        "english": "\"After Christine promised to be my wife, she did not try to run away.\"",
+        "turkish": "\"Christine karım olmaya söz verdikten sonra kaçmaya çalışmadı.\"",
+        "translations": {
+          "es-419": "—Después de prometer que sería mi esposa, Christine no intentó huir.",
+          "pt-BR": "— Depois que Christine prometeu ser minha esposa, ela não tentou fugir.",
+          "id": "\"Setelah Christine berjanji menjadi istriku, ia tidak mencoba kabur.\"",
+          "ar": "«بعد أن وعدت كريستين بأن تكون زوجتي، لم تحاول الهرب».",
+          "vi": "\"Sau khi Christine hứa làm vợ ta, nàng không hề tìm cách trốn đi.\"",
+          "hi": "\"मेरी पत्नी बनने का वचन देने के बाद क्रिस्टीन ने भागने की कोशिश नहीं की।\"",
+          "ru": "«Когда Кристина пообещала стать моей женой, она не пыталась убежать».",
+          "bn": "\"আমার বউ হওয়ার কথা দেওয়ার পর ক্রিস্টিন পালানোর চেষ্টা করেনি।\"",
+          "ur": "\"میری بیوی بننے کا وعدہ کرنے کے بعد کرسٹین نے بھاگنے کی کوشش نہیں کی۔\"",
+          "th": "\"หลังจากคริสตีนสัญญาว่าจะเป็นภรรยาฉัน เธอก็ไม่พยายามหนีเลย\""
+        }
+      },
+      {
+        "id": "cl-phantom-077",
+        "english": "\"I lifted my mask, and she did not close her eyes.\"",
+        "turkish": "\"Maskemi kaldırdım ve o gözlerini kapamadı.\"",
+        "translations": {
+          "es-419": "—Me quité la máscara, y ella no cerró los ojos.",
+          "pt-BR": "— Levantei minha máscara, e ela não fechou os olhos.",
+          "id": "\"Aku mengangkat topengku, dan ia tidak menutup matanya.\"",
+          "ar": "«رفعتُ قناعي، فلم تُغمض عينيها».",
+          "vi": "\"Ta nhấc mặt nạ lên, và nàng không nhắm mắt lại.\"",
+          "hi": "\"मैंने अपना मुखौटा उठाया, और उसने आँखें बंद नहीं कीं।\"",
+          "ru": "«Я поднял маску, а она не закрыла глаза».",
+          "bn": "\"আমি মুখোশটা তুললাম, আর সে চোখ বন্ধ করল না।\"",
+          "ur": "\"میں نے اپنا نقاب اٹھایا، اور اس نے آنکھیں بند نہیں کیں۔\"",
+          "th": "\"ฉันยกหน้ากากขึ้น และเธอก็ไม่หลับตาหนี\""
+        }
+      },
+      {
+        "id": "cl-phantom-078",
+        "english": "\"Then she gave me a kiss on my forehead, like a real bride.\"",
+        "turkish": "\"Sonra gerçek bir gelin gibi alnıma bir öpücük kondurdu.\"",
+        "translations": {
+          "es-419": "—Luego me dio un beso en la frente, como una novia de verdad.",
+          "pt-BR": "— Depois ela me deu um beijo na testa, como uma noiva de verdade.",
+          "id": "\"Lalu ia memberiku sebuah ciuman di dahi, seperti pengantin sungguhan.\"",
+          "ar": "«ثمّ طبعت قبلة على جبيني، كعروس حقيقيّة».",
+          "vi": "\"Rồi nàng đặt một nụ hôn lên trán ta, như một cô dâu thật sự.\"",
+          "hi": "\"फिर उसने एक सच्ची दुल्हन की तरह मेरे माथे पर एक चुंबन दिया।\"",
+          "ru": "«Потом она поцеловала меня в лоб, как настоящая невеста».",
+          "bn": "\"তারপর সে সত্যিকারের কনের মতো আমার কপালে একটা চুমু দিল।\"",
+          "ur": "\"پھر اس نے ایک سچی دلہن کی طرح میرے ماتھے پر بوسہ دیا۔\"",
+          "th": "\"แล้วเธอก็จูบหน้าผากฉัน เหมือนเจ้าสาวจริง ๆ\""
+        }
+      },
+      {
+        "id": "cl-phantom-079",
+        "english": "\"Nobody had ever kissed me before, not even my mother.\"",
+        "turkish": "\"Daha önce beni kimse öpmemişti, annem bile.\"",
+        "translations": {
+          "es-419": "—Nadie me había besado nunca, ni siquiera mi madre.",
+          "pt-BR": "— Ninguém nunca tinha me beijado antes, nem mesmo minha mãe.",
+          "id": "\"Belum pernah ada yang menciumku, bahkan ibuku pun tidak.\"",
+          "ar": "«لم يقبّلني أحد من قبل، ولا حتّى أمّي».",
+          "vi": "\"Trước đó chưa ai từng hôn ta, kể cả mẹ ta.\"",
+          "hi": "\"इससे पहले मुझे किसी ने कभी नहीं चूमा था, मेरी माँ ने भी नहीं।\"",
+          "ru": "«Никто никогда раньше меня не целовал, даже мать».",
+          "bn": "\"এর আগে কেউ কখনো আমাকে চুমু খায়নি, এমনকি আমার মাও না।\"",
+          "ur": "\"اس سے پہلے مجھے کسی نے کبھی نہیں چوما تھا، میری ماں نے بھی نہیں۔\"",
+          "th": "\"ไม่เคยมีใครจูบฉันมาก่อนเลย แม้แต่แม่ของฉันเอง\""
+        }
+      },
+      {
+        "id": "cl-phantom-080",
+        "english": "\"I fell at her feet and cried, and she cried with me.\"",
+        "turkish": "\"Ayaklarına kapanıp ağladım, o da benimle birlikte ağladı.\"",
+        "translations": {
+          "es-419": "—Caí a sus pies y lloré, y ella lloró conmigo.",
+          "pt-BR": "— Caí aos pés dela e chorei, e ela chorou comigo.",
+          "id": "\"Aku bersimpuh di kakinya dan menangis, dan ia menangis bersamaku.\"",
+          "ar": "«سقطتُ عند قدميها وبكيت، فبكت معي».",
+          "vi": "\"Ta quỳ sụp dưới chân nàng mà khóc, và nàng khóc cùng ta.\"",
+          "hi": "\"मैं उसके पैरों पर गिरकर रोया, और वह भी मेरे साथ रोई।\"",
+          "ru": "«Я упал к её ногам и заплакал, и она плакала вместе со мной».",
+          "bn": "\"আমি তার পায়ে পড়ে কাঁদলাম, আর সেও আমার সঙ্গে কাঁদল।\"",
+          "ur": "\"میں اس کے قدموں میں گر کر رویا، اور وہ بھی میرے ساتھ روئی۔\"",
+          "th": "\"ฉันทรุดลงแทบเท้าเธอแล้วร้องไห้ และเธอก็ร้องไห้ไปกับฉัน\""
+        }
+      },
+      {
+        "id": "cl-phantom-081",
+        "english": "\"It was the first kindness in my whole life.\"",
+        "turkish": "\"Bütün hayatımda gördüğüm ilk iyilikti bu.\"",
+        "translations": {
+          "es-419": "—Fue la primera bondad de toda mi vida.",
+          "pt-BR": "— Foi a primeira bondade da minha vida inteira.",
+          "id": "\"Itulah kebaikan pertama dalam seluruh hidupku.\"",
+          "ar": "«كانت تلك أوّل رحمة في حياتي كلّها».",
+          "vi": "\"Đó là lòng tốt đầu tiên trong suốt cuộc đời ta.\"",
+          "hi": "\"वह मेरी पूरी ज़िंदगी की पहली दया थी।\"",
+          "ru": "«Это была первая доброта за всю мою жизнь».",
+          "bn": "\"সারা জীবনে ওটাই ছিল আমার পাওয়া প্রথম দয়া।\"",
+          "ur": "\"وہ میری پوری زندگی کی پہلی مہربانی تھی۔\"",
+          "th": "\"นั่นคือความเมตตาครั้งแรกในชีวิตของฉัน\""
+        }
+      },
+      {
+        "id": "cl-phantom-082",
+        "english": "\"So I let her go with her young man, and I gave her back her freedom.\"",
+        "turkish": "\"Bu yüzden onu genç adamıyla gitmesine izin verdim, özgürlüğünü geri verdim.\"",
+        "translations": {
+          "es-419": "—Así que la dejé ir con su joven, y le devolví la libertad.",
+          "pt-BR": "— Por isso deixei que ela fosse com o seu rapaz, e lhe devolvi a liberdade.",
+          "id": "\"Jadi aku membiarkannya pergi bersama pemudanya, dan kukembalikan kebebasannya.\"",
+          "ar": "«فتركتها تذهب مع شابّها، وأعدتُ إليها حرّيّتها».",
+          "vi": "\"Vì thế ta để nàng đi cùng chàng trai của nàng, và trả lại tự do cho nàng.\"",
+          "hi": "\"इसलिए मैंने उसे उसके नौजवान के साथ जाने दिया, और उसकी आज़ादी लौटा दी।\"",
+          "ru": "«Поэтому я отпустил её с её молодым человеком и вернул ей свободу».",
+          "bn": "\"তাই আমি তাকে তার যুবকের সঙ্গে যেতে দিলাম, ফিরিয়ে দিলাম তার স্বাধীনতা।\"",
+          "ur": "\"اس لیے میں نے اسے اس کے نوجوان کے ساتھ جانے دیا، اور اس کی آزادی لوٹا دی۔\"",
+          "th": "\"ฉันจึงปล่อยให้เธอไปกับชายหนุ่มของเธอ และคืนอิสรภาพให้เธอ\""
+        }
+      },
+      {
+        "id": "cl-phantom-083",
+        "english": "\"I asked only one thing: when I die, she must come back with the gold ring.\"",
+        "turkish": "\"Yalnızca bir şey istedim: Ben ölünce altın yüzükle geri gelmeli.\"",
+        "translations": {
+          "es-419": "—Solo le pedí una cosa: cuando yo muera, debe volver con el anillo de oro.",
+          "pt-BR": "— Só pedi uma coisa: quando eu morrer, ela deve voltar com o anel de ouro.",
+          "id": "\"Aku hanya meminta satu hal: saat aku mati, ia harus kembali membawa cincin emas itu.\"",
+          "ar": "«لم أطلب إلّا شيئًا واحدًا: حين أموت، يجب أن تعود ومعها الخاتم الذهبيّ».",
+          "vi": "\"Ta chỉ xin một điều: khi ta chết, nàng phải quay lại cùng chiếc nhẫn vàng.\"",
+          "hi": "\"मैंने बस एक चीज़ माँगी: जब मैं मरूँ, तो वह सोने की अँगूठी लेकर लौटे।\"",
+          "ru": "«Я попросил только об одном: когда я умру, она должна вернуться с золотым кольцом».",
+          "bn": "\"আমি শুধু একটা জিনিস চেয়েছি: আমি মরলে সে যেন সোনার আংটিটা নিয়ে ফিরে আসে।\"",
+          "ur": "\"میں نے بس ایک چیز مانگی: جب میں مروں، تو وہ سونے کی انگوٹھی لے کر لوٹے۔\"",
+          "th": "\"ฉันขอแค่อย่างเดียว เมื่อฉันตาย เธอต้องกลับมาพร้อมแหวนทองวงนั้น\""
+        }
+      },
+      {
+        "id": "cl-phantom-084",
+        "english": "\"She must bury it with me, under the Opera.\"",
+        "turkish": "\"Onu benimle birlikte, Opera'nın altına gömmeli.\"",
+        "translations": {
+          "es-419": "—Debe enterrarlo conmigo, bajo la Ópera.",
+          "pt-BR": "— Ela deve enterrá-lo comigo, debaixo da Ópera.",
+          "id": "\"Ia harus menguburnya bersamaku, di bawah Opera.\"",
+          "ar": "«ويجب أن تدفنه معي، تحت الأوبرا».",
+          "vi": "\"Nàng phải chôn nó cùng ta, bên dưới nhà hát Opera.\"",
+          "hi": "\"उसे वह अँगूठी मेरे साथ ओपेरा के नीचे दफ़नानी होगी।\"",
+          "ru": "«Она должна похоронить его вместе со мной, под Оперой».",
+          "bn": "\"সেটা তাকে আমার সঙ্গে অপেরার নিচে কবর দিতে হবে।\"",
+          "ur": "\"اسے وہ انگوٹھی میرے ساتھ اوپرا کے نیچے دفنانی ہوگی۔\"",
+          "th": "\"เธอต้องฝังมันไว้กับฉัน ใต้โรงโอเปร่า\""
+        }
+      },
+      {
+        "id": "cl-phantom-085",
+        "english": "A few weeks later, a short notice appeared in a newspaper: \"Erik is dead.\"",
+        "turkish": "Birkaç hafta sonra bir gazetede kısa bir ilan çıktı: \"Erik öldü.\"",
+        "translations": {
+          "es-419": "Unas semanas después, apareció un breve aviso en un periódico: «Erik ha muerto».",
+          "pt-BR": "Algumas semanas depois, saiu um aviso curto num jornal: \"Erik morreu.\"",
+          "id": "Beberapa minggu kemudian, sebuah pengumuman pendek muncul di surat kabar: \"Erik telah mati.\"",
+          "ar": "وبعد بضعة أسابيع، ظهر إعلان قصير في إحدى الصحف: «إريك مات».",
+          "vi": "Vài tuần sau, một mẩu tin ngắn xuất hiện trên báo: \"Erik đã chết.\"",
+          "hi": "कुछ हफ़्ते बाद एक अख़बार में छोटी-सी सूचना छपी: \"एरिक मर गया।\"",
+          "ru": "Через несколько недель в газете появилось короткое объявление: «Эрик умер».",
+          "bn": "কয়েক সপ্তাহ পরে একটা খবরের কাগজে ছোট্ট একটা বিজ্ঞপ্তি বেরোল: \"এরিক মারা গেছে।\"",
+          "ur": "کچھ ہفتے بعد ایک اخبار میں مختصر سا اعلان چھپا: \"ایرک مر گیا۔\"",
+          "th": "ไม่กี่สัปดาห์ต่อมา มีประกาศสั้น ๆ ลงในหนังสือพิมพ์ว่า \"เอริกตายแล้ว\""
+        }
+      },
+      {
+        "id": "cl-phantom-086",
+        "english": "Christine and Raoul left Paris and lived quietly, far away in the north.",
+        "turkish": "Christine ile Raoul Paris'ten ayrılıp uzaklarda, kuzeyde sessizce yaşadılar.",
+        "translations": {
+          "es-419": "Christine y Raoul se fueron de París y vivieron en paz, muy lejos, en el norte.",
+          "pt-BR": "Christine e Raoul deixaram Paris e viveram em paz, bem longe, no norte.",
+          "id": "Christine dan Raoul meninggalkan Paris dan hidup tenang, jauh di utara.",
+          "ar": "غادر كريستين وراؤول باريس، وعاشا بهدوء بعيدًا في الشمال.",
+          "vi": "Christine và Raoul rời Paris và sống lặng lẽ ở một nơi xa xôi phía bắc.",
+          "hi": "क्रिस्टीन और राउल पेरिस छोड़कर दूर उत्तर में चुपचाप रहने लगे।",
+          "ru": "Кристина и Рауль уехали из Парижа и тихо жили далеко на севере.",
+          "bn": "ক্রিস্টিন আর রাউল প্যারিস ছেড়ে দূর উত্তরে নিরিবিলিতে থাকতে লাগল।",
+          "ur": "کرسٹین اور راؤل پیرس چھوڑ کر دور شمال میں خاموشی سے رہنے لگے۔",
+          "th": "คริสตีนกับราอูลออกจากปารีส และใช้ชีวิตอย่างสงบอยู่ไกลทางเหนือ"
+        }
+      },
+      {
+        "id": "cl-phantom-087",
+        "english": "Many years later, workers were digging deep under the Opera.",
+        "turkish": "Yıllar sonra işçiler Opera'nın derinliklerinde kazı yapıyordu.",
+        "translations": {
+          "es-419": "Muchos años después, unos obreros cavaban muy hondo bajo la Ópera.",
+          "pt-BR": "Muitos anos depois, operários cavavam bem fundo debaixo da Ópera.",
+          "id": "Bertahun-tahun kemudian, para pekerja sedang menggali jauh di bawah Opera.",
+          "ar": "وبعد سنوات طويلة، كان عمّال يحفرون عميقًا تحت الأوبرا.",
+          "vi": "Nhiều năm sau, những người thợ đang đào sâu dưới lòng nhà hát Opera.",
+          "hi": "कई साल बाद मज़दूर ओपेरा के नीचे गहरी खुदाई कर रहे थे।",
+          "ru": "Много лет спустя рабочие копали глубоко под Оперой.",
+          "bn": "বহু বছর পরে শ্রমিকেরা অপেরার নিচে গভীরে খোঁড়াখুঁড়ি করছিল।",
+          "ur": "کئی سال بعد مزدور اوپرا کے نیچے گہری کھدائی کر رہے تھے۔",
+          "th": "หลายปีต่อมา คนงานกำลังขุดดินลึกลงไปใต้โรงโอเปร่า"
+        }
+      },
+      {
+        "id": "cl-phantom-088",
+        "english": "Near the underground lake, they found a skeleton.",
+        "turkish": "Yeraltı gölünün yakınında bir iskelet buldular.",
+        "translations": {
+          "es-419": "Cerca del lago subterráneo, encontraron un esqueleto.",
+          "pt-BR": "Perto do lago subterrâneo, encontraram um esqueleto.",
+          "id": "Di dekat danau bawah tanah, mereka menemukan sebuah kerangka.",
+          "ar": "وقرب البحيرة التي تحت الأرض، عثروا على هيكل عظميّ.",
+          "vi": "Gần hồ nước ngầm, họ tìm thấy một bộ xương.",
+          "hi": "ज़मीन के नीचे वाली झील के पास उन्हें एक कंकाल मिला।",
+          "ru": "У подземного озера они нашли скелет.",
+          "bn": "মাটির নিচের হ্রদের কাছে তারা একটা কঙ্কাল পেল।",
+          "ur": "زیرِ زمین جھیل کے پاس انہیں ایک ڈھانچا ملا۔",
+          "th": "ใกล้ทะเลสาบใต้ดิน พวกเขาพบโครงกระดูกโครงหนึ่ง"
+        }
+      },
+      {
+        "id": "cl-phantom-089",
+        "english": "On one of its fingers there was a simple gold ring.",
+        "turkish": "Parmaklarından birinde sade bir altın yüzük vardı.",
+        "translations": {
+          "es-419": "En uno de sus dedos había un sencillo anillo de oro.",
+          "pt-BR": "Num dos dedos havia um anel de ouro simples.",
+          "id": "Di salah satu jarinya ada sebuah cincin emas sederhana.",
+          "ar": "وفي أحد أصابعه خاتم بسيط من الذهب.",
+          "vi": "Trên một ngón tay của nó có một chiếc nhẫn vàng giản dị.",
+          "hi": "उसकी एक उँगली में सोने की एक सादी अँगूठी थी।",
+          "ru": "На одном из пальцев было простое золотое кольцо.",
+          "bn": "তার একটা আঙুলে ছিল সাদামাটা একটা সোনার আংটি।",
+          "ur": "اس کی ایک انگلی میں سونے کی ایک سادہ انگوٹھی تھی۔",
+          "th": "ที่นิ้วหนึ่งของมันมีแหวนทองเรียบ ๆ สวมอยู่"
+        }
+      },
+      {
+        "id": "cl-phantom-090",
+        "english": "Christine had kept her promise, and the Ghost was finally at peace.",
+        "turkish": "Christine sözünü tutmuştu ve Hayalet sonunda huzura kavuşmuştu.",
+        "translations": {
+          "es-419": "Christine había cumplido su promesa, y el Fantasma por fin descansaba en paz.",
+          "pt-BR": "Christine tinha cumprido a promessa, e o Fantasma enfim estava em paz.",
+          "id": "Christine telah menepati janjinya, dan Hantu itu akhirnya tenang.",
+          "ar": "كانت كريستين قد وفت بوعدها، ونال الشبح السلام أخيرًا.",
+          "vi": "Christine đã giữ lời hứa, và Bóng Ma cuối cùng cũng được yên nghỉ.",
+          "hi": "क्रिस्टीन ने अपना वादा निभाया था, और भूत को आख़िरकार शांति मिल गई थी।",
+          "ru": "Кристина сдержала обещание, и Призрак наконец обрёл покой.",
+          "bn": "ক্রিস্টিন তার কথা রেখেছিল, আর ভূত অবশেষে শান্তি পেয়েছিল।",
+          "ur": "کرسٹین نے اپنا وعدہ نبھایا تھا، اور بھوت کو آخرکار سکون مل گیا تھا۔",
+          "th": "คริสตีนรักษาสัญญาแล้ว และในที่สุดผีก็ได้พักอย่างสงบ"
+        }
+      },
+      {
+        "id": "cl-phantom-091",
+        "english": "Yet some people say that late at night, music still rises from the cellars.",
+        "turkish": "Yine de bazıları gece geç saatlerde mahzenlerden hâlâ müzik yükseldiğini söyler.",
+        "translations": {
+          "es-419": "Aun así, algunos dicen que, muy de noche, todavía sube música desde los sótanos.",
+          "pt-BR": "Mesmo assim, há quem diga que, tarde da noite, ainda sobe música dos porões.",
+          "id": "Namun, ada yang bilang bahwa larut malam, musik masih terdengar dari ruang bawah tanah.",
+          "ar": "ومع ذلك، يقول بعض الناس إنّ موسيقى ما زالت تصعد من الأقبية في آخر الليل.",
+          "vi": "Vậy mà có người nói rằng, về khuya, tiếng nhạc vẫn còn vọng lên từ các căn hầm.",
+          "hi": "फिर भी कुछ लोग कहते हैं कि देर रात तहख़ानों से अब भी संगीत उठता है।",
+          "ru": "И всё же говорят, что поздней ночью из подвалов до сих пор доносится музыка.",
+          "bn": "তবু কেউ কেউ বলে, গভীর রাতে মাটির নিচের ঘরগুলো থেকে আজও গান-বাজনার সুর ভেসে আসে।",
+          "ur": "پھر بھی کچھ لوگ کہتے ہیں کہ رات گئے تہ خانوں سے اب بھی موسیقی اٹھتی ہے۔",
+          "th": "ถึงกระนั้น บางคนก็ว่ายามดึก ยังมีเสียงดนตรีลอยขึ้นมาจากห้องใต้ดิน"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-phantom-opera-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "A singer who becomes the new manager of the Opera",
+          "A lonely man under the Opera who loves a young singer and finally lets her go",
+          "A young man who builds a house on a lake",
+          "Two managers who catch a thief in Box Five"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-phantom-opera-q2",
+        "kind": "detail",
+        "prompt": "Who was the \"Angel of Music\" really?",
+        "options": [
+          "Christine's father",
+          "Raoul",
+          "Erik, a man in a mask",
+          "The Persian"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "classic-phantom-opera-q3",
+        "kind": "detail",
+        "prompt": "What happened when Carlotta sang instead of Christine?",
+        "options": [
+          "She sang better than ever",
+          "Her voice broke and the chandelier fell",
+          "She disappeared through a mirror",
+          "The Persian stopped the show"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-phantom-opera-q4",
+        "kind": "inference",
+        "prompt": "Why did Christine turn the scorpion?",
+        "options": [
+          "She wanted to destroy the Opera",
+          "She wanted to save everyone, even if it meant marrying Erik",
+          "She did not understand the two boxes",
+          "Erik turned it for her"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-phantom-opera-q5",
+        "kind": "inference",
+        "prompt": "Why did Erik let Christine go?",
+        "options": [
+          "Raoul paid him a lot of money",
+          "The police found his house",
+          "Her kiss and her tears were the first kindness of his life",
+          "The water destroyed his house"
+        ],
+        "answer": 2
+      }
+    ]
+  },
+  "words": [
+    {
+      "id": "opera",
+      "word": "opera",
+      "translation": "opera",
+      "pronunciation": "/ˈɒprə/",
+      "example": "We went to the opera and heard a famous singer.",
+      "translations": {
+        "es-419": "ópera",
+        "pt-BR": "ópera",
+        "id": "opera",
+        "ar": "أوبرا",
+        "vi": "nhạc kịch opera",
+        "hi": "ओपेरा",
+        "ru": "опера",
+        "bn": "অপেরা",
+        "ur": "اوپرا",
+        "th": "อุปรากร, โอเปร่า"
+      }
+    },
+    {
+      "id": "stage",
+      "word": "stage",
+      "translation": "sahne",
+      "pronunciation": "/steɪdʒ/",
+      "example": "The actors walked onto the stage and the show began.",
+      "translations": {
+        "es-419": "escenario",
+        "pt-BR": "palco",
+        "id": "panggung",
+        "ar": "خشبة المسرح",
+        "vi": "sân khấu",
+        "hi": "मंच",
+        "ru": "сцена",
+        "bn": "মঞ্চ",
+        "ur": "اسٹیج",
+        "th": "เวที"
+      }
+    },
+    {
+      "id": "chandelier",
+      "word": "chandelier",
+      "translation": "avize",
+      "pronunciation": "/ˌʃændəˈlɪə(r)/",
+      "example": "A big chandelier hung from the ceiling of the hall.",
+      "translations": {
+        "es-419": "candelabro, araña",
+        "pt-BR": "lustre",
+        "id": "lampu gantung kristal",
+        "ar": "ثريّا",
+        "vi": "đèn chùm",
+        "hi": "झाड़-फ़ानूस",
+        "ru": "люстра",
+        "bn": "ঝাড়বাতি",
+        "ur": "فانوس، جھومر",
+        "th": "โคมระย้า"
+      }
+    },
+    {
+      "id": "lake",
+      "word": "lake",
+      "translation": "göl",
+      "pronunciation": "/leɪk/",
+      "example": "We swam in the lake on a hot summer day.",
+      "translations": {
+        "es-419": "lago",
+        "pt-BR": "lago",
+        "id": "danau",
+        "ar": "بحيرة",
+        "vi": "hồ",
+        "hi": "झील",
+        "ru": "озеро",
+        "bn": "হ্রদ",
+        "ur": "جھیل",
+        "th": "ทะเลสาบ"
+      }
+    },
+    {
+      "id": "music",
+      "word": "music",
+      "translation": "müzik",
+      "pronunciation": "/ˈmjuːzɪk/",
+      "example": "She listens to music while she studies.",
+      "translations": {
+        "es-419": "música",
+        "pt-BR": "música",
+        "id": "musik",
+        "ar": "موسيقى",
+        "vi": "âm nhạc",
+        "hi": "संगीत",
+        "ru": "музыка",
+        "bn": "গান-বাজনা, সংগীত",
+        "ur": "موسیقی",
+        "th": "ดนตรี"
+      }
+    },
+    {
+      "id": "kiss",
+      "word": "kiss",
+      "translation": "öpücük",
+      "pronunciation": "/kɪs/",
+      "example": "The mother gave her baby a kiss on the cheek.",
+      "translations": {
+        "es-419": "beso",
+        "pt-BR": "beijo",
+        "id": "ciuman",
+        "ar": "قُبلة",
+        "vi": "nụ hôn",
+        "hi": "चुंबन",
+        "ru": "поцелуй",
+        "bn": "চুমু",
+        "ur": "بوسہ",
+        "th": "การจูบ"
+      }
+    },
+    {
+      "id": "underground",
+      "word": "underground",
+      "translation": "yeraltı",
+      "pronunciation": "/ˌʌndəˈɡraʊnd/",
+      "example": "The city has an underground train station.",
+      "translations": {
+        "es-419": "subterráneo",
+        "pt-BR": "subterrâneo",
+        "id": "bawah tanah",
+        "ar": "تحت الأرض",
+        "vi": "dưới lòng đất, ngầm",
+        "hi": "ज़मीन के नीचे का, भूमिगत",
+        "ru": "подземный",
+        "bn": "মাটির নিচের, ভূগর্ভস্থ",
+        "ur": "زیرِ زمین",
+        "th": "ใต้ดิน"
+      }
+    },
+    {
+      "id": "organ",
+      "word": "organ",
+      "translation": "org",
+      "pronunciation": "/ˈɔːɡən/",
+      "example": "The old church has a large organ with many pipes.",
+      "translations": {
+        "es-419": "órgano",
+        "pt-BR": "órgão",
+        "id": "organ",
+        "ar": "أرغن",
+        "vi": "đàn organ",
+        "hi": "ऑर्गन (बाजा)",
+        "ru": "орган",
+        "bn": "অর্গান",
+        "ur": "آرگن (باجا)",
+        "th": "ออร์แกน"
+      }
+    },
+    {
+      "id": "angel",
+      "word": "angel",
+      "translation": "melek",
+      "pronunciation": "/ˈeɪndʒl/",
+      "example": "An angel chooses the heart and the bird.",
+      "translations": {
+        "es-419": "ángel",
+        "pt-BR": "anjo",
+        "id": "malaikat",
+        "ar": "ملاك",
+        "vi": "thiên thần",
+        "hi": "फ़रिश्ता",
+        "ru": "ангел",
+        "bn": "দেবদূত, ফেরেশতা",
+        "ur": "فرشتہ",
+        "th": "นางฟ้า, เทวดา"
+      }
+    },
+    {
+      "id": "voice",
+      "word": "voice",
+      "translation": "ses",
+      "pronunciation": "/vɔɪs/",
+      "example": "\"You must have a beautiful voice, too.\"",
+      "translations": {
+        "es-419": "voz",
+        "pt-BR": "voz",
+        "id": "suara",
+        "ar": "صوت",
+        "vi": "giọng nói, giọng hát",
+        "hi": "आवाज़",
+        "ru": "голос",
+        "bn": "গলা, কণ্ঠস্বর",
+        "ur": "آواز",
+        "th": "เสียง"
+      }
+    },
+    {
+      "id": "ring",
+      "word": "ring",
+      "translation": "yüzük",
+      "pronunciation": "/rɪŋ/",
+      "example": "The king demanded more gold, so she gave the little man her ring.",
+      "translations": {
+        "es-419": "anillo",
+        "pt-BR": "anel",
+        "id": "cincin",
+        "ar": "خاتم",
+        "vi": "chiếc nhẫn",
+        "hi": "अँगूठी",
+        "ru": "кольцо",
+        "bn": "আংটি",
+        "ur": "انگوٹھی",
+        "th": "แหวน"
+      }
+    },
+    {
+      "id": "boat",
+      "word": "boat",
+      "translation": "tekne",
+      "pronunciation": "/boʊt/",
+      "example": "A little boat floated away.",
+      "translations": {
+        "es-419": "barco, bote",
+        "pt-BR": "barco",
+        "id": "perahu",
+        "ar": "قارب",
+        "vi": "con thuyền",
+        "hi": "नाव",
+        "ru": "лодка, кораблик",
+        "bn": "নৌকা",
+        "ur": "کشتی",
+        "th": "เรือ"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "opera",
+    "stage",
+    "chandelier",
+    "lake",
+    "music",
+    "kiss",
+    "underground",
+    "organ",
+    "angel",
+    "voice",
+    "ring",
+    "boat"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-phantom-opera-q1",
+      "sentenceIds": [
+        "cl-phantom-033",
+        "cl-phantom-082"
+      ],
+      "rationale": "Erik loves Christine and hides under the Opera, but in the end he gives her back her freedom."
+    },
+    {
+      "questionId": "classic-phantom-opera-q2",
+      "sentenceIds": [
+        "cl-phantom-033"
+      ],
+      "rationale": "Christine tells Raoul that her angel was a masked man called Erik."
+    },
+    {
+      "questionId": "classic-phantom-opera-q3",
+      "sentenceIds": [
+        "cl-phantom-023",
+        "cl-phantom-026"
+      ],
+      "rationale": "Carlotta's voice broke like a frog's, and then the chandelier crashed onto the seats."
+    },
+    {
+      "questionId": "classic-phantom-opera-q4",
+      "sentenceIds": [
+        "cl-phantom-062",
+        "cl-phantom-069"
+      ],
+      "rationale": "The grasshopper would blow up the Opera, so she chose the scorpion and promised to be Erik's wife."
+    },
+    {
+      "questionId": "classic-phantom-opera-q5",
+      "sentenceIds": [
+        "cl-phantom-078",
+        "cl-phantom-081"
+      ],
+      "rationale": "Christine's kiss moved Erik so much that he gave her back her freedom."
+    }
+  ],
+  "publicationBlockers": [
+    "Owner (oguz) approval of the English text, questions and translations required.",
+    "Native-speaker language review not done.",
+    "Cover artwork and asset mapping pending.",
+    "Source text hash pending (Gutenberg not reachable from the cloud session).",
+    "Publisher story creation, validation and publication pending."
+  ]
+}
