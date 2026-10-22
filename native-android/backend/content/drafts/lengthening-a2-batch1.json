@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "updatedOn": "2026-10-22",
+  "focus": "existing-stories-only",
+  "activeRevisionStoryIds": [
+    "classic-red-riding-hood",
+    "classic-hansel-gretel",
+    "classic-cinderella"
+  ],
+  "reason": "Owner asked why the Grimm tales were added so short. These drafts restore scenes from the Grimm originals that the short adaptations had skipped, without changing any legacy sentence.",
+  "publicationStatus": "No live content publication.",
+  "nextStep": "Owner (oguz) reads and approves the drafts; then record reviewedBy/reviewedLanguages, take a fresh live snapshot and run story-pilot:drafts --scope with a publisher session."
+}
