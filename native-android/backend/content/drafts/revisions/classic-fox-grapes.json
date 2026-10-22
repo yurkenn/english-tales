@@ -1,0 +1,999 @@
+{
+  "status": "draft",
+  "kind": "revision",
+  "source": "story-lengthening-a1-batch1-2026-10-22",
+  "reviewedBy": null,
+  "baseStoryId": "classic-fox-grapes",
+  "baseStorySHA256": "be6760ed2e8ea29d6268575e0becef537e9db0689b600b6e84d1bbee99f2b524",
+  "editorialNotes": [
+    "Adds the fox's hunger, the vine on a high wall, her repeated jumps and tired legs, and her wish not to feel silly; the ending and lesson are unchanged.",
+    "Every legacy sentence, its ID and its translations are kept unchanged; new sentences are only inserted between them. Plot, characters, ending and lesson are unchanged.",
+    "New sentences have AI-drafted translations in all ten additional support languages, following the gender and wording already used in each legacy translation. No native-speaker review."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "unchangedTranslationsPreserved": true,
+    "newSentenceIds": [
+      "classic-fox-grapes-ext-01-01",
+      "classic-fox-grapes-ext-02-01",
+      "classic-fox-grapes-ext-03-01",
+      "classic-fox-grapes-ext-04-01",
+      "classic-fox-grapes-ext-05-01",
+      "classic-fox-grapes-ext-06-01",
+      "classic-fox-grapes-ext-07-01",
+      "classic-fox-grapes-ext-08-01",
+      "classic-fox-grapes-ext-08-02",
+      "classic-fox-grapes-ext-09-01",
+      "classic-fox-grapes-ext-10-01",
+      "classic-fox-grapes-ext-10-02",
+      "classic-fox-grapes-ext-11-01",
+      "classic-fox-grapes-ext-13-01",
+      "classic-fox-grapes-ext-14-01"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+  },
+  "story": {
+    "id": "classic-fox-grapes",
+    "title": "The Fox and the Grapes",
+    "author": "Aesop",
+    "level": "A1",
+    "genre": "Macera",
+    "description": "Tilki ve Üzümler. Ulaşamadığı üzümler hakkında fikrini değiştiren bir tilki. A1 düzeyinde kısa uyarlama. Uyarlama ve Türkçe çeviri: English Tales. Tarihî görsel: Arthur Rackham; kitap içi illüstrasyon, ayrı bir ilk baskı kapağı değildir.",
+    "coverKey": "cover_classic_fox_grapes",
+    "sentences": [
+      {
+        "id": "cl-fox-grapes-01",
+        "english": "A hungry fox walks past a garden.",
+        "turkish": "Aç bir tilki bir bahçenin yanından geçer.",
+        "translations": {
+          "es-419": "Una zorra hambrienta pasa junto a un jardín.",
+          "pt-BR": "Uma raposa com fome passa por um jardim.",
+          "id": "Seekor rubah yang lapar berjalan melewati sebuah kebun.",
+          "ar": "تمشي ثعلبة جائعة بجانب حديقة.",
+          "vi": "Một cô cáo đói bụng đi ngang qua một khu vườn.",
+          "hi": "एक भूखी लोमड़ी एक बगीचे के पास से गुज़रती है।",
+          "ru": "Голодная лиса проходит мимо сада.",
+          "bn": "একটা ক্ষুধার্ত শেয়াল একটা বাগানের পাশ দিয়ে হেঁটে যায়।",
+          "ur": "ایک بھوکی لومڑی ایک باغ کے پاس سے گزرتی ہے۔",
+          "th": "สุนัขจิ้งจอกที่หิวโซตัวหนึ่งเดินผ่านสวน"
+        }
+      },
+      {
+        "id": "classic-fox-grapes-ext-01-01",
+        "english": "She cannot find any food today.",
+        "turkish": "Bugün hiç yiyecek bulamaz.",
+        "translations": {
+          "es-419": "Hoy no encuentra nada de comida.",
+          "pt-BR": "Hoje ela não encontra nada para comer.",
+          "id": "Hari ini ia tidak bisa menemukan makanan sama sekali.",
+          "ar": "لا تجد أي طعام اليوم.",
+          "vi": "Hôm nay cô chẳng tìm được chút thức ăn nào.",
+          "hi": "आज उसे खाने को कुछ नहीं मिल रहा।",
+          "ru": "Сегодня она никак не может найти еду.",
+          "bn": "আজ সে কোনো খাবার খুঁজে পাচ্ছে না।",
+          "ur": "آج اسے کھانے کو کچھ نہیں مل رہا۔",
+          "th": "วันนี้เธอหาอาหารไม่ได้เลย"
+        }
+      },
+      {
+        "id": "cl-fox-grapes-02",
+        "english": "She sees some grapes on a vine.",
+        "turkish": "Bir asmada üzümler görür.",
+        "translations": {
+          "es-419": "Ve unas uvas en una parra.",
+          "pt-BR": "Ela vê algumas uvas em uma parreira.",
+          "id": "Ia melihat beberapa buah anggur di pohon anggur.",
+          "ar": "ترى بعض العنب على كرمة.",
+          "vi": "Cô nhìn thấy mấy chùm nho trên giàn.",
+          "hi": "उसे एक बेल पर कुछ अंगूर दिखते हैं।",
+          "ru": "Она видит виноград на лозе.",
+          "bn": "সে একটা লতায় কিছু আঙুর দেখতে পায়।",
+          "ur": "وہ ایک بیل پر کچھ انگور دیکھتی ہے۔",
+          "th": "เธอเห็นองุ่นอยู่บนเถา"
+        }
+      },
+      {
+        "id": "classic-fox-grapes-ext-02-01",
+        "english": "The vine grows over a high wall.",
+        "turkish": "Asma yüksek bir duvarın üzerine uzanır.",
+        "translations": {
+          "es-419": "La parra crece sobre un muro alto.",
+          "pt-BR": "A parreira cresce sobre um muro alto.",
+          "id": "Pohon anggur itu merambat di atas tembok yang tinggi.",
+          "ar": "تنمو الكرمة فوق جدار عالٍ.",
+          "vi": "Giàn nho leo trên một bức tường cao.",
+          "hi": "बेल एक ऊँची दीवार पर फैली है।",
+          "ru": "Лоза растёт на высокой стене.",
+          "bn": "লতাটা একটা উঁচু দেয়ালের ওপর দিয়ে বেড়ে উঠেছে।",
+          "ur": "بیل ایک اونچی دیوار پر چڑھی ہوئی ہے۔",
+          "th": "เถาองุ่นเลื้อยอยู่บนกำแพงสูง"
+        }
+      },
+      {
+        "id": "cl-fox-grapes-03",
+        "english": "The grapes are dark and ripe.",
+        "turkish": "Üzümler koyu renkli ve olgundur.",
+        "translations": {
+          "es-419": "Las uvas están oscuras y maduras.",
+          "pt-BR": "As uvas estão escuras e maduras.",
+          "id": "Buah anggur itu berwarna gelap dan matang.",
+          "ar": "العنب داكن وناضج.",
+          "vi": "Những quả nho sẫm màu và đã chín.",
+          "hi": "अंगूर गहरे रंग के और पके हुए हैं।",
+          "ru": "Виноград тёмный и спелый.",
+          "bn": "আঙুরগুলো গাঢ় রঙের আর পাকা।",
+          "ur": "انگور گہرے رنگ کے اور پکے ہوئے ہیں۔",
+          "th": "องุ่นมีสีเข้มและสุกงอม"
+        }
+      },
+      {
+        "id": "classic-fox-grapes-ext-03-01",
+        "english": "They shine in the warm sun.",
+        "turkish": "Ilık güneşte parlarlar.",
+        "translations": {
+          "es-419": "Brillan bajo el sol cálido.",
+          "pt-BR": "Elas brilham no sol quente.",
+          "id": "Buah anggur itu berkilau di bawah matahari yang hangat.",
+          "ar": "يلمع العنب تحت الشمس الدافئة.",
+          "vi": "Chúng lấp lánh dưới ánh nắng ấm áp.",
+          "hi": "वे गुनगुनी धूप में चमक रहे हैं।",
+          "ru": "Он блестит на тёплом солнце.",
+          "bn": "উষ্ণ রোদে সেগুলো চকচক করছে।",
+          "ur": "وہ گرم دھوپ میں چمک رہے ہیں۔",
+          "th": "มันเป็นประกายอยู่ใต้แสงแดดอุ่น ๆ"
+        }
+      },
+      {
+        "id": "cl-fox-grapes-04",
+        "english": "\"Those grapes look sweet,\" she says.",
+        "turkish": "\"Şu üzümler tatlı görünüyor,\" der.",
+        "translations": {
+          "es-419": "\"Esas uvas parecen dulces\", dice.",
+          "pt-BR": "— Essas uvas parecem doces — diz ela.",
+          "id": "\"Anggur itu tampak manis,\" katanya.",
+          "ar": "تقول: «يبدو ذلك العنب حلوًا.»",
+          "vi": "\"Mấy chùm nho kia trông ngọt quá,\" cô nói.",
+          "hi": "\"वे अंगूर मीठे लगते हैं,\" वह कहती है।",
+          "ru": "«Этот виноград, наверное, сладкий», — говорит она.",
+          "bn": "\"ওই আঙুরগুলো দেখে মিষ্টি মনে হচ্ছে,\" সে বলে।",
+          "ur": "\"وہ انگور میٹھے لگتے ہیں،\" وہ کہتی ہے۔",
+          "th": "\"องุ่นพวกนั้นดูหวานจัง\" เธอพูด"
+        }
+      },
+      {
+        "id": "classic-fox-grapes-ext-04-01",
+        "english": "\"They will be my lunch.\"",
+        "turkish": "\"Öğle yemeğim onlar olacak.\"",
+        "translations": {
+          "es-419": "\"Van a ser mi almuerzo.\"",
+          "pt-BR": "— Elas vão ser o meu almoço.",
+          "id": "\"Anggur itu akan jadi makan siangku.\"",
+          "ar": "«سيكون غدائي.»",
+          "vi": "\"Chúng sẽ là bữa trưa của mình.\"",
+          "hi": "\"ये मेरा दोपहर का खाना बनेंगे।\"",
+          "ru": "«Это будет мой обед».",
+          "bn": "\"ওগুলোই হবে আমার দুপুরের খাবার।\"",
+          "ur": "\"یہ میرا دوپہر کا کھانا بنیں گے۔\"",
+          "th": "\"มันจะเป็นอาหารกลางวันของฉัน\""
+        }
+      },
+      {
+        "id": "cl-fox-grapes-05",
+        "english": "She wants to eat them.",
+        "turkish": "Onları yemek ister.",
+        "translations": {
+          "es-419": "Quiere comérselas.",
+          "pt-BR": "Ela quer comê-las.",
+          "id": "Ia ingin memakannya.",
+          "ar": "تريد أن تأكله.",
+          "vi": "Cô muốn ăn chúng.",
+          "hi": "वह उन्हें खाना चाहती है।",
+          "ru": "Ей хочется его съесть.",
+          "bn": "সে সেগুলো খেতে চায়।",
+          "ur": "وہ انہیں کھانا چاہتی ہے۔",
+          "th": "เธออยากกินมัน"
+        }
+      },
+      {
+        "id": "classic-fox-grapes-ext-05-01",
+        "english": "Her stomach makes a loud sound.",
+        "turkish": "Midesi yüksek sesle guruldar.",
+        "translations": {
+          "es-419": "Le suena muy fuerte la barriga.",
+          "pt-BR": "A barriga dela ronca alto.",
+          "id": "Perutnya berbunyi keras.",
+          "ar": "تُصدر معدتها صوتًا عاليًا.",
+          "vi": "Bụng cô sôi lên ùng ục.",
+          "hi": "उसका पेट ज़ोर से गुड़गुड़ाता है।",
+          "ru": "У неё громко урчит в животе.",
+          "bn": "তার পেট জোরে গুড়গুড় করে ওঠে।",
+          "ur": "اس کے پیٹ میں زور سے گڑگڑاہٹ ہوتی ہے۔",
+          "th": "ท้องของเธอร้องเสียงดัง"
+        }
+      },
+      {
+        "id": "cl-fox-grapes-06",
+        "english": "But the grapes are very high.",
+        "turkish": "Ama üzümler çok yüksektedir.",
+        "translations": {
+          "es-419": "Pero las uvas están muy altas.",
+          "pt-BR": "Mas as uvas estão muito altas.",
+          "id": "Tetapi buah anggur itu sangat tinggi.",
+          "ar": "لكن العنب عالٍ جدًا.",
+          "vi": "Nhưng những chùm nho ở rất cao.",
+          "hi": "लेकिन अंगूर बहुत ऊँचे हैं।",
+          "ru": "Но виноград висит очень высоко.",
+          "bn": "কিন্তু আঙুরগুলো অনেক উঁচুতে।",
+          "ur": "لیکن انگور بہت اونچے ہیں۔",
+          "th": "แต่องุ่นอยู่สูงมาก"
+        }
+      },
+      {
+        "id": "classic-fox-grapes-ext-06-01",
+        "english": "They hang far above her head.",
+        "turkish": "Başının çok yukarısında asılı dururlar.",
+        "translations": {
+          "es-419": "Cuelgan muy por encima de su cabeza.",
+          "pt-BR": "Elas ficam penduradas bem acima da cabeça dela.",
+          "id": "Buah anggur itu tergantung jauh di atas kepalanya.",
+          "ar": "إنه معلّق بعيدًا فوق رأسها.",
+          "vi": "Chúng treo lơ lửng tít trên đầu cô.",
+          "hi": "वे उसके सिर से बहुत ऊपर लटक रहे हैं।",
+          "ru": "Он висит высоко над её головой.",
+          "bn": "সেগুলো তার মাথার অনেক ওপরে ঝুলছে।",
+          "ur": "وہ اس کے سر سے بہت اوپر لٹک رہے ہیں۔",
+          "th": "มันห้อยอยู่สูงเหนือหัวเธอมาก"
+        }
+      },
+      {
+        "id": "cl-fox-grapes-07",
+        "english": "The fox jumps into the air.",
+        "turkish": "Tilki havaya sıçrar.",
+        "translations": {
+          "es-419": "La zorra salta en el aire.",
+          "pt-BR": "A raposa pula no ar.",
+          "id": "Rubah itu melompat ke udara.",
+          "ar": "تقفز الثعلبة في الهواء.",
+          "vi": "Cáo nhảy lên không trung.",
+          "hi": "लोमड़ी हवा में उछलती है।",
+          "ru": "Лиса подпрыгивает.",
+          "bn": "শেয়াল লাফ দেয়।",
+          "ur": "لومڑی ہوا میں اچھلتی ہے۔",
+          "th": "สุนัขจิ้งจอกกระโดดขึ้นไปในอากาศ"
+        }
+      },
+      {
+        "id": "classic-fox-grapes-ext-07-01",
+        "english": "Her mouth opens, but she bites only air.",
+        "turkish": "Ağzını açar ama sadece havayı ısırır.",
+        "translations": {
+          "es-419": "Abre la boca, pero solo muerde el aire.",
+          "pt-BR": "Ela abre a boca, mas só morde o ar.",
+          "id": "Mulutnya terbuka, tetapi ia hanya menggigit udara.",
+          "ar": "تفتح فمها، لكنها لا تعضّ إلا الهواء.",
+          "vi": "Cô há miệng ra, nhưng chỉ đớp phải không khí.",
+          "hi": "उसका मुँह खुलता है, पर वह सिर्फ़ हवा को काटती है।",
+          "ru": "Она открывает пасть, но кусает только воздух.",
+          "bn": "সে মুখ খোলে, কিন্তু শুধু বাতাসেই কামড় দেয়।",
+          "ur": "اس کا منہ کھلتا ہے، مگر وہ صرف ہوا کو کاٹتی ہے۔",
+          "th": "เธออ้าปาก แต่งับได้แค่อากาศ"
+        }
+      },
+      {
+        "id": "cl-fox-grapes-08",
+        "english": "She cannot reach the grapes.",
+        "turkish": "Üzümlere ulaşamaz.",
+        "translations": {
+          "es-419": "No puede alcanzar las uvas.",
+          "pt-BR": "Ela não consegue alcançar as uvas.",
+          "id": "Ia tidak bisa menggapai buah anggur itu.",
+          "ar": "لا تستطيع أن تصل إلى العنب.",
+          "vi": "Cô không với tới chùm nho.",
+          "hi": "वह अंगूरों तक नहीं पहुँच पाती।",
+          "ru": "Она не может достать виноград.",
+          "bn": "সে আঙুরের নাগাল পায় না।",
+          "ur": "وہ انگوروں تک نہیں پہنچ پاتی۔",
+          "th": "เธอเอื้อมไม่ถึงองุ่น"
+        }
+      },
+      {
+        "id": "classic-fox-grapes-ext-08-01",
+        "english": "She walks back a few steps.",
+        "turkish": "Birkaç adım geri gider.",
+        "translations": {
+          "es-419": "Retrocede unos pasos.",
+          "pt-BR": "Ela dá alguns passos para trás.",
+          "id": "Ia mundur beberapa langkah.",
+          "ar": "تعود إلى الوراء بضع خطوات.",
+          "vi": "Cô lùi lại vài bước.",
+          "hi": "वह कुछ क़दम पीछे जाती है।",
+          "ru": "Она отходит на несколько шагов назад.",
+          "bn": "সে কয়েক পা পিছিয়ে যায়।",
+          "ur": "وہ چند قدم پیچھے ہٹتی ہے۔",
+          "th": "เธอถอยหลังไปสองสามก้าว"
+        }
+      },
+      {
+        "id": "classic-fox-grapes-ext-08-02",
+        "english": "Then she runs and jumps again, higher this time.",
+        "turkish": "Sonra koşar ve yeniden zıplar, bu sefer daha yükseğe.",
+        "translations": {
+          "es-419": "Luego corre y salta otra vez, más alto esta vez.",
+          "pt-BR": "Depois ela corre e pula de novo, mais alto desta vez.",
+          "id": "Lalu ia berlari dan melompat lagi, kali ini lebih tinggi.",
+          "ar": "ثم تركض وتقفز مرة أخرى، وأعلى هذه المرة.",
+          "vi": "Rồi cô chạy tới và nhảy lên lần nữa, lần này cao hơn.",
+          "hi": "फिर वह दौड़ती है और दोबारा उछलती है, इस बार और ऊँचा।",
+          "ru": "Потом она разбегается и снова прыгает, на этот раз выше.",
+          "bn": "তারপর সে দৌড়ে এসে আবার লাফ দেয়, এবার আরও উঁচুতে।",
+          "ur": "پھر وہ دوڑتی ہے اور دوبارہ اچھلتی ہے، اس بار اور اونچا۔",
+          "th": "แล้วเธอก็วิ่งมากระโดดอีกครั้ง คราวนี้สูงกว่าเดิม"
+        }
+      },
+      {
+        "id": "cl-fox-grapes-09",
+        "english": "She tries again and again.",
+        "turkish": "Tekrar tekrar dener.",
+        "translations": {
+          "es-419": "Lo intenta una y otra vez.",
+          "pt-BR": "Ela tenta de novo e de novo.",
+          "id": "Ia mencoba berulang kali.",
+          "ar": "تحاول مرارًا وتكرارًا.",
+          "vi": "Cô thử đi thử lại nhiều lần.",
+          "hi": "वह बार-बार कोशिश करती है।",
+          "ru": "Она пробует снова и снова.",
+          "bn": "সে বারবার চেষ্টা করে।",
+          "ur": "وہ بار بار کوشش کرتی ہے۔",
+          "th": "เธอพยายามครั้งแล้วครั้งเล่า"
+        }
+      },
+      {
+        "id": "classic-fox-grapes-ext-09-01",
+        "english": "She jumps until her legs hurt.",
+        "turkish": "Bacakları ağrıyana kadar zıplar.",
+        "translations": {
+          "es-419": "Salta hasta que le duelen las patas.",
+          "pt-BR": "Ela pula até as patas doerem.",
+          "id": "Ia melompat sampai kakinya sakit.",
+          "ar": "تقفز حتى تؤلمها ساقاها.",
+          "vi": "Cô nhảy cho đến khi chân đau nhức.",
+          "hi": "वह तब तक उछलती है जब तक उसके पैर दुखने नहीं लगते।",
+          "ru": "Она прыгает, пока у неё не начинают болеть лапы.",
+          "bn": "পা ব্যথা না হওয়া পর্যন্ত সে লাফাতে থাকে।",
+          "ur": "وہ تب تک اچھلتی ہے جب تک اس کی ٹانگیں دکھنے نہیں لگتیں۔",
+          "th": "เธอกระโดดจนขาเจ็บ"
+        }
+      },
+      {
+        "id": "cl-fox-grapes-10",
+        "english": "At last, she is tired.",
+        "turkish": "Sonunda yorulur.",
+        "translations": {
+          "es-419": "Por fin, está cansada.",
+          "pt-BR": "Finalmente, ela fica cansada.",
+          "id": "Akhirnya, ia lelah.",
+          "ar": "أخيرًا، تتعب.",
+          "vi": "Cuối cùng, cô mệt lả.",
+          "hi": "आख़िरकार वह थक जाती है।",
+          "ru": "Наконец она устаёт.",
+          "bn": "অবশেষে সে ক্লান্ত হয়ে পড়ে।",
+          "ur": "آخرکار وہ تھک جاتی ہے۔",
+          "th": "ในที่สุด เธอก็เหนื่อย"
+        }
+      },
+      {
+        "id": "classic-fox-grapes-ext-10-01",
+        "english": "She sits down and looks up at the grapes.",
+        "turkish": "Oturur ve yukarıdaki üzümlere bakar.",
+        "translations": {
+          "es-419": "Se sienta y mira las uvas allá arriba.",
+          "pt-BR": "Ela se senta e olha para as uvas lá em cima.",
+          "id": "Ia duduk dan menatap buah anggur di atas.",
+          "ar": "تجلس وتنظر إلى العنب في الأعلى.",
+          "vi": "Cô ngồi xuống và ngước nhìn những chùm nho.",
+          "hi": "वह बैठ जाती है और ऊपर अंगूरों को देखती है।",
+          "ru": "Она садится и смотрит вверх на виноград.",
+          "bn": "সে বসে পড়ে আর ওপরে আঙুরগুলোর দিকে তাকায়।",
+          "ur": "وہ بیٹھ جاتی ہے اور اوپر انگوروں کو دیکھتی ہے۔",
+          "th": "เธอนั่งลงและแหงนมององุ่น"
+        }
+      },
+      {
+        "id": "classic-fox-grapes-ext-10-02",
+        "english": "She does not want to feel silly.",
+        "turkish": "Kendini aptal gibi hissetmek istemez.",
+        "translations": {
+          "es-419": "No quiere sentirse tonta.",
+          "pt-BR": "Ela não quer se sentir boba.",
+          "id": "Ia tidak mau merasa konyol.",
+          "ar": "لا تريد أن تشعر بأنها حمقاء.",
+          "vi": "Cô không muốn thấy mình ngốc nghếch.",
+          "hi": "वह खुद को बेवकूफ़ महसूस नहीं करना चाहती।",
+          "ru": "Ей не хочется чувствовать себя глупо.",
+          "bn": "সে নিজেকে বোকা ভাবতে চায় না।",
+          "ur": "وہ خود کو بے وقوف محسوس نہیں کرنا چاہتی۔",
+          "th": "เธอไม่อยากรู้สึกว่าตัวเองโง่"
+        }
+      },
+      {
+        "id": "cl-fox-grapes-11",
+        "english": "She turns away from the vine.",
+        "turkish": "Asmaya arkasını döner.",
+        "translations": {
+          "es-419": "Se aleja de la parra.",
+          "pt-BR": "Ela se afasta da parreira.",
+          "id": "Ia berbalik meninggalkan pohon anggur itu.",
+          "ar": "تبتعد عن الكرمة.",
+          "vi": "Cô quay lưng bỏ đi khỏi giàn nho.",
+          "hi": "वह बेल से मुँह फेर लेती है।",
+          "ru": "Она отворачивается от лозы.",
+          "bn": "সে লতার দিক থেকে মুখ ফিরিয়ে নেয়।",
+          "ur": "وہ بیل سے منہ پھیر لیتی ہے۔",
+          "th": "เธอหันหลังให้เถาองุ่น"
+        }
+      },
+      {
+        "id": "classic-fox-grapes-ext-11-01",
+        "english": "She lifts her nose high in the air.",
+        "turkish": "Burnunu havaya diker.",
+        "translations": {
+          "es-419": "Levanta la nariz bien alto.",
+          "pt-BR": "Ela empina o focinho.",
+          "id": "Ia mengangkat hidungnya tinggi-tinggi.",
+          "ar": "ترفع أنفها عاليًا.",
+          "vi": "Cô hếch mũi lên trời.",
+          "hi": "वह अपनी नाक ऊँची कर लेती है।",
+          "ru": "Она высоко задирает нос.",
+          "bn": "সে নাকটা উঁচু করে তোলে।",
+          "ur": "وہ اپنی ناک اونچی کر لیتی ہے۔",
+          "th": "เธอเชิดจมูกขึ้นสูง"
+        }
+      },
+      {
+        "id": "cl-fox-grapes-12",
+        "english": "\"Those grapes are sour,\" she says.",
+        "turkish": "\"Şu üzümler ekşi,\" der.",
+        "translations": {
+          "es-419": "\"Esas uvas están agrias\", dice.",
+          "pt-BR": "— Essas uvas estão azedas — diz ela.",
+          "id": "\"Anggur itu asam,\" katanya.",
+          "ar": "تقول: «ذلك العنب حامض.»",
+          "vi": "\"Nho đó chua lắm,\" cô nói.",
+          "hi": "\"वे अंगूर खट्टे हैं,\" वह कहती है।",
+          "ru": "«Этот виноград кислый», — говорит она.",
+          "bn": "\"ওই আঙুরগুলো টক,\" সে বলে।",
+          "ur": "\"وہ انگور کھٹے ہیں،\" وہ کہتی ہے۔",
+          "th": "\"องุ่นพวกนั้นเปรี้ยว\" เธอพูด"
+        }
+      },
+      {
+        "id": "cl-fox-grapes-13",
+        "english": "\"They are not ripe at all.\"",
+        "turkish": "\"Hiç de olgun değiller.\"",
+        "translations": {
+          "es-419": "\"No están maduras para nada.\"",
+          "pt-BR": "— Nem estão maduras.",
+          "id": "\"Anggur itu sama sekali belum matang.\"",
+          "ar": "«إنه غير ناضج أبدًا.»",
+          "vi": "\"Chúng chưa chín chút nào.\"",
+          "hi": "\"वे बिल्कुल भी पके नहीं हैं।\"",
+          "ru": "«Он совсем не спелый».",
+          "bn": "\"ওগুলো একদম পাকেনি।\"",
+          "ur": "\"وہ بالکل پکے ہوئے نہیں ہیں۔\"",
+          "th": "\"มันยังไม่สุกเลยสักนิด\""
+        }
+      },
+      {
+        "id": "classic-fox-grapes-ext-13-01",
+        "english": "\"Only a foolish animal wants grapes like that.\"",
+        "turkish": "\"Öyle üzümleri ancak aptal bir hayvan ister.\"",
+        "translations": {
+          "es-419": "\"Solo un animal tonto quiere uvas así.\"",
+          "pt-BR": "— Só um bicho bobo quer uvas assim.",
+          "id": "\"Hanya hewan bodoh yang menginginkan anggur seperti itu.\"",
+          "ar": "«وحده حيوان أحمق يريد عنبًا كهذا.»",
+          "vi": "\"Chỉ có con vật ngốc mới thèm thứ nho như thế.\"",
+          "hi": "\"ऐसे अंगूर तो कोई मूर्ख जानवर ही चाहेगा।\"",
+          "ru": "«Такой виноград нужен только глупому зверю».",
+          "bn": "\"এমন আঙুর শুধু বোকা কোনো প্রাণীই চায়।\"",
+          "ur": "\"ایسے انگور تو کوئی بے وقوف جانور ہی چاہے گا۔\"",
+          "th": "\"มีแต่สัตว์โง่ ๆ เท่านั้นที่อยากได้องุ่นแบบนั้น\""
+        }
+      },
+      {
+        "id": "cl-fox-grapes-14",
+        "english": "She walks away without any grapes.",
+        "turkish": "Hiç üzüm alamadan uzaklaşır.",
+        "translations": {
+          "es-419": "Se va sin ninguna uva.",
+          "pt-BR": "Ela vai embora sem nenhuma uva.",
+          "id": "Ia pergi tanpa membawa sebutir anggur pun.",
+          "ar": "تمشي بعيدًا من دون أي عنب.",
+          "vi": "Cô bỏ đi mà không có quả nho nào.",
+          "hi": "वह बिना अंगूर लिए चली जाती है।",
+          "ru": "Она уходит без винограда.",
+          "bn": "সে একটাও আঙুর ছাড়াই চলে যায়।",
+          "ur": "وہ ایک بھی انگور لیے بغیر چلی جاتی ہے۔",
+          "th": "เธอเดินจากไปโดยไม่ได้องุ่นสักลูก"
+        }
+      },
+      {
+        "id": "classic-fox-grapes-ext-14-01",
+        "english": "But she is still hungry, and she still thinks about them.",
+        "turkish": "Ama hâlâ açtır ve hâlâ onları düşünür.",
+        "translations": {
+          "es-419": "Pero todavía tiene hambre y todavía piensa en ellas.",
+          "pt-BR": "Mas ela ainda está com fome e ainda pensa nelas.",
+          "id": "Tetapi ia masih lapar, dan ia masih memikirkan anggur itu.",
+          "ar": "لكنها ما زالت جائعة، وما زالت تفكّر فيه.",
+          "vi": "Nhưng cô vẫn còn đói, và vẫn nghĩ về chúng.",
+          "hi": "लेकिन उसे अब भी भूख लगी है, और वह अब भी उन्हीं के बारे में सोचती है।",
+          "ru": "Но она всё ещё голодна и всё ещё думает о нём.",
+          "bn": "কিন্তু সে এখনও ক্ষুধার্ত, আর এখনও সেগুলোর কথাই ভাবে।",
+          "ur": "لیکن وہ اب بھی بھوکی ہے اور اب بھی انہی کے بارے میں سوچتی ہے۔",
+          "th": "แต่เธอก็ยังหิว และยังคิดถึงองุ่นอยู่"
+        }
+      },
+      {
+        "id": "cl-fox-grapes-15",
+        "english": "She hides her disappointment with unkind words.",
+        "turkish": "Hayal kırıklığını kırıcı sözlerle gizler.",
+        "translations": {
+          "es-419": "Esconde su decepción con palabras crueles.",
+          "pt-BR": "Ela esconde a decepção com palavras maldosas.",
+          "id": "Ia menyembunyikan kekecewaannya dengan kata-kata yang tidak baik.",
+          "ar": "تُخفي خيبة أملها بكلمات قاسية.",
+          "vi": "Cô che giấu sự thất vọng của mình bằng những lời chê bai.",
+          "hi": "वह अपनी निराशा को रूखे शब्दों के पीछे छिपा लेती है।",
+          "ru": "Она прячет своё разочарование за недобрыми словами.",
+          "bn": "সে রূঢ় কথা বলে নিজের হতাশা লুকায়।",
+          "ur": "وہ اپنی مایوسی کو کڑوی باتوں کے پیچھے چھپا لیتی ہے۔",
+          "th": "เธอปิดบังความผิดหวังด้วยคำพูดที่ไม่ดี"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-fox-grapes-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "A fox who grows grapes in a garden",
+          "A fox who gives grapes to her friends",
+          "A fox who wants grapes she cannot get",
+          "A fox who takes grapes from a farmer"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "classic-fox-grapes-q2",
+        "kind": "detail",
+        "prompt": "Why can't the fox eat the grapes?",
+        "options": [
+          "They are sour",
+          "They are too high",
+          "She is not hungry",
+          "Someone takes them"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-fox-grapes-q3",
+        "kind": "inference",
+        "prompt": "Why does the fox say the grapes are sour?",
+        "options": [
+          "She eats one and finds it tastes bad",
+          "She feels bad because she cannot get them",
+          "She hears a gardener say they taste bad",
+          "She sees that all the grapes are green"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-fox-grapes-q4",
+        "kind": "detail",
+        "prompt": "What does the fox do after her first jump?",
+        "options": [
+          "She walks back and jumps again",
+          "She asks a bird for help",
+          "She climbs over the wall",
+          "She goes home to sleep"
+        ],
+        "answer": 0
+      }
+    ],
+    "tags": [
+      "fabl",
+      "macera"
+    ],
+    "descriptions": {
+      "es-419": "La zorra y las uvas. Una zorra que cambia de opinión sobre las uvas que no puede alcanzar. Adaptación breve de nivel A1. Adaptación: English Tales. Imagen histórica: Arthur Rackham; ilustración interior del libro, no es una portada aparte de primera edición.",
+      "pt-BR": "A raposa e as uvas. Uma raposa que muda de ideia sobre as uvas que não consegue alcançar. Adaptação curta de nível A1. Adaptação: English Tales. Imagem histórica: Arthur Rackham; ilustração interna do livro, não é uma capa separada de primeira edição.",
+      "id": "Rubah dan Anggur. Seekor rubah yang berubah pikiran tentang buah anggur yang tidak bisa ia gapai. Adaptasi singkat tingkat A1. Adaptasi: English Tales. Gambar historis: Arthur Rackham; ilustrasi di dalam buku, bukan sampul edisi pertama tersendiri.",
+      "ar": "الثعلب والعنب. ثعلبة تغيّر رأيها في عنب لا تستطيع الوصول إليه. اقتباس قصير بمستوى A1. الاقتباس: English Tales. صورة تاريخية: آرثر راكهام؛ رسم توضيحي داخل الكتاب، وليس غلافًا منفصلًا للطبعة الأولى.",
+      "vi": "Con cáo và chùm nho. Một con cáo thay đổi ý kiến về chùm nho mà nó không với tới được. Bản phóng tác ngắn trình độ A1. Phóng tác: English Tales. Hình ảnh lịch sử: Arthur Rackham; tranh minh họa bên trong sách, không phải bìa riêng của ấn bản đầu tiên.",
+      "hi": "लोमड़ी और अंगूर। एक लोमड़ी, जो अंगूरों तक नहीं पहुँच पाती और उनके बारे में अपनी राय बदल लेती है। A1 स्तर का छोटा रूपांतरण। रूपांतरण: English Tales। ऐतिहासिक चित्र: Arthur Rackham; किताब के अंदर का चित्र, पहले संस्करण का अलग कवर नहीं।",
+      "ru": "Лиса и виноград. Лиса, которая передумала насчёт винограда, до которого не смогла дотянуться. Краткая адаптация уровня A1. Адаптация: English Tales. Историческое изображение: Артур Рэкхем; внутренняя иллюстрация из книги, а не отдельная обложка первого издания.",
+      "bn": "আঙুর ফল টক (শেয়াল আর আঙুর)। নাগাল না পাওয়া আঙুর নিয়ে মত বদলে ফেলা এক শেয়াল। A1 স্তরের ছোট রূপান্তর। রূপান্তর: English Tales। ঐতিহাসিক ছবি: Arthur Rackham; বইয়ের ভেতরের ছবি, প্রথম সংস্করণের আলাদা প্রচ্ছদ নয়।",
+      "ur": "لومڑی اور انگور۔ ایک لومڑی جو انگوروں تک نہیں پہنچ پاتی اور ان کے بارے میں اپنی رائے بدل لیتی ہے۔ A1 سطح کی مختصر ماخوذ کہانی۔ ترتیب: English Tales۔ تاریخی تصویر: Arthur Rackham؛ کتاب کے اندر کی تصویر، پہلے ایڈیشن کا الگ سرورق نہیں۔",
+      "th": "สุนัขจิ้งจอกกับองุ่นเปรี้ยว: สุนัขจิ้งจอกที่เปลี่ยนใจเกี่ยวกับองุ่นที่มันเอื้อมไม่ถึง ฉบับดัดแปลงสั้น ๆ ระดับ A1 ดัดแปลงโดย English Tales ภาพเก่าทางประวัติศาสตร์: Arthur Rackham; ภาพประกอบภายในเล่ม ไม่ใช่ปกแยกของฉบับพิมพ์ครั้งแรก"
+    }
+  },
+  "words": [
+    {
+      "id": "hungry",
+      "word": "hungry",
+      "translation": "aç",
+      "pronunciation": "/ˈhʌŋɡri/",
+      "example": "I am hungry after school.",
+      "translations": {
+        "es-419": "hambriento",
+        "pt-BR": "com fome, faminto",
+        "id": "lapar",
+        "ar": "جائع",
+        "vi": "đói",
+        "hi": "भूखा",
+        "ru": "голодный",
+        "bn": "ক্ষুধার্ত",
+        "ur": "بھوکا",
+        "th": "หิว"
+      }
+    },
+    {
+      "id": "fox",
+      "word": "fox",
+      "translation": "tilki",
+      "pronunciation": "/fɒks/",
+      "example": "The fox sees some grapes.",
+      "translations": {
+        "es-419": "zorro",
+        "pt-BR": "raposa",
+        "id": "rubah",
+        "ar": "ثعلب",
+        "vi": "con cáo",
+        "hi": "लोमड़ी",
+        "ru": "лиса",
+        "bn": "শেয়াল",
+        "ur": "لومڑی",
+        "th": "สุนัขจิ้งจอก"
+      }
+    },
+    {
+      "id": "grapes",
+      "word": "grapes",
+      "translation": "üzümler",
+      "pronunciation": "/ɡreɪps/",
+      "example": "The grapes are high on the vine.",
+      "translations": {
+        "es-419": "uvas",
+        "pt-BR": "uvas",
+        "id": "buah anggur",
+        "ar": "عنب",
+        "vi": "chùm nho, quả nho",
+        "hi": "अंगूर",
+        "ru": "виноград",
+        "bn": "আঙুর",
+        "ur": "انگور",
+        "th": "องุ่น"
+      }
+    },
+    {
+      "id": "vine",
+      "word": "vine",
+      "translation": "asma",
+      "pronunciation": "/vaɪn/",
+      "example": "A vine grows in the garden.",
+      "translations": {
+        "es-419": "vid, parra",
+        "pt-BR": "videira, parreira",
+        "id": "tanaman merambat, pohon anggur",
+        "ar": "كرمة",
+        "vi": "giàn nho, cây leo",
+        "hi": "अंगूर की बेल",
+        "ru": "виноградная лоза",
+        "bn": "আঙুরলতা",
+        "ur": "انگور کی بیل",
+        "th": "เถาองุ่น"
+      }
+    },
+    {
+      "id": "ripe",
+      "word": "ripe",
+      "translation": "olgun",
+      "pronunciation": "/raɪp/",
+      "example": "The fruit is ripe.",
+      "translations": {
+        "es-419": "maduro",
+        "pt-BR": "maduro",
+        "id": "matang",
+        "ar": "ناضج",
+        "vi": "chín",
+        "hi": "पका हुआ",
+        "ru": "спелый",
+        "bn": "পাকা",
+        "ur": "پکا ہوا",
+        "th": "สุก"
+      }
+    },
+    {
+      "id": "sweet",
+      "word": "sweet",
+      "translation": "tatlı",
+      "pronunciation": "/swiːt/",
+      "example": "This cake is very sweet.",
+      "translations": {
+        "es-419": "dulce",
+        "pt-BR": "doce",
+        "id": "manis",
+        "ar": "حلو",
+        "vi": "ngọt",
+        "hi": "मीठा",
+        "ru": "сладкий",
+        "bn": "মিষ্টি",
+        "ur": "میٹھا",
+        "th": "หวาน"
+      }
+    },
+    {
+      "id": "high",
+      "word": "high",
+      "translation": "yüksek",
+      "pronunciation": "/haɪ/",
+      "example": "The bird sits on a high wall.",
+      "translations": {
+        "es-419": "alto",
+        "pt-BR": "alto",
+        "id": "tinggi",
+        "ar": "عالٍ",
+        "vi": "cao",
+        "hi": "ऊँचा",
+        "ru": "высоко, высокий",
+        "bn": "উঁচু",
+        "ur": "اونچا",
+        "th": "สูง"
+      }
+    },
+    {
+      "id": "jumps",
+      "word": "jumps",
+      "translation": "zıplar, sıçrar",
+      "pronunciation": "/dʒʌmps/",
+      "example": "The cat jumps onto the chair.",
+      "translations": {
+        "es-419": "salta",
+        "pt-BR": "pula, salta",
+        "id": "melompat",
+        "ar": "يقفز",
+        "vi": "nhảy",
+        "hi": "कूदता है, उछलता है",
+        "ru": "прыгает",
+        "bn": "লাফ দেয়",
+        "ur": "اچھلتا ہے، چھلانگ لگاتا ہے",
+        "th": "กระโดด"
+      }
+    },
+    {
+      "id": "reach",
+      "word": "reach",
+      "translation": "ulaşmak, uzanmak",
+      "pronunciation": "/riːtʃ/",
+      "example": "I cannot reach the top shelf.",
+      "translations": {
+        "es-419": "alcanzar",
+        "pt-BR": "alcançar",
+        "id": "mencapai, menggapai",
+        "ar": "يصل إلى",
+        "vi": "với tới",
+        "hi": "पहुँचना",
+        "ru": "достать, дотянуться",
+        "bn": "নাগাল পাওয়া, পৌঁছানো",
+        "ur": "پہنچنا، ہاتھ پہنچانا",
+        "th": "เอื้อมถึง"
+      }
+    },
+    {
+      "id": "tries",
+      "word": "tries",
+      "translation": "dener",
+      "pronunciation": "/traɪz/",
+      "example": "He tries to open the door.",
+      "translations": {
+        "es-419": "intenta",
+        "pt-BR": "tenta",
+        "id": "mencoba",
+        "ar": "يحاول",
+        "vi": "cố gắng, thử",
+        "hi": "कोशिश करता है",
+        "ru": "пытается, пробует",
+        "bn": "চেষ্টা করে",
+        "ur": "کوشش کرتا ہے",
+        "th": "พยายาม"
+      }
+    },
+    {
+      "id": "again-and-again",
+      "word": "again and again",
+      "translation": "tekrar tekrar",
+      "pronunciation": "/əˈɡen ənd əˈɡen/",
+      "example": "She reads the letter again and again.",
+      "translations": {
+        "es-419": "una y otra vez",
+        "pt-BR": "de novo e de novo, repetidamente",
+        "id": "berulang kali",
+        "ar": "مرارًا وتكرارًا",
+        "vi": "hết lần này đến lần khác",
+        "hi": "बार-बार",
+        "ru": "снова и снова",
+        "bn": "বারবার",
+        "ur": "بار بار",
+        "th": "ครั้งแล้วครั้งเล่า"
+      }
+    },
+    {
+      "id": "at-last",
+      "word": "at last",
+      "translation": "sonunda",
+      "pronunciation": "/æt læst/",
+      "example": "At last, the bus arrives.",
+      "translations": {
+        "es-419": "por fin",
+        "pt-BR": "finalmente, enfim",
+        "id": "akhirnya",
+        "ar": "أخيرًا",
+        "vi": "cuối cùng",
+        "hi": "आख़िरकार",
+        "ru": "наконец",
+        "bn": "অবশেষে",
+        "ur": "آخرکار",
+        "th": "ในที่สุด"
+      }
+    },
+    {
+      "id": "tired",
+      "word": "tired",
+      "translation": "yorgun",
+      "pronunciation": "/ˈtaɪərd/",
+      "example": "She is tired after work.",
+      "translations": {
+        "es-419": "cansado",
+        "pt-BR": "cansado",
+        "id": "lelah",
+        "ar": "متعب",
+        "vi": "mệt",
+        "hi": "थका हुआ",
+        "ru": "усталый",
+        "bn": "ক্লান্ত",
+        "ur": "تھکا ہوا",
+        "th": "เหนื่อย"
+      }
+    },
+    {
+      "id": "sour",
+      "word": "sour",
+      "translation": "ekşi",
+      "pronunciation": "/ˈsaʊə(r)/",
+      "example": "The fox calls the grapes sour.",
+      "translations": {
+        "es-419": "agrio",
+        "pt-BR": "azedo",
+        "id": "asam",
+        "ar": "حامض",
+        "vi": "chua",
+        "hi": "खट्टा",
+        "ru": "кислый",
+        "bn": "টক",
+        "ur": "کھٹا",
+        "th": "เปรี้ยว"
+      }
+    },
+    {
+      "id": "disappointment",
+      "word": "disappointment",
+      "translation": "hayal kırıklığı",
+      "pronunciation": "/ˌdɪsəˈpɔɪntmənt/",
+      "example": "She hides her disappointment.",
+      "translations": {
+        "es-419": "decepción",
+        "pt-BR": "decepção",
+        "id": "kekecewaan",
+        "ar": "خيبة أمل",
+        "vi": "sự thất vọng",
+        "hi": "निराशा",
+        "ru": "разочарование",
+        "bn": "হতাশা",
+        "ur": "مایوسی",
+        "th": "ความผิดหวัง"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "hungry",
+    "fox",
+    "grapes",
+    "vine",
+    "ripe",
+    "sweet",
+    "high",
+    "jumps",
+    "reach",
+    "tries",
+    "again-and-again",
+    "at-last",
+    "tired",
+    "sour",
+    "disappointment"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-fox-grapes-q1",
+      "sentenceIds": [
+        "cl-fox-grapes-02",
+        "cl-fox-grapes-05",
+        "cl-fox-grapes-06",
+        "cl-fox-grapes-08"
+      ],
+      "rationale": "The fox wants the grapes but cannot reach them."
+    },
+    {
+      "questionId": "classic-fox-grapes-q2",
+      "sentenceIds": [
+        "cl-fox-grapes-06",
+        "cl-fox-grapes-08"
+      ],
+      "rationale": "The grapes are very high, so she cannot reach them."
+    },
+    {
+      "questionId": "classic-fox-grapes-q3",
+      "sentenceIds": [
+        "cl-fox-grapes-12",
+        "cl-fox-grapes-15"
+      ],
+      "rationale": "She calls the grapes sour to hide her disappointment."
+    },
+    {
+      "questionId": "classic-fox-grapes-q4",
+      "sentenceIds": [
+        "classic-fox-grapes-ext-08-01",
+        "classic-fox-grapes-ext-08-02"
+      ],
+      "rationale": "She walks back a few steps, then runs and jumps again."
+    }
+  ],
+  "publicationBlockers": [
+    "Owner (oguz) approval of the English text, questions and translations required.",
+    "Fresh live source snapshot and publisher validation required."
+  ],
+  "lengthening": {
+    "wordsBefore": 89,
+    "wordsAfter": 197,
+    "sentencesBefore": 15,
+    "sentencesAfter": 30
+  }
+}
