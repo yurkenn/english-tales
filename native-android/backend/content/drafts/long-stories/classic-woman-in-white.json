@@ -1,0 +1,1958 @@
+{
+  "status": "draft",
+  "kind": "long-story",
+  "source": "long-story-classics-2026-10-22",
+  "reviewedBy": null,
+  "rights": {
+    "credit": "Wilkie Collins",
+    "sourceTitle": "The Woman in White",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/583",
+    "sourceTextUrl": "https://www.gutenberg.org/cache/epub/583/pg583-images.html",
+    "identifiedContributor": {
+      "name": "Wilkie Collins",
+      "role": "author",
+      "deathYear": 1889
+    },
+    "firstPublished": 1860,
+    "sourceCopyrightStatement": "Public domain in the USA",
+    "checkedOn": "2026-10-22",
+    "adaptation": "New graded B1 retelling written by English Tales, with English Tales translations. No modern abridgement, film script or translation was used.",
+    "turkeyAssessment": "Author died in 1889, more than 70 years before 2026, so the work is out of protection in Turkey and in life+70 countries.",
+    "rightsGuidanceUrl": "https://telifhaklari.ktb.gov.tr/TR-332373/telif-hakki-kac-yil-sureyle-korunur.html",
+    "sourceTextSha256": null,
+    "sourceTextSha256Pending": "Gutenberg is not reachable from the cloud session; record the source text hash on the owner's Mac before publication."
+  },
+  "editorialNotes": [
+    "B1 target: past tense narration, sentences of at most 20 words, about 1,050 words (about 9 minutes of reading).",
+    "Retelling of the 1860 novel's main line: the meeting on the road, Limmeridge, Laura and Walter, the warning letter, Blackwater Park, the signature, Marian on the roof, the exchange of Anne and Laura, the asylum, the grave, the false register and fire, and Fosco's written confession.",
+    "The many narrators of the novel are replaced by one simple third-person story; Fosco's own end is left out.",
+    "Reading sections are editorial groupings for a future chapter view; the app currently shows the story as one text."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+  },
+  "readingSections": [
+    {
+      "title": "The woman on the road",
+      "firstSentenceId": "cl-white-001",
+      "lastSentenceId": "cl-white-025"
+    },
+    {
+      "title": "The Count and the signature",
+      "firstSentenceId": "cl-white-026",
+      "lastSentenceId": "cl-white-046"
+    },
+    {
+      "title": "A name on a grave",
+      "firstSentenceId": "cl-white-047",
+      "lastSentenceId": "cl-white-064"
+    },
+    {
+      "title": "The secret in the church",
+      "firstSentenceId": "cl-white-065",
+      "lastSentenceId": "cl-white-088"
+    }
+  ],
+  "story": {
+    "id": "classic-woman-in-white",
+    "title": "The Woman in White",
+    "author": "Wilkie Collins",
+    "level": "B1",
+    "genre": "Gizem",
+    "description": "Beyazlı Kadın. Genç resim öğretmeni Walter, gece yolda beyazlar giymiş korkmuş bir kadınla karşılaşır; bu karşılaşma onu bir servet, sahte bir mezar ve korkunç bir sırla dolu bir gizeme sürükler. B1 düzeyinde uzun uyarlama. Uyarlama ve Türkçe çeviri: English Tales.",
+    "descriptions": {
+      "es-419": "La dama de blanco. Una noche, el joven profesor de dibujo Walter se cruza en un camino con una mujer asustada vestida de blanco; ese encuentro lo lleva a un misterio de dinero, una tumba falsa y un terrible secreto. Adaptación larga de nivel B1. Adaptación: English Tales.",
+      "pt-BR": "A dama de branco. Numa noite, o jovem professor de desenho Walter encontra na estrada uma mulher assustada vestida de branco; esse encontro o leva a um mistério de dinheiro, um túmulo falso e um segredo terrível. Adaptação longa de nível B1. Adaptação: English Tales.",
+      "id": "Wanita Berbaju Putih. Suatu malam, guru menggambar muda bernama Walter bertemu seorang wanita ketakutan berbaju putih di jalan; pertemuan itu menyeretnya ke dalam misteri harta, makam palsu, dan rahasia yang mengerikan. Adaptasi panjang tingkat B1. Adaptasi: English Tales.",
+      "ar": "المرأة ذات الثوب الأبيض. يلتقي مُعلّم الرسم الشابّ والتر ليلًا على الطريق بامرأة خائفة ترتدي الأبيض؛ فيقوده هذا اللقاء إلى لغز فيه ثروة وقبر مزيّف وسرّ رهيب. اقتباس طويل بمستوى B1. الاقتباس: English Tales.",
+      "vi": "Người đàn bà áo trắng. Một đêm, thầy giáo dạy vẽ trẻ tuổi Walter gặp trên đường một người phụ nữ áo trắng đang sợ hãi; cuộc gặp ấy cuốn anh vào một bí ẩn về tiền bạc, một ngôi mộ giả và một bí mật khủng khiếp. Bản phóng tác dài trình độ B1. Phóng tác: English Tales.",
+      "hi": "द वुमन इन व्हाइट। एक रात युवा ड्रॉइंग शिक्षक वॉल्टर को सड़क पर सफ़ेद कपड़ों में एक डरी हुई औरत मिलती है; यह मुलाक़ात उसे दौलत, एक झूठी क़ब्र और एक भयानक राज़ से भरे रहस्य में खींच ले जाती है। B1 स्तर का लंबा रूपांतरण। रूपांतरण: English Tales.",
+      "ru": "Женщина в белом. Однажды ночью молодой учитель рисования Уолтер встречает на дороге испуганную женщину в белом; эта встреча втягивает его в тайну, где есть деньги, ложная могила и страшный секрет. Длинный пересказ уровня B1. Адаптация: English Tales.",
+      "bn": "দ্য উওম্যান ইন হোয়াইট। এক রাতে তরুণ ছবি আঁকার শিক্ষক ওয়াল্টার রাস্তায় সাদা পোশাকের এক ভীত মহিলার দেখা পায়; সেই দেখা তাকে টাকাপয়সা, এক নকল কবর আর এক ভয়ংকর গোপন কথার রহস্যে টেনে নেয়। B1 স্তরের দীর্ঘ রূপান্তর। রূপান্তর: English Tales.",
+      "ur": "سفید لباس والی عورت۔ ایک رات نوجوان ڈرائنگ استاد والٹر کو سڑک پر سفید لباس میں ایک ڈری ہوئی عورت ملتی ہے؛ یہ ملاقات اسے دولت، ایک جھوٹی قبر اور ایک خوفناک راز سے بھرے معمے میں کھینچ لیتی ہے۔ B1 سطح کی طویل ماخوذ کہانی۔ ماخوذ: English Tales.",
+      "th": "หญิงชุดขาว คืนหนึ่ง วอลเตอร์ ครูสอนวาดภาพหนุ่ม พบหญิงชุดขาวผู้หวาดกลัวบนถนน การพบกันครั้งนั้นดึงเขาเข้าสู่ปริศนาเรื่องทรัพย์สิน หลุมศพปลอม และความลับอันน่ากลัว ฉบับเรียบเรียงยาวระดับ B1 เรียบเรียงโดย English Tales"
+    },
+    "coverKey": "cover_classic_woman_in_white",
+    "tags": [
+      "gizem"
+    ],
+    "sentences": [
+      {
+        "id": "cl-white-001",
+        "english": "Walter Hartright was a young drawing teacher in London.",
+        "turkish": "Walter Hartright, Londra'da genç bir resim öğretmeniydi.",
+        "translations": {
+          "es-419": "Walter Hartright era un joven profesor de dibujo en Londres.",
+          "pt-BR": "Walter Hartright era um jovem professor de desenho em Londres.",
+          "id": "Walter Hartright adalah seorang guru menggambar muda di London.",
+          "ar": "كان والتر هارترايت مُعلّم رسم شابًّا في لندن.",
+          "vi": "Walter Hartright là một thầy giáo dạy vẽ trẻ ở London.",
+          "hi": "वॉल्टर हार्टराइट लंदन में ड्रॉइंग सिखाने वाला एक युवा शिक्षक था।",
+          "ru": "Уолтер Хартрайт был молодым учителем рисования в Лондоне.",
+          "bn": "ওয়াল্টার হার্টরাইট ছিল লন্ডনের এক তরুণ ছবি আঁকার শিক্ষক।",
+          "ur": "والٹر ہارٹ رائٹ لندن میں ڈرائنگ سکھانے والا ایک نوجوان استاد تھا۔",
+          "th": "วอลเตอร์ ฮาร์ตไรต์เป็นครูสอนวาดภาพหนุ่มในลอนดอน"
+        }
+      },
+      {
+        "id": "cl-white-002",
+        "english": "One summer night, he was walking home alone along an empty road.",
+        "turkish": "Bir yaz gecesi, ıssız bir yolda tek başına eve yürüyordu.",
+        "translations": {
+          "es-419": "Una noche de verano, volvía a casa caminando solo por un camino desierto.",
+          "pt-BR": "Numa noite de verão, ele voltava para casa a pé, sozinho, por uma estrada vazia.",
+          "id": "Pada suatu malam musim panas, ia berjalan pulang sendirian di jalan yang sepi.",
+          "ar": "في إحدى ليالي الصيف، كان عائدًا إلى بيته وحده على طريق خالٍ.",
+          "vi": "Một đêm mùa hè, anh đang đi bộ về nhà một mình trên con đường vắng.",
+          "hi": "गर्मियों की एक रात वह एक सुनसान सड़क पर अकेला घर लौट रहा था।",
+          "ru": "Однажды летней ночью он шёл домой один по пустой дороге.",
+          "bn": "এক গ্রীষ্মের রাতে সে একা একটা ফাঁকা রাস্তা ধরে বাড়ি ফিরছিল।",
+          "ur": "گرمیوں کی ایک رات وہ ایک سنسان سڑک پر اکیلا گھر لوٹ رہا تھا۔",
+          "th": "คืนหนึ่งในฤดูร้อน เขากำลังเดินกลับบ้านคนเดียวบนถนนที่ว่างเปล่า"
+        }
+      },
+      {
+        "id": "cl-white-003",
+        "english": "Suddenly a hand touched his shoulder from behind.",
+        "turkish": "Birden arkadan bir el omzuna dokundu.",
+        "translations": {
+          "es-419": "De repente, una mano le tocó el hombro por detrás.",
+          "pt-BR": "De repente, uma mão tocou seu ombro por trás.",
+          "id": "Tiba-tiba sebuah tangan menyentuh bahunya dari belakang.",
+          "ar": "فجأة لمست يدٌ كتفه من الخلف.",
+          "vi": "Bỗng có một bàn tay chạm vào vai anh từ phía sau.",
+          "hi": "अचानक पीछे से किसी हाथ ने उसके कंधे को छुआ।",
+          "ru": "Вдруг чья-то рука коснулась сзади его плеча.",
+          "bn": "হঠাৎ পেছন থেকে একটা হাত তার কাঁধ ছুঁল।",
+          "ur": "اچانک پیچھے سے کسی ہاتھ نے اس کے کندھے کو چھوا۔",
+          "th": "ทันใดนั้นก็มีมือหนึ่งแตะไหล่เขาจากด้านหลัง"
+        }
+      },
+      {
+        "id": "cl-white-004",
+        "english": "He turned and saw a young woman dressed all in white.",
+        "turkish": "Döndü ve baştan aşağı beyazlar giymiş genç bir kadın gördü.",
+        "translations": {
+          "es-419": "Se volvió y vio a una joven vestida toda de blanco.",
+          "pt-BR": "Ele se virou e viu uma jovem toda vestida de branco.",
+          "id": "Ia menoleh dan melihat seorang wanita muda berpakaian serba putih.",
+          "ar": "التفت فرأى امرأة شابّة ترتدي الأبيض كلّه.",
+          "vi": "Anh quay lại và thấy một cô gái trẻ mặc toàn màu trắng.",
+          "hi": "उसने मुड़कर देखा, तो सिर से पाँव तक सफ़ेद कपड़ों में एक युवती खड़ी थी।",
+          "ru": "Он обернулся и увидел молодую женщину, одетую во всё белое.",
+          "bn": "সে ঘুরে দেখল, আপাদমস্তক সাদা পোশাকে এক তরুণী দাঁড়িয়ে।",
+          "ur": "اس نے مڑ کر دیکھا تو سر سے پاؤں تک سفید لباس میں ایک نوجوان عورت کھڑی تھی۔",
+          "th": "เขาหันไปและเห็นหญิงสาวคนหนึ่งสวมชุดขาวทั้งตัว"
+        }
+      },
+      {
+        "id": "cl-white-005",
+        "english": "Her face was pale, and she looked very frightened.",
+        "turkish": "Yüzü solgundu ve çok korkmuş görünüyordu.",
+        "translations": {
+          "es-419": "Tenía la cara pálida y parecía muy asustada.",
+          "pt-BR": "O rosto dela estava pálido, e ela parecia muito assustada.",
+          "id": "Wajahnya pucat, dan ia tampak sangat ketakutan.",
+          "ar": "كان وجهها شاحبًا، وبدت خائفة جدًّا.",
+          "vi": "Mặt cô tái nhợt, trông vô cùng sợ hãi.",
+          "hi": "उसका चेहरा पीला था, और वह बहुत डरी हुई लग रही थी।",
+          "ru": "Лицо у неё было бледное, и она выглядела очень испуганной.",
+          "bn": "তার মুখ ফ্যাকাশে, আর তাকে খুব ভয় পাওয়া দেখাচ্ছিল।",
+          "ur": "اس کا چہرہ زرد تھا، اور وہ بہت ڈری ہوئی لگ رہی تھی۔",
+          "th": "หน้าของเธอซีดเผือด และดูหวาดกลัวมาก"
+        }
+      },
+      {
+        "id": "cl-white-006",
+        "english": "\"Please help me find the way to London,\" she whispered.",
+        "turkish": "\"Lütfen Londra'nın yolunu bulmama yardım edin,\" diye fısıldadı.",
+        "translations": {
+          "es-419": "—Por favor, ayúdeme a encontrar el camino a Londres —susurró.",
+          "pt-BR": "— Por favor, me ajude a achar o caminho para Londres — sussurrou ela.",
+          "id": "\"Tolong bantu saya menemukan jalan ke London,\" bisiknya.",
+          "ar": "همست: «أرجوك، ساعدني على إيجاد الطريق إلى لندن».",
+          "vi": "\"Xin anh giúp tôi tìm đường đến London,\" cô thì thầm.",
+          "hi": "\"कृपया लंदन का रास्ता ढूँढने में मेरी मदद कीजिए,\" उसने फुसफुसाकर कहा।",
+          "ru": "«Пожалуйста, помогите мне найти дорогу в Лондон», — прошептала она.",
+          "bn": "\"দয়া করে লন্ডনের পথ খুঁজতে আমাকে সাহায্য করুন,\" সে ফিসফিস করে বলল।",
+          "ur": "\"براہِ کرم لندن کا راستہ ڈھونڈنے میں میری مدد کیجیے،\" اس نے سرگوشی کی۔",
+          "th": "\"ช่วยพาฉันหาทางไปลอนดอนหน่อยเถอะค่ะ\" เธอกระซิบ"
+        }
+      },
+      {
+        "id": "cl-white-007",
+        "english": "As they walked, she asked him strange questions about a rich man, a baronet.",
+        "turkish": "Yürürlerken ona zengin bir adam, bir baronet hakkında tuhaf sorular sordu.",
+        "translations": {
+          "es-419": "Mientras caminaban, ella le hizo preguntas extrañas sobre un hombre rico, un baronet.",
+          "pt-BR": "Enquanto caminhavam, ela lhe fez perguntas estranhas sobre um homem rico, um baronete.",
+          "id": "Sambil berjalan, ia menanyakan hal-hal aneh tentang seorang pria kaya, seorang baronet.",
+          "ar": "وبينما كانا يمشيان، سألته أسئلة غريبة عن رجل غنيّ يحمل لقب بارونيت.",
+          "vi": "Vừa đi, cô vừa hỏi anh những câu kỳ lạ về một người giàu có, một vị tòng nam tước.",
+          "hi": "चलते-चलते उसने एक अमीर आदमी, एक बैरोनेट, के बारे में उससे अजीब सवाल पूछे।",
+          "ru": "По дороге она задавала ему странные вопросы о каком-то богатом баронете.",
+          "bn": "হাঁটতে হাঁটতে সে এক ধনী লোক, এক ব্যারোনেট সম্পর্কে তাকে অদ্ভুত সব প্রশ্ন করল।",
+          "ur": "چلتے چلتے اس نے ایک امیر آدمی، ایک بیرونیٹ، کے بارے میں اس سے عجیب سوال پوچھے۔",
+          "th": "ระหว่างเดิน เธอถามคำถามแปลก ๆ เกี่ยวกับชายร่ำรวยคนหนึ่งที่มีบรรดาศักดิ์บารอเนต"
+        }
+      },
+      {
+        "id": "cl-white-008",
+        "english": "When they reached the city, she got into a cab and disappeared.",
+        "turkish": "Şehre vardıklarında bir arabaya binip gözden kayboldu.",
+        "translations": {
+          "es-419": "Cuando llegaron a la ciudad, ella subió a un coche de alquiler y desapareció.",
+          "pt-BR": "Quando chegaram à cidade, ela entrou num cabriolé e desapareceu.",
+          "id": "Ketika mereka sampai di kota, ia naik kereta sewaan dan menghilang.",
+          "ar": "وحين وصلا إلى المدينة، ركبت عربة أجرة واختفت.",
+          "vi": "Khi tới thành phố, cô lên một chiếc xe ngựa thuê và biến mất.",
+          "hi": "शहर पहुँचकर वह एक बग्घी में बैठी और ग़ायब हो गई।",
+          "ru": "Когда они дошли до города, она села в кэб и исчезла.",
+          "bn": "শহরে পৌঁছে সে একটা গাড়িতে উঠে মিলিয়ে গেল।",
+          "ur": "شہر پہنچ کر وہ ایک بگھی میں بیٹھی اور غائب ہو گئی۔",
+          "th": "เมื่อถึงตัวเมือง เธอก็ขึ้นรถม้ารับจ้างแล้วหายไป"
+        }
+      },
+      {
+        "id": "cl-white-009",
+        "english": "A minute later, two men ran past in another carriage.",
+        "turkish": "Bir dakika sonra iki adam başka bir arabayla hızla geçti.",
+        "translations": {
+          "es-419": "Un minuto después, dos hombres pasaron a toda prisa en otro carruaje.",
+          "pt-BR": "Um minuto depois, dois homens passaram correndo em outra carruagem.",
+          "id": "Semenit kemudian, dua pria melintas dengan cepat naik kereta lain.",
+          "ar": "بعد دقيقة، مرّ رجلان مسرعين في عربة أخرى.",
+          "vi": "Một phút sau, hai người đàn ông phóng qua trên một cỗ xe khác.",
+          "hi": "एक मिनट बाद दो आदमी दूसरी बग्घी में तेज़ी से गुज़रे।",
+          "ru": "Через минуту мимо промчались двое мужчин в другой коляске.",
+          "bn": "এক মিনিট পরে দুজন লোক আরেকটা গাড়িতে দ্রুত পাশ দিয়ে চলে গেল।",
+          "ur": "ایک منٹ بعد دو آدمی ایک دوسری بگھی میں تیزی سے گزرے۔",
+          "th": "หนึ่งนาทีต่อมา ชายสองคนก็ขับรถม้าอีกคันผ่านไปอย่างรวดเร็ว"
+        }
+      },
+      {
+        "id": "cl-white-010",
+        "english": "\"Have you seen a woman in white?\" they shouted to a policeman.",
+        "turkish": "\"Beyazlı bir kadın gördünüz mü?\" diye bağırdılar bir polise.",
+        "translations": {
+          "es-419": "—¿Ha visto a una mujer vestida de blanco? —le gritaron a un policía.",
+          "pt-BR": "— O senhor viu uma mulher de branco? — gritaram para um policial.",
+          "id": "\"Apakah Anda melihat wanita berbaju putih?\" teriak mereka kepada seorang polisi.",
+          "ar": "صاحا بشرطيّ: «هل رأيت امرأة ترتدي الأبيض؟»",
+          "vi": "\"Anh có thấy một người phụ nữ mặc đồ trắng không?\" họ hét hỏi một viên cảnh sát.",
+          "hi": "\"क्या आपने सफ़ेद कपड़ों वाली एक औरत देखी है?\" उन्होंने एक सिपाही से चिल्लाकर पूछा।",
+          "ru": "«Вы не видели женщину в белом?» — крикнули они полицейскому.",
+          "bn": "\"আপনি কি সাদা পোশাকের এক মহিলাকে দেখেছেন?\" তারা এক পুলিশকে চেঁচিয়ে জিজ্ঞেস করল।",
+          "ur": "\"کیا آپ نے سفید لباس والی ایک عورت دیکھی ہے؟\" انہوں نے ایک سپاہی سے چلا کر پوچھا۔",
+          "th": "\"เห็นผู้หญิงชุดขาวบ้างไหม\" พวกเขาตะโกนถามตำรวจ"
+        }
+      },
+      {
+        "id": "cl-white-011",
+        "english": "\"She has escaped from my asylum, and she must be caught.\"",
+        "turkish": "\"Benim akıl hastanemden kaçtı ve yakalanması gerek.\"",
+        "translations": {
+          "es-419": "—Se escapó de mi manicomio y hay que atraparla.",
+          "pt-BR": "— Ela fugiu do meu hospício e precisa ser apanhada.",
+          "id": "\"Ia kabur dari rumah sakit jiwa saya, dan ia harus ditangkap.\"",
+          "ar": "«لقد هربت من مصحّتي العقلية، ويجب الإمساك بها».",
+          "vi": "\"Cô ta trốn khỏi nhà thương điên của tôi, phải bắt cô ta lại.\"",
+          "hi": "\"वह मेरे पागलख़ाने से भाग निकली है, और उसे पकड़ना ज़रूरी है।\"",
+          "ru": "«Она сбежала из моей лечебницы для душевнобольных, её нужно поймать».",
+          "bn": "\"সে আমার পাগলাগারদ থেকে পালিয়েছে, তাকে ধরতেই হবে।\"",
+          "ur": "\"وہ میرے پاگل خانے سے بھاگ نکلی ہے، اور اسے پکڑنا ضروری ہے۔\"",
+          "th": "\"เธอหนีออกมาจากโรงพยาบาลบ้าของผม ต้องจับตัวเธอให้ได้\""
+        }
+      },
+      {
+        "id": "cl-white-012",
+        "english": "Walter could not forget the woman's sad white face.",
+        "turkish": "Walter kadının o hüzünlü, beyaz yüzünü unutamadı.",
+        "translations": {
+          "es-419": "Walter no podía olvidar el rostro triste y blanco de la mujer.",
+          "pt-BR": "Walter não conseguia esquecer o rosto triste e branco da mulher.",
+          "id": "Walter tidak bisa melupakan wajah wanita itu yang sedih dan pucat.",
+          "ar": "لم يستطع والتر أن ينسى وجه المرأة الحزين الشاحب.",
+          "vi": "Walter không thể quên gương mặt trắng bệch, buồn bã của người phụ nữ.",
+          "hi": "वॉल्टर उस औरत का उदास, सफ़ेद चेहरा भूल नहीं सका।",
+          "ru": "Уолтер не мог забыть грустное бледное лицо той женщины.",
+          "bn": "ওয়াল্টার মহিলার সেই বিষণ্ণ, সাদা মুখ ভুলতে পারল না।",
+          "ur": "والٹر اس عورت کا اداس، سفید چہرہ بھول نہیں سکا۔",
+          "th": "วอลเตอร์ลืมใบหน้าขาวซีดอันเศร้าสร้อยของหญิงคนนั้นไม่ได้"
+        }
+      },
+      {
+        "id": "cl-white-013",
+        "english": "The next week, he went north to Limmeridge House to teach two young ladies.",
+        "turkish": "Ertesi hafta iki genç hanıma ders vermek için kuzeye, Limmeridge Konağı'na gitti.",
+        "translations": {
+          "es-419": "La semana siguiente, viajó al norte, a Limmeridge House, para dar clases a dos señoritas.",
+          "pt-BR": "Na semana seguinte, ele foi para o norte, para Limmeridge House, dar aulas a duas moças.",
+          "id": "Minggu berikutnya, ia pergi ke utara, ke Limmeridge House, untuk mengajar dua nona muda.",
+          "ar": "في الأسبوع التالي، سافر شمالًا إلى قصر ليمريدج ليعلّم سيّدتين شابّتين.",
+          "vi": "Tuần sau, anh lên phía bắc, đến dinh thự Limmeridge để dạy hai tiểu thư.",
+          "hi": "अगले हफ़्ते वह दो युवतियों को पढ़ाने उत्तर में लिमरिज हाउस गया।",
+          "ru": "На следующей неделе он уехал на север, в Лиммеридж-хаус, учить двух молодых леди.",
+          "bn": "পরের সপ্তাহে সে দুই তরুণীকে পড়াতে উত্তরে লিমেরিজ হাউসে গেল।",
+          "ur": "اگلے ہفتے وہ دو نوجوان خواتین کو پڑھانے شمال میں لمرج ہاؤس گیا۔",
+          "th": "สัปดาห์ต่อมา เขาเดินทางขึ้นเหนือไปยังคฤหาสน์ลิมเมอริดจ์เพื่อสอนหญิงสาวสองคน"
+        }
+      },
+      {
+        "id": "cl-white-014",
+        "english": "One was Marian Halcombe, dark, clever and brave.",
+        "turkish": "Biri Marian Halcombe'du: esmer, zeki ve cesur.",
+        "translations": {
+          "es-419": "Una era Marian Halcombe, morena, inteligente y valiente.",
+          "pt-BR": "Uma era Marian Halcombe, morena, inteligente e corajosa.",
+          "id": "Yang satu adalah Marian Halcombe, berambut gelap, cerdas, dan pemberani.",
+          "ar": "إحداهما ماريان هالكومب، سمراء ذكيّة شجاعة.",
+          "vi": "Một người là Marian Halcombe, tóc sẫm, thông minh và can đảm.",
+          "hi": "एक थी मैरियन हैलकॉम्ब, साँवली, चतुर और बहादुर।",
+          "ru": "Одна была Мэриан Холкомб — темноволосая, умная и смелая.",
+          "bn": "একজন মেরিয়ান হ্যালকম্ব, শ্যামলা, বুদ্ধিমতী আর সাহসী।",
+          "ur": "ایک تھی میرین ہالکومب، سانولی، ذہین اور بہادر۔",
+          "th": "คนหนึ่งคือแมเรียน แฮลคอมบ์ ผมสีเข้ม ฉลาด และกล้าหาญ"
+        }
+      },
+      {
+        "id": "cl-white-015",
+        "english": "The other was her gentle half-sister, Laura Fairlie, who was fair and lovely.",
+        "turkish": "Diğeri onun yumuşak huylu, sarışın ve sevimli anne bir kız kardeşi Laura Fairlie'ydi.",
+        "translations": {
+          "es-419": "La otra era su dulce media hermana, Laura Fairlie, rubia y encantadora.",
+          "pt-BR": "A outra era sua meiga meia-irmã, Laura Fairlie, loira e encantadora.",
+          "id": "Yang lain adalah adik seibunya yang lembut, Laura Fairlie, berambut pirang dan cantik.",
+          "ar": "والأخرى أختها غير الشقيقة الرقيقة، لورا فيرلي، الشقراء الفاتنة.",
+          "vi": "Người kia là cô em cùng mẹ khác cha hiền dịu, Laura Fairlie, tóc vàng và xinh xắn.",
+          "hi": "दूसरी थी उसकी कोमल सौतेली बहन लॉरा फ़ेयरली, गोरी और प्यारी।",
+          "ru": "Другая — её кроткая единоутробная сестра Лора Фэрли, светловолосая и прелестная.",
+          "bn": "অন্যজন তার কোমল সৎবোন লরা ফেয়ারলি, ফরসা আর মিষ্টি।",
+          "ur": "دوسری اس کی نرم مزاج سوتیلی بہن لارا فیئرلی تھی، گوری اور پیاری۔",
+          "th": "อีกคนคือน้องสาวต่างพ่อผู้อ่อนโยน ลอรา แฟร์ลี ผมสีอ่อนและน่ารัก"
+        }
+      },
+      {
+        "id": "cl-white-016",
+        "english": "When Walter first saw Laura, he felt a strange shock.",
+        "turkish": "Walter, Laura'yı ilk gördüğünde tuhaf bir sarsıntı hissetti.",
+        "translations": {
+          "es-419": "Cuando Walter vio a Laura por primera vez, sintió una extraña sacudida.",
+          "pt-BR": "Quando Walter viu Laura pela primeira vez, sentiu um estranho choque.",
+          "id": "Saat Walter pertama kali melihat Laura, ia merasakan keterkejutan yang aneh.",
+          "ar": "حين رأى والتر لورا أوّل مرّة، شعر بصدمة غريبة.",
+          "vi": "Lần đầu nhìn thấy Laura, Walter có một cảm giác bàng hoàng kỳ lạ.",
+          "hi": "जब वॉल्टर ने पहली बार लॉरा को देखा, तो उसे एक अजीब-सा झटका लगा।",
+          "ru": "Когда Уолтер впервые увидел Лору, он испытал странное потрясение.",
+          "bn": "লরাকে প্রথম দেখে ওয়াল্টার এক অদ্ভুত ধাক্কা খেল।",
+          "ur": "جب والٹر نے پہلی بار لارا کو دیکھا، تو اسے ایک عجیب سا جھٹکا لگا۔",
+          "th": "เมื่อวอลเตอร์เห็นลอราครั้งแรก เขารู้สึกตกใจอย่างประหลาด"
+        }
+      },
+      {
+        "id": "cl-white-017",
+        "english": "She looked just like the woman in white.",
+        "turkish": "Tıpkı beyazlı kadına benziyordu.",
+        "translations": {
+          "es-419": "Se parecía muchísimo a la mujer de blanco.",
+          "pt-BR": "Ela era igualzinha à mulher de branco.",
+          "id": "Ia tampak persis seperti wanita berbaju putih itu.",
+          "ar": "كانت تشبه المرأة ذات الثوب الأبيض تمامًا.",
+          "vi": "Cô giống hệt người phụ nữ áo trắng.",
+          "hi": "वह बिल्कुल सफ़ेद कपड़ों वाली उस औरत जैसी दिखती थी।",
+          "ru": "Она была точь-в-точь похожа на женщину в белом.",
+          "bn": "সে দেখতে হুবহু সেই সাদা পোশাকের মহিলার মতো।",
+          "ur": "وہ بالکل سفید لباس والی اس عورت جیسی دکھتی تھی۔",
+          "th": "เธอหน้าตาเหมือนหญิงชุดขาวคนนั้นไม่มีผิด"
+        }
+      },
+      {
+        "id": "cl-white-018",
+        "english": "Marian found an old letter from her mother about a poor village girl, Anne Catherick.",
+        "turkish": "Marian, annesinin yoksul bir köy kızı olan Anne Catherick'ten söz ettiği eski bir mektup buldu.",
+        "translations": {
+          "es-419": "Marian encontró una vieja carta de su madre sobre una niña pobre del pueblo, Anne Catherick.",
+          "pt-BR": "Marian achou uma carta antiga da mãe sobre uma menina pobre da aldeia, Anne Catherick.",
+          "id": "Marian menemukan surat lama dari ibunya tentang seorang gadis desa miskin, Anne Catherick.",
+          "ar": "وجدت ماريان رسالة قديمة من أمّها عن فتاة قروية فقيرة اسمها آن كاثريك.",
+          "vi": "Marian tìm thấy một lá thư cũ của mẹ kể về một cô bé làng nghèo tên Anne Catherick.",
+          "hi": "मैरियन को अपनी माँ का एक पुराना पत्र मिला, जिसमें गाँव की एक ग़रीब लड़की ऐन कैथरिक का ज़िक्र था।",
+          "ru": "Мэриан нашла старое письмо матери о бедной деревенской девочке Анне Кэтерик.",
+          "bn": "মেরিয়ান তার মায়ের লেখা একটা পুরোনো চিঠি পেল, গ্রামের এক গরিব মেয়ে অ্যান ক্যাথেরিককে নিয়ে।",
+          "ur": "میرین کو اپنی ماں کا ایک پرانا خط ملا، جس میں گاؤں کی ایک غریب لڑکی این کیتھرک کا ذکر تھا۔",
+          "th": "แมเรียนพบจดหมายเก่าของแม่ที่เขียนถึงเด็กหญิงยากจนในหมู่บ้านชื่อแอนน์ แคเธอริก"
+        }
+      },
+      {
+        "id": "cl-white-019",
+        "english": "As a child, Anne had loved to dress only in white, like Laura.",
+        "turkish": "Anne çocukken, tıpkı Laura gibi, yalnızca beyaz giyinmeyi severdi.",
+        "translations": {
+          "es-419": "De niña, a Anne le encantaba vestirse solo de blanco, como Laura.",
+          "pt-BR": "Quando criança, Anne adorava se vestir só de branco, como Laura.",
+          "id": "Saat kecil, Anne suka berpakaian serba putih saja, seperti Laura.",
+          "ar": "في طفولتها، كانت آن تحبّ أن ترتدي الأبيض فقط، مثل لورا.",
+          "vi": "Hồi nhỏ, Anne chỉ thích mặc đồ trắng, giống như Laura.",
+          "hi": "बचपन में ऐन को लॉरा की तरह सिर्फ़ सफ़ेद कपड़े पहनना पसंद था।",
+          "ru": "В детстве Анна любила носить только белое, как Лора.",
+          "bn": "ছোটবেলায় অ্যান লরার মতোই শুধু সাদা পোশাক পরতে ভালোবাসত।",
+          "ur": "بچپن میں این کو لارا کی طرح صرف سفید کپڑے پہننا پسند تھا۔",
+          "th": "ตอนเป็นเด็ก แอนน์ชอบใส่แต่ชุดสีขาวเหมือนลอรา"
+        }
+      },
+      {
+        "id": "cl-white-020",
+        "english": "Over the summer, Walter and Laura drew pictures together and fell in love.",
+        "turkish": "Yaz boyunca Walter ve Laura birlikte resim yaptılar ve birbirlerine âşık oldular.",
+        "translations": {
+          "es-419": "Durante el verano, Walter y Laura dibujaron juntos y se enamoraron.",
+          "pt-BR": "Durante o verão, Walter e Laura desenharam juntos e se apaixonaram.",
+          "id": "Sepanjang musim panas, Walter dan Laura menggambar bersama dan jatuh cinta.",
+          "ar": "خلال الصيف، رسم والتر ولورا معًا ووقعا في الحبّ.",
+          "vi": "Suốt mùa hè, Walter và Laura cùng nhau vẽ tranh và đem lòng yêu nhau.",
+          "hi": "गर्मियों भर वॉल्टर और लॉरा ने साथ चित्र बनाए और एक-दूसरे से प्यार कर बैठे।",
+          "ru": "За лето Уолтер и Лора вместе рисовали и полюбили друг друга.",
+          "bn": "সারা গ্রীষ্ম ওয়াল্টার আর লরা একসঙ্গে ছবি আঁকল আর পরস্পরের প্রেমে পড়ল।",
+          "ur": "گرمیوں بھر والٹر اور لارا نے ساتھ تصویریں بنائیں اور ایک دوسرے سے محبت کرنے لگے۔",
+          "th": "ตลอดฤดูร้อน วอลเตอร์กับลอราวาดภาพด้วยกันและตกหลุมรักกัน"
+        }
+      },
+      {
+        "id": "cl-white-021",
+        "english": "But Laura had promised her dying father to marry Sir Percival Glyde.",
+        "turkish": "Ama Laura, ölüm döşeğindeki babasına Sir Percival Glyde'la evleneceğine söz vermişti.",
+        "translations": {
+          "es-419": "Pero Laura le había prometido a su padre moribundo casarse con sir Percival Glyde.",
+          "pt-BR": "Mas Laura tinha prometido ao pai, no leito de morte, casar-se com Sir Percival Glyde.",
+          "id": "Tetapi Laura sudah berjanji kepada ayahnya yang sekarat untuk menikah dengan Sir Percival Glyde.",
+          "ar": "لكنّ لورا كانت قد وعدت أباها وهو على فراش الموت بأن تتزوّج السير بيرسيفال غلايد.",
+          "vi": "Nhưng Laura đã hứa với người cha lúc lâm chung rằng sẽ lấy ngài Percival Glyde.",
+          "hi": "पर लॉरा ने अपने मरते हुए पिता से सर पर्सिवल ग्लाइड से शादी करने का वादा किया था।",
+          "ru": "Но Лора обещала умирающему отцу выйти замуж за сэра Персиваля Глайда.",
+          "bn": "কিন্তু লরা তার মৃত্যুপথযাত্রী বাবাকে কথা দিয়েছিল যে সে স্যার পার্সিভাল গ্লাইডকে বিয়ে করবে।",
+          "ur": "مگر لارا نے اپنے مرتے ہوئے والد سے سر پرسیول گلائیڈ سے شادی کرنے کا وعدہ کیا تھا۔",
+          "th": "แต่ลอราได้สัญญากับพ่อผู้ใกล้สิ้นใจไว้ว่าจะแต่งงานกับเซอร์เพอร์ซิวัล ไกลด์"
+        }
+      },
+      {
+        "id": "cl-white-022",
+        "english": "Then an unsigned letter arrived, warning Laura not to marry him.",
+        "turkish": "Sonra imzasız bir mektup geldi; Laura'yı onunla evlenmemesi için uyarıyordu.",
+        "translations": {
+          "es-419": "Entonces llegó una carta sin firma que advertía a Laura que no se casara con él.",
+          "pt-BR": "Então chegou uma carta sem assinatura, alertando Laura para não se casar com ele.",
+          "id": "Lalu datang sepucuk surat tanpa nama yang memperingatkan Laura agar tidak menikah dengannya.",
+          "ar": "ثمّ وصلت رسالة بلا توقيع تحذّر لورا من الزواج منه.",
+          "vi": "Rồi một lá thư không ký tên gửi đến, cảnh báo Laura đừng lấy ông ta.",
+          "hi": "फिर बिना दस्तख़त का एक पत्र आया, जिसमें लॉरा को उससे शादी न करने की चेतावनी दी गई थी।",
+          "ru": "Потом пришло письмо без подписи, предостерегавшее Лору от этого брака.",
+          "bn": "তারপর সই ছাড়া একটা চিঠি এল, লরাকে সতর্ক করে যেন সে তাকে বিয়ে না করে।",
+          "ur": "پھر بغیر دستخط کا ایک خط آیا، جس میں لارا کو اس سے شادی نہ کرنے کی تنبیہ کی گئی تھی۔",
+          "th": "แล้วก็มีจดหมายไม่ลงชื่อส่งมา เตือนลอราไม่ให้แต่งงานกับเขา"
+        }
+      },
+      {
+        "id": "cl-white-023",
+        "english": "Walter knew in his heart that Anne Catherick had written it.",
+        "turkish": "Walter, mektubu Anne Catherick'in yazdığını içten içe biliyordu.",
+        "translations": {
+          "es-419": "Walter sabía en el fondo que la había escrito Anne Catherick.",
+          "pt-BR": "Walter sabia no fundo do coração que Anne Catherick a escrevera.",
+          "id": "Walter tahu dalam hatinya bahwa Anne Catherick yang menulisnya.",
+          "ar": "عرف والتر في قرارة نفسه أنّ آن كاثريك هي من كتبتها.",
+          "vi": "Trong thâm tâm, Walter biết Anne Catherick đã viết nó.",
+          "hi": "वॉल्टर मन ही मन जानता था कि वह पत्र ऐन कैथरिक ने लिखा है।",
+          "ru": "Уолтер сердцем чувствовал, что его написала Анна Кэтерик.",
+          "bn": "ওয়াল্টার মনে মনে জানত, চিঠিটা অ্যান ক্যাথেরিকই লিখেছে।",
+          "ur": "والٹر دل ہی دل میں جانتا تھا کہ یہ خط این کیتھرک نے لکھا ہے۔",
+          "th": "วอลเตอร์รู้อยู่ในใจว่าแอนน์ แคเธอริกเป็นคนเขียน"
+        }
+      },
+      {
+        "id": "cl-white-024",
+        "english": "Sir Percival explained everything politely, and the wedding plans went on.",
+        "turkish": "Sir Percival her şeyi kibarca açıkladı ve düğün hazırlıkları sürdü.",
+        "translations": {
+          "es-419": "Sir Percival lo explicó todo con cortesía, y los planes de la boda siguieron adelante.",
+          "pt-BR": "Sir Percival explicou tudo com educação, e os preparativos do casamento continuaram.",
+          "id": "Sir Percival menjelaskan semuanya dengan sopan, dan rencana pernikahan tetap berjalan.",
+          "ar": "شرح السير بيرسيفال كلّ شيء بلباقة، ومضت خطط الزفاف.",
+          "vi": "Ngài Percival lịch sự giải thích mọi chuyện, và việc chuẩn bị đám cưới vẫn tiếp tục.",
+          "hi": "सर पर्सिवल ने सब कुछ शालीनता से समझा दिया, और शादी की तैयारियाँ चलती रहीं।",
+          "ru": "Сэр Персиваль вежливо всё объяснил, и подготовка к свадьбе продолжилась.",
+          "bn": "স্যার পার্সিভাল ভদ্রভাবে সব বুঝিয়ে দিলেন, আর বিয়ের আয়োজন চলতে থাকল।",
+          "ur": "سر پرسیول نے سب کچھ شائستگی سے سمجھا دیا، اور شادی کی تیاریاں جاری رہیں۔",
+          "th": "เซอร์เพอร์ซิวัลอธิบายทุกอย่างอย่างสุภาพ และการเตรียมงานแต่งก็ดำเนินต่อไป"
+        }
+      },
+      {
+        "id": "cl-white-025",
+        "english": "With a broken heart, Walter left England for a long journey across the sea.",
+        "turkish": "Kalbi kırık Walter, denizler aşırı uzun bir yolculuğa çıkmak için İngiltere'den ayrıldı.",
+        "translations": {
+          "es-419": "Con el corazón roto, Walter dejó Inglaterra para hacer un largo viaje por mar.",
+          "pt-BR": "De coração partido, Walter deixou a Inglaterra numa longa viagem pelo mar.",
+          "id": "Dengan hati hancur, Walter meninggalkan Inggris untuk perjalanan jauh menyeberangi lautan.",
+          "ar": "غادر والتر إنجلترا مكسور القلب في رحلة طويلة عبر البحر.",
+          "vi": "Với trái tim tan vỡ, Walter rời nước Anh cho một chuyến đi xa vượt biển.",
+          "hi": "टूटे दिल के साथ वॉल्टर समुद्र पार एक लंबी यात्रा पर इंग्लैंड छोड़कर चला गया।",
+          "ru": "С разбитым сердцем Уолтер покинул Англию и отправился в долгое плавание.",
+          "bn": "ভাঙা হৃদয় নিয়ে ওয়াল্টার সমুদ্র পেরিয়ে এক দীর্ঘ যাত্রায় ইংল্যান্ড ছেড়ে গেল।",
+          "ur": "ٹوٹے دل کے ساتھ والٹر سمندر پار ایک لمبے سفر پر انگلینڈ چھوڑ کر چلا گیا۔",
+          "th": "วอลเตอร์จากอังกฤษไปเดินทางไกลข้ามทะเลด้วยหัวใจที่แตกสลาย"
+        }
+      },
+      {
+        "id": "cl-white-026",
+        "english": "Laura married Sir Percival that winter, and Marian went to live with them.",
+        "turkish": "Laura o kış Sir Percival'le evlendi ve Marian da onlarla yaşamaya gitti.",
+        "translations": {
+          "es-419": "Laura se casó con sir Percival ese invierno, y Marian se fue a vivir con ellos.",
+          "pt-BR": "Laura se casou com Sir Percival naquele inverno, e Marian foi morar com eles.",
+          "id": "Laura menikah dengan Sir Percival musim dingin itu, dan Marian ikut tinggal bersama mereka.",
+          "ar": "تزوّجت لورا السير بيرسيفال في ذلك الشتاء، وذهبت ماريان لتعيش معهما.",
+          "vi": "Mùa đông năm ấy, Laura cưới ngài Percival, và Marian đến sống cùng họ.",
+          "hi": "उस सर्दी लॉरा ने सर पर्सिवल से शादी कर ली, और मैरियन उनके साथ रहने चली गई।",
+          "ru": "Той зимой Лора вышла замуж за сэра Персиваля, и Мэриан поселилась вместе с ними.",
+          "bn": "সেই শীতে লরা স্যার পার্সিভালকে বিয়ে করল, আর মেরিয়ান তাদের সঙ্গে থাকতে গেল।",
+          "ur": "اس سردی لارا نے سر پرسیول سے شادی کر لی، اور میرین ان کے ساتھ رہنے چلی گئی۔",
+          "th": "ฤดูหนาวนั้น ลอราแต่งงานกับเซอร์เพอร์ซิวัล และแมเรียนก็ย้ายไปอยู่กับพวกเขา"
+        }
+      },
+      {
+        "id": "cl-white-027",
+        "english": "Their home was Blackwater Park, a dark old house beside a lake.",
+        "turkish": "Evleri, bir gölün kıyısındaki karanlık, eski bir ev olan Blackwater Park'tı.",
+        "translations": {
+          "es-419": "Su hogar era Blackwater Park, una casa vieja y sombría junto a un lago.",
+          "pt-BR": "A casa deles era Blackwater Park, uma casa velha e sombria à beira de um lago.",
+          "id": "Rumah mereka adalah Blackwater Park, sebuah rumah tua yang suram di tepi danau.",
+          "ar": "كان بيتهم بلاكووتر بارك، بيتًا قديمًا مظلمًا بجانب بحيرة.",
+          "vi": "Nhà họ là Blackwater Park, một ngôi nhà cổ u ám bên hồ.",
+          "hi": "उनका घर ब्लैकवॉटर पार्क था, एक झील के किनारे बना एक अँधेरा, पुराना मकान।",
+          "ru": "Их домом был Блэкуотер-парк, мрачный старый дом у озера.",
+          "bn": "তাদের বাড়ি ছিল ব্ল্যাকওয়াটার পার্ক, এক হ্রদের ধারে এক অন্ধকার পুরোনো বাড়ি।",
+          "ur": "ان کا گھر بلیک واٹر پارک تھا، ایک جھیل کے کنارے ایک اندھیرا، پرانا مکان۔",
+          "th": "บ้านของพวกเขาคือแบล็กวอเตอร์พาร์ก บ้านเก่ามืดทึมริมทะเลสาบ"
+        }
+      },
+      {
+        "id": "cl-white-028",
+        "english": "Sir Percival was no longer polite. He was cold and often angry.",
+        "turkish": "Sir Percival artık kibar değildi. Soğuk ve sık sık öfkeliydi.",
+        "translations": {
+          "es-419": "Sir Percival ya no era cortés. Era frío y a menudo se enojaba.",
+          "pt-BR": "Sir Percival já não era educado. Era frio e muitas vezes ficava irritado.",
+          "id": "Sir Percival tidak lagi sopan. Ia dingin dan sering marah.",
+          "ar": "لم يعد السير بيرسيفال لطيفًا. صار باردًا وكثير الغضب.",
+          "vi": "Ngài Percival không còn lịch sự nữa. Ông ta lạnh lùng và hay nổi giận.",
+          "hi": "सर पर्सिवल अब शालीन नहीं रहे थे। वे रूखे थे और अक्सर ग़ुस्से में रहते थे।",
+          "ru": "Сэр Персиваль больше не был вежлив. Он был холоден и часто злился.",
+          "bn": "স্যার পার্সিভাল আর ভদ্র ছিলেন না। তিনি ছিলেন রূঢ় আর প্রায়ই রেগে থাকতেন।",
+          "ur": "سر پرسیول اب شائستہ نہیں رہے تھے۔ وہ روکھے تھے اور اکثر غصے میں رہتے تھے۔",
+          "th": "เซอร์เพอร์ซิวัลไม่สุภาพอีกต่อไป เขาเย็นชาและโกรธบ่อย"
+        }
+      },
+      {
+        "id": "cl-white-029",
+        "english": "He had many debts, and he wanted his wife's money.",
+        "turkish": "Çok borcu vardı ve karısının parasını istiyordu.",
+        "translations": {
+          "es-419": "Tenía muchas deudas y quería el dinero de su esposa.",
+          "pt-BR": "Ele tinha muitas dívidas e queria o dinheiro da esposa.",
+          "id": "Ia punya banyak utang, dan ia menginginkan uang istrinya.",
+          "ar": "كان عليه ديون كثيرة، وكان يريد مال زوجته.",
+          "vi": "Ông ta nợ nần chồng chất và muốn có tiền của vợ.",
+          "hi": "उन पर बहुत कर्ज़ था, और वे अपनी पत्नी का पैसा चाहते थे।",
+          "ru": "У него было много долгов, и он хотел денег жены.",
+          "bn": "তাঁর অনেক দেনা ছিল, আর তিনি স্ত্রীর টাকা চাইছিলেন।",
+          "ur": "ان پر بہت قرض تھا، اور وہ اپنی بیوی کا پیسہ چاہتے تھے۔",
+          "th": "เขามีหนี้สินมากมาย และต้องการเงินของภรรยา"
+        }
+      },
+      {
+        "id": "cl-white-030",
+        "english": "His best friend, Count Fosco, came to stay with his wife.",
+        "turkish": "En yakın arkadaşı Kont Fosco, karısıyla birlikte kalmaya geldi.",
+        "translations": {
+          "es-419": "Su mejor amigo, el conde Fosco, vino a quedarse con su esposa.",
+          "pt-BR": "O melhor amigo dele, o conde Fosco, veio se hospedar com a esposa.",
+          "id": "Sahabatnya, Count Fosco, datang menginap bersama istrinya.",
+          "ar": "جاء صديقه المقرّب، الكونت فوسكو، ليقيم عندهم مع زوجته.",
+          "vi": "Bạn thân nhất của ông ta, Bá tước Fosco, đến ở cùng vợ.",
+          "hi": "उनके सबसे अच्छे दोस्त काउंट फ़ॉस्को अपनी पत्नी के साथ रहने आए।",
+          "ru": "Его лучший друг, граф Фоско, приехал погостить вместе с женой.",
+          "bn": "তাঁর সবচেয়ে কাছের বন্ধু কাউন্ট ফস্কো স্ত্রীকে নিয়ে থাকতে এলেন।",
+          "ur": "ان کے سب سے اچھے دوست کاؤنٹ فوسکو اپنی بیوی کے ساتھ رہنے آئے۔",
+          "th": "เคานต์ฟอสโก เพื่อนรักของเขา พาภรรยามาพักด้วย"
+        }
+      },
+      {
+        "id": "cl-white-031",
+        "english": "The Count was a huge, smiling Italian who kept white mice as pets.",
+        "turkish": "Kont, evcil hayvan olarak beyaz fareler besleyen iri yarı, güler yüzlü bir İtalyan'dı.",
+        "translations": {
+          "es-419": "El conde era un italiano enorme y sonriente que tenía ratones blancos como mascotas.",
+          "pt-BR": "O conde era um italiano enorme e sorridente que criava camundongos brancos como bichos de estimação.",
+          "id": "Sang Count adalah orang Italia bertubuh besar dan murah senyum yang memelihara tikus putih.",
+          "ar": "كان الكونت إيطاليًّا ضخمًا مبتسمًا يربّي فئرانًا بيضاء كحيوانات أليفة.",
+          "vi": "Bá tước là một người Ý to lớn, hay cười, nuôi chuột bạch làm thú cưng.",
+          "hi": "काउंट एक भारी-भरकम, मुस्कुराते इतालवी थे, जो पालतू सफ़ेद चूहे रखते थे।",
+          "ru": "Граф был огромным улыбчивым итальянцем, который держал белых мышей.",
+          "bn": "কাউন্ট ছিলেন এক বিশাল, হাসিখুশি ইতালীয়, যিনি পোষা সাদা ইঁদুর রাখতেন।",
+          "ur": "کاؤنٹ ایک بھاری بھرکم، مسکراتے اطالوی تھے، جو پالتو سفید چوہے رکھتے تھے۔",
+          "th": "ท่านเคานต์เป็นชาวอิตาเลียนร่างใหญ่ ยิ้มแย้ม และเลี้ยงหนูขาวไว้เป็นสัตว์เลี้ยง"
+        }
+      },
+      {
+        "id": "cl-white-032",
+        "english": "He was charming, but Marian felt that he was the more dangerous of the two.",
+        "turkish": "Çekici biriydi ama Marian ikisi içinde daha tehlikelisinin o olduğunu hissediyordu.",
+        "translations": {
+          "es-419": "Era encantador, pero Marian sentía que era el más peligroso de los dos.",
+          "pt-BR": "Ele era encantador, mas Marian sentia que era o mais perigoso dos dois.",
+          "id": "Ia memesona, tetapi Marian merasa dialah yang lebih berbahaya di antara keduanya.",
+          "ar": "كان ساحرًا، لكنّ ماريان شعرت بأنّه الأخطر بين الاثنين.",
+          "vi": "Ông ta duyên dáng, nhưng Marian cảm thấy ông ta mới là kẻ nguy hiểm hơn trong hai người.",
+          "hi": "वे आकर्षक थे, पर मैरियन को लगता था कि दोनों में वही ज़्यादा ख़तरनाक हैं।",
+          "ru": "Он был обаятелен, но Мэриан чувствовала, что из двоих он опаснее.",
+          "bn": "তিনি মনোহর ছিলেন, কিন্তু মেরিয়ানের মনে হত দুজনের মধ্যে তিনিই বেশি বিপজ্জনক।",
+          "ur": "وہ دلکش تھے، مگر میرین کو لگتا تھا کہ دونوں میں وہی زیادہ خطرناک ہیں۔",
+          "th": "เขามีเสน่ห์ แต่แมเรียนรู้สึกว่าเขาอันตรายกว่าในบรรดาสองคนนั้น"
+        }
+      },
+      {
+        "id": "cl-white-033",
+        "english": "One day, Sir Percival brought a paper into the library.",
+        "turkish": "Bir gün Sir Percival kütüphaneye bir kâğıt getirdi.",
+        "translations": {
+          "es-419": "Un día, sir Percival trajo un papel a la biblioteca.",
+          "pt-BR": "Um dia, Sir Percival levou um papel para a biblioteca.",
+          "id": "Suatu hari, Sir Percival membawa selembar kertas ke perpustakaan.",
+          "ar": "في أحد الأيّام، أحضر السير بيرسيفال ورقة إلى المكتبة.",
+          "vi": "Một hôm, ngài Percival mang một tờ giấy vào thư viện.",
+          "hi": "एक दिन सर पर्सिवल पुस्तकालय में एक काग़ज़ लेकर आए।",
+          "ru": "Однажды сэр Персиваль принёс в библиотеку какую-то бумагу.",
+          "bn": "একদিন স্যার পার্সিভাল লাইব্রেরিতে একটা কাগজ নিয়ে এলেন।",
+          "ur": "ایک دن سر پرسیول کتب خانے میں ایک کاغذ لے کر آئے۔",
+          "th": "วันหนึ่ง เซอร์เพอร์ซิวัลนำกระดาษแผ่นหนึ่งเข้ามาในห้องสมุด"
+        }
+      },
+      {
+        "id": "cl-white-034",
+        "english": "He covered the words with his hand and said, \"Sign here.\"",
+        "turkish": "Yazıları eliyle kapattı ve \"Buraya imza at,\" dedi.",
+        "translations": {
+          "es-419": "Tapó el texto con la mano y dijo: «Firma aquí».",
+          "pt-BR": "Ele cobriu o texto com a mão e disse: \"Assine aqui.\"",
+          "id": "Ia menutupi tulisannya dengan tangan dan berkata, \"Tanda tangan di sini.\"",
+          "ar": "غطّى الكلمات بيده وقال: «وقّعي هنا».",
+          "vi": "Ông ta lấy tay che chữ và nói: \"Ký vào đây.\"",
+          "hi": "उन्होंने हाथ से लिखावट ढक दी और कहा, \"यहाँ दस्तख़त करो।\"",
+          "ru": "Он прикрыл текст рукой и сказал: «Подпиши здесь».",
+          "bn": "তিনি হাত দিয়ে লেখাগুলো ঢেকে বললেন, \"এখানে সই করো।\"",
+          "ur": "انہوں نے ہاتھ سے لکھائی ڈھانپ دی اور کہا، \"یہاں دستخط کرو۔\"",
+          "th": "เขาเอามือปิดข้อความไว้แล้วพูดว่า \"เซ็นตรงนี้\""
+        }
+      },
+      {
+        "id": "cl-white-035",
+        "english": "\"I will not give my signature to a paper I have not read,\" Laura said.",
+        "turkish": "\"Okumadığım bir kâğıda imzamı atmam,\" dedi Laura.",
+        "translations": {
+          "es-419": "—No pondré mi firma en un papel que no he leído —dijo Laura.",
+          "pt-BR": "— Não vou dar minha assinatura num papel que não li — disse Laura.",
+          "id": "\"Aku tidak akan membubuhkan tanda tanganku pada kertas yang belum kubaca,\" kata Laura.",
+          "ar": "قالت لورا: «لن أضع توقيعي على ورقة لم أقرأها».",
+          "vi": "\"Em sẽ không ký vào tờ giấy mà em chưa đọc,\" Laura nói.",
+          "hi": "\"मैं ऐसे काग़ज़ पर दस्तख़त नहीं करूँगी जो मैंने पढ़ा नहीं,\" लॉरा ने कहा।",
+          "ru": "«Я не поставлю подпись под бумагой, которую не читала», — сказала Лора.",
+          "bn": "\"যে কাগজ আমি পড়িনি, তাতে আমি সই দেব না,\" লরা বলল।",
+          "ur": "\"میں ایسے کاغذ پر دستخط نہیں کروں گی جو میں نے پڑھا نہیں،\" لارا نے کہا۔",
+          "th": "\"ฉันจะไม่เซ็นชื่อบนกระดาษที่ฉันยังไม่ได้อ่าน\" ลอราพูด"
+        }
+      },
+      {
+        "id": "cl-white-036",
+        "english": "Marian stood beside her sister, and the Count told his friend to wait.",
+        "turkish": "Marian kardeşinin yanında durdu, Kont da arkadaşına beklemesini söyledi.",
+        "translations": {
+          "es-419": "Marian se puso al lado de su hermana, y el conde le dijo a su amigo que esperara.",
+          "pt-BR": "Marian ficou ao lado da irmã, e o conde disse ao amigo que esperasse.",
+          "id": "Marian berdiri di samping adiknya, dan sang Count menyuruh temannya menunggu.",
+          "ar": "وقفت ماريان بجانب أختها، وطلب الكونت من صديقه أن ينتظر.",
+          "vi": "Marian đứng cạnh em gái, và Bá tước bảo bạn mình hãy chờ đã.",
+          "hi": "मैरियन अपनी बहन के पास खड़ी रही, और काउंट ने अपने दोस्त से रुकने को कहा।",
+          "ru": "Мэриан встала рядом с сестрой, и граф велел другу подождать.",
+          "bn": "মেরিয়ান বোনের পাশে দাঁড়িয়ে রইল, আর কাউন্ট বন্ধুকে অপেক্ষা করতে বললেন।",
+          "ur": "میرین اپنی بہن کے پاس کھڑی رہی، اور کاؤنٹ نے اپنے دوست سے رکنے کو کہا۔",
+          "th": "แมเรียนยืนอยู่ข้างน้องสาว และท่านเคานต์ก็บอกให้เพื่อนรอไปก่อน"
+        }
+      },
+      {
+        "id": "cl-white-037",
+        "english": "That night, Marian climbed out onto the roof in the rain.",
+        "turkish": "O gece Marian yağmurda damın üstüne tırmandı.",
+        "translations": {
+          "es-419": "Esa noche, Marian salió al tejado bajo la lluvia.",
+          "pt-BR": "Naquela noite, Marian subiu no telhado debaixo de chuva.",
+          "id": "Malam itu, Marian memanjat ke atap di tengah hujan.",
+          "ar": "في تلك الليلة، تسلّقت ماريان إلى السطح تحت المطر.",
+          "vi": "Đêm đó, Marian trèo ra mái nhà giữa trời mưa.",
+          "hi": "उस रात मैरियन बारिश में छत पर चढ़ गई।",
+          "ru": "Той ночью Мэриан выбралась на крышу под дождём.",
+          "bn": "সেই রাতে মেরিয়ান বৃষ্টির মধ্যে ছাদে উঠে গেল।",
+          "ur": "اس رات میرین بارش میں چھت پر چڑھ گئی۔",
+          "th": "คืนนั้น แมเรียนปีนออกไปบนหลังคาท่ามกลางสายฝน"
+        }
+      },
+      {
+        "id": "cl-white-038",
+        "english": "Under the window, she heard the two men talking about their plan.",
+        "turkish": "Pencerenin altında iki adamın planları hakkında konuştuğunu duydu.",
+        "translations": {
+          "es-419": "Bajo la ventana, oyó a los dos hombres hablar de su plan.",
+          "pt-BR": "Embaixo da janela, ouviu os dois homens falando do plano deles.",
+          "id": "Di bawah jendela, ia mendengar kedua pria itu membicarakan rencana mereka.",
+          "ar": "تحت النافذة، سمعت الرجلين يتحدّثان عن خطّتهما.",
+          "vi": "Dưới khung cửa sổ, cô nghe hai người đàn ông bàn về kế hoạch của họ.",
+          "hi": "खिड़की के नीचे उसने दोनों आदमियों को अपनी योजना के बारे में बात करते सुना।",
+          "ru": "Под окном она услышала, как двое мужчин обсуждают свой план.",
+          "bn": "জানালার নিচে সে শুনল দুজন লোক তাদের পরিকল্পনা নিয়ে কথা বলছে।",
+          "ur": "کھڑکی کے نیچے اس نے دونوں آدمیوں کو اپنے منصوبے کے بارے میں بات کرتے سنا۔",
+          "th": "ใต้หน้าต่าง เธอได้ยินชายสองคนคุยกันถึงแผนการของพวกเขา"
+        }
+      },
+      {
+        "id": "cl-white-039",
+        "english": "\"If Lady Glyde dies, you will get her money,\" said the Count softly.",
+        "turkish": "\"Leydi Glyde ölürse parası sana kalır,\" dedi Kont yumuşak bir sesle.",
+        "translations": {
+          "es-419": "—Si lady Glyde muere, tú tendrás su dinero —dijo el conde en voz baja.",
+          "pt-BR": "— Se Lady Glyde morrer, você fica com o dinheiro dela — disse o conde baixinho.",
+          "id": "\"Jika Lady Glyde meninggal, kau akan mendapatkan uangnya,\" kata sang Count pelan.",
+          "ar": "قال الكونت بصوت خافت: «إن ماتت السيّدة غلايد، فستحصل على مالها».",
+          "vi": "\"Nếu phu nhân Glyde chết, anh sẽ có tiền của cô ta,\" Bá tước khẽ nói.",
+          "hi": "\"अगर लेडी ग्लाइड मर जाए, तो उसका पैसा तुम्हें मिल जाएगा,\" काउंट ने धीरे से कहा।",
+          "ru": "«Если леди Глайд умрёт, ты получишь её деньги», — тихо сказал граф.",
+          "bn": "\"লেডি গ্লাইড মারা গেলে তুমি তার টাকা পাবে,\" কাউন্ট নরম গলায় বললেন।",
+          "ur": "\"اگر لیڈی گلائیڈ مر جائے، تو اس کا پیسہ تمہیں مل جائے گا،\" کاؤنٹ نے آہستہ سے کہا۔",
+          "th": "\"ถ้าเลดี้ไกลด์ตาย นายก็จะได้เงินของเธอ\" ท่านเคานต์พูดเสียงแผ่ว"
+        }
+      },
+      {
+        "id": "cl-white-040",
+        "english": "They also spoke of Anne Catherick, who knew a secret about Sir Percival.",
+        "turkish": "Sir Percival hakkında bir sır bilen Anne Catherick'ten de söz ettiler.",
+        "translations": {
+          "es-419": "También hablaron de Anne Catherick, que sabía un secreto sobre sir Percival.",
+          "pt-BR": "Também falaram de Anne Catherick, que sabia um segredo sobre Sir Percival.",
+          "id": "Mereka juga membicarakan Anne Catherick, yang mengetahui sebuah rahasia tentang Sir Percival.",
+          "ar": "وتحدّثا أيضًا عن آن كاثريك، التي تعرف سرًّا عن السير بيرسيفال.",
+          "vi": "Họ còn nhắc đến Anne Catherick, người biết một bí mật về ngài Percival.",
+          "hi": "उन्होंने ऐन कैथरिक की भी बात की, जो सर पर्सिवल का एक राज़ जानती थी।",
+          "ru": "Говорили они и об Анне Кэтерик, которая знала тайну сэра Персиваля.",
+          "bn": "তারা অ্যান ক্যাথেরিকের কথাও বলল, যে স্যার পার্সিভালের একটা গোপন কথা জানত।",
+          "ur": "انہوں نے این کیتھرک کی بھی بات کی، جو سر پرسیول کا ایک راز جانتی تھی۔",
+          "th": "พวกเขายังพูดถึงแอนน์ แคเธอริก ผู้รู้ความลับบางอย่างของเซอร์เพอร์ซิวัล"
+        }
+      },
+      {
+        "id": "cl-white-041",
+        "english": "Marian stayed on the roof for hours, and she caught a terrible fever.",
+        "turkish": "Marian saatlerce damda kaldı ve korkunç bir ateşe yakalandı.",
+        "translations": {
+          "es-419": "Marian se quedó horas en el tejado y cogió una fiebre terrible.",
+          "pt-BR": "Marian ficou horas no telhado e pegou uma febre terrível.",
+          "id": "Marian bertahan di atap berjam-jam, dan ia terserang demam hebat.",
+          "ar": "بقيت ماريان على السطح ساعات، فأصابتها حمّى شديدة.",
+          "vi": "Marian ở trên mái nhà hàng giờ liền và bị một cơn sốt khủng khiếp.",
+          "hi": "मैरियन घंटों छत पर रही, और उसे भयानक बुख़ार हो गया।",
+          "ru": "Мэриан пробыла на крыше несколько часов и слегла с жестокой лихорадкой.",
+          "bn": "মেরিয়ান ঘণ্টার পর ঘণ্টা ছাদে রইল, আর ভয়ংকর জ্বরে পড়ল।",
+          "ur": "میرین گھنٹوں چھت پر رہی، اور اسے خوفناک بخار ہو گیا۔",
+          "th": "แมเรียนอยู่บนหลังคาหลายชั่วโมง จนป่วยเป็นไข้หนัก"
+        }
+      },
+      {
+        "id": "cl-white-042",
+        "english": "For weeks she lay in bed, and she could not protect Laura.",
+        "turkish": "Haftalarca yatakta yattı ve Laura'yı koruyamadı.",
+        "translations": {
+          "es-419": "Durante semanas estuvo en cama y no pudo proteger a Laura.",
+          "pt-BR": "Durante semanas ela ficou de cama e não pôde proteger Laura.",
+          "id": "Berminggu-minggu ia terbaring di tempat tidur, dan tidak bisa melindungi Laura.",
+          "ar": "لزمت الفراش أسابيع، ولم تستطع أن تحمي لورا.",
+          "vi": "Suốt nhiều tuần cô nằm liệt giường và không thể bảo vệ Laura.",
+          "hi": "हफ़्तों तक वह बिस्तर पर पड़ी रही, और लॉरा की रक्षा नहीं कर सकी।",
+          "ru": "Неделями она лежала в постели и не могла защитить Лору.",
+          "bn": "সপ্তাহের পর সপ্তাহ সে বিছানায় পড়ে রইল, আর লরাকে রক্ষা করতে পারল না।",
+          "ur": "ہفتوں تک وہ بستر پر پڑی رہی، اور لارا کی حفاظت نہ کر سکی۔",
+          "th": "เธอนอนป่วยอยู่หลายสัปดาห์ และปกป้องลอราไม่ได้"
+        }
+      },
+      {
+        "id": "cl-white-043",
+        "english": "Meanwhile, Laura met Anne Catherick secretly by the lake.",
+        "turkish": "Bu arada Laura göl kıyısında Anne Catherick'le gizlice buluştu.",
+        "translations": {
+          "es-419": "Mientras tanto, Laura se encontró en secreto con Anne Catherick junto al lago.",
+          "pt-BR": "Enquanto isso, Laura encontrou Anne Catherick em segredo à beira do lago.",
+          "id": "Sementara itu, Laura diam-diam bertemu Anne Catherick di tepi danau.",
+          "ar": "في هذه الأثناء، التقت لورا سرًّا بآن كاثريك عند البحيرة.",
+          "vi": "Trong khi đó, Laura bí mật gặp Anne Catherick bên hồ.",
+          "hi": "इस बीच लॉरा झील के किनारे चुपके से ऐन कैथरिक से मिली।",
+          "ru": "Тем временем Лора тайно встретилась с Анной Кэтерик у озера.",
+          "bn": "এর মধ্যে লরা হ্রদের ধারে গোপনে অ্যান ক্যাথেরিকের সঙ্গে দেখা করল।",
+          "ur": "اسی دوران لارا جھیل کے کنارے چپکے سے این کیتھرک سے ملی۔",
+          "th": "ในระหว่างนั้น ลอราแอบไปพบแอนน์ แคเธอริกที่ริมทะเลสาบ"
+        }
+      },
+      {
+        "id": "cl-white-044",
+        "english": "Anne was thin and ill, and she looked like Laura's own ghost.",
+        "turkish": "Anne zayıf ve hastaydı; Laura'nın kendi hayaleti gibi görünüyordu.",
+        "translations": {
+          "es-419": "Anne estaba delgada y enferma, y parecía el fantasma de la propia Laura.",
+          "pt-BR": "Anne estava magra e doente, e parecia o fantasma da própria Laura.",
+          "id": "Anne kurus dan sakit, dan ia tampak seperti hantu Laura sendiri.",
+          "ar": "كانت آن نحيلة مريضة، وبدت كأنّها شبح لورا نفسها.",
+          "vi": "Anne gầy gò và ốm yếu, trông như bóng ma của chính Laura.",
+          "hi": "ऐन दुबली और बीमार थी, और लॉरा की ही परछाईं-सी लगती थी।",
+          "ru": "Анна была худой и больной и походила на призрак самой Лоры.",
+          "bn": "অ্যান রোগা আর অসুস্থ, যেন লরারই ছায়ামূর্তি।",
+          "ur": "این دبلی اور بیمار تھی، اور لارا ہی کا سایہ سی لگتی تھی۔",
+          "th": "แอนน์ผอมและป่วย ดูราวกับเป็นภูตของลอราเอง"
+        }
+      },
+      {
+        "id": "cl-white-045",
+        "english": "\"Your husband has a secret,\" she said. \"If I tell it, he will be ruined.\"",
+        "turkish": "\"Kocanızın bir sırrı var,\" dedi. \"Onu söylersem mahvolur.\"",
+        "translations": {
+          "es-419": "—Su esposo tiene un secreto —dijo—. Si lo cuento, quedará arruinado.",
+          "pt-BR": "— Seu marido tem um segredo — disse ela. — Se eu contar, ele estará arruinado.",
+          "id": "\"Suami Anda punya rahasia,\" katanya. \"Jika saya membongkarnya, ia akan hancur.\"",
+          "ar": "قالت: «لزوجك سرّ. إن بحتُ به، فسيُدمَّر».",
+          "vi": "\"Chồng cô có một bí mật,\" cô ta nói. \"Nếu tôi nói ra, ông ta sẽ thân bại danh liệt.\"",
+          "hi": "\"आपके पति का एक राज़ है,\" उसने कहा। \"अगर मैंने बता दिया, तो वे बर्बाद हो जाएँगे।\"",
+          "ru": "«У вашего мужа есть тайна, — сказала она. — Если я её открою, ему конец».",
+          "bn": "\"আপনার স্বামীর একটা গোপন কথা আছে,\" সে বলল। \"আমি বলে দিলে তিনি শেষ হয়ে যাবেন।\"",
+          "ur": "\"آپ کے شوہر کا ایک راز ہے،\" اس نے کہا۔ \"اگر میں نے بتا دیا تو وہ برباد ہو جائیں گے۔\"",
+          "th": "\"สามีของคุณมีความลับ\" เธอพูด \"ถ้าฉันเปิดเผยมัน เขาจะพังพินาศ\""
+        }
+      },
+      {
+        "id": "cl-white-046",
+        "english": "But before she could say more, she saw the Count's shadow and ran away.",
+        "turkish": "Ama daha fazlasını söyleyemeden Kont'un gölgesini gördü ve kaçtı.",
+        "translations": {
+          "es-419": "Pero antes de que pudiera decir más, vio la sombra del conde y huyó.",
+          "pt-BR": "Mas antes que pudesse dizer mais, viu a sombra do conde e fugiu.",
+          "id": "Tetapi sebelum sempat berkata lebih banyak, ia melihat bayangan sang Count dan lari.",
+          "ar": "لكن قبل أن تقول المزيد، رأت ظلّ الكونت فهربت.",
+          "vi": "Nhưng chưa kịp nói thêm, cô ta đã thấy bóng Bá tước và bỏ chạy.",
+          "hi": "पर इससे पहले कि वह और कुछ कहती, उसने काउंट की परछाईं देखी और भाग गई।",
+          "ru": "Но не успела она сказать больше, как увидела тень графа и убежала.",
+          "bn": "কিন্তু আর কিছু বলার আগেই সে কাউন্টের ছায়া দেখে পালিয়ে গেল।",
+          "ur": "مگر اس سے پہلے کہ وہ کچھ اور کہتی، اس نے کاؤنٹ کا سایہ دیکھا اور بھاگ گئی۔",
+          "th": "แต่ก่อนที่เธอจะพูดอะไรต่อ เธอก็เห็นเงาของท่านเคานต์และวิ่งหนีไป"
+        }
+      },
+      {
+        "id": "cl-white-047",
+        "english": "When Marian was still too weak to leave her bed, the Count made his move.",
+        "turkish": "Marian henüz yataktan kalkamayacak kadar zayıfken Kont harekete geçti.",
+        "translations": {
+          "es-419": "Cuando Marian todavía estaba demasiado débil para levantarse, el conde actuó.",
+          "pt-BR": "Quando Marian ainda estava fraca demais para sair da cama, o conde agiu.",
+          "id": "Ketika Marian masih terlalu lemah untuk bangun dari tempat tidur, sang Count mulai bertindak.",
+          "ar": "وحين كانت ماريان لا تزال أضعف من أن تغادر سريرها، تحرّك الكونت.",
+          "vi": "Khi Marian vẫn còn quá yếu chưa rời giường được, Bá tước ra tay.",
+          "hi": "जब मैरियन अभी इतनी कमज़ोर थी कि बिस्तर से उठ नहीं सकती थी, तब काउंट ने अपनी चाल चली।",
+          "ru": "Пока Мэриан была ещё слишком слаба, чтобы встать, граф начал действовать.",
+          "bn": "মেরিয়ান তখনও বিছানা ছাড়ার মতো সুস্থ হয়নি, এমন সময় কাউন্ট তাঁর চাল চাললেন।",
+          "ur": "جب میرین ابھی اتنی کمزور تھی کہ بستر سے اٹھ نہیں سکتی تھی، تب کاؤنٹ نے اپنی چال چلی۔",
+          "th": "ขณะที่แมเรียนยังอ่อนแอเกินกว่าจะลุกจากเตียง ท่านเคานต์ก็ลงมือ"
+        }
+      },
+      {
+        "id": "cl-white-048",
+        "english": "He found Anne Catherick and took her to a house in London.",
+        "turkish": "Anne Catherick'i buldu ve onu Londra'da bir eve götürdü.",
+        "translations": {
+          "es-419": "Encontró a Anne Catherick y la llevó a una casa en Londres.",
+          "pt-BR": "Ele encontrou Anne Catherick e a levou para uma casa em Londres.",
+          "id": "Ia menemukan Anne Catherick dan membawanya ke sebuah rumah di London.",
+          "ar": "وجد آن كاثريك وأخذها إلى بيت في لندن.",
+          "vi": "Ông ta tìm ra Anne Catherick và đưa cô đến một ngôi nhà ở London.",
+          "hi": "उन्होंने ऐन कैथरिक को ढूँढ निकाला और उसे लंदन के एक घर में ले गए।",
+          "ru": "Он нашёл Анну Кэтерик и отвёз её в дом в Лондоне.",
+          "bn": "তিনি অ্যান ক্যাথেরিককে খুঁজে বের করে লন্ডনের এক বাড়িতে নিয়ে গেলেন।",
+          "ur": "انہوں نے این کیتھرک کو ڈھونڈ نکالا اور اسے لندن کے ایک گھر میں لے گئے۔",
+          "th": "เขาตามหาแอนน์ แคเธอริกจนพบ และพาเธอไปยังบ้านหลังหนึ่งในลอนดอน"
+        }
+      },
+      {
+        "id": "cl-white-049",
+        "english": "Then he told Laura that Marian had already gone to London, and Laura followed.",
+        "turkish": "Sonra Laura'ya Marian'ın çoktan Londra'ya gittiğini söyledi, Laura da peşinden gitti.",
+        "translations": {
+          "es-419": "Luego le dijo a Laura que Marian ya se había ido a Londres, y Laura la siguió.",
+          "pt-BR": "Depois disse a Laura que Marian já tinha ido para Londres, e Laura foi atrás.",
+          "id": "Lalu ia berkata kepada Laura bahwa Marian sudah pergi ke London, dan Laura pun menyusul.",
+          "ar": "ثمّ أخبر لورا أنّ ماريان سبقتها إلى لندن، فلحقت بها لورا.",
+          "vi": "Rồi ông ta nói với Laura rằng Marian đã đi London trước, và Laura đi theo.",
+          "hi": "फिर उन्होंने लॉरा से कहा कि मैरियन पहले ही लंदन जा चुकी है, और लॉरा पीछे-पीछे चली गई।",
+          "ru": "Потом он сказал Лоре, что Мэриан уже уехала в Лондон, и Лора поехала следом.",
+          "bn": "তারপর তিনি লরাকে বললেন যে মেরিয়ান আগেই লন্ডনে চলে গেছে, আর লরাও পিছু পিছু গেল।",
+          "ur": "پھر انہوں نے لارا سے کہا کہ میرین پہلے ہی لندن جا چکی ہے، اور لارا پیچھے پیچھے چلی گئی۔",
+          "th": "แล้วเขาก็บอกลอราว่าแมเรียนไปลอนดอนก่อนแล้ว ลอราจึงตามไป"
+        }
+      },
+      {
+        "id": "cl-white-050",
+        "english": "It was a lie, and it was a trap.",
+        "turkish": "Bu bir yalandı ve bir tuzaktı.",
+        "translations": {
+          "es-419": "Era una mentira, y era una trampa.",
+          "pt-BR": "Era uma mentira, e era uma armadilha.",
+          "id": "Itu bohong, dan itu jebakan.",
+          "ar": "كانت كذبة، وكانت فخًّا.",
+          "vi": "Đó là lời nói dối, và là một cái bẫy.",
+          "hi": "यह झूठ था, और एक जाल था।",
+          "ru": "Это была ложь и ловушка.",
+          "bn": "এটা ছিল মিথ্যে, আর একটা ফাঁদ।",
+          "ur": "یہ جھوٹ تھا، اور ایک جال تھا۔",
+          "th": "มันเป็นเรื่องโกหก และเป็นกับดัก"
+        }
+      },
+      {
+        "id": "cl-white-051",
+        "english": "In London, poor Anne Catherick died of her illness.",
+        "turkish": "Londra'da zavallı Anne Catherick hastalığından öldü.",
+        "translations": {
+          "es-419": "En Londres, la pobre Anne Catherick murió de su enfermedad.",
+          "pt-BR": "Em Londres, a pobre Anne Catherick morreu da doença.",
+          "id": "Di London, Anne Catherick yang malang meninggal karena penyakitnya.",
+          "ar": "في لندن، ماتت آن كاثريك المسكينة بسبب مرضها.",
+          "vi": "Ở London, Anne Catherick tội nghiệp chết vì bệnh.",
+          "hi": "लंदन में बेचारी ऐन कैथरिक अपनी बीमारी से मर गई।",
+          "ru": "В Лондоне бедная Анна Кэтерик умерла от болезни.",
+          "bn": "লন্ডনে বেচারি অ্যান ক্যাথেরিক তার অসুখে মারা গেল।",
+          "ur": "لندن میں بے چاری این کیتھرک اپنی بیماری سے مر گئی۔",
+          "th": "ที่ลอนดอน แอนน์ แคเธอริกผู้น่าสงสารเสียชีวิตด้วยโรคที่เป็นอยู่"
+        }
+      },
+      {
+        "id": "cl-white-052",
+        "english": "The Count told the doctor that the dead woman was Lady Glyde.",
+        "turkish": "Kont doktora ölen kadının Leydi Glyde olduğunu söyledi.",
+        "translations": {
+          "es-419": "El conde le dijo al médico que la mujer muerta era lady Glyde.",
+          "pt-BR": "O conde disse ao médico que a mulher morta era Lady Glyde.",
+          "id": "Sang Count memberi tahu dokter bahwa wanita yang meninggal itu adalah Lady Glyde.",
+          "ar": "أخبر الكونت الطبيب أنّ المرأة الميتة هي السيّدة غلايد.",
+          "vi": "Bá tước nói với bác sĩ rằng người phụ nữ đã chết là phu nhân Glyde.",
+          "hi": "काउंट ने डॉक्टर से कहा कि मरने वाली औरत लेडी ग्लाइड है।",
+          "ru": "Граф сказал врачу, что умершая — леди Глайд.",
+          "bn": "কাউন্ট ডাক্তারকে বললেন যে মৃত মহিলাটি লেডি গ্লাইড।",
+          "ur": "کاؤنٹ نے ڈاکٹر سے کہا کہ مرنے والی عورت لیڈی گلائیڈ ہے۔",
+          "th": "ท่านเคานต์บอกหมอว่าผู้หญิงที่ตายคือเลดี้ไกลด์"
+        }
+      },
+      {
+        "id": "cl-white-053",
+        "english": "So Anne was buried at Limmeridge under Laura's name.",
+        "turkish": "Böylece Anne, Limmeridge'de Laura'nın adıyla gömüldü.",
+        "translations": {
+          "es-419": "Así, Anne fue enterrada en Limmeridge con el nombre de Laura.",
+          "pt-BR": "Assim, Anne foi enterrada em Limmeridge com o nome de Laura.",
+          "id": "Maka Anne dimakamkan di Limmeridge dengan nama Laura.",
+          "ar": "وهكذا دُفنت آن في ليمريدج باسم لورا.",
+          "vi": "Thế là Anne được chôn ở Limmeridge dưới tên của Laura.",
+          "hi": "इस तरह ऐन को लिमरिज में लॉरा के नाम से दफ़नाया गया।",
+          "ru": "Так Анну похоронили в Лиммеридже под именем Лоры.",
+          "bn": "এভাবে অ্যানকে লরার নামে লিমেরিজে কবর দেওয়া হল।",
+          "ur": "یوں این کو لمرج میں لارا کے نام سے دفنایا گیا۔",
+          "th": "แอนน์จึงถูกฝังที่ลิมเมอริดจ์ภายใต้ชื่อของลอรา"
+        }
+      },
+      {
+        "id": "cl-white-054",
+        "english": "The real Laura was given medicine to make her sleep.",
+        "turkish": "Gerçek Laura'ya onu uyutacak bir ilaç verildi.",
+        "translations": {
+          "es-419": "A la verdadera Laura le dieron una medicina para hacerla dormir.",
+          "pt-BR": "A verdadeira Laura recebeu um remédio para dormir.",
+          "id": "Laura yang asli diberi obat agar tertidur.",
+          "ar": "أمّا لورا الحقيقية فأُعطيت دواءً ليجعلها تنام.",
+          "vi": "Còn Laura thật thì bị cho uống thuốc ngủ.",
+          "hi": "असली लॉरा को सुलाने की दवा दी गई।",
+          "ru": "Настоящей Лоре дали снотворное.",
+          "bn": "আসল লরাকে ঘুমের ওষুধ দেওয়া হল।",
+          "ur": "اصلی لارا کو سلانے کی دوا دی گئی۔",
+          "th": "ลอราตัวจริงถูกวางยาให้หลับ"
+        }
+      },
+      {
+        "id": "cl-white-055",
+        "english": "When she woke, she was in the asylum, wearing Anne's clothes.",
+        "turkish": "Uyandığında akıl hastanesindeydi ve Anne'in giysilerini giyiyordu.",
+        "translations": {
+          "es-419": "Cuando despertó, estaba en el manicomio, con la ropa de Anne.",
+          "pt-BR": "Quando acordou, estava no hospício, usando as roupas de Anne.",
+          "id": "Ketika bangun, ia sudah berada di rumah sakit jiwa, mengenakan pakaian Anne.",
+          "ar": "وحين استيقظت، وجدت نفسها في المصحّة العقلية ترتدي ثياب آن.",
+          "vi": "Khi tỉnh dậy, cô đã ở trong nhà thương điên, mặc quần áo của Anne.",
+          "hi": "जब वह जागी, तो पागलख़ाने में थी, ऐन के कपड़े पहने हुए।",
+          "ru": "Очнулась она в лечебнице для душевнобольных, в одежде Анны.",
+          "bn": "ঘুম ভাঙলে সে দেখল সে পাগলাগারদে, পরনে অ্যানের জামাকাপড়।",
+          "ur": "جب وہ جاگی تو پاگل خانے میں تھی، این کے کپڑے پہنے ہوئے۔",
+          "th": "เมื่อตื่นขึ้น เธอก็อยู่ในโรงพยาบาลบ้า สวมเสื้อผ้าของแอนน์"
+        }
+      },
+      {
+        "id": "cl-white-056",
+        "english": "\"I am Lady Glyde!\" she cried, but nobody believed her.",
+        "turkish": "\"Ben Leydi Glyde'ım!\" diye haykırdı ama kimse ona inanmadı.",
+        "translations": {
+          "es-419": "—¡Soy lady Glyde! —gritó, pero nadie le creyó.",
+          "pt-BR": "— Eu sou Lady Glyde! — gritou ela, mas ninguém acreditou.",
+          "id": "\"Aku Lady Glyde!\" serunya, tetapi tidak ada yang percaya.",
+          "ar": "صرخت: «أنا السيّدة غلايد!»، لكنّ أحدًا لم يصدّقها.",
+          "vi": "\"Tôi là phu nhân Glyde!\" cô kêu lên, nhưng không ai tin.",
+          "hi": "\"मैं लेडी ग्लाइड हूँ!\" वह चिल्लाई, पर किसी ने उसका यक़ीन नहीं किया।",
+          "ru": "«Я леди Глайд!» — кричала она, но ей никто не верил.",
+          "bn": "\"আমি লেডি গ্লাইড!\" সে চেঁচিয়ে উঠল, কিন্তু কেউ তাকে বিশ্বাস করল না।",
+          "ur": "\"میں لیڈی گلائیڈ ہوں!\" وہ چلائی، مگر کسی نے اس کا یقین نہیں کیا۔",
+          "th": "\"ฉันคือเลดี้ไกลด์!\" เธอร้อง แต่ไม่มีใครเชื่อ"
+        }
+      },
+      {
+        "id": "cl-white-057",
+        "english": "\"Anne Catherick always says strange things,\" said the nurse.",
+        "turkish": "\"Anne Catherick hep tuhaf şeyler söyler,\" dedi hemşire.",
+        "translations": {
+          "es-419": "—Anne Catherick siempre dice cosas raras —dijo la enfermera.",
+          "pt-BR": "— Anne Catherick sempre diz coisas estranhas — disse a enfermeira.",
+          "id": "\"Anne Catherick memang selalu bicara aneh,\" kata perawat.",
+          "ar": "قالت الممرّضة: «آن كاثريك تقول دائمًا أشياء غريبة».",
+          "vi": "\"Anne Catherick lúc nào cũng nói những điều kỳ quặc,\" cô y tá nói.",
+          "hi": "\"ऐन कैथरिक हमेशा अजीब बातें करती है,\" नर्स ने कहा।",
+          "ru": "«Анна Кэтерик вечно говорит странные вещи», — сказала сиделка.",
+          "bn": "\"অ্যান ক্যাথেরিক সবসময় উল্টোপাল্টা কথা বলে,\" নার্স বলল।",
+          "ur": "\"این کیتھرک ہمیشہ عجیب باتیں کرتی ہے،\" نرس نے کہا۔",
+          "th": "\"แอนน์ แคเธอริกพูดอะไรแปลก ๆ อยู่เสมอ\" พยาบาลพูด"
+        }
+      },
+      {
+        "id": "cl-white-058",
+        "english": "Sir Percival now had his wife's money, and the Count had his share.",
+        "turkish": "Sir Percival artık karısının parasına kavuşmuştu, Kont da payını almıştı.",
+        "translations": {
+          "es-419": "Sir Percival ya tenía el dinero de su esposa, y el conde tenía su parte.",
+          "pt-BR": "Sir Percival agora tinha o dinheiro da esposa, e o conde tinha a sua parte.",
+          "id": "Sir Percival kini mendapatkan uang istrinya, dan sang Count mendapat bagiannya.",
+          "ar": "صار للسير بيرسيفال الآن مال زوجته، وللكونت نصيبه.",
+          "vi": "Giờ ngài Percival đã có tiền của vợ, còn Bá tước có phần của mình.",
+          "hi": "सर पर्सिवल को अब पत्नी का पैसा मिल गया था, और काउंट को अपना हिस्सा।",
+          "ru": "Теперь у сэра Персиваля были деньги жены, а у графа — его доля.",
+          "bn": "স্যার পার্সিভাল এখন স্ত্রীর টাকা পেয়ে গেলেন, আর কাউন্ট পেলেন নিজের ভাগ।",
+          "ur": "سر پرسیول کو اب بیوی کا پیسہ مل گیا تھا، اور کاؤنٹ کو اپنا حصہ۔",
+          "th": "ตอนนี้เซอร์เพอร์ซิวัลได้เงินของภรรยาแล้ว และท่านเคานต์ก็ได้ส่วนแบ่งของตน"
+        }
+      },
+      {
+        "id": "cl-white-059",
+        "english": "When Marian got better, she was told that her sister was dead.",
+        "turkish": "Marian iyileşince ona kardeşinin öldüğü söylendi.",
+        "translations": {
+          "es-419": "Cuando Marian se recuperó, le dijeron que su hermana había muerto.",
+          "pt-BR": "Quando Marian melhorou, disseram a ela que a irmã tinha morrido.",
+          "id": "Ketika Marian sembuh, ia diberi tahu bahwa adiknya sudah meninggal.",
+          "ar": "وحين تعافت ماريان، قيل لها إنّ أختها ماتت.",
+          "vi": "Khi Marian khỏe lại, người ta báo rằng em gái cô đã chết.",
+          "hi": "जब मैरियन ठीक हुई, तो उसे बताया गया कि उसकी बहन मर चुकी है।",
+          "ru": "Когда Мэриан поправилась, ей сказали, что сестра умерла.",
+          "bn": "মেরিয়ান সুস্থ হলে তাকে জানানো হল যে তার বোন মারা গেছে।",
+          "ur": "جب میرین ٹھیک ہوئی، تو اسے بتایا گیا کہ اس کی بہن مر چکی ہے۔",
+          "th": "เมื่อแมเรียนหายดี เธอก็ได้รับแจ้งว่าน้องสาวเสียชีวิตแล้ว"
+        }
+      },
+      {
+        "id": "cl-white-060",
+        "english": "Full of grief, she went to visit Anne Catherick in the asylum.",
+        "turkish": "Derin bir kederle akıl hastanesine Anne Catherick'i ziyarete gitti.",
+        "translations": {
+          "es-419": "Llena de dolor, fue al manicomio a visitar a Anne Catherick.",
+          "pt-BR": "Cheia de tristeza, ela foi ao hospício visitar Anne Catherick.",
+          "id": "Dengan hati penuh duka, ia pergi menjenguk Anne Catherick di rumah sakit jiwa.",
+          "ar": "وهي مثقلة بالحزن، ذهبت لتزور آن كاثريك في المصحّة العقلية.",
+          "vi": "Lòng đầy đau buồn, cô đến nhà thương điên thăm Anne Catherick.",
+          "hi": "दुख से भरी वह पागलख़ाने में ऐन कैथरिक से मिलने गई।",
+          "ru": "Полная горя, она поехала навестить Анну Кэтерик в лечебнице.",
+          "bn": "শোকে ভরা মন নিয়ে সে পাগলাগারদে অ্যান ক্যাথেরিককে দেখতে গেল।",
+          "ur": "غم سے بھری وہ پاگل خانے میں این کیتھرک سے ملنے گئی۔",
+          "th": "ด้วยความโศกเศร้า เธอไปเยี่ยมแอนน์ แคเธอริกที่โรงพยาบาลบ้า"
+        }
+      },
+      {
+        "id": "cl-white-061",
+        "english": "She hoped that Anne could tell her Sir Percival's secret.",
+        "turkish": "Anne'in ona Sir Percival'in sırrını söyleyebileceğini umuyordu.",
+        "translations": {
+          "es-419": "Esperaba que Anne pudiera contarle el secreto de sir Percival.",
+          "pt-BR": "Ela esperava que Anne pudesse lhe contar o segredo de Sir Percival.",
+          "id": "Ia berharap Anne bisa memberitahunya rahasia Sir Percival.",
+          "ar": "كانت تأمل أن تخبرها آن بسرّ السير بيرسيفال.",
+          "vi": "Cô hy vọng Anne có thể cho cô biết bí mật của ngài Percival.",
+          "hi": "उसे उम्मीद थी कि ऐन उसे सर पर्सिवल का राज़ बता सकेगी।",
+          "ru": "Она надеялась, что Анна откроет ей тайну сэра Персиваля.",
+          "bn": "সে আশা করছিল অ্যান তাকে স্যার পার্সিভালের গোপন কথাটা বলতে পারবে।",
+          "ur": "اسے امید تھی کہ این اسے سر پرسیول کا راز بتا سکے گی۔",
+          "th": "เธอหวังว่าแอนน์จะบอกความลับของเซอร์เพอร์ซิวัลให้เธอรู้"
+        }
+      },
+      {
+        "id": "cl-white-062",
+        "english": "But the pale woman in the garden turned, and it was Laura.",
+        "turkish": "Ama bahçedeki solgun kadın döndüğünde, o Laura'ydı.",
+        "translations": {
+          "es-419": "Pero la mujer pálida del jardín se dio vuelta, y era Laura.",
+          "pt-BR": "Mas a mulher pálida no jardim se virou, e era Laura.",
+          "id": "Tetapi wanita pucat di taman itu menoleh, dan ternyata ia Laura.",
+          "ar": "لكنّ المرأة الشاحبة في الحديقة التفتت، فإذا هي لورا.",
+          "vi": "Nhưng người phụ nữ xanh xao trong vườn quay lại, và đó chính là Laura.",
+          "hi": "पर बग़ीचे में खड़ी पीली औरत ने मुड़कर देखा, और वह लॉरा थी।",
+          "ru": "Но бледная женщина в саду обернулась, и это была Лора.",
+          "bn": "কিন্তু বাগানের ফ্যাকাশে মহিলাটি ঘুরে দাঁড়াল, আর সে ছিল লরা।",
+          "ur": "مگر باغ میں کھڑی زرد عورت نے مڑ کر دیکھا، اور وہ لارا تھی۔",
+          "th": "แต่เมื่อหญิงหน้าซีดในสวนหันมา ก็คือลอรานั่นเอง"
+        }
+      },
+      {
+        "id": "cl-white-063",
+        "english": "Marian gave the nurse all her money, and that night Laura escaped.",
+        "turkish": "Marian bütün parasını hemşireye verdi ve o gece Laura kaçtı.",
+        "translations": {
+          "es-419": "Marian le dio a la enfermera todo su dinero, y esa noche Laura escapó.",
+          "pt-BR": "Marian deu à enfermeira todo o seu dinheiro, e naquela noite Laura fugiu.",
+          "id": "Marian memberikan semua uangnya kepada perawat, dan malam itu Laura melarikan diri.",
+          "ar": "أعطت ماريان الممرّضة كلّ مالها، وفي تلك الليلة هربت لورا.",
+          "vi": "Marian đưa cô y tá toàn bộ số tiền mình có, và đêm đó Laura trốn thoát.",
+          "hi": "मैरियन ने नर्स को अपना सारा पैसा दे दिया, और उसी रात लॉरा भाग निकली।",
+          "ru": "Мэриан отдала сиделке все свои деньги, и той же ночью Лора сбежала.",
+          "bn": "মেরিয়ান নার্সকে তার সব টাকা দিয়ে দিল, আর সেই রাতে লরা পালাল।",
+          "ur": "میرین نے نرس کو اپنا سارا پیسہ دے دیا، اور اسی رات لارا بھاگ نکلی۔",
+          "th": "แมเรียนให้เงินทั้งหมดที่มีแก่พยาบาล และคืนนั้นลอราก็หนีออกมาได้"
+        }
+      },
+      {
+        "id": "cl-white-064",
+        "english": "But Laura was weak and confused, and the world believed she was dead.",
+        "turkish": "Ama Laura zayıf ve şaşkındı; dünya da onun öldüğüne inanıyordu.",
+        "translations": {
+          "es-419": "Pero Laura estaba débil y confundida, y el mundo creía que estaba muerta.",
+          "pt-BR": "Mas Laura estava fraca e confusa, e o mundo acreditava que ela estava morta.",
+          "id": "Tetapi Laura lemah dan bingung, dan dunia percaya ia sudah mati.",
+          "ar": "لكنّ لورا كانت ضعيفة مشوّشة، والعالم كلّه يظنّ أنّها ميتة.",
+          "vi": "Nhưng Laura yếu ớt và hoang mang, còn cả thế giới tin rằng cô đã chết.",
+          "hi": "पर लॉरा कमज़ोर और उलझी हुई थी, और दुनिया मानती थी कि वह मर चुकी है।",
+          "ru": "Но Лора была слаба и растеряна, а весь свет считал её мёртвой.",
+          "bn": "কিন্তু লরা দুর্বল আর বিভ্রান্ত, আর দুনিয়া বিশ্বাস করত সে মৃত।",
+          "ur": "مگر لارا کمزور اور الجھی ہوئی تھی، اور دنیا سمجھتی تھی کہ وہ مر چکی ہے۔",
+          "th": "แต่ลอราอ่อนแอและสับสน และทั้งโลกเชื่อว่าเธอตายไปแล้ว"
+        }
+      },
+      {
+        "id": "cl-white-065",
+        "english": "A year later, Walter came home to England.",
+        "turkish": "Bir yıl sonra Walter İngiltere'ye döndü.",
+        "translations": {
+          "es-419": "Un año después, Walter volvió a Inglaterra.",
+          "pt-BR": "Um ano depois, Walter voltou para a Inglaterra.",
+          "id": "Setahun kemudian, Walter pulang ke Inggris.",
+          "ar": "بعد عام، عاد والتر إلى إنجلترا.",
+          "vi": "Một năm sau, Walter trở về nước Anh.",
+          "hi": "एक साल बाद वॉल्टर इंग्लैंड लौट आया।",
+          "ru": "Через год Уолтер вернулся в Англию.",
+          "bn": "এক বছর পরে ওয়াল্টার ইংল্যান্ডে ফিরে এল।",
+          "ur": "ایک سال بعد والٹر انگلینڈ لوٹ آیا۔",
+          "th": "หนึ่งปีต่อมา วอลเตอร์กลับมายังอังกฤษ"
+        }
+      },
+      {
+        "id": "cl-white-066",
+        "english": "He heard that Laura was dead, and he went to Limmeridge to see her grave.",
+        "turkish": "Laura'nın öldüğünü duydu ve mezarını görmek için Limmeridge'e gitti.",
+        "translations": {
+          "es-419": "Se enteró de que Laura había muerto, y fue a Limmeridge a ver su tumba.",
+          "pt-BR": "Ele soube que Laura tinha morrido e foi a Limmeridge ver o túmulo dela.",
+          "id": "Ia mendengar bahwa Laura sudah meninggal, lalu pergi ke Limmeridge untuk melihat makamnya.",
+          "ar": "سمع أنّ لورا ماتت، فذهب إلى ليمريدج ليرى قبرها.",
+          "vi": "Nghe tin Laura đã chết, anh đến Limmeridge để thăm mộ cô.",
+          "hi": "उसने सुना कि लॉरा मर चुकी है, और वह उसकी क़ब्र देखने लिमरिज गया।",
+          "ru": "Он узнал, что Лора умерла, и поехал в Лиммеридж к её могиле.",
+          "bn": "সে শুনল লরা মারা গেছে, আর তার কবর দেখতে লিমেরিজে গেল।",
+          "ur": "اس نے سنا کہ لارا مر چکی ہے، اور وہ اس کی قبر دیکھنے لمرج گیا۔",
+          "th": "เขาได้ยินว่าลอราตายแล้ว จึงไปลิมเมอริดจ์เพื่อดูหลุมศพของเธอ"
+        }
+      },
+      {
+        "id": "cl-white-067",
+        "english": "As he stood there, two women came slowly toward him.",
+        "turkish": "Orada dururken iki kadın ağır ağır ona doğru geldi.",
+        "translations": {
+          "es-419": "Mientras estaba allí, dos mujeres se le acercaron despacio.",
+          "pt-BR": "Enquanto ele estava ali, duas mulheres se aproximaram devagar.",
+          "id": "Saat ia berdiri di sana, dua wanita berjalan perlahan ke arahnya.",
+          "ar": "وبينما كان واقفًا هناك، اقتربت منه امرأتان ببطء.",
+          "vi": "Khi anh đứng đó, hai người phụ nữ chậm rãi tiến về phía anh.",
+          "hi": "जब वह वहाँ खड़ा था, दो औरतें धीरे-धीरे उसकी ओर आईं।",
+          "ru": "Пока он стоял там, к нему медленно подошли две женщины.",
+          "bn": "সে যখন সেখানে দাঁড়িয়ে, দুজন মহিলা ধীরে ধীরে তার দিকে এগিয়ে এল।",
+          "ur": "جب وہ وہاں کھڑا تھا، دو عورتیں آہستہ آہستہ اس کی طرف آئیں۔",
+          "th": "ขณะที่เขายืนอยู่ตรงนั้น ผู้หญิงสองคนค่อย ๆ เดินเข้ามาหาเขา"
+        }
+      },
+      {
+        "id": "cl-white-068",
+        "english": "One was Marian. The other lifted her veil, and it was Laura.",
+        "turkish": "Biri Marian'dı. Öteki peçesini kaldırdı; o, Laura'ydı.",
+        "translations": {
+          "es-419": "Una era Marian. La otra se levantó el velo, y era Laura.",
+          "pt-BR": "Uma era Marian. A outra levantou o véu, e era Laura.",
+          "id": "Yang satu adalah Marian. Yang lain mengangkat kerudungnya, dan itu Laura.",
+          "ar": "إحداهما ماريان. أمّا الأخرى فرفعت حجابها، فإذا هي لورا.",
+          "vi": "Một người là Marian. Người kia vén mạng che mặt lên, và đó là Laura.",
+          "hi": "एक मैरियन थी। दूसरी ने अपना घूँघट उठाया, और वह लॉरा थी।",
+          "ru": "Одна была Мэриан. Другая подняла вуаль — это была Лора.",
+          "bn": "একজন মেরিয়ান। অন্যজন ঘোমটা তুলল, আর সে লরা।",
+          "ur": "ایک میرین تھی۔ دوسری نے اپنا نقاب اٹھایا، اور وہ لارا تھی۔",
+          "th": "คนหนึ่งคือแมเรียน อีกคนเลิกผ้าคลุมหน้าขึ้น และนั่นคือลอรา"
+        }
+      },
+      {
+        "id": "cl-white-069",
+        "english": "She was standing beside her own grave.",
+        "turkish": "Kendi mezarının yanında duruyordu.",
+        "translations": {
+          "es-419": "Estaba de pie junto a su propia tumba.",
+          "pt-BR": "Ela estava de pé ao lado do próprio túmulo.",
+          "id": "Ia berdiri di samping makamnya sendiri.",
+          "ar": "كانت واقفة بجانب قبرها هي.",
+          "vi": "Cô đang đứng bên ngôi mộ của chính mình.",
+          "hi": "वह अपनी ही क़ब्र के पास खड़ी थी।",
+          "ru": "Она стояла у собственной могилы.",
+          "bn": "সে দাঁড়িয়ে ছিল নিজেরই কবরের পাশে।",
+          "ur": "وہ اپنی ہی قبر کے پاس کھڑی تھی۔",
+          "th": "เธอยืนอยู่ข้างหลุมศพของตัวเอง"
+        }
+      },
+      {
+        "id": "cl-white-070",
+        "english": "The three of them hid in a poor part of London under false names.",
+        "turkish": "Üçü, sahte adlarla Londra'nın yoksul bir semtinde saklandı.",
+        "translations": {
+          "es-419": "Los tres se escondieron en un barrio pobre de Londres con nombres falsos.",
+          "pt-BR": "Os três se esconderam num bairro pobre de Londres com nomes falsos.",
+          "id": "Mereka bertiga bersembunyi di kawasan miskin London dengan nama palsu.",
+          "ar": "اختبأ ثلاثتهم في حيّ فقير من لندن بأسماء مستعارة.",
+          "vi": "Ba người trốn trong một khu nghèo của London dưới tên giả.",
+          "hi": "तीनों नक़ली नामों से लंदन के एक ग़रीब इलाक़े में छिपकर रहने लगे।",
+          "ru": "Втроём они укрылись в бедном районе Лондона под чужими именами.",
+          "bn": "তিনজনে মিলে নকল নামে লন্ডনের এক গরিব এলাকায় লুকিয়ে রইল।",
+          "ur": "تینوں نقلی ناموں سے لندن کے ایک غریب علاقے میں چھپ گئے۔",
+          "th": "ทั้งสามคนหลบซ่อนอยู่ในย่านยากจนของลอนดอนโดยใช้ชื่อปลอม"
+        }
+      },
+      {
+        "id": "cl-white-071",
+        "english": "Walter worked hard, and Laura slowly became calm and happy again.",
+        "turkish": "Walter çok çalıştı, Laura da yavaş yavaş yeniden sakinleşip mutlu oldu.",
+        "translations": {
+          "es-419": "Walter trabajó mucho, y Laura poco a poco volvió a estar tranquila y feliz.",
+          "pt-BR": "Walter trabalhou duro, e Laura aos poucos voltou a ficar calma e feliz.",
+          "id": "Walter bekerja keras, dan Laura perlahan kembali tenang dan bahagia.",
+          "ar": "عمل والتر بجدّ، وعادت لورا شيئًا فشيئًا هادئة سعيدة.",
+          "vi": "Walter làm việc cật lực, còn Laura dần dần bình tâm và vui vẻ trở lại.",
+          "hi": "वॉल्टर ने कड़ी मेहनत की, और लॉरा धीरे-धीरे फिर से शांत और ख़ुश होने लगी।",
+          "ru": "Уолтер много работал, и Лора понемногу снова стала спокойной и счастливой.",
+          "bn": "ওয়াল্টার কঠোর পরিশ্রম করল, আর লরা ধীরে ধীরে আবার শান্ত ও সুখী হয়ে উঠল।",
+          "ur": "والٹر نے سخت محنت کی، اور لارا آہستہ آہستہ پھر سے پرسکون اور خوش ہونے لگی۔",
+          "th": "วอลเตอร์ทำงานหนัก และลอราก็ค่อย ๆ กลับมาสงบและมีความสุขอีกครั้ง"
+        }
+      },
+      {
+        "id": "cl-white-072",
+        "english": "But to give her back her name, they needed proof.",
+        "turkish": "Ama ona adını geri vermek için kanıta ihtiyaçları vardı.",
+        "translations": {
+          "es-419": "Pero para devolverle su nombre, necesitaban pruebas.",
+          "pt-BR": "Mas, para devolver o nome dela, precisavam de provas.",
+          "id": "Tetapi untuk mengembalikan namanya, mereka membutuhkan bukti.",
+          "ar": "لكن ليعيدوا إليها اسمها، كانوا بحاجة إلى دليل.",
+          "vi": "Nhưng để trả lại tên tuổi cho cô, họ cần bằng chứng.",
+          "hi": "पर उसे उसका नाम लौटाने के लिए उन्हें सबूत चाहिए था।",
+          "ru": "Но чтобы вернуть ей имя, нужны были доказательства.",
+          "bn": "কিন্তু তাকে তার নাম ফিরিয়ে দিতে তাদের প্রমাণ দরকার ছিল।",
+          "ur": "مگر اسے اس کا نام لوٹانے کے لیے انہیں ثبوت چاہیے تھا۔",
+          "th": "แต่หากจะคืนชื่อให้เธอ พวกเขาต้องมีหลักฐาน"
+        }
+      },
+      {
+        "id": "cl-white-073",
+        "english": "Walter began to search for Sir Percival's secret.",
+        "turkish": "Walter, Sir Percival'in sırrını araştırmaya başladı.",
+        "translations": {
+          "es-419": "Walter empezó a buscar el secreto de sir Percival.",
+          "pt-BR": "Walter começou a procurar o segredo de Sir Percival.",
+          "id": "Walter mulai mencari rahasia Sir Percival.",
+          "ar": "بدأ والتر يبحث عن سرّ السير بيرسيفال.",
+          "vi": "Walter bắt đầu đi tìm bí mật của ngài Percival.",
+          "hi": "वॉल्टर ने सर पर्सिवल का राज़ खोजना शुरू किया।",
+          "ru": "Уолтер принялся искать тайну сэра Персиваля.",
+          "bn": "ওয়াল্টার স্যার পার্সিভালের গোপন কথা খুঁজতে শুরু করল।",
+          "ur": "والٹر نے سر پرسیول کا راز ڈھونڈنا شروع کیا۔",
+          "th": "วอลเตอร์เริ่มสืบหาความลับของเซอร์เพอร์ซิวัล"
+        }
+      },
+      {
+        "id": "cl-white-074",
+        "english": "In an old village church, he studied the marriage register.",
+        "turkish": "Eski bir köy kilisesinde evlilik kayıt defterini inceledi.",
+        "translations": {
+          "es-419": "En una vieja iglesia de pueblo, examinó el registro de matrimonios.",
+          "pt-BR": "Numa velha igreja de aldeia, ele examinou o livro de registro de casamentos.",
+          "id": "Di sebuah gereja desa tua, ia memeriksa buku catatan pernikahan.",
+          "ar": "في كنيسة قروية قديمة، فحص سجلّ الزواج.",
+          "vi": "Trong một nhà thờ làng cổ, anh xem xét sổ đăng ký kết hôn.",
+          "hi": "गाँव के एक पुराने चर्च में उसने विवाह का रजिस्टर जाँचा।",
+          "ru": "В старой деревенской церкви он изучил книгу записей о браках.",
+          "bn": "গ্রামের এক পুরোনো গির্জায় সে বিয়ের রেজিস্টার খুঁটিয়ে দেখল।",
+          "ur": "گاؤں کے ایک پرانے چرچ میں اس نے نکاح کا رجسٹر دیکھا۔",
+          "th": "ในโบสถ์เก่าแห่งหนึ่งในหมู่บ้าน เขาตรวจดูสมุดทะเบียนสมรส"
+        }
+      },
+      {
+        "id": "cl-white-075",
+        "english": "He discovered that Sir Percival's parents had never married.",
+        "turkish": "Sir Percival'in anne babasının hiç evlenmediğini keşfetti.",
+        "translations": {
+          "es-419": "Descubrió que los padres de sir Percival nunca se habían casado.",
+          "pt-BR": "Ele descobriu que os pais de Sir Percival nunca tinham se casado.",
+          "id": "Ia menemukan bahwa orang tua Sir Percival tidak pernah menikah.",
+          "ar": "اكتشف أنّ والدَي السير بيرسيفال لم يتزوّجا قطّ.",
+          "vi": "Anh phát hiện ra cha mẹ ngài Percival chưa bao giờ kết hôn.",
+          "hi": "उसे पता चला कि सर पर्सिवल के माता-पिता ने कभी शादी नहीं की थी।",
+          "ru": "Он обнаружил, что родители сэра Персиваля никогда не состояли в браке.",
+          "bn": "সে জানতে পারল যে স্যার পার্সিভালের বাবা-মা কখনো বিয়েই করেননি।",
+          "ur": "اسے پتا چلا کہ سر پرسیول کے والدین نے کبھی شادی نہیں کی تھی۔",
+          "th": "เขาค้นพบว่าพ่อแม่ของเซอร์เพอร์ซิวัลไม่เคยแต่งงานกัน"
+        }
+      },
+      {
+        "id": "cl-white-076",
+        "english": "Years ago, Sir Percival had secretly written their marriage into the old book.",
+        "turkish": "Yıllar önce Sir Percival onların evliliğini gizlice o eski deftere yazmıştı.",
+        "translations": {
+          "es-419": "Hacía años, sir Percival había escrito en secreto su matrimonio en el viejo libro.",
+          "pt-BR": "Anos antes, Sir Percival tinha escrito em segredo o casamento deles no livro antigo.",
+          "id": "Bertahun-tahun lalu, Sir Percival diam-diam menuliskan pernikahan mereka ke buku tua itu.",
+          "ar": "قبل سنوات، كان السير بيرسيفال قد كتب زواجهما سرًّا في الكتاب القديم.",
+          "vi": "Nhiều năm trước, ngài Percival đã lén ghi cuộc hôn nhân ấy vào cuốn sổ cũ.",
+          "hi": "बरसों पहले सर पर्सिवल ने चुपके से उस पुरानी किताब में उनकी शादी दर्ज कर दी थी।",
+          "ru": "Много лет назад сэр Персиваль тайком вписал их брак в старую книгу.",
+          "bn": "বহু বছর আগে স্যার পার্সিভাল গোপনে পুরোনো খাতায় তাঁদের বিয়ের কথা লিখে দিয়েছিলেন।",
+          "ur": "برسوں پہلے سر پرسیول نے چپکے سے اس پرانی کتاب میں ان کی شادی درج کر دی تھی۔",
+          "th": "หลายปีก่อน เซอร์เพอร์ซิวัลแอบเขียนการสมรสของพวกเขาลงในสมุดเล่มเก่านั้น"
+        }
+      },
+      {
+        "id": "cl-white-077",
+        "english": "So he had no right to his name, his house or his money.",
+        "turkish": "Yani ne adına, ne evine, ne de parasına hakkı vardı.",
+        "translations": {
+          "es-419": "Así que no tenía derecho a su nombre, a su casa ni a su dinero.",
+          "pt-BR": "Portanto, ele não tinha direito ao nome, à casa nem ao dinheiro.",
+          "id": "Jadi ia tidak berhak atas nama, rumah, ataupun hartanya.",
+          "ar": "لذلك لم يكن له حقّ في اسمه ولا في بيته ولا في ماله.",
+          "vi": "Vậy là ông ta chẳng có quyền gì với cái tên, ngôi nhà hay tài sản của mình.",
+          "hi": "यानी उसका न अपने नाम पर हक़ था, न घर पर, न पैसे पर।",
+          "ru": "Значит, у него не было прав ни на имя, ни на дом, ни на деньги.",
+          "bn": "অর্থাৎ তাঁর নাম, বাড়ি বা টাকা কোনোটার ওপরই কোনো অধিকার ছিল না।",
+          "ur": "یعنی اس کا نہ اپنے نام پر حق تھا، نہ گھر پر، نہ پیسے پر۔",
+          "th": "นั่นหมายความว่าเขาไม่มีสิทธิ์ในชื่อ บ้าน หรือเงินทองของตนเลย"
+        }
+      },
+      {
+        "id": "cl-white-078",
+        "english": "That night, Sir Percival went to the church to burn the register.",
+        "turkish": "O gece Sir Percival kayıt defterini yakmak için kiliseye gitti.",
+        "translations": {
+          "es-419": "Esa noche, sir Percival fue a la iglesia a quemar el registro.",
+          "pt-BR": "Naquela noite, Sir Percival foi à igreja para queimar o livro de registro.",
+          "id": "Malam itu, Sir Percival pergi ke gereja untuk membakar buku catatan itu.",
+          "ar": "في تلك الليلة، ذهب السير بيرسيفال إلى الكنيسة ليحرق السجلّ.",
+          "vi": "Đêm đó, ngài Percival đến nhà thờ để đốt cuốn sổ đăng ký.",
+          "hi": "उस रात सर पर्सिवल रजिस्टर जलाने चर्च गए।",
+          "ru": "Той ночью сэр Персиваль пошёл в церковь, чтобы сжечь книгу записей.",
+          "bn": "সেই রাতে স্যার পার্সিভাল রেজিস্টারটা পোড়াতে গির্জায় গেলেন।",
+          "ur": "اس رات سر پرسیول رجسٹر جلانے چرچ گئے۔",
+          "th": "คืนนั้น เซอร์เพอร์ซิวัลไปที่โบสถ์เพื่อเผาสมุดทะเบียน"
+        }
+      },
+      {
+        "id": "cl-white-079",
+        "english": "The fire spread too fast, the door was locked, and he died inside.",
+        "turkish": "Ateş çok hızlı yayıldı, kapı kilitliydi ve içeride öldü.",
+        "translations": {
+          "es-419": "El fuego se extendió muy rápido, la puerta estaba cerrada, y murió dentro.",
+          "pt-BR": "O fogo se espalhou rápido demais, a porta estava trancada, e ele morreu lá dentro.",
+          "id": "Api menyebar terlalu cepat, pintunya terkunci, dan ia tewas di dalam.",
+          "ar": "انتشرت النار بسرعة كبيرة، وكان الباب مقفلًا، فمات في الداخل.",
+          "vi": "Ngọn lửa lan quá nhanh, cửa bị khóa, và ông ta chết bên trong.",
+          "hi": "आग बहुत तेज़ी से फैली, दरवाज़ा बंद था, और वे अंदर ही मर गए।",
+          "ru": "Огонь распространился слишком быстро, дверь была заперта, и он погиб внутри.",
+          "bn": "আগুন খুব তাড়াতাড়ি ছড়িয়ে পড়ল, দরজা বন্ধ ছিল, আর তিনি ভেতরেই মারা গেলেন।",
+          "ur": "آگ بہت تیزی سے پھیلی، دروازہ بند تھا، اور وہ اندر ہی مر گئے۔",
+          "th": "ไฟลุกลามเร็วเกินไป ประตูถูกล็อก และเขาก็ตายอยู่ข้างใน"
+        }
+      },
+      {
+        "id": "cl-white-080",
+        "english": "Now only the Count could prove what had happened to Laura.",
+        "turkish": "Artık Laura'nın başına geleni yalnızca Kont kanıtlayabilirdi.",
+        "translations": {
+          "es-419": "Ahora solo el conde podía demostrar lo que le había pasado a Laura.",
+          "pt-BR": "Agora só o conde podia provar o que tinha acontecido com Laura.",
+          "id": "Kini hanya sang Count yang bisa membuktikan apa yang terjadi pada Laura.",
+          "ar": "الآن لم يعد أحد غير الكونت قادرًا على إثبات ما جرى للورا.",
+          "vi": "Giờ chỉ còn Bá tước có thể chứng minh chuyện gì đã xảy ra với Laura.",
+          "hi": "अब सिर्फ़ काउंट ही साबित कर सकते थे कि लॉरा के साथ क्या हुआ था।",
+          "ru": "Теперь только граф мог доказать, что случилось с Лорой.",
+          "bn": "এখন শুধু কাউন্টই প্রমাণ করতে পারতেন লরার কী হয়েছিল।",
+          "ur": "اب صرف کاؤنٹ ہی ثابت کر سکتے تھے کہ لارا کے ساتھ کیا ہوا تھا۔",
+          "th": "ตอนนี้มีเพียงท่านเคานต์เท่านั้นที่พิสูจน์ได้ว่าเกิดอะไรขึ้นกับลอรา"
+        }
+      },
+      {
+        "id": "cl-white-081",
+        "english": "Walter learned that the Count was afraid of a secret society from Italy.",
+        "turkish": "Walter, Kont'un İtalya'daki gizli bir örgütten korktuğunu öğrendi.",
+        "translations": {
+          "es-419": "Walter supo que el conde le tenía miedo a una sociedad secreta de Italia.",
+          "pt-BR": "Walter descobriu que o conde tinha medo de uma sociedade secreta da Itália.",
+          "id": "Walter mengetahui bahwa sang Count takut pada sebuah perkumpulan rahasia dari Italia.",
+          "ar": "علم والتر أنّ الكونت يخاف من جمعيّة سرّية من إيطاليا.",
+          "vi": "Walter biết được Bá tước sợ một hội kín từ nước Ý.",
+          "hi": "वॉल्टर को पता चला कि काउंट इटली के एक गुप्त संगठन से डरते थे।",
+          "ru": "Уолтер узнал, что граф боится тайного общества из Италии.",
+          "bn": "ওয়াল্টার জানতে পারল যে কাউন্ট ইতালির এক গুপ্ত সংগঠনকে ভয় পান।",
+          "ur": "والٹر کو پتا چلا کہ کاؤنٹ اٹلی کی ایک خفیہ تنظیم سے ڈرتے تھے۔",
+          "th": "วอลเตอร์รู้มาว่าท่านเคานต์กลัวสมาคมลับแห่งหนึ่งจากอิตาลี"
+        }
+      },
+      {
+        "id": "cl-white-082",
+        "english": "\"Confess everything in writing, or I will tell them where you are,\" Walter said.",
+        "turkish": "\"Her şeyi yazılı olarak itiraf edin, yoksa onlara nerede olduğunuzu söylerim,\" dedi Walter.",
+        "translations": {
+          "es-419": "—Confiese todo por escrito, o les diré dónde está —dijo Walter.",
+          "pt-BR": "— Confesse tudo por escrito, ou direi a eles onde o senhor está — disse Walter.",
+          "id": "\"Akui semuanya secara tertulis, atau akan kuberi tahu mereka di mana Anda berada,\" kata Walter.",
+          "ar": "قال والتر: «اعترف بكلّ شيء كتابةً، وإلّا أخبرتهم بمكانك».",
+          "vi": "\"Hãy viết lời thú tội về mọi chuyện, nếu không tôi sẽ báo cho họ biết ông ở đâu,\" Walter nói.",
+          "hi": "\"सब कुछ लिखकर क़बूल कीजिए, वरना मैं उन्हें बता दूँगा कि आप कहाँ हैं,\" वॉल्टर ने कहा।",
+          "ru": "«Признайтесь во всём письменно, или я скажу им, где вы», — сказал Уолтер.",
+          "bn": "\"সব কিছু লিখে স্বীকার করুন, নইলে আমি ওদের বলে দেব আপনি কোথায়,\" ওয়াল্টার বলল।",
+          "ur": "\"سب کچھ لکھ کر اعتراف کیجیے، ورنہ میں انہیں بتا دوں گا کہ آپ کہاں ہیں،\" والٹر نے کہا۔",
+          "th": "\"เขียนสารภาพทุกอย่างเสีย ไม่อย่างนั้นผมจะบอกพวกเขาว่าคุณอยู่ที่ไหน\" วอลเตอร์พูด"
+        }
+      },
+      {
+        "id": "cl-white-083",
+        "english": "The Count smiled, wrote for a whole night, and then left the country.",
+        "turkish": "Kont gülümsedi, bütün gece yazdı ve sonra ülkeyi terk etti.",
+        "translations": {
+          "es-419": "El conde sonrió, escribió durante toda una noche y luego se fue del país.",
+          "pt-BR": "O conde sorriu, escreveu a noite inteira e depois deixou o país.",
+          "id": "Sang Count tersenyum, menulis semalaman, lalu meninggalkan negeri itu.",
+          "ar": "ابتسم الكونت، وكتب طوال الليل، ثمّ غادر البلاد.",
+          "vi": "Bá tước mỉm cười, viết suốt một đêm, rồi rời khỏi đất nước.",
+          "hi": "काउंट मुस्कुराए, पूरी रात लिखते रहे, और फिर देश छोड़कर चले गए।",
+          "ru": "Граф улыбнулся, писал всю ночь, а потом уехал из страны.",
+          "bn": "কাউন্ট হাসলেন, সারা রাত লিখলেন, তারপর দেশ ছেড়ে চলে গেলেন।",
+          "ur": "کاؤنٹ مسکرائے، پوری رات لکھتے رہے، اور پھر ملک چھوڑ کر چلے گئے۔",
+          "th": "ท่านเคานต์ยิ้ม เขียนอยู่ทั้งคืน แล้วก็เดินทางออกนอกประเทศ"
+        }
+      },
+      {
+        "id": "cl-white-084",
+        "english": "His papers proved that Laura's journey to London came after Anne's death.",
+        "turkish": "Belgeleri, Laura'nın Londra yolculuğunun Anne'in ölümünden sonra olduğunu kanıtladı.",
+        "translations": {
+          "es-419": "Sus papeles demostraron que el viaje de Laura a Londres fue posterior a la muerte de Anne.",
+          "pt-BR": "Os papéis dele provaram que a viagem de Laura a Londres foi depois da morte de Anne.",
+          "id": "Dokumennya membuktikan bahwa perjalanan Laura ke London terjadi setelah Anne meninggal.",
+          "ar": "أثبتت أوراقه أنّ رحلة لورا إلى لندن جاءت بعد وفاة آن.",
+          "vi": "Giấy tờ của ông ta chứng minh rằng chuyến đi London của Laura diễn ra sau khi Anne chết.",
+          "hi": "उनके काग़ज़ों से साबित हुआ कि लॉरा की लंदन यात्रा ऐन की मौत के बाद हुई थी।",
+          "ru": "Его бумаги доказали, что Лора приехала в Лондон уже после смерти Анны.",
+          "bn": "তাঁর কাগজপত্রে প্রমাণ হল যে লরার লন্ডন যাত্রা অ্যানের মৃত্যুর পরে হয়েছিল।",
+          "ur": "ان کے کاغذات سے ثابت ہوا کہ لارا کا لندن کا سفر این کی موت کے بعد ہوا تھا۔",
+          "th": "เอกสารของเขาพิสูจน์ว่าการเดินทางไปลอนดอนของลอราเกิดขึ้นหลังจากแอนน์ตายไปแล้ว"
+        }
+      },
+      {
+        "id": "cl-white-085",
+        "english": "The dead woman could not have been Laura, so the lie was finished.",
+        "turkish": "Ölen kadın Laura olamazdı; böylece yalan sona erdi.",
+        "translations": {
+          "es-419": "La mujer muerta no podía haber sido Laura, así que la mentira terminó.",
+          "pt-BR": "A mulher morta não podia ter sido Laura, e assim a mentira acabou.",
+          "id": "Wanita yang meninggal itu tidak mungkin Laura, jadi kebohongan itu berakhir.",
+          "ar": "لم يكن من الممكن أن تكون المرأة الميتة لورا، فانتهت الكذبة.",
+          "vi": "Người phụ nữ đã chết không thể là Laura, vậy là lời dối trá chấm dứt.",
+          "hi": "मरने वाली औरत लॉरा हो ही नहीं सकती थी, इसलिए झूठ ख़त्म हो गया।",
+          "ru": "Умершая не могла быть Лорой, и обман раскрылся.",
+          "bn": "মৃত মহিলাটি লরা হতেই পারে না, তাই মিথ্যেটা শেষ হল।",
+          "ur": "مرنے والی عورت لارا ہو ہی نہیں سکتی تھی، اس لیے جھوٹ ختم ہو گیا۔",
+          "th": "ผู้หญิงที่ตายไม่มีทางเป็นลอราได้ เรื่องโกหกจึงจบลง"
+        }
+      },
+      {
+        "id": "cl-white-086",
+        "english": "At Limmeridge, the false words were cut from the grave, and Anne's name was written there.",
+        "turkish": "Limmeridge'de mezar taşındaki sahte yazı silindi ve yerine Anne'in adı yazıldı.",
+        "translations": {
+          "es-419": "En Limmeridge borraron las palabras falsas de la tumba y escribieron allí el nombre de Anne.",
+          "pt-BR": "Em Limmeridge, as palavras falsas foram apagadas do túmulo, e ali foi escrito o nome de Anne.",
+          "id": "Di Limmeridge, tulisan palsu di makam itu dihapus, dan nama Anne dituliskan di sana.",
+          "ar": "في ليمريدج، مُحيت الكلمات الكاذبة عن القبر، وكُتب عليه اسم آن.",
+          "vi": "Ở Limmeridge, dòng chữ giả trên bia mộ được xóa đi, và tên Anne được khắc vào đó.",
+          "hi": "लिमरिज में क़ब्र से झूठे शब्द मिटा दिए गए, और वहाँ ऐन का नाम लिखा गया।",
+          "ru": "В Лиммеридже ложную надпись стёрли с надгробия и написали там имя Анны.",
+          "bn": "লিমেরিজে কবর থেকে মিথ্যে লেখা মুছে ফেলা হল, আর সেখানে অ্যানের নাম লেখা হল।",
+          "ur": "لمرج میں قبر سے جھوٹے الفاظ مٹا دیے گئے، اور وہاں این کا نام لکھا گیا۔",
+          "th": "ที่ลิมเมอริดจ์ ถ้อยคำปลอมบนหลุมศพถูกลบออก และสลักชื่อของแอนน์ลงไปแทน"
+        }
+      },
+      {
+        "id": "cl-white-087",
+        "english": "Walter and Laura were married, and Marian lived happily with them.",
+        "turkish": "Walter ile Laura evlendi, Marian da mutlulukla onlarla yaşadı.",
+        "translations": {
+          "es-419": "Walter y Laura se casaron, y Marian vivió feliz con ellos.",
+          "pt-BR": "Walter e Laura se casaram, e Marian viveu feliz com eles.",
+          "id": "Walter dan Laura menikah, dan Marian hidup bahagia bersama mereka.",
+          "ar": "تزوّج والتر ولورا، وعاشت ماريان معهما سعيدة.",
+          "vi": "Walter và Laura nên vợ nên chồng, và Marian sống hạnh phúc cùng họ.",
+          "hi": "वॉल्टर और लॉरा की शादी हो गई, और मैरियन उनके साथ ख़ुशी से रहने लगी।",
+          "ru": "Уолтер и Лора поженились, и Мэриан счастливо жила вместе с ними.",
+          "bn": "ওয়াল্টার আর লরার বিয়ে হল, আর মেরিয়ান তাদের সঙ্গে সুখে থাকল।",
+          "ur": "والٹر اور لارا کی شادی ہو گئی، اور میرین ان کے ساتھ خوشی سے رہنے لگی۔",
+          "th": "วอลเตอร์กับลอราแต่งงานกัน และแมเรียนก็อยู่กับพวกเขาอย่างมีความสุข"
+        }
+      },
+      {
+        "id": "cl-white-088",
+        "english": "The woman in white, who had tried to help, could rest at last.",
+        "turkish": "Yardım etmeye çalışan beyazlı kadın da sonunda huzura kavuşabildi.",
+        "translations": {
+          "es-419": "La mujer de blanco, que había intentado ayudar, por fin pudo descansar.",
+          "pt-BR": "A mulher de branco, que tinha tentado ajudar, enfim pôde descansar.",
+          "id": "Wanita berbaju putih, yang dulu berusaha menolong, akhirnya bisa beristirahat dengan tenang.",
+          "ar": "أمّا المرأة ذات الثوب الأبيض، التي حاولت أن تساعد، فقد استطاعت أخيرًا أن ترتاح.",
+          "vi": "Người phụ nữ áo trắng, người từng cố giúp đỡ, cuối cùng đã được yên nghỉ.",
+          "hi": "सफ़ेद कपड़ों वाली वह औरत, जिसने मदद करने की कोशिश की थी, आख़िरकार चैन से सो सकी।",
+          "ru": "Женщина в белом, пытавшаяся помочь, наконец обрела покой.",
+          "bn": "সাদা পোশাকের সেই মহিলা, যে সাহায্য করতে চেয়েছিল, অবশেষে শান্তিতে ঘুমাতে পারল।",
+          "ur": "سفید لباس والی وہ عورت، جس نے مدد کرنے کی کوشش کی تھی، آخرکار سکون سے سو سکی۔",
+          "th": "หญิงชุดขาวผู้เคยพยายามช่วยเหลือ ในที่สุดก็ได้พักผ่อนอย่างสงบ"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-woman-in-white-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "A teacher who becomes a famous painter",
+          "Two men who steal a woman's name and money, and the people who win it back",
+          "A ghost who lives in an old church",
+          "A nurse who runs an asylum"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-woman-in-white-q2",
+        "kind": "detail",
+        "prompt": "Why did Walter feel a shock when he first saw Laura?",
+        "options": [
+          "She was very rude",
+          "She looked just like the woman in white",
+          "She was wearing his coat",
+          "She knew his name"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-woman-in-white-q3",
+        "kind": "detail",
+        "prompt": "Whose body was buried at Limmeridge under Laura's name?",
+        "options": [
+          "Marian's",
+          "Anne Catherick's",
+          "The nurse's",
+          "Nobody's"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-woman-in-white-q4",
+        "kind": "inference",
+        "prompt": "Why did Sir Percival go to the church at night?",
+        "options": [
+          "To pray for his wife",
+          "To destroy the proof of his secret",
+          "To meet the Count",
+          "To find Anne Catherick"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-woman-in-white-q5",
+        "kind": "inference",
+        "prompt": "Why did the Count agree to write a confession?",
+        "options": [
+          "He felt sorry for Laura",
+          "He wanted to become famous",
+          "He was afraid Walter would tell a secret society where he was",
+          "The police forced him"
+        ],
+        "answer": 2
+      }
+    ]
+  },
+  "words": [
+    {
+      "id": "drawing",
+      "word": "drawing",
+      "translation": "resim, çizim",
+      "pronunciation": "/ˈdrɔːɪŋ/",
+      "example": "She made a drawing of the old bridge.",
+      "translations": {
+        "es-419": "dibujo",
+        "pt-BR": "desenho",
+        "id": "gambar",
+        "ar": "رسم",
+        "vi": "bức vẽ, môn vẽ",
+        "hi": "चित्र, ड्रॉइंग",
+        "ru": "рисунок, рисование",
+        "bn": "ছবি, অঙ্কন",
+        "ur": "ڈرائنگ، خاکہ",
+        "th": "ภาพวาด, การวาดภาพ"
+      }
+    },
+    {
+      "id": "asylum",
+      "word": "asylum",
+      "translation": "akıl hastanesi",
+      "pronunciation": "/əˈsaɪləm/",
+      "example": "In the past, sick people were sometimes locked in an asylum.",
+      "translations": {
+        "es-419": "manicomio",
+        "pt-BR": "hospício",
+        "id": "rumah sakit jiwa",
+        "ar": "مصحّة عقلية",
+        "vi": "nhà thương điên",
+        "hi": "पागलख़ाना",
+        "ru": "лечебница для душевнобольных",
+        "bn": "পাগলাগারদ",
+        "ur": "پاگل خانہ",
+        "th": "โรงพยาบาลบ้า"
+      }
+    },
+    {
+      "id": "husband",
+      "word": "husband",
+      "translation": "koca",
+      "pronunciation": "/ˈhʌzbənd/",
+      "example": "Her husband cooks dinner every evening.",
+      "translations": {
+        "es-419": "esposo",
+        "pt-BR": "marido",
+        "id": "suami",
+        "ar": "زوج",
+        "vi": "chồng",
+        "hi": "पति",
+        "ru": "муж",
+        "bn": "স্বামী",
+        "ur": "شوہر",
+        "th": "สามี"
+      }
+    },
+    {
+      "id": "signature",
+      "word": "signature",
+      "translation": "imza",
+      "pronunciation": "/ˈsɪɡnətʃə(r)/",
+      "example": "Please put your signature at the bottom of the page.",
+      "translations": {
+        "es-419": "firma",
+        "pt-BR": "assinatura",
+        "id": "tanda tangan",
+        "ar": "توقيع",
+        "vi": "chữ ký",
+        "hi": "दस्तख़त, हस्ताक्षर",
+        "ru": "подпись",
+        "bn": "সই, স্বাক্ষর",
+        "ur": "دستخط",
+        "th": "ลายเซ็น"
+      }
+    },
+    {
+      "id": "nurse",
+      "word": "nurse",
+      "translation": "hemşire",
+      "pronunciation": "/nɜːs/",
+      "example": "The nurse gave the child some medicine.",
+      "translations": {
+        "es-419": "enfermera",
+        "pt-BR": "enfermeira",
+        "id": "perawat",
+        "ar": "ممرّضة",
+        "vi": "y tá",
+        "hi": "नर्स",
+        "ru": "медсестра, сиделка",
+        "bn": "নার্স",
+        "ur": "نرس",
+        "th": "พยาบาล"
+      }
+    },
+    {
+      "id": "register",
+      "word": "register",
+      "translation": "kayıt defteri",
+      "pronunciation": "/ˈredʒɪstə(r)/",
+      "example": "The teacher checks the class register every morning.",
+      "translations": {
+        "es-419": "registro",
+        "pt-BR": "livro de registro",
+        "id": "buku daftar, catatan",
+        "ar": "سجلّ",
+        "vi": "sổ đăng ký",
+        "hi": "रजिस्टर",
+        "ru": "книга записей, журнал",
+        "bn": "রেজিস্টার, খাতা",
+        "ur": "رجسٹر",
+        "th": "สมุดทะเบียน"
+      }
+    },
+    {
+      "id": "confess",
+      "word": "confess",
+      "translation": "itiraf etmek",
+      "pronunciation": "/kənˈfes/",
+      "example": "He decided to confess that he broke the window.",
+      "translations": {
+        "es-419": "confesar",
+        "pt-BR": "confessar",
+        "id": "mengaku",
+        "ar": "يعترف",
+        "vi": "thú nhận",
+        "hi": "क़बूल करना",
+        "ru": "признаваться",
+        "bn": "স্বীকার করা",
+        "ur": "اعتراف کرنا",
+        "th": "สารภาพ"
+      }
+    },
+    {
+      "id": "lie",
+      "word": "lie",
+      "translation": "yalan",
+      "pronunciation": "/laɪ/",
+      "example": "Never tell a lie to your friends.",
+      "translations": {
+        "es-419": "mentira",
+        "pt-BR": "mentira",
+        "id": "kebohongan",
+        "ar": "كذبة",
+        "vi": "lời nói dối",
+        "hi": "झूठ",
+        "ru": "ложь",
+        "bn": "মিথ্যে",
+        "ur": "جھوٹ",
+        "th": "คำโกหก"
+      }
+    },
+    {
+      "id": "grave",
+      "word": "grave",
+      "translation": "mezar",
+      "pronunciation": "/ɡreɪv/",
+      "example": "She visits her mother's grave.",
+      "translations": {
+        "es-419": "tumba",
+        "pt-BR": "túmulo",
+        "id": "makam, kuburan",
+        "ar": "قبر",
+        "vi": "ngôi mộ",
+        "hi": "कब्र",
+        "ru": "могила",
+        "bn": "কবর",
+        "ur": "قبر",
+        "th": "หลุมศพ"
+      }
+    },
+    {
+      "id": "warning",
+      "word": "warning",
+      "translation": "uyarı",
+      "pronunciation": "/ˈwɔːnɪŋ/",
+      "example": "She remembers her mother's warning.",
+      "translations": {
+        "es-419": "advertencia",
+        "pt-BR": "aviso",
+        "id": "peringatan",
+        "ar": "تحذير",
+        "vi": "lời cảnh báo, lời dặn",
+        "hi": "चेतावनी",
+        "ru": "предупреждение",
+        "bn": "সতর্কবাণী",
+        "ur": "تنبیہ، خبردار کرنا",
+        "th": "คำเตือน"
+      }
+    },
+    {
+      "id": "frightened",
+      "word": "frightened",
+      "translation": "korkmuş",
+      "pronunciation": "/ˈfraɪtnd/",
+      "example": "The frightened cat hides under the bed.",
+      "translations": {
+        "es-419": "asustado",
+        "pt-BR": "assustado, com medo",
+        "id": "ketakutan",
+        "ar": "خائف",
+        "vi": "sợ hãi",
+        "hi": "डरा हुआ",
+        "ru": "испуганный",
+        "bn": "ভয় পাওয়া",
+        "ur": "ڈرا ہوا",
+        "th": "ตกใจกลัว"
+      }
+    },
+    {
+      "id": "proof",
+      "word": "proof",
+      "translation": "kanıt",
+      "pronunciation": "/pruːf/",
+      "example": "He broke off a branch from each wood to keep as proof.",
+      "translations": {
+        "es-419": "prueba",
+        "pt-BR": "prova",
+        "id": "bukti",
+        "ar": "دليل",
+        "vi": "bằng chứng",
+        "hi": "सबूत",
+        "ru": "доказательство",
+        "bn": "প্রমাণ",
+        "ur": "ثبوت",
+        "th": "หลักฐาน"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "drawing",
+    "asylum",
+    "husband",
+    "signature",
+    "nurse",
+    "register",
+    "confess",
+    "lie",
+    "grave",
+    "warning",
+    "frightened",
+    "proof"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-woman-in-white-q1",
+      "sentenceIds": [
+        "cl-white-058",
+        "cl-white-072"
+      ],
+      "rationale": "Percival and Fosco take Laura's identity and money; Walter and Marian prove the truth."
+    },
+    {
+      "questionId": "classic-woman-in-white-q2",
+      "sentenceIds": [
+        "cl-white-017"
+      ],
+      "rationale": "Laura looked exactly like Anne Catherick."
+    },
+    {
+      "questionId": "classic-woman-in-white-q3",
+      "sentenceIds": [
+        "cl-white-053"
+      ],
+      "rationale": "Anne died in London, and the Count said she was Lady Glyde."
+    },
+    {
+      "questionId": "classic-woman-in-white-q4",
+      "sentenceIds": [
+        "cl-white-078"
+      ],
+      "rationale": "The register showed that he had no right to his name and money."
+    },
+    {
+      "questionId": "classic-woman-in-white-q5",
+      "sentenceIds": [
+        "cl-white-081",
+        "cl-white-082"
+      ],
+      "rationale": "Walter used the Count's fear of the secret society."
+    }
+  ],
+  "publicationBlockers": [
+    "Owner (oguz) approval of the English text, questions and translations required.",
+    "Native-speaker language review not done.",
+    "Cover artwork and asset mapping pending.",
+    "Source text hash pending (Gutenberg not reachable from the cloud session).",
+    "Publisher story creation, validation and publication pending."
+  ]
+}
