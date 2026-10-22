@@ -88,6 +88,7 @@ private fun coverResource(key: String) = when(key) {
     "cover_classic_romeo_juliet" -> R.drawable.cover_classic_romeo_juliet
     "cover_classic_jane_eyre" -> R.drawable.cover_classic_jane_eyre
     "cover_classic_dorian_gray" -> R.drawable.cover_classic_dorian_gray
+    "cover_classic_little_women" -> R.drawable.cover_classic_little_women
     else -> R.drawable.cover_quiet_morning
 }
 
