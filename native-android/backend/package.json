@@ -18,7 +18,8 @@
     "study-words:report": "node tools/study-words.mjs report",
     "story-pilot:preview": "node tools/story-pilot-preview.mjs",
     "story-pilot:drafts": "node tools/story-pilot-drafts.mjs",
-    "content:session": "node tools/content-session.mjs"
+    "content:session": "node tools/content-session.mjs",
+    "long-stories:publish": "node tools/long-stories-publish.mjs"
   },
   "devDependencies": {
     "@electric-sql/pglite": "0.3.14"
