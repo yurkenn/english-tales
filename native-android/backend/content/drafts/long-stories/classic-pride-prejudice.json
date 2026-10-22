@@ -1,0 +1,2400 @@
+{
+  "status": "draft",
+  "kind": "long-story",
+  "source": "long-story-classics-2026-10-22",
+  "reviewedBy": null,
+  "rights": {
+    "credit": "Jane Austen",
+    "sourceTitle": "Pride and Prejudice",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/1342",
+    "sourceTextUrl": "https://www.gutenberg.org/cache/epub/1342/pg1342-images.html",
+    "identifiedContributor": {
+      "name": "Jane Austen",
+      "role": "author",
+      "deathYear": 1817
+    },
+    "firstPublished": 1813,
+    "sourceCopyrightStatement": "Public domain in the USA",
+    "checkedOn": "2026-10-22",
+    "adaptation": "New graded B1 retelling written by English Tales, with English Tales translations. No modern abridgement, film script or translation was used.",
+    "turkeyAssessment": "Author died in 1817, more than 70 years before 2026, so the work is out of protection in Turkey and in life+70 countries.",
+    "rightsGuidanceUrl": "https://telifhaklari.ktb.gov.tr/TR-332373/telif-hakki-kac-yil-sureyle-korunur.html",
+    "sourceTextSha256": null,
+    "sourceTextSha256Pending": "Gutenberg is not reachable from the cloud session; record the source text hash on the owner's Mac before publication."
+  },
+  "editorialNotes": [
+    "B1 target: past tense narration, sentences of at most 20 words, about 1,300 words (about 10 minutes of reading).",
+    "Abridged retelling of the novel's main line: the Meryton ball and Darcy's insult, Jane's illness at Netherfield, Mr Collins's proposal and Charlotte's marriage, Wickham's story, Darcy's first proposal and letter, Pemberley, Lydia's elopement, Darcy's secret help, Lady Catherine's visit and the second proposal.",
+    "Mr and Mrs Gardiner are Mrs Bennet's brother and his wife, so translations use maternal uncle and his wife; Lady Catherine is Darcy's mother's sister.",
+    "Reading sections are editorial groupings for a future chapter view; the app currently shows the story as one text."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+  },
+  "readingSections": [
+    {
+      "title": "A new neighbour",
+      "firstSentenceId": "cl-pride-001",
+      "lastSentenceId": "cl-pride-025"
+    },
+    {
+      "title": "First impressions",
+      "firstSentenceId": "cl-pride-026",
+      "lastSentenceId": "cl-pride-053"
+    },
+    {
+      "title": "The letter",
+      "firstSentenceId": "cl-pride-054",
+      "lastSentenceId": "cl-pride-081"
+    },
+    {
+      "title": "Pemberley",
+      "firstSentenceId": "cl-pride-082",
+      "lastSentenceId": "cl-pride-115"
+    }
+  ],
+  "story": {
+    "id": "classic-pride-prejudice",
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "level": "B1",
+    "genre": "Günlük yaşam",
+    "description": "Gurur ve Önyargı. Zeki ve hazırcevap Elizabeth Bennet ile gururlu ve zengin Bay Darcy, ilk izlenimlerin yanıltıcı olabileceğini zor yoldan öğrenir. B1 düzeyinde uzun uyarlama. Uyarlama ve Türkçe çeviri: English Tales.",
+    "descriptions": {
+      "es-419": "Orgullo y prejuicio. La ingeniosa Elizabeth Bennet y el orgulloso y rico señor Darcy aprenden a la fuerza que las primeras impresiones pueden engañar. Adaptación larga de nivel B1. Adaptación: English Tales.",
+      "pt-BR": "Orgulho e preconceito. A espirituosa Elizabeth Bennet e o orgulhoso e rico senhor Darcy aprendem do jeito difícil que as primeiras impressões podem enganar. Adaptação longa de nível B1. Adaptação: English Tales.",
+      "id": "Kesombongan dan Prasangka. Elizabeth Bennet yang cerdas dan Tuan Darcy yang angkuh dan kaya belajar dengan susah payah bahwa kesan pertama bisa menipu. Adaptasi panjang tingkat B1. Adaptasi: English Tales.",
+      "ar": "كبرياء وتحامل. إليزابيث بينيت الذكية والسيد دارسي المتكبّر الثري يتعلّمان بالطريقة الصعبة أن الانطباعات الأولى قد تخدع. اقتباس طويل بمستوى B1. الاقتباس: English Tales.",
+      "vi": "Kiêu hãnh và định kiến. Cô Elizabeth Bennet thông minh lanh lợi và anh Darcy giàu có, kiêu ngạo học được một bài học khó khăn rằng ấn tượng đầu tiên có thể đánh lừa. Bản phóng tác dài trình độ B1. Phóng tác: English Tales.",
+      "hi": "गर्व और पूर्वाग्रह। हाज़िरजवाब एलिज़ाबेथ बेनेट और घमंडी, अमीर मिस्टर डार्सी मुश्किल से सीखते हैं कि पहली छाप धोखा दे सकती है। B1 स्तर का लंबा रूपांतरण। रूपांतरण: English Tales।",
+      "ru": "Гордость и предубеждение. Остроумная Элизабет Беннет и гордый богач мистер Дарси на собственном опыте узнают, что первое впечатление бывает обманчивым. Длинная адаптация уровня B1. Адаптация: English Tales.",
+      "bn": "অহংকার ও সংস্কার। বুদ্ধিমতী এলিজাবেথ বেনেট আর অহংকারী ধনী মিস্টার ডারসি কঠিন পথে শেখেন যে প্রথম দেখার ধারণা ভুল হতে পারে। B1 স্তরের দীর্ঘ রূপান্তর। রূপান্তর: English Tales।",
+      "ur": "غرور اور تعصب۔ حاضر جواب الزبتھ بینیٹ اور مغرور، امیر مسٹر ڈارسی مشکل سے سیکھتے ہیں کہ پہلا تاثر دھوکا دے سکتا ہے۔ B1 سطح کی طویل ماخوذ کہانی۔ ترتیب: English Tales۔",
+      "th": "ทิฐิและอคติ: เอลิซาเบธ เบนเน็ต หญิงสาวหัวไว กับคุณดาร์ซี ชายหนุ่มร่ำรวยผู้หยิ่งทะนง ได้เรียนรู้อย่างยากลำบากว่าความประทับใจแรกอาจหลอกตาได้ ฉบับดัดแปลงขนาดยาวระดับ B1 ดัดแปลงโดย English Tales"
+    },
+    "coverKey": "cover_classic_pride_prejudice",
+    "tags": [
+      "gunluk-yasam"
+    ],
+    "sentences": [
+      {
+        "id": "cl-pride-001",
+        "english": "It is a truth known to everyone that a rich single man must want a wife.",
+        "turkish": "Herkesin bildiği bir gerçektir ki zengin ve bekâr bir adamın mutlaka bir eşe ihtiyacı vardır.",
+        "translations": {
+          "es-419": "Es una verdad que todos conocen: un hombre rico y soltero necesita una esposa.",
+          "pt-BR": "É uma verdade que todos conhecem: um homem rico e solteiro precisa de uma esposa.",
+          "id": "Semua orang tahu bahwa seorang pria kaya yang masih lajang pasti menginginkan seorang istri.",
+          "ar": "من الحقائق التي يعرفها الجميع أن الرجل الغني الأعزب لا بدّ أن يريد زوجة.",
+          "vi": "Ai cũng biết một sự thật rằng một người đàn ông giàu có còn độc thân thì hẳn phải muốn có vợ.",
+          "hi": "यह सच सब जानते हैं कि एक अमीर, कुँवारे आदमी को पत्नी की ज़रूरत ज़रूर होती है।",
+          "ru": "Всем известна истина: богатому холостяку непременно нужна жена.",
+          "bn": "সবাই জানে, ধনী অবিবাহিত পুরুষের নিশ্চয়ই একজন স্ত্রী চাই।",
+          "ur": "یہ سچ سب جانتے ہیں کہ ایک امیر، کنوارے آدمی کو بیوی کی ضرورت ضرور ہوتی ہے۔",
+          "th": "ทุกคนรู้กันดีว่าชายโสดที่ร่ำรวยย่อมต้องการภรรยา"
+        }
+      },
+      {
+        "id": "cl-pride-002",
+        "english": "At least, Mrs Bennet believed this with all her heart.",
+        "turkish": "En azından Bayan Bennet buna bütün kalbiyle inanıyordu.",
+        "translations": {
+          "es-419": "Al menos, la señora Bennet lo creía con todo su corazón.",
+          "pt-BR": "Pelo menos, a senhora Bennet acreditava nisso de todo o coração.",
+          "id": "Setidaknya, Nyonya Bennet memercayainya dengan sepenuh hati.",
+          "ar": "على الأقل، كانت السيدة بينيت تؤمن بذلك من كل قلبها.",
+          "vi": "Ít nhất thì bà Bennet tin điều đó bằng cả trái tim.",
+          "hi": "कम से कम श्रीमती बेनेट तो पूरे दिल से यही मानती थीं।",
+          "ru": "По крайней мере, миссис Беннет верила в это всем сердцем.",
+          "bn": "অন্তত মিসেস বেনেট মনেপ্রাণে এটাই বিশ্বাস করতেন।",
+          "ur": "کم از کم مسز بینیٹ تو پورے دل سے یہی مانتی تھیں۔",
+          "th": "อย่างน้อยคุณนายเบนเน็ตก็เชื่อเรื่องนี้อย่างสุดหัวใจ"
+        }
+      },
+      {
+        "id": "cl-pride-003",
+        "english": "She lived with her husband and five daughters at Longbourn, a house near the town of Meryton.",
+        "turkish": "Kocası ve beş kızıyla birlikte Meryton kasabasının yakınındaki Longbourn adlı evde yaşıyordu.",
+        "translations": {
+          "es-419": "Vivía con su esposo y sus cinco hijas en Longbourn, una casa cerca del pueblo de Meryton.",
+          "pt-BR": "Ela morava com o marido e as cinco filhas em Longbourn, uma casa perto da cidade de Meryton.",
+          "id": "Ia tinggal bersama suami dan lima putrinya di Longbourn, sebuah rumah dekat kota Meryton.",
+          "ar": "كانت تعيش مع زوجها وبناتها الخمس في لونغبورن، وهو بيت قريب من بلدة ميريتون.",
+          "vi": "Bà sống cùng chồng và năm cô con gái ở Longbourn, một ngôi nhà gần thị trấn Meryton.",
+          "hi": "वे अपने पति और पाँच बेटियों के साथ मेरिटन क़स्बे के पास लॉन्गबॉर्न नाम के घर में रहती थीं।",
+          "ru": "Она жила с мужем и пятью дочерьми в Лонгборне, доме недалеко от городка Меритон.",
+          "bn": "তিনি স্বামী আর পাঁচ মেয়েকে নিয়ে মেরিটন শহরের কাছে লংবোর্ন নামের বাড়িতে থাকতেন।",
+          "ur": "وہ اپنے شوہر اور پانچ بیٹیوں کے ساتھ میریٹن قصبے کے قریب لانگبورن نامی گھر میں رہتی تھیں۔",
+          "th": "เธออาศัยอยู่กับสามีและลูกสาวห้าคนที่ลองบอร์น บ้านหลังหนึ่งใกล้เมืองเมริตัน"
+        }
+      },
+      {
+        "id": "cl-pride-004",
+        "english": "The girls were Jane, Elizabeth, Mary, Kitty and Lydia.",
+        "turkish": "Kızların adları Jane, Elizabeth, Mary, Kitty ve Lydia'ydı.",
+        "translations": {
+          "es-419": "Las muchachas se llamaban Jane, Elizabeth, Mary, Kitty y Lydia.",
+          "pt-BR": "As moças se chamavam Jane, Elizabeth, Mary, Kitty e Lydia.",
+          "id": "Nama gadis-gadis itu adalah Jane, Elizabeth, Mary, Kitty, dan Lydia.",
+          "ar": "كانت البنات جين وإليزابيث وماري وكيتي وليديا.",
+          "vi": "Các cô gái tên là Jane, Elizabeth, Mary, Kitty và Lydia.",
+          "hi": "लड़कियों के नाम थे जेन, एलिज़ाबेथ, मैरी, किटी और लिडिया।",
+          "ru": "Девочек звали Джейн, Элизабет, Мэри, Китти и Лидия.",
+          "bn": "মেয়েদের নাম ছিল জেন, এলিজাবেথ, মেরি, কিটি আর লিডিয়া।",
+          "ur": "لڑکیوں کے نام تھے جین، الزبتھ، میری، کٹی اور لیڈیا۔",
+          "th": "ลูกสาวทั้งห้าคือ เจน เอลิซาเบธ แมรี คิตตี้ และลิเดีย"
+        }
+      },
+      {
+        "id": "cl-pride-005",
+        "english": "The Bennets were not poor, but the house would not stay in the family.",
+        "turkish": "Bennet ailesi yoksul değildi, ama ev ailede kalmayacaktı.",
+        "translations": {
+          "es-419": "Los Bennet no eran pobres, pero la casa no se quedaría en la familia.",
+          "pt-BR": "Os Bennet não eram pobres, mas a casa não ficaria com a família.",
+          "id": "Keluarga Bennet tidak miskin, tetapi rumah itu tidak akan tetap menjadi milik keluarga.",
+          "ar": "لم تكن عائلة بينيت فقيرة، لكن البيت لن يبقى ملكًا للعائلة.",
+          "vi": "Nhà Bennet không nghèo, nhưng ngôi nhà sẽ không còn thuộc về gia đình.",
+          "hi": "बेनेट परिवार ग़रीब नहीं था, लेकिन घर परिवार के पास नहीं रहने वाला था।",
+          "ru": "Беннеты не были бедны, но дом не должен был остаться в семье.",
+          "bn": "বেনেট পরিবার গরিব ছিল না, কিন্তু বাড়িটা পরিবারের হাতে থাকবে না।",
+          "ur": "بینیٹ خاندان غریب نہیں تھا، لیکن گھر خاندان کے پاس نہیں رہنا تھا۔",
+          "th": "ครอบครัวเบนเน็ตไม่ได้ยากจน แต่บ้านหลังนี้จะไม่ได้อยู่ในครอบครัวต่อไป"
+        }
+      },
+      {
+        "id": "cl-pride-006",
+        "english": "When Mr Bennet died, a cousin called Mr Collins would get the estate.",
+        "turkish": "Bay Bennet öldüğünde malikâne Bay Collins adında bir kuzene geçecekti.",
+        "translations": {
+          "es-419": "Cuando muriera el señor Bennet, un primo llamado señor Collins heredaría la finca.",
+          "pt-BR": "Quando o senhor Bennet morresse, um primo chamado senhor Collins herdaria a propriedade.",
+          "id": "Saat Tuan Bennet meninggal, seorang sepupu bernama Tuan Collins akan mewarisi tanah itu.",
+          "ar": "فعندما يموت السيد بينيت، سيرث الضيعةَ ابنُ عمّ يُدعى السيد كولينز.",
+          "vi": "Khi ông Bennet qua đời, một người anh họ tên là Collins sẽ được thừa hưởng điền trang.",
+          "hi": "मिस्टर बेनेट की मृत्यु के बाद जागीर कॉलिन्स नाम के एक चचेरे भाई को मिलने वाली थी।",
+          "ru": "После смерти мистера Беннета поместье должно было перейти к кузену, мистеру Коллинзу.",
+          "bn": "মিস্টার বেনেট মারা গেলে জমিদারিটা পাবেন মিস্টার কলিন্স নামে এক আত্মীয়।",
+          "ur": "مسٹر بینیٹ کی وفات کے بعد جاگیر مسٹر کولنز نامی ایک کزن کو ملنی تھی۔",
+          "th": "เมื่อคุณเบนเน็ตเสียชีวิต ที่ดินทั้งหมดจะตกเป็นของญาติชื่อคุณคอลลินส์"
+        }
+      },
+      {
+        "id": "cl-pride-007",
+        "english": "So Mrs Bennet had one great dream: to see her daughters marry well.",
+        "turkish": "Bu yüzden Bayan Bennet'in tek bir büyük hayali vardı: kızlarını iyi evlilikler yaparken görmek.",
+        "translations": {
+          "es-419": "Por eso la señora Bennet tenía un gran sueño: ver a sus hijas casarse bien.",
+          "pt-BR": "Por isso a senhora Bennet tinha um grande sonho: ver as filhas casarem bem.",
+          "id": "Karena itu Nyonya Bennet punya satu mimpi besar: melihat putri-putrinya menikah dengan baik.",
+          "ar": "لذلك كان للسيدة بينيت حلم كبير واحد: أن ترى بناتها يتزوّجن زواجًا حسنًا.",
+          "vi": "Vì vậy bà Bennet có một giấc mơ lớn: thấy các con gái lấy được chồng tốt.",
+          "hi": "इसलिए श्रीमती बेनेट का एक ही बड़ा सपना था: अपनी बेटियों की अच्छी जगह शादी होते देखना।",
+          "ru": "Поэтому у миссис Беннет была одна большая мечта: удачно выдать дочерей замуж.",
+          "bn": "তাই মিসেস বেনেটের একটাই বড় স্বপ্ন ছিল: মেয়েদের ভালো ঘরে বিয়ে হতে দেখা।",
+          "ur": "اس لیے مسز بینیٹ کا ایک ہی بڑا خواب تھا: اپنی بیٹیوں کی اچھی جگہ شادی ہوتے دیکھنا۔",
+          "th": "คุณนายเบนเน็ตจึงมีความฝันใหญ่อยู่อย่างเดียว คือได้เห็นลูกสาวแต่งงานกับคนดี ๆ"
+        }
+      },
+      {
+        "id": "cl-pride-008",
+        "english": "One day she ran into the library with exciting news.",
+        "turkish": "Bir gün heyecan verici bir haberle kütüphaneye koştu.",
+        "translations": {
+          "es-419": "Un día entró corriendo en la biblioteca con una noticia emocionante.",
+          "pt-BR": "Um dia ela entrou correndo na biblioteca com uma notícia empolgante.",
+          "id": "Suatu hari ia berlari ke perpustakaan membawa kabar yang menggembirakan.",
+          "ar": "وذات يوم دخلت المكتبة مسرعة تحمل خبرًا مثيرًا.",
+          "vi": "Một hôm bà chạy vào thư viện với một tin hết sức thú vị.",
+          "hi": "एक दिन वे एक रोमांचक ख़बर लेकर पुस्तकालय में दौड़ी आईं।",
+          "ru": "Однажды она вбежала в библиотеку с волнующей новостью.",
+          "bn": "একদিন তিনি একটা দারুণ খবর নিয়ে ছুটে পাঠাগারে ঢুকলেন।",
+          "ur": "ایک دن وہ ایک دلچسپ خبر لے کر لائبریری میں دوڑی چلی آئیں۔",
+          "th": "วันหนึ่งเธอวิ่งเข้าไปในห้องสมุดพร้อมข่าวที่น่าตื่นเต้น"
+        }
+      },
+      {
+        "id": "cl-pride-009",
+        "english": "\"My dear, Netherfield Park has a new owner at last!\"",
+        "turkish": "\"Sevgili kocacığım, Netherfield Park'ın sonunda yeni bir sahibi var!\"",
+        "translations": {
+          "es-419": "\"¡Querido, por fin Netherfield Park tiene un nuevo dueño!\"",
+          "pt-BR": "\"Meu querido, Netherfield Park finalmente tem um novo dono!\"",
+          "id": "\"Suamiku sayang, akhirnya Netherfield Park punya pemilik baru!\"",
+          "ar": "\"يا عزيزي، أخيرًا صار لنذرفيلد بارك مالك جديد!\"",
+          "vi": "\"Ông ơi, cuối cùng Netherfield Park cũng có chủ mới rồi!\"",
+          "hi": "\"सुनिए जी, आख़िरकार नेदरफ़ील्ड पार्क को नया मालिक मिल गया!\"",
+          "ru": "«Дорогой мой, у Незерфилд-парка наконец новый хозяин!»",
+          "bn": "\"ওগো, শেষ পর্যন্ত নেদারফিল্ড পার্কের নতুন মালিক এসেছেন!\"",
+          "ur": "\"سنیے جی، آخرکار نیدرفیلڈ پارک کا نیا مالک آ گیا!\"",
+          "th": "\"ที่รัก ในที่สุดเนเธอร์ฟิลด์พาร์กก็มีเจ้าของคนใหม่แล้ว!\""
+        }
+      },
+      {
+        "id": "cl-pride-010",
+        "english": "\"His name is Mr Bingley, and he has five thousand pounds a year.\"",
+        "turkish": "\"Adı Bay Bingley ve yılda beş bin sterlin geliri var.\"",
+        "translations": {
+          "es-419": "\"Se llama señor Bingley y tiene cinco mil libras al año.\"",
+          "pt-BR": "\"Ele se chama senhor Bingley e tem cinco mil libras por ano.\"",
+          "id": "\"Namanya Tuan Bingley, dan penghasilannya lima ribu pound setahun.\"",
+          "ar": "\"اسمه السيد بينغلي، ودخله خمسة آلاف جنيه في السنة.\"",
+          "vi": "\"Anh ấy tên là Bingley, mỗi năm có năm nghìn bảng thu nhập.\"",
+          "hi": "\"उनका नाम मिस्टर बिंगले है, और उनकी सालाना आमदनी पाँच हज़ार पाउंड है।\"",
+          "ru": "«Его зовут мистер Бингли, и у него пять тысяч фунтов в год».",
+          "bn": "\"ওঁর নাম মিস্টার বিংলি, বছরে পাঁচ হাজার পাউন্ড আয়।\"",
+          "ur": "\"ان کا نام مسٹر بنگلے ہے، اور ان کی سالانہ آمدنی پانچ ہزار پاؤنڈ ہے۔\"",
+          "th": "\"เขาชื่อคุณบิงลีย์ มีรายได้ปีละห้าพันปอนด์\""
+        }
+      },
+      {
+        "id": "cl-pride-011",
+        "english": "Mr Bennet smiled behind his book and teased her, but he visited Mr Bingley the next day.",
+        "turkish": "Bay Bennet kitabının arkasından gülümseyip onunla dalga geçti, ama ertesi gün Bay Bingley'yi ziyaret etti.",
+        "translations": {
+          "es-419": "El señor Bennet sonrió detrás de su libro y se burló de ella, pero al día siguiente visitó al señor Bingley.",
+          "pt-BR": "O senhor Bennet sorriu atrás do livro e brincou com ela, mas no dia seguinte visitou o senhor Bingley.",
+          "id": "Tuan Bennet tersenyum di balik bukunya dan menggodanya, tetapi keesokan harinya ia mengunjungi Tuan Bingley.",
+          "ar": "ابتسم السيد بينيت خلف كتابه ومازحها، لكنه زار السيد بينغلي في اليوم التالي.",
+          "vi": "Ông Bennet mỉm cười sau cuốn sách và trêu bà, nhưng hôm sau ông vẫn đến thăm Bingley.",
+          "hi": "मिस्टर बेनेट किताब के पीछे मुस्कुराए और उन्हें छेड़ा, पर अगले ही दिन वे मिस्टर बिंगले से मिलने गए।",
+          "ru": "Мистер Беннет улыбнулся из-за книги и подшутил над ней, но на следующий день навестил мистера Бингли.",
+          "bn": "মিস্টার বেনেট বইয়ের আড়ালে হেসে তাঁকে খেপালেন, কিন্তু পরদিনই মিস্টার বিংলির সঙ্গে দেখা করতে গেলেন।",
+          "ur": "مسٹر بینیٹ کتاب کے پیچھے مسکرائے اور انہیں چھیڑا، لیکن اگلے ہی دن وہ مسٹر بنگلے سے ملنے گئے۔",
+          "th": "คุณเบนเน็ตยิ้มอยู่หลังหนังสือและแกล้งแซวภรรยา แต่วันรุ่งขึ้นเขาก็ไปเยี่ยมคุณบิงลีย์"
+        }
+      },
+      {
+        "id": "cl-pride-012",
+        "english": "Soon there was a ball in Meryton, and the whole town came to see the new neighbour.",
+        "turkish": "Çok geçmeden Meryton'da bir balo verildi ve bütün kasaba yeni komşuyu görmeye geldi.",
+        "translations": {
+          "es-419": "Pronto hubo un baile en Meryton, y todo el pueblo fue a ver al nuevo vecino.",
+          "pt-BR": "Logo houve um baile em Meryton, e a cidade inteira foi ver o novo vizinho.",
+          "id": "Tak lama kemudian ada pesta dansa di Meryton, dan seluruh kota datang untuk melihat tetangga baru itu.",
+          "ar": "وسرعان ما أُقيم حفل راقص في ميريتون، وجاءت البلدة كلها لترى الجار الجديد.",
+          "vi": "Chẳng bao lâu có một buổi khiêu vũ ở Meryton, và cả thị trấn đến xem người hàng xóm mới.",
+          "hi": "जल्द ही मेरिटन में एक नृत्य-समारोह हुआ, और पूरा क़स्बा नए पड़ोसी को देखने आया।",
+          "ru": "Вскоре в Меритоне устроили бал, и весь городок пришёл посмотреть на нового соседа.",
+          "bn": "কিছুদিনের মধ্যেই মেরিটনে একটা নাচের আসর বসল, আর পুরো শহর নতুন প্রতিবেশীকে দেখতে এল।",
+          "ur": "جلد ہی میریٹن میں ایک رقص کی محفل ہوئی، اور پورا قصبہ نئے پڑوسی کو دیکھنے آیا۔",
+          "th": "ไม่นานก็มีงานเต้นรำที่เมริตัน และคนทั้งเมืองก็มาดูเพื่อนบ้านคนใหม่"
+        }
+      },
+      {
+        "id": "cl-pride-013",
+        "english": "Mr Bingley was handsome, friendly and happy to dance with everyone.",
+        "turkish": "Bay Bingley yakışıklı ve cana yakındı, herkesle seve seve dans ediyordu.",
+        "translations": {
+          "es-419": "El señor Bingley era guapo, amable y bailaba con gusto con todas.",
+          "pt-BR": "O senhor Bingley era bonito, simpático e dançava com prazer com todas.",
+          "id": "Tuan Bingley tampan, ramah, dan senang berdansa dengan siapa saja.",
+          "ar": "كان السيد بينغلي وسيمًا ودودًا، يسعده أن يرقص مع الجميع.",
+          "vi": "Bingley đẹp trai, thân thiện và vui vẻ khiêu vũ với mọi người.",
+          "hi": "मिस्टर बिंगले सुंदर और मिलनसार थे, और सबके साथ ख़ुशी से नाचते थे।",
+          "ru": "Мистер Бингли был красив, приветлив и охотно танцевал со всеми.",
+          "bn": "মিস্টার বিংলি সুদর্শন আর মিশুক ছিলেন, সবার সঙ্গেই খুশি মনে নাচলেন।",
+          "ur": "مسٹر بنگلے خوبصورت اور ملنسار تھے، اور سب کے ساتھ خوشی سے ناچتے تھے۔",
+          "th": "คุณบิงลีย์รูปหล่อ เป็นมิตร และยินดีเต้นรำกับทุกคน"
+        }
+      },
+      {
+        "id": "cl-pride-014",
+        "english": "He danced twice with Jane, the eldest and kindest of the sisters.",
+        "turkish": "Kız kardeşlerin en büyüğü ve en iyi kalplisi olan Jane'le iki kez dans etti.",
+        "translations": {
+          "es-419": "Bailó dos veces con Jane, la mayor y la más bondadosa de las hermanas.",
+          "pt-BR": "Ele dançou duas vezes com Jane, a mais velha e a mais bondosa das irmãs.",
+          "id": "Ia berdansa dua kali dengan Jane, si sulung yang paling baik hati di antara saudari-saudarinya.",
+          "ar": "رقص مرتين مع جين، كبرى الأخوات وأطيبهنّ قلبًا.",
+          "vi": "Anh khiêu vũ hai lần với Jane, cô chị cả và hiền hậu nhất trong các chị em.",
+          "hi": "उन्होंने बहनों में सबसे बड़ी और सबसे नेकदिल जेन के साथ दो बार नृत्य किया।",
+          "ru": "Он дважды танцевал с Джейн, старшей и самой доброй из сестёр.",
+          "bn": "তিনি দুবার নাচলেন জেনের সঙ্গে, যে বোনদের মধ্যে সবচেয়ে বড় আর সবচেয়ে দয়ালু।",
+          "ur": "انہوں نے بہنوں میں سب سے بڑی اور سب سے نیک دل جین کے ساتھ دو بار رقص کیا۔",
+          "th": "เขาเต้นรำกับเจนถึงสองครั้ง เจนเป็นพี่คนโตและใจดีที่สุดในบรรดาพี่น้อง"
+        }
+      },
+      {
+        "id": "cl-pride-015",
+        "english": "His friend Mr Darcy was even richer, with a great estate called Pemberley in Derbyshire.",
+        "turkish": "Arkadaşı Bay Darcy ise daha da zengindi, Derbyshire'da Pemberley adında büyük bir malikânesi vardı.",
+        "translations": {
+          "es-419": "Su amigo, el señor Darcy, era aún más rico y tenía una gran finca llamada Pemberley en Derbyshire.",
+          "pt-BR": "Seu amigo, o senhor Darcy, era ainda mais rico e tinha uma grande propriedade chamada Pemberley, em Derbyshire.",
+          "id": "Temannya, Tuan Darcy, bahkan lebih kaya, dengan tanah luas bernama Pemberley di Derbyshire.",
+          "ar": "أما صديقه السيد دارسي فكان أغنى منه، ويملك ضيعة عظيمة اسمها بيمبرلي في ديربيشاير.",
+          "vi": "Bạn anh, Darcy, còn giàu hơn nữa, với một điền trang lớn tên là Pemberley ở Derbyshire.",
+          "hi": "उनके दोस्त मिस्टर डार्सी और भी अमीर थे, डर्बीशायर में उनकी पेम्बर्ली नाम की बड़ी जागीर थी।",
+          "ru": "Его друг мистер Дарси был ещё богаче: ему принадлежало большое поместье Пемберли в Дербишире.",
+          "bn": "তাঁর বন্ধু মিস্টার ডারসি আরও ধনী, ডার্বিশায়ারে পেমবার্লি নামে তাঁর বিশাল জমিদারি।",
+          "ur": "ان کے دوست مسٹر ڈارسی اس سے بھی امیر تھے، ڈربی شائر میں ان کی پیمبرلی نامی بڑی جاگیر تھی۔",
+          "th": "คุณดาร์ซี เพื่อนของเขา รวยยิ่งกว่า และมีที่ดินผืนใหญ่ชื่อเพมเบอร์ลีย์ในเดอร์บีไชร์"
+        }
+      },
+      {
+        "id": "cl-pride-016",
+        "english": "He was tall and handsome, but he looked bored and cold all evening.",
+        "turkish": "Uzun boylu ve yakışıklıydı, ama bütün akşam sıkılmış ve soğuk görünüyordu.",
+        "translations": {
+          "es-419": "Era alto y guapo, pero pareció aburrido y frío toda la noche.",
+          "pt-BR": "Era alto e bonito, mas pareceu entediado e frio a noite toda.",
+          "id": "Ia tinggi dan tampan, tetapi sepanjang malam ia tampak bosan dan dingin.",
+          "ar": "كان طويلًا وسيمًا، لكنه بدا ضجرًا باردًا طوال السهرة.",
+          "vi": "Anh cao ráo, đẹp trai, nhưng suốt buổi tối trông chán chường và lạnh lùng.",
+          "hi": "वे लंबे और सुंदर थे, पर पूरी शाम ऊबे हुए और रूखे दिखे।",
+          "ru": "Он был высок и красив, но весь вечер выглядел скучающим и холодным.",
+          "bn": "তিনি লম্বা আর সুদর্শন, কিন্তু সারা সন্ধ্যা বিরক্ত আর শীতল দেখাল তাঁকে।",
+          "ur": "وہ لمبے اور خوبصورت تھے، مگر پوری شام اکتائے ہوئے اور سرد مزاج نظر آئے۔",
+          "th": "เขาสูงและรูปหล่อ แต่ตลอดทั้งค่ำดูเบื่อหน่ายและเย็นชา"
+        }
+      },
+      {
+        "id": "cl-pride-017",
+        "english": "He danced only with Bingley's sisters and spoke to no one else.",
+        "turkish": "Yalnızca Bingley'nin kız kardeşleriyle dans etti ve başka kimseyle konuşmadı.",
+        "translations": {
+          "es-419": "Solo bailó con las hermanas de Bingley y no habló con nadie más.",
+          "pt-BR": "Dançou só com as irmãs de Bingley e não falou com mais ninguém.",
+          "id": "Ia hanya berdansa dengan saudari-saudari Bingley dan tidak berbicara dengan orang lain.",
+          "ar": "لم يرقص إلا مع أختَي بينغلي، ولم يكلّم أحدًا غيرهما.",
+          "vi": "Anh chỉ khiêu vũ với các chị em của Bingley và không nói chuyện với ai khác.",
+          "hi": "उन्होंने सिर्फ़ बिंगले की बहनों के साथ नृत्य किया और किसी और से बात नहीं की।",
+          "ru": "Он танцевал только с сёстрами Бингли и больше ни с кем не разговаривал.",
+          "bn": "তিনি শুধু বিংলির বোনদের সঙ্গে নাচলেন, আর কারও সঙ্গে কথাই বললেন না।",
+          "ur": "انہوں نے صرف بنگلے کی بہنوں کے ساتھ رقص کیا اور کسی اور سے بات نہیں کی۔",
+          "th": "เขาเต้นรำกับน้องสาวของบิงลีย์เท่านั้น และไม่พูดกับใครอีกเลย"
+        }
+      },
+      {
+        "id": "cl-pride-018",
+        "english": "At one point Bingley begged him to dance with Elizabeth.",
+        "turkish": "Bir ara Bingley, Elizabeth'le dans etmesi için ona yalvardı.",
+        "translations": {
+          "es-419": "En un momento, Bingley le rogó que bailara con Elizabeth.",
+          "pt-BR": "Em certo momento, Bingley implorou que ele dançasse com Elizabeth.",
+          "id": "Pada suatu saat Bingley memohon agar ia berdansa dengan Elizabeth.",
+          "ar": "وفي لحظة ما، توسّل إليه بينغلي أن يرقص مع إليزابيث.",
+          "vi": "Có lúc Bingley nài nỉ anh khiêu vũ với Elizabeth.",
+          "hi": "एक बार बिंगले ने उनसे एलिज़ाबेथ के साथ नाचने की मिन्नत की।",
+          "ru": "В какой-то момент Бингли стал упрашивать его потанцевать с Элизабет.",
+          "bn": "একসময় বিংলি তাঁকে এলিজাবেথের সঙ্গে নাচার জন্য অনুরোধ করলেন।",
+          "ur": "ایک موقع پر بنگلے نے ان سے الزبتھ کے ساتھ ناچنے کی منت کی۔",
+          "th": "มีอยู่ครั้งหนึ่งที่บิงลีย์อ้อนวอนให้เขาเต้นรำกับเอลิซาเบธ"
+        }
+      },
+      {
+        "id": "cl-pride-019",
+        "english": "Darcy glanced at her and said, \"She is not pretty enough to tempt me.\"",
+        "turkish": "Darcy ona bir göz atıp, \"Beni cezbedecek kadar güzel değil,\" dedi.",
+        "translations": {
+          "es-419": "Darcy la miró un instante y dijo: \"No es lo bastante bonita para tentarme\".",
+          "pt-BR": "Darcy olhou de relance para ela e disse: \"Ela não é bonita o bastante para me tentar\".",
+          "id": "Darcy meliriknya dan berkata, \"Dia tidak cukup cantik untuk menggodaku.\"",
+          "ar": "نظر إليها دارسي نظرة سريعة وقال: \"ليست جميلة بما يكفي لتغريني.\"",
+          "vi": "Darcy liếc nhìn cô rồi nói: \"Cô ấy không đủ xinh để làm tôi động lòng.\"",
+          "hi": "डार्सी ने उस पर एक नज़र डाली और बोले, \"वह इतनी सुंदर नहीं कि मुझे लुभा सके।\"",
+          "ru": "Дарси взглянул на неё и сказал: «Она недостаточно хороша, чтобы меня соблазнить».",
+          "bn": "ডারসি তার দিকে একবার তাকিয়ে বললেন, \"আমাকে টানার মতো সুন্দরী সে নয়।\"",
+          "ur": "ڈارسی نے اس پر ایک نظر ڈالی اور بولے، \"وہ اتنی خوبصورت نہیں کہ مجھے لبھا سکے۔\"",
+          "th": "ดาร์ซีชำเลืองมองเธอแล้วพูดว่า \"เธอไม่สวยพอจะทำให้ผมสนใจหรอก\""
+        }
+      },
+      {
+        "id": "cl-pride-020",
+        "english": "Elizabeth heard every word.",
+        "turkish": "Elizabeth her kelimeyi duydu.",
+        "translations": {
+          "es-419": "Elizabeth oyó cada palabra.",
+          "pt-BR": "Elizabeth ouviu cada palavra.",
+          "id": "Elizabeth mendengar setiap katanya.",
+          "ar": "سمعت إليزابيث كل كلمة.",
+          "vi": "Elizabeth nghe thấy từng lời.",
+          "hi": "एलिज़ाबेथ ने एक-एक शब्द सुन लिया।",
+          "ru": "Элизабет слышала каждое слово.",
+          "bn": "এলিজাবেথ প্রতিটা কথা শুনে ফেলল।",
+          "ur": "الزبتھ نے ایک ایک لفظ سن لیا۔",
+          "th": "เอลิซาเบธได้ยินทุกคำ"
+        }
+      },
+      {
+        "id": "cl-pride-021",
+        "english": "She laughed about it with her friend Charlotte Lucas, but the words stayed with her.",
+        "turkish": "Arkadaşı Charlotte Lucas'la buna güldü, ama o sözler aklından çıkmadı.",
+        "translations": {
+          "es-419": "Se rio de ello con su amiga Charlotte Lucas, pero las palabras se le quedaron grabadas.",
+          "pt-BR": "Ela riu disso com a amiga Charlotte Lucas, mas as palavras ficaram na sua cabeça.",
+          "id": "Ia menertawakannya bersama sahabatnya, Charlotte Lucas, tetapi kata-kata itu terus membekas.",
+          "ar": "ضحكت من ذلك مع صديقتها شارلوت لوكاس، لكن الكلمات بقيت في ذهنها.",
+          "vi": "Cô cười chuyện đó với bạn mình là Charlotte Lucas, nhưng những lời ấy cứ ở mãi trong đầu cô.",
+          "hi": "उसने अपनी सहेली शार्लट लूकस के साथ इस पर हँसी उड़ाई, पर वे शब्द उसके मन में रह गए।",
+          "ru": "Она посмеялась над этим с подругой Шарлоттой Лукас, но слова запомнились ей.",
+          "bn": "বান্ধবী শার্লট লুকাসের সঙ্গে সে ব্যাপারটা নিয়ে হাসল, কিন্তু কথাগুলো মনে গেঁথে রইল।",
+          "ur": "اس نے اپنی سہیلی شارلٹ لوکس کے ساتھ اس پر ہنسی اڑائی، مگر وہ الفاظ اس کے دل میں رہ گئے۔",
+          "th": "เธอหัวเราะเรื่องนี้กับชาร์ลอตต์ ลูคัส เพื่อนของเธอ แต่คำพูดนั้นยังติดอยู่ในใจ"
+        }
+      },
+      {
+        "id": "cl-pride-022",
+        "english": "\"He is the proudest man in the world,\" said Mrs Bennet.",
+        "turkish": "\"Dünyanın en kibirli adamı,\" dedi Bayan Bennet.",
+        "translations": {
+          "es-419": "\"Es el hombre más orgulloso del mundo\", dijo la señora Bennet.",
+          "pt-BR": "\"Ele é o homem mais orgulhoso do mundo\", disse a senhora Bennet.",
+          "id": "\"Dia pria paling angkuh di dunia,\" kata Nyonya Bennet.",
+          "ar": "قالت السيدة بينيت: \"إنه أكثر رجل متكبّر في الدنيا.\"",
+          "vi": "\"Anh ta là người kiêu ngạo nhất trên đời,\" bà Bennet nói.",
+          "hi": "\"वह दुनिया का सबसे घमंडी आदमी है,\" श्रीमती बेनेट ने कहा।",
+          "ru": "«Он самый гордый человек на свете», — сказала миссис Беннет.",
+          "bn": "\"ও দুনিয়ার সবচেয়ে অহংকারী লোক,\" বললেন মিসেস বেনেট।",
+          "ur": "\"وہ دنیا کا سب سے مغرور آدمی ہے،\" مسز بینیٹ نے کہا۔",
+          "th": "\"เขาเป็นผู้ชายที่หยิ่งที่สุดในโลก\" คุณนายเบนเน็ตกล่าว"
+        }
+      },
+      {
+        "id": "cl-pride-023",
+        "english": "\"I would not dance with him if he asked me,\" Elizabeth replied.",
+        "turkish": "\"Bana teklif etse bile onunla dans etmezdim,\" diye karşılık verdi Elizabeth.",
+        "translations": {
+          "es-419": "\"No bailaría con él aunque me lo pidiera\", respondió Elizabeth.",
+          "pt-BR": "\"Eu não dançaria com ele nem se ele me pedisse\", respondeu Elizabeth.",
+          "id": "\"Aku tidak akan mau berdansa dengannya meskipun ia memintaku,\" jawab Elizabeth.",
+          "ar": "ردّت إليزابيث: \"لن أرقص معه حتى لو طلب مني.\"",
+          "vi": "\"Dù anh ta có mời, tôi cũng chẳng khiêu vũ với anh ta,\" Elizabeth đáp.",
+          "hi": "\"वे मुझसे कहें, तब भी मैं उनके साथ नहीं नाचूँगी,\" एलिज़ाबेथ ने जवाब दिया।",
+          "ru": "«Я бы не пошла с ним танцевать, даже если бы он пригласил», — ответила Элизабет.",
+          "bn": "\"উনি বললেও আমি ওঁর সঙ্গে নাচতাম না,\" উত্তর দিল এলিজাবেথ।",
+          "ur": "\"وہ مجھ سے کہیں تب بھی میں ان کے ساتھ نہ ناچوں،\" الزبتھ نے جواب دیا۔",
+          "th": "\"ต่อให้เขาขอ ฉันก็ไม่เต้นรำกับเขาหรอก\" เอลิซาเบธตอบ"
+        }
+      },
+      {
+        "id": "cl-pride-024",
+        "english": "Only Charlotte said something different.",
+        "turkish": "Yalnızca Charlotte farklı bir şey söyledi.",
+        "translations": {
+          "es-419": "Solo Charlotte dijo algo distinto.",
+          "pt-BR": "Só Charlotte disse algo diferente.",
+          "id": "Hanya Charlotte yang berkata lain.",
+          "ar": "وحدها شارلوت قالت شيئًا مختلفًا.",
+          "vi": "Chỉ có Charlotte nói khác.",
+          "hi": "सिर्फ़ शार्लट ने कुछ अलग कहा।",
+          "ru": "Только Шарлотта сказала иначе.",
+          "bn": "শুধু শার্লট অন্য কথা বলল।",
+          "ur": "صرف شارلٹ نے کچھ مختلف کہا۔",
+          "th": "มีเพียงชาร์ลอตต์ที่พูดต่างออกไป"
+        }
+      },
+      {
+        "id": "cl-pride-025",
+        "english": "\"A man with so much money has some right to be proud.\"",
+        "turkish": "\"Bu kadar parası olan bir adamın biraz gururlu olmaya hakkı var.\"",
+        "translations": {
+          "es-419": "\"Un hombre con tanto dinero tiene cierto derecho a ser orgulloso\".",
+          "pt-BR": "\"Um homem com tanto dinheiro tem certo direito de ser orgulhoso.\"",
+          "id": "\"Pria dengan uang sebanyak itu punya sedikit hak untuk merasa bangga.\"",
+          "ar": "\"رجل يملك كل هذا المال له بعض الحق في أن يكون فخورًا.\"",
+          "vi": "\"Một người đàn ông nhiều tiền như thế cũng có chút quyền được kiêu hãnh.\"",
+          "hi": "\"जिस आदमी के पास इतना पैसा हो, उसे थोड़ा गर्व करने का हक़ है।\"",
+          "ru": "«Человек с такими деньгами имеет некоторое право гордиться».",
+          "bn": "\"এত টাকার মালিকের একটু গর্ব করার অধিকার আছে।\"",
+          "ur": "\"جس آدمی کے پاس اتنا پیسہ ہو، اسے تھوڑا فخر کرنے کا حق ہے۔\"",
+          "th": "\"ผู้ชายที่มีเงินมากขนาดนั้นก็มีสิทธิ์จะภูมิใจในตัวเองอยู่บ้าง\""
+        }
+      },
+      {
+        "id": "cl-pride-026",
+        "english": "Over the next weeks, Bingley and Jane met often, and they clearly liked each other.",
+        "turkish": "Sonraki haftalarda Bingley ile Jane sık sık görüştüler ve birbirlerinden hoşlandıkları belliydi.",
+        "translations": {
+          "es-419": "En las semanas siguientes, Bingley y Jane se vieron a menudo, y era claro que se gustaban.",
+          "pt-BR": "Nas semanas seguintes, Bingley e Jane se encontraram muitas vezes, e era claro que gostavam um do outro.",
+          "id": "Selama beberapa minggu berikutnya, Bingley dan Jane sering bertemu, dan jelas mereka saling suka.",
+          "ar": "وفي الأسابيع التالية، كثرت لقاءات بينغلي وجين، وكان واضحًا أن كلًّا منهما معجب بالآخر.",
+          "vi": "Những tuần sau đó, Bingley và Jane gặp nhau thường xuyên, và rõ ràng họ có cảm tình với nhau.",
+          "hi": "अगले कुछ हफ़्तों में बिंगले और जेन अक्सर मिले, और साफ़ था कि वे एक-दूसरे को पसंद करते थे।",
+          "ru": "В следующие недели Бингли и Джейн часто встречались, и было видно, что они нравятся друг другу.",
+          "bn": "পরের কয়েক সপ্তাহ বিংলি আর জেন প্রায়ই দেখা করলেন, আর স্পষ্ট বোঝা যাচ্ছিল তাঁরা একে অপরকে পছন্দ করেন।",
+          "ur": "اگلے چند ہفتوں میں بنگلے اور جین اکثر ملے، اور صاف تھا کہ وہ ایک دوسرے کو پسند کرتے تھے۔",
+          "th": "ในสัปดาห์ต่อมา บิงลีย์กับเจนพบกันบ่อย และเห็นได้ชัดว่าทั้งคู่ชอบพอกัน"
+        }
+      },
+      {
+        "id": "cl-pride-027",
+        "english": "Jane was quiet and gentle, so she did not show her feelings very openly.",
+        "turkish": "Jane sessiz ve yumuşak huyluydu, bu yüzden duygularını pek açıkça göstermiyordu.",
+        "translations": {
+          "es-419": "Jane era callada y dulce, así que no mostraba mucho sus sentimientos.",
+          "pt-BR": "Jane era quieta e meiga, por isso não mostrava muito os seus sentimentos.",
+          "id": "Jane pendiam dan lembut, jadi ia tidak terlalu menunjukkan perasaannya.",
+          "ar": "كانت جين هادئة رقيقة، فلم تكن تُظهر مشاعرها بوضوح.",
+          "vi": "Jane trầm lặng và dịu dàng nên không bộc lộ tình cảm của mình rõ ràng lắm.",
+          "hi": "जेन शांत और कोमल स्वभाव की थी, इसलिए वह अपनी भावनाएँ खुलकर नहीं दिखाती थी।",
+          "ru": "Джейн была тихой и мягкой и не показывала свои чувства открыто.",
+          "bn": "জেন শান্ত আর কোমল স্বভাবের, তাই সে নিজের অনুভূতি খুব একটা প্রকাশ করত না।",
+          "ur": "جین خاموش اور نرم مزاج تھی، اس لیے وہ اپنے جذبات کھل کر ظاہر نہیں کرتی تھی۔",
+          "th": "เจนเป็นคนเงียบและอ่อนโยน จึงไม่ค่อยแสดงความรู้สึกออกมาให้เห็นชัด"
+        }
+      },
+      {
+        "id": "cl-pride-028",
+        "english": "One rainy day Jane rode to Netherfield and caught a bad cold.",
+        "turkish": "Yağmurlu bir günde Jane at sırtında Netherfield'a gitti ve kötü bir soğuk algınlığına yakalandı.",
+        "translations": {
+          "es-419": "Un día de lluvia, Jane fue a caballo a Netherfield y se resfrió mucho.",
+          "pt-BR": "Num dia chuvoso, Jane foi a cavalo até Netherfield e pegou um forte resfriado.",
+          "id": "Pada suatu hari hujan, Jane berkuda ke Netherfield dan terserang pilek berat.",
+          "ar": "في يوم ممطر، ركبت جين الحصان إلى نذرفيلد وأُصيبت بزكام شديد.",
+          "vi": "Một ngày mưa, Jane cưỡi ngựa đến Netherfield và bị cảm nặng.",
+          "hi": "बारिश के एक दिन जेन घोड़े पर नेदरफ़ील्ड गई और उसे बुरा ज़ुकाम हो गया।",
+          "ru": "В дождливый день Джейн поехала верхом в Незерфилд и сильно простудилась.",
+          "bn": "এক বৃষ্টির দিনে জেন ঘোড়ায় চড়ে নেদারফিল্ডে গেল আর খুব ঠান্ডা লাগিয়ে ফেলল।",
+          "ur": "بارش کے ایک دن جین گھوڑے پر نیدرفیلڈ گئی اور اسے سخت زکام ہو گیا۔",
+          "th": "วันหนึ่งที่ฝนตก เจนขี่ม้าไปเนเธอร์ฟิลด์และเป็นหวัดหนัก"
+        }
+      },
+      {
+        "id": "cl-pride-029",
+        "english": "She had to stay there, and Elizabeth walked three miles across muddy fields to look after her.",
+        "turkish": "Orada kalmak zorunda kaldı, Elizabeth de ona bakmak için çamurlu tarlalardan üç mil yürüdü.",
+        "translations": {
+          "es-419": "Tuvo que quedarse allí, y Elizabeth caminó tres millas por campos llenos de barro para cuidarla.",
+          "pt-BR": "Ela teve de ficar lá, e Elizabeth andou cinco quilômetros por campos enlameados para cuidar dela.",
+          "id": "Ia harus tinggal di sana, dan Elizabeth berjalan tiga mil melintasi ladang berlumpur untuk merawatnya.",
+          "ar": "اضطرت إلى البقاء هناك، فمشت إليزابيث ثلاثة أميال عبر حقول موحلة لتعتني بها.",
+          "vi": "Cô phải ở lại đó, và Elizabeth đã đi bộ ba dặm qua những cánh đồng lầy lội để chăm sóc chị.",
+          "hi": "उसे वहीं रुकना पड़ा, और एलिज़ाबेथ उसकी देखभाल के लिए कीचड़ भरे खेतों से तीन मील पैदल चलकर आई।",
+          "ru": "Ей пришлось остаться там, и Элизабет прошла пешком три мили по грязным полям, чтобы ухаживать за ней.",
+          "bn": "তাকে সেখানেই থাকতে হলো, আর এলিজাবেথ তার দেখাশোনা করতে কাদাভরা মাঠ পেরিয়ে তিন মাইল হেঁটে এল।",
+          "ur": "اسے وہیں رکنا پڑا، اور الزبتھ اس کی دیکھ بھال کے لیے کیچڑ بھرے کھیتوں سے تین میل پیدل چل کر آئی۔",
+          "th": "เจนต้องพักอยู่ที่นั่น และเอลิซาเบธก็เดินข้ามทุ่งที่เต็มไปด้วยโคลนถึงสามไมล์เพื่อไปดูแลพี่สาว"
+        }
+      },
+      {
+        "id": "cl-pride-030",
+        "english": "Bingley's sisters laughed at her dirty dress behind her back.",
+        "turkish": "Bingley'nin kız kardeşleri arkasından onun çamurlu elbisesine güldüler.",
+        "translations": {
+          "es-419": "Las hermanas de Bingley se rieron a sus espaldas de su vestido sucio.",
+          "pt-BR": "As irmãs de Bingley riram pelas costas do vestido sujo dela.",
+          "id": "Saudari-saudari Bingley menertawakan gaunnya yang kotor di belakangnya.",
+          "ar": "سخرت أختا بينغلي من فستانها المتّسخ من وراء ظهرها.",
+          "vi": "Các chị em của Bingley cười chê chiếc váy lấm bẩn của cô sau lưng.",
+          "hi": "बिंगले की बहनें पीठ पीछे उसकी गंदी पोशाक पर हँसीं।",
+          "ru": "Сёстры Бингли за её спиной смеялись над её грязным платьем.",
+          "bn": "বিংলির বোনেরা আড়ালে তার কাদামাখা পোশাক নিয়ে হাসাহাসি করল।",
+          "ur": "بنگلے کی بہنیں پیٹھ پیچھے اس کے میلے لباس پر ہنسیں۔",
+          "th": "น้องสาวของบิงลีย์หัวเราะเยาะชุดเปื้อนโคลนของเธอลับหลัง"
+        }
+      },
+      {
+        "id": "cl-pride-031",
+        "english": "But Darcy thought that the walk had made her eyes look brighter.",
+        "turkish": "Ama Darcy, yürüyüşün onun gözlerini daha da parlak gösterdiğini düşündü.",
+        "translations": {
+          "es-419": "Pero Darcy pensó que la caminata había hecho brillar más sus ojos.",
+          "pt-BR": "Mas Darcy achou que a caminhada tinha deixado os olhos dela mais brilhantes.",
+          "id": "Namun Darcy berpikir bahwa perjalanan itu membuat matanya tampak lebih bersinar.",
+          "ar": "لكن دارسي رأى أن المشي جعل عينيها أكثر بريقًا.",
+          "vi": "Nhưng Darcy lại nghĩ chuyến đi bộ đã làm đôi mắt cô sáng hơn.",
+          "hi": "लेकिन डार्सी को लगा कि पैदल चलने से उसकी आँखें और चमक उठी थीं।",
+          "ru": "А Дарси подумал, что после прогулки её глаза стали ещё ярче.",
+          "bn": "কিন্তু ডারসির মনে হলো, হাঁটার পর তার চোখ দুটো আরও উজ্জ্বল দেখাচ্ছে।",
+          "ur": "لیکن ڈارسی کو لگا کہ پیدل چلنے سے اس کی آنکھیں اور چمک اٹھی تھیں۔",
+          "th": "แต่ดาร์ซีกลับคิดว่าการเดินทำให้ดวงตาของเธอดูสดใสขึ้น"
+        }
+      },
+      {
+        "id": "cl-pride-032",
+        "english": "He began to watch her, and he liked her quick mind and her lively talk.",
+        "turkish": "Onu izlemeye başladı; zekâsının hızını ve canlı konuşmasını beğendi.",
+        "translations": {
+          "es-419": "Empezó a observarla, y le gustaron su mente rápida y su conversación viva.",
+          "pt-BR": "Ele começou a observá-la e gostou da sua inteligência rápida e da sua conversa animada.",
+          "id": "Ia mulai memperhatikannya, dan ia menyukai kecerdasannya serta caranya berbicara yang hidup.",
+          "ar": "بدأ يراقبها، وأعجبه ذكاؤها السريع وحديثها المفعم بالحيوية.",
+          "vi": "Anh bắt đầu để ý cô, và thích trí óc nhanh nhạy cùng lối nói chuyện sôi nổi của cô.",
+          "hi": "वे उसे ध्यान से देखने लगे, और उन्हें उसकी तेज़ बुद्धि और जीवंत बातें अच्छी लगीं।",
+          "ru": "Он стал наблюдать за ней, и ему понравились её живой ум и бойкая речь.",
+          "bn": "তিনি তাকে লক্ষ করতে লাগলেন, তার তীক্ষ্ণ বুদ্ধি আর প্রাণবন্ত কথা তাঁর ভালো লাগল।",
+          "ur": "وہ اسے غور سے دیکھنے لگے، اور انہیں اس کی تیز ذہانت اور زندہ دل باتیں اچھی لگیں۔",
+          "th": "เขาเริ่มสังเกตเธอ และชอบความคิดที่ว่องไวกับการพูดจาที่มีชีวิตชีวาของเธอ"
+        }
+      },
+      {
+        "id": "cl-pride-033",
+        "english": "Elizabeth noticed him watching and decided that he was looking for faults.",
+        "turkish": "Elizabeth onun kendisini izlediğini fark etti ve kusur aradığına karar verdi.",
+        "translations": {
+          "es-419": "Elizabeth notó que la miraba y decidió que le estaba buscando defectos.",
+          "pt-BR": "Elizabeth percebeu que ele a observava e concluiu que procurava defeitos nela.",
+          "id": "Elizabeth menyadari ia sedang diperhatikan dan menyimpulkan bahwa Darcy sedang mencari-cari kesalahannya.",
+          "ar": "لاحظت إليزابيث أنه يراقبها، فظنّت أنه يبحث عن عيوبها.",
+          "vi": "Elizabeth nhận ra anh đang nhìn mình và cho rằng anh đang tìm lỗi của cô.",
+          "hi": "एलिज़ाबेथ ने उन्हें देखते हुए पाया और तय कर लिया कि वे उसमें कमियाँ ढूँढ़ रहे हैं।",
+          "ru": "Элизабет заметила его взгляд и решила, что он ищет в ней недостатки.",
+          "bn": "এলিজাবেথ খেয়াল করল তিনি তাকিয়ে আছেন, আর ধরে নিল তিনি তার দোষ খুঁজছেন।",
+          "ur": "الزبتھ نے انہیں دیکھتے ہوئے پایا اور طے کر لیا کہ وہ اس میں خامیاں ڈھونڈ رہے ہیں۔",
+          "th": "เอลิซาเบธสังเกตเห็นว่าเขามองเธออยู่ และคิดเอาเองว่าเขากำลังจับผิดเธอ"
+        }
+      },
+      {
+        "id": "cl-pride-034",
+        "english": "Soon after, Mr Collins came to stay at Longbourn.",
+        "turkish": "Kısa süre sonra Bay Collins, Longbourn'da kalmaya geldi.",
+        "translations": {
+          "es-419": "Poco después, el señor Collins llegó a quedarse en Longbourn.",
+          "pt-BR": "Pouco depois, o senhor Collins veio se hospedar em Longbourn.",
+          "id": "Tak lama kemudian, Tuan Collins datang menginap di Longbourn.",
+          "ar": "وبعد قليل، جاء السيد كولينز ليقيم في لونغبورن.",
+          "vi": "Ít lâu sau, anh Collins đến ở lại Longbourn.",
+          "hi": "कुछ ही समय बाद मिस्टर कॉलिन्स लॉन्गबॉर्न में ठहरने आए।",
+          "ru": "Вскоре в Лонгборн погостить приехал мистер Коллинз.",
+          "bn": "কিছুদিন পরেই মিস্টার কলিন্স লংবোর্নে থাকতে এলেন।",
+          "ur": "کچھ ہی عرصے بعد مسٹر کولنز لانگبورن میں ٹھہرنے آئے۔",
+          "th": "ไม่นานหลังจากนั้น คุณคอลลินส์ก็มาพักที่ลองบอร์น"
+        }
+      },
+      {
+        "id": "cl-pride-035",
+        "english": "He was a serious young priest who talked far too much.",
+        "turkish": "Fazlasıyla çok konuşan, ciddi, genç bir papazdı.",
+        "translations": {
+          "es-419": "Era un joven clérigo muy serio que hablaba demasiado.",
+          "pt-BR": "Era um jovem clérigo sério que falava demais.",
+          "id": "Ia seorang pendeta muda yang serius dan terlalu banyak bicara.",
+          "ar": "كان قسًّا شابًّا جادًّا يُكثر من الكلام كثيرًا.",
+          "vi": "Anh là một mục sư trẻ nghiêm nghị và nói quá nhiều.",
+          "hi": "वे एक गंभीर नौजवान पादरी थे, जो ज़रूरत से कहीं ज़्यादा बोलते थे।",
+          "ru": "Это был серьёзный молодой священник, который говорил слишком много.",
+          "bn": "তিনি ছিলেন এক গম্ভীর তরুণ যাজক, যিনি অতিরিক্ত কথা বলতেন।",
+          "ur": "وہ ایک سنجیدہ نوجوان پادری تھے جو ضرورت سے کہیں زیادہ بولتے تھے۔",
+          "th": "เขาเป็นนักบวชหนุ่มท่าทางเคร่งขรึมที่พูดมากเกินไป"
+        }
+      },
+      {
+        "id": "cl-pride-036",
+        "english": "At every meal he praised his patron, the great Lady Catherine de Bourgh.",
+        "turkish": "Her yemekte koruyucusu olan büyük hanımefendi Leydi Catherine de Bourgh'u övüp duruyordu.",
+        "translations": {
+          "es-419": "En cada comida elogiaba a su protectora, la gran Lady Catherine de Bourgh.",
+          "pt-BR": "Em todas as refeições, ele elogiava sua protetora, a grande Lady Catherine de Bourgh.",
+          "id": "Di setiap makan, ia memuji-muji pelindungnya, Lady Catherine de Bourgh yang agung.",
+          "ar": "وفي كل وجبة كان يمدح راعيته، الليدي كاثرين دي بيرغ العظيمة.",
+          "vi": "Bữa ăn nào anh cũng ca ngợi người bảo trợ của mình, phu nhân Catherine de Bourgh quyền quý.",
+          "hi": "हर खाने पर वे अपनी संरक्षक, महान लेडी कैथरीन डी बर्ग, की तारीफ़ करते रहते।",
+          "ru": "За каждой трапезой он восхвалял свою покровительницу, великую леди Кэтрин де Бёр.",
+          "bn": "প্রতিবার খেতে বসে তিনি তাঁর পৃষ্ঠপোষক, মহান লেডি ক্যাথরিন ডি বার্গের প্রশংসা করতেন।",
+          "ur": "ہر کھانے پر وہ اپنی سرپرست، عظیم لیڈی کیتھرین ڈی برگ، کی تعریف کرتے رہتے۔",
+          "th": "ทุกมื้ออาหาร เขาจะยกย่องผู้อุปถัมภ์ของตน คือเลดี้แคเธอรีน เดอ เบิร์ก ผู้ยิ่งใหญ่"
+        }
+      },
+      {
+        "id": "cl-pride-037",
+        "english": "He had come to choose a wife from among his cousins.",
+        "turkish": "Kuzenleri arasından kendine bir eş seçmeye gelmişti.",
+        "translations": {
+          "es-419": "Había venido a elegir esposa entre sus primas.",
+          "pt-BR": "Ele tinha vindo escolher uma esposa entre as primas.",
+          "id": "Ia datang untuk memilih seorang istri di antara sepupu-sepupunya.",
+          "ar": "كان قد جاء ليختار زوجة من بين بنات عمّه.",
+          "vi": "Anh đến để chọn một người vợ trong số các cô em họ.",
+          "hi": "वे अपनी चचेरी बहनों में से एक पत्नी चुनने आए थे।",
+          "ru": "Он приехал, чтобы выбрать себе жену среди кузин.",
+          "bn": "তিনি এসেছিলেন তাঁর তুতো বোনেদের মধ্যে থেকে একজন স্ত্রী বেছে নিতে।",
+          "ur": "وہ اپنی کزنوں میں سے ایک بیوی چننے آئے تھے۔",
+          "th": "เขามาเพื่อเลือกภรรยาจากบรรดาลูกพี่ลูกน้องของเขา"
+        }
+      },
+      {
+        "id": "cl-pride-038",
+        "english": "When he heard that Jane might soon be engaged, he chose Elizabeth instead.",
+        "turkish": "Jane'in yakında nişanlanabileceğini duyunca onun yerine Elizabeth'i seçti.",
+        "translations": {
+          "es-419": "Cuando supo que Jane quizá pronto se comprometería, eligió a Elizabeth.",
+          "pt-BR": "Quando soube que Jane talvez logo ficasse noiva, escolheu Elizabeth no lugar dela.",
+          "id": "Ketika mendengar bahwa Jane mungkin akan segera bertunangan, ia memilih Elizabeth.",
+          "ar": "ولما سمع أن جين قد تُخطب قريبًا، اختار إليزابيث بدلًا منها.",
+          "vi": "Khi nghe nói Jane có thể sắp đính hôn, anh chọn Elizabeth thay vào đó.",
+          "hi": "जब उन्होंने सुना कि जेन की जल्द ही सगाई हो सकती है, तो उन्होंने एलिज़ाबेथ को चुन लिया।",
+          "ru": "Услышав, что Джейн, возможно, скоро будет помолвлена, он выбрал Элизабет.",
+          "bn": "যখন শুনলেন জেনের শিগগিরই বাগদান হতে পারে, তিনি তার বদলে এলিজাবেথকে বেছে নিলেন।",
+          "ur": "جب انہوں نے سنا کہ جین کی جلد ہی منگنی ہو سکتی ہے، تو انہوں نے الزبتھ کو چن لیا۔",
+          "th": "เมื่อได้ยินว่าเจนอาจจะหมั้นเร็ว ๆ นี้ เขาจึงเลือกเอลิซาเบธแทน"
+        }
+      },
+      {
+        "id": "cl-pride-039",
+        "english": "His proposal was long, polite and very dull.",
+        "turkish": "Evlenme teklifi uzun, kibar ve son derece sıkıcıydı.",
+        "translations": {
+          "es-419": "Su propuesta fue larga, cortés y muy aburrida.",
+          "pt-BR": "O pedido dele foi longo, educado e muito chato.",
+          "id": "Lamarannya panjang, sopan, dan sangat membosankan.",
+          "ar": "كان طلبه للزواج طويلًا ومهذّبًا ومملًّا جدًّا.",
+          "vi": "Lời cầu hôn của anh dài dòng, lịch sự và vô cùng tẻ nhạt.",
+          "hi": "उनका विवाह-प्रस्ताव लंबा, विनम्र और बहुत उबाऊ था।",
+          "ru": "Его предложение было длинным, вежливым и очень скучным.",
+          "bn": "তাঁর বিয়ের প্রস্তাব ছিল লম্বা, ভদ্র আর ভীষণ একঘেয়ে।",
+          "ur": "ان کی شادی کی پیشکش لمبی، مہذب اور بہت اکتا دینے والی تھی۔",
+          "th": "คำขอแต่งงานของเขายืดยาว สุภาพ และน่าเบื่อมาก"
+        }
+      },
+      {
+        "id": "cl-pride-040",
+        "english": "Elizabeth refused him as kindly as she could.",
+        "turkish": "Elizabeth onu elinden geldiğince nazikçe reddetti.",
+        "translations": {
+          "es-419": "Elizabeth lo rechazó con toda la amabilidad que pudo.",
+          "pt-BR": "Elizabeth o recusou com toda a gentileza que pôde.",
+          "id": "Elizabeth menolaknya sehalus mungkin.",
+          "ar": "رفضته إليزابيث بأكبر قدر استطاعته من اللطف.",
+          "vi": "Elizabeth từ chối anh một cách nhẹ nhàng nhất có thể.",
+          "hi": "एलिज़ाबेथ ने जितनी नरमी से हो सका, उन्हें मना कर दिया।",
+          "ru": "Элизабет отказала ему так мягко, как только могла.",
+          "bn": "এলিজাবেথ যতটা সম্ভব নরমভাবে তাঁকে ফিরিয়ে দিল।",
+          "ur": "الزبتھ نے جتنی نرمی سے ہو سکا، انہیں انکار کر دیا۔",
+          "th": "เอลิซาเบธปฏิเสธเขาอย่างนุ่มนวลที่สุดเท่าที่จะทำได้"
+        }
+      },
+      {
+        "id": "cl-pride-041",
+        "english": "Her mother was furious, but her father took her side.",
+        "turkish": "Annesi çok öfkelendi, ama babası ondan yana çıktı.",
+        "translations": {
+          "es-419": "Su madre se puso furiosa, pero su padre se puso de su lado.",
+          "pt-BR": "A mãe ficou furiosa, mas o pai ficou do lado dela.",
+          "id": "Ibunya sangat marah, tetapi ayahnya membelanya.",
+          "ar": "غضبت أمها غضبًا شديدًا، لكن أباها وقف إلى جانبها.",
+          "vi": "Mẹ cô giận dữ, nhưng cha cô lại đứng về phía cô.",
+          "hi": "उसकी माँ आगबबूला हो गईं, पर पिता ने उसका साथ दिया।",
+          "ru": "Мать была в ярости, но отец встал на её сторону.",
+          "bn": "তার মা রেগে আগুন, কিন্তু বাবা তার পক্ষ নিলেন।",
+          "ur": "اس کی ماں آگ بگولا ہو گئیں، مگر باپ نے اس کا ساتھ دیا۔",
+          "th": "แม่ของเธอโกรธจัด แต่พ่อกลับเข้าข้างเธอ"
+        }
+      },
+      {
+        "id": "cl-pride-042",
+        "english": "\"Your mother will never see you again if you do not marry Mr Collins,\" he said.",
+        "turkish": "\"Bay Collins'le evlenmezsen annen seni bir daha asla görmek istemeyecek,\" dedi.",
+        "translations": {
+          "es-419": "\"Tu madre no volverá a verte si no te casas con el señor Collins\", dijo.",
+          "pt-BR": "\"Sua mãe nunca mais vai querer ver você se não se casar com o senhor Collins\", disse ele.",
+          "id": "\"Ibumu tidak akan mau melihatmu lagi kalau kau tidak menikah dengan Tuan Collins,\" katanya.",
+          "ar": "قال: \"لن ترغب أمك في رؤيتك مرة أخرى إن لم تتزوّجي السيد كولينز.\"",
+          "vi": "\"Nếu con không lấy anh Collins, mẹ con sẽ không bao giờ muốn nhìn mặt con nữa,\" ông nói.",
+          "hi": "\"अगर तुमने मिस्टर कॉलिन्स से शादी नहीं की, तो तुम्हारी माँ तुम्हें फिर कभी नहीं देखेंगी,\" उन्होंने कहा।",
+          "ru": "«Твоя мать больше никогда не захочет тебя видеть, если ты не выйдешь за мистера Коллинза», — сказал он.",
+          "bn": "\"মিস্টার কলিন্সকে বিয়ে না করলে তোমার মা আর কখনো তোমার মুখ দেখবেন না,\" বললেন তিনি।",
+          "ur": "\"اگر تم نے مسٹر کولنز سے شادی نہ کی تو تمہاری ماں تمہیں پھر کبھی نہیں دیکھیں گی،\" انہوں نے کہا۔",
+          "th": "\"ถ้าลูกไม่แต่งงานกับคุณคอลลินส์ แม่จะไม่อยากเห็นหน้าลูกอีกเลย\" เขากล่าว"
+        }
+      },
+      {
+        "id": "cl-pride-043",
+        "english": "\"And I will never see you again if you do.\"",
+        "turkish": "\"Evlenirsen de ben seni bir daha asla görmek istemem.\"",
+        "translations": {
+          "es-419": "\"Y yo no volveré a verte si te casas\".",
+          "pt-BR": "\"E eu nunca mais vou querer ver você se você se casar.\"",
+          "id": "\"Dan aku tidak akan mau melihatmu lagi kalau kau menikah dengannya.\"",
+          "ar": "\"وأنا لن أرغب في رؤيتك مرة أخرى إن تزوّجته.\"",
+          "vi": "\"Còn nếu con lấy anh ta, cha sẽ không bao giờ muốn nhìn mặt con nữa.\"",
+          "hi": "\"और अगर तुमने शादी कर ली, तो मैं तुम्हें फिर कभी नहीं देखूँगा।\"",
+          "ru": "«А я никогда не захочу тебя видеть, если выйдешь».",
+          "bn": "\"আর বিয়ে করলে আমি আর কখনো তোমার মুখ দেখব না।\"",
+          "ur": "\"اور اگر تم نے شادی کر لی تو میں تمہیں پھر کبھی نہیں دیکھوں گا۔\"",
+          "th": "\"และถ้าลูกแต่ง พ่อก็จะไม่อยากเห็นหน้าลูกอีกเลย\""
+        }
+      },
+      {
+        "id": "cl-pride-044",
+        "english": "Three days later, Collins was engaged to Charlotte Lucas instead.",
+        "turkish": "Üç gün sonra Collins bunun yerine Charlotte Lucas'la nişanlandı.",
+        "translations": {
+          "es-419": "Tres días después, Collins se comprometió con Charlotte Lucas.",
+          "pt-BR": "Três dias depois, Collins ficou noivo de Charlotte Lucas.",
+          "id": "Tiga hari kemudian, Collins malah bertunangan dengan Charlotte Lucas.",
+          "ar": "وبعد ثلاثة أيام، خُطب كولينز إلى شارلوت لوكاس بدلًا منها.",
+          "vi": "Ba ngày sau, Collins lại đính hôn với Charlotte Lucas.",
+          "hi": "तीन दिन बाद कॉलिन्स की सगाई शार्लट लूकस से हो गई।",
+          "ru": "Через три дня Коллинз обручился с Шарлоттой Лукас.",
+          "bn": "তিন দিন পরে কলিন্সের বাগদান হলো শার্লট লুকাসের সঙ্গে।",
+          "ur": "تین دن بعد کولنز کی منگنی شارلٹ لوکس سے ہو گئی۔",
+          "th": "สามวันต่อมา คอลลินส์ก็หมั้นกับชาร์ลอตต์ ลูคัสแทน"
+        }
+      },
+      {
+        "id": "cl-pride-045",
+        "english": "Charlotte explained calmly that she wanted a safe home more than romance.",
+        "turkish": "Charlotte, aşktan çok güvenli bir yuva istediğini sakin sakin anlattı.",
+        "translations": {
+          "es-419": "Charlotte explicó con calma que prefería un hogar seguro antes que el romance.",
+          "pt-BR": "Charlotte explicou com calma que queria mais um lar seguro do que romance.",
+          "id": "Charlotte menjelaskan dengan tenang bahwa ia lebih menginginkan rumah yang aman daripada cinta.",
+          "ar": "شرحت شارلوت بهدوء أنها تريد بيتًا آمنًا أكثر مما تريد الحب.",
+          "vi": "Charlotte bình thản giải thích rằng cô cần một mái nhà yên ổn hơn là tình yêu lãng mạn.",
+          "hi": "शार्लट ने शांति से समझाया कि उसे प्रेम से ज़्यादा एक सुरक्षित घर चाहिए था।",
+          "ru": "Шарлотта спокойно объяснила, что надёжный дом ей нужнее, чем романтика.",
+          "bn": "শার্লট শান্তভাবে বুঝিয়ে বলল, প্রেমের চেয়ে একটা নিরাপদ ঘরই তার বেশি দরকার।",
+          "ur": "شارلٹ نے سکون سے سمجھایا کہ اسے محبت سے زیادہ ایک محفوظ گھر چاہیے تھا۔",
+          "th": "ชาร์ลอตต์อธิบายอย่างใจเย็นว่าเธออยากได้บ้านที่มั่นคงมากกว่าความโรแมนติก"
+        }
+      },
+      {
+        "id": "cl-pride-046",
+        "english": "In Meryton, Elizabeth met a charming young officer called Mr Wickham.",
+        "turkish": "Elizabeth, Meryton'da Bay Wickham adında çekici, genç bir subayla tanıştı.",
+        "translations": {
+          "es-419": "En Meryton, Elizabeth conoció a un joven oficial encantador llamado señor Wickham.",
+          "pt-BR": "Em Meryton, Elizabeth conheceu um jovem oficial encantador chamado senhor Wickham.",
+          "id": "Di Meryton, Elizabeth berkenalan dengan seorang perwira muda yang menawan bernama Tuan Wickham.",
+          "ar": "وفي ميريتون، تعرّفت إليزابيث إلى ضابط شاب ساحر يُدعى السيد ويكهام.",
+          "vi": "Ở Meryton, Elizabeth gặp một sĩ quan trẻ duyên dáng tên là Wickham.",
+          "hi": "मेरिटन में एलिज़ाबेथ की मुलाक़ात विकहम नाम के एक आकर्षक नौजवान अफ़सर से हुई।",
+          "ru": "В Меритоне Элизабет познакомилась с обаятельным молодым офицером, мистером Уикхемом.",
+          "bn": "মেরিটনে এলিজাবেথের আলাপ হলো উইকহ্যাম নামে এক মনোহর তরুণ অফিসারের সঙ্গে।",
+          "ur": "میریٹن میں الزبتھ کی ملاقات وکھم نامی ایک دلکش نوجوان افسر سے ہوئی۔",
+          "th": "ที่เมริตัน เอลิซาเบธได้รู้จักนายทหารหนุ่มผู้มีเสน่ห์ชื่อคุณวิกแฮม"
+        }
+      },
+      {
+        "id": "cl-pride-047",
+        "english": "He told her that he had grown up at Pemberley, where his father had worked for Darcy's father.",
+        "turkish": "Ona, babasının Darcy'nin babası için çalıştığı Pemberley'de büyüdüğünü anlattı.",
+        "translations": {
+          "es-419": "Le contó que había crecido en Pemberley, donde su padre trabajaba para el padre de Darcy.",
+          "pt-BR": "Ele contou que tinha crescido em Pemberley, onde o pai dele trabalhava para o pai de Darcy.",
+          "id": "Ia bercerita bahwa ia dibesarkan di Pemberley, tempat ayahnya bekerja untuk ayah Darcy.",
+          "ar": "أخبرها أنه نشأ في بيمبرلي، حيث كان أبوه يعمل لدى والد دارسي.",
+          "vi": "Anh kể với cô rằng anh lớn lên ở Pemberley, nơi cha anh từng làm việc cho cha của Darcy.",
+          "hi": "उन्होंने उसे बताया कि वे पेम्बर्ली में पले-बढ़े थे, जहाँ उनके पिता डार्सी के पिता के यहाँ काम करते थे।",
+          "ru": "Он рассказал ей, что вырос в Пемберли, где его отец служил у отца Дарси.",
+          "bn": "তিনি তাকে বললেন, তিনি পেমবার্লিতে বড় হয়েছেন, যেখানে তাঁর বাবা ডারসির বাবার কাজ করতেন।",
+          "ur": "انہوں نے اسے بتایا کہ وہ پیمبرلی میں پلے بڑھے تھے، جہاں ان کے والد ڈارسی کے والد کے ہاں کام کرتے تھے۔",
+          "th": "เขาเล่าให้เธอฟังว่าเขาเติบโตที่เพมเบอร์ลีย์ ซึ่งพ่อของเขาเคยทำงานให้พ่อของดาร์ซี"
+        }
+      },
+      {
+        "id": "cl-pride-048",
+        "english": "\"Old Mr Darcy promised me a good job in the church,\" he said sadly.",
+        "turkish": "\"Yaşlı Bay Darcy bana kilisede iyi bir görev sözü vermişti,\" dedi üzgün bir sesle.",
+        "translations": {
+          "es-419": "\"El viejo señor Darcy me prometió un buen puesto en la iglesia\", dijo con tristeza.",
+          "pt-BR": "\"O velho senhor Darcy me prometeu um bom cargo na igreja\", disse ele com tristeza.",
+          "id": "\"Mendiang Tuan Darcy menjanjikan aku pekerjaan yang baik di gereja,\" katanya dengan sedih.",
+          "ar": "قال بحزن: \"وعدني السيد دارسي الأب بوظيفة جيدة في الكنيسة.\"",
+          "vi": "\"Ông Darcy cha đã hứa cho tôi một chức vụ tốt trong nhà thờ,\" anh buồn bã nói.",
+          "hi": "\"बड़े मिस्टर डार्सी ने मुझे चर्च में एक अच्छी नौकरी का वादा किया था,\" उन्होंने उदास होकर कहा।",
+          "ru": "«Старый мистер Дарси обещал мне хорошее место в церкви», — грустно сказал он.",
+          "bn": "\"বড় মিস্টার ডারসি আমাকে গির্জায় একটা ভালো কাজের কথা দিয়েছিলেন,\" দুঃখের সঙ্গে বললেন তিনি।",
+          "ur": "\"بڑے مسٹر ڈارسی نے مجھ سے چرچ میں ایک اچھی نوکری کا وعدہ کیا تھا،\" انہوں نے اداسی سے کہا۔",
+          "th": "\"คุณดาร์ซีผู้พ่อเคยสัญญาว่าจะให้ผมได้ตำแหน่งดี ๆ ในโบสถ์\" เขาพูดอย่างเศร้า ๆ"
+        }
+      },
+      {
+        "id": "cl-pride-049",
+        "english": "\"But his son broke that promise and left me with nothing.\"",
+        "turkish": "\"Ama oğlu bu sözü tutmadı ve beni elimde hiçbir şey olmadan bıraktı.\"",
+        "translations": {
+          "es-419": "\"Pero su hijo rompió esa promesa y me dejó sin nada\".",
+          "pt-BR": "\"Mas o filho dele quebrou essa promessa e me deixou sem nada.\"",
+          "id": "\"Tetapi putranya mengingkari janji itu dan membuatku tak punya apa-apa.\"",
+          "ar": "\"لكن ابنه نكث ذلك الوعد وتركني بلا شيء.\"",
+          "vi": "\"Nhưng con trai ông ấy đã thất hứa và để tôi trắng tay.\"",
+          "hi": "\"लेकिन उनके बेटे ने वह वादा तोड़ दिया और मुझे ख़ाली हाथ छोड़ दिया।\"",
+          "ru": "«Но его сын нарушил это обещание и оставил меня ни с чем».",
+          "bn": "\"কিন্তু তাঁর ছেলে সেই কথা রাখেননি, আমাকে খালি হাতে ফেলে দিয়েছেন।\"",
+          "ur": "\"لیکن ان کے بیٹے نے وہ وعدہ توڑ دیا اور مجھے خالی ہاتھ چھوڑ دیا۔\"",
+          "th": "\"แต่ลูกชายของท่านผิดสัญญา และทิ้งให้ผมไม่เหลืออะไรเลย\""
+        }
+      },
+      {
+        "id": "cl-pride-050",
+        "english": "Elizabeth believed every word, and her dislike of Darcy grew stronger.",
+        "turkish": "Elizabeth her kelimeye inandı ve Darcy'ye duyduğu antipati daha da güçlendi.",
+        "translations": {
+          "es-419": "Elizabeth creyó cada palabra, y su antipatía por Darcy se hizo más fuerte.",
+          "pt-BR": "Elizabeth acreditou em cada palavra, e sua antipatia por Darcy ficou ainda mais forte.",
+          "id": "Elizabeth memercayai setiap katanya, dan rasa tidak sukanya pada Darcy makin kuat.",
+          "ar": "صدّقت إليزابيث كل كلمة، وازداد نفورها من دارسي.",
+          "vi": "Elizabeth tin từng lời, và ác cảm của cô với Darcy càng thêm sâu sắc.",
+          "hi": "एलिज़ाबेथ ने हर शब्द पर यक़ीन कर लिया, और डार्सी के लिए उसकी नापसंदगी और बढ़ गई।",
+          "ru": "Элизабет поверила каждому слову, и её неприязнь к Дарси стала ещё сильнее.",
+          "bn": "এলিজাবেথ প্রতিটা কথা বিশ্বাস করল, আর ডারসির প্রতি তার বিরক্তি আরও বেড়ে গেল।",
+          "ur": "الزبتھ نے ہر لفظ پر یقین کر لیا، اور ڈارسی کے لیے اس کی ناپسندیدگی اور بڑھ گئی۔",
+          "th": "เอลิซาเบธเชื่อทุกคำ และความไม่ชอบที่มีต่อดาร์ซีก็ยิ่งรุนแรงขึ้น"
+        }
+      },
+      {
+        "id": "cl-pride-051",
+        "english": "Then, suddenly, the whole Netherfield party left for London.",
+        "turkish": "Sonra birdenbire Netherfield'daki herkes Londra'ya gitti.",
+        "translations": {
+          "es-419": "Entonces, de repente, todo el grupo de Netherfield se fue a Londres.",
+          "pt-BR": "Então, de repente, todo o grupo de Netherfield partiu para Londres.",
+          "id": "Lalu, tiba-tiba, seluruh rombongan Netherfield berangkat ke London.",
+          "ar": "ثم فجأة، رحل كل من في نذرفيلد إلى لندن.",
+          "vi": "Rồi đột nhiên, cả nhóm người ở Netherfield kéo nhau đi London.",
+          "hi": "फिर अचानक नेदरफ़ील्ड का पूरा दल लंदन चला गया।",
+          "ru": "А потом вдруг вся компания из Незерфилда уехала в Лондон.",
+          "bn": "তারপর হঠাৎ নেদারফিল্ডের পুরো দলটা লন্ডনে চলে গেল।",
+          "ur": "پھر اچانک نیدرفیلڈ کا پورا گروہ لندن چلا گیا۔",
+          "th": "แล้วจู่ ๆ คนทั้งหมดที่เนเธอร์ฟิลด์ก็พากันไปลอนดอน"
+        }
+      },
+      {
+        "id": "cl-pride-052",
+        "english": "Bingley's sister wrote to Jane that they would not return that winter.",
+        "turkish": "Bingley'nin kız kardeşi Jane'e, o kış geri dönmeyeceklerini yazdı.",
+        "translations": {
+          "es-419": "La hermana de Bingley le escribió a Jane que no volverían ese invierno.",
+          "pt-BR": "A irmã de Bingley escreveu a Jane que eles não voltariam naquele inverno.",
+          "id": "Saudari Bingley menulis surat kepada Jane bahwa mereka tidak akan kembali musim dingin itu.",
+          "ar": "وكتبت أخت بينغلي إلى جين أنهم لن يعودوا ذلك الشتاء.",
+          "vi": "Em gái của Bingley viết thư cho Jane rằng mùa đông năm ấy họ sẽ không quay lại.",
+          "hi": "बिंगले की बहन ने जेन को लिखा कि वे उस सर्दी वापस नहीं आएँगे।",
+          "ru": "Сестра Бингли написала Джейн, что этой зимой они не вернутся.",
+          "bn": "বিংলির বোন জেনকে লিখল, সেই শীতে তাঁরা আর ফিরবেন না।",
+          "ur": "بنگلے کی بہن نے جین کو لکھا کہ وہ اس سردی واپس نہیں آئیں گے۔",
+          "th": "น้องสาวของบิงลีย์เขียนจดหมายบอกเจนว่าฤดูหนาวนั้นพวกเขาจะไม่กลับมา"
+        }
+      },
+      {
+        "id": "cl-pride-053",
+        "english": "Jane tried to hide her sadness, but her heart was broken.",
+        "turkish": "Jane üzüntüsünü gizlemeye çalıştı, ama kalbi kırılmıştı.",
+        "translations": {
+          "es-419": "Jane intentó esconder su tristeza, pero tenía el corazón roto.",
+          "pt-BR": "Jane tentou esconder a tristeza, mas estava de coração partido.",
+          "id": "Jane berusaha menyembunyikan kesedihannya, tetapi hatinya hancur.",
+          "ar": "حاولت جين أن تخفي حزنها، لكن قلبها كان محطّمًا.",
+          "vi": "Jane cố giấu nỗi buồn, nhưng trái tim cô đã tan vỡ.",
+          "hi": "जेन ने अपना दुख छिपाने की कोशिश की, पर उसका दिल टूट चुका था।",
+          "ru": "Джейн старалась скрыть грусть, но её сердце было разбито.",
+          "bn": "জেন দুঃখ লুকোনোর চেষ্টা করল, কিন্তু তার মন ভেঙে গিয়েছিল।",
+          "ur": "جین نے اپنا دکھ چھپانے کی کوشش کی، مگر اس کا دل ٹوٹ چکا تھا۔",
+          "th": "เจนพยายามซ่อนความเศร้า แต่หัวใจของเธอแตกสลายไปแล้ว"
+        }
+      },
+      {
+        "id": "cl-pride-054",
+        "english": "In spring, Elizabeth visited Charlotte at her new home in Kent.",
+        "turkish": "İlkbaharda Elizabeth, Charlotte'u Kent'teki yeni evinde ziyaret etti.",
+        "translations": {
+          "es-419": "En primavera, Elizabeth visitó a Charlotte en su nueva casa de Kent.",
+          "pt-BR": "Na primavera, Elizabeth visitou Charlotte em sua nova casa em Kent.",
+          "id": "Pada musim semi, Elizabeth mengunjungi Charlotte di rumah barunya di Kent.",
+          "ar": "في الربيع، زارت إليزابيث شارلوت في بيتها الجديد في كينت.",
+          "vi": "Mùa xuân, Elizabeth đến thăm Charlotte ở nhà mới của cô tại Kent.",
+          "hi": "वसंत में एलिज़ाबेथ केंट में शार्लट के नए घर उससे मिलने गई।",
+          "ru": "Весной Элизабет навестила Шарлотту в её новом доме в Кенте.",
+          "bn": "বসন্তে এলিজাবেথ কেন্টে শার্লটের নতুন বাড়িতে তার সঙ্গে দেখা করতে গেল।",
+          "ur": "بہار میں الزبتھ کینٹ میں شارلٹ کے نئے گھر اس سے ملنے گئی۔",
+          "th": "ในฤดูใบไม้ผลิ เอลิซาเบธไปเยี่ยมชาร์ลอตต์ที่บ้านหลังใหม่ในเคนต์"
+        }
+      },
+      {
+        "id": "cl-pride-055",
+        "english": "It was close to Rosings, the grand house of Lady Catherine.",
+        "turkish": "Ev, Leydi Catherine'in görkemli konağı Rosings'e yakındı.",
+        "translations": {
+          "es-419": "Estaba cerca de Rosings, la gran mansión de Lady Catherine.",
+          "pt-BR": "Ficava perto de Rosings, a grande mansão de Lady Catherine.",
+          "id": "Rumah itu dekat dengan Rosings, kediaman megah Lady Catherine.",
+          "ar": "كان قريبًا من روزينغز، قصر الليدي كاثرين الفخم.",
+          "vi": "Nơi đó gần Rosings, dinh thự lộng lẫy của phu nhân Catherine.",
+          "hi": "वह घर लेडी कैथरीन की शानदार हवेली रोज़िंग्स के पास था।",
+          "ru": "Он стоял рядом с Розингсом, величественным домом леди Кэтрин.",
+          "bn": "বাড়িটা ছিল লেডি ক্যাথরিনের বিশাল প্রাসাদ রোজিংসের কাছে।",
+          "ur": "وہ گھر لیڈی کیتھرین کی شاندار حویلی روزنگز کے قریب تھا۔",
+          "th": "บ้านหลังนั้นอยู่ใกล้โรซิงส์ คฤหาสน์หลังใหญ่ของเลดี้แคเธอรีน"
+        }
+      },
+      {
+        "id": "cl-pride-056",
+        "english": "To her surprise, Darcy was staying there, because Lady Catherine was his aunt.",
+        "turkish": "Şaşırtıcı biçimde Darcy de oradaydı, çünkü Leydi Catherine onun teyzesiydi.",
+        "translations": {
+          "es-419": "Para su sorpresa, Darcy se alojaba allí, porque Lady Catherine era su tía.",
+          "pt-BR": "Para sua surpresa, Darcy estava hospedado lá, porque Lady Catherine era tia dele.",
+          "id": "Ia terkejut karena Darcy juga menginap di sana, sebab Lady Catherine adalah bibinya.",
+          "ar": "ولدهشتها، كان دارسي يقيم هناك، لأن الليدي كاثرين خالته.",
+          "vi": "Cô ngạc nhiên khi thấy Darcy cũng đang ở đó, vì phu nhân Catherine là dì của anh.",
+          "hi": "उसे हैरानी हुई कि डार्सी भी वहीं ठहरे थे, क्योंकि लेडी कैथरीन उनकी मौसी थीं।",
+          "ru": "К её удивлению, там гостил Дарси, ведь леди Кэтрин была его тётей.",
+          "bn": "অবাক হয়ে সে দেখল ডারসিও সেখানে আছেন, কারণ লেডি ক্যাথরিন তাঁর মাসি।",
+          "ur": "اسے حیرت ہوئی کہ ڈارسی بھی وہیں ٹھہرے تھے، کیونکہ لیڈی کیتھرین ان کی خالہ تھیں۔",
+          "th": "เธอแปลกใจที่ดาร์ซีก็พักอยู่ที่นั่น เพราะเลดี้แคเธอรีนเป็นป้าของเขา"
+        }
+      },
+      {
+        "id": "cl-pride-057",
+        "english": "He came often to Charlotte's house, sat in silence, and then went away again.",
+        "turkish": "Sık sık Charlotte'un evine geliyor, sessizce oturuyor, sonra yine gidiyordu.",
+        "translations": {
+          "es-419": "Iba a menudo a casa de Charlotte, se sentaba en silencio y luego se marchaba.",
+          "pt-BR": "Ele ia muitas vezes à casa de Charlotte, sentava-se em silêncio e depois ia embora.",
+          "id": "Ia sering datang ke rumah Charlotte, duduk diam, lalu pergi lagi.",
+          "ar": "كان يأتي كثيرًا إلى بيت شارلوت، فيجلس صامتًا ثم ينصرف.",
+          "vi": "Anh thường đến nhà Charlotte, ngồi im lặng rồi lại ra về.",
+          "hi": "वे अक्सर शार्लट के घर आते, चुपचाप बैठते और फिर चले जाते।",
+          "ru": "Он часто приходил в дом Шарлотты, молча сидел и снова уходил.",
+          "bn": "তিনি প্রায়ই শার্লটের বাড়িতে আসতেন, চুপ করে বসে থাকতেন, তারপর আবার চলে যেতেন।",
+          "ur": "وہ اکثر شارلٹ کے گھر آتے، خاموش بیٹھے رہتے اور پھر چلے جاتے۔",
+          "th": "เขามาที่บ้านของชาร์ลอตต์บ่อย ๆ นั่งเงียบ ๆ แล้วก็กลับไป"
+        }
+      },
+      {
+        "id": "cl-pride-058",
+        "english": "Elizabeth also learned something that made her very angry.",
+        "turkish": "Elizabeth ayrıca onu çok öfkelendiren bir şey öğrendi.",
+        "translations": {
+          "es-419": "Elizabeth también se enteró de algo que la enfureció.",
+          "pt-BR": "Elizabeth também descobriu algo que a deixou muito zangada.",
+          "id": "Elizabeth juga mengetahui sesuatu yang membuatnya sangat marah.",
+          "ar": "وعرفت إليزابيث أيضًا أمرًا أغضبها كثيرًا.",
+          "vi": "Elizabeth còn biết được một chuyện khiến cô vô cùng tức giận.",
+          "hi": "एलिज़ाबेथ को एक ऐसी बात भी पता चली जिससे उसे बहुत ग़ुस्सा आया।",
+          "ru": "Элизабет узнала и то, что её очень рассердило.",
+          "bn": "এলিজাবেথ এমন একটা কথাও জানল যাতে তার খুব রাগ হলো।",
+          "ur": "الزبتھ کو ایک ایسی بات بھی معلوم ہوئی جس سے اسے بہت غصہ آیا۔",
+          "th": "เอลิซาเบธยังได้รู้เรื่องหนึ่งที่ทำให้เธอโกรธมาก"
+        }
+      },
+      {
+        "id": "cl-pride-059",
+        "english": "Darcy had told Bingley that Jane did not really love him.",
+        "turkish": "Darcy, Bingley'ye Jane'in onu aslında sevmediğini söylemişti.",
+        "translations": {
+          "es-419": "Darcy le había dicho a Bingley que Jane no lo amaba de verdad.",
+          "pt-BR": "Darcy tinha dito a Bingley que Jane não o amava de verdade.",
+          "id": "Darcy pernah berkata kepada Bingley bahwa Jane tidak sungguh-sungguh mencintainya.",
+          "ar": "كان دارسي قد قال لبينغلي إن جين لا تحبه حقًّا.",
+          "vi": "Darcy đã nói với Bingley rằng Jane không thật lòng yêu anh.",
+          "hi": "डार्सी ने बिंगले से कहा था कि जेन उनसे सच में प्यार नहीं करती।",
+          "ru": "Дарси сказал Бингли, что Джейн на самом деле его не любит.",
+          "bn": "ডারসি বিংলিকে বলেছিলেন, জেন আসলে তাঁকে ভালোবাসে না।",
+          "ur": "ڈارسی نے بنگلے سے کہا تھا کہ جین ان سے سچ مچ محبت نہیں کرتی۔",
+          "th": "ดาร์ซีบอกบิงลีย์ว่าเจนไม่ได้รักเขาจริง ๆ"
+        }
+      },
+      {
+        "id": "cl-pride-060",
+        "english": "He had kept his friend away from her sister on purpose.",
+        "turkish": "Arkadaşını onun kız kardeşinden bilerek uzak tutmuştu.",
+        "translations": {
+          "es-419": "Había alejado a su amigo de su hermana a propósito.",
+          "pt-BR": "Ele tinha afastado o amigo da irmã dela de propósito.",
+          "id": "Ia sengaja menjauhkan temannya dari kakak Elizabeth.",
+          "ar": "لقد أبعد صديقه عن أختها عن قصد.",
+          "vi": "Anh đã cố tình giữ bạn mình tránh xa chị gái cô.",
+          "hi": "उन्होंने जान-बूझकर अपने दोस्त को उसकी बहन से दूर रखा था।",
+          "ru": "Он нарочно держал друга подальше от её сестры.",
+          "bn": "তিনি ইচ্ছে করেই বন্ধুকে তার বোনের কাছ থেকে দূরে সরিয়ে রেখেছিলেন।",
+          "ur": "انہوں نے جان بوجھ کر اپنے دوست کو اس کی بہن سے دور رکھا تھا۔",
+          "th": "เขาจงใจกันเพื่อนไม่ให้ใกล้ชิดกับพี่สาวของเธอ"
+        }
+      },
+      {
+        "id": "cl-pride-061",
+        "english": "That same evening, Darcy came to see her alone.",
+        "turkish": "Aynı akşam Darcy onu görmek için yalnız geldi.",
+        "translations": {
+          "es-419": "Esa misma noche, Darcy fue a verla a solas.",
+          "pt-BR": "Naquela mesma noite, Darcy foi vê-la sozinho.",
+          "id": "Malam itu juga, Darcy datang menemuinya seorang diri.",
+          "ar": "وفي المساء نفسه، جاء دارسي ليراها وحدها.",
+          "vi": "Ngay tối hôm đó, Darcy đến gặp riêng cô.",
+          "hi": "उसी शाम डार्सी उससे अकेले में मिलने आए।",
+          "ru": "В тот же вечер Дарси пришёл к ней наедине.",
+          "bn": "সেদিন সন্ধ্যাতেই ডারসি একা তার সঙ্গে দেখা করতে এলেন।",
+          "ur": "اسی شام ڈارسی اس سے اکیلے میں ملنے آئے۔",
+          "th": "เย็นวันเดียวกันนั้น ดาร์ซีมาพบเธอตามลำพัง"
+        }
+      },
+      {
+        "id": "cl-pride-062",
+        "english": "He walked up and down the room and then spoke at last.",
+        "turkish": "Odada bir aşağı bir yukarı yürüdü ve sonunda konuştu.",
+        "translations": {
+          "es-419": "Caminó de un lado a otro de la sala y al fin habló.",
+          "pt-BR": "Ele andou de um lado para o outro na sala e por fim falou.",
+          "id": "Ia mondar-mandir di ruangan, lalu akhirnya berbicara.",
+          "ar": "مشى في الغرفة جيئةً وذهابًا ثم تكلّم أخيرًا.",
+          "vi": "Anh đi tới đi lui trong phòng rồi cuối cùng cũng lên tiếng.",
+          "hi": "वे कमरे में इधर-उधर टहलते रहे और फिर आख़िरकार बोले।",
+          "ru": "Он прошёлся взад и вперёд по комнате и наконец заговорил.",
+          "bn": "তিনি ঘরে পায়চারি করলেন, তারপর শেষমেশ কথা বললেন।",
+          "ur": "وہ کمرے میں ادھر ادھر ٹہلتے رہے اور پھر آخرکار بولے۔",
+          "th": "เขาเดินไปมาในห้อง แล้วในที่สุดก็เอ่ยปาก"
+        }
+      },
+      {
+        "id": "cl-pride-063",
+        "english": "\"I have fought against my feelings, but it is no use.",
+        "turkish": "\"Duygularıma karşı savaştım, ama hiçbir faydası yok.",
+        "translations": {
+          "es-419": "\"He luchado contra mis sentimientos, pero es inútil.",
+          "pt-BR": "\"Lutei contra os meus sentimentos, mas não adianta.",
+          "id": "\"Aku sudah melawan perasaanku, tetapi percuma.",
+          "ar": "\"لقد قاومتُ مشاعري، لكن بلا فائدة.",
+          "vi": "\"Tôi đã cố chống lại tình cảm của mình, nhưng vô ích.",
+          "hi": "\"मैंने अपनी भावनाओं से लड़ने की कोशिश की, पर कोई फ़ायदा नहीं।",
+          "ru": "«Я боролся со своими чувствами, но всё напрасно.",
+          "bn": "\"আমি নিজের অনুভূতির সঙ্গে লড়েছি, কিন্তু কোনো লাভ হয়নি।",
+          "ur": "\"میں نے اپنے جذبات سے لڑنے کی کوشش کی، مگر کوئی فائدہ نہیں۔",
+          "th": "\"ผมพยายามต่อสู้กับความรู้สึกของตัวเองแล้ว แต่ก็ไม่เป็นผล"
+        }
+      },
+      {
+        "id": "cl-pride-064",
+        "english": "You must allow me to tell you how much I admire and love you.\"",
+        "turkish": "Size ne kadar hayran olduğumu ve sizi ne kadar sevdiğimi söylememe izin vermelisiniz.\"",
+        "translations": {
+          "es-419": "Debe permitirme decirle cuánto la admiro y la amo\".",
+          "pt-BR": "Permita que eu lhe diga o quanto a admiro e a amo.\"",
+          "id": "Izinkan aku mengatakan betapa aku mengagumi dan mencintaimu.\"",
+          "ar": "اسمحي لي أن أقول لكِ كم أُعجب بكِ وأحبك.\"",
+          "vi": "Xin cô cho phép tôi nói rằng tôi ngưỡng mộ và yêu cô biết nhường nào.\"",
+          "hi": "आपको मुझे यह बताने देना होगा कि मैं आपको कितना सराहता हूँ और कितना प्यार करता हूँ।\"",
+          "ru": "Позвольте сказать вам, как сильно я восхищаюсь вами и люблю вас».",
+          "bn": "আপনাকে বলতেই হবে, আমি আপনাকে কতটা শ্রদ্ধা করি আর ভালোবাসি।\"",
+          "ur": "آپ کو مجھے یہ کہنے دینا ہوگا کہ میں آپ کو کتنا سراہتا ہوں اور کتنی محبت کرتا ہوں۔\"",
+          "th": "โปรดยอมให้ผมได้บอกว่าผมชื่นชมและรักคุณมากเพียงใด\""
+        }
+      },
+      {
+        "id": "cl-pride-065",
+        "english": "Elizabeth could hardly believe her ears.",
+        "turkish": "Elizabeth kulaklarına inanamadı.",
+        "translations": {
+          "es-419": "Elizabeth casi no podía creer lo que oía.",
+          "pt-BR": "Elizabeth mal podia acreditar no que ouvia.",
+          "id": "Elizabeth hampir tidak percaya pada pendengarannya.",
+          "ar": "لم تكد إليزابيث تصدّق أذنيها.",
+          "vi": "Elizabeth gần như không tin vào tai mình.",
+          "hi": "एलिज़ाबेथ को अपने कानों पर यक़ीन ही नहीं हुआ।",
+          "ru": "Элизабет едва верила своим ушам.",
+          "bn": "এলিজাবেথ নিজের কানকে বিশ্বাস করতে পারছিল না।",
+          "ur": "الزبتھ کو اپنے کانوں پر یقین ہی نہ آیا۔",
+          "th": "เอลิซาเบธแทบไม่เชื่อหูตัวเอง"
+        }
+      },
+      {
+        "id": "cl-pride-066",
+        "english": "He talked about his love, but also about her low family and her silly mother.",
+        "turkish": "Aşkından söz etti, ama onun alçak ailesinden ve aptal annesinden de bahsetti.",
+        "translations": {
+          "es-419": "Habló de su amor, pero también de su familia humilde y de su madre tonta.",
+          "pt-BR": "Ele falou do seu amor, mas também da família inferior dela e da mãe tola.",
+          "id": "Ia berbicara tentang cintanya, tetapi juga tentang keluarganya yang rendah dan ibunya yang konyol.",
+          "ar": "تحدّث عن حبه، لكنه تحدّث أيضًا عن عائلتها المتواضعة وأمها السخيفة.",
+          "vi": "Anh nói về tình yêu của mình, nhưng cũng nói về gia đình thấp kém và bà mẹ ngớ ngẩn của cô.",
+          "hi": "उन्होंने अपने प्यार की बात की, पर उसके छोटे घराने और नासमझ माँ की भी।",
+          "ru": "Он говорил о своей любви, но и о её низком происхождении, и о её глупой матери.",
+          "bn": "তিনি নিজের ভালোবাসার কথা বললেন, কিন্তু তার নিচু পরিবার আর বোকা মায়ের কথাও তুললেন।",
+          "ur": "انہوں نے اپنی محبت کی بات کی، مگر اس کے کم تر خاندان اور نادان ماں کی بھی۔",
+          "th": "เขาพูดถึงความรัก แต่ก็พูดถึงครอบครัวที่ต่ำต้อยและแม่ที่ไร้สาระของเธอด้วย"
+        }
+      },
+      {
+        "id": "cl-pride-067",
+        "english": "His pride was in every sentence.",
+        "turkish": "Her cümlesinde gururu vardı.",
+        "translations": {
+          "es-419": "Su orgullo estaba en cada frase.",
+          "pt-BR": "O orgulho dele estava em cada frase.",
+          "id": "Keangkuhannya terasa di setiap kalimat.",
+          "ar": "كان كبرياؤه في كل جملة.",
+          "vi": "Sự kiêu hãnh của anh hiện rõ trong từng câu nói.",
+          "hi": "उनका घमंड हर वाक्य में झलक रहा था।",
+          "ru": "Его гордость звучала в каждой фразе.",
+          "bn": "প্রতিটা বাক্যে ছিল তাঁর অহংকার।",
+          "ur": "ان کا غرور ہر جملے میں جھلک رہا تھا۔",
+          "th": "ความหยิ่งของเขาปรากฏอยู่ในทุกประโยค"
+        }
+      },
+      {
+        "id": "cl-pride-068",
+        "english": "Elizabeth refused him, and her voice shook with anger.",
+        "turkish": "Elizabeth onu reddetti; sesi öfkeden titriyordu.",
+        "translations": {
+          "es-419": "Elizabeth lo rechazó, y su voz temblaba de rabia.",
+          "pt-BR": "Elizabeth o recusou, e sua voz tremia de raiva.",
+          "id": "Elizabeth menolaknya, dan suaranya bergetar karena marah.",
+          "ar": "رفضته إليزابيث، وصوتها يرتجف من الغضب.",
+          "vi": "Elizabeth từ chối anh, giọng cô run lên vì giận.",
+          "hi": "एलिज़ाबेथ ने उन्हें ठुकरा दिया, और ग़ुस्से से उसकी आवाज़ काँप रही थी।",
+          "ru": "Элизабет отказала ему, и её голос дрожал от гнева.",
+          "bn": "এলিজাবেথ তাঁকে প্রত্যাখ্যান করল, রাগে তার গলা কাঁপছিল।",
+          "ur": "الزبتھ نے انہیں ٹھکرا دیا، اور غصے سے اس کی آواز کانپ رہی تھی۔",
+          "th": "เอลิซาเบธปฏิเสธเขา เสียงของเธอสั่นด้วยความโกรธ"
+        }
+      },
+      {
+        "id": "cl-pride-069",
+        "english": "\"You have ruined my sister's happiness, and you have treated Mr Wickham cruelly.\"",
+        "turkish": "\"Ablamın mutluluğunu mahvettiniz ve Bay Wickham'a acımasızca davrandınız.\"",
+        "translations": {
+          "es-419": "\"Usted arruinó la felicidad de mi hermana y trató con crueldad al señor Wickham\".",
+          "pt-BR": "\"O senhor arruinou a felicidade da minha irmã e tratou o senhor Wickham com crueldade.\"",
+          "id": "\"Anda telah menghancurkan kebahagiaan kakakku, dan Anda memperlakukan Tuan Wickham dengan kejam.\"",
+          "ar": "\"لقد دمّرتَ سعادة أختي، وعاملتَ السيد ويكهام بقسوة.\"",
+          "vi": "\"Anh đã phá hỏng hạnh phúc của chị tôi, và anh đã đối xử tàn nhẫn với anh Wickham.\"",
+          "hi": "\"आपने मेरी बहन की ख़ुशियाँ बर्बाद कीं, और मिस्टर विकहम के साथ बेरहमी की।\"",
+          "ru": "«Вы разрушили счастье моей сестры и жестоко обошлись с мистером Уикхемом».",
+          "bn": "\"আপনি আমার দিদির সুখ নষ্ট করেছেন, আর মিস্টার উইকহ্যামের সঙ্গে নিষ্ঠুর আচরণ করেছেন।\"",
+          "ur": "\"آپ نے میری بہن کی خوشیاں برباد کیں، اور مسٹر وکھم کے ساتھ ظلم کیا۔\"",
+          "th": "\"คุณทำลายความสุขของพี่สาวฉัน และปฏิบัติต่อคุณวิกแฮมอย่างโหดร้าย\""
+        }
+      },
+      {
+        "id": "cl-pride-070",
+        "english": "\"From the first moment I met you, I saw your pride and your selfishness.\"",
+        "turkish": "\"Sizinle tanıştığım ilk andan beri kibrinizi ve bencilliğinizi gördüm.\"",
+        "translations": {
+          "es-419": "\"Desde el primer momento en que lo conocí, vi su orgullo y su egoísmo\".",
+          "pt-BR": "\"Desde o primeiro momento em que o conheci, vi o seu orgulho e o seu egoísmo.\"",
+          "id": "\"Sejak pertama kali bertemu Anda, aku sudah melihat keangkuhan dan keegoisan Anda.\"",
+          "ar": "\"منذ اللحظة الأولى التي قابلتك فيها، رأيت كبرياءك وأنانيتك.\"",
+          "vi": "\"Ngay từ lần đầu gặp anh, tôi đã thấy sự kiêu ngạo và ích kỷ của anh.\"",
+          "hi": "\"आपसे पहली बार मिलते ही मैंने आपका घमंड और आपकी ख़ुदग़र्ज़ी देख ली थी।\"",
+          "ru": "«С первой минуты нашего знакомства я видела вашу гордость и ваш эгоизм».",
+          "bn": "\"প্রথম দেখার মুহূর্ত থেকেই আমি আপনার অহংকার আর স্বার্থপরতা দেখেছি।\"",
+          "ur": "\"آپ سے پہلی ملاقات ہی میں میں نے آپ کا غرور اور خود غرضی دیکھ لی تھی۔\"",
+          "th": "\"ตั้งแต่วินาทีแรกที่ได้พบคุณ ฉันก็เห็นความหยิ่งและความเห็นแก่ตัวของคุณ\""
+        }
+      },
+      {
+        "id": "cl-pride-071",
+        "english": "\"You are the last man in the world I could ever marry.\"",
+        "turkish": "\"Dünyada evlenebileceğim en son adam sizsiniz.\"",
+        "translations": {
+          "es-419": "\"Usted es el último hombre del mundo con quien podría casarme\".",
+          "pt-BR": "\"O senhor é o último homem do mundo com quem eu me casaria.\"",
+          "id": "\"Anda adalah pria terakhir di dunia yang mau kunikahi.\"",
+          "ar": "\"أنت آخر رجل في الدنيا يمكن أن أتزوّجه.\"",
+          "vi": "\"Anh là người đàn ông cuối cùng trên đời mà tôi có thể lấy làm chồng.\"",
+          "hi": "\"आप दुनिया के आख़िरी आदमी हैं जिनसे मैं कभी शादी कर सकूँ।\"",
+          "ru": "«Вы последний человек на свете, за которого я могла бы выйти замуж».",
+          "bn": "\"পৃথিবীতে আপনিই শেষ মানুষ যাঁকে আমি কখনো বিয়ে করতে পারি।\"",
+          "ur": "\"آپ دنیا کے آخری آدمی ہیں جن سے میں کبھی شادی کر سکوں۔\"",
+          "th": "\"คุณคือผู้ชายคนสุดท้ายในโลกที่ฉันจะยอมแต่งงานด้วย\""
+        }
+      },
+      {
+        "id": "cl-pride-072",
+        "english": "Darcy went pale and left the room without another word.",
+        "turkish": "Darcy'nin yüzü bembeyaz oldu ve tek kelime etmeden odadan çıktı.",
+        "translations": {
+          "es-419": "Darcy se puso pálido y salió de la sala sin decir otra palabra.",
+          "pt-BR": "Darcy ficou pálido e saiu da sala sem dizer mais nada.",
+          "id": "Wajah Darcy memucat, dan ia meninggalkan ruangan tanpa sepatah kata pun.",
+          "ar": "شحب وجه دارسي وغادر الغرفة دون كلمة أخرى.",
+          "vi": "Darcy tái mặt và rời khỏi phòng không nói thêm lời nào.",
+          "hi": "डार्सी का चेहरा पीला पड़ गया और वे बिना कुछ कहे कमरे से चले गए।",
+          "ru": "Дарси побледнел и вышел, не сказав больше ни слова.",
+          "bn": "ডারসি ফ্যাকাশে হয়ে গেলেন, আর কোনো কথা না বলে ঘর ছেড়ে চলে গেলেন।",
+          "ur": "ڈارسی کا چہرہ زرد پڑ گیا اور وہ بغیر کچھ کہے کمرے سے چلے گئے۔",
+          "th": "ดาร์ซีหน้าซีด แล้วเดินออกจากห้องไปโดยไม่พูดอะไรอีก"
+        }
+      },
+      {
+        "id": "cl-pride-073",
+        "english": "The next morning he met her in the park and gave her a long letter.",
+        "turkish": "Ertesi sabah onu parkta buldu ve ona uzun bir mektup verdi.",
+        "translations": {
+          "es-419": "A la mañana siguiente la encontró en el parque y le dio una larga carta.",
+          "pt-BR": "Na manhã seguinte, ele a encontrou no parque e lhe entregou uma longa carta.",
+          "id": "Keesokan paginya ia menemuinya di taman dan memberinya sepucuk surat panjang.",
+          "ar": "وفي صباح اليوم التالي، لقيها في الحديقة وأعطاها رسالة طويلة.",
+          "vi": "Sáng hôm sau, anh gặp cô trong công viên và đưa cho cô một lá thư dài.",
+          "hi": "अगली सुबह वे उसे बगीचे में मिले और उसे एक लंबा पत्र दिया।",
+          "ru": "На следующее утро он встретил её в парке и отдал ей длинное письмо.",
+          "bn": "পরদিন সকালে তিনি তাকে বাগানে পেয়ে একটা লম্বা চিঠি দিলেন।",
+          "ur": "اگلی صبح وہ اسے باغ میں ملے اور اسے ایک لمبا خط دیا۔",
+          "th": "เช้าวันรุ่งขึ้น เขาพบเธอในสวนและยื่นจดหมายยาวฉบับหนึ่งให้"
+        }
+      },
+      {
+        "id": "cl-pride-074",
+        "english": "In it, he explained everything honestly.",
+        "turkish": "Mektupta her şeyi dürüstçe açıklıyordu.",
+        "translations": {
+          "es-419": "En ella lo explicaba todo con sinceridad.",
+          "pt-BR": "Nela, ele explicava tudo com sinceridade.",
+          "id": "Di dalamnya, ia menjelaskan segalanya dengan jujur.",
+          "ar": "وفيها شرح كل شيء بصدق.",
+          "vi": "Trong thư, anh thành thật giải thích mọi chuyện.",
+          "hi": "उसमें उन्होंने सब कुछ ईमानदारी से समझाया था।",
+          "ru": "В нём он честно всё объяснил.",
+          "bn": "তাতে তিনি সবকিছু সৎভাবে খুলে বলেছিলেন।",
+          "ur": "اس میں انہوں نے سب کچھ ایمانداری سے سمجھایا تھا۔",
+          "th": "ในจดหมาย เขาอธิบายทุกอย่างอย่างตรงไปตรงมา"
+        }
+      },
+      {
+        "id": "cl-pride-075",
+        "english": "He had truly believed that Jane did not care for Bingley.",
+        "turkish": "Jane'in Bingley'yi umursamadığına gerçekten inanmıştı.",
+        "translations": {
+          "es-419": "Él de verdad había creído que a Jane no le importaba Bingley.",
+          "pt-BR": "Ele realmente tinha acreditado que Jane não gostava de Bingley.",
+          "id": "Ia sungguh-sungguh percaya bahwa Jane tidak peduli pada Bingley.",
+          "ar": "لقد ظنّ حقًّا أن جين لا تهتمّ ببينغلي.",
+          "vi": "Anh đã thật sự tin rằng Jane không có tình cảm với Bingley.",
+          "hi": "उन्हें सच में लगा था कि जेन को बिंगले की परवाह नहीं।",
+          "ru": "Он искренне верил, что Джейн равнодушна к Бингли.",
+          "bn": "তিনি সত্যিই বিশ্বাস করেছিলেন যে জেন বিংলিকে চায় না।",
+          "ur": "انہیں سچ مچ یقین تھا کہ جین کو بنگلے کی پروا نہیں۔",
+          "th": "เขาเชื่อจริง ๆ ว่าเจนไม่ได้ใส่ใจบิงลีย์"
+        }
+      },
+      {
+        "id": "cl-pride-076",
+        "english": "As for Wickham, he had been offered money instead of the church job, and he had accepted it.",
+        "turkish": "Wickham'a gelince, kilisedeki görev yerine ona para teklif edilmiş, o da kabul etmişti.",
+        "translations": {
+          "es-419": "En cuanto a Wickham, le habían ofrecido dinero en lugar del puesto en la iglesia, y él lo había aceptado.",
+          "pt-BR": "Quanto a Wickham, tinham lhe oferecido dinheiro no lugar do cargo na igreja, e ele tinha aceitado.",
+          "id": "Adapun Wickham, ia ditawari uang sebagai ganti pekerjaan di gereja, dan ia menerimanya.",
+          "ar": "أما ويكهام، فقد عُرض عليه مال بدلًا من وظيفة الكنيسة، وقبله.",
+          "vi": "Còn Wickham, anh ta đã được đề nghị nhận tiền thay cho chức vụ ở nhà thờ, và anh ta đã nhận.",
+          "hi": "रही बात विकहम की, तो उन्हें चर्च की नौकरी के बदले पैसे दिए गए थे, और उन्होंने ले लिए थे।",
+          "ru": "Что до Уикхема, то ему предложили деньги вместо места в церкви, и он их взял.",
+          "bn": "আর উইকহ্যামকে গির্জার কাজের বদলে টাকা দেওয়া হয়েছিল, তিনি তা নিয়েছিলেন।",
+          "ur": "رہی بات وکھم کی، تو انہیں چرچ کی نوکری کے بدلے پیسے دیے گئے تھے، اور انہوں نے لے لیے تھے۔",
+          "th": "ส่วนวิกแฮม เขาได้รับข้อเสนอเป็นเงินแทนตำแหน่งในโบสถ์ และเขาก็รับเงินนั้นไป"
+        }
+      },
+      {
+        "id": "cl-pride-077",
+        "english": "When the money was gone, Wickham tried to run away with Darcy's young sister, Georgiana.",
+        "turkish": "Para bitince Wickham, Darcy'nin küçük kız kardeşi Georgiana'yla kaçmaya çalıştı.",
+        "translations": {
+          "es-419": "Cuando se acabó el dinero, Wickham intentó fugarse con Georgiana, la hermana menor de Darcy.",
+          "pt-BR": "Quando o dinheiro acabou, Wickham tentou fugir com Georgiana, a irmã mais nova de Darcy.",
+          "id": "Ketika uangnya habis, Wickham mencoba kawin lari dengan adik Darcy yang masih muda, Georgiana.",
+          "ar": "ولما نفد المال، حاول ويكهام أن يهرب مع جورجيانا، أخت دارسي الصغيرة.",
+          "vi": "Khi tiêu hết tiền, Wickham tìm cách bỏ trốn cùng Georgiana, cô em gái nhỏ của Darcy.",
+          "hi": "पैसे ख़त्म होने पर विकहम ने डार्सी की छोटी बहन जॉर्जियाना को भगा ले जाने की कोशिश की।",
+          "ru": "Когда деньги кончились, Уикхем попытался бежать с юной сестрой Дарси, Джорджианой.",
+          "bn": "টাকা ফুরিয়ে গেলে উইকহ্যাম ডারসির ছোট বোন জর্জিয়ানাকে নিয়ে পালানোর চেষ্টা করেছিলেন।",
+          "ur": "پیسے ختم ہونے پر وکھم نے ڈارسی کی چھوٹی بہن جارجیانا کو بھگا لے جانے کی کوشش کی۔",
+          "th": "เมื่อเงินหมด วิกแฮมพยายามพาจอร์เจียนา น้องสาววัยเยาว์ของดาร์ซีหนีไป"
+        }
+      },
+      {
+        "id": "cl-pride-078",
+        "english": "He wanted her fortune, not her heart.",
+        "turkish": "Onun kalbini değil, servetini istiyordu.",
+        "translations": {
+          "es-419": "Quería su fortuna, no su corazón.",
+          "pt-BR": "Ele queria a fortuna dela, não o coração.",
+          "id": "Ia menginginkan hartanya, bukan hatinya.",
+          "ar": "كان يريد ثروتها لا قلبها.",
+          "vi": "Anh ta muốn gia tài của cô bé, chứ không phải trái tim.",
+          "hi": "उन्हें उसकी दौलत चाहिए थी, उसका दिल नहीं।",
+          "ru": "Ему нужно было её состояние, а не её сердце.",
+          "bn": "তিনি চেয়েছিলেন তার সম্পত্তি, তার মন নয়।",
+          "ur": "انہیں اس کی دولت چاہیے تھی، اس کا دل نہیں۔",
+          "th": "เขาต้องการทรัพย์สมบัติของเธอ ไม่ใช่หัวใจ"
+        }
+      },
+      {
+        "id": "cl-pride-079",
+        "english": "Elizabeth read the letter again and again.",
+        "turkish": "Elizabeth mektubu tekrar tekrar okudu.",
+        "translations": {
+          "es-419": "Elizabeth leyó la carta una y otra vez.",
+          "pt-BR": "Elizabeth leu a carta muitas e muitas vezes.",
+          "id": "Elizabeth membaca surat itu berulang-ulang.",
+          "ar": "قرأت إليزابيث الرسالة مرارًا وتكرارًا.",
+          "vi": "Elizabeth đọc đi đọc lại lá thư.",
+          "hi": "एलिज़ाबेथ ने वह पत्र बार-बार पढ़ा।",
+          "ru": "Элизабет перечитывала письмо снова и снова.",
+          "bn": "এলিজাবেথ চিঠিটা বারবার পড়ল।",
+          "ur": "الزبتھ نے وہ خط بار بار پڑھا۔",
+          "th": "เอลิซาเบธอ่านจดหมายซ้ำแล้วซ้ำเล่า"
+        }
+      },
+      {
+        "id": "cl-pride-080",
+        "english": "Slowly, she understood that she had made a terrible mistake.",
+        "turkish": "Yavaş yavaş korkunç bir hata yaptığını anladı.",
+        "translations": {
+          "es-419": "Poco a poco comprendió que había cometido un error terrible.",
+          "pt-BR": "Aos poucos, ela entendeu que tinha cometido um erro terrível.",
+          "id": "Perlahan-lahan ia sadar bahwa ia telah membuat kesalahan besar.",
+          "ar": "وشيئًا فشيئًا، أدركت أنها ارتكبت خطأً فادحًا.",
+          "vi": "Dần dần, cô hiểu ra mình đã phạm một sai lầm khủng khiếp.",
+          "hi": "धीरे-धीरे उसे समझ आया कि उससे एक भयानक भूल हो गई थी।",
+          "ru": "Постепенно она поняла, что совершила ужасную ошибку.",
+          "bn": "ধীরে ধীরে সে বুঝল, সে এক ভয়ানক ভুল করেছে।",
+          "ur": "آہستہ آہستہ اسے سمجھ آیا کہ اس سے ایک خوفناک غلطی ہو گئی تھی۔",
+          "th": "ค่อย ๆ เธอเข้าใจว่าตัวเองได้ทำผิดพลาดครั้งร้ายแรง"
+        }
+      },
+      {
+        "id": "cl-pride-081",
+        "english": "\"I was proud of my judgement,\" she thought, \"and I was blind.\"",
+        "turkish": "\"Sağduyumla gurur duyuyordum,\" diye düşündü, \"ve kördüm.\"",
+        "translations": {
+          "es-419": "\"Estaba orgullosa de mi buen juicio\", pensó, \"y estaba ciega\".",
+          "pt-BR": "\"Eu tinha orgulho do meu julgamento\", pensou ela, \"e estava cega.\"",
+          "id": "\"Aku bangga dengan penilaianku,\" pikirnya, \"dan ternyata aku buta.\"",
+          "ar": "فكّرت: \"كنت فخورة بحكمي على الناس، وكنت عمياء.\"",
+          "vi": "\"Mình từng tự hào về khả năng phán đoán,\" cô nghĩ, \"vậy mà mình đã mù quáng.\"",
+          "hi": "\"मुझे अपनी परख पर गर्व था,\" उसने सोचा, \"और मैं अंधी थी।\"",
+          "ru": "«Я гордилась своим умением судить о людях, — подумала она, — и была слепа».",
+          "bn": "\"আমি নিজের বিচারবুদ্ধি নিয়ে গর্ব করতাম,\" সে ভাবল, \"অথচ আমি ছিলাম অন্ধ।\"",
+          "ur": "\"مجھے اپنی پرکھ پر فخر تھا،\" اس نے سوچا، \"اور میں اندھی تھی۔\"",
+          "th": "\"ฉันเคยภูมิใจในวิจารณญาณของตัวเอง\" เธอคิด \"แต่ที่จริงฉันตาบอด\""
+        }
+      },
+      {
+        "id": "cl-pride-082",
+        "english": "That summer, Elizabeth travelled north with her aunt and uncle, the Gardiners.",
+        "turkish": "O yaz Elizabeth, dayısı ve yengesi Gardiner'larla birlikte kuzeye yolculuk etti.",
+        "translations": {
+          "es-419": "Ese verano, Elizabeth viajó al norte con sus tíos, los Gardiner.",
+          "pt-BR": "Naquele verão, Elizabeth viajou para o norte com os tios, os Gardiner.",
+          "id": "Musim panas itu, Elizabeth bepergian ke utara bersama bibi dan pamannya, keluarga Gardiner.",
+          "ar": "في ذلك الصيف، سافرت إليزابيث شمالًا مع خالها وزوجته، آل غاردينر.",
+          "vi": "Mùa hè năm ấy, Elizabeth đi du lịch lên phía bắc cùng cậu mợ của cô, ông bà Gardiner.",
+          "hi": "उस गर्मी में एलिज़ाबेथ अपने मामा-मामी, गार्डिनर दंपती, के साथ उत्तर की यात्रा पर गई।",
+          "ru": "Тем летом Элизабет поехала на север с тётей и дядей, супругами Гардинер.",
+          "bn": "সেই গ্রীষ্মে এলিজাবেথ মামা-মামি গার্ডিনারদের সঙ্গে উত্তরে বেড়াতে গেল।",
+          "ur": "اس گرمی میں الزبتھ اپنے ماموں ممانی، گارڈنر میاں بیوی، کے ساتھ شمال کے سفر پر گئی۔",
+          "th": "ฤดูร้อนนั้น เอลิซาเบธเดินทางขึ้นเหนือกับน้าทั้งสอง คือคุณและคุณนายการ์ดิเนอร์"
+        }
+      },
+      {
+        "id": "cl-pride-083",
+        "english": "They stopped to see Pemberley, because they had heard that Darcy was away.",
+        "turkish": "Darcy'nin orada olmadığını duydukları için Pemberley'yi görmek üzere mola verdiler.",
+        "translations": {
+          "es-419": "Se detuvieron a ver Pemberley, porque habían oído que Darcy no estaba.",
+          "pt-BR": "Eles pararam para conhecer Pemberley, porque tinham ouvido que Darcy estava fora.",
+          "id": "Mereka mampir melihat Pemberley, karena mereka dengar Darcy sedang pergi.",
+          "ar": "توقّفوا لزيارة بيمبرلي، لأنهم سمعوا أن دارسي غائب.",
+          "vi": "Họ ghé thăm Pemberley vì nghe nói Darcy đang đi vắng.",
+          "hi": "वे पेम्बर्ली देखने रुके, क्योंकि उन्होंने सुना था कि डार्सी वहाँ नहीं हैं।",
+          "ru": "Они заехали посмотреть Пемберли, потому что слышали, что Дарси в отъезде.",
+          "bn": "তাঁরা পেমবার্লি দেখতে থামলেন, কারণ শুনেছিলেন ডারসি বাড়ি নেই।",
+          "ur": "وہ پیمبرلی دیکھنے رکے، کیونکہ انہوں نے سنا تھا کہ ڈارسی وہاں نہیں ہیں۔",
+          "th": "พวกเขาแวะชมเพมเบอร์ลีย์ เพราะได้ยินมาว่าดาร์ซีไม่อยู่"
+        }
+      },
+      {
+        "id": "cl-pride-084",
+        "english": "The house stood beside a lake, and it was more beautiful than she had imagined.",
+        "turkish": "Ev bir gölün kıyısındaydı ve onun hayal ettiğinden daha güzeldi.",
+        "translations": {
+          "es-419": "La casa estaba junto a un lago y era más hermosa de lo que había imaginado.",
+          "pt-BR": "A casa ficava à beira de um lago e era mais bonita do que ela tinha imaginado.",
+          "id": "Rumah itu berdiri di tepi danau, dan lebih indah daripada yang ia bayangkan.",
+          "ar": "كان البيت قائمًا بجانب بحيرة، وكان أجمل مما تخيّلت.",
+          "vi": "Ngôi nhà nằm bên một hồ nước và đẹp hơn cô tưởng tượng rất nhiều.",
+          "hi": "घर एक झील के किनारे था, और उसकी कल्पना से कहीं ज़्यादा सुंदर था।",
+          "ru": "Дом стоял у озера и был красивее, чем она себе представляла.",
+          "bn": "বাড়িটা একটা হ্রদের ধারে, আর সে যা ভেবেছিল তার চেয়েও সুন্দর।",
+          "ur": "گھر ایک جھیل کے کنارے تھا، اور اس کے تصور سے کہیں زیادہ خوبصورت تھا۔",
+          "th": "บ้านตั้งอยู่ริมทะเลสาบ และงดงามกว่าที่เธอจินตนาการไว้"
+        }
+      },
+      {
+        "id": "cl-pride-085",
+        "english": "The old housekeeper said that her master was the kindest man she knew.",
+        "turkish": "Yaşlı kâhya kadın, efendisinin tanıdığı en iyi kalpli insan olduğunu söyledi.",
+        "translations": {
+          "es-419": "La vieja ama de llaves dijo que su amo era el hombre más bondadoso que conocía.",
+          "pt-BR": "A velha governanta disse que o patrão era o homem mais bondoso que ela conhecia.",
+          "id": "Kepala pelayan yang sudah tua berkata bahwa tuannya adalah pria paling baik hati yang ia kenal.",
+          "ar": "قالت مدبّرة البيت العجوز إن سيّدها أطيب رجل عرفته.",
+          "vi": "Bà quản gia già nói rằng chủ của bà là người tốt bụng nhất mà bà từng biết.",
+          "hi": "बूढ़ी गृह-प्रबंधिका ने कहा कि उनके मालिक सबसे दयालु इंसान हैं जिन्हें वह जानती है।",
+          "ru": "Старая экономка сказала, что её хозяин — самый добрый человек из всех, кого она знает.",
+          "bn": "বৃদ্ধা গৃহকর্ত্রী বললেন, তাঁর মনিবের মতো দয়ালু মানুষ তিনি আর দেখেননি।",
+          "ur": "بوڑھی منتظمہ نے کہا کہ ان کے مالک سب سے مہربان انسان ہیں جنہیں وہ جانتی ہے۔",
+          "th": "แม่บ้านชราบอกว่านายของเธอเป็นผู้ชายที่ใจดีที่สุดที่เธอรู้จัก"
+        }
+      },
+      {
+        "id": "cl-pride-086",
+        "english": "Then, as they walked through the gardens, Darcy himself appeared.",
+        "turkish": "Sonra bahçelerde dolaşırlarken Darcy'nin kendisi çıkageldi.",
+        "translations": {
+          "es-419": "Entonces, mientras paseaban por los jardines, apareció el propio Darcy.",
+          "pt-BR": "Então, enquanto passeavam pelos jardins, o próprio Darcy apareceu.",
+          "id": "Lalu, saat mereka berjalan-jalan di taman, Darcy sendiri muncul.",
+          "ar": "ثم، وبينما كانوا يتجوّلون في الحدائق، ظهر دارسي نفسه.",
+          "vi": "Rồi khi họ đang dạo trong vườn, chính Darcy xuất hiện.",
+          "hi": "फिर जब वे बगीचों में घूम रहे थे, ख़ुद डार्सी सामने आ गए।",
+          "ru": "И вдруг, когда они гуляли по саду, появился сам Дарси.",
+          "bn": "তারপর তাঁরা বাগানে হাঁটছেন, এমন সময় স্বয়ং ডারসি এসে হাজির।",
+          "ur": "پھر جب وہ باغوں میں گھوم رہے تھے، خود ڈارسی سامنے آ گئے۔",
+          "th": "แล้วขณะที่พวกเขาเดินชมสวน ดาร์ซีเองก็ปรากฏตัวขึ้น"
+        }
+      },
+      {
+        "id": "cl-pride-087",
+        "english": "He had come home a day early.",
+        "turkish": "Eve bir gün erken dönmüştü.",
+        "translations": {
+          "es-419": "Había vuelto a casa un día antes.",
+          "pt-BR": "Ele tinha voltado para casa um dia antes.",
+          "id": "Ia pulang sehari lebih awal.",
+          "ar": "كان قد عاد إلى بيته قبل موعده بيوم.",
+          "vi": "Anh đã về nhà sớm một ngày.",
+          "hi": "वे एक दिन पहले ही घर लौट आए थे।",
+          "ru": "Он вернулся домой на день раньше.",
+          "bn": "তিনি একদিন আগেই বাড়ি ফিরে এসেছিলেন।",
+          "ur": "وہ ایک دن پہلے ہی گھر لوٹ آئے تھے۔",
+          "th": "เขากลับบ้านก่อนกำหนดหนึ่งวัน"
+        }
+      },
+      {
+        "id": "cl-pride-088",
+        "english": "Elizabeth's face turned red, but Darcy was calm and gentle.",
+        "turkish": "Elizabeth'in yüzü kızardı, ama Darcy sakin ve nazikti.",
+        "translations": {
+          "es-419": "Elizabeth se sonrojó, pero Darcy estuvo tranquilo y amable.",
+          "pt-BR": "Elizabeth ficou vermelha, mas Darcy estava calmo e gentil.",
+          "id": "Wajah Elizabeth memerah, tetapi Darcy tenang dan lembut.",
+          "ar": "احمرّ وجه إليزابيث، لكن دارسي كان هادئًا لطيفًا.",
+          "vi": "Mặt Elizabeth đỏ bừng, nhưng Darcy vẫn điềm tĩnh và hòa nhã.",
+          "hi": "एलिज़ाबेथ का चेहरा लाल हो गया, पर डार्सी शांत और नरम थे।",
+          "ru": "Элизабет покраснела, но Дарси был спокоен и мягок.",
+          "bn": "এলিজাবেথের মুখ লাল হয়ে গেল, কিন্তু ডারসি শান্ত আর নম্র রইলেন।",
+          "ur": "الزبتھ کا چہرہ سرخ ہو گیا، مگر ڈارسی پرسکون اور نرم تھے۔",
+          "th": "หน้าของเอลิซาเบธแดงก่ำ แต่ดาร์ซีกลับสงบและอ่อนโยน"
+        }
+      },
+      {
+        "id": "cl-pride-089",
+        "english": "He spoke politely to her uncle and aunt and invited them to fish in his lake.",
+        "turkish": "Dayısı ve yengesiyle kibarca konuştu ve onları gölünde balık tutmaya davet etti.",
+        "translations": {
+          "es-419": "Habló con cortesía a sus tíos y los invitó a pescar en su lago.",
+          "pt-BR": "Ele falou com educação com os tios dela e os convidou para pescar no seu lago.",
+          "id": "Ia berbicara dengan sopan kepada paman dan bibinya dan mengundang mereka memancing di danaunya.",
+          "ar": "تحدّث بأدب مع خالها وزوجته، ودعاهما لصيد السمك في بحيرته.",
+          "vi": "Anh nói chuyện lịch sự với cậu mợ cô và mời họ câu cá ở hồ của mình.",
+          "hi": "उन्होंने उसके मामा-मामी से विनम्रता से बात की और उन्हें अपनी झील में मछली पकड़ने बुलाया।",
+          "ru": "Он вежливо поговорил с её дядей и тётей и пригласил их порыбачить в его озере.",
+          "bn": "তিনি তার মামা-মামির সঙ্গে ভদ্রভাবে কথা বললেন, আর তাঁদের হ্রদে মাছ ধরতে ডাকলেন।",
+          "ur": "انہوں نے اس کے ماموں ممانی سے شائستگی سے بات کی اور انہیں اپنی جھیل میں مچھلی پکڑنے کی دعوت دی۔",
+          "th": "เขาพูดคุยกับน้าทั้งสองอย่างสุภาพ และชวนให้มาตกปลาที่ทะเลสาบของเขา"
+        }
+      },
+      {
+        "id": "cl-pride-090",
+        "english": "The next day he brought his shy sister Georgiana to meet her.",
+        "turkish": "Ertesi gün utangaç kız kardeşi Georgiana'yı onunla tanıştırmaya getirdi.",
+        "translations": {
+          "es-419": "Al día siguiente llevó a su tímida hermana Georgiana a conocerla.",
+          "pt-BR": "No dia seguinte, ele levou a irmã tímida, Georgiana, para conhecê-la.",
+          "id": "Keesokan harinya ia membawa adiknya yang pemalu, Georgiana, untuk berkenalan dengannya.",
+          "ar": "وفي اليوم التالي، أحضر أخته الخجولة جورجيانا لتتعرّف إليها.",
+          "vi": "Hôm sau, anh đưa cô em gái nhút nhát Georgiana đến làm quen với cô.",
+          "hi": "अगले दिन वे अपनी शर्मीली बहन जॉर्जियाना को उससे मिलवाने लाए।",
+          "ru": "На следующий день он привёз познакомиться с ней свою застенчивую сестру Джорджиану.",
+          "bn": "পরদিন তিনি তাঁর লাজুক বোন জর্জিয়ানাকে তার সঙ্গে আলাপ করাতে নিয়ে এলেন।",
+          "ur": "اگلے دن وہ اپنی شرمیلی بہن جارجیانا کو اس سے ملوانے لائے۔",
+          "th": "วันรุ่งขึ้น เขาพาจอร์เจียนา น้องสาวขี้อายมาทำความรู้จักกับเธอ"
+        }
+      },
+      {
+        "id": "cl-pride-091",
+        "english": "Elizabeth began to see a different man, and her feelings started to change.",
+        "turkish": "Elizabeth karşısında farklı bir adam görmeye başladı ve duyguları değişmeye başladı.",
+        "translations": {
+          "es-419": "Elizabeth empezó a ver a un hombre distinto, y sus sentimientos comenzaron a cambiar.",
+          "pt-BR": "Elizabeth começou a ver um homem diferente, e seus sentimentos começaram a mudar.",
+          "id": "Elizabeth mulai melihat pria yang berbeda, dan perasaannya mulai berubah.",
+          "ar": "بدأت إليزابيث ترى رجلًا مختلفًا، وبدأت مشاعرها تتغيّر.",
+          "vi": "Elizabeth bắt đầu thấy một con người khác, và tình cảm của cô bắt đầu thay đổi.",
+          "hi": "एलिज़ाबेथ को एक अलग ही इंसान दिखने लगा, और उसकी भावनाएँ बदलने लगीं।",
+          "ru": "Элизабет увидела совсем другого человека, и её чувства начали меняться.",
+          "bn": "এলিজাবেথ এক অন্য মানুষকে দেখতে পেল, আর তার মন বদলাতে শুরু করল।",
+          "ur": "الزبتھ کو ایک مختلف انسان نظر آنے لگا، اور اس کے جذبات بدلنے لگے۔",
+          "th": "เอลิซาเบธเริ่มเห็นเขาเป็นคนละคน และความรู้สึกของเธอก็เริ่มเปลี่ยนไป"
+        }
+      },
+      {
+        "id": "cl-pride-092",
+        "english": "But then a letter arrived from Jane with terrible news.",
+        "turkish": "Ama sonra Jane'den korkunç haberler içeren bir mektup geldi.",
+        "translations": {
+          "es-419": "Pero entonces llegó una carta de Jane con noticias terribles.",
+          "pt-BR": "Mas então chegou uma carta de Jane com notícias terríveis.",
+          "id": "Namun kemudian datang surat dari Jane dengan kabar buruk.",
+          "ar": "لكن بعد ذلك وصلت رسالة من جين تحمل أخبارًا مروّعة.",
+          "vi": "Nhưng rồi một lá thư của Jane gửi đến với tin dữ.",
+          "hi": "लेकिन तभी जेन का एक पत्र भयानक ख़बर लेकर आया।",
+          "ru": "Но тут пришло письмо от Джейн с ужасной новостью.",
+          "bn": "কিন্তু তখনই জেনের কাছ থেকে একটা চিঠি এল ভয়ংকর খবর নিয়ে।",
+          "ur": "لیکن تبھی جین کا ایک خط خوفناک خبر لے کر آیا۔",
+          "th": "แต่แล้วจดหมายจากเจนก็มาถึงพร้อมข่าวร้าย"
+        }
+      },
+      {
+        "id": "cl-pride-093",
+        "english": "Lydia, the youngest sister, had run away with Wickham.",
+        "turkish": "En küçük kız kardeş Lydia, Wickham'la kaçmıştı.",
+        "translations": {
+          "es-419": "Lydia, la hermana menor, se había fugado con Wickham.",
+          "pt-BR": "Lydia, a irmã mais nova, tinha fugido com Wickham.",
+          "id": "Lydia, si bungsu, telah kawin lari dengan Wickham.",
+          "ar": "لقد هربت ليديا، الأخت الصغرى، مع ويكهام.",
+          "vi": "Lydia, cô em út, đã bỏ trốn theo Wickham.",
+          "hi": "सबसे छोटी बहन लिडिया विकहम के साथ भाग गई थी।",
+          "ru": "Лидия, младшая сестра, сбежала с Уикхемом.",
+          "bn": "সবচেয়ে ছোট বোন লিডিয়া উইকহ্যামের সঙ্গে পালিয়ে গেছে।",
+          "ur": "سب سے چھوٹی بہن لیڈیا وکھم کے ساتھ بھاگ گئی تھی۔",
+          "th": "ลิเดีย น้องสาวคนเล็ก หนีตามวิกแฮมไปแล้ว"
+        }
+      },
+      {
+        "id": "cl-pride-094",
+        "english": "They were not married, and the whole family would be shamed.",
+        "turkish": "Evli değillerdi ve bütün aile rezil olacaktı.",
+        "translations": {
+          "es-419": "No estaban casados, y toda la familia quedaría deshonrada.",
+          "pt-BR": "Eles não estavam casados, e a família inteira ficaria desonrada.",
+          "id": "Mereka belum menikah, dan seluruh keluarga akan menanggung malu.",
+          "ar": "لم يكونا متزوّجين، وسيلحق العار بالعائلة كلها.",
+          "vi": "Họ chưa cưới nhau, và cả gia đình sẽ phải chịu nhục.",
+          "hi": "उनकी शादी नहीं हुई थी, और पूरे परिवार की बदनामी होने वाली थी।",
+          "ru": "Они не были женаты, и позор пал бы на всю семью.",
+          "bn": "তাদের বিয়ে হয়নি, আর গোটা পরিবারের মুখে কালি পড়বে।",
+          "ur": "ان کی شادی نہیں ہوئی تھی، اور پورے خاندان کی بدنامی ہونے والی تھی۔",
+          "th": "ทั้งคู่ยังไม่ได้แต่งงานกัน และทั้งครอบครัวจะต้องอับอาย"
+        }
+      },
+      {
+        "id": "cl-pride-095",
+        "english": "Elizabeth told Darcy everything in tears, and he left quickly.",
+        "turkish": "Elizabeth gözyaşları içinde her şeyi Darcy'ye anlattı, o da hemen ayrıldı.",
+        "translations": {
+          "es-419": "Elizabeth le contó todo a Darcy entre lágrimas, y él se fue enseguida.",
+          "pt-BR": "Elizabeth contou tudo a Darcy em lágrimas, e ele foi embora depressa.",
+          "id": "Sambil menangis, Elizabeth menceritakan semuanya kepada Darcy, dan ia segera pergi.",
+          "ar": "أخبرت إليزابيث دارسي بكل شيء وهي تبكي، فغادر مسرعًا.",
+          "vi": "Elizabeth vừa khóc vừa kể hết với Darcy, và anh vội vã ra đi.",
+          "hi": "एलिज़ाबेथ ने रोते हुए डार्सी को सब बता दिया, और वे जल्दी से चले गए।",
+          "ru": "Элизабет в слезах рассказала всё Дарси, и он быстро ушёл.",
+          "bn": "এলিজাবেথ কাঁদতে কাঁদতে ডারসিকে সব বলল, আর তিনি তাড়াতাড়ি চলে গেলেন।",
+          "ur": "الزبتھ نے روتے ہوئے ڈارسی کو سب کچھ بتا دیا، اور وہ جلدی سے چلے گئے۔",
+          "th": "เอลิซาเบธเล่าทุกอย่างให้ดาร์ซีฟังทั้งน้ำตา แล้วเขาก็รีบจากไป"
+        }
+      },
+      {
+        "id": "cl-pride-096",
+        "english": "She was sure that she would never see him again.",
+        "turkish": "Onu bir daha asla göremeyeceğinden emindi.",
+        "translations": {
+          "es-419": "Estaba segura de que nunca volvería a verlo.",
+          "pt-BR": "Ela tinha certeza de que nunca mais o veria.",
+          "id": "Ia yakin tidak akan pernah melihatnya lagi.",
+          "ar": "كانت متأكدة أنها لن تراه مرة أخرى.",
+          "vi": "Cô tin chắc mình sẽ không bao giờ gặp lại anh nữa.",
+          "hi": "उसे यक़ीन था कि वह उन्हें फिर कभी नहीं देखेगी।",
+          "ru": "Она была уверена, что больше никогда его не увидит.",
+          "bn": "সে নিশ্চিত ছিল, আর কখনো তাঁকে দেখতে পাবে না।",
+          "ur": "اسے یقین تھا کہ وہ انہیں پھر کبھی نہیں دیکھے گی۔",
+          "th": "เธอมั่นใจว่าจะไม่ได้พบเขาอีกแล้ว"
+        }
+      },
+      {
+        "id": "cl-pride-097",
+        "english": "A few days later, the family heard that Lydia and Wickham had been found in London.",
+        "turkish": "Birkaç gün sonra aile, Lydia ile Wickham'ın Londra'da bulunduğunu duydu.",
+        "translations": {
+          "es-419": "Pocos días después, la familia supo que habían encontrado a Lydia y a Wickham en Londres.",
+          "pt-BR": "Poucos dias depois, a família soube que Lydia e Wickham tinham sido encontrados em Londres.",
+          "id": "Beberapa hari kemudian, keluarga itu mendengar bahwa Lydia dan Wickham ditemukan di London.",
+          "ar": "بعد أيام قليلة، سمعت العائلة أن ليديا وويكهام وُجدا في لندن.",
+          "vi": "Vài ngày sau, gia đình nghe tin Lydia và Wickham đã được tìm thấy ở London.",
+          "hi": "कुछ दिनों बाद परिवार को ख़बर मिली कि लिडिया और विकहम लंदन में मिल गए हैं।",
+          "ru": "Через несколько дней семья узнала, что Лидию и Уикхема нашли в Лондоне.",
+          "bn": "কয়েক দিন পরে পরিবার খবর পেল, লিডিয়া আর উইকহ্যামকে লন্ডনে পাওয়া গেছে।",
+          "ur": "چند دن بعد خاندان کو خبر ملی کہ لیڈیا اور وکھم لندن میں مل گئے ہیں۔",
+          "th": "ไม่กี่วันต่อมา ครอบครัวได้ข่าวว่าพบลิเดียกับวิกแฮมที่ลอนดอนแล้ว"
+        }
+      },
+      {
+        "id": "cl-pride-098",
+        "english": "They were married, and Wickham's debts had been paid.",
+        "turkish": "Evlenmişlerdi ve Wickham'ın borçları ödenmişti.",
+        "translations": {
+          "es-419": "Se habían casado, y las deudas de Wickham estaban pagadas.",
+          "pt-BR": "Eles tinham se casado, e as dívidas de Wickham tinham sido pagas.",
+          "id": "Mereka sudah menikah, dan utang-utang Wickham sudah dilunasi.",
+          "ar": "لقد تزوّجا، وسُدّدت ديون ويكهام.",
+          "vi": "Họ đã cưới nhau, và nợ nần của Wickham đã được trả hết.",
+          "hi": "उनकी शादी हो गई थी, और विकहम के क़र्ज़ चुका दिए गए थे।",
+          "ru": "Они поженились, а долги Уикхема были оплачены.",
+          "bn": "তাদের বিয়ে হয়ে গেছে, আর উইকহ্যামের দেনা শোধ করা হয়েছে।",
+          "ur": "ان کی شادی ہو گئی تھی، اور وکھم کے قرض ادا کر دیے گئے تھے۔",
+          "th": "ทั้งคู่แต่งงานกันแล้ว และหนี้สินของวิกแฮมก็ถูกชำระหมดแล้ว"
+        }
+      },
+      {
+        "id": "cl-pride-099",
+        "english": "Later, Lydia said by mistake that Darcy had been at her wedding.",
+        "turkish": "Sonradan Lydia, ağzından kaçırıp Darcy'nin düğününde bulunduğunu söyledi.",
+        "translations": {
+          "es-419": "Más tarde, Lydia dijo sin querer que Darcy había estado en su boda.",
+          "pt-BR": "Mais tarde, Lydia deixou escapar que Darcy tinha estado no seu casamento.",
+          "id": "Belakangan, Lydia tanpa sengaja berkata bahwa Darcy hadir di pernikahannya.",
+          "ar": "وفي وقت لاحق، قالت ليديا عن غير قصد إن دارسي حضر زفافها.",
+          "vi": "Sau đó, Lydia lỡ miệng nói rằng Darcy đã có mặt ở đám cưới của cô.",
+          "hi": "बाद में लिडिया के मुँह से ग़लती से निकल गया कि डार्सी उसकी शादी में आए थे।",
+          "ru": "Позже Лидия случайно проговорилась, что Дарси был на её свадьбе.",
+          "bn": "পরে লিডিয়া ভুল করে বলে ফেলল যে ডারসি তার বিয়েতে ছিলেন।",
+          "ur": "بعد میں لیڈیا کے منہ سے غلطی سے نکل گیا کہ ڈارسی اس کی شادی میں آئے تھے۔",
+          "th": "ต่อมา ลิเดียเผลอพูดออกมาว่าดาร์ซีไปร่วมงานแต่งงานของเธอด้วย"
+        }
+      },
+      {
+        "id": "cl-pride-100",
+        "english": "Elizabeth learned the truth from her aunt.",
+        "turkish": "Elizabeth gerçeği yengesinden öğrendi.",
+        "translations": {
+          "es-419": "Elizabeth supo la verdad por su tía.",
+          "pt-BR": "Elizabeth soube a verdade pela tia.",
+          "id": "Elizabeth mengetahui kebenarannya dari bibinya.",
+          "ar": "عرفت إليزابيث الحقيقة من زوجة خالها.",
+          "vi": "Elizabeth biết được sự thật từ mợ của mình.",
+          "hi": "एलिज़ाबेथ को सच्चाई अपनी मामी से पता चली।",
+          "ru": "Правду Элизабет узнала от тёти.",
+          "bn": "এলিজাবেথ মামির কাছ থেকে সত্যিটা জানল।",
+          "ur": "الزبتھ کو سچائی اپنی ممانی سے معلوم ہوئی۔",
+          "th": "เอลิซาเบธรู้ความจริงจากน้าสะใภ้"
+        }
+      },
+      {
+        "id": "cl-pride-101",
+        "english": "Darcy had found the couple, paid Wickham and arranged the marriage.",
+        "turkish": "Çifti Darcy bulmuş, Wickham'a para ödemiş ve evliliği o ayarlamıştı.",
+        "translations": {
+          "es-419": "Darcy había encontrado a la pareja, le había pagado a Wickham y había arreglado la boda.",
+          "pt-BR": "Darcy tinha encontrado o casal, pagado Wickham e arranjado o casamento.",
+          "id": "Darcy-lah yang menemukan pasangan itu, membayar Wickham, dan mengatur pernikahan mereka.",
+          "ar": "كان دارسي هو من وجد الاثنين، ودفع لويكهام، ورتّب الزواج.",
+          "vi": "Chính Darcy đã tìm ra hai người, trả tiền cho Wickham và lo liệu cuộc hôn nhân.",
+          "hi": "डार्सी ने ही उस जोड़े को ढूँढ़ा था, विकहम को पैसे दिए थे और शादी करवाई थी।",
+          "ru": "Это Дарси нашёл их, заплатил Уикхему и устроил свадьбу.",
+          "bn": "ডারসিই ওদের খুঁজে বের করেছিলেন, উইকহ্যামকে টাকা দিয়েছিলেন আর বিয়ের ব্যবস্থা করেছিলেন।",
+          "ur": "ڈارسی ہی نے اس جوڑے کو ڈھونڈا تھا، وکھم کو پیسے دیے تھے اور شادی کروائی تھی۔",
+          "th": "ดาร์ซีเป็นคนตามหาทั้งคู่จนพบ จ่ายเงินให้วิกแฮม และจัดการให้ทั้งสองแต่งงานกัน"
+        }
+      },
+      {
+        "id": "cl-pride-102",
+        "english": "He had done it all for Elizabeth, and he had asked for no thanks.",
+        "turkish": "Bunların hepsini Elizabeth için yapmış ve hiçbir teşekkür beklememişti.",
+        "translations": {
+          "es-419": "Lo había hecho todo por Elizabeth, y no había pedido ningún agradecimiento.",
+          "pt-BR": "Ele tinha feito tudo por Elizabeth e não tinha pedido nenhum agradecimento.",
+          "id": "Ia melakukan semua itu demi Elizabeth, dan tidak meminta ucapan terima kasih.",
+          "ar": "لقد فعل كل ذلك من أجل إليزابيث، ولم يطلب أي شكر.",
+          "vi": "Anh đã làm tất cả vì Elizabeth, và không hề đòi một lời cảm ơn.",
+          "hi": "उन्होंने यह सब एलिज़ाबेथ के लिए किया था, और बदले में धन्यवाद तक नहीं चाहा था।",
+          "ru": "Он сделал всё это ради Элизабет и не просил никакой благодарности.",
+          "bn": "তিনি এসব করেছিলেন এলিজাবেথের জন্য, আর কোনো ধন্যবাদও চাননি।",
+          "ur": "انہوں نے یہ سب الزبتھ کے لیے کیا تھا، اور بدلے میں شکریہ تک نہیں چاہا تھا۔",
+          "th": "เขาทำทั้งหมดนี้เพื่อเอลิซาเบธ และไม่ได้ขอแม้แต่คำขอบคุณ"
+        }
+      },
+      {
+        "id": "cl-pride-103",
+        "english": "In autumn, Bingley came back to Netherfield and asked Jane to marry him.",
+        "turkish": "Sonbaharda Bingley Netherfield'a geri döndü ve Jane'e evlenme teklif etti.",
+        "translations": {
+          "es-419": "En otoño, Bingley volvió a Netherfield y le pidió a Jane que se casara con él.",
+          "pt-BR": "No outono, Bingley voltou a Netherfield e pediu Jane em casamento.",
+          "id": "Pada musim gugur, Bingley kembali ke Netherfield dan melamar Jane.",
+          "ar": "وفي الخريف، عاد بينغلي إلى نذرفيلد وطلب يد جين.",
+          "vi": "Mùa thu, Bingley trở lại Netherfield và cầu hôn Jane.",
+          "hi": "पतझड़ में बिंगले नेदरफ़ील्ड लौट आए और जेन से शादी का प्रस्ताव रखा।",
+          "ru": "Осенью Бингли вернулся в Незерфилд и сделал Джейн предложение.",
+          "bn": "শরতে বিংলি নেদারফিল্ডে ফিরে এলেন আর জেনকে বিয়ের প্রস্তাব দিলেন।",
+          "ur": "خزاں میں بنگلے نیدرفیلڈ لوٹ آئے اور جین کو شادی کی پیشکش کی۔",
+          "th": "ในฤดูใบไม้ร่วง บิงลีย์กลับมาที่เนเธอร์ฟิลด์และขอเจนแต่งงาน"
+        }
+      },
+      {
+        "id": "cl-pride-104",
+        "english": "Jane said yes with tears of joy.",
+        "turkish": "Jane sevinç gözyaşları içinde evet dedi.",
+        "translations": {
+          "es-419": "Jane dijo que sí con lágrimas de alegría.",
+          "pt-BR": "Jane disse sim com lágrimas de alegria.",
+          "id": "Jane menjawab ya sambil menangis bahagia.",
+          "ar": "قالت جين نعم ودموع الفرح في عينيها.",
+          "vi": "Jane nhận lời trong những giọt nước mắt hạnh phúc.",
+          "hi": "जेन ने ख़ुशी के आँसुओं के साथ हाँ कह दी।",
+          "ru": "Джейн со слезами радости ответила «да».",
+          "bn": "জেন আনন্দে কেঁদে ফেলে রাজি হলো।",
+          "ur": "جین نے خوشی کے آنسوؤں کے ساتھ ہاں کہہ دی۔",
+          "th": "เจนตอบตกลงทั้งน้ำตาแห่งความสุข"
+        }
+      },
+      {
+        "id": "cl-pride-105",
+        "english": "Soon after, Lady Catherine arrived at Longbourn in a fury.",
+        "turkish": "Kısa süre sonra Leydi Catherine öfkeyle Longbourn'a geldi.",
+        "translations": {
+          "es-419": "Poco después, Lady Catherine llegó furiosa a Longbourn.",
+          "pt-BR": "Pouco depois, Lady Catherine chegou furiosa a Longbourn.",
+          "id": "Tak lama kemudian, Lady Catherine datang ke Longbourn dengan murka.",
+          "ar": "وبعد ذلك بقليل، وصلت الليدي كاثرين إلى لونغبورن غاضبة.",
+          "vi": "Ít lâu sau, phu nhân Catherine giận dữ đến Longbourn.",
+          "hi": "कुछ ही समय बाद लेडी कैथरीन ग़ुस्से में लॉन्गबॉर्न आ पहुँचीं।",
+          "ru": "Вскоре в Лонгборн в ярости приехала леди Кэтрин.",
+          "bn": "কিছুদিন পরেই লেডি ক্যাথরিন রেগেমেগে লংবোর্নে এসে হাজির হলেন।",
+          "ur": "کچھ ہی عرصے بعد لیڈی کیتھرین غصے میں لانگبورن آ پہنچیں۔",
+          "th": "ไม่นานหลังจากนั้น เลดี้แคเธอรีนก็มาถึงลองบอร์นด้วยความโกรธจัด"
+        }
+      },
+      {
+        "id": "cl-pride-106",
+        "english": "She had heard a rumour and ordered Elizabeth never to marry her nephew.",
+        "turkish": "Bir söylenti duymuştu ve Elizabeth'e yeğeniyle asla evlenmemesini emretti.",
+        "translations": {
+          "es-419": "Había oído un rumor y le ordenó a Elizabeth que nunca se casara con su sobrino.",
+          "pt-BR": "Ela tinha ouvido um boato e ordenou a Elizabeth que nunca se casasse com o sobrinho dela.",
+          "id": "Ia mendengar sebuah desas-desus dan memerintahkan Elizabeth agar tidak pernah menikahi keponakannya.",
+          "ar": "كانت قد سمعت إشاعة، فأمرت إليزابيث ألّا تتزوّج ابن أختها أبدًا.",
+          "vi": "Bà nghe được một lời đồn và ra lệnh cho Elizabeth không bao giờ được lấy cháu trai bà.",
+          "hi": "उन्होंने एक अफ़वाह सुनी थी और एलिज़ाबेथ को हुक्म दिया कि वह उनके भांजे से कभी शादी न करे।",
+          "ru": "Она услышала слух и потребовала, чтобы Элизабет никогда не выходила за её племянника.",
+          "bn": "তিনি একটা গুজব শুনেছিলেন, তাই এলিজাবেথকে হুকুম দিলেন যেন সে কখনো তাঁর বোনপোকে বিয়ে না করে।",
+          "ur": "انہوں نے ایک افواہ سنی تھی اور الزبتھ کو حکم دیا کہ وہ ان کے بھانجے سے کبھی شادی نہ کرے۔",
+          "th": "เธอได้ยินข่าวลือมา จึงสั่งเอลิซาเบธว่าห้ามแต่งงานกับหลานชายของเธอเด็ดขาด"
+        }
+      },
+      {
+        "id": "cl-pride-107",
+        "english": "Elizabeth refused to make any promise.",
+        "turkish": "Elizabeth hiçbir söz vermeyi kabul etmedi.",
+        "translations": {
+          "es-419": "Elizabeth se negó a prometer nada.",
+          "pt-BR": "Elizabeth se recusou a prometer qualquer coisa.",
+          "id": "Elizabeth menolak untuk berjanji apa pun.",
+          "ar": "رفضت إليزابيث أن تقطع أي وعد.",
+          "vi": "Elizabeth từ chối hứa bất cứ điều gì.",
+          "hi": "एलिज़ाबेथ ने कोई भी वादा करने से इनकार कर दिया।",
+          "ru": "Элизабет отказалась что-либо обещать.",
+          "bn": "এলিজাবেথ কোনো কথা দিতে রাজি হলো না।",
+          "ur": "الزبتھ نے کوئی بھی وعدہ کرنے سے انکار کر دیا۔",
+          "th": "เอลิซาเบธปฏิเสธที่จะให้สัญญาใด ๆ"
+        }
+      },
+      {
+        "id": "cl-pride-108",
+        "english": "When Darcy heard this, he found new hope.",
+        "turkish": "Darcy bunu duyunca yeniden umutlandı.",
+        "translations": {
+          "es-419": "Cuando Darcy se enteró, sintió una nueva esperanza.",
+          "pt-BR": "Quando Darcy soube disso, encontrou uma nova esperança.",
+          "id": "Ketika Darcy mendengarnya, ia mendapat harapan baru.",
+          "ar": "ولما سمع دارسي بذلك، وجد أملًا جديدًا.",
+          "vi": "Khi Darcy nghe chuyện này, anh lại có hy vọng mới.",
+          "hi": "जब डार्सी ने यह सुना, तो उन्हें नई उम्मीद मिली।",
+          "ru": "Узнав об этом, Дарси вновь обрёл надежду.",
+          "bn": "ডারসি এ কথা শুনে নতুন আশা পেলেন।",
+          "ur": "جب ڈارسی نے یہ سنا تو انہیں نئی امید ملی۔",
+          "th": "เมื่อดาร์ซีได้ยินเรื่องนี้ เขาก็มีความหวังขึ้นมาใหม่"
+        }
+      },
+      {
+        "id": "cl-pride-109",
+        "english": "He came to Longbourn, and they walked out together along the quiet lane.",
+        "turkish": "Longbourn'a geldi ve birlikte sessiz patika boyunca yürüyüşe çıktılar.",
+        "translations": {
+          "es-419": "Fue a Longbourn, y salieron a pasear juntos por el camino tranquilo.",
+          "pt-BR": "Ele foi a Longbourn, e os dois saíram para caminhar juntos pela estradinha tranquila.",
+          "id": "Ia datang ke Longbourn, dan mereka berjalan berdua menyusuri jalan kecil yang sepi.",
+          "ar": "جاء إلى لونغبورن، وخرجا يتمشّيان معًا في الدرب الهادئ.",
+          "vi": "Anh đến Longbourn, và hai người cùng đi dạo dọc con đường nhỏ yên tĩnh.",
+          "hi": "वे लॉन्गबॉर्न आए, और दोनों साथ-साथ शांत गली में टहलने निकल गए।",
+          "ru": "Он приехал в Лонгборн, и они вместе пошли гулять по тихой дорожке.",
+          "bn": "তিনি লংবোর্নে এলেন, আর দুজনে মিলে নিরিবিলি পথ ধরে হাঁটতে বেরোলেন।",
+          "ur": "وہ لانگبورن آئے، اور دونوں ساتھ ساتھ پرسکون گلی میں ٹہلنے نکل گئے۔",
+          "th": "เขามาที่ลองบอร์น และทั้งสองก็ออกไปเดินเล่นด้วยกันตามทางเล็ก ๆ ที่เงียบสงบ"
+        }
+      },
+      {
+        "id": "cl-pride-110",
+        "english": "\"My feelings have not changed,\" he said. \"But one word from you will silence me forever.\"",
+        "turkish": "\"Duygularım değişmedi,\" dedi. \"Ama sizden tek bir kelime beni sonsuza dek susturur.\"",
+        "translations": {
+          "es-419": "\"Mis sentimientos no han cambiado\", dijo. \"Pero una palabra suya me hará callar para siempre\".",
+          "pt-BR": "\"Meus sentimentos não mudaram\", disse ele. \"Mas uma palavra sua me fará calar para sempre.\"",
+          "id": "\"Perasaanku belum berubah,\" katanya. \"Tetapi satu kata darimu akan membuatku diam selamanya.\"",
+          "ar": "قال: \"مشاعري لم تتغيّر. لكن كلمة واحدة منكِ ستُسكتني إلى الأبد.\"",
+          "vi": "\"Tình cảm của tôi chưa hề thay đổi,\" anh nói. \"Nhưng chỉ một lời của cô, tôi sẽ im lặng mãi mãi.\"",
+          "hi": "\"मेरी भावनाएँ नहीं बदलीं,\" उन्होंने कहा। \"पर आपका एक शब्द मुझे हमेशा के लिए चुप करा देगा।\"",
+          "ru": "«Мои чувства не изменились, — сказал он. — Но одно ваше слово заставит меня замолчать навсегда».",
+          "bn": "\"আমার অনুভূতি বদলায়নি,\" তিনি বললেন। \"কিন্তু আপনার একটা কথাতেই আমি চিরকালের মতো চুপ করে যাব।\"",
+          "ur": "\"میرے جذبات نہیں بدلے،\" انہوں نے کہا۔ \"مگر آپ کا ایک لفظ مجھے ہمیشہ کے لیے چپ کرا دے گا۔\"",
+          "th": "\"ความรู้สึกของผมไม่เคยเปลี่ยน\" เขากล่าว \"แต่ถ้าคุณพูดเพียงคำเดียว ผมจะไม่พูดเรื่องนี้อีกตลอดไป\""
+        }
+      },
+      {
+        "id": "cl-pride-111",
+        "english": "This time Elizabeth's answer made him happier than he had ever been.",
+        "turkish": "Bu kez Elizabeth'in cevabı onu hayatında hiç olmadığı kadar mutlu etti.",
+        "translations": {
+          "es-419": "Esta vez, la respuesta de Elizabeth lo hizo más feliz que nunca.",
+          "pt-BR": "Desta vez, a resposta de Elizabeth o deixou mais feliz do que nunca.",
+          "id": "Kali ini jawaban Elizabeth membuatnya lebih bahagia daripada sebelumnya.",
+          "ar": "هذه المرة، جعله جواب إليزابيث أسعد مما كان في أي وقت مضى.",
+          "vi": "Lần này, câu trả lời của Elizabeth khiến anh hạnh phúc hơn bao giờ hết.",
+          "hi": "इस बार एलिज़ाबेथ के जवाब ने उन्हें इतना ख़ुश कर दिया, जितना वे पहले कभी नहीं हुए थे।",
+          "ru": "На этот раз ответ Элизабет сделал его счастливее, чем когда-либо.",
+          "bn": "এবার এলিজাবেথের উত্তরে তিনি জীবনে এত খুশি হলেন, যতটা আগে কখনো হননি।",
+          "ur": "اس بار الزبتھ کے جواب نے انہیں اتنا خوش کر دیا جتنا وہ پہلے کبھی نہیں ہوئے تھے۔",
+          "th": "ครั้งนี้ คำตอบของเอลิซาเบธทำให้เขามีความสุขยิ่งกว่าครั้งไหน ๆ"
+        }
+      },
+      {
+        "id": "cl-pride-112",
+        "english": "They both had to learn something.",
+        "turkish": "İkisinin de öğrenmesi gereken bir şey vardı.",
+        "translations": {
+          "es-419": "Los dos tenían algo que aprender.",
+          "pt-BR": "Os dois tinham algo a aprender.",
+          "id": "Mereka berdua harus belajar sesuatu.",
+          "ar": "كان على كلٍّ منهما أن يتعلّم شيئًا.",
+          "vi": "Cả hai đều phải học được một điều.",
+          "hi": "दोनों को कुछ न कुछ सीखना था।",
+          "ru": "Обоим нужно было кое-чему научиться.",
+          "bn": "দুজনকেই কিছু একটা শিখতে হয়েছিল।",
+          "ur": "دونوں کو کچھ نہ کچھ سیکھنا تھا۔",
+          "th": "ทั้งสองคนต่างก็ต้องเรียนรู้บางอย่าง"
+        }
+      },
+      {
+        "id": "cl-pride-113",
+        "english": "He had learned to be less proud, and she had learned to judge less quickly.",
+        "turkish": "O daha az kibirli olmayı, Elizabeth de insanları daha az aceleyle yargılamayı öğrenmişti.",
+        "translations": {
+          "es-419": "Él había aprendido a ser menos orgulloso, y ella a juzgar con menos prisa.",
+          "pt-BR": "Ele tinha aprendido a ser menos orgulhoso, e ela, a julgar com menos pressa.",
+          "id": "Ia belajar untuk tidak terlalu angkuh, dan Elizabeth belajar untuk tidak cepat menilai.",
+          "ar": "تعلّم هو أن يكون أقل كبرياءً، وتعلّمت هي ألّا تتسرّع في الحكم.",
+          "vi": "Anh đã học cách bớt kiêu ngạo, còn cô học cách bớt vội vàng phán xét.",
+          "hi": "उन्होंने कम घमंडी होना सीखा था, और उसने जल्दबाज़ी में राय न बनाना।",
+          "ru": "Он научился меньше гордиться, а она — не судить так поспешно.",
+          "bn": "তিনি শিখেছিলেন কম অহংকারী হতে, আর সে শিখেছিল তাড়াহুড়ো করে বিচার না করতে।",
+          "ur": "انہوں نے کم مغرور ہونا سیکھا تھا، اور اس نے جلد بازی میں رائے نہ بنانا۔",
+          "th": "เขาเรียนรู้ที่จะหยิ่งน้อยลง ส่วนเธอก็เรียนรู้ที่จะไม่ด่วนตัดสินผู้อื่น"
+        }
+      },
+      {
+        "id": "cl-pride-114",
+        "english": "Elizabeth and Jane were married on the same day.",
+        "turkish": "Elizabeth ile Jane aynı gün evlendiler.",
+        "translations": {
+          "es-419": "Elizabeth y Jane se casaron el mismo día.",
+          "pt-BR": "Elizabeth e Jane se casaram no mesmo dia.",
+          "id": "Elizabeth dan Jane menikah pada hari yang sama.",
+          "ar": "تزوّجت إليزابيث وجين في اليوم نفسه.",
+          "vi": "Elizabeth và Jane kết hôn trong cùng một ngày.",
+          "hi": "एलिज़ाबेथ और जेन की शादी एक ही दिन हुई।",
+          "ru": "Элизабет и Джейн вышли замуж в один день.",
+          "bn": "এলিজাবেথ আর জেনের বিয়ে হলো একই দিনে।",
+          "ur": "الزبتھ اور جین کی شادی ایک ہی دن ہوئی۔",
+          "th": "เอลิซาเบธและเจนแต่งงานในวันเดียวกัน"
+        }
+      },
+      {
+        "id": "cl-pride-115",
+        "english": "And at Pemberley, Elizabeth found a husband who was also her best friend.",
+        "turkish": "Ve Elizabeth, Pemberley'de aynı zamanda en iyi arkadaşı olan bir eş buldu.",
+        "translations": {
+          "es-419": "Y en Pemberley, Elizabeth encontró un esposo que también era su mejor amigo.",
+          "pt-BR": "E em Pemberley, Elizabeth encontrou um marido que também era seu melhor amigo.",
+          "id": "Dan di Pemberley, Elizabeth menemukan seorang suami yang juga sahabat terbaiknya.",
+          "ar": "وفي بيمبرلي، وجدت إليزابيث زوجًا كان أيضًا أعزّ أصدقائها.",
+          "vi": "Và ở Pemberley, Elizabeth tìm thấy một người chồng đồng thời là người bạn thân nhất của cô.",
+          "hi": "और पेम्बर्ली में एलिज़ाबेथ को ऐसा पति मिला जो उसका सबसे अच्छा दोस्त भी था।",
+          "ru": "А в Пемберли Элизабет обрела мужа, который стал и её лучшим другом.",
+          "bn": "আর পেমবার্লিতে এলিজাবেথ পেল এমন এক স্বামী, যিনি তার সবচেয়ে কাছের বন্ধুও।",
+          "ur": "اور پیمبرلی میں الزبتھ کو ایسا شوہر ملا جو اس کا سب سے اچھا دوست بھی تھا۔",
+          "th": "และที่เพมเบอร์ลีย์ เอลิซาเบธได้พบสามีที่เป็นเพื่อนที่ดีที่สุดของเธอด้วย"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-pride-prejudice-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "Two sisters open a shop in London",
+          "Elizabeth and Darcy overcome pride and quick judgement and fall in love",
+          "Mrs Bennet sells the family house to Mr Collins",
+          "An officer saves a family from losing their money"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-pride-prejudice-q2",
+        "kind": "detail",
+        "prompt": "Why did Elizabeth first dislike Darcy?",
+        "options": [
+          "He stepped on her dress at the ball",
+          "He said she was not pretty enough to dance with",
+          "He refused to visit her father",
+          "He laughed at her sister's cold"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-pride-prejudice-q3",
+        "kind": "detail",
+        "prompt": "Who did Mr Collins finally become engaged to?",
+        "options": [
+          "Jane Bennet",
+          "Lydia Bennet",
+          "Charlotte Lucas",
+          "Georgiana Darcy"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "classic-pride-prejudice-q4",
+        "kind": "inference",
+        "prompt": "Why did Darcy's letter change Elizabeth's opinion of Wickham?",
+        "options": [
+          "It showed that Wickham had lied to her",
+          "It said Wickham was Darcy's brother",
+          "It asked her to marry Wickham",
+          "It proved that Wickham was very rich"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "classic-pride-prejudice-q5",
+        "kind": "inference",
+        "prompt": "Why did Darcy secretly help Lydia and Wickham?",
+        "options": [
+          "He wanted Wickham to work at Pemberley",
+          "Lady Catherine ordered him to",
+          "He loved Elizabeth and wanted to protect her family",
+          "He owed Mr Bennet money"
+        ],
+        "answer": 2
+      }
+    ]
+  },
+  "words": [
+    {
+      "id": "ball",
+      "word": "ball",
+      "translation": "balo",
+      "pronunciation": "/bɔːl/",
+      "example": "Everyone in the town came to the ball.",
+      "translations": {
+        "es-419": "baile",
+        "pt-BR": "baile",
+        "id": "pesta dansa",
+        "ar": "حفل راقص",
+        "vi": "buổi khiêu vũ",
+        "hi": "नृत्य-समारोह",
+        "ru": "бал",
+        "bn": "নাচের আসর",
+        "ur": "رقص کی محفل",
+        "th": "งานเต้นรำ"
+      }
+    },
+    {
+      "id": "marry",
+      "word": "marry",
+      "translation": "evlenmek",
+      "pronunciation": "/ˈmæri/",
+      "example": "She hoped to marry a kind man.",
+      "translations": {
+        "es-419": "casarse",
+        "pt-BR": "casar-se",
+        "id": "menikah",
+        "ar": "يتزوّج",
+        "vi": "kết hôn, cưới",
+        "hi": "शादी करना",
+        "ru": "жениться, выйти замуж",
+        "bn": "বিয়ে করা",
+        "ur": "شادی کرنا",
+        "th": "แต่งงาน"
+      }
+    },
+    {
+      "id": "pride",
+      "word": "pride",
+      "translation": "gurur, kibir",
+      "pronunciation": "/praɪd/",
+      "example": "His pride made him seem cold.",
+      "translations": {
+        "es-419": "orgullo",
+        "pt-BR": "orgulho",
+        "id": "keangkuhan, kebanggaan",
+        "ar": "كبرياء",
+        "vi": "sự kiêu hãnh",
+        "hi": "घमंड, गर्व",
+        "ru": "гордость",
+        "bn": "অহংকার, গর্ব",
+        "ur": "غرور، فخر",
+        "th": "ความหยิ่ง, ทิฐิ"
+      }
+    },
+    {
+      "id": "letter",
+      "word": "letter",
+      "translation": "mektup",
+      "pronunciation": "/ˈletə(r)/",
+      "example": "She read the letter twice.",
+      "translations": {
+        "es-419": "carta",
+        "pt-BR": "carta",
+        "id": "surat",
+        "ar": "رسالة",
+        "vi": "lá thư",
+        "hi": "पत्र, चिट्ठी",
+        "ru": "письмо",
+        "bn": "চিঠি",
+        "ur": "خط",
+        "th": "จดหมาย"
+      }
+    },
+    {
+      "id": "polite",
+      "word": "polite",
+      "translation": "kibar, nazik",
+      "pronunciation": "/pəˈlaɪt/",
+      "example": "He gave a polite answer.",
+      "translations": {
+        "es-419": "cortés, educado",
+        "pt-BR": "educado",
+        "id": "sopan",
+        "ar": "مهذّب",
+        "vi": "lịch sự",
+        "hi": "विनम्र",
+        "ru": "вежливый",
+        "bn": "ভদ্র",
+        "ur": "مہذب، شائستہ",
+        "th": "สุภาพ"
+      }
+    },
+    {
+      "id": "handsome",
+      "word": "handsome",
+      "translation": "yakışıklı",
+      "pronunciation": "/ˈhænsəm/",
+      "example": "The new neighbour was tall and handsome.",
+      "translations": {
+        "es-419": "guapo",
+        "pt-BR": "bonito",
+        "id": "tampan",
+        "ar": "وسيم",
+        "vi": "đẹp trai",
+        "hi": "सुंदर, ख़ूबसूरत",
+        "ru": "красивый",
+        "bn": "সুদর্শন",
+        "ur": "خوبصورت",
+        "th": "รูปหล่อ"
+      }
+    },
+    {
+      "id": "estate",
+      "word": "estate",
+      "translation": "malikâne, arazi",
+      "pronunciation": "/ɪˈsteɪt/",
+      "example": "The family lived on a large estate.",
+      "translations": {
+        "es-419": "finca, hacienda",
+        "pt-BR": "propriedade",
+        "id": "tanah milik, perkebunan",
+        "ar": "ضيعة",
+        "vi": "điền trang",
+        "hi": "जागीर",
+        "ru": "поместье",
+        "bn": "জমিদারি, এস্টেট",
+        "ur": "جاگیر",
+        "th": "ที่ดิน, คฤหาสน์"
+      }
+    },
+    {
+      "id": "mistake",
+      "word": "mistake",
+      "translation": "hata",
+      "pronunciation": "/mɪˈsteɪk/",
+      "example": "I made a big mistake.",
+      "translations": {
+        "es-419": "error",
+        "pt-BR": "erro",
+        "id": "kesalahan",
+        "ar": "خطأ",
+        "vi": "sai lầm",
+        "hi": "भूल, ग़लती",
+        "ru": "ошибка",
+        "bn": "ভুল",
+        "ur": "غلطی",
+        "th": "ความผิดพลาด"
+      }
+    },
+    {
+      "id": "proud",
+      "word": "proud",
+      "translation": "gururlu",
+      "pronunciation": "/praʊd/",
+      "example": "The crow feels proud.",
+      "translations": {
+        "es-419": "orgulloso",
+        "pt-BR": "orgulhoso",
+        "id": "bangga",
+        "ar": "فخور",
+        "vi": "tự hào, kiêu hãnh",
+        "hi": "घमंडी, गर्व से भरा",
+        "ru": "гордый",
+        "bn": "গর্বিত",
+        "ur": "مغرور، فخر کرنے والا",
+        "th": "ภูมิใจ, หยิ่ง"
+      }
+    },
+    {
+      "id": "rich",
+      "word": "rich",
+      "translation": "zengin",
+      "pronunciation": "/rɪtʃ/",
+      "example": "They find a table full of rich food.",
+      "translations": {
+        "es-419": "rico",
+        "pt-BR": "rico",
+        "id": "kaya, lezat",
+        "ar": "غني؛ دسم",
+        "vi": "giàu có; (đồ ăn) thịnh soạn",
+        "hi": "अमीर; बढ़िया (खाना)",
+        "ru": "богатый; жирный, изысканный (о еде)",
+        "bn": "ধনী; দামি, ভারী (খাবার)",
+        "ur": "امیر؛ مرغن (کھانا)",
+        "th": "ร่ำรวย; (อาหาร) อุดมสมบูรณ์"
+      }
+    },
+    {
+      "id": "truth",
+      "word": "truth",
+      "translation": "gerçek",
+      "pronunciation": "/truːθ/",
+      "example": "A liar can lose people's trust, even when he tells the truth.",
+      "translations": {
+        "es-419": "verdad",
+        "pt-BR": "verdade",
+        "id": "kebenaran",
+        "ar": "الحقيقة",
+        "vi": "sự thật",
+        "hi": "सच",
+        "ru": "правда",
+        "bn": "সত্য",
+        "ur": "سچ",
+        "th": "ความจริง"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "ball",
+    "marry",
+    "pride",
+    "letter",
+    "polite",
+    "handsome",
+    "estate",
+    "mistake",
+    "proud",
+    "rich",
+    "truth"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-pride-prejudice-q1",
+      "sentenceIds": [
+        "cl-pride-113",
+        "cl-pride-115"
+      ],
+      "rationale": "Both main characters change, and the story ends with Elizabeth marrying Darcy."
+    },
+    {
+      "questionId": "classic-pride-prejudice-q2",
+      "sentenceIds": [
+        "cl-pride-019",
+        "cl-pride-020"
+      ],
+      "rationale": "At the first ball she heard Darcy say she was not pretty enough to tempt him."
+    },
+    {
+      "questionId": "classic-pride-prejudice-q3",
+      "sentenceIds": [
+        "cl-pride-044"
+      ],
+      "rationale": "Three days after Elizabeth refused him, Collins was engaged to Charlotte."
+    },
+    {
+      "questionId": "classic-pride-prejudice-q4",
+      "sentenceIds": [
+        "cl-pride-076",
+        "cl-pride-077",
+        "cl-pride-080"
+      ],
+      "rationale": "The letter showed Wickham had taken money and tried to elope with Georgiana, so his sad story was untrue."
+    },
+    {
+      "questionId": "classic-pride-prejudice-q5",
+      "sentenceIds": [
+        "cl-pride-102",
+        "cl-pride-101"
+      ],
+      "rationale": "He found the couple and paid Wickham for Elizabeth's sake, asking for no thanks."
+    }
+  ],
+  "publicationBlockers": [
+    "Owner (oguz) approval of the English text, questions and translations required.",
+    "Native-speaker language review not done.",
+    "Cover artwork and asset mapping pending.",
+    "Source text hash pending (Gutenberg not reachable from the cloud session).",
+    "Publisher story creation, validation and publication pending."
+  ]
+}
