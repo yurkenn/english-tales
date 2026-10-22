@@ -1,0 +1,2299 @@
+{
+  "status": "draft",
+  "kind": "long-story",
+  "source": "long-story-classics-2026-10-22",
+  "reviewedBy": null,
+  "rights": {
+    "credit": "Oscar Wilde",
+    "sourceTitle": "The Picture of Dorian Gray",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/174",
+    "sourceTextUrl": "https://www.gutenberg.org/cache/epub/174/pg174-images.html",
+    "identifiedContributor": {
+      "name": "Oscar Wilde",
+      "role": "author",
+      "deathYear": 1900
+    },
+    "firstPublished": 1890,
+    "sourceCopyrightStatement": "Public domain in the USA",
+    "checkedOn": "2026-10-22",
+    "adaptation": "New graded B1 retelling written by English Tales, with English Tales translations. No modern abridgement, film script or translation was used.",
+    "turkeyAssessment": "Author died in 1900, more than 70 years before 2026, so the work is out of protection in Turkey and in life+70 countries.",
+    "rightsGuidanceUrl": "https://telifhaklari.ktb.gov.tr/TR-332373/telif-hakki-kac-yil-sureyle-korunur.html",
+    "sourceTextSha256": null,
+    "sourceTextSha256Pending": "Gutenberg is not reachable from the cloud session; record the source text hash on the owner's Mac before publication."
+  },
+  "editorialNotes": [
+    "B1 target: past tense narration, sentences of at most 20 words, about 1,100 words (about 10 minutes of reading).",
+    "Retelling of the 1891 book version's main line: the portrait and the wish, Sibyl Vane, the first change, the locked room, Basil's visit and murder, James Vane, the false good deed and the final stabbing of the picture.",
+    "Sibyl's death and Basil's murder are told in one plain sentence each, without detail; Dorian's other sins stay vague as in the source.",
+    "Reading sections are editorial groupings for a future chapter view; the app currently shows the story as one text."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+  },
+  "readingSections": [
+    {
+      "title": "The portrait",
+      "firstSentenceId": "cl-dorian-001",
+      "lastSentenceId": "cl-dorian-027"
+    },
+    {
+      "title": "The first change",
+      "firstSentenceId": "cl-dorian-028",
+      "lastSentenceId": "cl-dorian-053"
+    },
+    {
+      "title": "Eighteen years",
+      "firstSentenceId": "cl-dorian-054",
+      "lastSentenceId": "cl-dorian-077"
+    },
+    {
+      "title": "The end of the picture",
+      "firstSentenceId": "cl-dorian-078",
+      "lastSentenceId": "cl-dorian-108"
+    }
+  ],
+  "story": {
+    "id": "classic-dorian-gray",
+    "title": "The Picture of Dorian Gray",
+    "author": "Oscar Wilde",
+    "level": "B1",
+    "genre": "Gizem",
+    "description": "Dorian Gray'in Portresi. Genç ve yakışıklı Dorian, portresinin kendi yerine yaşlanmasını diler; dileği gerçek olur, ama her kötülüğü resimde iz bırakır. B1 düzeyinde uzun uyarlama. Uyarlama ve Türkçe çeviri: English Tales.",
+    "descriptions": {
+      "es-419": "El retrato de Dorian Gray. El joven y bello Dorian desea que su retrato envejezca en su lugar; su deseo se cumple, pero cada maldad deja una marca en el cuadro. Adaptación larga de nivel B1. Adaptación: English Tales.",
+      "pt-BR": "O retrato de Dorian Gray. O jovem e belo Dorian deseja que seu retrato envelheça no seu lugar; o desejo se realiza, mas cada maldade deixa uma marca no quadro. Adaptação longa de nível B1. Adaptação: English Tales.",
+      "id": "Potret Dorian Gray. Dorian yang muda dan tampan berharap potretnya menua menggantikan dirinya; keinginannya terkabul, tetapi setiap kejahatannya meninggalkan bekas pada lukisan itu. Adaptasi panjang tingkat B1. Adaptasi: English Tales.",
+      "ar": "صورة دوريان غراي. يتمنّى دوريان الشاب الوسيم أن تشيخ صورته بدلًا منه، فتتحقّق أمنيته، لكن كل شرّ يفعله يترك أثرًا على اللوحة. اقتباس طويل بمستوى B1. الاقتباس: English Tales.",
+      "vi": "Bức chân dung của Dorian Gray. Chàng Dorian trẻ đẹp ước bức chân dung sẽ già đi thay mình; điều ước thành sự thật, nhưng mỗi việc ác đều để lại dấu vết trên bức tranh. Bản phóng tác dài trình độ B1. Phóng tác: English Tales.",
+      "hi": "डोरियन ग्रे की तस्वीर। जवान और सुंदर डोरियन चाहता है कि उसकी जगह उसकी तस्वीर बूढ़ी हो; उसकी इच्छा पूरी होती है, पर उसकी हर बुराई तस्वीर पर निशान छोड़ जाती है। B1 स्तर का लंबा रूपांतरण। रूपांतरण: English Tales।",
+      "ru": "Портрет Дориана Грея. Юный красавец Дориан хочет, чтобы вместо него старел его портрет; желание сбывается, но каждое злое дело оставляет след на картине. Длинная адаптация уровня B1. Адаптация: English Tales.",
+      "bn": "ডোরিয়ান গ্রের ছবি। তরুণ সুদর্শন ডোরিয়ান চায় তার বদলে তার ছবিটা বুড়ো হোক; ইচ্ছে পূরণ হয়, কিন্তু তার প্রতিটি খারাপ কাজের দাগ পড়ে ছবিতে। B1 স্তরের দীর্ঘ রূপান্তর। রূপান্তর: English Tales।",
+      "ur": "ڈورین گرے کی تصویر۔ جوان اور خوبصورت ڈورین چاہتا ہے کہ اس کی جگہ اس کی تصویر بوڑھی ہو؛ اس کی خواہش پوری ہوتی ہے، مگر اس کی ہر برائی تصویر پر نشان چھوڑ جاتی ہے۔ B1 سطح کی طویل ماخوذ کہانی۔ ترتیب: English Tales۔",
+      "th": "ภาพของดอเรียน เกรย์: ดอเรียน ชายหนุ่มรูปงาม ปรารถนาให้ภาพเหมือนของเขาแก่ลงแทนตัวเอง คำขอนั้นเป็นจริง แต่ความชั่วทุกอย่างของเขาทิ้งร่องรอยไว้บนภาพ ฉบับดัดแปลงขนาดยาวระดับ B1 ดัดแปลงโดย English Tales"
+    },
+    "coverKey": "cover_classic_dorian_gray",
+    "tags": [
+      "gizem"
+    ],
+    "sentences": [
+      {
+        "id": "cl-dorian-001",
+        "english": "In a sunny London garden, the painter Basil Hallward was finishing a portrait.",
+        "turkish": "Londra'da güneşli bir bahçede ressam Basil Hallward bir portreyi bitiriyordu.",
+        "translations": {
+          "es-419": "En un jardín soleado de Londres, el pintor Basil Hallward estaba terminando un retrato.",
+          "pt-BR": "Num jardim ensolarado de Londres, o pintor Basil Hallward terminava um retrato.",
+          "id": "Di sebuah taman yang cerah di London, pelukis Basil Hallward sedang menyelesaikan sebuah potret.",
+          "ar": "في حديقة مشمسة في لندن، كان الرسّام بازل هالوارد يُنهي لوحة لشخص.",
+          "vi": "Trong một khu vườn đầy nắng ở London, họa sĩ Basil Hallward đang hoàn thành một bức chân dung.",
+          "hi": "लंदन के एक धूप भरे बाग़ में चित्रकार बेज़िल हॉलवर्ड एक चित्र पूरा कर रहे थे।",
+          "ru": "В солнечном лондонском саду художник Бэзил Холлуорд заканчивал портрет.",
+          "bn": "লন্ডনের এক রোদেলা বাগানে চিত্রশিল্পী বেসিল হলওয়ার্ড একটা প্রতিকৃতি শেষ করছিলেন।",
+          "ur": "لندن کے ایک دھوپ بھرے باغ میں مصور بیزل ہالورڈ ایک تصویر مکمل کر رہے تھے۔",
+          "th": "ในสวนที่มีแดดจ้าแห่งหนึ่งในลอนดอน จิตรกรเบซิล ฮอลล์เวิร์ดกำลังวาดภาพเหมือนใกล้เสร็จ"
+        }
+      },
+      {
+        "id": "cl-dorian-002",
+        "english": "It showed a young man of wonderful beauty.",
+        "turkish": "Portrede olağanüstü güzellikte genç bir adam vardı.",
+        "translations": {
+          "es-419": "Mostraba a un joven de una belleza maravillosa.",
+          "pt-BR": "Mostrava um rapaz de uma beleza maravilhosa.",
+          "id": "Lukisan itu menggambarkan seorang pemuda yang luar biasa tampan.",
+          "ar": "كانت تُظهر شابًّا ذا جمال رائع.",
+          "vi": "Bức tranh vẽ một chàng trai có vẻ đẹp tuyệt vời.",
+          "hi": "उसमें अद्भुत सुंदरता वाला एक नौजवान दिखाया गया था।",
+          "ru": "На нём был изображён юноша удивительной красоты.",
+          "bn": "তাতে ছিল অপূর্ব সৌন্দর্যের এক তরুণ।",
+          "ur": "اس میں غیر معمولی خوبصورتی والا ایک نوجوان دکھایا گیا تھا۔",
+          "th": "ภาพนั้นเป็นชายหนุ่มผู้มีความงามน่าอัศจรรย์"
+        }
+      },
+      {
+        "id": "cl-dorian-003",
+        "english": "His name was Dorian Gray.",
+        "turkish": "Adı Dorian Gray'di.",
+        "translations": {
+          "es-419": "Se llamaba Dorian Gray.",
+          "pt-BR": "Ele se chamava Dorian Gray.",
+          "id": "Namanya Dorian Gray.",
+          "ar": "كان اسمه دوريان غراي.",
+          "vi": "Tên chàng là Dorian Gray.",
+          "hi": "उसका नाम डोरियन ग्रे था।",
+          "ru": "Его звали Дориан Грей.",
+          "bn": "তার নাম ডোরিয়ান গ্রে।",
+          "ur": "اس کا نام ڈورین گرے تھا۔",
+          "th": "เขาชื่อดอเรียน เกรย์"
+        }
+      },
+      {
+        "id": "cl-dorian-004",
+        "english": "\"It is the best thing I have ever painted,\" Basil said to his friend.",
+        "turkish": "\"Bu, şimdiye kadar yaptığım en iyi resim,\" dedi Basil arkadaşına.",
+        "translations": {
+          "es-419": "\"Es lo mejor que he pintado en mi vida\", le dijo Basil a su amigo.",
+          "pt-BR": "\"É a melhor coisa que já pintei\", disse Basil ao amigo.",
+          "id": "\"Ini lukisan terbaik yang pernah kubuat,\" kata Basil kepada temannya.",
+          "ar": "قال بازل لصديقه: \"إنها أفضل ما رسمتُ في حياتي.\"",
+          "vi": "\"Đây là bức tranh đẹp nhất tôi từng vẽ,\" Basil nói với bạn mình.",
+          "hi": "\"यह मेरा अब तक का सबसे अच्छा चित्र है,\" बेज़िल ने अपने दोस्त से कहा।",
+          "ru": "«Это лучшее, что я когда-либо написал», — сказал Бэзил другу.",
+          "bn": "\"এটাই আমার আঁকা সবচেয়ে ভালো ছবি,\" বেসিল তাঁর বন্ধুকে বললেন।",
+          "ur": "\"یہ میری اب تک کی سب سے اچھی تصویر ہے،\" بیزل نے اپنے دوست سے کہا۔",
+          "th": "\"นี่คือภาพที่ดีที่สุดที่ผมเคยวาด\" เบซิลบอกเพื่อน"
+        }
+      },
+      {
+        "id": "cl-dorian-005",
+        "english": "The friend was Lord Henry Wotton, a clever man with dangerous ideas.",
+        "turkish": "Bu arkadaş, tehlikeli fikirleri olan zeki bir adam olan Lord Henry Wotton'dı.",
+        "translations": {
+          "es-419": "El amigo era lord Henry Wotton, un hombre inteligente con ideas peligrosas.",
+          "pt-BR": "O amigo era Lorde Henry Wotton, um homem inteligente de ideias perigosas.",
+          "id": "Teman itu adalah Lord Henry Wotton, pria cerdas dengan gagasan yang berbahaya.",
+          "ar": "كان الصديق هو اللورد هنري ووتون، رجلًا ذكيًّا ذا أفكار خطيرة.",
+          "vi": "Người bạn ấy là huân tước Henry Wotton, một người thông minh với những tư tưởng nguy hiểm.",
+          "hi": "वह दोस्त थे लॉर्ड हेनरी वॉटन, ख़तरनाक विचारों वाले एक चतुर आदमी।",
+          "ru": "Этим другом был лорд Генри Уоттон, умный человек с опасными идеями.",
+          "bn": "সেই বন্ধু ছিলেন লর্ড হেনরি ওটন, বিপজ্জনক চিন্তাভাবনার এক চতুর মানুষ।",
+          "ur": "وہ دوست تھے لارڈ ہنری ووٹن، خطرناک خیالات والے ایک ذہین آدمی۔",
+          "th": "เพื่อนคนนั้นคือลอร์ดเฮนรี วอตตัน ชายฉลาดที่มีความคิดอันตราย"
+        }
+      },
+      {
+        "id": "cl-dorian-006",
+        "english": "\"Do not let Henry meet Dorian,\" Basil begged. \"He will spoil him.\"",
+        "turkish": "\"Henry'yi Dorian'la tanıştırmayın,\" diye yalvardı Basil. \"Onu bozar.\"",
+        "translations": {
+          "es-419": "\"No dejen que Henry conozca a Dorian\", rogó Basil. \"Lo echará a perder\".",
+          "pt-BR": "\"Não deixem Henry conhecer Dorian\", implorou Basil. \"Ele vai estragá-lo.\"",
+          "id": "\"Jangan biarkan Henry bertemu Dorian,\" pinta Basil. \"Ia akan merusaknya.\"",
+          "ar": "توسّل بازل: \"لا تدعوا هنري يلتقي بدوريان. سيُفسده.\"",
+          "vi": "\"Đừng để Henry gặp Dorian,\" Basil van nài. \"Anh ta sẽ làm hư cậu ấy.\"",
+          "hi": "\"हेनरी को डोरियन से मत मिलने देना,\" बेज़िल ने मिन्नत की। \"वे उसे बिगाड़ देंगे।\"",
+          "ru": "«Не позволяйте Генри знакомиться с Дорианом, — умолял Бэзил. — Он его испортит».",
+          "bn": "\"হেনরিকে ডোরিয়ানের সঙ্গে দেখা করতে দিয়ো না,\" মিনতি করলেন বেসিল। \"উনি ওকে নষ্ট করে দেবেন।\"",
+          "ur": "\"ہنری کو ڈورین سے مت ملنے دینا،\" بیزل نے منت کی۔ \"وہ اسے بگاڑ دیں گے۔\"",
+          "th": "\"อย่าให้เฮนรีได้พบดอเรียนเลย\" เบซิลอ้อนวอน \"เขาจะทำให้ดอเรียนเสียคน\""
+        }
+      },
+      {
+        "id": "cl-dorian-007",
+        "english": "But at that moment, Dorian walked into the studio.",
+        "turkish": "Ama tam o sırada Dorian atölyeye girdi.",
+        "translations": {
+          "es-419": "Pero en ese momento, Dorian entró en el estudio.",
+          "pt-BR": "Mas naquele momento Dorian entrou no ateliê.",
+          "id": "Namun saat itu juga, Dorian masuk ke studio.",
+          "ar": "لكن في تلك اللحظة، دخل دوريان المرسم.",
+          "vi": "Nhưng đúng lúc ấy, Dorian bước vào xưởng vẽ.",
+          "hi": "लेकिन उसी पल डोरियन स्टूडियो में आ गया।",
+          "ru": "Но в эту минуту Дориан вошёл в мастерскую.",
+          "bn": "কিন্তু ঠিক তখনই ডোরিয়ান স্টুডিওতে ঢুকল।",
+          "ur": "لیکن اسی لمحے ڈورین اسٹوڈیو میں آ گیا۔",
+          "th": "แต่ในตอนนั้นเอง ดอเรียนก็เดินเข้ามาในห้องวาดภาพ"
+        }
+      },
+      {
+        "id": "cl-dorian-008",
+        "english": "Lord Henry spoke to him in a soft, beautiful voice.",
+        "turkish": "Lord Henry onunla yumuşak, güzel bir sesle konuştu.",
+        "translations": {
+          "es-419": "Lord Henry le habló con una voz suave y hermosa.",
+          "pt-BR": "Lorde Henry falou com ele numa voz suave e bonita.",
+          "id": "Lord Henry berbicara kepadanya dengan suara yang lembut dan indah.",
+          "ar": "تحدّث إليه اللورد هنري بصوت ناعم جميل.",
+          "vi": "Huân tước Henry nói chuyện với chàng bằng giọng êm ái, dễ nghe.",
+          "hi": "लॉर्ड हेनरी ने उससे मीठी, कोमल आवाज़ में बात की।",
+          "ru": "Лорд Генри заговорил с ним мягким, красивым голосом.",
+          "bn": "লর্ড হেনরি নরম, সুন্দর গলায় তার সঙ্গে কথা বললেন।",
+          "ur": "لارڈ ہنری نے اس سے نرم، خوبصورت آواز میں بات کی۔",
+          "th": "ลอร์ดเฮนรีพูดกับเขาด้วยน้ำเสียงนุ่มนวลไพเราะ"
+        }
+      },
+      {
+        "id": "cl-dorian-009",
+        "english": "\"Youth is the only thing worth having,\" he said.",
+        "turkish": "\"Gençlik, sahip olmaya değer tek şeydir,\" dedi.",
+        "translations": {
+          "es-419": "\"La juventud es lo único que vale la pena tener\", dijo.",
+          "pt-BR": "\"A juventude é a única coisa que vale a pena ter\", disse ele.",
+          "id": "\"Masa muda adalah satu-satunya hal yang layak dimiliki,\" katanya.",
+          "ar": "قال: \"الشباب هو الشيء الوحيد الذي يستحقّ أن نملكه.\"",
+          "vi": "\"Tuổi trẻ là thứ duy nhất đáng có,\" ông nói.",
+          "hi": "\"जवानी ही एकमात्र चीज़ है जो पाने लायक़ है,\" उन्होंने कहा।",
+          "ru": "«Молодость — единственное, чем стоит обладать», — сказал он.",
+          "bn": "\"যৌবনই একমাত্র জিনিস যা পাওয়ার মতো,\" তিনি বললেন।",
+          "ur": "\"جوانی ہی وہ واحد چیز ہے جو پانے کے لائق ہے،\" انہوں نے کہا۔",
+          "th": "\"ความเยาว์วัยคือสิ่งเดียวที่ควรค่าแก่การครอบครอง\" เขากล่าว"
+        }
+      },
+      {
+        "id": "cl-dorian-010",
+        "english": "\"Your beauty will fade, and then you will have nothing.\"",
+        "turkish": "\"Güzelliğin solacak, o zaman elinde hiçbir şey kalmayacak.\"",
+        "translations": {
+          "es-419": "\"Tu belleza se marchitará, y entonces no tendrás nada\".",
+          "pt-BR": "\"Sua beleza vai murchar, e então você não terá nada.\"",
+          "id": "\"Ketampananmu akan pudar, dan saat itu kau tidak akan punya apa-apa.\"",
+          "ar": "\"سيذبل جمالك، وعندها لن يبقى لك شيء.\"",
+          "vi": "\"Vẻ đẹp của cậu sẽ phai tàn, và khi ấy cậu sẽ chẳng còn gì.\"",
+          "hi": "\"तुम्हारी सुंदरता ढल जाएगी, और फिर तुम्हारे पास कुछ नहीं बचेगा।\"",
+          "ru": "«Ваша красота увянет, и тогда у вас ничего не останется».",
+          "bn": "\"তোমার রূপ ফিকে হয়ে যাবে, তখন তোমার আর কিছুই থাকবে না।\"",
+          "ur": "\"تمہاری خوبصورتی ڈھل جائے گی، اور پھر تمہارے پاس کچھ نہیں بچے گا۔\"",
+          "th": "\"ความงามของเธอจะร่วงโรย แล้วเธอจะไม่เหลืออะไรเลย\""
+        }
+      },
+      {
+        "id": "cl-dorian-011",
+        "english": "\"Live every moment. Try every pleasure. Be afraid of nothing.\"",
+        "turkish": "\"Her anı yaşa. Her zevki dene. Hiçbir şeyden korkma.\"",
+        "translations": {
+          "es-419": "\"Vive cada momento. Prueba cada placer. No temas nada\".",
+          "pt-BR": "\"Viva cada momento. Experimente cada prazer. Não tenha medo de nada.\"",
+          "id": "\"Nikmati setiap saat. Cobalah setiap kesenangan. Jangan takut pada apa pun.\"",
+          "ar": "\"عِش كل لحظة. جرّب كل متعة. ولا تخف من شيء.\"",
+          "vi": "\"Hãy sống trọn từng khoảnh khắc. Hãy nếm trải mọi thú vui. Đừng sợ điều gì cả.\"",
+          "hi": "\"हर पल जियो। हर सुख आज़माओ। किसी चीज़ से मत डरो।\"",
+          "ru": "«Живите каждым мгновением. Испытайте все наслаждения. Ничего не бойтесь».",
+          "bn": "\"প্রতিটা মুহূর্ত বাঁচো। সব আনন্দের স্বাদ নাও। কিছুকেই ভয় পেয়ো না।\"",
+          "ur": "\"ہر لمحہ جیو۔ ہر لذت آزماؤ۔ کسی چیز سے مت ڈرو۔\"",
+          "th": "\"จงใช้ชีวิตทุกวินาที ลิ้มลองความสุขทุกอย่าง และอย่ากลัวสิ่งใด\""
+        }
+      },
+      {
+        "id": "cl-dorian-012",
+        "english": "Dorian listened, and his young mind was filled with new thoughts.",
+        "turkish": "Dorian dinledi ve genç zihni yeni düşüncelerle doldu.",
+        "translations": {
+          "es-419": "Dorian escuchaba, y su mente joven se llenó de ideas nuevas.",
+          "pt-BR": "Dorian ouvia, e sua mente jovem se encheu de pensamentos novos.",
+          "id": "Dorian mendengarkan, dan pikirannya yang muda dipenuhi gagasan baru.",
+          "ar": "أصغى دوريان، فامتلأ عقله الشاب بأفكار جديدة.",
+          "vi": "Dorian lắng nghe, và tâm trí non trẻ của chàng tràn ngập những ý nghĩ mới.",
+          "hi": "डोरियन सुनता रहा, और उसका जवान मन नए विचारों से भर गया।",
+          "ru": "Дориан слушал, и его юный ум наполнялся новыми мыслями.",
+          "bn": "ডোরিয়ান শুনল, আর তার তরুণ মন ভরে গেল নতুন চিন্তায়।",
+          "ur": "ڈورین سنتا رہا، اور اس کا جوان ذہن نئے خیالات سے بھر گیا۔",
+          "th": "ดอเรียนฟังอยู่ และจิตใจอันเยาว์ของเขาก็เต็มไปด้วยความคิดใหม่ ๆ"
+        }
+      },
+      {
+        "id": "cl-dorian-013",
+        "english": "When Basil finished, Dorian looked at the portrait for a long time.",
+        "turkish": "Basil resmi bitirince Dorian uzun süre portreye baktı.",
+        "translations": {
+          "es-419": "Cuando Basil terminó, Dorian miró el retrato durante mucho tiempo.",
+          "pt-BR": "Quando Basil terminou, Dorian olhou para o retrato por muito tempo.",
+          "id": "Ketika Basil selesai, Dorian lama memandangi potret itu.",
+          "ar": "حين انتهى بازل، حدّق دوريان في اللوحة طويلًا.",
+          "vi": "Khi Basil vẽ xong, Dorian ngắm bức chân dung rất lâu.",
+          "hi": "जब बेज़िल ने चित्र पूरा किया, तो डोरियन देर तक उसे देखता रहा।",
+          "ru": "Когда Бэзил закончил, Дориан долго смотрел на портрет.",
+          "bn": "বেসিল শেষ করলে ডোরিয়ান অনেকক্ষণ ধরে প্রতিকৃতিটার দিকে তাকিয়ে রইল।",
+          "ur": "جب بیزل نے تصویر مکمل کی تو ڈورین دیر تک اسے دیکھتا رہا۔",
+          "th": "เมื่อเบซิลวาดเสร็จ ดอเรียนจ้องมองภาพเหมือนอยู่นาน"
+        }
+      },
+      {
+        "id": "cl-dorian-014",
+        "english": "For the first time, he understood how beautiful he was.",
+        "turkish": "İlk kez ne kadar güzel olduğunu anladı.",
+        "translations": {
+          "es-419": "Por primera vez, comprendió lo hermoso que era.",
+          "pt-BR": "Pela primeira vez, ele entendeu como era belo.",
+          "id": "Untuk pertama kalinya, ia sadar betapa tampannya dirinya.",
+          "ar": "للمرة الأولى، أدرك كم هو جميل.",
+          "vi": "Lần đầu tiên, chàng hiểu mình đẹp đến nhường nào.",
+          "hi": "पहली बार उसे समझ आया कि वह कितना सुंदर है।",
+          "ru": "Впервые он понял, как он красив.",
+          "bn": "প্রথমবার সে বুঝল, সে কতটা সুন্দর।",
+          "ur": "پہلی بار اسے سمجھ آیا کہ وہ کتنا خوبصورت ہے۔",
+          "th": "เป็นครั้งแรกที่เขาเข้าใจว่าตัวเองงดงามเพียงใด"
+        }
+      },
+      {
+        "id": "cl-dorian-015",
+        "english": "Then a terrible sadness came over him.",
+        "turkish": "Sonra onu korkunç bir hüzün kapladı.",
+        "translations": {
+          "es-419": "Entonces lo invadió una tristeza terrible.",
+          "pt-BR": "Então uma tristeza terrível tomou conta dele.",
+          "id": "Lalu kesedihan yang dalam menguasainya.",
+          "ar": "ثم غمره حزن رهيب.",
+          "vi": "Rồi một nỗi buồn khủng khiếp ập đến.",
+          "hi": "फिर उस पर एक भयानक उदासी छा गई।",
+          "ru": "И тогда его охватила страшная печаль.",
+          "bn": "তারপর এক ভয়ানক বিষাদ তাকে ঘিরে ধরল।",
+          "ur": "پھر اس پر ایک خوفناک اداسی چھا گئی۔",
+          "th": "แล้วความเศร้าอันแสนสาหัสก็ครอบงำเขา"
+        }
+      },
+      {
+        "id": "cl-dorian-016",
+        "english": "\"I will grow old and ugly, but this picture will always stay young.\"",
+        "turkish": "\"Ben yaşlanıp çirkinleşeceğim, ama bu resim hep genç kalacak.\"",
+        "translations": {
+          "es-419": "\"Yo envejeceré y me volveré feo, pero este cuadro siempre seguirá joven\".",
+          "pt-BR": "\"Eu vou ficar velho e feio, mas este quadro vai continuar sempre jovem.\"",
+          "id": "\"Aku akan menjadi tua dan jelek, tetapi lukisan ini akan selalu muda.\"",
+          "ar": "\"سأشيخ وأصير قبيحًا، أما هذه اللوحة فستبقى شابّة دائمًا.\"",
+          "vi": "\"Tôi sẽ già đi và xấu xí, còn bức tranh này sẽ mãi mãi trẻ trung.\"",
+          "hi": "\"मैं बूढ़ा और बदसूरत हो जाऊँगा, पर यह तस्वीर हमेशा जवान रहेगी।\"",
+          "ru": "«Я состарюсь и стану уродливым, а этот портрет навсегда останется молодым».",
+          "bn": "\"আমি বুড়ো আর কুৎসিত হয়ে যাব, কিন্তু এই ছবিটা চিরকাল তরুণ থাকবে।\"",
+          "ur": "\"میں بوڑھا اور بدصورت ہو جاؤں گا، مگر یہ تصویر ہمیشہ جوان رہے گی۔\"",
+          "th": "\"ผมจะแก่และน่าเกลียด แต่ภาพนี้จะหนุ่มอยู่ตลอดไป\""
+        }
+      },
+      {
+        "id": "cl-dorian-017",
+        "english": "\"If only it were the other way round!\"",
+        "turkish": "\"Keşke tam tersi olsaydı!\"",
+        "translations": {
+          "es-419": "\"¡Si tan solo fuera al revés!\"",
+          "pt-BR": "\"Se ao menos fosse o contrário!\"",
+          "id": "\"Andai saja kebalikannya!\"",
+          "ar": "\"ليت الأمر كان معكوسًا!\"",
+          "vi": "\"Giá mà mọi chuyện ngược lại!\"",
+          "hi": "\"काश, उल्टा होता!\"",
+          "ru": "«Если бы было наоборот!»",
+          "bn": "\"আহা, যদি উল্টোটা হতো!\"",
+          "ur": "\"کاش، الٹا ہوتا!\"",
+          "th": "\"ถ้ามันกลับกันได้ก็ดีสิ!\""
+        }
+      },
+      {
+        "id": "cl-dorian-018",
+        "english": "\"I would give anything for that, even my soul.\"",
+        "turkish": "\"Bunun için her şeyimi verirdim, ruhumu bile.\"",
+        "translations": {
+          "es-419": "\"Daría cualquier cosa por eso, hasta mi alma\".",
+          "pt-BR": "\"Eu daria qualquer coisa por isso, até a minha alma.\"",
+          "id": "\"Aku rela memberikan apa saja untuk itu, bahkan jiwaku.\"",
+          "ar": "\"كنت سأعطي أي شيء مقابل ذلك، حتى روحي.\"",
+          "vi": "\"Tôi sẵn sàng đánh đổi mọi thứ, kể cả linh hồn mình.\"",
+          "hi": "\"इसके लिए मैं कुछ भी दे दूँ, अपनी आत्मा तक।\"",
+          "ru": "«Я отдал бы за это всё, даже свою душу».",
+          "bn": "\"এর জন্য আমি সবকিছু দিতে রাজি, এমনকি নিজের আত্মাও।\"",
+          "ur": "\"اس کے لیے میں کچھ بھی دے دوں، اپنی روح تک۔\"",
+          "th": "\"ผมยอมแลกทุกอย่าง แม้แต่วิญญาณของผม\""
+        }
+      },
+      {
+        "id": "cl-dorian-019",
+        "english": "Basil gave him the portrait as a present.",
+        "turkish": "Basil portreyi ona hediye etti.",
+        "translations": {
+          "es-419": "Basil le regaló el retrato.",
+          "pt-BR": "Basil deu o retrato de presente a ele.",
+          "id": "Basil memberikan potret itu kepadanya sebagai hadiah.",
+          "ar": "أهداه بازل اللوحة.",
+          "vi": "Basil tặng chàng bức chân dung làm quà.",
+          "hi": "बेज़िल ने वह चित्र उसे तोहफ़े में दे दिया।",
+          "ru": "Бэзил подарил ему портрет.",
+          "bn": "বেসিল প্রতিকৃতিটা তাকে উপহার দিলেন।",
+          "ur": "بیزل نے وہ تصویر اسے تحفے میں دے دی۔",
+          "th": "เบซิลมอบภาพเหมือนนั้นให้เขาเป็นของขวัญ"
+        }
+      },
+      {
+        "id": "cl-dorian-020",
+        "english": "Dorian hung it in his house, in a room full of light.",
+        "turkish": "Dorian onu evinde, ışıkla dolu bir odaya astı.",
+        "translations": {
+          "es-419": "Dorian lo colgó en su casa, en una sala llena de luz.",
+          "pt-BR": "Dorian o pendurou em casa, numa sala cheia de luz.",
+          "id": "Dorian menggantungnya di rumahnya, di sebuah ruangan yang terang.",
+          "ar": "علّقها دوريان في بيته، في غرفة يملؤها الضوء.",
+          "vi": "Dorian treo nó trong nhà, ở một căn phòng tràn ngập ánh sáng.",
+          "hi": "डोरियन ने उसे अपने घर में रोशनी से भरे एक कमरे में टाँग दिया।",
+          "ru": "Дориан повесил его у себя дома, в светлой комнате.",
+          "bn": "ডোরিয়ান সেটা বাড়িতে আলোয় ভরা একটা ঘরে টাঙিয়ে রাখল।",
+          "ur": "ڈورین نے اسے اپنے گھر میں روشنی سے بھرے ایک کمرے میں ٹانگ دیا۔",
+          "th": "ดอเรียนนำภาพไปแขวนไว้ที่บ้าน ในห้องที่สว่างไสว"
+        }
+      },
+      {
+        "id": "cl-dorian-021",
+        "english": "Soon he was spending every day with Lord Henry.",
+        "turkish": "Çok geçmeden her gününü Lord Henry'yle geçirmeye başladı.",
+        "translations": {
+          "es-419": "Pronto pasaba todos los días con lord Henry.",
+          "pt-BR": "Logo ele passava todos os dias com Lorde Henry.",
+          "id": "Tak lama kemudian ia menghabiskan setiap hari bersama Lord Henry.",
+          "ar": "وسرعان ما صار يقضي كل يوم مع اللورد هنري.",
+          "vi": "Chẳng bao lâu, ngày nào chàng cũng ở bên huân tước Henry.",
+          "hi": "जल्द ही वह हर दिन लॉर्ड हेनरी के साथ बिताने लगा।",
+          "ru": "Вскоре он стал проводить с лордом Генри каждый день.",
+          "bn": "অল্পদিনেই সে প্রতিদিন লর্ড হেনরির সঙ্গে কাটাতে লাগল।",
+          "ur": "جلد ہی وہ ہر دن لارڈ ہنری کے ساتھ گزارنے لگا۔",
+          "th": "ไม่นานเขาก็ใช้เวลาทุกวันอยู่กับลอร์ดเฮนรี"
+        }
+      },
+      {
+        "id": "cl-dorian-022",
+        "english": "He went to parties, theatres and dinners, always looking for new pleasures.",
+        "turkish": "Hep yeni zevkler arayarak partilere, tiyatrolara ve yemeklere gitti.",
+        "translations": {
+          "es-419": "Iba a fiestas, teatros y cenas, siempre buscando nuevos placeres.",
+          "pt-BR": "Ia a festas, teatros e jantares, sempre em busca de novos prazeres.",
+          "id": "Ia pergi ke pesta, teater, dan jamuan makan malam, selalu mencari kesenangan baru.",
+          "ar": "كان يذهب إلى الحفلات والمسارح والعشاءات، باحثًا دائمًا عن متع جديدة.",
+          "vi": "Chàng đi dự tiệc, xem kịch, ăn tối, lúc nào cũng tìm kiếm những thú vui mới.",
+          "hi": "वह पार्टियों, थिएटरों और दावतों में जाता, हमेशा नए सुखों की तलाश में।",
+          "ru": "Он ходил на приёмы, в театры и на ужины, вечно ища новых наслаждений.",
+          "bn": "সে পার্টি, থিয়েটার আর নৈশভোজে যেত, সবসময় নতুন আনন্দের খোঁজে।",
+          "ur": "وہ پارٹیوں، تھیٹروں اور دعوتوں میں جاتا، ہمیشہ نئی لذتوں کی تلاش میں۔",
+          "th": "เขาไปงานเลี้ยง โรงละคร และงานมื้อค่ำ คอยแสวงหาความสำราญใหม่ ๆ อยู่เสมอ"
+        }
+      },
+      {
+        "id": "cl-dorian-023",
+        "english": "One night, in a poor little theatre, he saw a young actress.",
+        "turkish": "Bir gece, yoksul küçük bir tiyatroda genç bir oyuncu kız gördü.",
+        "translations": {
+          "es-419": "Una noche, en un teatrito pobre, vio a una joven actriz.",
+          "pt-BR": "Uma noite, num teatrinho pobre, ele viu uma jovem atriz.",
+          "id": "Suatu malam, di sebuah teater kecil yang sederhana, ia melihat seorang aktris muda.",
+          "ar": "وذات ليلة، في مسرح صغير فقير، رأى ممثّلة شابّة.",
+          "vi": "Một đêm, tại một nhà hát nhỏ tồi tàn, chàng thấy một nữ diễn viên trẻ.",
+          "hi": "एक रात एक छोटे, ग़रीब-से थिएटर में उसने एक नौजवान अभिनेत्री को देखा।",
+          "ru": "Однажды вечером в бедном маленьком театре он увидел юную актрису.",
+          "bn": "এক রাতে একটা ছোট, গরিব থিয়েটারে সে এক তরুণী অভিনেত্রীকে দেখল।",
+          "ur": "ایک رات ایک چھوٹے، غریب سے تھیٹر میں اس نے ایک نوجوان اداکارہ کو دیکھا۔",
+          "th": "คืนหนึ่ง ในโรงละครเล็ก ๆ ซอมซ่อ เขาได้เห็นนักแสดงสาวคนหนึ่ง"
+        }
+      },
+      {
+        "id": "cl-dorian-024",
+        "english": "Her name was Sibyl Vane, and she was playing Juliet.",
+        "turkish": "Adı Sibyl Vane'di ve Juliet'i oynuyordu.",
+        "translations": {
+          "es-419": "Se llamaba Sibyl Vane, y hacía el papel de Julieta.",
+          "pt-BR": "Ela se chamava Sibyl Vane e fazia o papel de Julieta.",
+          "id": "Namanya Sibyl Vane, dan ia sedang memerankan Juliet.",
+          "ar": "كان اسمها سيبيل فين، وكانت تؤدّي دور جولييت.",
+          "vi": "Cô tên là Sibyl Vane và đang đóng vai Juliet.",
+          "hi": "उसका नाम सिबिल वेन था, और वह जूलियट का किरदार निभा रही थी।",
+          "ru": "Её звали Сибила Вэйн, и она играла Джульетту.",
+          "bn": "তার নাম সিবিল ভেন, সে জুলিয়েটের চরিত্রে অভিনয় করছিল।",
+          "ur": "اس کا نام سبل وین تھا، اور وہ جولیٹ کا کردار ادا کر رہی تھی۔",
+          "th": "เธอชื่อซิบิล เวน และกำลังรับบทเป็นจูเลียต"
+        }
+      },
+      {
+        "id": "cl-dorian-025",
+        "english": "Dorian thought she was the most wonderful artist in London.",
+        "turkish": "Dorian onun Londra'nın en harika sanatçısı olduğunu düşündü.",
+        "translations": {
+          "es-419": "Dorian pensó que era la artista más maravillosa de Londres.",
+          "pt-BR": "Dorian achou que ela era a artista mais maravilhosa de Londres.",
+          "id": "Dorian menganggapnya seniman paling hebat di London.",
+          "ar": "ظنّ دوريان أنها أروع فنّانة في لندن.",
+          "vi": "Dorian nghĩ cô là nghệ sĩ tuyệt vời nhất London.",
+          "hi": "डोरियन को लगा कि वह लंदन की सबसे अद्भुत कलाकार है।",
+          "ru": "Дориан решил, что она самая чудесная актриса в Лондоне.",
+          "bn": "ডোরিয়ানের মনে হলো, সে লন্ডনের সবচেয়ে চমৎকার শিল্পী।",
+          "ur": "ڈورین کو لگا کہ وہ لندن کی سب سے شاندار فنکارہ ہے۔",
+          "th": "ดอเรียนคิดว่าเธอคือศิลปินที่วิเศษที่สุดในลอนดอน"
+        }
+      },
+      {
+        "id": "cl-dorian-026",
+        "english": "He fell in love with her at once.",
+        "turkish": "Ona hemen âşık oldu.",
+        "translations": {
+          "es-419": "Se enamoró de ella al instante.",
+          "pt-BR": "Ele se apaixonou por ela na hora.",
+          "id": "Ia langsung jatuh cinta kepadanya.",
+          "ar": "وقع في حبّها على الفور.",
+          "vi": "Chàng phải lòng cô ngay lập tức.",
+          "hi": "उसे फ़ौरन उससे प्यार हो गया।",
+          "ru": "Он сразу же влюбился в неё.",
+          "bn": "সে সঙ্গে সঙ্গে তার প্রেমে পড়ে গেল।",
+          "ur": "اسے فوراً اس سے محبت ہو گئی۔",
+          "th": "เขาตกหลุมรักเธอในทันที"
+        }
+      },
+      {
+        "id": "cl-dorian-027",
+        "english": "A few weeks later, they were engaged.",
+        "turkish": "Birkaç hafta sonra nişanlandılar.",
+        "translations": {
+          "es-419": "Unas semanas después, se comprometieron.",
+          "pt-BR": "Algumas semanas depois, ficaram noivos.",
+          "id": "Beberapa minggu kemudian, mereka bertunangan.",
+          "ar": "وبعد أسابيع قليلة، تمّت خطبتهما.",
+          "vi": "Vài tuần sau, họ đính hôn.",
+          "hi": "कुछ हफ़्तों बाद उनकी सगाई हो गई।",
+          "ru": "Через несколько недель они обручились.",
+          "bn": "কয়েক সপ্তাহ পরে তাদের বাগদান হলো।",
+          "ur": "چند ہفتوں بعد ان کی منگنی ہو گئی۔",
+          "th": "ไม่กี่สัปดาห์ต่อมา ทั้งสองก็หมั้นกัน"
+        }
+      },
+      {
+        "id": "cl-dorian-028",
+        "english": "Dorian invited Basil and Lord Henry to watch Sibyl act.",
+        "turkish": "Dorian, Basil'i ve Lord Henry'yi Sibyl'in oyununu izlemeye davet etti.",
+        "translations": {
+          "es-419": "Dorian invitó a Basil y a lord Henry a ver actuar a Sibyl.",
+          "pt-BR": "Dorian convidou Basil e Lorde Henry para verem Sibyl atuar.",
+          "id": "Dorian mengundang Basil dan Lord Henry untuk menonton Sibyl berakting.",
+          "ar": "دعا دوريان بازل واللورد هنري لمشاهدة تمثيل سيبيل.",
+          "vi": "Dorian mời Basil và huân tước Henry đến xem Sibyl diễn.",
+          "hi": "डोरियन ने बेज़िल और लॉर्ड हेनरी को सिबिल का अभिनय देखने बुलाया।",
+          "ru": "Дориан пригласил Бэзила и лорда Генри посмотреть, как играет Сибила.",
+          "bn": "ডোরিয়ান বেসিল আর লর্ড হেনরিকে সিবিলের অভিনয় দেখতে ডাকল।",
+          "ur": "ڈورین نے بیزل اور لارڈ ہنری کو سبل کی اداکاری دیکھنے بلایا۔",
+          "th": "ดอเรียนชวนเบซิลและลอร์ดเฮนรีไปดูซิบิลแสดง"
+        }
+      },
+      {
+        "id": "cl-dorian-029",
+        "english": "But that night, she acted terribly.",
+        "turkish": "Ama o gece çok kötü oynadı.",
+        "translations": {
+          "es-419": "Pero esa noche, actuó pésimo.",
+          "pt-BR": "Mas naquela noite ela atuou muito mal.",
+          "id": "Namun malam itu, aktingnya buruk sekali.",
+          "ar": "لكنها في تلك الليلة مثّلت تمثيلًا سيئًا جدًّا.",
+          "vi": "Nhưng đêm ấy, cô diễn tệ hại.",
+          "hi": "लेकिन उस रात उसने बहुत बुरा अभिनय किया।",
+          "ru": "Но в тот вечер она играла ужасно.",
+          "bn": "কিন্তু সে রাতে সে ভয়ানক খারাপ অভিনয় করল।",
+          "ur": "لیکن اس رات اس نے بہت بری اداکاری کی۔",
+          "th": "แต่คืนนั้นเธอแสดงได้แย่มาก"
+        }
+      },
+      {
+        "id": "cl-dorian-030",
+        "english": "Her voice was flat, and the audience laughed at her.",
+        "turkish": "Sesi cansızdı ve seyirciler ona güldü.",
+        "translations": {
+          "es-419": "Su voz sonaba apagada, y el público se rio de ella.",
+          "pt-BR": "A voz dela estava sem vida, e a plateia riu dela.",
+          "id": "Suaranya datar, dan penonton menertawakannya.",
+          "ar": "كان صوتها باهتًا، فضحك منها الجمهور.",
+          "vi": "Giọng cô đều đều vô hồn, và khán giả cười nhạo cô.",
+          "hi": "उसकी आवाज़ बेजान थी, और दर्शक उस पर हँसने लगे।",
+          "ru": "Голос её звучал безжизненно, и зрители смеялись над ней.",
+          "bn": "তার গলা ছিল প্রাণহীন, আর দর্শকেরা তাকে নিয়ে হাসল।",
+          "ur": "اس کی آواز بے جان تھی، اور تماشائی اس پر ہنسنے لگے۔",
+          "th": "น้ำเสียงของเธอแบนราบไร้ชีวิต และผู้ชมก็หัวเราะเยาะเธอ"
+        }
+      },
+      {
+        "id": "cl-dorian-031",
+        "english": "After the play, Sibyl ran to Dorian, smiling with joy.",
+        "turkish": "Oyundan sonra Sibyl sevinçle gülümseyerek Dorian'a koştu.",
+        "translations": {
+          "es-419": "Después de la obra, Sibyl corrió hacia Dorian, sonriendo de alegría.",
+          "pt-BR": "Depois da peça, Sibyl correu até Dorian, sorrindo de alegria.",
+          "id": "Setelah pertunjukan, Sibyl berlari kepada Dorian sambil tersenyum gembira.",
+          "ar": "بعد المسرحية، ركضت سيبيل نحو دوريان وهي تبتسم فرحًا.",
+          "vi": "Sau buổi diễn, Sibyl chạy đến bên Dorian, mỉm cười rạng rỡ.",
+          "hi": "नाटक के बाद सिबिल ख़ुशी से मुस्कुराती हुई डोरियन के पास दौड़ी आई।",
+          "ru": "После спектакля Сибила, сияя от радости, подбежала к Дориану.",
+          "bn": "নাটকের পরে সিবিল আনন্দে হাসতে হাসতে ডোরিয়ানের কাছে ছুটে এল।",
+          "ur": "ڈرامے کے بعد سبل خوشی سے مسکراتی ہوئی ڈورین کے پاس دوڑی آئی۔",
+          "th": "หลังละครจบ ซิบิลวิ่งมาหาดอเรียนพร้อมรอยยิ้มอย่างมีความสุข"
+        }
+      },
+      {
+        "id": "cl-dorian-032",
+        "english": "\"Before I met you, acting was my whole life,\" she said.",
+        "turkish": "\"Seninle tanışmadan önce oyunculuk benim bütün hayatımdı,\" dedi.",
+        "translations": {
+          "es-419": "\"Antes de conocerte, actuar era toda mi vida\", dijo.",
+          "pt-BR": "\"Antes de conhecer você, atuar era a minha vida inteira\", disse ela.",
+          "id": "\"Sebelum bertemu denganmu, berakting adalah seluruh hidupku,\" katanya.",
+          "ar": "قالت: \"قبل أن ألقاك، كان التمثيل حياتي كلها.\"",
+          "vi": "\"Trước khi gặp anh, diễn xuất là cả cuộc đời em,\" cô nói.",
+          "hi": "\"तुमसे मिलने से पहले अभिनय ही मेरी पूरी ज़िंदगी था,\" उसने कहा।",
+          "ru": "«До встречи с тобой сцена была всей моей жизнью», — сказала она.",
+          "bn": "\"তোমার সঙ্গে দেখা হওয়ার আগে অভিনয়ই ছিল আমার সারা জীবন,\" সে বলল।",
+          "ur": "\"تم سے ملنے سے پہلے اداکاری ہی میری پوری زندگی تھی،\" اس نے کہا۔",
+          "th": "\"ก่อนได้พบคุณ การแสดงคือชีวิตทั้งหมดของฉัน\" เธอกล่าว"
+        }
+      },
+      {
+        "id": "cl-dorian-033",
+        "english": "\"Now I know what real love is, and I cannot pretend any more.\"",
+        "turkish": "\"Artık gerçek aşkın ne olduğunu biliyorum ve artık rol yapamıyorum.\"",
+        "translations": {
+          "es-419": "\"Ahora sé lo que es el amor de verdad, y ya no puedo fingir\".",
+          "pt-BR": "\"Agora sei o que é o amor de verdade, e não consigo mais fingir.\"",
+          "id": "\"Kini aku tahu apa itu cinta sejati, dan aku tak bisa berpura-pura lagi.\"",
+          "ar": "\"الآن عرفتُ ما الحب الحقيقي، ولم أعد أستطيع التظاهر.\"",
+          "vi": "\"Giờ em biết thế nào là tình yêu thật sự, và em không thể giả vờ được nữa.\"",
+          "hi": "\"अब मैं जानती हूँ कि सच्चा प्यार क्या है, और मैं अब दिखावा नहीं कर सकती।\"",
+          "ru": "«Теперь я знаю, что такое настоящая любовь, и больше не могу притворяться».",
+          "bn": "\"এখন আমি জানি সত্যিকারের ভালোবাসা কী, আর ভান করতে পারি না।\"",
+          "ur": "\"اب میں جانتی ہوں کہ سچی محبت کیا ہے، اور اب میں دکھاوا نہیں کر سکتی۔\"",
+          "th": "\"ตอนนี้ฉันรู้แล้วว่ารักแท้คืออะไร และฉันแสร้งทำอีกต่อไปไม่ได้แล้ว\""
+        }
+      },
+      {
+        "id": "cl-dorian-034",
+        "english": "But Dorian did not want a simple girl in love.",
+        "turkish": "Ama Dorian âşık, sıradan bir kız istemiyordu.",
+        "translations": {
+          "es-419": "Pero Dorian no quería a una muchacha sencilla y enamorada.",
+          "pt-BR": "Mas Dorian não queria uma moça simples e apaixonada.",
+          "id": "Namun Dorian tidak menginginkan gadis biasa yang sedang jatuh cinta.",
+          "ar": "لكن دوريان لم يكن يريد فتاة بسيطة عاشقة.",
+          "vi": "Nhưng Dorian không cần một cô gái bình thường đang yêu.",
+          "hi": "लेकिन डोरियन को प्यार में डूबी एक साधारण लड़की नहीं चाहिए थी।",
+          "ru": "Но Дориану не нужна была простая влюблённая девушка.",
+          "bn": "কিন্তু ডোরিয়ান প্রেমে পড়া সাধারণ এক মেয়েকে চায়নি।",
+          "ur": "لیکن ڈورین کو محبت میں ڈوبی ایک عام لڑکی نہیں چاہیے تھی۔",
+          "th": "แต่ดอเรียนไม่ได้ต้องการหญิงสาวธรรมดาที่กำลังมีความรัก"
+        }
+      },
+      {
+        "id": "cl-dorian-035",
+        "english": "He wanted the great artist he had seen on the stage.",
+        "turkish": "Sahnede gördüğü büyük sanatçıyı istiyordu.",
+        "translations": {
+          "es-419": "Quería a la gran artista que había visto en el escenario.",
+          "pt-BR": "Ele queria a grande artista que tinha visto no palco.",
+          "id": "Ia menginginkan seniman hebat yang pernah ia lihat di panggung.",
+          "ar": "كان يريد الفنّانة العظيمة التي رآها على المسرح.",
+          "vi": "Chàng muốn người nghệ sĩ vĩ đại mà chàng đã thấy trên sân khấu.",
+          "hi": "उसे वह महान कलाकार चाहिए थी जिसे उसने मंच पर देखा था।",
+          "ru": "Ему нужна была великая актриса, которую он видел на сцене.",
+          "bn": "সে চেয়েছিল মঞ্চে দেখা সেই মহান শিল্পীকে।",
+          "ur": "اسے وہ عظیم فنکارہ چاہیے تھی جسے اس نے اسٹیج پر دیکھا تھا۔",
+          "th": "เขาต้องการศิลปินผู้ยิ่งใหญ่ที่เขาเคยเห็นบนเวที"
+        }
+      },
+      {
+        "id": "cl-dorian-036",
+        "english": "\"You have killed my love,\" he said coldly.",
+        "turkish": "\"Aşkımı öldürdün,\" dedi soğuk bir sesle.",
+        "translations": {
+          "es-419": "\"Has matado mi amor\", dijo con frialdad.",
+          "pt-BR": "\"Você matou o meu amor\", disse ele friamente.",
+          "id": "\"Kau telah membunuh cintaku,\" katanya dengan dingin.",
+          "ar": "قال ببرود: \"لقد قتلتِ حبّي.\"",
+          "vi": "\"Em đã giết chết tình yêu của tôi,\" chàng lạnh lùng nói.",
+          "hi": "\"तुमने मेरा प्यार मार डाला,\" उसने रूखेपन से कहा।",
+          "ru": "«Ты убила мою любовь», — холодно сказал он.",
+          "bn": "\"তুমি আমার ভালোবাসাকে মেরে ফেলেছ,\" সে ঠান্ডা গলায় বলল।",
+          "ur": "\"تم نے میری محبت کو مار ڈالا،\" اس نے سرد لہجے میں کہا۔",
+          "th": "\"เธอฆ่าความรักของฉันแล้ว\" เขาพูดอย่างเย็นชา"
+        }
+      },
+      {
+        "id": "cl-dorian-037",
+        "english": "\"I never want to see you again.\"",
+        "turkish": "\"Seni bir daha asla görmek istemiyorum.\"",
+        "translations": {
+          "es-419": "\"No quiero volver a verte nunca\".",
+          "pt-BR": "\"Nunca mais quero ver você.\"",
+          "id": "\"Aku tak mau melihatmu lagi.\"",
+          "ar": "\"لا أريد أن أراكِ مرة أخرى أبدًا.\"",
+          "vi": "\"Tôi không bao giờ muốn gặp lại em nữa.\"",
+          "hi": "\"मैं तुम्हें फिर कभी नहीं देखना चाहता।\"",
+          "ru": "«Я больше никогда не хочу тебя видеть».",
+          "bn": "\"আমি আর কখনো তোমার মুখ দেখতে চাই না।\"",
+          "ur": "\"میں تمہیں پھر کبھی نہیں دیکھنا چاہتا۔\"",
+          "th": "\"ฉันไม่อยากเห็นหน้าเธออีกแล้ว\""
+        }
+      },
+      {
+        "id": "cl-dorian-038",
+        "english": "Sibyl fell to the floor, crying, but he walked away.",
+        "turkish": "Sibyl ağlayarak yere yığıldı, ama o çekip gitti.",
+        "translations": {
+          "es-419": "Sibyl cayó al suelo llorando, pero él se marchó.",
+          "pt-BR": "Sibyl caiu no chão chorando, mas ele foi embora.",
+          "id": "Sibyl jatuh ke lantai sambil menangis, tetapi Dorian pergi begitu saja.",
+          "ar": "سقطت سيبيل على الأرض باكية، لكنه مضى.",
+          "vi": "Sibyl ngã quỵ xuống sàn, khóc nức nở, nhưng chàng bỏ đi.",
+          "hi": "सिबिल रोती हुई ज़मीन पर गिर पड़ी, पर वह चला गया।",
+          "ru": "Сибила, рыдая, упала на пол, но он ушёл.",
+          "bn": "সিবিল কাঁদতে কাঁদতে মেঝেতে লুটিয়ে পড়ল, কিন্তু সে চলে গেল।",
+          "ur": "سبل روتی ہوئی زمین پر گر پڑی، مگر وہ چلا گیا۔",
+          "th": "ซิบิลทรุดลงกับพื้นร่ำไห้ แต่เขากลับเดินจากไป"
+        }
+      },
+      {
+        "id": "cl-dorian-039",
+        "english": "When he came home at dawn, he looked at the portrait.",
+        "turkish": "Şafakta eve döndüğünde portreye baktı.",
+        "translations": {
+          "es-419": "Cuando volvió a casa al amanecer, miró el retrato.",
+          "pt-BR": "Quando voltou para casa ao amanhecer, ele olhou para o retrato.",
+          "id": "Saat pulang menjelang fajar, ia memandang potret itu.",
+          "ar": "وحين عاد إلى بيته عند الفجر، نظر إلى اللوحة.",
+          "vi": "Khi về nhà lúc bình minh, chàng nhìn bức chân dung.",
+          "hi": "भोर में घर लौटकर उसने चित्र की ओर देखा।",
+          "ru": "Вернувшись домой на рассвете, он взглянул на портрет.",
+          "bn": "ভোরে বাড়ি ফিরে সে প্রতিকৃতিটার দিকে তাকাল।",
+          "ur": "فجر کے وقت گھر لوٹ کر اس نے تصویر کی طرف دیکھا۔",
+          "th": "เมื่อกลับถึงบ้านตอนรุ่งสาง เขามองไปที่ภาพเหมือน"
+        }
+      },
+      {
+        "id": "cl-dorian-040",
+        "english": "Something in the face had changed.",
+        "turkish": "Yüzde bir şey değişmişti.",
+        "translations": {
+          "es-419": "Algo en el rostro había cambiado.",
+          "pt-BR": "Algo no rosto tinha mudado.",
+          "id": "Ada sesuatu yang berubah di wajah itu.",
+          "ar": "كان شيء ما في الوجه قد تغيّر.",
+          "vi": "Có điều gì đó trên khuôn mặt đã thay đổi.",
+          "hi": "चेहरे में कुछ बदल गया था।",
+          "ru": "Что-то в лице изменилось.",
+          "bn": "মুখটায় কিছু একটা বদলে গিয়েছিল।",
+          "ur": "چہرے میں کچھ بدل گیا تھا۔",
+          "th": "มีบางอย่างบนใบหน้านั้นเปลี่ยนไป"
+        }
+      },
+      {
+        "id": "cl-dorian-041",
+        "english": "There was a cruel line around the mouth.",
+        "turkish": "Ağzın çevresinde acımasız bir çizgi vardı.",
+        "translations": {
+          "es-419": "Había una línea cruel alrededor de la boca.",
+          "pt-BR": "Havia uma linha cruel em volta da boca.",
+          "id": "Ada garis kejam di sekitar mulutnya.",
+          "ar": "كان هناك خطّ قاسٍ حول الفم.",
+          "vi": "Quanh miệng có một nét tàn nhẫn.",
+          "hi": "होंठों के आसपास एक क्रूर रेखा थी।",
+          "ru": "У рта появилась жестокая складка.",
+          "bn": "ঠোঁটের চারপাশে ফুটে উঠেছে একটা নিষ্ঠুর রেখা।",
+          "ur": "ہونٹوں کے گرد ایک ظالمانہ لکیر تھی۔",
+          "th": "รอบปากมีรอยเส้นที่ดูโหดร้าย"
+        }
+      },
+      {
+        "id": "cl-dorian-042",
+        "english": "Dorian looked in the mirror, but his own face was still perfect.",
+        "turkish": "Dorian aynaya baktı, ama kendi yüzü hâlâ kusursuzdu.",
+        "translations": {
+          "es-419": "Dorian se miró al espejo, pero su propio rostro seguía perfecto.",
+          "pt-BR": "Dorian se olhou no espelho, mas o próprio rosto continuava perfeito.",
+          "id": "Dorian bercermin, tetapi wajahnya sendiri masih sempurna.",
+          "ar": "نظر دوريان في المرآة، لكن وجهه هو كان لا يزال كاملًا.",
+          "vi": "Dorian soi gương, nhưng gương mặt của chàng vẫn hoàn hảo.",
+          "hi": "डोरियन ने आईने में देखा, पर उसका अपना चेहरा अब भी बेदाग़ था।",
+          "ru": "Дориан посмотрел в зеркало, но его собственное лицо оставалось безупречным.",
+          "bn": "ডোরিয়ান আয়নায় তাকাল, কিন্তু তার নিজের মুখ তখনো নিখুঁত।",
+          "ur": "ڈورین نے آئینے میں دیکھا، مگر اس کا اپنا چہرہ اب بھی بے داغ تھا۔",
+          "th": "ดอเรียนส่องกระจก แต่ใบหน้าของเขาเองยังคงไร้ที่ติ"
+        }
+      },
+      {
+        "id": "cl-dorian-043",
+        "english": "His wish had come true.",
+        "turkish": "Dileği gerçek olmuştu.",
+        "translations": {
+          "es-419": "Su deseo se había cumplido.",
+          "pt-BR": "O desejo dele tinha se realizado.",
+          "id": "Keinginannya telah menjadi kenyataan.",
+          "ar": "لقد تحقّقت أمنيته.",
+          "vi": "Điều ước của chàng đã thành sự thật.",
+          "hi": "उसकी इच्छा पूरी हो गई थी।",
+          "ru": "Его желание сбылось.",
+          "bn": "তার ইচ্ছে পূরণ হয়েছে।",
+          "ur": "اس کی خواہش پوری ہو گئی تھی۔",
+          "th": "คำอธิษฐานของเขาเป็นจริงแล้ว"
+        }
+      },
+      {
+        "id": "cl-dorian-044",
+        "english": "The picture would carry the marks of everything he did.",
+        "turkish": "Resim, onun yaptığı her şeyin izini taşıyacaktı.",
+        "translations": {
+          "es-419": "El cuadro llevaría las marcas de todo lo que él hiciera.",
+          "pt-BR": "O quadro carregaria as marcas de tudo o que ele fizesse.",
+          "id": "Lukisan itu akan menanggung bekas dari semua yang ia lakukan.",
+          "ar": "ستحمل اللوحة آثار كل ما يفعله.",
+          "vi": "Bức tranh sẽ mang dấu vết của mọi điều chàng làm.",
+          "hi": "वह तस्वीर उसके हर काम के निशान ढोएगी।",
+          "ru": "Портрет будет нести следы всего, что он сделает.",
+          "bn": "সে যা-ই করুক, তার দাগ পড়বে ছবিটার গায়ে।",
+          "ur": "وہ تصویر اس کے ہر کام کے نشان اٹھائے گی۔",
+          "th": "ภาพนั้นจะแบกรับร่องรอยของทุกสิ่งที่เขาทำ"
+        }
+      },
+      {
+        "id": "cl-dorian-045",
+        "english": "Frightened, he decided to be good and to marry Sibyl after all.",
+        "turkish": "Korkup iyi biri olmaya ve sonunda Sibyl'le evlenmeye karar verdi.",
+        "translations": {
+          "es-419": "Asustado, decidió ser bueno y casarse con Sibyl, después de todo.",
+          "pt-BR": "Assustado, ele decidiu ser bom e se casar com Sibyl, afinal.",
+          "id": "Karena takut, ia memutuskan untuk menjadi orang baik dan menikahi Sibyl.",
+          "ar": "خائفًا، قرّر أن يكون صالحًا وأن يتزوّج سيبيل في النهاية.",
+          "vi": "Hoảng sợ, chàng quyết định sống tốt và cưới Sibyl như đã hứa.",
+          "hi": "डरकर उसने तय किया कि वह अच्छा बनेगा और आख़िरकार सिबिल से शादी करेगा।",
+          "ru": "Испугавшись, он решил стать хорошим и всё-таки жениться на Сибиле.",
+          "bn": "ভয় পেয়ে সে ঠিক করল ভালো হবে, আর শেষ পর্যন্ত সিবিলকেই বিয়ে করবে।",
+          "ur": "ڈر کر اس نے طے کیا کہ وہ اچھا بنے گا اور آخرکار سبل سے شادی کرے گا۔",
+          "th": "ด้วยความกลัว เขาตัดสินใจจะเป็นคนดีและแต่งงานกับซิบิลตามเดิม"
+        }
+      },
+      {
+        "id": "cl-dorian-046",
+        "english": "He wrote her a long, loving letter.",
+        "turkish": "Ona uzun, sevgi dolu bir mektup yazdı.",
+        "translations": {
+          "es-419": "Le escribió una carta larga y cariñosa.",
+          "pt-BR": "Escreveu para ela uma carta longa e carinhosa.",
+          "id": "Ia menulis surat panjang yang penuh kasih untuknya.",
+          "ar": "كتب لها رسالة طويلة مليئة بالحب.",
+          "vi": "Chàng viết cho cô một lá thư dài đầy yêu thương.",
+          "hi": "उसने उसे एक लंबा, प्यार भरा पत्र लिखा।",
+          "ru": "Он написал ей длинное нежное письмо.",
+          "bn": "সে তাকে একটা লম্বা, ভালোবাসায় ভরা চিঠি লিখল।",
+          "ur": "اس نے اسے ایک لمبا، محبت بھرا خط لکھا۔",
+          "th": "เขาเขียนจดหมายยาวเปี่ยมด้วยความรักถึงเธอ"
+        }
+      },
+      {
+        "id": "cl-dorian-047",
+        "english": "But that afternoon, Lord Henry brought terrible news.",
+        "turkish": "Ama o öğleden sonra Lord Henry korkunç bir haber getirdi.",
+        "translations": {
+          "es-419": "Pero esa tarde, lord Henry trajo una noticia terrible.",
+          "pt-BR": "Mas naquela tarde Lorde Henry trouxe uma notícia terrível.",
+          "id": "Namun sore itu, Lord Henry datang membawa kabar buruk.",
+          "ar": "لكن في عصر ذلك اليوم، جاء اللورد هنري بخبر مروّع.",
+          "vi": "Nhưng chiều hôm ấy, huân tước Henry mang đến một tin khủng khiếp.",
+          "hi": "लेकिन उसी दोपहर लॉर्ड हेनरी एक भयानक ख़बर लेकर आए।",
+          "ru": "Но в тот же день лорд Генри принёс страшную новость.",
+          "bn": "কিন্তু সেদিন বিকেলে লর্ড হেনরি এক ভয়ংকর খবর নিয়ে এলেন।",
+          "ur": "لیکن اسی دوپہر لارڈ ہنری ایک خوفناک خبر لے کر آئے۔",
+          "th": "แต่บ่ายวันนั้น ลอร์ดเฮนรีนำข่าวร้ายมาบอก"
+        }
+      },
+      {
+        "id": "cl-dorian-048",
+        "english": "Sibyl had taken poison and died the night before.",
+        "turkish": "Sibyl önceki gece zehir içip ölmüştü.",
+        "translations": {
+          "es-419": "Sibyl había tomado veneno y había muerto la noche anterior.",
+          "pt-BR": "Sibyl tinha tomado veneno e morrido na noite anterior.",
+          "id": "Sibyl telah meminum racun dan meninggal malam sebelumnya.",
+          "ar": "لقد تناولت سيبيل سمًّا وماتت في الليلة السابقة.",
+          "vi": "Sibyl đã uống thuốc độc và qua đời từ đêm hôm trước.",
+          "hi": "सिबिल ने पिछली रात ज़हर खा लिया था और उसकी मौत हो गई थी।",
+          "ru": "Сибила накануне ночью приняла яд и умерла.",
+          "bn": "সিবিল আগের রাতে বিষ খেয়ে মারা গেছে।",
+          "ur": "سبل نے پچھلی رات زہر کھا لیا تھا اور اس کی موت ہو گئی تھی۔",
+          "th": "ซิบิลกินยาพิษและเสียชีวิตไปตั้งแต่เมื่อคืน"
+        }
+      },
+      {
+        "id": "cl-dorian-049",
+        "english": "Dorian was shocked, but Lord Henry spoke calmly.",
+        "turkish": "Dorian sarsılmıştı, ama Lord Henry sakin sakin konuştu.",
+        "translations": {
+          "es-419": "Dorian quedó impactado, pero lord Henry habló con calma.",
+          "pt-BR": "Dorian ficou chocado, mas Lorde Henry falou com calma.",
+          "id": "Dorian terguncang, tetapi Lord Henry berbicara dengan tenang.",
+          "ar": "صُدم دوريان، لكن اللورد هنري تكلّم بهدوء.",
+          "vi": "Dorian bàng hoàng, nhưng huân tước Henry vẫn bình thản.",
+          "hi": "डोरियन सदमे में था, पर लॉर्ड हेनरी शांति से बोले।",
+          "ru": "Дориан был потрясён, но лорд Генри говорил спокойно.",
+          "bn": "ডোরিয়ান স্তম্ভিত, কিন্তু লর্ড হেনরি শান্তভাবে কথা বললেন।",
+          "ur": "ڈورین صدمے میں تھا، مگر لارڈ ہنری سکون سے بولے۔",
+          "th": "ดอเรียนตกตะลึง แต่ลอร์ดเฮนรีกลับพูดอย่างใจเย็น"
+        }
+      },
+      {
+        "id": "cl-dorian-050",
+        "english": "\"Think of it as a beautiful scene from a play,\" he said.",
+        "turkish": "\"Bunu bir oyundan güzel bir sahne gibi düşün,\" dedi.",
+        "translations": {
+          "es-419": "\"Piénsalo como una bella escena de una obra de teatro\", dijo.",
+          "pt-BR": "\"Pense nisso como uma bela cena de uma peça\", disse ele.",
+          "id": "\"Anggap saja itu adegan indah dari sebuah drama,\" katanya.",
+          "ar": "قال: \"اعتبرها مشهدًا جميلًا من مسرحية.\"",
+          "vi": "\"Hãy coi đó như một cảnh đẹp trong một vở kịch,\" ông nói.",
+          "hi": "\"इसे किसी नाटक का एक सुंदर दृश्य समझो,\" उन्होंने कहा।",
+          "ru": "«Представь, что это прекрасная сцена из пьесы», — сказал он.",
+          "bn": "\"এটাকে কোনো নাটকের একটা সুন্দর দৃশ্য ভেবে নাও,\" তিনি বললেন।",
+          "ur": "\"اسے کسی ڈرامے کا ایک خوبصورت منظر سمجھو،\" انہوں نے کہا۔",
+          "th": "\"คิดเสียว่าเป็นฉากงาม ๆ ในละครเรื่องหนึ่งก็แล้วกัน\" เขากล่าว"
+        }
+      },
+      {
+        "id": "cl-dorian-051",
+        "english": "And soon Dorian stopped feeling sorry.",
+        "turkish": "Ve çok geçmeden Dorian üzülmeyi bıraktı.",
+        "translations": {
+          "es-419": "Y pronto Dorian dejó de sentir pena.",
+          "pt-BR": "E logo Dorian deixou de sentir pena.",
+          "id": "Dan tak lama kemudian Dorian tidak lagi merasa menyesal.",
+          "ar": "وسرعان ما توقّف دوريان عن الشعور بالأسف.",
+          "vi": "Và chẳng bao lâu Dorian không còn thấy hối hận nữa.",
+          "hi": "और जल्द ही डोरियन को अफ़सोस होना बंद हो गया।",
+          "ru": "И вскоре Дориан перестал сожалеть.",
+          "bn": "আর অল্পদিনেই ডোরিয়ানের অনুশোচনা মিলিয়ে গেল।",
+          "ur": "اور جلد ہی ڈورین کو افسوس ہونا بند ہو گیا۔",
+          "th": "ไม่นานดอเรียนก็เลิกรู้สึกเสียใจ"
+        }
+      },
+      {
+        "id": "cl-dorian-052",
+        "english": "He covered the portrait with a heavy cloth.",
+        "turkish": "Portreyi ağır bir örtüyle örttü.",
+        "translations": {
+          "es-419": "Cubrió el retrato con una tela pesada.",
+          "pt-BR": "Cobriu o retrato com um pano pesado.",
+          "id": "Ia menutupi potret itu dengan kain tebal.",
+          "ar": "غطّى اللوحة بقماش ثقيل.",
+          "vi": "Chàng phủ bức chân dung bằng một tấm vải dày.",
+          "hi": "उसने चित्र को एक भारी कपड़े से ढक दिया।",
+          "ru": "Он накрыл портрет тяжёлой тканью.",
+          "bn": "সে প্রতিকৃতিটা একটা ভারী কাপড়ে ঢেকে দিল।",
+          "ur": "اس نے تصویر کو ایک بھاری کپڑے سے ڈھک دیا۔",
+          "th": "เขาคลุมภาพเหมือนด้วยผ้าผืนหนา"
+        }
+      },
+      {
+        "id": "cl-dorian-053",
+        "english": "Then he locked it in an old room at the top of the house.",
+        "turkish": "Sonra onu evin en üstündeki eski bir odaya kilitledi.",
+        "translations": {
+          "es-419": "Luego lo encerró en un cuarto viejo en lo alto de la casa.",
+          "pt-BR": "Depois o trancou num quarto velho no alto da casa.",
+          "id": "Lalu ia menguncinya di sebuah kamar tua di lantai paling atas.",
+          "ar": "ثم أقفل عليها في غرفة قديمة أعلى البيت.",
+          "vi": "Rồi chàng khóa nó trong một căn phòng cũ trên tầng cao nhất.",
+          "hi": "फिर उसने उसे घर की सबसे ऊपरी मंज़िल के एक पुराने कमरे में बंद कर दिया।",
+          "ru": "Потом он запер его в старой комнате под самой крышей.",
+          "bn": "তারপর সেটা বাড়ির একেবারে ওপরের একটা পুরোনো ঘরে তালাবন্ধ করে রাখল।",
+          "ur": "پھر اس نے اسے گھر کی سب سے اوپری منزل کے ایک پرانے کمرے میں بند کر دیا۔",
+          "th": "แล้วเขาก็ล็อกมันไว้ในห้องเก่า ๆ บนชั้นบนสุดของบ้าน"
+        }
+      },
+      {
+        "id": "cl-dorian-054",
+        "english": "The years passed, but Dorian never grew older.",
+        "turkish": "Yıllar geçti, ama Dorian hiç yaşlanmadı.",
+        "translations": {
+          "es-419": "Pasaron los años, pero Dorian nunca envejeció.",
+          "pt-BR": "Os anos passaram, mas Dorian nunca envelheceu.",
+          "id": "Tahun demi tahun berlalu, tetapi Dorian tak pernah menua.",
+          "ar": "مرّت السنوات، لكن دوريان لم يكبر أبدًا.",
+          "vi": "Năm tháng trôi qua, nhưng Dorian không hề già đi.",
+          "hi": "साल गुज़रते गए, पर डोरियन कभी बूढ़ा नहीं हुआ।",
+          "ru": "Шли годы, но Дориан не старел.",
+          "bn": "বছরের পর বছর কেটে গেল, কিন্তু ডোরিয়ানের বয়স বাড়ল না।",
+          "ur": "سال گزرتے گئے، مگر ڈورین کبھی بوڑھا نہیں ہوا۔",
+          "th": "หลายปีผ่านไป แต่ดอเรียนไม่เคยแก่ลงเลย"
+        }
+      },
+      {
+        "id": "cl-dorian-055",
+        "english": "At thirty-eight, he still looked like a boy of twenty.",
+        "turkish": "Otuz sekiz yaşında hâlâ yirmi yaşında bir genç gibi görünüyordu.",
+        "translations": {
+          "es-419": "A los treinta y ocho, todavía parecía un muchacho de veinte.",
+          "pt-BR": "Aos trinta e oito anos, ainda parecia um rapaz de vinte.",
+          "id": "Pada usia tiga puluh delapan, ia masih tampak seperti pemuda dua puluh tahun.",
+          "ar": "في الثامنة والثلاثين، كان لا يزال يبدو كفتى في العشرين.",
+          "vi": "Ba mươi tám tuổi, trông chàng vẫn như một cậu trai hai mươi.",
+          "hi": "अड़तीस की उम्र में भी वह बीस साल का लड़का लगता था।",
+          "ru": "В тридцать восемь лет он всё ещё выглядел двадцатилетним юношей.",
+          "bn": "আটত্রিশ বছর বয়সেও তাকে কুড়ি বছরের ছেলের মতো দেখাত।",
+          "ur": "اڑتیس سال کی عمر میں بھی وہ بیس سال کا لڑکا لگتا تھا۔",
+          "th": "เมื่ออายุสามสิบแปด เขายังดูเหมือนหนุ่มอายุยี่สิบ"
+        }
+      },
+      {
+        "id": "cl-dorian-056",
+        "english": "People told strange stories about him.",
+        "turkish": "İnsanlar onun hakkında tuhaf hikâyeler anlatıyordu.",
+        "translations": {
+          "es-419": "La gente contaba historias extrañas sobre él.",
+          "pt-BR": "As pessoas contavam histórias estranhas sobre ele.",
+          "id": "Orang-orang menceritakan kisah-kisah aneh tentang dirinya.",
+          "ar": "كان الناس يروون عنه حكايات غريبة.",
+          "vi": "Người ta kể những câu chuyện kỳ lạ về chàng.",
+          "hi": "लोग उसके बारे में अजीब क़िस्से सुनाते थे।",
+          "ru": "О нём рассказывали странные истории.",
+          "bn": "লোকে তাকে নিয়ে অদ্ভুত সব গল্প বলত।",
+          "ur": "لوگ اس کے بارے میں عجیب قصے سناتے تھے۔",
+          "th": "ผู้คนต่างเล่าเรื่องแปลก ๆ เกี่ยวกับเขา"
+        }
+      },
+      {
+        "id": "cl-dorian-057",
+        "english": "Young men who were his friends lost their money or their good names.",
+        "turkish": "Onunla arkadaş olan genç adamlar paralarını ya da itibarlarını kaybediyordu.",
+        "translations": {
+          "es-419": "Los jóvenes que eran sus amigos perdían su dinero o su buen nombre.",
+          "pt-BR": "Os rapazes que eram seus amigos perdiam o dinheiro ou o bom nome.",
+          "id": "Para pemuda yang berteman dengannya kehilangan uang atau nama baik mereka.",
+          "ar": "الشبّان الذين صادقوه كانوا يخسرون أموالهم أو سمعتهم الطيبة.",
+          "vi": "Những chàng trai làm bạn với chàng đều mất tiền bạc hoặc thanh danh.",
+          "hi": "जो नौजवान उसके दोस्त बनते, वे अपना पैसा या अपनी इज़्ज़त खो बैठते।",
+          "ru": "Молодые люди, дружившие с ним, теряли деньги или доброе имя.",
+          "bn": "যে তরুণেরা তার বন্ধু হতো, তারা হারাত টাকা কিংবা সুনাম।",
+          "ur": "جو نوجوان اس کے دوست بنتے، وہ اپنا پیسہ یا اپنی عزت کھو بیٹھتے۔",
+          "th": "ชายหนุ่มที่คบหากับเขาต่างสูญเสียเงินทองหรือชื่อเสียง"
+        }
+      },
+      {
+        "id": "cl-dorian-058",
+        "english": "Some families no longer allowed their sons to visit him.",
+        "turkish": "Bazı aileler artık oğullarının onu ziyaret etmesine izin vermiyordu.",
+        "translations": {
+          "es-419": "Algunas familias ya no permitían que sus hijos lo visitaran.",
+          "pt-BR": "Algumas famílias não deixavam mais os filhos visitá-lo.",
+          "id": "Beberapa keluarga tidak lagi mengizinkan putra mereka mengunjunginya.",
+          "ar": "بعض العائلات لم تعد تسمح لأبنائها بزيارته.",
+          "vi": "Một số gia đình không còn cho con trai đến thăm chàng nữa.",
+          "hi": "कुछ परिवार अब अपने बेटों को उससे मिलने नहीं देते थे।",
+          "ru": "Некоторые семьи больше не позволяли сыновьям бывать у него.",
+          "bn": "কিছু পরিবার আর তাদের ছেলেদের তার কাছে যেতে দিত না।",
+          "ur": "کچھ خاندان اب اپنے بیٹوں کو اس سے ملنے نہیں دیتے تھے۔",
+          "th": "บางครอบครัวไม่ยอมให้ลูกชายไปหาเขาอีกต่อไป"
+        }
+      },
+      {
+        "id": "cl-dorian-059",
+        "english": "Yet when people saw his innocent face, they could not believe the stories.",
+        "turkish": "Yine de insanlar onun masum yüzünü görünce bu hikâyelere inanamıyordu.",
+        "translations": {
+          "es-419": "Sin embargo, cuando veían su rostro inocente, no podían creer esas historias.",
+          "pt-BR": "Mesmo assim, quando viam seu rosto inocente, não conseguiam acreditar nas histórias.",
+          "id": "Namun saat orang melihat wajahnya yang polos, mereka tak bisa memercayai kisah-kisah itu.",
+          "ar": "ومع ذلك، حين كان الناس يرون وجهه البريء، لم يستطيعوا تصديق تلك الحكايات.",
+          "vi": "Thế nhưng khi nhìn gương mặt ngây thơ của chàng, người ta không thể tin những lời đồn.",
+          "hi": "फिर भी जब लोग उसका मासूम चेहरा देखते, तो उन क़िस्सों पर यक़ीन नहीं कर पाते।",
+          "ru": "И всё же, глядя на его невинное лицо, люди не могли поверить этим историям.",
+          "bn": "তবু তার নিষ্পাপ মুখ দেখলে লোকে গল্পগুলো বিশ্বাস করতে পারত না।",
+          "ur": "پھر بھی جب لوگ اس کا معصوم چہرہ دیکھتے، تو ان قصوں پر یقین نہ کر پاتے۔",
+          "th": "แต่เมื่อผู้คนเห็นใบหน้าไร้เดียงสาของเขา ก็ไม่อาจเชื่อเรื่องเล่าเหล่านั้นได้"
+        }
+      },
+      {
+        "id": "cl-dorian-060",
+        "english": "Sometimes Dorian climbed to the locked room alone.",
+        "turkish": "Dorian bazen kilitli odaya tek başına çıkıyordu.",
+        "translations": {
+          "es-419": "A veces Dorian subía solo al cuarto cerrado.",
+          "pt-BR": "Às vezes Dorian subia sozinho ao quarto trancado.",
+          "id": "Kadang-kadang Dorian naik sendirian ke kamar yang terkunci itu.",
+          "ar": "كان دوريان يصعد أحيانًا وحده إلى الغرفة المقفلة.",
+          "vi": "Thỉnh thoảng Dorian một mình leo lên căn phòng khóa kín.",
+          "hi": "कभी-कभी डोरियन अकेला उस बंद कमरे में चढ़ जाता।",
+          "ru": "Иногда Дориан поднимался в запертую комнату один.",
+          "bn": "মাঝে মাঝে ডোরিয়ান একা সেই তালাবন্ধ ঘরে উঠে যেত।",
+          "ur": "کبھی کبھی ڈورین اکیلا اس بند کمرے میں چڑھ جاتا۔",
+          "th": "บางครั้งดอเรียนก็ขึ้นไปยังห้องที่ล็อกไว้ตามลำพัง"
+        }
+      },
+      {
+        "id": "cl-dorian-061",
+        "english": "He looked at the picture and then at his face in a mirror.",
+        "turkish": "Resme, sonra da aynadaki yüzüne bakıyordu.",
+        "translations": {
+          "es-419": "Miraba el cuadro y luego su cara en un espejo.",
+          "pt-BR": "Olhava para o quadro e depois para o próprio rosto num espelho.",
+          "id": "Ia memandang lukisan itu, lalu wajahnya sendiri di cermin.",
+          "ar": "كان ينظر إلى اللوحة، ثم إلى وجهه في المرآة.",
+          "vi": "Chàng nhìn bức tranh, rồi nhìn gương mặt mình trong gương.",
+          "hi": "वह तस्वीर को देखता, फिर आईने में अपना चेहरा।",
+          "ru": "Он смотрел на портрет, а потом на своё лицо в зеркале.",
+          "bn": "সে ছবিটার দিকে তাকাত, তারপর আয়নায় নিজের মুখের দিকে।",
+          "ur": "وہ تصویر کو دیکھتا، پھر آئینے میں اپنا چہرہ۔",
+          "th": "เขามองภาพวาด แล้วมองใบหน้าตัวเองในกระจก"
+        }
+      },
+      {
+        "id": "cl-dorian-062",
+        "english": "The painted man had become old, ugly and evil.",
+        "turkish": "Resimdeki adam yaşlı, çirkin ve kötü biri olmuştu.",
+        "translations": {
+          "es-419": "El hombre pintado se había vuelto viejo, feo y malvado.",
+          "pt-BR": "O homem pintado tinha ficado velho, feio e mau.",
+          "id": "Pria di dalam lukisan itu telah menjadi tua, jelek, dan jahat.",
+          "ar": "صار الرجل المرسوم عجوزًا قبيحًا شرّيرًا.",
+          "vi": "Người đàn ông trong tranh đã trở nên già nua, xấu xí và độc ác.",
+          "hi": "तस्वीर वाला आदमी बूढ़ा, बदसूरत और दुष्ट हो चुका था।",
+          "ru": "Человек на портрете стал старым, уродливым и злым.",
+          "bn": "ছবির মানুষটা হয়ে গেছে বুড়ো, কুৎসিত আর দুষ্ট।",
+          "ur": "تصویر والا آدمی بوڑھا، بدصورت اور شیطان صفت ہو چکا تھا۔",
+          "th": "ชายในภาพกลายเป็นคนแก่ อัปลักษณ์ และชั่วร้าย"
+        }
+      },
+      {
+        "id": "cl-dorian-063",
+        "english": "Dorian sometimes hated it, and sometimes he laughed at it.",
+        "turkish": "Dorian bazen ondan nefret ediyor, bazen de ona gülüyordu.",
+        "translations": {
+          "es-419": "Dorian a veces lo odiaba, y a veces se reía de él.",
+          "pt-BR": "Dorian às vezes o odiava, e às vezes ria dele.",
+          "id": "Dorian kadang membencinya, dan kadang menertawakannya.",
+          "ar": "كان دوريان يكرهها أحيانًا، ويضحك منها أحيانًا.",
+          "vi": "Dorian lúc thì căm ghét nó, lúc lại cười cợt nó.",
+          "hi": "डोरियन कभी उससे नफ़रत करता, तो कभी उस पर हँसता।",
+          "ru": "Иногда Дориан ненавидел его, а иногда смеялся над ним.",
+          "bn": "ডোরিয়ান কখনো ছবিটাকে ঘৃণা করত, কখনো তা নিয়ে হাসত।",
+          "ur": "ڈورین کبھی اس سے نفرت کرتا، تو کبھی اس پر ہنستا۔",
+          "th": "บางครั้งดอเรียนก็เกลียดมัน บางครั้งก็หัวเราะเยาะมัน"
+        }
+      },
+      {
+        "id": "cl-dorian-064",
+        "english": "One foggy night, Basil came to his house.",
+        "turkish": "Sisli bir gece Basil onun evine geldi.",
+        "translations": {
+          "es-419": "Una noche de niebla, Basil fue a su casa.",
+          "pt-BR": "Numa noite de neblina, Basil foi à casa dele.",
+          "id": "Pada suatu malam berkabut, Basil datang ke rumahnya.",
+          "ar": "وفي ليلة ضبابية، جاء بازل إلى بيته.",
+          "vi": "Một đêm sương mù, Basil đến nhà chàng.",
+          "hi": "एक धुंध भरी रात बेज़िल उसके घर आए।",
+          "ru": "Однажды туманной ночью к нему пришёл Бэзил.",
+          "bn": "এক কুয়াশাভরা রাতে বেসিল তার বাড়িতে এলেন।",
+          "ur": "ایک دھند بھری رات بیزل اس کے گھر آئے۔",
+          "th": "คืนหนึ่งที่หมอกลงจัด เบซิลมาที่บ้านของเขา"
+        }
+      },
+      {
+        "id": "cl-dorian-065",
+        "english": "He was leaving for Paris and wanted to speak to his old friend.",
+        "turkish": "Paris'e gidiyordu ve eski dostuyla konuşmak istiyordu.",
+        "translations": {
+          "es-419": "Se iba a París y quería hablar con su viejo amigo.",
+          "pt-BR": "Ele estava de partida para Paris e queria falar com o velho amigo.",
+          "id": "Ia akan berangkat ke Paris dan ingin berbicara dengan sahabat lamanya.",
+          "ar": "كان مسافرًا إلى باريس، وأراد أن يتحدّث إلى صديقه القديم.",
+          "vi": "Anh sắp đi Paris và muốn nói chuyện với người bạn cũ.",
+          "hi": "वे पेरिस जा रहे थे और अपने पुराने दोस्त से बात करना चाहते थे।",
+          "ru": "Он уезжал в Париж и хотел поговорить со старым другом.",
+          "bn": "তিনি প্যারিসে যাচ্ছিলেন, পুরোনো বন্ধুর সঙ্গে কথা বলতে চাইলেন।",
+          "ur": "وہ پیرس جا رہے تھے اور اپنے پرانے دوست سے بات کرنا چاہتے تھے۔",
+          "th": "เขากำลังจะไปปารีส และอยากคุยกับเพื่อนเก่า"
+        }
+      },
+      {
+        "id": "cl-dorian-066",
+        "english": "\"Everyone says terrible things about you,\" Basil said.",
+        "turkish": "\"Herkes senin hakkında korkunç şeyler söylüyor,\" dedi Basil.",
+        "translations": {
+          "es-419": "\"Todos dicen cosas terribles de ti\", dijo Basil.",
+          "pt-BR": "\"Todo mundo diz coisas terríveis sobre você\", disse Basil.",
+          "id": "\"Semua orang membicarakan hal-hal mengerikan tentangmu,\" kata Basil.",
+          "ar": "قال بازل: \"الجميع يقولون عنك أشياء فظيعة.\"",
+          "vi": "\"Ai cũng nói những điều khủng khiếp về cậu,\" Basil nói.",
+          "hi": "\"सब तुम्हारे बारे में भयानक बातें कहते हैं,\" बेज़िल ने कहा।",
+          "ru": "«Все говорят о тебе ужасные вещи», — сказал Бэзил.",
+          "bn": "\"সবাই তোমার নামে ভয়ংকর কথা বলে,\" বেসিল বললেন।",
+          "ur": "\"سب تمہارے بارے میں خوفناک باتیں کہتے ہیں،\" بیزل نے کہا۔",
+          "th": "\"ทุกคนพูดถึงเธอในทางที่เลวร้าย\" เบซิลกล่าว"
+        }
+      },
+      {
+        "id": "cl-dorian-067",
+        "english": "\"I want to know the truth. I want to see your soul.\"",
+        "turkish": "\"Gerçeği bilmek istiyorum. Ruhunu görmek istiyorum.\"",
+        "translations": {
+          "es-419": "\"Quiero saber la verdad. Quiero ver tu alma\".",
+          "pt-BR": "\"Quero saber a verdade. Quero ver a sua alma.\"",
+          "id": "\"Aku ingin tahu kebenarannya. Aku ingin melihat jiwamu.\"",
+          "ar": "\"أريد أن أعرف الحقيقة. أريد أن أرى روحك.\"",
+          "vi": "\"Tôi muốn biết sự thật. Tôi muốn nhìn thấy linh hồn cậu.\"",
+          "hi": "\"मैं सच जानना चाहता हूँ। मैं तुम्हारी आत्मा देखना चाहता हूँ।\"",
+          "ru": "«Я хочу знать правду. Я хочу увидеть твою душу».",
+          "bn": "\"আমি সত্যিটা জানতে চাই। তোমার আত্মাটা দেখতে চাই।\"",
+          "ur": "\"میں سچ جاننا چاہتا ہوں۔ میں تمہاری روح دیکھنا چاہتا ہوں۔\"",
+          "th": "\"ฉันอยากรู้ความจริง ฉันอยากเห็นวิญญาณของเธอ\""
+        }
+      },
+      {
+        "id": "cl-dorian-068",
+        "english": "\"Then come and see it,\" said Dorian with a strange smile.",
+        "turkish": "\"O halde gel ve gör,\" dedi Dorian tuhaf bir gülümsemeyle.",
+        "translations": {
+          "es-419": "\"Entonces ven a verla\", dijo Dorian con una sonrisa extraña.",
+          "pt-BR": "\"Então venha vê-la\", disse Dorian com um sorriso estranho.",
+          "id": "\"Kalau begitu, mari lihat,\" kata Dorian dengan senyum aneh.",
+          "ar": "قال دوريان بابتسامة غريبة: \"إذن تعالَ وانظر إليها.\"",
+          "vi": "\"Vậy thì hãy đến mà xem,\" Dorian nói với nụ cười kỳ lạ.",
+          "hi": "\"तो आओ और देख लो,\" डोरियन ने अजीब मुस्कान के साथ कहा।",
+          "ru": "«Тогда пойдём, посмотришь», — сказал Дориан со странной улыбкой.",
+          "bn": "\"তাহলে এসো, দেখো,\" অদ্ভুত হাসি হেসে বলল ডোরিয়ান।",
+          "ur": "\"تو آؤ اور دیکھ لو،\" ڈورین نے عجیب مسکراہٹ کے ساتھ کہا۔",
+          "th": "\"ถ้าอย่างนั้นก็มาดูสิ\" ดอเรียนพูดพร้อมรอยยิ้มประหลาด"
+        }
+      },
+      {
+        "id": "cl-dorian-069",
+        "english": "He took Basil up to the locked room and pulled away the cloth.",
+        "turkish": "Basil'i kilitli odaya çıkardı ve örtüyü çekip aldı.",
+        "translations": {
+          "es-419": "Llevó a Basil al cuarto cerrado y retiró la tela.",
+          "pt-BR": "Levou Basil ao quarto trancado e puxou o pano.",
+          "id": "Ia membawa Basil naik ke kamar terkunci dan menarik kain penutupnya.",
+          "ar": "صعد ببازل إلى الغرفة المقفلة ونزع القماش.",
+          "vi": "Chàng dẫn Basil lên căn phòng khóa kín và giật tấm vải ra.",
+          "hi": "वह बेज़िल को ऊपर बंद कमरे में ले गया और कपड़ा हटा दिया।",
+          "ru": "Он отвёл Бэзила в запертую комнату и сдёрнул ткань.",
+          "bn": "সে বেসিলকে ওপরে তালাবন্ধ ঘরে নিয়ে গিয়ে কাপড়টা সরিয়ে দিল।",
+          "ur": "وہ بیزل کو اوپر بند کمرے میں لے گیا اور کپڑا ہٹا دیا۔",
+          "th": "เขาพาเบซิลขึ้นไปยังห้องที่ล็อกไว้ แล้วดึงผ้าคลุมออก"
+        }
+      },
+      {
+        "id": "cl-dorian-070",
+        "english": "Basil cried out in horror.",
+        "turkish": "Basil dehşetle haykırdı.",
+        "translations": {
+          "es-419": "Basil gritó horrorizado.",
+          "pt-BR": "Basil gritou de horror.",
+          "id": "Basil berteriak ngeri.",
+          "ar": "صرخ بازل مذعورًا.",
+          "vi": "Basil kêu lên kinh hãi.",
+          "hi": "बेज़िल डर से चीख़ पड़े।",
+          "ru": "Бэзил вскрикнул от ужаса.",
+          "bn": "বেসিল আতঙ্কে চিৎকার করে উঠলেন।",
+          "ur": "بیزل خوف سے چیخ پڑے۔",
+          "th": "เบซิลร้องลั่นด้วยความสยดสยอง"
+        }
+      },
+      {
+        "id": "cl-dorian-071",
+        "english": "It was his own painting, but the face was a monster's.",
+        "turkish": "Bu kendi resmiydi, ama yüz bir canavarın yüzüydü.",
+        "translations": {
+          "es-419": "Era su propio cuadro, pero el rostro era el de un monstruo.",
+          "pt-BR": "Era a sua própria pintura, mas o rosto era de um monstro.",
+          "id": "Itu lukisannya sendiri, tetapi wajahnya adalah wajah monster.",
+          "ar": "كانت لوحته هو، لكن الوجه كان وجه وحش.",
+          "vi": "Đó là chính bức tranh anh vẽ, nhưng khuôn mặt lại là của một con quái vật.",
+          "hi": "वह उनकी अपनी पेंटिंग थी, पर चेहरा किसी राक्षस का था।",
+          "ru": "Это была его собственная картина, но лицо было лицом чудовища.",
+          "bn": "ছবিটা তাঁরই আঁকা, কিন্তু মুখটা এক দানবের।",
+          "ur": "وہ ان کی اپنی پینٹنگ تھی، مگر چہرہ کسی عفریت کا تھا۔",
+          "th": "มันคือภาพที่เขาวาดเอง แต่ใบหน้านั้นเป็นของปีศาจ"
+        }
+      },
+      {
+        "id": "cl-dorian-072",
+        "english": "\"Pray, Dorian,\" he whispered. \"It is not too late.\"",
+        "turkish": "\"Dua et, Dorian,\" diye fısıldadı. \"Henüz çok geç değil.\"",
+        "translations": {
+          "es-419": "\"Reza, Dorian\", susurró. \"Aún no es demasiado tarde\".",
+          "pt-BR": "\"Reze, Dorian\", sussurrou ele. \"Ainda não é tarde demais.\"",
+          "id": "\"Berdoalah, Dorian,\" bisiknya. \"Belum terlambat.\"",
+          "ar": "همس: \"صلِّ يا دوريان. لم يفت الأوان بعد.\"",
+          "vi": "\"Hãy cầu nguyện đi, Dorian,\" anh thì thầm. \"Vẫn chưa quá muộn đâu.\"",
+          "hi": "\"प्रार्थना करो, डोरियन,\" उन्होंने फुसफुसाया। \"अभी बहुत देर नहीं हुई।\"",
+          "ru": "«Молись, Дориан, — прошептал он. — Ещё не поздно».",
+          "bn": "\"প্রার্থনা করো, ডোরিয়ান,\" তিনি ফিসফিস করে বললেন। \"এখনো খুব দেরি হয়নি।\"",
+          "ur": "\"دعا کرو، ڈورین،\" انہوں نے سرگوشی کی۔ \"ابھی بہت دیر نہیں ہوئی۔\"",
+          "th": "\"สวดภาวนาเถิด ดอเรียน\" เขากระซิบ \"ยังไม่สายเกินไป\""
+        }
+      },
+      {
+        "id": "cl-dorian-073",
+        "english": "Suddenly Dorian felt a wild hatred for the man who had painted it.",
+        "turkish": "Dorian birden resmi yapan adama karşı vahşi bir nefret duydu.",
+        "translations": {
+          "es-419": "De pronto, Dorian sintió un odio salvaje por el hombre que lo había pintado.",
+          "pt-BR": "De repente, Dorian sentiu um ódio selvagem pelo homem que o tinha pintado.",
+          "id": "Tiba-tiba Dorian merasakan kebencian yang liar terhadap pria yang melukisnya.",
+          "ar": "فجأة، شعر دوريان بكراهية جامحة للرجل الذي رسمها.",
+          "vi": "Bỗng nhiên Dorian thấy căm thù dữ dội người đã vẽ bức tranh.",
+          "hi": "अचानक डोरियन के मन में तस्वीर बनाने वाले के लिए जंगली नफ़रत भर गई।",
+          "ru": "Вдруг Дориан почувствовал дикую ненависть к человеку, который написал портрет.",
+          "bn": "হঠাৎ ছবিটা যিনি এঁকেছেন, তাঁর প্রতি ডোরিয়ানের মনে জেগে উঠল তীব্র ঘৃণা।",
+          "ur": "اچانک ڈورین کے دل میں تصویر بنانے والے کے لیے وحشیانہ نفرت بھر گئی۔",
+          "th": "ทันใดนั้น ดอเรียนก็รู้สึกเกลียดชังชายผู้วาดภาพนั้นอย่างบ้าคลั่ง"
+        }
+      },
+      {
+        "id": "cl-dorian-074",
+        "english": "He picked up a knife from the table and killed Basil.",
+        "turkish": "Masadan bir bıçak aldı ve Basil'i öldürdü.",
+        "translations": {
+          "es-419": "Tomó un cuchillo de la mesa y mató a Basil.",
+          "pt-BR": "Pegou uma faca da mesa e matou Basil.",
+          "id": "Ia mengambil pisau dari meja dan membunuh Basil.",
+          "ar": "التقط سكّينًا عن الطاولة وقتل بازل.",
+          "vi": "Chàng chộp con dao trên bàn và giết chết Basil.",
+          "hi": "उसने मेज़ से एक चाकू उठाया और बेज़िल को मार डाला।",
+          "ru": "Он схватил со стола нож и убил Бэзила.",
+          "bn": "সে টেবিল থেকে একটা ছুরি তুলে বেসিলকে মেরে ফেলল।",
+          "ur": "اس نے میز سے ایک چاقو اٹھایا اور بیزل کو مار ڈالا۔",
+          "th": "เขาคว้ามีดจากโต๊ะและฆ่าเบซิล"
+        }
+      },
+      {
+        "id": "cl-dorian-075",
+        "english": "Then he locked the door and went quietly downstairs.",
+        "turkish": "Sonra kapıyı kilitledi ve sessizce aşağı indi.",
+        "translations": {
+          "es-419": "Luego cerró la puerta con llave y bajó en silencio.",
+          "pt-BR": "Depois trancou a porta e desceu em silêncio.",
+          "id": "Lalu ia mengunci pintu dan turun dengan diam-diam.",
+          "ar": "ثم أقفل الباب ونزل بهدوء.",
+          "vi": "Rồi chàng khóa cửa và lặng lẽ đi xuống.",
+          "hi": "फिर उसने दरवाज़ा बंद किया और चुपचाप नीचे उतर आया।",
+          "ru": "Затем он запер дверь и тихо спустился вниз.",
+          "bn": "তারপর দরজায় তালা দিয়ে চুপচাপ নিচে নেমে এল।",
+          "ur": "پھر اس نے دروازہ بند کیا اور چپ چاپ نیچے اتر آیا۔",
+          "th": "แล้วเขาก็ล็อกประตูและเดินลงมาข้างล่างอย่างเงียบ ๆ"
+        }
+      },
+      {
+        "id": "cl-dorian-076",
+        "english": "He forced an old friend, a scientist, to destroy the body.",
+        "turkish": "Eski bir dostunu, bir bilim insanını, cesedi yok etmeye zorladı.",
+        "translations": {
+          "es-419": "Obligó a un viejo amigo, un científico, a hacer desaparecer el cuerpo.",
+          "pt-BR": "Ele obrigou um velho amigo, um cientista, a destruir o corpo.",
+          "id": "Ia memaksa seorang teman lama, seorang ilmuwan, untuk melenyapkan jasad itu.",
+          "ar": "أجبر صديقًا قديمًا، وهو عالِم، على التخلّص من الجثة.",
+          "vi": "Chàng ép một người bạn cũ, vốn là nhà khoa học, phải phi tang thi thể.",
+          "hi": "उसने अपने एक पुराने दोस्त, एक वैज्ञानिक, को लाश मिटाने पर मजबूर किया।",
+          "ru": "Он заставил старого приятеля, учёного, уничтожить тело.",
+          "bn": "সে এক পুরোনো বন্ধুকে, যিনি একজন বিজ্ঞানী, লাশটা নিশ্চিহ্ন করতে বাধ্য করল।",
+          "ur": "اس نے اپنے ایک پرانے دوست، ایک سائنس دان، کو لاش مٹانے پر مجبور کیا۔",
+          "th": "เขาบังคับเพื่อนเก่าซึ่งเป็นนักวิทยาศาสตร์ให้ทำลายศพ"
+        }
+      },
+      {
+        "id": "cl-dorian-077",
+        "english": "No one ever discovered what had happened to the painter.",
+        "turkish": "Ressama ne olduğunu hiç kimse öğrenemedi.",
+        "translations": {
+          "es-419": "Nadie descubrió jamás lo que le había pasado al pintor.",
+          "pt-BR": "Ninguém jamais descobriu o que tinha acontecido com o pintor.",
+          "id": "Tak seorang pun pernah tahu apa yang terjadi pada pelukis itu.",
+          "ar": "ولم يكتشف أحد قط ما الذي حلّ بالرسّام.",
+          "vi": "Không ai biết được chuyện gì đã xảy ra với người họa sĩ.",
+          "hi": "किसी को कभी पता नहीं चला कि चित्रकार के साथ क्या हुआ।",
+          "ru": "Никто так и не узнал, что случилось с художником.",
+          "bn": "চিত্রশিল্পীর কী হয়েছিল, কেউ কোনোদিন জানতে পারল না।",
+          "ur": "کسی کو کبھی پتا نہ چلا کہ مصور کے ساتھ کیا ہوا۔",
+          "th": "ไม่มีใครรู้เลยว่าเกิดอะไรขึ้นกับจิตรกรผู้นั้น"
+        }
+      },
+      {
+        "id": "cl-dorian-078",
+        "english": "But Dorian could not forget.",
+        "turkish": "Ama Dorian unutamadı.",
+        "translations": {
+          "es-419": "Pero Dorian no podía olvidar.",
+          "pt-BR": "Mas Dorian não conseguia esquecer.",
+          "id": "Namun Dorian tidak bisa lupa.",
+          "ar": "لكن دوريان لم يستطع أن ينسى.",
+          "vi": "Nhưng Dorian không thể quên.",
+          "hi": "लेकिन डोरियन भूल नहीं सका।",
+          "ru": "Но Дориан не мог забыть.",
+          "bn": "কিন্তু ডোরিয়ান ভুলতে পারল না।",
+          "ur": "لیکن ڈورین بھول نہ سکا۔",
+          "th": "แต่ดอเรียนไม่อาจลืมได้"
+        }
+      },
+      {
+        "id": "cl-dorian-079",
+        "english": "One night, in a dark part of London, a sailor attacked him.",
+        "turkish": "Bir gece Londra'nın karanlık bir köşesinde bir denizci ona saldırdı.",
+        "translations": {
+          "es-419": "Una noche, en un barrio oscuro de Londres, un marinero lo atacó.",
+          "pt-BR": "Uma noite, num bairro escuro de Londres, um marinheiro o atacou.",
+          "id": "Suatu malam, di sudut gelap kota London, seorang pelaut menyerangnya.",
+          "ar": "وذات ليلة، في حيّ مظلم من لندن، هاجمه بحّار.",
+          "vi": "Một đêm, ở một góc tối tăm của London, một thủy thủ tấn công chàng.",
+          "hi": "एक रात लंदन के एक अँधेरे इलाक़े में एक नाविक ने उस पर हमला किया।",
+          "ru": "Однажды ночью в тёмном районе Лондона на него напал моряк.",
+          "bn": "এক রাতে লন্ডনের এক অন্ধকার এলাকায় এক নাবিক তার ওপর ঝাঁপিয়ে পড়ল।",
+          "ur": "ایک رات لندن کے ایک اندھیرے علاقے میں ایک ملاح نے اس پر حملہ کیا۔",
+          "th": "คืนหนึ่ง ในย่านมืด ๆ ของลอนดอน มีกะลาสีคนหนึ่งเข้าทำร้ายเขา"
+        }
+      },
+      {
+        "id": "cl-dorian-080",
+        "english": "It was James Vane, Sibyl's brother.",
+        "turkish": "Bu, Sibyl'in kardeşi James Vane'di.",
+        "translations": {
+          "es-419": "Era James Vane, el hermano de Sibyl.",
+          "pt-BR": "Era James Vane, irmão de Sibyl.",
+          "id": "Ia adalah James Vane, saudara laki-laki Sibyl.",
+          "ar": "كان ذلك جيمس فين، شقيق سيبيل.",
+          "vi": "Đó là James Vane, anh trai của Sibyl.",
+          "hi": "वह सिबिल का भाई जेम्स वेन था।",
+          "ru": "Это был Джеймс Вэйн, брат Сибилы.",
+          "bn": "সে ছিল সিবিলের ভাই জেমস ভেন।",
+          "ur": "وہ سبل کا بھائی جیمز وین تھا۔",
+          "th": "เขาคือเจมส์ เวน พี่ชายของซิบิล"
+        }
+      },
+      {
+        "id": "cl-dorian-081",
+        "english": "For years, he had wanted to punish the man who hurt his sister.",
+        "turkish": "Yıllardır kız kardeşini inciten adamı cezalandırmak istiyordu.",
+        "translations": {
+          "es-419": "Durante años, había querido castigar al hombre que hirió a su hermana.",
+          "pt-BR": "Durante anos, ele quis castigar o homem que tinha magoado a irmã.",
+          "id": "Selama bertahun-tahun ia ingin menghukum pria yang menyakiti adiknya.",
+          "ar": "لسنوات، كان يريد أن يعاقب الرجل الذي آذى أخته.",
+          "vi": "Suốt nhiều năm, anh muốn trừng phạt kẻ đã làm tổn thương em gái mình.",
+          "hi": "बरसों से वह उस आदमी को सज़ा देना चाहता था जिसने उसकी बहन को दुख दिया था।",
+          "ru": "Годами он мечтал наказать человека, который обидел его сестру.",
+          "bn": "বছরের পর বছর সে বোনকে কষ্ট দেওয়া লোকটাকে শাস্তি দিতে চেয়েছে।",
+          "ur": "برسوں سے وہ اس آدمی کو سزا دینا چاہتا تھا جس نے اس کی بہن کو دکھ دیا تھا۔",
+          "th": "หลายปีมาแล้วที่เขาต้องการลงโทษชายผู้ทำร้ายน้องสาวของเขา"
+        }
+      },
+      {
+        "id": "cl-dorian-082",
+        "english": "\"That was eighteen years ago,\" said Dorian. \"Look at my face.\"",
+        "turkish": "\"Bu on sekiz yıl önceydi,\" dedi Dorian. \"Yüzüme bak.\"",
+        "translations": {
+          "es-419": "\"Eso fue hace dieciocho años\", dijo Dorian. \"Mírame la cara\".",
+          "pt-BR": "\"Isso foi há dezoito anos\", disse Dorian. \"Olhe para o meu rosto.\"",
+          "id": "\"Itu terjadi delapan belas tahun lalu,\" kata Dorian. \"Lihat wajahku.\"",
+          "ar": "قال دوريان: \"كان ذلك قبل ثمانية عشر عامًا. انظر إلى وجهي.\"",
+          "vi": "\"Chuyện đó đã mười tám năm rồi,\" Dorian nói. \"Hãy nhìn mặt tôi đi.\"",
+          "hi": "\"वह अठारह साल पहले की बात है,\" डोरियन ने कहा। \"मेरा चेहरा देखो।\"",
+          "ru": "«Это было восемнадцать лет назад, — сказал Дориан. — Посмотри на моё лицо».",
+          "bn": "\"সে তো আঠারো বছর আগের কথা,\" বলল ডোরিয়ান। \"আমার মুখের দিকে তাকাও।\"",
+          "ur": "\"وہ اٹھارہ سال پہلے کی بات ہے،\" ڈورین نے کہا۔ \"میرا چہرہ دیکھو۔\"",
+          "th": "\"นั่นมันสิบแปดปีมาแล้ว\" ดอเรียนกล่าว \"ดูหน้าฉันสิ\""
+        }
+      },
+      {
+        "id": "cl-dorian-083",
+        "english": "James saw a young man and let him go, confused.",
+        "turkish": "James genç bir adam gördü ve şaşkınlık içinde onu bıraktı.",
+        "translations": {
+          "es-419": "James vio a un hombre joven y, confundido, lo dejó ir.",
+          "pt-BR": "James viu um homem jovem e, confuso, deixou-o ir.",
+          "id": "James melihat seorang pemuda dan, dengan bingung, melepaskannya.",
+          "ar": "رأى جيمس شابًّا، فأطلقه وهو حائر.",
+          "vi": "James thấy một chàng trai trẻ và, bối rối, đành thả chàng đi.",
+          "hi": "जेम्स ने एक नौजवान देखा और उलझन में उसे जाने दिया।",
+          "ru": "Джеймс увидел юношу и в растерянности отпустил его.",
+          "bn": "জেমস দেখল এক তরুণকে, আর হতভম্ব হয়ে তাকে ছেড়ে দিল।",
+          "ur": "جیمز نے ایک نوجوان دیکھا اور الجھن میں اسے جانے دیا۔",
+          "th": "เจมส์เห็นชายหนุ่มคนหนึ่ง จึงปล่อยตัวเขาไปอย่างงุนงง"
+        }
+      },
+      {
+        "id": "cl-dorian-084",
+        "english": "A few weeks later, Dorian saw James's face at a window in the country.",
+        "turkish": "Birkaç hafta sonra Dorian, kırdaki bir evin penceresinde James'in yüzünü gördü.",
+        "translations": {
+          "es-419": "Unas semanas después, Dorian vio la cara de James en una ventana en el campo.",
+          "pt-BR": "Algumas semanas depois, Dorian viu o rosto de James numa janela, no campo.",
+          "id": "Beberapa minggu kemudian, Dorian melihat wajah James di sebuah jendela di pedesaan.",
+          "ar": "بعد أسابيع قليلة، رأى دوريان وجه جيمس عند نافذة في الريف.",
+          "vi": "Vài tuần sau, ở vùng quê, Dorian thấy gương mặt James ngoài cửa sổ.",
+          "hi": "कुछ हफ़्तों बाद डोरियन ने गाँव के एक घर की खिड़की पर जेम्स का चेहरा देखा।",
+          "ru": "Через несколько недель в загородном доме Дориан увидел в окне лицо Джеймса.",
+          "bn": "কয়েক সপ্তাহ পরে গ্রামের এক বাড়ির জানালায় ডোরিয়ান জেমসের মুখ দেখল।",
+          "ur": "چند ہفتوں بعد ڈورین نے دیہات کے ایک گھر کی کھڑکی پر جیمز کا چہرہ دیکھا۔",
+          "th": "ไม่กี่สัปดาห์ต่อมา ดอเรียนเห็นใบหน้าของเจมส์ที่หน้าต่างบ้านหลังหนึ่งในชนบท"
+        }
+      },
+      {
+        "id": "cl-dorian-085",
+        "english": "He was terrified.",
+        "turkish": "Dehşete kapıldı.",
+        "translations": {
+          "es-419": "Se quedó aterrorizado.",
+          "pt-BR": "Ele ficou apavorado.",
+          "id": "Ia ketakutan setengah mati.",
+          "ar": "ارتعب.",
+          "vi": "Chàng kinh hoàng.",
+          "hi": "वह बुरी तरह डर गया।",
+          "ru": "Его охватил ужас.",
+          "bn": "সে আতঙ্কে কেঁপে উঠল।",
+          "ur": "وہ بری طرح ڈر گیا۔",
+          "th": "เขาหวาดกลัวสุดขีด"
+        }
+      },
+      {
+        "id": "cl-dorian-086",
+        "english": "But the next day, James was shot by accident during a hunt.",
+        "turkish": "Ama ertesi gün James bir av sırasında kazara vurularak öldü.",
+        "translations": {
+          "es-419": "Pero al día siguiente, James murió de un disparo accidental durante una cacería.",
+          "pt-BR": "Mas no dia seguinte, James levou um tiro por acidente durante uma caçada.",
+          "id": "Namun keesokan harinya, James tertembak secara tidak sengaja saat perburuan.",
+          "ar": "لكن في اليوم التالي، أُصيب جيمس برصاصة خطأً أثناء رحلة صيد.",
+          "vi": "Nhưng ngày hôm sau, James bị bắn nhầm trong một cuộc đi săn.",
+          "hi": "लेकिन अगले दिन शिकार के दौरान जेम्स को ग़लती से गोली लग गई।",
+          "ru": "Но на следующий день Джеймса случайно застрелили на охоте.",
+          "bn": "কিন্তু পরদিন শিকারের সময় ভুল করে জেমসের গায়ে গুলি লাগল।",
+          "ur": "لیکن اگلے دن شکار کے دوران جیمز کو غلطی سے گولی لگ گئی۔",
+          "th": "แต่วันรุ่งขึ้น เจมส์ถูกยิงโดยบังเอิญระหว่างการล่าสัตว์"
+        }
+      },
+      {
+        "id": "cl-dorian-087",
+        "english": "Dorian was safe, yet he still felt no peace.",
+        "turkish": "Dorian güvendeydi, yine de içi hiç rahat değildi.",
+        "translations": {
+          "es-419": "Dorian estaba a salvo, pero aun así no sentía paz.",
+          "pt-BR": "Dorian estava a salvo, mas mesmo assim não sentia paz.",
+          "id": "Dorian selamat, tetapi hatinya tetap tidak tenang.",
+          "ar": "صار دوريان في أمان، ومع ذلك لم يشعر بأي سلام.",
+          "vi": "Dorian đã an toàn, nhưng lòng chàng vẫn không yên.",
+          "hi": "डोरियन सुरक्षित था, फिर भी उसे चैन नहीं मिला।",
+          "ru": "Дориан был в безопасности, но покоя так и не обрёл.",
+          "bn": "ডোরিয়ান নিরাপদ, তবু তার মনে শান্তি নেই।",
+          "ur": "ڈورین محفوظ تھا، پھر بھی اسے سکون نہ ملا۔",
+          "th": "ดอเรียนปลอดภัยแล้ว แต่ใจของเขาก็ยังไม่สงบ"
+        }
+      },
+      {
+        "id": "cl-dorian-088",
+        "english": "He told Lord Henry that he wanted to change his life.",
+        "turkish": "Lord Henry'ye hayatını değiştirmek istediğini söyledi.",
+        "translations": {
+          "es-419": "Le dijo a lord Henry que quería cambiar su vida.",
+          "pt-BR": "Disse a Lorde Henry que queria mudar de vida.",
+          "id": "Ia berkata kepada Lord Henry bahwa ia ingin mengubah hidupnya.",
+          "ar": "أخبر اللورد هنري أنه يريد أن يغيّر حياته.",
+          "vi": "Chàng nói với huân tước Henry rằng mình muốn thay đổi cuộc đời.",
+          "hi": "उसने लॉर्ड हेनरी से कहा कि वह अपनी ज़िंदगी बदलना चाहता है।",
+          "ru": "Он сказал лорду Генри, что хочет изменить свою жизнь.",
+          "bn": "সে লর্ড হেনরিকে বলল, সে নিজের জীবন বদলাতে চায়।",
+          "ur": "اس نے لارڈ ہنری سے کہا کہ وہ اپنی زندگی بدلنا چاہتا ہے۔",
+          "th": "เขาบอกลอร์ดเฮนรีว่าอยากเปลี่ยนแปลงชีวิตของตัวเอง"
+        }
+      },
+      {
+        "id": "cl-dorian-089",
+        "english": "Lord Henry only laughed.",
+        "turkish": "Lord Henry yalnızca güldü.",
+        "translations": {
+          "es-419": "Lord Henry solo se rio.",
+          "pt-BR": "Lorde Henry apenas riu.",
+          "id": "Lord Henry hanya tertawa.",
+          "ar": "لم يفعل اللورد هنري سوى أن ضحك.",
+          "vi": "Huân tước Henry chỉ cười.",
+          "hi": "लॉर्ड हेनरी बस हँस दिए।",
+          "ru": "Лорд Генри лишь рассмеялся.",
+          "bn": "লর্ড হেনরি শুধু হাসলেন।",
+          "ur": "لارڈ ہنری بس ہنس دیے۔",
+          "th": "ลอร์ดเฮนรีเพียงแค่หัวเราะ"
+        }
+      },
+      {
+        "id": "cl-dorian-090",
+        "english": "\"You are perfect as you are,\" he said. \"Do not change.\"",
+        "turkish": "\"Olduğun gibi kusursuzsun,\" dedi. \"Değişme.\"",
+        "translations": {
+          "es-419": "\"Eres perfecto tal como eres\", dijo. \"No cambies\".",
+          "pt-BR": "\"Você é perfeito como é\", disse ele. \"Não mude.\"",
+          "id": "\"Kau sempurna apa adanya,\" katanya. \"Jangan berubah.\"",
+          "ar": "قال: \"أنت كامل كما أنت. لا تتغيّر.\"",
+          "vi": "\"Cậu hoàn hảo như vốn có,\" ông nói. \"Đừng thay đổi.\"",
+          "hi": "\"तुम जैसे हो, वैसे ही परिपूर्ण हो,\" उन्होंने कहा। \"बदलो मत।\"",
+          "ru": "«Ты совершенен таким, какой ты есть, — сказал он. — Не меняйся».",
+          "bn": "\"তুমি যেমন আছ, তেমনই নিখুঁত,\" তিনি বললেন। \"বদলিয়ো না।\"",
+          "ur": "\"تم جیسے ہو، ویسے ہی کامل ہو،\" انہوں نے کہا۔ \"بدلو مت۔\"",
+          "th": "\"เธอสมบูรณ์แบบอยู่แล้ว\" เขากล่าว \"อย่าเปลี่ยนเลย\""
+        }
+      },
+      {
+        "id": "cl-dorian-091",
+        "english": "That night, Dorian thought about a good deed he had done.",
+        "turkish": "O gece Dorian yaptığı bir iyiliği düşündü.",
+        "translations": {
+          "es-419": "Esa noche, Dorian pensó en una buena acción que había hecho.",
+          "pt-BR": "Naquela noite, Dorian pensou numa boa ação que tinha feito.",
+          "id": "Malam itu, Dorian memikirkan satu perbuatan baik yang pernah ia lakukan.",
+          "ar": "في تلك الليلة، فكّر دوريان في عمل صالح قام به.",
+          "vi": "Đêm ấy, Dorian nghĩ về một việc tốt mà chàng đã làm.",
+          "hi": "उस रात डोरियन ने अपने किए एक अच्छे काम के बारे में सोचा।",
+          "ru": "В ту ночь Дориан думал о добром поступке, который совершил.",
+          "bn": "সে রাতে ডোরিয়ান নিজের করা একটা ভালো কাজের কথা ভাবল।",
+          "ur": "اس رات ڈورین نے اپنے کیے ایک اچھے کام کے بارے میں سوچا۔",
+          "th": "คืนนั้น ดอเรียนนึกถึงความดีครั้งหนึ่งที่เขาได้ทำ"
+        }
+      },
+      {
+        "id": "cl-dorian-092",
+        "english": "He had left a simple country girl instead of breaking her heart.",
+        "turkish": "Sade bir köylü kızın kalbini kırmak yerine onu bırakıp gitmişti.",
+        "translations": {
+          "es-419": "Había dejado a una sencilla muchacha de campo en lugar de romperle el corazón.",
+          "pt-BR": "Tinha deixado uma moça simples do campo, em vez de partir o coração dela.",
+          "id": "Ia meninggalkan seorang gadis desa yang lugu alih-alih menghancurkan hatinya.",
+          "ar": "لقد ترك فتاة ريفية بسيطة بدلًا من أن يحطّم قلبها.",
+          "vi": "Chàng đã rời bỏ một cô gái quê chất phác thay vì làm tan nát trái tim cô.",
+          "hi": "उसने एक सीधी-सादी गाँव की लड़की का दिल तोड़ने के बजाय उसे छोड़ दिया था।",
+          "ru": "Он оставил простую деревенскую девушку, вместо того чтобы разбить ей сердце.",
+          "bn": "একটা সরল গ্রাম্য মেয়ের মন ভাঙার বদলে সে তাকে ছেড়ে এসেছিল।",
+          "ur": "اس نے ایک سیدھی سادی دیہاتی لڑکی کا دل توڑنے کے بجائے اسے چھوڑ دیا تھا۔",
+          "th": "เขาจากหญิงสาวชาวชนบทผู้ใสซื่อคนหนึ่งมา แทนที่จะทำให้เธอหัวใจสลาย"
+        }
+      },
+      {
+        "id": "cl-dorian-093",
+        "english": "Perhaps the portrait was already a little better.",
+        "turkish": "Belki de portre şimdiden biraz düzelmişti.",
+        "translations": {
+          "es-419": "Quizá el retrato ya estaba un poco mejor.",
+          "pt-BR": "Talvez o retrato já estivesse um pouco melhor.",
+          "id": "Mungkin potret itu sudah sedikit lebih baik.",
+          "ar": "لعلّ اللوحة صارت أفضل قليلًا.",
+          "vi": "Có lẽ bức chân dung đã khá hơn một chút.",
+          "hi": "शायद चित्र अब थोड़ा बेहतर हो गया हो।",
+          "ru": "Может быть, портрет уже стал немного лучше.",
+          "bn": "হয়তো প্রতিকৃতিটা এর মধ্যে একটু ভালো হয়েছে।",
+          "ur": "شاید تصویر اب کچھ بہتر ہو گئی ہو۔",
+          "th": "บางทีภาพเหมือนอาจดีขึ้นบ้างแล้ว"
+        }
+      },
+      {
+        "id": "cl-dorian-094",
+        "english": "He went up to the locked room and pulled away the cloth.",
+        "turkish": "Kilitli odaya çıktı ve örtüyü çekip aldı.",
+        "translations": {
+          "es-419": "Subió al cuarto cerrado y retiró la tela.",
+          "pt-BR": "Subiu ao quarto trancado e puxou o pano.",
+          "id": "Ia naik ke kamar terkunci dan menarik kain penutupnya.",
+          "ar": "صعد إلى الغرفة المقفلة ونزع القماش.",
+          "vi": "Chàng lên căn phòng khóa kín và giật tấm vải ra.",
+          "hi": "वह ऊपर बंद कमरे में गया और कपड़ा हटा दिया।",
+          "ru": "Он поднялся в запертую комнату и сдёрнул ткань.",
+          "bn": "সে ওপরের তালাবন্ধ ঘরে গিয়ে কাপড়টা সরাল।",
+          "ur": "وہ اوپر بند کمرے میں گیا اور کپڑا ہٹا دیا۔",
+          "th": "เขาขึ้นไปยังห้องที่ล็อกไว้ แล้วดึงผ้าคลุมออก"
+        }
+      },
+      {
+        "id": "cl-dorian-095",
+        "english": "But the face was even worse.",
+        "turkish": "Ama yüz daha da kötüleşmişti.",
+        "translations": {
+          "es-419": "Pero el rostro estaba aún peor.",
+          "pt-BR": "Mas o rosto estava ainda pior.",
+          "id": "Namun wajah itu justru lebih buruk.",
+          "ar": "لكن الوجه صار أسوأ.",
+          "vi": "Nhưng khuôn mặt còn tệ hơn trước.",
+          "hi": "लेकिन चेहरा और भी बदतर हो गया था।",
+          "ru": "Но лицо стало ещё хуже.",
+          "bn": "কিন্তু মুখটা আরও খারাপ হয়েছে।",
+          "ur": "مگر چہرہ اور بھی بدتر ہو گیا تھا۔",
+          "th": "แต่ใบหน้ากลับยิ่งแย่ลง"
+        }
+      },
+      {
+        "id": "cl-dorian-096",
+        "english": "Now there was a look of cunning in the eyes.",
+        "turkish": "Gözlerde artık kurnaz bir bakış vardı.",
+        "translations": {
+          "es-419": "Ahora había una mirada astuta en los ojos.",
+          "pt-BR": "Agora havia um olhar de astúcia nos olhos.",
+          "id": "Kini ada sorot licik di matanya.",
+          "ar": "صارت في العينين الآن نظرة مكر.",
+          "vi": "Giờ trong đôi mắt có một ánh nhìn xảo quyệt.",
+          "hi": "अब आँखों में एक मक्कारी झलक रही थी।",
+          "ru": "Теперь в глазах появилось лукавство.",
+          "bn": "এখন চোখে ফুটে উঠেছে ধূর্ত চাহনি।",
+          "ur": "اب آنکھوں میں مکاری جھلک رہی تھی۔",
+          "th": "ตอนนี้ในดวงตามีแววเจ้าเล่ห์"
+        }
+      },
+      {
+        "id": "cl-dorian-097",
+        "english": "Dorian understood that he had not been good at all.",
+        "turkish": "Dorian aslında hiç de iyi davranmadığını anladı.",
+        "translations": {
+          "es-419": "Dorian comprendió que no había sido bueno en absoluto.",
+          "pt-BR": "Dorian entendeu que não tinha sido bom de jeito nenhum.",
+          "id": "Dorian sadar bahwa ia sama sekali tidak berbuat baik.",
+          "ar": "فهم دوريان أنه لم يكن صالحًا على الإطلاق.",
+          "vi": "Dorian hiểu rằng mình chẳng hề tốt chút nào.",
+          "hi": "डोरियन समझ गया कि वह ज़रा भी अच्छा नहीं बना था।",
+          "ru": "Дориан понял, что вовсе не был добрым.",
+          "bn": "ডোরিয়ান বুঝল, সে আসলে একটুও ভালো হয়নি।",
+          "ur": "ڈورین سمجھ گیا کہ وہ ذرا بھی اچھا نہیں بنا تھا۔",
+          "th": "ดอเรียนเข้าใจว่าเขาไม่ได้เป็นคนดีเลยแม้แต่น้อย"
+        }
+      },
+      {
+        "id": "cl-dorian-098",
+        "english": "He had only wanted to feel good about himself.",
+        "turkish": "Sadece kendini iyi hissetmek istemişti.",
+        "translations": {
+          "es-419": "Solo había querido sentirse bien consigo mismo.",
+          "pt-BR": "Ele só tinha querido se sentir bem consigo mesmo.",
+          "id": "Ia hanya ingin merasa senang dengan dirinya sendiri.",
+          "ar": "كل ما أراده هو أن يشعر بالرضا عن نفسه.",
+          "vi": "Chàng chỉ muốn cảm thấy hài lòng về bản thân mà thôi.",
+          "hi": "वह बस अपने बारे में अच्छा महसूस करना चाहता था।",
+          "ru": "Он лишь хотел почувствовать себя хорошим.",
+          "bn": "সে শুধু নিজের সম্পর্কে ভালো বোধ করতে চেয়েছিল।",
+          "ur": "وہ بس اپنے بارے میں اچھا محسوس کرنا چاہتا تھا۔",
+          "th": "เขาเพียงอยากรู้สึกดีกับตัวเองเท่านั้น"
+        }
+      },
+      {
+        "id": "cl-dorian-099",
+        "english": "The picture was a mirror of his soul, and it would never let him go.",
+        "turkish": "Resim ruhunun aynasıydı ve onu asla bırakmayacaktı.",
+        "translations": {
+          "es-419": "El cuadro era un espejo de su alma, y nunca lo dejaría en paz.",
+          "pt-BR": "O quadro era um espelho da sua alma, e nunca o deixaria em paz.",
+          "id": "Lukisan itu adalah cermin jiwanya, dan takkan pernah melepaskannya.",
+          "ar": "كانت اللوحة مرآة لروحه، ولن تتركه أبدًا.",
+          "vi": "Bức tranh là tấm gương phản chiếu linh hồn chàng, và nó sẽ không bao giờ buông tha chàng.",
+          "hi": "वह तस्वीर उसकी आत्मा का आईना थी, और वह उसे कभी नहीं छोड़ेगी।",
+          "ru": "Портрет был зеркалом его души, и он никогда его не отпустит.",
+          "bn": "ছবিটা ছিল তার আত্মার আয়না, আর তা কখনো তাকে রেহাই দেবে না।",
+          "ur": "وہ تصویر اس کی روح کا آئینہ تھی، اور اسے کبھی نہیں چھوڑے گی۔",
+          "th": "ภาพนั้นคือกระจกสะท้อนวิญญาณของเขา และจะไม่มีวันปล่อยเขาไป"
+        }
+      },
+      {
+        "id": "cl-dorian-100",
+        "english": "He picked up the same knife that had killed Basil.",
+        "turkish": "Basil'i öldüren aynı bıçağı eline aldı.",
+        "translations": {
+          "es-419": "Tomó el mismo cuchillo que había matado a Basil.",
+          "pt-BR": "Pegou a mesma faca que tinha matado Basil.",
+          "id": "Ia memungut pisau yang sama yang telah membunuh Basil.",
+          "ar": "التقط السكّين نفسها التي قتلت بازل.",
+          "vi": "Chàng cầm lên chính con dao đã giết Basil.",
+          "hi": "उसने वही चाकू उठाया जिससे बेज़िल की जान गई थी।",
+          "ru": "Он взял тот самый нож, которым убил Бэзила.",
+          "bn": "সে তুলে নিল সেই ছুরিটাই, যা দিয়ে বেসিলকে মারা হয়েছিল।",
+          "ur": "اس نے وہی چاقو اٹھایا جس سے بیزل کی جان گئی تھی۔",
+          "th": "เขาหยิบมีดเล่มเดียวกับที่ใช้ฆ่าเบซิลขึ้นมา"
+        }
+      },
+      {
+        "id": "cl-dorian-101",
+        "english": "\"I will kill this picture and be free,\" he said.",
+        "turkish": "\"Bu resmi öldüreceğim ve özgür olacağım,\" dedi.",
+        "translations": {
+          "es-419": "\"Mataré este cuadro y seré libre\", dijo.",
+          "pt-BR": "\"Vou matar este quadro e ficar livre\", disse ele.",
+          "id": "\"Akan kubunuh lukisan ini, dan aku akan bebas,\" katanya.",
+          "ar": "قال: \"سأقتل هذه اللوحة وأصير حرًّا.\"",
+          "vi": "\"Ta sẽ giết bức tranh này và được tự do,\" chàng nói.",
+          "hi": "\"मैं इस तस्वीर को मार डालूँगा और आज़ाद हो जाऊँगा,\" उसने कहा।",
+          "ru": "«Я убью этот портрет и стану свободным», — сказал он.",
+          "bn": "\"এই ছবিটাকে মেরে আমি মুক্ত হব,\" সে বলল।",
+          "ur": "\"میں اس تصویر کو مار ڈالوں گا اور آزاد ہو جاؤں گا،\" اس نے کہا۔",
+          "th": "\"ฉันจะฆ่าภาพนี้ แล้วฉันจะเป็นอิสระ\" เขากล่าว"
+        }
+      },
+      {
+        "id": "cl-dorian-102",
+        "english": "He stabbed the canvas.",
+        "turkish": "Bıçağı tuvale sapladı.",
+        "translations": {
+          "es-419": "Apuñaló el lienzo.",
+          "pt-BR": "Ele cravou a faca na tela.",
+          "id": "Ia menusuk kanvas itu.",
+          "ar": "طعن القماش المرسوم.",
+          "vi": "Chàng đâm vào tấm vải vẽ.",
+          "hi": "उसने कैनवस में चाकू घोंप दिया।",
+          "ru": "Он вонзил нож в холст.",
+          "bn": "সে ক্যানভাসে ছুরি বসিয়ে দিল।",
+          "ur": "اس نے کینوس میں چاقو گھونپ دیا۔",
+          "th": "เขาแทงเข้าไปที่ผืนผ้าใบ"
+        }
+      },
+      {
+        "id": "cl-dorian-103",
+        "english": "There was a terrible cry, and the servants ran upstairs.",
+        "turkish": "Korkunç bir çığlık duyuldu ve hizmetkârlar yukarı koştu.",
+        "translations": {
+          "es-419": "Se oyó un grito terrible, y los criados subieron corriendo.",
+          "pt-BR": "Ouviu-se um grito terrível, e os criados subiram correndo.",
+          "id": "Terdengar jeritan mengerikan, dan para pelayan berlari ke atas.",
+          "ar": "دوّت صرخة رهيبة، فهرع الخدم إلى الطابق العلوي.",
+          "vi": "Một tiếng thét khủng khiếp vang lên, và những người hầu chạy lên lầu.",
+          "hi": "एक भयानक चीख़ गूँजी, और नौकर ऊपर दौड़े।",
+          "ru": "Раздался страшный крик, и слуги бросились наверх.",
+          "bn": "এক ভয়ংকর আর্তনাদ শোনা গেল, আর কাজের লোকেরা ওপরে ছুটে গেল।",
+          "ur": "ایک خوفناک چیخ گونجی، اور نوکر اوپر دوڑے۔",
+          "th": "มีเสียงกรีดร้องอันน่าสะพรึง คนรับใช้จึงวิ่งขึ้นไปชั้นบน"
+        }
+      },
+      {
+        "id": "cl-dorian-104",
+        "english": "They had to climb in through a window.",
+        "turkish": "İçeri bir pencereden tırmanarak girmek zorunda kaldılar.",
+        "translations": {
+          "es-419": "Tuvieron que entrar trepando por una ventana.",
+          "pt-BR": "Tiveram de entrar pela janela.",
+          "id": "Mereka harus memanjat masuk lewat jendela.",
+          "ar": "اضطرّوا إلى الدخول متسلّقين من نافذة.",
+          "vi": "Họ phải trèo vào qua cửa sổ.",
+          "hi": "उन्हें खिड़की से चढ़कर अंदर जाना पड़ा।",
+          "ru": "Им пришлось влезть через окно.",
+          "bn": "তাদের জানালা দিয়ে বেয়ে ভেতরে ঢুকতে হলো।",
+          "ur": "انہیں کھڑکی سے چڑھ کر اندر جانا پڑا۔",
+          "th": "พวกเขาต้องปีนเข้าไปทางหน้าต่าง"
+        }
+      },
+      {
+        "id": "cl-dorian-105",
+        "english": "On the wall hung a wonderful portrait of their young master.",
+        "turkish": "Duvarda genç efendilerinin harika bir portresi asılıydı.",
+        "translations": {
+          "es-419": "En la pared colgaba un maravilloso retrato de su joven amo.",
+          "pt-BR": "Na parede estava pendurado um retrato maravilhoso do seu jovem patrão.",
+          "id": "Di dinding tergantung potret indah tuan muda mereka.",
+          "ar": "على الجدار عُلّقت لوحة رائعة لسيّدهم الشاب.",
+          "vi": "Trên tường treo một bức chân dung tuyệt đẹp của cậu chủ trẻ.",
+          "hi": "दीवार पर उनके नौजवान मालिक का एक अद्भुत चित्र टँगा था।",
+          "ru": "На стене висел чудесный портрет их молодого хозяина.",
+          "bn": "দেয়ালে ঝুলছিল তাদের তরুণ মনিবের এক অপূর্ব প্রতিকৃতি।",
+          "ur": "دیوار پر ان کے نوجوان مالک کی ایک شاندار تصویر ٹنگی تھی۔",
+          "th": "บนผนังแขวนภาพเหมือนอันงดงามของนายหนุ่มของพวกเขา"
+        }
+      },
+      {
+        "id": "cl-dorian-106",
+        "english": "On the floor lay a dead man with a knife in his heart.",
+        "turkish": "Yerde kalbine bıçak saplanmış ölü bir adam yatıyordu.",
+        "translations": {
+          "es-419": "En el suelo yacía un hombre muerto con un cuchillo en el corazón.",
+          "pt-BR": "No chão jazia um homem morto, com uma faca no coração.",
+          "id": "Di lantai tergeletak seorang pria tak bernyawa dengan pisau di jantungnya.",
+          "ar": "وعلى الأرض رقد رجل ميت وفي قلبه سكّين.",
+          "vi": "Trên sàn là xác một người đàn ông với con dao cắm vào tim.",
+          "hi": "फ़र्श पर एक मरा हुआ आदमी पड़ा था, जिसके दिल में चाकू धँसा था।",
+          "ru": "На полу лежал мёртвый человек с ножом в сердце.",
+          "bn": "মেঝেতে পড়ে ছিল এক মৃত মানুষ, বুকে ছুরি বেঁধা।",
+          "ur": "فرش پر ایک مرا ہوا آدمی پڑا تھا، جس کے دل میں چاقو پیوست تھا۔",
+          "th": "บนพื้นมีชายคนหนึ่งนอนตาย มีมีดปักอยู่ที่หัวใจ"
+        }
+      },
+      {
+        "id": "cl-dorian-107",
+        "english": "He was old, wrinkled and ugly.",
+        "turkish": "Yaşlı, buruşuk ve çirkindi.",
+        "translations": {
+          "es-419": "Era viejo, arrugado y feo.",
+          "pt-BR": "Era velho, enrugado e feio.",
+          "id": "Ia tua, keriput, dan jelek.",
+          "ar": "كان عجوزًا مجعّدًا قبيحًا.",
+          "vi": "Hắn già nua, nhăn nheo và xấu xí.",
+          "hi": "वह बूढ़ा, झुर्रियों भरा और बदसूरत था।",
+          "ru": "Он был старым, морщинистым и уродливым.",
+          "bn": "সে বুড়ো, কোঁচকানো চামড়ার আর কুৎসিত।",
+          "ur": "وہ بوڑھا، جھریوں بھرا اور بدصورت تھا۔",
+          "th": "เขาแก่ หน้าเหี่ยวย่น และอัปลักษณ์"
+        }
+      },
+      {
+        "id": "cl-dorian-108",
+        "english": "Only from the rings on his fingers did they know that it was Dorian Gray.",
+        "turkish": "Onun Dorian Gray olduğunu ancak parmaklarındaki yüzüklerden anlayabildiler.",
+        "translations": {
+          "es-419": "Solo por los anillos de sus dedos supieron que era Dorian Gray.",
+          "pt-BR": "Só pelos anéis nos dedos souberam que era Dorian Gray.",
+          "id": "Hanya dari cincin di jari-jarinya mereka tahu bahwa itu Dorian Gray.",
+          "ar": "ولم يعرفوا أنه دوريان غراي إلا من الخواتم في أصابعه.",
+          "vi": "Chỉ nhờ những chiếc nhẫn trên ngón tay, họ mới biết đó là Dorian Gray.",
+          "hi": "सिर्फ़ उसकी उँगलियों की अँगूठियों से वे जान पाए कि वह डोरियन ग्रे था।",
+          "ru": "Лишь по кольцам на пальцах они узнали, что это Дориан Грей.",
+          "bn": "শুধু আঙুলের আংটিগুলো দেখেই তারা বুঝল, এ ডোরিয়ান গ্রে।",
+          "ur": "صرف اس کی انگلیوں کی انگوٹھیوں سے وہ جان پائے کہ وہ ڈورین گرے تھا۔",
+          "th": "มีเพียงแหวนบนนิ้วเท่านั้นที่ทำให้พวกเขารู้ว่านั่นคือดอเรียน เกรย์"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-dorian-gray-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "A painter who becomes famous in Paris",
+          "A young man who stays beautiful while his portrait shows his age and his evil acts",
+          "An actress who opens her own theatre",
+          "A sailor who looks for his lost sister"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-dorian-gray-q2",
+        "kind": "detail",
+        "prompt": "What did Dorian wish when he first saw the portrait?",
+        "options": [
+          "To become a painter",
+          "That the picture would grow old instead of him",
+          "To marry Sibyl Vane",
+          "To live in Paris"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-dorian-gray-q3",
+        "kind": "detail",
+        "prompt": "What was the first change Dorian saw in the portrait?",
+        "options": [
+          "A cruel line around the mouth",
+          "Grey hair",
+          "A tear on the cheek",
+          "A smile in the eyes"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "classic-dorian-gray-q4",
+        "kind": "inference",
+        "prompt": "Why did James Vane let Dorian go the first time?",
+        "options": [
+          "Dorian paid him money",
+          "Dorian's face was too young to be the man from eighteen years before",
+          "Lord Henry stopped him",
+          "He forgave Dorian"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-dorian-gray-q5",
+        "kind": "inference",
+        "prompt": "Why did the portrait look worse after Dorian's 'good deed'?",
+        "options": [
+          "Someone had painted on it",
+          "His good deed was only for his own pride, not real goodness",
+          "The room was too dark",
+          "James Vane had damaged it"
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  "words": [
+    {
+      "id": "portrait",
+      "word": "portrait",
+      "translation": "portre",
+      "pronunciation": "/ˈpɔːtreɪt/",
+      "example": "The artist painted a portrait of the queen.",
+      "translations": {
+        "es-419": "retrato",
+        "pt-BR": "retrato",
+        "id": "potret",
+        "ar": "صورة شخصية، لوحة",
+        "vi": "bức chân dung",
+        "hi": "चित्र, पोर्ट्रेट",
+        "ru": "портрет",
+        "bn": "প্রতিকৃতি",
+        "ur": "تصویر، پورٹریٹ",
+        "th": "ภาพเหมือน"
+      }
+    },
+    {
+      "id": "youth",
+      "word": "youth",
+      "translation": "gençlik",
+      "pronunciation": "/juːθ/",
+      "example": "In his youth, he travelled a lot.",
+      "translations": {
+        "es-419": "juventud",
+        "pt-BR": "juventude",
+        "id": "masa muda",
+        "ar": "شباب",
+        "vi": "tuổi trẻ",
+        "hi": "जवानी, युवावस्था",
+        "ru": "молодость, юность",
+        "bn": "যৌবন",
+        "ur": "جوانی",
+        "th": "ความเยาว์วัย"
+      }
+    },
+    {
+      "id": "painter",
+      "word": "painter",
+      "translation": "ressam",
+      "pronunciation": "/ˈpeɪntə(r)/",
+      "example": "The painter worked in a small studio.",
+      "translations": {
+        "es-419": "pintor",
+        "pt-BR": "pintor",
+        "id": "pelukis",
+        "ar": "رسّام",
+        "vi": "họa sĩ",
+        "hi": "चित्रकार",
+        "ru": "художник",
+        "bn": "চিত্রশিল্পী",
+        "ur": "مصور",
+        "th": "จิตรกร"
+      }
+    },
+    {
+      "id": "beauty",
+      "word": "beauty",
+      "translation": "güzellik",
+      "pronunciation": "/ˈbjuːti/",
+      "example": "Everyone talked about her beauty.",
+      "translations": {
+        "es-419": "belleza",
+        "pt-BR": "beleza",
+        "id": "kecantikan, keindahan",
+        "ar": "جمال",
+        "vi": "vẻ đẹp",
+        "hi": "सुंदरता",
+        "ru": "красота",
+        "bn": "সৌন্দর্য",
+        "ur": "خوبصورتی",
+        "th": "ความงาม"
+      }
+    },
+    {
+      "id": "actress",
+      "word": "actress",
+      "translation": "kadın oyuncu, aktris",
+      "pronunciation": "/ˈæktrəs/",
+      "example": "The young actress was nervous before the play.",
+      "translations": {
+        "es-419": "actriz",
+        "pt-BR": "atriz",
+        "id": "aktris",
+        "ar": "ممثّلة",
+        "vi": "nữ diễn viên",
+        "hi": "अभिनेत्री",
+        "ru": "актриса",
+        "bn": "অভিনেত্রী",
+        "ur": "اداکارہ",
+        "th": "นักแสดงหญิง"
+      }
+    },
+    {
+      "id": "evil",
+      "word": "evil",
+      "translation": "kötü, şeytani",
+      "pronunciation": "/ˈiːvl/",
+      "example": "The evil king hurt his people.",
+      "translations": {
+        "es-419": "malvado",
+        "pt-BR": "mau, malvado",
+        "id": "jahat",
+        "ar": "شرّير",
+        "vi": "độc ác",
+        "hi": "दुष्ट, बुरा",
+        "ru": "злой",
+        "bn": "দুষ্ট, অশুভ",
+        "ur": "شیطانی، برا",
+        "th": "ชั่วร้าย"
+      }
+    },
+    {
+      "id": "wish",
+      "word": "wish",
+      "translation": "dilek",
+      "pronunciation": "/wɪʃ/",
+      "example": "Close your eyes and make a wish.",
+      "translations": {
+        "es-419": "deseo",
+        "pt-BR": "desejo",
+        "id": "keinginan, permohonan",
+        "ar": "أمنية",
+        "vi": "điều ước",
+        "hi": "इच्छा",
+        "ru": "желание",
+        "bn": "ইচ্ছা",
+        "ur": "خواہش",
+        "th": "คำอธิษฐาน, ความปรารถนา"
+      }
+    },
+    {
+      "id": "ugly",
+      "word": "ugly",
+      "translation": "çirkin",
+      "pronunciation": "/ˈʌɡli/",
+      "example": "The old building was dark and ugly.",
+      "translations": {
+        "es-419": "feo",
+        "pt-BR": "feio",
+        "id": "jelek",
+        "ar": "قبيح",
+        "vi": "xấu xí",
+        "hi": "बदसूरत",
+        "ru": "уродливый",
+        "bn": "কুৎসিত",
+        "ur": "بدصورت",
+        "th": "น่าเกลียด"
+      }
+    },
+    {
+      "id": "soul",
+      "word": "soul",
+      "translation": "ruh",
+      "pronunciation": "/səʊl/",
+      "example": "Her grandmother explained that mermaids lived for three hundred years but had no immortal soul.",
+      "translations": {
+        "es-419": "alma",
+        "pt-BR": "alma",
+        "id": "jiwa",
+        "ar": "روح",
+        "vi": "linh hồn",
+        "hi": "आत्मा",
+        "ru": "душа",
+        "bn": "আত্মা",
+        "ur": "روح",
+        "th": "วิญญาณ"
+      }
+    },
+    {
+      "id": "mirror",
+      "word": "mirror",
+      "translation": "ayna",
+      "pronunciation": "/ˈmɪrə(r)/",
+      "example": "The new queen asked her magic mirror who was the most beautiful.",
+      "translations": {
+        "es-419": "espejo",
+        "pt-BR": "espelho",
+        "id": "cermin",
+        "ar": "مرآة",
+        "vi": "cái gương",
+        "hi": "आईना",
+        "ru": "зеркало",
+        "bn": "আয়না",
+        "ur": "آئینہ",
+        "th": "กระจก"
+      }
+    },
+    {
+      "id": "knife",
+      "word": "knife",
+      "translation": "bıçak",
+      "pronunciation": "/naɪf/",
+      "example": "They had traded their hair to the witch for a knife.",
+      "translations": {
+        "es-419": "cuchillo",
+        "pt-BR": "faca",
+        "id": "pisau",
+        "ar": "سكّين",
+        "vi": "con dao",
+        "hi": "चाकू",
+        "ru": "нож",
+        "bn": "ছুরি",
+        "ur": "چاقو، چھری",
+        "th": "มีด"
+      }
+    },
+    {
+      "id": "innocent",
+      "word": "innocent",
+      "translation": "suçsuz",
+      "pronunciation": "/ˈɪnəsnt/",
+      "example": "Now Elisa could speak and explain that she was innocent.",
+      "translations": {
+        "es-419": "inocente",
+        "pt-BR": "inocente",
+        "id": "tidak bersalah",
+        "ar": "بريء",
+        "vi": "vô tội",
+        "hi": "बेकसूर, निर्दोष",
+        "ru": "невиновный",
+        "bn": "নির্দোষ",
+        "ur": "بے قصور، معصوم",
+        "th": "บริสุทธิ์, ไม่มีความผิด"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "portrait",
+    "youth",
+    "painter",
+    "beauty",
+    "actress",
+    "evil",
+    "wish",
+    "ugly",
+    "soul",
+    "mirror",
+    "knife",
+    "innocent"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-dorian-gray-q1",
+      "sentenceIds": [
+        "cl-dorian-044",
+        "cl-dorian-062"
+      ],
+      "rationale": "Dorian stays young while the portrait carries the marks of his life."
+    },
+    {
+      "questionId": "classic-dorian-gray-q2",
+      "sentenceIds": [
+        "cl-dorian-017"
+      ],
+      "rationale": "He wished that he would stay young and the picture would grow old."
+    },
+    {
+      "questionId": "classic-dorian-gray-q3",
+      "sentenceIds": [
+        "cl-dorian-041"
+      ],
+      "rationale": "After he left Sibyl, a cruel line appeared around the mouth."
+    },
+    {
+      "questionId": "classic-dorian-gray-q4",
+      "sentenceIds": [
+        "cl-dorian-082",
+        "cl-dorian-083"
+      ],
+      "rationale": "Dorian still looked young, so James thought he had the wrong man."
+    },
+    {
+      "questionId": "classic-dorian-gray-q5",
+      "sentenceIds": [
+        "cl-dorian-098",
+        "cl-dorian-096"
+      ],
+      "rationale": "The good deed came from vanity, so the picture showed cunning instead of goodness."
+    }
+  ],
+  "publicationBlockers": [
+    "Owner (oguz) approval of the English text, questions and translations required.",
+    "Native-speaker language review not done.",
+    "Cover artwork and asset mapping pending.",
+    "Source text hash pending (Gutenberg not reachable from the cloud session).",
+    "Publisher story creation, validation and publication pending."
+  ]
+}
