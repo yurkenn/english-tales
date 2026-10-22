@@ -1,0 +1,827 @@
+{
+  "status": "draft",
+  "kind": "revision",
+  "source": "story-lengthening-a1-batch2-2026-10-22",
+  "reviewedBy": null,
+  "baseStoryId": "classic-town-country-mouse",
+  "baseStorySHA256": "b223f617bc74dbd466c7c43ab7e6fd2e4efb53c461d7c75be952a5a02c7fb1e7",
+  "editorialNotes": [
+    "Adds the country mouse's hole and simple seeds, the town mouse's rudeness and boast, Aesop's rich table and dogs, the long wait in the dark and the return home.",
+    "Every legacy sentence, its ID and its translations are kept unchanged; new sentences are only inserted between them. Plot, characters, ending and lesson are unchanged.",
+    "New sentences have AI-drafted translations in all ten additional support languages, following the gender and wording already used in each legacy translation. No native-speaker review."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "unchangedTranslationsPreserved": true,
+    "newSentenceIds": [
+      "classic-town-country-mouse-ext-01-01",
+      "classic-town-country-mouse-ext-02-01",
+      "classic-town-country-mouse-ext-03-01",
+      "classic-town-country-mouse-ext-05-01",
+      "classic-town-country-mouse-ext-06-01",
+      "classic-town-country-mouse-ext-06-02",
+      "classic-town-country-mouse-ext-07-01",
+      "classic-town-country-mouse-ext-07-02",
+      "classic-town-country-mouse-ext-08-01",
+      "classic-town-country-mouse-ext-09-01",
+      "classic-town-country-mouse-ext-11-01",
+      "classic-town-country-mouse-ext-14-01"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+  },
+  "story": {
+    "id": "classic-town-country-mouse",
+    "title": "The Town Mouse and the Country Mouse",
+    "author": "Aesop",
+    "level": "A1",
+    "genre": "Macera",
+    "description": "Şehir Faresi ile Kır Faresi. İki fare, zengin bir sofra ile huzurlu bir hayat arasında seçim yapar. A1 düzeyinde kısa uyarlama. Uyarlama ve Türkçe çeviri: English Tales. Tarihî görsel: Arthur Rackham; kitap içi illüstrasyon, ayrı bir ilk baskı kapağı değildir.",
+    "coverKey": "cover_classic_town_country_mouse",
+    "sentences": [
+      {
+        "id": "cl-town-country-mouse-01",
+        "english": "A country mouse invites his town friend to dinner.",
+        "turkish": "Bir kır faresi şehirli arkadaşını akşam yemeğine çağırır.",
+        "translations": {
+          "es-419": "Un ratón de campo invita a cenar a su amigo de la ciudad.",
+          "pt-BR": "Um rato do campo convida seu amigo da cidade para jantar.",
+          "id": "Seekor tikus desa mengundang temannya dari kota untuk makan malam.",
+          "ar": "يدعو فأر الريف صديقه فأر المدينة إلى العشاء.",
+          "vi": "Một chú chuột đồng quê mời người bạn ở thành phố đến ăn tối.",
+          "hi": "एक देहाती चूहा अपने शहरी दोस्त को रात के खाने पर बुलाता है।",
+          "ru": "Деревенская мышь приглашает свою городскую подругу на обед.",
+          "bn": "একটা গেঁয়ো ইঁদুর তার শহুরে বন্ধুকে রাতের খাবারে নিমন্ত্রণ করে।",
+          "ur": "ایک دیہاتی چوہا اپنے شہری دوست کو رات کے کھانے پر بلاتا ہے۔",
+          "th": "หนูบ้านนอกเชิญเพื่อนจากในเมืองมากินอาหารเย็น"
+        }
+      },
+      {
+        "id": "classic-town-country-mouse-ext-01-01",
+        "english": "He lives in a small hole under a tree.",
+        "turkish": "Bir ağacın altındaki küçük bir delikte yaşar.",
+        "translations": {
+          "es-419": "Vive en un pequeño agujero debajo de un árbol.",
+          "pt-BR": "Ele mora num buraquinho debaixo de uma árvore.",
+          "id": "Ia tinggal di sebuah lubang kecil di bawah pohon.",
+          "ar": "يعيش في جُحر صغير تحت شجرة.",
+          "vi": "Chú sống trong một cái hang nhỏ dưới gốc cây.",
+          "hi": "वह एक पेड़ के नीचे छोटे से बिल में रहता है।",
+          "ru": "Она живёт в маленькой норке под деревом.",
+          "bn": "সে একটা গাছের নিচে ছোট্ট একটা গর্তে থাকে।",
+          "ur": "وہ ایک درخت کے نیچے چھوٹے سے بل میں رہتا ہے۔",
+          "th": "เขาอาศัยอยู่ในรูเล็ก ๆ ใต้ต้นไม้"
+        }
+      },
+      {
+        "id": "cl-town-country-mouse-02",
+        "english": "He offers simple food from the fields.",
+        "turkish": "Tarlalardan gelen basit yiyecekler sunar.",
+        "translations": {
+          "es-419": "Le ofrece comida sencilla de los campos.",
+          "pt-BR": "Ele oferece uma comida simples, vinda dos campos.",
+          "id": "Ia menyuguhkan makanan sederhana dari ladang.",
+          "ar": "يقدّم له طعامًا بسيطًا من الحقول.",
+          "vi": "Chú mời bạn những món ăn đơn giản từ đồng ruộng.",
+          "hi": "वह उसे खेतों का सादा खाना देता है।",
+          "ru": "Она угощает её простой едой с полей.",
+          "bn": "সে মাঠ থেকে আনা সাদামাটা খাবার খেতে দেয়।",
+          "ur": "وہ کھیتوں سے لایا ہوا سادہ کھانا پیش کرتا ہے۔",
+          "th": "เขานำอาหารง่าย ๆ จากท้องทุ่งมาเลี้ยง"
+        }
+      },
+      {
+        "id": "classic-town-country-mouse-ext-02-01",
+        "english": "There are seeds, roots and a little corn.",
+        "turkish": "Tohumlar, kökler ve biraz mısır vardır.",
+        "translations": {
+          "es-419": "Hay semillas, raíces y un poco de maíz.",
+          "pt-BR": "Há sementes, raízes e um pouco de milho.",
+          "id": "Ada biji-bijian, akar, dan sedikit jagung.",
+          "ar": "هناك بذور وجذور وقليل من الذرة.",
+          "vi": "Có hạt, rễ cây và một ít ngô.",
+          "hi": "उसमें बीज, जड़ें और थोड़ा-सा मक्का है।",
+          "ru": "Там есть семена, корешки и немного кукурузы.",
+          "bn": "সেখানে আছে বীজ, শিকড় আর একটু ভুট্টা।",
+          "ur": "اس میں بیج، جڑیں اور تھوڑی سی مکئی ہے۔",
+          "th": "มีเมล็ดพืช รากไม้ และข้าวโพดนิดหน่อย"
+        }
+      },
+      {
+        "id": "cl-town-country-mouse-03",
+        "english": "The town mouse is not happy with the meal.",
+        "turkish": "Şehir faresi yemekten memnun değildir.",
+        "translations": {
+          "es-419": "El ratón de ciudad no está contento con la comida.",
+          "pt-BR": "O rato da cidade não fica contente com a refeição.",
+          "id": "Tikus kota tidak senang dengan hidangan itu.",
+          "ar": "فأر المدينة غير راضٍ عن الوجبة.",
+          "vi": "Chuột thành phố không hài lòng với bữa ăn.",
+          "hi": "शहरी चूहे को यह खाना पसंद नहीं आता।",
+          "ru": "Городской мыши такая еда не нравится.",
+          "bn": "শহুরে ইঁদুর এই খাবারে খুশি হয় না।",
+          "ur": "شہری چوہا اس کھانے سے خوش نہیں ہے۔",
+          "th": "หนูเมืองไม่พอใจกับอาหารมื้อนี้"
+        }
+      },
+      {
+        "id": "classic-town-country-mouse-ext-03-01",
+        "english": "He eats only a little and makes a face.",
+        "turkish": "Sadece biraz yer ve yüzünü buruşturur.",
+        "translations": {
+          "es-419": "Come solo un poco y hace una mueca.",
+          "pt-BR": "Ele come só um pouquinho e faz careta.",
+          "id": "Ia hanya makan sedikit dan memasang wajah masam.",
+          "ar": "يأكل قليلًا فقط ويعبس بوجهه.",
+          "vi": "Chú chỉ ăn một chút rồi nhăn mặt.",
+          "hi": "वह थोड़ा-सा ही खाता है और मुँह बनाता है।",
+          "ru": "Она съедает совсем немного и морщится.",
+          "bn": "সে একটুখানি খায় আর মুখ বাঁকায়।",
+          "ur": "وہ تھوڑا سا ہی کھاتا ہے اور منہ بناتا ہے۔",
+          "th": "เขากินแค่นิดเดียวแล้วทำหน้าบึ้ง"
+        }
+      },
+      {
+        "id": "cl-town-country-mouse-04",
+        "english": "\"Come to my house,\" he says.",
+        "turkish": "\"Benim evime gel,\" der.",
+        "translations": {
+          "es-419": "\"Ven a mi casa\", le dice.",
+          "pt-BR": "— Venha à minha casa — diz ele.",
+          "id": "\"Datanglah ke rumahku,\" katanya.",
+          "ar": "يقول: «تعالَ إلى بيتي.»",
+          "vi": "\"Hãy đến nhà tôi,\" chuột thành phố nói.",
+          "hi": "\"मेरे घर चलो,\" वह कहता है।",
+          "ru": "«Пойдём ко мне, — говорит она. —",
+          "bn": "\"আমার বাড়িতে চলো,\" সে বলে।",
+          "ur": "\"میرے گھر چلو،\" وہ کہتا ہے۔",
+          "th": "\"มาบ้านฉันสิ\" เขาพูด"
+        }
+      },
+      {
+        "id": "cl-town-country-mouse-05",
+        "english": "\"We have wonderful food there.\"",
+        "turkish": "\"Orada harika yiyeceklerimiz var.\"",
+        "translations": {
+          "es-419": "\"Allí tenemos comida maravillosa.\"",
+          "pt-BR": "— Lá temos uma comida maravilhosa.",
+          "id": "\"Di sana kami punya makanan yang luar biasa.\"",
+          "ar": "«عندنا طعام رائع هناك.»",
+          "vi": "\"Ở đó chúng tôi có những món ăn tuyệt vời.\"",
+          "hi": "\"वहाँ हमारे पास बहुत बढ़िया खाना है।\"",
+          "ru": "У нас там чудесная еда».",
+          "bn": "\"সেখানে আমাদের দারুণ সব খাবার আছে।\"",
+          "ur": "\"وہاں ہمارے پاس بہت مزے دار کھانا ہے۔\"",
+          "th": "\"ที่นั่นเรามีอาหารวิเศษมากมาย\""
+        }
+      },
+      {
+        "id": "classic-town-country-mouse-ext-05-01",
+        "english": "\"You can eat like a king every day.\"",
+        "turkish": "\"Her gün bir kral gibi yiyebilirsin.\"",
+        "translations": {
+          "es-419": "\"Puedes comer como un rey todos los días.\"",
+          "pt-BR": "— Você pode comer como um rei todos os dias.",
+          "id": "\"Kamu bisa makan seperti raja setiap hari.\"",
+          "ar": "«تستطيع أن تأكل مثل ملك كل يوم.»",
+          "vi": "\"Ngày nào cậu cũng có thể ăn như vua.\"",
+          "hi": "\"तुम हर दिन राजा की तरह खा सकते हो।\"",
+          "ru": "«Ты сможешь каждый день есть как королева».",
+          "bn": "\"তুমি রোজ রাজার মতো খেতে পারবে।\"",
+          "ur": "\"تم ہر روز بادشاہ کی طرح کھا سکتے ہو۔\"",
+          "th": "\"เธอจะได้กินอย่างพระราชาทุกวัน\""
+        }
+      },
+      {
+        "id": "cl-town-country-mouse-06",
+        "english": "The country mouse follows him to town.",
+        "turkish": "Kır faresi onun peşinden şehre gider.",
+        "translations": {
+          "es-419": "El ratón de campo lo sigue a la ciudad.",
+          "pt-BR": "O rato do campo o acompanha até a cidade.",
+          "id": "Tikus desa mengikutinya ke kota.",
+          "ar": "يتبعه فأر الريف إلى المدينة.",
+          "vi": "Chuột đồng quê theo bạn lên thành phố.",
+          "hi": "देहाती चूहा उसके पीछे-पीछे शहर जाता है।",
+          "ru": "Деревенская мышь идёт за ней в город.",
+          "bn": "গেঁয়ো ইঁদুর তার পিছু পিছু শহরে যায়।",
+          "ur": "دیہاتی چوہا اس کے پیچھے پیچھے شہر چلا جاتا ہے۔",
+          "th": "หนูบ้านนอกตามเขาไปในเมือง"
+        }
+      },
+      {
+        "id": "classic-town-country-mouse-ext-06-01",
+        "english": "They walk for a long time and arrive at night.",
+        "turkish": "Uzun süre yürürler ve gece varırlar.",
+        "translations": {
+          "es-419": "Caminan mucho tiempo y llegan de noche.",
+          "pt-BR": "Eles andam por muito tempo e chegam à noite.",
+          "id": "Mereka berjalan lama dan tiba pada malam hari.",
+          "ar": "يمشيان وقتًا طويلًا ويصلان في الليل.",
+          "vi": "Hai chú đi bộ rất lâu và đến nơi khi trời đã tối.",
+          "hi": "वे बहुत देर तक चलते हैं और रात को पहुँचते हैं।",
+          "ru": "Они долго идут и приходят ночью.",
+          "bn": "তারা অনেকক্ষণ হাঁটে আর রাতে গিয়ে পৌঁছায়।",
+          "ur": "وہ بہت دیر تک چلتے ہیں اور رات کو پہنچتے ہیں۔",
+          "th": "พวกเขาเดินอยู่นานและไปถึงตอนกลางคืน"
+        }
+      },
+      {
+        "id": "classic-town-country-mouse-ext-06-02",
+        "english": "The town mouse lives in a big, beautiful house.",
+        "turkish": "Şehir faresi büyük ve güzel bir evde yaşar.",
+        "translations": {
+          "es-419": "El ratón de ciudad vive en una casa grande y hermosa.",
+          "pt-BR": "O rato da cidade mora numa casa grande e bonita.",
+          "id": "Tikus kota tinggal di sebuah rumah besar yang indah.",
+          "ar": "يعيش فأر المدينة في بيت كبير وجميل.",
+          "vi": "Chuột thành phố sống trong một ngôi nhà to và đẹp.",
+          "hi": "शहरी चूहा एक बड़े और सुंदर घर में रहता है।",
+          "ru": "Городская мышь живёт в большом красивом доме.",
+          "bn": "শহুরে ইঁদুর একটা বড় সুন্দর বাড়িতে থাকে।",
+          "ur": "شہری چوہا ایک بڑے اور خوبصورت گھر میں رہتا ہے۔",
+          "th": "หนูเมืองอาศัยอยู่ในบ้านหลังใหญ่ที่สวยงาม"
+        }
+      },
+      {
+        "id": "cl-town-country-mouse-07",
+        "english": "They find a table full of rich food.",
+        "turkish": "Zengin yiyeceklerle dolu bir masa bulurlar.",
+        "translations": {
+          "es-419": "Encuentran una mesa llena de comida abundante.",
+          "pt-BR": "Eles encontram uma mesa cheia de comidas finas.",
+          "id": "Mereka menemukan meja yang penuh makanan lezat.",
+          "ar": "يجدان مائدة مليئة بالطعام الفاخر.",
+          "vi": "Chúng thấy một chiếc bàn đầy những món ăn thịnh soạn.",
+          "hi": "उन्हें बढ़िया पकवानों से भरी एक मेज़ मिलती है।",
+          "ru": "Они находят стол, полный изысканной еды.",
+          "bn": "তারা দামি খাবারে ভরা একটা টেবিল দেখতে পায়।",
+          "ur": "انہیں مرغن کھانوں سے بھری ایک میز ملتی ہے۔",
+          "th": "พวกเขาพบโต๊ะที่เต็มไปด้วยอาหารเลิศรส"
+        }
+      },
+      {
+        "id": "classic-town-country-mouse-ext-07-01",
+        "english": "There is cheese, honey, cake and fruit.",
+        "turkish": "Peynir, bal, kek ve meyve vardır.",
+        "translations": {
+          "es-419": "Hay queso, miel, pastel y fruta.",
+          "pt-BR": "Tem queijo, mel, bolo e frutas.",
+          "id": "Ada keju, madu, kue, dan buah.",
+          "ar": "هناك جبن وعسل وكعك وفاكهة.",
+          "vi": "Có phô mai, mật ong, bánh ngọt và trái cây.",
+          "hi": "वहाँ चीज़, शहद, केक और फल हैं।",
+          "ru": "Там есть сыр, мёд, пирог и фрукты.",
+          "bn": "সেখানে আছে চিজ, মধু, কেক আর ফল।",
+          "ur": "وہاں پنیر، شہد، کیک اور پھل ہیں۔",
+          "th": "มีทั้งชีส น้ำผึ้ง เค้ก และผลไม้"
+        }
+      },
+      {
+        "id": "classic-town-country-mouse-ext-07-02",
+        "english": "The country mouse's eyes open wide.",
+        "turkish": "Kır faresinin gözleri fal taşı gibi açılır.",
+        "translations": {
+          "es-419": "Al ratón de campo se le abren mucho los ojos.",
+          "pt-BR": "Os olhos do rato do campo ficam arregalados.",
+          "id": "Mata tikus desa terbelalak.",
+          "ar": "تتّسع عينا فأر الريف.",
+          "vi": "Chuột đồng quê tròn xoe mắt.",
+          "hi": "देहाती चूहे की आँखें फटी की फटी रह जाती हैं।",
+          "ru": "У деревенской мыши округляются глаза.",
+          "bn": "গেঁয়ো ইঁদুরের চোখ বড় বড় হয়ে যায়।",
+          "ur": "دیہاتی چوہے کی آنکھیں کھلی کی کھلی رہ جاتی ہیں۔",
+          "th": "หนูบ้านนอกตาโตด้วยความตื่นเต้น"
+        }
+      },
+      {
+        "id": "cl-town-country-mouse-08",
+        "english": "But someone opens the door before they can eat.",
+        "turkish": "Ama yiyemeden biri kapıyı açar.",
+        "translations": {
+          "es-419": "Pero alguien abre la puerta antes de que puedan comer.",
+          "pt-BR": "Mas alguém abre a porta antes que eles possam comer.",
+          "id": "Tetapi seseorang membuka pintu sebelum mereka sempat makan.",
+          "ar": "لكن أحدًا يفتح الباب قبل أن يأكلا.",
+          "vi": "Nhưng có người mở cửa trước khi chúng kịp ăn.",
+          "hi": "लेकिन उनके खाने से पहले ही कोई दरवाज़ा खोल देता है।",
+          "ru": "Но кто-то открывает дверь, прежде чем они успевают поесть.",
+          "bn": "কিন্তু খাওয়ার আগেই কেউ একজন দরজা খোলে।",
+          "ur": "لیکن ان کے کھانے سے پہلے ہی کوئی دروازہ کھول دیتا ہے۔",
+          "th": "แต่มีคนเปิดประตูเข้ามาก่อนที่พวกเขาจะได้กิน"
+        }
+      },
+      {
+        "id": "classic-town-country-mouse-ext-08-01",
+        "english": "Two big dogs run in and bark.",
+        "turkish": "İki büyük köpek koşarak içeri girer ve havlar.",
+        "translations": {
+          "es-419": "Dos perros grandes entran corriendo y ladran.",
+          "pt-BR": "Dois cachorros grandes entram correndo e latem.",
+          "id": "Dua ekor anjing besar berlari masuk dan menggonggong.",
+          "ar": "يدخل كلبان كبيران راكضين وينبحان.",
+          "vi": "Hai con chó to chạy vào và sủa ầm ĩ.",
+          "hi": "दो बड़े कुत्ते दौड़ते हुए अंदर आते हैं और भौंकते हैं।",
+          "ru": "Вбегают две большие собаки и лают.",
+          "bn": "দুটো বড় কুকুর দৌড়ে ঢুকে ঘেউ ঘেউ করে।",
+          "ur": "دو بڑے کتے دوڑتے ہوئے اندر آتے ہیں اور بھونکتے ہیں۔",
+          "th": "สุนัขตัวใหญ่สองตัววิ่งเข้ามาและเห่า"
+        }
+      },
+      {
+        "id": "cl-town-country-mouse-09",
+        "english": "The mice run and hide in a hole.",
+        "turkish": "Fareler koşup bir deliğe saklanır.",
+        "translations": {
+          "es-419": "Los ratones corren y se esconden en un agujero.",
+          "pt-BR": "Os ratos correm e se escondem em um buraco.",
+          "id": "Tikus-tikus itu berlari dan bersembunyi di sebuah lubang.",
+          "ar": "يركض الفأران ويختبئان في جُحر.",
+          "vi": "Hai chú chuột chạy trốn vào một cái lỗ.",
+          "hi": "चूहे भागकर एक बिल में छिप जाते हैं।",
+          "ru": "Мыши убегают и прячутся в норку.",
+          "bn": "ইঁদুর দুটো দৌড়ে একটা গর্তে লুকায়।",
+          "ur": "چوہے بھاگ کر ایک سوراخ میں چھپ جاتے ہیں۔",
+          "th": "หนูทั้งสองวิ่งไปซ่อนในรู"
+        }
+      },
+      {
+        "id": "classic-town-country-mouse-ext-09-01",
+        "english": "The country mouse's heart beats fast.",
+        "turkish": "Kır faresinin kalbi hızlı hızlı çarpar.",
+        "translations": {
+          "es-419": "El corazón del ratón de campo late muy rápido.",
+          "pt-BR": "O coração do rato do campo bate muito rápido.",
+          "id": "Jantung tikus desa berdegup kencang.",
+          "ar": "يخفق قلب فأر الريف بسرعة.",
+          "vi": "Tim chuột đồng quê đập thình thịch.",
+          "hi": "देहाती चूहे का दिल तेज़-तेज़ धड़कता है।",
+          "ru": "Сердце деревенской мыши быстро бьётся.",
+          "bn": "গেঁয়ো ইঁদুরের বুক ধুকপুক করে।",
+          "ur": "دیہاتی چوہے کا دل تیزی سے دھڑکتا ہے۔",
+          "th": "หัวใจของหนูบ้านนอกเต้นแรง"
+        }
+      },
+      {
+        "id": "cl-town-country-mouse-10",
+        "english": "When it is quiet, they come out again.",
+        "turkish": "Ortalık sessizleşince yeniden çıkarlar.",
+        "translations": {
+          "es-419": "Cuando todo está en silencio, vuelven a salir.",
+          "pt-BR": "Quando tudo fica quieto, eles saem de novo.",
+          "id": "Ketika suasana sepi, mereka keluar lagi.",
+          "ar": "عندما يعود الهدوء، يخرجان من جديد.",
+          "vi": "Khi mọi thứ yên tĩnh trở lại, chúng lại chui ra.",
+          "hi": "जब सब शांत हो जाता है, तो वे फिर बाहर आते हैं।",
+          "ru": "Когда становится тихо, они снова выходят.",
+          "bn": "চারদিক চুপচাপ হলে তারা আবার বেরিয়ে আসে।",
+          "ur": "جب خاموشی ہو جاتی ہے تو وہ پھر باہر آتے ہیں۔",
+          "th": "เมื่อเงียบลง พวกเขาก็ออกมาอีกครั้ง"
+        }
+      },
+      {
+        "id": "cl-town-country-mouse-11",
+        "english": "Then another person enters, and they hide once more.",
+        "turkish": "Sonra başka biri girer ve bir kez daha saklanırlar.",
+        "translations": {
+          "es-419": "Entonces entra otra persona, y se esconden una vez más.",
+          "pt-BR": "Então outra pessoa entra, e eles se escondem mais uma vez.",
+          "id": "Lalu orang lain masuk, dan mereka bersembunyi sekali lagi.",
+          "ar": "ثم يدخل شخص آخر، فيختبئان مرة أخرى.",
+          "vi": "Rồi một người khác bước vào, và chúng lại trốn một lần nữa.",
+          "hi": "फिर कोई दूसरा आदमी अंदर आता है, और वे एक बार फिर छिप जाते हैं।",
+          "ru": "Тут входит другой человек, и они опять прячутся.",
+          "bn": "তারপর আরেকজন ঢোকে, আর তারা আবার লুকায়।",
+          "ur": "پھر کوئی اور شخص اندر آتا ہے، اور وہ ایک بار پھر چھپ جاتے ہیں۔",
+          "th": "แล้วก็มีอีกคนเดินเข้ามา พวกเขาจึงต้องซ่อนอีกครั้ง"
+        }
+      },
+      {
+        "id": "classic-town-country-mouse-ext-11-01",
+        "english": "They wait in the dark for a long time.",
+        "turkish": "Uzun süre karanlıkta beklerler.",
+        "translations": {
+          "es-419": "Esperan en la oscuridad durante mucho tiempo.",
+          "pt-BR": "Eles esperam no escuro por muito tempo.",
+          "id": "Mereka menunggu lama dalam gelap.",
+          "ar": "ينتظران في الظلام وقتًا طويلًا.",
+          "vi": "Hai chú chờ trong bóng tối rất lâu.",
+          "hi": "वे बहुत देर तक अँधेरे में इंतज़ार करते हैं।",
+          "ru": "Они долго ждут в темноте.",
+          "bn": "তারা অনেকক্ষণ অন্ধকারে অপেক্ষা করে।",
+          "ur": "وہ بہت دیر تک اندھیرے میں انتظار کرتے ہیں۔",
+          "th": "พวกเขารออยู่ในความมืดเป็นเวลานาน"
+        }
+      },
+      {
+        "id": "cl-town-country-mouse-12",
+        "english": "The country mouse decides to leave.",
+        "turkish": "Kır faresi gitmeye karar verir.",
+        "translations": {
+          "es-419": "El ratón de campo decide irse.",
+          "pt-BR": "O rato do campo decide ir embora.",
+          "id": "Tikus desa memutuskan untuk pergi.",
+          "ar": "يقرّر فأر الريف أن يرحل.",
+          "vi": "Chuột đồng quê quyết định ra về.",
+          "hi": "देहाती चूहा वहाँ से जाने का फ़ैसला करता है।",
+          "ru": "Деревенская мышь решает уйти.",
+          "bn": "গেঁয়ো ইঁদুর চলে যাওয়ার সিদ্ধান্ত নেয়।",
+          "ur": "دیہاتی چوہا واپس جانے کا فیصلہ کرتا ہے۔",
+          "th": "หนูบ้านนอกตัดสินใจกลับบ้าน"
+        }
+      },
+      {
+        "id": "cl-town-country-mouse-13",
+        "english": "\"Keep your fine food,\" he tells his friend.",
+        "turkish": "Arkadaşına, \"Güzel yiyeceklerin sende kalsın,\" der.",
+        "translations": {
+          "es-419": "\"Quédate con tu comida fina\", le dice a su amigo.",
+          "pt-BR": "— Pode ficar com a sua comida fina — ele diz ao amigo.",
+          "id": "\"Simpan saja makanan mewahmu,\" katanya kepada temannya.",
+          "ar": "يقول لصديقه: «احتفظ بطعامك الفاخر.»",
+          "vi": "\"Cậu cứ giữ lấy những món ăn sang trọng của cậu,\" chú nói với bạn.",
+          "hi": "\"अपना बढ़िया खाना अपने पास रखो,\" वह अपने दोस्त से कहता है।",
+          "ru": "«Оставь себе свою изысканную еду», — говорит она подруге.",
+          "bn": "\"তোমার দামি খাবার তোমারই থাক,\" সে তার বন্ধুকে বলে।",
+          "ur": "\"اپنا شاندار کھانا اپنے پاس رکھو،\" وہ اپنے دوست سے کہتا ہے۔",
+          "th": "\"เก็บอาหารหรู ๆ ของเธอไว้เถอะ\" เขาบอกเพื่อน"
+        }
+      },
+      {
+        "id": "cl-town-country-mouse-14",
+        "english": "\"I prefer a simple meal and a safe home.\"",
+        "turkish": "\"Ben basit bir yemeği ve güvenli bir evi tercih ederim.\"",
+        "translations": {
+          "es-419": "\"Prefiero una comida sencilla y un hogar seguro.\"",
+          "pt-BR": "— Eu prefiro uma refeição simples e uma casa segura.",
+          "id": "\"Aku lebih suka makanan sederhana dan rumah yang aman.\"",
+          "ar": "«أنا أفضّل وجبة بسيطة وبيتًا آمنًا.»",
+          "vi": "\"Tôi thích một bữa ăn đơn giản và một mái nhà an toàn hơn.\"",
+          "hi": "\"मुझे सादा खाना और सुरक्षित घर ज़्यादा पसंद है।\"",
+          "ru": "«Я лучше выберу простую еду и безопасный дом».",
+          "bn": "\"আমার কাছে সাদামাটা খাবার আর নিরাপদ ঘরই ভালো।\"",
+          "ur": "\"مجھے سادہ کھانا اور محفوظ گھر زیادہ پسند ہے۔\"",
+          "th": "\"ฉันชอบอาหารง่าย ๆ กับบ้านที่ปลอดภัยมากกว่า\""
+        }
+      },
+      {
+        "id": "classic-town-country-mouse-ext-14-01",
+        "english": "Then he goes back to his quiet hole under the tree.",
+        "turkish": "Sonra ağacın altındaki sessiz deliğine geri döner.",
+        "translations": {
+          "es-419": "Luego vuelve a su agujero tranquilo debajo del árbol.",
+          "pt-BR": "Depois ele volta para o seu buraco tranquilo debaixo da árvore.",
+          "id": "Lalu ia kembali ke lubangnya yang tenang di bawah pohon.",
+          "ar": "ثم يعود إلى جُحره الهادئ تحت الشجرة.",
+          "vi": "Rồi chú trở về cái hang yên tĩnh dưới gốc cây.",
+          "hi": "फिर वह पेड़ के नीचे अपने शांत बिल में लौट जाता है।",
+          "ru": "И она возвращается в свою тихую норку под деревом.",
+          "bn": "তারপর সে গাছের নিচে তার শান্ত গর্তে ফিরে যায়।",
+          "ur": "پھر وہ درخت کے نیچے اپنے پرسکون بل میں لوٹ جاتا ہے۔",
+          "th": "แล้วเขาก็กลับไปยังรูอันเงียบสงบใต้ต้นไม้"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-town-country-mouse-q1",
+        "kind": "main",
+        "prompt": "What does the country mouse decide after visiting town?",
+        "options": [
+          "He wants a safe home with simple food",
+          "He wants to stay and enjoy the rich food",
+          "He wants to bring more mice to the town",
+          "He wants to find another house in the town"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "classic-town-country-mouse-q2",
+        "kind": "detail",
+        "prompt": "What happens each time the mice try to eat in town?",
+        "options": [
+          "The town mouse eats everything",
+          "The food is cold",
+          "Someone comes in and they hide",
+          "The table breaks"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "classic-town-country-mouse-q3",
+        "kind": "inference",
+        "prompt": "Why does the country mouse go home?",
+        "options": [
+          "He misses his family",
+          "He does not feel safe in town",
+          "The food is bad",
+          "He does not like his friend"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-town-country-mouse-q4",
+        "kind": "detail",
+        "prompt": "What food is on the table in the town house?",
+        "options": [
+          "Cheese, honey, cake and fruit",
+          "Seeds, roots and corn",
+          "Only bread and water",
+          "Fish and rice"
+        ],
+        "answer": 0
+      }
+    ],
+    "tags": [
+      "fabl",
+      "macera"
+    ],
+    "descriptions": {
+      "es-419": "El ratón de ciudad y el ratón de campo. Dos ratones eligen entre una mesa abundante y una vida tranquila. Adaptación breve de nivel A1. Adaptación: English Tales. Imagen histórica: Arthur Rackham; ilustración interior del libro, no es una portada aparte de primera edición.",
+      "pt-BR": "O rato do campo e o rato da cidade. Dois ratos escolhem entre uma mesa farta e uma vida tranquila. Adaptação curta de nível A1. Adaptação: English Tales. Imagem histórica: Arthur Rackham; ilustração interna do livro, não é uma capa separada de primeira edição.",
+      "id": "Tikus Kota dan Tikus Desa. Dua ekor tikus memilih antara hidangan mewah dan hidup yang tenang. Adaptasi singkat tingkat A1. Adaptasi: English Tales. Gambar historis: Arthur Rackham; ilustrasi di dalam buku, bukan sampul edisi pertama tersendiri.",
+      "ar": "فأر المدينة وفأر الريف. فأران يختاران بين مائدة غنية وحياة هادئة. اقتباس قصير بمستوى A1. الاقتباس: English Tales. صورة تاريخية: آرثر راكهام؛ رسم توضيحي داخل الكتاب، وليس غلافًا منفصلًا للطبعة الأولى.",
+      "vi": "Chuột thành phố và chuột đồng quê. Hai chú chuột lựa chọn giữa một bữa tiệc thịnh soạn và một cuộc sống bình yên. Bản phóng tác ngắn trình độ A1. Phóng tác: English Tales. Hình ảnh lịch sử: Arthur Rackham; tranh minh họa bên trong sách, không phải bìa riêng của ấn bản đầu tiên.",
+      "hi": "शहरी चूहा और देहाती चूहा। दो चूहे बढ़िया दावत और सुकून भरी ज़िंदगी के बीच चुनाव करते हैं। A1 स्तर का छोटा रूपांतरण। रूपांतरण: English Tales। ऐतिहासिक चित्र: Arthur Rackham; किताब के अंदर का चित्र, पहले संस्करण का अलग कवर नहीं।",
+      "ru": "Городская мышь и деревенская мышь. Две мыши выбирают между богатым столом и спокойной жизнью. Краткая адаптация уровня A1. Адаптация: English Tales. Историческое изображение: Артур Рэкхем; внутренняя иллюстрация из книги, а не отдельная обложка первого издания.",
+      "bn": "শহুরে ইঁদুর আর গেঁয়ো ইঁদুর। দুটি ইঁদুর ভূরিভোজ আর শান্তির জীবনের মধ্যে একটা বেছে নেয়। A1 স্তরের ছোট রূপান্তর। রূপান্তর: English Tales। ঐতিহাসিক ছবি: Arthur Rackham; বইয়ের ভেতরের ছবি, প্রথম সংস্করণের আলাদা প্রচ্ছদ নয়।",
+      "ur": "شہری چوہا اور دیہاتی چوہا۔ دو چوہے شاندار دعوت اور پرسکون زندگی میں سے ایک کو چنتے ہیں۔ A1 سطح کی مختصر ماخوذ کہانی۔ ترتیب: English Tales۔ تاریخی تصویر: Arthur Rackham؛ کتاب کے اندر کی تصویر، پہلے ایڈیشن کا الگ سرورق نہیں۔",
+      "th": "หนูเมืองกับหนูบ้านนอก: หนูสองตัวต้องเลือกระหว่างอาหารเลิศรสกับชีวิตที่สงบสุข ฉบับดัดแปลงสั้น ๆ ระดับ A1 ดัดแปลงโดย English Tales ภาพเก่าทางประวัติศาสตร์: Arthur Rackham; ภาพประกอบภายในเล่ม ไม่ใช่ปกแยกของฉบับพิมพ์ครั้งแรก"
+    }
+  },
+  "words": [
+    {
+      "id": "country",
+      "word": "country",
+      "translation": "kır; ülke",
+      "pronunciation": "/ˈkʌntri/",
+      "example": "A country mouse invites his town friend to dinner.",
+      "translations": {
+        "es-419": "campo",
+        "pt-BR": "campo",
+        "id": "desa, pedesaan",
+        "ar": "ريف؛ بلد",
+        "vi": "nông thôn; đất nước",
+        "hi": "गाँव, देहात; देश",
+        "ru": "деревня, сельская местность",
+        "bn": "গ্রামাঞ্চল; দেশ",
+        "ur": "دیہات؛ ملک",
+        "th": "ชนบท; ประเทศ"
+      }
+    },
+    {
+      "id": "mouse",
+      "word": "mouse",
+      "translation": "fare",
+      "pronunciation": "/maʊs/",
+      "example": "The mouse is very small.",
+      "translations": {
+        "es-419": "ratón",
+        "pt-BR": "rato, camundongo",
+        "id": "tikus",
+        "ar": "فأر",
+        "vi": "chuột",
+        "hi": "चूहा",
+        "ru": "мышь, мышка",
+        "bn": "ইঁদুর",
+        "ur": "چوہا",
+        "th": "หนู"
+      }
+    },
+    {
+      "id": "dinner",
+      "word": "dinner",
+      "translation": "akşam yemeği",
+      "pronunciation": "/ˈdɪnə(r)/",
+      "example": "A country mouse invites his town friend to dinner.",
+      "translations": {
+        "es-419": "cena",
+        "pt-BR": "jantar",
+        "id": "makan malam",
+        "ar": "عشاء",
+        "vi": "bữa tối",
+        "hi": "रात का खाना",
+        "ru": "обед, ужин",
+        "bn": "রাতের খাবার",
+        "ur": "رات کا کھانا",
+        "th": "อาหารเย็น"
+      }
+    },
+    {
+      "id": "food",
+      "word": "food",
+      "translation": "yiyecek",
+      "pronunciation": "/fuːd/",
+      "example": "He offers simple food from the fields.",
+      "translations": {
+        "es-419": "comida",
+        "pt-BR": "comida",
+        "id": "makanan",
+        "ar": "طعام",
+        "vi": "thức ăn",
+        "hi": "खाना",
+        "ru": "еда",
+        "bn": "খাবার",
+        "ur": "کھانا، خوراک",
+        "th": "อาหาร"
+      }
+    },
+    {
+      "id": "meal",
+      "word": "meal",
+      "translation": "öğün",
+      "pronunciation": "/miːl/",
+      "example": "The town mouse is not happy with the meal.",
+      "translations": {
+        "es-419": "comida",
+        "pt-BR": "refeição",
+        "id": "hidangan, makanan",
+        "ar": "وجبة",
+        "vi": "bữa ăn",
+        "hi": "खाना, भोजन",
+        "ru": "еда, трапеза",
+        "bn": "খাবার",
+        "ur": "کھانا",
+        "th": "มื้ออาหาร"
+      }
+    },
+    {
+      "id": "rich",
+      "word": "rich",
+      "translation": "zengin",
+      "pronunciation": "/rɪtʃ/",
+      "example": "They find a table full of rich food.",
+      "translations": {
+        "es-419": "rico",
+        "pt-BR": "rico",
+        "id": "kaya, lezat",
+        "ar": "غني؛ دسم",
+        "vi": "giàu có; (đồ ăn) thịnh soạn",
+        "hi": "अमीर; बढ़िया (खाना)",
+        "ru": "богатый; жирный, изысканный (о еде)",
+        "bn": "ধনী; দামি, ভারী (খাবার)",
+        "ur": "امیر؛ مرغن (کھانا)",
+        "th": "ร่ำรวย; (อาหาร) อุดมสมบูรณ์"
+      }
+    },
+    {
+      "id": "mice",
+      "word": "mice",
+      "translation": "fareler",
+      "pronunciation": "/maɪs/",
+      "example": "The mice run and hide in a hole.",
+      "translations": {
+        "es-419": "ratones",
+        "pt-BR": "ratos",
+        "id": "tikus-tikus",
+        "ar": "فئران",
+        "vi": "những con chuột",
+        "hi": "चूहे",
+        "ru": "мыши",
+        "bn": "ইঁদুরেরা",
+        "ur": "چوہے",
+        "th": "หนู (หลายตัว)"
+      }
+    },
+    {
+      "id": "hole",
+      "word": "hole",
+      "translation": "delik",
+      "pronunciation": "/həʊl/",
+      "example": "The mice run and hide in a hole.",
+      "translations": {
+        "es-419": "agujero",
+        "pt-BR": "buraco",
+        "id": "lubang",
+        "ar": "جُحر، حفرة",
+        "vi": "cái lỗ, hang",
+        "hi": "बिल, छेद",
+        "ru": "нора, дыра",
+        "bn": "গর্ত",
+        "ur": "سوراخ، بل",
+        "th": "รู"
+      }
+    },
+    {
+      "id": "quiet",
+      "word": "quiet",
+      "translation": "sessiz",
+      "pronunciation": "/ˈkwaɪət/",
+      "example": "The street was quiet.",
+      "translations": {
+        "es-419": "tranquilo, silencioso",
+        "pt-BR": "tranquilo, silencioso",
+        "id": "tenang, sepi",
+        "ar": "هادئ، صامت",
+        "vi": "yên tĩnh, im lặng",
+        "hi": "शांत, चुप",
+        "ru": "тихий, спокойный",
+        "bn": "শান্ত, চুপচাপ",
+        "ur": "پرسکون، خاموش",
+        "th": "เงียบ, สงบ"
+      }
+    },
+    {
+      "id": "safe",
+      "word": "safe",
+      "translation": "güvenli",
+      "pronunciation": "/seɪf/",
+      "example": "\"I prefer a simple meal and a safe home.\"",
+      "translations": {
+        "es-419": "seguro",
+        "pt-BR": "seguro",
+        "id": "aman",
+        "ar": "آمن",
+        "vi": "an toàn",
+        "hi": "सुरक्षित",
+        "ru": "безопасный, в безопасности",
+        "bn": "নিরাপদ",
+        "ur": "محفوظ",
+        "th": "ปลอดภัย"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "country",
+    "mouse",
+    "dinner",
+    "food",
+    "meal",
+    "rich",
+    "mice",
+    "hole",
+    "quiet",
+    "safe"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-town-country-mouse-q1",
+      "sentenceIds": [
+        "cl-town-country-mouse-12",
+        "cl-town-country-mouse-14"
+      ],
+      "rationale": "He leaves and says he prefers a simple meal and a safe home."
+    },
+    {
+      "questionId": "classic-town-country-mouse-q2",
+      "sentenceIds": [
+        "cl-town-country-mouse-08",
+        "cl-town-country-mouse-09",
+        "cl-town-country-mouse-11"
+      ],
+      "rationale": "Someone comes in each time, and the mice hide."
+    },
+    {
+      "questionId": "classic-town-country-mouse-q3",
+      "sentenceIds": [
+        "cl-town-country-mouse-08",
+        "cl-town-country-mouse-11",
+        "cl-town-country-mouse-14"
+      ],
+      "rationale": "People keep coming in, so he prefers a safe home."
+    },
+    {
+      "questionId": "classic-town-country-mouse-q4",
+      "sentenceIds": [
+        "classic-town-country-mouse-ext-07-01"
+      ],
+      "rationale": "The table has cheese, honey, cake and fruit."
+    }
+  ],
+  "publicationBlockers": [
+    "Owner (oguz) approval of the English text, questions and translations required.",
+    "Fresh live source snapshot and publisher validation required."
+  ],
+  "lengthening": {
+    "wordsBefore": 108,
+    "wordsAfter": 207,
+    "sentencesBefore": 14,
+    "sentencesAfter": 26
+  }
+}

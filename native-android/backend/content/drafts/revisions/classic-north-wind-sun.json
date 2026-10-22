@@ -1,0 +1,884 @@
+{
+  "status": "draft",
+  "kind": "revision",
+  "source": "story-lengthening-a1-batch2-2026-10-22",
+  "reviewedBy": null,
+  "baseStoryId": "classic-north-wind-sun",
+  "baseStorySHA256": "e7ed423b44e413ad522c8f200f2879a0cf272d1bdf9f3dee0d6969dfe3e89360",
+  "editorialNotes": [
+    "Adds the two boasts, the traveler's bag, the Sun hiding behind a cloud during the Wind's turn, the bending trees, the tired Wind and the traveler resting in the warmth.",
+    "Every legacy sentence, its ID and its translations are kept unchanged; new sentences are only inserted between them. Plot, characters, ending and lesson are unchanged.",
+    "New sentences have AI-drafted translations in all ten additional support languages, following the gender and wording already used in each legacy translation. No native-speaker review."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "unchangedTranslationsPreserved": true,
+    "newSentenceIds": [
+      "classic-north-wind-sun-ext-02-01",
+      "classic-north-wind-sun-ext-02-02",
+      "classic-north-wind-sun-ext-03-01",
+      "classic-north-wind-sun-ext-05-01",
+      "classic-north-wind-sun-ext-05-02",
+      "classic-north-wind-sun-ext-06-01",
+      "classic-north-wind-sun-ext-07-01",
+      "classic-north-wind-sun-ext-08-01",
+      "classic-north-wind-sun-ext-09-01",
+      "classic-north-wind-sun-ext-09-02",
+      "classic-north-wind-sun-ext-11-01",
+      "classic-north-wind-sun-ext-12-01",
+      "classic-north-wind-sun-ext-13-01"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+  },
+  "story": {
+    "id": "classic-north-wind-sun",
+    "title": "The North Wind and the Sun",
+    "author": "Aesop",
+    "level": "A1",
+    "genre": "Macera",
+    "description": "Kuzey Rüzgârı ile Güneş. Bir yolcunun paltosu, güç ile nezaket arasındaki farkı gösterir. A1 düzeyinde kısa uyarlama. Uyarlama ve Türkçe çeviri: English Tales. Tarihî görsel: Arthur Rackham; kitap içi illüstrasyon, ayrı bir ilk baskı kapağı değildir.",
+    "coverKey": "cover_classic_north_wind_sun",
+    "sentences": [
+      {
+        "id": "cl-north-wind-sun-01",
+        "english": "The North Wind and the Sun argue.",
+        "turkish": "Kuzey Rüzgârı ile Güneş tartışır.",
+        "translations": {
+          "es-419": "El Viento del Norte y el Sol discuten.",
+          "pt-BR": "O Vento Norte e o Sol discutem.",
+          "id": "Angin Utara dan Matahari berdebat.",
+          "ar": "تتجادل ريح الشمال والشمس.",
+          "vi": "Gió Bắc và Mặt Trời tranh cãi với nhau.",
+          "hi": "उत्तरी हवा और सूरज बहस करते हैं।",
+          "ru": "Северный ветер и Солнце спорят.",
+          "bn": "উত্তুরে হাওয়া আর সূর্য তর্ক করে।",
+          "ur": "شمالی ہوا اور سورج آپس میں بحث کرتے ہیں۔",
+          "th": "ลมเหนือกับดวงอาทิตย์เถียงกัน"
+        }
+      },
+      {
+        "id": "cl-north-wind-sun-02",
+        "english": "Each thinks he is stronger.",
+        "turkish": "Her biri kendisinin daha güçlü olduğunu düşünür.",
+        "translations": {
+          "es-419": "Cada uno cree que es el más fuerte.",
+          "pt-BR": "Cada um acha que é o mais forte.",
+          "id": "Masing-masing merasa dirinya lebih kuat.",
+          "ar": "كلّ منهما يظنّ أنه الأقوى.",
+          "vi": "Ai cũng nghĩ mình mạnh hơn.",
+          "hi": "दोनों सोचते हैं कि वही ज़्यादा ताकतवर है।",
+          "ru": "Каждый думает, что он сильнее.",
+          "bn": "দুজনেই ভাবে, সে-ই বেশি শক্তিশালী।",
+          "ur": "دونوں سمجھتے ہیں کہ وہ زیادہ طاقتور ہیں۔",
+          "th": "ต่างฝ่ายต่างคิดว่าตัวเองแข็งแรงกว่า"
+        }
+      },
+      {
+        "id": "classic-north-wind-sun-ext-02-01",
+        "english": "\"I can break trees,\" says the Wind.",
+        "turkish": "Rüzgâr, \"Ben ağaçları kırabilirim,\" der.",
+        "translations": {
+          "es-419": "\"Yo puedo romper árboles\", dice el Viento.",
+          "pt-BR": "— Eu consigo quebrar árvores — diz o Vento.",
+          "id": "\"Aku bisa mematahkan pohon,\" kata Angin.",
+          "ar": "تقول الريح: «أستطيع أن أكسر الأشجار.»",
+          "vi": "\"Ta có thể làm gãy cây,\" Gió nói.",
+          "hi": "\"मैं पेड़ तोड़ सकती हूँ,\" हवा कहती है।",
+          "ru": "«Я могу ломать деревья», — говорит Ветер.",
+          "bn": "\"আমি গাছ ভেঙে ফেলতে পারি,\" হাওয়া বলে।",
+          "ur": "\"میں درخت توڑ سکتی ہوں،\" ہوا کہتی ہے۔",
+          "th": "\"ข้าหักต้นไม้ได้\" ลมพูด"
+        }
+      },
+      {
+        "id": "classic-north-wind-sun-ext-02-02",
+        "english": "\"I can make the whole world warm,\" says the Sun.",
+        "turkish": "Güneş, \"Ben bütün dünyayı ısıtabilirim,\" der.",
+        "translations": {
+          "es-419": "\"Yo puedo calentar el mundo entero\", dice el Sol.",
+          "pt-BR": "— Eu consigo aquecer o mundo inteiro — diz o Sol.",
+          "id": "\"Aku bisa menghangatkan seluruh dunia,\" kata Matahari.",
+          "ar": "تقول الشمس: «أستطيع أن أدفّئ العالم كله.»",
+          "vi": "\"Ta có thể sưởi ấm cả thế giới,\" Mặt Trời nói.",
+          "hi": "\"मैं पूरी दुनिया को गरम कर सकता हूँ,\" सूरज कहता है।",
+          "ru": "«А я могу согреть весь мир», — говорит Солнце.",
+          "bn": "\"আমি সারা পৃথিবী উষ্ণ করে দিতে পারি,\" সূর্য বলে।",
+          "ur": "\"میں پوری دنیا کو گرم کر سکتا ہوں،\" سورج کہتا ہے۔",
+          "th": "\"ข้าทำให้ทั้งโลกอบอุ่นได้\" ดวงอาทิตย์พูด"
+        }
+      },
+      {
+        "id": "cl-north-wind-sun-03",
+        "english": "They see a traveler on the road.",
+        "turkish": "Yolda bir yolcu görürler.",
+        "translations": {
+          "es-419": "Ven a un viajero en el camino.",
+          "pt-BR": "Eles veem um viajante na estrada.",
+          "id": "Mereka melihat seorang pengembara di jalan.",
+          "ar": "يريان مسافرًا على الطريق.",
+          "vi": "Họ nhìn thấy một người lữ hành trên đường.",
+          "hi": "उन्हें सड़क पर एक मुसाफ़िर दिखता है।",
+          "ru": "Они видят на дороге путника.",
+          "bn": "তারা রাস্তায় একজন পথিককে দেখে।",
+          "ur": "انہیں سڑک پر ایک مسافر نظر آتا ہے۔",
+          "th": "พวกเขาเห็นนักเดินทางคนหนึ่งบนถนน"
+        }
+      },
+      {
+        "id": "classic-north-wind-sun-ext-03-01",
+        "english": "He walks slowly with a bag on his back.",
+        "turkish": "Sırtında bir çantayla yavaşça yürür.",
+        "translations": {
+          "es-419": "Camina despacio con una bolsa en la espalda.",
+          "pt-BR": "Ele anda devagar, com uma bolsa nas costas.",
+          "id": "Ia berjalan pelan dengan tas di punggungnya.",
+          "ar": "يمشي ببطء وعلى ظهره حقيبة.",
+          "vi": "Ông chậm rãi bước đi, trên lưng đeo một cái túi.",
+          "hi": "वह पीठ पर एक थैला लिए धीरे-धीरे चल रहा है।",
+          "ru": "Он медленно идёт с мешком за спиной.",
+          "bn": "সে পিঠে একটা ব্যাগ নিয়ে ধীরে ধীরে হাঁটছে।",
+          "ur": "وہ کمر پر ایک تھیلا لیے آہستہ آہستہ چل رہا ہے۔",
+          "th": "เขาเดินช้า ๆ พร้อมกับสะพายถุงไว้บนหลัง"
+        }
+      },
+      {
+        "id": "cl-north-wind-sun-04",
+        "english": "He wears a warm coat.",
+        "turkish": "Sıcak tutan bir palto giymektedir.",
+        "translations": {
+          "es-419": "Lleva un abrigo grueso.",
+          "pt-BR": "Ele está usando um casaco quente.",
+          "id": "Ia memakai mantel yang hangat.",
+          "ar": "إنه يلبس معطفًا دافئًا.",
+          "vi": "Ông mặc một chiếc áo khoác ấm.",
+          "hi": "उसने एक गरम कोट पहना है।",
+          "ru": "На нём тёплое пальто.",
+          "bn": "তার গায়ে একটা গরম কোট।",
+          "ur": "اس نے ایک گرم کوٹ پہنا ہوا ہے۔",
+          "th": "เขาสวมเสื้อโค้ตตัวอุ่น"
+        }
+      },
+      {
+        "id": "cl-north-wind-sun-05",
+        "english": "\"Let us make him take off his coat,\" says the Wind.",
+        "turkish": "Rüzgâr, \"Hadi ona paltosunu çıkarttıralım,\" der.",
+        "translations": {
+          "es-419": "\"Hagamos que se quite el abrigo\", dice el Viento.",
+          "pt-BR": "— Vamos fazê-lo tirar o casaco — diz o Vento.",
+          "id": "\"Mari kita buat dia melepas mantelnya,\" kata Angin.",
+          "ar": "تقول الريح: «لنجعله يخلع معطفه.»",
+          "vi": "\"Hãy làm cho ông ta cởi áo khoác ra,\" Gió nói.",
+          "hi": "\"चलो, उससे उसका कोट उतरवाते हैं,\" हवा कहती है।",
+          "ru": "«Давай заставим его снять пальто», — говорит Ветер.",
+          "bn": "\"চলো, ওকে দিয়ে কোটটা খোলাই,\" হাওয়া বলে।",
+          "ur": "\"آؤ، اس سے اس کا کوٹ اتروائیں،\" ہوا کہتی ہے۔",
+          "th": "\"มาทำให้เขาถอดเสื้อโค้ตกันเถอะ\" ลมพูด"
+        }
+      },
+      {
+        "id": "classic-north-wind-sun-ext-05-01",
+        "english": "\"The stronger one will win.\"",
+        "turkish": "\"Hangimiz daha güçlüyse o kazanır.\"",
+        "translations": {
+          "es-419": "\"El más fuerte va a ganar.\"",
+          "pt-BR": "— O mais forte vai ganhar.",
+          "id": "\"Yang lebih kuat akan menang.\"",
+          "ar": "«الأقوى هو الذي سيفوز.»",
+          "vi": "\"Ai mạnh hơn sẽ thắng.\"",
+          "hi": "\"जो ज़्यादा ताकतवर है, वही जीतेगा।\"",
+          "ru": "«Кто сильнее, тот и победит».",
+          "bn": "\"যে বেশি শক্তিশালী, সে-ই জিতবে।\"",
+          "ur": "\"جو زیادہ طاقتور ہے، وہی جیتے گا۔\"",
+          "th": "\"ใครแข็งแรงกว่าคนนั้นชนะ\""
+        }
+      },
+      {
+        "id": "classic-north-wind-sun-ext-05-02",
+        "english": "The Sun agrees and hides behind a cloud.",
+        "turkish": "Güneş kabul eder ve bir bulutun arkasına saklanır.",
+        "translations": {
+          "es-419": "El Sol acepta y se esconde detrás de una nube.",
+          "pt-BR": "O Sol concorda e se esconde atrás de uma nuvem.",
+          "id": "Matahari setuju dan bersembunyi di balik awan.",
+          "ar": "توافق الشمس وتختبئ خلف غيمة.",
+          "vi": "Mặt Trời đồng ý và nấp sau một đám mây.",
+          "hi": "सूरज मान जाता है और एक बादल के पीछे छिप जाता है।",
+          "ru": "Солнце соглашается и прячется за облако.",
+          "bn": "সূর্য রাজি হয় আর একটা মেঘের আড়ালে লুকায়।",
+          "ur": "سورج مان جاتا ہے اور ایک بادل کے پیچھے چھپ جاتا ہے۔",
+          "th": "ดวงอาทิตย์ตกลงและไปซ่อนอยู่หลังก้อนเมฆ"
+        }
+      },
+      {
+        "id": "cl-north-wind-sun-06",
+        "english": "The Wind blows as hard as he can.",
+        "turkish": "Rüzgâr elinden geldiğince sert eser.",
+        "translations": {
+          "es-419": "El Viento sopla tan fuerte como puede.",
+          "pt-BR": "O Vento sopra o mais forte que pode.",
+          "id": "Angin bertiup sekencang-kencangnya.",
+          "ar": "تهبّ الريح بكل ما لديها من قوة.",
+          "vi": "Gió thổi mạnh hết sức có thể.",
+          "hi": "हवा जितनी ज़ोर से हो सके, चलती है।",
+          "ru": "Ветер дует изо всех сил.",
+          "bn": "হাওয়া যত জোরে পারে বইতে থাকে।",
+          "ur": "ہوا پورے زور سے چلتی ہے۔",
+          "th": "ลมพัดแรงที่สุดเท่าที่จะทำได้"
+        }
+      },
+      {
+        "id": "classic-north-wind-sun-ext-06-01",
+        "english": "Leaves fly, and the trees bend.",
+        "turkish": "Yapraklar uçuşur ve ağaçlar eğilir.",
+        "translations": {
+          "es-419": "Las hojas vuelan, y los árboles se doblan.",
+          "pt-BR": "As folhas voam, e as árvores se curvam.",
+          "id": "Daun-daun beterbangan, dan pohon-pohon membungkuk.",
+          "ar": "تتطاير الأوراق، وتنحني الأشجار.",
+          "vi": "Lá cây bay tung, cây cối nghiêng ngả.",
+          "hi": "पत्ते उड़ते हैं और पेड़ झुक जाते हैं।",
+          "ru": "Летят листья, гнутся деревья.",
+          "bn": "পাতা উড়ে যায়, আর গাছগুলো নুয়ে পড়ে।",
+          "ur": "پتے اڑتے ہیں اور درخت جھک جاتے ہیں۔",
+          "th": "ใบไม้ปลิวว่อน และต้นไม้ก็โอนเอน"
+        }
+      },
+      {
+        "id": "cl-north-wind-sun-07",
+        "english": "The traveler pulls his coat closer.",
+        "turkish": "Yolcu paltosuna daha sıkı sarılır.",
+        "translations": {
+          "es-419": "El viajero se ajusta más el abrigo.",
+          "pt-BR": "O viajante aperta o casaco contra o corpo.",
+          "id": "Pengembara itu merapatkan mantelnya.",
+          "ar": "يشدّ المسافر معطفه حوله أكثر.",
+          "vi": "Người lữ hành kéo áo khoác sát vào người hơn.",
+          "hi": "मुसाफ़िर अपना कोट और कसकर लपेट लेता है।",
+          "ru": "Путник плотнее закутывается в пальто.",
+          "bn": "পথিক কোটটা আরও শক্ত করে গায়ে জড়িয়ে নেয়।",
+          "ur": "مسافر اپنا کوٹ اور کس کر لپیٹ لیتا ہے۔",
+          "th": "นักเดินทางดึงเสื้อโค้ตเข้ามาแนบตัว"
+        }
+      },
+      {
+        "id": "classic-north-wind-sun-ext-07-01",
+        "english": "\"What a cold day!\" he says.",
+        "turkish": "\"Ne soğuk bir gün!\" der.",
+        "translations": {
+          "es-419": "\"¡Qué día tan frío!\", dice.",
+          "pt-BR": "— Que dia frio! — diz ele.",
+          "id": "\"Dinginnya hari ini!\" katanya.",
+          "ar": "يقول: «يا له من يوم بارد!»",
+          "vi": "\"Hôm nay lạnh quá!\" ông nói.",
+          "hi": "\"कितना ठंडा दिन है!\" वह कहता है।",
+          "ru": "«Какой холодный день!» — говорит он.",
+          "bn": "\"কী ঠান্ডা দিন!\" সে বলে।",
+          "ur": "\"کتنا ٹھنڈا دن ہے!\" وہ کہتا ہے۔",
+          "th": "\"วันนี้หนาวจริง ๆ!\" เขาพูด"
+        }
+      },
+      {
+        "id": "cl-north-wind-sun-08",
+        "english": "The Wind blows harder, but the coat stays on.",
+        "turkish": "Rüzgâr daha sert eser ama palto adamın üzerinde kalır.",
+        "translations": {
+          "es-419": "El Viento sopla más fuerte, pero el abrigo no se cae.",
+          "pt-BR": "O Vento sopra ainda mais forte, mas o casaco continua no lugar.",
+          "id": "Angin bertiup lebih kencang, tetapi mantel itu tetap terpakai.",
+          "ar": "تهبّ الريح بقوة أكبر، لكن المعطف يبقى عليه.",
+          "vi": "Gió thổi mạnh hơn nữa, nhưng chiếc áo khoác vẫn nằm yên trên người ông.",
+          "hi": "हवा और ज़ोर से चलती है, लेकिन कोट नहीं उतरता।",
+          "ru": "Ветер дует ещё сильнее, но пальто остаётся на путнике.",
+          "bn": "হাওয়া আরও জোরে বয়, কিন্তু কোটটা গায়েই থাকে।",
+          "ur": "ہوا اور زور سے چلتی ہے، لیکن کوٹ نہیں اترتا۔",
+          "th": "ลมพัดแรงขึ้นอีก แต่เขาก็ยังไม่ถอดเสื้อโค้ต"
+        }
+      },
+      {
+        "id": "classic-north-wind-sun-ext-08-01",
+        "english": "The traveler holds it with both hands.",
+        "turkish": "Yolcu onu iki eliyle tutar.",
+        "translations": {
+          "es-419": "El viajero lo sujeta con las dos manos.",
+          "pt-BR": "O viajante o segura com as duas mãos.",
+          "id": "Pengembara itu memegangnya dengan kedua tangan.",
+          "ar": "يمسكه المسافر بكلتا يديه.",
+          "vi": "Người lữ hành giữ chặt nó bằng cả hai tay.",
+          "hi": "मुसाफ़िर उसे दोनों हाथों से पकड़े रहता है।",
+          "ru": "Путник держит его обеими руками.",
+          "bn": "পথিক দুই হাতে সেটা চেপে ধরে।",
+          "ur": "مسافر اسے دونوں ہاتھوں سے پکڑے رہتا ہے۔",
+          "th": "นักเดินทางใช้มือทั้งสองข้างจับมันไว้"
+        }
+      },
+      {
+        "id": "cl-north-wind-sun-09",
+        "english": "At last, the Wind stops.",
+        "turkish": "Sonunda Rüzgâr durur.",
+        "translations": {
+          "es-419": "Por fin, el Viento se detiene.",
+          "pt-BR": "Por fim, o Vento para.",
+          "id": "Akhirnya, Angin berhenti.",
+          "ar": "أخيرًا، تتوقّف الريح.",
+          "vi": "Cuối cùng, Gió dừng lại.",
+          "hi": "आख़िरकार हवा रुक जाती है।",
+          "ru": "Наконец Ветер перестаёт дуть.",
+          "bn": "অবশেষে হাওয়া থেমে যায়।",
+          "ur": "آخرکار ہوا رک جاتی ہے۔",
+          "th": "ในที่สุด ลมก็หยุด"
+        }
+      },
+      {
+        "id": "classic-north-wind-sun-ext-09-01",
+        "english": "He is tired, and he cannot win.",
+        "turkish": "Yorulmuştur ve kazanamaz.",
+        "translations": {
+          "es-419": "Está cansado y no puede ganar.",
+          "pt-BR": "Ele está cansado e não consegue vencer.",
+          "id": "Ia lelah, dan ia tidak bisa menang.",
+          "ar": "إنها متعبة، ولا تستطيع أن تفوز.",
+          "vi": "Gió đã mệt và không thể thắng.",
+          "hi": "वह थक गई है और जीत नहीं सकती।",
+          "ru": "Он устал и не может победить.",
+          "bn": "সে ক্লান্ত, আর জিততে পারে না।",
+          "ur": "وہ تھک گئی ہے اور جیت نہیں سکتی۔",
+          "th": "มันเหนื่อยและเอาชนะไม่ได้"
+        }
+      },
+      {
+        "id": "classic-north-wind-sun-ext-09-02",
+        "english": "Then the Sun comes out from behind the cloud.",
+        "turkish": "Sonra Güneş bulutun arkasından çıkar.",
+        "translations": {
+          "es-419": "Entonces el Sol sale de detrás de la nube.",
+          "pt-BR": "Então o Sol sai de trás da nuvem.",
+          "id": "Lalu Matahari keluar dari balik awan.",
+          "ar": "ثم تخرج الشمس من خلف الغيمة.",
+          "vi": "Rồi Mặt Trời ló ra từ sau đám mây.",
+          "hi": "फिर सूरज बादल के पीछे से निकल आता है।",
+          "ru": "Тогда Солнце выходит из-за облака.",
+          "bn": "তখন সূর্য মেঘের আড়াল থেকে বেরিয়ে আসে।",
+          "ur": "پھر سورج بادل کے پیچھے سے نکل آتا ہے۔",
+          "th": "แล้วดวงอาทิตย์ก็ออกมาจากหลังก้อนเมฆ"
+        }
+      },
+      {
+        "id": "cl-north-wind-sun-10",
+        "english": "Now the Sun shines gently.",
+        "turkish": "Şimdi Güneş yumuşakça ışıldar.",
+        "translations": {
+          "es-419": "Ahora el Sol brilla suavemente.",
+          "pt-BR": "Agora o Sol brilha suavemente.",
+          "id": "Sekarang Matahari bersinar dengan lembut.",
+          "ar": "الآن تُشرق الشمس بلطف.",
+          "vi": "Bây giờ Mặt Trời chiếu sáng dịu dàng.",
+          "hi": "अब सूरज नरमी से चमकता है।",
+          "ru": "Теперь мягко светит Солнце.",
+          "bn": "এবার সূর্য মৃদুভাবে আলো দেয়।",
+          "ur": "اب سورج نرمی سے چمکتا ہے۔",
+          "th": "ตอนนี้ดวงอาทิตย์ส่องแสงอย่างอ่อนโยน"
+        }
+      },
+      {
+        "id": "cl-north-wind-sun-11",
+        "english": "The traveler starts to feel warm.",
+        "turkish": "Yolcu sıcaklamaya başlar.",
+        "translations": {
+          "es-419": "El viajero empieza a sentir calor.",
+          "pt-BR": "O viajante começa a sentir calor.",
+          "id": "Pengembara itu mulai merasa hangat.",
+          "ar": "يبدأ المسافر يشعر بالدفء.",
+          "vi": "Người lữ hành bắt đầu thấy ấm áp.",
+          "hi": "मुसाफ़िर को गरमी लगने लगती है।",
+          "ru": "Путнику становится тепло.",
+          "bn": "পথিকের গরম লাগতে শুরু করে।",
+          "ur": "مسافر کو گرمی محسوس ہونے لگتی ہے۔",
+          "th": "นักเดินทางเริ่มรู้สึกอุ่น"
+        }
+      },
+      {
+        "id": "classic-north-wind-sun-ext-11-01",
+        "english": "He opens his coat and wipes his face.",
+        "turkish": "Paltosunun önünü açar ve yüzünü siler.",
+        "translations": {
+          "es-419": "Se abre el abrigo y se seca la cara.",
+          "pt-BR": "Ele abre o casaco e enxuga o rosto.",
+          "id": "Ia membuka kancing mantelnya dan menyeka wajahnya.",
+          "ar": "يفتح معطفه ويمسح وجهه.",
+          "vi": "Ông mở cúc áo khoác và lau mặt.",
+          "hi": "वह अपना कोट खोलता है और चेहरा पोंछता है।",
+          "ru": "Он расстёгивает пальто и вытирает лицо.",
+          "bn": "সে কোটের বোতাম খোলে আর মুখ মোছে।",
+          "ur": "وہ اپنا کوٹ کھولتا ہے اور چہرہ پونچھتا ہے۔",
+          "th": "เขาเปิดเสื้อโค้ตและเช็ดหน้า"
+        }
+      },
+      {
+        "id": "cl-north-wind-sun-12",
+        "english": "Soon, he takes off his coat.",
+        "turkish": "Çok geçmeden paltosunu çıkarır.",
+        "translations": {
+          "es-419": "Pronto, se quita el abrigo.",
+          "pt-BR": "Logo, ele tira o casaco.",
+          "id": "Tak lama kemudian, ia melepas mantelnya.",
+          "ar": "بعد قليل، يخلع معطفه.",
+          "vi": "Chẳng bao lâu sau, ông cởi áo khoác ra.",
+          "hi": "जल्दी ही वह अपना कोट उतार देता है।",
+          "ru": "Вскоре он снимает пальто.",
+          "bn": "একটু পরেই সে কোটটা খুলে ফেলে।",
+          "ur": "جلد ہی وہ اپنا کوٹ اتار دیتا ہے۔",
+          "th": "ไม่นาน เขาก็ถอดเสื้อโค้ตออก"
+        }
+      },
+      {
+        "id": "classic-north-wind-sun-ext-12-01",
+        "english": "Then he sits down to rest under a tree.",
+        "turkish": "Sonra dinlenmek için bir ağacın altına oturur.",
+        "translations": {
+          "es-419": "Luego se sienta a descansar debajo de un árbol.",
+          "pt-BR": "Depois ele se senta para descansar debaixo de uma árvore.",
+          "id": "Lalu ia duduk beristirahat di bawah pohon.",
+          "ar": "ثم يجلس ليستريح تحت شجرة.",
+          "vi": "Rồi ông ngồi xuống nghỉ dưới gốc cây.",
+          "hi": "फिर वह एक पेड़ के नीचे आराम करने बैठ जाता है।",
+          "ru": "Потом он садится отдохнуть под деревом.",
+          "bn": "তারপর সে একটা গাছের নিচে বসে বিশ্রাম নেয়।",
+          "ur": "پھر وہ ایک درخت کے نیچے آرام کرنے بیٹھ جاتا ہے۔",
+          "th": "แล้วเขาก็นั่งพักใต้ต้นไม้"
+        }
+      },
+      {
+        "id": "cl-north-wind-sun-13",
+        "english": "The Sun wins without using force.",
+        "turkish": "Güneş güç kullanmadan kazanır.",
+        "translations": {
+          "es-419": "El Sol gana sin usar la fuerza.",
+          "pt-BR": "O Sol vence sem usar a força.",
+          "id": "Matahari menang tanpa menggunakan kekerasan.",
+          "ar": "تفوز الشمس من دون أن تستعمل القوة.",
+          "vi": "Mặt Trời thắng mà không cần dùng sức mạnh.",
+          "hi": "सूरज ज़ोर लगाए बिना जीत जाता है।",
+          "ru": "Солнце побеждает, не применяя силы.",
+          "bn": "সূর্য জোর না খাটিয়েই জিতে যায়।",
+          "ur": "سورج زور لگائے بغیر جیت جاتا ہے۔",
+          "th": "ดวงอาทิตย์ชนะโดยไม่ต้องใช้กำลัง"
+        }
+      },
+      {
+        "id": "classic-north-wind-sun-ext-13-01",
+        "english": "The Wind has nothing to say.",
+        "turkish": "Rüzgârın söyleyecek bir şeyi yoktur.",
+        "translations": {
+          "es-419": "El Viento no tiene nada que decir.",
+          "pt-BR": "O Vento não tem nada a dizer.",
+          "id": "Angin tidak bisa berkata apa-apa.",
+          "ar": "لا تجد الريح ما تقوله.",
+          "vi": "Gió chẳng còn gì để nói.",
+          "hi": "हवा के पास कहने को कुछ नहीं है।",
+          "ru": "Ветру нечего сказать.",
+          "bn": "হাওয়ার আর কিছু বলার থাকে না।",
+          "ur": "ہوا کے پاس کہنے کو کچھ نہیں ہے۔",
+          "th": "ลมไม่มีอะไรจะพูดอีก"
+        }
+      },
+      {
+        "id": "cl-north-wind-sun-14",
+        "english": "Gentleness can succeed where force fails.",
+        "turkish": "Nezaket, gücün başarısız olduğu yerde başarılı olabilir.",
+        "translations": {
+          "es-419": "La amabilidad puede tener éxito donde la fuerza fracasa.",
+          "pt-BR": "A gentileza pode ter sucesso onde a força fracassa.",
+          "id": "Kelembutan bisa berhasil ketika kekerasan gagal.",
+          "ar": "اللطف قد ينجح حيث تفشل القوة.",
+          "vi": "Sự dịu dàng có thể thành công ở nơi sức mạnh thất bại.",
+          "hi": "जहाँ ज़ोर हार जाता है, वहाँ नरमी जीत सकती है।",
+          "ru": "Мягкость может добиться успеха там, где сила бессильна.",
+          "bn": "যেখানে জোর হার মানে, সেখানে কোমলতা জিততে পারে।",
+          "ur": "جہاں زور ناکام ہو جاتا ہے، وہاں نرمی کامیاب ہو سکتی ہے۔",
+          "th": "ความอ่อนโยนทำสำเร็จได้ในสิ่งที่กำลังทำไม่สำเร็จ"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-north-wind-sun-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "The Wind and Sun help a traveler find his coat",
+          "The Wind wins a test by blowing away a coat",
+          "The Sun asks the Wind to warm a cold traveler",
+          "The Sun wins a test by warming a traveler"
+        ],
+        "answer": 3
+      },
+      {
+        "id": "classic-north-wind-sun-q2",
+        "kind": "detail",
+        "prompt": "What does the traveler do when the Wind blows?",
+        "options": [
+          "He runs home",
+          "He sits down",
+          "He takes off his coat",
+          "He pulls his coat closer"
+        ],
+        "answer": 3
+      },
+      {
+        "id": "classic-north-wind-sun-q3",
+        "kind": "inference",
+        "prompt": "What does the Sun do after the Wind stops?",
+        "options": [
+          "He hides behind a cloud",
+          "He shines gently on the traveler",
+          "He asks the Wind to try again",
+          "He tells the traveler to go home"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-north-wind-sun-q4",
+        "kind": "detail",
+        "prompt": "What does the Sun do while the Wind blows?",
+        "options": [
+          "He hides behind a cloud",
+          "He shines as hard as he can",
+          "He helps the Wind blow",
+          "He talks to the traveler"
+        ],
+        "answer": 0
+      }
+    ],
+    "tags": [
+      "fabl",
+      "macera"
+    ],
+    "descriptions": {
+      "es-419": "El viento del norte y el sol. El abrigo de un viajero muestra la diferencia entre la fuerza y la amabilidad. Adaptación breve de nivel A1. Adaptación: English Tales. Imagen histórica: Arthur Rackham; ilustración interior del libro, no es una portada aparte de primera edición.",
+      "pt-BR": "O vento norte e o sol. O casaco de um viajante mostra a diferença entre a força e a gentileza. Adaptação curta de nível A1. Adaptação: English Tales. Imagem histórica: Arthur Rackham; ilustração interna do livro, não é uma capa separada de primeira edição.",
+      "id": "Angin Utara dan Matahari. Mantel seorang pengembara menunjukkan perbedaan antara kekuatan dan kelembutan. Adaptasi singkat tingkat A1. Adaptasi: English Tales. Gambar historis: Arthur Rackham; ilustrasi di dalam buku, bukan sampul edisi pertama tersendiri.",
+      "ar": "ريح الشمال والشمس. معطف مسافر يُظهر الفرق بين القوة واللطف. اقتباس قصير بمستوى A1. الاقتباس: English Tales. صورة تاريخية: آرثر راكهام؛ رسم توضيحي داخل الكتاب، وليس غلافًا منفصلًا للطبعة الأولى.",
+      "vi": "Gió Bắc và Mặt Trời. Chiếc áo khoác của một người lữ hành cho thấy sự khác biệt giữa sức mạnh và sự dịu dàng. Bản phóng tác ngắn trình độ A1. Phóng tác: English Tales. Hình ảnh lịch sử: Arthur Rackham; tranh minh họa bên trong sách, không phải bìa riêng của ấn bản đầu tiên.",
+      "hi": "उत्तरी हवा और सूरज। एक मुसाफ़िर का कोट ज़ोर और नरमी के बीच का फ़र्क़ दिखाता है। A1 स्तर का छोटा रूपांतरण। रूपांतरण: English Tales। ऐतिहासिक चित्र: Arthur Rackham; किताब के अंदर का चित्र, पहले संस्करण का अलग कवर नहीं।",
+      "ru": "Северный ветер и Солнце. Пальто путника показывает разницу между силой и мягкостью. Краткая адаптация уровня A1. Адаптация: English Tales. Историческое изображение: Артур Рэкхем; внутренняя иллюстрация из книги, а не отдельная обложка первого издания.",
+      "bn": "উত্তুরে হাওয়া আর সূর্য। এক পথিকের কোট দেখিয়ে দেয় জোর আর কোমলতার পার্থক্য। A1 স্তরের ছোট রূপান্তর। রূপান্তর: English Tales। ঐতিহাসিক ছবি: Arthur Rackham; বইয়ের ভেতরের ছবি, প্রথম সংস্করণের আলাদা প্রচ্ছদ নয়।",
+      "ur": "شمالی ہوا اور سورج۔ ایک مسافر کا کوٹ زور اور نرمی کا فرق دکھاتا ہے۔ A1 سطح کی مختصر ماخوذ کہانی۔ ترتیب: English Tales۔ تاریخی تصویر: Arthur Rackham؛ کتاب کے اندر کی تصویر، پہلے ایڈیشن کا الگ سرورق نہیں۔",
+      "th": "ลมเหนือกับดวงอาทิตย์: เสื้อโค้ตของนักเดินทางแสดงให้เห็นความแตกต่างระหว่างกำลังกับความอ่อนโยน ฉบับดัดแปลงสั้น ๆ ระดับ A1 ดัดแปลงโดย English Tales ภาพเก่าทางประวัติศาสตร์: Arthur Rackham; ภาพประกอบภายในเล่ม ไม่ใช่ปกแยกของฉบับพิมพ์ครั้งแรก"
+    }
+  },
+  "words": [
+    {
+      "id": "north",
+      "word": "north",
+      "translation": "kuzey",
+      "pronunciation": "/nɔːθ/",
+      "example": "The North Wind and the Sun argue.",
+      "translations": {
+        "es-419": "norte",
+        "pt-BR": "norte",
+        "id": "utara",
+        "ar": "الشمال",
+        "vi": "phương bắc",
+        "hi": "उत्तर",
+        "ru": "север, северный",
+        "bn": "উত্তর",
+        "ur": "شمال",
+        "th": "ทิศเหนือ"
+      }
+    },
+    {
+      "id": "wind",
+      "word": "wind",
+      "translation": "rüzgâr",
+      "pronunciation": "/wɪnd/",
+      "example": "The wind carried the boat.",
+      "translations": {
+        "es-419": "viento",
+        "pt-BR": "vento",
+        "id": "angin",
+        "ar": "ريح",
+        "vi": "gió",
+        "hi": "हवा",
+        "ru": "ветер",
+        "bn": "বাতাস, হাওয়া",
+        "ur": "ہوا",
+        "th": "ลม"
+      }
+    },
+    {
+      "id": "sun",
+      "word": "sun",
+      "translation": "güneş",
+      "pronunciation": "/sʌn/",
+      "example": "The North Wind and the Sun argue.",
+      "translations": {
+        "es-419": "sol",
+        "pt-BR": "sol",
+        "id": "matahari",
+        "ar": "شمس",
+        "vi": "mặt trời",
+        "hi": "सूरज",
+        "ru": "солнце",
+        "bn": "সূর্য",
+        "ur": "سورج",
+        "th": "ดวงอาทิตย์"
+      }
+    },
+    {
+      "id": "argue",
+      "word": "argue",
+      "translation": "tartışmak",
+      "pronunciation": "/ˈɑːɡjuː/",
+      "example": "The North Wind and the Sun argue.",
+      "translations": {
+        "es-419": "discutir",
+        "pt-BR": "discutir",
+        "id": "berdebat",
+        "ar": "يتجادل",
+        "vi": "tranh cãi",
+        "hi": "बहस करना",
+        "ru": "спорить",
+        "bn": "তর্ক করা",
+        "ur": "بحث کرنا، جھگڑنا",
+        "th": "เถียงกัน"
+      }
+    },
+    {
+      "id": "stronger",
+      "word": "stronger",
+      "translation": "daha güçlü",
+      "pronunciation": "/ˈstrɒŋɡə(r)/",
+      "example": "Each thinks he is stronger.",
+      "translations": {
+        "es-419": "más fuerte",
+        "pt-BR": "mais forte",
+        "id": "lebih kuat",
+        "ar": "أقوى",
+        "vi": "mạnh hơn",
+        "hi": "ज़्यादा ताकतवर",
+        "ru": "сильнее",
+        "bn": "বেশি শক্তিশালী",
+        "ur": "زیادہ طاقتور",
+        "th": "แข็งแรงกว่า"
+      }
+    },
+    {
+      "id": "traveler",
+      "word": "traveler",
+      "translation": "yolcu",
+      "pronunciation": "/ˈtrævələ(r)/",
+      "example": "They see a traveler on the road.",
+      "translations": {
+        "es-419": "viajero",
+        "pt-BR": "viajante",
+        "id": "pengembara, musafir",
+        "ar": "مسافر",
+        "vi": "người lữ hành",
+        "hi": "मुसाफ़िर, यात्री",
+        "ru": "путник",
+        "bn": "পথিক, যাত্রী",
+        "ur": "مسافر",
+        "th": "นักเดินทาง"
+      }
+    },
+    {
+      "id": "road",
+      "word": "road",
+      "translation": "yol",
+      "pronunciation": "/roʊd/",
+      "example": "The road goes to the village.",
+      "translations": {
+        "es-419": "camino, carretera",
+        "pt-BR": "estrada, caminho",
+        "id": "jalan",
+        "ar": "طريق",
+        "vi": "con đường",
+        "hi": "सड़क",
+        "ru": "дорога",
+        "bn": "রাস্তা",
+        "ur": "سڑک، راستہ",
+        "th": "ถนน"
+      }
+    },
+    {
+      "id": "coat",
+      "word": "coat",
+      "translation": "palto",
+      "pronunciation": "/koʊt/",
+      "example": "His coat is wet.",
+      "translations": {
+        "es-419": "abrigo",
+        "pt-BR": "casaco",
+        "id": "mantel",
+        "ar": "معطف",
+        "vi": "áo khoác",
+        "hi": "कोट",
+        "ru": "пальто",
+        "bn": "কোট",
+        "ur": "کوٹ",
+        "th": "เสื้อโค้ต"
+      }
+    },
+    {
+      "id": "at-last",
+      "word": "at last",
+      "translation": "sonunda",
+      "pronunciation": "/æt læst/",
+      "example": "At last, the bus arrives.",
+      "translations": {
+        "es-419": "por fin",
+        "pt-BR": "finalmente, enfim",
+        "id": "akhirnya",
+        "ar": "أخيرًا",
+        "vi": "cuối cùng",
+        "hi": "आख़िरकार",
+        "ru": "наконец",
+        "bn": "অবশেষে",
+        "ur": "آخرکار",
+        "th": "ในที่สุด"
+      }
+    },
+    {
+      "id": "wins",
+      "word": "wins",
+      "translation": "kazanır",
+      "pronunciation": "/wɪnz/",
+      "example": "Our team wins the game.",
+      "translations": {
+        "es-419": "gana",
+        "pt-BR": "vence, ganha",
+        "id": "menang",
+        "ar": "يفوز",
+        "vi": "thắng",
+        "hi": "जीतता है",
+        "ru": "побеждает",
+        "bn": "জেতে",
+        "ur": "جیتتا ہے",
+        "th": "ชนะ"
+      }
+    },
+    {
+      "id": "force",
+      "word": "force",
+      "translation": "güç; zor kullanma",
+      "pronunciation": "/fɔːs/",
+      "example": "The Sun wins without using force.",
+      "translations": {
+        "es-419": "fuerza",
+        "pt-BR": "força",
+        "id": "kekuatan, paksaan, kekerasan",
+        "ar": "القوة",
+        "vi": "sức mạnh, vũ lực",
+        "hi": "ज़ोर, बल",
+        "ru": "сила, принуждение",
+        "bn": "জোর, বলপ্রয়োগ",
+        "ur": "زور، طاقت",
+        "th": "กำลัง, การใช้กำลัง"
+      }
+    },
+    {
+      "id": "gentleness",
+      "word": "gentleness",
+      "translation": "nezaket",
+      "pronunciation": "/ˈdʒentlnəs/",
+      "example": "Gentleness can succeed where force fails.",
+      "translations": {
+        "es-419": "amabilidad, suavidad",
+        "pt-BR": "gentileza, delicadeza",
+        "id": "kelembutan",
+        "ar": "اللطف، الرفق",
+        "vi": "sự dịu dàng",
+        "hi": "नरमी, कोमलता",
+        "ru": "мягкость, доброта",
+        "bn": "কোমলতা, নম্রতা",
+        "ur": "نرمی",
+        "th": "ความอ่อนโยน"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "north",
+    "wind",
+    "sun",
+    "argue",
+    "stronger",
+    "traveler",
+    "road",
+    "coat",
+    "at-last",
+    "wins",
+    "force",
+    "gentleness"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-north-wind-sun-q1",
+      "sentenceIds": [
+        "cl-north-wind-sun-05",
+        "cl-north-wind-sun-10",
+        "cl-north-wind-sun-12",
+        "cl-north-wind-sun-13"
+      ],
+      "rationale": "The Sun warms the traveler until he takes off his coat and wins."
+    },
+    {
+      "questionId": "classic-north-wind-sun-q2",
+      "sentenceIds": [
+        "cl-north-wind-sun-07"
+      ],
+      "rationale": "The traveler pulls his coat closer when the Wind blows."
+    },
+    {
+      "questionId": "classic-north-wind-sun-q3",
+      "sentenceIds": [
+        "cl-north-wind-sun-09",
+        "cl-north-wind-sun-10"
+      ],
+      "rationale": "After the Wind stops, the Sun shines gently."
+    },
+    {
+      "questionId": "classic-north-wind-sun-q4",
+      "sentenceIds": [
+        "classic-north-wind-sun-ext-05-02"
+      ],
+      "rationale": "The Sun agrees and hides behind a cloud during the Wind's turn."
+    }
+  ],
+  "publicationBlockers": [
+    "Owner (oguz) approval of the English text, questions and translations required.",
+    "Fresh live source snapshot and publisher validation required."
+  ],
+  "lengthening": {
+    "wordsBefore": 92,
+    "wordsAfter": 189,
+    "sentencesBefore": 14,
+    "sentencesAfter": 27
+  }
+}
