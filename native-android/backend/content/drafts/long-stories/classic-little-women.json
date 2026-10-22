@@ -1,0 +1,2470 @@
+{
+  "status": "draft",
+  "kind": "long-story",
+  "source": "long-story-classics-2026-10-22",
+  "reviewedBy": null,
+  "rights": {
+    "credit": "Louisa May Alcott",
+    "sourceTitle": "Little Women",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/514",
+    "sourceTextUrl": "https://www.gutenberg.org/cache/epub/514/pg514-images.html",
+    "identifiedContributor": {
+      "name": "Louisa May Alcott",
+      "role": "author",
+      "deathYear": 1888
+    },
+    "firstPublished": 1868,
+    "sourceCopyrightStatement": "Public domain in the USA",
+    "checkedOn": "2026-10-22",
+    "adaptation": "New graded B1 retelling written by English Tales, with English Tales translations. No modern abridgement, film script or translation was used.",
+    "turkeyAssessment": "Author died in 1888, more than 70 years before 2026, so the work is out of protection in Turkey and in life+70 countries.",
+    "rightsGuidanceUrl": "https://telifhaklari.ktb.gov.tr/TR-332373/telif-hakki-kac-yil-sureyle-korunur.html",
+    "sourceTextSha256": null,
+    "sourceTextSha256Pending": "Gutenberg is not reachable from the cloud session; record the source text hash on the owner's Mac before publication."
+  },
+  "editorialNotes": [
+    "B1 target: past tense narration, sentences of at most 20 words, about 1,200 words (about 10 minutes of reading).",
+    "Retelling of the main line of both parts (1868 and 1869): the Christmas breakfast, Laurie and Mr Laurence, Beth's piano, the burned manuscript and the ice, Jo's hair, Beth's scarlet fever, Father's return, Meg and John, Laurie's refused proposal, Professor Bhaer, Beth's death, Amy and Laurie, the umbrella proposal and Plumfield.",
+    "Beth's death is told in one calm sentence, as in the source.",
+    "Reading sections are editorial groupings for a future chapter view; the app currently shows the story as one text."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+  },
+  "readingSections": [
+    {
+      "title": "Christmas without Father",
+      "firstSentenceId": "cl-women-001",
+      "lastSentenceId": "cl-women-031"
+    },
+    {
+      "title": "The boy next door",
+      "firstSentenceId": "cl-women-032",
+      "lastSentenceId": "cl-women-060"
+    },
+    {
+      "title": "A hard winter",
+      "firstSentenceId": "cl-women-061",
+      "lastSentenceId": "cl-women-088"
+    },
+    {
+      "title": "Growing up",
+      "firstSentenceId": "cl-women-089",
+      "lastSentenceId": "cl-women-118"
+    }
+  ],
+  "story": {
+    "id": "classic-little-women",
+    "title": "Little Women",
+    "author": "Louisa May Alcott",
+    "level": "B1",
+    "genre": "Günlük yaşam",
+    "description": "Küçük Kadınlar. Babaları savaştayken yoksul ama birbirine bağlı dört kız kardeş, Meg, Jo, Beth ve Amy, büyür, sever, kaybeder ve kendi yollarını bulur. B1 düzeyinde uzun uyarlama. Uyarlama ve Türkçe çeviri: English Tales.",
+    "descriptions": {
+      "es-419": "Mujercitas. Mientras su padre está en la guerra, cuatro hermanas pobres pero muy unidas, Meg, Jo, Beth y Amy, crecen, aman, pierden y encuentran su camino. Adaptación larga de nivel B1. Adaptación: English Tales.",
+      "pt-BR": "Mulherzinhas. Enquanto o pai está na guerra, quatro irmãs pobres mas muito unidas, Meg, Jo, Beth e Amy, crescem, amam, perdem e encontram seu caminho. Adaptação longa de nível B1. Adaptação: English Tales.",
+      "id": "Little Women. Saat ayah mereka berada di medan perang, empat saudari yang miskin tetapi saling menyayangi, Meg, Jo, Beth, dan Amy, tumbuh dewasa, mencintai, kehilangan, dan menemukan jalan mereka. Adaptasi panjang tingkat B1. Adaptasi: English Tales.",
+      "ar": "نساء صغيرات. بينما الأب في الحرب، تكبر أربع أخوات فقيرات متحابّات، ميغ وجو وبيث وإيمي، فيحببن ويفقدن ويجدن طريقهنّ. اقتباس طويل بمستوى B1. الاقتباس: English Tales.",
+      "vi": "Những người phụ nữ nhỏ bé. Khi cha ở ngoài chiến trận, bốn chị em nghèo nhưng gắn bó, Meg, Jo, Beth và Amy, lớn lên, yêu thương, mất mát và tìm ra con đường của mình. Bản phóng tác dài trình độ B1. Phóng tác: English Tales.",
+      "hi": "लिटिल विमेन। पिता के युद्ध में होने के दौरान चार ग़रीब पर एक-दूसरे से जुड़ी बहनें, मेग, जो, बेथ और एमी, बड़ी होती हैं, प्यार करती हैं, खोती हैं और अपनी राह पाती हैं। B1 स्तर का लंबा रूपांतरण। रूपांतरण: English Tales.",
+      "ru": "Маленькие женщины. Пока отец на войне, четыре бедные, но дружные сестры, Мег, Джо, Бет и Эми, взрослеют, любят, теряют и находят свой путь. Длинный пересказ уровня B1. Адаптация: English Tales.",
+      "bn": "লিটল উইমেন। বাবা যখন যুদ্ধে, তখন চার গরিব কিন্তু একে অপরের প্রতি অনুরক্ত বোন, মেগ, জো, বেথ আর অ্যামি, বড় হয়, ভালোবাসে, হারায় আর নিজেদের পথ খুঁজে পায়। B1 স্তরের দীর্ঘ রূপান্তর। রূপান্তর: English Tales.",
+      "ur": "لٹل ویمن۔ والد کے جنگ میں ہوتے ہوئے چار غریب مگر ایک دوسرے سے جڑی بہنیں، میگ، جو، بیتھ اور ایمی، بڑی ہوتی ہیں، محبت کرتی ہیں، کھوتی ہیں اور اپنی راہ پاتی ہیں۔ B1 سطح کی طویل ماخوذ کہانی۔ ماخوذ: English Tales.",
+      "th": "สี่ดรุณี ขณะที่พ่ออยู่ในสงคราม สี่พี่น้องที่ยากจนแต่รักกัน คือเม็ก โจ เบธ และเอมี่ ได้เติบโต รัก สูญเสีย และค้นพบทางของตนเอง ฉบับเรียบเรียงยาวระดับ B1 เรียบเรียงโดย English Tales"
+    },
+    "coverKey": "cover_classic_little_women",
+    "tags": [
+      "gunluk-yasam"
+    ],
+    "sentences": [
+      {
+        "id": "cl-women-001",
+        "english": "Four sisters lived with their mother in an old brown house in a small American town.",
+        "turkish": "Dört kız kardeş, küçük bir Amerikan kasabasında eski, kahverengi bir evde anneleriyle birlikte yaşıyordu.",
+        "translations": {
+          "es-419": "Cuatro hermanas vivían con su madre en una vieja casa marrón de un pequeño pueblo estadounidense.",
+          "pt-BR": "Quatro irmãs moravam com a mãe numa velha casa marrom de uma pequena cidade americana.",
+          "id": "Empat kakak beradik tinggal bersama ibu mereka di sebuah rumah tua berwarna cokelat di sebuah kota kecil di Amerika.",
+          "ar": "عاشت أربع أخوات مع أمّهنّ في بيت بنّيّ قديم في بلدة أمريكية صغيرة.",
+          "vi": "Bốn chị em gái sống cùng mẹ trong một ngôi nhà cũ màu nâu ở một thị trấn nhỏ của nước Mỹ.",
+          "hi": "चार बहनें अपनी माँ के साथ एक छोटे अमेरिकी कस्बे के एक पुराने भूरे घर में रहती थीं।",
+          "ru": "Четыре сестры жили с матерью в старом коричневом доме в маленьком американском городке.",
+          "bn": "চার বোন তাদের মায়ের সঙ্গে আমেরিকার এক ছোট শহরে একটা পুরোনো বাদামি বাড়িতে থাকত।",
+          "ur": "چار بہنیں اپنی ماں کے ساتھ ایک چھوٹے امریکی قصبے کے ایک پرانے بھورے گھر میں رہتی تھیں۔",
+          "th": "สี่พี่น้องหญิงอาศัยอยู่กับแม่ในบ้านสีน้ำตาลหลังเก่าในเมืองเล็ก ๆ แห่งหนึ่งของอเมริกา"
+        }
+      },
+      {
+        "id": "cl-women-002",
+        "english": "Their names were Meg, Jo, Beth and Amy March.",
+        "turkish": "Adları Meg, Jo, Beth ve Amy March'tı.",
+        "translations": {
+          "es-419": "Se llamaban Meg, Jo, Beth y Amy March.",
+          "pt-BR": "Elas se chamavam Meg, Jo, Beth e Amy March.",
+          "id": "Nama mereka Meg, Jo, Beth, dan Amy March.",
+          "ar": "كانت أسماؤهنّ ميغ وجو وبيث وإيمي مارش.",
+          "vi": "Tên của họ là Meg, Jo, Beth và Amy March.",
+          "hi": "उनके नाम थे मेग, जो, बेथ और एमी मार्च।",
+          "ru": "Их звали Мег, Джо, Бет и Эми Марч.",
+          "bn": "তাদের নাম ছিল মেগ, জো, বেথ আর অ্যামি মার্চ।",
+          "ur": "ان کے نام میگ، جو، بیتھ اور ایمی مارچ تھے۔",
+          "th": "พวกเธอชื่อเม็ก โจ เบธ และเอมี่ มาร์ช"
+        }
+      },
+      {
+        "id": "cl-women-003",
+        "english": "Meg was sixteen and very pretty, and she loved nice dresses.",
+        "turkish": "Meg on altı yaşındaydı, çok güzeldi ve şık elbiselere bayılırdı.",
+        "translations": {
+          "es-419": "Meg tenía dieciséis años, era muy bonita y le encantaban los vestidos elegantes.",
+          "pt-BR": "Meg tinha dezesseis anos, era muito bonita e adorava vestidos bonitos.",
+          "id": "Meg berumur enam belas tahun, sangat cantik, dan suka sekali gaun yang bagus.",
+          "ar": "كانت ميغ في السادسة عشرة، جميلة جدًّا، وتحبّ الفساتين الأنيقة.",
+          "vi": "Meg mười sáu tuổi, rất xinh đẹp và mê những chiếc váy đẹp.",
+          "hi": "मेग सोलह साल की थी, बहुत सुंदर थी और उसे अच्छी पोशाकें बहुत पसंद थीं।",
+          "ru": "Мег было шестнадцать, она была очень хорошенькой и любила красивые платья.",
+          "bn": "মেগের বয়স ষোলো, সে খুব সুন্দরী ছিল আর সুন্দর পোশাক খুব ভালোবাসত।",
+          "ur": "میگ سولہ برس کی تھی، بہت خوبصورت تھی اور اسے اچھے کپڑے بہت پسند تھے۔",
+          "th": "เม็กอายุสิบหกปี สวยมาก และชอบชุดสวย ๆ เป็นที่สุด"
+        }
+      },
+      {
+        "id": "cl-women-004",
+        "english": "Jo was fifteen, tall and wild, and she wanted to be a writer.",
+        "turkish": "Jo on beş yaşındaydı; uzun boylu ve deli doluydu, yazar olmak istiyordu.",
+        "translations": {
+          "es-419": "Jo tenía quince años, era alta y alocada, y quería ser escritora.",
+          "pt-BR": "Jo tinha quinze anos, era alta e impetuosa, e queria ser escritora.",
+          "id": "Jo berumur lima belas tahun, tinggi dan liar, dan ia ingin menjadi penulis.",
+          "ar": "كانت جو في الخامسة عشرة، طويلة وجامحة، وأرادت أن تصبح كاتبة.",
+          "vi": "Jo mười lăm tuổi, cao lớn và ngang tàng, cô muốn trở thành nhà văn.",
+          "hi": "जो पंद्रह साल की थी, लंबी और बेपरवाह, और वह लेखिका बनना चाहती थी।",
+          "ru": "Джо было пятнадцать, она была высокой и непоседливой и хотела стать писательницей.",
+          "bn": "জোর বয়স পনেরো, সে লম্বা আর দুরন্ত, আর সে লেখিকা হতে চাইত।",
+          "ur": "جو پندرہ برس کی تھی، لمبی اور بے باک، اور وہ ادیبہ بننا چاہتی تھی۔",
+          "th": "โจอายุสิบห้าปี ตัวสูงและห้าวหาญ และอยากเป็นนักเขียน"
+        }
+      },
+      {
+        "id": "cl-women-005",
+        "english": "Beth was shy and gentle, and she loved music more than anything.",
+        "turkish": "Beth utangaç ve yumuşak huyluydu, müziği her şeyden çok severdi.",
+        "translations": {
+          "es-419": "Beth era tímida y dulce, y amaba la música más que nada.",
+          "pt-BR": "Beth era tímida e meiga, e amava a música mais do que tudo.",
+          "id": "Beth pemalu dan lembut, dan ia mencintai musik lebih dari apa pun.",
+          "ar": "كانت بيث خجولة ورقيقة، وتحبّ الموسيقى أكثر من أيّ شيء.",
+          "vi": "Beth nhút nhát và hiền dịu, cô yêu âm nhạc hơn bất cứ thứ gì.",
+          "hi": "बेथ शर्मीली और कोमल थी, और उसे संगीत सबसे ज़्यादा प्यारा था।",
+          "ru": "Бет была застенчивой и кроткой и любила музыку больше всего на свете.",
+          "bn": "বেথ লাজুক আর কোমল স্বভাবের, আর সে সবকিছুর চেয়ে গান-বাজনা বেশি ভালোবাসত।",
+          "ur": "بیتھ شرمیلی اور نرم مزاج تھی، اور اسے موسیقی سب سے زیادہ پیاری تھی۔",
+          "th": "เบธขี้อายและอ่อนโยน เธอรักดนตรีมากกว่าสิ่งใด"
+        }
+      },
+      {
+        "id": "cl-women-006",
+        "english": "Amy was the youngest, with golden hair, and she dreamed of being an artist.",
+        "turkish": "Amy en küçükleriydi; altın sarısı saçları vardı ve ressam olmayı hayal ederdi.",
+        "translations": {
+          "es-419": "Amy era la menor, tenía el pelo dorado y soñaba con ser artista.",
+          "pt-BR": "Amy era a caçula, tinha cabelos dourados e sonhava ser artista.",
+          "id": "Amy yang paling muda, berambut keemasan, dan ia bermimpi menjadi seniman.",
+          "ar": "كانت إيمي الصغرى، ذات شعر ذهبيّ، وكانت تحلم بأن تصبح فنّانة.",
+          "vi": "Amy là em út, có mái tóc vàng óng và mơ ước trở thành họa sĩ.",
+          "hi": "एमी सबसे छोटी थी, उसके बाल सुनहरे थे और वह कलाकार बनने के सपने देखती थी।",
+          "ru": "Эми была младшей, с золотыми волосами, и мечтала стать художницей.",
+          "bn": "অ্যামি সবার ছোট, তার চুল সোনালি, আর সে শিল্পী হওয়ার স্বপ্ন দেখত।",
+          "ur": "ایمی سب سے چھوٹی تھی، اس کے بال سنہرے تھے اور وہ فنکار بننے کے خواب دیکھتی تھی۔",
+          "th": "เอมี่เป็นน้องคนเล็ก ผมสีทอง และใฝ่ฝันอยากเป็นศิลปิน"
+        }
+      },
+      {
+        "id": "cl-women-007",
+        "english": "Their mother, whom the girls called Marmee, was kind and wise.",
+        "turkish": "Kızların \"Marmee\" diye seslendiği anneleri iyi kalpli ve bilgeydi.",
+        "translations": {
+          "es-419": "Su madre, a quien las chicas llamaban Marmee, era bondadosa y sabia.",
+          "pt-BR": "A mãe delas, a quem as meninas chamavam de Marmee, era bondosa e sábia.",
+          "id": "Ibu mereka, yang mereka panggil Marmee, baik hati dan bijaksana.",
+          "ar": "كانت أمّهنّ، التي تناديها البنات «مارمي»، طيّبة وحكيمة.",
+          "vi": "Mẹ của các cô, người mà các cô gọi là Marmee, hiền hậu và khôn ngoan.",
+          "hi": "उनकी माँ, जिन्हें लड़कियाँ \"मार्मी\" कहती थीं, दयालु और समझदार थीं।",
+          "ru": "Их мать, которую девочки звали Марми, была доброй и мудрой.",
+          "bn": "তাদের মা, যাঁকে মেয়েরা \"মারমি\" বলে ডাকত, ছিলেন দয়ালু আর জ্ঞানী।",
+          "ur": "ان کی ماں، جنہیں لڑکیاں \"مارمی\" کہتی تھیں، مہربان اور سمجھدار تھیں۔",
+          "th": "แม่ของพวกเธอซึ่งลูก ๆ เรียกว่า \"มาร์มี\" เป็นคนใจดีและเฉลียวฉลาด"
+        }
+      },
+      {
+        "id": "cl-women-008",
+        "english": "Their father was far away in the war.",
+        "turkish": "Babaları çok uzaklarda, savaştaydı.",
+        "translations": {
+          "es-419": "Su padre estaba lejos, en la guerra.",
+          "pt-BR": "O pai delas estava longe, na guerra.",
+          "id": "Ayah mereka berada jauh di medan perang.",
+          "ar": "كان أبوهنّ بعيدًا في الحرب.",
+          "vi": "Cha của các cô đang ở rất xa, nơi chiến trận.",
+          "hi": "उनके पिता दूर युद्ध में गए हुए थे।",
+          "ru": "Их отец был далеко, на войне.",
+          "bn": "তাদের বাবা অনেক দূরে, যুদ্ধে গিয়েছিলেন।",
+          "ur": "ان کے والد دور جنگ میں گئے ہوئے تھے۔",
+          "th": "พ่อของพวกเธออยู่ไกลในสงคราม"
+        }
+      },
+      {
+        "id": "cl-women-009",
+        "english": "He was not a soldier, but he cared for the sick and wounded men.",
+        "turkish": "Asker değildi ama hasta ve yaralı adamlarla ilgileniyordu.",
+        "translations": {
+          "es-419": "No era soldado, pero cuidaba a los hombres enfermos y heridos.",
+          "pt-BR": "Ele não era soldado, mas cuidava dos homens doentes e feridos.",
+          "id": "Ia bukan tentara, tetapi ia merawat orang-orang yang sakit dan terluka.",
+          "ar": "لم يكن جنديًّا، لكنّه كان يعتني بالرجال المرضى والجرحى.",
+          "vi": "Ông không phải là lính, nhưng ông chăm sóc những người ốm và bị thương.",
+          "hi": "वे सैनिक नहीं थे, पर बीमार और घायल लोगों की देखभाल करते थे।",
+          "ru": "Он не был солдатом, но ухаживал за больными и ранеными.",
+          "bn": "তিনি সৈনিক ছিলেন না, কিন্তু অসুস্থ আর আহত মানুষদের দেখাশোনা করতেন।",
+          "ur": "وہ سپاہی نہیں تھے، لیکن بیمار اور زخمی لوگوں کی دیکھ بھال کرتے تھے۔",
+          "th": "เขาไม่ใช่ทหาร แต่คอยดูแลคนป่วยและคนบาดเจ็บ"
+        }
+      },
+      {
+        "id": "cl-women-010",
+        "english": "The family had lost its money, so the older girls had to work.",
+        "turkish": "Aile parasını kaybetmişti, bu yüzden büyük kızlar çalışmak zorundaydı.",
+        "translations": {
+          "es-419": "La familia había perdido su dinero, así que las chicas mayores tenían que trabajar.",
+          "pt-BR": "A família tinha perdido o dinheiro, então as meninas mais velhas precisavam trabalhar.",
+          "id": "Keluarga itu telah kehilangan hartanya, jadi anak-anak yang lebih tua harus bekerja.",
+          "ar": "كانت العائلة قد خسرت مالها، فاضطرّت البنات الكبيرات إلى العمل.",
+          "vi": "Gia đình đã mất hết tiền, nên các cô chị phải đi làm.",
+          "hi": "परिवार का पैसा जा चुका था, इसलिए बड़ी लड़कियों को काम करना पड़ता था।",
+          "ru": "Семья потеряла свои деньги, и старшим девочкам приходилось работать.",
+          "bn": "পরিবারটির টাকাপয়সা চলে গিয়েছিল, তাই বড় মেয়েদের কাজ করতে হত।",
+          "ur": "خاندان کا پیسہ ختم ہو چکا تھا، اس لیے بڑی لڑکیوں کو کام کرنا پڑتا تھا۔",
+          "th": "ครอบครัวนี้สูญเงินไปหมด ลูกสาวคนโต ๆ จึงต้องทำงาน"
+        }
+      },
+      {
+        "id": "cl-women-011",
+        "english": "Meg taught small children, and Jo read books to an old aunt.",
+        "turkish": "Meg küçük çocuklara ders veriyor, Jo da yaşlı bir halasına kitap okuyordu.",
+        "translations": {
+          "es-419": "Meg les daba clases a niños pequeños, y Jo les leía libros a una tía anciana.",
+          "pt-BR": "Meg dava aulas para crianças pequenas, e Jo lia livros para uma tia idosa.",
+          "id": "Meg mengajar anak-anak kecil, dan Jo membacakan buku untuk seorang bibi tua.",
+          "ar": "كانت ميغ تعلّم أطفالًا صغارًا، وكانت جو تقرأ الكتب لعمّة عجوز.",
+          "vi": "Meg dạy trẻ nhỏ, còn Jo đọc sách cho một bà cô già nghe.",
+          "hi": "मेग छोटे बच्चों को पढ़ाती थी, और जो एक बूढ़ी बुआ को किताबें पढ़कर सुनाती थी।",
+          "ru": "Мег учила маленьких детей, а Джо читала книги старой тётушке.",
+          "bn": "মেগ ছোট বাচ্চাদের পড়াত, আর জো এক বুড়ি পিসিকে বই পড়ে শোনাত।",
+          "ur": "میگ چھوٹے بچوں کو پڑھاتی تھی، اور جو ایک بوڑھی پھوپھی کو کتابیں پڑھ کر سناتی تھی۔",
+          "th": "เม็กสอนเด็กเล็ก ส่วนโจอ่านหนังสือให้ป้าแก่คนหนึ่งฟัง"
+        }
+      },
+      {
+        "id": "cl-women-012",
+        "english": "It was nearly Christmas, and the sisters sat together by the fire.",
+        "turkish": "Noel yaklaşıyordu ve kız kardeşler ateşin başında birlikte oturuyordu.",
+        "translations": {
+          "es-419": "Ya casi era Navidad, y las hermanas estaban sentadas juntas junto al fuego.",
+          "pt-BR": "Era quase Natal, e as irmãs estavam sentadas juntas perto da lareira.",
+          "id": "Natal sudah dekat, dan para saudari itu duduk bersama di dekat perapian.",
+          "ar": "كان عيد الميلاد قريبًا، وجلست الأخوات معًا قرب المدفأة.",
+          "vi": "Đã gần đến Giáng sinh, và các chị em ngồi quây quần bên lò sưởi.",
+          "hi": "क्रिसमस आने वाला था, और बहनें आग के पास साथ बैठी थीं।",
+          "ru": "Близилось Рождество, и сёстры сидели вместе у камина.",
+          "bn": "বড়দিন প্রায় এসে গেছে, আর বোনেরা একসঙ্গে আগুনের পাশে বসে ছিল।",
+          "ur": "کرسمس قریب تھا، اور بہنیں آگ کے پاس اکٹھی بیٹھی تھیں۔",
+          "th": "ใกล้คริสต์มาสแล้ว และพี่น้องนั่งรวมกันอยู่ข้างเตาผิง"
+        }
+      },
+      {
+        "id": "cl-women-013",
+        "english": "\"Christmas won't be Christmas without any presents,\" said Jo.",
+        "turkish": "\"Hiç hediye olmadan Noel, Noel olmaz,\" dedi Jo.",
+        "translations": {
+          "es-419": "—La Navidad no será Navidad sin regalos —dijo Jo.",
+          "pt-BR": "— O Natal não vai ser Natal sem nenhum presente — disse Jo.",
+          "id": "\"Natal tidak akan terasa seperti Natal tanpa hadiah,\" kata Jo.",
+          "ar": "قالت جو: «لن يكون عيد الميلاد عيدًا من دون أيّ هدايا».",
+          "vi": "\"Giáng sinh mà không có quà thì chẳng ra Giáng sinh,\" Jo nói.",
+          "hi": "\"बिना किसी तोहफ़े के क्रिसमस, क्रिसमस नहीं लगेगा,\" जो ने कहा।",
+          "ru": "«Рождество без подарков — не Рождество», — сказала Джо.",
+          "bn": "\"কোনো উপহার ছাড়া বড়দিন, বড়দিনই মনে হবে না,\" বলল জো।",
+          "ur": "\"بغیر تحفوں کے کرسمس، کرسمس نہیں لگے گا،\" جو نے کہا۔",
+          "th": "\"คริสต์มาสที่ไม่มีของขวัญเลยก็ไม่ใช่คริสต์มาสหรอก\" โจพูด"
+        }
+      },
+      {
+        "id": "cl-women-014",
+        "english": "\"It's so bad to be poor!\" sighed Meg, looking at her old dress.",
+        "turkish": "\"Yoksul olmak ne kötü!\" diye iç geçirdi Meg, eski elbisesine bakarak.",
+        "translations": {
+          "es-419": "—¡Qué triste es ser pobre! —suspiró Meg, mirando su vestido viejo.",
+          "pt-BR": "— Como é ruim ser pobre! — suspirou Meg, olhando para o vestido velho.",
+          "id": "\"Menjadi miskin itu sangat tidak enak!\" keluh Meg sambil melihat gaun tuanya.",
+          "ar": "تنهّدت ميغ وهي تنظر إلى فستانها القديم: «ما أسوأ أن يكون المرء فقيرًا!»",
+          "vi": "\"Nghèo thật là khổ!\" Meg thở dài, nhìn chiếc váy cũ của mình.",
+          "hi": "\"ग़रीब होना कितना बुरा है!\" मेग ने अपनी पुरानी पोशाक देखते हुए आह भरी।",
+          "ru": "«Как плохо быть бедными!» — вздохнула Мег, глядя на своё старое платье.",
+          "bn": "\"গরিব হওয়া কী খারাপ!\" নিজের পুরোনো জামার দিকে তাকিয়ে দীর্ঘশ্বাস ফেলল মেগ।",
+          "ur": "\"غریب ہونا کتنا برا ہے!\" میگ نے اپنے پرانے کپڑوں کو دیکھتے ہوئے آہ بھری۔",
+          "th": "\"การเป็นคนจนนี่แย่จริง ๆ!\" เม็กถอนใจขณะมองชุดเก่าของตัวเอง"
+        }
+      },
+      {
+        "id": "cl-women-015",
+        "english": "Each sister had one dollar, and each wanted to buy something for herself.",
+        "turkish": "Her kız kardeşin bir doları vardı ve her biri kendine bir şey almak istiyordu.",
+        "translations": {
+          "es-419": "Cada hermana tenía un dólar, y cada una quería comprarse algo para sí misma.",
+          "pt-BR": "Cada irmã tinha um dólar, e cada uma queria comprar algo para si mesma.",
+          "id": "Setiap saudari punya satu dolar, dan masing-masing ingin membeli sesuatu untuk dirinya sendiri.",
+          "ar": "كان مع كلّ أخت دولار واحد، وأرادت كلّ واحدة أن تشتري شيئًا لنفسها.",
+          "vi": "Mỗi cô có một đô la, và cô nào cũng muốn mua gì đó cho riêng mình.",
+          "hi": "हर बहन के पास एक डॉलर था, और हर कोई अपने लिए कुछ ख़रीदना चाहती थी।",
+          "ru": "У каждой сестры был один доллар, и каждая хотела купить что-нибудь себе.",
+          "bn": "প্রত্যেক বোনের কাছে এক ডলার ছিল, আর প্রত্যেকে নিজের জন্য কিছু কিনতে চাইছিল।",
+          "ur": "ہر بہن کے پاس ایک ڈالر تھا، اور ہر ایک اپنے لیے کچھ خریدنا چاہتی تھی۔",
+          "th": "พี่น้องแต่ละคนมีเงินคนละหนึ่งดอลลาร์ และต่างก็อยากซื้ออะไรให้ตัวเอง"
+        }
+      },
+      {
+        "id": "cl-women-016",
+        "english": "Then Beth looked at their mother's old slippers by the fire.",
+        "turkish": "Sonra Beth, ateşin yanında duran annelerinin eski terliklerine baktı.",
+        "translations": {
+          "es-419": "Entonces Beth miró las pantuflas viejas de su madre junto al fuego.",
+          "pt-BR": "Então Beth olhou para os chinelos velhos da mãe perto da lareira.",
+          "id": "Lalu Beth melihat sandal rumah ibu mereka yang sudah usang di dekat perapian.",
+          "ar": "ثمّ نظرت بيث إلى خُفّي أمّهنّ القديمين قرب المدفأة.",
+          "vi": "Rồi Beth nhìn đôi dép cũ của mẹ đặt cạnh lò sưởi.",
+          "hi": "तभी बेथ ने आग के पास रखी माँ की पुरानी चप्पलों को देखा।",
+          "ru": "Тут Бет посмотрела на старые мамины тапочки у камина.",
+          "bn": "তখন বেথ আগুনের পাশে রাখা মায়ের পুরোনো চটির দিকে তাকাল।",
+          "ur": "تب بیتھ نے آگ کے پاس رکھی ماں کی پرانی چپلوں کو دیکھا۔",
+          "th": "แล้วเบธก็มองรองเท้าแตะเก่า ๆ ของแม่ที่วางอยู่ข้างเตาผิง"
+        }
+      },
+      {
+        "id": "cl-women-017",
+        "english": "\"Let's buy a gift for Marmee instead,\" she said quietly.",
+        "turkish": "\"Onun yerine Marmee'ye bir hediye alalım,\" dedi usulca.",
+        "translations": {
+          "es-419": "—Mejor compremos un regalo para Marmee —dijo en voz baja.",
+          "pt-BR": "— Vamos comprar um presente para a Marmee em vez disso — disse ela baixinho.",
+          "id": "\"Bagaimana kalau kita belikan hadiah untuk Marmee saja,\" katanya pelan.",
+          "ar": "قالت بهدوء: «لنشترِ هديّة لمارمي بدلًا من ذلك».",
+          "vi": "\"Thay vào đó, mình mua quà cho Marmee đi,\" cô khẽ nói.",
+          "hi": "\"इसके बजाय चलो मार्मी के लिए तोहफ़ा ख़रीदें,\" उसने धीरे से कहा।",
+          "ru": "«Давайте лучше купим подарок Марми», — тихо сказала она.",
+          "bn": "\"তার বদলে চলো মারমির জন্য একটা উপহার কিনি,\" সে আস্তে বলল।",
+          "ur": "\"اس کے بجائے آؤ مارمی کے لیے تحفہ خریدیں،\" اس نے آہستہ سے کہا۔",
+          "th": "\"เราซื้อของขวัญให้มาร์มีแทนดีกว่า\" เธอพูดเบา ๆ"
+        }
+      },
+      {
+        "id": "cl-women-018",
+        "english": "The others agreed at once, and they felt happy and warm inside.",
+        "turkish": "Diğerleri hemen kabul etti ve içleri mutlulukla ısındı.",
+        "translations": {
+          "es-419": "Las demás estuvieron de acuerdo enseguida y se sintieron felices y llenas de calor.",
+          "pt-BR": "As outras concordaram na hora e se sentiram felizes e aquecidas por dentro.",
+          "id": "Yang lain langsung setuju, dan hati mereka terasa bahagia dan hangat.",
+          "ar": "وافقت الأخريات على الفور، وشعرن بالسعادة والدفء في قلوبهنّ.",
+          "vi": "Các cô kia đồng ý ngay, và thấy lòng vui vẻ, ấm áp.",
+          "hi": "बाक़ी सब तुरंत मान गईं, और उनके मन में ख़ुशी और गर्माहट भर गई।",
+          "ru": "Остальные сразу согласились, и им стало радостно и тепло на душе.",
+          "bn": "বাকিরা সঙ্গে সঙ্গে রাজি হল, আর তাদের মন আনন্দে আর উষ্ণতায় ভরে গেল।",
+          "ur": "باقی سب فوراً مان گئیں، اور ان کے دل خوشی اور گرمجوشی سے بھر گئے۔",
+          "th": "คนอื่น ๆ ตกลงทันที และรู้สึกอบอุ่นใจและมีความสุข"
+        }
+      },
+      {
+        "id": "cl-women-019",
+        "english": "On Christmas morning, Marmee came home with sad news.",
+        "turkish": "Noel sabahı Marmee eve üzücü bir haberle geldi.",
+        "translations": {
+          "es-419": "La mañana de Navidad, Marmee llegó a casa con una noticia triste.",
+          "pt-BR": "Na manhã de Natal, Marmee chegou em casa com uma notícia triste.",
+          "id": "Pada pagi Natal, Marmee pulang membawa kabar sedih.",
+          "ar": "في صباح عيد الميلاد، عادت مارمي إلى البيت بخبر حزين.",
+          "vi": "Sáng Giáng sinh, Marmee về nhà với một tin buồn.",
+          "hi": "क्रिसमस की सुबह मार्मी एक दुखद ख़बर लेकर घर आईं।",
+          "ru": "Рождественским утром Марми вернулась домой с печальной новостью.",
+          "bn": "বড়দিনের সকালে মারমি একটা দুঃখের খবর নিয়ে বাড়ি ফিরলেন।",
+          "ur": "کرسمس کی صبح مارمی ایک افسوسناک خبر لے کر گھر آئیں۔",
+          "th": "เช้าวันคริสต์มาส มาร์มีกลับบ้านมาพร้อมข่าวเศร้า"
+        }
+      },
+      {
+        "id": "cl-women-020",
+        "english": "A poor German family, the Hummels, lived nearby with six children.",
+        "turkish": "Yakında yoksul bir Alman ailesi, Hummel'ler, altı çocuklarıyla yaşıyordu.",
+        "translations": {
+          "es-419": "Cerca vivía una familia alemana pobre, los Hummel, con seis hijos.",
+          "pt-BR": "Perto dali morava uma família alemã pobre, os Hummel, com seis filhos.",
+          "id": "Di dekat situ tinggal sebuah keluarga Jerman yang miskin, keluarga Hummel, dengan enam anak.",
+          "ar": "كانت تعيش بالقرب منهنّ عائلة ألمانية فقيرة، عائلة هومل، مع ستّة أطفال.",
+          "vi": "Gần đó có một gia đình người Đức nghèo, nhà Hummel, sống cùng sáu đứa con.",
+          "hi": "पास ही एक ग़रीब जर्मन परिवार, हमल परिवार, अपने छह बच्चों के साथ रहता था।",
+          "ru": "Неподалёку жила бедная немецкая семья Хаммелов с шестью детьми.",
+          "bn": "কাছেই এক গরিব জার্মান পরিবার, হামেলরা, ছয়টি ছেলেমেয়ে নিয়ে থাকত।",
+          "ur": "قریب ہی ایک غریب جرمن خاندان، ہمل خاندان، اپنے چھ بچوں کے ساتھ رہتا تھا۔",
+          "th": "ใกล้ ๆ นั้นมีครอบครัวชาวเยอรมันยากจนครอบครัวหนึ่ง คือครอบครัวฮัมเมล อาศัยอยู่กับลูกหกคน"
+        }
+      },
+      {
+        "id": "cl-women-021",
+        "english": "They had no food and no wood for a fire.",
+        "turkish": "Ne yiyecekleri ne de ateş yakacak odunları vardı.",
+        "translations": {
+          "es-419": "No tenían comida ni leña para el fuego.",
+          "pt-BR": "Eles não tinham comida nem lenha para o fogo.",
+          "id": "Mereka tidak punya makanan dan tidak punya kayu bakar.",
+          "ar": "لم يكن لديهم طعام ولا حطب للنار.",
+          "vi": "Họ không có thức ăn, cũng không có củi để đốt lửa.",
+          "hi": "उनके पास न खाना था, न आग जलाने के लिए लकड़ी।",
+          "ru": "У них не было ни еды, ни дров для огня.",
+          "bn": "তাদের খাবারও ছিল না, আগুন জ্বালানোর কাঠও ছিল না।",
+          "ur": "ان کے پاس نہ کھانا تھا نہ آگ جلانے کو لکڑی۔",
+          "th": "พวกเขาไม่มีทั้งอาหารและฟืนก่อไฟ"
+        }
+      },
+      {
+        "id": "cl-women-022",
+        "english": "\"Will you give them your breakfast as a Christmas present?\" asked Marmee.",
+        "turkish": "\"Kahvaltınızı onlara Noel hediyesi olarak verir misiniz?\" diye sordu Marmee.",
+        "translations": {
+          "es-419": "—¿Les darían su desayuno como regalo de Navidad? —preguntó Marmee.",
+          "pt-BR": "— Vocês dariam o café da manhã de vocês a eles como presente de Natal? — perguntou Marmee.",
+          "id": "\"Maukah kalian memberikan sarapan kalian kepada mereka sebagai hadiah Natal?\" tanya Marmee.",
+          "ar": "سألت مارمي: «هل تعطينهم فطوركنّ هديّةً لعيد الميلاد؟»",
+          "vi": "\"Các con có muốn tặng bữa sáng của mình cho họ làm quà Giáng sinh không?\" Marmee hỏi.",
+          "hi": "\"क्या तुम अपना नाश्ता उन्हें क्रिसमस के तोहफ़े के रूप में दोगी?\" मार्मी ने पूछा।",
+          "ru": "«Отдадите им свой завтрак как рождественский подарок?» — спросила Марми.",
+          "bn": "\"তোমরা কি তোমাদের সকালের খাবার ওদের বড়দিনের উপহার হিসেবে দেবে?\" জিজ্ঞেস করলেন মারমি।",
+          "ur": "\"کیا تم اپنا ناشتہ انہیں کرسمس کے تحفے کے طور پر دو گی؟\" مارمی نے پوچھا۔",
+          "th": "\"ลูก ๆ จะยกอาหารเช้าให้พวกเขาเป็นของขวัญคริสต์มาสไหม\" มาร์มีถาม"
+        }
+      },
+      {
+        "id": "cl-women-023",
+        "english": "The girls were very hungry, but they did not wait long.",
+        "turkish": "Kızlar çok açtı ama fazla düşünmediler.",
+        "translations": {
+          "es-419": "Las chicas tenían mucha hambre, pero no lo pensaron mucho.",
+          "pt-BR": "As meninas estavam com muita fome, mas não pensaram muito.",
+          "id": "Anak-anak itu sangat lapar, tetapi mereka tidak berpikir lama.",
+          "ar": "كانت البنات جائعات جدًّا، لكنّهنّ لم يتردّدن طويلًا.",
+          "vi": "Các cô rất đói, nhưng không chần chừ lâu.",
+          "hi": "लड़कियाँ बहुत भूखी थीं, पर उन्होंने ज़्यादा देर नहीं सोचा।",
+          "ru": "Девочки были очень голодны, но долго не раздумывали.",
+          "bn": "মেয়েরা খুব ক্ষুধার্ত ছিল, কিন্তু বেশিক্ষণ ভাবল না।",
+          "ur": "لڑکیاں بہت بھوکی تھیں، مگر انہوں نے زیادہ دیر نہیں سوچا۔",
+          "th": "เด็กสาวทั้งสี่หิวมาก แต่ก็ไม่ลังเลนาน"
+        }
+      },
+      {
+        "id": "cl-women-024",
+        "english": "\"I'm so glad you came before we began!\" cried Jo.",
+        "turkish": "\"Biz başlamadan geldiğine çok sevindim!\" diye haykırdı Jo.",
+        "translations": {
+          "es-419": "—¡Qué bueno que llegaste antes de que empezáramos! —exclamó Jo.",
+          "pt-BR": "— Que bom que você chegou antes de a gente começar! — exclamou Jo.",
+          "id": "\"Untung Ibu datang sebelum kami mulai makan!\" seru Jo.",
+          "ar": "صاحت جو: «كم أنا سعيدة لأنّكِ جئتِ قبل أن نبدأ!»",
+          "vi": "\"Con mừng quá vì mẹ về trước khi tụi con bắt đầu ăn!\" Jo reo lên.",
+          "hi": "\"अच्छा हुआ आप हमारे शुरू करने से पहले आ गईं!\" जो चहक उठी।",
+          "ru": "«Как хорошо, что ты пришла, пока мы не начали!» — воскликнула Джо.",
+          "bn": "\"ভাগ্যিস আমরা খাওয়া শুরু করার আগেই তুমি এলে!\" চেঁচিয়ে উঠল জো।",
+          "ur": "\"شکر ہے آپ ہمارے شروع کرنے سے پہلے آ گئیں!\" جو پکار اٹھی۔",
+          "th": "\"ดีจังที่แม่มาก่อนเราจะเริ่มกิน!\" โจร้อง"
+        }
+      },
+      {
+        "id": "cl-women-025",
+        "english": "They carried bread, milk and cakes through the snow to the cold little room.",
+        "turkish": "Ekmeği, sütü ve kekleri karların içinden o soğuk küçük odaya taşıdılar.",
+        "translations": {
+          "es-419": "Llevaron pan, leche y pasteles por la nieve hasta el cuartito frío.",
+          "pt-BR": "Levaram pão, leite e bolos pela neve até o quartinho frio.",
+          "id": "Mereka membawa roti, susu, dan kue melewati salju ke kamar kecil yang dingin itu.",
+          "ar": "حملن الخبز والحليب والكعك عبر الثلج إلى تلك الغرفة الصغيرة الباردة.",
+          "vi": "Các cô mang bánh mì, sữa và bánh ngọt băng qua tuyết đến căn phòng nhỏ lạnh lẽo.",
+          "hi": "वे बर्फ़ के बीच से रोटी, दूध और केक उस ठंडे छोटे कमरे तक ले गईं।",
+          "ru": "Они понесли хлеб, молоко и пироги по снегу в холодную комнатку.",
+          "bn": "তারা রুটি, দুধ আর কেক নিয়ে বরফের মধ্য দিয়ে সেই ঠান্ডা ছোট ঘরে গেল।",
+          "ur": "وہ روٹی، دودھ اور کیک برف میں سے اس ٹھنڈے چھوٹے کمرے تک لے گئیں۔",
+          "th": "พวกเธอถือขนมปัง นม และขนมเค้กฝ่าหิมะไปยังห้องเล็ก ๆ ที่หนาวเหน็บนั้น"
+        }
+      },
+      {
+        "id": "cl-women-026",
+        "english": "The hungry children ate and laughed, and called the girls angels.",
+        "turkish": "Aç çocuklar yiyip güldüler ve kızlara melek dediler.",
+        "translations": {
+          "es-419": "Los niños hambrientos comieron y rieron, y llamaron ángeles a las chicas.",
+          "pt-BR": "As crianças famintas comeram e riram, e chamaram as meninas de anjos.",
+          "id": "Anak-anak yang lapar itu makan dan tertawa, lalu menyebut gadis-gadis itu malaikat.",
+          "ar": "أكل الأطفال الجائعون وضحكوا، وسمّوا البنات ملائكة.",
+          "vi": "Lũ trẻ đói ăn uống, cười đùa và gọi các cô là thiên thần.",
+          "hi": "भूखे बच्चों ने खाया, हँसे, और लड़कियों को फ़रिश्ते कहा।",
+          "ru": "Голодные дети ели, смеялись и называли девочек ангелами.",
+          "bn": "ক্ষুধার্ত বাচ্চারা খেল, হাসল, আর মেয়েদের দেবদূত বলে ডাকল।",
+          "ur": "بھوکے بچوں نے کھایا، ہنسے، اور لڑکیوں کو فرشتے کہا۔",
+          "th": "เด็ก ๆ ที่หิวโหยกินและหัวเราะ แล้วเรียกพวกเธอว่านางฟ้า"
+        }
+      },
+      {
+        "id": "cl-women-027",
+        "english": "That day, the sisters had only bread and milk for breakfast.",
+        "turkish": "O gün kız kardeşler kahvaltıda yalnızca ekmek ve süt yedi.",
+        "translations": {
+          "es-419": "Ese día, las hermanas desayunaron solo pan y leche.",
+          "pt-BR": "Naquele dia, as irmãs tomaram só pão e leite no café da manhã.",
+          "id": "Hari itu, para saudari hanya sarapan roti dan susu.",
+          "ar": "في ذلك اليوم، لم يكن فطور الأخوات سوى الخبز والحليب.",
+          "vi": "Hôm đó, các chị em chỉ ăn sáng bằng bánh mì và sữa.",
+          "hi": "उस दिन बहनों ने नाश्ते में सिर्फ़ रोटी और दूध लिया।",
+          "ru": "В тот день сёстры позавтракали только хлебом с молоком.",
+          "bn": "সেদিন বোনেরা সকালে শুধু রুটি আর দুধ খেল।",
+          "ur": "اس دن بہنوں نے ناشتے میں صرف روٹی اور دودھ لیا۔",
+          "th": "วันนั้นพี่น้องกินแค่ขนมปังกับนมเป็นอาหารเช้า"
+        }
+      },
+      {
+        "id": "cl-women-028",
+        "english": "But that evening, a surprise arrived from the big house next door.",
+        "turkish": "Ama o akşam yandaki büyük evden bir sürpriz geldi.",
+        "translations": {
+          "es-419": "Pero esa noche llegó una sorpresa de la casa grande de al lado.",
+          "pt-BR": "Mas naquela noite chegou uma surpresa da casa grande ao lado.",
+          "id": "Tetapi malam itu, sebuah kejutan datang dari rumah besar di sebelah.",
+          "ar": "لكن في ذلك المساء، وصلت مفاجأة من البيت الكبير المجاور.",
+          "vi": "Nhưng tối hôm đó, một bất ngờ đến từ ngôi nhà lớn bên cạnh.",
+          "hi": "पर उस शाम बग़ल के बड़े घर से एक सरप्राइज़ आया।",
+          "ru": "Но вечером из большого соседнего дома пришёл сюрприз.",
+          "bn": "কিন্তু সেই সন্ধ্যায় পাশের বড় বাড়ি থেকে একটা চমক এল।",
+          "ur": "لیکن اس شام برابر والے بڑے گھر سے ایک سرپرائز آیا۔",
+          "th": "แต่เย็นวันนั้น มีของประหลาดใจส่งมาจากบ้านหลังใหญ่ข้าง ๆ"
+        }
+      },
+      {
+        "id": "cl-women-029",
+        "english": "Their rich neighbor, old Mr Laurence, had heard about the breakfast.",
+        "turkish": "Zengin komşuları yaşlı Bay Laurence kahvaltı olayını duymuştu.",
+        "translations": {
+          "es-419": "Su vecino rico, el anciano señor Laurence, se había enterado del desayuno.",
+          "pt-BR": "O vizinho rico, o velho senhor Laurence, tinha ficado sabendo do café da manhã.",
+          "id": "Tetangga mereka yang kaya, Tuan Laurence tua, sudah mendengar tentang sarapan itu.",
+          "ar": "كان جارهنّ الغنيّ، السيد لورنس العجوز، قد سمع بأمر الفطور.",
+          "vi": "Người hàng xóm giàu có, ông Laurence già, đã nghe chuyện bữa sáng ấy.",
+          "hi": "उनके अमीर पड़ोसी, बूढ़े मिस्टर लॉरेंस, ने नाश्ते वाली बात सुन ली थी।",
+          "ru": "Их богатый сосед, старый мистер Лоренс, узнал о завтраке.",
+          "bn": "তাদের ধনী প্রতিবেশী, বৃদ্ধ মিস্টার লরেন্স, সকালের খাবারের কথা শুনেছিলেন।",
+          "ur": "ان کے امیر پڑوسی، بوڑھے مسٹر لارنس، نے ناشتے والی بات سن لی تھی۔",
+          "th": "เพื่อนบ้านผู้ร่ำรวย คือคุณลอเรนซ์ผู้ชรา ได้ยินเรื่องอาหารเช้านั้นแล้ว"
+        }
+      },
+      {
+        "id": "cl-women-030",
+        "english": "He sent ice cream, cake, fruit and flowers to the March girls.",
+        "turkish": "March kızlarına dondurma, pasta, meyve ve çiçek gönderdi.",
+        "translations": {
+          "es-419": "Les envió helado, pastel, fruta y flores a las chicas March.",
+          "pt-BR": "Ele mandou sorvete, bolo, frutas e flores para as meninas March.",
+          "id": "Ia mengirimkan es krim, kue, buah, dan bunga untuk gadis-gadis March.",
+          "ar": "أرسل إلى بنات مارش المثلّجات والكعك والفاكهة والزهور.",
+          "vi": "Ông gửi kem, bánh, trái cây và hoa sang cho các cô nhà March.",
+          "hi": "उन्होंने मार्च लड़कियों के लिए आइसक्रीम, केक, फल और फूल भेजे।",
+          "ru": "Он прислал девочкам Марч мороженое, торт, фрукты и цветы.",
+          "bn": "তিনি মার্চ মেয়েদের জন্য আইসক্রিম, কেক, ফল আর ফুল পাঠালেন।",
+          "ur": "انہوں نے مارچ لڑکیوں کے لیے آئس کریم، کیک، پھل اور پھول بھیجے۔",
+          "th": "เขาส่งไอศกรีม เค้ก ผลไม้ และดอกไม้มาให้สาว ๆ บ้านมาร์ช"
+        }
+      },
+      {
+        "id": "cl-women-031",
+        "english": "It was a strange Christmas, without Father, but it was full of love.",
+        "turkish": "Babasız, tuhaf bir Noel'di ama sevgiyle doluydu.",
+        "translations": {
+          "es-419": "Fue una Navidad extraña, sin papá, pero llena de amor.",
+          "pt-BR": "Foi um Natal estranho, sem o pai, mas cheio de amor.",
+          "id": "Itu Natal yang aneh, tanpa Ayah, tetapi penuh cinta.",
+          "ar": "كان عيد ميلاد غريبًا من دون الأب، لكنّه كان مليئًا بالحبّ.",
+          "vi": "Đó là một mùa Giáng sinh lạ lùng, vắng cha, nhưng tràn đầy yêu thương.",
+          "hi": "पिता के बिना वह एक अजीब क्रिसमस था, पर प्यार से भरा हुआ।",
+          "ru": "Это было странное Рождество, без папы, но полное любви.",
+          "bn": "বাবাকে ছাড়া সেটা ছিল এক অদ্ভুত বড়দিন, কিন্তু ভালোবাসায় ভরা।",
+          "ur": "والد کے بغیر وہ ایک عجیب کرسمس تھا، مگر محبت سے بھرا ہوا۔",
+          "th": "นั่นเป็นคริสต์มาสที่แปลก ไม่มีพ่ออยู่ด้วย แต่เต็มไปด้วยความรัก"
+        }
+      },
+      {
+        "id": "cl-women-032",
+        "english": "Mr Laurence lived alone with his grandson, a boy called Laurie.",
+        "turkish": "Bay Laurence, Laurie adında bir oğlan olan torunuyla yalnız yaşıyordu.",
+        "translations": {
+          "es-419": "El señor Laurence vivía solo con su nieto, un muchacho llamado Laurie.",
+          "pt-BR": "O senhor Laurence morava sozinho com o neto, um rapaz chamado Laurie.",
+          "id": "Tuan Laurence tinggal sendirian bersama cucunya, seorang anak laki-laki bernama Laurie.",
+          "ar": "كان السيد لورنس يعيش وحده مع حفيده، فتى يُدعى لوري.",
+          "vi": "Ông Laurence sống một mình cùng cháu trai, một cậu bé tên là Laurie.",
+          "hi": "मिस्टर लॉरेंस अपने पोते लॉरी नाम के एक लड़के के साथ अकेले रहते थे।",
+          "ru": "Мистер Лоренс жил один со своим внуком, мальчиком по имени Лори.",
+          "bn": "মিস্টার লরেন্স তাঁর নাতি লরি নামের একটি ছেলেকে নিয়ে একা থাকতেন।",
+          "ur": "مسٹر لارنس اپنے پوتے لاری نام کے ایک لڑکے کے ساتھ اکیلے رہتے تھے۔",
+          "th": "คุณลอเรนซ์อาศัยอยู่ตามลำพังกับหลานชาย เด็กหนุ่มชื่อลอรี"
+        }
+      },
+      {
+        "id": "cl-women-033",
+        "english": "Jo often saw him at the window of the big house, looking lonely.",
+        "turkish": "Jo onu sık sık büyük evin penceresinde, yalnız görünürken görürdü.",
+        "translations": {
+          "es-419": "Jo lo veía a menudo en la ventana de la casa grande, con aire solitario.",
+          "pt-BR": "Jo muitas vezes o via na janela da casa grande, com ar solitário.",
+          "id": "Jo sering melihatnya di jendela rumah besar itu, tampak kesepian.",
+          "ar": "كانت جو تراه كثيرًا عند نافذة البيت الكبير، يبدو وحيدًا.",
+          "vi": "Jo thường thấy cậu đứng bên cửa sổ ngôi nhà lớn, trông cô đơn.",
+          "hi": "जो अक्सर उसे बड़े घर की खिड़की पर अकेला-सा खड़ा देखती थी।",
+          "ru": "Джо часто видела его у окна большого дома, и вид у него был одинокий.",
+          "bn": "জো প্রায়ই তাকে বড় বাড়ির জানালায় একা একা দাঁড়িয়ে থাকতে দেখত।",
+          "ur": "جو اکثر اسے بڑے گھر کی کھڑکی پر اکیلا اکیلا کھڑا دیکھتی تھی۔",
+          "th": "โจมักเห็นเขาอยู่ที่หน้าต่างบ้านหลังใหญ่ ดูเหงา ๆ"
+        }
+      },
+      {
+        "id": "cl-women-034",
+        "english": "She first spoke to him at a New Year party, where they both hid from the dancing.",
+        "turkish": "Onunla ilk kez bir yılbaşı partisinde, ikisi de danstan kaçıp saklanırken konuştu.",
+        "translations": {
+          "es-419": "Habló con él por primera vez en una fiesta de Año Nuevo, donde los dos se escondían del baile.",
+          "pt-BR": "Ela falou com ele pela primeira vez numa festa de Ano-Novo, onde os dois se escondiam da dança.",
+          "id": "Ia pertama kali berbicara dengannya di pesta Tahun Baru, saat mereka berdua bersembunyi dari acara dansa.",
+          "ar": "تحدّثت إليه أوّل مرّة في حفلة رأس السنة، حيث اختبأ كلاهما من الرقص.",
+          "vi": "Lần đầu cô nói chuyện với cậu là ở một bữa tiệc năm mới, khi cả hai cùng trốn chuyện khiêu vũ.",
+          "hi": "उसने पहली बार उससे नए साल की एक पार्टी में बात की, जहाँ दोनों नाच से बचकर छिपे थे।",
+          "ru": "Впервые она заговорила с ним на новогоднем вечере, где они оба прятались от танцев.",
+          "bn": "নতুন বছরের এক পার্টিতে সে প্রথম তার সঙ্গে কথা বলল, যেখানে দুজনেই নাচ এড়িয়ে লুকিয়ে ছিল।",
+          "ur": "اس نے پہلی بار اس سے نئے سال کی ایک پارٹی میں بات کی، جہاں دونوں رقص سے بچ کر چھپے تھے۔",
+          "th": "เธอได้คุยกับเขาครั้งแรกที่งานปีใหม่ ตอนที่ทั้งคู่แอบหลบจากการเต้นรำ"
+        }
+      },
+      {
+        "id": "cl-women-035",
+        "english": "They laughed and talked, and soon they were good friends.",
+        "turkish": "Gülüp konuştular ve kısa sürede iyi arkadaş oldular.",
+        "translations": {
+          "es-419": "Rieron y conversaron, y pronto fueron buenos amigos.",
+          "pt-BR": "Riram e conversaram, e logo ficaram bons amigos.",
+          "id": "Mereka tertawa dan mengobrol, dan segera menjadi sahabat.",
+          "ar": "ضحكا وتحدّثا، وسرعان ما صارا صديقين حميمين.",
+          "vi": "Họ cười nói với nhau, và chẳng bao lâu đã thành bạn thân.",
+          "hi": "वे हँसे, बातें कीं, और जल्दी ही अच्छे दोस्त बन गए।",
+          "ru": "Они смеялись и болтали и скоро стали хорошими друзьями.",
+          "bn": "তারা হাসল, গল্প করল, আর শিগগিরই ভালো বন্ধু হয়ে গেল।",
+          "ur": "وہ ہنسے، باتیں کیں، اور جلد ہی اچھے دوست بن گئے۔",
+          "th": "ทั้งสองหัวเราะและพูดคุยกัน ไม่นานก็กลายเป็นเพื่อนสนิท"
+        }
+      },
+      {
+        "id": "cl-women-036",
+        "english": "When Laurie had a bad cold that winter, Jo went next door to cheer him up.",
+        "turkish": "O kış Laurie kötü bir soğuk algınlığına yakalanınca Jo onu neşelendirmek için yan eve gitti.",
+        "translations": {
+          "es-419": "Cuando Laurie tuvo un fuerte resfriado ese invierno, Jo fue a la casa de al lado para animarlo.",
+          "pt-BR": "Quando Laurie pegou um forte resfriado naquele inverno, Jo foi à casa ao lado para animá-lo.",
+          "id": "Ketika Laurie terkena pilek berat musim dingin itu, Jo pergi ke rumah sebelah untuk menghiburnya.",
+          "ar": "عندما أُصيب لوري بزكام شديد في ذلك الشتاء، ذهبت جو إلى البيت المجاور لتُبهجه.",
+          "vi": "Mùa đông năm ấy, khi Laurie bị cảm nặng, Jo sang nhà bên để làm cậu vui.",
+          "hi": "उस सर्दी जब लॉरी को तेज़ ज़ुकाम हुआ, तो जो उसका मन बहलाने बग़ल के घर गई।",
+          "ru": "Когда той зимой Лори сильно простудился, Джо пошла к соседям его развеселить.",
+          "bn": "সেই শীতে লরির খুব সর্দি হলে জো তাকে খুশি করতে পাশের বাড়িতে গেল।",
+          "ur": "اس سردی میں جب لاری کو سخت زکام ہوا، تو جو اس کا دل بہلانے برابر والے گھر گئی۔",
+          "th": "หน้าหนาวปีนั้น เมื่อลอรีเป็นหวัดหนัก โจไปบ้านข้าง ๆ เพื่อให้เขาร่าเริง"
+        }
+      },
+      {
+        "id": "cl-women-037",
+        "english": "She made him laugh so much that old Mr Laurence was pleased.",
+        "turkish": "Onu öyle çok güldürdü ki yaşlı Bay Laurence çok memnun oldu.",
+        "translations": {
+          "es-419": "Lo hizo reír tanto que el anciano señor Laurence quedó encantado.",
+          "pt-BR": "Ela o fez rir tanto que o velho senhor Laurence ficou contente.",
+          "id": "Ia membuatnya tertawa begitu banyak sehingga Tuan Laurence tua merasa senang.",
+          "ar": "أضحكته كثيرًا حتّى سُرّ السيد لورنس العجوز.",
+          "vi": "Cô làm cậu cười nhiều đến nỗi ông Laurence già rất hài lòng.",
+          "hi": "उसने उसे इतना हँसाया कि बूढ़े मिस्टर लॉरेंस बहुत ख़ुश हुए।",
+          "ru": "Она так его рассмешила, что старый мистер Лоренс остался доволен.",
+          "bn": "সে তাকে এত হাসাল যে বৃদ্ধ মিস্টার লরেন্স খুব খুশি হলেন।",
+          "ur": "اس نے اسے اتنا ہنسایا کہ بوڑھے مسٹر لارنس بہت خوش ہوئے۔",
+          "th": "เธอทำให้เขาหัวเราะมากจนคุณลอเรนซ์ผู้ชราพอใจ"
+        }
+      },
+      {
+        "id": "cl-women-038",
+        "english": "\"You have done him more good than all the medicine,\" he said.",
+        "turkish": "\"Ona bütün ilaçlardan daha çok iyi geldin,\" dedi.",
+        "translations": {
+          "es-419": "—Le has hecho más bien que todas las medicinas —dijo él.",
+          "pt-BR": "— Você fez mais bem a ele do que todos os remédios — disse ele.",
+          "id": "\"Kau telah memberinya lebih banyak kebaikan daripada semua obat,\" katanya.",
+          "ar": "قال: «لقد نفعتِه أكثر من كلّ الدواء».",
+          "vi": "\"Cháu đã giúp nó còn hơn tất cả thuốc men,\" ông nói.",
+          "hi": "\"तुमने उसका सारी दवाओं से ज़्यादा भला किया है,\" उन्होंने कहा।",
+          "ru": "«Ты принесла ему больше пользы, чем все лекарства», — сказал он.",
+          "bn": "\"তুমি ওর যত উপকার করেছ, সব ওষুধ মিলেও তা করেনি,\" তিনি বললেন।",
+          "ur": "\"تم نے اس کا ساری دواؤں سے زیادہ بھلا کیا ہے،\" انہوں نے کہا۔",
+          "th": "\"หลานช่วยเขาได้มากกว่ายาทั้งหมดเสียอีก\" เขากล่าว"
+        }
+      },
+      {
+        "id": "cl-women-039",
+        "english": "Soon the March girls and Laurie were always in and out of each other's houses.",
+        "turkish": "Çok geçmeden March kızlarıyla Laurie birbirlerinin evine girip çıkar oldular.",
+        "translations": {
+          "es-419": "Pronto las chicas March y Laurie entraban y salían de la casa del otro todo el tiempo.",
+          "pt-BR": "Logo as meninas March e Laurie viviam entrando e saindo da casa um do outro.",
+          "id": "Tak lama kemudian, gadis-gadis March dan Laurie selalu keluar-masuk rumah satu sama lain.",
+          "ar": "وسرعان ما صارت بنات مارش ولوري يدخلون ويخرجون من بيوت بعضهم دائمًا.",
+          "vi": "Chẳng bao lâu, các cô nhà March và Laurie suốt ngày ra vào nhà nhau.",
+          "hi": "जल्दी ही मार्च लड़कियाँ और लॉरी हर समय एक-दूसरे के घर आने-जाने लगे।",
+          "ru": "Вскоре девочки Марч и Лори постоянно бегали друг к другу в гости.",
+          "bn": "শিগগিরই মার্চ মেয়েরা আর লরি সারাক্ষণ একে অপরের বাড়িতে যাতায়াত করতে লাগল।",
+          "ur": "جلد ہی مارچ لڑکیاں اور لاری ہر وقت ایک دوسرے کے گھر آنے جانے لگے۔",
+          "th": "ไม่นานสาว ๆ บ้านมาร์ชกับลอรีก็เข้าออกบ้านของกันและกันอยู่เสมอ"
+        }
+      },
+      {
+        "id": "cl-women-040",
+        "english": "In the big house there was a beautiful grand piano.",
+        "turkish": "Büyük evde güzel bir kuyruklu piyano vardı.",
+        "translations": {
+          "es-419": "En la casa grande había un hermoso piano de cola.",
+          "pt-BR": "Na casa grande havia um lindo piano de cauda.",
+          "id": "Di rumah besar itu ada sebuah piano besar yang indah.",
+          "ar": "كان في البيت الكبير بيانو كبير جميل.",
+          "vi": "Trong ngôi nhà lớn có một cây đàn piano lớn rất đẹp.",
+          "hi": "बड़े घर में एक सुंदर ग्रैंड पियानो रखा था।",
+          "ru": "В большом доме стоял прекрасный рояль.",
+          "bn": "বড় বাড়িতে একটা সুন্দর গ্র্যান্ড পিয়ানো ছিল।",
+          "ur": "بڑے گھر میں ایک خوبصورت گرینڈ پیانو تھا۔",
+          "th": "ในบ้านหลังใหญ่มีแกรนด์เปียโนหลังงามอยู่หลังหนึ่ง"
+        }
+      },
+      {
+        "id": "cl-women-041",
+        "english": "Beth longed to play the piano, but she was afraid of the old gentleman.",
+        "turkish": "Beth o piyanoyu çalmayı çok istiyordu ama yaşlı beyefendiden korkuyordu.",
+        "translations": {
+          "es-419": "Beth deseaba tocar el piano, pero le tenía miedo al anciano caballero.",
+          "pt-BR": "Beth sonhava em tocar o piano, mas tinha medo do velho senhor.",
+          "id": "Beth ingin sekali bermain piano itu, tetapi ia takut pada tuan tua itu.",
+          "ar": "كانت بيث تتوق إلى العزف على البيانو، لكنّها كانت تخاف من السيّد العجوز.",
+          "vi": "Beth rất muốn chơi cây đàn piano ấy, nhưng cô sợ ông lão.",
+          "hi": "बेथ वह पियानो बजाने को तरसती थी, पर उसे बूढ़े सज्जन से डर लगता था।",
+          "ru": "Бет очень хотелось поиграть на рояле, но она боялась старого джентльмена.",
+          "bn": "বেথ পিয়ানোটা বাজাতে খুব চাইত, কিন্তু বৃদ্ধ ভদ্রলোককে সে ভয় পেত।",
+          "ur": "بیتھ وہ پیانو بجانے کو ترستی تھی، مگر اسے بوڑھے صاحب سے ڈر لگتا تھا۔",
+          "th": "เบธอยากเล่นเปียโนนั้นใจจะขาด แต่เธอกลัวสุภาพบุรุษชราคนนั้น"
+        }
+      },
+      {
+        "id": "cl-women-042",
+        "english": "Mr Laurence understood, and one day he spoke to Marmee about music.",
+        "turkish": "Bay Laurence bunu anladı ve bir gün Marmee'yle müzik hakkında konuştu.",
+        "translations": {
+          "es-419": "El señor Laurence lo comprendió, y un día habló con Marmee sobre música.",
+          "pt-BR": "O senhor Laurence entendeu e, um dia, conversou com Marmee sobre música.",
+          "id": "Tuan Laurence mengerti, dan suatu hari ia berbicara dengan Marmee tentang musik.",
+          "ar": "فهم السيد لورنس ذلك، وفي يوم من الأيّام تحدّث مع مارمي عن الموسيقى.",
+          "vi": "Ông Laurence hiểu chuyện, và một hôm ông nói với Marmee về âm nhạc.",
+          "hi": "मिस्टर लॉरेंस समझ गए, और एक दिन उन्होंने मार्मी से संगीत के बारे में बात की।",
+          "ru": "Мистер Лоренс всё понял и однажды заговорил с Марми о музыке.",
+          "bn": "মিস্টার লরেন্স ব্যাপারটা বুঝলেন, আর একদিন মারমির সঙ্গে গানবাজনা নিয়ে কথা বললেন।",
+          "ur": "مسٹر لارنس سمجھ گئے، اور ایک دن انہوں نے مارمی سے موسیقی کے بارے میں بات کی۔",
+          "th": "คุณลอเรนซ์เข้าใจ และวันหนึ่งเขาก็คุยเรื่องดนตรีกับมาร์มี"
+        }
+      },
+      {
+        "id": "cl-women-043",
+        "english": "\"Nobody plays my piano now,\" he said. \"Your girls may come and use it.\"",
+        "turkish": "\"Artık piyanomu kimse çalmıyor,\" dedi. \"Kızlarınız gelip çalabilir.\"",
+        "translations": {
+          "es-419": "—Ahora nadie toca mi piano —dijo—. Sus hijas pueden venir a usarlo.",
+          "pt-BR": "— Ninguém toca mais o meu piano — disse ele. — Suas filhas podem vir usá-lo.",
+          "id": "\"Sekarang tidak ada yang memainkan pianoku,\" katanya. \"Putri-putri Anda boleh datang dan memakainya.\"",
+          "ar": "قال: «لا أحد يعزف على البيانو الآن. يمكن لبناتك أن يأتين ويستعملنه».",
+          "vi": "\"Giờ chẳng ai chơi cây đàn piano của tôi nữa,\" ông nói. \"Các cháu có thể sang dùng nó.\"",
+          "hi": "\"अब मेरा पियानो कोई नहीं बजाता,\" उन्होंने कहा। \"आपकी बेटियाँ आकर उसे बजा सकती हैं।\"",
+          "ru": "«На моём рояле теперь никто не играет, — сказал он. — Ваши девочки могут приходить и играть».",
+          "bn": "\"এখন আমার পিয়ানো কেউ বাজায় না,\" তিনি বললেন। \"আপনার মেয়েরা এসে বাজাতে পারে।\"",
+          "ur": "\"اب میرا پیانو کوئی نہیں بجاتا،\" انہوں نے کہا۔ \"آپ کی بیٹیاں آ کر اسے بجا سکتی ہیں۔\"",
+          "th": "\"ตอนนี้ไม่มีใครเล่นเปียโนของผมแล้ว\" เขาพูด \"ลูกสาวของคุณมาเล่นได้นะ\""
+        }
+      },
+      {
+        "id": "cl-women-044",
+        "english": "So Beth crept in every day and played, and she was very happy.",
+        "turkish": "Böylece Beth her gün sessizce girip çaldı ve çok mutlu oldu.",
+        "translations": {
+          "es-419": "Así que Beth entraba sin hacer ruido cada día y tocaba, y era muy feliz.",
+          "pt-BR": "Então Beth entrava de mansinho todos os dias e tocava, e ficava muito feliz.",
+          "id": "Maka Beth diam-diam masuk setiap hari dan bermain, dan ia sangat bahagia.",
+          "ar": "فصارت بيث تتسلّل كلّ يوم وتعزف، وكانت سعيدة جدًّا.",
+          "vi": "Thế là ngày nào Beth cũng khẽ khàng sang chơi đàn, và cô rất hạnh phúc.",
+          "hi": "तो बेथ हर दिन चुपके से जाकर बजाती, और वह बहुत ख़ुश रहती।",
+          "ru": "И Бет каждый день тихонько приходила и играла, и была очень счастлива.",
+          "bn": "তাই বেথ রোজ চুপিচুপি গিয়ে বাজাত, আর খুব খুশি থাকত।",
+          "ur": "چنانچہ بیتھ ہر روز چپکے سے جا کر بجاتی، اور وہ بہت خوش رہتی۔",
+          "th": "เบธจึงย่องเข้าไปเล่นทุกวัน และมีความสุขมาก"
+        }
+      },
+      {
+        "id": "cl-women-045",
+        "english": "To thank him, she sewed a pair of slippers for the old man.",
+        "turkish": "Ona teşekkür etmek için yaşlı adama bir çift terlik dikti.",
+        "translations": {
+          "es-419": "Para darle las gracias, le cosió un par de pantuflas al anciano.",
+          "pt-BR": "Para agradecer, ela costurou um par de chinelos para o velho.",
+          "id": "Untuk berterima kasih, ia menjahitkan sepasang sandal rumah untuk orang tua itu.",
+          "ar": "ولتشكره، خاطت للرجل العجوز زوجًا من الخِفاف.",
+          "vi": "Để cảm ơn, cô may tặng ông lão một đôi dép.",
+          "hi": "उन्हें धन्यवाद देने के लिए उसने बूढ़े सज्जन के लिए चप्पलों की एक जोड़ी सिली।",
+          "ru": "Чтобы отблагодарить, она сшила старику пару тапочек.",
+          "bn": "ধন্যবাদ জানাতে সে বৃদ্ধ ভদ্রলোকের জন্য এক জোড়া চটি সেলাই করল।",
+          "ur": "ان کا شکریہ ادا کرنے کے لیے اس نے بوڑھے صاحب کے لیے چپلوں کا ایک جوڑا سیا۔",
+          "th": "เพื่อขอบคุณ เธอเย็บรองเท้าแตะให้ชายชราคู่หนึ่ง"
+        }
+      },
+      {
+        "id": "cl-women-046",
+        "english": "A few days later, a small piano arrived at the March house for Beth.",
+        "turkish": "Birkaç gün sonra March'ların evine Beth için küçük bir piyano geldi.",
+        "translations": {
+          "es-419": "Unos días después, llegó a la casa de los March un pequeño piano para Beth.",
+          "pt-BR": "Alguns dias depois, chegou à casa dos March um pequeno piano para Beth.",
+          "id": "Beberapa hari kemudian, sebuah piano kecil tiba di rumah keluarga March untuk Beth.",
+          "ar": "بعد أيّام قليلة، وصل إلى بيت آل مارش بيانو صغير لبيث.",
+          "vi": "Vài ngày sau, một cây đàn piano nhỏ được chở đến nhà March để tặng Beth.",
+          "hi": "कुछ दिन बाद मार्च परिवार के घर बेथ के लिए एक छोटा पियानो पहुँचा।",
+          "ru": "Через несколько дней в дом Марчей привезли для Бет маленькое пианино.",
+          "bn": "কয়েক দিন পর মার্চদের বাড়িতে বেথের জন্য একটা ছোট পিয়ানো এসে পৌঁছাল।",
+          "ur": "چند دن بعد مارچ خاندان کے گھر بیتھ کے لیے ایک چھوٹا پیانو پہنچا۔",
+          "th": "ไม่กี่วันต่อมา มีเปียโนหลังเล็กส่งมาถึงบ้านมาร์ชเพื่อเบธ"
+        }
+      },
+      {
+        "id": "cl-women-047",
+        "english": "It had belonged to his little granddaughter, who had died years before.",
+        "turkish": "Piyano, yıllar önce ölen küçük torununa aitti.",
+        "translations": {
+          "es-419": "Había sido de su nieta pequeña, que había muerto años atrás.",
+          "pt-BR": "Tinha pertencido à netinha dele, que morrera anos antes.",
+          "id": "Piano itu dulu milik cucu perempuannya yang kecil, yang sudah meninggal bertahun-tahun sebelumnya.",
+          "ar": "كان لحفيدته الصغيرة التي ماتت قبل سنوات.",
+          "vi": "Nó từng là của đứa cháu gái nhỏ của ông, đã mất từ nhiều năm trước.",
+          "hi": "वह उनकी छोटी पोती का था, जिसकी कई साल पहले मृत्यु हो गई थी।",
+          "ru": "Оно принадлежало его маленькой внучке, которая умерла много лет назад.",
+          "bn": "সেটা ছিল তাঁর ছোট্ট নাতনির, যে বহু বছর আগে মারা গিয়েছিল।",
+          "ur": "وہ ان کی چھوٹی پوتی کا تھا، جو برسوں پہلے فوت ہو گئی تھی۔",
+          "th": "เปียโนนั้นเคยเป็นของหลานสาวตัวน้อยของเขาที่เสียชีวิตไปหลายปีก่อน"
+        }
+      },
+      {
+        "id": "cl-women-048",
+        "english": "Beth was so grateful that she ran next door and kissed him.",
+        "turkish": "Beth o kadar minnettardı ki yan eve koşup onu öptü.",
+        "translations": {
+          "es-419": "Beth estaba tan agradecida que corrió a la casa de al lado y le dio un beso.",
+          "pt-BR": "Beth ficou tão grata que correu até a casa ao lado e deu um beijo nele.",
+          "id": "Beth sangat berterima kasih sampai ia berlari ke rumah sebelah dan menciumnya.",
+          "ar": "كانت بيث ممتنّة جدًّا حتّى إنّها ركضت إلى البيت المجاور وقبّلته.",
+          "vi": "Beth biết ơn đến nỗi chạy sang nhà bên và hôn ông.",
+          "hi": "बेथ इतनी आभारी थी कि वह दौड़कर बग़ल के घर गई और उन्हें चूम लिया।",
+          "ru": "Бет была так благодарна, что побежала к соседу и поцеловала его.",
+          "bn": "বেথ এতই কৃতজ্ঞ ছিল যে সে দৌড়ে পাশের বাড়ি গিয়ে তাঁকে চুমু খেল।",
+          "ur": "بیتھ اتنی شکر گزار تھی کہ وہ دوڑ کر برابر والے گھر گئی اور انہیں چوم لیا۔",
+          "th": "เบธซาบซึ้งใจมากจนวิ่งไปบ้านข้าง ๆ แล้วจูบเขา"
+        }
+      },
+      {
+        "id": "cl-women-049",
+        "english": "But not every day was happy for the sisters.",
+        "turkish": "Ama kız kardeşler için her gün mutlu geçmiyordu.",
+        "translations": {
+          "es-419": "Pero no todos los días eran felices para las hermanas.",
+          "pt-BR": "Mas nem todo dia era feliz para as irmãs.",
+          "id": "Tetapi tidak setiap hari membahagiakan bagi para saudari itu.",
+          "ar": "لكن لم تكن كلّ الأيّام سعيدة للأخوات.",
+          "vi": "Nhưng không phải ngày nào cũng vui với các chị em.",
+          "hi": "पर बहनों के लिए हर दिन ख़ुशी भरा नहीं होता था।",
+          "ru": "Но не каждый день был для сестёр счастливым.",
+          "bn": "কিন্তু বোনেদের প্রতিটা দিন আনন্দের ছিল না।",
+          "ur": "مگر بہنوں کے لیے ہر دن خوشی بھرا نہیں ہوتا تھا۔",
+          "th": "แต่ใช่ว่าทุกวันจะมีความสุขสำหรับพี่น้อง"
+        }
+      },
+      {
+        "id": "cl-women-050",
+        "english": "Amy wanted to go to the theatre with Jo and Laurie, but Jo said no.",
+        "turkish": "Amy, Jo ve Laurie'yle tiyatroya gitmek istedi ama Jo hayır dedi.",
+        "translations": {
+          "es-419": "Amy quería ir al teatro con Jo y Laurie, pero Jo dijo que no.",
+          "pt-BR": "Amy queria ir ao teatro com Jo e Laurie, mas Jo disse que não.",
+          "id": "Amy ingin pergi ke teater bersama Jo dan Laurie, tetapi Jo menolak.",
+          "ar": "أرادت إيمي أن تذهب إلى المسرح مع جو ولوري، لكنّ جو رفضت.",
+          "vi": "Amy muốn đi xem kịch cùng Jo và Laurie, nhưng Jo không cho.",
+          "hi": "एमी जो और लॉरी के साथ थिएटर जाना चाहती थी, पर जो ने मना कर दिया।",
+          "ru": "Эми хотела пойти в театр с Джо и Лори, но Джо сказала «нет».",
+          "bn": "অ্যামি জো আর লরির সঙ্গে থিয়েটারে যেতে চাইল, কিন্তু জো না বলে দিল।",
+          "ur": "ایمی جو اور لاری کے ساتھ تھیٹر جانا چاہتی تھی، مگر جو نے منع کر دیا۔",
+          "th": "เอมี่อยากไปดูละครกับโจและลอรี แต่โจไม่ยอม"
+        }
+      },
+      {
+        "id": "cl-women-051",
+        "english": "Angry and hurt, Amy took Jo's little book of stories from her desk.",
+        "turkish": "Öfkeli ve kırgın Amy, Jo'nun öykü defterini masasından aldı.",
+        "translations": {
+          "es-419": "Enojada y dolida, Amy tomó del escritorio el cuadernito de cuentos de Jo.",
+          "pt-BR": "Com raiva e magoada, Amy pegou na escrivaninha o caderninho de histórias de Jo.",
+          "id": "Dengan marah dan sakit hati, Amy mengambil buku cerita kecil milik Jo dari mejanya.",
+          "ar": "غاضبةً ومجروحة، أخذت إيمي دفتر قصص جو الصغير من مكتبها.",
+          "vi": "Giận dỗi và tủi thân, Amy lấy cuốn sổ truyện nhỏ của Jo trên bàn.",
+          "hi": "ग़ुस्से और दुख में एमी ने जो की मेज़ से उसकी कहानियों की छोटी कॉपी उठा ली।",
+          "ru": "Обиженная и сердитая, Эми взяла со стола тетрадку с рассказами Джо.",
+          "bn": "রাগে আর অভিমানে অ্যামি জোর টেবিল থেকে তার গল্পের ছোট খাতাটা নিয়ে নিল।",
+          "ur": "غصے اور دکھ میں ایمی نے جو کی میز سے اس کی کہانیوں کی چھوٹی کاپی اٹھا لی۔",
+          "th": "ทั้งโกรธทั้งเสียใจ เอมี่หยิบสมุดนิทานเล่มเล็กของโจไปจากโต๊ะ"
+        }
+      },
+      {
+        "id": "cl-women-052",
+        "english": "She threw it into the fire and watched the pages burn.",
+        "turkish": "Defteri ateşe attı ve sayfaların yanışını seyretti.",
+        "translations": {
+          "es-419": "Lo arrojó al fuego y miró cómo ardían las páginas.",
+          "pt-BR": "Jogou-o no fogo e ficou olhando as páginas queimarem.",
+          "id": "Ia melemparnya ke dalam api dan melihat halaman-halamannya terbakar.",
+          "ar": "رمته في النار وراقبت الصفحات وهي تحترق.",
+          "vi": "Cô ném nó vào lửa và nhìn những trang giấy cháy.",
+          "hi": "उसने उसे आग में फेंक दिया और पन्नों को जलते देखा।",
+          "ru": "Она бросила её в огонь и смотрела, как горят страницы.",
+          "bn": "সে খাতাটা আগুনে ছুড়ে দিল আর পাতাগুলো পুড়তে দেখল।",
+          "ur": "اس نے اسے آگ میں پھینک دیا اور صفحوں کو جلتے دیکھا۔",
+          "th": "เธอโยนมันลงในกองไฟแล้วมองดูหน้ากระดาษไหม้"
+        }
+      },
+      {
+        "id": "cl-women-053",
+        "english": "It was the work of several years, and Jo cried bitterly.",
+        "turkish": "O defter yılların emeğiydi ve Jo acı acı ağladı.",
+        "translations": {
+          "es-419": "Era el trabajo de varios años, y Jo lloró amargamente.",
+          "pt-BR": "Era o trabalho de vários anos, e Jo chorou amargamente.",
+          "id": "Itu hasil kerja bertahun-tahun, dan Jo menangis tersedu-sedu.",
+          "ar": "كان ذلك عمل عدّة سنوات، فبكت جو بمرارة.",
+          "vi": "Đó là công sức của nhiều năm, và Jo khóc thảm thiết.",
+          "hi": "वह कई सालों की मेहनत थी, और जो फूट-फूटकर रोई।",
+          "ru": "Это был труд нескольких лет, и Джо горько плакала.",
+          "bn": "সেটা ছিল কয়েক বছরের পরিশ্রম, আর জো খুব কাঁদল।",
+          "ur": "وہ کئی برسوں کی محنت تھی، اور جو پھوٹ پھوٹ کر روئی۔",
+          "th": "นั่นคือผลงานหลายปี และโจร้องไห้อย่างขมขื่น"
+        }
+      },
+      {
+        "id": "cl-women-054",
+        "english": "\"I'll never forgive you as long as I live!\" she shouted.",
+        "turkish": "\"Yaşadığım sürece seni asla affetmeyeceğim!\" diye bağırdı.",
+        "translations": {
+          "es-419": "—¡Nunca te perdonaré mientras viva! —gritó.",
+          "pt-BR": "— Nunca vou te perdoar enquanto eu viver! — gritou ela.",
+          "id": "\"Aku tidak akan pernah memaafkanmu seumur hidupku!\" teriaknya.",
+          "ar": "صرخت: «لن أسامحكِ ما دمتُ حيّة!»",
+          "vi": "\"Chị sẽ không bao giờ tha thứ cho em, suốt đời!\" cô hét lên.",
+          "hi": "\"जब तक मैं ज़िंदा हूँ, तुम्हें कभी माफ़ नहीं करूँगी!\" वह चिल्लाई।",
+          "ru": "«Я никогда тебя не прощу, пока жива!» — закричала она.",
+          "bn": "\"যতদিন বাঁচব, তোকে কখনো ক্ষমা করব না!\" সে চিৎকার করে উঠল।",
+          "ur": "\"جب تک میں زندہ ہوں، تمہیں کبھی معاف نہیں کروں گی!\" وہ چلائی۔",
+          "th": "\"ชาตินี้ฉันจะไม่มีวันให้อภัยเธอ!\" เธอตะโกน"
+        }
+      },
+      {
+        "id": "cl-women-055",
+        "english": "The next day, Jo and Laurie went skating on the river, and Amy followed them.",
+        "turkish": "Ertesi gün Jo ve Laurie nehirde patene gittiler, Amy de peşlerinden geldi.",
+        "translations": {
+          "es-419": "Al día siguiente, Jo y Laurie fueron a patinar al río, y Amy los siguió.",
+          "pt-BR": "No dia seguinte, Jo e Laurie foram patinar no rio, e Amy os seguiu.",
+          "id": "Keesokan harinya, Jo dan Laurie pergi bermain seluncur es di sungai, dan Amy mengikuti mereka.",
+          "ar": "في اليوم التالي، ذهبت جو ولوري للتزلّج على النهر، وتبعتهما إيمي.",
+          "vi": "Hôm sau, Jo và Laurie đi trượt băng trên sông, và Amy đi theo.",
+          "hi": "अगले दिन जो और लॉरी नदी पर स्केटिंग करने गए, और एमी उनके पीछे चली आई।",
+          "ru": "На следующий день Джо и Лори пошли кататься на коньках по реке, и Эми пошла за ними.",
+          "bn": "পরদিন জো আর লরি নদীতে স্কেটিং করতে গেল, আর অ্যামি তাদের পিছু নিল।",
+          "ur": "اگلے دن جو اور لاری دریا پر اسکیٹنگ کرنے گئے، اور ایمی ان کے پیچھے آ گئی۔",
+          "th": "วันรุ่งขึ้น โจกับลอรีไปเล่นสเกตบนแม่น้ำ และเอมี่ตามไป"
+        }
+      },
+      {
+        "id": "cl-women-056",
+        "english": "Jo saw her but said nothing, and Amy skated onto thin ice.",
+        "turkish": "Jo onu gördü ama hiçbir şey söylemedi, Amy de ince buzun üstüne kaydı.",
+        "translations": {
+          "es-419": "Jo la vio pero no dijo nada, y Amy patinó hacia el hielo delgado.",
+          "pt-BR": "Jo a viu, mas não disse nada, e Amy patinou para o gelo fino.",
+          "id": "Jo melihatnya tetapi diam saja, dan Amy meluncur ke atas es yang tipis.",
+          "ar": "رأتها جو لكنّها لم تقل شيئًا، فتزلّجت إيمي نحو الجليد الرقيق.",
+          "vi": "Jo thấy em nhưng không nói gì, và Amy trượt ra chỗ băng mỏng.",
+          "hi": "जो ने उसे देखा पर कुछ नहीं कहा, और एमी पतली बर्फ़ पर फिसलती चली गई।",
+          "ru": "Джо увидела её, но ничего не сказала, и Эми выехала на тонкий лёд.",
+          "bn": "জো তাকে দেখল কিন্তু কিছু বলল না, আর অ্যামি পাতলা বরফের ওপর চলে গেল।",
+          "ur": "جو نے اسے دیکھا مگر کچھ نہ کہا، اور ایمی پتلی برف پر پھسلتی چلی گئی۔",
+          "th": "โจเห็นน้องแต่ไม่พูดอะไร แล้วเอมี่ก็ไถลไปบนน้ำแข็งบาง ๆ"
+        }
+      },
+      {
+        "id": "cl-women-057",
+        "english": "Suddenly the ice broke, and Amy fell into the freezing water.",
+        "turkish": "Birden buz kırıldı ve Amy buz gibi suya düştü.",
+        "translations": {
+          "es-419": "De repente el hielo se rompió, y Amy cayó al agua helada.",
+          "pt-BR": "De repente o gelo quebrou, e Amy caiu na água gelada.",
+          "id": "Tiba-tiba es itu pecah, dan Amy jatuh ke dalam air yang sangat dingin.",
+          "ar": "فجأة انكسر الجليد، وسقطت إيمي في الماء المتجمّد.",
+          "vi": "Bỗng lớp băng vỡ, và Amy rơi xuống làn nước lạnh cóng.",
+          "hi": "अचानक बर्फ़ टूट गई, और एमी बर्फ़ीले पानी में गिर पड़ी।",
+          "ru": "Вдруг лёд проломился, и Эми упала в ледяную воду.",
+          "bn": "হঠাৎ বরফ ভেঙে গেল, আর অ্যামি হিমশীতল জলে পড়ে গেল।",
+          "ur": "اچانک برف ٹوٹ گئی، اور ایمی یخ پانی میں گر پڑی۔",
+          "th": "ทันใดนั้นน้ำแข็งก็แตก และเอมี่ตกลงไปในน้ำเย็นจัด"
+        }
+      },
+      {
+        "id": "cl-women-058",
+        "english": "Laurie and Jo pulled her out, cold and frightened but alive.",
+        "turkish": "Laurie ve Jo onu sudan çıkardılar; üşümüş ve korkmuştu ama yaşıyordu.",
+        "translations": {
+          "es-419": "Laurie y Jo la sacaron, helada y asustada, pero viva.",
+          "pt-BR": "Laurie e Jo a tiraram da água, gelada e assustada, mas viva.",
+          "id": "Laurie dan Jo menariknya keluar, kedinginan dan ketakutan tetapi masih hidup.",
+          "ar": "سحبها لوري وجو من الماء، باردة وخائفة لكنّها حيّة.",
+          "vi": "Laurie và Jo kéo em lên, lạnh cóng và sợ hãi nhưng vẫn sống.",
+          "hi": "लॉरी और जो ने उसे बाहर निकाला, ठिठुरी और डरी हुई, पर ज़िंदा।",
+          "ru": "Лори и Джо вытащили её, замёрзшую и перепуганную, но живую.",
+          "bn": "লরি আর জো তাকে টেনে তুলল, ঠান্ডায় কাঁপছে আর ভয় পেয়েছে, কিন্তু বেঁচে আছে।",
+          "ur": "لاری اور جو نے اسے باہر نکالا، ٹھٹھری اور ڈری ہوئی، مگر زندہ۔",
+          "th": "ลอรีกับโจดึงเธอขึ้นมา เธอหนาวสั่นและหวาดกลัว แต่ยังมีชีวิตอยู่"
+        }
+      },
+      {
+        "id": "cl-women-059",
+        "english": "That night, Jo told Marmee about her terrible temper.",
+        "turkish": "O gece Jo, Marmee'ye korkunç öfkesinden söz etti.",
+        "translations": {
+          "es-419": "Esa noche, Jo le habló a Marmee de su terrible mal genio.",
+          "pt-BR": "Naquela noite, Jo contou a Marmee sobre o seu gênio terrível.",
+          "id": "Malam itu, Jo bercerita kepada Marmee tentang sifat pemarahnya yang buruk.",
+          "ar": "في تلك الليلة، حدّثت جو مارمي عن طبعها الحادّ الرهيب.",
+          "vi": "Đêm đó, Jo kể với Marmee về tính nóng nảy khủng khiếp của mình.",
+          "hi": "उस रात जो ने मार्मी को अपने भयानक ग़ुस्से के बारे में बताया।",
+          "ru": "В ту ночь Джо рассказала Марми о своём ужасном вспыльчивом нраве.",
+          "bn": "সেই রাতে জো মারমিকে তার ভয়ংকর রাগের কথা বলল।",
+          "ur": "اس رات جو نے مارمی کو اپنے خوفناک غصے کے بارے میں بتایا۔",
+          "th": "คืนนั้นโจเล่าให้มาร์มีฟังเรื่องอารมณ์ร้ายของตัวเอง"
+        }
+      },
+      {
+        "id": "cl-women-060",
+        "english": "Then she hugged her little sister, and the two of them were friends again.",
+        "turkish": "Sonra küçük kız kardeşine sarıldı ve ikisi yeniden barıştı.",
+        "translations": {
+          "es-419": "Luego abrazó a su hermanita, y las dos volvieron a ser amigas.",
+          "pt-BR": "Depois abraçou a irmãzinha, e as duas voltaram a ser amigas.",
+          "id": "Lalu ia memeluk adiknya, dan keduanya berbaikan lagi.",
+          "ar": "ثمّ عانقت أختها الصغيرة، فعادتا صديقتين من جديد.",
+          "vi": "Rồi cô ôm lấy cô em gái nhỏ, và hai chị em lại làm lành.",
+          "hi": "फिर उसने अपनी छोटी बहन को गले लगाया, और दोनों फिर से दोस्त बन गईं।",
+          "ru": "Потом она обняла младшую сестру, и они снова помирились.",
+          "bn": "তারপর সে তার ছোট বোনকে জড়িয়ে ধরল, আর দুজনে আবার বন্ধু হয়ে গেল।",
+          "ur": "پھر اس نے اپنی چھوٹی بہن کو گلے لگایا، اور دونوں پھر سے دوست بن گئیں۔",
+          "th": "แล้วเธอก็กอดน้องสาว และทั้งสองก็คืนดีกัน"
+        }
+      },
+      {
+        "id": "cl-women-061",
+        "english": "One grey day in November, a telegram came for Marmee.",
+        "turkish": "Kasımda gri bir günde Marmee'ye bir telgraf geldi.",
+        "translations": {
+          "es-419": "Un día gris de noviembre, llegó un telegrama para Marmee.",
+          "pt-BR": "Num dia cinzento de novembro, chegou um telegrama para Marmee.",
+          "id": "Pada suatu hari yang kelabu di bulan November, datang sebuah telegram untuk Marmee.",
+          "ar": "في يوم رماديّ من نوفمبر، وصلت برقيّة لمارمي.",
+          "vi": "Vào một ngày tháng Mười Một u ám, có bức điện tín gửi cho Marmee.",
+          "hi": "नवंबर के एक धूसर दिन मार्मी के नाम एक तार आया।",
+          "ru": "В один серый ноябрьский день Марми пришла телеграмма.",
+          "bn": "নভেম্বরের এক ধূসর দিনে মারমির নামে একটা টেলিগ্রাম এল।",
+          "ur": "نومبر کے ایک دھندلے دن مارمی کے نام ایک تار آیا۔",
+          "th": "วันหนึ่งที่ฟ้าหม่นในเดือนพฤศจิกายน มีโทรเลขส่งถึงมาร์มี"
+        }
+      },
+      {
+        "id": "cl-women-062",
+        "english": "\"Your husband is very ill. Come at once,\" it said.",
+        "turkish": "\"Kocanız çok hasta. Hemen gelin,\" diyordu.",
+        "translations": {
+          "es-419": "Decía: «Su esposo está muy enfermo. Venga enseguida».",
+          "pt-BR": "Dizia: \"Seu marido está muito doente. Venha imediatamente.\"",
+          "id": "Isinya: \"Suami Anda sakit parah. Segera datang.\"",
+          "ar": "وكان فيها: «زوجكِ مريض جدًّا. تعالي فورًا».",
+          "vi": "Trong đó viết: \"Chồng bà ốm rất nặng. Hãy đến ngay.\"",
+          "hi": "उसमें लिखा था: \"आपके पति बहुत बीमार हैं। तुरंत आइए।\"",
+          "ru": "В ней было: «Ваш муж тяжело болен. Приезжайте немедленно».",
+          "bn": "তাতে লেখা ছিল: \"আপনার স্বামী খুব অসুস্থ। এখনই চলে আসুন।\"",
+          "ur": "اس میں لکھا تھا: \"آپ کے شوہر بہت بیمار ہیں۔ فوراً آئیے۔\"",
+          "th": "ในนั้นเขียนว่า \"สามีของคุณป่วยหนัก มาด่วน\""
+        }
+      },
+      {
+        "id": "cl-women-063",
+        "english": "Father was lying in a hospital in Washington, far away.",
+        "turkish": "Babaları çok uzakta, Washington'da bir hastanede yatıyordu.",
+        "translations": {
+          "es-419": "Papá estaba internado en un hospital de Washington, muy lejos.",
+          "pt-BR": "O pai estava internado num hospital em Washington, muito longe.",
+          "id": "Ayah sedang terbaring di sebuah rumah sakit di Washington, jauh sekali.",
+          "ar": "كان الأب راقدًا في مستشفى في واشنطن، بعيدًا جدًّا.",
+          "vi": "Cha đang nằm trong một bệnh viện ở Washington, xa lắm.",
+          "hi": "पिता बहुत दूर वॉशिंगटन के एक अस्पताल में भर्ती थे।",
+          "ru": "Отец лежал в госпитале в Вашингтоне, очень далеко.",
+          "bn": "বাবা অনেক দূরে ওয়াশিংটনের এক হাসপাতালে শুয়ে ছিলেন।",
+          "ur": "والد بہت دور واشنگٹن کے ایک ہسپتال میں داخل تھے۔",
+          "th": "พ่อนอนอยู่ในโรงพยาบาลที่วอชิงตัน ซึ่งอยู่ไกลมาก"
+        }
+      },
+      {
+        "id": "cl-women-064",
+        "english": "Marmee had to go, but the long journey would cost a lot of money.",
+        "turkish": "Marmee'nin gitmesi gerekiyordu ama bu uzun yolculuk çok paraya mal olacaktı.",
+        "translations": {
+          "es-419": "Marmee tenía que ir, pero el largo viaje costaría mucho dinero.",
+          "pt-BR": "Marmee precisava ir, mas a longa viagem custaria muito dinheiro.",
+          "id": "Marmee harus pergi, tetapi perjalanan jauh itu akan memakan banyak uang.",
+          "ar": "كان على مارمي أن تذهب، لكنّ الرحلة الطويلة ستكلّف مالًا كثيرًا.",
+          "vi": "Marmee phải đi, nhưng chuyến đi dài sẽ tốn rất nhiều tiền.",
+          "hi": "मार्मी को जाना ही था, पर लंबे सफ़र में बहुत पैसा लगने वाला था।",
+          "ru": "Марми нужно было ехать, но долгая дорога стоила много денег.",
+          "bn": "মারমিকে যেতেই হবে, কিন্তু লম্বা যাত্রায় অনেক টাকা লাগবে।",
+          "ur": "مارمی کو جانا ہی تھا، مگر لمبے سفر پر بہت پیسہ لگنا تھا۔",
+          "th": "มาร์มีต้องไป แต่การเดินทางไกลจะต้องใช้เงินมาก"
+        }
+      },
+      {
+        "id": "cl-women-065",
+        "english": "Mr Laurence helped at once, and Laurie's teacher, John Brooke, went with her.",
+        "turkish": "Bay Laurence hemen yardım etti, Laurie'nin öğretmeni John Brooke da onunla gitti.",
+        "translations": {
+          "es-419": "El señor Laurence ayudó enseguida, y el profesor de Laurie, John Brooke, fue con ella.",
+          "pt-BR": "O senhor Laurence ajudou na hora, e o professor de Laurie, John Brooke, foi com ela.",
+          "id": "Tuan Laurence langsung membantu, dan guru Laurie, John Brooke, ikut menemaninya.",
+          "ar": "ساعد السيد لورنس فورًا، وذهب معها مُعلّم لوري، جون بروك.",
+          "vi": "Ông Laurence giúp đỡ ngay, và thầy giáo của Laurie, John Brooke, đi cùng bà.",
+          "hi": "मिस्टर लॉरेंस ने तुरंत मदद की, और लॉरी के शिक्षक जॉन ब्रुक उनके साथ गए।",
+          "ru": "Мистер Лоренс сразу помог, а учитель Лори, Джон Брук, поехал с ней.",
+          "bn": "মিস্টার লরেন্স সঙ্গে সঙ্গে সাহায্য করলেন, আর লরির শিক্ষক জন ব্রুক তাঁর সঙ্গে গেলেন।",
+          "ur": "مسٹر لارنس نے فوراً مدد کی، اور لاری کے استاد جان بروک ان کے ساتھ گئے۔",
+          "th": "คุณลอเรนซ์ช่วยเหลือทันที และจอห์น บรุก ครูของลอรี ก็เดินทางไปกับเธอ"
+        }
+      },
+      {
+        "id": "cl-women-066",
+        "english": "That afternoon, Jo ran out and came back with twenty-five dollars.",
+        "turkish": "O öğleden sonra Jo dışarı koştu ve yirmi beş dolarla geri döndü.",
+        "translations": {
+          "es-419": "Esa tarde, Jo salió corriendo y volvió con veinticinco dólares.",
+          "pt-BR": "Naquela tarde, Jo saiu correndo e voltou com vinte e cinco dólares.",
+          "id": "Sore itu, Jo berlari keluar dan kembali membawa dua puluh lima dolar.",
+          "ar": "في ذلك العصر، خرجت جو مسرعة وعادت ومعها خمسة وعشرون دولارًا.",
+          "vi": "Chiều hôm đó, Jo chạy ra ngoài và trở về với hai mươi lăm đô la.",
+          "hi": "उस दोपहर जो दौड़कर बाहर गई और पच्चीस डॉलर लेकर लौटी।",
+          "ru": "В тот день Джо выбежала из дома и вернулась с двадцатью пятью долларами.",
+          "bn": "সেদিন বিকেলে জো দৌড়ে বেরিয়ে গেল আর পঁচিশ ডলার নিয়ে ফিরল।",
+          "ur": "اس سہ پہر جو دوڑ کر باہر گئی اور پچیس ڈالر لے کر لوٹی۔",
+          "th": "บ่ายวันนั้น โจวิ่งออกไปข้างนอกแล้วกลับมาพร้อมเงินยี่สิบห้าดอลลาร์"
+        }
+      },
+      {
+        "id": "cl-women-067",
+        "english": "She took off her hat, and her sisters cried out in surprise.",
+        "turkish": "Şapkasını çıkardı ve kardeşleri şaşkınlıkla bağrıştı.",
+        "translations": {
+          "es-419": "Se quitó el sombrero, y sus hermanas gritaron de sorpresa.",
+          "pt-BR": "Ela tirou o chapéu, e as irmãs gritaram de surpresa.",
+          "id": "Ia melepas topinya, dan saudari-saudarinya berteriak kaget.",
+          "ar": "خلعت قبّعتها، فصاحت أخواتها من الدهشة.",
+          "vi": "Cô bỏ mũ ra, và các chị em kêu lên kinh ngạc.",
+          "hi": "उसने अपनी टोपी उतारी, और उसकी बहनें हैरानी से चीख़ पड़ीं।",
+          "ru": "Она сняла шляпу, и сёстры вскрикнули от удивления.",
+          "bn": "সে টুপিটা খুলল, আর তার বোনেরা অবাক হয়ে চেঁচিয়ে উঠল।",
+          "ur": "اس نے اپنی ٹوپی اتاری، اور اس کی بہنیں حیرت سے چیخ پڑیں۔",
+          "th": "เธอถอดหมวกออก และพี่น้องของเธอร้องออกมาด้วยความตกใจ"
+        }
+      },
+      {
+        "id": "cl-women-068",
+        "english": "Her long, thick hair, her one real beauty, was cut short.",
+        "turkish": "Uzun, gür saçları, tek gerçek güzelliği, kısacık kesilmişti.",
+        "translations": {
+          "es-419": "Su pelo largo y espeso, su única belleza de verdad, estaba cortado muy corto.",
+          "pt-BR": "O cabelo longo e grosso, sua única beleza de verdade, estava cortado bem curto.",
+          "id": "Rambutnya yang panjang dan tebal, satu-satunya kecantikannya, sudah dipotong pendek.",
+          "ar": "كان شعرها الطويل الكثيف، جمالها الحقيقيّ الوحيد، مقصوصًا قصيرًا.",
+          "vi": "Mái tóc dài và dày, nét đẹp thật sự duy nhất của cô, đã bị cắt ngắn.",
+          "hi": "उसके लंबे, घने बाल, उसकी इकलौती असली सुंदरता, छोटे कटे हुए थे।",
+          "ru": "Её длинные густые волосы, её единственная настоящая красота, были коротко острижены.",
+          "bn": "তার লম্বা ঘন চুল, তার একমাত্র আসল সৌন্দর্য, ছোট করে কাটা।",
+          "ur": "اس کے لمبے گھنے بال، اس کی واحد اصل خوبصورتی، چھوٹے کٹے ہوئے تھے۔",
+          "th": "ผมยาวดกหนาของเธอ ซึ่งเป็นความงามแท้จริงเพียงอย่างเดียว ถูกตัดสั้นกุด"
+        }
+      },
+      {
+        "id": "cl-women-069",
+        "english": "\"I sold it to help Father,\" she said, and she tried to laugh.",
+        "turkish": "\"Babama yardım etmek için sattım,\" dedi ve gülmeye çalıştı.",
+        "translations": {
+          "es-419": "—Lo vendí para ayudar a papá —dijo, e intentó reír.",
+          "pt-BR": "— Vendi para ajudar o papai — disse ela, e tentou rir.",
+          "id": "\"Aku menjualnya untuk membantu Ayah,\" katanya, sambil mencoba tertawa.",
+          "ar": "قالت وهي تحاول أن تضحك: «بعته لأساعد أبي».",
+          "vi": "\"Con bán nó để giúp cha,\" cô nói và cố cười.",
+          "hi": "\"मैंने इन्हें पिताजी की मदद के लिए बेच दिया,\" उसने कहा और हँसने की कोशिश की।",
+          "ru": "«Я продала их, чтобы помочь папе», — сказала она и попыталась засмеяться.",
+          "bn": "\"বাবাকে সাহায্য করতে বিক্রি করে দিয়েছি,\" সে বলল আর হাসার চেষ্টা করল।",
+          "ur": "\"میں نے انہیں ابا کی مدد کے لیے بیچ دیا،\" اس نے کہا اور ہنسنے کی کوشش کی۔",
+          "th": "\"ฉันขายมันเพื่อช่วยพ่อ\" เธอพูดแล้วพยายามหัวเราะ"
+        }
+      },
+      {
+        "id": "cl-women-070",
+        "english": "That night Jo cried a little in bed, but only for her hair.",
+        "turkish": "O gece Jo yatağında biraz ağladı, ama yalnızca saçları için.",
+        "translations": {
+          "es-419": "Esa noche Jo lloró un poco en la cama, pero solo por su pelo.",
+          "pt-BR": "Naquela noite Jo chorou um pouco na cama, mas só pelo cabelo.",
+          "id": "Malam itu Jo menangis sedikit di tempat tidur, tetapi hanya karena rambutnya.",
+          "ar": "في تلك الليلة بكت جو قليلًا في سريرها، لكن من أجل شعرها فقط.",
+          "vi": "Đêm đó Jo khóc một chút trên giường, nhưng chỉ vì mái tóc.",
+          "hi": "उस रात जो बिस्तर में थोड़ा रोई, पर सिर्फ़ अपने बालों के लिए।",
+          "ru": "Ночью Джо немного поплакала в постели, но только о волосах.",
+          "bn": "সেই রাতে জো বিছানায় একটু কাঁদল, কিন্তু শুধু চুলের জন্য।",
+          "ur": "اس رات جو بستر میں تھوڑا روئی، مگر صرف اپنے بالوں کے لیے۔",
+          "th": "คืนนั้นโจร้องไห้นิดหน่อยบนเตียง แต่เพียงเพราะเสียดายผมเท่านั้น"
+        }
+      },
+      {
+        "id": "cl-women-071",
+        "english": "After Marmee left, the girls tried hard to be good and busy.",
+        "turkish": "Marmee gittikten sonra kızlar iyi ve çalışkan olmak için çok uğraştı.",
+        "translations": {
+          "es-419": "Después de que Marmee se fue, las chicas se esforzaron por ser buenas y mantenerse ocupadas.",
+          "pt-BR": "Depois que Marmee partiu, as meninas se esforçaram para ser boas e ficar ocupadas.",
+          "id": "Setelah Marmee pergi, anak-anak itu berusaha keras untuk berbuat baik dan tetap sibuk.",
+          "ar": "بعد رحيل مارمي، حاولت البنات جاهدات أن يكنّ صالحات ومشغولات.",
+          "vi": "Sau khi Marmee đi, các cô cố gắng ngoan ngoãn và chăm chỉ.",
+          "hi": "मार्मी के जाने के बाद लड़कियों ने अच्छा बनने और काम में लगे रहने की पूरी कोशिश की।",
+          "ru": "После отъезда Марми девочки изо всех сил старались быть хорошими и не сидеть без дела.",
+          "bn": "মারমি চলে যাওয়ার পর মেয়েরা ভালো থাকতে আর কাজে ব্যস্ত থাকতে খুব চেষ্টা করল।",
+          "ur": "مارمی کے جانے کے بعد لڑکیوں نے اچھا بننے اور کام میں لگے رہنے کی پوری کوشش کی۔",
+          "th": "หลังจากมาร์มีไปแล้ว เด็กสาวทั้งหลายพยายามเป็นเด็กดีและทำงานไม่หยุด"
+        }
+      },
+      {
+        "id": "cl-women-072",
+        "english": "But soon they grew lazy and forgot their duties, all except Beth.",
+        "turkish": "Ama çok geçmeden tembelleşip görevlerini unuttular; Beth dışında hepsi.",
+        "translations": {
+          "es-419": "Pero pronto se volvieron perezosas y olvidaron sus deberes, todas menos Beth.",
+          "pt-BR": "Mas logo ficaram preguiçosas e esqueceram suas tarefas, todas menos Beth.",
+          "id": "Tetapi segera mereka menjadi malas dan melupakan tugas mereka, kecuali Beth.",
+          "ar": "لكن سرعان ما تكاسلن ونسين واجباتهنّ، كلّهنّ ما عدا بيث.",
+          "vi": "Nhưng chẳng bao lâu các cô sinh lười và quên bổn phận, trừ Beth.",
+          "hi": "पर जल्दी ही वे आलसी हो गईं और अपने काम भूल गईं, सिवाय बेथ के।",
+          "ru": "Но скоро они разленились и забыли о своих обязанностях, все, кроме Бет.",
+          "bn": "কিন্তু শিগগিরই তারা অলস হয়ে নিজেদের কাজ ভুলে গেল, বেথ ছাড়া সবাই।",
+          "ur": "مگر جلد ہی وہ سست ہو گئیں اور اپنے کام بھول گئیں، سوائے بیتھ کے۔",
+          "th": "แต่ไม่นานพวกเธอก็ขี้เกียจและลืมหน้าที่ ยกเว้นเบธคนเดียว"
+        }
+      },
+      {
+        "id": "cl-women-073",
+        "english": "Beth still visited the poor Hummels every day with food.",
+        "turkish": "Beth hâlâ her gün yoksul Hummel'lere yiyecek götürüyordu.",
+        "translations": {
+          "es-419": "Beth seguía visitando a los pobres Hummel todos los días con comida.",
+          "pt-BR": "Beth continuava visitando os pobres Hummel todos os dias com comida.",
+          "id": "Beth masih mengunjungi keluarga Hummel yang miskin setiap hari sambil membawa makanan.",
+          "ar": "ظلّت بيث تزور عائلة هومل الفقيرة كلّ يوم ومعها الطعام.",
+          "vi": "Beth vẫn ngày ngày mang thức ăn đến thăm nhà Hummel nghèo.",
+          "hi": "बेथ अब भी हर दिन ग़रीब हमल परिवार के पास खाना लेकर जाती थी।",
+          "ru": "Бет по-прежнему каждый день носила еду бедным Хаммелам.",
+          "bn": "বেথ তখনও রোজ খাবার নিয়ে গরিব হামেলদের কাছে যেত।",
+          "ur": "بیتھ اب بھی ہر روز غریب ہمل خاندان کے پاس کھانا لے کر جاتی تھی۔",
+          "th": "เบธยังคงนำอาหารไปเยี่ยมครอบครัวฮัมเมลผู้ยากจนทุกวัน"
+        }
+      },
+      {
+        "id": "cl-women-074",
+        "english": "One evening she came home very quiet and pale.",
+        "turkish": "Bir akşam eve çok sessiz ve solgun döndü.",
+        "translations": {
+          "es-419": "Una tarde volvió a casa muy callada y pálida.",
+          "pt-BR": "Uma tarde ela voltou para casa muito quieta e pálida.",
+          "id": "Suatu sore ia pulang dengan sangat pendiam dan pucat.",
+          "ar": "في إحدى الأمسيات عادت إلى البيت صامتة جدًّا وشاحبة.",
+          "vi": "Một tối nọ, cô về nhà rất lặng lẽ và xanh xao.",
+          "hi": "एक शाम वह बहुत चुप और पीली-सी घर लौटी।",
+          "ru": "Однажды вечером она вернулась домой очень тихой и бледной.",
+          "bn": "এক সন্ধ্যায় সে খুব চুপচাপ আর ফ্যাকাশে মুখে বাড়ি ফিরল।",
+          "ur": "ایک شام وہ بہت خاموش اور زرد سی گھر لوٹی۔",
+          "th": "เย็นวันหนึ่ง เธอกลับบ้านมาเงียบผิดปกติและหน้าซีด"
+        }
+      },
+      {
+        "id": "cl-women-075",
+        "english": "The Hummel baby had scarlet fever, and it had died in her arms.",
+        "turkish": "Hummel'lerin bebeği kızıla yakalanmış ve onun kollarında ölmüştü.",
+        "translations": {
+          "es-419": "El bebé de los Hummel tenía escarlatina, y había muerto en sus brazos.",
+          "pt-BR": "O bebê dos Hummel estava com escarlatina e tinha morrido nos braços dela.",
+          "id": "Bayi keluarga Hummel terkena demam scarlet, dan meninggal dalam pelukannya.",
+          "ar": "كان طفل عائلة هومل مصابًا بالحمّى القرمزية، وقد مات بين ذراعيها.",
+          "vi": "Em bé nhà Hummel bị bệnh tinh hồng nhiệt và đã mất trong vòng tay cô.",
+          "hi": "हमल परिवार के बच्चे को स्कार्लेट ज्वर था, और वह उसकी बाँहों में ही मर गया था।",
+          "ru": "Малыш Хаммелов болел скарлатиной и умер у неё на руках.",
+          "bn": "হামেলদের শিশুটির স্কারলেট জ্বর হয়েছিল, আর সে বেথের কোলেই মারা গিয়েছিল।",
+          "ur": "ہمل خاندان کے بچے کو اسکارلٹ بخار تھا، اور وہ اس کی بانہوں میں ہی مر گیا تھا۔",
+          "th": "ทารกของครอบครัวฮัมเมลเป็นไข้อีดำอีแดง และเสียชีวิตในอ้อมแขนของเธอ"
+        }
+      },
+      {
+        "id": "cl-women-076",
+        "english": "A few days later, Beth was sick with the same fever.",
+        "turkish": "Birkaç gün sonra Beth de aynı hastalığa yakalandı.",
+        "translations": {
+          "es-419": "Unos días después, Beth estaba enferma con la misma fiebre.",
+          "pt-BR": "Alguns dias depois, Beth estava doente com a mesma febre.",
+          "id": "Beberapa hari kemudian, Beth jatuh sakit dengan demam yang sama.",
+          "ar": "بعد أيّام قليلة، مرضت بيث بالحمّى نفسها.",
+          "vi": "Vài ngày sau, Beth mắc đúng cơn sốt ấy.",
+          "hi": "कुछ दिन बाद बेथ भी उसी ज्वर से बीमार पड़ गई।",
+          "ru": "Через несколько дней Бет заболела той же болезнью.",
+          "bn": "কয়েক দিন পর বেথ সেই একই জ্বরে অসুস্থ হয়ে পড়ল।",
+          "ur": "چند دن بعد بیتھ بھی اسی بخار سے بیمار پڑ گئی۔",
+          "th": "ไม่กี่วันต่อมา เบธก็ป่วยด้วยไข้ชนิดเดียวกัน"
+        }
+      },
+      {
+        "id": "cl-women-077",
+        "english": "Amy was sent to stay with old Aunt March, so she would not catch it.",
+        "turkish": "Amy, hastalığı kapmasın diye yaşlı March halanın yanına gönderildi.",
+        "translations": {
+          "es-419": "Enviaron a Amy a casa de la anciana tía March, para que no se contagiara.",
+          "pt-BR": "Amy foi mandada para a casa da velha tia March, para não pegar a doença.",
+          "id": "Amy dikirim untuk tinggal bersama Bibi March yang sudah tua, supaya tidak tertular.",
+          "ar": "أُرسلت إيمي لتقيم عند العمّة مارش العجوز، كي لا تُصاب بالعدوى.",
+          "vi": "Amy được gửi sang ở với bà cô March già để khỏi bị lây.",
+          "hi": "एमी को बूढ़ी बुआ मार्च के पास भेज दिया गया, ताकि उसे यह बीमारी न लगे।",
+          "ru": "Эми отправили пожить к старой тётушке Марч, чтобы она не заразилась.",
+          "bn": "অ্যামিকে বুড়ি পিসি মার্চের কাছে পাঠিয়ে দেওয়া হল, যাতে তার রোগটা না ধরে।",
+          "ur": "ایمی کو بوڑھی پھوپھی مارچ کے پاس بھیج دیا گیا، تاکہ اسے یہ بیماری نہ لگے۔",
+          "th": "เอมี่ถูกส่งไปอยู่กับป้ามาร์ชผู้ชรา เพื่อจะได้ไม่ติดโรค"
+        }
+      },
+      {
+        "id": "cl-women-078",
+        "english": "Jo stayed by Beth's bed day and night.",
+        "turkish": "Jo gece gündüz Beth'in yatağının başında kaldı.",
+        "translations": {
+          "es-419": "Jo se quedó junto a la cama de Beth día y noche.",
+          "pt-BR": "Jo ficou ao lado da cama de Beth dia e noite.",
+          "id": "Jo menjaga di samping tempat tidur Beth siang dan malam.",
+          "ar": "بقيت جو بجانب سرير بيث ليلًا ونهارًا.",
+          "vi": "Jo ngồi bên giường Beth suốt ngày đêm.",
+          "hi": "जो दिन-रात बेथ के बिस्तर के पास रही।",
+          "ru": "Джо день и ночь не отходила от постели Бет.",
+          "bn": "জো দিনরাত বেথের বিছানার পাশে রইল।",
+          "ur": "جو دن رات بیتھ کے بستر کے پاس رہی۔",
+          "th": "โจเฝ้าอยู่ข้างเตียงเบธทั้งวันทั้งคืน"
+        }
+      },
+      {
+        "id": "cl-women-079",
+        "english": "Beth grew worse, and soon she did not know her sisters any more.",
+        "turkish": "Beth'in durumu kötüleşti ve kısa süre sonra kardeşlerini tanıyamaz oldu.",
+        "translations": {
+          "es-419": "Beth empeoró, y pronto ya no reconocía a sus hermanas.",
+          "pt-BR": "Beth piorou e logo não reconhecia mais as irmãs.",
+          "id": "Keadaan Beth memburuk, dan tak lama kemudian ia tidak mengenali saudari-saudarinya lagi.",
+          "ar": "ساءت حال بيث، وسرعان ما لم تعد تعرف أخواتها.",
+          "vi": "Beth ngày càng yếu, và chẳng bao lâu không còn nhận ra các chị em nữa.",
+          "hi": "बेथ की हालत बिगड़ती गई, और जल्दी ही वह अपनी बहनों को पहचानना भी भूल गई।",
+          "ru": "Бет становилось хуже, и скоро она перестала узнавать сестёр.",
+          "bn": "বেথের অবস্থা খারাপ হতে লাগল, আর শিগগিরই সে বোনেদের চিনতেও পারল না।",
+          "ur": "بیتھ کی حالت بگڑتی گئی، اور جلد ہی وہ اپنی بہنوں کو پہچان بھی نہ سکی۔",
+          "th": "อาการของเบธแย่ลง ไม่นานเธอก็จำพี่น้องของตัวเองไม่ได้อีกแล้ว"
+        }
+      },
+      {
+        "id": "cl-women-080",
+        "english": "The doctor looked worried, and Laurie sent a telegram to Marmee.",
+        "turkish": "Doktor endişeli görünüyordu, Laurie de Marmee'ye telgraf çekti.",
+        "translations": {
+          "es-419": "El médico parecía preocupado, y Laurie le mandó un telegrama a Marmee.",
+          "pt-BR": "O médico parecia preocupado, e Laurie mandou um telegrama para Marmee.",
+          "id": "Dokter tampak cemas, dan Laurie mengirim telegram kepada Marmee.",
+          "ar": "بدا الطبيب قلقًا، فأرسل لوري برقيّة إلى مارمي.",
+          "vi": "Bác sĩ có vẻ lo lắng, và Laurie đánh điện cho Marmee.",
+          "hi": "डॉक्टर चिंतित दिखे, और लॉरी ने मार्मी को तार भेज दिया।",
+          "ru": "Доктор выглядел встревоженным, и Лори отправил Марми телеграмму.",
+          "bn": "ডাক্তারকে চিন্তিত দেখাল, আর লরি মারমিকে টেলিগ্রাম পাঠাল।",
+          "ur": "ڈاکٹر فکرمند دکھائی دیے، اور لاری نے مارمی کو تار بھیج دیا۔",
+          "th": "หมอดูกังวล และลอรีส่งโทรเลขไปหามาร์มี"
+        }
+      },
+      {
+        "id": "cl-women-081",
+        "english": "Late one night, Jo and Meg sat by the bed and waited.",
+        "turkish": "Bir gece geç saatte Jo ile Meg yatağın yanında oturup beklediler.",
+        "translations": {
+          "es-419": "Una noche, ya tarde, Jo y Meg se sentaron junto a la cama a esperar.",
+          "pt-BR": "Tarde da noite, Jo e Meg se sentaram ao lado da cama e esperaram.",
+          "id": "Suatu malam yang larut, Jo dan Meg duduk di samping tempat tidur dan menunggu.",
+          "ar": "في وقت متأخّر من إحدى الليالي، جلست جو وميغ بجانب السرير تنتظران.",
+          "vi": "Một đêm khuya, Jo và Meg ngồi bên giường chờ đợi.",
+          "hi": "एक रात देर तक जो और मेग बिस्तर के पास बैठी इंतज़ार करती रहीं।",
+          "ru": "Однажды поздно ночью Джо и Мег сидели у постели и ждали.",
+          "bn": "এক গভীর রাতে জো আর মেগ বিছানার পাশে বসে অপেক্ষা করছিল।",
+          "ur": "ایک رات دیر تک جو اور میگ بستر کے پاس بیٹھی انتظار کرتی رہیں۔",
+          "th": "ดึกคืนหนึ่ง โจกับเม็กนั่งรออยู่ข้างเตียง"
+        }
+      },
+      {
+        "id": "cl-women-082",
+        "english": "Then the fever broke, and Beth fell into a quiet, natural sleep.",
+        "turkish": "Sonra ateş düştü ve Beth sakin, huzurlu bir uykuya daldı.",
+        "translations": {
+          "es-419": "Entonces la fiebre bajó, y Beth cayó en un sueño tranquilo y natural.",
+          "pt-BR": "Então a febre cedeu, e Beth caiu num sono tranquilo e natural.",
+          "id": "Lalu demamnya turun, dan Beth tertidur dengan tenang dan wajar.",
+          "ar": "ثمّ انكسرت الحمّى، وغطّت بيث في نوم هادئ طبيعيّ.",
+          "vi": "Rồi cơn sốt lui, và Beth chìm vào giấc ngủ yên lành.",
+          "hi": "फिर बुख़ार उतर गया, और बेथ शांत, सहज नींद में सो गई।",
+          "ru": "Потом жар спал, и Бет погрузилась в спокойный, естественный сон.",
+          "bn": "তারপর জ্বর ছাড়ল, আর বেথ শান্ত, স্বাভাবিক ঘুমে ঢলে পড়ল।",
+          "ur": "پھر بخار اتر گیا، اور بیتھ پرسکون، قدرتی نیند سو گئی۔",
+          "th": "แล้วไข้ก็ลด และเบธก็หลับไปอย่างสงบเป็นปกติ"
+        }
+      },
+      {
+        "id": "cl-women-083",
+        "english": "\"She will live,\" said the doctor, and Jo wept for joy.",
+        "turkish": "\"Yaşayacak,\" dedi doktor, Jo da sevinçten ağladı.",
+        "translations": {
+          "es-419": "—Vivirá —dijo el médico, y Jo lloró de alegría.",
+          "pt-BR": "— Ela vai viver — disse o médico, e Jo chorou de alegria.",
+          "id": "\"Dia akan hidup,\" kata dokter, dan Jo menangis karena gembira.",
+          "ar": "قال الطبيب: «ستعيش»، فبكت جو من الفرح.",
+          "vi": "\"Cô bé sẽ sống,\" bác sĩ nói, và Jo khóc vì vui sướng.",
+          "hi": "\"यह बच जाएगी,\" डॉक्टर ने कहा, और जो ख़ुशी से रो पड़ी।",
+          "ru": "«Она будет жить», — сказал доктор, и Джо заплакала от радости.",
+          "bn": "\"ও বাঁচবে,\" ডাক্তার বললেন, আর জো আনন্দে কেঁদে ফেলল।",
+          "ur": "\"یہ بچ جائے گی،\" ڈاکٹر نے کہا، اور جو خوشی سے رو پڑی۔",
+          "th": "\"เธอจะรอด\" หมอบอก และโจก็ร้องไห้ด้วยความดีใจ"
+        }
+      },
+      {
+        "id": "cl-women-084",
+        "english": "Marmee arrived that same night through the snow.",
+        "turkish": "Marmee aynı gece karların içinden çıkıp geldi.",
+        "translations": {
+          "es-419": "Marmee llegó esa misma noche a través de la nieve.",
+          "pt-BR": "Marmee chegou naquela mesma noite, atravessando a neve.",
+          "id": "Marmee tiba malam itu juga, menembus salju.",
+          "ar": "وصلت مارمي في الليلة نفسها عبر الثلج.",
+          "vi": "Marmee về đến nơi ngay đêm hôm đó, băng qua tuyết.",
+          "hi": "मार्मी उसी रात बर्फ़ के बीच से होकर पहुँच गईं।",
+          "ru": "Марми приехала той же ночью, сквозь снег.",
+          "bn": "মারমি সেই রাতেই বরফ পেরিয়ে এসে পৌঁছালেন।",
+          "ur": "مارمی اسی رات برف میں سے ہوتی ہوئی پہنچ گئیں۔",
+          "th": "มาร์มีมาถึงในคืนเดียวกันนั้นท่ามกลางหิมะ"
+        }
+      },
+      {
+        "id": "cl-women-085",
+        "english": "Father got better slowly, and on Christmas Day he came home.",
+        "turkish": "Babaları yavaş yavaş iyileşti ve Noel günü eve döndü.",
+        "translations": {
+          "es-419": "Papá se recuperó poco a poco, y el día de Navidad volvió a casa.",
+          "pt-BR": "O pai melhorou aos poucos e, no dia de Natal, voltou para casa.",
+          "id": "Ayah sembuh perlahan-lahan, dan pada hari Natal ia pulang ke rumah.",
+          "ar": "تحسّن الأب ببطء، وفي يوم عيد الميلاد عاد إلى البيت.",
+          "vi": "Cha dần dần khỏe lại, và vào ngày Giáng sinh ông trở về nhà.",
+          "hi": "पिताजी धीरे-धीरे ठीक हुए, और क्रिसमस के दिन घर लौट आए।",
+          "ru": "Отец медленно поправлялся и в Рождество вернулся домой.",
+          "bn": "বাবা ধীরে ধীরে সেরে উঠলেন, আর বড়দিনের দিন বাড়ি ফিরলেন।",
+          "ur": "والد آہستہ آہستہ ٹھیک ہوئے، اور کرسمس کے دن گھر لوٹ آئے۔",
+          "th": "พ่อค่อย ๆ หายดี และกลับถึงบ้านในวันคริสต์มาส"
+        }
+      },
+      {
+        "id": "cl-women-086",
+        "english": "Laurie led him into the room as a surprise, and the family laughed and cried.",
+        "turkish": "Laurie onu sürpriz olarak odaya getirdi, aile de hem güldü hem ağladı.",
+        "translations": {
+          "es-419": "Laurie lo hizo entrar en la sala como sorpresa, y la familia rio y lloró.",
+          "pt-BR": "Laurie o levou até a sala como surpresa, e a família riu e chorou.",
+          "id": "Laurie membawanya masuk ke ruangan sebagai kejutan, dan keluarga itu tertawa sambil menangis.",
+          "ar": "أدخله لوري إلى الغرفة مفاجأةً، فضحكت العائلة وبكت.",
+          "vi": "Laurie dẫn ông vào phòng như một bất ngờ, và cả nhà vừa cười vừa khóc.",
+          "hi": "लॉरी उन्हें सरप्राइज़ के तौर पर कमरे में लाया, और पूरा परिवार हँसा भी और रोया भी।",
+          "ru": "Лори ввёл его в комнату как сюрприз, и вся семья смеялась и плакала.",
+          "bn": "লরি চমক হিসেবে তাঁকে ঘরে নিয়ে এল, আর পরিবারের সবাই হাসল আর কাঁদল।",
+          "ur": "لاری انہیں سرپرائز کے طور پر کمرے میں لایا، اور سارا خاندان ہنسا بھی اور رویا بھی۔",
+          "th": "ลอรีพาเขาเข้ามาในห้องเป็นของขวัญเซอร์ไพรส์ ทั้งครอบครัวทั้งหัวเราะทั้งร้องไห้"
+        }
+      },
+      {
+        "id": "cl-women-087",
+        "english": "Soon after, John Brooke asked Meg to be his wife, and she said yes.",
+        "turkish": "Kısa süre sonra John Brooke, Meg'e evlenme teklif etti ve Meg evet dedi.",
+        "translations": {
+          "es-419": "Poco después, John Brooke le pidió a Meg que fuera su esposa, y ella dijo que sí.",
+          "pt-BR": "Pouco depois, John Brooke pediu Meg em casamento, e ela disse sim.",
+          "id": "Tak lama kemudian, John Brooke melamar Meg, dan Meg menerimanya.",
+          "ar": "بعد ذلك بقليل، طلب جون بروك من ميغ أن تكون زوجته، فقالت نعم.",
+          "vi": "Không lâu sau, John Brooke cầu hôn Meg, và cô nhận lời.",
+          "hi": "कुछ ही समय बाद जॉन ब्रुक ने मेग से शादी का प्रस्ताव रखा, और उसने हाँ कह दी।",
+          "ru": "Вскоре Джон Брук попросил Мег стать его женой, и она согласилась.",
+          "bn": "এর কিছুদিন পরেই জন ব্রুক মেগকে বিয়ের প্রস্তাব দিলেন, আর মেগ রাজি হল।",
+          "ur": "کچھ ہی عرصے بعد جان بروک نے میگ کو شادی کی پیشکش کی، اور اس نے ہاں کر دی۔",
+          "th": "ไม่นานหลังจากนั้น จอห์น บรุกขอเม็กแต่งงาน และเธอก็ตอบตกลง"
+        }
+      },
+      {
+        "id": "cl-women-088",
+        "english": "Jo was a little sad, because she did not want the family to change.",
+        "turkish": "Jo biraz üzüldü, çünkü ailenin değişmesini istemiyordu.",
+        "translations": {
+          "es-419": "Jo se puso un poco triste, porque no quería que la familia cambiara.",
+          "pt-BR": "Jo ficou um pouco triste, porque não queria que a família mudasse.",
+          "id": "Jo sedikit sedih, karena ia tidak ingin keluarganya berubah.",
+          "ar": "حزنت جو قليلًا، لأنّها لم تكن تريد أن تتغيّر العائلة.",
+          "vi": "Jo hơi buồn, vì cô không muốn gia đình thay đổi.",
+          "hi": "जो थोड़ी उदास हुई, क्योंकि वह नहीं चाहती थी कि परिवार बदले।",
+          "ru": "Джо немного загрустила: ей не хотелось, чтобы в семье что-то менялось.",
+          "bn": "জো একটু মন খারাপ করল, কারণ সে চাইত না পরিবারটা বদলে যাক।",
+          "ur": "جو تھوڑی اداس ہوئی، کیونکہ وہ نہیں چاہتی تھی کہ خاندان بدلے۔",
+          "th": "โจเศร้าเล็กน้อย เพราะเธอไม่อยากให้ครอบครัวเปลี่ยนไป"
+        }
+      },
+      {
+        "id": "cl-women-089",
+        "english": "Three years passed, and Meg married John and had her own little home.",
+        "turkish": "Üç yıl geçti; Meg, John'la evlendi ve kendi küçük yuvasını kurdu.",
+        "translations": {
+          "es-419": "Pasaron tres años, y Meg se casó con John y tuvo su propio hogar pequeño.",
+          "pt-BR": "Passaram-se três anos, e Meg se casou com John e teve seu próprio lar pequeno.",
+          "id": "Tiga tahun berlalu, dan Meg menikah dengan John dan punya rumah kecilnya sendiri.",
+          "ar": "مرّت ثلاث سنوات، فتزوّجت ميغ من جون وصار لها بيتها الصغير.",
+          "vi": "Ba năm trôi qua, Meg cưới John và có tổ ấm nhỏ của riêng mình.",
+          "hi": "तीन साल बीत गए, और मेग ने जॉन से शादी करके अपना छोटा-सा घर बसा लिया।",
+          "ru": "Прошло три года, Мег вышла замуж за Джона, и у неё появился свой маленький дом.",
+          "bn": "তিন বছর কেটে গেল, আর মেগ জনকে বিয়ে করে নিজের ছোট্ট সংসার পাতল।",
+          "ur": "تین سال گزر گئے، اور میگ نے جان سے شادی کر کے اپنا چھوٹا سا گھر بسا لیا۔",
+          "th": "สามปีผ่านไป เม็กแต่งงานกับจอห์นและมีบ้านหลังเล็ก ๆ ของตัวเอง"
+        }
+      },
+      {
+        "id": "cl-women-090",
+        "english": "Laurie went to college, and every year he loved Jo more.",
+        "turkish": "Laurie üniversiteye gitti ve her yıl Jo'yu daha çok sevdi.",
+        "translations": {
+          "es-419": "Laurie fue a la universidad, y cada año amaba más a Jo.",
+          "pt-BR": "Laurie foi para a faculdade e, a cada ano, amava Jo ainda mais.",
+          "id": "Laurie pergi kuliah, dan setiap tahun ia semakin mencintai Jo.",
+          "ar": "ذهب لوري إلى الجامعة، وكان يحبّ جو أكثر في كلّ عام.",
+          "vi": "Laurie vào đại học, và mỗi năm cậu lại yêu Jo nhiều hơn.",
+          "hi": "लॉरी कॉलेज गया, और हर साल वह जो से और ज़्यादा प्यार करने लगा।",
+          "ru": "Лори поступил в колледж и с каждым годом любил Джо всё сильнее.",
+          "bn": "লরি কলেজে গেল, আর প্রতি বছর সে জোকে আরও বেশি ভালোবাসতে লাগল।",
+          "ur": "لاری کالج گیا، اور ہر سال وہ جو سے اور زیادہ محبت کرنے لگا۔",
+          "th": "ลอรีเข้ามหาวิทยาลัย และเขารักโจมากขึ้นทุกปี"
+        }
+      },
+      {
+        "id": "cl-women-091",
+        "english": "One day he told her so, but Jo shook her head sadly.",
+        "turkish": "Bir gün bunu ona söyledi ama Jo üzgünce başını salladı.",
+        "translations": {
+          "es-419": "Un día se lo dijo, pero Jo negó tristemente con la cabeza.",
+          "pt-BR": "Um dia ele disse isso a ela, mas Jo balançou a cabeça com tristeza.",
+          "id": "Suatu hari ia mengatakannya, tetapi Jo menggeleng dengan sedih.",
+          "ar": "وفي يوم من الأيّام صارحها بذلك، لكنّ جو هزّت رأسها بحزن.",
+          "vi": "Một hôm cậu nói điều đó với cô, nhưng Jo buồn bã lắc đầu.",
+          "hi": "एक दिन उसने यह बात उससे कह दी, पर जो ने उदासी से सिर हिला दिया।",
+          "ru": "Однажды он сказал ей об этом, но Джо грустно покачала головой.",
+          "bn": "একদিন সে কথাটা জোকে বলল, কিন্তু জো দুঃখের সঙ্গে মাথা নাড়ল।",
+          "ur": "ایک دن اس نے یہ بات اس سے کہہ دی، مگر جو نے اداسی سے سر ہلا دیا۔",
+          "th": "วันหนึ่งเขาบอกความในใจกับเธอ แต่โจส่ายหน้าอย่างเศร้า ๆ"
+        }
+      },
+      {
+        "id": "cl-women-092",
+        "english": "\"I love you as a friend, Laurie, but I can't be your wife,\" she said.",
+        "turkish": "\"Seni bir arkadaş olarak seviyorum Laurie, ama senin karın olamam,\" dedi.",
+        "translations": {
+          "es-419": "—Te quiero como amigo, Laurie, pero no puedo ser tu esposa —dijo.",
+          "pt-BR": "— Eu te amo como amigo, Laurie, mas não posso ser sua esposa — disse ela.",
+          "id": "\"Aku menyayangimu sebagai sahabat, Laurie, tetapi aku tidak bisa menjadi istrimu,\" katanya.",
+          "ar": "قالت: «أحبّك كصديق يا لوري، لكنّي لا أستطيع أن أكون زوجتك».",
+          "vi": "\"Chị yêu quý cậu như một người bạn, Laurie à, nhưng chị không thể làm vợ cậu,\" cô nói.",
+          "hi": "\"मैं तुम्हें दोस्त की तरह प्यार करती हूँ, लॉरी, पर तुम्हारी पत्नी नहीं बन सकती,\" उसने कहा।",
+          "ru": "«Я люблю тебя как друга, Лори, но не могу стать твоей женой», — сказала она.",
+          "bn": "\"আমি তোমাকে বন্ধু হিসেবে ভালোবাসি, লরি, কিন্তু তোমার বউ হতে পারব না,\" সে বলল।",
+          "ur": "\"میں تم سے دوست کی طرح محبت کرتی ہوں، لاری، مگر تمہاری بیوی نہیں بن سکتی،\" اس نے کہا۔",
+          "th": "\"ฉันรักเธอในฐานะเพื่อนนะ ลอรี แต่ฉันเป็นภรรยาเธอไม่ได้\" เธอพูด"
+        }
+      },
+      {
+        "id": "cl-women-093",
+        "english": "Laurie was very unhappy, and he went away to Europe.",
+        "turkish": "Laurie çok mutsuz oldu ve Avrupa'ya gitti.",
+        "translations": {
+          "es-419": "Laurie se sintió muy desdichado, y se fue a Europa.",
+          "pt-BR": "Laurie ficou muito infeliz e foi embora para a Europa.",
+          "id": "Laurie sangat sedih, lalu ia pergi ke Eropa.",
+          "ar": "حزن لوري حزنًا شديدًا، وسافر إلى أوروبا.",
+          "vi": "Laurie rất đau khổ, và cậu bỏ sang châu Âu.",
+          "hi": "लॉरी बहुत दुखी हुआ, और वह यूरोप चला गया।",
+          "ru": "Лори был очень несчастен и уехал в Европу.",
+          "bn": "লরি খুব দুঃখ পেল, আর সে ইউরোপে চলে গেল।",
+          "ur": "لاری بہت دکھی ہوا، اور وہ یورپ چلا گیا۔",
+          "th": "ลอรีเสียใจมาก และเดินทางไปยุโรป"
+        }
+      },
+      {
+        "id": "cl-women-094",
+        "english": "Jo went to New York to work and to write.",
+        "turkish": "Jo çalışmak ve yazmak için New York'a gitti.",
+        "translations": {
+          "es-419": "Jo se fue a Nueva York a trabajar y a escribir.",
+          "pt-BR": "Jo foi para Nova York trabalhar e escrever.",
+          "id": "Jo pergi ke New York untuk bekerja dan menulis.",
+          "ar": "ذهبت جو إلى نيويورك لتعمل وتكتب.",
+          "vi": "Jo lên New York để làm việc và viết văn.",
+          "hi": "जो काम करने और लिखने के लिए न्यूयॉर्क चली गई।",
+          "ru": "Джо уехала в Нью-Йорк работать и писать.",
+          "bn": "জো কাজ করতে আর লিখতে নিউ ইয়র্কে গেল।",
+          "ur": "جو کام کرنے اور لکھنے کے لیے نیویارک چلی گئی۔",
+          "th": "โจไปนิวยอร์กเพื่อทำงานและเขียนหนังสือ"
+        }
+      },
+      {
+        "id": "cl-women-095",
+        "english": "There she met Professor Bhaer, a poor, kind German teacher.",
+        "turkish": "Orada yoksul ve iyi kalpli bir Alman öğretmen olan Profesör Bhaer'le tanıştı.",
+        "translations": {
+          "es-419": "Allí conoció al profesor Bhaer, un maestro alemán pobre y bondadoso.",
+          "pt-BR": "Lá ela conheceu o professor Bhaer, um professor alemão pobre e bondoso.",
+          "id": "Di sana ia bertemu Profesor Bhaer, seorang guru Jerman yang miskin dan baik hati.",
+          "ar": "هناك تعرّفت إلى البروفيسور باير، وهو مُعلّم ألمانيّ فقير وطيّب.",
+          "vi": "Ở đó cô gặp Giáo sư Bhaer, một thầy giáo người Đức nghèo và tốt bụng.",
+          "hi": "वहाँ उसकी मुलाक़ात प्रोफ़ेसर बेयर से हुई, जो एक ग़रीब और दयालु जर्मन शिक्षक थे।",
+          "ru": "Там она познакомилась с профессором Баэром, бедным и добрым учителем-немцем.",
+          "bn": "সেখানে তার আলাপ হল প্রফেসর বেয়ারের সঙ্গে, এক গরিব আর দয়ালু জার্মান শিক্ষক।",
+          "ur": "وہاں اس کی ملاقات پروفیسر بیئر سے ہوئی، جو ایک غریب اور مہربان جرمن استاد تھے۔",
+          "th": "ที่นั่นเธอได้พบศาสตราจารย์แบร์ ครูชาวเยอรมันผู้ยากจนแต่ใจดี"
+        }
+      },
+      {
+        "id": "cl-women-096",
+        "english": "He was not young or handsome, but he was wise and good.",
+        "turkish": "Ne genç ne de yakışıklıydı, ama bilge ve iyi bir adamdı.",
+        "translations": {
+          "es-419": "No era joven ni guapo, pero era sabio y bueno.",
+          "pt-BR": "Ele não era jovem nem bonito, mas era sábio e bom.",
+          "id": "Ia tidak muda dan tidak tampan, tetapi ia bijaksana dan baik.",
+          "ar": "لم يكن شابًّا ولا وسيمًا، لكنّه كان حكيمًا وطيّبًا.",
+          "vi": "Ông không trẻ cũng chẳng đẹp trai, nhưng ông khôn ngoan và tử tế.",
+          "hi": "वे न जवान थे न सुंदर, पर समझदार और नेक थे।",
+          "ru": "Он не был ни молод, ни красив, но был мудрым и добрым.",
+          "bn": "তিনি তরুণও ছিলেন না, সুদর্শনও না, কিন্তু ছিলেন জ্ঞানী আর ভালো মানুষ।",
+          "ur": "وہ نہ جوان تھے نہ خوبصورت، مگر سمجھدار اور نیک تھے۔",
+          "th": "เขาไม่ได้หนุ่มหรือหล่อ แต่เป็นคนฉลาดและดี"
+        }
+      },
+      {
+        "id": "cl-women-097",
+        "english": "He told her that her exciting newspaper stories were not her best work.",
+        "turkish": "Ona gazeteler için yazdığı heyecanlı öykülerin en iyi işi olmadığını söyledi.",
+        "translations": {
+          "es-419": "Le dijo que sus emocionantes cuentos para periódicos no eran su mejor trabajo.",
+          "pt-BR": "Ele disse a ela que suas histórias emocionantes para jornais não eram o seu melhor trabalho.",
+          "id": "Ia berkata bahwa cerita-cerita seru Jo untuk surat kabar bukanlah karya terbaiknya.",
+          "ar": "قال لها إنّ قصصها المثيرة للصحف لم تكن أفضل أعمالها.",
+          "vi": "Ông bảo cô rằng những truyện ly kỳ cô viết cho báo không phải là tác phẩm hay nhất của cô.",
+          "hi": "उन्होंने उससे कहा कि अख़बारों के लिए लिखी उसकी सनसनीख़ेज़ कहानियाँ उसका सबसे अच्छा काम नहीं हैं।",
+          "ru": "Он сказал ей, что её захватывающие рассказы для газет — не лучшее, что она может.",
+          "bn": "তিনি তাকে বললেন যে খবরের কাগজের জন্য লেখা তার উত্তেজনাময় গল্পগুলো তার সেরা কাজ নয়।",
+          "ur": "انہوں نے اس سے کہا کہ اخباروں کے لیے لکھی اس کی سنسنی خیز کہانیاں اس کا بہترین کام نہیں ہیں۔",
+          "th": "เขาบอกเธอว่าเรื่องตื่นเต้นที่เธอเขียนลงหนังสือพิมพ์ไม่ใช่ผลงานที่ดีที่สุดของเธอ"
+        }
+      },
+      {
+        "id": "cl-women-098",
+        "english": "\"Write about real things, from your heart,\" he said.",
+        "turkish": "\"Gerçek şeyleri, yüreğinden gelerek yaz,\" dedi.",
+        "translations": {
+          "es-419": "—Escribe sobre cosas reales, desde el corazón —dijo.",
+          "pt-BR": "— Escreva sobre coisas reais, de coração — disse ele.",
+          "id": "\"Tulislah tentang hal-hal yang nyata, dari hatimu,\" katanya.",
+          "ar": "قال: «اكتبي عن أشياء حقيقيّة، من قلبك».",
+          "vi": "\"Hãy viết về những điều có thật, từ trái tim cháu,\" ông nói.",
+          "hi": "\"सच्ची बातों के बारे में, दिल से लिखो,\" उन्होंने कहा।",
+          "ru": "«Пишите о настоящем, от всего сердца», — сказал он.",
+          "bn": "\"সত্যিকারের জিনিস নিয়ে মন থেকে লেখো,\" তিনি বললেন।",
+          "ur": "\"سچی باتوں کے بارے میں، دل سے لکھو،\" انہوں نے کہا۔",
+          "th": "\"จงเขียนถึงเรื่องจริง ด้วยหัวใจของเธอ\" เขากล่าว"
+        }
+      },
+      {
+        "id": "cl-women-099",
+        "english": "Then Jo came home, because Beth was ill again.",
+        "turkish": "Sonra Jo eve döndü, çünkü Beth yine hastaydı.",
+        "translations": {
+          "es-419": "Entonces Jo volvió a casa, porque Beth estaba enferma otra vez.",
+          "pt-BR": "Então Jo voltou para casa, porque Beth estava doente de novo.",
+          "id": "Lalu Jo pulang, karena Beth sakit lagi.",
+          "ar": "ثمّ عادت جو إلى البيت، لأنّ بيث مرضت من جديد.",
+          "vi": "Rồi Jo trở về nhà, vì Beth lại ốm.",
+          "hi": "फिर जो घर लौट आई, क्योंकि बेथ फिर से बीमार थी।",
+          "ru": "Потом Джо вернулась домой, потому что Бет снова заболела.",
+          "bn": "তারপর জো বাড়ি ফিরে এল, কারণ বেথ আবার অসুস্থ।",
+          "ur": "پھر جو گھر لوٹ آئی، کیونکہ بیتھ پھر سے بیمار تھی۔",
+          "th": "แล้วโจก็กลับบ้าน เพราะเบธล้มป่วยอีกครั้ง"
+        }
+      },
+      {
+        "id": "cl-women-100",
+        "english": "Beth had never been strong again after the fever.",
+        "turkish": "Beth o ateşli hastalıktan sonra bir daha hiç güçlenememişti.",
+        "translations": {
+          "es-419": "Beth nunca había vuelto a estar fuerte después de la fiebre.",
+          "pt-BR": "Beth nunca mais tinha ficado forte depois da febre.",
+          "id": "Beth tidak pernah kuat lagi sejak demam itu.",
+          "ar": "لم تستعد بيث قوّتها أبدًا بعد تلك الحمّى.",
+          "vi": "Từ sau cơn sốt, Beth chưa bao giờ khỏe lại được.",
+          "hi": "उस बुख़ार के बाद बेथ फिर कभी पहले जैसी ताक़तवर नहीं हो पाई।",
+          "ru": "После той болезни Бет так и не окрепла.",
+          "bn": "সেই জ্বরের পর বেথ আর কখনো আগের মতো শক্ত হয়ে ওঠেনি।",
+          "ur": "اس بخار کے بعد بیتھ پھر کبھی پہلے جیسی مضبوط نہ ہو سکی۔",
+          "th": "หลังจากไข้ครั้งนั้น เบธก็ไม่เคยแข็งแรงอีกเลย"
+        }
+      },
+      {
+        "id": "cl-women-101",
+        "english": "All that summer, Jo sat with her by the sea and later in her room.",
+        "turkish": "O yaz boyunca Jo onunla önce deniz kıyısında, sonra odasında oturdu.",
+        "translations": {
+          "es-419": "Todo ese verano, Jo se quedó con ella junto al mar y luego en su habitación.",
+          "pt-BR": "Durante todo aquele verão, Jo ficou com ela à beira-mar e depois no quarto.",
+          "id": "Sepanjang musim panas itu, Jo menemaninya di tepi laut lalu di kamarnya.",
+          "ar": "طوال ذلك الصيف، جلست جو معها على شاطئ البحر ثمّ في غرفتها.",
+          "vi": "Suốt mùa hè năm ấy, Jo ngồi cạnh em bên bờ biển, rồi sau đó trong phòng.",
+          "hi": "उस पूरी गर्मी जो उसके साथ पहले समुद्र किनारे और फिर उसके कमरे में बैठी रही।",
+          "ru": "Всё то лето Джо была с ней сначала у моря, а потом в её комнате.",
+          "bn": "সেই পুরো গ্রীষ্ম জো তার সঙ্গে আগে সমুদ্রের ধারে, পরে তার ঘরে বসে কাটাল।",
+          "ur": "اس پوری گرمی جو اس کے ساتھ پہلے سمندر کے کنارے اور پھر اس کے کمرے میں بیٹھی رہی۔",
+          "th": "ตลอดฤดูร้อนนั้น โจนั่งอยู่กับเธอที่ริมทะเล และต่อมาในห้องของเธอ"
+        }
+      },
+      {
+        "id": "cl-women-102",
+        "english": "Beth was not afraid, and she stayed gentle and calm until the end.",
+        "turkish": "Beth korkmuyordu ve sonuna kadar yumuşak ve sakin kaldı.",
+        "translations": {
+          "es-419": "Beth no tenía miedo, y se mantuvo dulce y tranquila hasta el final.",
+          "pt-BR": "Beth não tinha medo e continuou meiga e calma até o fim.",
+          "id": "Beth tidak takut, dan ia tetap lembut dan tenang sampai akhir.",
+          "ar": "لم تكن بيث خائفة، وبقيت رقيقة هادئة حتّى النهاية.",
+          "vi": "Beth không sợ hãi, và cô vẫn dịu dàng, bình thản cho đến cuối cùng.",
+          "hi": "बेथ डरी नहीं, और अंत तक कोमल और शांत रही।",
+          "ru": "Бет не боялась и до самого конца оставалась кроткой и спокойной.",
+          "bn": "বেথ ভয় পায়নি, আর শেষ পর্যন্ত কোমল আর শান্ত ছিল।",
+          "ur": "بیتھ ڈری نہیں، اور آخر تک نرم اور پرسکون رہی۔",
+          "th": "เบธไม่กลัว และยังคงอ่อนโยนและสงบจนวาระสุดท้าย"
+        }
+      },
+      {
+        "id": "cl-women-103",
+        "english": "In the spring, she died peacefully, with her family around her.",
+        "turkish": "İlkbaharda, ailesi başındayken huzur içinde öldü.",
+        "translations": {
+          "es-419": "En primavera murió en paz, rodeada de su familia.",
+          "pt-BR": "Na primavera, ela morreu em paz, cercada pela família.",
+          "id": "Pada musim semi, ia meninggal dengan damai, dikelilingi keluarganya.",
+          "ar": "في الربيع، ماتت بسلام وعائلتها حولها.",
+          "vi": "Mùa xuân năm đó, cô ra đi thanh thản, có gia đình ở bên.",
+          "hi": "वसंत में वह अपने परिवार के बीच शांति से चल बसी।",
+          "ru": "Весной она тихо умерла, окружённая семьёй.",
+          "bn": "বসন্তকালে সে পরিবারের সবার মাঝে শান্তিতে মারা গেল।",
+          "ur": "بہار میں وہ اپنے خاندان کے درمیان سکون سے چل بسی۔",
+          "th": "ในฤดูใบไม้ผลิ เธอจากไปอย่างสงบ ท่ามกลางครอบครัว"
+        }
+      },
+      {
+        "id": "cl-women-104",
+        "english": "The house felt empty, and Jo felt lost without her sister.",
+        "turkish": "Ev bomboş gibiydi ve Jo kardeşi olmadan kendini kaybolmuş hissetti.",
+        "translations": {
+          "es-419": "La casa parecía vacía, y Jo se sentía perdida sin su hermana.",
+          "pt-BR": "A casa parecia vazia, e Jo se sentia perdida sem a irmã.",
+          "id": "Rumah terasa kosong, dan Jo merasa kehilangan arah tanpa adiknya.",
+          "ar": "بدا البيت فارغًا، وشعرت جو بالضياع من دون أختها.",
+          "vi": "Ngôi nhà trống vắng, và Jo thấy lạc lõng khi không còn em gái.",
+          "hi": "घर सूना लगने लगा, और जो अपनी बहन के बिना खोई-खोई रहने लगी।",
+          "ru": "Дом опустел, и Джо чувствовала себя потерянной без сестры.",
+          "bn": "বাড়িটা ফাঁকা লাগত, আর বোনকে ছাড়া জো নিজেকে হারিয়ে ফেলেছিল।",
+          "ur": "گھر سونا لگنے لگا، اور جو اپنی بہن کے بغیر کھوئی کھوئی رہنے لگی۔",
+          "th": "บ้านดูว่างเปล่า และโจรู้สึกเคว้งคว้างเมื่อไม่มีน้องสาว"
+        }
+      },
+      {
+        "id": "cl-women-105",
+        "english": "Meanwhile in Europe, Laurie met Amy again.",
+        "turkish": "Bu arada Avrupa'da Laurie, Amy'yle yeniden karşılaştı.",
+        "translations": {
+          "es-419": "Mientras tanto, en Europa, Laurie se encontró de nuevo con Amy.",
+          "pt-BR": "Enquanto isso, na Europa, Laurie reencontrou Amy.",
+          "id": "Sementara itu di Eropa, Laurie bertemu Amy lagi.",
+          "ar": "في هذه الأثناء، التقى لوري بإيمي من جديد في أوروبا.",
+          "vi": "Trong khi đó ở châu Âu, Laurie gặp lại Amy.",
+          "hi": "इस बीच यूरोप में लॉरी की फिर से एमी से मुलाक़ात हुई।",
+          "ru": "Тем временем в Европе Лори снова встретил Эми.",
+          "bn": "এর মধ্যে ইউরোপে লরির আবার অ্যামির সঙ্গে দেখা হল।",
+          "ur": "اسی دوران یورپ میں لاری کی پھر سے ایمی سے ملاقات ہوئی۔",
+          "th": "ในระหว่างนั้นที่ยุโรป ลอรีได้พบกับเอมี่อีกครั้ง"
+        }
+      },
+      {
+        "id": "cl-women-106",
+        "english": "Amy told him honestly that he was wasting his life and being selfish.",
+        "turkish": "Amy ona hayatını boşa harcadığını ve bencillik ettiğini açıkça söyledi.",
+        "translations": {
+          "es-419": "Amy le dijo con franqueza que estaba desperdiciando su vida y siendo egoísta.",
+          "pt-BR": "Amy disse a ele com franqueza que estava desperdiçando a vida e sendo egoísta.",
+          "id": "Amy berkata terus terang bahwa ia menyia-nyiakan hidupnya dan bersikap egois.",
+          "ar": "قالت له إيمي بصراحة إنّه يُضيّع حياته ويتصرّف بأنانية.",
+          "vi": "Amy thẳng thắn nói với cậu rằng cậu đang phí hoài cuộc đời và sống ích kỷ.",
+          "hi": "एमी ने उससे साफ़-साफ़ कहा कि वह अपनी ज़िंदगी बर्बाद कर रहा है और स्वार्थी बन रहा है।",
+          "ru": "Эми честно сказала ему, что он тратит жизнь впустую и ведёт себя эгоистично.",
+          "bn": "অ্যামি তাকে সোজাসুজি বলল যে সে জীবনটা নষ্ট করছে আর স্বার্থপরের মতো চলছে।",
+          "ur": "ایمی نے اس سے صاف صاف کہا کہ وہ اپنی زندگی برباد کر رہا ہے اور خود غرض بن رہا ہے۔",
+          "th": "เอมี่บอกเขาตรง ๆ ว่าเขากำลังใช้ชีวิตอย่างสูญเปล่าและเห็นแก่ตัว"
+        }
+      },
+      {
+        "id": "cl-women-107",
+        "english": "Laurie listened, and slowly he changed and fell in love with her.",
+        "turkish": "Laurie dinledi; yavaş yavaş değişti ve ona âşık oldu.",
+        "translations": {
+          "es-419": "Laurie escuchó, y poco a poco cambió y se enamoró de ella.",
+          "pt-BR": "Laurie ouviu e, aos poucos, mudou e se apaixonou por ela.",
+          "id": "Laurie mendengarkan, dan perlahan ia berubah dan jatuh cinta padanya.",
+          "ar": "أصغى لوري، وتغيّر شيئًا فشيئًا ووقع في حبّها.",
+          "vi": "Laurie lắng nghe, rồi dần dần thay đổi và đem lòng yêu cô.",
+          "hi": "लॉरी ने सुना, और धीरे-धीरे वह बदल गया और उससे प्यार करने लगा।",
+          "ru": "Лори прислушался, постепенно изменился и полюбил её.",
+          "bn": "লরি কথাটা শুনল, আর ধীরে ধীরে বদলে গিয়ে তার প্রেমে পড়ল।",
+          "ur": "لاری نے سنا، اور آہستہ آہستہ وہ بدل گیا اور اس سے محبت کرنے لگا۔",
+          "th": "ลอรีรับฟัง แล้วค่อย ๆ เปลี่ยนไปและตกหลุมรักเธอ"
+        }
+      },
+      {
+        "id": "cl-women-108",
+        "english": "They married and came home together.",
+        "turkish": "Evlendiler ve birlikte eve döndüler.",
+        "translations": {
+          "es-419": "Se casaron y volvieron juntos a casa.",
+          "pt-BR": "Eles se casaram e voltaram juntos para casa.",
+          "id": "Mereka menikah dan pulang bersama.",
+          "ar": "تزوّجا وعادا إلى الوطن معًا.",
+          "vi": "Họ cưới nhau và cùng trở về nhà.",
+          "hi": "उन्होंने शादी की और साथ घर लौट आए।",
+          "ru": "Они поженились и вместе вернулись домой.",
+          "bn": "তারা বিয়ে করল আর একসঙ্গে দেশে ফিরল।",
+          "ur": "انہوں نے شادی کی اور ساتھ گھر لوٹ آئے۔",
+          "th": "ทั้งสองแต่งงานกันและกลับบ้านด้วยกัน"
+        }
+      },
+      {
+        "id": "cl-women-109",
+        "english": "Jo was happy for them, but she felt lonely.",
+        "turkish": "Jo onlar için mutluydu ama kendini yalnız hissediyordu.",
+        "translations": {
+          "es-419": "Jo se alegró por ellos, pero se sentía sola.",
+          "pt-BR": "Jo ficou feliz por eles, mas se sentia sozinha.",
+          "id": "Jo ikut bahagia untuk mereka, tetapi ia merasa kesepian.",
+          "ar": "فرحت جو لهما، لكنّها شعرت بالوحدة.",
+          "vi": "Jo mừng cho họ, nhưng cô thấy cô đơn.",
+          "hi": "जो उनके लिए ख़ुश थी, पर ख़ुद को अकेला महसूस करती थी।",
+          "ru": "Джо радовалась за них, но ей было одиноко.",
+          "bn": "জো তাদের জন্য খুশি ছিল, কিন্তু নিজেকে একা লাগত।",
+          "ur": "جو ان کے لیے خوش تھی، مگر خود کو اکیلا محسوس کرتی تھی۔",
+          "th": "โจยินดีกับทั้งสอง แต่เธอรู้สึกเหงา"
+        }
+      },
+      {
+        "id": "cl-women-110",
+        "english": "To fill her days, she wrote a simple story about her own family.",
+        "turkish": "Günlerini doldurmak için kendi ailesini anlatan sade bir öykü yazdı.",
+        "translations": {
+          "es-419": "Para llenar sus días, escribió una historia sencilla sobre su propia familia.",
+          "pt-BR": "Para preencher os dias, ela escreveu uma história simples sobre a própria família.",
+          "id": "Untuk mengisi hari-harinya, ia menulis cerita sederhana tentang keluarganya sendiri.",
+          "ar": "ولتملأ أيّامها، كتبت قصّة بسيطة عن عائلتها.",
+          "vi": "Để lấp đầy những ngày trống trải, cô viết một câu chuyện giản dị về chính gia đình mình.",
+          "hi": "अपने दिन भरने के लिए उसने अपने ही परिवार के बारे में एक सीधी-सादी कहानी लिखी।",
+          "ru": "Чтобы заполнить дни, она написала простую историю о своей семье.",
+          "bn": "দিনগুলো ভরিয়ে রাখতে সে নিজের পরিবারকে নিয়ে একটা সাদামাটা গল্প লিখল।",
+          "ur": "اپنے دن بھرنے کے لیے اس نے اپنے ہی خاندان کے بارے میں ایک سیدھی سادی کہانی لکھی۔",
+          "th": "เพื่อให้วันเวลาไม่ว่างเปล่า เธอเขียนเรื่องเรียบง่ายเกี่ยวกับครอบครัวของตัวเอง"
+        }
+      },
+      {
+        "id": "cl-women-111",
+        "english": "To her surprise, readers loved it.",
+        "turkish": "Şaşırtıcı biçimde okurlar onu çok sevdi.",
+        "translations": {
+          "es-419": "Para su sorpresa, a los lectores les encantó.",
+          "pt-BR": "Para a surpresa dela, os leitores adoraram.",
+          "id": "Di luar dugaannya, para pembaca sangat menyukainya.",
+          "ar": "ولدهشتها، أحبّها القرّاء كثيرًا.",
+          "vi": "Thật bất ngờ, độc giả rất yêu thích nó.",
+          "hi": "उसे हैरानी हुई जब पाठकों ने उसे बहुत पसंद किया।",
+          "ru": "К её удивлению, читателям она очень понравилась.",
+          "bn": "সে অবাক হয়ে দেখল, পাঠকেরা গল্পটা খুব ভালোবাসল।",
+          "ur": "اسے حیرت ہوئی جب قارئین نے اسے بہت پسند کیا۔",
+          "th": "เธอประหลาดใจที่ผู้อ่านชื่นชอบมันมาก"
+        }
+      },
+      {
+        "id": "cl-women-112",
+        "english": "One rainy day, Professor Bhaer came to see her.",
+        "turkish": "Yağmurlu bir günde Profesör Bhaer onu görmeye geldi.",
+        "translations": {
+          "es-419": "Un día de lluvia, el profesor Bhaer fue a verla.",
+          "pt-BR": "Num dia chuvoso, o professor Bhaer foi vê-la.",
+          "id": "Pada suatu hari yang hujan, Profesor Bhaer datang menemuinya.",
+          "ar": "في يوم ماطر، جاء البروفيسور باير لزيارتها.",
+          "vi": "Vào một ngày mưa, Giáo sư Bhaer đến thăm cô.",
+          "hi": "एक बरसाती दिन प्रोफ़ेसर बेयर उससे मिलने आए।",
+          "ru": "В один дождливый день к ней приехал профессор Баэр.",
+          "bn": "এক বৃষ্টির দিনে প্রফেসর বেয়ার তার সঙ্গে দেখা করতে এলেন।",
+          "ur": "ایک برساتی دن پروفیسر بیئر اس سے ملنے آئے۔",
+          "th": "ในวันฝนตกวันหนึ่ง ศาสตราจารย์แบร์มาหาเธอ"
+        }
+      },
+      {
+        "id": "cl-women-113",
+        "english": "They walked together under his old umbrella.",
+        "turkish": "Onun eski şemsiyesinin altında birlikte yürüdüler.",
+        "translations": {
+          "es-419": "Caminaron juntos bajo su viejo paraguas.",
+          "pt-BR": "Eles caminharam juntos sob o velho guarda-chuva dele.",
+          "id": "Mereka berjalan bersama di bawah payung tuanya.",
+          "ar": "سارا معًا تحت مظلّته القديمة.",
+          "vi": "Họ cùng đi dưới chiếc ô cũ của ông.",
+          "hi": "वे उनकी पुरानी छतरी के नीचे साथ-साथ चले।",
+          "ru": "Они шли вместе под его старым зонтом.",
+          "bn": "তাঁরা দুজনে তাঁর পুরোনো ছাতার নিচে একসঙ্গে হাঁটলেন।",
+          "ur": "وہ ان کی پرانی چھتری کے نیچے ساتھ ساتھ چلے۔",
+          "th": "ทั้งสองเดินไปด้วยกันใต้ร่มคันเก่าของเขา"
+        }
+      },
+      {
+        "id": "cl-women-114",
+        "english": "There, in the rain, he asked her to be his wife, and Jo said yes.",
+        "turkish": "Orada, yağmurun altında, ona evlenme teklif etti ve Jo evet dedi.",
+        "translations": {
+          "es-419": "Allí, bajo la lluvia, le pidió que fuera su esposa, y Jo dijo que sí.",
+          "pt-BR": "Ali, na chuva, ele a pediu em casamento, e Jo disse sim.",
+          "id": "Di sana, di tengah hujan, ia melamar Jo, dan Jo menerimanya.",
+          "ar": "وهناك، تحت المطر، طلب منها أن تكون زوجته، فقالت جو نعم.",
+          "vi": "Ở đó, dưới mưa, ông cầu hôn cô, và Jo nhận lời.",
+          "hi": "वहीं बारिश में उन्होंने उससे शादी का प्रस्ताव रखा, और जो ने हाँ कह दी।",
+          "ru": "Там, под дождём, он попросил её стать его женой, и Джо согласилась.",
+          "bn": "সেখানে, বৃষ্টির মধ্যে, তিনি জোকে বিয়ের প্রস্তাব দিলেন, আর জো রাজি হল।",
+          "ur": "وہیں بارش میں انہوں نے اس سے شادی کی درخواست کی، اور جو نے ہاں کر دی۔",
+          "th": "ที่นั่น ท่ามกลางสายฝน เขาขอเธอแต่งงาน และโจก็ตอบตกลง"
+        }
+      },
+      {
+        "id": "cl-women-115",
+        "english": "Later, Aunt March left Jo her big old house, Plumfield.",
+        "turkish": "Daha sonra March hala, büyük eski evi Plumfield'ı Jo'ya bıraktı.",
+        "translations": {
+          "es-419": "Más tarde, la tía March le dejó a Jo su gran casa vieja, Plumfield.",
+          "pt-BR": "Mais tarde, a tia March deixou para Jo sua grande casa antiga, Plumfield.",
+          "id": "Kemudian, Bibi March mewariskan rumah besarnya yang tua, Plumfield, kepada Jo.",
+          "ar": "لاحقًا، تركت العمّة مارش لجو بيتها الكبير القديم، بلَمفيلد.",
+          "vi": "Về sau, bà cô March để lại cho Jo ngôi nhà lớn cũ kỹ của bà, Plumfield.",
+          "hi": "बाद में बुआ मार्च ने अपना बड़ा पुराना घर, प्लमफ़ील्ड, जो के नाम छोड़ दिया।",
+          "ru": "Позже тётушка Марч оставила Джо свой большой старый дом, Пламфилд.",
+          "bn": "পরে পিসি মার্চ তাঁর বড় পুরোনো বাড়ি প্লামফিল্ড জোকে দিয়ে গেলেন।",
+          "ur": "بعد میں پھوپھی مارچ نے اپنا بڑا پرانا گھر، پلم فیلڈ، جو کے نام چھوڑ دیا۔",
+          "th": "ต่อมา ป้ามาร์ชยกบ้านหลังใหญ่เก่าแก่ชื่อพลัมฟิลด์ให้โจ"
+        }
+      },
+      {
+        "id": "cl-women-116",
+        "english": "Jo and her husband turned it into a happy school for boys.",
+        "turkish": "Jo ve kocası orayı erkek çocuklar için mutlu bir okula dönüştürdü.",
+        "translations": {
+          "es-419": "Jo y su esposo lo convirtieron en una escuela feliz para niños.",
+          "pt-BR": "Jo e o marido a transformaram numa escola feliz para meninos.",
+          "id": "Jo dan suaminya mengubahnya menjadi sekolah yang ceria untuk anak laki-laki.",
+          "ar": "حوّلته جو وزوجها إلى مدرسة سعيدة للصبيان.",
+          "vi": "Jo và chồng biến nó thành một ngôi trường vui vẻ cho các cậu bé.",
+          "hi": "जो और उसके पति ने उसे लड़कों के लिए एक ख़ुशहाल स्कूल बना दिया।",
+          "ru": "Джо и её муж превратили его в весёлую школу для мальчиков.",
+          "bn": "জো আর তার স্বামী বাড়িটাকে ছেলেদের জন্য এক আনন্দের স্কুল বানালেন।",
+          "ur": "جو اور اس کے شوہر نے اسے لڑکوں کے لیے ایک خوشگوار اسکول بنا دیا۔",
+          "th": "โจกับสามีเปลี่ยนบ้านหลังนั้นให้เป็นโรงเรียนแสนสุขสำหรับเด็กผู้ชาย"
+        }
+      },
+      {
+        "id": "cl-women-117",
+        "english": "Every autumn, the whole family met there to pick apples and remember Beth.",
+        "turkish": "Her sonbahar bütün aile orada buluşup elma topluyor ve Beth'i anıyordu.",
+        "translations": {
+          "es-419": "Cada otoño, toda la familia se reunía allí para recoger manzanas y recordar a Beth.",
+          "pt-BR": "Todo outono, a família inteira se reunia ali para colher maçãs e lembrar de Beth.",
+          "id": "Setiap musim gugur, seluruh keluarga berkumpul di sana untuk memetik apel dan mengenang Beth.",
+          "ar": "في كلّ خريف، كانت العائلة كلّها تجتمع هناك لتقطف التفّاح وتتذكّر بيث.",
+          "vi": "Mỗi mùa thu, cả gia đình lại họp mặt ở đó để hái táo và tưởng nhớ Beth.",
+          "hi": "हर पतझड़ में पूरा परिवार वहाँ सेब तोड़ने और बेथ को याद करने इकट्ठा होता।",
+          "ru": "Каждую осень вся семья собиралась там собирать яблоки и вспоминать Бет.",
+          "bn": "প্রতি শরতে গোটা পরিবার সেখানে আপেল পাড়তে আর বেথকে মনে করতে একত্র হত।",
+          "ur": "ہر خزاں میں سارا خاندان وہاں سیب توڑنے اور بیتھ کو یاد کرنے اکٹھا ہوتا۔",
+          "th": "ทุกฤดูใบไม้ร่วง ทั้งครอบครัวจะมาพบกันที่นั่นเพื่อเก็บแอปเปิลและรำลึกถึงเบธ"
+        }
+      },
+      {
+        "id": "cl-women-118",
+        "english": "\"I am so happy,\" said Marmee, as she looked at her children together.",
+        "turkish": "\"Çok mutluyum,\" dedi Marmee, çocuklarını bir arada görünce.",
+        "translations": {
+          "es-419": "—Soy muy feliz —dijo Marmee, mirando a sus hijos reunidos.",
+          "pt-BR": "— Estou tão feliz — disse Marmee, olhando os filhos reunidos.",
+          "id": "\"Aku sangat bahagia,\" kata Marmee sambil memandangi anak-anaknya berkumpul.",
+          "ar": "قالت مارمي وهي تنظر إلى أولادها مجتمعين: «أنا سعيدة جدًّا».",
+          "vi": "\"Mẹ hạnh phúc quá,\" Marmee nói khi nhìn các con quây quần bên nhau.",
+          "hi": "\"मैं बहुत ख़ुश हूँ,\" मार्मी ने अपने बच्चों को साथ देखते हुए कहा।",
+          "ru": "«Я так счастлива», — сказала Марми, глядя на собравшихся вместе детей.",
+          "bn": "\"আমি খুব সুখী,\" সন্তানদের একসঙ্গে দেখে বললেন মারমি।",
+          "ur": "\"میں بہت خوش ہوں،\" مارمی نے اپنے بچوں کو اکٹھا دیکھتے ہوئے کہا۔",
+          "th": "\"แม่มีความสุขเหลือเกิน\" มาร์มีพูดขณะมองลูก ๆ ที่อยู่พร้อมหน้ากัน"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-little-women-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "A rich girl who travels around Europe",
+          "Four sisters who grow up together through hard times, love and loss",
+          "A soldier who comes home from the war",
+          "A teacher who opens a school in New York"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-little-women-q2",
+        "kind": "detail",
+        "prompt": "What did the sisters do with their breakfast on Christmas morning?",
+        "options": [
+          "They ate it with Mr Laurence",
+          "They gave it to a poor family",
+          "They sent it to their father",
+          "They sold it at the market"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-little-women-q3",
+        "kind": "detail",
+        "prompt": "How did Jo get money for Marmee's journey?",
+        "options": [
+          "She sold her hair",
+          "She sold her stories",
+          "Laurie gave it to her",
+          "She worked for Mr Laurence"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "classic-little-women-q4",
+        "kind": "inference",
+        "prompt": "Why did Jo stop being angry with Amy?",
+        "options": [
+          "Amy wrote her a new book",
+          "Marmee told her to forget it",
+          "Jo nearly lost her sister when the ice broke",
+          "Laurie bought her a present"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "classic-little-women-q5",
+        "kind": "inference",
+        "prompt": "Why did Jo say no to Laurie?",
+        "options": [
+          "He was too poor",
+          "She loved him only as a friend",
+          "Her parents did not like him",
+          "She wanted to live in Europe"
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  "words": [
+    {
+      "id": "sister",
+      "word": "sister",
+      "translation": "kız kardeş",
+      "pronunciation": "/ˈsɪstə(r)/",
+      "example": "My sister is two years older than me.",
+      "translations": {
+        "es-419": "hermana",
+        "pt-BR": "irmã",
+        "id": "saudara perempuan, kakak/adik perempuan",
+        "ar": "أخت",
+        "vi": "chị gái, em gái",
+        "hi": "बहन",
+        "ru": "сестра",
+        "bn": "বোন",
+        "ur": "بہن",
+        "th": "พี่สาว, น้องสาว"
+      }
+    },
+    {
+      "id": "christmas",
+      "word": "Christmas",
+      "translation": "Noel",
+      "pronunciation": "/ˈkrɪsməs/",
+      "example": "We put up a tree every Christmas.",
+      "translations": {
+        "es-419": "Navidad",
+        "pt-BR": "Natal",
+        "id": "Natal",
+        "ar": "عيد الميلاد",
+        "vi": "Giáng sinh",
+        "hi": "क्रिसमस",
+        "ru": "Рождество",
+        "bn": "বড়দিন",
+        "ur": "کرسمس",
+        "th": "คริสต์มาส"
+      }
+    },
+    {
+      "id": "piano",
+      "word": "piano",
+      "translation": "piyano",
+      "pronunciation": "/piˈænəʊ/",
+      "example": "She plays the piano every evening.",
+      "translations": {
+        "es-419": "piano",
+        "pt-BR": "piano",
+        "id": "piano",
+        "ar": "بيانو",
+        "vi": "đàn piano",
+        "hi": "पियानो",
+        "ru": "фортепиано, пианино",
+        "bn": "পিয়ানো",
+        "ur": "پیانو",
+        "th": "เปียโน"
+      }
+    },
+    {
+      "id": "writer",
+      "word": "writer",
+      "translation": "yazar",
+      "pronunciation": "/ˈraɪtə(r)/",
+      "example": "He wants to be a famous writer one day.",
+      "translations": {
+        "es-419": "escritor",
+        "pt-BR": "escritor",
+        "id": "penulis",
+        "ar": "كاتب",
+        "vi": "nhà văn",
+        "hi": "लेखक",
+        "ru": "писатель",
+        "bn": "লেখক",
+        "ur": "ادیب، مصنف",
+        "th": "นักเขียน"
+      }
+    },
+    {
+      "id": "sick",
+      "word": "sick",
+      "translation": "hasta",
+      "pronunciation": "/sɪk/",
+      "example": "I stayed at home because I was sick.",
+      "translations": {
+        "es-419": "enfermo",
+        "pt-BR": "doente",
+        "id": "sakit",
+        "ar": "مريض",
+        "vi": "ốm, bệnh",
+        "hi": "बीमार",
+        "ru": "больной",
+        "bn": "অসুস্থ",
+        "ur": "بیمار",
+        "th": "ป่วย"
+      }
+    },
+    {
+      "id": "forgive",
+      "word": "forgive",
+      "translation": "affetmek",
+      "pronunciation": "/fəˈɡɪv/",
+      "example": "Please forgive me for being late.",
+      "translations": {
+        "es-419": "perdonar",
+        "pt-BR": "perdoar",
+        "id": "memaafkan",
+        "ar": "يسامح",
+        "vi": "tha thứ",
+        "hi": "माफ़ करना",
+        "ru": "прощать",
+        "bn": "ক্ষমা করা",
+        "ur": "معاف کرنا",
+        "th": "ให้อภัย"
+      }
+    },
+    {
+      "id": "war",
+      "word": "war",
+      "translation": "savaş",
+      "pronunciation": "/wɔː(r)/",
+      "example": "Many people lost their homes in the war.",
+      "translations": {
+        "es-419": "guerra",
+        "pt-BR": "guerra",
+        "id": "perang",
+        "ar": "حرب",
+        "vi": "chiến tranh",
+        "hi": "युद्ध",
+        "ru": "война",
+        "bn": "যুদ্ধ",
+        "ur": "جنگ",
+        "th": "สงคราม"
+      }
+    },
+    {
+      "id": "burn",
+      "word": "burn",
+      "translation": "yanmak, yakmak",
+      "pronunciation": "/bɜːn/",
+      "example": "Be careful, the hot pan can burn you.",
+      "translations": {
+        "es-419": "quemar, arder",
+        "pt-BR": "queimar",
+        "id": "membakar, terbakar",
+        "ar": "يحرق، يحترق",
+        "vi": "cháy, đốt",
+        "hi": "जलना, जलाना",
+        "ru": "гореть, жечь",
+        "bn": "পোড়া, পোড়ানো",
+        "ur": "جلنا، جلانا",
+        "th": "เผา, ไหม้"
+      }
+    },
+    {
+      "id": "neighbor",
+      "word": "neighbor",
+      "translation": "komşu",
+      "pronunciation": "/ˈneɪbər/",
+      "example": "Her neighbor is outside.",
+      "translations": {
+        "es-419": "vecino, vecina",
+        "pt-BR": "vizinho, vizinha",
+        "id": "tetangga",
+        "ar": "جار، جارة",
+        "vi": "hàng xóm",
+        "hi": "पड़ोसी",
+        "ru": "сосед, соседка",
+        "bn": "প্রতিবেশী",
+        "ur": "پڑوسی",
+        "th": "เพื่อนบ้าน"
+      }
+    },
+    {
+      "id": "gift",
+      "word": "gift",
+      "translation": "hediye",
+      "pronunciation": "/ɡɪft/",
+      "example": "Della wants to buy a gift.",
+      "translations": {
+        "es-419": "regalo",
+        "pt-BR": "presente",
+        "id": "hadiah",
+        "ar": "هدية",
+        "vi": "món quà",
+        "hi": "तोहफ़ा",
+        "ru": "подарок",
+        "bn": "উপহার",
+        "ur": "تحفہ",
+        "th": "ของขวัญ"
+      }
+    },
+    {
+      "id": "selfish",
+      "word": "selfish",
+      "translation": "bencil",
+      "pronunciation": "/ˈselfɪʃ/",
+      "example": "The selfish giant builds a wall.",
+      "translations": {
+        "es-419": "egoísta",
+        "pt-BR": "egoísta",
+        "id": "egois",
+        "ar": "أناني",
+        "vi": "ích kỷ",
+        "hi": "स्वार्थी",
+        "ru": "эгоистичный",
+        "bn": "স্বার্থপর",
+        "ur": "خود غرض",
+        "th": "เห็นแก่ตัว"
+      }
+    },
+    {
+      "id": "soldier",
+      "word": "soldier",
+      "translation": "asker",
+      "pronunciation": "/ˈsəʊldʒə(r)/",
+      "example": "An old soldier met a woman who gave him useful advice and an invisible cloak.",
+      "translations": {
+        "es-419": "soldado",
+        "pt-BR": "soldado",
+        "id": "prajurit",
+        "ar": "جندي",
+        "vi": "người lính",
+        "hi": "सिपाही",
+        "ru": "солдат",
+        "bn": "সৈনিক",
+        "ur": "سپاہی",
+        "th": "ทหาร"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "sister",
+    "christmas",
+    "piano",
+    "writer",
+    "sick",
+    "forgive",
+    "war",
+    "burn",
+    "neighbor",
+    "gift",
+    "selfish",
+    "soldier"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-little-women-q1",
+      "sentenceIds": [
+        "cl-women-001",
+        "cl-women-117"
+      ],
+      "rationale": "The story follows the four March sisters from one poor Christmas to adult life."
+    },
+    {
+      "questionId": "classic-little-women-q2",
+      "sentenceIds": [
+        "cl-women-022",
+        "cl-women-025"
+      ],
+      "rationale": "Marmee asked, and the girls carried their breakfast to the hungry Hummels."
+    },
+    {
+      "questionId": "classic-little-women-q3",
+      "sentenceIds": [
+        "cl-women-068",
+        "cl-women-069"
+      ],
+      "rationale": "Jo came back with twenty-five dollars and short hair."
+    },
+    {
+      "questionId": "classic-little-women-q4",
+      "sentenceIds": [
+        "cl-women-057",
+        "cl-women-060"
+      ],
+      "rationale": "After Amy fell through the ice, Jo saw what her temper could cost and made peace."
+    },
+    {
+      "questionId": "classic-little-women-q5",
+      "sentenceIds": [
+        "cl-women-092"
+      ],
+      "rationale": "Jo told Laurie she loved him as a friend but could not be his wife."
+    }
+  ],
+  "publicationBlockers": [
+    "Owner (oguz) approval of the English text, questions and translations required.",
+    "Native-speaker language review not done.",
+    "Cover artwork and asset mapping pending.",
+    "Source text hash pending (Gutenberg not reachable from the cloud session).",
+    "Publisher story creation, validation and publication pending."
+  ]
+}
