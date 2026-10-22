@@ -473,8 +473,9 @@ internal fun ReadingMinutes(story: Story, modifier: Modifier = Modifier) {
 @Composable
 private fun StoryWordsPreview(story: Story) {
     val words=remember(story.revisionId) {
-        val text=story.sentences.joinToString(" ") {it.english}.lowercase()
-        LearningContent.words.filter {w -> w.word.length>2 && Regex("\\b"+Regex.escape(w.word.lowercase())+"\\b").containsMatchIn(text)}.take(8)
+        // The story's words as one space-padded line, so a word or phrase is a plain substring check instead of one regex per dictionary word.
+        val text=story.sentences.joinToString(" ",prefix=" ",postfix=" ") {it.english.lowercase().split(Regex("[^a-z0-9]+")).filter(String::isNotEmpty).joinToString(" ")}
+        LearningContent.words.asSequence().filter {w -> w.word.length>2 && text.contains(" "+w.word.lowercase()+" ")}.take(8).toList()
     }
     if(words.isEmpty()) return
     Column(Modifier.fillMaxWidth().padding(horizontal=24.dp,vertical=24.dp).background(TaleSurface,RoundedCornerShape(20.dp)).border(1.dp,TaleLine,RoundedCornerShape(20.dp)).padding(16.dp),
