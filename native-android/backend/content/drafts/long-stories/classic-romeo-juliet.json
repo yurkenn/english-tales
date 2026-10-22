@@ -1,0 +1,2388 @@
+{
+  "status": "draft",
+  "kind": "long-story",
+  "source": "long-story-classics-2026-10-22",
+  "reviewedBy": null,
+  "rights": {
+    "credit": "William Shakespeare",
+    "sourceTitle": "Romeo and Juliet",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/1513",
+    "sourceTextUrl": "https://www.gutenberg.org/cache/epub/1513/pg1513-images.html",
+    "identifiedContributor": {
+      "name": "William Shakespeare",
+      "role": "author",
+      "deathYear": 1616
+    },
+    "firstPublished": 1597,
+    "sourceCopyrightStatement": "Public domain in the USA",
+    "checkedOn": "2026-10-22",
+    "adaptation": "New graded B1 prose retelling of the play written by English Tales, with English Tales translations. No modern abridgement, film script or translation was used.",
+    "turkeyAssessment": "Author died in 1616, more than 70 years before 2026, so the work is out of protection in Turkey and in life+70 countries.",
+    "rightsGuidanceUrl": "https://telifhaklari.ktb.gov.tr/TR-332373/telif-hakki-kac-yil-sureyle-korunur.html",
+    "sourceTextSha256": null,
+    "sourceTextSha256Pending": "Gutenberg is not reachable from the cloud session; record the source text hash on the owner's Mac before publication."
+  },
+  "editorialNotes": [
+    "B1 target: past tense narration, sentences of at most 20 words, about 1,200 words (about 10 minutes of reading).",
+    "Prose retelling of the play's main line: the street fight and the Prince's warning, the Capulet feast, the balcony, the secret wedding, Mercutio's and Tybalt's deaths, Romeo's banishment, the friar's sleeping potion, the lost letter and the tomb.",
+    "Three famous lines are kept in simple English: 'why are you Romeo', the rose line and 'A plague on both your houses'; the Prince's closing couplet is paraphrased.",
+    "Juliet is under fourteen in the source; the age is kept and the text stays non-explicit. The deaths are told briefly without graphic detail.",
+    "Reading sections are editorial groupings for a future chapter view; the app currently shows the story as one text."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+  },
+  "readingSections": [
+    {
+      "title": "Two families",
+      "firstSentenceId": "cl-romeo-001",
+      "lastSentenceId": "cl-romeo-030"
+    },
+    {
+      "title": "The balcony",
+      "firstSentenceId": "cl-romeo-031",
+      "lastSentenceId": "cl-romeo-052"
+    },
+    {
+      "title": "Banished",
+      "firstSentenceId": "cl-romeo-053",
+      "lastSentenceId": "cl-romeo-077"
+    },
+    {
+      "title": "The tomb",
+      "firstSentenceId": "cl-romeo-078",
+      "lastSentenceId": "cl-romeo-112"
+    }
+  ],
+  "story": {
+    "id": "classic-romeo-juliet",
+    "title": "Romeo and Juliet",
+    "author": "William Shakespeare",
+    "level": "B1",
+    "genre": "Günlük yaşam",
+    "description": "Romeo ve Juliet. Verona'da birbirinden nefret eden iki ailenin çocukları birbirine âşık olur ve gizlice evlenir; ama aileler arasındaki kin her şeyi değiştirir. B1 düzeyinde uzun uyarlama. Uyarlama ve Türkçe çeviri: English Tales.",
+    "descriptions": {
+      "es-419": "Romeo y Julieta. Los hijos de dos familias enemigas de Verona se enamoran y se casan en secreto, pero el odio entre las familias lo cambia todo. Adaptación larga de nivel B1. Adaptación: English Tales.",
+      "pt-BR": "Romeu e Julieta. Os filhos de duas famílias inimigas de Verona se apaixonam e se casam em segredo, mas o ódio entre as famílias muda tudo. Adaptação longa de nível B1. Adaptação: English Tales.",
+      "id": "Romeo dan Juliet. Anak-anak dari dua keluarga yang saling bermusuhan di Verona jatuh cinta dan menikah diam-diam, tetapi kebencian antarkeluarga mengubah segalanya. Adaptasi panjang tingkat B1. Adaptasi: English Tales.",
+      "ar": "روميو وجولييت. يقع ابن وابنة عائلتين متعاديتين في فيرونا في الحب ويتزوّجان سرًّا، لكن العداوة بين العائلتين تغيّر كل شيء. اقتباس طويل بمستوى B1. الاقتباس: English Tales.",
+      "vi": "Romeo và Juliet. Con cái của hai dòng họ thù địch ở Verona yêu nhau và bí mật kết hôn, nhưng mối hận thù giữa hai nhà đã thay đổi tất cả. Bản phóng tác dài trình độ B1. Phóng tác: English Tales.",
+      "hi": "रोमियो और जूलियट। वेरोना के दो दुश्मन परिवारों के बच्चे एक-दूसरे से प्यार करते हैं और चुपके से शादी कर लेते हैं, पर परिवारों की नफ़रत सब कुछ बदल देती है। B1 स्तर का लंबा रूपांतरण। रूपांतरण: English Tales।",
+      "ru": "Ромео и Джульетта. Дети двух враждующих семей Вероны влюбляются и тайно венчаются, но ненависть между семьями меняет всё. Длинная адаптация уровня B1. Адаптация: English Tales.",
+      "bn": "রোমিও ও জুলিয়েট। ভেরোনার দুই শত্রু পরিবারের ছেলেমেয়ে প্রেমে পড়ে গোপনে বিয়ে করে, কিন্তু দুই পরিবারের ঘৃণা সবকিছু বদলে দেয়। B1 স্তরের দীর্ঘ রূপান্তর। রূপান্তর: English Tales।",
+      "ur": "رومیو اور جولیٹ۔ ویرونا کے دو دشمن خاندانوں کے بچے ایک دوسرے سے محبت کرتے ہیں اور چپکے سے شادی کر لیتے ہیں، مگر خاندانوں کی نفرت سب کچھ بدل دیتی ہے۔ B1 سطح کی طویل ماخوذ کہانی۔ ترتیب: English Tales۔",
+      "th": "โรมิโอและจูเลียต: ลูกของสองตระกูลที่เป็นศัตรูกันในเวโรนาตกหลุมรักและแต่งงานกันอย่างลับ ๆ แต่ความเกลียดชังระหว่างสองตระกูลได้เปลี่ยนทุกสิ่ง ฉบับดัดแปลงขนาดยาวระดับ B1 ดัดแปลงโดย English Tales"
+    },
+    "coverKey": "cover_classic_romeo_juliet",
+    "tags": [
+      "gunluk-yasam"
+    ],
+    "sentences": [
+      {
+        "id": "cl-romeo-001",
+        "english": "In the Italian city of Verona, two rich families hated each other.",
+        "turkish": "İtalya'nın Verona şehrinde iki zengin aile birbirinden nefret ediyordu.",
+        "translations": {
+          "es-419": "En la ciudad italiana de Verona, dos familias ricas se odiaban.",
+          "pt-BR": "Na cidade italiana de Verona, duas famílias ricas se odiavam.",
+          "id": "Di kota Verona di Italia, dua keluarga kaya saling membenci.",
+          "ar": "في مدينة فيرونا الإيطالية، كانت عائلتان غنيّتان تكره إحداهما الأخرى.",
+          "vi": "Ở thành phố Verona của nước Ý, có hai gia đình giàu có căm ghét nhau.",
+          "hi": "इटली के वेरोना शहर में दो अमीर परिवार एक-दूसरे से नफ़रत करते थे।",
+          "ru": "В итальянском городе Вероне две богатые семьи ненавидели друг друга.",
+          "bn": "ইতালির ভেরোনা শহরে দুটো ধনী পরিবার একে অপরকে ঘৃণা করত।",
+          "ur": "اٹلی کے شہر ویرونا میں دو امیر خاندان ایک دوسرے سے نفرت کرتے تھے۔",
+          "th": "ในเมืองเวโรนาของอิตาลี มีสองตระกูลร่ำรวยที่เกลียดชังกัน"
+        }
+      },
+      {
+        "id": "cl-romeo-002",
+        "english": "They were the Montagues and the Capulets.",
+        "turkish": "Bunlar Montague ve Capulet aileleriydi.",
+        "translations": {
+          "es-419": "Eran los Montesco y los Capuleto.",
+          "pt-BR": "Eram os Montéquio e os Capuleto.",
+          "id": "Mereka adalah keluarga Montague dan keluarga Capulet.",
+          "ar": "كانتا عائلة مونتيغيو وعائلة كابوليت.",
+          "vi": "Đó là nhà Montague và nhà Capulet.",
+          "hi": "वे थे मॉन्टेग्यू और कैपुलेट परिवार।",
+          "ru": "Это были Монтекки и Капулетти.",
+          "bn": "তারা হলো মন্টেগু আর ক্যাপুলেট পরিবার।",
+          "ur": "وہ تھے مونٹیگ اور کیپولٹ خاندان۔",
+          "th": "สองตระกูลนั้นคือมอนตะกิวและแคปปิวเล็ต"
+        }
+      },
+      {
+        "id": "cl-romeo-003",
+        "english": "Nobody remembered how the quarrel had started, but it never stopped.",
+        "turkish": "Kavganın nasıl başladığını kimse hatırlamıyordu, ama kavga hiç bitmiyordu.",
+        "translations": {
+          "es-419": "Nadie recordaba cómo había empezado la pelea, pero nunca terminaba.",
+          "pt-BR": "Ninguém lembrava como a briga tinha começado, mas ela nunca acabava.",
+          "id": "Tak seorang pun ingat bagaimana pertikaian itu bermula, tetapi pertikaian itu tak pernah berhenti.",
+          "ar": "لم يتذكّر أحد كيف بدأ الخلاف، لكنه لم يتوقّف قط.",
+          "vi": "Không ai nhớ mối hận đã bắt đầu thế nào, nhưng nó chưa bao giờ dứt.",
+          "hi": "किसी को याद नहीं था कि झगड़ा कैसे शुरू हुआ, पर वह कभी ख़त्म नहीं हुआ।",
+          "ru": "Никто не помнил, с чего началась вражда, но она не прекращалась.",
+          "bn": "ঝগড়াটা কীভাবে শুরু হয়েছিল কেউ মনে রাখেনি, কিন্তু তা কখনো থামেনি।",
+          "ur": "کسی کو یاد نہیں تھا کہ جھگڑا کیسے شروع ہوا، مگر وہ کبھی ختم نہیں ہوا۔",
+          "th": "ไม่มีใครจำได้ว่าความบาดหมางเริ่มต้นอย่างไร แต่มันไม่เคยหยุดลงเลย"
+        }
+      },
+      {
+        "id": "cl-romeo-004",
+        "english": "Even their servants fought in the streets.",
+        "turkish": "Hizmetkârları bile sokaklarda kavga ediyordu.",
+        "translations": {
+          "es-419": "Hasta sus criados peleaban en las calles.",
+          "pt-BR": "Até os criados brigavam nas ruas.",
+          "id": "Bahkan para pelayan mereka berkelahi di jalanan.",
+          "ar": "حتى خدمهم كانوا يتشاجرون في الشوارع.",
+          "vi": "Ngay cả người hầu của họ cũng đánh nhau ngoài phố.",
+          "hi": "उनके नौकर तक गलियों में लड़ते थे।",
+          "ru": "Даже их слуги дрались на улицах.",
+          "bn": "এমনকি তাদের চাকররাও রাস্তায় মারামারি করত।",
+          "ur": "ان کے نوکر تک گلیوں میں لڑتے تھے۔",
+          "th": "แม้แต่คนรับใช้ของทั้งสองตระกูลก็ยังต่อสู้กันกลางถนน"
+        }
+      },
+      {
+        "id": "cl-romeo-005",
+        "english": "One hot morning, a fight broke out in the market square.",
+        "turkish": "Sıcak bir sabah, pazar meydanında bir kavga çıktı.",
+        "translations": {
+          "es-419": "Una mañana calurosa, estalló una pelea en la plaza del mercado.",
+          "pt-BR": "Numa manhã quente, começou uma briga na praça do mercado.",
+          "id": "Pada suatu pagi yang panas, terjadi perkelahian di alun-alun pasar.",
+          "ar": "في صباح حارّ، اندلع شجار في ساحة السوق.",
+          "vi": "Một buổi sáng oi bức, một trận ẩu đả nổ ra ở quảng trường chợ.",
+          "hi": "एक गर्म सुबह बाज़ार के चौक में लड़ाई छिड़ गई।",
+          "ru": "Однажды жарким утром на рыночной площади вспыхнула драка.",
+          "bn": "এক গরম সকালে বাজারের চত্বরে মারামারি বেধে গেল।",
+          "ur": "ایک گرم صبح بازار کے چوک میں لڑائی چھڑ گئی۔",
+          "th": "เช้าวันหนึ่งที่ร้อนอบอ้าว เกิดการต่อสู้ขึ้นที่ลานตลาด"
+        }
+      },
+      {
+        "id": "cl-romeo-006",
+        "english": "Swords flashed, people screamed, and soon half the town was involved.",
+        "turkish": "Kılıçlar parladı, insanlar çığlık attı ve kısa sürede kasabanın yarısı kavgaya karıştı.",
+        "translations": {
+          "es-419": "Brillaron las espadas, la gente gritó, y pronto media ciudad estaba metida en la pelea.",
+          "pt-BR": "Espadas brilharam, pessoas gritaram, e logo metade da cidade estava envolvida.",
+          "id": "Pedang-pedang berkilat, orang-orang menjerit, dan segera separuh kota ikut terlibat.",
+          "ar": "لمعت السيوف، وصرخ الناس، وسرعان ما انخرط نصف المدينة في الشجار.",
+          "vi": "Gươm loé sáng, người người la hét, và chẳng mấy chốc nửa thành phố đã bị cuốn vào.",
+          "hi": "तलवारें चमकीं, लोग चीख़े, और जल्द ही आधा शहर लड़ाई में शामिल हो गया।",
+          "ru": "Сверкали шпаги, кричали люди, и вскоре в драку втянулась половина города.",
+          "bn": "তলোয়ার ঝলসে উঠল, লোকে চিৎকার করল, আর অল্পক্ষণেই অর্ধেক শহর জড়িয়ে পড়ল।",
+          "ur": "تلواریں چمکیں، لوگ چیخے، اور جلد ہی آدھا شہر لڑائی میں شامل ہو گیا۔",
+          "th": "ดาบวาววับ ผู้คนกรีดร้อง และไม่นานคนครึ่งเมืองก็เข้าไปพัวพัน"
+        }
+      },
+      {
+        "id": "cl-romeo-007",
+        "english": "At last the Prince of Verona arrived, furious.",
+        "turkish": "Sonunda Verona Prensi öfke içinde geldi.",
+        "translations": {
+          "es-419": "Por fin llegó el príncipe de Verona, furioso.",
+          "pt-BR": "Por fim, o príncipe de Verona chegou, furioso.",
+          "id": "Akhirnya Pangeran Verona datang dengan sangat marah.",
+          "ar": "وأخيرًا وصل أمير فيرونا وهو في غاية الغضب.",
+          "vi": "Cuối cùng, ông hoàng thành Verona đến, giận dữ vô cùng.",
+          "hi": "आख़िरकार वेरोना के राजकुमार ग़ुस्से में आ पहुँचे।",
+          "ru": "Наконец появился разгневанный князь Вероны.",
+          "bn": "অবশেষে ভেরোনার রাজকুমার রেগে আগুন হয়ে এসে পৌঁছলেন।",
+          "ur": "آخرکار ویرونا کے شہزادے غصے میں آ پہنچے۔",
+          "th": "ในที่สุดเจ้าชายแห่งเวโรนาก็มาถึงด้วยความโกรธจัด"
+        }
+      },
+      {
+        "id": "cl-romeo-008",
+        "english": "\"If anyone disturbs our streets again,\" he said, \"he will pay with his life.\"",
+        "turkish": "\"Sokaklarımızın huzurunu bir daha bozan olursa,\" dedi, \"bunu canıyla öder.\"",
+        "translations": {
+          "es-419": "\"Si alguien vuelve a alterar nuestras calles\", dijo, \"lo pagará con su vida\".",
+          "pt-BR": "\"Se alguém perturbar nossas ruas outra vez\", disse ele, \"pagará com a vida.\"",
+          "id": "\"Jika ada yang mengacau jalanan kita lagi,\" katanya, \"ia akan membayar dengan nyawanya.\"",
+          "ar": "قال: \"إن عكّر أحد صفو شوارعنا مرة أخرى، فسيدفع حياته ثمنًا لذلك.\"",
+          "vi": "\"Nếu còn kẻ nào làm loạn đường phố của ta,\" ông nói, \"kẻ đó sẽ phải trả giá bằng mạng sống.\"",
+          "hi": "\"अगर किसी ने फिर हमारी गलियों की शांति भंग की,\" उन्होंने कहा, \"तो उसे अपनी जान देकर चुकाना होगा।\"",
+          "ru": "«Если кто-нибудь снова нарушит покой наших улиц, — сказал он, — то заплатит жизнью».",
+          "bn": "\"আবার কেউ আমাদের রাস্তায় অশান্তি করলে,\" তিনি বললেন, \"তাকে প্রাণ দিয়ে তার দাম দিতে হবে।\"",
+          "ur": "\"اگر کسی نے پھر ہماری گلیوں کا امن خراب کیا،\" انہوں نے کہا، \"تو اسے اپنی جان دے کر قیمت چکانی ہوگی۔\"",
+          "th": "\"ถ้าใครก่อความวุ่นวายบนถนนของเราอีก\" เขากล่าว \"ผู้นั้นจะต้องชดใช้ด้วยชีวิต\""
+        }
+      },
+      {
+        "id": "cl-romeo-009",
+        "english": "Romeo, the only son of Lord Montague, had missed the fight.",
+        "turkish": "Lord Montague'nun tek oğlu Romeo kavgayı kaçırmıştı.",
+        "translations": {
+          "es-419": "Romeo, el único hijo del señor Montesco, no había estado en la pelea.",
+          "pt-BR": "Romeu, o único filho do senhor Montéquio, não tinha participado da briga.",
+          "id": "Romeo, putra tunggal Tuan Montague, tidak ikut dalam perkelahian itu.",
+          "ar": "أما روميو، الابن الوحيد للسيد مونتيغيو، فلم يكن في الشجار.",
+          "vi": "Romeo, con trai duy nhất của ngài Montague, đã không có mặt trong trận ẩu đả.",
+          "hi": "लॉर्ड मॉन्टेग्यू का इकलौता बेटा रोमियो उस लड़ाई में नहीं था।",
+          "ru": "Ромео, единственный сын синьора Монтекки, в драке не участвовал.",
+          "bn": "লর্ড মন্টেগুর একমাত্র ছেলে রোমিও সেই মারামারিতে ছিল না।",
+          "ur": "لارڈ مونٹیگ کا اکلوتا بیٹا رومیو اس لڑائی میں نہیں تھا۔",
+          "th": "โรมิโอ ลูกชายคนเดียวของท่านมอนตะกิว ไม่ได้อยู่ในการต่อสู้ครั้งนั้น"
+        }
+      },
+      {
+        "id": "cl-romeo-010",
+        "english": "He was walking alone in the woods, sad because a girl named Rosaline did not love him.",
+        "turkish": "Ormanda yalnız başına yürüyordu, çünkü Rosaline adında bir kız onu sevmiyordu ve o çok üzgündü.",
+        "translations": {
+          "es-419": "Paseaba solo por el bosque, triste porque una muchacha llamada Rosalina no lo amaba.",
+          "pt-BR": "Ele caminhava sozinho no bosque, triste porque uma moça chamada Rosalina não o amava.",
+          "id": "Ia berjalan sendirian di hutan, sedih karena gadis bernama Rosaline tidak mencintainya.",
+          "ar": "كان يمشي وحده في الغابة، حزينًا لأن فتاة تُدعى روزالين لا تحبه.",
+          "vi": "Chàng đang đi dạo một mình trong rừng, buồn bã vì cô gái tên Rosaline không yêu chàng.",
+          "hi": "वह अकेला जंगल में घूम रहा था, उदास क्योंकि रोज़लिन नाम की एक लड़की उससे प्यार नहीं करती थी।",
+          "ru": "Он одиноко бродил по лесу, грустя оттого, что девушка по имени Розалина его не любила.",
+          "bn": "সে একা বনে হাঁটছিল, মন খারাপ, কারণ রোজালিন নামে এক মেয়ে তাকে ভালোবাসত না।",
+          "ur": "وہ اکیلا جنگل میں گھوم رہا تھا، اداس کیونکہ روزالین نام کی ایک لڑکی اس سے محبت نہیں کرتی تھی۔",
+          "th": "เขากำลังเดินอยู่ในป่าตามลำพัง เศร้าใจเพราะหญิงสาวชื่อโรซาลีนไม่รักเขา"
+        }
+      },
+      {
+        "id": "cl-romeo-011",
+        "english": "His cousin Benvolio tried to cheer him up.",
+        "turkish": "Kuzeni Benvolio onu neşelendirmeye çalıştı.",
+        "translations": {
+          "es-419": "Su primo Benvolio intentó animarlo.",
+          "pt-BR": "Seu primo Benvólio tentou animá-lo.",
+          "id": "Sepupunya, Benvolio, mencoba menghiburnya.",
+          "ar": "حاول ابن عمّه بنفوليو أن يُدخل البهجة إلى قلبه.",
+          "vi": "Người anh họ Benvolio cố làm chàng vui lên.",
+          "hi": "उसके चचेरे भाई बेनवोलियो ने उसका मन बहलाने की कोशिश की।",
+          "ru": "Его двоюродный брат Бенволио пытался его развеселить.",
+          "bn": "তার খুড়তুতো ভাই বেনভোলিও তার মন ভালো করার চেষ্টা করল।",
+          "ur": "اس کے کزن بینوولیو نے اس کا دل بہلانے کی کوشش کی۔",
+          "th": "เบนโวลิโอ ลูกพี่ลูกน้องของเขา พยายามทำให้เขาร่าเริงขึ้น"
+        }
+      },
+      {
+        "id": "cl-romeo-012",
+        "english": "\"Forget her,\" he said. \"Look at other beautiful girls instead.\"",
+        "turkish": "\"Unut onu,\" dedi. \"Onun yerine başka güzel kızlara bak.\"",
+        "translations": {
+          "es-419": "\"Olvídala\", le dijo. \"Mira a otras chicas hermosas\".",
+          "pt-BR": "\"Esqueça ela\", disse. \"Olhe para outras moças bonitas.\"",
+          "id": "\"Lupakan dia,\" katanya. \"Lihatlah gadis-gadis cantik yang lain.\"",
+          "ar": "قال: \"انسَها. وانظر إلى فتيات جميلات أخريات.\"",
+          "vi": "\"Quên cô ấy đi,\" anh nói. \"Hãy nhìn những cô gái xinh đẹp khác.\"",
+          "hi": "\"उसे भूल जाओ,\" उसने कहा। \"इसके बजाय दूसरी सुंदर लड़कियों को देखो।\"",
+          "ru": "«Забудь её, — сказал он. — Посмотри лучше на других красавиц».",
+          "bn": "\"ওকে ভুলে যাও,\" সে বলল। \"বরং অন্য সুন্দরী মেয়েদের দিকে তাকাও।\"",
+          "ur": "\"اسے بھول جاؤ،\" اس نے کہا۔ \"اس کے بجائے دوسری خوبصورت لڑکیوں کو دیکھو۔\"",
+          "th": "\"ลืมเธอซะ\" เขาพูด \"ไปมองสาวสวยคนอื่นแทนเถอะ\""
+        }
+      },
+      {
+        "id": "cl-romeo-013",
+        "english": "That night Lord Capulet was giving a great feast.",
+        "turkish": "O gece Lord Capulet büyük bir şölen veriyordu.",
+        "translations": {
+          "es-419": "Esa noche el señor Capuleto daba un gran banquete.",
+          "pt-BR": "Naquela noite, o senhor Capuleto daria um grande banquete.",
+          "id": "Malam itu Tuan Capulet mengadakan pesta besar.",
+          "ar": "في تلك الليلة كان السيد كابوليت يقيم وليمة كبيرة.",
+          "vi": "Đêm đó, ngài Capulet mở một bữa tiệc lớn.",
+          "hi": "उस रात लॉर्ड कैपुलेट एक बड़ी दावत दे रहे थे।",
+          "ru": "В тот вечер синьор Капулетти устраивал большой пир.",
+          "bn": "সে রাতে লর্ড ক্যাপুলেট এক বিরাট ভোজের আয়োজন করেছিলেন।",
+          "ur": "اس رات لارڈ کیپولٹ ایک بڑی دعوت دے رہے تھے۔",
+          "th": "คืนนั้นท่านแคปปิวเล็ตจัดงานเลี้ยงใหญ่"
+        }
+      },
+      {
+        "id": "cl-romeo-014",
+        "english": "Romeo and his friends decided to go, wearing masks so no one would know them.",
+        "turkish": "Romeo ile arkadaşları, kimse tanımasın diye maske takarak gitmeye karar verdiler.",
+        "translations": {
+          "es-419": "Romeo y sus amigos decidieron ir con máscaras para que nadie los reconociera.",
+          "pt-BR": "Romeu e os amigos decidiram ir de máscara, para que ninguém os reconhecesse.",
+          "id": "Romeo dan teman-temannya memutuskan untuk datang dengan memakai topeng agar tak ada yang mengenali mereka.",
+          "ar": "قرّر روميو وأصدقاؤه أن يذهبوا وهم يرتدون أقنعة حتى لا يعرفهم أحد.",
+          "vi": "Romeo và bạn bè quyết định đến dự, đeo mặt nạ để không ai nhận ra.",
+          "hi": "रोमियो और उसके दोस्तों ने मुखौटे पहनकर जाने का फ़ैसला किया, ताकि कोई उन्हें पहचान न सके।",
+          "ru": "Ромео и его друзья решили пойти туда в масках, чтобы их никто не узнал.",
+          "bn": "রোমিও আর তার বন্ধুরা মুখোশ পরে যাওয়ার সিদ্ধান্ত নিল, যাতে কেউ চিনতে না পারে।",
+          "ur": "رومیو اور اس کے دوستوں نے نقاب پہن کر جانے کا فیصلہ کیا تاکہ کوئی انہیں پہچان نہ سکے۔",
+          "th": "โรมิโอกับเพื่อน ๆ ตัดสินใจไปงาน โดยสวมหน้ากากเพื่อไม่ให้ใครจำได้"
+        }
+      },
+      {
+        "id": "cl-romeo-015",
+        "english": "In the Capulet house, Lady Capulet was talking to her daughter, Juliet.",
+        "turkish": "Capulet'lerin evinde Leydi Capulet, kızı Juliet'le konuşuyordu.",
+        "translations": {
+          "es-419": "En la casa de los Capuleto, la señora Capuleto hablaba con su hija, Julieta.",
+          "pt-BR": "Na casa dos Capuleto, a senhora Capuleto conversava com a filha, Julieta.",
+          "id": "Di rumah keluarga Capulet, Nyonya Capulet sedang berbicara dengan putrinya, Juliet.",
+          "ar": "في بيت كابوليت، كانت السيدة كابوليت تتحدّث مع ابنتها جولييت.",
+          "vi": "Trong nhà Capulet, phu nhân Capulet đang nói chuyện với con gái là Juliet.",
+          "hi": "कैपुलेट के घर में लेडी कैपुलेट अपनी बेटी जूलियट से बात कर रही थीं।",
+          "ru": "В доме Капулетти синьора Капулетти разговаривала с дочерью Джульеттой.",
+          "bn": "ক্যাপুলেটদের বাড়িতে লেডি ক্যাপুলেট মেয়ে জুলিয়েটের সঙ্গে কথা বলছিলেন।",
+          "ur": "کیپولٹ کے گھر میں لیڈی کیپولٹ اپنی بیٹی جولیٹ سے بات کر رہی تھیں۔",
+          "th": "ที่บ้านของแคปปิวเล็ต คุณนายแคปปิวเล็ตกำลังคุยกับจูเลียต ลูกสาวของเธอ"
+        }
+      },
+      {
+        "id": "cl-romeo-016",
+        "english": "Juliet was not yet fourteen.",
+        "turkish": "Juliet henüz on dört yaşında bile değildi.",
+        "translations": {
+          "es-419": "Julieta aún no tenía catorce años.",
+          "pt-BR": "Julieta ainda não tinha catorze anos.",
+          "id": "Juliet belum genap empat belas tahun.",
+          "ar": "لم تكن جولييت قد بلغت الرابعة عشرة بعد.",
+          "vi": "Juliet còn chưa tròn mười bốn tuổi.",
+          "hi": "जूलियट अभी चौदह साल की भी नहीं हुई थी।",
+          "ru": "Джульетте ещё не исполнилось четырнадцати.",
+          "bn": "জুলিয়েটের তখনো চোদ্দো বছর পূর্ণ হয়নি।",
+          "ur": "جولیٹ ابھی چودہ سال کی بھی نہیں ہوئی تھی۔",
+          "th": "จูเลียตยังอายุไม่ถึงสิบสี่ปี"
+        }
+      },
+      {
+        "id": "cl-romeo-017",
+        "english": "\"A young nobleman called Paris wants to marry you,\" her mother said.",
+        "turkish": "\"Paris adında genç bir soylu seninle evlenmek istiyor,\" dedi annesi.",
+        "translations": {
+          "es-419": "\"Un joven noble llamado Paris quiere casarse contigo\", dijo su madre.",
+          "pt-BR": "\"Um jovem nobre chamado Páris quer se casar com você\", disse a mãe.",
+          "id": "\"Seorang bangsawan muda bernama Paris ingin menikahimu,\" kata ibunya.",
+          "ar": "قالت أمها: \"نبيل شاب يُدعى باريس يريد أن يتزوّجك.\"",
+          "vi": "\"Một chàng quý tộc trẻ tên Paris muốn cưới con,\" mẹ nàng nói.",
+          "hi": "\"पेरिस नाम का एक नौजवान रईस तुमसे शादी करना चाहता है,\" उसकी माँ ने कहा।",
+          "ru": "«Молодой знатный граф Парис хочет на тебе жениться», — сказала мать.",
+          "bn": "\"প্যারিস নামে এক তরুণ অভিজাত তোমাকে বিয়ে করতে চায়,\" মা বললেন।",
+          "ur": "\"پیرس نام کا ایک نوجوان رئیس تم سے شادی کرنا چاہتا ہے،\" اس کی ماں نے کہا۔",
+          "th": "\"ขุนนางหนุ่มชื่อปารีสอยากแต่งงานกับลูก\" แม่ของเธอกล่าว"
+        }
+      },
+      {
+        "id": "cl-romeo-018",
+        "english": "\"Look at him tonight and see if you can love him.\"",
+        "turkish": "\"Bu gece ona bir bak, onu sevip sevemeyeceğini gör.\"",
+        "translations": {
+          "es-419": "\"Míralo esta noche y mira si puedes amarlo\".",
+          "pt-BR": "\"Olhe para ele esta noite e veja se consegue amá-lo.\"",
+          "id": "\"Lihatlah dia malam ini, dan coba rasakan apakah kau bisa mencintainya.\"",
+          "ar": "\"انظري إليه الليلة، وانظري إن كان بإمكانك أن تحبيه.\"",
+          "vi": "\"Tối nay hãy nhìn chàng và xem con có thể yêu chàng không.\"",
+          "hi": "\"आज रात उसे देखना और सोचना कि क्या तुम उससे प्यार कर सकती हो।\"",
+          "ru": "«Присмотрись к нему сегодня и подумай, сможешь ли ты его полюбить».",
+          "bn": "\"আজ রাতে ওকে দেখো, ভালোবাসতে পারো কি না বুঝে নাও।\"",
+          "ur": "\"آج رات اسے دیکھنا اور سوچنا کہ کیا تم اس سے محبت کر سکتی ہو۔\"",
+          "th": "\"คืนนี้ลองมองเขาดู แล้วดูว่าลูกจะรักเขาได้ไหม\""
+        }
+      },
+      {
+        "id": "cl-romeo-019",
+        "english": "Juliet's old nurse, who loved her like a mother, laughed with joy.",
+        "turkish": "Juliet'i bir anne gibi seven yaşlı dadısı sevinçle güldü.",
+        "translations": {
+          "es-419": "La vieja nodriza de Julieta, que la quería como una madre, rio de alegría.",
+          "pt-BR": "A velha ama de Julieta, que a amava como uma mãe, riu de alegria.",
+          "id": "Inang tua Juliet, yang menyayanginya seperti ibu sendiri, tertawa gembira.",
+          "ar": "ضحكت مربّية جولييت العجوز من الفرح، وكانت تحبها كأنها أمها.",
+          "vi": "Bà vú già của Juliet, người thương nàng như mẹ, cười vang sung sướng.",
+          "hi": "जूलियट की बूढ़ी धाय, जो उसे माँ की तरह प्यार करती थी, ख़ुशी से हँस पड़ी।",
+          "ru": "Старая кормилица Джульетты, любившая её как мать, засмеялась от радости.",
+          "bn": "জুলিয়েটের বুড়ি ধাইমা, যে তাকে মায়ের মতো ভালোবাসত, আনন্দে হেসে উঠল।",
+          "ur": "جولیٹ کی بوڑھی دایہ، جو اسے ماں کی طرح چاہتی تھی، خوشی سے ہنس پڑی۔",
+          "th": "แม่นมชราของจูเลียต ผู้รักเธอเหมือนแม่ หัวเราะด้วยความดีใจ"
+        }
+      },
+      {
+        "id": "cl-romeo-020",
+        "english": "The feast was full of music, dancing and light.",
+        "turkish": "Şölen müzik, dans ve ışıkla doluydu.",
+        "translations": {
+          "es-419": "El banquete estaba lleno de música, baile y luz.",
+          "pt-BR": "O banquete estava cheio de música, dança e luz.",
+          "id": "Pesta itu penuh musik, tarian, dan cahaya.",
+          "ar": "كانت الوليمة مليئة بالموسيقى والرقص والأضواء.",
+          "vi": "Bữa tiệc ngập tràn âm nhạc, điệu nhảy và ánh sáng.",
+          "hi": "दावत संगीत, नृत्य और रोशनी से भरी हुई थी।",
+          "ru": "Пир был полон музыки, танцев и света.",
+          "bn": "ভোজসভা ভরে ছিল গান, নাচ আর আলোয়।",
+          "ur": "دعوت موسیقی، رقص اور روشنی سے بھری ہوئی تھی۔",
+          "th": "งานเลี้ยงเต็มไปด้วยเสียงดนตรี การเต้นรำ และแสงไฟ"
+        }
+      },
+      {
+        "id": "cl-romeo-021",
+        "english": "Romeo came in behind his mask and suddenly stopped.",
+        "turkish": "Romeo maskesinin ardında içeri girdi ve birden durdu.",
+        "translations": {
+          "es-419": "Romeo entró detrás de su máscara y de pronto se detuvo.",
+          "pt-BR": "Romeu entrou atrás da máscara e de repente parou.",
+          "id": "Romeo masuk dengan topengnya, lalu tiba-tiba berhenti.",
+          "ar": "دخل روميو متخفّيًا وراء قناعه، ثم توقّف فجأة.",
+          "vi": "Romeo bước vào sau chiếc mặt nạ rồi bỗng khựng lại.",
+          "hi": "रोमियो मुखौटा लगाए अंदर आया और अचानक ठिठक गया।",
+          "ru": "Ромео вошёл в маске и вдруг замер.",
+          "bn": "রোমিও মুখোশের আড়ালে ভেতরে ঢুকে হঠাৎ থমকে দাঁড়াল।",
+          "ur": "رومیو نقاب کے پیچھے اندر آیا اور اچانک رک گیا۔",
+          "th": "โรมิโอเดินเข้ามาภายใต้หน้ากาก แล้วจู่ ๆ ก็หยุดชะงัก"
+        }
+      },
+      {
+        "id": "cl-romeo-022",
+        "english": "Across the room he saw a girl who shone like a star.",
+        "turkish": "Odanın öbür ucunda yıldız gibi parlayan bir kız gördü.",
+        "translations": {
+          "es-419": "Al otro lado de la sala vio a una muchacha que brillaba como una estrella.",
+          "pt-BR": "Do outro lado da sala, viu uma moça que brilhava como uma estrela.",
+          "id": "Di seberang ruangan ia melihat seorang gadis yang bersinar seperti bintang.",
+          "ar": "رأى في الطرف الآخر من القاعة فتاة تتلألأ كالنجمة.",
+          "vi": "Ở phía bên kia căn phòng, chàng thấy một cô gái lấp lánh như một vì sao.",
+          "hi": "कमरे के उस पार उसने एक लड़की देखी जो सितारे की तरह चमक रही थी।",
+          "ru": "В другом конце зала он увидел девушку, сиявшую, как звезда.",
+          "bn": "ঘরের ওপাশে সে দেখল এক মেয়েকে, যে তারার মতো ঝলমল করছে।",
+          "ur": "کمرے کے اس پار اس نے ایک لڑکی دیکھی جو ستارے کی طرح چمک رہی تھی۔",
+          "th": "อีกฟากของห้อง เขาเห็นหญิงสาวคนหนึ่งที่เปล่งประกายราวกับดวงดาว"
+        }
+      },
+      {
+        "id": "cl-romeo-023",
+        "english": "In that moment, he forgot Rosaline forever.",
+        "turkish": "O anda Rosaline'i sonsuza dek unuttu.",
+        "translations": {
+          "es-419": "En ese momento, olvidó a Rosalina para siempre.",
+          "pt-BR": "Naquele momento, ele esqueceu Rosalina para sempre.",
+          "id": "Saat itu juga, ia melupakan Rosaline untuk selamanya.",
+          "ar": "في تلك اللحظة، نسي روزالين إلى الأبد.",
+          "vi": "Ngay khoảnh khắc ấy, chàng quên Rosaline mãi mãi.",
+          "hi": "उसी पल वह रोज़लिन को हमेशा के लिए भूल गया।",
+          "ru": "В тот же миг он навсегда забыл Розалину.",
+          "bn": "সেই মুহূর্তে সে রোজালিনকে চিরদিনের মতো ভুলে গেল।",
+          "ur": "اسی لمحے وہ روزالین کو ہمیشہ کے لیے بھول گیا۔",
+          "th": "ในวินาทีนั้น เขาลืมโรซาลีนไปตลอดกาล"
+        }
+      },
+      {
+        "id": "cl-romeo-024",
+        "english": "He took Juliet's hand, and they spoke quietly together.",
+        "turkish": "Juliet'in elini tuttu ve birlikte usulca konuştular.",
+        "translations": {
+          "es-419": "Tomó la mano de Julieta, y hablaron en voz baja.",
+          "pt-BR": "Ele pegou a mão de Julieta, e os dois conversaram baixinho.",
+          "id": "Ia menggenggam tangan Juliet, dan mereka berbicara pelan-pelan.",
+          "ar": "أمسك يد جولييت، وتحدّثا معًا بصوت خافت.",
+          "vi": "Chàng nắm tay Juliet, và hai người khẽ trò chuyện cùng nhau.",
+          "hi": "उसने जूलियट का हाथ थामा, और दोनों धीमे-धीमे बातें करने लगे।",
+          "ru": "Он взял Джульетту за руку, и они тихо заговорили.",
+          "bn": "সে জুলিয়েটের হাত ধরল, আর দুজনে চুপিচুপি কথা বলল।",
+          "ur": "اس نے جولیٹ کا ہاتھ تھاما، اور دونوں دھیرے دھیرے باتیں کرنے لگے۔",
+          "th": "เขาจับมือจูเลียต แล้วทั้งสองก็พูดคุยกันเบา ๆ"
+        }
+      },
+      {
+        "id": "cl-romeo-025",
+        "english": "Then he kissed her, and she did not pull away.",
+        "turkish": "Sonra onu öptü, Juliet de geri çekilmedi.",
+        "translations": {
+          "es-419": "Luego la besó, y ella no se apartó.",
+          "pt-BR": "Depois ele a beijou, e ela não se afastou.",
+          "id": "Lalu ia menciumnya, dan Juliet tidak menghindar.",
+          "ar": "ثم قبّلها، ولم تبتعد عنه.",
+          "vi": "Rồi chàng hôn nàng, và nàng không lùi lại.",
+          "hi": "फिर उसने उसे चूम लिया, और वह पीछे नहीं हटी।",
+          "ru": "Потом он поцеловал её, и она не отстранилась.",
+          "bn": "তারপর সে তাকে চুমু খেল, আর জুলিয়েট সরে গেল না।",
+          "ur": "پھر اس نے اسے چوم لیا، اور وہ پیچھے نہیں ہٹی۔",
+          "th": "แล้วเขาก็จูบเธอ และเธอก็ไม่ได้ถอยหนี"
+        }
+      },
+      {
+        "id": "cl-romeo-026",
+        "english": "But Juliet's cousin Tybalt recognised Romeo's voice.",
+        "turkish": "Ama Juliet'in kuzeni Tybalt, Romeo'nun sesini tanıdı.",
+        "translations": {
+          "es-419": "Pero Teobaldo, el primo de Julieta, reconoció la voz de Romeo.",
+          "pt-BR": "Mas Teobaldo, primo de Julieta, reconheceu a voz de Romeu.",
+          "id": "Namun sepupu Juliet, Tybalt, mengenali suara Romeo.",
+          "ar": "لكن تيبالت، ابن عمّ جولييت، عرف صوت روميو.",
+          "vi": "Nhưng Tybalt, anh họ của Juliet, đã nhận ra giọng của Romeo.",
+          "hi": "लेकिन जूलियट के चचेरे भाई टिबाल्ट ने रोमियो की आवाज़ पहचान ली।",
+          "ru": "Но двоюродный брат Джульетты Тибальт узнал голос Ромео.",
+          "bn": "কিন্তু জুলিয়েটের মামাতো ভাই টিবল্ট রোমিওর গলা চিনে ফেলল।",
+          "ur": "لیکن جولیٹ کے کزن ٹائبالٹ نے رومیو کی آواز پہچان لی۔",
+          "th": "แต่ไทบอลต์ ลูกพี่ลูกน้องของจูเลียต จำเสียงของโรมิโอได้"
+        }
+      },
+      {
+        "id": "cl-romeo-027",
+        "english": "\"A Montague in our house!\" he whispered angrily, and he reached for his sword.",
+        "turkish": "\"Evimizde bir Montague!\" diye öfkeyle fısıldadı ve kılıcına uzandı.",
+        "translations": {
+          "es-419": "\"¡Un Montesco en nuestra casa!\", susurró furioso, y llevó la mano a la espada.",
+          "pt-BR": "\"Um Montéquio na nossa casa!\", sussurrou ele com raiva, e levou a mão à espada.",
+          "id": "\"Seorang Montague di rumah kita!\" bisiknya dengan marah, lalu ia meraih pedangnya.",
+          "ar": "همس بغضب: \"واحد من آل مونتيغيو في بيتنا!\" ومدّ يده إلى سيفه.",
+          "vi": "\"Một kẻ nhà Montague trong nhà ta!\" hắn rít lên giận dữ và với tay lấy thanh gươm.",
+          "hi": "\"हमारे घर में एक मॉन्टेग्यू!\" उसने ग़ुस्से से फुसफुसाया और अपनी तलवार की ओर हाथ बढ़ाया।",
+          "ru": "«Монтекки в нашем доме!» — злобно прошептал он и потянулся к шпаге.",
+          "bn": "\"আমাদের বাড়িতে একজন মন্টেগু!\" রেগে ফিসফিস করে বলল সে, আর তলোয়ারের দিকে হাত বাড়াল।",
+          "ur": "\"ہمارے گھر میں ایک مونٹیگ!\" اس نے غصے سے سرگوشی کی اور اپنی تلوار کی طرف ہاتھ بڑھایا۔",
+          "th": "\"คนของมอนตะกิวอยู่ในบ้านเรา!\" เขากระซิบอย่างโกรธเกรี้ยว แล้วเอื้อมมือไปจับดาบ"
+        }
+      },
+      {
+        "id": "cl-romeo-028",
+        "english": "Lord Capulet stopped him, because he did not want a fight at his feast.",
+        "turkish": "Lord Capulet onu durdurdu, çünkü şöleninde kavga çıksın istemiyordu.",
+        "translations": {
+          "es-419": "El señor Capuleto lo detuvo, porque no quería una pelea en su banquete.",
+          "pt-BR": "O senhor Capuleto o impediu, porque não queria briga no seu banquete.",
+          "id": "Tuan Capulet menahannya, karena ia tidak mau ada perkelahian di pestanya.",
+          "ar": "أوقفه السيد كابوليت، لأنه لم يُرد شجارًا في وليمته.",
+          "vi": "Ngài Capulet ngăn hắn lại, vì ông không muốn có ẩu đả trong bữa tiệc của mình.",
+          "hi": "लॉर्ड कैपुलेट ने उसे रोक दिया, क्योंकि वे अपनी दावत में लड़ाई नहीं चाहते थे।",
+          "ru": "Синьор Капулетти остановил его: он не хотел драки на своём пиру.",
+          "bn": "লর্ড ক্যাপুলেট তাকে থামালেন, কারণ তিনি নিজের ভোজে মারামারি চাননি।",
+          "ur": "لارڈ کیپولٹ نے اسے روک دیا، کیونکہ وہ اپنی دعوت میں لڑائی نہیں چاہتے تھے۔",
+          "th": "ท่านแคปปิวเล็ตห้ามเขาไว้ เพราะไม่อยากให้มีการต่อสู้ในงานเลี้ยงของตน"
+        }
+      },
+      {
+        "id": "cl-romeo-029",
+        "english": "Only later did Romeo and Juliet learn the terrible truth.",
+        "turkish": "Romeo ile Juliet korkunç gerçeği ancak daha sonra öğrendiler.",
+        "translations": {
+          "es-419": "Solo más tarde Romeo y Julieta supieron la terrible verdad.",
+          "pt-BR": "Só mais tarde Romeu e Julieta souberam a terrível verdade.",
+          "id": "Baru belakangan Romeo dan Juliet mengetahui kenyataan yang mengerikan itu.",
+          "ar": "ولم يعرف روميو وجولييت الحقيقة المروّعة إلا لاحقًا.",
+          "vi": "Mãi sau Romeo và Juliet mới biết sự thật khủng khiếp.",
+          "hi": "बाद में ही रोमियो और जूलियट को भयानक सच्चाई पता चली।",
+          "ru": "Лишь позже Ромео и Джульетта узнали страшную правду.",
+          "bn": "পরে গিয়েই রোমিও আর জুলিয়েট ভয়ংকর সত্যিটা জানল।",
+          "ur": "بعد میں ہی رومیو اور جولیٹ کو خوفناک سچائی معلوم ہوئی۔",
+          "th": "หลังจากนั้นโรมิโอและจูเลียตจึงได้รู้ความจริงอันน่ากลัว"
+        }
+      },
+      {
+        "id": "cl-romeo-030",
+        "english": "Each of them had fallen in love with an enemy.",
+        "turkish": "İkisi de bir düşmana âşık olmuştu.",
+        "translations": {
+          "es-419": "Cada uno se había enamorado de un enemigo.",
+          "pt-BR": "Cada um tinha se apaixonado por um inimigo.",
+          "id": "Masing-masing telah jatuh cinta kepada musuhnya.",
+          "ar": "لقد وقع كلٌّ منهما في حبّ عدوّ.",
+          "vi": "Cả hai đều đã phải lòng một kẻ thù.",
+          "hi": "दोनों को एक दुश्मन से प्यार हो गया था।",
+          "ru": "Каждый из них полюбил врага.",
+          "bn": "দুজনেই প্রেমে পড়েছিল এক শত্রুর।",
+          "ur": "دونوں کو ایک دشمن سے محبت ہو گئی تھی۔",
+          "th": "ทั้งสองต่างตกหลุมรักศัตรูของตน"
+        }
+      },
+      {
+        "id": "cl-romeo-031",
+        "english": "After the feast, Romeo could not go home.",
+        "turkish": "Şölenden sonra Romeo eve gidemedi.",
+        "translations": {
+          "es-419": "Después del banquete, Romeo no pudo irse a casa.",
+          "pt-BR": "Depois do banquete, Romeu não conseguiu ir para casa.",
+          "id": "Setelah pesta, Romeo tidak sanggup pulang.",
+          "ar": "بعد الوليمة، لم يستطع روميو أن يعود إلى بيته.",
+          "vi": "Sau bữa tiệc, Romeo không thể về nhà.",
+          "hi": "दावत के बाद रोमियो घर नहीं जा सका।",
+          "ru": "После пира Ромео не мог уйти домой.",
+          "bn": "ভোজের পর রোমিও আর বাড়ি ফিরতে পারল না।",
+          "ur": "دعوت کے بعد رومیو گھر نہ جا سکا۔",
+          "th": "หลังงานเลี้ยง โรมิโอไม่อาจกลับบ้านได้"
+        }
+      },
+      {
+        "id": "cl-romeo-032",
+        "english": "He climbed over the wall into the Capulet garden.",
+        "turkish": "Duvarın üstünden tırmanıp Capulet'lerin bahçesine girdi.",
+        "translations": {
+          "es-419": "Trepó el muro y entró en el jardín de los Capuleto.",
+          "pt-BR": "Ele pulou o muro e entrou no jardim dos Capuleto.",
+          "id": "Ia memanjat tembok dan masuk ke kebun keluarga Capulet.",
+          "ar": "تسلّق الجدار ودخل حديقة آل كابوليت.",
+          "vi": "Chàng trèo qua bức tường vào khu vườn nhà Capulet.",
+          "hi": "वह दीवार फाँदकर कैपुलेट के बाग़ में घुस गया।",
+          "ru": "Он перелез через стену в сад Капулетти.",
+          "bn": "সে দেয়াল টপকে ক্যাপুলেটদের বাগানে ঢুকে পড়ল।",
+          "ur": "وہ دیوار پھلانگ کر کیپولٹ کے باغ میں داخل ہو گیا۔",
+          "th": "เขาปีนข้ามกำแพงเข้าไปในสวนของแคปปิวเล็ต"
+        }
+      },
+      {
+        "id": "cl-romeo-033",
+        "english": "Above him, Juliet stepped out onto her balcony.",
+        "turkish": "Yukarıda Juliet balkonuna çıktı.",
+        "translations": {
+          "es-419": "Sobre él, Julieta salió a su balcón.",
+          "pt-BR": "Acima dele, Julieta saiu para a sacada.",
+          "id": "Di atasnya, Juliet melangkah keluar ke balkon.",
+          "ar": "وفوقه، خرجت جولييت إلى شرفتها.",
+          "vi": "Phía trên chàng, Juliet bước ra ban công.",
+          "hi": "उसके ऊपर जूलियट अपनी बालकनी में आई।",
+          "ru": "Над ним Джульетта вышла на балкон.",
+          "bn": "তার মাথার ওপরে জুলিয়েট বারান্দায় এসে দাঁড়াল।",
+          "ur": "اس کے اوپر جولیٹ اپنی بالکونی میں آئی۔",
+          "th": "เหนือศีรษะเขา จูเลียตก้าวออกมาที่ระเบียง"
+        }
+      },
+      {
+        "id": "cl-romeo-034",
+        "english": "She did not know that anyone was listening.",
+        "turkish": "Birinin onu dinlediğini bilmiyordu.",
+        "translations": {
+          "es-419": "No sabía que alguien la escuchaba.",
+          "pt-BR": "Ela não sabia que alguém estava ouvindo.",
+          "id": "Ia tidak tahu ada yang mendengarkan.",
+          "ar": "لم تكن تعلم أن أحدًا يسمعها.",
+          "vi": "Nàng không biết có người đang lắng nghe.",
+          "hi": "उसे नहीं पता था कि कोई सुन रहा है।",
+          "ru": "Она не знала, что её кто-то слушает.",
+          "bn": "সে জানত না যে কেউ শুনছে।",
+          "ur": "اسے معلوم نہیں تھا کہ کوئی سن رہا ہے۔",
+          "th": "เธอไม่รู้ว่ามีใครกำลังฟังอยู่"
+        }
+      },
+      {
+        "id": "cl-romeo-035",
+        "english": "\"Oh Romeo, Romeo, why are you Romeo?\" she sighed.",
+        "turkish": "\"Ah Romeo, Romeo, neden Romeo'sun sen?\" diye iç çekti.",
+        "translations": {
+          "es-419": "\"¡Oh, Romeo, Romeo! ¿Por qué eres tú Romeo?\", suspiró.",
+          "pt-BR": "\"Ó Romeu, Romeu, por que você é Romeu?\", suspirou ela.",
+          "id": "\"Oh Romeo, Romeo, mengapa engkau Romeo?\" desahnya.",
+          "ar": "تنهّدت قائلة: \"آه يا روميو، يا روميو، لماذا أنت روميو؟\"",
+          "vi": "\"Ôi Romeo, Romeo, sao chàng lại là Romeo?\" nàng thở dài.",
+          "hi": "\"ओ रोमियो, रोमियो, तुम रोमियो क्यों हो?\" उसने आह भरी।",
+          "ru": "«О Ромео, Ромео, зачем же ты Ромео?» — вздохнула она.",
+          "bn": "\"ও রোমিও, রোমিও, কেন তুমি রোমিও?\" দীর্ঘশ্বাস ফেলল সে।",
+          "ur": "\"اے رومیو، رومیو، تم رومیو کیوں ہو؟\" اس نے آہ بھری۔",
+          "th": "\"โอ โรมิโอ โรมิโอ ไยเธอจึงเป็นโรมิโอ\" เธอถอนใจ"
+        }
+      },
+      {
+        "id": "cl-romeo-036",
+        "english": "\"A name means nothing. A rose would smell just as sweet with any other name.\"",
+        "turkish": "\"İsim hiçbir şey ifade etmez. Gülün adı başka olsa da yine aynı tatlılıkta kokardı.\"",
+        "translations": {
+          "es-419": "\"Un nombre no significa nada. Una rosa olería igual de dulce con cualquier otro nombre\".",
+          "pt-BR": "\"Um nome não significa nada. Uma rosa teria o mesmo perfume com qualquer outro nome.\"",
+          "id": "\"Nama tidak berarti apa-apa. Mawar akan tetap harum meski diberi nama lain.\"",
+          "ar": "\"الاسم لا يعني شيئًا. فالوردة ستبقى عطرة حتى لو حملت اسمًا آخر.\"",
+          "vi": "\"Cái tên chẳng có nghĩa gì. Hoa hồng dù mang tên khác vẫn ngát hương như thế.\"",
+          "hi": "\"नाम में कुछ नहीं रखा। गुलाब को किसी और नाम से पुकारो, तब भी वह उतनी ही मीठी ख़ुशबू देगा।\"",
+          "ru": "«Имя ничего не значит. Роза пахнет розой, хоть розой назови её, хоть нет».",
+          "bn": "\"নামে কিছু আসে যায় না। গোলাপকে যে নামেই ডাকো, সে একই রকম মিষ্টি গন্ধ ছড়াবে।\"",
+          "ur": "\"نام میں کیا رکھا ہے۔ گلاب کو کسی اور نام سے پکارو، تب بھی وہ ویسی ہی میٹھی خوشبو دے گا۔\"",
+          "th": "\"ชื่อนั้นไม่มีความหมายอะไร กุหลาบจะเรียกด้วยชื่ออื่นก็ยังหอมหวานเหมือนเดิม\""
+        }
+      },
+      {
+        "id": "cl-romeo-037",
+        "english": "Romeo stepped out of the shadows.",
+        "turkish": "Romeo gölgelerin arasından çıktı.",
+        "translations": {
+          "es-419": "Romeo salió de entre las sombras.",
+          "pt-BR": "Romeu saiu das sombras.",
+          "id": "Romeo keluar dari kegelapan.",
+          "ar": "خرج روميو من الظلال.",
+          "vi": "Romeo bước ra khỏi bóng tối.",
+          "hi": "रोमियो परछाइयों से बाहर निकल आया।",
+          "ru": "Ромео вышел из тени.",
+          "bn": "রোমিও অন্ধকার থেকে বেরিয়ে এল।",
+          "ur": "رومیو سایوں سے باہر نکل آیا۔",
+          "th": "โรมิโอก้าวออกมาจากเงามืด"
+        }
+      },
+      {
+        "id": "cl-romeo-038",
+        "english": "\"Call me your love, and I will never be Romeo again.\"",
+        "turkish": "\"Bana sevgilim de, bir daha asla Romeo olmayayım.\"",
+        "translations": {
+          "es-419": "\"Llámame tu amor, y nunca más seré Romeo\".",
+          "pt-BR": "\"Me chame de seu amor, e nunca mais serei Romeu.\"",
+          "id": "\"Panggil aku kekasihmu, dan aku takkan pernah menjadi Romeo lagi.\"",
+          "ar": "\"سمّيني حبيبك، ولن أكون روميو بعد اليوم أبدًا.\"",
+          "vi": "\"Hãy gọi ta là người yêu, và ta sẽ không bao giờ là Romeo nữa.\"",
+          "hi": "\"मुझे अपना प्रेमी कहो, और मैं फिर कभी रोमियो नहीं रहूँगा।\"",
+          "ru": "«Зови меня любимым, и я больше никогда не буду Ромео».",
+          "bn": "\"আমাকে তোমার প্রিয়তম বলে ডাকো, আমি আর কখনো রোমিও থাকব না।\"",
+          "ur": "\"مجھے اپنا محبوب کہو، اور میں پھر کبھی رومیو نہیں رہوں گا۔\"",
+          "th": "\"เรียกผมว่าที่รักเถิด แล้วผมจะไม่เป็นโรมิโออีกต่อไป\""
+        }
+      },
+      {
+        "id": "cl-romeo-039",
+        "english": "Juliet was frightened at first, because her family would kill him if they found him.",
+        "turkish": "Juliet önce korktu, çünkü ailesi onu bulursa öldürürdü.",
+        "translations": {
+          "es-419": "Al principio Julieta se asustó, porque su familia lo mataría si lo encontraba.",
+          "pt-BR": "No início, Julieta se assustou, porque a família dela o mataria se o encontrasse.",
+          "id": "Mula-mula Juliet ketakutan, karena keluarganya akan membunuh Romeo jika menemukannya.",
+          "ar": "خافت جولييت في البداية، لأن عائلتها ستقتله إن وجدته.",
+          "vi": "Ban đầu Juliet hoảng sợ, vì nếu gia đình nàng bắt gặp, họ sẽ giết chàng.",
+          "hi": "पहले तो जूलियट डर गई, क्योंकि उसका परिवार उसे पकड़ लेता तो मार डालता।",
+          "ru": "Сначала Джульетта испугалась: если родные найдут его, то убьют.",
+          "bn": "প্রথমে জুলিয়েট ভয় পেল, কারণ পরিবার তাকে পেলে মেরে ফেলবে।",
+          "ur": "پہلے تو جولیٹ ڈر گئی، کیونکہ اس کا خاندان اسے پکڑ لیتا تو مار ڈالتا۔",
+          "th": "ตอนแรกจูเลียตตกใจกลัว เพราะถ้าครอบครัวเธอพบเขา พวกเขาจะฆ่าเขา"
+        }
+      },
+      {
+        "id": "cl-romeo-040",
+        "english": "But soon they were sharing their hearts, and they made a promise.",
+        "turkish": "Ama çok geçmeden kalplerini birbirlerine açtılar ve bir söz verdiler.",
+        "translations": {
+          "es-419": "Pero pronto se abrieron el corazón, e hicieron una promesa.",
+          "pt-BR": "Mas logo estavam abrindo o coração um para o outro, e fizeram uma promessa.",
+          "id": "Namun tak lama kemudian mereka saling mencurahkan isi hati, dan mereka membuat sebuah janji.",
+          "ar": "لكن سرعان ما راح كلٌّ منهما يبوح للآخر بما في قلبه، وتعاهدا.",
+          "vi": "Nhưng chẳng mấy chốc họ đã trải lòng với nhau, và cùng hứa một lời.",
+          "hi": "लेकिन जल्द ही दोनों ने अपने दिल की बातें कहीं और एक वादा किया।",
+          "ru": "Но вскоре они открыли друг другу сердца и дали обещание.",
+          "bn": "কিন্তু অল্পক্ষণেই তারা মনের কথা খুলে বলল, আর একটা প্রতিজ্ঞা করল।",
+          "ur": "لیکن جلد ہی دونوں نے دل کی باتیں کیں اور ایک وعدہ کیا۔",
+          "th": "แต่ไม่นานทั้งสองก็เปิดใจต่อกัน และให้คำสัญญาไว้"
+        }
+      },
+      {
+        "id": "cl-romeo-041",
+        "english": "They would marry, secretly and quickly.",
+        "turkish": "Gizlice ve hemen evleneceklerdi.",
+        "translations": {
+          "es-419": "Se casarían, en secreto y pronto.",
+          "pt-BR": "Eles se casariam, em segredo e depressa.",
+          "id": "Mereka akan menikah, diam-diam dan secepatnya.",
+          "ar": "سيتزوّجان، سرًّا وبسرعة.",
+          "vi": "Họ sẽ kết hôn, thật bí mật và thật nhanh.",
+          "hi": "वे चुपचाप और जल्दी शादी करेंगे।",
+          "ru": "Они поженятся тайно и скоро.",
+          "bn": "তারা বিয়ে করবে, গোপনে আর তাড়াতাড়ি।",
+          "ur": "وہ چپکے سے اور جلدی شادی کریں گے۔",
+          "th": "พวกเขาจะแต่งงานกันอย่างลับ ๆ และรวดเร็ว"
+        }
+      },
+      {
+        "id": "cl-romeo-042",
+        "english": "Early the next morning, Romeo ran to his friend, Friar Laurence.",
+        "turkish": "Ertesi sabah erkenden Romeo, dostu Rahip Laurence'a koştu.",
+        "translations": {
+          "es-419": "A la mañana siguiente, temprano, Romeo corrió a ver a su amigo fray Lorenzo.",
+          "pt-BR": "Na manhã seguinte, bem cedo, Romeu correu até seu amigo, frei Lourenço.",
+          "id": "Pagi-pagi sekali keesokan harinya, Romeo berlari menemui sahabatnya, Pastor Laurence.",
+          "ar": "في الصباح الباكر من اليوم التالي، أسرع روميو إلى صديقه الراهب لورنس.",
+          "vi": "Sáng sớm hôm sau, Romeo chạy đến gặp người bạn của mình, thầy tu Laurence.",
+          "hi": "अगली सुबह-सुबह रोमियो अपने दोस्त फ़्रायर लॉरेंस के पास दौड़ा।",
+          "ru": "Рано утром Ромео побежал к своему другу, брату Лоренцо.",
+          "bn": "পরদিন ভোরে রোমিও ছুটে গেল তার বন্ধু ফ্রায়ার লরেন্সের কাছে।",
+          "ur": "اگلی صبح سویرے رومیو اپنے دوست فرائر لارنس کے پاس دوڑا۔",
+          "th": "เช้าตรู่วันรุ่งขึ้น โรมิโอวิ่งไปหาบาทหลวงลอเรนซ์ เพื่อนของเขา"
+        }
+      },
+      {
+        "id": "cl-romeo-043",
+        "english": "The friar was a wise old priest who grew herbs and made medicines.",
+        "turkish": "Rahip, şifalı otlar yetiştirip ilaç yapan bilge, yaşlı bir din adamıydı.",
+        "translations": {
+          "es-419": "El fraile era un sacerdote viejo y sabio que cultivaba hierbas y preparaba medicinas.",
+          "pt-BR": "O frei era um sacerdote velho e sábio que cultivava ervas e fazia remédios.",
+          "id": "Pastor itu seorang rohaniwan tua yang bijak, yang menanam tanaman obat dan membuat ramuan.",
+          "ar": "كان الراهب كاهنًا عجوزًا حكيمًا يزرع الأعشاب ويصنع الأدوية.",
+          "vi": "Thầy tu là một linh mục già thông thái, chuyên trồng thảo dược và bào chế thuốc.",
+          "hi": "फ़्रायर एक बुद्धिमान बूढ़े पादरी थे, जो जड़ी-बूटियाँ उगाते और दवाएँ बनाते थे।",
+          "ru": "Монах был мудрым старым священником, который выращивал травы и готовил лекарства.",
+          "bn": "ফ্রায়ার ছিলেন এক জ্ঞানী বৃদ্ধ যাজক, যিনি ভেষজ গাছ চাষ করে ওষুধ বানাতেন।",
+          "ur": "فرائر ایک دانا بوڑھے پادری تھے جو جڑی بوٹیاں اگاتے اور دوائیں بناتے تھے۔",
+          "th": "บาทหลวงเป็นนักบวชชราผู้รอบรู้ ที่ปลูกสมุนไพรและปรุงยา"
+        }
+      },
+      {
+        "id": "cl-romeo-044",
+        "english": "He was surprised that Romeo had forgotten Rosaline so fast.",
+        "turkish": "Romeo'nun Rosaline'i bu kadar çabuk unutmasına şaşırdı.",
+        "translations": {
+          "es-419": "Le sorprendió que Romeo hubiera olvidado tan rápido a Rosalina.",
+          "pt-BR": "Ele ficou surpreso por Romeu ter esquecido Rosalina tão depressa.",
+          "id": "Ia heran Romeo bisa melupakan Rosaline secepat itu.",
+          "ar": "تعجّب من أن روميو نسي روزالين بهذه السرعة.",
+          "vi": "Thầy ngạc nhiên vì Romeo đã quên Rosaline nhanh đến thế.",
+          "hi": "उन्हें हैरानी हुई कि रोमियो इतनी जल्दी रोज़लिन को भूल गया।",
+          "ru": "Он удивился, что Ромео так быстро забыл Розалину.",
+          "bn": "রোমিও এত তাড়াতাড়ি রোজালিনকে ভুলে গেছে দেখে তিনি অবাক হলেন।",
+          "ur": "انہیں حیرت ہوئی کہ رومیو اتنی جلدی روزالین کو بھول گیا۔",
+          "th": "เขาแปลกใจที่โรมิโอลืมโรซาลีนได้เร็วขนาดนี้"
+        }
+      },
+      {
+        "id": "cl-romeo-045",
+        "english": "But he agreed to help, for a reason of his own.",
+        "turkish": "Ama kendine göre bir nedenle yardım etmeyi kabul etti.",
+        "translations": {
+          "es-419": "Pero aceptó ayudar, por una razón propia.",
+          "pt-BR": "Mas aceitou ajudar, por um motivo seu.",
+          "id": "Namun ia setuju membantu, dengan alasannya sendiri.",
+          "ar": "لكنه وافق على المساعدة لسبب خاص به.",
+          "vi": "Nhưng thầy đồng ý giúp, vì một lý do riêng.",
+          "hi": "फिर भी वे मदद को राज़ी हो गए, अपनी ही एक वजह से।",
+          "ru": "Но он согласился помочь, и у него была на то своя причина.",
+          "bn": "তবু তিনি নিজের একটা কারণে সাহায্য করতে রাজি হলেন।",
+          "ur": "پھر بھی وہ اپنی ایک وجہ سے مدد پر راضی ہو گئے۔",
+          "th": "แต่เขาก็ยอมช่วย ด้วยเหตุผลบางอย่างของตัวเอง"
+        }
+      },
+      {
+        "id": "cl-romeo-046",
+        "english": "\"Perhaps this marriage will turn your families' hate into love,\" he said.",
+        "turkish": "\"Belki bu evlilik ailelerinizin nefretini sevgiye dönüştürür,\" dedi.",
+        "translations": {
+          "es-419": "\"Quizá este matrimonio convierta el odio de sus familias en amor\", dijo.",
+          "pt-BR": "\"Talvez este casamento transforme o ódio das suas famílias em amor\", disse ele.",
+          "id": "\"Mungkin pernikahan ini akan mengubah kebencian keluarga kalian menjadi cinta,\" katanya.",
+          "ar": "قال: \"لعلّ هذا الزواج يحوّل الكراهية بين عائلتيكما إلى محبة.\"",
+          "vi": "\"Có lẽ cuộc hôn nhân này sẽ biến hận thù của hai nhà thành tình thương,\" thầy nói.",
+          "hi": "\"शायद यह शादी तुम्हारे परिवारों की नफ़रत को प्यार में बदल दे,\" उन्होंने कहा।",
+          "ru": "«Быть может, этот брак превратит ненависть ваших семей в любовь», — сказал он.",
+          "bn": "\"হয়তো এই বিয়ে তোমাদের পরিবারের ঘৃণাকে ভালোবাসায় বদলে দেবে,\" বললেন তিনি।",
+          "ur": "\"شاید یہ شادی تمہارے خاندانوں کی نفرت کو محبت میں بدل دے،\" انہوں نے کہا۔",
+          "th": "\"บางทีการแต่งงานครั้งนี้อาจเปลี่ยนความเกลียดชังของสองตระกูลให้กลายเป็นความรัก\" เขากล่าว"
+        }
+      },
+      {
+        "id": "cl-romeo-047",
+        "english": "Juliet sent her nurse to Romeo with a message.",
+        "turkish": "Juliet, dadısını bir haberle Romeo'ya gönderdi.",
+        "translations": {
+          "es-419": "Julieta envió a su nodriza con un mensaje para Romeo.",
+          "pt-BR": "Julieta mandou a ama até Romeu com um recado.",
+          "id": "Juliet mengutus inangnya kepada Romeo dengan sebuah pesan.",
+          "ar": "أرسلت جولييت مربّيتها إلى روميو برسالة.",
+          "vi": "Juliet sai bà vú mang lời nhắn đến cho Romeo.",
+          "hi": "जूलियट ने अपनी धाय को एक संदेश देकर रोमियो के पास भेजा।",
+          "ru": "Джульетта послала кормилицу к Ромео с весточкой.",
+          "bn": "জুলিয়েট ধাইমাকে একটা খবর দিয়ে রোমিওর কাছে পাঠাল।",
+          "ur": "جولیٹ نے اپنی دایہ کو ایک پیغام دے کر رومیو کے پاس بھیجا۔",
+          "th": "จูเลียตส่งแม่นมไปหาโรมิโอพร้อมข้อความ"
+        }
+      },
+      {
+        "id": "cl-romeo-048",
+        "english": "That afternoon Juliet told her mother that she was going to confession.",
+        "turkish": "O öğleden sonra Juliet annesine günah çıkarmaya gideceğini söyledi.",
+        "translations": {
+          "es-419": "Esa tarde, Julieta le dijo a su madre que iba a confesarse.",
+          "pt-BR": "Naquela tarde, Julieta disse à mãe que ia se confessar.",
+          "id": "Sore itu Juliet berkata kepada ibunya bahwa ia akan pergi mengaku dosa.",
+          "ar": "وفي عصر ذلك اليوم، أخبرت جولييت أمها أنها ذاهبة إلى الاعتراف.",
+          "vi": "Chiều hôm ấy, Juliet nói với mẹ rằng nàng đi xưng tội.",
+          "hi": "उस दोपहर जूलियट ने माँ से कहा कि वह पाप-स्वीकार के लिए जा रही है।",
+          "ru": "В тот день Джульетта сказала матери, что идёт на исповедь.",
+          "bn": "সেদিন বিকেলে জুলিয়েট মাকে বলল, সে স্বীকারোক্তি দিতে গির্জায় যাচ্ছে।",
+          "ur": "اس دوپہر جولیٹ نے ماں سے کہا کہ وہ اعترافِ گناہ کے لیے جا رہی ہے۔",
+          "th": "บ่ายวันนั้น จูเลียตบอกแม่ว่าจะไปสารภาพบาป"
+        }
+      },
+      {
+        "id": "cl-romeo-049",
+        "english": "Instead, she went to Friar Laurence's small church.",
+        "turkish": "Oysa Rahip Laurence'ın küçük kilisesine gitti.",
+        "translations": {
+          "es-419": "En cambio, fue a la pequeña iglesia de fray Lorenzo.",
+          "pt-BR": "Em vez disso, foi à pequena igreja de frei Lourenço.",
+          "id": "Padahal ia pergi ke gereja kecil Pastor Laurence.",
+          "ar": "لكنها ذهبت بدلًا من ذلك إلى كنيسة الراهب لورنس الصغيرة.",
+          "vi": "Nhưng thật ra nàng đến nhà thờ nhỏ của thầy tu Laurence.",
+          "hi": "असल में वह फ़्रायर लॉरेंस के छोटे-से गिरजाघर गई।",
+          "ru": "А на самом деле пошла в маленькую церковь брата Лоренцо.",
+          "bn": "আসলে সে গেল ফ্রায়ার লরেন্সের ছোট্ট গির্জায়।",
+          "ur": "دراصل وہ فرائر لارنس کے چھوٹے سے گرجا گھر گئی۔",
+          "th": "แต่ที่จริงเธอไปยังโบสถ์เล็ก ๆ ของบาทหลวงลอเรนซ์"
+        }
+      },
+      {
+        "id": "cl-romeo-050",
+        "english": "There, with only the friar as a witness, Romeo and Juliet were married.",
+        "turkish": "Orada, tek tanık rahipken, Romeo ile Juliet evlendiler.",
+        "translations": {
+          "es-419": "Allí, con el fraile como único testigo, Romeo y Julieta se casaron.",
+          "pt-BR": "Ali, tendo só o frei como testemunha, Romeu e Julieta se casaram.",
+          "id": "Di sana, hanya disaksikan oleh pastor itu, Romeo dan Juliet menikah.",
+          "ar": "وهناك، ولا شاهد سوى الراهب، تزوّج روميو وجولييت.",
+          "vi": "Tại đó, chỉ có thầy tu làm chứng, Romeo và Juliet thành vợ chồng.",
+          "hi": "वहाँ, सिर्फ़ फ़्रायर की गवाही में, रोमियो और जूलियट की शादी हो गई।",
+          "ru": "Там, при одном лишь свидетеле, монахе, Ромео и Джульетта обвенчались.",
+          "bn": "সেখানে, একমাত্র সাক্ষী ফ্রায়ারের সামনে, রোমিও আর জুলিয়েটের বিয়ে হলো।",
+          "ur": "وہاں، صرف فرائر کی گواہی میں، رومیو اور جولیٹ کی شادی ہو گئی۔",
+          "th": "ที่นั่น โดยมีเพียงบาทหลวงเป็นพยาน โรมิโอและจูเลียตก็แต่งงานกัน"
+        }
+      },
+      {
+        "id": "cl-romeo-051",
+        "english": "They would meet again that night, when the house was dark.",
+        "turkish": "O gece, ev karanlığa gömüldüğünde yeniden buluşacaklardı.",
+        "translations": {
+          "es-419": "Se verían de nuevo esa noche, cuando la casa estuviera a oscuras.",
+          "pt-BR": "Eles se encontrariam de novo à noite, quando a casa estivesse escura.",
+          "id": "Mereka akan bertemu lagi malam itu, saat rumah sudah gelap.",
+          "ar": "وسيلتقيان مجددًا تلك الليلة حين يعمّ الظلام البيت.",
+          "vi": "Đêm ấy, khi ngôi nhà chìm trong bóng tối, họ sẽ gặp lại nhau.",
+          "hi": "उस रात, जब घर में अँधेरा हो जाएगा, वे फिर मिलेंगे।",
+          "ru": "Они должны были встретиться снова ночью, когда в доме станет темно.",
+          "bn": "সে রাতে, বাড়ি অন্ধকার হলে, তারা আবার দেখা করবে।",
+          "ur": "اس رات، جب گھر میں اندھیرا ہو جائے گا، وہ پھر ملیں گے۔",
+          "th": "คืนนั้น เมื่อบ้านมืดลง ทั้งสองจะได้พบกันอีก"
+        }
+      },
+      {
+        "id": "cl-romeo-052",
+        "english": "For a few hours, they were the happiest people in Verona.",
+        "turkish": "Birkaç saat boyunca Verona'nın en mutlu insanlarıydılar.",
+        "translations": {
+          "es-419": "Durante unas horas, fueron las personas más felices de Verona.",
+          "pt-BR": "Por algumas horas, foram as pessoas mais felizes de Verona.",
+          "id": "Selama beberapa jam, mereka menjadi orang paling bahagia di Verona.",
+          "ar": "ولبضع ساعات، كانا أسعد الناس في فيرونا.",
+          "vi": "Trong vài giờ, họ là những người hạnh phúc nhất Verona.",
+          "hi": "कुछ घंटों के लिए वे वेरोना के सबसे ख़ुश लोग थे।",
+          "ru": "Несколько часов они были самыми счастливыми людьми в Вероне.",
+          "bn": "কয়েক ঘণ্টার জন্য তারাই ছিল ভেরোনার সবচেয়ে সুখী মানুষ।",
+          "ur": "چند گھنٹوں کے لیے وہ ویرونا کے سب سے خوش لوگ تھے۔",
+          "th": "ชั่วเวลาไม่กี่ชั่วโมง ทั้งสองคือคนที่มีความสุขที่สุดในเวโรนา"
+        }
+      },
+      {
+        "id": "cl-romeo-053",
+        "english": "That same afternoon, Romeo's friend Mercutio was walking in the hot streets.",
+        "turkish": "Aynı öğleden sonra Romeo'nun arkadaşı Mercutio sıcak sokaklarda yürüyordu.",
+        "translations": {
+          "es-419": "Esa misma tarde, Mercucio, el amigo de Romeo, paseaba por las calles calurosas.",
+          "pt-BR": "Naquela mesma tarde, Mercúcio, amigo de Romeu, andava pelas ruas quentes.",
+          "id": "Sore itu juga, Mercutio, sahabat Romeo, sedang berjalan di jalanan yang panas.",
+          "ar": "في عصر اليوم نفسه، كان ميركوشيو، صديق روميو، يتمشّى في الشوارع الحارّة.",
+          "vi": "Cũng chiều hôm ấy, Mercutio, bạn của Romeo, đang dạo trên những con phố nóng bức.",
+          "hi": "उसी दोपहर रोमियो का दोस्त मर्क्यूशियो तपती गलियों में घूम रहा था।",
+          "ru": "В тот же день друг Ромео Меркуцио прогуливался по раскалённым улицам.",
+          "bn": "সেদিন বিকেলেই রোমিওর বন্ধু মার্কুশিও গরম রাস্তায় হাঁটছিল।",
+          "ur": "اسی دوپہر رومیو کا دوست مرکیوشیو تپتی گلیوں میں گھوم رہا تھا۔",
+          "th": "บ่ายวันเดียวกันนั้น เมอร์คิวชิโอ เพื่อนของโรมิโอ กำลังเดินอยู่บนถนนที่ร้อนระอุ"
+        }
+      },
+      {
+        "id": "cl-romeo-054",
+        "english": "Tybalt appeared, still angry about the feast.",
+        "turkish": "Şölen yüzünden hâlâ öfkeli olan Tybalt ortaya çıktı.",
+        "translations": {
+          "es-419": "Apareció Teobaldo, todavía enojado por lo del banquete.",
+          "pt-BR": "Teobaldo apareceu, ainda furioso por causa do banquete.",
+          "id": "Tybalt muncul, masih marah karena kejadian di pesta.",
+          "ar": "ظهر تيبالت، وما زال غاضبًا بسبب ما جرى في الوليمة.",
+          "vi": "Tybalt xuất hiện, vẫn còn tức giận chuyện bữa tiệc.",
+          "hi": "टिबाल्ट आ पहुँचा, जो दावत वाली बात पर अब भी ग़ुस्से में था।",
+          "ru": "Появился Тибальт, всё ещё злой из-за пира.",
+          "bn": "টিবল্ট এসে হাজির হলো, ভোজের ঘটনায় তখনো রেগে আছে।",
+          "ur": "ٹائبالٹ آ پہنچا، جو دعوت والی بات پر اب بھی غصے میں تھا۔",
+          "th": "ไทบอลต์ปรากฏตัวขึ้น ยังคงโกรธเรื่องงานเลี้ยงอยู่"
+        }
+      },
+      {
+        "id": "cl-romeo-055",
+        "english": "He wanted to fight Romeo.",
+        "turkish": "Romeo'yla dövüşmek istiyordu.",
+        "translations": {
+          "es-419": "Quería pelear con Romeo.",
+          "pt-BR": "Ele queria lutar com Romeu.",
+          "id": "Ia ingin bertarung dengan Romeo.",
+          "ar": "كان يريد أن يبارز روميو.",
+          "vi": "Hắn muốn đấu với Romeo.",
+          "hi": "वह रोमियो से लड़ना चाहता था।",
+          "ru": "Он хотел сразиться с Ромео.",
+          "bn": "সে রোমিওর সঙ্গে লড়তে চাইছিল।",
+          "ur": "وہ رومیو سے لڑنا چاہتا تھا۔",
+          "th": "เขาต้องการดวลกับโรมิโอ"
+        }
+      },
+      {
+        "id": "cl-romeo-056",
+        "english": "When Romeo arrived, he refused to fight, because Tybalt was now his cousin too.",
+        "turkish": "Romeo geldiğinde dövüşmeyi reddetti, çünkü Tybalt artık onun da akrabasıydı.",
+        "translations": {
+          "es-419": "Cuando llegó Romeo, se negó a pelear, porque ahora Teobaldo también era su pariente.",
+          "pt-BR": "Quando Romeu chegou, recusou-se a lutar, porque agora Teobaldo também era seu parente.",
+          "id": "Ketika Romeo datang, ia menolak bertarung, karena Tybalt kini juga kerabatnya.",
+          "ar": "وحين وصل روميو، رفض القتال، لأن تيبالت صار قريبه هو أيضًا.",
+          "vi": "Khi Romeo đến, chàng từ chối giao đấu, vì giờ Tybalt cũng là người thân của chàng.",
+          "hi": "जब रोमियो आया, तो उसने लड़ने से इनकार कर दिया, क्योंकि टिबाल्ट अब उसका भी रिश्तेदार था।",
+          "ru": "Когда пришёл Ромео, он отказался драться: ведь Тибальт теперь был и его родственником.",
+          "bn": "রোমিও এসে লড়তে রাজি হলো না, কারণ টিবল্ট এখন তারও আত্মীয়।",
+          "ur": "جب رومیو آیا تو اس نے لڑنے سے انکار کر دیا، کیونکہ ٹائبالٹ اب اس کا بھی رشتہ دار تھا۔",
+          "th": "เมื่อโรมิโอมาถึง เขาปฏิเสธที่จะต่อสู้ เพราะตอนนี้ไทบอลต์ก็เป็นญาติของเขาด้วย"
+        }
+      },
+      {
+        "id": "cl-romeo-057",
+        "english": "But no one else knew about the marriage, so his kind words sounded like fear.",
+        "turkish": "Ama evlilikten başka kimsenin haberi yoktu, bu yüzden nazik sözleri korku gibi duyuldu.",
+        "translations": {
+          "es-419": "Pero nadie más sabía de la boda, así que sus palabras amables parecían miedo.",
+          "pt-BR": "Mas ninguém mais sabia do casamento, então suas palavras gentis pareceram medo.",
+          "id": "Namun tak ada orang lain yang tahu tentang pernikahan itu, jadi kata-katanya yang ramah terdengar seperti rasa takut.",
+          "ar": "لكن لم يكن أحد غيره يعلم بالزواج، فبدت كلماته اللطيفة وكأنها خوف.",
+          "vi": "Nhưng không ai khác biết về đám cưới, nên những lời ôn hòa của chàng nghe như sợ hãi.",
+          "hi": "लेकिन शादी के बारे में और किसी को पता नहीं था, इसलिए उसकी नरम बातें डर जैसी लगीं।",
+          "ru": "Но никто больше не знал о свадьбе, и его мирные слова прозвучали как трусость.",
+          "bn": "কিন্তু বিয়ের কথা আর কেউ জানত না, তাই তার নরম কথাগুলো ভয়ের মতো শোনাল।",
+          "ur": "لیکن شادی کا کسی اور کو علم نہیں تھا، اس لیے اس کی نرم باتیں ڈر جیسی لگیں۔",
+          "th": "แต่ไม่มีใครรู้เรื่องการแต่งงาน คำพูดอ่อนโยนของเขาจึงฟังดูเหมือนความขลาดกลัว"
+        }
+      },
+      {
+        "id": "cl-romeo-058",
+        "english": "Mercutio drew his sword and fought Tybalt instead.",
+        "turkish": "Bunun üzerine Mercutio kılıcını çekip Tybalt'la kendisi dövüştü.",
+        "translations": {
+          "es-419": "Entonces Mercucio sacó la espada y peleó él con Teobaldo.",
+          "pt-BR": "Então Mercúcio sacou a espada e lutou ele mesmo com Teobaldo.",
+          "id": "Maka Mercutio menghunus pedangnya dan bertarung melawan Tybalt.",
+          "ar": "فاستلّ ميركوشيو سيفه وبارز تيبالت بدلًا منه.",
+          "vi": "Thế là Mercutio rút gươm và tự mình đấu với Tybalt.",
+          "hi": "तब मर्क्यूशियो ने अपनी तलवार खींची और ख़ुद टिबाल्ट से भिड़ गया।",
+          "ru": "Тогда Меркуцио выхватил шпагу и сам сразился с Тибальтом.",
+          "bn": "তখন মার্কুশিও নিজেই তলোয়ার বের করে টিবল্টের সঙ্গে লড়াই শুরু করল।",
+          "ur": "تب مرکیوشیو نے اپنی تلوار نکالی اور خود ٹائبالٹ سے بھڑ گیا۔",
+          "th": "เมอร์คิวชิโอจึงชักดาบออกมาและต่อสู้กับไทบอลต์แทน"
+        }
+      },
+      {
+        "id": "cl-romeo-059",
+        "english": "Romeo stepped between them to stop the fight.",
+        "turkish": "Romeo kavgayı durdurmak için aralarına girdi.",
+        "translations": {
+          "es-419": "Romeo se puso entre ellos para detener la pelea.",
+          "pt-BR": "Romeu se colocou entre os dois para parar a luta.",
+          "id": "Romeo berdiri di antara mereka untuk menghentikan perkelahian.",
+          "ar": "وقف روميو بينهما ليوقف القتال.",
+          "vi": "Romeo lao vào giữa hai người để can ngăn.",
+          "hi": "रोमियो लड़ाई रोकने के लिए उनके बीच आ गया।",
+          "ru": "Ромео встал между ними, чтобы остановить бой.",
+          "bn": "রোমিও লড়াই থামাতে দুজনের মাঝখানে গিয়ে দাঁড়াল।",
+          "ur": "رومیو لڑائی روکنے کے لیے ان کے بیچ آ گیا۔",
+          "th": "โรมิโอเข้าไปขวางระหว่างทั้งสองเพื่อหยุดการต่อสู้"
+        }
+      },
+      {
+        "id": "cl-romeo-060",
+        "english": "Under his arm, Tybalt's sword struck Mercutio.",
+        "turkish": "Tybalt'ın kılıcı Romeo'nun kolunun altından Mercutio'ya saplandı.",
+        "translations": {
+          "es-419": "Por debajo de su brazo, la espada de Teobaldo hirió a Mercucio.",
+          "pt-BR": "Por baixo do braço dele, a espada de Teobaldo atingiu Mercúcio.",
+          "id": "Dari bawah lengan Romeo, pedang Tybalt menusuk Mercutio.",
+          "ar": "ومن تحت ذراعه، أصاب سيف تيبالت ميركوشيو.",
+          "vi": "Từ dưới cánh tay chàng, lưỡi gươm của Tybalt đâm trúng Mercutio.",
+          "hi": "उसकी बाँह के नीचे से टिबाल्ट की तलवार मर्क्यूशियो को लग गई।",
+          "ru": "Из-под его руки шпага Тибальта пронзила Меркуцио.",
+          "bn": "তার হাতের নিচ দিয়ে টিবল্টের তলোয়ার মার্কুশিওকে বিঁধল।",
+          "ur": "اس کے بازو کے نیچے سے ٹائبالٹ کی تلوار مرکیوشیو کو لگ گئی۔",
+          "th": "ดาบของไทบอลต์ลอดใต้แขนของโรมิโอไปแทงเมอร์คิวชิโอ"
+        }
+      },
+      {
+        "id": "cl-romeo-061",
+        "english": "\"A plague on both your houses!\" Mercutio cried, and then he died.",
+        "turkish": "\"Lanet olsun iki ailenize de!\" diye bağırdı Mercutio ve sonra öldü.",
+        "translations": {
+          "es-419": "\"¡Malditas sean sus dos casas!\", gritó Mercucio, y luego murió.",
+          "pt-BR": "\"Malditas sejam as suas duas casas!\", gritou Mercúcio, e então morreu.",
+          "id": "\"Terkutuklah kedua keluarga kalian!\" seru Mercutio, lalu ia meninggal.",
+          "ar": "صرخ ميركوشيو: \"اللعنة على بيتَيكما كليهما!\" ثم مات.",
+          "vi": "\"Nguyền rủa cả hai nhà các người!\" Mercutio kêu lên, rồi chết.",
+          "hi": "\"तुम दोनों घरानों पर लानत हो!\" मर्क्यूशियो चिल्लाया, और फिर मर गया।",
+          "ru": "«Чума на оба ваши дома!» — крикнул Меркуцио и умер.",
+          "bn": "\"অভিশাপ লাগুক তোমাদের দুই বংশেই!\" চিৎকার করল মার্কুশিও, তারপর মারা গেল।",
+          "ur": "\"تم دونوں گھرانوں پر لعنت ہو!\" مرکیوشیو چلایا، اور پھر مر گیا۔",
+          "th": "\"ขอให้โรคระบาดลงทั้งสองตระกูลของพวกแก!\" เมอร์คิวชิโอร้อง แล้วเขาก็สิ้นใจ"
+        }
+      },
+      {
+        "id": "cl-romeo-062",
+        "english": "Mad with anger and grief, Romeo attacked Tybalt and killed him.",
+        "turkish": "Öfke ve acıdan çılgına dönen Romeo, Tybalt'a saldırıp onu öldürdü.",
+        "translations": {
+          "es-419": "Loco de rabia y de dolor, Romeo atacó a Teobaldo y lo mató.",
+          "pt-BR": "Louco de raiva e de dor, Romeu atacou Teobaldo e o matou.",
+          "id": "Gelap mata karena marah dan duka, Romeo menyerang Tybalt dan membunuhnya.",
+          "ar": "وقد جُنّ من الغضب والحزن، هاجم روميو تيبالت وقتله.",
+          "vi": "Điên cuồng vì giận dữ và đau đớn, Romeo lao vào Tybalt và giết hắn.",
+          "hi": "ग़ुस्से और दुख से पागल होकर रोमियो ने टिबाल्ट पर हमला किया और उसे मार डाला।",
+          "ru": "Обезумев от гнева и горя, Ромео напал на Тибальта и убил его.",
+          "bn": "রাগে আর শোকে উন্মত্ত হয়ে রোমিও টিবল্টকে আক্রমণ করে মেরে ফেলল।",
+          "ur": "غصے اور غم سے پاگل ہو کر رومیو نے ٹائبالٹ پر حملہ کیا اور اسے مار ڈالا۔",
+          "th": "โรมิโอคลั่งด้วยความโกรธและความโศกเศร้า จึงเข้าโจมตีไทบอลต์จนตาย"
+        }
+      },
+      {
+        "id": "cl-romeo-063",
+        "english": "Then he realised what he had done and ran.",
+        "turkish": "Sonra ne yaptığını anladı ve kaçtı.",
+        "translations": {
+          "es-419": "Entonces comprendió lo que había hecho y huyó.",
+          "pt-BR": "Então percebeu o que tinha feito e fugiu.",
+          "id": "Lalu ia sadar apa yang telah ia lakukan, dan ia pun lari.",
+          "ar": "ثم أدرك ما فعل، فهرب.",
+          "vi": "Rồi chàng nhận ra mình vừa làm gì và bỏ chạy.",
+          "hi": "फिर उसे एहसास हुआ कि उसने क्या कर दिया, और वह भाग गया।",
+          "ru": "Тут он понял, что натворил, и бросился бежать.",
+          "bn": "তারপর সে বুঝল কী করে ফেলেছে, আর পালিয়ে গেল।",
+          "ur": "پھر اسے احساس ہوا کہ اس نے کیا کر دیا، اور وہ بھاگ گیا۔",
+          "th": "แล้วเขาก็รู้ตัวว่าได้ทำอะไรลงไป จึงวิ่งหนี"
+        }
+      },
+      {
+        "id": "cl-romeo-064",
+        "english": "The Prince did not sentence Romeo to death, because Tybalt had killed first.",
+        "turkish": "Prens, Romeo'ya ölüm cezası vermedi, çünkü ilk öldüren Tybalt'tı.",
+        "translations": {
+          "es-419": "El príncipe no condenó a muerte a Romeo, porque Teobaldo había matado primero.",
+          "pt-BR": "O príncipe não condenou Romeu à morte, porque Teobaldo tinha matado primeiro.",
+          "id": "Pangeran tidak menjatuhkan hukuman mati kepada Romeo, karena Tybalt yang lebih dulu membunuh.",
+          "ar": "لم يحكم الأمير على روميو بالموت، لأن تيبالت هو من قتل أولًا.",
+          "vi": "Ông hoàng không xử tử Romeo, vì Tybalt đã giết người trước.",
+          "hi": "राजकुमार ने रोमियो को मौत की सज़ा नहीं दी, क्योंकि पहले टिबाल्ट ने हत्या की थी।",
+          "ru": "Князь не приговорил Ромео к смерти, потому что первым убил Тибальт.",
+          "bn": "রাজকুমার রোমিওকে মৃত্যুদণ্ড দিলেন না, কারণ প্রথম খুনটা করেছিল টিবল্ট।",
+          "ur": "شہزادے نے رومیو کو موت کی سزا نہیں دی، کیونکہ پہلے ٹائبالٹ نے قتل کیا تھا۔",
+          "th": "เจ้าชายไม่ได้ตัดสินประหารโรมิโอ เพราะไทบอลต์เป็นฝ่ายฆ่าก่อน"
+        }
+      },
+      {
+        "id": "cl-romeo-065",
+        "english": "Instead, he banished him from Verona forever.",
+        "turkish": "Bunun yerine onu Verona'dan sonsuza dek sürgün etti.",
+        "translations": {
+          "es-419": "En cambio, lo desterró de Verona para siempre.",
+          "pt-BR": "Em vez disso, ele o baniu de Verona para sempre.",
+          "id": "Sebagai gantinya, ia mengusir Romeo dari Verona untuk selamanya.",
+          "ar": "وبدلًا من ذلك، نفاه من فيرونا إلى الأبد.",
+          "vi": "Thay vào đó, ông trục xuất chàng khỏi Verona mãi mãi.",
+          "hi": "इसके बजाय उन्होंने उसे हमेशा के लिए वेरोना से देश-निकाला दे दिया।",
+          "ru": "Вместо этого он навсегда изгнал его из Вероны.",
+          "bn": "তার বদলে তিনি তাকে চিরকালের জন্য ভেরোনা থেকে নির্বাসন দিলেন।",
+          "ur": "اس کے بجائے انہوں نے اسے ہمیشہ کے لیے ویرونا سے جلاوطن کر دیا۔",
+          "th": "แต่ทรงเนรเทศเขาออกจากเวโรนาตลอดกาลแทน"
+        }
+      },
+      {
+        "id": "cl-romeo-066",
+        "english": "If Romeo was seen in the city again, he would die.",
+        "turkish": "Romeo şehirde bir daha görülürse ölecekti.",
+        "translations": {
+          "es-419": "Si volvían a ver a Romeo en la ciudad, moriría.",
+          "pt-BR": "Se Romeu fosse visto na cidade outra vez, morreria.",
+          "id": "Jika Romeo terlihat lagi di kota itu, ia akan dihukum mati.",
+          "ar": "وإن شوهد روميو في المدينة مرة أخرى، فسيموت.",
+          "vi": "Nếu Romeo còn bị bắt gặp trong thành, chàng sẽ phải chết.",
+          "hi": "अगर रोमियो फिर शहर में दिखा, तो उसे मरना होगा।",
+          "ru": "Если Ромео снова увидят в городе, он умрёт.",
+          "bn": "রোমিওকে আবার শহরে দেখা গেলে তার মৃত্যু হবে।",
+          "ur": "اگر رومیو پھر شہر میں دکھائی دیا تو اسے مرنا ہوگا۔",
+          "th": "หากพบโรมิโอในเมืองอีก เขาจะต้องตาย"
+        }
+      },
+      {
+        "id": "cl-romeo-067",
+        "english": "Juliet wept for her cousin, but she wept more for her husband.",
+        "turkish": "Juliet kuzeni için ağladı, ama kocası için daha çok ağladı.",
+        "translations": {
+          "es-419": "Julieta lloró por su primo, pero lloró más por su esposo.",
+          "pt-BR": "Julieta chorou pelo primo, mas chorou mais pelo marido.",
+          "id": "Juliet menangisi sepupunya, tetapi lebih menangisi suaminya.",
+          "ar": "بكت جولييت ابن عمّها، لكنها بكت زوجها أكثر.",
+          "vi": "Juliet khóc thương anh họ, nhưng nàng khóc cho chồng mình nhiều hơn.",
+          "hi": "जूलियट अपने भाई के लिए रोई, पर अपने पति के लिए उससे भी ज़्यादा रोई।",
+          "ru": "Джульетта оплакивала двоюродного брата, но ещё больше — мужа.",
+          "bn": "জুলিয়েট ভাইয়ের জন্য কাঁদল, কিন্তু স্বামীর জন্য কাঁদল আরও বেশি।",
+          "ur": "جولیٹ اپنے کزن کے لیے روئی، مگر اپنے شوہر کے لیے اس سے بھی زیادہ روئی۔",
+          "th": "จูเลียตร่ำไห้ให้ลูกพี่ลูกน้อง แต่ร่ำไห้ให้สามีมากยิ่งกว่า"
+        }
+      },
+      {
+        "id": "cl-romeo-068",
+        "english": "That night Romeo climbed to her room, and they spent their only night together.",
+        "turkish": "O gece Romeo onun odasına tırmandı ve birlikte geçirecekleri tek geceyi geçirdiler.",
+        "translations": {
+          "es-419": "Esa noche Romeo subió a su habitación, y pasaron juntos su única noche.",
+          "pt-BR": "Naquela noite, Romeu subiu ao quarto dela, e eles passaram juntos sua única noite.",
+          "id": "Malam itu Romeo memanjat ke kamar Juliet, dan mereka melewatkan satu-satunya malam bersama.",
+          "ar": "في تلك الليلة تسلّق روميو إلى غرفتها، وقضيا معًا ليلتهما الوحيدة.",
+          "vi": "Đêm ấy Romeo trèo lên phòng nàng, và họ trải qua đêm duy nhất bên nhau.",
+          "hi": "उस रात रोमियो चढ़कर उसके कमरे में आया, और उन्होंने अपनी इकलौती रात साथ बिताई।",
+          "ru": "Той ночью Ромео поднялся к ней в комнату, и они провели вместе свою единственную ночь.",
+          "bn": "সে রাতে রোমিও বেয়ে উঠে তার ঘরে এল, আর তারা কাটাল একসঙ্গে তাদের একমাত্র রাত।",
+          "ur": "اس رات رومیو چڑھ کر اس کے کمرے میں آیا، اور انہوں نے اپنی اکلوتی رات ساتھ گزاری۔",
+          "th": "คืนนั้นโรมิโอปีนขึ้นไปที่ห้องของเธอ และทั้งสองได้อยู่ด้วยกันเพียงคืนเดียว"
+        }
+      },
+      {
+        "id": "cl-romeo-069",
+        "english": "At dawn a bird began to sing.",
+        "turkish": "Şafak vakti bir kuş ötmeye başladı.",
+        "translations": {
+          "es-419": "Al amanecer, un pájaro empezó a cantar.",
+          "pt-BR": "Ao amanhecer, um pássaro começou a cantar.",
+          "id": "Saat fajar, seekor burung mulai berkicau.",
+          "ar": "وعند الفجر، بدأ طائر يغرّد.",
+          "vi": "Lúc bình minh, một con chim bắt đầu hót.",
+          "hi": "भोर होते ही एक पक्षी गाने लगा।",
+          "ru": "На рассвете запела птица.",
+          "bn": "ভোরবেলা একটা পাখি গান গাইতে শুরু করল।",
+          "ur": "فجر کے وقت ایک پرندہ گانے لگا۔",
+          "th": "ยามรุ่งสาง นกตัวหนึ่งเริ่มร้องเพลง"
+        }
+      },
+      {
+        "id": "cl-romeo-070",
+        "english": "\"It is the nightingale, not the lark,\" Juliet begged. \"Stay a little longer.\"",
+        "turkish": "\"Bu bülbül, tarlakuşu değil,\" diye yalvardı Juliet. \"Biraz daha kal.\"",
+        "translations": {
+          "es-419": "\"Es el ruiseñor, no la alondra\", rogó Julieta. \"Quédate un poco más\".",
+          "pt-BR": "\"É o rouxinol, não a cotovia\", implorou Julieta. \"Fique mais um pouco.\"",
+          "id": "\"Itu burung bulbul, bukan burung lark,\" pinta Juliet. \"Tinggallah sebentar lagi.\"",
+          "ar": "توسّلت جولييت: \"إنه العندليب، لا القُبَّرة. ابقَ قليلًا بعد.\"",
+          "vi": "\"Đó là chim sơn ca đêm, không phải chim chiền chiện,\" Juliet van nài. \"Ở lại thêm chút nữa đi.\"",
+          "hi": "\"यह बुलबुल है, लार्क नहीं,\" जूलियट ने मिन्नत की। \"थोड़ी देर और रुको।\"",
+          "ru": "«Это соловей, а не жаворонок, — умоляла Джульетта. — Побудь ещё немного».",
+          "bn": "\"ওটা বুলবুলি, ভরতপাখি নয়,\" মিনতি করল জুলিয়েট। \"আরেকটু থাকো।\"",
+          "ur": "\"یہ بلبل ہے، چنڈول نہیں،\" جولیٹ نے منت کی۔ \"تھوڑی دیر اور رک جاؤ۔\"",
+          "th": "\"นั่นคือนกไนติงเกล ไม่ใช่นกลาร์ก\" จูเลียตอ้อนวอน \"อยู่ต่ออีกสักหน่อยเถิด\""
+        }
+      },
+      {
+        "id": "cl-romeo-071",
+        "english": "But it was the lark, and Romeo had to leave for the town of Mantua.",
+        "turkish": "Ama o tarlakuşuydu ve Romeo, Mantua kasabasına gitmek zorundaydı.",
+        "translations": {
+          "es-419": "Pero era la alondra, y Romeo tuvo que partir hacia la ciudad de Mantua.",
+          "pt-BR": "Mas era a cotovia, e Romeu teve de partir para a cidade de Mântua.",
+          "id": "Tetapi itu memang burung lark, dan Romeo harus berangkat ke kota Mantua.",
+          "ar": "لكنها كانت القُبَّرة، وكان على روميو أن يرحل إلى بلدة مانتوا.",
+          "vi": "Nhưng đó đúng là chim chiền chiện, và Romeo phải lên đường đến thành Mantua.",
+          "hi": "पर वह लार्क ही था, और रोमियो को मैंटुआ शहर के लिए निकलना पड़ा।",
+          "ru": "Но это был жаворонок, и Ромео пришлось уехать в город Мантую.",
+          "bn": "কিন্তু ওটা ভরতপাখিই ছিল, আর রোমিওকে মান্টুয়া শহরে চলে যেতে হলো।",
+          "ur": "مگر وہ چنڈول ہی تھا، اور رومیو کو مانٹوا شہر کے لیے نکلنا پڑا۔",
+          "th": "แต่นั่นคือนกลาร์กจริง ๆ และโรมิโอต้องจากไปยังเมืองมานทัว"
+        }
+      },
+      {
+        "id": "cl-romeo-072",
+        "english": "Soon after he left, Juliet's parents gave her new orders.",
+        "turkish": "O gittikten kısa süre sonra Juliet'in anne babası ona yeni emirler verdi.",
+        "translations": {
+          "es-419": "Poco después de que él se fue, los padres de Julieta le dieron nuevas órdenes.",
+          "pt-BR": "Pouco depois que ele partiu, os pais de Julieta lhe deram novas ordens.",
+          "id": "Tak lama setelah ia pergi, orang tua Juliet memberinya perintah baru.",
+          "ar": "وبعد رحيله بقليل، أصدر والدا جولييت إليها أوامر جديدة.",
+          "vi": "Chàng đi chưa được bao lâu thì cha mẹ Juliet ra lệnh mới cho nàng.",
+          "hi": "उसके जाने के कुछ ही देर बाद जूलियट के माता-पिता ने उसे नया हुक्म सुनाया।",
+          "ru": "Вскоре после его отъезда родители Джульетты отдали ей новый приказ.",
+          "bn": "সে চলে যাওয়ার কিছু পরেই জুলিয়েটের বাবা-মা তাকে নতুন হুকুম দিলেন।",
+          "ur": "اس کے جانے کے کچھ ہی دیر بعد جولیٹ کے ماں باپ نے اسے نیا حکم سنایا۔",
+          "th": "ไม่นานหลังจากเขาจากไป พ่อแม่ของจูเลียตก็มีคำสั่งใหม่ให้เธอ"
+        }
+      },
+      {
+        "id": "cl-romeo-073",
+        "english": "\"You will marry Paris on Thursday,\" her father said.",
+        "turkish": "\"Perşembe günü Paris'le evleneceksin,\" dedi babası.",
+        "translations": {
+          "es-419": "\"Te casarás con Paris el jueves\", dijo su padre.",
+          "pt-BR": "\"Você vai se casar com Páris na quinta-feira\", disse o pai.",
+          "id": "\"Kau akan menikah dengan Paris hari Kamis,\" kata ayahnya.",
+          "ar": "قال أبوها: \"ستتزوّجين باريس يوم الخميس.\"",
+          "vi": "\"Thứ Năm này con sẽ cưới Paris,\" cha nàng nói.",
+          "hi": "\"गुरुवार को तुम्हारी शादी पेरिस से होगी,\" उसके पिता ने कहा।",
+          "ru": "«В четверг ты выйдешь за Париса», — сказал отец.",
+          "bn": "\"বৃহস্পতিবার তোমার বিয়ে প্যারিসের সঙ্গে,\" বললেন তার বাবা।",
+          "ur": "\"جمعرات کو تمہاری شادی پیرس سے ہوگی،\" اس کے باپ نے کہا۔",
+          "th": "\"วันพฤหัสบดีนี้ลูกจะต้องแต่งงานกับปารีส\" พ่อของเธอกล่าว"
+        }
+      },
+      {
+        "id": "cl-romeo-074",
+        "english": "Juliet refused, and her father shouted that he would throw her into the street.",
+        "turkish": "Juliet reddetti, babası da onu sokağa atacağını haykırdı.",
+        "translations": {
+          "es-419": "Julieta se negó, y su padre gritó que la echaría a la calle.",
+          "pt-BR": "Julieta recusou, e o pai gritou que a poria na rua.",
+          "id": "Juliet menolak, dan ayahnya berteriak bahwa ia akan mengusirnya ke jalan.",
+          "ar": "رفضت جولييت، فصاح أبوها بأنه سيرميها في الشارع.",
+          "vi": "Juliet từ chối, và cha nàng quát rằng ông sẽ đuổi nàng ra đường.",
+          "hi": "जूलियट ने मना कर दिया, और उसके पिता चिल्लाए कि वे उसे घर से निकाल देंगे।",
+          "ru": "Джульетта отказалась, и отец закричал, что выгонит её на улицу.",
+          "bn": "জুলিয়েট রাজি হলো না, আর তার বাবা চেঁচিয়ে বললেন, তাকে রাস্তায় বের করে দেবেন।",
+          "ur": "جولیٹ نے انکار کر دیا، اور اس کے باپ چلائے کہ وہ اسے سڑک پر نکال دیں گے۔",
+          "th": "จูเลียตปฏิเสธ พ่อของเธอจึงตะโกนว่าจะไล่เธอออกไปอยู่ข้างถนน"
+        }
+      },
+      {
+        "id": "cl-romeo-075",
+        "english": "Even her nurse told her to forget Romeo and marry Paris.",
+        "turkish": "Dadısı bile ona Romeo'yu unutup Paris'le evlenmesini söyledi.",
+        "translations": {
+          "es-419": "Hasta su nodriza le dijo que olvidara a Romeo y se casara con Paris.",
+          "pt-BR": "Até a ama lhe disse para esquecer Romeu e se casar com Páris.",
+          "id": "Bahkan inangnya menyuruhnya melupakan Romeo dan menikahi Paris.",
+          "ar": "حتى مربّيتها قالت لها أن تنسى روميو وتتزوّج باريس.",
+          "vi": "Ngay cả bà vú cũng bảo nàng hãy quên Romeo mà cưới Paris.",
+          "hi": "यहाँ तक कि उसकी धाय ने भी कहा कि रोमियो को भूल जाओ और पेरिस से शादी कर लो।",
+          "ru": "Даже кормилица посоветовала ей забыть Ромео и выйти за Париса.",
+          "bn": "এমনকি ধাইমাও তাকে বলল রোমিওকে ভুলে প্যারিসকে বিয়ে করতে।",
+          "ur": "یہاں تک کہ اس کی دایہ نے بھی کہا کہ رومیو کو بھول جاؤ اور پیرس سے شادی کر لو۔",
+          "th": "แม้แต่แม่นมก็บอกให้เธอลืมโรมิโอแล้วแต่งงานกับปารีสเสีย"
+        }
+      },
+      {
+        "id": "cl-romeo-076",
+        "english": "Juliet felt completely alone.",
+        "turkish": "Juliet kendini tamamen yalnız hissetti.",
+        "translations": {
+          "es-419": "Julieta se sintió completamente sola.",
+          "pt-BR": "Julieta se sentiu completamente sozinha.",
+          "id": "Juliet merasa benar-benar sendirian.",
+          "ar": "شعرت جولييت بأنها وحيدة تمامًا.",
+          "vi": "Juliet cảm thấy hoàn toàn cô độc.",
+          "hi": "जूलियट ने ख़ुद को बिल्कुल अकेला महसूस किया।",
+          "ru": "Джульетта почувствовала себя совсем одинокой.",
+          "bn": "জুলিয়েট নিজেকে একেবারে একা মনে করল।",
+          "ur": "جولیٹ نے خود کو بالکل اکیلا محسوس کیا۔",
+          "th": "จูเลียตรู้สึกโดดเดี่ยวอย่างที่สุด"
+        }
+      },
+      {
+        "id": "cl-romeo-077",
+        "english": "She ran to Friar Laurence and said she would rather die.",
+        "turkish": "Rahip Laurence'a koştu ve ölmeyi tercih edeceğini söyledi.",
+        "translations": {
+          "es-419": "Corrió a ver a fray Lorenzo y le dijo que prefería morir.",
+          "pt-BR": "Ela correu até frei Lourenço e disse que preferia morrer.",
+          "id": "Ia berlari kepada Pastor Laurence dan berkata ia lebih baik mati.",
+          "ar": "أسرعت إلى الراهب لورنس وقالت إنها تفضّل الموت.",
+          "vi": "Nàng chạy đến gặp thầy tu Laurence và nói rằng nàng thà chết còn hơn.",
+          "hi": "वह दौड़कर फ़्रायर लॉरेंस के पास गई और बोली कि वह मर जाना पसंद करेगी।",
+          "ru": "Она побежала к брату Лоренцо и сказала, что лучше умрёт.",
+          "bn": "সে ছুটে গেল ফ্রায়ার লরেন্সের কাছে, বলল সে বরং মরে যাবে।",
+          "ur": "وہ دوڑ کر فرائر لارنس کے پاس گئی اور بولی کہ وہ مر جانا پسند کرے گی۔",
+          "th": "เธอวิ่งไปหาบาทหลวงลอเรนซ์ และบอกว่ายอมตายเสียดีกว่า"
+        }
+      },
+      {
+        "id": "cl-romeo-078",
+        "english": "The friar thought for a long time and then took out a small bottle.",
+        "turkish": "Rahip uzun süre düşündü, sonra küçük bir şişe çıkardı.",
+        "translations": {
+          "es-419": "El fraile pensó mucho tiempo y luego sacó un frasquito.",
+          "pt-BR": "O frei pensou por muito tempo e depois tirou um pequeno frasco.",
+          "id": "Pastor itu berpikir lama, lalu mengeluarkan sebuah botol kecil.",
+          "ar": "فكّر الراهب طويلًا، ثم أخرج قارورة صغيرة.",
+          "vi": "Thầy tu suy nghĩ hồi lâu rồi lấy ra một chiếc lọ nhỏ.",
+          "hi": "फ़्रायर बहुत देर तक सोचते रहे और फिर एक छोटी शीशी निकाली।",
+          "ru": "Монах долго думал, а потом достал маленький флакон.",
+          "bn": "ফ্রায়ার অনেকক্ষণ ভাবলেন, তারপর একটা ছোট শিশি বের করলেন।",
+          "ur": "فرائر بہت دیر تک سوچتے رہے اور پھر ایک چھوٹی شیشی نکالی۔",
+          "th": "บาทหลวงครุ่นคิดอยู่นาน แล้วหยิบขวดเล็ก ๆ ออกมา"
+        }
+      },
+      {
+        "id": "cl-romeo-079",
+        "english": "\"Drink this the night before the wedding,\" he said.",
+        "turkish": "\"Bunu düğünden önceki gece iç,\" dedi.",
+        "translations": {
+          "es-419": "\"Bebe esto la noche antes de la boda\", dijo.",
+          "pt-BR": "\"Beba isto na noite antes do casamento\", disse ele.",
+          "id": "\"Minumlah ini pada malam sebelum pernikahan,\" katanya.",
+          "ar": "قال: \"اشربي هذا في الليلة السابقة للزفاف.\"",
+          "vi": "\"Hãy uống thứ này vào đêm trước đám cưới,\" thầy nói.",
+          "hi": "\"शादी से पहली रात इसे पी लेना,\" उन्होंने कहा।",
+          "ru": "«Выпей это в ночь перед свадьбой», — сказал он.",
+          "bn": "\"বিয়ের আগের রাতে এটা খেয়ে নিও,\" তিনি বললেন।",
+          "ur": "\"شادی سے پہلی رات اسے پی لینا،\" انہوں نے کہا۔",
+          "th": "\"ดื่มสิ่งนี้ในคืนก่อนวันแต่งงาน\" เขากล่าว"
+        }
+      },
+      {
+        "id": "cl-romeo-080",
+        "english": "\"You will sleep so deeply that everyone will think you are dead.\"",
+        "turkish": "\"Öyle derin uyuyacaksın ki herkes öldüğünü sanacak.\"",
+        "translations": {
+          "es-419": "\"Dormirás tan profundamente que todos pensarán que estás muerta\".",
+          "pt-BR": "\"Você vai dormir tão profundamente que todos vão pensar que está morta.\"",
+          "id": "\"Kau akan tidur begitu lelap sampai semua orang mengira kau sudah mati.\"",
+          "ar": "\"ستنامين نومًا عميقًا حتى يظنّ الجميع أنك ميتة.\"",
+          "vi": "\"Con sẽ ngủ say đến mức ai cũng tưởng con đã chết.\"",
+          "hi": "\"तुम इतनी गहरी नींद सोओगी कि सब समझेंगे तुम मर चुकी हो।\"",
+          "ru": "«Ты уснёшь так крепко, что все решат, будто ты умерла».",
+          "bn": "\"তুমি এত গভীর ঘুমে ঢলে পড়বে যে সবাই ভাববে তুমি মারা গেছ।\"",
+          "ur": "\"تم اتنی گہری نیند سوؤ گی کہ سب سمجھیں گے تم مر چکی ہو۔\"",
+          "th": "\"ลูกจะหลับลึกจนทุกคนคิดว่าลูกตายแล้ว\""
+        }
+      },
+      {
+        "id": "cl-romeo-081",
+        "english": "\"Your family will put you in the Capulet tomb.\"",
+        "turkish": "\"Ailen seni Capulet'lerin mezarına koyacak.\"",
+        "translations": {
+          "es-419": "\"Tu familia te llevará a la tumba de los Capuleto\".",
+          "pt-BR": "\"Sua família vai colocar você no túmulo dos Capuleto.\"",
+          "id": "\"Keluargamu akan membaringkanmu di makam keluarga Capulet.\"",
+          "ar": "\"وستضعك عائلتك في مدفن آل كابوليت.\"",
+          "vi": "\"Gia đình sẽ đặt con vào hầm mộ nhà Capulet.\"",
+          "hi": "\"तुम्हारा परिवार तुम्हें कैपुलेट की क़ब्रगाह में रख देगा।\"",
+          "ru": "«Родные положат тебя в склеп Капулетти».",
+          "bn": "\"তোমার পরিবার তোমাকে ক্যাপুলেটদের সমাধিঘরে রেখে আসবে।\"",
+          "ur": "\"تمہارا خاندان تمہیں کیپولٹ کے مقبرے میں رکھ دے گا۔\"",
+          "th": "\"ครอบครัวจะนำลูกไปไว้ในสุสานของแคปปิวเล็ต\""
+        }
+      },
+      {
+        "id": "cl-romeo-082",
+        "english": "\"I will send a letter to Romeo, and he will be there when you wake.\"",
+        "turkish": "\"Romeo'ya bir mektup göndereceğim, sen uyandığında o yanında olacak.\"",
+        "translations": {
+          "es-419": "\"Le enviaré una carta a Romeo, y él estará allí cuando despiertes\".",
+          "pt-BR": "\"Vou mandar uma carta a Romeu, e ele estará lá quando você acordar.\"",
+          "id": "\"Aku akan mengirim surat kepada Romeo, dan ia akan ada di sana saat kau bangun.\"",
+          "ar": "\"وسأرسل رسالة إلى روميو، وسيكون هناك حين تستيقظين.\"",
+          "vi": "\"Ta sẽ gửi thư cho Romeo, và chàng sẽ ở đó khi con tỉnh dậy.\"",
+          "hi": "\"मैं रोमियो को पत्र भेजूँगा, और जब तुम जागोगी, वह वहीं होगा।\"",
+          "ru": "«Я пошлю письмо Ромео, и он будет рядом, когда ты проснёшься».",
+          "bn": "\"আমি রোমিওকে চিঠি পাঠাব, তুমি জেগে উঠলে সে সেখানেই থাকবে।\"",
+          "ur": "\"میں رومیو کو خط بھیجوں گا، اور جب تم جاگو گی تو وہ وہیں ہوگا۔\"",
+          "th": "\"พ่อจะส่งจดหมายถึงโรมิโอ และเขาจะอยู่ที่นั่นเมื่อลูกตื่น\""
+        }
+      },
+      {
+        "id": "cl-romeo-083",
+        "english": "Juliet was afraid, but she took the bottle.",
+        "turkish": "Juliet korkuyordu, ama şişeyi aldı.",
+        "translations": {
+          "es-419": "Julieta tenía miedo, pero tomó el frasco.",
+          "pt-BR": "Julieta estava com medo, mas pegou o frasco.",
+          "id": "Juliet takut, tetapi ia mengambil botol itu.",
+          "ar": "كانت جولييت خائفة، لكنها أخذت القارورة.",
+          "vi": "Juliet sợ hãi, nhưng vẫn cầm lấy chiếc lọ.",
+          "hi": "जूलियट डरी हुई थी, पर उसने शीशी ले ली।",
+          "ru": "Джульетте было страшно, но она взяла флакон.",
+          "bn": "জুলিয়েট ভয় পেয়েছিল, তবু শিশিটা নিল।",
+          "ur": "جولیٹ ڈری ہوئی تھی، مگر اس نے شیشی لے لی۔",
+          "th": "จูเลียตกลัว แต่เธอก็รับขวดนั้นไว้"
+        }
+      },
+      {
+        "id": "cl-romeo-084",
+        "english": "At home she pretended to obey and agreed to marry Paris.",
+        "turkish": "Evde söz dinliyormuş gibi yaptı ve Paris'le evlenmeyi kabul etti.",
+        "translations": {
+          "es-419": "En casa fingió obedecer y aceptó casarse con Paris.",
+          "pt-BR": "Em casa, fingiu obedecer e concordou em se casar com Páris.",
+          "id": "Di rumah ia berpura-pura patuh dan setuju menikah dengan Paris.",
+          "ar": "وفي البيت تظاهرت بالطاعة ووافقت على الزواج من باريس.",
+          "vi": "Về nhà, nàng giả vờ vâng lời và đồng ý cưới Paris.",
+          "hi": "घर पर उसने आज्ञा मानने का नाटक किया और पेरिस से शादी के लिए हाँ कह दी।",
+          "ru": "Дома она сделала вид, что послушалась, и согласилась выйти за Париса.",
+          "bn": "বাড়িতে সে বাধ্য মেয়ের ভান করল, প্যারিসকে বিয়ে করতে রাজি হলো।",
+          "ur": "گھر پر اس نے فرماں برداری کا ڈھونگ کیا اور پیرس سے شادی کے لیے ہاں کہہ دی۔",
+          "th": "ที่บ้าน เธอแสร้งทำเป็นเชื่อฟังและยอมแต่งงานกับปารีส"
+        }
+      },
+      {
+        "id": "cl-romeo-085",
+        "english": "On Wednesday night, alone in her room, she drank the potion.",
+        "turkish": "Çarşamba gecesi odasında yalnızken iksiri içti.",
+        "translations": {
+          "es-419": "El miércoles por la noche, sola en su cuarto, bebió la poción.",
+          "pt-BR": "Na quarta-feira à noite, sozinha no quarto, ela bebeu a poção.",
+          "id": "Pada Rabu malam, sendirian di kamarnya, ia meminum ramuan itu.",
+          "ar": "وفي ليلة الأربعاء، وهي وحدها في غرفتها، شربت الجرعة.",
+          "vi": "Đêm thứ Tư, một mình trong phòng, nàng uống liều thuốc.",
+          "hi": "बुधवार की रात, अपने कमरे में अकेले, उसने वह दवा पी ली।",
+          "ru": "В среду ночью, одна в своей комнате, она выпила зелье.",
+          "bn": "বুধবার রাতে, নিজের ঘরে একা, সে ওষুধটা খেয়ে নিল।",
+          "ur": "بدھ کی رات، اپنے کمرے میں اکیلے، اس نے وہ دوا پی لی۔",
+          "th": "คืนวันพุธ เธอดื่มยานั้นตามลำพังในห้องของเธอ"
+        }
+      },
+      {
+        "id": "cl-romeo-086",
+        "english": "In the morning, the nurse found her cold and still.",
+        "turkish": "Sabah dadısı onu soğuk ve kıpırtısız buldu.",
+        "translations": {
+          "es-419": "Por la mañana, la nodriza la encontró fría e inmóvil.",
+          "pt-BR": "De manhã, a ama a encontrou fria e imóvel.",
+          "id": "Pagi harinya, inangnya mendapati tubuhnya dingin dan tak bergerak.",
+          "ar": "وفي الصباح، وجدتها المربّية باردة ساكنة.",
+          "vi": "Sáng hôm sau, bà vú thấy nàng lạnh ngắt và bất động.",
+          "hi": "सुबह धाय ने उसे ठंडा और निश्चल पाया।",
+          "ru": "Утром кормилица нашла её холодной и неподвижной.",
+          "bn": "সকালে ধাইমা তাকে ঠান্ডা আর নিথর অবস্থায় পেল।",
+          "ur": "صبح دایہ نے اسے ٹھنڈا اور بے حرکت پایا۔",
+          "th": "ตอนเช้า แม่นมพบว่าเธอตัวเย็นและนิ่งสนิท"
+        }
+      },
+      {
+        "id": "cl-romeo-087",
+        "english": "The wedding music turned into funeral songs.",
+        "turkish": "Düğün müziği cenaze ağıtlarına dönüştü.",
+        "translations": {
+          "es-419": "La música de la boda se convirtió en cantos fúnebres.",
+          "pt-BR": "A música do casamento virou cantos fúnebres.",
+          "id": "Musik pernikahan berubah menjadi lagu duka.",
+          "ar": "تحوّلت موسيقى الزفاف إلى أناشيد جنازة.",
+          "vi": "Nhạc cưới biến thành khúc ca tang lễ.",
+          "hi": "शादी का संगीत मातम के गीतों में बदल गया।",
+          "ru": "Свадебная музыка сменилась похоронными песнями.",
+          "bn": "বিয়ের বাজনা বদলে গেল শোকের গানে।",
+          "ur": "شادی کی موسیقی ماتمی گیتوں میں بدل گئی۔",
+          "th": "ดนตรีงานแต่งกลายเป็นเพลงในงานศพ"
+        }
+      },
+      {
+        "id": "cl-romeo-088",
+        "english": "But the friar's letter never reached Romeo.",
+        "turkish": "Ama rahibin mektubu Romeo'ya hiç ulaşmadı.",
+        "translations": {
+          "es-419": "Pero la carta del fraile nunca llegó a Romeo.",
+          "pt-BR": "Mas a carta do frei nunca chegou a Romeu.",
+          "id": "Namun surat pastor itu tak pernah sampai kepada Romeo.",
+          "ar": "لكن رسالة الراهب لم تصل إلى روميو قط.",
+          "vi": "Nhưng lá thư của thầy tu không bao giờ đến tay Romeo.",
+          "hi": "लेकिन फ़्रायर का पत्र रोमियो तक कभी नहीं पहुँचा।",
+          "ru": "Но письмо монаха так и не дошло до Ромео.",
+          "bn": "কিন্তু ফ্রায়ারের চিঠি রোমিওর কাছে কখনো পৌঁছল না।",
+          "ur": "لیکن فرائر کا خط رومیو تک کبھی نہیں پہنچا۔",
+          "th": "แต่จดหมายของบาทหลวงไปไม่ถึงโรมิโอ"
+        }
+      },
+      {
+        "id": "cl-romeo-089",
+        "english": "The messenger was stopped by a sickness in the town and could not travel.",
+        "turkish": "Ulak, kasabadaki bir salgın yüzünden durduruldu ve yola çıkamadı.",
+        "translations": {
+          "es-419": "Al mensajero lo detuvo una epidemia en la ciudad y no pudo viajar.",
+          "pt-BR": "O mensageiro foi detido por uma epidemia na cidade e não pôde viajar.",
+          "id": "Pembawa pesan tertahan oleh wabah di kota dan tidak bisa bepergian.",
+          "ar": "أُوقف الرسول بسبب وباء في البلدة، فلم يستطع السفر.",
+          "vi": "Người đưa thư bị giữ lại vì dịch bệnh trong thành và không thể lên đường.",
+          "hi": "संदेशवाहक को शहर में फैली एक बीमारी की वजह से रोक लिया गया, और वह सफ़र नहीं कर सका।",
+          "ru": "Гонца задержали из-за болезни в городе, и он не смог поехать.",
+          "bn": "শহরে একটা মহামারির কারণে দূতকে আটকে রাখা হলো, সে যাত্রা করতে পারল না।",
+          "ur": "قاصد کو شہر میں پھیلی ایک بیماری کی وجہ سے روک لیا گیا، اور وہ سفر نہ کر سکا۔",
+          "th": "ผู้ส่งสารถูกกักตัวไว้เพราะโรคระบาดในเมืองและเดินทางไม่ได้"
+        }
+      },
+      {
+        "id": "cl-romeo-090",
+        "english": "Instead, Romeo's servant brought him news from Verona.",
+        "turkish": "Onun yerine Romeo'nun uşağı Verona'dan haber getirdi.",
+        "translations": {
+          "es-419": "En su lugar, el criado de Romeo le llevó noticias de Verona.",
+          "pt-BR": "Em vez disso, o criado de Romeu lhe levou notícias de Verona.",
+          "id": "Sebaliknya, pelayan Romeo membawa kabar dari Verona.",
+          "ar": "وبدلًا من ذلك، جاءه خادمه بأخبار من فيرونا.",
+          "vi": "Thay vào đó, người hầu của Romeo mang tin từ Verona tới.",
+          "hi": "इसके बजाय रोमियो का नौकर वेरोना से ख़बर लेकर आया।",
+          "ru": "Вместо него к Ромео прибыл слуга с вестями из Вероны.",
+          "bn": "তার বদলে রোমিওর চাকর ভেরোনা থেকে খবর নিয়ে এল।",
+          "ur": "اس کے بجائے رومیو کا نوکر ویرونا سے خبر لے کر آیا۔",
+          "th": "แต่คนรับใช้ของโรมิโอกลับนำข่าวจากเวโรนามาบอกเขาแทน"
+        }
+      },
+      {
+        "id": "cl-romeo-091",
+        "english": "\"Juliet is dead. I saw her placed in the tomb.\"",
+        "turkish": "\"Juliet öldü. Onu mezara koyduklarını gördüm.\"",
+        "translations": {
+          "es-419": "\"Julieta ha muerto. Vi cómo la ponían en la tumba\".",
+          "pt-BR": "\"Julieta está morta. Eu a vi ser colocada no túmulo.\"",
+          "id": "\"Juliet sudah meninggal. Aku melihatnya dibaringkan di makam.\"",
+          "ar": "\"جولييت ماتت. رأيتهم يضعونها في المدفن.\"",
+          "vi": "\"Juliet đã chết rồi. Tôi đã thấy người ta đặt nàng vào hầm mộ.\"",
+          "hi": "\"जूलियट मर गई है। मैंने उसे क़ब्रगाह में रखते देखा।\"",
+          "ru": "«Джульетта умерла. Я видел, как её положили в склеп».",
+          "bn": "\"জুলিয়েট মারা গেছে। আমি নিজে তাকে সমাধিঘরে রাখতে দেখেছি।\"",
+          "ur": "\"جولیٹ مر گئی ہے۔ میں نے اسے مقبرے میں رکھتے دیکھا۔\"",
+          "th": "\"จูเลียตตายแล้ว ข้าเห็นเขานำนางไปไว้ในสุสาน\""
+        }
+      },
+      {
+        "id": "cl-romeo-092",
+        "english": "Romeo bought poison from a poor shopkeeper and rode back through the night.",
+        "turkish": "Romeo yoksul bir dükkâncıdan zehir aldı ve gece boyunca at sürerek geri döndü.",
+        "translations": {
+          "es-419": "Romeo compró veneno a un tendero pobre y cabalgó de vuelta toda la noche.",
+          "pt-BR": "Romeu comprou veneno de um boticário pobre e cavalgou de volta durante a noite.",
+          "id": "Romeo membeli racun dari seorang pemilik toko yang miskin, lalu berkuda pulang menembus malam.",
+          "ar": "اشترى روميو سمًّا من بائع فقير، وعاد على حصانه طوال الليل.",
+          "vi": "Romeo mua thuốc độc của một người bán hàng nghèo và phi ngựa trở về suốt đêm.",
+          "hi": "रोमियो ने एक ग़रीब दुकानदार से ज़हर ख़रीदा और रात भर घोड़ा दौड़ाकर वापस लौटा।",
+          "ru": "Ромео купил яд у бедного аптекаря и всю ночь скакал обратно.",
+          "bn": "রোমিও এক গরিব দোকানির কাছ থেকে বিষ কিনে সারা রাত ঘোড়া ছুটিয়ে ফিরে এল।",
+          "ur": "رومیو نے ایک غریب دکاندار سے زہر خریدا اور رات بھر گھوڑا دوڑا کر واپس لوٹا۔",
+          "th": "โรมิโอซื้อยาพิษจากเจ้าของร้านยากจนคนหนึ่ง แล้วควบม้ากลับมาตลอดทั้งคืน"
+        }
+      },
+      {
+        "id": "cl-romeo-093",
+        "english": "At the tomb he found Paris, who had come to bring flowers.",
+        "turkish": "Mezarda, çiçek getirmeye gelmiş olan Paris'i buldu.",
+        "translations": {
+          "es-419": "En la tumba encontró a Paris, que había ido a llevar flores.",
+          "pt-BR": "No túmulo, encontrou Páris, que tinha ido levar flores.",
+          "id": "Di makam ia mendapati Paris, yang datang membawa bunga.",
+          "ar": "وعند المدفن وجد باريس، الذي جاء ليضع الزهور.",
+          "vi": "Tại hầm mộ, chàng gặp Paris, người đến để đặt hoa.",
+          "hi": "क़ब्रगाह पर उसे पेरिस मिला, जो फूल चढ़ाने आया था।",
+          "ru": "У склепа он застал Париса, пришедшего с цветами.",
+          "bn": "সমাধিঘরে গিয়ে সে পেল প্যারিসকে, যে ফুল দিতে এসেছিল।",
+          "ur": "مقبرے پر اسے پیرس ملا، جو پھول چڑھانے آیا تھا۔",
+          "th": "ที่สุสาน เขาพบปารีสซึ่งมาวางดอกไม้"
+        }
+      },
+      {
+        "id": "cl-romeo-094",
+        "english": "They fought in the dark, and Romeo killed him.",
+        "turkish": "Karanlıkta dövüştüler ve Romeo onu öldürdü.",
+        "translations": {
+          "es-419": "Pelearon en la oscuridad, y Romeo lo mató.",
+          "pt-BR": "Eles lutaram no escuro, e Romeu o matou.",
+          "id": "Mereka bertarung dalam gelap, dan Romeo membunuhnya.",
+          "ar": "تقاتلا في الظلام، فقتله روميو.",
+          "vi": "Họ giao đấu trong bóng tối, và Romeo giết chết Paris.",
+          "hi": "अँधेरे में दोनों लड़े, और रोमियो ने उसे मार डाला।",
+          "ru": "Они сразились в темноте, и Ромео убил его.",
+          "bn": "অন্ধকারে দুজনের লড়াই হলো, আর রোমিও তাকে মেরে ফেলল।",
+          "ur": "اندھیرے میں دونوں لڑے، اور رومیو نے اسے مار ڈالا۔",
+          "th": "ทั้งสองต่อสู้กันในความมืด และโรมิโอก็ฆ่าเขา"
+        }
+      },
+      {
+        "id": "cl-romeo-095",
+        "english": "Then he went inside and found Juliet.",
+        "turkish": "Sonra içeri girdi ve Juliet'i buldu.",
+        "translations": {
+          "es-419": "Luego entró y encontró a Julieta.",
+          "pt-BR": "Depois entrou e encontrou Julieta.",
+          "id": "Lalu ia masuk dan menemukan Juliet.",
+          "ar": "ثم دخل فوجد جولييت.",
+          "vi": "Rồi chàng bước vào trong và thấy Juliet.",
+          "hi": "फिर वह अंदर गया और उसे जूलियट मिली।",
+          "ru": "Потом он вошёл внутрь и нашёл Джульетту.",
+          "bn": "তারপর সে ভেতরে ঢুকে জুলিয়েটকে খুঁজে পেল।",
+          "ur": "پھر وہ اندر گیا اور اسے جولیٹ ملی۔",
+          "th": "แล้วเขาก็เข้าไปข้างในและพบจูเลียต"
+        }
+      },
+      {
+        "id": "cl-romeo-096",
+        "english": "She looked as beautiful as ever, and her cheeks still had some colour.",
+        "turkish": "Her zamanki kadar güzel görünüyordu, yanaklarında hâlâ biraz renk vardı.",
+        "translations": {
+          "es-419": "Se veía tan hermosa como siempre, y sus mejillas aún tenían algo de color.",
+          "pt-BR": "Ela estava linda como sempre, e suas faces ainda tinham um pouco de cor.",
+          "id": "Ia tampak secantik biasanya, dan pipinya masih sedikit merona.",
+          "ar": "كانت جميلة كعهدها، وما زال في خدّيها شيء من اللون.",
+          "vi": "Nàng vẫn đẹp như xưa, và đôi má vẫn còn chút sắc hồng.",
+          "hi": "वह हमेशा की तरह सुंदर लग रही थी, और उसके गालों पर अब भी थोड़ी लाली थी।",
+          "ru": "Она была прекрасна, как всегда, и на её щеках ещё оставался румянец.",
+          "bn": "তাকে আগের মতোই সুন্দর দেখাচ্ছিল, গালে তখনো একটু রং লেগে আছে।",
+          "ur": "وہ ہمیشہ کی طرح خوبصورت لگ رہی تھی، اور اس کے گالوں پر اب بھی تھوڑی سرخی تھی۔",
+          "th": "เธอยังคงงดงามเหมือนเคย และแก้มยังมีสีเลือดฝาดอยู่บ้าง"
+        }
+      },
+      {
+        "id": "cl-romeo-097",
+        "english": "Romeo kissed her one last time.",
+        "turkish": "Romeo onu son bir kez öptü.",
+        "translations": {
+          "es-419": "Romeo la besó por última vez.",
+          "pt-BR": "Romeu a beijou uma última vez.",
+          "id": "Romeo menciumnya untuk terakhir kali.",
+          "ar": "قبّلها روميو للمرة الأخيرة.",
+          "vi": "Romeo hôn nàng lần cuối.",
+          "hi": "रोमियो ने उसे आख़िरी बार चूमा।",
+          "ru": "Ромео поцеловал её в последний раз.",
+          "bn": "রোমিও শেষবারের মতো তাকে চুমু খেল।",
+          "ur": "رومیو نے اسے آخری بار چوما۔",
+          "th": "โรมิโอจูบเธอเป็นครั้งสุดท้าย"
+        }
+      },
+      {
+        "id": "cl-romeo-098",
+        "english": "Then he drank the poison and died beside her.",
+        "turkish": "Sonra zehri içti ve onun yanında öldü.",
+        "translations": {
+          "es-419": "Luego bebió el veneno y murió a su lado.",
+          "pt-BR": "Depois bebeu o veneno e morreu ao lado dela.",
+          "id": "Lalu ia meminum racun itu dan meninggal di sampingnya.",
+          "ar": "ثم شرب السمّ ومات إلى جانبها.",
+          "vi": "Rồi chàng uống thuốc độc và chết bên cạnh nàng.",
+          "hi": "फिर उसने ज़हर पी लिया और उसके पास ही मर गया।",
+          "ru": "Затем он выпил яд и умер рядом с ней.",
+          "bn": "তারপর সে বিষ খেয়ে তার পাশেই মারা গেল।",
+          "ur": "پھر اس نے زہر پی لیا اور اس کے پاس ہی مر گیا۔",
+          "th": "แล้วเขาก็ดื่มยาพิษและสิ้นใจอยู่ข้างกายเธอ"
+        }
+      },
+      {
+        "id": "cl-romeo-099",
+        "english": "A few minutes later, Friar Laurence hurried in.",
+        "turkish": "Birkaç dakika sonra Rahip Laurence telaşla içeri girdi.",
+        "translations": {
+          "es-419": "Pocos minutos después, fray Lorenzo entró a toda prisa.",
+          "pt-BR": "Poucos minutos depois, frei Lourenço entrou às pressas.",
+          "id": "Beberapa menit kemudian, Pastor Laurence bergegas masuk.",
+          "ar": "وبعد دقائق قليلة، دخل الراهب لورنس مسرعًا.",
+          "vi": "Vài phút sau, thầy tu Laurence vội vã bước vào.",
+          "hi": "कुछ मिनट बाद फ़्रायर लॉरेंस जल्दी-जल्दी अंदर आए।",
+          "ru": "Через несколько минут вбежал брат Лоренцо.",
+          "bn": "কয়েক মিনিট পরে ফ্রায়ার লরেন্স হন্তদন্ত হয়ে ঢুকলেন।",
+          "ur": "چند منٹ بعد فرائر لارنس جلدی جلدی اندر آئے۔",
+          "th": "ไม่กี่นาทีต่อมา บาทหลวงลอเรนซ์ก็รีบเข้ามา"
+        }
+      },
+      {
+        "id": "cl-romeo-100",
+        "english": "At that moment Juliet woke up.",
+        "turkish": "Tam o anda Juliet uyandı.",
+        "translations": {
+          "es-419": "En ese momento, Julieta despertó.",
+          "pt-BR": "Naquele momento, Julieta acordou.",
+          "id": "Saat itu juga Juliet terbangun.",
+          "ar": "في تلك اللحظة استيقظت جولييت.",
+          "vi": "Đúng lúc ấy, Juliet tỉnh dậy.",
+          "hi": "ठीक उसी पल जूलियट जाग गई।",
+          "ru": "В этот миг Джульетта проснулась.",
+          "bn": "ঠিক সেই মুহূর্তে জুলিয়েট জেগে উঠল।",
+          "ur": "عین اسی لمحے جولیٹ جاگ گئی۔",
+          "th": "ในวินาทีนั้นเอง จูเลียตก็ตื่นขึ้น"
+        }
+      },
+      {
+        "id": "cl-romeo-101",
+        "english": "She saw Romeo lying dead, with the empty bottle in his hand.",
+        "turkish": "Romeo'yu elinde boş şişeyle ölü yatarken gördü.",
+        "translations": {
+          "es-419": "Vio a Romeo muerto en el suelo, con el frasco vacío en la mano.",
+          "pt-BR": "Viu Romeu morto, com o frasco vazio na mão.",
+          "id": "Ia melihat Romeo terbaring mati, dengan botol kosong di tangannya.",
+          "ar": "رأت روميو ممدّدًا ميتًا، والقارورة الفارغة في يده.",
+          "vi": "Nàng thấy Romeo nằm chết, tay vẫn cầm chiếc lọ rỗng.",
+          "hi": "उसने रोमियो को मरा पड़ा देखा, हाथ में ख़ाली शीशी थी।",
+          "ru": "Она увидела мёртвого Ромео с пустым флаконом в руке.",
+          "bn": "সে দেখল রোমিও মরে পড়ে আছে, হাতে খালি শিশি।",
+          "ur": "اس نے رومیو کو مرا پڑا دیکھا، ہاتھ میں خالی شیشی تھی۔",
+          "th": "เธอเห็นโรมิโอนอนตาย ในมือถือขวดเปล่า"
+        }
+      },
+      {
+        "id": "cl-romeo-102",
+        "english": "The friar heard voices outside and begged her to come away.",
+        "turkish": "Rahip dışarıda sesler duydu ve ona kendisiyle gelmesi için yalvardı.",
+        "translations": {
+          "es-419": "El fraile oyó voces afuera y le rogó que se fuera con él.",
+          "pt-BR": "O frei ouviu vozes lá fora e implorou que ela fosse embora com ele.",
+          "id": "Pastor itu mendengar suara-suara di luar dan memohon agar Juliet ikut pergi.",
+          "ar": "سمع الراهب أصواتًا في الخارج، فتوسّل إليها أن تخرج معه.",
+          "vi": "Thầy tu nghe tiếng người bên ngoài và van nài nàng đi theo.",
+          "hi": "फ़्रायर ने बाहर आवाज़ें सुनीं और उससे साथ चलने की मिन्नत की।",
+          "ru": "Монах услышал снаружи голоса и стал умолять её уйти с ним.",
+          "bn": "ফ্রায়ার বাইরে লোকের গলা শুনে তাকে সঙ্গে চলে আসতে মিনতি করলেন।",
+          "ur": "فرائر نے باہر آوازیں سنیں اور اس سے ساتھ چلنے کی منت کی۔",
+          "th": "บาทหลวงได้ยินเสียงคนอยู่ข้างนอก จึงอ้อนวอนให้เธอไปกับเขา"
+        }
+      },
+      {
+        "id": "cl-romeo-103",
+        "english": "But Juliet would not leave her husband.",
+        "turkish": "Ama Juliet kocasını bırakmak istemedi.",
+        "translations": {
+          "es-419": "Pero Julieta no quiso dejar a su esposo.",
+          "pt-BR": "Mas Julieta não quis deixar o marido.",
+          "id": "Namun Juliet tidak mau meninggalkan suaminya.",
+          "ar": "لكن جولييت لم ترضَ أن تترك زوجها.",
+          "vi": "Nhưng Juliet không chịu rời xa chồng mình.",
+          "hi": "लेकिन जूलियट अपने पति को छोड़कर जाने को तैयार नहीं थी।",
+          "ru": "Но Джульетта не захотела оставить мужа.",
+          "bn": "কিন্তু জুলিয়েট স্বামীকে ছেড়ে যেতে রাজি হলো না।",
+          "ur": "لیکن جولیٹ اپنے شوہر کو چھوڑ کر جانے پر راضی نہ ہوئی۔",
+          "th": "แต่จูเลียตไม่ยอมทิ้งสามีของเธอไป"
+        }
+      },
+      {
+        "id": "cl-romeo-104",
+        "english": "She kissed his lips, hoping that some poison was still there.",
+        "turkish": "Dudaklarında biraz zehir kalmıştır umuduyla onun dudaklarını öptü.",
+        "translations": {
+          "es-419": "Le besó los labios, con la esperanza de que aún quedara algo de veneno.",
+          "pt-BR": "Beijou os lábios dele, esperando que ainda houvesse algum veneno.",
+          "id": "Ia mencium bibir Romeo, berharap masih ada sisa racun di sana.",
+          "ar": "قبّلت شفتيه، على أمل أن يكون فيهما بقية من السمّ.",
+          "vi": "Nàng hôn lên môi chàng, mong rằng vẫn còn chút thuốc độc ở đó.",
+          "hi": "उसने उसके होंठ चूमे, इस उम्मीद में कि उन पर अब भी थोड़ा ज़हर बचा हो।",
+          "ru": "Она поцеловала его губы, надеясь, что на них ещё остался яд.",
+          "bn": "সে তার ঠোঁটে চুমু খেল, এই আশায় যে সেখানে এখনো একটু বিষ লেগে আছে।",
+          "ur": "اس نے اس کے ہونٹ چومے، اس امید میں کہ ان پر اب بھی کچھ زہر باقی ہو۔",
+          "th": "เธอจูบริมฝีปากของเขา หวังว่ายังมียาพิษหลงเหลืออยู่บ้าง"
+        }
+      },
+      {
+        "id": "cl-romeo-105",
+        "english": "Then she took Romeo's dagger and joined him in death.",
+        "turkish": "Sonra Romeo'nun hançerini aldı ve ölümde ona kavuştu.",
+        "translations": {
+          "es-419": "Luego tomó la daga de Romeo y se unió a él en la muerte.",
+          "pt-BR": "Então pegou o punhal de Romeu e juntou-se a ele na morte.",
+          "id": "Lalu ia mengambil belati Romeo dan menyusulnya dalam kematian.",
+          "ar": "ثم أخذت خنجر روميو ولحقت به في الموت.",
+          "vi": "Rồi nàng cầm lấy con dao găm của Romeo và theo chàng vào cõi chết.",
+          "hi": "फिर उसने रोमियो का ख़ंजर उठाया और मौत में उससे जा मिली।",
+          "ru": "Тогда она взяла кинжал Ромео и последовала за ним в смерть.",
+          "bn": "তারপর সে রোমিওর ছোরাটা তুলে নিয়ে মৃত্যুতে তার সঙ্গী হলো।",
+          "ur": "پھر اس نے رومیو کا خنجر اٹھایا اور موت میں اس سے جا ملی۔",
+          "th": "แล้วเธอก็หยิบกริชของโรมิโอ และตามเขาไปสู่ความตาย"
+        }
+      },
+      {
+        "id": "cl-romeo-106",
+        "english": "Soon the Prince, the Capulets and the Montagues filled the tomb.",
+        "turkish": "Çok geçmeden Prens, Capulet'ler ve Montague'lar mezarı doldurdu.",
+        "translations": {
+          "es-419": "Pronto el príncipe, los Capuleto y los Montesco llenaron la tumba.",
+          "pt-BR": "Logo o príncipe, os Capuleto e os Montéquio encheram o túmulo.",
+          "id": "Tak lama kemudian, Pangeran, keluarga Capulet, dan keluarga Montague memenuhi makam itu.",
+          "ar": "وسرعان ما امتلأ المدفن بالأمير وآل كابوليت وآل مونتيغيو.",
+          "vi": "Chẳng bao lâu, ông hoàng, nhà Capulet và nhà Montague kéo đến chật kín hầm mộ.",
+          "hi": "जल्द ही राजकुमार, कैपुलेट और मॉन्टेग्यू परिवार के लोग क़ब्रगाह में भर गए।",
+          "ru": "Вскоре склеп наполнился людьми: пришли князь, Капулетти и Монтекки.",
+          "bn": "অল্পক্ষণেই রাজকুমার, ক্যাপুলেট আর মন্টেগুরা এসে সমাধিঘর ভরিয়ে দিলেন।",
+          "ur": "جلد ہی شہزادہ، کیپولٹ اور مونٹیگ خاندان کے لوگ مقبرے میں بھر گئے۔",
+          "th": "ไม่นานเจ้าชาย ตระกูลแคปปิวเล็ต และตระกูลมอนตะกิวก็มาเต็มสุสาน"
+        }
+      },
+      {
+        "id": "cl-romeo-107",
+        "english": "The friar told them the whole sad story.",
+        "turkish": "Rahip onlara bütün acıklı hikâyeyi anlattı.",
+        "translations": {
+          "es-419": "El fraile les contó toda la triste historia.",
+          "pt-BR": "O frei lhes contou toda a triste história.",
+          "id": "Pastor itu menceritakan seluruh kisah sedih itu kepada mereka.",
+          "ar": "روى لهم الراهب القصة الحزينة كلها.",
+          "vi": "Thầy tu kể cho họ nghe toàn bộ câu chuyện buồn.",
+          "hi": "फ़्रायर ने उन्हें पूरी दुखभरी कहानी सुनाई।",
+          "ru": "Монах рассказал им всю печальную историю.",
+          "bn": "ফ্রায়ার তাঁদের পুরো দুঃখের কাহিনি শোনালেন।",
+          "ur": "فرائر نے انہیں پوری دکھ بھری کہانی سنائی۔",
+          "th": "บาทหลวงเล่าเรื่องราวอันน่าเศร้าทั้งหมดให้พวกเขาฟัง"
+        }
+      },
+      {
+        "id": "cl-romeo-108",
+        "english": "The two fathers looked at their dead children and finally understood.",
+        "turkish": "İki baba ölü çocuklarına baktı ve sonunda anladı.",
+        "translations": {
+          "es-419": "Los dos padres miraron a sus hijos muertos y por fin comprendieron.",
+          "pt-BR": "Os dois pais olharam para os filhos mortos e finalmente entenderam.",
+          "id": "Kedua ayah itu memandang anak-anak mereka yang telah mati dan akhirnya mengerti.",
+          "ar": "نظر الأبوان إلى ولديهما الميتين، وفهما أخيرًا.",
+          "vi": "Hai người cha nhìn những đứa con đã chết của mình và cuối cùng cũng hiểu ra.",
+          "hi": "दोनों पिताओं ने अपने मरे हुए बच्चों को देखा और आख़िरकार समझ गए।",
+          "ru": "Два отца посмотрели на своих мёртвых детей и наконец поняли.",
+          "bn": "দুই বাবা তাঁদের মৃত সন্তানদের দিকে তাকালেন, আর অবশেষে বুঝলেন।",
+          "ur": "دونوں باپوں نے اپنے مرے ہوئے بچوں کو دیکھا اور آخرکار سمجھ گئے۔",
+          "th": "บิดาทั้งสองมองดูลูกที่สิ้นชีวิต และในที่สุดก็เข้าใจ"
+        }
+      },
+      {
+        "id": "cl-romeo-109",
+        "english": "Their hate had killed the people they loved most.",
+        "turkish": "Nefretleri en çok sevdikleri insanları öldürmüştü.",
+        "translations": {
+          "es-419": "Su odio había matado a quienes más amaban.",
+          "pt-BR": "O ódio deles tinha matado as pessoas que mais amavam.",
+          "id": "Kebencian mereka telah membunuh orang-orang yang paling mereka cintai.",
+          "ar": "لقد قتلت كراهيتهما أحبّ الناس إليهما.",
+          "vi": "Lòng hận thù của họ đã giết chết những người họ yêu thương nhất.",
+          "hi": "उनकी नफ़रत ने उन्हीं लोगों की जान ले ली थी जिन्हें वे सबसे ज़्यादा प्यार करते थे।",
+          "ru": "Их ненависть убила тех, кого они любили больше всего.",
+          "bn": "তাঁদের ঘৃণাই কেড়ে নিয়েছে তাঁদের সবচেয়ে প্রিয় মানুষদের।",
+          "ur": "ان کی نفرت نے انہی لوگوں کی جان لے لی تھی جن سے وہ سب سے زیادہ محبت کرتے تھے۔",
+          "th": "ความเกลียดชังของพวกเขาได้คร่าชีวิตคนที่พวกเขารักที่สุด"
+        }
+      },
+      {
+        "id": "cl-romeo-110",
+        "english": "Lord Capulet and Lord Montague took each other's hands.",
+        "turkish": "Lord Capulet ile Lord Montague birbirlerinin ellerini tuttular.",
+        "translations": {
+          "es-419": "El señor Capuleto y el señor Montesco se dieron la mano.",
+          "pt-BR": "O senhor Capuleto e o senhor Montéquio deram-se as mãos.",
+          "id": "Tuan Capulet dan Tuan Montague saling berjabat tangan.",
+          "ar": "تصافح السيد كابوليت والسيد مونتيغيو.",
+          "vi": "Ngài Capulet và ngài Montague nắm lấy tay nhau.",
+          "hi": "लॉर्ड कैपुलेट और लॉर्ड मॉन्टेग्यू ने एक-दूसरे का हाथ थाम लिया।",
+          "ru": "Синьор Капулетти и синьор Монтекки пожали друг другу руки.",
+          "bn": "লর্ড ক্যাপুলেট আর লর্ড মন্টেগু একে অপরের হাত ধরলেন।",
+          "ur": "لارڈ کیپولٹ اور لارڈ مونٹیگ نے ایک دوسرے کا ہاتھ تھام لیا۔",
+          "th": "ท่านแคปปิวเล็ตและท่านมอนตะกิวจับมือกัน"
+        }
+      },
+      {
+        "id": "cl-romeo-111",
+        "english": "They promised to build golden statues of Romeo and Juliet.",
+        "turkish": "Romeo ile Juliet'in altından heykellerini yaptırmaya söz verdiler.",
+        "translations": {
+          "es-419": "Prometieron levantar estatuas de oro de Romeo y Julieta.",
+          "pt-BR": "Prometeram erguer estátuas de ouro de Romeu e Julieta.",
+          "id": "Mereka berjanji membangun patung emas Romeo dan Juliet.",
+          "ar": "ووعدا ببناء تمثالين من ذهب لروميو وجولييت.",
+          "vi": "Họ hứa sẽ dựng tượng vàng cho Romeo và Juliet.",
+          "hi": "उन्होंने रोमियो और जूलियट की सोने की मूर्तियाँ बनवाने का वादा किया।",
+          "ru": "Они пообещали поставить золотые статуи Ромео и Джульетты.",
+          "bn": "তাঁরা রোমিও আর জুলিয়েটের সোনার মূর্তি গড়ার প্রতিজ্ঞা করলেন।",
+          "ur": "انہوں نے رومیو اور جولیٹ کے سونے کے مجسمے بنوانے کا وعدہ کیا۔",
+          "th": "พวกเขาสัญญาว่าจะสร้างรูปปั้นทองคำของโรมิโอและจูเลียต"
+        }
+      },
+      {
+        "id": "cl-romeo-112",
+        "english": "\"There never was a story of more sorrow,\" said the Prince, \"than this of Juliet and her Romeo.\"",
+        "turkish": "\"Juliet ile Romeo'sununkinden daha acıklı bir hikâye hiç olmadı,\" dedi Prens.",
+        "translations": {
+          "es-419": "\"Nunca hubo historia más triste\", dijo el príncipe, \"que esta de Julieta y su Romeo\".",
+          "pt-BR": "\"Nunca houve história mais triste\", disse o príncipe, \"do que esta de Julieta e seu Romeu.\"",
+          "id": "\"Tak pernah ada kisah yang lebih menyedihkan,\" kata Pangeran, \"daripada kisah Juliet dan Romeo-nya.\"",
+          "ar": "قال الأمير: \"لم تكن قطّ قصة أشدّ حزنًا من قصة جولييت وروميو.\"",
+          "vi": "\"Chưa từng có câu chuyện nào đau buồn hơn,\" ông hoàng nói, \"chuyện của Juliet và chàng Romeo của nàng.\"",
+          "hi": "\"इससे ज़्यादा दुखभरी कहानी कभी नहीं हुई,\" राजकुमार ने कहा, \"जितनी जूलियट और उसके रोमियो की।\"",
+          "ru": "«Нет повести печальнее на свете, — сказал князь, — чем повесть о Ромео и Джульетте».",
+          "bn": "\"এর চেয়ে দুঃখের কাহিনি আর কখনো হয়নি,\" বললেন রাজকুমার, \"জুলিয়েট আর তার রোমিওর এই কাহিনির চেয়ে।\"",
+          "ur": "\"اس سے زیادہ دکھ بھری کہانی کبھی نہیں ہوئی،\" شہزادے نے کہا، \"جتنی جولیٹ اور اس کے رومیو کی۔\"",
+          "th": "\"ไม่เคยมีเรื่องใดเศร้ายิ่งกว่า\" เจ้าชายตรัส \"เรื่องของจูเลียตและโรมิโอของนาง\""
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-romeo-juliet-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "Two friends travel from Verona to Mantua",
+          "Two young lovers from enemy families marry in secret and die because of the hate around them",
+          "A prince tries to find a husband for his daughter",
+          "A priest opens a shop that sells medicines"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-romeo-juliet-q2",
+        "kind": "detail",
+        "prompt": "How did Tybalt know that Romeo was at the feast?",
+        "options": [
+          "He saw Romeo's face without a mask",
+          "The nurse told him",
+          "He recognised Romeo's voice",
+          "Romeo said his name aloud"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "classic-romeo-juliet-q3",
+        "kind": "detail",
+        "prompt": "Why did the Prince banish Romeo instead of sentencing him to death?",
+        "options": [
+          "Because Romeo was his nephew",
+          "Because Tybalt had killed first",
+          "Because Juliet begged him",
+          "Because Romeo ran to Mantua"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-romeo-juliet-q4",
+        "kind": "inference",
+        "prompt": "Why did Friar Laurence agree to marry Romeo and Juliet?",
+        "options": [
+          "He hoped the marriage would end the families' hate",
+          "He wanted money from Romeo",
+          "Juliet's father asked him to",
+          "He wanted to stop Paris"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "classic-romeo-juliet-q5",
+        "kind": "inference",
+        "prompt": "Why did Romeo believe that Juliet was really dead?",
+        "options": [
+          "He saw her drink the poison",
+          "The friar's letter never reached him, and his servant told him she was dead",
+          "Paris told him at the tomb",
+          "Juliet wrote him a goodbye letter"
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  "words": [
+    {
+      "id": "enemy",
+      "word": "enemy",
+      "translation": "düşman",
+      "pronunciation": "/ˈenəmi/",
+      "example": "He saw his enemy across the street.",
+      "translations": {
+        "es-419": "enemigo",
+        "pt-BR": "inimigo",
+        "id": "musuh",
+        "ar": "عدوّ",
+        "vi": "kẻ thù",
+        "hi": "दुश्मन",
+        "ru": "враг",
+        "bn": "শত্রু",
+        "ur": "دشمن",
+        "th": "ศัตรู"
+      }
+    },
+    {
+      "id": "sword",
+      "word": "sword",
+      "translation": "kılıç",
+      "pronunciation": "/sɔːd/",
+      "example": "The soldier pulled out his sword.",
+      "translations": {
+        "es-419": "espada",
+        "pt-BR": "espada",
+        "id": "pedang",
+        "ar": "سيف",
+        "vi": "thanh gươm",
+        "hi": "तलवार",
+        "ru": "шпага, меч",
+        "bn": "তলোয়ার",
+        "ur": "تلوار",
+        "th": "ดาบ"
+      }
+    },
+    {
+      "id": "balcony",
+      "word": "balcony",
+      "translation": "balkon",
+      "pronunciation": "/ˈbælkəni/",
+      "example": "She stood on the balcony and looked at the stars.",
+      "translations": {
+        "es-419": "balcón",
+        "pt-BR": "sacada, varanda",
+        "id": "balkon",
+        "ar": "شرفة",
+        "vi": "ban công",
+        "hi": "बालकनी",
+        "ru": "балкон",
+        "bn": "বারান্দা, ব্যালকনি",
+        "ur": "بالکونی",
+        "th": "ระเบียง"
+      }
+    },
+    {
+      "id": "poison",
+      "word": "poison",
+      "translation": "zehir",
+      "pronunciation": "/ˈpɔɪzn/",
+      "example": "The bottle was full of poison.",
+      "translations": {
+        "es-419": "veneno",
+        "pt-BR": "veneno",
+        "id": "racun",
+        "ar": "سمّ",
+        "vi": "thuốc độc",
+        "hi": "ज़हर, विष",
+        "ru": "яд",
+        "bn": "বিষ",
+        "ur": "زہر",
+        "th": "ยาพิษ"
+      }
+    },
+    {
+      "id": "tomb",
+      "word": "tomb",
+      "translation": "mezar, türbe",
+      "pronunciation": "/tuːm/",
+      "example": "The old family tomb was cold and dark.",
+      "translations": {
+        "es-419": "tumba",
+        "pt-BR": "túmulo",
+        "id": "makam",
+        "ar": "مدفن، قبر",
+        "vi": "hầm mộ, lăng mộ",
+        "hi": "क़ब्र, मक़बरा",
+        "ru": "склеп, гробница",
+        "bn": "সমাধি",
+        "ur": "مقبرہ، قبر",
+        "th": "สุสาน"
+      }
+    },
+    {
+      "id": "priest",
+      "word": "priest",
+      "translation": "papaz, rahip",
+      "pronunciation": "/priːst/",
+      "example": "The priest spoke softly in the church.",
+      "translations": {
+        "es-419": "sacerdote",
+        "pt-BR": "padre, sacerdote",
+        "id": "pendeta, imam",
+        "ar": "كاهن",
+        "vi": "linh mục",
+        "hi": "पादरी, पुजारी",
+        "ru": "священник",
+        "bn": "যাজক, পুরোহিত",
+        "ur": "پادری",
+        "th": "นักบวช, บาทหลวง"
+      }
+    },
+    {
+      "id": "mask",
+      "word": "mask",
+      "translation": "maske",
+      "pronunciation": "/mɑːsk/",
+      "example": "He wore a black mask to the party.",
+      "translations": {
+        "es-419": "máscara",
+        "pt-BR": "máscara",
+        "id": "topeng",
+        "ar": "قناع",
+        "vi": "mặt nạ",
+        "hi": "मुखौटा",
+        "ru": "маска",
+        "bn": "মুখোশ",
+        "ur": "نقاب، ماسک",
+        "th": "หน้ากาก"
+      }
+    },
+    {
+      "id": "feast",
+      "word": "feast",
+      "translation": "şölen, ziyafet",
+      "pronunciation": "/fiːst/",
+      "example": "The king gave a great feast for his guests.",
+      "translations": {
+        "es-419": "banquete, festín",
+        "pt-BR": "banquete, festa",
+        "id": "pesta, perjamuan",
+        "ar": "وليمة",
+        "vi": "bữa tiệc lớn",
+        "hi": "दावत, भोज",
+        "ru": "пир",
+        "bn": "ভোজ",
+        "ur": "دعوت، ضیافت",
+        "th": "งานเลี้ยง"
+      }
+    },
+    {
+      "id": "dawn",
+      "word": "dawn",
+      "translation": "şafak",
+      "pronunciation": "/dɔːn/",
+      "example": "We left the house at dawn.",
+      "translations": {
+        "es-419": "amanecer",
+        "pt-BR": "amanhecer",
+        "id": "fajar",
+        "ar": "الفجر",
+        "vi": "bình minh",
+        "hi": "भोर",
+        "ru": "рассвет",
+        "bn": "ভোর",
+        "ur": "فجر، صبح سویرے",
+        "th": "รุ่งอรุณ"
+      }
+    },
+    {
+      "id": "wedding",
+      "word": "wedding",
+      "translation": "düğün",
+      "pronunciation": "/ˈwedɪŋ/",
+      "example": "The whole village came to the wedding.",
+      "translations": {
+        "es-419": "boda",
+        "pt-BR": "casamento",
+        "id": "pernikahan",
+        "ar": "زفاف",
+        "vi": "đám cưới",
+        "hi": "शादी, विवाह",
+        "ru": "свадьба",
+        "bn": "বিয়ে, বিবাহ",
+        "ur": "شادی",
+        "th": "งานแต่งงาน"
+      }
+    },
+    {
+      "id": "promise",
+      "word": "promise",
+      "translation": "söz",
+      "pronunciation": "/ˈprɑːmɪs/",
+      "example": "The letter described a promise.",
+      "translations": {
+        "es-419": "promesa",
+        "pt-BR": "promessa",
+        "id": "janji",
+        "ar": "وعد",
+        "vi": "lời hứa",
+        "hi": "वादा",
+        "ru": "обещание",
+        "bn": "প্রতিশ্রুতি, কথা দেওয়া",
+        "ur": "وعدہ",
+        "th": "คำสัญญา"
+      }
+    },
+    {
+      "id": "alone",
+      "word": "alone",
+      "translation": "yalnız",
+      "pronunciation": "/əˈloʊn/",
+      "example": "He walks home alone.",
+      "translations": {
+        "es-419": "solo",
+        "pt-BR": "sozinho",
+        "id": "sendirian",
+        "ar": "وحيدًا",
+        "vi": "một mình",
+        "hi": "अकेला",
+        "ru": "один, в одиночестве",
+        "bn": "একা",
+        "ur": "اکیلا",
+        "th": "ตามลำพัง"
+      }
+    },
+    {
+      "id": "voice",
+      "word": "voice",
+      "translation": "ses",
+      "pronunciation": "/vɔɪs/",
+      "example": "\"You must have a beautiful voice, too.\"",
+      "translations": {
+        "es-419": "voz",
+        "pt-BR": "voz",
+        "id": "suara",
+        "ar": "صوت",
+        "vi": "giọng nói, giọng hát",
+        "hi": "आवाज़",
+        "ru": "голос",
+        "bn": "গলা, কণ্ঠস্বর",
+        "ur": "آواز",
+        "th": "เสียง"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "enemy",
+    "sword",
+    "balcony",
+    "poison",
+    "tomb",
+    "priest",
+    "mask",
+    "feast",
+    "dawn",
+    "wedding",
+    "promise",
+    "alone",
+    "voice"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-romeo-juliet-q1",
+      "sentenceIds": [
+        "cl-romeo-030",
+        "cl-romeo-050",
+        "cl-romeo-109"
+      ],
+      "rationale": "Romeo and Juliet come from enemy families, marry secretly and die, and the fathers see that their hate caused it."
+    },
+    {
+      "questionId": "classic-romeo-juliet-q2",
+      "sentenceIds": [
+        "cl-romeo-026"
+      ],
+      "rationale": "Romeo wore a mask, but Tybalt recognised his voice."
+    },
+    {
+      "questionId": "classic-romeo-juliet-q3",
+      "sentenceIds": [
+        "cl-romeo-064"
+      ],
+      "rationale": "The Prince spared Romeo's life because Tybalt had killed Mercutio first."
+    },
+    {
+      "questionId": "classic-romeo-juliet-q4",
+      "sentenceIds": [
+        "cl-romeo-046"
+      ],
+      "rationale": "The friar hoped the marriage would turn the families' hate into love."
+    },
+    {
+      "questionId": "classic-romeo-juliet-q5",
+      "sentenceIds": [
+        "cl-romeo-088",
+        "cl-romeo-091"
+      ],
+      "rationale": "Romeo never got the friar's letter explaining the plan, so he trusted his servant's news."
+    }
+  ],
+  "publicationBlockers": [
+    "Owner (oguz) approval of the English text, questions and translations required.",
+    "Native-speaker language review not done.",
+    "Cover artwork and asset mapping pending.",
+    "Source text hash pending (Gutenberg not reachable from the cloud session).",
+    "Publisher story creation, validation and publication pending."
+  ]
+}

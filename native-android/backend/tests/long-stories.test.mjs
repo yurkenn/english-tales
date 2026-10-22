@@ -21,6 +21,7 @@ test('long story drafts are complete, unpublished and do not collide with the ca
     assert.ok(doc.reviewedBy===null||typeof doc.reviewedBy==='string',file);
     assert.ok(!storyIds.has(s.id),`${s.id} already in catalog`);
     assert.ok(['A1','A2','B1','B2'].includes(s.level),file);
+    assert.ok(['Günlük yaşam','Macera','Gizem'].includes(s.genre),`${file}: genre must be one the app shelves`);
     for(const field of ['title','author','genre','description','coverKey'])assert.ok(typeof s[field]==='string'&&s[field].trim(),`${file}:${field}`);
     assert.deepEqual(Object.keys(s.descriptions).sort(),languages.slice(1).sort(),`${file}: descriptions`);
     assert.ok(s.tags.length>0&&s.tags.every(t=>tags.has(t)),`${file}:tags`);
