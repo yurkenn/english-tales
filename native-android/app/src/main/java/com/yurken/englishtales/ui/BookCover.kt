@@ -94,6 +94,12 @@ private fun coverResource(key: String) = when(key) {
     "cover_classic_three_little_pigs" -> R.drawable.cover_classic_three_little_pigs
     "cover_first_order" -> R.drawable.cover_first_order
     "cover_night_library" -> R.drawable.cover_night_library
+    "cover_classic_invisible_man" -> R.drawable.cover_classic_invisible_man
+    "cover_classic_woman_in_white" -> R.drawable.cover_classic_woman_in_white
+    "cover_classic_phantom_opera" -> R.drawable.cover_classic_phantom_opera
+    "cover_classic_moby_dick" -> R.drawable.cover_classic_moby_dick
+    "cover_classic_great_gatsby" -> R.drawable.cover_classic_great_gatsby
+    "cover_classic_financier" -> R.drawable.cover_classic_financier
     else -> R.drawable.cover_quiet_morning
 }
 
