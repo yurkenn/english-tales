@@ -1,0 +1,1857 @@
+{
+  "status": "draft",
+  "kind": "long-story",
+  "source": "long-story-classics-2026-10-22",
+  "reviewedBy": null,
+  "rights": {
+    "credit": "F. Scott Fitzgerald",
+    "sourceTitle": "The Great Gatsby",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/64317",
+    "sourceTextUrl": "https://www.gutenberg.org/cache/epub/64317/pg64317-images.html",
+    "identifiedContributor": {
+      "name": "F. Scott Fitzgerald",
+      "role": "author",
+      "deathYear": 1940
+    },
+    "firstPublished": 1925,
+    "sourceCopyrightStatement": "Public domain in the USA",
+    "checkedOn": "2026-10-22",
+    "adaptation": "New graded B1 retelling written by English Tales, with English Tales translations. No modern abridgement, film script or translation was used.",
+    "turkeyAssessment": "Author died in 1940, more than 70 years before 2026, so the work is out of protection in Turkey and in life+70 countries. Public domain in the USA since 2021.",
+    "rightsGuidanceUrl": "https://telifhaklari.ktb.gov.tr/TR-332373/telif-hakki-kac-yil-sureyle-korunur.html",
+    "sourceTextSha256": null,
+    "sourceTextSha256Pending": "Gutenberg is not reachable from the cloud session; record the source text hash on the owner's Mac before publication."
+  },
+  "editorialNotes": [
+    "B1 target: past tense narration, sentences of at most 20 words, about 1,050 words (about 9 minutes of reading).",
+    "Retelling of the novel's main line, told by Nick: West Egg, Daisy and Tom, Gatsby and the green light, the parties, Jordan's story of the past, the tea, the shirts, the hotel quarrel, Myrtle's death, Gatsby's death in the pool, the empty funeral and the closing image.",
+    "Two famous lines (\"Can't repeat the past?\" and the boats against the current) are kept in simplified form; the 1925 text is public domain in the USA and the author died in 1940.",
+    "Reading sections are editorial groupings for a future chapter view; the app currently shows the story as one text."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+  },
+  "readingSections": [
+    {
+      "title": "The green light",
+      "firstSentenceId": "cl-gatsby-001",
+      "lastSentenceId": "cl-gatsby-019"
+    },
+    {
+      "title": "Gatsby's parties",
+      "firstSentenceId": "cl-gatsby-020",
+      "lastSentenceId": "cl-gatsby-038"
+    },
+    {
+      "title": "Beautiful shirts",
+      "firstSentenceId": "cl-gatsby-039",
+      "lastSentenceId": "cl-gatsby-061"
+    },
+    {
+      "title": "Careless people",
+      "firstSentenceId": "cl-gatsby-062",
+      "lastSentenceId": "cl-gatsby-082"
+    }
+  ],
+  "story": {
+    "id": "classic-great-gatsby",
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "level": "B1",
+    "genre": "Günlük yaşam",
+    "description": "Muhteşem Gatsby. 1922 yazında Nick, gizemli milyoner Gatsby'nin komşusu olur; görkemli partilerin ardında, beş yıl önce kaybettiği aşkı Daisy'yi geri kazanma hayali yatmaktadır. B1 düzeyinde uzun uyarlama. Uyarlama ve Türkçe çeviri: English Tales.",
+    "descriptions": {
+      "es-419": "El gran Gatsby. En el verano de 1922, Nick se convierte en vecino del misterioso millonario Gatsby; detrás de sus grandes fiestas está el sueño de recuperar a Daisy, el amor que perdió hace cinco años. Adaptación larga de nivel B1. Adaptación: English Tales.",
+      "pt-BR": "O grande Gatsby. No verão de 1922, Nick se torna vizinho do misterioso milionário Gatsby; por trás das festas enormes está o sonho de reconquistar Daisy, o amor que ele perdeu cinco anos antes. Adaptação longa de nível B1. Adaptação: English Tales.",
+      "id": "Gatsby yang Agung. Pada musim panas 1922, Nick menjadi tetangga jutawan misterius Gatsby; di balik pesta-pesta mewahnya ada mimpi untuk merebut kembali Daisy, cinta yang hilang lima tahun lalu. Adaptasi panjang tingkat B1. Adaptasi: English Tales.",
+      "ar": "غاتسبي العظيم. في صيف 1922، يصبح نيك جارًا للمليونير الغامض غاتسبي؛ ووراء حفلاته الفخمة حلم باستعادة ديزي، الحبّ الذي فقده قبل خمس سنوات. اقتباس طويل بمستوى B1. الاقتباس: English Tales.",
+      "vi": "Gatsby vĩ đại. Mùa hè năm 1922, Nick trở thành hàng xóm của triệu phú bí ẩn Gatsby; đằng sau những bữa tiệc xa hoa là giấc mơ giành lại Daisy, tình yêu anh đã đánh mất năm năm trước. Bản phóng tác dài trình độ B1. Phóng tác: English Tales.",
+      "hi": "द ग्रेट गैट्सबी। 1922 की गर्मियों में निक रहस्यमय करोड़पति गैट्सबी का पड़ोसी बनता है; उसकी शानदार पार्टियों के पीछे डेज़ी को वापस पाने का सपना छिपा है, वह प्यार जो उसने पाँच साल पहले खो दिया था। B1 स्तर का लंबा रूपांतरण। रूपांतरण: English Tales.",
+      "ru": "Великий Гэтсби. Летом 1922 года Ник становится соседом загадочного миллионера Гэтсби; за его роскошными вечеринками скрывается мечта вернуть Дейзи, любовь, потерянную пять лет назад. Длинный пересказ уровня B1. Адаптация: English Tales.",
+      "bn": "দ্য গ্রেট গ্যাটসবি। ১৯২২ সালের গ্রীষ্মে নিক রহস্যময় কোটিপতি গ্যাটসবির প্রতিবেশী হয়; তার জমকালো পার্টিগুলোর পেছনে লুকিয়ে আছে পাঁচ বছর আগে হারানো ভালোবাসা ডেইজিকে ফিরে পাওয়ার স্বপ্ন। B1 স্তরের দীর্ঘ রূপান্তর। রূপান্তর: English Tales.",
+      "ur": "دی گریٹ گیٹسبی۔ 1922 کی گرمیوں میں نک پراسرار کروڑ پتی گیٹسبی کا پڑوسی بنتا ہے؛ اس کی شاندار پارٹیوں کے پیچھے ڈیزی کو واپس پانے کا خواب چھپا ہے، وہ محبت جو اس نے پانچ سال پہلے کھو دی تھی۔ B1 سطح کی طویل ماخوذ کہانی۔ ماخوذ: English Tales.",
+      "th": "เดอะ เกรท แกตสบี ฤดูร้อนปี 1922 นิกได้เป็นเพื่อนบ้านของแกตสบี มหาเศรษฐีลึกลับ เบื้องหลังงานเลี้ยงสุดหรูคือความฝันที่จะได้เดซี่ รักที่เขาเสียไปเมื่อห้าปีก่อนกลับคืนมา ฉบับเรียบเรียงยาวระดับ B1 เรียบเรียงโดย English Tales"
+    },
+    "coverKey": "cover_classic_great_gatsby",
+    "tags": [
+      "gunluk-yasam"
+    ],
+    "sentences": [
+      {
+        "id": "cl-gatsby-001",
+        "english": "In the summer of 1922, I moved to a small house on Long Island, near New York.",
+        "turkish": "1922 yazında New York yakınlarında, Long Island'da küçük bir eve taşındım.",
+        "translations": {
+          "es-419": "En el verano de 1922, me mudé a una casa pequeña en Long Island, cerca de Nueva York.",
+          "pt-BR": "No verão de 1922, mudei-me para uma casa pequena em Long Island, perto de Nova York.",
+          "id": "Pada musim panas tahun 1922, aku pindah ke sebuah rumah kecil di Long Island, dekat New York.",
+          "ar": "في صيف عام 1922، انتقلتُ إلى بيت صغير في لونغ آيلاند، قرب نيويورك.",
+          "vi": "Mùa hè năm 1922, tôi chuyển đến một ngôi nhà nhỏ ở Long Island, gần New York.",
+          "hi": "1922 की गर्मियों में मैं न्यूयॉर्क के पास, लॉन्ग आइलैंड पर एक छोटे-से घर में रहने आया।",
+          "ru": "Летом 1922 года я переехал в маленький дом на Лонг-Айленде, недалеко от Нью-Йорка.",
+          "bn": "১৯২২ সালের গ্রীষ্মে আমি নিউ ইয়র্কের কাছে লং আইল্যান্ডে একটা ছোট বাড়িতে উঠে এলাম।",
+          "ur": "1922 کی گرمیوں میں میں نیویارک کے قریب، لانگ آئلینڈ پر ایک چھوٹے سے گھر میں آ کر رہنے لگا۔",
+          "th": "ฤดูร้อนปี 1922 ผมย้ายไปอยู่บ้านหลังเล็ก ๆ บนเกาะลองไอแลนด์ ใกล้นิวยอร์ก"
+        }
+      },
+      {
+        "id": "cl-gatsby-002",
+        "english": "My name is Nick Carraway, and I worked in the city, selling bonds.",
+        "turkish": "Adım Nick Carraway'di ve şehirde tahvil satarak çalışıyordum.",
+        "translations": {
+          "es-419": "Me llamo Nick Carraway, y trabajaba en la ciudad vendiendo bonos.",
+          "pt-BR": "Meu nome é Nick Carraway, e eu trabalhava na cidade vendendo títulos.",
+          "id": "Namaku Nick Carraway, dan aku bekerja di kota sebagai penjual obligasi.",
+          "ar": "اسمي نيك كاراواي، وكنت أعمل في المدينة في بيع السندات.",
+          "vi": "Tôi tên là Nick Carraway, và tôi làm nghề bán trái phiếu trong thành phố.",
+          "hi": "मेरा नाम निक कैरवे है, और मैं शहर में बॉन्ड बेचने का काम करता था।",
+          "ru": "Меня зовут Ник Каррауэй, я работал в городе, продавал облигации.",
+          "bn": "আমার নাম নিক ক্যারাওয়ে, আমি শহরে বন্ড বিক্রির কাজ করতাম।",
+          "ur": "میرا نام نک کیراوے ہے، اور میں شہر میں بانڈ بیچنے کا کام کرتا تھا۔",
+          "th": "ผมชื่อนิก แคร์ราเวย์ ทำงานขายพันธบัตรอยู่ในเมือง"
+        }
+      },
+      {
+        "id": "cl-gatsby-003",
+        "english": "Next to my little house stood an enormous mansion with a garden down to the water.",
+        "turkish": "Küçük evimin yanında, bahçesi suya kadar inen kocaman bir malikâne vardı.",
+        "translations": {
+          "es-419": "Junto a mi casita había una mansión enorme, con un jardín que bajaba hasta el agua.",
+          "pt-BR": "Ao lado da minha casinha havia uma mansão enorme, com um jardim que descia até a água.",
+          "id": "Di sebelah rumah kecilku berdiri sebuah rumah mewah raksasa dengan taman yang sampai ke tepi air.",
+          "ar": "وبجوار بيتي الصغير قام قصر ضخم تمتدّ حديقته حتّى الماء.",
+          "vi": "Cạnh ngôi nhà nhỏ của tôi là một dinh thự khổng lồ, khu vườn trải dài xuống tận mặt nước.",
+          "hi": "मेरे छोटे-से घर के बगल में एक विशाल हवेली थी, जिसका बाग़ पानी तक जाता था।",
+          "ru": "Рядом с моим домиком стоял огромный особняк, его сад спускался к самой воде.",
+          "bn": "আমার ছোট্ট বাড়ির পাশে ছিল এক বিশাল প্রাসাদ, যার বাগান নেমে গেছে জল পর্যন্ত।",
+          "ur": "میرے چھوٹے سے گھر کے برابر ایک بہت بڑی حویلی تھی، جس کا باغ پانی تک جاتا تھا۔",
+          "th": "ข้างบ้านหลังเล็กของผมมีคฤหาสน์หลังมหึมา สวนของมันทอดยาวลงไปถึงริมน้ำ"
+        }
+      },
+      {
+        "id": "cl-gatsby-004",
+        "english": "It belonged to a mysterious man called Jay Gatsby.",
+        "turkish": "Jay Gatsby adında gizemli bir adama aitti.",
+        "translations": {
+          "es-419": "Pertenecía a un hombre misterioso llamado Jay Gatsby.",
+          "pt-BR": "Pertencia a um homem misterioso chamado Jay Gatsby.",
+          "id": "Rumah itu milik seorang pria misterius bernama Jay Gatsby.",
+          "ar": "كان ملكًا لرجل غامض اسمه جاي غاتسبي.",
+          "vi": "Nó thuộc về một người đàn ông bí ẩn tên là Jay Gatsby.",
+          "hi": "वह जे गैट्सबी नाम के एक रहस्यमय आदमी की थी।",
+          "ru": "Он принадлежал загадочному человеку по имени Джей Гэтсби.",
+          "bn": "সেটা ছিল জে গ্যাটসবি নামের এক রহস্যময় লোকের।",
+          "ur": "وہ جے گیٹسبی نام کے ایک پراسرار آدمی کی تھی۔",
+          "th": "มันเป็นของชายลึกลับคนหนึ่งชื่อเจย์ แกตสบี"
+        }
+      },
+      {
+        "id": "cl-gatsby-005",
+        "english": "Its many windows shone with light every night, but I never saw the owner.",
+        "turkish": "Sayısız penceresi her gece ışıl ışıl parlardı, ama sahibini hiç görmedim.",
+        "translations": {
+          "es-419": "Sus muchas ventanas brillaban de luz cada noche, pero nunca vi al dueño.",
+          "pt-BR": "Suas muitas janelas brilhavam de luz todas as noites, mas eu nunca via o dono.",
+          "id": "Jendela-jendelanya yang banyak bersinar terang setiap malam, tetapi aku tak pernah melihat pemiliknya.",
+          "ar": "كانت نوافذه الكثيرة تتلألأ بالضوء كلّ ليلة، لكنّي لم أرَ صاحبه قطّ.",
+          "vi": "Vô số cửa sổ của nó sáng rực mỗi đêm, nhưng tôi chưa bao giờ thấy chủ nhân.",
+          "hi": "उसकी ढेर सारी खिड़कियाँ हर रात रोशनी से जगमगाती थीं, पर मैंने उसके मालिक को कभी नहीं देखा।",
+          "ru": "Его многочисленные окна каждую ночь сияли огнями, но хозяина я ни разу не видел.",
+          "bn": "তার অসংখ্য জানালা রোজ রাতে আলোয় ঝলমল করত, কিন্তু মালিককে আমি কখনো দেখিনি।",
+          "ur": "اس کی بے شمار کھڑکیاں ہر رات روشنی سے جگمگاتی تھیں، مگر میں نے اس کے مالک کو کبھی نہیں دیکھا۔",
+          "th": "หน้าต่างมากมายของมันสว่างไสวทุกคืน แต่ผมไม่เคยเห็นเจ้าของเลย"
+        }
+      },
+      {
+        "id": "cl-gatsby-006",
+        "english": "Across the bay, in a rich town, lived my cousin Daisy.",
+        "turkish": "Körfezin karşı yakasında, zengin bir kasabada kuzenim Daisy yaşıyordu.",
+        "translations": {
+          "es-419": "Al otro lado de la bahía, en un pueblo rico, vivía mi prima Daisy.",
+          "pt-BR": "Do outro lado da baía, numa cidade rica, morava minha prima Daisy.",
+          "id": "Di seberang teluk, di sebuah kota yang kaya, tinggal sepupuku Daisy.",
+          "ar": "وعلى الضفّة الأخرى من الخليج، في بلدة غنيّة، كانت تعيش ابنة عمّي ديزي.",
+          "vi": "Bên kia vịnh, trong một thị trấn giàu có, là nơi cô em họ Daisy của tôi sống.",
+          "hi": "खाड़ी के उस पार एक अमीर क़स्बे में मेरी चचेरी बहन डेज़ी रहती थी।",
+          "ru": "На другом берегу залива, в богатом городке, жила моя кузина Дейзи.",
+          "bn": "উপসাগরের ওপারে, এক ধনী শহরে থাকত আমার তুতো বোন ডেইজি।",
+          "ur": "خلیج کے اس پار، ایک امیر قصبے میں میری کزن ڈیزی رہتی تھی۔",
+          "th": "ฝั่งตรงข้ามอ่าว ในเมืองของคนรวย เป็นที่อยู่ของเดซี่ ลูกพี่ลูกน้องของผม"
+        }
+      },
+      {
+        "id": "cl-gatsby-007",
+        "english": "She had a soft, exciting voice that sounded full of money.",
+        "turkish": "Yumuşak, heyecan verici, sanki parayla dolu gibi çınlayan bir sesi vardı.",
+        "translations": {
+          "es-419": "Tenía una voz suave y emocionante que sonaba llena de dinero.",
+          "pt-BR": "Tinha uma voz suave e emocionante, que parecia cheia de dinheiro.",
+          "id": "Suaranya lembut dan menggetarkan, terdengar penuh dengan uang.",
+          "ar": "كان لها صوت ناعم مثير، يبدو كأنّه مليء بالمال.",
+          "vi": "Cô có một giọng nói dịu dàng, quyến rũ, nghe như chứa đầy tiền bạc.",
+          "hi": "उसकी आवाज़ नरम और रोमांचक थी, जो पैसों से भरी हुई लगती थी।",
+          "ru": "У неё был мягкий, волнующий голос, в котором будто звенели деньги.",
+          "bn": "তার গলার স্বর নরম আর রোমাঞ্চকর, শুনে মনে হত টাকায় ভরা।",
+          "ur": "اس کی آواز نرم اور دلکش تھی، جو پیسوں سے بھری ہوئی لگتی تھی۔",
+          "th": "เธอมีน้ำเสียงนุ่มนวลชวนตื่นเต้น ฟังดูราวกับเต็มไปด้วยเงินทอง"
+        }
+      },
+      {
+        "id": "cl-gatsby-008",
+        "english": "Her husband, Tom Buchanan, was very rich, very strong and very rude.",
+        "turkish": "Kocası Tom Buchanan çok zengin, çok güçlü ve çok kabaydı.",
+        "translations": {
+          "es-419": "Su esposo, Tom Buchanan, era muy rico, muy fuerte y muy grosero.",
+          "pt-BR": "O marido dela, Tom Buchanan, era muito rico, muito forte e muito grosseiro.",
+          "id": "Suaminya, Tom Buchanan, sangat kaya, sangat kuat, dan sangat kasar.",
+          "ar": "وكان زوجها، توم بيوكانن، غنيًّا جدًّا، قويًّا جدًّا، وفظًّا جدًّا.",
+          "vi": "Chồng cô, Tom Buchanan, rất giàu, rất khỏe và rất thô lỗ.",
+          "hi": "उसका पति टॉम ब्यूकैनन बहुत अमीर, बहुत ताक़तवर और बहुत बदतमीज़ था।",
+          "ru": "Её муж, Том Бьюкенен, был очень богат, очень силён и очень груб.",
+          "bn": "তার স্বামী টম বুকানন ছিল খুব ধনী, খুব শক্তিশালী আর খুব অভদ্র।",
+          "ur": "اس کا شوہر ٹام بیوکینن بہت امیر، بہت طاقتور اور بہت بدتمیز تھا۔",
+          "th": "ทอม บิวแคนัน สามีของเธอ ร่ำรวยมาก แข็งแรงมาก และหยาบคายมาก"
+        }
+      },
+      {
+        "id": "cl-gatsby-009",
+        "english": "Tom and Daisy had a little daughter, but they seemed bored with everything.",
+        "turkish": "Tom ile Daisy'nin küçük bir kızı vardı, ama her şeyden sıkılmış gibiydiler.",
+        "translations": {
+          "es-419": "Tom y Daisy tenían una hija pequeña, pero parecían aburridos de todo.",
+          "pt-BR": "Tom e Daisy tinham uma filha pequena, mas pareciam entediados com tudo.",
+          "id": "Tom dan Daisy punya seorang putri kecil, tetapi mereka tampak bosan dengan segalanya.",
+          "ar": "كانت لتوم وديزي ابنة صغيرة، لكنّهما بدَوا ضجِرَين من كلّ شيء.",
+          "vi": "Tom và Daisy có một cô con gái nhỏ, nhưng họ có vẻ chán chường với mọi thứ.",
+          "hi": "टॉम और डेज़ी की एक छोटी-सी बेटी थी, पर वे हर चीज़ से ऊबे हुए लगते थे।",
+          "ru": "У Тома и Дейзи была маленькая дочь, но им, казалось, всё наскучило.",
+          "bn": "টম আর ডেইজির একটা ছোট্ট মেয়ে ছিল, কিন্তু মনে হত সবকিছুতেই তারা বিরক্ত।",
+          "ur": "ٹام اور ڈیزی کی ایک چھوٹی سی بیٹی تھی، مگر وہ ہر چیز سے اکتائے ہوئے لگتے تھے۔",
+          "th": "ทอมกับเดซี่มีลูกสาวตัวเล็ก ๆ คนหนึ่ง แต่ทั้งคู่ดูเบื่อหน่ายไปเสียทุกอย่าง"
+        }
+      },
+      {
+        "id": "cl-gatsby-010",
+        "english": "Everyone knew that Tom had another woman in the city.",
+        "turkish": "Herkes Tom'un şehirde başka bir kadını olduğunu biliyordu.",
+        "translations": {
+          "es-419": "Todos sabían que Tom tenía otra mujer en la ciudad.",
+          "pt-BR": "Todos sabiam que Tom tinha outra mulher na cidade.",
+          "id": "Semua orang tahu Tom punya wanita lain di kota.",
+          "ar": "كان الجميع يعرفون أنّ لتوم امرأة أخرى في المدينة.",
+          "vi": "Ai cũng biết Tom có một người đàn bà khác trong thành phố.",
+          "hi": "सब जानते थे कि शहर में टॉम की एक और औरत है।",
+          "ru": "Все знали, что у Тома есть другая женщина в городе.",
+          "bn": "সবাই জানত, শহরে টমের আরেকজন মেয়েমানুষ আছে।",
+          "ur": "سب جانتے تھے کہ شہر میں ٹام کی ایک اور عورت ہے۔",
+          "th": "ใคร ๆ ก็รู้ว่าทอมมีผู้หญิงอีกคนอยู่ในเมือง"
+        }
+      },
+      {
+        "id": "cl-gatsby-011",
+        "english": "Her name was Myrtle, and she was the wife of a poor man who repaired cars.",
+        "turkish": "Adı Myrtle'dı ve araba tamir eden yoksul bir adamın karısıydı.",
+        "translations": {
+          "es-419": "Se llamaba Myrtle, y era la esposa de un hombre pobre que reparaba autos.",
+          "pt-BR": "Seu nome era Myrtle, e ela era a esposa de um homem pobre que consertava carros.",
+          "id": "Namanya Myrtle, istri seorang pria miskin yang memperbaiki mobil.",
+          "ar": "كان اسمها ميرتل، وكانت زوجة رجل فقير يصلح السيّارات.",
+          "vi": "Tên chị ta là Myrtle, vợ của một người đàn ông nghèo làm nghề sửa xe.",
+          "hi": "उसका नाम मर्टल था, और वह गाड़ियाँ ठीक करने वाले एक ग़रीब आदमी की पत्नी थी।",
+          "ru": "Её звали Миртл, она была женой бедного человека, который чинил машины.",
+          "bn": "তার নাম মার্টল, সে ছিল গাড়ি সারাই করা এক গরিব লোকের বউ।",
+          "ur": "اس کا نام مرٹل تھا، اور وہ گاڑیاں ٹھیک کرنے والے ایک غریب آدمی کی بیوی تھی۔",
+          "th": "เธอชื่อเมอร์เทิล เป็นภรรยาของชายยากจนคนหนึ่งที่รับซ่อมรถ"
+        }
+      },
+      {
+        "id": "cl-gatsby-012",
+        "english": "One warm night, I came home late and saw a man standing on the next lawn.",
+        "turkish": "Ilık bir gece eve geç döndüm ve yan bahçenin çimlerinde duran bir adam gördüm.",
+        "translations": {
+          "es-419": "Una noche cálida, volví tarde a casa y vi a un hombre de pie en el césped de al lado.",
+          "pt-BR": "Numa noite quente, voltei tarde para casa e vi um homem de pé no gramado ao lado.",
+          "id": "Suatu malam yang hangat, aku pulang larut dan melihat seorang pria berdiri di halaman rumput sebelah.",
+          "ar": "في ليلة دافئة، عدتُ إلى البيت متأخّرًا فرأيتُ رجلًا واقفًا على العشب المجاور.",
+          "vi": "Một đêm ấm áp, tôi về nhà muộn và thấy một người đàn ông đứng trên bãi cỏ bên cạnh.",
+          "hi": "एक गर्म रात मैं देर से घर लौटा और बगल वाले लॉन पर एक आदमी को खड़ा देखा।",
+          "ru": "Однажды тёплой ночью я поздно вернулся домой и увидел человека на соседней лужайке.",
+          "bn": "এক উষ্ণ রাতে দেরি করে বাড়ি ফিরে দেখলাম, পাশের লনে একজন লোক দাঁড়িয়ে।",
+          "ur": "ایک گرم رات میں دیر سے گھر لوٹا اور برابر والے لان پر ایک آدمی کو کھڑا دیکھا۔",
+          "th": "คืนหนึ่งที่อากาศอบอุ่น ผมกลับบ้านดึกและเห็นชายคนหนึ่งยืนอยู่บนสนามหญ้าข้างบ้าน"
+        }
+      },
+      {
+        "id": "cl-gatsby-013",
+        "english": "He stretched his arms toward the dark water, and he was shaking.",
+        "turkish": "Kollarını karanlık suya doğru uzatmıştı ve titriyordu.",
+        "translations": {
+          "es-419": "Extendía los brazos hacia el agua oscura, y temblaba.",
+          "pt-BR": "Ele estendia os braços em direção à água escura, e tremia.",
+          "id": "Ia merentangkan kedua lengannya ke arah air yang gelap, dan tubuhnya gemetar.",
+          "ar": "كان يمدّ ذراعيه نحو الماء المظلم، وكان يرتجف.",
+          "vi": "Anh ta dang tay về phía mặt nước tối đen, và người run lên.",
+          "hi": "वह अँधेरे पानी की ओर बाँहें फैलाए खड़ा था, और काँप रहा था।",
+          "ru": "Он протягивал руки к тёмной воде и дрожал.",
+          "bn": "সে অন্ধকার জলের দিকে দুই হাত বাড়িয়ে ছিল, আর কাঁপছিল।",
+          "ur": "وہ اندھیرے پانی کی طرف بازو پھیلائے کھڑا تھا، اور کانپ رہا تھا۔",
+          "th": "เขายื่นแขนทั้งสองออกไปทางผืนน้ำมืด และตัวสั่นเทา"
+        }
+      },
+      {
+        "id": "cl-gatsby-014",
+        "english": "I looked, but I could see nothing except a single green light, far away.",
+        "turkish": "Baktım, ama uzaklardaki tek bir yeşil ışıktan başka bir şey göremedim.",
+        "translations": {
+          "es-419": "Miré, pero no pude ver nada salvo una sola luz verde, muy lejos.",
+          "pt-BR": "Olhei, mas não consegui ver nada além de uma única luz verde, bem longe.",
+          "id": "Aku ikut melihat, tetapi tak tampak apa pun selain satu cahaya hijau di kejauhan.",
+          "ar": "نظرتُ، لكنّي لم أرَ شيئًا سوى ضوء أخضر وحيد في البعيد.",
+          "vi": "Tôi nhìn theo, nhưng chẳng thấy gì ngoài một ngọn đèn xanh duy nhất ở tận xa.",
+          "hi": "मैंने देखा, पर दूर एक अकेली हरी बत्ती के सिवा कुछ नज़र नहीं आया।",
+          "ru": "Я посмотрел туда, но не увидел ничего, кроме одного зелёного огонька вдали.",
+          "bn": "আমি তাকালাম, কিন্তু দূরে একটা মাত্র সবুজ আলো ছাড়া কিছুই দেখতে পেলাম না।",
+          "ur": "میں نے دیکھا، مگر دور ایک اکیلی سبز روشنی کے سوا کچھ نظر نہیں آیا۔",
+          "th": "ผมมองตาม แต่ไม่เห็นอะไรเลยนอกจากแสงไฟสีเขียวดวงเดียวที่อยู่ไกลลิบ"
+        }
+      },
+      {
+        "id": "cl-gatsby-015",
+        "english": "When I looked back, the man was gone.",
+        "turkish": "Tekrar döndüğümde adam gitmişti.",
+        "translations": {
+          "es-419": "Cuando volví a mirar, el hombre ya no estaba.",
+          "pt-BR": "Quando olhei de novo, o homem tinha sumido.",
+          "id": "Ketika aku menoleh lagi, pria itu sudah pergi.",
+          "ar": "وحين التفتُّ ثانية، كان الرجل قد اختفى.",
+          "vi": "Khi tôi quay lại nhìn, người đàn ông đã biến mất.",
+          "hi": "जब मैंने फिर देखा, तो वह आदमी जा चुका था।",
+          "ru": "Когда я снова оглянулся, человека уже не было.",
+          "bn": "আবার যখন তাকালাম, লোকটা চলে গেছে।",
+          "ur": "جب میں نے پھر دیکھا، تو وہ آدمی جا چکا تھا۔",
+          "th": "พอผมหันกลับไปมอง ชายคนนั้นก็หายไปแล้ว"
+        }
+      },
+      {
+        "id": "cl-gatsby-016",
+        "english": "Every weekend that summer, music came from Gatsby's house.",
+        "turkish": "O yaz her hafta sonu Gatsby'nin evinden müzik yükseldi.",
+        "translations": {
+          "es-419": "Todos los fines de semana de aquel verano, salía música de la casa de Gatsby.",
+          "pt-BR": "Todo fim de semana daquele verão, vinha música da casa de Gatsby.",
+          "id": "Setiap akhir pekan musim panas itu, musik terdengar dari rumah Gatsby.",
+          "ar": "وفي كلّ عطلة أسبوعيّة من ذلك الصيف، كانت الموسيقى تنبعث من بيت غاتسبي.",
+          "vi": "Mỗi cuối tuần mùa hè năm ấy, tiếng nhạc lại vang ra từ nhà Gatsby.",
+          "hi": "उस गर्मी में हर सप्ताहांत गैट्सबी के घर से संगीत आता था।",
+          "ru": "Каждые выходные того лета из дома Гэтсби звучала музыка.",
+          "bn": "সেই গ্রীষ্মে প্রতি সপ্তাহান্তে গ্যাটসবির বাড়ি থেকে গানবাজনা ভেসে আসত।",
+          "ur": "اس گرمی میں ہر ہفتے کے آخر گیٹسبی کے گھر سے موسیقی آتی تھی۔",
+          "th": "ทุกสุดสัปดาห์ของฤดูร้อนนั้น มีเสียงดนตรีดังมาจากบ้านของแกตสบี"
+        }
+      },
+      {
+        "id": "cl-gatsby-017",
+        "english": "Cars arrived from New York, full of people in bright clothes.",
+        "turkish": "New York'tan, rengârenk giysili insanlarla dolu arabalar gelirdi.",
+        "translations": {
+          "es-419": "Llegaban autos de Nueva York, llenos de gente con ropa de colores vivos.",
+          "pt-BR": "Chegavam carros de Nova York, cheios de gente com roupas coloridas.",
+          "id": "Mobil-mobil berdatangan dari New York, penuh orang berpakaian cerah.",
+          "ar": "كانت السيّارات تصل من نيويورك، مليئة بأناس يرتدون ملابس زاهية.",
+          "vi": "Những chiếc xe từ New York kéo đến, chở đầy người mặc quần áo sặc sỡ.",
+          "hi": "न्यूयॉर्क से भड़कीले कपड़ों वाले लोगों से भरी गाड़ियाँ आतीं।",
+          "ru": "Из Нью-Йорка приезжали машины, полные людей в ярких нарядах.",
+          "bn": "নিউ ইয়র্ক থেকে ঝলমলে পোশাক পরা মানুষে ভরা গাড়ি আসত।",
+          "ur": "نیویارک سے بھڑکیلے کپڑوں والے لوگوں سے بھری گاڑیاں آتیں۔",
+          "th": "รถยนต์แล่นมาจากนิวยอร์ก เต็มไปด้วยผู้คนในชุดสีสดใส"
+        }
+      },
+      {
+        "id": "cl-gatsby-018",
+        "english": "They danced and drank in his garden until the sun came up.",
+        "turkish": "Güneş doğana kadar bahçesinde dans edip içerlerdi.",
+        "translations": {
+          "es-419": "Bailaban y bebían en su jardín hasta que salía el sol.",
+          "pt-BR": "Dançavam e bebiam no jardim dele até o sol nascer.",
+          "id": "Mereka berdansa dan minum di tamannya sampai matahari terbit.",
+          "ar": "كانوا يرقصون ويشربون في حديقته حتّى تطلع الشمس.",
+          "vi": "Họ nhảy múa và uống rượu trong vườn nhà anh ta cho đến khi mặt trời mọc.",
+          "hi": "वे सूरज निकलने तक उसके बाग़ में नाचते और पीते रहते।",
+          "ru": "Они танцевали и пили в его саду до самого восхода солнца.",
+          "bn": "তারা সূর্য ওঠা পর্যন্ত তার বাগানে নাচত আর মদ খেত।",
+          "ur": "وہ سورج نکلنے تک اس کے باغ میں ناچتے اور پیتے رہتے۔",
+          "th": "พวกเขาเต้นรำและดื่มกันในสวนของเขาจนตะวันขึ้น"
+        }
+      },
+      {
+        "id": "cl-gatsby-019",
+        "english": "On Monday mornings, eight servants worked all day to clean up after the party.",
+        "turkish": "Pazartesi sabahları sekiz hizmetçi, partinin ardından toparlamak için bütün gün çalışırdı.",
+        "translations": {
+          "es-419": "Los lunes por la mañana, ocho sirvientes trabajaban todo el día para limpiar después de la fiesta.",
+          "pt-BR": "Nas manhãs de segunda, oito criados trabalhavam o dia inteiro para limpar tudo depois da festa.",
+          "id": "Setiap Senin pagi, delapan pelayan bekerja seharian untuk membersihkan bekas pesta.",
+          "ar": "وفي صباح كلّ إثنين، كان ثمانية خدم يعملون طوال اليوم لتنظيف ما خلّفته الحفلة.",
+          "vi": "Sáng thứ Hai, tám người hầu làm việc suốt ngày để dọn dẹp sau bữa tiệc.",
+          "hi": "सोमवार की सुबह आठ नौकर पार्टी के बाद सफ़ाई करने में दिन भर लगे रहते।",
+          "ru": "По понедельникам восемь слуг весь день убирали после вечеринки.",
+          "bn": "সোমবার সকালে আটজন চাকর সারাদিন ধরে পার্টির পরের জঞ্জাল সাফ করত।",
+          "ur": "پیر کی صبح آٹھ نوکر پارٹی کے بعد صفائی کرنے میں دن بھر لگے رہتے۔",
+          "th": "เช้าวันจันทร์ คนรับใช้แปดคนทำงานทั้งวันเพื่อเก็บกวาดหลังงานเลี้ยง"
+        }
+      },
+      {
+        "id": "cl-gatsby-020",
+        "english": "One Saturday, a driver in a blue uniform brought me an invitation.",
+        "turkish": "Bir cumartesi, mavi üniformalı bir şoför bana bir davetiye getirdi.",
+        "translations": {
+          "es-419": "Un sábado, un chofer de uniforme azul me trajo una invitación.",
+          "pt-BR": "Num sábado, um motorista de uniforme azul me trouxe um convite.",
+          "id": "Suatu Sabtu, seorang sopir berseragam biru membawakan undangan untukku.",
+          "ar": "وذات سبت، جاءني سائق بزيّ أزرق ببطاقة دعوة.",
+          "vi": "Một ngày thứ Bảy, một người tài xế mặc đồng phục xanh mang đến cho tôi một tấm thiệp mời.",
+          "hi": "एक शनिवार नीली वर्दी वाला एक ड्राइवर मेरे लिए एक निमंत्रण लाया।",
+          "ru": "Однажды в субботу шофёр в синей форме принёс мне приглашение.",
+          "bn": "এক শনিবার নীল উর্দি পরা এক ড্রাইভার আমার জন্য একটা নিমন্ত্রণপত্র নিয়ে এল।",
+          "ur": "ایک ہفتے کو نیلی وردی والا ایک ڈرائیور میرے لیے ایک دعوت نامہ لایا۔",
+          "th": "วันเสาร์หนึ่ง คนขับรถในเครื่องแบบสีน้ำเงินนำบัตรเชิญมาให้ผม"
+        }
+      },
+      {
+        "id": "cl-gatsby-021",
+        "english": "That night I went to my first party at Gatsby's house.",
+        "turkish": "O gece Gatsby'nin evindeki ilk partime gittim.",
+        "translations": {
+          "es-419": "Esa noche fui a mi primera fiesta en la casa de Gatsby.",
+          "pt-BR": "Naquela noite fui à minha primeira festa na casa de Gatsby.",
+          "id": "Malam itu aku menghadiri pesta pertamaku di rumah Gatsby.",
+          "ar": "في تلك الليلة ذهبتُ إلى أوّل حفلة لي في بيت غاتسبي.",
+          "vi": "Tối đó tôi dự bữa tiệc đầu tiên ở nhà Gatsby.",
+          "hi": "उस रात मैं गैट्सबी के घर अपनी पहली पार्टी में गया।",
+          "ru": "В тот вечер я впервые пошёл на вечеринку в доме Гэтсби.",
+          "bn": "সেই রাতে আমি গ্যাটসবির বাড়িতে আমার প্রথম পার্টিতে গেলাম।",
+          "ur": "اس رات میں گیٹسبی کے گھر اپنی پہلی پارٹی میں گیا۔",
+          "th": "คืนนั้นผมไปงานเลี้ยงครั้งแรกที่บ้านของแกตสบี"
+        }
+      },
+      {
+        "id": "cl-gatsby-022",
+        "english": "Most of the guests had never been invited. They simply came.",
+        "turkish": "Konukların çoğu hiç davet edilmemişti. Öylece gelmişlerdi.",
+        "translations": {
+          "es-419": "La mayoría de los invitados nunca había sido invitada. Simplemente venían.",
+          "pt-BR": "A maioria dos convidados nunca tinha sido convidada. Eles simplesmente vinham.",
+          "id": "Sebagian besar tamu tidak pernah diundang. Mereka datang begitu saja.",
+          "ar": "لم يكن معظم الضيوف مدعوّين قطّ، بل كانوا يأتون فحسب.",
+          "vi": "Phần lớn khách khứa chưa từng được mời. Họ cứ thế mà đến.",
+          "hi": "ज़्यादातर मेहमानों को कभी बुलाया ही नहीं गया था। वे बस चले आते थे।",
+          "ru": "Большинство гостей никто не приглашал. Они просто приходили.",
+          "bn": "বেশিরভাগ অতিথিকে কেউ কখনো ডাকেনি। তারা এমনিই চলে আসত।",
+          "ur": "زیادہ تر مہمانوں کو کبھی بلایا ہی نہیں گیا تھا۔ وہ بس چلے آتے تھے۔",
+          "th": "แขกส่วนใหญ่ไม่เคยได้รับเชิญเลย พวกเขาแค่มากันเอง"
+        }
+      },
+      {
+        "id": "cl-gatsby-023",
+        "english": "They ate his food and drank his wine, but nobody knew who he was.",
+        "turkish": "Onun yemeğini yiyip şarabını içtiler, ama kim olduğunu kimse bilmiyordu.",
+        "translations": {
+          "es-419": "Comían su comida y bebían su vino, pero nadie sabía quién era él.",
+          "pt-BR": "Comiam a comida dele e bebiam o vinho dele, mas ninguém sabia quem ele era.",
+          "id": "Mereka makan makanannya dan minum anggurnya, tetapi tak ada yang tahu siapa dia.",
+          "ar": "كانوا يأكلون طعامه ويشربون نبيذه، لكنّ أحدًا لم يعرف من هو.",
+          "vi": "Họ ăn đồ ăn của anh ta, uống rượu của anh ta, nhưng chẳng ai biết anh ta là ai.",
+          "hi": "वे उसका खाना खाते और उसकी शराब पीते, पर कोई नहीं जानता था कि वह कौन है।",
+          "ru": "Они ели его еду и пили его вино, но никто не знал, кто он такой.",
+          "bn": "তারা তার খাবার খেত, তার মদ খেত, কিন্তু সে কে, কেউ জানত না।",
+          "ur": "وہ اس کا کھانا کھاتے اور اس کی شراب پیتے، مگر کوئی نہیں جانتا تھا کہ وہ کون ہے۔",
+          "th": "พวกเขากินอาหารและดื่มไวน์ของเขา แต่ไม่มีใครรู้ว่าเขาเป็นใคร"
+        }
+      },
+      {
+        "id": "cl-gatsby-024",
+        "english": "\"They say he killed a man once,\" a girl whispered.",
+        "turkish": "\"Bir zamanlar bir adam öldürdüğünü söylüyorlar,\" diye fısıldadı bir kız.",
+        "translations": {
+          "es-419": "—Dicen que una vez mató a un hombre —susurró una muchacha.",
+          "pt-BR": "— Dizem que ele matou um homem uma vez — sussurrou uma moça.",
+          "id": "\"Katanya dia pernah membunuh orang,\" bisik seorang gadis.",
+          "ar": "همست فتاة: «يقولون إنّه قتل رجلًا ذات مرّة».",
+          "vi": "\"Người ta bảo anh ta từng giết một người,\" một cô gái thì thầm.",
+          "hi": "एक लड़की ने फुसफुसाकर कहा, \"कहते हैं, उसने एक बार किसी आदमी को मार डाला था।\"",
+          "ru": "«Говорят, он однажды убил человека», — прошептала одна девушка.",
+          "bn": "একটা মেয়ে ফিসফিস করে বলল, \"শুনেছি, সে একবার একজনকে খুন করেছিল।\"",
+          "ur": "ایک لڑکی نے سرگوشی کی، \"کہتے ہیں، اس نے ایک بار کسی آدمی کو مار ڈالا تھا۔\"",
+          "th": "\"เขาว่ากันว่าเขาเคยฆ่าคนมาแล้ว\" หญิงสาวคนหนึ่งกระซิบ"
+        }
+      },
+      {
+        "id": "cl-gatsby-025",
+        "english": "\"No, he was a German spy in the war,\" said another.",
+        "turkish": "\"Hayır, savaşta Alman casusuymuş,\" dedi bir başkası.",
+        "translations": {
+          "es-419": "—No, fue un espía alemán en la guerra —dijo otra.",
+          "pt-BR": "— Não, ele foi espião alemão na guerra — disse outra.",
+          "id": "\"Bukan, dia mata-mata Jerman waktu perang,\" kata yang lain.",
+          "ar": "وقالت أخرى: «لا، كان جاسوسًا ألمانيًّا في الحرب».",
+          "vi": "\"Không, anh ta là gián điệp Đức hồi chiến tranh,\" một cô khác nói.",
+          "hi": "दूसरी बोली, \"नहीं, वह युद्ध में जर्मन जासूस था।\"",
+          "ru": "«Нет, он был немецким шпионом на войне», — сказала другая.",
+          "bn": "আরেকজন বলল, \"না, সে যুদ্ধের সময় জার্মান গুপ্তচর ছিল।\"",
+          "ur": "دوسری بولی، \"نہیں، وہ جنگ میں جرمن جاسوس تھا۔\"",
+          "th": "\"ไม่ใช่ เขาเป็นสายลับเยอรมันตอนสงครามต่างหาก\" อีกคนว่า"
+        }
+      },
+      {
+        "id": "cl-gatsby-026",
+        "english": "Near midnight, a young man next to me smiled at me.",
+        "turkish": "Gece yarısına doğru yanımdaki genç bir adam bana gülümsedi.",
+        "translations": {
+          "es-419": "Cerca de la medianoche, un joven que estaba a mi lado me sonrió.",
+          "pt-BR": "Perto da meia-noite, um rapaz ao meu lado sorriu para mim.",
+          "id": "Menjelang tengah malam, seorang pemuda di sampingku tersenyum kepadaku.",
+          "ar": "قرب منتصف الليل، ابتسم لي شابّ كان بجانبي.",
+          "vi": "Gần nửa đêm, một người đàn ông trẻ đứng cạnh mỉm cười với tôi.",
+          "hi": "आधी रात के क़रीब मेरे पास खड़े एक नौजवान ने मेरी ओर मुस्कुराकर देखा।",
+          "ru": "Около полуночи молодой человек рядом со мной улыбнулся мне.",
+          "bn": "মাঝরাতের কাছাকাছি আমার পাশের এক যুবক আমার দিকে চেয়ে হাসল।",
+          "ur": "آدھی رات کے قریب میرے پاس کھڑے ایک نوجوان نے میری طرف دیکھ کر مسکرایا۔",
+          "th": "ใกล้เที่ยงคืน ชายหนุ่มที่อยู่ข้าง ๆ ผมยิ้มให้ผม"
+        }
+      },
+      {
+        "id": "cl-gatsby-027",
+        "english": "It was a rare smile that made you feel special and understood.",
+        "turkish": "Bu, insana özel ve anlaşılmış olduğunu hissettiren nadir bir gülümsemeydi.",
+        "translations": {
+          "es-419": "Era una sonrisa poco común, que te hacía sentir especial y comprendido.",
+          "pt-BR": "Era um sorriso raro, que fazia você se sentir especial e compreendido.",
+          "id": "Itu senyum langka yang membuatmu merasa istimewa dan dimengerti.",
+          "ar": "كانت ابتسامة نادرة تجعلك تشعر بأنّك مميّز ومفهوم.",
+          "vi": "Đó là một nụ cười hiếm có, khiến người ta thấy mình đặc biệt và được thấu hiểu.",
+          "hi": "वह एक दुर्लभ मुस्कान थी, जो आपको ख़ास और समझा हुआ महसूस कराती थी।",
+          "ru": "Это была редкая улыбка, от которой ты чувствовал себя особенным и понятым.",
+          "bn": "সেটা ছিল এক বিরল হাসি, যা দেখে মনে হত তুমি বিশেষ কেউ, কেউ তোমাকে বোঝে।",
+          "ur": "وہ ایک نایاب مسکراہٹ تھی، جو آپ کو خاص اور سمجھا ہوا محسوس کراتی تھی۔",
+          "th": "มันเป็นรอยยิ้มที่หาได้ยาก ทำให้คุณรู้สึกพิเศษและมีคนเข้าใจ"
+        }
+      },
+      {
+        "id": "cl-gatsby-028",
+        "english": "\"I am Gatsby,\" he said. \"I'm afraid I'm not a very good host, old sport.\"",
+        "turkish": "\"Ben Gatsby'yim,\" dedi. \"Korkarım pek iyi bir ev sahibi değilim, dostum.\"",
+        "translations": {
+          "es-419": "—Soy Gatsby —dijo—. Me temo que no soy muy buen anfitrión, viejo amigo.",
+          "pt-BR": "— Eu sou Gatsby — disse ele. — Receio não ser um anfitrião muito bom, meu velho.",
+          "id": "\"Aku Gatsby,\" katanya. \"Sepertinya aku bukan tuan rumah yang baik, kawan lama.\"",
+          "ar": "قال: «أنا غاتسبي. أخشى أنّني لستُ مضيفًا جيّدًا جدًّا يا صديقي العزيز».",
+          "vi": "\"Tôi là Gatsby,\" anh ta nói. \"Tôi e mình không phải chủ nhà tốt lắm đâu, ông bạn.\"",
+          "hi": "उसने कहा, \"मैं गैट्सबी हूँ। लगता है, मैं बहुत अच्छा मेज़बान नहीं हूँ, दोस्त।\"",
+          "ru": "«Я Гэтсби, — сказал он. — Боюсь, я не очень хороший хозяин, старина».",
+          "bn": "সে বলল, \"আমিই গ্যাটসবি। মনে হচ্ছে আমি খুব একটা ভালো গৃহকর্তা নই, বন্ধু।\"",
+          "ur": "اس نے کہا، \"میں گیٹسبی ہوں۔ لگتا ہے، میں بہت اچھا میزبان نہیں ہوں، دوست۔\"",
+          "th": "\"ผมคือแกตสบี\" เขาพูด \"เกรงว่าผมจะไม่ใช่เจ้าบ้านที่ดีนัก เพื่อนยาก\""
+        }
+      },
+      {
+        "id": "cl-gatsby-029",
+        "english": "Later, Daisy's friend Jordan Baker told me his secret.",
+        "turkish": "Sonra Daisy'nin arkadaşı Jordan Baker bana onun sırrını anlattı.",
+        "translations": {
+          "es-419": "Más tarde, Jordan Baker, amiga de Daisy, me contó su secreto.",
+          "pt-BR": "Mais tarde, Jordan Baker, amiga de Daisy, me contou o segredo dele.",
+          "id": "Kemudian, teman Daisy, Jordan Baker, menceritakan rahasianya kepadaku.",
+          "ar": "وفي ما بعد، أخبرتني جوردان بيكر، صديقة ديزي، بسرّه.",
+          "vi": "Sau đó, Jordan Baker, bạn của Daisy, kể cho tôi nghe bí mật của anh ta.",
+          "hi": "बाद में डेज़ी की सहेली जॉर्डन बेकर ने मुझे उसका राज़ बताया।",
+          "ru": "Позже подруга Дейзи, Джордан Бейкер, открыла мне его тайну.",
+          "bn": "পরে ডেইজির বান্ধবী জর্ডান বেকার আমাকে তার গোপন কথাটা বলল।",
+          "ur": "بعد میں ڈیزی کی سہیلی جارڈن بیکر نے مجھے اس کا راز بتایا۔",
+          "th": "ต่อมา จอร์แดน เบเกอร์ เพื่อนของเดซี่ เล่าความลับของเขาให้ผมฟัง"
+        }
+      },
+      {
+        "id": "cl-gatsby-030",
+        "english": "\"Five years ago, before the war, Gatsby and Daisy were in love.\"",
+        "turkish": "\"Beş yıl önce, savaştan önce, Gatsby ile Daisy birbirlerine âşıktı.\"",
+        "translations": {
+          "es-419": "—Hace cinco años, antes de la guerra, Gatsby y Daisy estaban enamorados.",
+          "pt-BR": "— Cinco anos atrás, antes da guerra, Gatsby e Daisy estavam apaixonados.",
+          "id": "\"Lima tahun lalu, sebelum perang, Gatsby dan Daisy saling jatuh cinta.\"",
+          "ar": "«قبل خمس سنوات، قبل الحرب، كان غاتسبي وديزي عاشقين».",
+          "vi": "\"Năm năm trước, trước chiến tranh, Gatsby và Daisy đã yêu nhau.\"",
+          "hi": "\"पाँच साल पहले, युद्ध से पहले, गैट्सबी और डेज़ी एक-दूसरे से प्यार करते थे।\"",
+          "ru": "«Пять лет назад, до войны, Гэтсби и Дейзи любили друг друга».",
+          "bn": "\"পাঁচ বছর আগে, যুদ্ধের আগে, গ্যাটসবি আর ডেইজি একে অপরকে ভালোবাসত।\"",
+          "ur": "\"پانچ سال پہلے، جنگ سے پہلے، گیٹسبی اور ڈیزی ایک دوسرے سے محبت کرتے تھے۔\"",
+          "th": "\"ห้าปีก่อน ก่อนสงคราม แกตสบีกับเดซี่เคยรักกัน\""
+        }
+      },
+      {
+        "id": "cl-gatsby-031",
+        "english": "\"He was a poor young officer then, and he had to go to France.\"",
+        "turkish": "\"O zamanlar yoksul, genç bir subaydı ve Fransa'ya gitmek zorunda kaldı.\"",
+        "translations": {
+          "es-419": "—Él era entonces un oficial joven y pobre, y tuvo que irse a Francia.",
+          "pt-BR": "— Ele era então um jovem oficial pobre, e teve de ir para a França.",
+          "id": "\"Waktu itu dia perwira muda yang miskin, dan dia harus pergi ke Prancis.\"",
+          "ar": "«كان يومها ضابطًا شابًّا فقيرًا، واضطُرّ إلى الذهاب إلى فرنسا».",
+          "vi": "\"Hồi đó anh ấy chỉ là một sĩ quan trẻ nghèo, và phải sang Pháp.\"",
+          "hi": "\"तब वह एक ग़रीब नौजवान अफ़सर था, और उसे फ़्रांस जाना पड़ा।\"",
+          "ru": "«Тогда он был бедным молодым офицером, и ему пришлось уехать во Францию».",
+          "bn": "\"তখন সে ছিল এক গরিব তরুণ অফিসার, আর তাকে ফ্রান্সে যেতে হয়েছিল।\"",
+          "ur": "\"تب وہ ایک غریب نوجوان افسر تھا، اور اسے فرانس جانا پڑا۔\"",
+          "th": "\"ตอนนั้นเขาเป็นนายทหารหนุ่มที่ยากจน และต้องไปฝรั่งเศส\""
+        }
+      },
+      {
+        "id": "cl-gatsby-032",
+        "english": "\"She promised to wait for him until the end of the war.\"",
+        "turkish": "\"Savaş bitene kadar onu bekleyeceğine söz verdi.\"",
+        "translations": {
+          "es-419": "—Ella prometió esperarlo hasta el final de la guerra.",
+          "pt-BR": "— Ela prometeu esperar por ele até o fim da guerra.",
+          "id": "\"Daisy berjanji akan menunggunya sampai perang berakhir.\"",
+          "ar": "«ووعدته بأن تنتظره حتّى نهاية الحرب».",
+          "vi": "\"Cô ấy hứa sẽ chờ anh ấy cho đến khi chiến tranh kết thúc.\"",
+          "hi": "\"उसने वादा किया कि वह युद्ध ख़त्म होने तक उसका इंतज़ार करेगी।\"",
+          "ru": "«Она обещала ждать его до конца войны».",
+          "bn": "\"ডেইজি কথা দিয়েছিল, যুদ্ধ শেষ হওয়া পর্যন্ত সে তার জন্য অপেক্ষা করবে।\"",
+          "ur": "\"اس نے وعدہ کیا کہ وہ جنگ ختم ہونے تک اس کا انتظار کرے گی۔\"",
+          "th": "\"เธอสัญญาว่าจะรอเขาจนกว่าสงครามจะจบ\""
+        }
+      },
+      {
+        "id": "cl-gatsby-033",
+        "english": "\"Daisy did not wait. She married Tom, because Tom was rich.\"",
+        "turkish": "\"Daisy beklemedi. Tom'la evlendi, çünkü Tom zengindi.\"",
+        "translations": {
+          "es-419": "—Daisy no esperó. Se casó con Tom, porque Tom era rico.",
+          "pt-BR": "— Daisy não esperou. Casou-se com Tom, porque Tom era rico.",
+          "id": "\"Daisy tidak menunggu. Dia menikah dengan Tom, karena Tom kaya.\"",
+          "ar": "«لم تنتظر ديزي، بل تزوّجت توم لأنّه كان غنيًّا».",
+          "vi": "\"Daisy đã không chờ. Cô ấy lấy Tom, vì Tom giàu.\"",
+          "hi": "\"डेज़ी ने इंतज़ार नहीं किया। उसने टॉम से शादी कर ली, क्योंकि टॉम अमीर था।\"",
+          "ru": "«Дейзи не стала ждать. Она вышла за Тома, потому что Том был богат».",
+          "bn": "\"ডেইজি অপেক্ষা করেনি। সে টমকে বিয়ে করল, কারণ টম ধনী ছিল।\"",
+          "ur": "\"ڈیزی نے انتظار نہیں کیا۔ اس نے ٹام سے شادی کر لی، کیونکہ ٹام امیر تھا۔\"",
+          "th": "\"เดซี่ไม่ได้รอ เธอแต่งงานกับทอม เพราะทอมรวย\""
+        }
+      },
+      {
+        "id": "cl-gatsby-034",
+        "english": "\"Gatsby made a fortune, nobody knows how, and bought that house.\"",
+        "turkish": "\"Gatsby, nasıl olduğunu kimse bilmeden bir servet yaptı ve o evi satın aldı.\"",
+        "translations": {
+          "es-419": "—Gatsby hizo una fortuna, nadie sabe cómo, y compró esa casa.",
+          "pt-BR": "— Gatsby fez fortuna, ninguém sabe como, e comprou aquela casa.",
+          "id": "\"Gatsby menjadi kaya raya, entah bagaimana caranya, lalu membeli rumah itu.\"",
+          "ar": "«جمع غاتسبي ثروة، لا أحد يعرف كيف، واشترى ذلك البيت».",
+          "vi": "\"Gatsby kiếm được cả một gia tài, chẳng ai biết bằng cách nào, rồi mua căn nhà đó.\"",
+          "hi": "\"गैट्सबी ने दौलत कमाई, कोई नहीं जानता कैसे, और वह घर ख़रीद लिया।\"",
+          "ru": "«Гэтсби разбогател, никто не знает как, и купил тот дом».",
+          "bn": "\"গ্যাটসবি অনেক টাকা করল, কীভাবে কেউ জানে না, আর ওই বাড়িটা কিনল।\"",
+          "ur": "\"گیٹسبی نے دولت کمائی، کوئی نہیں جانتا کیسے، اور وہ گھر خرید لیا۔\"",
+          "th": "\"แกตสบีร่ำรวยขึ้นมา ไม่มีใครรู้ว่าด้วยวิธีไหน แล้วก็ซื้อบ้านหลังนั้น\""
+        }
+      },
+      {
+        "id": "cl-gatsby-035",
+        "english": "\"He chose it because Daisy lives just across the bay.\"",
+        "turkish": "\"Onu seçti, çünkü Daisy körfezin hemen karşı yakasında yaşıyor.\"",
+        "translations": {
+          "es-419": "—La eligió porque Daisy vive justo al otro lado de la bahía.",
+          "pt-BR": "— Ele a escolheu porque Daisy mora bem do outro lado da baía.",
+          "id": "\"Dia memilihnya karena Daisy tinggal tepat di seberang teluk.\"",
+          "ar": "«اختاره لأنّ ديزي تسكن على الضفّة المقابلة من الخليج تمامًا».",
+          "vi": "\"Anh ấy chọn nó vì Daisy sống ngay bên kia vịnh.\"",
+          "hi": "\"उसने वह घर इसलिए चुना, क्योंकि डेज़ी ठीक खाड़ी के उस पार रहती है।\"",
+          "ru": "«Он выбрал его, потому что Дейзи живёт прямо на другом берегу залива».",
+          "bn": "\"সে বাড়িটা বেছেছে, কারণ ডেইজি ঠিক উপসাগরের ওপারে থাকে।\"",
+          "ur": "\"اس نے وہ گھر اس لیے چنا، کیونکہ ڈیزی بالکل خلیج کے اس پار رہتی ہے۔\"",
+          "th": "\"เขาเลือกบ้านนั้น เพราะเดซี่อยู่ตรงข้ามอ่าวพอดี\""
+        }
+      },
+      {
+        "id": "cl-gatsby-036",
+        "english": "\"The green light at the end of her dock is the light he watches every night.\"",
+        "turkish": "\"Onun iskelesinin ucundaki yeşil ışık, her gece izlediği ışık.\"",
+        "translations": {
+          "es-419": "—La luz verde al final de su muelle es la luz que él mira cada noche.",
+          "pt-BR": "— A luz verde no fim do cais dela é a luz que ele olha todas as noites.",
+          "id": "\"Lampu hijau di ujung dermaganya itulah cahaya yang dia pandangi setiap malam.\"",
+          "ar": "«الضوء الأخضر في طرف رصيفها هو الضوء الذي يتأمّله كلّ ليلة».",
+          "vi": "\"Ngọn đèn xanh ở cuối cầu tàu nhà cô ấy chính là ánh đèn anh ấy ngắm mỗi đêm.\"",
+          "hi": "\"उसकी जेटी के छोर की हरी बत्ती ही वह रोशनी है, जिसे वह हर रात देखता है।\"",
+          "ru": "«Зелёный огонёк в конце её причала и есть тот свет, на который он смотрит каждую ночь».",
+          "bn": "\"ওর জেটির শেষ মাথার সবুজ আলোটাই সেই আলো, যেটা সে রোজ রাতে দেখে।\"",
+          "ur": "\"اس کی جیٹی کے سرے کی سبز روشنی ہی وہ روشنی ہے، جسے وہ ہر رات دیکھتا ہے۔\"",
+          "th": "\"ไฟสีเขียวที่ปลายท่าเรือบ้านเธอ คือแสงที่เขาเฝ้ามองทุกคืน\""
+        }
+      },
+      {
+        "id": "cl-gatsby-037",
+        "english": "\"All these parties are for her. He hopes that one night she will walk in.\"",
+        "turkish": "\"Bütün bu partiler onun için. Bir gece onun içeri gireceğini umuyor.\"",
+        "translations": {
+          "es-419": "—Todas esas fiestas son para ella. Espera que una noche ella entre por la puerta.",
+          "pt-BR": "— Todas essas festas são para ela. Ele espera que uma noite ela entre.",
+          "id": "\"Semua pesta ini untuknya. Dia berharap suatu malam Daisy akan datang.\"",
+          "ar": "«كلّ هذه الحفلات من أجلها. إنّه يأمل أن تدخل ذات ليلة».",
+          "vi": "\"Tất cả những bữa tiệc này là vì cô ấy. Anh ấy mong một đêm nào đó cô ấy sẽ bước vào.\"",
+          "hi": "\"ये सारी पार्टियाँ उसी के लिए हैं। उसे उम्मीद है कि किसी रात वह अंदर आ जाएगी।\"",
+          "ru": "«Все эти вечеринки — ради неё. Он надеется, что однажды вечером она войдёт».",
+          "bn": "\"এত পার্টি সব ওর জন্যই। সে আশা করে, কোনো এক রাতে ডেইজি এসে ঢুকবে।\"",
+          "ur": "\"یہ ساری پارٹیاں اسی کے لیے ہیں۔ اسے امید ہے کہ کسی رات وہ اندر آ جائے گی۔\"",
+          "th": "\"งานเลี้ยงทั้งหมดนี้ก็เพื่อเธอ เขาหวังว่าสักคืนหนึ่งเธอจะเดินเข้ามา\""
+        }
+      },
+      {
+        "id": "cl-gatsby-038",
+        "english": "\"But she never comes. So he wants you to invite her to your house for tea.\"",
+        "turkish": "\"Ama hiç gelmiyor. O yüzden onu çaya senin evine davet etmeni istiyor.\"",
+        "translations": {
+          "es-419": "—Pero ella nunca viene. Por eso quiere que tú la invites a tomar el té en tu casa.",
+          "pt-BR": "— Mas ela nunca vem. Por isso ele quer que você a convide para um chá na sua casa.",
+          "id": "\"Tapi dia tak pernah datang. Jadi dia ingin kau mengundang Daisy minum teh di rumahmu.\"",
+          "ar": "«لكنّها لا تأتي أبدًا. لذلك يريدك أن تدعوها إلى بيتك لشرب الشاي».",
+          "vi": "\"Nhưng cô ấy chẳng bao giờ đến. Vì vậy anh ấy muốn anh mời cô ấy đến nhà anh uống trà.\"",
+          "hi": "\"पर वह कभी नहीं आती। इसलिए वह चाहता है कि तुम उसे अपने घर चाय पर बुलाओ।\"",
+          "ru": "«Но она так и не приходит. Поэтому он хочет, чтобы ты пригласил её к себе на чай».",
+          "bn": "\"কিন্তু সে কখনো আসে না। তাই গ্যাটসবি চায়, তুমি ওকে তোমার বাড়িতে চায়ের নিমন্ত্রণ করো।\"",
+          "ur": "\"مگر وہ کبھی نہیں آتی۔ اس لیے وہ چاہتا ہے کہ تم اسے اپنے گھر چائے پر بلاؤ۔\"",
+          "th": "\"แต่เธอไม่เคยมา เขาจึงอยากให้คุณชวนเธอมาดื่มชาที่บ้านคุณ\""
+        }
+      },
+      {
+        "id": "cl-gatsby-039",
+        "english": "On the day of the tea, it rained hard.",
+        "turkish": "Çay günü bardaktan boşanırcasına yağmur yağdı.",
+        "translations": {
+          "es-419": "El día del té llovió muchísimo.",
+          "pt-BR": "No dia do chá, choveu forte.",
+          "id": "Pada hari minum teh itu, hujan turun dengan deras.",
+          "ar": "في يوم الشاي، هطل المطر بغزارة.",
+          "vi": "Vào ngày mời trà, trời mưa như trút.",
+          "hi": "चाय वाले दिन ज़ोर की बारिश हुई।",
+          "ru": "В день чаепития шёл сильный дождь.",
+          "bn": "চায়ের দিন খুব জোরে বৃষ্টি হল।",
+          "ur": "چائے والے دن زور کی بارش ہوئی۔",
+          "th": "วันนัดดื่มชา ฝนตกหนัก"
+        }
+      },
+      {
+        "id": "cl-gatsby-040",
+        "english": "Gatsby arrived an hour early, pale and nervous, in a white suit.",
+        "turkish": "Gatsby bir saat erken geldi; beyaz takım elbisesi içinde solgun ve gergindi.",
+        "translations": {
+          "es-419": "Gatsby llegó una hora antes, pálido y nervioso, con un traje blanco.",
+          "pt-BR": "Gatsby chegou uma hora antes, pálido e nervoso, num terno branco.",
+          "id": "Gatsby datang satu jam lebih awal, pucat dan gugup, dengan setelan putih.",
+          "ar": "وصل غاتسبي قبل الموعد بساعة، شاحبًا متوتّرًا، في بذلة بيضاء.",
+          "vi": "Gatsby đến sớm một tiếng, xanh xao và bồn chồn, trong bộ com-lê trắng.",
+          "hi": "गैट्सबी एक घंटा पहले आ गया, सफ़ेद सूट में, पीला और घबराया हुआ।",
+          "ru": "Гэтсби пришёл на час раньше, бледный и взволнованный, в белом костюме.",
+          "bn": "গ্যাটসবি এক ঘণ্টা আগেই এল, সাদা স্যুট পরে, ফ্যাকাশে আর উদ্বিগ্ন।",
+          "ur": "گیٹسبی ایک گھنٹہ پہلے آ گیا، سفید سوٹ میں، زرد اور گھبرایا ہوا۔",
+          "th": "แกตสบีมาถึงก่อนเวลาหนึ่งชั่วโมง ในชุดสูทสีขาว หน้าซีดและกระวนกระวาย"
+        }
+      },
+      {
+        "id": "cl-gatsby-041",
+        "english": "When Daisy came in, he almost knocked a clock off the shelf.",
+        "turkish": "Daisy içeri girdiğinde neredeyse raftaki saati düşürüyordu.",
+        "translations": {
+          "es-419": "Cuando Daisy entró, casi tiró un reloj de la repisa.",
+          "pt-BR": "Quando Daisy entrou, ele quase derrubou um relógio da prateleira.",
+          "id": "Ketika Daisy masuk, ia hampir menjatuhkan jam dari rak.",
+          "ar": "وحين دخلت ديزي، كاد يُسقط ساعة عن الرفّ.",
+          "vi": "Khi Daisy bước vào, anh ta suýt làm rơi chiếc đồng hồ trên kệ.",
+          "hi": "जब डेज़ी अंदर आई, तो उसने लगभग ताक़ पर रखी घड़ी गिरा दी।",
+          "ru": "Когда вошла Дейзи, он чуть не уронил часы с полки.",
+          "bn": "ডেইজি ঢুকতেই সে তাক থেকে একটা ঘড়ি প্রায় ফেলে দিচ্ছিল।",
+          "ur": "جب ڈیزی اندر آئی، تو اس نے تقریباً طاق پر رکھی گھڑی گرا دی۔",
+          "th": "พอเดซี่เดินเข้ามา เขาเกือบทำนาฬิกาบนหิ้งตกลงมา"
+        }
+      },
+      {
+        "id": "cl-gatsby-042",
+        "english": "At first, they could hardly speak. Then they both began to smile.",
+        "turkish": "Önce neredeyse konuşamadılar. Sonra ikisi de gülümsemeye başladı.",
+        "translations": {
+          "es-419": "Al principio, casi no podían hablar. Luego los dos empezaron a sonreír.",
+          "pt-BR": "No começo, mal conseguiam falar. Depois, os dois começaram a sorrir.",
+          "id": "Awalnya, mereka hampir tak bisa bicara. Lalu keduanya mulai tersenyum.",
+          "ar": "في البداية، بالكاد استطاعا الكلام. ثمّ بدأ كلاهما يبتسم.",
+          "vi": "Lúc đầu, họ gần như không nói nên lời. Rồi cả hai bắt đầu mỉm cười.",
+          "hi": "पहले तो वे मुश्किल से बोल पाए। फिर दोनों मुस्कुराने लगे।",
+          "ru": "Сначала они едва могли говорить. Потом оба начали улыбаться.",
+          "bn": "প্রথমে তারা প্রায় কথাই বলতে পারছিল না। তারপর দুজনেই হাসতে লাগল।",
+          "ur": "پہلے تو وہ مشکل سے بول پائے۔ پھر دونوں مسکرانے لگے۔",
+          "th": "ตอนแรกทั้งคู่แทบพูดอะไรไม่ออก แล้วทั้งสองก็เริ่มยิ้ม"
+        }
+      },
+      {
+        "id": "cl-gatsby-043",
+        "english": "Afterwards, Gatsby showed Daisy his great house, room after room.",
+        "turkish": "Sonra Gatsby, Daisy'ye büyük evini oda oda gezdirdi.",
+        "translations": {
+          "es-419": "Después, Gatsby le mostró a Daisy su gran casa, habitación por habitación.",
+          "pt-BR": "Depois, Gatsby mostrou a Daisy sua grande casa, cômodo por cômodo.",
+          "id": "Setelah itu, Gatsby mengajak Daisy melihat rumahnya yang besar, kamar demi kamar.",
+          "ar": "وبعد ذلك، أرى غاتسبي ديزي بيته الكبير، غرفة بعد غرفة.",
+          "vi": "Sau đó, Gatsby dẫn Daisy đi xem ngôi nhà lớn của mình, hết phòng này đến phòng khác.",
+          "hi": "उसके बाद गैट्सबी ने डेज़ी को अपना बड़ा घर, कमरा-दर-कमरा दिखाया।",
+          "ru": "Потом Гэтсби показал Дейзи свой большой дом, комнату за комнатой.",
+          "bn": "তারপর গ্যাটসবি ডেইজিকে তার বিরাট বাড়ি ঘুরে ঘুরে, এক ঘর থেকে আরেক ঘরে দেখাল।",
+          "ur": "اس کے بعد گیٹسبی نے ڈیزی کو اپنا بڑا گھر، کمرہ در کمرہ دکھایا۔",
+          "th": "จากนั้น แกตสบีพาเดซี่ชมบ้านหลังใหญ่ของเขาทีละห้อง"
+        }
+      },
+      {
+        "id": "cl-gatsby-044",
+        "english": "He looked at everything again through her eyes, as if nothing was real without her.",
+        "turkish": "Her şeye yeniden onun gözleriyle baktı, sanki o olmadan hiçbir şey gerçek değilmiş gibi.",
+        "translations": {
+          "es-419": "Lo miraba todo otra vez con los ojos de ella, como si nada fuera real sin ella.",
+          "pt-BR": "Ele olhava tudo de novo pelos olhos dela, como se nada fosse real sem ela.",
+          "id": "Ia memandang segalanya lagi lewat mata Daisy, seolah tak ada yang nyata tanpa dirinya.",
+          "ar": "كان ينظر إلى كلّ شيء من جديد بعينيها، كأنّ لا شيء حقيقيّ من دونها.",
+          "vi": "Anh ta nhìn lại mọi thứ qua đôi mắt của cô, như thể không có cô thì chẳng gì là thật.",
+          "hi": "वह हर चीज़ को फिर से उसकी आँखों से देख रहा था, मानो उसके बिना कुछ भी सच्चा न हो।",
+          "ru": "Он заново смотрел на всё её глазами, будто без неё ничто не было настоящим.",
+          "bn": "সে সবকিছু আবার ডেইজির চোখ দিয়ে দেখছিল, যেন ডেইজি ছাড়া কিছুই সত্যি নয়।",
+          "ur": "وہ ہر چیز کو پھر سے اس کی آنکھوں سے دیکھ رہا تھا، گویا اس کے بغیر کچھ بھی سچ نہ ہو۔",
+          "th": "เขามองทุกสิ่งอีกครั้งผ่านสายตาของเธอ ราวกับว่าไม่มีอะไรเป็นจริงหากไม่มีเธอ"
+        }
+      },
+      {
+        "id": "cl-gatsby-045",
+        "english": "In his bedroom, he opened a cupboard full of shirts and threw them on the bed.",
+        "turkish": "Yatak odasında gömleklerle dolu bir dolabı açtı ve onları yatağın üstüne attı.",
+        "translations": {
+          "es-419": "En su dormitorio, abrió un armario lleno de camisas y las arrojó sobre la cama.",
+          "pt-BR": "No quarto, abriu um armário cheio de camisas e as jogou sobre a cama.",
+          "id": "Di kamar tidurnya, ia membuka lemari penuh kemeja dan melemparkannya ke atas ranjang.",
+          "ar": "وفي غرفة نومه، فتح خزانة مليئة بالقمصان ورماها على السرير.",
+          "vi": "Trong phòng ngủ, anh ta mở một chiếc tủ đầy áo sơ mi rồi ném chúng lên giường.",
+          "hi": "अपने सोने के कमरे में उसने क़मीज़ों से भरी अलमारी खोली और उन्हें बिस्तर पर फेंकने लगा।",
+          "ru": "В спальне он открыл шкаф, полный рубашек, и стал бросать их на кровать.",
+          "bn": "শোবার ঘরে সে জামায় ভরা একটা আলমারি খুলে সেগুলো বিছানার ওপর ছুড়ে দিতে লাগল।",
+          "ur": "اپنے سونے کے کمرے میں اس نے قمیضوں سے بھری الماری کھولی اور انہیں بستر پر پھینکنے لگا۔",
+          "th": "ในห้องนอน เขาเปิดตู้ที่เต็มไปด้วยเสื้อเชิ้ต แล้วโยนมันลงบนเตียง"
+        }
+      },
+      {
+        "id": "cl-gatsby-046",
+        "english": "Silk shirts in every colour fell in a soft, bright pile.",
+        "turkish": "Her renkten ipek gömlekler yumuşak, parlak bir yığın halinde düştü.",
+        "translations": {
+          "es-419": "Camisas de seda de todos los colores cayeron en un montón suave y brillante.",
+          "pt-BR": "Camisas de seda de todas as cores caíram num monte macio e brilhante.",
+          "id": "Kemeja sutra beraneka warna jatuh membentuk tumpukan yang lembut dan cerah.",
+          "ar": "تساقطت قمصان الحرير من كلّ لون في كومة ناعمة لامعة.",
+          "vi": "Những chiếc áo lụa đủ màu rơi thành một đống mềm mại, rực rỡ.",
+          "hi": "हर रंग की रेशमी क़मीज़ें एक नरम, चमकीले ढेर में गिरती गईं।",
+          "ru": "Шёлковые рубашки всех цветов падали мягкой яркой грудой.",
+          "bn": "নানা রঙের রেশমি জামা নরম, ঝলমলে একটা স্তূপ হয়ে পড়ল।",
+          "ur": "ہر رنگ کی ریشمی قمیضیں ایک نرم، چمکیلے ڈھیر کی صورت گرتی گئیں۔",
+          "th": "เสื้อเชิ้ตผ้าไหมหลากสีร่วงลงมากองนุ่ม ๆ สดใส"
+        }
+      },
+      {
+        "id": "cl-gatsby-047",
+        "english": "Suddenly Daisy put her face in them and began to cry.",
+        "turkish": "Daisy birden yüzünü gömleklere gömüp ağlamaya başladı.",
+        "translations": {
+          "es-419": "De repente, Daisy hundió la cara en ellas y se puso a llorar.",
+          "pt-BR": "De repente, Daisy enterrou o rosto nelas e começou a chorar.",
+          "id": "Tiba-tiba Daisy membenamkan wajahnya di sana dan mulai menangis.",
+          "ar": "فجأة، دفنت ديزي وجهها فيها وبدأت تبكي.",
+          "vi": "Bỗng Daisy vùi mặt vào đống áo và bật khóc.",
+          "hi": "अचानक डेज़ी ने उनमें अपना चेहरा छिपा लिया और रोने लगी।",
+          "ru": "Вдруг Дейзи уткнулась в них лицом и заплакала.",
+          "bn": "হঠাৎ ডেইজি জামাগুলোর মধ্যে মুখ গুঁজে কাঁদতে শুরু করল।",
+          "ur": "اچانک ڈیزی نے ان میں اپنا چہرہ چھپا لیا اور رونے لگی۔",
+          "th": "ทันใดนั้นเดซี่ก็ซบหน้าลงบนกองเสื้อแล้วเริ่มร้องไห้"
+        }
+      },
+      {
+        "id": "cl-gatsby-048",
+        "english": "\"They're such beautiful shirts,\" she cried. \"I've never seen such beautiful shirts before.\"",
+        "turkish": "\"Ne güzel gömlekler,\" diye ağladı. \"Daha önce hiç böyle güzel gömlekler görmedim.\"",
+        "translations": {
+          "es-419": "—Son unas camisas tan hermosas —sollozó—. Nunca había visto camisas tan hermosas.",
+          "pt-BR": "— São camisas tão bonitas — chorou ela. — Nunca vi camisas tão bonitas antes.",
+          "id": "\"Kemeja-kemeja ini indah sekali,\" isaknya. \"Aku belum pernah melihat kemeja seindah ini.\"",
+          "ar": "بكت قائلة: «إنّها قمصان جميلة جدًّا. لم أرَ قطّ قمصانًا بهذا الجمال».",
+          "vi": "\"Những chiếc áo đẹp quá,\" cô nức nở. \"Em chưa bao giờ thấy những chiếc áo đẹp như thế.\"",
+          "hi": "वह रोते हुए बोली, \"कितनी सुंदर क़मीज़ें हैं। मैंने पहले कभी इतनी सुंदर क़मीज़ें नहीं देखीं।\"",
+          "ru": "«Какие красивые рубашки, — рыдала она. — Я никогда не видела таких красивых рубашек».",
+          "bn": "সে কাঁদতে কাঁদতে বলল, \"কী সুন্দর জামা! এত সুন্দর জামা আমি আগে কখনো দেখিনি।\"",
+          "ur": "وہ روتے ہوئے بولی، \"کتنی خوبصورت قمیضیں ہیں۔ میں نے پہلے کبھی اتنی خوبصورت قمیضیں نہیں دیکھیں۔\"",
+          "th": "\"เสื้อพวกนี้สวยเหลือเกิน\" เธอสะอื้น \"ฉันไม่เคยเห็นเสื้อที่สวยขนาดนี้มาก่อนเลย\""
+        }
+      },
+      {
+        "id": "cl-gatsby-049",
+        "english": "I thought she was crying for the five lost years, not for the shirts.",
+        "turkish": "Bence gömlekler için değil, kaybolan beş yıl için ağlıyordu.",
+        "translations": {
+          "es-419": "Pensé que lloraba por los cinco años perdidos, no por las camisas.",
+          "pt-BR": "Achei que ela chorava pelos cinco anos perdidos, não pelas camisas.",
+          "id": "Kupikir dia menangisi lima tahun yang hilang, bukan kemeja-kemeja itu.",
+          "ar": "ظننتُ أنّها تبكي على السنوات الخمس الضائعة، لا على القمصان.",
+          "vi": "Tôi nghĩ cô ấy khóc vì năm năm đã mất, chứ không phải vì những chiếc áo.",
+          "hi": "मुझे लगा कि वह क़मीज़ों के लिए नहीं, खोए हुए पाँच सालों के लिए रो रही थी।",
+          "ru": "Мне казалось, что она плачет о пяти потерянных годах, а не о рубашках.",
+          "bn": "আমার মনে হল, সে জামার জন্য নয়, হারিয়ে যাওয়া পাঁচটা বছরের জন্য কাঁদছে।",
+          "ur": "مجھے لگا کہ وہ قمیضوں کے لیے نہیں، کھوئے ہوئے پانچ سالوں کے لیے رو رہی تھی۔",
+          "th": "ผมคิดว่าเธอร้องไห้ให้กับห้าปีที่สูญเสียไป ไม่ใช่ให้กับเสื้อ"
+        }
+      },
+      {
+        "id": "cl-gatsby-050",
+        "english": "Outside, across the bay, the green light was shining on Daisy's dock.",
+        "turkish": "Dışarıda, körfezin karşısında, Daisy'nin iskelesinde yeşil ışık parlıyordu.",
+        "translations": {
+          "es-419": "Afuera, al otro lado de la bahía, la luz verde brillaba en el muelle de Daisy.",
+          "pt-BR": "Lá fora, do outro lado da baía, a luz verde brilhava no cais de Daisy.",
+          "id": "Di luar, di seberang teluk, lampu hijau bersinar di dermaga Daisy.",
+          "ar": "وفي الخارج، على الضفّة الأخرى من الخليج، كان الضوء الأخضر يلمع على رصيف ديزي.",
+          "vi": "Bên ngoài, phía bên kia vịnh, ngọn đèn xanh đang sáng trên cầu tàu nhà Daisy.",
+          "hi": "बाहर, खाड़ी के उस पार, डेज़ी की जेटी पर हरी बत्ती चमक रही थी।",
+          "ru": "Снаружи, за заливом, на причале Дейзи горел зелёный огонёк.",
+          "bn": "বাইরে, উপসাগরের ওপারে, ডেইজির জেটিতে সবুজ আলোটা জ্বলছিল।",
+          "ur": "باہر، خلیج کے اس پار، ڈیزی کی جیٹی پر سبز روشنی چمک رہی تھی۔",
+          "th": "ข้างนอก ฝั่งตรงข้ามอ่าว ไฟสีเขียวส่องสว่างอยู่ที่ท่าเรือบ้านเดซี่"
+        }
+      },
+      {
+        "id": "cl-gatsby-051",
+        "english": "Now that she was here, it was only a light again, not a dream.",
+        "turkish": "Artık Daisy buradaydı ve o ışık yeniden yalnızca bir ışıktı, bir rüya değil.",
+        "translations": {
+          "es-419": "Ahora que ella estaba aquí, volvía a ser solo una luz, no un sueño.",
+          "pt-BR": "Agora que ela estava ali, era de novo só uma luz, não um sonho.",
+          "id": "Kini setelah Daisy ada di sini, itu kembali hanya sebuah lampu, bukan mimpi.",
+          "ar": "والآن بعد أن صارت هنا، عاد مجرّد ضوء، لا حلمًا.",
+          "vi": "Giờ cô ấy đã ở đây, nó lại chỉ còn là một ngọn đèn, không còn là giấc mơ.",
+          "hi": "अब जब वह यहाँ थी, तो वह फिर बस एक बत्ती थी, कोई सपना नहीं।",
+          "ru": "Теперь, когда она была здесь, это снова был просто огонёк, а не мечта.",
+          "bn": "এখন ডেইজি এখানে, তাই সেটা আবার নিছক একটা আলো, কোনো স্বপ্ন নয়।",
+          "ur": "اب جب وہ یہاں تھی، تو وہ پھر بس ایک روشنی تھی، کوئی خواب نہیں۔",
+          "th": "เมื่อเธออยู่ที่นี่แล้ว มันก็กลับเป็นเพียงไฟดวงหนึ่ง ไม่ใช่ความฝันอีกต่อไป"
+        }
+      },
+      {
+        "id": "cl-gatsby-052",
+        "english": "All summer, Daisy came secretly to Gatsby's house, and the parties stopped.",
+        "turkish": "Bütün yaz Daisy gizlice Gatsby'nin evine geldi ve partiler sona erdi.",
+        "translations": {
+          "es-419": "Todo el verano, Daisy fue en secreto a la casa de Gatsby, y las fiestas terminaron.",
+          "pt-BR": "O verão inteiro, Daisy foi em segredo à casa de Gatsby, e as festas acabaram.",
+          "id": "Sepanjang musim panas, Daisy diam-diam datang ke rumah Gatsby, dan pesta-pesta pun berhenti.",
+          "ar": "وطوال الصيف، كانت ديزي تأتي سرًّا إلى بيت غاتسبي، وتوقّفت الحفلات.",
+          "vi": "Suốt mùa hè, Daisy lén đến nhà Gatsby, và những bữa tiệc chấm dứt.",
+          "hi": "पूरी गर्मी डेज़ी चुपके से गैट्सबी के घर आती रही, और पार्टियाँ बंद हो गईं।",
+          "ru": "Всё лето Дейзи тайком приезжала к Гэтсби, и вечеринки прекратились.",
+          "bn": "সারা গ্রীষ্ম ডেইজি লুকিয়ে গ্যাটসবির বাড়ি আসত, আর পার্টিগুলো বন্ধ হয়ে গেল।",
+          "ur": "ساری گرمی ڈیزی چپکے سے گیٹسبی کے گھر آتی رہی، اور پارٹیاں بند ہو گئیں۔",
+          "th": "ตลอดฤดูร้อน เดซี่แอบมาที่บ้านของแกตสบี และงานเลี้ยงก็ยุติลง"
+        }
+      },
+      {
+        "id": "cl-gatsby-053",
+        "english": "But Gatsby wanted more. He wanted Daisy to tell Tom that she had never loved him.",
+        "turkish": "Ama Gatsby daha fazlasını istiyordu. Daisy'nin Tom'a onu hiç sevmediğini söylemesini istiyordu.",
+        "translations": {
+          "es-419": "Pero Gatsby quería más. Quería que Daisy le dijera a Tom que nunca lo había amado.",
+          "pt-BR": "Mas Gatsby queria mais. Queria que Daisy dissesse a Tom que nunca o tinha amado.",
+          "id": "Tetapi Gatsby menginginkan lebih. Ia ingin Daisy mengatakan kepada Tom bahwa ia tak pernah mencintainya.",
+          "ar": "لكنّ غاتسبي أراد المزيد. أراد أن تقول ديزي لتوم إنّها لم تحبّه قطّ.",
+          "vi": "Nhưng Gatsby muốn hơn thế. Anh ta muốn Daisy nói với Tom rằng cô chưa bao giờ yêu hắn.",
+          "hi": "पर गैट्सबी और चाहता था। वह चाहता था कि डेज़ी टॉम से कहे कि उसने उससे कभी प्यार नहीं किया।",
+          "ru": "Но Гэтсби хотел большего. Он хотел, чтобы Дейзи сказала Тому, что никогда его не любила.",
+          "bn": "কিন্তু গ্যাটসবি আরও চাইত। সে চাইত, ডেইজি টমকে বলুক যে সে তাকে কখনো ভালোবাসেনি।",
+          "ur": "مگر گیٹسبی اور چاہتا تھا۔ وہ چاہتا تھا کہ ڈیزی ٹام سے کہے کہ اس نے اس سے کبھی محبت نہیں کی۔",
+          "th": "แต่แกตสบีต้องการมากกว่านั้น เขาอยากให้เดซี่บอกทอมว่าเธอไม่เคยรักเขาเลย"
+        }
+      },
+      {
+        "id": "cl-gatsby-054",
+        "english": "\"You can't repeat the past,\" I told him.",
+        "turkish": "\"Geçmişi tekrarlayamazsın,\" dedim ona.",
+        "translations": {
+          "es-419": "—No se puede repetir el pasado —le dije.",
+          "pt-BR": "— Não dá para repetir o passado — eu disse a ele.",
+          "id": "\"Kau tak bisa mengulang masa lalu,\" kataku kepadanya.",
+          "ar": "قلتُ له: «لا يمكنك أن تعيد الماضي».",
+          "vi": "\"Anh không thể lặp lại quá khứ đâu,\" tôi bảo anh ta.",
+          "hi": "मैंने उससे कहा, \"तुम अतीत को दोहरा नहीं सकते।\"",
+          "ru": "«Прошлое не повторить», — сказал я ему.",
+          "bn": "আমি তাকে বললাম, \"অতীতকে আর ফিরিয়ে আনা যায় না।\"",
+          "ur": "میں نے اس سے کہا، \"تم ماضی کو دہرا نہیں سکتے۔\"",
+          "th": "\"คุณย้อนอดีตไม่ได้หรอก\" ผมบอกเขา"
+        }
+      },
+      {
+        "id": "cl-gatsby-055",
+        "english": "\"Can't repeat the past? Why of course you can!\" he said.",
+        "turkish": "\"Geçmişi tekrarlayamaz mıyım? Elbette tekrarlayabilirim!\" dedi.",
+        "translations": {
+          "es-419": "—¿Que no se puede repetir el pasado? ¡Claro que se puede! —dijo.",
+          "pt-BR": "— Não dá para repetir o passado? Claro que dá! — disse ele.",
+          "id": "\"Tak bisa mengulang masa lalu? Tentu saja bisa!\" katanya.",
+          "ar": "قال: «لا يمكن إعادة الماضي؟ بل يمكن بالطبع!»",
+          "vi": "\"Không thể lặp lại quá khứ ư? Tất nhiên là có thể chứ!\" anh ta nói.",
+          "hi": "उसने कहा, \"अतीत को दोहरा नहीं सकते? बेशक दोहरा सकते हैं!\"",
+          "ru": "«Прошлое не повторить? Ну конечно же можно!» — сказал он.",
+          "bn": "সে বলল, \"অতীত ফিরিয়ে আনা যায় না? অবশ্যই যায়!\"",
+          "ur": "اس نے کہا، \"ماضی کو دہرا نہیں سکتے؟ بے شک دہرا سکتے ہیں!\"",
+          "th": "\"ย้อนอดีตไม่ได้หรือ ได้สิ แน่นอนว่าได้!\" เขาตอบ"
+        }
+      },
+      {
+        "id": "cl-gatsby-056",
+        "english": "He wanted everything to be just the way it was before, in Louisville.",
+        "turkish": "Her şeyin tıpkı eskisi gibi, Louisville'deki gibi olmasını istiyordu.",
+        "translations": {
+          "es-419": "Quería que todo fuera exactamente como antes, en Louisville.",
+          "pt-BR": "Ele queria que tudo fosse exatamente como antes, em Louisville.",
+          "id": "Ia ingin segalanya persis seperti dulu, di Louisville.",
+          "ar": "كان يريد أن يعود كلّ شيء تمامًا كما كان من قبل، في لويفيل.",
+          "vi": "Anh ta muốn mọi thứ trở lại y như trước kia, hồi ở Louisville.",
+          "hi": "वह चाहता था कि सब कुछ ठीक वैसा ही हो जाए जैसा पहले लुइविल में था।",
+          "ru": "Он хотел, чтобы всё было точно так же, как раньше, в Луисвилле.",
+          "bn": "সে চাইত সবকিছু ঠিক আগের মতো হোক, লুইভিলে যেমন ছিল।",
+          "ur": "وہ چاہتا تھا کہ سب کچھ بالکل ویسا ہی ہو جائے جیسا پہلے لوئیول میں تھا۔",
+          "th": "เขาอยากให้ทุกอย่างกลับเป็นเหมือนเดิมทุกประการ เหมือนตอนอยู่ที่หลุยส์วิลล์"
+        }
+      },
+      {
+        "id": "cl-gatsby-057",
+        "english": "On the hottest day of the summer, we all drove into New York.",
+        "turkish": "Yazın en sıcak gününde hep birlikte arabayla New York'a gittik.",
+        "translations": {
+          "es-419": "El día más caluroso del verano, fuimos todos en auto a Nueva York.",
+          "pt-BR": "No dia mais quente do verão, fomos todos de carro para Nova York.",
+          "id": "Pada hari terpanas musim panas itu, kami semua bermobil ke New York.",
+          "ar": "وفي أشدّ أيّام الصيف حرًّا، ذهبنا جميعًا بالسيّارة إلى نيويورك.",
+          "vi": "Vào ngày nóng nhất mùa hè, tất cả chúng tôi lái xe vào New York.",
+          "hi": "गर्मी के सबसे गर्म दिन हम सब गाड़ी से न्यूयॉर्क गए।",
+          "ru": "В самый жаркий день лета мы все поехали в Нью-Йорк.",
+          "bn": "গ্রীষ্মের সবচেয়ে গরম দিনে আমরা সবাই গাড়ি চালিয়ে নিউ ইয়র্কে গেলাম।",
+          "ur": "گرمی کے سب سے گرم دن ہم سب گاڑی سے نیویارک گئے۔",
+          "th": "ในวันที่ร้อนที่สุดของฤดูร้อน เราทุกคนขับรถเข้านิวยอร์ก"
+        }
+      },
+      {
+        "id": "cl-gatsby-058",
+        "english": "In a hotel room, Tom and Gatsby finally fought over Daisy.",
+        "turkish": "Bir otel odasında Tom ile Gatsby sonunda Daisy yüzünden kavgaya tutuştu.",
+        "translations": {
+          "es-419": "En una habitación de hotel, Tom y Gatsby por fin se pelearon por Daisy.",
+          "pt-BR": "Num quarto de hotel, Tom e Gatsby finalmente brigaram por causa de Daisy.",
+          "id": "Di sebuah kamar hotel, Tom dan Gatsby akhirnya bertengkar memperebutkan Daisy.",
+          "ar": "وفي غرفة فندق، تشاجر توم وغاتسبي أخيرًا على ديزي.",
+          "vi": "Trong một phòng khách sạn, Tom và Gatsby cuối cùng cũng tranh cãi vì Daisy.",
+          "hi": "एक होटल के कमरे में टॉम और गैट्सबी आख़िरकार डेज़ी को लेकर लड़ पड़े।",
+          "ru": "В гостиничном номере Том и Гэтсби наконец поссорились из-за Дейзи.",
+          "bn": "একটা হোটেলের ঘরে টম আর গ্যাটসবি শেষ পর্যন্ত ডেইজিকে নিয়ে ঝগড়া বাধাল।",
+          "ur": "ایک ہوٹل کے کمرے میں ٹام اور گیٹسبی آخرکار ڈیزی پر لڑ پڑے۔",
+          "th": "ในห้องพักโรงแรม ทอมกับแกตสบีก็ทะเลาะกันเรื่องเดซี่ในที่สุด"
+        }
+      },
+      {
+        "id": "cl-gatsby-059",
+        "english": "\"Your wife never loved you,\" Gatsby told Tom. \"She loves me.\"",
+        "turkish": "\"Karın seni hiç sevmedi,\" dedi Gatsby, Tom'a. \"O beni seviyor.\"",
+        "translations": {
+          "es-419": "—Su esposa nunca lo amó —le dijo Gatsby a Tom—. Me ama a mí.",
+          "pt-BR": "— Sua esposa nunca amou você — disse Gatsby a Tom. — Ela me ama.",
+          "id": "\"Istrimu tak pernah mencintaimu,\" kata Gatsby kepada Tom. \"Dia mencintaiku.\"",
+          "ar": "قال غاتسبي لتوم: «زوجتك لم تحبّك قطّ. إنّها تحبّني أنا».",
+          "vi": "\"Vợ anh chưa bao giờ yêu anh,\" Gatsby nói với Tom. \"Cô ấy yêu tôi.\"",
+          "hi": "गैट्सबी ने टॉम से कहा, \"तुम्हारी पत्नी ने तुमसे कभी प्यार नहीं किया। वह मुझसे प्यार करती है।\"",
+          "ru": "«Ваша жена никогда вас не любила, — сказал Гэтсби Тому. — Она любит меня».",
+          "bn": "গ্যাটসবি টমকে বলল, \"তোমার বউ তোমাকে কখনো ভালোবাসেনি। ও আমাকে ভালোবাসে।\"",
+          "ur": "گیٹسبی نے ٹام سے کہا، \"تمہاری بیوی نے تم سے کبھی محبت نہیں کی۔ وہ مجھ سے محبت کرتی ہے۔\"",
+          "th": "\"ภรรยาคุณไม่เคยรักคุณเลย\" แกตสบีบอกทอม \"เธอรักผม\""
+        }
+      },
+      {
+        "id": "cl-gatsby-060",
+        "english": "Tom told the truth about Gatsby's money: it came from illegal business.",
+        "turkish": "Tom, Gatsby'nin parasıyla ilgili gerçeği söyledi: Para yasa dışı işlerden geliyordu.",
+        "translations": {
+          "es-419": "Tom contó la verdad sobre el dinero de Gatsby: venía de negocios ilegales.",
+          "pt-BR": "Tom contou a verdade sobre o dinheiro de Gatsby: vinha de negócios ilegais.",
+          "id": "Tom membongkar kebenaran tentang uang Gatsby: uang itu berasal dari bisnis ilegal.",
+          "ar": "كشف توم الحقيقة عن مال غاتسبي: لقد جاء من تجارة غير قانونيّة.",
+          "vi": "Tom nói ra sự thật về tiền của Gatsby: nó đến từ những việc làm ăn phi pháp.",
+          "hi": "टॉम ने गैट्सबी के पैसों का सच बता दिया: वे ग़ैरक़ानूनी धंधे से आए थे।",
+          "ru": "Том рассказал правду о деньгах Гэтсби: они были нажиты незаконными делами.",
+          "bn": "টম গ্যাটসবির টাকার আসল কথা ফাঁস করে দিল: সেগুলো এসেছে বেআইনি কারবার থেকে।",
+          "ur": "ٹام نے گیٹسبی کے پیسوں کا سچ بتا دیا: وہ غیر قانونی دھندے سے آئے تھے۔",
+          "th": "ทอมเปิดโปงความจริงเรื่องเงินของแกตสบี ว่ามันมาจากธุรกิจผิดกฎหมาย"
+        }
+      },
+      {
+        "id": "cl-gatsby-061",
+        "english": "Daisy looked from one man to the other. She could not say she had never loved Tom.",
+        "turkish": "Daisy bir adama, bir ötekine baktı. Tom'u hiç sevmediğini söyleyemedi.",
+        "translations": {
+          "es-419": "Daisy miró a uno y a otro. No pudo decir que nunca había amado a Tom.",
+          "pt-BR": "Daisy olhou de um para o outro. Não conseguiu dizer que nunca tinha amado Tom.",
+          "id": "Daisy menatap kedua pria itu bergantian. Ia tak sanggup berkata bahwa ia tak pernah mencintai Tom.",
+          "ar": "نقلت ديزي نظرها بين الرجلين. لم تستطع أن تقول إنّها لم تحبّ توم قطّ.",
+          "vi": "Daisy nhìn hết người này đến người kia. Cô không thể nói rằng mình chưa bao giờ yêu Tom.",
+          "hi": "डेज़ी ने एक आदमी से दूसरे की ओर देखा। वह यह नहीं कह सकी कि उसने टॉम से कभी प्यार नहीं किया।",
+          "ru": "Дейзи переводила взгляд с одного на другого. Она не смогла сказать, что никогда не любила Тома.",
+          "bn": "ডেইজি একবার এর দিকে, একবার ওর দিকে তাকাল। সে বলতে পারল না যে টমকে কখনো ভালোবাসেনি।",
+          "ur": "ڈیزی نے ایک آدمی سے دوسرے کی طرف دیکھا۔ وہ یہ نہیں کہہ سکی کہ اس نے ٹام سے کبھی محبت نہیں کی۔",
+          "th": "เดซี่มองชายคนหนึ่งสลับกับอีกคน เธอพูดไม่ได้ว่าไม่เคยรักทอมเลย"
+        }
+      },
+      {
+        "id": "cl-gatsby-062",
+        "english": "On the way home, Daisy drove Gatsby's big yellow car, with Gatsby beside her.",
+        "turkish": "Eve dönerken Gatsby'nin büyük sarı arabasını Daisy kullanıyordu, Gatsby de yanındaydı.",
+        "translations": {
+          "es-419": "De regreso a casa, Daisy manejaba el gran auto amarillo de Gatsby, con Gatsby a su lado.",
+          "pt-BR": "No caminho de volta, Daisy dirigia o grande carro amarelo de Gatsby, com Gatsby ao lado.",
+          "id": "Dalam perjalanan pulang, Daisy menyetir mobil kuning besar milik Gatsby, dengan Gatsby di sampingnya.",
+          "ar": "وفي طريق العودة، كانت ديزي تقود سيّارة غاتسبي الصفراء الكبيرة، وغاتسبي بجانبها.",
+          "vi": "Trên đường về, Daisy lái chiếc xe lớn màu vàng của Gatsby, còn Gatsby ngồi bên cạnh.",
+          "hi": "घर लौटते हुए डेज़ी गैट्सबी की बड़ी पीली गाड़ी चला रही थी, और गैट्सबी उसके बगल में बैठा था।",
+          "ru": "По дороге домой Дейзи вела большую жёлтую машину Гэтсби, а Гэтсби сидел рядом.",
+          "bn": "ফেরার পথে ডেইজি গ্যাটসবির বড় হলুদ গাড়িটা চালাচ্ছিল, পাশে বসে ছিল গ্যাটসবি।",
+          "ur": "گھر لوٹتے ہوئے ڈیزی گیٹسبی کی بڑی پیلی گاڑی چلا رہی تھی، اور گیٹسبی اس کے برابر بیٹھا تھا۔",
+          "th": "ระหว่างทางกลับ เดซี่เป็นคนขับรถคันใหญ่สีเหลืองของแกตสบี โดยมีแกตสบีนั่งข้าง ๆ"
+        }
+      },
+      {
+        "id": "cl-gatsby-063",
+        "english": "Near the garage of Myrtle's husband, a woman suddenly ran into the road.",
+        "turkish": "Myrtle'ın kocasının garajının yakınında bir kadın birden yola fırladı.",
+        "translations": {
+          "es-419": "Cerca del taller del esposo de Myrtle, una mujer corrió de repente a la carretera.",
+          "pt-BR": "Perto da oficina do marido de Myrtle, uma mulher correu de repente para a estrada.",
+          "id": "Di dekat bengkel suami Myrtle, seorang wanita tiba-tiba berlari ke jalan.",
+          "ar": "قرب ورشة زوج ميرتل، ركضت امرأة فجأة إلى الطريق.",
+          "vi": "Gần xưởng sửa xe của chồng Myrtle, một người phụ nữ bỗng lao ra đường.",
+          "hi": "मर्टल के पति के गैराज के पास अचानक एक औरत सड़क पर दौड़ आई।",
+          "ru": "У гаража мужа Миртл на дорогу вдруг выбежала женщина.",
+          "bn": "মার্টলের স্বামীর গ্যারেজের কাছে হঠাৎ এক মহিলা ছুটে রাস্তায় এসে পড়ল।",
+          "ur": "مرٹل کے شوہر کے گیراج کے پاس اچانک ایک عورت دوڑ کر سڑک پر آ گئی۔",
+          "th": "ใกล้อู่ซ่อมรถของสามีเมอร์เทิล มีผู้หญิงคนหนึ่งวิ่งออกมากลางถนนกะทันหัน"
+        }
+      },
+      {
+        "id": "cl-gatsby-064",
+        "english": "It was Myrtle. She thought the yellow car was Tom's.",
+        "turkish": "Myrtle'dı. Sarı arabanın Tom'un olduğunu sanmıştı.",
+        "translations": {
+          "es-419": "Era Myrtle. Creía que el auto amarillo era el de Tom.",
+          "pt-BR": "Era Myrtle. Ela achou que o carro amarelo era de Tom.",
+          "id": "Itu Myrtle. Ia mengira mobil kuning itu milik Tom.",
+          "ar": "كانت ميرتل، وقد ظنّت أنّ السيّارة الصفراء سيّارة توم.",
+          "vi": "Đó là Myrtle. Chị ta tưởng chiếc xe vàng là của Tom.",
+          "hi": "वह मर्टल थी। उसे लगा कि पीली गाड़ी टॉम की है।",
+          "ru": "Это была Миртл. Она думала, что жёлтая машина принадлежит Тому.",
+          "bn": "সে ছিল মার্টল। সে ভেবেছিল হলুদ গাড়িটা টমের।",
+          "ur": "وہ مرٹل تھی۔ اسے لگا کہ پیلی گاڑی ٹام کی ہے۔",
+          "th": "นั่นคือเมอร์เทิล เธอคิดว่ารถสีเหลืองเป็นของทอม"
+        }
+      },
+      {
+        "id": "cl-gatsby-065",
+        "english": "The car hit her, and she died in the road.",
+        "turkish": "Araba ona çarptı ve kadın yolda öldü.",
+        "translations": {
+          "es-419": "El auto la atropelló, y ella murió en la carretera.",
+          "pt-BR": "O carro a atropelou, e ela morreu na estrada.",
+          "id": "Mobil itu menabraknya, dan ia tewas di jalan.",
+          "ar": "صدمتها السيّارة، فماتت على الطريق.",
+          "vi": "Chiếc xe đâm vào chị ta, và chị ta chết ngay giữa đường.",
+          "hi": "गाड़ी ने उसे टक्कर मार दी, और वह सड़क पर ही मर गई।",
+          "ru": "Машина сбила её, и она умерла на дороге.",
+          "bn": "গাড়িটা তাকে ধাক্কা দিল, আর সে রাস্তাতেই মারা গেল।",
+          "ur": "گاڑی نے اسے ٹکر مار دی، اور وہ سڑک پر ہی مر گئی۔",
+          "th": "รถชนเธอ และเธอเสียชีวิตอยู่กลางถนน"
+        }
+      },
+      {
+        "id": "cl-gatsby-066",
+        "english": "People ran out of the garage, screaming.",
+        "turkish": "İnsanlar çığlık atarak garajdan dışarı koştu.",
+        "translations": {
+          "es-419": "La gente salió corriendo del taller, gritando.",
+          "pt-BR": "As pessoas saíram correndo da oficina, gritando.",
+          "id": "Orang-orang berlarian keluar dari bengkel sambil menjerit.",
+          "ar": "خرج الناس من الورشة راكضين يصرخون.",
+          "vi": "Mọi người chạy ra khỏi xưởng, la hét.",
+          "hi": "लोग चीख़ते हुए गैराज से बाहर भागे।",
+          "ru": "Люди с криками выбежали из гаража.",
+          "bn": "লোকজন চিৎকার করতে করতে গ্যারেজ থেকে ছুটে বেরোল।",
+          "ur": "لوگ چیختے ہوئے گیراج سے باہر بھاگے۔",
+          "th": "ผู้คนวิ่งกรูออกมาจากอู่พลางกรีดร้อง"
+        }
+      },
+      {
+        "id": "cl-gatsby-067",
+        "english": "Daisy did not stop. She drove on into the dark.",
+        "turkish": "Daisy durmadı. Karanlığın içine doğru sürmeye devam etti.",
+        "translations": {
+          "es-419": "Daisy no se detuvo. Siguió manejando en la oscuridad.",
+          "pt-BR": "Daisy não parou. Continuou dirigindo pela escuridão.",
+          "id": "Daisy tidak berhenti. Ia terus menyetir ke dalam gelap.",
+          "ar": "لم تتوقّف ديزي، بل واصلت القيادة في الظلام.",
+          "vi": "Daisy không dừng lại. Cô tiếp tục lái vào bóng tối.",
+          "hi": "डेज़ी नहीं रुकी। वह अँधेरे में गाड़ी चलाती रही।",
+          "ru": "Дейзи не остановилась. Она поехала дальше, в темноту.",
+          "bn": "ডেইজি থামল না। সে অন্ধকারের মধ্যে গাড়ি চালিয়ে চলে গেল।",
+          "ur": "ڈیزی نہیں رکی۔ وہ اندھیرے میں گاڑی چلاتی رہی۔",
+          "th": "เดซี่ไม่หยุดรถ เธอขับต่อไปในความมืด"
+        }
+      },
+      {
+        "id": "cl-gatsby-068",
+        "english": "Later that night, I found Gatsby outside Daisy's house.",
+        "turkish": "O gece daha sonra Gatsby'yi Daisy'nin evinin önünde buldum.",
+        "translations": {
+          "es-419": "Más tarde esa noche, encontré a Gatsby frente a la casa de Daisy.",
+          "pt-BR": "Mais tarde naquela noite, encontrei Gatsby do lado de fora da casa de Daisy.",
+          "id": "Malam itu juga, aku menemukan Gatsby di luar rumah Daisy.",
+          "ar": "وفي وقت لاحق من تلك الليلة، وجدتُ غاتسبي خارج بيت ديزي.",
+          "vi": "Khuya đêm đó, tôi thấy Gatsby đứng bên ngoài nhà Daisy.",
+          "hi": "उसी रात बाद में मैंने गैट्सबी को डेज़ी के घर के बाहर पाया।",
+          "ru": "Позже той ночью я нашёл Гэтсби возле дома Дейзи.",
+          "bn": "সেই রাতে পরে গ্যাটসবিকে ডেইজির বাড়ির বাইরে পেলাম।",
+          "ur": "اسی رات بعد میں میں نے گیٹسبی کو ڈیزی کے گھر کے باہر پایا۔",
+          "th": "ดึกคืนนั้น ผมพบแกตสบียืนอยู่หน้าบ้านของเดซี่"
+        }
+      },
+      {
+        "id": "cl-gatsby-069",
+        "english": "\"It was an accident,\" he said. \"I will say that I was driving.\"",
+        "turkish": "\"Bir kazaydı,\" dedi. \"Arabayı benim kullandığımı söyleyeceğim.\"",
+        "translations": {
+          "es-419": "—Fue un accidente —dijo—. Diré que yo iba manejando.",
+          "pt-BR": "— Foi um acidente — disse ele. — Vou dizer que era eu quem dirigia.",
+          "id": "\"Itu kecelakaan,\" katanya. \"Aku akan bilang bahwa akulah yang menyetir.\"",
+          "ar": "قال: «كان حادثًا. سأقول إنّني كنتُ أقود».",
+          "vi": "\"Đó là một tai nạn,\" anh ta nói. \"Tôi sẽ nói là tôi lái xe.\"",
+          "hi": "उसने कहा, \"वह एक दुर्घटना थी। मैं कहूँगा कि गाड़ी मैं चला रहा था।\"",
+          "ru": "«Это был несчастный случай, — сказал он. — Я скажу, что за рулём был я».",
+          "bn": "সে বলল, \"ওটা একটা দুর্ঘটনা। আমি বলব, গাড়িটা আমিই চালাচ্ছিলাম।\"",
+          "ur": "اس نے کہا، \"وہ ایک حادثہ تھا۔ میں کہوں گا کہ گاڑی میں چلا رہا تھا۔\"",
+          "th": "\"มันเป็นอุบัติเหตุ\" เขาพูด \"ผมจะบอกว่าผมเป็นคนขับเอง\""
+        }
+      },
+      {
+        "id": "cl-gatsby-070",
+        "english": "Through the window, I saw Tom and Daisy at the kitchen table, talking quietly together.",
+        "turkish": "Pencereden Tom ile Daisy'yi mutfak masasında, sessizce konuşurken gördüm.",
+        "translations": {
+          "es-419": "Por la ventana, vi a Tom y a Daisy en la mesa de la cocina, hablando en voz baja.",
+          "pt-BR": "Pela janela, vi Tom e Daisy à mesa da cozinha, conversando baixinho.",
+          "id": "Lewat jendela, aku melihat Tom dan Daisy di meja dapur, bercakap pelan berdua.",
+          "ar": "ومن النافذة، رأيتُ توم وديزي إلى طاولة المطبخ يتحدّثان بهدوء.",
+          "vi": "Qua cửa sổ, tôi thấy Tom và Daisy ngồi bên bàn bếp, khẽ khàng nói chuyện với nhau.",
+          "hi": "खिड़की से मैंने टॉम और डेज़ी को रसोई की मेज़ पर धीरे-धीरे बातें करते देखा।",
+          "ru": "В окно я увидел Тома и Дейзи за кухонным столом: они тихо разговаривали.",
+          "bn": "জানালা দিয়ে দেখলাম, টম আর ডেইজি রান্নাঘরের টেবিলে বসে চুপিচুপি কথা বলছে।",
+          "ur": "کھڑکی سے میں نے ٹام اور ڈیزی کو باورچی خانے کی میز پر آہستہ آہستہ باتیں کرتے دیکھا۔",
+          "th": "ผ่านหน้าต่าง ผมเห็นทอมกับเดซี่นั่งที่โต๊ะในครัว คุยกันเบา ๆ"
+        }
+      },
+      {
+        "id": "cl-gatsby-071",
+        "english": "He stood there all night, waiting for a sign from her. She never came.",
+        "turkish": "Bütün gece orada durdu, ondan bir işaret bekledi. Daisy hiç gelmedi.",
+        "translations": {
+          "es-419": "Se quedó allí toda la noche, esperando una señal de ella. Ella nunca salió.",
+          "pt-BR": "Ficou ali a noite toda, esperando um sinal dela. Ela nunca apareceu.",
+          "id": "Ia berdiri di sana semalaman, menunggu tanda dari Daisy. Daisy tak pernah datang.",
+          "ar": "وقف هناك طوال الليل ينتظر منها إشارة، لكنّها لم تأتِ أبدًا.",
+          "vi": "Anh ta đứng đó suốt đêm, chờ một dấu hiệu từ cô. Cô không bao giờ ra.",
+          "hi": "वह रात भर वहीं खड़ा रहा, उसके किसी इशारे का इंतज़ार करता रहा। वह कभी नहीं आई।",
+          "ru": "Он простоял там всю ночь, ожидая от неё знака. Она так и не вышла.",
+          "bn": "সে সারারাত সেখানে দাঁড়িয়ে ডেইজির একটা ইশারার অপেক্ষা করল। ডেইজি আর এল না।",
+          "ur": "وہ رات بھر وہیں کھڑا رہا، اس کے کسی اشارے کا انتظار کرتا رہا۔ وہ کبھی نہیں آئی۔",
+          "th": "เขายืนรออยู่ตรงนั้นทั้งคืน รอสัญญาณจากเธอ แต่เธอไม่เคยออกมาเลย"
+        }
+      },
+      {
+        "id": "cl-gatsby-072",
+        "english": "The next day, Tom told Myrtle's husband who owned the yellow car.",
+        "turkish": "Ertesi gün Tom, sarı arabanın kime ait olduğunu Myrtle'ın kocasına söyledi.",
+        "translations": {
+          "es-419": "Al día siguiente, Tom le dijo al esposo de Myrtle de quién era el auto amarillo.",
+          "pt-BR": "No dia seguinte, Tom contou ao marido de Myrtle de quem era o carro amarelo.",
+          "id": "Keesokan harinya, Tom memberi tahu suami Myrtle siapa pemilik mobil kuning itu.",
+          "ar": "وفي اليوم التالي، أخبر توم زوج ميرتل بصاحب السيّارة الصفراء.",
+          "vi": "Ngày hôm sau, Tom nói cho chồng Myrtle biết ai là chủ chiếc xe vàng.",
+          "hi": "अगले दिन टॉम ने मर्टल के पति को बता दिया कि पीली गाड़ी किसकी है।",
+          "ru": "На следующий день Том сказал мужу Миртл, чья это была жёлтая машина.",
+          "bn": "পরের দিন টম মার্টলের স্বামীকে বলে দিল হলুদ গাড়িটা কার।",
+          "ur": "اگلے دن ٹام نے مرٹل کے شوہر کو بتا دیا کہ پیلی گاڑی کس کی ہے۔",
+          "th": "วันรุ่งขึ้น ทอมบอกสามีของเมอร์เทิลว่ารถสีเหลืองเป็นของใคร"
+        }
+      },
+      {
+        "id": "cl-gatsby-073",
+        "english": "That afternoon, Gatsby went for a swim in his pool, for the first time that summer.",
+        "turkish": "O öğleden sonra Gatsby, o yaz ilk kez havuzunda yüzmeye gitti.",
+        "translations": {
+          "es-419": "Esa tarde, Gatsby fue a nadar a su piscina, por primera vez en todo el verano.",
+          "pt-BR": "Naquela tarde, Gatsby foi nadar na piscina, pela primeira vez naquele verão.",
+          "id": "Sore itu, Gatsby berenang di kolamnya, untuk pertama kalinya musim panas itu.",
+          "ar": "وبعد ظهر ذلك اليوم، نزل غاتسبي ليسبح في حوضه، لأوّل مرّة في ذلك الصيف.",
+          "vi": "Chiều hôm ấy, Gatsby xuống bể bơi nhà mình, lần đầu tiên trong mùa hè đó.",
+          "hi": "उस दोपहर गैट्सबी उस गर्मी में पहली बार अपने पूल में तैरने गया।",
+          "ru": "В тот день Гэтсби впервые за всё лето пошёл поплавать в своём бассейне.",
+          "bn": "সেই বিকেলে গ্যাটসবি সেই গ্রীষ্মে প্রথমবার তার সুইমিং পুলে সাঁতার কাটতে গেল।",
+          "ur": "اس سہ پہر گیٹسبی اس گرمی میں پہلی بار اپنے پول میں تیرنے گیا۔",
+          "th": "บ่ายวันนั้น แกตสบีลงว่ายน้ำในสระของเขาเป็นครั้งแรกของฤดูร้อนนั้น"
+        }
+      },
+      {
+        "id": "cl-gatsby-074",
+        "english": "Myrtle's husband came with a gun, shot him in the water, and then shot himself.",
+        "turkish": "Myrtle'ın kocası elinde silahla geldi, onu suyun içinde vurdu, sonra da kendini vurdu.",
+        "translations": {
+          "es-419": "El esposo de Myrtle llegó con un arma, le disparó en el agua y luego se disparó a sí mismo.",
+          "pt-BR": "O marido de Myrtle chegou com uma arma, atirou nele na água e depois atirou em si mesmo.",
+          "id": "Suami Myrtle datang membawa pistol, menembaknya di dalam air, lalu menembak dirinya sendiri.",
+          "ar": "جاء زوج ميرتل بمسدّس، فأطلق عليه النار في الماء، ثمّ أطلق النار على نفسه.",
+          "vi": "Chồng Myrtle mang súng đến, bắn anh ta ngay dưới nước, rồi tự bắn mình.",
+          "hi": "मर्टल का पति बंदूक़ लेकर आया, उसे पानी में गोली मारी, और फिर ख़ुद को भी गोली मार ली।",
+          "ru": "Муж Миртл пришёл с пистолетом, застрелил его в воде, а потом застрелился сам.",
+          "bn": "মার্টলের স্বামী বন্দুক নিয়ে এসে তাকে জলের মধ্যেই গুলি করল, তারপর নিজেকেও গুলি করল।",
+          "ur": "مرٹل کا شوہر بندوق لے کر آیا، اسے پانی میں گولی ماری، اور پھر خود کو بھی گولی مار لی۔",
+          "th": "สามีของเมอร์เทิลถือปืนมา ยิงเขาในน้ำ แล้วยิงตัวเองตาย"
+        }
+      },
+      {
+        "id": "cl-gatsby-075",
+        "english": "Hundreds of guests had come to Gatsby's parties, but almost nobody came to his funeral.",
+        "turkish": "Gatsby'nin partilerine yüzlerce konuk gelmişti, ama cenazesine neredeyse kimse gelmedi.",
+        "translations": {
+          "es-419": "Cientos de invitados habían ido a las fiestas de Gatsby, pero casi nadie fue a su funeral.",
+          "pt-BR": "Centenas de convidados tinham ido às festas de Gatsby, mas quase ninguém foi ao enterro dele.",
+          "id": "Ratusan tamu pernah datang ke pesta Gatsby, tetapi hampir tak ada yang datang ke pemakamannya.",
+          "ar": "جاء مئات الضيوف إلى حفلات غاتسبي، لكنّ أحدًا تقريبًا لم يحضر جنازته.",
+          "vi": "Hàng trăm vị khách từng đến các bữa tiệc của Gatsby, nhưng hầu như không ai đến đám tang anh.",
+          "hi": "गैट्सबी की पार्टियों में सैकड़ों मेहमान आए थे, पर उसके जनाज़े में लगभग कोई नहीं आया।",
+          "ru": "На вечеринки Гэтсби приходили сотни гостей, но на его похороны почти никто не пришёл.",
+          "bn": "গ্যাটসবির পার্টিতে শয়ে শয়ে অতিথি এসেছিল, কিন্তু তার শেষকৃত্যে প্রায় কেউই এল না।",
+          "ur": "گیٹسبی کی پارٹیوں میں سینکڑوں مہمان آئے تھے، مگر اس کے جنازے میں تقریباً کوئی نہیں آیا۔",
+          "th": "แขกหลายร้อยคนเคยมางานเลี้ยงของแกตสบี แต่แทบไม่มีใครมางานศพของเขาเลย"
+        }
+      },
+      {
+        "id": "cl-gatsby-076",
+        "english": "Only his old father came from the West, proud of his son's great house.",
+        "turkish": "Yalnızca yaşlı babası, oğlunun görkemli evinden gururla, Batı'dan geldi.",
+        "translations": {
+          "es-419": "Solo vino su anciano padre desde el Oeste, orgulloso de la gran casa de su hijo.",
+          "pt-BR": "Só o velho pai veio do Oeste, orgulhoso da grande casa do filho.",
+          "id": "Hanya ayahnya yang sudah tua datang dari Barat, bangga akan rumah besar putranya.",
+          "ar": "لم يأتِ إلّا أبوه العجوز من الغرب، فخورًا ببيت ابنه الكبير.",
+          "vi": "Chỉ có người cha già từ miền Tây đến, tự hào về ngôi nhà lớn của con trai.",
+          "hi": "सिर्फ़ उसके बूढ़े पिता पश्चिम से आए, अपने बेटे के बड़े घर पर गर्व करते हुए।",
+          "ru": "Приехал только его старый отец с Запада, гордый большим домом сына.",
+          "bn": "শুধু তার বৃদ্ধ বাবা পশ্চিম থেকে এলেন, ছেলের বিরাট বাড়ি নিয়ে গর্বিত।",
+          "ur": "صرف اس کے بوڑھے والد مغرب سے آئے، اپنے بیٹے کے بڑے گھر پر فخر کرتے ہوئے۔",
+          "th": "มีเพียงพ่อชราของเขาที่มาจากทางตะวันตก ภูมิใจในบ้านหลังใหญ่ของลูกชาย"
+        }
+      },
+      {
+        "id": "cl-gatsby-077",
+        "english": "Daisy did not even send flowers. She and Tom simply went away on a trip.",
+        "turkish": "Daisy çiçek bile göndermedi. Tom'la birlikte öylece bir yolculuğa çıkıp gittiler.",
+        "translations": {
+          "es-419": "Daisy ni siquiera mandó flores. Ella y Tom simplemente se fueron de viaje.",
+          "pt-BR": "Daisy nem mandou flores. Ela e Tom simplesmente foram viajar.",
+          "id": "Daisy bahkan tidak mengirim bunga. Ia dan Tom pergi begitu saja untuk berlibur.",
+          "ar": "لم ترسل ديزي حتّى زهورًا. بل سافرت هي وتوم ببساطة.",
+          "vi": "Daisy thậm chí không gửi hoa. Cô và Tom cứ thế đi du lịch xa.",
+          "hi": "डेज़ी ने फूल तक नहीं भेजे। वह और टॉम बस घूमने चले गए।",
+          "ru": "Дейзи даже не прислала цветов. Они с Томом просто уехали путешествовать.",
+          "bn": "ডেইজি একটা ফুলও পাঠাল না। সে আর টম স্রেফ বেড়াতে চলে গেল।",
+          "ur": "ڈیزی نے پھول تک نہیں بھیجے۔ وہ اور ٹام بس سیر کو چلے گئے۔",
+          "th": "เดซี่ไม่ได้ส่งดอกไม้มาด้วยซ้ำ เธอกับทอมแค่ออกเดินทางไปเที่ยว"
+        }
+      },
+      {
+        "id": "cl-gatsby-078",
+        "english": "They were careless people. They broke things and people, and then let others clean up.",
+        "turkish": "Onlar umursamaz insanlardı. Eşyaları ve insanları kırıp geçirir, sonra temizliği başkalarına bırakırlardı.",
+        "translations": {
+          "es-419": "Eran gente descuidada. Rompían cosas y personas, y luego dejaban que otros limpiaran.",
+          "pt-BR": "Eram pessoas descuidadas. Quebravam coisas e pessoas, e depois deixavam os outros limparem.",
+          "id": "Mereka orang-orang yang ceroboh. Mereka menghancurkan barang dan manusia, lalu membiarkan orang lain membereskannya.",
+          "ar": "كانا شخصين مستهترين. يحطّمان الأشياء والناس، ثمّ يتركان الآخرين ينظّفون.",
+          "vi": "Họ là những người vô tâm. Họ đập vỡ đồ vật và cả con người, rồi để người khác dọn dẹp.",
+          "hi": "वे लापरवाह लोग थे। वे चीज़ें और लोग तोड़ देते, फिर सफ़ाई दूसरों पर छोड़ देते।",
+          "ru": "Они были беспечными людьми. Они ломали вещи и людей, а потом оставляли другим убирать.",
+          "bn": "ওরা ছিল বেপরোয়া মানুষ। জিনিস আর মানুষ ভেঙে চুরমার করত, তারপর অন্যদের ওপর সাফ করার ভার ছেড়ে দিত।",
+          "ur": "وہ لاپروا لوگ تھے۔ وہ چیزیں اور لوگ توڑ دیتے، پھر صفائی دوسروں پر چھوڑ دیتے۔",
+          "th": "พวกเขาเป็นคนที่ไม่แยแส ทำลายข้าวของและผู้คน แล้วปล่อยให้คนอื่นตามเก็บกวาด"
+        }
+      },
+      {
+        "id": "cl-gatsby-079",
+        "english": "I decided to leave the East and go back home to the West.",
+        "turkish": "Doğu'dan ayrılıp evime, Batı'ya dönmeye karar verdim.",
+        "translations": {
+          "es-419": "Decidí dejar el Este y volver a casa, al Oeste.",
+          "pt-BR": "Decidi deixar o Leste e voltar para casa, no Oeste.",
+          "id": "Aku memutuskan meninggalkan Timur dan pulang ke Barat.",
+          "ar": "قرّرتُ أن أغادر الشرق وأعود إلى بيتي في الغرب.",
+          "vi": "Tôi quyết định rời miền Đông và trở về nhà ở miền Tây.",
+          "hi": "मैंने पूरब छोड़कर पश्चिम में अपने घर लौटने का फ़ैसला किया।",
+          "ru": "Я решил уехать с Востока и вернуться домой, на Запад.",
+          "bn": "আমি পূর্ব ছেড়ে পশ্চিমে নিজের বাড়ি ফিরে যাওয়ার সিদ্ধান্ত নিলাম।",
+          "ur": "میں نے مشرق چھوڑ کر مغرب میں اپنے گھر لوٹنے کا فیصلہ کیا۔",
+          "th": "ผมตัดสินใจทิ้งฝั่งตะวันออก แล้วกลับบ้านทางตะวันตก"
+        }
+      },
+      {
+        "id": "cl-gatsby-080",
+        "english": "On my last night, I sat on Gatsby's empty beach and looked at the bay.",
+        "turkish": "Son gecemde Gatsby'nin boş kumsalına oturup körfeze baktım.",
+        "translations": {
+          "es-419": "En mi última noche, me senté en la playa vacía de Gatsby y miré la bahía.",
+          "pt-BR": "Na minha última noite, sentei-me na praia vazia de Gatsby e olhei para a baía.",
+          "id": "Pada malam terakhirku, aku duduk di pantai Gatsby yang sepi dan memandang teluk.",
+          "ar": "وفي ليلتي الأخيرة، جلستُ على شاطئ غاتسبي الخالي ونظرتُ إلى الخليج.",
+          "vi": "Đêm cuối cùng, tôi ngồi trên bãi biển vắng của Gatsby và nhìn ra vịnh.",
+          "hi": "अपनी आख़िरी रात मैं गैट्सबी के सुनसान तट पर बैठा और खाड़ी को देखता रहा।",
+          "ru": "В последнюю ночь я сидел на пустом пляже Гэтсби и смотрел на залив.",
+          "bn": "শেষ রাতে আমি গ্যাটসবির ফাঁকা সৈকতে বসে উপসাগরের দিকে তাকিয়ে রইলাম।",
+          "ur": "اپنی آخری رات میں گیٹسبی کے سنسان ساحل پر بیٹھا اور خلیج کو دیکھتا رہا۔",
+          "th": "คืนสุดท้าย ผมนั่งอยู่บนชายหาดที่ว่างเปล่าของแกตสบี มองออกไปที่อ่าว"
+        }
+      },
+      {
+        "id": "cl-gatsby-081",
+        "english": "Gatsby believed in the green light, in a happy future that kept moving away.",
+        "turkish": "Gatsby yeşil ışığa, sürekli uzaklaşan mutlu bir geleceğe inanmıştı.",
+        "translations": {
+          "es-419": "Gatsby creía en la luz verde, en un futuro feliz que siempre se alejaba.",
+          "pt-BR": "Gatsby acreditava na luz verde, num futuro feliz que sempre se afastava.",
+          "id": "Gatsby percaya pada lampu hijau itu, pada masa depan bahagia yang terus menjauh.",
+          "ar": "آمن غاتسبي بالضوء الأخضر، بمستقبل سعيد يظلّ يبتعد.",
+          "vi": "Gatsby đã tin vào ngọn đèn xanh, vào một tương lai hạnh phúc cứ mãi lùi xa.",
+          "hi": "गैट्सबी हरी बत्ती में विश्वास करता था, एक ख़ुशहाल भविष्य में, जो लगातार दूर होता जाता था।",
+          "ru": "Гэтсби верил в зелёный огонёк, в счастливое будущее, которое всё время уходило вдаль.",
+          "bn": "গ্যাটসবি বিশ্বাস করত সেই সবুজ আলোয়, এক সুখী ভবিষ্যতে, যা কেবলই দূরে সরে যেত।",
+          "ur": "گیٹسبی سبز روشنی پر یقین رکھتا تھا، ایک خوش حال مستقبل پر، جو مسلسل دور ہوتا جاتا تھا۔",
+          "th": "แกตสบีเชื่อในแสงไฟสีเขียว เชื่อในอนาคตที่มีความสุขซึ่งเอาแต่ถอยห่างออกไป"
+        }
+      },
+      {
+        "id": "cl-gatsby-082",
+        "english": "So we keep rowing, like boats against the current, carried back again and again into the past.",
+        "turkish": "Böylece kürek çekmeye devam ederiz; akıntıya karşı giden kayıklar gibi, durmadan geçmişe geri sürükleniriz.",
+        "translations": {
+          "es-419": "Así seguimos remando, como botes contra la corriente, arrastrados una y otra vez hacia el pasado.",
+          "pt-BR": "Assim seguimos remando, como barcos contra a corrente, levados de novo e de novo para o passado.",
+          "id": "Maka kita terus mendayung, seperti perahu melawan arus, terbawa kembali lagi dan lagi ke masa lalu.",
+          "ar": "وهكذا نواصل التجديف، كقوارب تسير عكس التيّار، يعيدها الماء مرّة بعد مرّة إلى الماضي.",
+          "vi": "Thế là ta cứ chèo mãi, như những con thuyền ngược dòng, bị đẩy lùi hết lần này đến lần khác về quá khứ.",
+          "hi": "तो हम नाव खेते रहते हैं, धारा के ख़िलाफ़ चलती नावों की तरह, जो बार-बार अतीत की ओर लौटा दी जाती हैं।",
+          "ru": "Так мы и плывём, словно лодки против течения, которое снова и снова уносит нас в прошлое.",
+          "bn": "তাই আমরা দাঁড় টেনে চলি, স্রোতের উল্টো দিকে চলা নৌকার মতো, যাদের বারবার অতীতের দিকে ফিরিয়ে নিয়ে যায়।",
+          "ur": "سو ہم کشتی کھیتے رہتے ہیں، دھارے کے خلاف چلتی کشتیوں کی طرح، جو بار بار ماضی کی طرف لوٹا دی جاتی ہیں۔",
+          "th": "เราจึงพายต่อไป ดั่งเรือที่ทวนกระแสน้ำ ถูกพัดย้อนกลับสู่อดีตครั้งแล้วครั้งเล่า"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-great-gatsby-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "A poor man who becomes a famous singer",
+          "A rich man who tries to win back the woman he loved five years before",
+          "A young man who sells bonds to his cousin",
+          "A woman who opens a car garage"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-great-gatsby-q2",
+        "kind": "detail",
+        "prompt": "What was the green light?",
+        "options": [
+          "A light on a ship",
+          "The light at the end of Daisy's dock",
+          "A lamp in Nick's house",
+          "A traffic light in New York"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-great-gatsby-q3",
+        "kind": "detail",
+        "prompt": "Who was driving the car when Myrtle died?",
+        "options": [
+          "Gatsby",
+          "Tom",
+          "Daisy",
+          "Nick"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "classic-great-gatsby-q4",
+        "kind": "inference",
+        "prompt": "Why did Daisy cry over the shirts?",
+        "options": [
+          "She did not like the colours",
+          "She was crying for the years she and Gatsby had lost",
+          "Tom had the same shirts",
+          "She was very ill"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-great-gatsby-q5",
+        "kind": "inference",
+        "prompt": "Why does Nick call Tom and Daisy \"careless people\"?",
+        "options": [
+          "They forgot his birthday",
+          "They hurt other people and left others to deal with it",
+          "They drove too slowly",
+          "They lost all their money"
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  "words": [
+    {
+      "id": "party",
+      "word": "party",
+      "translation": "parti",
+      "pronunciation": "/ˈpɑːti/",
+      "example": "We are having a birthday party on Saturday.",
+      "translations": {
+        "es-419": "fiesta",
+        "pt-BR": "festa",
+        "id": "pesta",
+        "ar": "حفلة",
+        "vi": "bữa tiệc",
+        "hi": "पार्टी",
+        "ru": "вечеринка, праздник",
+        "bn": "পার্টি, অনুষ্ঠান",
+        "ur": "پارٹی",
+        "th": "งานเลี้ยง, ปาร์ตี้"
+      }
+    },
+    {
+      "id": "guests",
+      "word": "guests",
+      "translation": "konuklar, misafirler",
+      "pronunciation": "/ɡests/",
+      "example": "The guests arrived at eight and stayed until midnight.",
+      "translations": {
+        "es-419": "invitados",
+        "pt-BR": "convidados",
+        "id": "tamu-tamu",
+        "ar": "ضيوف",
+        "vi": "khách khứa",
+        "hi": "मेहमान",
+        "ru": "гости",
+        "bn": "অতিথিরা",
+        "ur": "مہمان",
+        "th": "แขก"
+      }
+    },
+    {
+      "id": "green",
+      "word": "green",
+      "translation": "yeşil",
+      "pronunciation": "/ɡriːn/",
+      "example": "In spring the trees are bright green.",
+      "translations": {
+        "es-419": "verde",
+        "pt-BR": "verde",
+        "id": "hijau",
+        "ar": "أخضر",
+        "vi": "màu xanh lá",
+        "hi": "हरा",
+        "ru": "зелёный",
+        "bn": "সবুজ",
+        "ur": "سبز، ہرا",
+        "th": "สีเขียว"
+      }
+    },
+    {
+      "id": "light",
+      "word": "light",
+      "translation": "ışık",
+      "pronunciation": "/laɪt/",
+      "example": "Please turn on the light; it is dark in here.",
+      "translations": {
+        "es-419": "luz",
+        "pt-BR": "luz",
+        "id": "lampu, cahaya",
+        "ar": "ضوء",
+        "vi": "ánh sáng, đèn",
+        "hi": "रोशनी, बत्ती",
+        "ru": "свет, огонёк",
+        "bn": "আলো",
+        "ur": "روشنی",
+        "th": "แสง, ไฟ"
+      }
+    },
+    {
+      "id": "dream",
+      "word": "dream",
+      "translation": "rüya, hayal",
+      "pronunciation": "/driːm/",
+      "example": "Her dream is to become a doctor.",
+      "translations": {
+        "es-419": "sueño",
+        "pt-BR": "sonho",
+        "id": "mimpi",
+        "ar": "حلم",
+        "vi": "giấc mơ",
+        "hi": "सपना",
+        "ru": "мечта, сон",
+        "bn": "স্বপ্ন",
+        "ur": "خواب",
+        "th": "ความฝัน"
+      }
+    },
+    {
+      "id": "past",
+      "word": "past",
+      "translation": "geçmiş",
+      "pronunciation": "/pɑːst/",
+      "example": "Try to learn from the past.",
+      "translations": {
+        "es-419": "pasado",
+        "pt-BR": "passado",
+        "id": "masa lalu",
+        "ar": "الماضي",
+        "vi": "quá khứ",
+        "hi": "अतीत",
+        "ru": "прошлое",
+        "bn": "অতীত",
+        "ur": "ماضی",
+        "th": "อดีต"
+      }
+    },
+    {
+      "id": "accident",
+      "word": "accident",
+      "translation": "kaza",
+      "pronunciation": "/ˈæksɪdənt/",
+      "example": "He broke his arm in a car accident.",
+      "translations": {
+        "es-419": "accidente",
+        "pt-BR": "acidente",
+        "id": "kecelakaan",
+        "ar": "حادث",
+        "vi": "tai nạn",
+        "hi": "दुर्घटना",
+        "ru": "несчастный случай, авария",
+        "bn": "দুর্ঘটনা",
+        "ur": "حادثہ",
+        "th": "อุบัติเหตุ"
+      }
+    },
+    {
+      "id": "careless",
+      "word": "careless",
+      "translation": "dikkatsiz, umursamaz",
+      "pronunciation": "/ˈkeələs/",
+      "example": "He was careless and lost his keys again.",
+      "translations": {
+        "es-419": "descuidado",
+        "pt-BR": "descuidado",
+        "id": "ceroboh",
+        "ar": "مستهتر، مهمل",
+        "vi": "vô tâm, cẩu thả",
+        "hi": "लापरवाह",
+        "ru": "беспечный, небрежный",
+        "bn": "বেপরোয়া, অসাবধান",
+        "ur": "لاپروا",
+        "th": "ไม่ระมัดระวัง, ไม่แยแส"
+      }
+    },
+    {
+      "id": "rich",
+      "word": "rich",
+      "translation": "zengin",
+      "pronunciation": "/rɪtʃ/",
+      "example": "They find a table full of rich food.",
+      "translations": {
+        "es-419": "rico",
+        "pt-BR": "rico",
+        "id": "kaya, lezat",
+        "ar": "غني؛ دسم",
+        "vi": "giàu có; (đồ ăn) thịnh soạn",
+        "hi": "अमीर; बढ़िया (खाना)",
+        "ru": "богатый; жирный, изысканный (о еде)",
+        "bn": "ধনী; দামি, ভারী (খাবার)",
+        "ur": "امیر؛ مرغن (کھانا)",
+        "th": "ร่ำรวย; (อาหาร) อุดมสมบูรณ์"
+      }
+    },
+    {
+      "id": "money",
+      "word": "money",
+      "translation": "para",
+      "pronunciation": "/ˈmʌni/",
+      "example": "She thinks about the money she can earn.",
+      "translations": {
+        "es-419": "dinero",
+        "pt-BR": "dinheiro",
+        "id": "uang",
+        "ar": "مال",
+        "vi": "tiền",
+        "hi": "पैसा",
+        "ru": "деньги",
+        "bn": "টাকা",
+        "ur": "پیسہ، رقم",
+        "th": "เงิน"
+      }
+    },
+    {
+      "id": "shirts",
+      "word": "shirts",
+      "translation": "gömlekler",
+      "pronunciation": "/ʃɜːts/",
+      "example": "The wife made tiny shirts, coats, and trousers.",
+      "translations": {
+        "es-419": "camisas",
+        "pt-BR": "camisas",
+        "id": "kemeja",
+        "ar": "قمصان",
+        "vi": "áo sơ mi",
+        "hi": "कमीज़ें",
+        "ru": "рубашки",
+        "bn": "জামা, শার্ট",
+        "ur": "قمیصیں",
+        "th": "เสื้อ"
+      }
+    },
+    {
+      "id": "truth",
+      "word": "truth",
+      "translation": "gerçek",
+      "pronunciation": "/truːθ/",
+      "example": "A liar can lose people's trust, even when he tells the truth.",
+      "translations": {
+        "es-419": "verdad",
+        "pt-BR": "verdade",
+        "id": "kebenaran",
+        "ar": "الحقيقة",
+        "vi": "sự thật",
+        "hi": "सच",
+        "ru": "правда",
+        "bn": "সত্য",
+        "ur": "سچ",
+        "th": "ความจริง"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "party",
+    "guests",
+    "green",
+    "light",
+    "dream",
+    "past",
+    "accident",
+    "careless",
+    "rich",
+    "money",
+    "shirts",
+    "truth"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-great-gatsby-q1",
+      "sentenceIds": [
+        "cl-gatsby-030",
+        "cl-gatsby-037"
+      ],
+      "rationale": "Gatsby builds his whole life around getting Daisy back."
+    },
+    {
+      "questionId": "classic-great-gatsby-q2",
+      "sentenceIds": [
+        "cl-gatsby-036"
+      ],
+      "rationale": "Jordan explains that the light Gatsby watches is on Daisy's dock."
+    },
+    {
+      "questionId": "classic-great-gatsby-q3",
+      "sentenceIds": [
+        "cl-gatsby-062",
+        "cl-gatsby-067"
+      ],
+      "rationale": "Daisy was at the wheel; Gatsby only planned to say he was driving."
+    },
+    {
+      "questionId": "classic-great-gatsby-q4",
+      "sentenceIds": [
+        "cl-gatsby-049"
+      ],
+      "rationale": "Nick believes the tears are for the five years apart, not for the shirts."
+    },
+    {
+      "questionId": "classic-great-gatsby-q5",
+      "sentenceIds": [
+        "cl-gatsby-078",
+        "cl-gatsby-077"
+      ],
+      "rationale": "After the deaths they simply leave, without taking any responsibility."
+    }
+  ],
+  "publicationBlockers": [
+    "Owner (oguz) approval of the English text, questions and translations required.",
+    "Native-speaker language review not done.",
+    "Cover artwork and asset mapping pending.",
+    "Source text hash pending (Gutenberg not reachable from the cloud session).",
+    "Publisher story creation, validation and publication pending."
+  ]
+}
