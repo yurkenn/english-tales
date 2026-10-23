@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <!-- Generated from values: python tooling/sync_turkish_resources.py -->
+    <string name="content_message_language_incomplete">Bu dilin bazı çevirileri henüz cihazına indirilmedi. Hikâyeyi İngilizce okuyabilir, bağlantın olduğunda yeniden deneyebilirsin.</string>
+    <string name="guest_chest_transfer_note">Misafir görev sandığı bonusları misafir alanında kalır; hesabına veya lig puanına aktarılmaz.</string>
+</resources>

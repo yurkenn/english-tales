@@ -13,7 +13,7 @@
     <string name="league_failed_short">Liga tidak dapat dimuat.</string>
     <string name="league_retry">Coba lagi</string>
     <string name="league_opted_out">Kamu tidak ikut liga. Ketuk untuk bergabung.</string>
-    <string name="league_opted_out_screen">Kamu tidak ikut liga. Kamu bisa bergabung lagi di bawah.</string>
+    <string name="league_opted_out_screen">Kamu tidak ikut liga. Untuk bergabung, aktifkan \"Tampilkan aku di liga\" di bawah.</string>
     <string name="league_join_hint">Selesaikan satu permainan atau cerita minggu ini untuk ikut liga.</string>
     <string name="league_rank">Peringkat %1$d · %2$d XP</string>
     <string name="league_to_next">%1$d XP lagi untuk naik satu peringkat</string>
@@ -35,7 +35,7 @@
     <string name="league_name_hint">Namamu di liga adalah \"%1$s\". Email kamu tidak pernah ditampilkan.</string>
     <string name="league_change_name">Ubah namamu</string>
     <string name="league_show_me">Tampilkan aku di liga</string>
-    <string name="league_show_me_text">Jika dimatikan, kamu keluar dari grup minggu ini dan namamu tidak terlihat.</string>
+    <string name="league_show_me_text">Nonaktif sampai kamu menyalakannya. Selama aktif, nama tampilanmu dan XP minggu ini terlihat oleh anggota grup ligamu dan teman-temanmu. Matikan kapan saja untuk menyembunyikannya.</string>
     <string name="league_rank_up">Kamu naik ke peringkat %1$d di liga!</string>
     <string name="league_xp_gain">+%1$d XP · Peringkat %2$d di liga</string>
     <string name="league_reminder_gap">Kamu peringkat %1$d di liga, %2$d XP lagi untuk naik.</string>
@@ -54,7 +54,7 @@
     <string name="friends_tab">Teman</string>
     <string name="friends_failed">Daftar teman tidak dapat dimuat.</string>
     <string name="friends_code_title">Kode undanganmu</string>
-    <string name="friends_code_text">Bagikan kodemu; setelah teman menambahkannya, kalian bersaing dengan XP minggu ini.</string>
+    <string name="friends_code_text">Bagikan kodemu; setelah teman menambahkannya, kalian bersaing dengan XP minggu ini. Teman hanya melihat nama dan XP-mu selama kamu ikut liga.</string>
     <string name="friends_code_create">Buat kode undangan</string>
     <string name="friends_share">Bagikan</string>
     <string name="friends_share_text">Ayo bersaing denganku di English Tales! Unduh aplikasinya dan masukkan kode %1$s di tab Teman: %2$s</string>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="content_message_language_incomplete">لم تُنزَّل بعض الترجمات بهذه اللغة بعد. يمكنك قراءة القصة بالإنجليزية والمحاولة مجددًا عند الاتصال.</string>
+    <string name="guest_chest_transfer_note">تبقى مكافآت صناديق مهام الضيف في مساحة الضيف، ولا تنتقل إلى حسابك أو نقاط الدوري.</string>
+</resources>

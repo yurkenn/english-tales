@@ -13,7 +13,7 @@
     <string name="league_failed_short">Lig şu an yüklenemedi.</string>
     <string name="league_retry">Tekrar dene</string>
     <string name="league_opted_out">Ligde görünmüyorsun. Katılmak için dokun.</string>
-    <string name="league_opted_out_screen">Ligde görünmüyorsun. Aşağıdan yeniden katılabilirsin.</string>
+    <string name="league_opted_out_screen">Ligde görünmüyorsun. Katılmak için aşağıdaki \"Ligde görün\" ayarını aç.</string>
     <string name="league_join_hint">Bu hafta bir oyun ya da hikâye bitir, lige katıl.</string>
     <string name="league_rank">%1$d. sıradasın · %2$d XP</string>
     <string name="league_to_next">Bir üst sıraya %1$d XP kaldı</string>
@@ -35,7 +35,7 @@
     <string name="league_name_hint">Ligde adın \"%1$s\" olarak görünür. E-posta adresin hiç kimseye gösterilmez.</string>
     <string name="league_change_name">Adını değiştir</string>
     <string name="league_show_me">Ligde görün</string>
-    <string name="league_show_me_text">Kapatırsan bu haftanın grubundan çıkarsın ve adın kimseye görünmez.</string>
+    <string name="league_show_me_text">Sen açana kadar kapalıdır. Açıkken adın ve bu haftaki XP\'n lig grubundaki öğrencilere ve arkadaşlarına görünür. İstediğin an kapatıp gizleyebilirsin.</string>
     <string name="league_rank_up">Ligde %1$d. sıraya yükseldin!</string>
     <string name="league_xp_gain">+%1$d XP · Ligde %2$d. sıradasın</string>
     <string name="league_reminder_gap">Ligde %1$d. sıradasın, bir üst sıraya %2$d XP kaldı.</string>
@@ -54,7 +54,7 @@
     <string name="friends_tab">Arkadaşlar</string>
     <string name="friends_failed">Arkadaş listesi yüklenemedi.</string>
     <string name="friends_code_title">Davet kodun</string>
-    <string name="friends_code_text">Kodunu paylaş; arkadaşın eklediğinde bu haftanın XP\'sinde birlikte yarışırsınız.</string>
+    <string name="friends_code_text">Kodunu paylaş; arkadaşın eklediğinde bu haftanın XP\'sinde birlikte yarışırsınız. Adın ve XP\'n arkadaşlarına yalnızca ligdeyken görünür.</string>
     <string name="friends_code_create">Davet kodu oluştur</string>
     <string name="friends_share">Paylaş</string>
     <string name="friends_share_text">English Tales\'te benimle yarış! Uygulamayı indir, Arkadaşlar sekmesinde %1$s kodunu gir: %2$s</string>

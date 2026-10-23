@@ -242,6 +242,49 @@ class AccountSwitchTest {
             assertFalse(rpcs.toString(),"save_learning_preferences" in rpcs)
         }
     }
+    @Test fun queuedChestSyncReturnsATicketForTheRerunRatherThanTheOlderRun() {
+        val hold=java.util.concurrent.atomic.AtomicBoolean(false)
+        val requests=java.util.concurrent.atomic.AtomicInteger()
+        val first=CountDownLatch(1);val releaseFirst=CountDownLatch(1)
+        val second=CountDownLatch(1);val releaseSecond=CountDownLatch(1)
+        try {
+            exercise({LearningAccountSync(LearningSyncTransport {rpc,_,token ->
+                if(rpc=="get_learning_snapshot" && hold.get()) when(requests.incrementAndGet()) {
+                    1 -> {first.countDown();check(releaseFirst.await(10,TimeUnit.SECONDS))}
+                    2 -> {second.countDown();check(releaseSecond.await(10,TimeUnit.SECONDS))}
+                }
+                if(rpc=="get_learning_snapshot") remote(token.removePrefix("token-")) else JSONObject().put("applied",true)
+            },"https://fixture.supabase.co")}) {vm,_ ->
+                vm.signIn("a@example.invalid","fixture-password")
+                await(20) {vm.account.value.syncCompleted>0 && !vm.account.value.sync.running}
+                val before=vm.account.value.syncCompleted
+                hold.set(true);vm.syncNow();assertTrue(first.await(5,TimeUnit.SECONDS))
+                val ticket=checkNotNull(vm.syncForChest())
+                releaseFirst.countDown();assertTrue(second.await(10,TimeUnit.SECONDS))
+                assertTrue("The older run must not complete the chest ticket",vm.account.value.syncCompleted<ticket)
+                releaseSecond.countDown()
+                await(20) {vm.account.value.syncCompleted>=ticket && !vm.account.value.sync.running}
+            }
+        } finally {releaseFirst.countDown();releaseSecond.countDown()}
+    }
+
+    @Test fun everyFastOrFailedSyncPublishesADurableCompletionIdentity() {
+        val fail=java.util.concurrent.atomic.AtomicBoolean(false)
+        exercise({LearningAccountSync(LearningSyncTransport {rpc,_,token ->
+            if(fail.get()) throw java.io.IOException("fixture offline")
+            if(rpc=="get_learning_snapshot") remote(token.removePrefix("token-")) else JSONObject().put("applied",true)
+        },"https://fixture.supabase.co")}) {vm,_ ->
+            vm.signIn("a@example.invalid","fixture-password")
+            await(20) {vm.account.value.syncCompleted>0 && !vm.account.value.sync.running}
+            val first=vm.account.value.syncCompleted
+            vm.syncNow()
+            await(20) {vm.account.value.syncCompleted>first && !vm.account.value.sync.running}
+            val second=vm.account.value.syncCompleted
+            fail.set(true);vm.syncNow()
+            await(20) {vm.account.value.syncCompleted>second && !vm.account.value.sync.running}
+            assertNotNull(vm.account.value.userId)
+        }
+    }
     @Test fun activeTimeCheckpointsStayLocalWhileRealWritesStillSync() {
         // Counts every RPC so a checkpoint can neither pull a snapshot nor upload anything.
         val rpcs=java.util.concurrent.atomic.AtomicInteger()

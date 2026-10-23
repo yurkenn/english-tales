@@ -1,0 +1,173 @@
+{
+  "generatedAt": "2026-10-23T18:09:24.276835+00:00",
+  "decision": "HOLD_PRODUCTION",
+  "sourceCommit": "336496453bd96cd65d26c00643eb2c039f5d9bb0",
+  "recordedProductionSourceCommit": "32a717f80c26a06e8ac329ee358af2e012469589",
+  "production": {
+    "versionCode": 50,
+    "versionName": "2.2.0",
+    "rollout": 1.0,
+    "highestUploadedCode": 50,
+    "internalAvailableCode": 49,
+    "internalDraftCode": 50,
+    "crashRate": null,
+    "anrRate": null,
+    "metricsConclusion": "Unavailable/insufficient data, not zero errors",
+    "lastVerifiedAt": "2026-10-23T18:13:39.912385+00:00"
+  },
+  "candidate": {
+    "versionCode": 51,
+    "versionName": "2.3.0",
+    "labelStatus": "Audit-only provisional label; never uploaded",
+    "apkBytes": 14014321,
+    "aabBytes": 17936985,
+    "apkSHA256": "8046133213291af3c2938ea243e7d11c6fbaea8d9ba78c6ced9ebeedb6f28ebc",
+    "aabSHA256": "6b91085febecf890ce019e77a7bc3633b2a0b81201aaa1aea007c300c538878c",
+    "mappingIncludedAndByteMatched": true,
+    "mappingUploaded": false,
+    "uploadSignerVerified": true,
+    "playAppSigningUpgradeVerified": false
+  },
+  "validation": {
+    "sourceMasterCI": {
+      "url": "https://github.com/yurkenn/english-tales/actions/runs/39942207590",
+      "status": "success",
+      "instrumentation": 351,
+      "startup": 3,
+      "liveService": 3,
+      "failures": 0,
+      "skipped": 0
+    },
+    "releaseUnit": {
+      "tests": 142,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "lint": {
+      "errors": 0,
+      "warnings": 104,
+      "missingTranslationWarnings": 0
+    },
+    "defectReproductions": {
+      "firstThree": {
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "translationCache": {
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "interpretation": "These diagnostic assertions PASS when the defect is present; they are evidence of bugs, not release acceptance."
+    },
+    "native16KB": {
+      "probe": {
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "environment": "16KB emulator; not physical device or Play-generated splits",
+      "testedNativeLibraryIsByteIdenticalToRelease": true
+    },
+    "freshLive": {
+      "verifiedAt": "2026-10-23T18:07:43.355Z",
+      "currentStories": 67,
+      "snapshotCurrentRevisionSignatureStillMatches": true,
+      "signatureSHA256": "e16b9ff42225b3190266f79ee30947b792c749ab2f3a1410355b8a57cda61681",
+      "privacyMatchesTracked": true,
+      "privacySHA256": "e5bfbae8f5f23c5ff42b8c26ec15fc696d230665ad189199895db532c603b3c9"
+    }
+  },
+  "findings": [
+    {
+      "id": "R51-01",
+      "priority": "P1",
+      "title": "Hesap değişiminde önceki hesabın arkadaş listesi ve davet kodu korunuyor",
+      "file": "native-android/app/src/main/java/com/yurken/englishtales/data/LeagueViewModel.kt",
+      "line": 93,
+      "verifiedBy": "Isolated Android component probe; logout followed by next-account network failure preserves previous FriendList",
+      "probe": "reproducesPreviousAccountFriendCodeOnLogoutAndNextAccountFailure"
+    },
+    {
+      "id": "R51-02",
+      "priority": "P1",
+      "title": "Lig otomatik katılımı eski profil adlarını yeni sosyal kitleye açıyor; canlı gizlilik açıklaması eksik",
+      "file": "native-android/backend/supabase/migrations/20261021100000_weekly_leagues.sql",
+      "line": 9,
+      "verifiedBy": "Live database default false, deployed league_join/safe_name definitions and published privacy byte match; no customer records accessed",
+      "probe": null
+    },
+    {
+      "id": "R51-03",
+      "priority": "P2",
+      "title": "Hesap silme yeni cihaz tercihleri ve ödül kayıtlarını temizlemiyor",
+      "file": "native-android/app/src/main/java/com/yurken/englishtales/data/LearningStore.kt",
+      "line": 383,
+      "verifiedBy": "Isolated Android direct erasure and restart cleanup both leave quest_chests, league_memory, game_records and avatar_choice",
+      "probe": "reproducesDeletedAccountPreferencesRemainingForDirectAndRestartCleanup"
+    },
+    {
+      "id": "R51-04",
+      "priority": "P2",
+      "title": "Senkron bekleyen hesap sandığı çıkışta misafir ödülüne dönüşebiliyor",
+      "file": "native-android/app/src/main/java/com/yurken/englishtales/data/LeagueViewModel.kt",
+      "line": 149,
+      "verifiedBy": "Isolated Android Syncing state -> retryChest(guest,null) produces local guest reward with no guest quests",
+      "probe": "reproducesWaitingAccountChestBeingOpenedForGuestAfterLogout"
+    },
+    {
+      "id": "R51-05",
+      "priority": "P2",
+      "title": "Yeni indirilen hikâyelerde dil değişimi tek dilli önbelleğe takılıyor",
+      "file": "native-android/app/src/main/java/com/yurken/englishtales/data/RemoteContent.kt",
+      "line": 295,
+      "verifiedBy": "Real production ContentRepository with published new-story plan and fake HTTP: tr download -> es-419 restore returns English; online download returns cache without requests",
+      "probe": "reproducesNewStoryLosingSpanishAfterTurkishDownloadEvenWhenOnline"
+    }
+  ],
+  "contentAudit": {
+    "passed": false,
+    "failures": [
+      "bundle_live_parity",
+      "live_min_questions",
+      "bundle_A1_coverage",
+      "bundle_A2_coverage",
+      "live_A1_coverage",
+      "live_A2_coverage"
+    ],
+    "bundleStories": 50,
+    "liveStories": 67,
+    "liveStructuralErrors": 0,
+    "storiesWithoutServerQuestions": 31,
+    "curatedCoverage": {
+      "bundleA1": 32.33,
+      "bundleA2": 17.26,
+      "liveA1": 24.93,
+      "liveA2": 14.42
+    },
+    "interpretation": "Strict parity/curated coverage is an explicit old project gate. It does not measure current Glossary lookup coverage; remote-only stories are not automatically a corruption bug."
+  },
+  "notPerformed": [
+    "Play internal upload or production deployment",
+    "Real account deletion",
+    "Production learning-event writes during this audit",
+    "Physical Play 50-to-51 upgrade/data retention",
+    "Two physical-device account synchronization",
+    "TalkBack/large-type/long-story physical performance acceptance",
+    "Native-speaker editorial approval"
+  ],
+  "independentReviewer": {
+    "tool": "Claude Code",
+    "mode": "Restricted read-only; no shell/network/write tools",
+    "resultArtifact": "native-android/build/pre-release-audit-2026-10-23/claude-review.md",
+    "interpretation": "Claude supplied candidate findings; Codex independently validated and reclassified them. Guest chest transfer treated as a product decision, not an unconditional defect."
+  },
+  "artifactDirectory": "/Users/oguzyurken/Code/english-tales/native-android/build/pre-release-audit-2026-10-23",
+  "productionCodeModified": false,
+  "productionDataModified": false
+}

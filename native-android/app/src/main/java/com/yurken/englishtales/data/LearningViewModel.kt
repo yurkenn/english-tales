@@ -34,6 +34,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     @Volatile private var syncEpoch=0L
     @Volatile private var disposed=false
     private val syncing=java.util.concurrent.atomic.AtomicBoolean(false)
+    private val syncRun=java.util.concurrent.atomic.AtomicLong(0)
     // A sync requested while one is running may land after that run read the outbox; it reruns shortly instead of waiting a minute.
     private val syncAgain=java.util.concurrent.atomic.AtomicBoolean(false)
     private var syncTimer: kotlinx.coroutines.Job?=null
@@ -193,8 +194,9 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         mutableAccount.value=mutableAccount.value.copy(sync=mutableAccount.value.sync.copy(running=false))
     }
     // Only the actor accesses a store. Timers enqueue work without touching Room.
+    private fun canScheduleSync() = cloudSync!=null && mutableAccount.value.userId!=null && !mutableAccount.value.needsSignIn && !disposed && !switching
     private fun scheduleSync(waitMillis: Long=2_000) {
-        if(cloudSync==null || mutableAccount.value.userId==null || mutableAccount.value.needsSignIn || disposed || switching) return
+        if(!canScheduleSync()) return
         val expected=scope
         scheduleWork(checkNotNull(mutableAccount.value.userId),!foreground)
         if(!foreground) return
@@ -220,15 +222,19 @@ class LearningViewModel(application: Application,private val auth: AccountServic
             }
         }
     }
-    fun syncNow() {
-        val user=mutableAccount.value.userId?:return
-        val sync=cloudSync?:return
-        if(disposed || mutableAccount.value.busy || mutableAccount.value.needsSignIn) return
-        if(!syncing.compareAndSet(false,true)) {syncAgain.set(true);return}
+    fun syncNow() { requestSync() }
+    /** The run that will include work queued before this request; an active older run is insufficient. */
+    fun syncForChest(): Long? = requestSync()
+    @Synchronized private fun requestSync(): Long? {
+        val user=mutableAccount.value.userId?:return null
+        val sync=cloudSync?:return null
+        if(disposed || mutableAccount.value.busy || mutableAccount.value.needsSignIn) return null
+        if(!syncing.compareAndSet(false,true)) {syncAgain.set(true);return syncRun.get()+1}
+        val request=syncRun.incrementAndGet()
         syncAgain.set(false)
         val expectedScope=scope
         val expectedEpoch=syncEpoch
-        val current={ !disposed && scope==expectedScope && syncEpoch==expectedEpoch }
+        val current={ !disposed && scope==expectedScope && syncEpoch==expectedEpoch && syncRun.get()==request }
         mutableAccount.value=mutableAccount.value.copy(sync=mutableAccount.value.sync.copy(running=true,message=text(R.string.account_message_syncing),tone=MessageTone.Info))
         viewModelScope.launch(Dispatchers.IO) {
             try {LearningSyncLocks.withOwner(user) {
@@ -259,11 +265,24 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                     })
                 }
             }} finally {
-                syncing.set(false)
-                val again=syncAgain.getAndSet(false)
-                if(current()) mutations.trySend(Mutation(expectedScope) {scheduleSync(if(again) 2_000 else 60_000)})
+                val again=synchronized(this@LearningViewModel) {
+                    syncing.set(false)
+                    syncAgain.getAndSet(false)
+                }
+                if(current()) mutations.trySend(Mutation(expectedScope) {
+                    if(current()) {
+                        // Publish the completed run's identity, not a conflated running flag or a count of observed frames.
+                        mutableAccount.value=mutableAccount.value.copy(syncCompleted=maxOf(mutableAccount.value.syncCompleted,request),
+                            sync=if(syncing.get()) mutableAccount.value.sync else mutableAccount.value.sync.copy(running=false))
+                        scheduleSync(if(again) 2_000 else 60_000)
+                    }
+                }) else if(again && !disposed && scope==expectedScope) mutations.trySend(Mutation(expectedScope) {
+                    // An interrupted run must not swallow a newer request made for the same owner/epoch transition.
+                    if(mutableAccount.value.userId==user) scheduleSync(0)
+                })
             }
         }
+        return request
     }
     fun resolvePreferences(useLocal: Boolean) {
         if(mutableAccount.value.busy || mutableAccount.value.userId==null) return

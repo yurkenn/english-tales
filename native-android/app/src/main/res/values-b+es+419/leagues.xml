@@ -13,7 +13,7 @@
     <string name="league_failed_short">No se pudo cargar la liga.</string>
     <string name="league_retry">Reintentar</string>
     <string name="league_opted_out">No estás en la liga. Toca para unirte.</string>
-    <string name="league_opted_out_screen">No estás en la liga. Puedes volver a unirte abajo.</string>
+    <string name="league_opted_out_screen">No estás en la liga. Para unirte, activa \"Mostrarme en la liga\" abajo.</string>
     <string name="league_join_hint">Termina un juego o una historia esta semana para unirte a la liga.</string>
     <string name="league_rank">Vas en el puesto %1$d · %2$d XP</string>
     <string name="league_to_next">Te faltan %1$d XP para subir un puesto</string>
@@ -35,7 +35,7 @@
     <string name="league_name_hint">Tu nombre en la liga es \"%1$s\". Tu correo nunca se muestra a nadie.</string>
     <string name="league_change_name">Cambiar tu nombre</string>
     <string name="league_show_me">Mostrarme en la liga</string>
-    <string name="league_show_me_text">Si lo desactivas, sales del grupo de esta semana y nadie verá tu nombre.</string>
+    <string name="league_show_me_text">Está desactivado hasta que lo actives. Mientras está activado, tu nombre visible y tu XP de esta semana se muestran a quienes están en tu grupo de la liga y a tus amigos. Desactívalo cuando quieras para ocultarlos.</string>
     <string name="league_rank_up">¡Subiste al puesto %1$d de tu liga!</string>
     <string name="league_xp_gain">+%1$d XP · Vas en el puesto %2$d de tu liga</string>
     <string name="league_reminder_gap">Vas en el puesto %1$d de tu liga, te faltan %2$d XP para subir.</string>
@@ -54,7 +54,7 @@
     <string name="friends_tab">Amigos</string>
     <string name="friends_failed">No se pudo cargar tu lista de amigos.</string>
     <string name="friends_code_title">Tu código de invitación</string>
-    <string name="friends_code_text">Comparte tu código; cuando un amigo lo agregue, competirán con el XP de esta semana.</string>
+    <string name="friends_code_text">Comparte tu código; cuando un amigo lo agregue, competirán con el XP de esta semana. Tus amigos ven tu nombre y tu XP solo mientras estés en la liga.</string>
     <string name="friends_code_create">Crear código</string>
     <string name="friends_share">Compartir</string>
     <string name="friends_share_text">¡Compite conmigo en English Tales! Descarga la app e ingresa el código %1$s en la pestaña Amigos: %2$s</string>

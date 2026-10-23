@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="content_message_language_incomplete">Algumas traduções neste idioma ainda não foram baixadas. Você pode ler a história em inglês e tentar novamente quando houver conexão.</string>
+    <string name="guest_chest_transfer_note">Os bônus dos baús de missões de visitante ficam na área de visitante; não são transferidos para sua conta nem para o XP da liga.</string>
+</resources>

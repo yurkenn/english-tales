@@ -13,7 +13,7 @@
     <string name="league_failed_short">লিগ লোড করা যায়নি।</string>
     <string name="league_retry">আবার চেষ্টা করুন</string>
     <string name="league_opted_out">আপনি লিগে নেই। যোগ দিতে ট্যাপ করুন।</string>
-    <string name="league_opted_out_screen">আপনি লিগে নেই। নিচে থেকে আবার যোগ দিতে পারেন।</string>
+    <string name="league_opted_out_screen">আপনি লিগে নেই। যোগ দিতে নিচে \"আমাকে লিগে দেখান\" চালু করুন।</string>
     <string name="league_join_hint">লিগে যোগ দিতে এই সপ্তাহে একটি খেলা বা গল্প শেষ করুন।</string>
     <string name="league_rank">আপনার স্থান %1$d · %2$d XP</string>
     <string name="league_to_next">এক ধাপ উপরে যেতে আরও %1$d XP</string>
@@ -35,7 +35,7 @@
     <string name="league_name_hint">লিগে আপনার নাম \"%1$s\" দেখায়। আপনার ইমেল কখনো কাউকে দেখানো হয় না।</string>
     <string name="league_change_name">নাম বদলান</string>
     <string name="league_show_me">আমাকে লিগে দেখান</string>
-    <string name="league_show_me_text">বন্ধ করলে আপনি এই সপ্তাহের দল থেকে বেরিয়ে যাবেন এবং কেউ আপনার নাম দেখবে না।</string>
+    <string name="league_show_me_text">আপনি চালু না করা পর্যন্ত এটি বন্ধ থাকে। চালু থাকলে আপনার প্রদর্শিত নাম ও এই সপ্তাহের XP আপনার লিগ দলের সদস্যরা এবং আপনার বন্ধুরা দেখতে পান। লুকাতে যেকোনো সময় বন্ধ করুন।</string>
     <string name="league_rank_up">আপনি লিগে %1$d নম্বরে উঠেছেন!</string>
     <string name="league_xp_gain">+%1$d XP · লিগে আপনার স্থান %2$d</string>
     <string name="league_reminder_gap">লিগে আপনার স্থান %1$d, উপরে উঠতে আরও %2$d XP।</string>
@@ -54,7 +54,7 @@
     <string name="friends_tab">বন্ধুরা</string>
     <string name="friends_failed">বন্ধুদের তালিকা লোড করা যায়নি।</string>
     <string name="friends_code_title">আপনার আমন্ত্রণ কোড</string>
-    <string name="friends_code_text">কোড শেয়ার করুন; বন্ধু যোগ করলে এই সপ্তাহের XP-তে একসাথে প্রতিযোগিতা করবেন।</string>
+    <string name="friends_code_text">কোড শেয়ার করুন; বন্ধু যোগ করলে এই সপ্তাহের XP-তে একসাথে প্রতিযোগিতা করবেন। আপনি লিগে থাকলেই কেবল বন্ধুরা আপনার নাম ও XP দেখতে পান।</string>
     <string name="friends_code_create">আমন্ত্রণ কোড তৈরি করুন</string>
     <string name="friends_share">শেয়ার করুন</string>
     <string name="friends_share_text">English Tales-এ আমার সাথে প্রতিযোগিতা করো! অ্যাপটি নামাও আর বন্ধুরা ট্যাবে %1$s কোডটি দাও: %2$s</string>

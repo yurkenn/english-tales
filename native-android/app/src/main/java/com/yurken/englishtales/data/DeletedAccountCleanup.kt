@@ -11,12 +11,13 @@ internal object DeletedAccountCleanup {
         check(prefs(context).edit().putStringSet("owners",pending(context)+id).commit())
     }
     @Synchronized fun complete(context: Context,user: String) {
-        check(prefs(context).edit().putStringSet("owners",pending(context)-user).commit())
+        check(prefs(context).edit().putStringSet("owners",pending(context)-LearningOwner.Account(user).id).commit())
     }
     fun clean(context: Context) {
         for(user in pending(context)) {
             val owner=LearningOwner.Account(user)
             LearningStore(context,LearningOwner.Guest).use {it.forgetTransferTarget(user)}
+            DeletedAccountPreferences.erase(context,owner)
             LearningDatabase.detach(context,owner)
             val path=context.getDatabasePath(owner.databaseName)
             check(!path.exists() || context.deleteDatabase(owner.databaseName))

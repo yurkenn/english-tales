@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="content_message_language_incomplete">Some translations in this language are not downloaded yet. You can read the English story and try again when connected.</string>
+    <string name="guest_chest_transfer_note">Guest quest chest bonuses stay in the guest area; they do not transfer to your account or league XP.</string>
+</resources>

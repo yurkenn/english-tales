@@ -29,10 +29,13 @@ const iso=(days=0,seconds=0)=>new Date(clock+days*86400000+seconds*1000).toISOSt
 const session=(extra={})=>({id:randomUUID(),installationId:randomUUID(),kind:'choice',storyRevisionId:revision,startedAt:iso(0,-60),finishedAt:iso(),activeSeconds:30,correctAnswers:4,questionCount:5,studyTimezone:'UTC',...extra});
 const submit=async(id,extra)=>(await user(id,'select public.submit_learning_session($1::jsonb) as r',[JSON.stringify(session(extra))]))[0].r;
 const league=async id=>(await user(id,'select public.get_my_league() as r'))[0].r;
+const optOut=async(id,out)=>(await user(id,'select public.set_league_opt_out($1) as r',[out]))[0].r;
+const join=id=>optOut(id,false);
 async function learner(name) {
   const id=randomUUID();
   await db.query('insert into auth.users(id) values($1)',[id]);
   await db.query('insert into public.learning_profiles(user_id,display_name) values($1,$2)',[id,name]);
+  await join(id);
   return id;
 }
 
@@ -64,6 +67,7 @@ test('friends join by code in both directions and rank by this week\'s league XP
   const mine=await code(alice);
   assert.match(mine,/^[A-HJ-NP-Z2-9]{6}$/);
   assert.equal(await code(alice),mine);
+  await join(bob);
   await submit(bob,{correctAnswers:5});
   const list=await call(bob,'add_friend',` ${mine.toLowerCase()} `);
   assert.deepEqual(list.friends.map(f=>[f.rank,f.xp,f.me]),[[1,25,true],[2,0,false]]);
@@ -77,6 +81,7 @@ test('friends join by code in both directions and rank by this week\'s league XP
 });
 
 test('offensive and reported names are masked for others but not for their owner',async()=>{
+  await join(alice);await join(bob);
   await submit(alice);await submit(bob);
   await db.query("update public.learning_profiles set display_name='Ali' where user_id=$1",[bob]);
   const ids=[];for(let i=0;i<3;i++){const id=await learner(`R${i}`);ids.push(id);await submit(id);}
@@ -96,7 +101,46 @@ test('offensive and reported names are masked for others but not for their owner
   await assert.rejects(call(alice,'report_name','0000'),/member_not_found/);
 });
 
+test('a friend outside the league shows only the default name and 0 XP, before joining and after leaving',async()=>{
+  await db.query("insert into public.learning_profiles(user_id,display_name) values($1,'Bob Private') on conflict(user_id) do update set display_name=excluded.display_name",[bob]);
+  await call(bob,'add_friend',await code(alice));
+  for(let i=0;i<2;i++) await submit(bob,{correctAnswers:5});
+  const bobFor=async()=>(await friends(alice)).friends.find(f=>!f.me);
+  // An older app never asked bob to join, so bob's name and XP stay private.
+  const before=await bobFor();
+  assert.equal(before.name,'Okuyucu');assert.equal(before.xp,0);
+  const self=(await friends(bob)).friends.find(f=>f.me);
+  assert.equal(self.name,'Bob Private');assert.equal(self.xp,0);
+  await join(bob);
+  await submit(bob,{correctAnswers:5});
+  assert.equal((await bobFor()).name,'Bob Private');
+  assert.equal((await bobFor()).xp,25);
+  await optOut(bob,true);
+  await submit(bob,{correctAnswers:5});
+  const hidden=await bobFor();
+  assert.equal(hidden.name,'Okuyucu');assert.equal(hidden.xp,0);
+  assert.equal(hidden.rank,2);
+  assert.ok(!JSON.stringify(await friends(alice)).includes('Bob Private'));
+  // Removing and reporting still work on the masked row.
+  assert.deepEqual(await call(alice,'report_name',hidden.id),{reported:true});
+  assert.equal((await db.query("select count(*)::int n from public.name_reports where reported_name='Bob Private'")).rows[0].n,0);
+  assert.equal((await call(alice,'remove_friend',hidden.id)).friends.length,1);
+});
+
+test('a learner who leaves the league cannot be found or reported through it any more',async()=>{
+  await join(alice);await join(bob);
+  await submit(alice);await submit(bob);
+  const token=(await league(alice)).members.find(m=>!m.me).id;
+  await optOut(bob,true);
+  assert.deepEqual((await league(alice)).members.map(m=>m.me),[true]);
+  await assert.rejects(call(alice,'report_name',token),/member_not_found/);
+  // A learner who left cannot report the group they no longer see either.
+  const aliceToken=(await db.query('select private.member_token($1,$2) t',[bob,alice])).rows[0].t;
+  await assert.rejects(call(bob,'report_name',aliceToken),/member_not_found/);
+});
+
 test('member tokens differ per viewer and friend data stays behind the functions',async()=>{
+  await join(alice);await join(bob);
   await submit(alice);await submit(bob);
   const a=(await league(alice)).members.map(m=>m.id).sort(), b=(await league(bob)).members.map(m=>m.id).sort();
   assert.equal(a.length,2);assert.notDeepEqual(a,b);
