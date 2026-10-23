@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="content_message_language_incomplete">इस भाषा के कुछ अनुवाद अभी डाउनलोड नहीं हुए हैं। आप कहानी अंग्रेज़ी में पढ़ सकते हैं और कनेक्शन मिलने पर फिर कोशिश कर सकते हैं।</string>
+    <string name="guest_chest_transfer_note">अतिथि के मिशन चेस्ट बोनस अतिथि क्षेत्र में रहते हैं; वे आपके खाते या लीग XP में नहीं जाते।</string>
+</resources>

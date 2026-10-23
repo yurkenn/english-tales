@@ -13,7 +13,7 @@
     <string name="league_failed_short">लीग लोड नहीं हो सकी।</string>
     <string name="league_retry">फिर कोशिश करें</string>
     <string name="league_opted_out">आप लीग में नहीं हैं। जुड़ने के लिए टैप करें।</string>
-    <string name="league_opted_out_screen">आप लीग में नहीं हैं। नीचे से फिर जुड़ सकते हैं।</string>
+    <string name="league_opted_out_screen">आप लीग में नहीं हैं। जुड़ने के लिए नीचे \"मुझे लीग में दिखाएँ\" चालू करें।</string>
     <string name="league_join_hint">लीग में जुड़ने के लिए इस हफ़्ते कोई खेल या कहानी पूरी करें।</string>
     <string name="league_rank">आपका स्थान %1$d · %2$d XP</string>
     <string name="league_to_next">एक स्थान ऊपर जाने के लिए %1$d XP बाकी</string>
@@ -35,7 +35,7 @@
     <string name="league_name_hint">लीग में आपका नाम \"%1$s\" दिखता है। आपका ईमेल कभी किसी को नहीं दिखाया जाता।</string>
     <string name="league_change_name">अपना नाम बदलें</string>
     <string name="league_show_me">मुझे लीग में दिखाएँ</string>
-    <string name="league_show_me_text">बंद करने पर आप इस हफ़्ते के समूह से निकल जाएँगे और आपका नाम किसी को नहीं दिखेगा।</string>
+    <string name="league_show_me_text">जब तक आप इसे चालू नहीं करते, यह बंद रहता है। चालू रहने पर आपका दिखने वाला नाम और इस हफ़्ते के XP आपके लीग समूह के लोगों और आपके दोस्तों को दिखते हैं। छिपाने के लिए इसे कभी भी बंद करें।</string>
     <string name="league_rank_up">आप लीग में %1$d स्थान पर पहुँच गए!</string>
     <string name="league_xp_gain">+%1$d XP · लीग में आपका स्थान %2$d</string>
     <string name="league_reminder_gap">लीग में आपका स्थान %1$d है, ऊपर जाने के लिए %2$d XP बाकी।</string>
@@ -54,7 +54,7 @@
     <string name="friends_tab">दोस्त</string>
     <string name="friends_failed">दोस्तों की सूची लोड नहीं हो सकी।</string>
     <string name="friends_code_title">आपका आमंत्रण कोड</string>
-    <string name="friends_code_text">अपना कोड शेयर करें; दोस्त के जोड़ते ही आप इस हफ़्ते के XP में साथ मुकाबला करेंगे।</string>
+    <string name="friends_code_text">अपना कोड शेयर करें; दोस्त के जोड़ते ही आप इस हफ़्ते के XP में साथ मुकाबला करेंगे। दोस्त आपका नाम और XP सिर्फ़ तब देखते हैं जब आप लीग में हों।</string>
     <string name="friends_code_create">आमंत्रण कोड बनाएँ</string>
     <string name="friends_share">शेयर करें</string>
     <string name="friends_share_text">English Tales पर मुझसे मुकाबला करो! ऐप डाउनलोड करो और दोस्त टैब में कोड %1$s डालो: %2$s</string>

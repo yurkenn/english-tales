@@ -13,7 +13,7 @@
     <string name="league_failed_short">تعذّر تحميل الدوري.</string>
     <string name="league_retry">إعادة المحاولة</string>
     <string name="league_opted_out">أنت لست في الدوري. انقر للانضمام.</string>
-    <string name="league_opted_out_screen">أنت لست في الدوري. يمكنك الانضمام مجددًا من الأسفل.</string>
+    <string name="league_opted_out_screen">أنت لست في الدوري. للانضمام، شغّل «أظهرني في الدوري» في الأسفل.</string>
     <string name="league_join_hint">أكمل لعبة أو قصة هذا الأسبوع لتنضم إلى الدوري.</string>
     <string name="league_rank">ترتيبك %1$d · %2$d XP</string>
     <string name="league_to_next">باقٍ %1$d XP للتقدم مركزًا واحدًا</string>
@@ -35,7 +35,7 @@
     <string name="league_name_hint">اسمك في الدوري هو \"%1$s\". لا يظهر بريدك الإلكتروني لأي أحد.</string>
     <string name="league_change_name">غيّر اسمك</string>
     <string name="league_show_me">أظهرني في الدوري</string>
-    <string name="league_show_me_text">إذا أوقفته، تخرج من مجموعة هذا الأسبوع ولن يرى أحد اسمك.</string>
+    <string name="league_show_me_text">يبقى مُطفأً حتى تشغّله بنفسك. أثناء تشغيله، يظهر اسمك المعروض ونقاط XP لهذا الأسبوع للمتعلمين في مجموعتك بالدوري ولأصدقائك. أوقفه في أي وقت لإخفائهما.</string>
     <string name="league_rank_up">تقدّمت إلى المركز %1$d في دوريك!</string>
     <string name="league_xp_gain">+%1$d XP · ترتيبك %2$d في الدوري</string>
     <string name="league_reminder_gap">ترتيبك %1$d في الدوري، باقٍ %2$d XP للتقدم.</string>
@@ -54,7 +54,7 @@
     <string name="friends_tab">الأصدقاء</string>
     <string name="friends_failed">تعذّر تحميل قائمة الأصدقاء.</string>
     <string name="friends_code_title">رمز الدعوة الخاص بك</string>
-    <string name="friends_code_text">شارك رمزك؛ عندما يضيفه صديقك تتنافسان على نقاط XP هذا الأسبوع.</string>
+    <string name="friends_code_text">شارك رمزك؛ عندما يضيفه صديقك تتنافسان على نقاط XP هذا الأسبوع. لا يرى أصدقاؤك اسمك ونقاطك إلا أثناء وجودك في الدوري.</string>
     <string name="friends_code_create">إنشاء رمز دعوة</string>
     <string name="friends_share">مشاركة</string>
     <string name="friends_share_text">نافسني في English Tales! نزّل التطبيق وأدخل الرمز %1$s في تبويب الأصدقاء: %2$s</string>

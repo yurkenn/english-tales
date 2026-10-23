@@ -43,28 +43,55 @@ class LeagueViewModel internal constructor(application: Application, private val
     private val mutableState = MutableStateFlow<LeagueUi>(if (service == null) LeagueUi.Unavailable else LeagueUi.Guest)
     val state: StateFlow<LeagueUi> = mutableState
     private var user: String? = null
+    private var accountGeneration = 0L
+
+    /** Invalidates every account-bound request before another owner can see or change its state. */
+    @Synchronized private fun selectAccount(userId: String?): Long {
+        if (user != userId) {
+            user = userId
+            accountGeneration++
+            generation++
+            changingChoice = false
+            friendRequest++
+            chestRequest++
+            pendingChest = null
+            chestSyncAfter = null
+            mutableState.value = if (service == null) LeagueUi.Unavailable else if (userId == null) LeagueUi.Guest else LeagueUi.Loading
+            mutableFriends.value = if (service == null || userId == null) FriendsUi.Unavailable else FriendsUi.Loading
+            mutableChest.value = ChestUi.Idle
+        }
+        return accountGeneration
+    }
     // Requests are blocking HTTP calls; only the latest one may publish its result.
     @Volatile private var generation = 0L
+    private var changingChoice = false
+
+    fun accountChanged(userId: String?) { selectAccount(userId) }
 
     /** Reloads for [userId]; the last standing stays on screen while a refresh runs, and a failed refresh keeps it. */
     fun refresh(userId: String?) = run(userId) { service, id -> service.load(id) }
 
-    fun setOptedOut(userId: String?, optedOut: Boolean) = run(userId) { service, id -> service.setOptedOut(id, optedOut) }
+    fun setOptedOut(userId: String?, optedOut: Boolean) = run(userId, choice = true) { service, id -> service.setOptedOut(id, optedOut) }
 
-    private fun run(userId: String?, action: (LeagueService, String) -> LeagueStanding) {
+    @Synchronized private fun run(userId: String?, choice: Boolean = false, action: (LeagueService, String) -> LeagueStanding) {
+        val account = selectAccount(userId)
         val service = service ?: return
+        if (changingChoice && !choice) return
         val request = ++generation
+        changingChoice = choice && userId != null
         if (userId == null) { user = null; mutableState.value = LeagueUi.Guest; return }
         val previous = (mutableState.value as? LeagueUi.Ready)?.takeIf { user == userId }
-        user = userId
         mutableState.value = previous?.copy(busy = true) ?: LeagueUi.Loading
         viewModelScope.launch(Dispatchers.IO) {
             val result = runCatching { action(service, userId) }
-            if (generation != request) return@launch
+            synchronized(this@LeagueViewModel) {
+            if (accountGeneration != account || generation != request) return@launch
+            changingChoice = false
             // A server without the league functions yet (404) hides the card instead of showing an error.
             mutableState.value = result.fold({ LeagueUi.Ready(it) }, {
                 if ((it as? LearningSyncFailure)?.status == 404) LeagueUi.Unavailable else previous?.copy(busy = false) ?: LeagueUi.Failed
             })
+            }
         }
     }
 
@@ -78,15 +105,20 @@ class LeagueViewModel internal constructor(application: Application, private val
     fun removeFriend(userId: String?, member: String) = friendsRun(userId) { service, id -> service.removeFriend(id, member) }
 
     /** Reports a name, then reloads both lists so it disappears for this learner at once. */
-    fun reportName(userId: String?, member: String) {
+    @Synchronized fun reportName(userId: String?, member: String) {
         val service = service ?: return
-        if (userId == null || member.isEmpty()) return
+        if (userId == null || userId != user || member.isEmpty()) return
+        val account = accountGeneration
         viewModelScope.launch(Dispatchers.IO) {
-            if (runCatching { service.reportName(userId, member) }.isSuccess) { refresh(userId); refreshFriends(userId) }
+            val success = runCatching { service.reportName(userId, member) }.isSuccess
+            synchronized(this@LeagueViewModel) {
+                if (success && accountGeneration == account) { refresh(userId); refreshFriends(userId) }
+            }
         }
     }
 
-    private fun friendsRun(userId: String?, action: (LeagueService, String) -> FriendList) {
+    @Synchronized private fun friendsRun(userId: String?, action: (LeagueService, String) -> FriendList) {
+        val account = selectAccount(userId)
         val service = service ?: return
         val request = ++friendRequest
         if (userId == null) { mutableFriends.value = FriendsUi.Unavailable; return }
@@ -94,7 +126,8 @@ class LeagueViewModel internal constructor(application: Application, private val
         mutableFriends.value = previous?.copy(busy = true, error = null) ?: FriendsUi.Loading
         viewModelScope.launch(Dispatchers.IO) {
             val result = runCatching { action(service, userId) }
-            if (friendRequest != request) return@launch
+            synchronized(this@LeagueViewModel) {
+            if (accountGeneration != account || friendRequest != request) return@launch
             mutableFriends.value = result.fold({ FriendsUi.Ready(it) }, {
                 val failure = it as? LearningSyncFailure
                 when {
@@ -103,6 +136,7 @@ class LeagueViewModel internal constructor(application: Application, private val
                     else -> FriendsUi.Failed
                 }
             })
+            }
         }
     }
 
@@ -111,57 +145,94 @@ class LeagueViewModel internal constructor(application: Application, private val
     /** Bumped whenever the device copy of the chests changes, so the learning snapshot re-reads its points. */
     private val mutableChestVersion = MutableStateFlow(0)
     val chestVersion: StateFlow<Int> = mutableChestVersion
-    private var chestDay: String? = null
+    private data class PendingChest(val owner: String, val user: String, val day: String, val account: Long)
+    private var pendingChest: PendingChest? = null
+    private var chestSyncAfter: Long? = null
+    private var chestRequest = 0L
+    private var chestRefreshRequest = 0L
 
     /**
      * Opens [day]'s chest. A guest's chest is rolled on the device; an account asks the server, which checks the
      * quests itself. When the server has not seen today's sessions yet the chest waits in [ChestUi.Syncing] and
      * [onSyncNeeded] uploads them; [retryChest] then tries once more.
      */
-    fun openChest(owner: String, userId: String?, day: String, onSyncNeeded: (() -> Unit)?) {
+    @Synchronized fun openChest(owner: String, userId: String?, day: String, onSyncNeeded: (() -> Unit)?) {
+        val account = selectAccount(userId)
         val chests = chests
         if (mutableChest.value == ChestUi.Opening) return
-        if (userId == null || chests == null) {
+        if (userId == null) {
+            if (owner != LearningOwner.Guest.id) return
             mutableChest.value = ChestUi.Opened(QuestChests.openLocally(getApplication(), owner, day), league = false)
             mutableChestVersion.value++
             return
         }
-        chestDay = day
+        if (chests == null || owner != userId) { mutableChest.value = ChestUi.Failed; return }
+        val pending = PendingChest(owner, userId, day, account)
+        pendingChest = pending
+        chestSyncAfter = null
+        val request = ++chestRequest
+        chestRefreshRequest++
         mutableChest.value = ChestUi.Opening
         viewModelScope.launch(Dispatchers.IO) {
             val result = runCatching { chests.open(userId, day) }
-            if (chestDay != day) return@launch
+            synchronized(this@LeagueViewModel) {
+            if (pendingChest != pending || accountGeneration != account || chestRequest != request) return@launch
             result.onSuccess { state ->
+                chestRefreshRequest++
                 QuestChests.mirror(getApplication(), userId, state)
-                chestDay = null
+                pendingChest = null
                 mutableChest.value = ChestUi.Opened(state.recent.firstOrNull { it.day == day }?.points ?: 0, league = true)
                 mutableChestVersion.value++
                 refresh(userId)
             }.onFailure {
                 // The quests are not done on the server yet: upload once and retry; a retry that still misses them gives up.
-                if ((it as? LearningSyncFailure)?.code == "55000" && onSyncNeeded != null) { mutableChest.value = ChestUi.Syncing; launch(Dispatchers.Main) { onSyncNeeded() } }
-                else { chestDay = null; mutableChest.value = ChestUi.Failed }
+                if ((it as? LearningSyncFailure)?.code == "55000" && onSyncNeeded != null) { mutableChest.value = ChestUi.Syncing; launch(Dispatchers.Main) {
+                    synchronized(this@LeagueViewModel) {
+                        if (pendingChest == pending && accountGeneration == account && chestRequest == request) onSyncNeeded()
+                    }
+                } }
+                else { pendingChest = null; mutableChest.value = ChestUi.Failed }
+            }
             }
         }
     }
 
-    /** Tries a chest that waited for an upload again; called when a sync finishes. */
-    fun retryChest(owner: String, userId: String?) {
-        val day = chestDay ?: return
-        if (mutableChest.value == ChestUi.Syncing) openChest(owner, userId, day, null)
+    /** Stamps the current completion before requesting the upload, excluding an earlier completion already queued in Compose. */
+    @Synchronized fun waitForChestSync(completed: Long) {
+        if (mutableChest.value == ChestUi.Syncing && pendingChest != null) chestSyncAfter = completed
     }
 
-    fun dismissChest() { if (mutableChest.value !is ChestUi.Opening && mutableChest.value !is ChestUi.Syncing) mutableChest.value = ChestUi.Idle }
+    /** Null completion is an explicit immediate retry when an upload cannot be requested. */
+    @Synchronized fun retryChest(owner: String, userId: String?, completed: Long? = null) {
+        selectAccount(userId)
+        val pending = pendingChest ?: return
+        if (pending.owner != owner || pending.user != userId || pending.account != accountGeneration) return
+        if (completed != null && (chestSyncAfter == null || completed <= chestSyncAfter!!)) return
+        if (mutableChest.value == ChestUi.Syncing) openChest(owner, userId, pending.day, null)
+    }
+
+    @Synchronized fun failChestSync() {
+        if (mutableChest.value == ChestUi.Syncing) { pendingChest = null; chestRequest++; mutableChest.value = ChestUi.Failed }
+    }
+
+    @Synchronized fun dismissChest() {
+        if (mutableChest.value != ChestUi.Opening) { pendingChest = null; chestRequest++; mutableChest.value = ChestUi.Idle }
+    }
 
     /** Mirrors the account's chests from the server, so a chest opened on another device shows here too. */
-    fun refreshChests(userId: String?) {
+    @Synchronized fun refreshChests(userId: String?) {
+        val account = selectAccount(userId)
         val chests = chests ?: return
-        if (userId == null) return
+        if (userId == null || pendingChest != null) return
+        val request = ++chestRefreshRequest
         viewModelScope.launch(Dispatchers.IO) {
             runCatching { chests.load(userId) }.onSuccess {
+                synchronized(this@LeagueViewModel) {
+                if (accountGeneration != account || chestRefreshRequest != request) return@onSuccess
                 val before = QuestChests.total(getApplication(), userId)
                 QuestChests.mirror(getApplication(), userId, it)
                 if (it.total != before) mutableChestVersion.value++
+                }
             }
         }
     }

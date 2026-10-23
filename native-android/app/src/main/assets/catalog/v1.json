@@ -14556,7 +14556,7 @@
           "kind": "detail",
           "prompt": "Who was the first policeman Bob spoke to?",
           "options": [
-            "A stranger",
+            "A shop owner",
             "The restaurant owner",
             "Jimmy Wells",
             "A detective from Chicago"
@@ -22172,9 +22172,9 @@
         {
           "id": "classic-twelve-dancing-princesses-q2",
           "kind": "detail",
-          "prompt": "What did the old woman tell the soldier not to do?",
+          "prompt": "What did the woman tell the soldier not to do?",
           "options": [
-            "Follow them",
+            "Follow the princesses",
             "Speak to the king",
             "Drink the princesses' wine",
             "Wear the cloak"
@@ -25235,7 +25235,7 @@
         {
           "id": "classic-little-mermaid-q2",
           "kind": "detail",
-          "prompt": "What price did the sea witch ask?",
+          "prompt": "What price did the sea witch ask for the potion?",
           "options": [
             "Her beautiful voice",
             "Her crown",

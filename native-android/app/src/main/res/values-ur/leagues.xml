@@ -13,7 +13,7 @@
     <string name="league_failed_short">لیگ لوڈ نہیں ہو سکی۔</string>
     <string name="league_retry">دوبارہ کوشش کریں</string>
     <string name="league_opted_out">آپ لیگ میں نہیں ہیں۔ شامل ہونے کے لیے ٹیپ کریں۔</string>
-    <string name="league_opted_out_screen">آپ لیگ میں نہیں ہیں۔ نیچے سے دوبارہ شامل ہو سکتے ہیں۔</string>
+    <string name="league_opted_out_screen">آپ لیگ میں نہیں ہیں۔ شامل ہونے کے لیے نیچے \"مجھے لیگ میں دکھائیں\" آن کریں۔</string>
     <string name="league_join_hint">لیگ میں شامل ہونے کے لیے اس ہفتے کوئی کھیل یا کہانی مکمل کریں۔</string>
     <string name="league_rank">آپ کا نمبر %1$d · %2$d XP</string>
     <string name="league_to_next">ایک درجہ اوپر جانے کے لیے %1$d XP باقی</string>
@@ -35,7 +35,7 @@
     <string name="league_name_hint">لیگ میں آپ کا نام \"%1$s\" دکھائی دیتا ہے۔ آپ کی ای میل کبھی کسی کو نہیں دکھائی جاتی۔</string>
     <string name="league_change_name">اپنا نام بدلیں</string>
     <string name="league_show_me">مجھے لیگ میں دکھائیں</string>
-    <string name="league_show_me_text">بند کرنے پر آپ اس ہفتے کے گروپ سے نکل جائیں گے اور کوئی آپ کا نام نہیں دیکھے گا۔</string>
+    <string name="league_show_me_text">جب تک آپ خود آن نہ کریں یہ بند رہتا ہے۔ آن رہنے پر آپ کا ظاہری نام اور اس ہفتے کے XP آپ کے لیگ گروپ کے لوگوں اور آپ کے دوستوں کو دکھائی دیتے ہیں۔ چھپانے کے لیے اسے کسی بھی وقت بند کریں۔</string>
     <string name="league_rank_up">آپ لیگ میں %1$d نمبر پر آ گئے!</string>
     <string name="league_xp_gain">+%1$d XP · لیگ میں آپ کا نمبر %2$d</string>
     <string name="league_reminder_gap">لیگ میں آپ کا نمبر %1$d ہے، اوپر جانے کے لیے %2$d XP باقی۔</string>
@@ -54,7 +54,7 @@
     <string name="friends_tab">دوست</string>
     <string name="friends_failed">دوستوں کی فہرست لوڈ نہیں ہو سکی۔</string>
     <string name="friends_code_title">آپ کا دعوتی کوڈ</string>
-    <string name="friends_code_text">اپنا کوڈ شیئر کریں؛ دوست کے شامل کرتے ہی آپ اس ہفتے کے XP میں مقابلہ کریں گے۔</string>
+    <string name="friends_code_text">اپنا کوڈ شیئر کریں؛ دوست کے شامل کرتے ہی آپ اس ہفتے کے XP میں مقابلہ کریں گے۔ دوست آپ کا نام اور XP صرف تب دیکھتے ہیں جب آپ لیگ میں ہوں۔</string>
     <string name="friends_code_create">دعوتی کوڈ بنائیں</string>
     <string name="friends_share">شیئر کریں</string>
     <string name="friends_share_text">English Tales پر مجھ سے مقابلہ کرو! ایپ ڈاؤن لوڈ کرو اور دوست والے حصے میں کوڈ %1$s لکھو: %2$s</string>

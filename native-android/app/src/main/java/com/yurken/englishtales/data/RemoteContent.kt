@@ -31,6 +31,9 @@ data class ContentStatus(val busy: Boolean = false, val message: String = "", va
 /** One finished content action, so the UI can confirm it or say clearly that it failed. */
 data class ContentEvent(val success: Boolean, val message: String)
 
+/** The saved download lacks the selected language and could not be completed; [story] is still readable (untranslated lines stay English). */
+class IncompleteDownloadException(val story: Story, cause: Throwable) : Exception(cause)
+
 /** Anonymous, read-only access. Only a publishable key is accepted, never a service key. */
 open class ContentHttp(private val base: String, private val key: String) {
     init { require(base.startsWith("https://") && key.startsWith("sb_publishable_")) }
@@ -107,7 +110,7 @@ object ContentCodec {
             else java.time.OffsetDateTime.parse(doc.getString("story_created_at")).toInstant()
         return Story(id, doc.getString("title"), doc.getString("author"), doc.getString("level"), doc.getString("genre"),
             SupportLanguage.pick(doc, "descriptions", "description"), "remote", parsed, revision, coverFile, vocabulary, mapping, addedAt,
-            StoryQuestion.parse(doc.optJSONArray("questions")), StoryTag.parse(doc.optJSONArray("tags")))
+            StoryQuestion.parse(doc.optJSONArray("questions")).ifEmpty { LearningContent.questionsForUnchangedSource(id, parsed) }, StoryTag.parse(doc.optJSONArray("tags")))
     }
     fun verify(bytes: ByteArray, asset: JSONObject) {
         require(bytes.size.toLong() == asset.getLong("byte_size")) { "İndirilen dosya eksik." }
@@ -118,6 +121,7 @@ object ContentCodec {
 
 class ContentRepository(context: Context, private val http: ContentHttp?) {
     private val language = SupportLanguage.code
+    @Volatile private var incompleteDownloads = emptySet<String>()
     private val directory = File(context.filesDir, "published-content").apply { mkdirs() }
     private val index = AtomicFile(File(directory, "catalog.json"))
     private val lock = Mutex()
@@ -173,6 +177,7 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
                 }
             }
             downloaded = restored
+            incompleteDownloads = restored.keys.filterTo(mutableSetOf()) { revision -> savedDocument(revision)?.let { !complete(it, SupportLanguage.code) } == true }
             directory.listFiles().orEmpty().filter {it.name.endsWith(".cover") && it.name.removeSuffix(".cover") !in restored}.forEach {it.delete()}
         }
         publish()
@@ -230,6 +235,37 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
             result
         }
         metadata = next; hasRemoteCatalog = true; publish()
+        // Best effort: older downloads stored only the language selected at the time; online they gain the rest.
+        repairDownloads(remote)
+    }
+    /** Revisions (per language) whose missing translations were already requested in this process, so refreshes do not refetch them. */
+    private val repairAttempts = mutableSetOf<String>()
+    private fun savedDocument(revision: String) = runCatching { JSONObject(read(AtomicFile(File(directory, "$revision.json")))) }.getOrNull()
+    /** True when every sentence and word has a real [lang] translation instead of the English fallback. */
+    private fun complete(doc: JSONObject, lang: String): Boolean {
+        if (lang == SupportLanguage.DEFAULT) return true
+        fun covered(items: JSONArray?, legacy: String) = items == null || (0 until items.length()).all { i -> items.getJSONObject(i).let {
+            it.optJSONObject("translations")?.optString(lang)?.isNotBlank() == true || ContentTranslations.pick(it, "translations", legacy, lang) != null } }
+        val description = doc.optJSONObject("descriptions")?.optString(lang)?.isNotBlank() == true ||
+            ContentTranslations.pick(doc, "descriptions", "description", lang) != null
+        return description && covered(doc.optJSONArray("sentences"), "turkish") && covered(doc.optJSONArray("words"), "translation")
+    }
+    private suspend fun repairDownloads(remote: ContentHttp) {
+        val lang = SupportLanguage.code
+        if (lang == SupportLanguage.DEFAULT) return
+        val partial = withContext(Dispatchers.IO) {
+            downloaded.values.filter { "$lang/${it.revisionId}" !in repairAttempts && savedDocument(it.revisionId)?.let { doc -> !complete(doc, lang) } == true }
+        }
+        var repaired = false
+        for (story in partial) {
+            try {
+                fetch(remote, story)
+                repairAttempts += "$lang/${story.revisionId}"
+                repaired = true
+            } catch (cancelled: kotlinx.coroutines.CancellationException) { throw cancelled }
+            catch (_: Exception) { /* A network failure must be retried on the next refresh. */ }
+        }
+        if (repaired) publish()
     }
     private fun matchBundledText(remote: ContentHttp, catalog: JSONArray) {
         val docs = (0 until catalog.length()).map { catalog.getJSONObject(it) }
@@ -282,17 +318,68 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
     /** Translation tables are newer than the first releases; until a server has them, the legacy Turkish columns are used. */
     private fun ContentHttp.optionalRows(table: String, query: String, pageSize: Int = ContentHttp.PAGE_SIZE) = runCatching { rows(table, query, pageSize) }.getOrNull()
     private fun JSONArray.forEachObject(action: (JSONObject) -> Unit) = (0 until length()).forEach { action(getJSONObject(it)) }
-    /** Stores each row's text as `translations.{lang}` on the matching item, which [ContentCodec] reads first. */
-    private fun attach(items: JSONArray, rows: JSONArray, key: String, field: String, lang: String) {
-        val byId = mutableMapOf<String, String>()
-        rows.forEachObject { byId[it.getString(key)] = it.getString(field) }
-        items.forEachObject { item -> byId[item.getString("id")]?.let { item.put("translations", JSONObject().put(lang, it)) } }
+    /**
+     * A revision's rows for every enabled language, so a later language switch never needs the network. Pairs are
+     * (language, rows); the language is null when each row carries its own `lang`. Servers rejecting the list filter
+     * are asked once per language.
+     */
+    private fun ContentHttp.translations(table: String, select: String, revision: String, order: String): List<Pair<String?, JSONArray>> {
+        val all = SupportLanguage.enabled
+        optionalRows(table, "select=$select,lang&revision_id=eq.$revision&lang=in.(${all.joinToString(",")})&order=$order,lang.asc")
+            ?.takeIf { rows -> (0 until rows.length()).all { rows.getJSONObject(it).optString("lang") in all } }?.let { return listOf(null to it) }
+        return all.mapNotNull { lang -> optionalRows(table, "select=$select,lang&revision_id=eq.$revision&lang=eq.$lang&order=$order")?.let { lang to it } }
+    }
+    private fun JSONObject.map(key: String) = optJSONObject(key) ?: JSONObject().also { put(key, it) }
+    /** Adds each row's text as `translations.{lang}` on the matching item, which [ContentCodec] reads first; other languages stay. */
+    private fun attach(items: JSONArray, rows: JSONArray, key: String, field: String, lang: String?) {
+        val byId = mutableMapOf<String, MutableMap<String, String>>()
+        rows.forEachObject { byId.getOrPut(it.getString(key)) { mutableMapOf() }[lang ?: it.getString("lang")] = it.getString(field) }
+        items.forEachObject { item -> byId[item.getString("id")]?.forEach { (code, text) -> item.map("translations").put(code, text) } }
+    }
+    /** A re-download keeps languages the earlier copy had for the same source text and this answer lacks, so none is lost. */
+    private fun keepTranslations(previous: JSONObject, doc: JSONObject) {
+        fun merge(old: JSONObject, item: JSONObject, key: String) {
+            val saved = old.optJSONObject(key)?.takeIf { it.length() > 0 } ?: return
+            val current = item.map(key)
+            for (code in saved.keys()) if (current.optString(code).isBlank()) current.put(code, saved.getString(code))
+        }
+        fun mergeItems(key: String, source: String) {
+            val old = previous.optJSONArray(key) ?: return
+            val byId = (0 until old.length()).associate { old.getJSONObject(it).let { item -> item.optString("id") to item } }
+            doc.optJSONArray(key)?.forEachObject { item ->
+                byId[item.getString("id")]?.takeIf { it.optString(source) == item.optString(source) }?.let { merge(it, item, "translations") }
+            }
+        }
+        mergeItems("sentences", "english"); mergeItems("words", "word")
+        if (previous.optString("description") == doc.optString("description")) merge(previous, doc, "descriptions")
     }
     fun isDownloaded(story: Story) = story.revisionId in downloaded
+    fun needsLanguageRepair(story: Story) = story.revisionId in downloaded && story.revisionId in incompleteDownloads
     fun downloads(): List<Story> = downloaded.values.distinctBy {it.id}.sortedBy {it.title}
+    /**
+     * A saved download is returned as is when it covers the selected language; otherwise it is downloaded again with
+     * every language. If that fails the saved copy stays untouched and comes back in [IncompleteDownloadException].
+     */
     suspend fun download(story: Story): Story = lock.withLock {
-        downloaded[story.revisionId]?.let { return@withLock it }
+        val lang = SupportLanguage.code
+        downloaded[story.revisionId]?.let { saved ->
+            if (withContext(Dispatchers.IO) { savedDocument(saved.revisionId)?.let { complete(it, lang) } != false }) return@withLock saved
+            try { return@withLock fetch(checkNotNull(http) { "İçerik bağlantısı yapılandırılmadı." }, story).also {
+                publish()
+                if (needsLanguageRepair(it)) throw IncompleteDownloadException(it, IllegalStateException("Selected language unavailable"))
+            } }
+            catch (partial: IncompleteDownloadException) { throw partial }
+            catch (cancelled: kotlinx.coroutines.CancellationException) { throw cancelled }
+            catch (failure: Exception) { throw IncompleteDownloadException(saved, failure) }
+        }
         val remote = checkNotNull(http) { "İçerik bağlantısı yapılandırılmadı." }
+        fetch(remote, story).also {
+            publish()
+            if (needsLanguageRepair(it)) throw IncompleteDownloadException(it, IllegalStateException("Selected language unavailable"))
+        }
+    }
+    /** Downloads [story] with every language under [lock]; the caller publishes. */
+    private suspend fun fetch(remote: ContentHttp, story: Story): Story {
         val result = withContext(Dispatchers.IO) {
             val revision = UUID.fromString(story.revisionId).toString()
             val rows = remote.rows("story_revisions", "select=*&id=eq.$revision&published_at=not.is.null&order=id.asc")
@@ -301,14 +388,15 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
             val lang = SupportLanguage.code
             val sentences = remote.rows("story_sentences", "select=*&revision_id=eq.$revision&order=position.asc")
             val words = remote.rows("revision_words", "select=*&revision_id=eq.$revision&order=id.asc")
-            remote.optionalRows("sentence_translations", "select=sentence_id,text&revision_id=eq.$revision&lang=eq.$lang&order=sentence_id.asc")
-                ?.let { attach(sentences, it, "sentence_id", "text", lang) }
-            remote.optionalRows("word_translations", "select=word_id,translation&revision_id=eq.$revision&lang=eq.$lang&order=word_id.asc")
-                ?.let { attach(words, it, "word_id", "translation", lang) }
-            remote.optionalRows("revision_texts", "select=revision_id,description&revision_id=eq.$revision&lang=eq.$lang&order=revision_id.asc")
-                ?.forEachObject { doc.put("descriptions", JSONObject().put(lang, it.getString("description"))) }
+            remote.translations("sentence_translations", "sentence_id,text", revision, "sentence_id.asc")
+                .forEach { (code, found) -> attach(sentences, found, "sentence_id", "text", code) }
+            remote.translations("word_translations", "word_id,translation", revision, "word_id.asc")
+                .forEach { (code, found) -> attach(words, found, "word_id", "translation", code) }
+            remote.translations("revision_texts", "revision_id,description", revision, "revision_id.asc")
+                .forEach { (code, found) -> found.forEachObject { doc.map("descriptions").put(code ?: it.getString("lang"), it.getString("description")) } }
             doc.put("sentences", sentences)
             doc.put("words", words)
+            savedDocument(revision)?.let { keepTranslations(it, doc) }
             doc.put("links", remote.rows("sentence_words", "select=*&revision_id=eq.$revision&order=sentence_id.asc,word_id.asc"))
             // Comprehension questions are newer than the first servers; their absence never blocks a download.
             runCatching { remote.rows("story_questions", "select=id,position,kind,prompt,options,answer&revision_id=eq.$revision&order=position.asc") }
@@ -321,21 +409,29 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
             require(asset.getString("kind") == "cover" && asset.getString("mime_type").startsWith("image/"))
             val path = asset.getString("storage_path")
             require(!path.startsWith('/') && !path.contains("..") && !path.contains('\\'))
-            val cover = remote.bytes("/storage/v1/object/authenticated/story-media/" + path.split('/').joinToString("/") { URLEncoder.encode(it, "UTF-8").replace("+", "%20") }, 6_291_456)
+            val target = File(directory, "$revision.cover")
+            val text = File(directory, "$revision.json")
+            // Repairing a saved download's languages reuses its verified cover.
+            val saved = target.takeIf { it.exists() }?.readBytes()?.takeIf { runCatching { ContentCodec.verify(it, asset) }.isSuccess }
+            val cover = saved ?: remote.bytes("/storage/v1/object/authenticated/story-media/" + path.split('/').joinToString("/") { URLEncoder.encode(it, "UTF-8").replace("+", "%20") }, 6_291_456)
             ContentCodec.verify(cover, asset)
             val imageBounds = android.graphics.BitmapFactory.Options().apply { inJustDecodeBounds = true }
             android.graphics.BitmapFactory.decodeByteArray(cover,0,cover.size,imageBounds)
             require(imageBounds.outWidth in 1..4096 && imageBounds.outHeight in 1..4096) { "Kapak dosyası geçersiz." }
             doc.put("cover", asset)
-            val target = File(directory, "$revision.cover")
             val parsed = ContentCodec.story(doc, target.absolutePath)
             require(parsed.id == story.id && parsed.sentences.isNotEmpty())
-            require(directory.listFiles().orEmpty().sumOf { it.length() } + cover.size + doc.toString().length < 100_000_000) { "İndirme alanı dolu. Bir hikâyenin indirmesini kaldır." }
-            atomic(AtomicFile(target), cover)
-            atomic(AtomicFile(File(directory, "$revision.json")), doc.toString().toByteArray(Charsets.UTF_8))
+            val replaced = (if (saved != null) target.length() else 0L) + (if (text.exists()) text.length() else 0L)
+            require(directory.listFiles().orEmpty().sumOf { it.length() } - replaced + cover.size + doc.toString().length < 100_000_000) { "İndirme alanı dolu. Bir hikâyenin indirmesini kaldır." }
+            if (saved == null) atomic(AtomicFile(target), cover)
+            atomic(AtomicFile(text), doc.toString().toByteArray(Charsets.UTF_8))
             parsed
         }
-        downloaded = downloaded + (result.revisionId to result); historical[result.revisionId] = result; publish(); result
+        downloaded = downloaded + (result.revisionId to result)
+        historical[result.revisionId] = result
+        val complete = withContext(Dispatchers.IO) { savedDocument(result.revisionId)?.let { complete(it, SupportLanguage.code) } == true }
+        incompleteDownloads = if (complete) incompleteDownloads - result.revisionId else incompleteDownloads + result.revisionId
+        return result
     }
     suspend fun removeDownload(story: Story) = lock.withLock {
         // Keep the small text archive as the source for already learned vocabulary.
@@ -411,6 +507,8 @@ class ContentViewModel internal constructor(application: Application, val reposi
         viewModelScope.launch {
             try { val ready = try { repository.download(story) } finally { waiting.remove(story.revisionId) }
                 finish(ContentStatus(message = text(R.string.content_message_downloaded)), true); callbacks.forEach { it(ready) } }
+            // The saved copy still opens, but the failure is reported instead of claiming the language is ready offline.
+            catch (partial: IncompleteDownloadException) { finish(ContentStatus(message = text(R.string.content_message_language_incomplete), failed = true), false); callbacks.forEach { it(partial.story) } }
             catch (_: Exception) { finish(ContentStatus(message = text(R.string.content_message_download_failed), failed = true), false) }
         }
     }

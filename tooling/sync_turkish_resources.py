@@ -18,7 +18,7 @@ def expected_resources():
         if len(root) == 1:
             continue
         ET.indent(root, space='    ')
-        files[source.name] = ET.tostring(root, encoding='unicode', xml_declaration=True) + '\n'
+        files[source.name] = ET.tostring(root, encoding='unicode', xml_declaration=True).replace("encoding='UTF-8'", "encoding='utf-8'") + '\n'
     return files
 
 

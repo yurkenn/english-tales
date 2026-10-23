@@ -83,6 +83,7 @@ test('the daily goal counts sessions, so a reading and a flawless game miss a go
 
 test('opening again returns the same reward and adds no more XP',async()=>{
   const id=await learner(2);
+  await user(id,'select public.set_league_opt_out(false)');
   await finishQuests(id);
   const first=await open(id);
   const again=await open(id);
@@ -91,6 +92,15 @@ test('opening again returns the same reward and adds no more XP',async()=>{
   assert.deepEqual((await chests(id)).recent,[{day:today,points:first.points}]);
   // 20 for the story, 25 for the flawless game, then the chest.
   assert.equal((await league(id)).members[0].xp,45+first.points);
+});
+
+test('a chest opened outside the league gives its points but no league entry',async()=>{
+  const id=await learner(2);
+  await finishQuests(id);
+  assert.ok((await open(id)).points>0);
+  const mine=await league(id);
+  assert.equal(mine.joined,false);assert.equal(mine.optedOut,true);assert.deepEqual(mine.members,[]);
+  assert.equal((await db.query('select count(*)::int n from public.league_entries where user_id=$1',[id])).rows[0].n,0);
 });
 
 test('only days next to today can be opened, and another learner sees only their own chests',async()=>{
