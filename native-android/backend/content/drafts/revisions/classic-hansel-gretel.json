@@ -90,7 +90,7 @@
     ],
     "pendingLanguages": [],
     "reviewedLanguages": [],
-    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+    "reviewStatus": "AI-drafted translations; owner authorized publication on 2026-10-23; not native-speaker-approved"
   },
   "story": {
     "id": "classic-hansel-gretel",
@@ -1847,5 +1847,14 @@
     "wordsAfter": 924,
     "sentencesBefore": 29,
     "sentencesAfter": 77
+  },
+  "publication": {
+    "status": "published",
+    "revisionId": "4034806e-4b3a-423e-b615-59461ab1d00a",
+    "publishedAt": "2026-10-23T10:21:12.551627+00:00",
+    "project": "gtuangjukckpuerczfxd",
+    "ownerAuthorized": true,
+    "nativeSpeakerApproved": false,
+    "evidence": "native-android/docs/release-evidence/2026-10-23-completion.json"
   }
 }

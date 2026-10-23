@@ -57,7 +57,7 @@
     ],
     "pendingLanguages": [],
     "reviewedLanguages": [],
-    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+    "reviewStatus": "AI-drafted translations; owner authorized publication on 2026-10-23; not native-speaker-approved"
   },
   "story": {
     "id": "classic-ant-dove",
@@ -941,5 +941,14 @@
     "wordsAfter": 195,
     "sentencesBefore": 13,
     "sentencesAfter": 28
+  },
+  "publication": {
+    "status": "published",
+    "revisionId": "27ddac3f-77ef-4e39-88a9-1a16acf7d14c",
+    "publishedAt": "2026-10-23T10:21:08.43404+00:00",
+    "project": "gtuangjukckpuerczfxd",
+    "ownerAuthorized": true,
+    "nativeSpeakerApproved": false,
+    "evidence": "native-android/docs/release-evidence/2026-10-23-completion.json"
   }
 }

@@ -86,7 +86,7 @@
     ],
     "pendingLanguages": [],
     "reviewedLanguages": [],
-    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+    "reviewStatus": "AI-drafted translations; owner authorized publication on 2026-10-23; not native-speaker-approved"
   },
   "story": {
     "id": "classic-red-riding-hood",
@@ -1792,5 +1792,14 @@
     "wordsAfter": 753,
     "sentencesBefore": 30,
     "sentencesAfter": 74
+  },
+  "publication": {
+    "status": "published",
+    "revisionId": "4ef46a3c-4c57-4afd-a178-d0b8e6f1ed50",
+    "publishedAt": "2026-10-23T10:21:12.071846+00:00",
+    "project": "gtuangjukckpuerczfxd",
+    "ownerAuthorized": true,
+    "nativeSpeakerApproved": false,
+    "evidence": "native-android/docs/release-evidence/2026-10-23-completion.json"
   }
 }

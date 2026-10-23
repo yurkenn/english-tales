@@ -1020,5 +1020,14 @@
     "date": "2026-10-23",
     "by": "Oğuz Yürken",
     "nativeSpeakerApproved": false
+  },
+  "publication": {
+    "status": "published",
+    "revisionId": "68e8ef8b-dad6-4856-ba67-c7bfcd915ac6",
+    "publishedAt": "2026-10-23T10:24:53.683478+00:00",
+    "project": "gtuangjukckpuerczfxd",
+    "ownerAuthorized": true,
+    "nativeSpeakerApproved": false,
+    "evidence": "native-android/docs/release-evidence/2026-10-23-completion.json"
   }
 }

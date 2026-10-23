@@ -58,7 +58,7 @@
     ],
     "pendingLanguages": [],
     "reviewedLanguages": [],
-    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+    "reviewStatus": "AI-drafted translations; owner authorized publication on 2026-10-23; not native-speaker-approved"
   },
   "story": {
     "id": "classic-crow-pitcher",
@@ -936,5 +936,14 @@
     "wordsAfter": 196,
     "sentencesBefore": 14,
     "sentencesAfter": 30
+  },
+  "publication": {
+    "status": "published",
+    "revisionId": "3fb99b32-1464-44f2-844e-ea31793d2e7d",
+    "publishedAt": "2026-10-23T10:21:08.01958+00:00",
+    "project": "gtuangjukckpuerczfxd",
+    "ownerAuthorized": true,
+    "nativeSpeakerApproved": false,
+    "evidence": "native-android/docs/release-evidence/2026-10-23-completion.json"
   }
 }

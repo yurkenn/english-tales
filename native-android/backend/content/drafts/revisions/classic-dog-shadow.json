@@ -53,7 +53,7 @@
     ],
     "pendingLanguages": [],
     "reviewedLanguages": [],
-    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+    "reviewStatus": "AI-drafted translations; owner authorized publication on 2026-10-23; not native-speaker-approved"
   },
   "story": {
     "id": "classic-dog-shadow",
@@ -832,5 +832,14 @@
     "wordsAfter": 191,
     "sentencesBefore": 12,
     "sentencesAfter": 23
+  },
+  "publication": {
+    "status": "published",
+    "revisionId": "cd2d81e7-7ff5-42f5-aec2-1ed0dfdce508",
+    "publishedAt": "2026-10-23T10:21:09.311722+00:00",
+    "project": "gtuangjukckpuerczfxd",
+    "ownerAuthorized": true,
+    "nativeSpeakerApproved": false,
+    "evidence": "native-android/docs/release-evidence/2026-10-23-completion.json"
   }
 }

@@ -54,7 +54,7 @@
     ],
     "pendingLanguages": [],
     "reviewedLanguages": [],
-    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+    "reviewStatus": "AI-drafted translations; owner authorized publication on 2026-10-23; not native-speaker-approved"
   },
   "story": {
     "id": "classic-town-country-mouse",
@@ -823,5 +823,14 @@
     "wordsAfter": 207,
     "sentencesBefore": 14,
     "sentencesAfter": 26
+  },
+  "publication": {
+    "status": "published",
+    "revisionId": "d7daa3c2-fe03-4653-99bc-e4685de0a89b",
+    "publishedAt": "2026-10-23T10:21:10.2126+00:00",
+    "project": "gtuangjukckpuerczfxd",
+    "ownerAuthorized": true,
+    "nativeSpeakerApproved": false,
+    "evidence": "native-android/docs/release-evidence/2026-10-23-completion.json"
   }
 }

@@ -55,7 +55,7 @@
     ],
     "pendingLanguages": [],
     "reviewedLanguages": [],
-    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+    "reviewStatus": "AI-drafted translations; owner authorized publication on 2026-10-23; not native-speaker-approved"
   },
   "story": {
     "id": "classic-north-wind-sun",
@@ -880,5 +880,14 @@
     "wordsAfter": 189,
     "sentencesBefore": 14,
     "sentencesAfter": 27
+  },
+  "publication": {
+    "status": "published",
+    "revisionId": "36a87928-5fea-4eaf-9bc0-f35444bc6e58",
+    "publishedAt": "2026-10-23T10:21:10.719415+00:00",
+    "project": "gtuangjukckpuerczfxd",
+    "ownerAuthorized": true,
+    "nativeSpeakerApproved": false,
+    "evidence": "native-android/docs/release-evidence/2026-10-23-completion.json"
   }
 }

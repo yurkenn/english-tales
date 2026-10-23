@@ -1,8 +1,14 @@
 # English Tales — son çalışmalar ve yayın durumu
 
-Son güncelleme: **21 Ekim 2026**.
+Son güncelleme: **23 Ekim 2026**.
 
 Gelecek işler ve öncelik sırası: [90 günlük yol haritası](native-android/docs/ROADMAP_2026_Q4.md).
+
+## İçerik ve yarım kalan işler — 23 Ekim 2026
+
+Claude #172 birleştirildi; 13 yeni uzun hikâyeye ek olarak 14 mevcut hikâye uzatması ve dört kısa hikâye yayınlandı. Canlı katalog **67 hikâye**, güncel revizyonlarda **2.839 cümle**; 18 hedefin 11 dili ve 67 medya SHA-256 değeri anonim API üzerinden doğrulandı. Önceki metin ve çeviriler korundu. Kaynak/yayın kanıtları #173 içinde takip edilir.
+
+İzin verilen mevcut hesap canlı sandık kabulünde iki test oturumu, 25 oyun + 20 sandık puanı ve okuma dahil 65 lig XP doğrulandı; tekrar gönderme/açma ek puan yazmıyor. Backend 201/201, hedefli Android sandık testleri 4/4 geçti. [Tamamlama raporu ve sınırlar](native-android/docs/COMPLETION_2026-10-23.md). Bu kayıt yeni mağaza paketi veya ana dil onayı iddia etmez. Aşağıdaki önceki tarihli kayıtlar tarihçedir.
 
 ## Güncel proje kontrolü — 21 Ekim 2026
 

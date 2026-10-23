@@ -59,7 +59,7 @@
     ],
     "pendingLanguages": [],
     "reviewedLanguages": [],
-    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+    "reviewStatus": "AI-drafted translations; owner authorized publication on 2026-10-23; not native-speaker-approved"
   },
   "story": {
     "id": "classic-fox-crow",
@@ -952,5 +952,14 @@
     "wordsAfter": 228,
     "sentencesBefore": 14,
     "sentencesAfter": 31
+  },
+  "publication": {
+    "status": "published",
+    "revisionId": "412700ad-fd19-40a1-8fd9-22e8299c8e0e",
+    "publishedAt": "2026-10-23T10:21:07.511411+00:00",
+    "project": "gtuangjukckpuerczfxd",
+    "ownerAuthorized": true,
+    "nativeSpeakerApproved": false,
+    "evidence": "native-android/docs/release-evidence/2026-10-23-completion.json"
   }
 }
