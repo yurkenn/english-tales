@@ -1,0 +1,836 @@
+{
+  "status": "draft",
+  "kind": "revision",
+  "source": "story-lengthening-a1-batch1-2026-10-22",
+  "reviewedBy": null,
+  "baseStoryId": "classic-dog-shadow",
+  "baseStorySHA256": "bb7465041945ca7a0b7be6dd070c7c61cf1e9f8021659ad9311ffa8df1b85d15",
+  "editorialNotes": [
+    "Adds where the meat came from (Aesop's butcher), the still water, the dog's greedy thoughts and bark, the empty reflection and the sad walk home.",
+    "Every legacy sentence, its ID and its translations are kept unchanged; new sentences are only inserted between them. Plot, characters, ending and lesson are unchanged.",
+    "New sentences have AI-drafted translations in all ten additional support languages, following the gender and wording already used in each legacy translation. No native-speaker review."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "unchangedTranslationsPreserved": true,
+    "newSentenceIds": [
+      "classic-dog-shadow-ext-01-01",
+      "classic-dog-shadow-ext-01-02",
+      "classic-dog-shadow-ext-02-01",
+      "classic-dog-shadow-ext-04-01",
+      "classic-dog-shadow-ext-05-01",
+      "classic-dog-shadow-ext-05-02",
+      "classic-dog-shadow-ext-06-01",
+      "classic-dog-shadow-ext-07-01",
+      "classic-dog-shadow-ext-09-01",
+      "classic-dog-shadow-ext-09-02",
+      "classic-dog-shadow-ext-11-01"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+  },
+  "story": {
+    "id": "classic-dog-shadow",
+    "title": "The Dog and the Shadow",
+    "author": "Aesop",
+    "level": "A1",
+    "genre": "Macera",
+    "description": "Köpek ve Gölgesi. Sudaki yansımasını başka bir köpek sanan açgözlü bir köpek. A1 düzeyinde kısa uyarlama. Uyarlama ve Türkçe çeviri: English Tales. Tarihî görsel: Arthur Rackham; kitap içi illüstrasyon, ayrı bir ilk baskı kapağı değildir.",
+    "coverKey": "cover_classic_dog_shadow",
+    "sentences": [
+      {
+        "id": "cl-dog-shadow-01",
+        "english": "A dog carries a piece of meat in his mouth.",
+        "turkish": "Bir köpek ağzında bir parça et taşır.",
+        "translations": {
+          "es-419": "Un perro lleva un pedazo de carne en la boca.",
+          "pt-BR": "Um cachorro carrega um pedaço de carne na boca.",
+          "id": "Seekor anjing membawa sepotong daging di mulutnya.",
+          "ar": "يحمل كلب قطعة لحم في فمه.",
+          "vi": "Một con chó ngậm một miếng thịt trong miệng.",
+          "hi": "एक कुत्ता अपने मुँह में मांस का एक टुकड़ा लिए जा रहा है।",
+          "ru": "Пёс несёт в зубах кусок мяса.",
+          "bn": "একটা কুকুর মুখে এক টুকরো মাংস নিয়ে যাচ্ছে।",
+          "ur": "ایک کتا منہ میں گوشت کا ایک ٹکڑا لیے جا رہا ہے۔",
+          "th": "สุนัขตัวหนึ่งคาบเนื้อชิ้นหนึ่งไว้ในปาก"
+        }
+      },
+      {
+        "id": "classic-dog-shadow-ext-01-01",
+        "english": "It is a gift from the butcher in the village.",
+        "turkish": "Bu et, köydeki kasabın bir hediyesidir.",
+        "translations": {
+          "es-419": "Es un regalo del carnicero del pueblo.",
+          "pt-BR": "É um presente do açougueiro da vila.",
+          "id": "Daging itu hadiah dari tukang daging di desa.",
+          "ar": "إنها هدية من الجزّار في القرية.",
+          "vi": "Đó là món quà của bác hàng thịt trong làng.",
+          "hi": "यह गाँव के कसाई का दिया हुआ तोहफ़ा है।",
+          "ru": "Это подарок мясника из деревни.",
+          "bn": "এটা গ্রামের কসাইয়ের দেওয়া উপহার।",
+          "ur": "یہ گاؤں کے قصائی کا دیا ہوا تحفہ ہے۔",
+          "th": "มันเป็นของขวัญจากคนขายเนื้อในหมู่บ้าน"
+        }
+      },
+      {
+        "id": "classic-dog-shadow-ext-01-02",
+        "english": "He wants to eat it at home, in a quiet place.",
+        "turkish": "Onu evde, sessiz bir yerde yemek ister.",
+        "translations": {
+          "es-419": "Quiere comérsela en casa, en un lugar tranquilo.",
+          "pt-BR": "Ele quer comê-la em casa, num lugar tranquilo.",
+          "id": "Ia ingin memakannya di rumah, di tempat yang tenang.",
+          "ar": "يريد أن يأكلها في البيت، في مكان هادئ.",
+          "vi": "Nó muốn mang về nhà ăn ở một chỗ yên tĩnh.",
+          "hi": "वह उसे घर पर, किसी शांत जगह पर खाना चाहता है।",
+          "ru": "Он хочет съесть его дома, в тихом месте.",
+          "bn": "সে সেটা বাড়িতে, কোনো শান্ত জায়গায় বসে খেতে চায়।",
+          "ur": "وہ اسے گھر پر کسی پرسکون جگہ کھانا چاہتا ہے۔",
+          "th": "มันอยากกินที่บ้าน ในที่เงียบ ๆ"
+        }
+      },
+      {
+        "id": "cl-dog-shadow-02",
+        "english": "He walks across a bridge over a river.",
+        "turkish": "Bir nehrin üzerindeki köprüden geçer.",
+        "translations": {
+          "es-419": "Cruza un puente sobre un río.",
+          "pt-BR": "Ele atravessa uma ponte sobre um rio.",
+          "id": "Ia berjalan menyeberangi jembatan di atas sungai.",
+          "ar": "يمشي على جسر فوق نهر.",
+          "vi": "Nó đi qua một cây cầu bắc ngang dòng sông.",
+          "hi": "वह नदी पर बने एक पुल को पार करता है।",
+          "ru": "Он идёт по мосту через реку.",
+          "bn": "সে নদীর ওপরের একটা সেতু পার হয়।",
+          "ur": "وہ دریا پر بنے ایک پل سے گزرتا ہے۔",
+          "th": "มันเดินข้ามสะพานที่ทอดข้ามแม่น้ำ"
+        }
+      },
+      {
+        "id": "classic-dog-shadow-ext-02-01",
+        "english": "The day is bright, and the water is very still.",
+        "turkish": "Gün aydınlıktır ve su çok durgundur.",
+        "translations": {
+          "es-419": "El día está claro y el agua está muy quieta.",
+          "pt-BR": "O dia está claro, e a água está bem parada.",
+          "id": "Hari itu cerah, dan airnya sangat tenang.",
+          "ar": "النهار مشرق، والماء ساكن جدًا.",
+          "vi": "Trời sáng sủa, mặt nước rất phẳng lặng.",
+          "hi": "दिन उजला है और पानी बिल्कुल ठहरा हुआ है।",
+          "ru": "День ясный, а вода совсем спокойная.",
+          "bn": "দিনটা উজ্জ্বল, আর জল একদম স্থির।",
+          "ur": "دن روشن ہے اور پانی بالکل ٹھہرا ہوا ہے۔",
+          "th": "วันนั้นแดดจ้า และน้ำนิ่งมาก"
+        }
+      },
+      {
+        "id": "cl-dog-shadow-03",
+        "english": "When he looks down, he sees his reflection.",
+        "turkish": "Aşağı baktığında kendi yansımasını görür.",
+        "translations": {
+          "es-419": "Cuando mira hacia abajo, ve su reflejo.",
+          "pt-BR": "Quando olha para baixo, vê o seu reflexo.",
+          "id": "Ketika ia melihat ke bawah, ia melihat bayangannya.",
+          "ar": "عندما ينظر إلى الأسفل، يرى انعكاسه.",
+          "vi": "Khi nhìn xuống, nó thấy bóng của mình.",
+          "hi": "जब वह नीचे देखता है, तो उसे अपनी परछाईं दिखती है।",
+          "ru": "Посмотрев вниз, он видит своё отражение.",
+          "bn": "নিচে তাকিয়ে সে নিজের প্রতিবিম্ব দেখতে পায়।",
+          "ur": "جب وہ نیچے دیکھتا ہے تو اسے اپنا عکس نظر آتا ہے۔",
+          "th": "เมื่อมองลงไป มันเห็นเงาสะท้อนของตัวเอง"
+        }
+      },
+      {
+        "id": "cl-dog-shadow-04",
+        "english": "He thinks another dog is in the water.",
+        "turkish": "Suyun içinde başka bir köpek olduğunu sanır.",
+        "translations": {
+          "es-419": "Cree que hay otro perro en el agua.",
+          "pt-BR": "Ele pensa que há outro cachorro na água.",
+          "id": "Ia mengira ada anjing lain di dalam air.",
+          "ar": "يظنّ أن كلبًا آخر في الماء.",
+          "vi": "Nó tưởng có một con chó khác ở dưới nước.",
+          "hi": "उसे लगता है कि पानी में कोई दूसरा कुत्ता है।",
+          "ru": "Он думает, что в воде другая собака.",
+          "bn": "সে ভাবে, জলের মধ্যে আরেকটা কুকুর আছে।",
+          "ur": "وہ سمجھتا ہے کہ پانی میں کوئی دوسرا کتا ہے۔",
+          "th": "มันคิดว่ามีสุนัขอีกตัวอยู่ในน้ำ"
+        }
+      },
+      {
+        "id": "classic-dog-shadow-ext-04-01",
+        "english": "The other dog also has meat in his mouth.",
+        "turkish": "Öteki köpeğin de ağzında et vardır.",
+        "translations": {
+          "es-419": "El otro perro también tiene carne en la boca.",
+          "pt-BR": "O outro cachorro também tem carne na boca.",
+          "id": "Anjing yang lain juga membawa daging di mulutnya.",
+          "ar": "الكلب الآخر أيضًا في فمه لحم.",
+          "vi": "Con chó kia cũng ngậm thịt trong miệng.",
+          "hi": "दूसरे कुत्ते के मुँह में भी मांस है।",
+          "ru": "У другой собаки тоже мясо в зубах.",
+          "bn": "অন্য কুকুরটার মুখেও মাংস আছে।",
+          "ur": "دوسرے کتے کے منہ میں بھی گوشت ہے۔",
+          "th": "สุนัขอีกตัวก็คาบเนื้ออยู่ในปากเหมือนกัน"
+        }
+      },
+      {
+        "id": "cl-dog-shadow-05",
+        "english": "That dog seems to have a bigger piece of meat.",
+        "turkish": "O köpeğin daha büyük bir et parçası var gibidir.",
+        "translations": {
+          "es-419": "Ese perro parece tener un pedazo de carne más grande.",
+          "pt-BR": "Esse cachorro parece ter um pedaço de carne maior.",
+          "id": "Anjing itu tampaknya membawa potongan daging yang lebih besar.",
+          "ar": "يبدو أن مع ذلك الكلب قطعة لحم أكبر.",
+          "vi": "Con chó kia dường như có miếng thịt to hơn.",
+          "hi": "उस कुत्ते के पास मांस का ज़्यादा बड़ा टुकड़ा लगता है।",
+          "ru": "Кажется, у той собаки кусок мяса больше.",
+          "bn": "মনে হয়, সেই কুকুরটার মাংসের টুকরোটা আরও বড়।",
+          "ur": "لگتا ہے اس کتے کے پاس گوشت کا بڑا ٹکڑا ہے۔",
+          "th": "สุนัขตัวนั้นดูเหมือนจะมีเนื้อชิ้นใหญ่กว่า"
+        }
+      },
+      {
+        "id": "classic-dog-shadow-ext-05-01",
+        "english": "\"His meat is bigger than mine,\" he thinks.",
+        "turkish": "\"Onun eti benimkinden büyük,\" diye düşünür.",
+        "translations": {
+          "es-419": "\"Su carne es más grande que la mía\", piensa.",
+          "pt-BR": "— A carne dele é maior que a minha — pensa ele.",
+          "id": "\"Dagingnya lebih besar daripada punyaku,\" pikirnya.",
+          "ar": "يفكّر: «لحمه أكبر من لحمي.»",
+          "vi": "\"Miếng thịt của nó to hơn của mình,\" nó nghĩ.",
+          "hi": "\"उसका मांस मेरे वाले से बड़ा है,\" वह सोचता है।",
+          "ru": "«У неё кусок больше моего», — думает он.",
+          "bn": "\"ওর মাংসটা আমারটার চেয়ে বড়,\" সে ভাবে।",
+          "ur": "\"اس کا گوشت میرے والے سے بڑا ہے،\" وہ سوچتا ہے۔",
+          "th": "\"เนื้อของมันใหญ่กว่าของข้า\" มันคิด"
+        }
+      },
+      {
+        "id": "classic-dog-shadow-ext-05-02",
+        "english": "\"I want that piece too.\"",
+        "turkish": "\"O parçayı da istiyorum.\"",
+        "translations": {
+          "es-419": "\"Quiero ese pedazo también.\"",
+          "pt-BR": "— Eu também quero aquele pedaço.",
+          "id": "\"Aku mau potongan itu juga.\"",
+          "ar": "«أريد تلك القطعة أيضًا.»",
+          "vi": "\"Mình cũng muốn miếng đó nữa.\"",
+          "hi": "\"मुझे वह टुकड़ा भी चाहिए।\"",
+          "ru": "«Я хочу и этот кусок».",
+          "bn": "\"ওই টুকরোটাও আমার চাই।\"",
+          "ur": "\"مجھے وہ ٹکڑا بھی چاہیے۔\"",
+          "th": "\"ข้าอยากได้ชิ้นนั้นด้วย\""
+        }
+      },
+      {
+        "id": "cl-dog-shadow-06",
+        "english": "The dog wants both pieces for himself.",
+        "turkish": "Köpek iki parçayı da kendisi ister.",
+        "translations": {
+          "es-419": "El perro quiere los dos pedazos para él.",
+          "pt-BR": "O cachorro quer os dois pedaços para si.",
+          "id": "Anjing itu menginginkan kedua potong daging untuk dirinya sendiri.",
+          "ar": "يريد الكلب القطعتين لنفسه.",
+          "vi": "Con chó muốn có cả hai miếng thịt cho riêng mình.",
+          "hi": "कुत्ता दोनों टुकड़े अपने लिए चाहता है।",
+          "ru": "Пёс хочет оба куска себе.",
+          "bn": "কুকুরটা দুটো টুকরোই নিজের জন্য চায়।",
+          "ur": "کتا دونوں ٹکڑے اپنے لیے چاہتا ہے۔",
+          "th": "สุนัขอยากได้เนื้อทั้งสองชิ้นไว้เป็นของตัวเอง"
+        }
+      },
+      {
+        "id": "classic-dog-shadow-ext-06-01",
+        "english": "He does not stop to think.",
+        "turkish": "Düşünmek için durmaz.",
+        "translations": {
+          "es-419": "No se detiene a pensar.",
+          "pt-BR": "Ele não para para pensar.",
+          "id": "Ia tidak berhenti untuk berpikir.",
+          "ar": "لا يتوقّف ليفكّر.",
+          "vi": "Nó chẳng dừng lại suy nghĩ.",
+          "hi": "वह रुककर सोचता नहीं।",
+          "ru": "Он не останавливается, чтобы подумать.",
+          "bn": "সে থেমে একটু ভাবেও না।",
+          "ur": "وہ رک کر سوچتا بھی نہیں۔",
+          "th": "มันไม่หยุดคิดเลย"
+        }
+      },
+      {
+        "id": "cl-dog-shadow-07",
+        "english": "He opens his mouth to take the other piece.",
+        "turkish": "Öteki parçayı almak için ağzını açar.",
+        "translations": {
+          "es-419": "Abre la boca para tomar el otro pedazo.",
+          "pt-BR": "Ele abre a boca para pegar o outro pedaço.",
+          "id": "Ia membuka mulutnya untuk merebut potongan yang lain.",
+          "ar": "يفتح فمه ليأخذ القطعة الأخرى.",
+          "vi": "Nó há miệng ra để đớp miếng thịt kia.",
+          "hi": "वह दूसरा टुकड़ा लेने के लिए अपना मुँह खोलता है।",
+          "ru": "Он открывает пасть, чтобы схватить другой кусок.",
+          "bn": "অন্য টুকরোটা নেওয়ার জন্য সে মুখ খোলে।",
+          "ur": "وہ دوسرا ٹکڑا چھیننے کے لیے منہ کھولتا ہے۔",
+          "th": "มันอ้าปากเพื่อจะแย่งเนื้ออีกชิ้น"
+        }
+      },
+      {
+        "id": "classic-dog-shadow-ext-07-01",
+        "english": "He barks loudly at the water.",
+        "turkish": "Suya doğru yüksek sesle havlar.",
+        "translations": {
+          "es-419": "Le ladra fuerte al agua.",
+          "pt-BR": "Ele late alto para a água.",
+          "id": "Ia menggonggong keras ke arah air.",
+          "ar": "ينبح بصوت عالٍ نحو الماء.",
+          "vi": "Nó sủa ầm lên về phía mặt nước.",
+          "hi": "वह पानी की ओर ज़ोर से भौंकता है।",
+          "ru": "Он громко лает на воду.",
+          "bn": "সে জলের দিকে জোরে ঘেউ ঘেউ করে ওঠে।",
+          "ur": "وہ پانی کی طرف زور سے بھونکتا ہے۔",
+          "th": "มันเห่าใส่น้ำเสียงดัง"
+        }
+      },
+      {
+        "id": "cl-dog-shadow-08",
+        "english": "His own meat falls into the river.",
+        "turkish": "Kendi eti nehre düşer.",
+        "translations": {
+          "es-419": "Su propia carne cae al río.",
+          "pt-BR": "A sua própria carne cai no rio.",
+          "id": "Dagingnya sendiri jatuh ke sungai.",
+          "ar": "تسقط قطعة لحمه في النهر.",
+          "vi": "Miếng thịt của chính nó rơi xuống sông.",
+          "hi": "उसका अपना मांस नदी में गिर जाता है।",
+          "ru": "Его собственное мясо падает в реку.",
+          "bn": "তার নিজের মাংসটা নদীতে পড়ে যায়।",
+          "ur": "اس کا اپنا گوشت دریا میں گر جاتا ہے۔",
+          "th": "เนื้อของมันเองจึงตกลงไปในแม่น้ำ"
+        }
+      },
+      {
+        "id": "cl-dog-shadow-09",
+        "english": "The water carries it away.",
+        "turkish": "Su onu alıp götürür.",
+        "translations": {
+          "es-419": "El agua se la lleva.",
+          "pt-BR": "A água a leva embora.",
+          "id": "Air sungai menghanyutkannya.",
+          "ar": "يحملها الماء بعيدًا.",
+          "vi": "Dòng nước cuốn nó đi mất.",
+          "hi": "पानी उसे बहा ले जाता है।",
+          "ru": "Вода уносит его.",
+          "bn": "জলের স্রোত সেটা ভাসিয়ে নিয়ে যায়।",
+          "ur": "پانی اسے بہا لے جاتا ہے۔",
+          "th": "น้ำพัดเนื้อนั้นไป"
+        }
+      },
+      {
+        "id": "classic-dog-shadow-ext-09-01",
+        "english": "The dog looks at the river for a long time.",
+        "turkish": "Köpek uzun süre nehre bakar.",
+        "translations": {
+          "es-419": "El perro mira el río durante mucho tiempo.",
+          "pt-BR": "O cachorro olha para o rio por muito tempo.",
+          "id": "Anjing itu memandangi sungai untuk waktu yang lama.",
+          "ar": "ينظر الكلب إلى النهر وقتًا طويلًا.",
+          "vi": "Con chó nhìn dòng sông rất lâu.",
+          "hi": "कुत्ता बहुत देर तक नदी को देखता रहता है।",
+          "ru": "Пёс долго смотрит на реку.",
+          "bn": "কুকুরটা অনেকক্ষণ নদীর দিকে তাকিয়ে থাকে।",
+          "ur": "کتا دیر تک دریا کو دیکھتا رہتا ہے۔",
+          "th": "สุนัขจ้องมองแม่น้ำอยู่นาน"
+        }
+      },
+      {
+        "id": "classic-dog-shadow-ext-09-02",
+        "english": "Now the dog in the water has no meat either.",
+        "turkish": "Artık sudaki köpeğin de eti yoktur.",
+        "translations": {
+          "es-419": "Ahora el perro del agua tampoco tiene carne.",
+          "pt-BR": "Agora o cachorro na água também não tem carne.",
+          "id": "Sekarang anjing di dalam air juga tidak membawa daging.",
+          "ar": "الآن الكلب الذي في الماء ليس معه لحم أيضًا.",
+          "vi": "Giờ con chó dưới nước cũng chẳng còn miếng thịt nào.",
+          "hi": "अब पानी वाले कुत्ते के पास भी मांस नहीं है।",
+          "ru": "Теперь и у собаки в воде нет мяса.",
+          "bn": "এখন জলের কুকুরটার মুখেও কোনো মাংস নেই।",
+          "ur": "اب پانی والے کتے کے پاس بھی گوشت نہیں ہے۔",
+          "th": "ตอนนี้สุนัขในน้ำก็ไม่มีเนื้อเหมือนกัน"
+        }
+      },
+      {
+        "id": "cl-dog-shadow-10",
+        "english": "There is no second dog and no second piece of meat.",
+        "turkish": "İkinci bir köpek ve ikinci bir et parçası yoktur.",
+        "translations": {
+          "es-419": "No hay un segundo perro ni un segundo pedazo de carne.",
+          "pt-BR": "Não há um segundo cachorro nem um segundo pedaço de carne.",
+          "id": "Tidak ada anjing kedua dan tidak ada potongan daging kedua.",
+          "ar": "لا يوجد كلب ثانٍ ولا قطعة لحم ثانية.",
+          "vi": "Chẳng có con chó thứ hai, cũng chẳng có miếng thịt thứ hai nào.",
+          "hi": "न कोई दूसरा कुत्ता है, न मांस का दूसरा टुकड़ा।",
+          "ru": "Нет ни второй собаки, ни второго куска мяса.",
+          "bn": "দ্বিতীয় কোনো কুকুর নেই, দ্বিতীয় কোনো মাংসের টুকরোও নেই।",
+          "ur": "نہ کوئی دوسرا کتا ہے، نہ گوشت کا دوسرا ٹکڑا۔",
+          "th": "ไม่มีสุนัขตัวที่สองและไม่มีเนื้อชิ้นที่สอง"
+        }
+      },
+      {
+        "id": "cl-dog-shadow-11",
+        "english": "The dog is left with nothing.",
+        "turkish": "Köpeğin elinde hiçbir şey kalmaz.",
+        "translations": {
+          "es-419": "El perro se queda sin nada.",
+          "pt-BR": "O cachorro fica sem nada.",
+          "id": "Anjing itu tidak mendapat apa-apa.",
+          "ar": "يبقى الكلب بلا شيء.",
+          "vi": "Con chó chẳng còn lại gì.",
+          "hi": "कुत्ते के पास कुछ नहीं बचता।",
+          "ru": "Пёс остаётся ни с чем.",
+          "bn": "কুকুরটার কাছে কিছুই থাকে না।",
+          "ur": "کتے کے پاس کچھ بھی نہیں بچتا۔",
+          "th": "สุนัขไม่เหลืออะไรเลย"
+        }
+      },
+      {
+        "id": "classic-dog-shadow-ext-11-01",
+        "english": "He walks home slowly, sad and hungry.",
+        "turkish": "Üzgün ve aç bir halde, yavaşça evine yürür.",
+        "translations": {
+          "es-419": "Camina despacio a casa, triste y con hambre.",
+          "pt-BR": "Ele volta devagar para casa, triste e com fome.",
+          "id": "Ia berjalan pulang dengan pelan, sedih dan lapar.",
+          "ar": "يمشي إلى البيت ببطء، حزينًا وجائعًا.",
+          "vi": "Nó chậm rãi đi về nhà, vừa buồn vừa đói.",
+          "hi": "वह उदास और भूखा, धीरे-धीरे घर लौटता है।",
+          "ru": "Он медленно идёт домой, грустный и голодный.",
+          "bn": "সে দুঃখী আর ক্ষুধার্ত হয়ে ধীরে ধীরে বাড়ি ফেরে।",
+          "ur": "وہ اداس اور بھوکا، آہستہ آہستہ گھر لوٹتا ہے۔",
+          "th": "มันเดินกลับบ้านช้า ๆ ทั้งเศร้าและหิว"
+        }
+      },
+      {
+        "id": "cl-dog-shadow-12",
+        "english": "Wanting too much can make us lose what we have.",
+        "turkish": "Çok fazlasını istemek, elimizdekini kaybetmemize yol açabilir.",
+        "translations": {
+          "es-419": "Querer demasiado puede hacernos perder lo que tenemos.",
+          "pt-BR": "Querer demais pode nos fazer perder o que temos.",
+          "id": "Menginginkan terlalu banyak bisa membuat kita kehilangan apa yang kita miliki.",
+          "ar": "الطمع في الكثير قد يُفقدنا ما نملك.",
+          "vi": "Muốn quá nhiều có thể khiến chúng ta mất đi những gì mình đang có.",
+          "hi": "बहुत ज़्यादा चाहने से हम वह भी खो सकते हैं जो हमारे पास है।",
+          "ru": "Желание получить слишком много может лишить нас того, что у нас есть.",
+          "bn": "বেশি চাইতে গেলে আমাদের যা আছে তা-ও হারাতে পারি।",
+          "ur": "بہت زیادہ کی چاہت ہم سے وہ بھی چھین سکتی ہے جو ہمارے پاس ہے۔",
+          "th": "การอยากได้มากเกินไปอาจทำให้เราเสียสิ่งที่มีอยู่"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-dog-shadow-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "A dog swims across a river to find his food",
+          "A dog gives his food to another dog on a bridge",
+          "A dog catches a fish while looking into a river",
+          "A dog loses his food while trying to get more"
+        ],
+        "answer": 3
+      },
+      {
+        "id": "classic-dog-shadow-q2",
+        "kind": "detail",
+        "prompt": "What does the dog really see when he looks into the water?",
+        "options": [
+          "A swimming fish",
+          "His own face",
+          "A second dog",
+          "A fallen bird"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-dog-shadow-q3",
+        "kind": "inference",
+        "prompt": "What makes the dog's meat fall into the river?",
+        "options": [
+          "He drops it to help another dog",
+          "He jumps in to catch a fish",
+          "He opens his mouth to get more meat",
+          "He puts it down to drink some water"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "classic-dog-shadow-q4",
+        "kind": "detail",
+        "prompt": "Where does the dog get his meat?",
+        "options": [
+          "From the butcher in the village",
+          "From another dog",
+          "From a farmer's table",
+          "From the river"
+        ],
+        "answer": 0
+      }
+    ],
+    "tags": [
+      "fabl",
+      "macera"
+    ],
+    "descriptions": {
+      "es-419": "El perro y su reflejo. Un perro codicioso que cree que su reflejo en el agua es otro perro. Adaptación breve de nivel A1. Adaptación: English Tales. Imagen histórica: Arthur Rackham; ilustración interior del libro, no es una portada aparte de primera edición.",
+      "pt-BR": "O cão e a sombra. Um cão ganancioso que pensa que seu reflexo na água é outro cão. Adaptação curta de nível A1. Adaptação: English Tales. Imagem histórica: Arthur Rackham; ilustração interna do livro, não é uma capa separada de primeira edição.",
+      "id": "Anjing dan Bayangannya. Seekor anjing serakah yang mengira bayangannya di air adalah anjing lain. Adaptasi singkat tingkat A1. Adaptasi: English Tales. Gambar historis: Arthur Rackham; ilustrasi di dalam buku, bukan sampul edisi pertama tersendiri.",
+      "ar": "الكلب وظلّه. كلب طمّاع يظنّ أن انعكاسه في الماء كلب آخر. اقتباس قصير بمستوى A1. الاقتباس: English Tales. صورة تاريخية: آرثر راكهام؛ رسم توضيحي داخل الكتاب، وليس غلافًا منفصلًا للطبعة الأولى.",
+      "vi": "Con chó và cái bóng. Một con chó tham lam tưởng bóng của mình dưới nước là một con chó khác. Bản phóng tác ngắn trình độ A1. Phóng tác: English Tales. Hình ảnh lịch sử: Arthur Rackham; tranh minh họa bên trong sách, không phải bìa riêng của ấn bản đầu tiên.",
+      "hi": "लालची कुत्ता। एक लालची कुत्ता, जो पानी में अपनी परछाईं को दूसरा कुत्ता समझ लेता है। A1 स्तर का छोटा रूपांतरण। रूपांतरण: English Tales। ऐतिहासिक चित्र: Arthur Rackham; किताब के अंदर का चित्र, पहले संस्करण का अलग कवर नहीं।",
+      "ru": "Собака и её тень. Жадный пёс принимает своё отражение в воде за другую собаку. Краткая адаптация уровня A1. Адаптация: English Tales. Историческое изображение: Артур Рэкхем; внутренняя иллюстрация из книги, а не отдельная обложка первого издания.",
+      "bn": "লোভী কুকুর। জলে নিজের প্রতিবিম্বকে অন্য কুকুর ভেবে ভুল করা এক লোভী কুকুর। A1 স্তরের ছোট রূপান্তর। রূপান্তর: English Tales। ঐতিহাসিক ছবি: Arthur Rackham; বইয়ের ভেতরের ছবি, প্রথম সংস্করণের আলাদা প্রচ্ছদ নয়।",
+      "ur": "لالچی کتا۔ ایک لالچی کتا جو پانی میں اپنے عکس کو دوسرا کتا سمجھ لیتا ہے۔ A1 سطح کی مختصر ماخوذ کہانی۔ ترتیب: English Tales۔ تاریخی تصویر: Arthur Rackham؛ کتاب کے اندر کی تصویر، پہلے ایڈیشن کا الگ سرورق نہیں۔",
+      "th": "สุนัขกับเงา: สุนัขโลภที่คิดว่าเงาสะท้อนของตัวเองในน้ำเป็นสุนัขอีกตัว ฉบับดัดแปลงสั้น ๆ ระดับ A1 ดัดแปลงโดย English Tales ภาพเก่าทางประวัติศาสตร์: Arthur Rackham; ภาพประกอบภายในเล่ม ไม่ใช่ปกแยกของฉบับพิมพ์ครั้งแรก"
+    }
+  },
+  "words": [
+    {
+      "id": "dog",
+      "word": "dog",
+      "translation": "köpek",
+      "pronunciation": "/dɒɡ/",
+      "example": "A dog carries a piece of meat in his mouth.",
+      "translations": {
+        "es-419": "perro",
+        "pt-BR": "cachorro, cão",
+        "id": "anjing",
+        "ar": "كلب",
+        "vi": "con chó",
+        "hi": "कुत्ता",
+        "ru": "собака",
+        "bn": "কুকুর",
+        "ur": "کتا",
+        "th": "สุนัข"
+      }
+    },
+    {
+      "id": "carries",
+      "word": "carries",
+      "translation": "taşır",
+      "pronunciation": "/ˈkæriz/",
+      "example": "He carries a big box.",
+      "translations": {
+        "es-419": "lleva, carga",
+        "pt-BR": "carrega, leva",
+        "id": "membawa",
+        "ar": "يحمل",
+        "vi": "mang, chở",
+        "hi": "ले जाता है, उठाता है",
+        "ru": "несёт",
+        "bn": "বয়ে নিয়ে যায়",
+        "ur": "اٹھائے پھرتا ہے، لے جاتا ہے",
+        "th": "แบก, ถือ"
+      }
+    },
+    {
+      "id": "meat",
+      "word": "meat",
+      "translation": "et",
+      "pronunciation": "/miːt/",
+      "example": "A dog carries a piece of meat in his mouth.",
+      "translations": {
+        "es-419": "carne",
+        "pt-BR": "carne",
+        "id": "daging",
+        "ar": "لحم",
+        "vi": "thịt",
+        "hi": "मांस",
+        "ru": "мясо",
+        "bn": "মাংস",
+        "ur": "گوشت",
+        "th": "เนื้อ"
+      }
+    },
+    {
+      "id": "mouth",
+      "word": "mouth",
+      "translation": "ağız",
+      "pronunciation": "/maʊθ/",
+      "example": "A dog carries a piece of meat in his mouth.",
+      "translations": {
+        "es-419": "boca",
+        "pt-BR": "boca",
+        "id": "mulut",
+        "ar": "فم",
+        "vi": "miệng",
+        "hi": "मुँह",
+        "ru": "рот, пасть",
+        "bn": "মুখ",
+        "ur": "منہ",
+        "th": "ปาก"
+      }
+    },
+    {
+      "id": "bridge",
+      "word": "bridge",
+      "translation": "köprü",
+      "pronunciation": "/brɪdʒ/",
+      "example": "They crossed the bridge.",
+      "translations": {
+        "es-419": "puente",
+        "pt-BR": "ponte",
+        "id": "jembatan",
+        "ar": "جسر",
+        "vi": "cây cầu",
+        "hi": "पुल",
+        "ru": "мост",
+        "bn": "সেতু, সাঁকো",
+        "ur": "پل",
+        "th": "สะพาน"
+      }
+    },
+    {
+      "id": "river",
+      "word": "river",
+      "translation": "nehir",
+      "pronunciation": "/ˈrɪvər/",
+      "example": "The river moved slowly.",
+      "translations": {
+        "es-419": "río",
+        "pt-BR": "rio",
+        "id": "sungai",
+        "ar": "نهر",
+        "vi": "dòng sông",
+        "hi": "नदी",
+        "ru": "река",
+        "bn": "নদী",
+        "ur": "دریا",
+        "th": "แม่น้ำ"
+      }
+    },
+    {
+      "id": "reflection",
+      "word": "reflection",
+      "translation": "yansıma",
+      "pronunciation": "/rɪˈflekʃn/",
+      "example": "When he looks down, he sees his reflection.",
+      "translations": {
+        "es-419": "reflejo",
+        "pt-BR": "reflexo",
+        "id": "bayangan, pantulan",
+        "ar": "انعكاس",
+        "vi": "bóng phản chiếu",
+        "hi": "परछाईं, प्रतिबिंब",
+        "ru": "отражение",
+        "bn": "প্রতিবিম্ব, ছায়া",
+        "ur": "عکس",
+        "th": "เงาสะท้อน"
+      }
+    },
+    {
+      "id": "bigger",
+      "word": "bigger",
+      "translation": "daha büyük",
+      "pronunciation": "/ˈbɪɡər/",
+      "example": "My room is bigger than yours.",
+      "translations": {
+        "es-419": "más grande",
+        "pt-BR": "maior",
+        "id": "lebih besar",
+        "ar": "أكبر",
+        "vi": "lớn hơn",
+        "hi": "ज़्यादा बड़ा",
+        "ru": "больше",
+        "bn": "আরও বড়",
+        "ur": "زیادہ بڑا",
+        "th": "ใหญ่กว่า"
+      }
+    },
+    {
+      "id": "pieces",
+      "word": "pieces",
+      "translation": "parçalar",
+      "pronunciation": "/ˈpiːsɪz/",
+      "example": "She cuts the bread into small pieces.",
+      "translations": {
+        "es-419": "pedazos, trozos",
+        "pt-BR": "pedaços",
+        "id": "potongan",
+        "ar": "قِطَع",
+        "vi": "mảnh, miếng",
+        "hi": "टुकड़े",
+        "ru": "кусочки, куски",
+        "bn": "টুকরো",
+        "ur": "ٹکڑے",
+        "th": "ชิ้น"
+      }
+    },
+    {
+      "id": "own",
+      "word": "own",
+      "translation": "kendi",
+      "pronunciation": "/oʊn/",
+      "example": "She has her own room.",
+      "translations": {
+        "es-419": "propio",
+        "pt-BR": "próprio",
+        "id": "sendiri, milik sendiri",
+        "ar": "خاصّ به",
+        "vi": "riêng, của mình",
+        "hi": "अपना",
+        "ru": "свой, собственный",
+        "bn": "নিজের",
+        "ur": "اپنا",
+        "th": "ของตัวเอง"
+      }
+    },
+    {
+      "id": "second",
+      "word": "second",
+      "translation": "ikinci",
+      "pronunciation": "/ˈsekənd/",
+      "example": "This is my second visit.",
+      "translations": {
+        "es-419": "segundo",
+        "pt-BR": "segundo",
+        "id": "kedua",
+        "ar": "ثانٍ",
+        "vi": "thứ hai",
+        "hi": "दूसरा",
+        "ru": "второй",
+        "bn": "দ্বিতীয়",
+        "ur": "دوسرا",
+        "th": "ที่สอง"
+      }
+    },
+    {
+      "id": "nothing",
+      "word": "nothing",
+      "translation": "hiçbir şey",
+      "pronunciation": "/ˈnʌθɪŋ/",
+      "example": "There is nothing in the box.",
+      "translations": {
+        "es-419": "nada",
+        "pt-BR": "nada",
+        "id": "tidak ada apa-apa",
+        "ar": "لا شيء",
+        "vi": "không có gì",
+        "hi": "कुछ नहीं",
+        "ru": "ничего",
+        "bn": "কিছুই না",
+        "ur": "کچھ نہیں",
+        "th": "ไม่มีอะไร"
+      }
+    },
+    {
+      "id": "much",
+      "word": "much",
+      "translation": "çok",
+      "pronunciation": "/mʌtʃ/",
+      "example": "Thank you very much.",
+      "translations": {
+        "es-419": "mucho",
+        "pt-BR": "muito",
+        "id": "banyak, sangat",
+        "ar": "كثيرًا",
+        "vi": "nhiều",
+        "hi": "बहुत",
+        "ru": "много",
+        "bn": "অনেক",
+        "ur": "بہت",
+        "th": "มาก"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "dog",
+    "carries",
+    "meat",
+    "mouth",
+    "bridge",
+    "river",
+    "reflection",
+    "bigger",
+    "pieces",
+    "own",
+    "second",
+    "nothing",
+    "much"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-dog-shadow-q1",
+      "sentenceIds": [
+        "cl-dog-shadow-05",
+        "cl-dog-shadow-06",
+        "cl-dog-shadow-07",
+        "cl-dog-shadow-08",
+        "cl-dog-shadow-11"
+      ],
+      "rationale": "Wanting the other piece, he opens his mouth and loses his own meat."
+    },
+    {
+      "questionId": "classic-dog-shadow-q2",
+      "sentenceIds": [
+        "cl-dog-shadow-03",
+        "cl-dog-shadow-10"
+      ],
+      "rationale": "He sees his own reflection; there is no second dog."
+    },
+    {
+      "questionId": "classic-dog-shadow-q3",
+      "sentenceIds": [
+        "cl-dog-shadow-07",
+        "cl-dog-shadow-08"
+      ],
+      "rationale": "He opens his mouth to take the other piece, and his meat falls."
+    },
+    {
+      "questionId": "classic-dog-shadow-q4",
+      "sentenceIds": [
+        "classic-dog-shadow-ext-01-01"
+      ],
+      "rationale": "The meat is a gift from the butcher in the village."
+    }
+  ],
+  "publicationBlockers": [
+    "Owner (oguz) approval of the English text, questions and translations required.",
+    "Fresh live source snapshot and publisher validation required."
+  ],
+  "lengthening": {
+    "wordsBefore": 99,
+    "wordsAfter": 191,
+    "sentencesBefore": 12,
+    "sentencesAfter": 23
+  }
+}

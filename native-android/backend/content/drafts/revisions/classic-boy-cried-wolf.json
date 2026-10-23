@@ -1,0 +1,944 @@
+{
+  "status": "draft",
+  "kind": "revision",
+  "source": "story-lengthening-a1-batch2-2026-10-22",
+  "reviewedBy": null,
+  "baseStoryId": "classic-boy-cried-wolf",
+  "baseStorySHA256": "51215a3ecd21d585cac83326a4712084a481ec57b49a3fc10098755453041233",
+  "editorialNotes": [
+    "Adds the boy's boring days on the hill, the villagers' sticks and anger, an old man's warning, the real wolf coming out of the forest and the boy's tears.",
+    "Every legacy sentence, its ID and its translations are kept unchanged; new sentences are only inserted between them. Plot, characters, ending and lesson are unchanged.",
+    "New sentences have AI-drafted translations in all ten additional support languages, following the gender and wording already used in each legacy translation. No native-speaker review."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "unchangedTranslationsPreserved": true,
+    "newSentenceIds": [
+      "classic-boy-cried-wolf-ext-01-01",
+      "classic-boy-cried-wolf-ext-01-02",
+      "classic-boy-cried-wolf-ext-02-01",
+      "classic-boy-cried-wolf-ext-04-01",
+      "classic-boy-cried-wolf-ext-06-01",
+      "classic-boy-cried-wolf-ext-06-02",
+      "classic-boy-cried-wolf-ext-08-01",
+      "classic-boy-cried-wolf-ext-09-01",
+      "classic-boy-cried-wolf-ext-10-01",
+      "classic-boy-cried-wolf-ext-10-02",
+      "classic-boy-cried-wolf-ext-12-01",
+      "classic-boy-cried-wolf-ext-13-01",
+      "classic-boy-cried-wolf-ext-13-02"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+  },
+  "story": {
+    "id": "classic-boy-cried-wolf",
+    "title": "The Boy Who Cried Wolf",
+    "author": "Aesop",
+    "level": "A1",
+    "genre": "Günlük yaşam",
+    "description": "Yalancı Çoban. Yalan yere yardım isteyen bir çoban, insanların güvenini kaybeder. A1 düzeyinde kısa uyarlama. Uyarlama ve Türkçe çeviri: English Tales. Tarihî görsel: Arthur Rackham; koleksiyonun iç başlık sayfası, ayrı bir ilk baskı kapağı değildir.",
+    "coverKey": "cover_classic_boy_cried_wolf",
+    "sentences": [
+      {
+        "id": "cl-boy-cried-wolf-01",
+        "english": "A shepherd boy watches sheep near a village.",
+        "turkish": "Bir çoban çocuk, bir köyün yakınında koyunları gözetir.",
+        "translations": {
+          "es-419": "Un niño pastor cuida ovejas cerca de un pueblo.",
+          "pt-BR": "Um menino pastor cuida de ovelhas perto de uma aldeia.",
+          "id": "Seorang anak gembala menjaga domba di dekat sebuah desa.",
+          "ar": "يرعى صبي خرافًا قرب قرية.",
+          "vi": "Một cậu bé chăn cừu trông đàn cừu gần một ngôi làng.",
+          "hi": "एक चरवाहा लड़का गाँव के पास भेड़ें चराता है।",
+          "ru": "Мальчик-пастушок пасёт овец возле деревни.",
+          "bn": "এক রাখাল ছেলে একটা গ্রামের কাছে ভেড়া চরায়।",
+          "ur": "ایک چرواہا لڑکا گاؤں کے پاس بھیڑیں چرا رہا ہے۔",
+          "th": "เด็กเลี้ยงแกะคนหนึ่งเฝ้าฝูงแกะอยู่ใกล้หมู่บ้าน"
+        }
+      },
+      {
+        "id": "classic-boy-cried-wolf-ext-01-01",
+        "english": "Every day, he sits on a hill above the fields.",
+        "turkish": "Her gün tarlaların yukarısındaki bir tepede oturur.",
+        "translations": {
+          "es-419": "Todos los días, se sienta en una colina sobre los campos.",
+          "pt-BR": "Todos os dias, ele se senta numa colina acima dos campos.",
+          "id": "Setiap hari, ia duduk di sebuah bukit di atas ladang.",
+          "ar": "كل يوم، يجلس على تلّ فوق الحقول.",
+          "vi": "Ngày nào cậu cũng ngồi trên một ngọn đồi phía trên cánh đồng.",
+          "hi": "हर दिन वह खेतों के ऊपर एक पहाड़ी पर बैठता है।",
+          "ru": "Каждый день он сидит на холме над полями.",
+          "bn": "রোজ সে মাঠের ওপরের একটা টিলায় বসে থাকে।",
+          "ur": "ہر روز وہ کھیتوں کے اوپر ایک ٹیلے پر بیٹھتا ہے۔",
+          "th": "ทุกวัน เขานั่งอยู่บนเนินเขาเหนือทุ่งนา"
+        }
+      },
+      {
+        "id": "classic-boy-cried-wolf-ext-01-02",
+        "english": "The sheep eat grass, and nothing happens.",
+        "turkish": "Koyunlar ot yer ve hiçbir şey olmaz.",
+        "translations": {
+          "es-419": "Las ovejas comen hierba, y no pasa nada.",
+          "pt-BR": "As ovelhas comem capim, e nada acontece.",
+          "id": "Domba-domba makan rumput, dan tidak terjadi apa-apa.",
+          "ar": "تأكل الخراف العشب، ولا يحدث شيء.",
+          "vi": "Đàn cừu gặm cỏ, và chẳng có chuyện gì xảy ra.",
+          "hi": "भेड़ें घास चरती हैं, और कुछ भी नहीं होता।",
+          "ru": "Овцы щиплют траву, и ничего не происходит.",
+          "bn": "ভেড়াগুলো ঘাস খায়, আর কিছুই ঘটে না।",
+          "ur": "بھیڑیں گھاس چرتی ہیں اور کچھ بھی نہیں ہوتا۔",
+          "th": "แกะกินหญ้า และไม่มีอะไรเกิดขึ้นเลย"
+        }
+      },
+      {
+        "id": "cl-boy-cried-wolf-02",
+        "english": "He is alone and wants some fun.",
+        "turkish": "Yalnızdır ve biraz eğlenmek ister.",
+        "translations": {
+          "es-419": "Está solo y quiere divertirse.",
+          "pt-BR": "Ele está sozinho e quer se divertir.",
+          "id": "Ia sendirian dan ingin bersenang-senang.",
+          "ar": "إنه وحيد ويريد بعض التسلية.",
+          "vi": "Cậu ở một mình và muốn vui đùa một chút.",
+          "hi": "वह अकेला है और थोड़ा मज़ा करना चाहता है।",
+          "ru": "Он один, и ему хочется повеселиться.",
+          "bn": "সে একা, আর একটু মজা করতে চায়।",
+          "ur": "وہ اکیلا ہے اور کچھ تفریح چاہتا ہے۔",
+          "th": "เขาอยู่ตามลำพังและอยากหาอะไรสนุก ๆ ทำ"
+        }
+      },
+      {
+        "id": "classic-boy-cried-wolf-ext-02-01",
+        "english": "He looks down at the village and smiles.",
+        "turkish": "Aşağıdaki köye bakar ve gülümser.",
+        "translations": {
+          "es-419": "Mira el pueblo allá abajo y sonríe.",
+          "pt-BR": "Ele olha para a aldeia lá embaixo e sorri.",
+          "id": "Ia memandang ke desa di bawah dan tersenyum.",
+          "ar": "ينظر إلى القرية في الأسفل ويبتسم.",
+          "vi": "Cậu nhìn xuống ngôi làng và mỉm cười.",
+          "hi": "वह नीचे गाँव की ओर देखता है और मुस्कुराता है।",
+          "ru": "Он смотрит вниз на деревню и улыбается.",
+          "bn": "সে নিচে গ্রামের দিকে তাকিয়ে হাসে।",
+          "ur": "وہ نیچے گاؤں کی طرف دیکھتا ہے اور مسکراتا ہے۔",
+          "th": "เขามองลงไปที่หมู่บ้านแล้วยิ้ม"
+        }
+      },
+      {
+        "id": "cl-boy-cried-wolf-03",
+        "english": "\"Wolf! Wolf!\" he shouts.",
+        "turkish": "\"Kurt! Kurt!\" diye bağırır.",
+        "translations": {
+          "es-419": "\"¡Lobo! ¡Lobo!\", grita.",
+          "pt-BR": "— Lobo! Lobo! — ele grita.",
+          "id": "\"Serigala! Serigala!\" teriaknya.",
+          "ar": "يصرخ: «ذئب! ذئب!»",
+          "vi": "\"Sói! Sói!\" cậu hét lên.",
+          "hi": "\"भेड़िया! भेड़िया!\" वह चिल्लाता है।",
+          "ru": "«Волк! Волк!» — кричит он.",
+          "bn": "\"নেকড়ে! নেকড়ে!\" সে চেঁচায়।",
+          "ur": "\"بھیڑیا! بھیڑیا!\" وہ چلاتا ہے۔",
+          "th": "\"หมาป่า! หมาป่า!\" เขาตะโกน"
+        }
+      },
+      {
+        "id": "cl-boy-cried-wolf-04",
+        "english": "The villagers run to help him.",
+        "turkish": "Köylüler ona yardıma koşar.",
+        "translations": {
+          "es-419": "Los aldeanos corren a ayudarlo.",
+          "pt-BR": "Os moradores da aldeia correm para ajudá-lo.",
+          "id": "Penduduk desa berlari untuk menolongnya.",
+          "ar": "يركض أهل القرية لمساعدته.",
+          "vi": "Dân làng chạy đến giúp cậu.",
+          "hi": "गाँव वाले उसकी मदद के लिए दौड़ते हैं।",
+          "ru": "Жители деревни бегут ему на помощь.",
+          "bn": "গ্রামবাসীরা তাকে সাহায্য করতে ছুটে আসে।",
+          "ur": "گاؤں والے اس کی مدد کو دوڑے آتے ہیں۔",
+          "th": "ชาวบ้านรีบวิ่งมาช่วยเขา"
+        }
+      },
+      {
+        "id": "classic-boy-cried-wolf-ext-04-01",
+        "english": "They carry sticks, and they are out of breath.",
+        "turkish": "Ellerinde sopalar vardır ve nefes nefesedirler.",
+        "translations": {
+          "es-419": "Llevan palos y les falta el aire.",
+          "pt-BR": "Eles carregam pedaços de pau e estão sem fôlego.",
+          "id": "Mereka membawa tongkat, dan napas mereka terengah-engah.",
+          "ar": "يحملون العصيّ، وأنفاسهم متقطّعة.",
+          "vi": "Họ cầm theo gậy và thở hổn hển.",
+          "hi": "उनके हाथों में लाठियाँ हैं और उनकी साँस फूली हुई है।",
+          "ru": "Они несут палки и тяжело дышат.",
+          "bn": "তাদের হাতে লাঠি, আর তারা হাঁপাচ্ছে।",
+          "ur": "ان کے ہاتھوں میں لاٹھیاں ہیں اور ان کی سانس پھولی ہوئی ہے۔",
+          "th": "พวกเขาถือไม้ติดมือมาและหอบหายใจ"
+        }
+      },
+      {
+        "id": "cl-boy-cried-wolf-05",
+        "english": "But there is no wolf.",
+        "turkish": "Ama ortada kurt yoktur.",
+        "translations": {
+          "es-419": "Pero no hay ningún lobo.",
+          "pt-BR": "Mas não há lobo nenhum.",
+          "id": "Tetapi tidak ada serigala.",
+          "ar": "لكن لا يوجد ذئب.",
+          "vi": "Nhưng chẳng có con sói nào cả.",
+          "hi": "लेकिन वहाँ कोई भेड़िया नहीं है।",
+          "ru": "Но никакого волка нет.",
+          "bn": "কিন্তু কোনো নেকড়ে নেই।",
+          "ur": "لیکن وہاں کوئی بھیڑیا نہیں ہے۔",
+          "th": "แต่ไม่มีหมาป่าเลย"
+        }
+      },
+      {
+        "id": "cl-boy-cried-wolf-06",
+        "english": "The boy laughs at the villagers.",
+        "turkish": "Çocuk köylülere güler.",
+        "translations": {
+          "es-419": "El niño se ríe de los aldeanos.",
+          "pt-BR": "O menino ri dos moradores.",
+          "id": "Anak itu menertawakan penduduk desa.",
+          "ar": "يضحك الصبي من أهل القرية.",
+          "vi": "Cậu bé cười nhạo dân làng.",
+          "hi": "लड़का गाँव वालों पर हँसता है।",
+          "ru": "Мальчик смеётся над жителями деревни.",
+          "bn": "ছেলেটা গ্রামবাসীদের দেখে হাসে।",
+          "ur": "لڑکا گاؤں والوں پر ہنستا ہے۔",
+          "th": "เด็กชายหัวเราะเยาะชาวบ้าน"
+        }
+      },
+      {
+        "id": "classic-boy-cried-wolf-ext-06-01",
+        "english": "\"I am only playing!\" he says.",
+        "turkish": "\"Sadece oyun oynuyorum!\" der.",
+        "translations": {
+          "es-419": "\"¡Solo estoy jugando!\", dice.",
+          "pt-BR": "— Eu só estou brincando! — diz ele.",
+          "id": "\"Aku cuma bercanda!\" katanya.",
+          "ar": "يقول: «أنا ألعب فقط!»",
+          "vi": "\"Tôi chỉ đùa thôi mà!\" cậu nói.",
+          "hi": "\"मैं तो बस मज़ाक कर रहा हूँ!\" वह कहता है।",
+          "ru": "«Я просто играю!» — говорит он.",
+          "bn": "\"আমি তো শুধু মজা করছি!\" সে বলে।",
+          "ur": "\"میں تو بس مذاق کر رہا ہوں!\" وہ کہتا ہے۔",
+          "th": "\"ฉันแค่เล่นสนุกเท่านั้นเอง!\" เขาพูด"
+        }
+      },
+      {
+        "id": "classic-boy-cried-wolf-ext-06-02",
+        "english": "The villagers are angry, and they go back to work.",
+        "turkish": "Köylüler kızgındır ve işlerine geri dönerler.",
+        "translations": {
+          "es-419": "Los aldeanos se enojan y vuelven al trabajo.",
+          "pt-BR": "Os moradores ficam bravos e voltam ao trabalho.",
+          "id": "Penduduk desa marah, lalu kembali bekerja.",
+          "ar": "يغضب أهل القرية ويعودون إلى عملهم.",
+          "vi": "Dân làng tức giận và quay về làm việc.",
+          "hi": "गाँव वाले नाराज़ हैं और काम पर लौट जाते हैं।",
+          "ru": "Жители деревни сердятся и возвращаются к работе.",
+          "bn": "গ্রামবাসীরা রেগে যায় আর কাজে ফিরে যায়।",
+          "ur": "گاؤں والے ناراض ہیں اور اپنے کام پر لوٹ جاتے ہیں۔",
+          "th": "ชาวบ้านโกรธและกลับไปทำงาน"
+        }
+      },
+      {
+        "id": "cl-boy-cried-wolf-07",
+        "english": "Later, he plays the same trick again.",
+        "turkish": "Daha sonra aynı oyunu yine oynar.",
+        "translations": {
+          "es-419": "Más tarde, vuelve a hacer la misma broma.",
+          "pt-BR": "Mais tarde, ele faz a mesma brincadeira de novo.",
+          "id": "Kemudian, ia memainkan tipuan yang sama lagi.",
+          "ar": "لاحقًا، يعيد المقلب نفسه.",
+          "vi": "Sau đó, cậu lại bày trò đùa y như vậy.",
+          "hi": "बाद में वह फिर वही मज़ाक करता है।",
+          "ru": "Позже он опять так же шутит.",
+          "bn": "পরে সে আবার একই চালাকি করে।",
+          "ur": "بعد میں وہ پھر وہی شرارت کرتا ہے۔",
+          "th": "ต่อมา เขาก็เล่นตลกแบบเดิมอีก"
+        }
+      },
+      {
+        "id": "cl-boy-cried-wolf-08",
+        "english": "Again, the villagers come for nothing.",
+        "turkish": "Köylüler yine boşuna gelir.",
+        "translations": {
+          "es-419": "Otra vez, los aldeanos vienen para nada.",
+          "pt-BR": "De novo, os moradores vêm à toa.",
+          "id": "Sekali lagi, penduduk desa datang dengan sia-sia.",
+          "ar": "ومرة أخرى، يأتي أهل القرية بلا فائدة.",
+          "vi": "Một lần nữa, dân làng đến mà chẳng được gì.",
+          "hi": "गाँव वाले फिर बेकार में आते हैं।",
+          "ru": "И снова жители деревни прибегают зря.",
+          "bn": "আবারও গ্রামবাসীরা অকারণে ছুটে আসে।",
+          "ur": "گاؤں والے پھر بے کار ہی آتے ہیں۔",
+          "th": "ชาวบ้านมาเสียเปล่าอีกครั้ง"
+        }
+      },
+      {
+        "id": "classic-boy-cried-wolf-ext-08-01",
+        "english": "\"Do not do this again,\" an old man tells him.",
+        "turkish": "Yaşlı bir adam ona, \"Bunu bir daha yapma,\" der.",
+        "translations": {
+          "es-419": "\"No vuelvas a hacer esto\", le dice un anciano.",
+          "pt-BR": "— Não faça mais isso — diz um velho para ele.",
+          "id": "\"Jangan lakukan ini lagi,\" kata seorang kakek kepadanya.",
+          "ar": "يقول له رجل عجوز: «لا تفعل هذا مرة أخرى.»",
+          "vi": "\"Đừng làm thế nữa,\" một ông lão bảo cậu.",
+          "hi": "\"ऐसा दोबारा मत करना,\" एक बूढ़ा आदमी उससे कहता है।",
+          "ru": "«Больше так не делай», — говорит ему один старик.",
+          "bn": "\"আর কখনো এমন কোরো না,\" এক বুড়ো লোক তাকে বলে।",
+          "ur": "\"دوبارہ ایسا مت کرنا،\" ایک بوڑھا آدمی اس سے کہتا ہے۔",
+          "th": "\"อย่าทำแบบนี้อีกนะ\" ชายชราคนหนึ่งบอกเขา"
+        }
+      },
+      {
+        "id": "cl-boy-cried-wolf-09",
+        "english": "One day, a real wolf arrives.",
+        "turkish": "Bir gün gerçek bir kurt gelir.",
+        "translations": {
+          "es-419": "Un día, llega un lobo de verdad.",
+          "pt-BR": "Um dia, chega um lobo de verdade.",
+          "id": "Suatu hari, seekor serigala sungguhan datang.",
+          "ar": "ذات يوم، يأتي ذئب حقيقي.",
+          "vi": "Một hôm, một con sói thật xuất hiện.",
+          "hi": "एक दिन सच में एक भेड़िया आ जाता है।",
+          "ru": "Однажды приходит настоящий волк.",
+          "bn": "একদিন সত্যি সত্যি একটা নেকড়ে আসে।",
+          "ur": "ایک دن سچ مچ ایک بھیڑیا آ جاتا ہے۔",
+          "th": "วันหนึ่ง หมาป่าตัวจริงก็มา"
+        }
+      },
+      {
+        "id": "classic-boy-cried-wolf-ext-09-01",
+        "english": "It comes out of the forest, big and hungry.",
+        "turkish": "Ormandan çıkar; büyük ve açtır.",
+        "translations": {
+          "es-419": "Sale del bosque, grande y hambriento.",
+          "pt-BR": "Ele sai da floresta, grande e faminto.",
+          "id": "Serigala itu keluar dari hutan, besar dan lapar.",
+          "ar": "يخرج من الغابة، كبيرًا وجائعًا.",
+          "vi": "Nó từ trong rừng đi ra, to lớn và đói khát.",
+          "hi": "वह जंगल से निकलता है, बड़ा और भूखा।",
+          "ru": "Он выходит из леса, большой и голодный.",
+          "bn": "সেটা বন থেকে বেরিয়ে আসে, বিশাল আর ক্ষুধার্ত।",
+          "ur": "وہ جنگل سے نکلتا ہے، بڑا اور بھوکا۔",
+          "th": "มันออกมาจากป่า ตัวใหญ่และหิวโหย"
+        }
+      },
+      {
+        "id": "cl-boy-cried-wolf-10",
+        "english": "The frightened boy calls for help.",
+        "turkish": "Korkmuş çocuk yardım ister.",
+        "translations": {
+          "es-419": "El niño, asustado, pide ayuda.",
+          "pt-BR": "O menino, assustado, pede ajuda.",
+          "id": "Anak yang ketakutan itu berteriak minta tolong.",
+          "ar": "ينادي الصبي الخائف طالبًا المساعدة.",
+          "vi": "Cậu bé sợ hãi kêu cứu.",
+          "hi": "डरा हुआ लड़का मदद के लिए पुकारता है।",
+          "ru": "Испуганный мальчик зовёт на помощь.",
+          "bn": "ভয় পেয়ে ছেলেটা সাহায্যের জন্য ডাকে।",
+          "ur": "ڈرا ہوا لڑکا مدد کے لیے پکارتا ہے۔",
+          "th": "เด็กชายตกใจกลัวและร้องขอความช่วยเหลือ"
+        }
+      },
+      {
+        "id": "classic-boy-cried-wolf-ext-10-01",
+        "english": "\"Wolf! Wolf! Please help me!\" he shouts.",
+        "turkish": "\"Kurt! Kurt! Lütfen bana yardım edin!\" diye bağırır.",
+        "translations": {
+          "es-419": "\"¡Lobo! ¡Lobo! ¡Por favor, ayúdenme!\", grita.",
+          "pt-BR": "— Lobo! Lobo! Por favor, me ajudem! — ele grita.",
+          "id": "\"Serigala! Serigala! Tolong aku!\" teriaknya.",
+          "ar": "يصرخ: «ذئب! ذئب! أرجوكم ساعدوني!»",
+          "vi": "\"Sói! Sói! Làm ơn cứu tôi với!\" cậu hét lên.",
+          "hi": "\"भेड़िया! भेड़िया! मेरी मदद करो!\" वह चिल्लाता है।",
+          "ru": "«Волк! Волк! Помогите!» — кричит он.",
+          "bn": "\"নেকড়ে! নেকড়ে! আমাকে বাঁচাও!\" সে চেঁচায়।",
+          "ur": "\"بھیڑیا! بھیڑیا! میری مدد کرو!\" وہ چلاتا ہے۔",
+          "th": "\"หมาป่า! หมาป่า! ช่วยฉันด้วย!\" เขาตะโกน"
+        }
+      },
+      {
+        "id": "classic-boy-cried-wolf-ext-10-02",
+        "english": "He shouts again and again.",
+        "turkish": "Tekrar tekrar bağırır.",
+        "translations": {
+          "es-419": "Grita una y otra vez.",
+          "pt-BR": "Ele grita de novo e de novo.",
+          "id": "Ia berteriak berulang kali.",
+          "ar": "يصرخ مرارًا وتكرارًا.",
+          "vi": "Cậu hét lên hết lần này đến lần khác.",
+          "hi": "वह बार-बार चिल्लाता है।",
+          "ru": "Он кричит снова и снова.",
+          "bn": "সে বারবার চেঁচাতে থাকে।",
+          "ur": "وہ بار بار چلاتا ہے۔",
+          "th": "เขาตะโกนครั้งแล้วครั้งเล่า"
+        }
+      },
+      {
+        "id": "cl-boy-cried-wolf-11",
+        "english": "This time, nobody comes.",
+        "turkish": "Bu kez kimse gelmez.",
+        "translations": {
+          "es-419": "Esta vez, nadie viene.",
+          "pt-BR": "Dessa vez, ninguém vem.",
+          "id": "Kali ini, tidak ada seorang pun yang datang.",
+          "ar": "هذه المرة، لا يأتي أحد.",
+          "vi": "Lần này, không ai đến cả.",
+          "hi": "इस बार कोई नहीं आता।",
+          "ru": "На этот раз никто не приходит.",
+          "bn": "এবার কেউ আসে না।",
+          "ur": "اس بار کوئی نہیں آتا۔",
+          "th": "ครั้งนี้ ไม่มีใครมาเลย"
+        }
+      },
+      {
+        "id": "cl-boy-cried-wolf-12",
+        "english": "The villagers do not believe him anymore.",
+        "turkish": "Köylüler artık ona inanmaz.",
+        "translations": {
+          "es-419": "Los aldeanos ya no le creen.",
+          "pt-BR": "Os moradores não acreditam mais nele.",
+          "id": "Penduduk desa tidak memercayainya lagi.",
+          "ar": "لم يعد أهل القرية يصدّقونه.",
+          "vi": "Dân làng không còn tin cậu nữa.",
+          "hi": "गाँव वाले अब उस पर विश्वास नहीं करते।",
+          "ru": "Жители деревни ему больше не верят.",
+          "bn": "গ্রামবাসীরা তাকে আর বিশ্বাস করে না।",
+          "ur": "گاؤں والے اب اس کی بات کا یقین نہیں کرتے۔",
+          "th": "ชาวบ้านไม่เชื่อเขาอีกแล้ว"
+        }
+      },
+      {
+        "id": "classic-boy-cried-wolf-ext-12-01",
+        "english": "\"He is playing his trick again,\" they say.",
+        "turkish": "\"Yine oyununu oynuyor,\" derler.",
+        "translations": {
+          "es-419": "\"Está haciendo su broma otra vez\", dicen.",
+          "pt-BR": "— Ele está fazendo a mesma brincadeira de novo — dizem.",
+          "id": "\"Dia sedang memainkan tipuannya lagi,\" kata mereka.",
+          "ar": "يقولون: «إنه يعيد مقلبه مرة أخرى.»",
+          "vi": "\"Thằng bé lại bày trò đùa nữa rồi,\" họ nói.",
+          "hi": "\"वह फिर से वही मज़ाक कर रहा है,\" वे कहते हैं।",
+          "ru": "«Он опять шутит», — говорят они.",
+          "bn": "\"ও আবার সেই চালাকি করছে,\" তারা বলে।",
+          "ur": "\"وہ پھر وہی شرارت کر رہا ہے،\" وہ کہتے ہیں۔",
+          "th": "\"เขาเล่นตลกแบบเดิมอีกแล้ว\" พวกเขาพูด"
+        }
+      },
+      {
+        "id": "cl-boy-cried-wolf-13",
+        "english": "The wolf attacks the sheep.",
+        "turkish": "Kurt koyunlara saldırır.",
+        "translations": {
+          "es-419": "El lobo ataca a las ovejas.",
+          "pt-BR": "O lobo ataca as ovelhas.",
+          "id": "Serigala itu menyerang domba-domba.",
+          "ar": "يهاجم الذئب الخراف.",
+          "vi": "Con sói tấn công đàn cừu.",
+          "hi": "भेड़िया भेड़ों पर हमला करता है।",
+          "ru": "Волк нападает на овец.",
+          "bn": "নেকড়েটা ভেড়াগুলোকে আক্রমণ করে।",
+          "ur": "بھیڑیا بھیڑوں پر حملہ کر دیتا ہے۔",
+          "th": "หมาป่าจู่โจมฝูงแกะ"
+        }
+      },
+      {
+        "id": "classic-boy-cried-wolf-ext-13-01",
+        "english": "The boy can only watch and cry.",
+        "turkish": "Çocuk sadece bakıp ağlayabilir.",
+        "translations": {
+          "es-419": "El niño solo puede mirar y llorar.",
+          "pt-BR": "O menino só pode olhar e chorar.",
+          "id": "Anak itu hanya bisa melihat dan menangis.",
+          "ar": "لا يستطيع الصبي إلا أن ينظر ويبكي.",
+          "vi": "Cậu bé chỉ biết đứng nhìn và khóc.",
+          "hi": "लड़का बस देखता और रोता रह जाता है।",
+          "ru": "Мальчик может только смотреть и плакать.",
+          "bn": "ছেলেটা শুধু তাকিয়ে দেখে আর কাঁদে।",
+          "ur": "لڑکا بس دیکھتا اور روتا رہ جاتا ہے۔",
+          "th": "เด็กชายได้แต่มองดูและร้องไห้"
+        }
+      },
+      {
+        "id": "classic-boy-cried-wolf-ext-13-02",
+        "english": "That evening, he walks home with tears in his eyes.",
+        "turkish": "O akşam gözleri yaşlı bir halde eve yürür.",
+        "translations": {
+          "es-419": "Esa tarde, camina a casa con lágrimas en los ojos.",
+          "pt-BR": "Naquela noite, ele volta para casa com lágrimas nos olhos.",
+          "id": "Sore itu, ia berjalan pulang dengan air mata di matanya.",
+          "ar": "في ذلك المساء، يمشي إلى البيت والدموع في عينيه.",
+          "vi": "Tối hôm đó, cậu đi về nhà với đôi mắt đẫm lệ.",
+          "hi": "उस शाम वह आँखों में आँसू लिए घर लौटता है।",
+          "ru": "В тот вечер он идёт домой со слезами на глазах.",
+          "bn": "সেদিন সন্ধ্যায় সে চোখে জল নিয়ে বাড়ি ফেরে।",
+          "ur": "اس شام وہ آنکھوں میں آنسو لیے گھر لوٹتا ہے۔",
+          "th": "เย็นวันนั้น เขาเดินกลับบ้านทั้งน้ำตา"
+        }
+      },
+      {
+        "id": "cl-boy-cried-wolf-14",
+        "english": "A liar can lose people's trust, even when he tells the truth.",
+        "turkish": "Bir yalancı, doğruyu söylediğinde bile insanların güvenini kaybedebilir.",
+        "translations": {
+          "es-419": "Un mentiroso puede perder la confianza de la gente, incluso cuando dice la verdad.",
+          "pt-BR": "Um mentiroso pode perder a confiança das pessoas, mesmo quando diz a verdade.",
+          "id": "Seorang pembohong bisa kehilangan kepercayaan orang lain, bahkan ketika ia berkata jujur.",
+          "ar": "الكذّاب قد يفقد ثقة الناس، حتى عندما يقول الحقيقة.",
+          "vi": "Kẻ nói dối có thể mất lòng tin của mọi người, ngay cả khi nói thật.",
+          "hi": "झूठा आदमी लोगों का भरोसा खो सकता है, तब भी जब वह सच बोलता है।",
+          "ru": "Лжец может потерять доверие людей, даже когда говорит правду.",
+          "bn": "মিথ্যাবাদী সত্যি কথা বললেও মানুষের বিশ্বাস হারাতে পারে।",
+          "ur": "جھوٹا آدمی لوگوں کا بھروسا کھو سکتا ہے، چاہے وہ سچ ہی کیوں نہ بول رہا ہو۔",
+          "th": "คนโกหกอาจสูญเสียความไว้วางใจของผู้อื่น แม้ในยามที่เขาพูดความจริง"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-boy-cried-wolf-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "A boy catches a wolf after calling his friends",
+          "A boy finds his sheep after they run away",
+          "A boy tells lies, so people stop believing him",
+          "A boy scares a wolf by making loud noises"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "classic-boy-cried-wolf-q2",
+        "kind": "detail",
+        "prompt": "What happens when the real wolf comes?",
+        "options": [
+          "The boy catches the wolf",
+          "The villagers run to help",
+          "Nobody comes",
+          "The sheep run home"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "classic-boy-cried-wolf-q3",
+        "kind": "inference",
+        "prompt": "Why don't the villagers come the last time?",
+        "options": [
+          "They do not hear him",
+          "They are asleep",
+          "They think he is lying again",
+          "They are afraid of the wolf"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "classic-boy-cried-wolf-q4",
+        "kind": "detail",
+        "prompt": "What do the villagers carry when they run to help?",
+        "options": [
+          "Sticks",
+          "Bread",
+          "Ropes",
+          "Lamps"
+        ],
+        "answer": 0
+      }
+    ],
+    "tags": [
+      "fabl",
+      "gunluk-yasam"
+    ],
+    "descriptions": {
+      "es-419": "Pedro y el lobo. Un pastor que pide ayuda con mentiras pierde la confianza de la gente. Adaptación breve de nivel A1. Adaptación: English Tales. Imagen histórica: Arthur Rackham; portadilla interior de la colección, no es una portada aparte de primera edición.",
+      "pt-BR": "O pastorzinho mentiroso. Um pastor que pede ajuda mentindo perde a confiança das pessoas. Adaptação curta de nível A1. Adaptação: English Tales. Imagem histórica: Arthur Rackham; folha de rosto interna da coleção, não é uma capa separada de primeira edição.",
+      "id": "Anak Gembala Pembohong. Seorang gembala yang meminta tolong dengan berbohong kehilangan kepercayaan orang-orang. Adaptasi singkat tingkat A1. Adaptasi: English Tales. Gambar historis: Arthur Rackham; halaman judul bagian dalam koleksi, bukan sampul edisi pertama tersendiri.",
+      "ar": "الراعي الكذّاب. راعٍ يطلب المساعدة كذبًا فيفقد ثقة الناس. اقتباس قصير بمستوى A1. الاقتباس: English Tales. صورة تاريخية: آرثر راكهام؛ صفحة العنوان الداخلية للمجموعة، وليست غلافًا منفصلًا للطبعة الأولى.",
+      "vi": "Cậu bé chăn cừu và chó sói. Một cậu bé chăn cừu kêu cứu giả vờ và đánh mất lòng tin của mọi người. Bản phóng tác ngắn trình độ A1. Phóng tác: English Tales. Hình ảnh lịch sử: Arthur Rackham; trang tiêu đề bên trong tuyển tập, không phải bìa riêng của ấn bản đầu tiên.",
+      "hi": "भेड़िया आया! झूठ-मूठ मदद के लिए पुकारने वाला एक चरवाहा लोगों का भरोसा खो देता है। A1 स्तर का छोटा रूपांतरण। रूपांतरण: English Tales। ऐतिहासिक चित्र: Arthur Rackham; संग्रह का अंदरूनी शीर्षक पृष्ठ, पहले संस्करण का अलग कवर नहीं।",
+      "ru": "Мальчик, который кричал «Волк!». Пастушок, который зовёт на помощь понарошку, теряет доверие людей. Краткая адаптация уровня A1. Адаптация: English Tales. Историческое изображение: Артур Рэкхем; внутренний титульный лист сборника, а не отдельная обложка первого издания.",
+      "bn": "মিথ্যাবাদী রাখাল। মিছিমিছি সাহায্যের জন্য চেঁচানো এক রাখাল মানুষের বিশ্বাস হারায়। A1 স্তরের ছোট রূপান্তর। রূপান্তর: English Tales। ঐতিহাসিক ছবি: Arthur Rackham; সংকলনের ভেতরের শিরোনাম পাতা, প্রথম সংস্করণের আলাদা প্রচ্ছদ নয়।",
+      "ur": "جھوٹا چرواہا۔ جھوٹ موٹ مدد کے لیے پکارنے والا ایک چرواہا لوگوں کا بھروسا کھو دیتا ہے۔ A1 سطح کی مختصر ماخوذ کہانی۔ ترتیب: English Tales۔ تاریخی تصویر: Arthur Rackham؛ مجموعے کا اندرونی عنوان صفحہ، پہلے ایڈیشن کا الگ سرورق نہیں۔",
+      "th": "เด็กเลี้ยงแกะ: เด็กเลี้ยงแกะที่โกหกขอความช่วยเหลือจนสูญเสียความไว้วางใจของผู้คน ฉบับดัดแปลงสั้น ๆ ระดับ A1 ดัดแปลงโดย English Tales ภาพเก่าทางประวัติศาสตร์: Arthur Rackham; หน้าชื่อเรื่องด้านในของหนังสือรวมเรื่อง ไม่ใช่ปกแยกของฉบับพิมพ์ครั้งแรก"
+    }
+  },
+  "words": [
+    {
+      "id": "shepherd",
+      "word": "shepherd",
+      "translation": "çoban",
+      "pronunciation": "/ˈʃepəd/",
+      "example": "A shepherd boy watches sheep near a village.",
+      "translations": {
+        "es-419": "pastor",
+        "pt-BR": "pastor",
+        "id": "gembala",
+        "ar": "راعٍ",
+        "vi": "người chăn cừu",
+        "hi": "चरवाहा",
+        "ru": "пастух",
+        "bn": "রাখাল",
+        "ur": "چرواہا",
+        "th": "คนเลี้ยงแกะ"
+      }
+    },
+    {
+      "id": "boy",
+      "word": "boy",
+      "translation": "erkek çocuk, oğlan",
+      "pronunciation": "/bɔɪ/",
+      "example": "The boy plays in the park.",
+      "translations": {
+        "es-419": "niño, muchacho",
+        "pt-BR": "menino, garoto",
+        "id": "anak laki-laki",
+        "ar": "ولد، صبي",
+        "vi": "cậu bé",
+        "hi": "लड़का",
+        "ru": "мальчик",
+        "bn": "ছেলে",
+        "ur": "لڑکا",
+        "th": "เด็กผู้ชาย"
+      }
+    },
+    {
+      "id": "sheep",
+      "word": "sheep",
+      "translation": "koyunlar",
+      "pronunciation": "/ʃiːp/",
+      "example": "A shepherd boy watches sheep near a village.",
+      "translations": {
+        "es-419": "ovejas",
+        "pt-BR": "ovelhas",
+        "id": "domba",
+        "ar": "خراف",
+        "vi": "cừu",
+        "hi": "भेड़ें",
+        "ru": "овцы",
+        "bn": "ভেড়া",
+        "ur": "بھیڑیں",
+        "th": "แกะ"
+      }
+    },
+    {
+      "id": "village",
+      "word": "village",
+      "translation": "köy",
+      "pronunciation": "/ˈvɪlɪdʒ/",
+      "example": "They visited a small village.",
+      "translations": {
+        "es-419": "pueblo, aldea",
+        "pt-BR": "vila, aldeia",
+        "id": "desa",
+        "ar": "قرية",
+        "vi": "ngôi làng",
+        "hi": "गाँव",
+        "ru": "деревня",
+        "bn": "গ্রাম",
+        "ur": "گاؤں",
+        "th": "หมู่บ้าน"
+      }
+    },
+    {
+      "id": "alone",
+      "word": "alone",
+      "translation": "yalnız",
+      "pronunciation": "/əˈloʊn/",
+      "example": "He walks home alone.",
+      "translations": {
+        "es-419": "solo",
+        "pt-BR": "sozinho",
+        "id": "sendirian",
+        "ar": "وحيدًا",
+        "vi": "một mình",
+        "hi": "अकेला",
+        "ru": "один, в одиночестве",
+        "bn": "একা",
+        "ur": "اکیلا",
+        "th": "ตามลำพัง"
+      }
+    },
+    {
+      "id": "wolf",
+      "word": "wolf",
+      "translation": "kurt",
+      "pronunciation": "/wʊlf/",
+      "example": "The wolf runs to the house.",
+      "translations": {
+        "es-419": "lobo",
+        "pt-BR": "lobo",
+        "id": "serigala",
+        "ar": "ذئب",
+        "vi": "chó sói",
+        "hi": "भेड़िया",
+        "ru": "волк",
+        "bn": "নেকড়ে",
+        "ur": "بھیڑیا",
+        "th": "หมาป่า"
+      }
+    },
+    {
+      "id": "shouts",
+      "word": "shouts",
+      "translation": "bağırır",
+      "pronunciation": "/ʃaʊts/",
+      "example": "The teacher never shouts.",
+      "translations": {
+        "es-419": "grita",
+        "pt-BR": "grita",
+        "id": "berteriak",
+        "ar": "يصرخ",
+        "vi": "hét lên",
+        "hi": "चिल्लाता है",
+        "ru": "кричит",
+        "bn": "চেঁচায়",
+        "ur": "چلاتا ہے",
+        "th": "ตะโกน"
+      }
+    },
+    {
+      "id": "villagers",
+      "word": "villagers",
+      "translation": "köylüler",
+      "pronunciation": "/ˈvɪlɪdʒəz/",
+      "example": "The villagers run to help him.",
+      "translations": {
+        "es-419": "aldeanos",
+        "pt-BR": "moradores da aldeia, aldeões",
+        "id": "penduduk desa",
+        "ar": "أهل القرية",
+        "vi": "dân làng",
+        "hi": "गाँव वाले",
+        "ru": "жители деревни",
+        "bn": "গ্রামবাসী",
+        "ur": "گاؤں والے",
+        "th": "ชาวบ้าน"
+      }
+    },
+    {
+      "id": "trick",
+      "word": "trick",
+      "translation": "oyun, numara",
+      "pronunciation": "/trɪk/",
+      "example": "The children play a trick on their friend.",
+      "translations": {
+        "es-419": "broma, truco",
+        "pt-BR": "brincadeira, peça",
+        "id": "tipuan, akal-akalan",
+        "ar": "خدعة، مقلب",
+        "vi": "trò đùa, mẹo",
+        "hi": "मज़ाक, चाल",
+        "ru": "шутка, обман",
+        "bn": "চালাকি, মজা করা",
+        "ur": "شرارت، چال",
+        "th": "การหลอก, กลอุบาย"
+      }
+    },
+    {
+      "id": "frightened",
+      "word": "frightened",
+      "translation": "korkmuş",
+      "pronunciation": "/ˈfraɪtnd/",
+      "example": "The frightened cat hides under the bed.",
+      "translations": {
+        "es-419": "asustado",
+        "pt-BR": "assustado, com medo",
+        "id": "ketakutan",
+        "ar": "خائف",
+        "vi": "sợ hãi",
+        "hi": "डरा हुआ",
+        "ru": "испуганный",
+        "bn": "ভয় পাওয়া",
+        "ur": "ڈرا ہوا",
+        "th": "ตกใจกลัว"
+      }
+    },
+    {
+      "id": "believe",
+      "word": "believe",
+      "translation": "inanmak",
+      "pronunciation": "/bɪˈliːv/",
+      "example": "I believe you.",
+      "translations": {
+        "es-419": "creer",
+        "pt-BR": "acreditar",
+        "id": "percaya",
+        "ar": "يصدّق",
+        "vi": "tin",
+        "hi": "विश्वास करना, यकीन करना",
+        "ru": "верить",
+        "bn": "বিশ্বাস করা",
+        "ur": "یقین کرنا",
+        "th": "เชื่อ"
+      }
+    },
+    {
+      "id": "attacks",
+      "word": "attacks",
+      "translation": "saldırır",
+      "pronunciation": "/əˈtæks/",
+      "example": "The fox attacks the chickens.",
+      "translations": {
+        "es-419": "ataca",
+        "pt-BR": "ataca",
+        "id": "menyerang",
+        "ar": "يهاجم",
+        "vi": "tấn công",
+        "hi": "हमला करता है",
+        "ru": "нападает",
+        "bn": "আক্রমণ করে",
+        "ur": "حملہ کرتا ہے",
+        "th": "โจมตี"
+      }
+    },
+    {
+      "id": "liar",
+      "word": "liar",
+      "translation": "yalancı",
+      "pronunciation": "/ˈlaɪə(r)/",
+      "example": "A liar can lose people's trust, even when he tells the truth.",
+      "translations": {
+        "es-419": "mentiroso",
+        "pt-BR": "mentiroso",
+        "id": "pembohong",
+        "ar": "كذّاب",
+        "vi": "kẻ nói dối",
+        "hi": "झूठा",
+        "ru": "лжец, обманщик",
+        "bn": "মিথ্যাবাদী",
+        "ur": "جھوٹا",
+        "th": "คนโกหก"
+      }
+    },
+    {
+      "id": "trust",
+      "word": "trust",
+      "translation": "güven",
+      "pronunciation": "/trʌst/",
+      "example": "A liar can lose people's trust, even when he tells the truth.",
+      "translations": {
+        "es-419": "confianza",
+        "pt-BR": "confiança",
+        "id": "kepercayaan",
+        "ar": "ثقة",
+        "vi": "lòng tin",
+        "hi": "भरोसा",
+        "ru": "доверие",
+        "bn": "বিশ্বাস, আস্থা",
+        "ur": "بھروسا",
+        "th": "ความไว้วางใจ"
+      }
+    },
+    {
+      "id": "truth",
+      "word": "truth",
+      "translation": "gerçek",
+      "pronunciation": "/truːθ/",
+      "example": "A liar can lose people's trust, even when he tells the truth.",
+      "translations": {
+        "es-419": "verdad",
+        "pt-BR": "verdade",
+        "id": "kebenaran",
+        "ar": "الحقيقة",
+        "vi": "sự thật",
+        "hi": "सच",
+        "ru": "правда",
+        "bn": "সত্য",
+        "ur": "سچ",
+        "th": "ความจริง"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "shepherd",
+    "boy",
+    "sheep",
+    "village",
+    "alone",
+    "wolf",
+    "shouts",
+    "villagers",
+    "trick",
+    "frightened",
+    "believe",
+    "attacks",
+    "liar",
+    "trust",
+    "truth"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-boy-cried-wolf-q1",
+      "sentenceIds": [
+        "cl-boy-cried-wolf-03",
+        "cl-boy-cried-wolf-05",
+        "cl-boy-cried-wolf-06",
+        "cl-boy-cried-wolf-12"
+      ],
+      "rationale": "The boy lies about a wolf, so later the villagers do not believe him."
+    },
+    {
+      "questionId": "classic-boy-cried-wolf-q2",
+      "sentenceIds": [
+        "cl-boy-cried-wolf-09",
+        "cl-boy-cried-wolf-11"
+      ],
+      "rationale": "When the real wolf arrives, nobody comes."
+    },
+    {
+      "questionId": "classic-boy-cried-wolf-q3",
+      "sentenceIds": [
+        "cl-boy-cried-wolf-12"
+      ],
+      "rationale": "The villagers no longer believe him."
+    },
+    {
+      "questionId": "classic-boy-cried-wolf-q4",
+      "sentenceIds": [
+        "classic-boy-cried-wolf-ext-04-01"
+      ],
+      "rationale": "The villagers carry sticks when they run to help."
+    }
+  ],
+  "publicationBlockers": [
+    "Owner (oguz) approval of the English text, questions and translations required.",
+    "Fresh live source snapshot and publisher validation required."
+  ],
+  "lengthening": {
+    "wordsBefore": 89,
+    "wordsAfter": 195,
+    "sentencesBefore": 14,
+    "sentencesAfter": 27
+  }
+}

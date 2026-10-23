@@ -10,21 +10,21 @@ const json=value=>JSON.stringify(value,null,2)+'\n';
 const local=file=>fileURLToPath(new URL(file,import.meta.url));
 
 export async function main(args=process.argv.slice(2),{fetchImpl}={}){
-  const options={apply:false,output:local('../../build/story-pilot-drafts/')};
+  const options={apply:false,output:local('../../build/story-pilot-drafts/'),scope:local('../content/drafts/pilot-scope.json')};
   for(let i=0;i<args.length;i++){
     const arg=args[i];
     if(arg==='--apply')options.apply=true;
-    else if(['--snapshot','--output','--url','--session-file'].includes(arg)){
+    else if(['--snapshot','--output','--url','--session-file','--scope'].includes(arg)){
       const value=args[++i];if(!value||value.startsWith('--'))throw Error(`Eksik değer: ${arg}`);
       options[{'--session-file':'sessionFile'}[arg]??arg.slice(2)]=value;
     }else if(arg==='--help'){
-      console.log('npm run story-pilot:drafts -- --snapshot <catalog.json> [--output <directory>] [--apply --url <supabase-url> --session-file <outside-git.json>]\nCreates editor drafts only; never publishes.');return;
+      console.log('npm run story-pilot:drafts -- --snapshot <catalog.json> [--scope <scope.json>] [--output <directory>] [--apply --url <supabase-url> --session-file <outside-git.json>]\nCreates editor drafts only; never publishes.');return;
     }else throw Error(`Bilinmeyen seçenek: ${arg}`);
   }
   if(!options.snapshot)throw Error('--snapshot gerekli');
   if(options.apply&&(!options.url||!options.sessionFile))throw Error('--apply için --url ve --session-file gerekli');
   const files={snapshot:path.resolve(options.snapshot),bundle:local('../../app/src/main/assets/catalog/v1.json'),
-    scope:local('../content/drafts/pilot-scope.json')};
+    scope:path.resolve(options.scope)};
   const raw=Object.fromEntries(await Promise.all(Object.entries(files).map(async([key,file])=>[key,await readFile(file)])));
   const data=Object.fromEntries(Object.entries(raw).map(([key,bytes])=>[key,JSON.parse(bytes)]));
   const ids=data.scope.activeRevisionStoryIds;

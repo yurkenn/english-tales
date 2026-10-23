@@ -1,0 +1,1851 @@
+{
+  "status": "draft",
+  "kind": "revision",
+  "source": "story-lengthening-a2-batch1-2026-10-22",
+  "reviewedBy": null,
+  "baseStoryId": "classic-hansel-gretel",
+  "baseStorySHA256": "8055f6cebd4d369cf53423b9f233b6e2f6beafb237309d9513a825ccc6575161",
+  "editorialNotes": [
+    "Restores scenes from the Grimm text (KHM 15) that the adaptation had skipped: the poor woodcutter, the parents' night talk, the moonlit pebbles, the white cat on the roof, the fire in the forest, the locked door, the witch's rhyme, the four weeks, the oven trick, the lake and the father's joy.",
+    "Every legacy sentence, its ID and its translations are kept unchanged; new sentences are only inserted between them. Plot, characters, ending and lesson are unchanged.",
+    "New sentences have AI-drafted translations in all ten additional support languages, following the gender and wording already used in each legacy translation. No native-speaker review."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "unchangedTranslationsPreserved": true,
+    "newSentenceIds": [
+      "classic-hansel-gretel-ext-01-01",
+      "classic-hansel-gretel-ext-02-01",
+      "classic-hansel-gretel-ext-02-02",
+      "classic-hansel-gretel-ext-03-01",
+      "classic-hansel-gretel-ext-03-02",
+      "classic-hansel-gretel-ext-03-03",
+      "classic-hansel-gretel-ext-03-04",
+      "classic-hansel-gretel-ext-04-01",
+      "classic-hansel-gretel-ext-04-02",
+      "classic-hansel-gretel-ext-04-03",
+      "classic-hansel-gretel-ext-05-01",
+      "classic-hansel-gretel-ext-05-02",
+      "classic-hansel-gretel-ext-05-03",
+      "classic-hansel-gretel-ext-05-04",
+      "classic-hansel-gretel-ext-05-05",
+      "classic-hansel-gretel-ext-05-06",
+      "classic-hansel-gretel-ext-05-07",
+      "classic-hansel-gretel-ext-05-08",
+      "classic-hansel-gretel-ext-06-01",
+      "classic-hansel-gretel-ext-06-02",
+      "classic-hansel-gretel-ext-07-01",
+      "classic-hansel-gretel-ext-08-01",
+      "classic-hansel-gretel-ext-08-02",
+      "classic-hansel-gretel-ext-09-01",
+      "classic-hansel-gretel-ext-12-01",
+      "classic-hansel-gretel-ext-12-02",
+      "classic-hansel-gretel-ext-12-03",
+      "classic-hansel-gretel-ext-12-04",
+      "classic-hansel-gretel-ext-13-01",
+      "classic-hansel-gretel-ext-14-01",
+      "classic-hansel-gretel-ext-15-01",
+      "classic-hansel-gretel-ext-15-02",
+      "classic-hansel-gretel-ext-16-01",
+      "classic-hansel-gretel-ext-18-01",
+      "classic-hansel-gretel-ext-19-01",
+      "classic-hansel-gretel-ext-19-02",
+      "classic-hansel-gretel-ext-20-01",
+      "classic-hansel-gretel-ext-21-01",
+      "classic-hansel-gretel-ext-21-02",
+      "classic-hansel-gretel-ext-23-01",
+      "classic-hansel-gretel-ext-25-01",
+      "classic-hansel-gretel-ext-25-02",
+      "classic-hansel-gretel-ext-25-03",
+      "classic-hansel-gretel-ext-25-04",
+      "classic-hansel-gretel-ext-26-01",
+      "classic-hansel-gretel-ext-27-01",
+      "classic-hansel-gretel-ext-28-01",
+      "classic-hansel-gretel-ext-28-02"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+  },
+  "story": {
+    "id": "classic-hansel-gretel",
+    "title": "Hansel and Gretel",
+    "author": "Jacob and Wilhelm Grimm",
+    "level": "A2",
+    "genre": "Macera",
+    "description": "Hansel ve Gretel. Ormanda bırakılan iki kardeşin cesaret ve zekâyla eve dönüşü. A2 düzeyinde kısa uyarlama. Uyarlama ve Türkçe çeviri: English Tales. Tarihî görsel: Walter Crane; kitap içi illüstrasyon, ayrı bir ilk baskı kapağı değildir.",
+    "coverKey": "cover_classic_hansel_gretel",
+    "sentences": [
+      {
+        "id": "cl-hansel-gretel-01",
+        "english": "Hansel and Gretel lived near a forest with their father and stepmother.",
+        "turkish": "Hansel ile Gretel, babaları ve üvey anneleriyle bir ormanın yakınında yaşıyordu.",
+        "translations": {
+          "es-419": "Hansel y Gretel vivían cerca de un bosque con su padre y su madrastra.",
+          "pt-BR": "João e Maria moravam perto de uma floresta com o pai e a madrasta.",
+          "id": "Hansel dan Gretel tinggal di dekat hutan bersama ayah dan ibu tiri mereka.",
+          "ar": "عاش هانسل وغريتل قرب غابة مع أبيهما وزوجة أبيهما.",
+          "vi": "Hansel và Gretel sống gần một khu rừng cùng với cha và mẹ kế.",
+          "hi": "हैंसल और ग्रेटल अपने पिता और सौतेली माँ के साथ एक जंगल के पास रहते थे।",
+          "ru": "Гензель и Гретель жили у леса с отцом и мачехой.",
+          "bn": "হ্যানসেল আর গ্রেটেল তাদের বাবা আর সৎমায়ের সঙ্গে একটা বনের কাছে থাকত।",
+          "ur": "ہینسل اور گریٹل اپنے باپ اور سوتیلی ماں کے ساتھ ایک جنگل کے پاس رہتے تھے۔",
+          "th": "ฮันเซลกับเกรเทลอาศัยอยู่ใกล้ป่ากับพ่อและแม่เลี้ยง"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-01-01",
+        "english": "Their father was a poor woodcutter.",
+        "turkish": "Babaları yoksul bir oduncuydu.",
+        "translations": {
+          "es-419": "Su padre era un leñador pobre.",
+          "pt-BR": "O pai era um lenhador pobre.",
+          "id": "Ayah mereka adalah seorang penebang kayu yang miskin.",
+          "ar": "كان أبوهما حطّابًا فقيرًا.",
+          "vi": "Cha của hai đứa trẻ là một bác tiều phu nghèo.",
+          "hi": "उनके पिता एक ग़रीब लकड़हारे थे।",
+          "ru": "Их отец был бедным дровосеком.",
+          "bn": "তাদের বাবা ছিলেন এক গরিব কাঠুরে।",
+          "ur": "ان کا باپ ایک غریب لکڑہارا تھا۔",
+          "th": "พ่อของพวกเขาเป็นคนตัดไม้ที่ยากจน"
+        }
+      },
+      {
+        "id": "cl-hansel-gretel-02",
+        "english": "The family had so little food that the stepmother wanted to leave the children in the forest.",
+        "turkish": "Ailenin yiyeceği o kadar azdı ki üvey anne çocukları ormanda bırakmak istedi.",
+        "translations": {
+          "es-419": "La familia tenía tan poca comida que la madrastra quería dejar a los niños en el bosque.",
+          "pt-BR": "A família tinha tão pouca comida que a madrasta quis deixar as crianças na floresta.",
+          "id": "Keluarga itu sangat kekurangan makanan sehingga ibu tiri ingin meninggalkan anak-anak di hutan.",
+          "ar": "كان لدى العائلة طعام قليل جدًا، فأرادت زوجة الأب أن تترك الطفلين في الغابة.",
+          "vi": "Gia đình có quá ít thức ăn đến nỗi bà mẹ kế muốn bỏ bọn trẻ lại trong rừng.",
+          "hi": "परिवार के पास इतना कम खाना था कि सौतेली माँ बच्चों को जंगल में छोड़ देना चाहती थी।",
+          "ru": "Еды в семье было так мало, что мачеха захотела оставить детей в лесу.",
+          "bn": "পরিবারে খাবার এত কম ছিল যে সৎমা ছেলেমেয়েদের বনে ফেলে আসতে চাইল।",
+          "ur": "گھر میں کھانا اتنا کم تھا کہ سوتیلی ماں بچوں کو جنگل میں چھوڑ آنا چاہتی تھی۔",
+          "th": "ครอบครัวนี้มีอาหารน้อยมากจนแม่เลี้ยงอยากทิ้งเด็ก ๆ ไว้ในป่า"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-02-01",
+        "english": "\"How can I leave my own children alone in the forest?\" said the father.",
+        "turkish": "\"Kendi çocuklarımı ormanda nasıl yalnız bırakırım?\" dedi baba.",
+        "translations": {
+          "es-419": "\"¿Cómo voy a dejar solos a mis propios hijos en el bosque?\", dijo el padre.",
+          "pt-BR": "— Como posso deixar meus próprios filhos sozinhos na floresta? — disse o pai.",
+          "id": "\"Bagaimana mungkin aku meninggalkan anak-anakku sendirian di hutan?\" kata sang ayah.",
+          "ar": "قال الأب: «كيف أترك ولديّ وحدهما في الغابة؟»",
+          "vi": "\"Làm sao tôi nỡ bỏ con mình một mình trong rừng?\" người cha nói.",
+          "hi": "पिता ने कहा, \"मैं अपने ही बच्चों को जंगल में अकेला कैसे छोड़ दूँ?\"",
+          "ru": "«Как я могу бросить своих детей одних в лесу?» — сказал отец.",
+          "bn": "বাবা বললেন, \"নিজের ছেলেমেয়েকে আমি বনে একা কীভাবে ফেলে আসব?\"",
+          "ur": "باپ نے کہا، \"میں اپنے ہی بچوں کو جنگل میں اکیلا کیسے چھوڑ دوں؟\"",
+          "th": "\"ฉันจะทิ้งลูกของตัวเองไว้ในป่าตามลำพังได้อย่างไร\" พ่อพูด"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-02-02",
+        "english": "\"If we do not, all four of us will die of hunger,\" she answered.",
+        "turkish": "\"Bırakmazsak dördümüz de açlıktan öleceğiz,\" diye cevap verdi kadın.",
+        "translations": {
+          "es-419": "\"Si no lo hacemos, los cuatro moriremos de hambre\", respondió ella.",
+          "pt-BR": "— Se não fizermos isso, nós quatro vamos morrer de fome — respondeu ela.",
+          "id": "\"Kalau tidak, kita berempat akan mati kelaparan,\" jawab perempuan itu.",
+          "ar": "فأجابت: «إن لم نفعل، فسنموت نحن الأربعة من الجوع.»",
+          "vi": "\"Nếu không làm vậy, cả bốn chúng ta sẽ chết đói,\" bà ta đáp.",
+          "hi": "उसने जवाब दिया, \"अगर हमने ऐसा नहीं किया, तो हम चारों भूख से मर जाएँगे।\"",
+          "ru": "«Если мы этого не сделаем, все четверо умрём с голоду», — ответила она.",
+          "bn": "সে উত্তর দিল, \"তা না করলে আমরা চারজনই না খেয়ে মরব।\"",
+          "ur": "اس نے جواب دیا، \"اگر ہم نے ایسا نہ کیا تو ہم چاروں بھوک سے مر جائیں گے۔\"",
+          "th": "\"ถ้าไม่ทำแบบนั้น พวกเราทั้งสี่คนจะต้องอดตาย\" นางตอบ"
+        }
+      },
+      {
+        "id": "cl-hansel-gretel-03",
+        "english": "Their father finally agreed, although it made him unhappy.",
+        "turkish": "Babaları, bu onu üzse de sonunda kabul etti.",
+        "translations": {
+          "es-419": "Su padre al final aceptó, aunque eso lo hacía infeliz.",
+          "pt-BR": "O pai acabou concordando, embora isso o deixasse infeliz.",
+          "id": "Akhirnya ayah mereka setuju, meskipun hal itu membuatnya sedih.",
+          "ar": "وافق أبوهما في النهاية، مع أن ذلك أحزنه.",
+          "vi": "Cuối cùng người cha cũng đồng ý, dù điều đó khiến ông rất buồn.",
+          "hi": "आख़िर पिता मान गए, हालाँकि इससे वे दुखी थे।",
+          "ru": "В конце концов отец согласился, хотя ему было очень тяжело.",
+          "bn": "শেষে বাবা রাজি হলেন, যদিও এতে তাঁর মন খুব খারাপ হলো।",
+          "ur": "آخرکار ان کا باپ مان گیا، حالانکہ اس سے وہ بہت دکھی ہوا۔",
+          "th": "ในที่สุดพ่อก็ยอมตกลง แม้ว่าจะทำให้เขาเสียใจก็ตาม"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-03-01",
+        "english": "That night, the children were too hungry to sleep, and they could hear every word.",
+        "turkish": "O gece çocuklar açlıktan uyuyamıyordu ve her kelimeyi duyabiliyorlardı.",
+        "translations": {
+          "es-419": "Esa noche, los niños tenían tanta hambre que no podían dormir, y oyeron cada palabra.",
+          "pt-BR": "Naquela noite, as crianças estavam com tanta fome que não conseguiam dormir, e ouviram cada palavra.",
+          "id": "Malam itu, anak-anak terlalu lapar untuk tidur, dan mereka bisa mendengar setiap kata.",
+          "ar": "في تلك الليلة، كان الطفلان جائعين جدًا فلم يستطيعا النوم، وسمعا كل كلمة.",
+          "vi": "Đêm đó, hai đứa trẻ đói quá không ngủ được, nên chúng nghe rõ từng lời.",
+          "hi": "उस रात बच्चे इतने भूखे थे कि सो नहीं पाए, और उन्होंने हर एक शब्द सुन लिया।",
+          "ru": "В ту ночь дети были так голодны, что не могли уснуть, и слышали каждое слово.",
+          "bn": "সেই রাতে ছেলেমেয়েরা এত ক্ষুধার্ত ছিল যে ঘুমাতে পারছিল না, আর তারা প্রতিটি কথা শুনতে পেল।",
+          "ur": "اس رات بچے اتنے بھوکے تھے کہ سو نہ سکے، اور انہوں نے ہر ایک بات سن لی۔",
+          "th": "คืนนั้น เด็ก ๆ หิวจนนอนไม่หลับ และได้ยินทุกคำพูด"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-03-02",
+        "english": "Gretel cried quietly, but Hansel whispered, \"Don't worry. I will find a way.\"",
+        "turkish": "Gretel sessizce ağladı ama Hansel, \"Merak etme. Bir yolunu bulacağım,\" diye fısıldadı.",
+        "translations": {
+          "es-419": "Gretel lloraba en silencio, pero Hansel le susurró: \"No te preocupes. Encontraré una manera\".",
+          "pt-BR": "Maria chorou baixinho, mas João sussurrou: — Não se preocupe. Vou dar um jeito.",
+          "id": "Gretel menangis diam-diam, tetapi Hansel berbisik, \"Jangan khawatir. Aku akan mencari jalan.\"",
+          "ar": "بكت غريتل بصمت، لكن هانسل همس: «لا تقلقي. سأجد طريقة.»",
+          "vi": "Gretel khóc thút thít, nhưng Hansel thì thầm: \"Đừng lo. Anh sẽ tìm ra cách.\"",
+          "hi": "ग्रेटल चुपचाप रोने लगी, लेकिन हैंसल ने धीरे से कहा, \"चिंता मत करो। मैं कोई रास्ता निकाल लूँगा।\"",
+          "ru": "Гретель тихо плакала, но Гензель прошептал: «Не бойся. Я что-нибудь придумаю».",
+          "bn": "গ্রেটেল চুপচাপ কাঁদছিল, কিন্তু হ্যানসেল ফিসফিস করে বলল, \"ভয় পেয়ো না। আমি একটা উপায় বের করব।\"",
+          "ur": "گریٹل چپکے چپکے رونے لگی، لیکن ہینسل نے سرگوشی کی، \"فکر مت کرو۔ میں کوئی راستہ نکال لوں گا۔\"",
+          "th": "เกรเทลร้องไห้เงียบ ๆ แต่ฮันเซลกระซิบว่า \"ไม่ต้องห่วงนะ พี่จะหาทางเอง\""
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-03-03",
+        "english": "When the parents were asleep, he crept outside.",
+        "turkish": "Anne babaları uyuyunca Hansel usulca dışarı çıktı.",
+        "translations": {
+          "es-419": "Cuando los padres se durmieron, él salió sin hacer ruido.",
+          "pt-BR": "Quando os pais dormiram, ele saiu de mansinho.",
+          "id": "Ketika kedua orang tua sudah tidur, ia menyelinap keluar.",
+          "ar": "وعندما نام الوالدان، تسلّل إلى الخارج.",
+          "vi": "Khi cha và mẹ kế đã ngủ, cậu rón rén ra ngoài.",
+          "hi": "जब माता-पिता सो गए, तो वह चुपके से बाहर निकल गया।",
+          "ru": "Когда родители уснули, он тихонько вышел из дома.",
+          "bn": "বাবা-মা ঘুমিয়ে পড়লে সে চুপিচুপি বাইরে গেল।",
+          "ur": "جب ماں باپ سو گئے تو وہ چپکے سے باہر نکل گیا۔",
+          "th": "เมื่อพ่อแม่หลับแล้ว เขาก็แอบย่องออกไปข้างนอก"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-03-04",
+        "english": "The moon was bright, and the white pebbles in front of the house shone like silver coins.",
+        "turkish": "Ay parlaktı ve evin önündeki beyaz çakıl taşları gümüş paralar gibi parlıyordu.",
+        "translations": {
+          "es-419": "La luna brillaba, y las piedritas blancas frente a la casa relucían como monedas de plata.",
+          "pt-BR": "A lua estava clara, e as pedrinhas brancas na frente da casa brilhavam como moedas de prata.",
+          "id": "Bulan bersinar terang, dan kerikil putih di depan rumah berkilau seperti uang perak.",
+          "ar": "كان القمر ساطعًا، وكانت الحصى البيضاء أمام البيت تلمع مثل قطع النقود الفضية.",
+          "vi": "Trăng sáng vằng vặc, và những viên sỏi trắng trước nhà lấp lánh như những đồng xu bạc.",
+          "hi": "चाँद चमक रहा था, और घर के सामने पड़े सफ़ेद कंकड़ चाँदी के सिक्कों की तरह चमक रहे थे।",
+          "ru": "Ярко светила луна, и белые камешки перед домом блестели, как серебряные монетки.",
+          "bn": "চাঁদের আলো ছিল উজ্জ্বল, আর বাড়ির সামনের সাদা নুড়িগুলো রুপোর মুদ্রার মতো ঝকঝক করছিল।",
+          "ur": "چاند روشن تھا، اور گھر کے سامنے پڑے سفید کنکر چاندی کے سکوں کی طرح چمک رہے تھے۔",
+          "th": "พระจันทร์สว่างไสว และก้อนกรวดสีขาวหน้าบ้านก็ส่องประกายเหมือนเหรียญเงิน"
+        }
+      },
+      {
+        "id": "cl-hansel-gretel-04",
+        "english": "Hansel heard the plan and filled his pocket with white pebbles.",
+        "turkish": "Hansel planı duydu ve cebini beyaz çakıl taşlarıyla doldurdu.",
+        "translations": {
+          "es-419": "Hansel oyó el plan y se llenó el bolsillo de piedritas blancas.",
+          "pt-BR": "João ouviu o plano e encheu o bolso de pedrinhas brancas.",
+          "id": "Hansel mendengar rencana itu dan mengisi sakunya dengan kerikil putih.",
+          "ar": "سمع هانسل الخطة وملأ جيبه بالحصى الأبيض.",
+          "vi": "Hansel nghe được kế hoạch và nhét đầy sỏi trắng vào túi.",
+          "hi": "हैंसल ने यह योजना सुन ली और अपनी जेब सफ़ेद कंकड़ों से भर ली।",
+          "ru": "Гензель услышал этот план и набил карман белыми камешками.",
+          "bn": "হ্যানসেল পরিকল্পনাটা শুনে ফেলল আর পকেট সাদা নুড়ি পাথরে ভরে নিল।",
+          "ur": "ہینسل نے یہ منصوبہ سن لیا اور اپنی جیب سفید کنکروں سے بھر لی۔",
+          "th": "ฮันเซลได้ยินแผนนั้น จึงเก็บก้อนกรวดสีขาวใส่กระเป๋าจนเต็ม"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-04-01",
+        "english": "Then he went back to bed and said, \"Sleep now, little sister. We will be all right.\"",
+        "turkish": "Sonra yatağına döndü ve \"Şimdi uyu, kardeşim. Bize bir şey olmayacak,\" dedi.",
+        "translations": {
+          "es-419": "Luego volvió a la cama y dijo: \"Ahora duerme, hermanita. Todo saldrá bien\".",
+          "pt-BR": "Depois voltou para a cama e disse: — Agora durma, maninha. Vai ficar tudo bem.",
+          "id": "Lalu ia kembali ke tempat tidur dan berkata, \"Tidurlah sekarang, Adik. Kita akan baik-baik saja.\"",
+          "ar": "ثم عاد إلى فراشه وقال: «نامي الآن يا أختي الصغيرة. سنكون بخير.»",
+          "vi": "Rồi cậu quay về giường và nói: \"Ngủ đi em. Chúng ta sẽ không sao đâu.\"",
+          "hi": "फिर वह बिस्तर पर लौट आया और बोला, \"अब सो जाओ, छोटी बहन। सब ठीक हो जाएगा।\"",
+          "ru": "Потом он вернулся в постель и сказал: «Спи, сестрёнка. Всё будет хорошо».",
+          "bn": "তারপর সে বিছানায় ফিরে এসে বলল, \"এবার ঘুমাও, বোনটি। আমাদের কিছু হবে না।\"",
+          "ur": "پھر وہ بستر پر لوٹ آیا اور بولا، \"اب سو جاؤ، چھوٹی بہن۔ سب ٹھیک ہو جائے گا۔\"",
+          "th": "จากนั้นเขากลับมาที่เตียงแล้วพูดว่า \"นอนเถอะน้องสาว พวกเราจะไม่เป็นไร\""
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-04-02",
+        "english": "Early in the morning, the stepmother woke them and gave each child a small piece of bread.",
+        "turkish": "Sabah erkenden üvey anne onları uyandırdı ve her çocuğa küçük bir parça ekmek verdi.",
+        "translations": {
+          "es-419": "Muy temprano, la madrastra los despertó y le dio a cada niño un pedacito de pan.",
+          "pt-BR": "Bem cedo, a madrasta os acordou e deu a cada criança um pedacinho de pão.",
+          "id": "Pagi-pagi sekali, ibu tiri membangunkan mereka dan memberi setiap anak sepotong kecil roti.",
+          "ar": "في الصباح الباكر، أيقظتهما زوجة الأب وأعطت كل واحد منهما قطعة صغيرة من الخبز.",
+          "vi": "Sáng sớm, bà mẹ kế đánh thức bọn trẻ và đưa cho mỗi đứa một mẩu bánh mì nhỏ.",
+          "hi": "सुबह-सुबह सौतेली माँ ने उन्हें जगाया और हर बच्चे को रोटी का एक छोटा टुकड़ा दिया।",
+          "ru": "Рано утром мачеха разбудила детей и дала каждому по маленькому кусочку хлеба.",
+          "bn": "ভোরবেলা সৎমা তাদের জাগিয়ে দিল আর প্রত্যেককে এক টুকরো ছোট রুটি দিল।",
+          "ur": "صبح سویرے سوتیلی ماں نے انہیں جگایا اور ہر بچے کو روٹی کا ایک چھوٹا سا ٹکڑا دیا۔",
+          "th": "เช้าตรู่ แม่เลี้ยงปลุกเด็ก ๆ และให้ขนมปังชิ้นเล็ก ๆ คนละชิ้น"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-04-03",
+        "english": "\"That is your lunch,\" she said. \"Do not eat it too early.\"",
+        "turkish": "\"Bu sizin öğle yemeğiniz,\" dedi. \"Erkenden yemeyin.\"",
+        "translations": {
+          "es-419": "\"Eso es su almuerzo\", dijo. \"No se lo coman demasiado pronto\".",
+          "pt-BR": "— Isso é o almoço de vocês — disse ela. — Não comam cedo demais.",
+          "id": "\"Itu makan siang kalian,\" katanya. \"Jangan dimakan terlalu cepat.\"",
+          "ar": "قالت: «هذا غداؤكما. لا تأكلاه مبكرًا.»",
+          "vi": "\"Đó là bữa trưa của các ngươi,\" bà ta nói. \"Đừng ăn sớm quá.\"",
+          "hi": "उसने कहा, \"यह तुम्हारा दोपहर का खाना है। इसे जल्दी मत खा लेना।\"",
+          "ru": "«Это ваш обед, — сказала она. — Не съешьте его слишком рано».",
+          "bn": "সে বলল, \"এটা তোমাদের দুপুরের খাবার। তাড়াতাড়ি খেয়ে ফেলো না।\"",
+          "ur": "اس نے کہا، \"یہ تمہارا دوپہر کا کھانا ہے۔ اسے جلدی مت کھا لینا۔\"",
+          "th": "\"นี่คืออาหารกลางวันของพวกเจ้า\" นางพูด \"อย่ากินเร็วเกินไปล่ะ\""
+        }
+      },
+      {
+        "id": "cl-hansel-gretel-05",
+        "english": "As they walked into the forest, he dropped the pebbles behind him.",
+        "turkish": "Ormana yürürlerken çakıl taşlarını arkasına bıraktı.",
+        "translations": {
+          "es-419": "Mientras caminaban hacia el bosque, fue dejando caer las piedritas detrás de él.",
+          "pt-BR": "Enquanto entravam na floresta, ele foi deixando cair as pedrinhas atrás de si.",
+          "id": "Saat mereka berjalan masuk ke hutan, ia menjatuhkan kerikil-kerikil itu di belakangnya.",
+          "ar": "وبينما كانوا يمشون في الغابة، كان يُسقط الحصى خلفه.",
+          "vi": "Khi họ đi vào rừng, cậu thả những viên sỏi lại phía sau.",
+          "hi": "जंगल में चलते हुए वह अपने पीछे कंकड़ गिराता गया।",
+          "ru": "Когда они шли в лес, он бросал камешки позади себя.",
+          "bn": "বনের ভেতরে হাঁটার সময় সে পেছনে পেছনে নুড়িগুলো ফেলে যেতে লাগল।",
+          "ur": "جنگل میں چلتے ہوئے وہ اپنے پیچھے کنکر گراتا گیا۔",
+          "th": "ขณะที่พวกเขาเดินเข้าป่า เขาก็ทิ้งก้อนกรวดไว้ข้างหลัง"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-05-01",
+        "english": "Again and again, Hansel stopped and looked back at the house.",
+        "turkish": "Hansel durmadan durup dönüp eve bakıyordu.",
+        "translations": {
+          "es-419": "Una y otra vez, Hansel se detenía y miraba hacia la casa.",
+          "pt-BR": "De vez em quando, João parava e olhava para trás, para a casa.",
+          "id": "Berkali-kali Hansel berhenti dan menoleh ke arah rumah.",
+          "ar": "وكان هانسل يتوقّف مرّة بعد مرّة وينظر إلى البيت خلفه.",
+          "vi": "Hansel cứ dừng lại và ngoái nhìn về phía ngôi nhà.",
+          "hi": "हैंसल बार-बार रुककर पीछे घर की ओर देखता।",
+          "ru": "Гензель то и дело останавливался и оглядывался на дом.",
+          "bn": "হ্যানসেল বারবার থেমে পিছন ফিরে বাড়ির দিকে তাকাচ্ছিল।",
+          "ur": "ہینسل بار بار رک کر پیچھے گھر کی طرف دیکھتا۔",
+          "th": "ฮันเซลหยุดแล้วหันกลับไปมองบ้านอยู่หลายครั้ง"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-05-02",
+        "english": "\"What are you looking at?\" asked his father.",
+        "turkish": "\"Neye bakıyorsun?\" diye sordu babası.",
+        "translations": {
+          "es-419": "\"¿Qué miras?\", le preguntó su padre.",
+          "pt-BR": "— O que você está olhando? — perguntou o pai.",
+          "id": "\"Apa yang kau lihat?\" tanya ayahnya.",
+          "ar": "سأله أبوه: «إلى ماذا تنظر؟»",
+          "vi": "\"Con nhìn gì thế?\" cha cậu hỏi.",
+          "hi": "उसके पिता ने पूछा, \"क्या देख रहे हो?\"",
+          "ru": "«Куда ты смотришь?» — спросил отец.",
+          "bn": "বাবা জিজ্ঞেস করলেন, \"কী দেখছ?\"",
+          "ur": "اس کے باپ نے پوچھا، \"کیا دیکھ رہے ہو؟\"",
+          "th": "\"มองอะไรอยู่ลูก\" พ่อถาม"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-05-03",
+        "english": "\"I am looking at my white cat on the roof,\" said Hansel.",
+        "turkish": "\"Çatıdaki beyaz kedime bakıyorum,\" dedi Hansel.",
+        "translations": {
+          "es-419": "\"Miro a mi gatito blanco en el techo\", dijo Hansel.",
+          "pt-BR": "— Estou olhando meu gatinho branco no telhado — disse João.",
+          "id": "\"Aku melihat kucing putihku di atas atap,\" kata Hansel.",
+          "ar": "قال هانسل: «أنظر إلى قطّتي البيضاء على السطح.»",
+          "vi": "\"Con nhìn con mèo trắng của con trên mái nhà,\" Hansel đáp.",
+          "hi": "हैंसल ने कहा, \"मैं छत पर बैठी अपनी सफ़ेद बिल्ली को देख रहा हूँ।\"",
+          "ru": "«Я смотрю на своего белого котёнка на крыше», — сказал Гензель.",
+          "bn": "হ্যানসেল বলল, \"ছাদের ওপর আমার সাদা বিড়ালটাকে দেখছি।\"",
+          "ur": "ہینسل نے کہا، \"میں چھت پر اپنی سفید بلی کو دیکھ رہا ہوں۔\"",
+          "th": "\"ผมกำลังมองแมวขาวของผมบนหลังคาครับ\" ฮันเซลตอบ"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-05-04",
+        "english": "But he was really dropping another pebble on the path.",
+        "turkish": "Ama aslında patikaya bir çakıl taşı daha bırakıyordu.",
+        "translations": {
+          "es-419": "Pero en realidad estaba dejando caer otra piedrita en el camino.",
+          "pt-BR": "Mas, na verdade, ele estava deixando cair mais uma pedrinha no caminho.",
+          "id": "Padahal sebenarnya ia sedang menjatuhkan sebutir kerikil lagi di jalan.",
+          "ar": "لكنه في الحقيقة كان يُسقط حصاة أخرى على الطريق.",
+          "vi": "Nhưng thật ra cậu đang thả thêm một viên sỏi xuống đường.",
+          "hi": "पर असल में वह रास्ते पर एक और कंकड़ गिरा रहा था।",
+          "ru": "А на самом деле он бросал на тропинку ещё один камешек.",
+          "bn": "কিন্তু আসলে সে পথের ওপর আরেকটা নুড়ি ফেলছিল।",
+          "ur": "مگر اصل میں وہ راستے پر ایک اور کنکر گرا رہا تھا۔",
+          "th": "แต่ที่จริงเขากำลังทิ้งก้อนกรวดอีกก้อนลงบนทาง"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-05-05",
+        "english": "Deep in the forest, the father made a big fire to keep them warm.",
+        "turkish": "Ormanın derinliklerinde baba, onları sıcak tutmak için büyük bir ateş yaktı.",
+        "translations": {
+          "es-419": "En lo profundo del bosque, el padre hizo una gran fogata para que no tuvieran frío.",
+          "pt-BR": "No fundo da floresta, o pai fez uma grande fogueira para aquecê-los.",
+          "id": "Di tengah hutan, sang ayah membuat api unggun besar agar mereka tetap hangat.",
+          "ar": "في أعماق الغابة، أشعل الأب نارًا كبيرة ليدفئهما.",
+          "vi": "Vào sâu trong rừng, người cha nhóm một đống lửa lớn cho bọn trẻ sưởi ấm.",
+          "hi": "जंगल के बीच पहुँचकर पिता ने उन्हें गरम रखने के लिए बड़ी आग जलाई।",
+          "ru": "В самой чаще отец развёл большой костёр, чтобы дети не замёрзли.",
+          "bn": "বনের গভীরে গিয়ে বাবা তাদের গরম রাখার জন্য একটা বড় আগুন জ্বাললেন।",
+          "ur": "جنگل کے بیچ میں باپ نے انہیں گرم رکھنے کے لیے بڑی آگ جلائی۔",
+          "th": "ในป่าลึก พ่อก่อกองไฟใหญ่ให้พวกเขาอบอุ่น"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-05-06",
+        "english": "\"Rest here,\" said the stepmother. \"We will come back for you when our work is done.\"",
+        "turkish": "\"Burada dinlenin,\" dedi üvey anne. \"İşimiz bitince sizi almaya geleceğiz.\"",
+        "translations": {
+          "es-419": "\"Descansen aquí\", dijo la madrastra. \"Volveremos por ustedes cuando terminemos el trabajo\".",
+          "pt-BR": "— Descansem aqui — disse a madrasta. — Voltaremos para buscar vocês quando o trabalho acabar.",
+          "id": "\"Beristirahatlah di sini,\" kata ibu tiri. \"Kami akan kembali menjemput kalian setelah pekerjaan selesai.\"",
+          "ar": "قالت زوجة الأب: «استريحا هنا. سنعود إليكما حين ننتهي من عملنا.»",
+          "vi": "\"Nghỉ ở đây,\" bà mẹ kế nói. \"Làm xong việc chúng ta sẽ quay lại đón.\"",
+          "hi": "सौतेली माँ ने कहा, \"यहीं आराम करो। काम ख़त्म होते ही हम तुम्हें लेने आएँगे।\"",
+          "ru": "«Отдохните здесь, — сказала мачеха. — Когда закончим работу, мы за вами вернёмся».",
+          "bn": "সৎমা বলল, \"এখানে বিশ্রাম নাও। কাজ শেষ হলে আমরা তোমাদের নিতে আসব।\"",
+          "ur": "سوتیلی ماں نے کہا، \"یہیں آرام کرو۔ کام ختم ہوتے ہی ہم تمہیں لینے آئیں گے۔\"",
+          "th": "\"พักอยู่ตรงนี้นะ\" แม่เลี้ยงพูด \"ทำงานเสร็จแล้วเราจะกลับมารับ\""
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-05-07",
+        "english": "At last they fell asleep, and when they woke up, it was dark night.",
+        "turkish": "Sonunda uyuyakaldılar ve uyandıklarında zifiri karanlık bir geceydi.",
+        "translations": {
+          "es-419": "Al final se quedaron dormidos, y cuando despertaron, era noche cerrada.",
+          "pt-BR": "Por fim, eles adormeceram, e quando acordaram já era noite escura.",
+          "id": "Akhirnya mereka tertidur, dan ketika bangun, hari sudah gelap gulita.",
+          "ar": "وأخيرًا غلبهما النوم، وحين استيقظا كان الليل مظلمًا.",
+          "vi": "Cuối cùng chúng ngủ thiếp đi, và khi tỉnh dậy thì trời đã tối đen.",
+          "hi": "आख़िर उन्हें नींद आ गई, और जब वे जागे तो घनी अँधेरी रात हो चुकी थी।",
+          "ru": "Наконец они уснули, а когда проснулись, была уже тёмная ночь.",
+          "bn": "শেষে তারা ঘুমিয়ে পড়ল, আর যখন জাগল, তখন ঘুটঘুটে অন্ধকার রাত।",
+          "ur": "آخرکار انہیں نیند آ گئی، اور جب وہ جاگے تو گھپ اندھیری رات ہو چکی تھی۔",
+          "th": "ในที่สุดพวกเขาก็หลับไป และเมื่อตื่นขึ้นมาก็มืดสนิทแล้ว"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-05-08",
+        "english": "Gretel began to cry, but Hansel said, \"Wait until the moon comes up.\"",
+        "turkish": "Gretel ağlamaya başladı ama Hansel, \"Ay doğana kadar bekle,\" dedi.",
+        "translations": {
+          "es-419": "Gretel se puso a llorar, pero Hansel dijo: \"Espera a que salga la luna\".",
+          "pt-BR": "Maria começou a chorar, mas João disse: — Espere a lua aparecer.",
+          "id": "Gretel mulai menangis, tetapi Hansel berkata, \"Tunggulah sampai bulan terbit.\"",
+          "ar": "بدأت غريتل تبكي، لكن هانسل قال: «انتظري حتى يطلع القمر.»",
+          "vi": "Gretel bắt đầu khóc, nhưng Hansel nói: \"Đợi trăng lên đã em.\"",
+          "hi": "ग्रेटल रोने लगी, लेकिन हैंसल ने कहा, \"चाँद निकलने तक रुको।\"",
+          "ru": "Гретель заплакала, но Гензель сказал: «Подожди, пока взойдёт луна».",
+          "bn": "গ্রেটেল কাঁদতে শুরু করল, কিন্তু হ্যানসেল বলল, \"চাঁদ ওঠা পর্যন্ত অপেক্ষা করো।\"",
+          "ur": "گریٹل رونے لگی، لیکن ہینسل نے کہا، \"چاند نکلنے تک انتظار کرو۔\"",
+          "th": "เกรเทลเริ่มร้องไห้ แต่ฮันเซลบอกว่า \"รอให้พระจันทร์ขึ้นก่อนนะ\""
+        }
+      },
+      {
+        "id": "cl-hansel-gretel-06",
+        "english": "That night, the children followed the shining stones home.",
+        "turkish": "O gece çocuklar parlayan taşları izleyerek eve döndü.",
+        "translations": {
+          "es-419": "Esa noche, los niños siguieron las piedras brillantes hasta su casa.",
+          "pt-BR": "Naquela noite, as crianças seguiram as pedras brilhantes até em casa.",
+          "id": "Malam itu, anak-anak mengikuti batu-batu yang berkilau itu sampai ke rumah.",
+          "ar": "في تلك الليلة، تبع الطفلان الحجارة اللامعة إلى البيت.",
+          "vi": "Đêm đó, hai đứa trẻ lần theo những viên sỏi lấp lánh để về nhà.",
+          "hi": "उस रात बच्चे चमकते पत्थरों के सहारे घर लौट आए।",
+          "ru": "Ночью дети пошли по блестящим камешкам и вернулись домой.",
+          "bn": "সেই রাতে ছেলেমেয়েরা চকচকে পাথরগুলো ধরে ধরে বাড়ি ফিরে এল।",
+          "ur": "اس رات بچے چمکتے ہوئے پتھروں کے پیچھے چل کر گھر پہنچ گئے۔",
+          "th": "คืนนั้น เด็ก ๆ เดินตามก้อนหินที่ส่องแสงวาววับกลับบ้าน"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-06-01",
+        "english": "In the morning, they knocked at the door of their house.",
+        "turkish": "Sabah olunca evlerinin kapısını çaldılar.",
+        "translations": {
+          "es-419": "Por la mañana, tocaron a la puerta de su casa.",
+          "pt-BR": "De manhã, eles bateram à porta de casa.",
+          "id": "Pagi harinya, mereka mengetuk pintu rumah mereka.",
+          "ar": "وفي الصباح، طرقا باب بيتهما.",
+          "vi": "Sáng ra, hai anh em gõ cửa nhà mình.",
+          "hi": "सुबह उन्होंने अपने घर का दरवाज़ा खटखटाया।",
+          "ru": "Утром они постучали в дверь своего дома.",
+          "bn": "সকালে তারা নিজেদের বাড়ির দরজায় কড়া নাড়ল।",
+          "ur": "صبح انہوں نے اپنے گھر کا دروازہ کھٹکھٹایا۔",
+          "th": "พอรุ่งเช้า พวกเขาก็เคาะประตูบ้านของตัวเอง"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-06-02",
+        "english": "The stepmother pretended to be glad, but their father was truly happy to see them.",
+        "turkish": "Üvey anne seviniyormuş gibi yaptı ama babaları onları gördüğüne gerçekten mutlu oldu.",
+        "translations": {
+          "es-419": "La madrastra fingió alegrarse, pero su padre de verdad se puso feliz de verlos.",
+          "pt-BR": "A madrasta fingiu estar contente, mas o pai ficou realmente feliz ao vê-los.",
+          "id": "Ibu tiri pura-pura senang, tetapi ayah mereka benar-benar bahagia melihat mereka.",
+          "ar": "تظاهرت زوجة الأب بالفرح، أما أبوهما فكان سعيدًا حقًّا برؤيتهما.",
+          "vi": "Bà mẹ kế giả vờ mừng rỡ, còn người cha thì thật lòng vui sướng khi thấy các con.",
+          "hi": "सौतेली माँ ने ख़ुश होने का दिखावा किया, पर उनके पिता उन्हें देखकर सचमुच ख़ुश हुए।",
+          "ru": "Мачеха сделала вид, что рада, а отец по-настоящему обрадовался детям.",
+          "bn": "সৎমা খুশি হওয়ার ভান করল, কিন্তু বাবা তাদের দেখে সত্যিই খুশি হলেন।",
+          "ur": "سوتیلی ماں نے خوش ہونے کا دکھاوا کیا، مگر ان کا باپ انہیں دیکھ کر سچ مچ خوش ہوا۔",
+          "th": "แม่เลี้ยงแกล้งทำเป็นดีใจ แต่พ่อดีใจจริง ๆ ที่ได้เห็นลูก"
+        }
+      },
+      {
+        "id": "cl-hansel-gretel-07",
+        "english": "When the family ran out of food again, their stepmother took them farther away.",
+        "turkish": "Ailenin yiyeceği yine tükenince üvey anneleri onları daha uzağa götürdü.",
+        "translations": {
+          "es-419": "Cuando la familia se quedó otra vez sin comida, su madrastra los llevó más lejos.",
+          "pt-BR": "Quando a comida acabou de novo, a madrasta os levou para ainda mais longe.",
+          "id": "Ketika keluarga itu kehabisan makanan lagi, ibu tiri membawa mereka lebih jauh.",
+          "ar": "عندما نفد الطعام مرة أخرى، أخذتهما زوجة أبيهما إلى مكان أبعد.",
+          "vi": "Khi gia đình lại hết thức ăn, bà mẹ kế dẫn chúng đi xa hơn nữa.",
+          "hi": "जब परिवार का खाना फिर ख़त्म हो गया, तो सौतेली माँ उन्हें और भी दूर ले गई।",
+          "ru": "Когда еда в семье снова закончилась, мачеха завела их ещё дальше.",
+          "bn": "আবার খাবার ফুরিয়ে গেলে সৎমা তাদের আরও দূরে নিয়ে গেল।",
+          "ur": "جب گھر میں پھر کھانا ختم ہو گیا تو سوتیلی ماں انہیں اور بھی دور لے گئی۔",
+          "th": "เมื่อครอบครัวไม่มีอาหารอีกครั้ง แม่เลี้ยงก็พาพวกเขาไปไกลกว่าเดิม"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-07-01",
+        "english": "That night, Hansel wanted to collect pebbles again, but the door was locked.",
+        "turkish": "O gece Hansel yine çakıl taşı toplamak istedi ama kapı kilitliydi.",
+        "translations": {
+          "es-419": "Esa noche, Hansel quiso juntar piedritas otra vez, pero la puerta estaba cerrada con llave.",
+          "pt-BR": "Naquela noite, João quis juntar pedrinhas de novo, mas a porta estava trancada.",
+          "id": "Malam itu, Hansel ingin mengumpulkan kerikil lagi, tetapi pintunya terkunci.",
+          "ar": "في تلك الليلة، أراد هانسل أن يجمع الحصى مرّة أخرى، لكن الباب كان مقفلًا.",
+          "vi": "Đêm ấy, Hansel lại muốn đi nhặt sỏi, nhưng cửa đã bị khóa.",
+          "hi": "उस रात हैंसल फिर से कंकड़ इकट्ठा करना चाहता था, लेकिन दरवाज़ा बंद था।",
+          "ru": "В ту ночь Гензель снова хотел набрать камешков, но дверь была заперта.",
+          "bn": "সেই রাতে হ্যানসেল আবার নুড়ি জোগাড় করতে চাইল, কিন্তু দরজা তালাবন্ধ ছিল।",
+          "ur": "اس رات ہینسل پھر کنکر جمع کرنا چاہتا تھا، لیکن دروازہ بند تھا۔",
+          "th": "คืนนั้น ฮันเซลอยากไปเก็บก้อนกรวดอีก แต่ประตูถูกล็อกไว้"
+        }
+      },
+      {
+        "id": "cl-hansel-gretel-08",
+        "english": "This time, Hansel could only drop bread crumbs on the path.",
+        "turkish": "Hansel bu kez patikaya yalnızca ekmek kırıntıları bırakabildi.",
+        "translations": {
+          "es-419": "Esta vez, Hansel solo pudo dejar caer migas de pan en el camino.",
+          "pt-BR": "Dessa vez, João só pôde jogar migalhas de pão no caminho.",
+          "id": "Kali ini, Hansel hanya bisa menjatuhkan remah-remah roti di jalan setapak.",
+          "ar": "هذه المرة، لم يستطع هانسل إلا أن يُسقط فُتات الخبز على الطريق.",
+          "vi": "Lần này, Hansel chỉ có thể rải vụn bánh mì trên đường.",
+          "hi": "इस बार हैंसल रास्ते पर सिर्फ़ ब्रेड के टुकड़े ही गिरा सका।",
+          "ru": "На этот раз Гензель смог бросать на тропинку только хлебные крошки.",
+          "bn": "এবার হ্যানসেল পথে শুধু রুটির গুঁড়ো ফেলতে পারল।",
+          "ur": "اس بار ہینسل راستے پر صرف روٹی کے ٹکڑے ہی گرا سکا۔",
+          "th": "ครั้งนี้ ฮันเซลทำได้แค่โปรยเศษขนมปังไว้บนทาง"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-08-01",
+        "english": "Once again, the parents left the children by a fire and did not come back.",
+        "turkish": "Anne babaları çocukları yine bir ateşin başında bıraktı ve geri dönmedi.",
+        "translations": {
+          "es-419": "Otra vez, los padres dejaron a los niños junto a una fogata y no regresaron.",
+          "pt-BR": "Mais uma vez, os pais deixaram as crianças perto de uma fogueira e não voltaram.",
+          "id": "Sekali lagi, orang tua itu meninggalkan anak-anak di dekat api unggun dan tidak kembali.",
+          "ar": "ومرّة أخرى، ترك الوالدان الطفلين عند نار ولم يعودا.",
+          "vi": "Một lần nữa, cha và mẹ kế để bọn trẻ lại bên đống lửa và không quay lại.",
+          "hi": "एक बार फिर माता-पिता बच्चों को आग के पास छोड़ गए और लौटकर नहीं आए।",
+          "ru": "И снова родители оставили детей у костра и не вернулись.",
+          "bn": "আবারও বাবা-মা ছেলেমেয়েদের আগুনের পাশে রেখে চলে গেল, আর ফিরে এল না।",
+          "ur": "ایک بار پھر ماں باپ بچوں کو آگ کے پاس چھوڑ گئے اور واپس نہیں آئے۔",
+          "th": "พ่อแม่ทิ้งเด็ก ๆ ไว้ข้างกองไฟอีกครั้ง และไม่กลับมาอีกเลย"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-08-02",
+        "english": "When the moon came up, the children looked for the crumbs.",
+        "turkish": "Ay doğunca çocuklar kırıntıları aradı.",
+        "translations": {
+          "es-419": "Cuando salió la luna, los niños buscaron las migas.",
+          "pt-BR": "Quando a lua apareceu, as crianças procuraram as migalhas.",
+          "id": "Ketika bulan terbit, anak-anak mencari remah-remah roti itu.",
+          "ar": "وعندما طلع القمر، بحث الطفلان عن الفتات.",
+          "vi": "Khi trăng lên, bọn trẻ đi tìm những mẩu vụn bánh.",
+          "hi": "जब चाँद निकला, तो बच्चों ने टुकड़ों को ढूँढा।",
+          "ru": "Когда взошла луна, дети стали искать крошки.",
+          "bn": "চাঁদ উঠলে ছেলেমেয়েরা রুটির টুকরোগুলো খুঁজতে লাগল।",
+          "ur": "جب چاند نکلا تو بچوں نے روٹی کے ٹکڑے ڈھونڈے۔",
+          "th": "เมื่อพระจันทร์ขึ้น เด็ก ๆ ก็มองหาเศษขนมปัง"
+        }
+      },
+      {
+        "id": "cl-hansel-gretel-09",
+        "english": "But birds ate the crumbs, and the children could not find their way back.",
+        "turkish": "Ama kuşlar kırıntıları yedi ve çocuklar dönüş yolunu bulamadı.",
+        "translations": {
+          "es-419": "Pero los pájaros se comieron las migas, y los niños no pudieron encontrar el camino de regreso.",
+          "pt-BR": "Mas os pássaros comeram as migalhas, e as crianças não conseguiram achar o caminho de volta.",
+          "id": "Tetapi burung-burung memakan remah-remah itu, dan anak-anak tidak bisa menemukan jalan pulang.",
+          "ar": "لكن الطيور أكلت الفُتات، ولم يستطع الطفلان أن يجدا طريق العودة.",
+          "vi": "Nhưng chim chóc đã ăn hết vụn bánh, và bọn trẻ không tìm được đường về.",
+          "hi": "लेकिन चिड़ियों ने टुकड़े खा लिए, और बच्चों को वापसी का रास्ता नहीं मिला।",
+          "ru": "Но птицы склевали крошки, и дети не смогли найти дорогу назад.",
+          "bn": "কিন্তু পাখিরা গুঁড়োগুলো খেয়ে ফেলল, আর ছেলেমেয়েরা ফেরার পথ খুঁজে পেল না।",
+          "ur": "لیکن پرندے ٹکڑے کھا گئے، اور بچوں کو واپسی کا راستہ نہ ملا۔",
+          "th": "แต่นกกินเศษขนมปังไปหมด และเด็ก ๆ ก็หาทางกลับไม่ได้"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-09-01",
+        "english": "They walked all night and all the next day, but they could not get out of the forest.",
+        "turkish": "Bütün gece ve ertesi gün boyunca yürüdüler ama ormandan çıkamadılar.",
+        "translations": {
+          "es-419": "Caminaron toda la noche y todo el día siguiente, pero no pudieron salir del bosque.",
+          "pt-BR": "Eles andaram a noite toda e o dia seguinte inteiro, mas não conseguiram sair da floresta.",
+          "id": "Mereka berjalan sepanjang malam dan sepanjang hari berikutnya, tetapi tidak bisa keluar dari hutan.",
+          "ar": "مشيا طوال الليل وطوال اليوم التالي، لكنهما لم يستطيعا الخروج من الغابة.",
+          "vi": "Chúng đi suốt đêm và suốt cả ngày hôm sau, nhưng vẫn không ra khỏi rừng được.",
+          "hi": "वे पूरी रात और अगले पूरे दिन चलते रहे, पर जंगल से बाहर नहीं निकल पाए।",
+          "ru": "Они шли всю ночь и весь следующий день, но так и не смогли выбраться из леса.",
+          "bn": "তারা সারা রাত আর পরের সারাদিন হাঁটল, কিন্তু বন থেকে বেরোতে পারল না।",
+          "ur": "وہ ساری رات اور اگلا پورا دن چلتے رہے، مگر جنگل سے باہر نہ نکل سکے۔",
+          "th": "พวกเขาเดินทั้งคืนและทั้งวันต่อมา แต่ก็ออกจากป่าไม่ได้"
+        }
+      },
+      {
+        "id": "cl-hansel-gretel-10",
+        "english": "After wandering for days, they followed a white bird to a strange little house.",
+        "turkish": "Günlerce dolaştıktan sonra beyaz bir kuşu izleyerek tuhaf küçük bir eve ulaştılar.",
+        "translations": {
+          "es-419": "Después de andar perdidos varios días, siguieron a un pájaro blanco hasta una casita extraña.",
+          "pt-BR": "Depois de vagar por dias, seguiram um pássaro branco até uma casinha estranha.",
+          "id": "Setelah berkeliaran selama berhari-hari, mereka mengikuti seekor burung putih ke sebuah rumah kecil yang aneh.",
+          "ar": "بعد أن تاها أيامًا، تبعا طائرًا أبيض إلى بيت صغير غريب.",
+          "vi": "Sau nhiều ngày lang thang, chúng đi theo một chú chim trắng đến một ngôi nhà nhỏ kỳ lạ.",
+          "hi": "कई दिन भटकने के बाद वे एक सफ़ेद चिड़िया के पीछे-पीछे एक अजीब छोटे घर तक पहुँचे।",
+          "ru": "Проблуждав несколько дней, они пошли за белой птичкой к странному домику.",
+          "bn": "কয়েক দিন ঘুরে বেড়ানোর পর তারা একটা সাদা পাখির পিছু নিয়ে একটা অদ্ভুত ছোট্ট বাড়িতে পৌঁছাল।",
+          "ur": "کئی دن بھٹکنے کے بعد وہ ایک سفید پرندے کے پیچھے ایک عجیب سے چھوٹے گھر تک پہنچے۔",
+          "th": "หลังจากเดินหลงทางอยู่หลายวัน พวกเขาเดินตามนกสีขาวตัวหนึ่งไปจนถึงบ้านหลังเล็กแปลก ๆ"
+        }
+      },
+      {
+        "id": "cl-hansel-gretel-11",
+        "english": "Its walls were made of bread, its roof of cake, and its windows of sugar.",
+        "turkish": "Duvarları ekmekten, çatısı kekten, pencereleri ise şekerdendi.",
+        "translations": {
+          "es-419": "Sus paredes eran de pan, su techo de pastel y sus ventanas de azúcar.",
+          "pt-BR": "As paredes eram de pão, o telhado de bolo e as janelas de açúcar.",
+          "id": "Dindingnya terbuat dari roti, atapnya dari kue, dan jendelanya dari gula.",
+          "ar": "كانت جدرانه من الخبز، وسقفه من الكعك، ونوافذه من السكّر.",
+          "vi": "Tường nhà làm bằng bánh mì, mái làm bằng bánh ngọt, và cửa sổ làm bằng đường.",
+          "hi": "उसकी दीवारें ब्रेड की, छत केक की और खिड़कियाँ चीनी की बनी थीं।",
+          "ru": "Стены у него были из хлеба, крыша — из пирога, а окна — из сахара.",
+          "bn": "বাড়িটার দেয়াল রুটির, ছাদ কেকের, আর জানালা চিনির তৈরি।",
+          "ur": "اس کی دیواریں روٹی کی، چھت کیک کی اور کھڑکیاں چینی کی بنی تھیں۔",
+          "th": "ผนังของบ้านทำจากขนมปัง หลังคาทำจากเค้ก และหน้าต่างทำจากน้ำตาล"
+        }
+      },
+      {
+        "id": "cl-hansel-gretel-12",
+        "english": "The hungry children began to eat pieces of the house.",
+        "turkish": "Aç çocuklar evden parçalar yemeye başladı.",
+        "translations": {
+          "es-419": "Los niños hambrientos empezaron a comer pedazos de la casa.",
+          "pt-BR": "As crianças famintas começaram a comer pedaços da casa.",
+          "id": "Anak-anak yang lapar itu mulai memakan bagian-bagian rumah itu.",
+          "ar": "بدأ الطفلان الجائعان يأكلان قطعًا من البيت.",
+          "vi": "Hai đứa trẻ đang đói bắt đầu bẻ từng miếng của ngôi nhà ra ăn.",
+          "hi": "भूखे बच्चे घर के टुकड़े तोड़-तोड़कर खाने लगे।",
+          "ru": "Голодные дети принялись есть кусочки домика.",
+          "bn": "ক্ষুধার্ত ছেলেমেয়েরা বাড়িটার টুকরো ভেঙে খেতে শুরু করল।",
+          "ur": "بھوکے بچے گھر کے ٹکڑے توڑ کر کھانے لگے۔",
+          "th": "เด็ก ๆ ที่หิวโหยเริ่มกินบ้านทีละชิ้น"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-12-01",
+        "english": "Hansel broke off a piece of the roof, and Gretel tasted a window.",
+        "turkish": "Hansel çatıdan bir parça kopardı, Gretel de bir pencereyi tattı.",
+        "translations": {
+          "es-419": "Hansel arrancó un pedazo del techo, y Gretel probó una ventana.",
+          "pt-BR": "João arrancou um pedaço do telhado, e Maria provou uma janela.",
+          "id": "Hansel mematahkan sepotong atap, dan Gretel mencicipi sebuah jendela.",
+          "ar": "كسر هانسل قطعة من السطح، وتذوّقت غريتل نافذة.",
+          "vi": "Hansel bẻ một miếng mái nhà, còn Gretel nếm thử một ô cửa sổ.",
+          "hi": "हैंसल ने छत का एक टुकड़ा तोड़ लिया, और ग्रेटल ने एक खिड़की चखकर देखी।",
+          "ru": "Гензель отломил кусок крыши, а Гретель попробовала окошко.",
+          "bn": "হ্যানসেল ছাদের একটা টুকরো ভেঙে নিল, আর গ্রেটেল একটা জানালা চেখে দেখল।",
+          "ur": "ہینسل نے چھت کا ایک ٹکڑا توڑ لیا، اور گریٹل نے ایک کھڑکی چکھ کر دیکھی۔",
+          "th": "ฮันเซลหักหลังคามาชิ้นหนึ่ง ส่วนเกรเทลลองชิมหน้าต่าง"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-12-02",
+        "english": "Then a soft voice called from inside: \"Nibble, nibble, little mouse, who is nibbling at my house?\"",
+        "turkish": "Sonra içeriden yumuşak bir ses seslendi: \"Kemir kemir, küçük fare, kim kemiriyor benim evimi?\"",
+        "translations": {
+          "es-419": "Entonces una voz suave dijo desde adentro: \"Mordisquito, mordisquito, ratoncito, ¿quién muerde mi casita?\"",
+          "pt-BR": "Então uma voz suave chamou lá de dentro: — Rói, rói, ratinho, quem está roendo a minha casinha?",
+          "id": "Lalu terdengar suara lembut dari dalam: \"Gigit, gigit, tikus kecil, siapa menggigit rumahku?\"",
+          "ar": "ثم نادى صوت ناعم من الداخل: «قَضْم، قَضْم، يا فأرًا صغيرًا، من يقضم بيتي؟»",
+          "vi": "Rồi một giọng nói nhỏ nhẹ vang ra từ bên trong: \"Gặm, gặm, chú chuột con, ai đang gặm nhà ta đó?\"",
+          "hi": "तभी अंदर से एक धीमी आवाज़ आई, \"कुतर-कुतर, नन्ही चुहिया, कौन कुतरे मेरी कुटिया?\"",
+          "ru": "Тут изнутри раздался тихий голос: «Хрум-хрум, мышка, кто грызёт мою избушку?»",
+          "bn": "তখন ভেতর থেকে একটা মিহি গলা শোনা গেল, \"কুটুর কুটুর, ছোট্ট ইঁদুর, কে খায় আমার ঘর?\"",
+          "ur": "تبھی اندر سے ایک دھیمی آواز آئی، \"کتر کتر، ننھے چوہے، کون کترے میرا گھر؟\"",
+          "th": "แล้วก็มีเสียงนุ่ม ๆ ดังมาจากข้างใน \"แทะ แทะ หนูน้อย ใครมาแทะบ้านของข้า\""
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-12-03",
+        "english": "\"Only the wind,\" the children answered, and they went on eating.",
+        "turkish": "\"Sadece rüzgâr,\" diye cevap verdi çocuklar ve yemeye devam ettiler.",
+        "translations": {
+          "es-419": "\"Solo el viento\", respondieron los niños, y siguieron comiendo.",
+          "pt-BR": "— É só o vento — responderam as crianças, e continuaram comendo.",
+          "id": "\"Hanya angin,\" jawab anak-anak, lalu mereka terus makan.",
+          "ar": "أجاب الطفلان: «إنها الريح فقط»، وواصلا الأكل.",
+          "vi": "\"Chỉ là gió thôi,\" bọn trẻ đáp, rồi tiếp tục ăn.",
+          "hi": "\"बस हवा है,\" बच्चों ने जवाब दिया, और खाते रहे।",
+          "ru": "«Это ветер», — ответили дети и продолжали есть.",
+          "bn": "\"শুধু হাওয়া,\" ছেলেমেয়েরা উত্তর দিল, আর খেতেই থাকল।",
+          "ur": "\"بس ہوا ہے،\" بچوں نے جواب دیا، اور کھاتے رہے۔",
+          "th": "\"แค่ลมเท่านั้น\" เด็ก ๆ ตอบ แล้วก็กินต่อไป"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-12-04",
+        "english": "Suddenly the door opened.",
+        "turkish": "Birden kapı açıldı.",
+        "translations": {
+          "es-419": "De pronto, la puerta se abrió.",
+          "pt-BR": "De repente, a porta se abriu.",
+          "id": "Tiba-tiba pintu terbuka.",
+          "ar": "وفجأة انفتح الباب.",
+          "vi": "Bỗng nhiên cánh cửa mở ra.",
+          "hi": "अचानक दरवाज़ा खुल गया।",
+          "ru": "Вдруг дверь отворилась.",
+          "bn": "হঠাৎ দরজাটা খুলে গেল।",
+          "ur": "اچانک دروازہ کھل گیا۔",
+          "th": "ทันใดนั้นประตูก็เปิดออก"
+        }
+      },
+      {
+        "id": "cl-hansel-gretel-13",
+        "english": "An old woman invited them in and gave them food and beds.",
+        "turkish": "Yaşlı bir kadın onları içeri davet edip yiyecek ve yatak verdi.",
+        "translations": {
+          "es-419": "Una anciana los invitó a pasar y les dio comida y camas.",
+          "pt-BR": "Uma velha os convidou para entrar e lhes deu comida e camas.",
+          "id": "Seorang wanita tua mengajak mereka masuk dan memberi mereka makanan serta tempat tidur.",
+          "ar": "دعتهما امرأة عجوز إلى الداخل وأعطتهما طعامًا وسريرين.",
+          "vi": "Một bà lão mời chúng vào nhà, cho chúng ăn và cho chỗ ngủ.",
+          "hi": "एक बूढ़ी औरत ने उन्हें अंदर बुलाया और उन्हें खाना और बिस्तर दिए।",
+          "ru": "Старушка пригласила их войти, накормила и уложила спать.",
+          "bn": "এক বুড়ি তাদের ভেতরে ডেকে খাবার আর বিছানা দিল।",
+          "ur": "ایک بوڑھی عورت نے انہیں اندر بلایا اور کھانا اور بستر دیے۔",
+          "th": "หญิงชราคนหนึ่งเชิญพวกเขาเข้าไป และให้อาหารกับที่นอนแก่พวกเขา"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-13-01",
+        "english": "There was milk, pancakes with sugar, apples and nuts.",
+        "turkish": "Süt, şekerli krep, elma ve ceviz vardı.",
+        "translations": {
+          "es-419": "Había leche, panqueques con azúcar, manzanas y nueces.",
+          "pt-BR": "Havia leite, panquecas com açúcar, maçãs e nozes.",
+          "id": "Ada susu, panekuk bergula, apel, dan kacang.",
+          "ar": "كان هناك حليب وفطائر بالسكر وتفاح وجوز.",
+          "vi": "Có sữa, bánh kếp rắc đường, táo và hạt dẻ.",
+          "hi": "वहाँ दूध, चीनी वाले पैनकेक, सेब और मेवे थे।",
+          "ru": "Там было молоко, блинчики с сахаром, яблоки и орехи.",
+          "bn": "সেখানে ছিল দুধ, চিনি দেওয়া প্যানকেক, আপেল আর বাদাম।",
+          "ur": "وہاں دودھ، چینی والے پین کیک، سیب اور میوے تھے۔",
+          "th": "มีนม แพนเค้กโรยน้ำตาล แอปเปิล และถั่ว"
+        }
+      },
+      {
+        "id": "cl-hansel-gretel-14",
+        "english": "But she was a witch who wanted to eat them.",
+        "turkish": "Ama o, onları yemek isteyen bir cadıydı.",
+        "translations": {
+          "es-419": "Pero era una bruja que quería comérselos.",
+          "pt-BR": "Mas ela era uma bruxa que queria comê-los.",
+          "id": "Tetapi ia adalah penyihir yang ingin memakan mereka.",
+          "ar": "لكنها كانت ساحرة تريد أن تأكلهما.",
+          "vi": "Nhưng bà ta là một mụ phù thủy muốn ăn thịt chúng.",
+          "hi": "लेकिन वह एक चुड़ैल थी जो उन्हें खाना चाहती थी।",
+          "ru": "Но это была ведьма, которая хотела их съесть.",
+          "bn": "কিন্তু সে ছিল এক ডাইনি, যে তাদের খেয়ে ফেলতে চাইত।",
+          "ur": "لیکن وہ ایک چڑیل تھی جو انہیں کھانا چاہتی تھی۔",
+          "th": "แต่นางคือแม่มดที่อยากจะกินพวกเขา"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-14-01",
+        "english": "She had built the sweet little house only to catch children.",
+        "turkish": "O tatlı küçük evi sadece çocukları yakalamak için yapmıştı.",
+        "translations": {
+          "es-419": "Había construido esa casita dulce solo para atrapar niños.",
+          "pt-BR": "Ela tinha construído aquela casinha doce só para pegar crianças.",
+          "id": "Ia membangun rumah kecil yang manis itu hanya untuk menangkap anak-anak.",
+          "ar": "لقد بنت ذلك البيت الصغير الحلو لتصطاد به الأطفال فقط.",
+          "vi": "Mụ dựng ngôi nhà nhỏ ngọt ngào ấy chỉ để bắt trẻ con.",
+          "hi": "उसने वह मीठा-सा छोटा घर सिर्फ़ बच्चों को पकड़ने के लिए बनाया था।",
+          "ru": "Этот сладкий домик она построила только для того, чтобы заманивать детей.",
+          "bn": "সে ওই মিষ্টি ছোট্ট বাড়িটা বানিয়েছিল শুধু ছোটদের ধরার জন্য।",
+          "ur": "اس نے وہ میٹھا سا چھوٹا گھر صرف بچوں کو پکڑنے کے لیے بنایا تھا۔",
+          "th": "นางสร้างบ้านหลังเล็กแสนหวานนั้นขึ้นมาเพื่อจับเด็กเท่านั้น"
+        }
+      },
+      {
+        "id": "cl-hansel-gretel-15",
+        "english": "The next morning, she locked Hansel behind a barred door.",
+        "turkish": "Ertesi sabah Hansel'i demir parmaklıklı bir kapının arkasına kilitledi.",
+        "translations": {
+          "es-419": "A la mañana siguiente, encerró a Hansel detrás de una puerta con barrotes.",
+          "pt-BR": "Na manhã seguinte, ela trancou João atrás de uma porta com grades.",
+          "id": "Keesokan paginya, ia mengurung Hansel di balik pintu berjeruji.",
+          "ar": "في الصباح التالي، حبست هانسل خلف باب ذي قضبان.",
+          "vi": "Sáng hôm sau, mụ nhốt Hansel sau một cánh cửa có song sắt.",
+          "hi": "अगली सुबह उसने हैंसल को सलाखों वाले दरवाज़े के पीछे बंद कर दिया।",
+          "ru": "На следующее утро она заперла Гензеля за решётчатой дверью.",
+          "bn": "পরদিন সকালে সে হ্যানসেলকে শিক লাগানো একটা দরজার পেছনে আটকে রাখল।",
+          "ur": "اگلی صبح اس نے ہینسل کو سلاخوں والے دروازے کے پیچھے بند کر دیا۔",
+          "th": "เช้าวันรุ่งขึ้น นางขังฮันเซลไว้หลังประตูที่มีลูกกรง"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-15-01",
+        "english": "Then she woke Gretel and shouted, \"Fetch water and cook something good for your brother!\"",
+        "turkish": "Sonra Gretel'i uyandırıp bağırdı: \"Su getir ve kardeşine güzel bir şey pişir!\"",
+        "translations": {
+          "es-419": "Luego despertó a Gretel y le gritó: \"¡Trae agua y cocina algo rico para tu hermano!\"",
+          "pt-BR": "Depois acordou Maria e gritou: — Vá buscar água e cozinhe algo gostoso para o seu irmão!",
+          "id": "Lalu ia membangunkan Gretel dan berteriak, \"Ambil air dan masakkan sesuatu yang enak untuk kakakmu!\"",
+          "ar": "ثم أيقظت غريتل وصرخت: «أحضري الماء واطبخي شيئًا طيّبًا لأخيك!»",
+          "vi": "Rồi mụ đánh thức Gretel và quát: \"Đi lấy nước và nấu món gì ngon cho anh mày!\"",
+          "hi": "फिर उसने ग्रेटल को जगाया और चिल्लाई, \"पानी ला और अपने भाई के लिए कुछ अच्छा पका!\"",
+          "ru": "Потом она разбудила Гретель и закричала: «Неси воду и свари брату что-нибудь вкусное!»",
+          "bn": "তারপর সে গ্রেটেলকে জাগিয়ে চেঁচিয়ে বলল, \"জল নিয়ে আয়, আর তোর ভাইয়ের জন্য ভালো কিছু রান্না কর!\"",
+          "ur": "پھر اس نے گریٹل کو جگایا اور چلائی، \"پانی لا اور اپنے بھائی کے لیے کچھ اچھا پکا!\"",
+          "th": "จากนั้นนางปลุกเกรเทลแล้วตะโกนว่า \"ไปตักน้ำมา แล้วทำอาหารดี ๆ ให้พี่ชายของเจ้ากิน\""
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-15-02",
+        "english": "\"When he is fat, I will eat him.\"",
+        "turkish": "\"O şişmanlayınca onu yiyeceğim.\"",
+        "translations": {
+          "es-419": "\"Cuando esté gordo, me lo comeré\".",
+          "pt-BR": "— Quando ele estiver gordo, eu vou comê-lo.",
+          "id": "\"Kalau ia sudah gemuk, akan kumakan dia.\"",
+          "ar": "«وعندما يسمن، سآكله.»",
+          "vi": "\"Khi nó béo rồi, ta sẽ ăn thịt nó.\"",
+          "hi": "\"जब वह मोटा हो जाएगा, तो मैं उसे खा जाऊँगी।\"",
+          "ru": "«Когда он растолстеет, я его съем».",
+          "bn": "\"ও মোটা হলে আমি ওকে খাব।\"",
+          "ur": "\"جب وہ موٹا ہو جائے گا تو میں اسے کھا جاؤں گی۔\"",
+          "th": "\"พอมันอ้วนแล้ว ข้าจะกินมัน\""
+        }
+      },
+      {
+        "id": "cl-hansel-gretel-16",
+        "english": "Gretel had to cook meals to make her brother fat.",
+        "turkish": "Gretel, kardeşini şişmanlatmak için yemekler pişirmek zorundaydı.",
+        "translations": {
+          "es-419": "Gretel tenía que cocinar para engordar a su hermano.",
+          "pt-BR": "Maria tinha que cozinhar para engordar o irmão.",
+          "id": "Gretel harus memasak agar kakaknya menjadi gemuk.",
+          "ar": "كان على غريتل أن تطبخ الوجبات لتُسمّن أخاها.",
+          "vi": "Gretel phải nấu ăn để vỗ béo anh mình.",
+          "hi": "ग्रेटल को अपने भाई को मोटा करने के लिए खाना पकाना पड़ता था।",
+          "ru": "Гретель пришлось готовить еду, чтобы откормить брата.",
+          "bn": "ভাইকে মোটা করার জন্য গ্রেটেলকে রান্না করতে হতো।",
+          "ur": "گریٹل کو اپنے بھائی کو موٹا کرنے کے لیے کھانا پکانا پڑتا تھا۔",
+          "th": "เกรเทลต้องทำอาหารเพื่อขุนพี่ชายให้อ้วน"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-16-01",
+        "english": "Hansel got the best food, but Gretel got almost nothing.",
+        "turkish": "Hansel en iyi yemekleri alıyordu ama Gretel'e neredeyse hiçbir şey verilmiyordu.",
+        "translations": {
+          "es-419": "Hansel recibía la mejor comida, pero Gretel casi no recibía nada.",
+          "pt-BR": "João ganhava a melhor comida, mas Maria quase não ganhava nada.",
+          "id": "Hansel mendapat makanan terbaik, tetapi Gretel hampir tidak mendapat apa-apa.",
+          "ar": "كان هانسل يحصل على أفضل الطعام، أما غريتل فلم تكن تحصل على شيء تقريبًا.",
+          "vi": "Hansel được ăn những món ngon nhất, còn Gretel gần như chẳng được gì.",
+          "hi": "हैंसल को सबसे अच्छा खाना मिलता, पर ग्रेटल को लगभग कुछ नहीं मिलता।",
+          "ru": "Гензелю доставалась лучшая еда, а Гретель почти ничего.",
+          "bn": "হ্যানসেল পেত সবচেয়ে ভালো খাবার, কিন্তু গ্রেটেল প্রায় কিছুই পেত না।",
+          "ur": "ہینسل کو سب سے اچھا کھانا ملتا، مگر گریٹل کو تقریباً کچھ نہ ملتا۔",
+          "th": "ฮันเซลได้กินอาหารดีที่สุด แต่เกรเทลแทบไม่ได้อะไรเลย"
+        }
+      },
+      {
+        "id": "cl-hansel-gretel-17",
+        "english": "The witch could not see well and asked to feel Hansel's finger.",
+        "turkish": "Cadı iyi göremiyordu ve Hansel'in parmağını yoklamak istiyordu.",
+        "translations": {
+          "es-419": "La bruja no veía bien y le pedía a Hansel tocarle el dedo.",
+          "pt-BR": "A bruxa não enxergava bem e pedia para apalpar o dedo de João.",
+          "id": "Penyihir itu tidak bisa melihat dengan jelas dan minta meraba jari Hansel.",
+          "ar": "لم تكن الساحرة ترى جيدًا، فطلبت أن تلمس إصبع هانسل.",
+          "vi": "Mụ phù thủy mắt kém nên đòi sờ ngón tay của Hansel.",
+          "hi": "चुड़ैल को ठीक से दिखता नहीं था, इसलिए वह हैंसल की उँगली छूकर देखना चाहती थी।",
+          "ru": "Ведьма плохо видела и просила Гензеля дать ей пощупать палец.",
+          "bn": "ডাইনি চোখে ভালো দেখত না, তাই সে হ্যানসেলের আঙুল ছুঁয়ে দেখতে চাইত।",
+          "ur": "چڑیل کو ٹھیک سے دکھائی نہیں دیتا تھا، اس لیے وہ ہینسل کی انگلی چھو کر دیکھنا چاہتی تھی۔",
+          "th": "แม่มดสายตาไม่ดี จึงขอจับนิ้วของฮันเซลดู"
+        }
+      },
+      {
+        "id": "cl-hansel-gretel-18",
+        "english": "He held out a little bone instead, so she thought he was still thin.",
+        "turkish": "Hansel onun yerine küçük bir kemik uzattı, bu yüzden cadı onun hâlâ zayıf olduğunu sandı.",
+        "translations": {
+          "es-419": "En lugar del dedo, él le mostraba un huesito, así que ella creía que seguía flaco.",
+          "pt-BR": "Em vez do dedo, ele estendia um ossinho, e ela achava que ele ainda estava magro.",
+          "id": "Hansel malah menyodorkan sepotong tulang kecil, sehingga penyihir mengira ia masih kurus.",
+          "ar": "فمدّ لها عظمة صغيرة بدلًا من إصبعه، فظنّت أنه ما زال نحيفًا.",
+          "vi": "Thay vào đó, cậu chìa ra một khúc xương nhỏ, nên mụ tưởng cậu vẫn còn gầy.",
+          "hi": "हैंसल उँगली की जगह एक छोटी हड्डी आगे कर देता था, इसलिए उसे लगता था कि वह अब भी दुबला है।",
+          "ru": "Вместо пальца он протягивал маленькую косточку, и она думала, что он всё ещё худой.",
+          "bn": "হ্যানসেল আঙুলের বদলে একটা ছোট হাড় বাড়িয়ে দিত, তাই ডাইনি ভাবত সে এখনও রোগা।",
+          "ur": "ہینسل انگلی کی جگہ ایک چھوٹی سی ہڈی آگے کر دیتا، اس لیے چڑیل سمجھتی کہ وہ ابھی تک دبلا ہے۔",
+          "th": "เขายื่นกระดูกชิ้นเล็ก ๆ ให้แทน นางจึงคิดว่าเขายังผอมอยู่"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-18-01",
+        "english": "Four weeks passed, and Hansel still seemed thin.",
+        "turkish": "Dört hafta geçti ve Hansel hâlâ zayıf görünüyordu.",
+        "translations": {
+          "es-419": "Pasaron cuatro semanas, y Hansel seguía pareciendo flaco.",
+          "pt-BR": "Passaram-se quatro semanas, e João ainda parecia magro.",
+          "id": "Empat minggu berlalu, dan Hansel masih tampak kurus.",
+          "ar": "مرّت أربعة أسابيع، وما زال هانسل يبدو نحيفًا.",
+          "vi": "Bốn tuần trôi qua mà Hansel trông vẫn gầy.",
+          "hi": "चार हफ़्ते बीत गए, और हैंसल अब भी दुबला लगता था।",
+          "ru": "Прошло четыре недели, а Гензель всё казался худым.",
+          "bn": "চার সপ্তাহ কেটে গেল, কিন্তু হ্যানসেলকে তখনও রোগা মনে হচ্ছিল।",
+          "ur": "چار ہفتے گزر گئے، اور ہینسل اب بھی دبلا لگتا تھا۔",
+          "th": "สี่สัปดาห์ผ่านไป ฮันเซลก็ยังดูผอมอยู่"
+        }
+      },
+      {
+        "id": "cl-hansel-gretel-19",
+        "english": "At last, the witch lost patience and decided to heat the oven.",
+        "turkish": "Sonunda cadının sabrı tükendi ve fırını ısıtmaya karar verdi.",
+        "translations": {
+          "es-419": "Por fin, la bruja perdió la paciencia y decidió calentar el horno.",
+          "pt-BR": "Por fim, a bruxa perdeu a paciência e decidiu acender o forno.",
+          "id": "Akhirnya, penyihir kehilangan kesabaran dan memutuskan untuk memanaskan oven.",
+          "ar": "أخيرًا، نفد صبر الساحرة وقرّرت أن تُشعل الفرن.",
+          "vi": "Cuối cùng, mụ phù thủy hết kiên nhẫn và quyết định đốt lò nướng.",
+          "hi": "आख़िरकार चुड़ैल का सब्र टूट गया और उसने भट्टी गरम करने का फ़ैसला किया।",
+          "ru": "Наконец ведьма потеряла терпение и решила растопить печь.",
+          "bn": "অবশেষে ডাইনির ধৈর্য ফুরিয়ে গেল, আর সে উনুন গরম করবে ঠিক করল।",
+          "ur": "آخرکار چڑیل کا صبر ختم ہو گیا اور اس نے تندور گرم کرنے کا فیصلہ کیا۔",
+          "th": "ในที่สุด แม่มดก็หมดความอดทนและตัดสินใจจุดไฟเตาอบ"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-19-01",
+        "english": "\"Fat or thin, I will eat him tomorrow,\" she said.",
+        "turkish": "\"Şişman ya da zayıf, onu yarın yiyeceğim,\" dedi.",
+        "translations": {
+          "es-419": "\"Gordo o flaco, mañana me lo como\", dijo.",
+          "pt-BR": "— Gordo ou magro, amanhã eu vou comê-lo — disse ela.",
+          "id": "\"Gemuk atau kurus, besok akan kumakan dia,\" katanya.",
+          "ar": "قالت: «سمينًا كان أو نحيفًا، سآكله غدًا.»",
+          "vi": "\"Béo hay gầy thì ngày mai ta cũng ăn nó,\" mụ nói.",
+          "hi": "उसने कहा, \"मोटा हो या दुबला, कल मैं उसे खा जाऊँगी।\"",
+          "ru": "«Толстый или худой — завтра я его съем», — сказала она.",
+          "bn": "সে বলল, \"মোটা হোক বা রোগা, কাল আমি ওকে খাবই।\"",
+          "ur": "اس نے کہا، \"موٹا ہو یا دبلا، کل میں اسے کھا جاؤں گی۔\"",
+          "th": "\"อ้วนหรือผอมก็ช่าง พรุ่งนี้ข้าจะกินมัน\" นางพูด"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-19-02",
+        "english": "\"First we will bake some bread,\" said the witch the next morning.",
+        "turkish": "Ertesi sabah cadı, \"Önce biraz ekmek pişireceğiz,\" dedi.",
+        "translations": {
+          "es-419": "\"Primero vamos a hornear pan\", dijo la bruja a la mañana siguiente.",
+          "pt-BR": "— Primeiro vamos assar um pouco de pão — disse a bruxa na manhã seguinte.",
+          "id": "\"Pertama-tama kita akan memanggang roti,\" kata penyihir itu keesokan paginya.",
+          "ar": "وفي الصباح التالي قالت الساحرة: «سنخبز بعض الخبز أولًا.»",
+          "vi": "Sáng hôm sau, mụ phù thủy nói: \"Trước hết chúng ta nướng bánh mì đã.\"",
+          "hi": "अगली सुबह चुड़ैल ने कहा, \"पहले हम थोड़ी रोटी सेंकेंगे।\"",
+          "ru": "«Сначала испечём хлеб», — сказала ведьма на следующее утро.",
+          "bn": "পরদিন সকালে ডাইনি বলল, \"আগে আমরা একটু রুটি সেঁকে নেব।\"",
+          "ur": "اگلی صبح چڑیل نے کہا، \"پہلے ہم تھوڑی روٹی پکائیں گے۔\"",
+          "th": "เช้าวันรุ่งขึ้น แม่มดพูดว่า \"ก่อนอื่นเราจะอบขนมปังกัน\""
+        }
+      },
+      {
+        "id": "cl-hansel-gretel-20",
+        "english": "She told Gretel to climb inside and check the heat.",
+        "turkish": "Gretel'e içeri girip sıcaklığı kontrol etmesini söyledi.",
+        "translations": {
+          "es-419": "Le dijo a Gretel que se metiera para revisar el calor.",
+          "pt-BR": "Ela mandou Maria entrar para ver se estava quente.",
+          "id": "Ia menyuruh Gretel masuk ke dalam untuk memeriksa panasnya.",
+          "ar": "قالت لغريتل أن تدخل الفرن وتتأكّد من حرارته.",
+          "vi": "Mụ bảo Gretel chui vào trong để thử độ nóng.",
+          "hi": "उसने ग्रेटल से कहा कि अंदर घुसकर देखे कि भट्टी कितनी गरम है।",
+          "ru": "Она велела Гретель залезть внутрь и проверить, хорошо ли печь нагрелась.",
+          "bn": "সে গ্রেটেলকে ভেতরে ঢুকে দেখতে বলল উনুন কতটা গরম হয়েছে।",
+          "ur": "اس نے گریٹل سے کہا کہ اندر جا کر دیکھے کہ تندور کتنا گرم ہے۔",
+          "th": "นางบอกให้เกรเทลปีนเข้าไปในเตาเพื่อดูว่าร้อนพอหรือยัง"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-20-01",
+        "english": "She planned to shut the door and cook Gretel, too.",
+        "turkish": "Kapıyı kapatıp Gretel'i de pişirmeyi planlıyordu.",
+        "translations": {
+          "es-419": "Pensaba cerrar la puerta y cocinar también a Gretel.",
+          "pt-BR": "Ela planejava fechar a porta e cozinhar Maria também.",
+          "id": "Ia berencana menutup pintunya dan memasak Gretel juga.",
+          "ar": "كانت تنوي أن تغلق الباب وتطبخ غريتل أيضًا.",
+          "vi": "Mụ định đóng cửa lò lại và nướng luôn cả Gretel.",
+          "hi": "उसकी योजना थी कि दरवाज़ा बंद करके ग्रेटल को भी पका डाले।",
+          "ru": "Она задумала захлопнуть дверцу и изжарить и Гретель.",
+          "bn": "তার মতলব ছিল দরজা বন্ধ করে গ্রেটেলকেও রান্না করে ফেলবে।",
+          "ur": "اس کا ارادہ تھا کہ دروازہ بند کر کے گریٹل کو بھی پکا ڈالے۔",
+          "th": "นางวางแผนจะปิดประตูแล้วย่างเกรเทลด้วย"
+        }
+      },
+      {
+        "id": "cl-hansel-gretel-21",
+        "english": "Gretel understood the danger and pretended not to know how.",
+        "turkish": "Gretel tehlikeyi anladı ve nasıl yapacağını bilmiyormuş gibi davrandı.",
+        "translations": {
+          "es-419": "Gretel entendió el peligro y fingió no saber cómo hacerlo.",
+          "pt-BR": "Maria percebeu o perigo e fingiu não saber como fazer isso.",
+          "id": "Gretel memahami bahaya itu dan berpura-pura tidak tahu caranya.",
+          "ar": "فهمت غريتل الخطر وتظاهرت بأنها لا تعرف كيف.",
+          "vi": "Gretel hiểu ra mối nguy hiểm và giả vờ không biết làm.",
+          "hi": "ग्रेटल ख़तरा समझ गई और ऐसा दिखाया कि उसे पता नहीं यह कैसे करते हैं।",
+          "ru": "Гретель поняла, что ей грозит, и притворилась, что не знает, как это сделать.",
+          "bn": "গ্রেটেল বিপদটা বুঝতে পারল আর ভান করল যে সে জানে না কীভাবে ঢুকতে হয়।",
+          "ur": "گریٹل خطرہ سمجھ گئی اور ایسے ظاہر کیا جیسے اسے طریقہ نہیں آتا۔",
+          "th": "เกรเทลรู้ว่าอันตราย จึงแกล้งทำเป็นไม่รู้ว่าต้องทำอย่างไร"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-21-01",
+        "english": "\"How do I get in?\" she asked.",
+        "turkish": "\"İçeri nasıl gireceğim?\" diye sordu.",
+        "translations": {
+          "es-419": "\"¿Cómo me meto?\", preguntó.",
+          "pt-BR": "— Como é que eu entro? — perguntou ela.",
+          "id": "\"Bagaimana caranya masuk?\" tanyanya.",
+          "ar": "سألت: «كيف أدخل؟»",
+          "vi": "\"Làm sao cháu chui vào được?\" cô bé hỏi.",
+          "hi": "उसने पूछा, \"मैं अंदर कैसे जाऊँ?\"",
+          "ru": "«А как туда залезть?» — спросила она.",
+          "bn": "সে জিজ্ঞেস করল, \"আমি ভেতরে ঢুকব কীভাবে?\"",
+          "ur": "اس نے پوچھا، \"میں اندر کیسے جاؤں؟\"",
+          "th": "\"หนูจะเข้าไปได้ยังไงคะ\" เธอถาม"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-21-02",
+        "english": "\"Silly goose,\" said the witch. \"The door is big enough. Even I can get in.\"",
+        "turkish": "\"Aptal kaz,\" dedi cadı. \"Kapı yeterince büyük. Ben bile girebilirim.\"",
+        "translations": {
+          "es-419": "\"Tonta\", dijo la bruja. \"La puerta es bastante grande. Hasta yo puedo entrar\".",
+          "pt-BR": "— Sua boba — disse a bruxa. — A porta é bem grande. Até eu consigo entrar.",
+          "id": "\"Bodoh sekali,\" kata penyihir. \"Pintunya cukup besar. Aku pun bisa masuk.\"",
+          "ar": "قالت الساحرة: «يا لكِ من حمقاء! الباب واسع بما يكفي. حتى أنا أستطيع الدخول.»",
+          "vi": "\"Đồ ngốc,\" mụ phù thủy nói. \"Cửa đủ rộng mà. Đến ta còn chui vào được.\"",
+          "hi": "चुड़ैल ने कहा, \"बुद्धू कहीं की! दरवाज़ा काफ़ी बड़ा है। मैं तक अंदर जा सकती हूँ।\"",
+          "ru": "«Глупая гусыня, — сказала ведьма. — Дверца большая. Даже я пролезу».",
+          "bn": "ডাইনি বলল, \"বোকা মেয়ে! দরজাটা যথেষ্ট বড়। আমি নিজেও ঢুকতে পারি।\"",
+          "ur": "چڑیل نے کہا، \"بے وقوف لڑکی! دروازہ کافی بڑا ہے۔ میں بھی اندر جا سکتی ہوں۔\"",
+          "th": "\"นังโง่\" แม่มดพูด \"ประตูกว้างพอแล้ว ขนาดข้ายังเข้าไปได้เลย\""
+        }
+      },
+      {
+        "id": "cl-hansel-gretel-22",
+        "english": "When the witch leaned in to show her, Gretel pushed her into the oven.",
+        "turkish": "Cadı ona göstermek için içeri eğildiğinde Gretel onu fırına itti.",
+        "translations": {
+          "es-419": "Cuando la bruja se inclinó para mostrarle, Gretel la empujó dentro del horno.",
+          "pt-BR": "Quando a bruxa se inclinou para mostrar, Maria a empurrou para dentro do forno.",
+          "id": "Ketika penyihir membungkuk ke dalam untuk menunjukkan caranya, Gretel mendorongnya masuk ke oven.",
+          "ar": "عندما انحنت الساحرة لتُريها، دفعتها غريتل إلى داخل الفرن.",
+          "vi": "Khi mụ phù thủy cúi vào để chỉ cho cô, Gretel đẩy mụ vào lò.",
+          "hi": "जब चुड़ैल उसे दिखाने के लिए अंदर झुकी, तो ग्रेटल ने उसे भट्टी में धकेल दिया।",
+          "ru": "Когда ведьма наклонилась, чтобы показать ей, Гретель втолкнула её в печь.",
+          "bn": "ডাইনি যখন দেখানোর জন্য ভেতরে ঝুঁকল, গ্রেটেল তাকে ধাক্কা দিয়ে উনুনে ফেলে দিল।",
+          "ur": "جب چڑیل اسے دکھانے کے لیے اندر جھکی تو گریٹل نے اسے تندور میں دھکیل دیا۔",
+          "th": "เมื่อแม่มดชะโงกเข้าไปเพื่อทำให้ดู เกรเทลก็ผลักนางเข้าไปในเตาอบ"
+        }
+      },
+      {
+        "id": "cl-hansel-gretel-23",
+        "english": "She shut the door, and the witch died inside.",
+        "turkish": "Kapıyı kapattı ve cadı içeride öldü.",
+        "translations": {
+          "es-419": "Cerró la puerta, y la bruja murió adentro.",
+          "pt-BR": "Ela fechou a porta, e a bruxa morreu lá dentro.",
+          "id": "Gretel menutup pintunya, dan penyihir itu mati di dalam.",
+          "ar": "أغلقت الباب، فماتت الساحرة في الداخل.",
+          "vi": "Cô đóng cửa lò lại, và mụ phù thủy chết ở bên trong.",
+          "hi": "उसने दरवाज़ा बंद कर दिया, और चुड़ैल अंदर ही मर गई।",
+          "ru": "Она захлопнула дверцу, и ведьма погибла внутри.",
+          "bn": "সে দরজা বন্ধ করে দিল, আর ডাইনি ভেতরেই মারা গেল।",
+          "ur": "اس نے دروازہ بند کر دیا، اور چڑیل اندر ہی مر گئی۔",
+          "th": "เธอปิดประตู และแม่มดก็ตายอยู่ข้างใน"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-23-01",
+        "english": "Then Gretel ran to Hansel and cried, \"We are free! The old witch is dead!\"",
+        "turkish": "Sonra Gretel Hansel'e koştu ve \"Kurtulduk! Yaşlı cadı öldü!\" diye bağırdı.",
+        "translations": {
+          "es-419": "Entonces Gretel corrió hacia Hansel y gritó: \"¡Somos libres! ¡La vieja bruja está muerta!\"",
+          "pt-BR": "Então Maria correu até João e gritou: — Estamos livres! A velha bruxa morreu!",
+          "id": "Lalu Gretel berlari ke Hansel dan berseru, \"Kita bebas! Penyihir tua itu sudah mati!\"",
+          "ar": "ثم ركضت غريتل إلى هانسل وصاحت: «نحن أحرار! الساحرة العجوز ماتت!»",
+          "vi": "Rồi Gretel chạy đến chỗ Hansel và reo lên: \"Mình được tự do rồi! Mụ phù thủy già chết rồi!\"",
+          "hi": "फिर ग्रेटल दौड़कर हैंसल के पास गई और चिल्लाई, \"हम आज़ाद हैं! बूढ़ी चुड़ैल मर गई!\"",
+          "ru": "Тогда Гретель подбежала к Гензелю и закричала: «Мы свободны! Старая ведьма умерла!»",
+          "bn": "তারপর গ্রেটেল দৌড়ে হ্যানসেলের কাছে গিয়ে চেঁচিয়ে উঠল, \"আমরা মুক্ত! বুড়ি ডাইনি মরে গেছে!\"",
+          "ur": "پھر گریٹل دوڑ کر ہینسل کے پاس گئی اور چلائی، \"ہم آزاد ہیں! بوڑھی چڑیل مر گئی!\"",
+          "th": "แล้วเกรเทลก็วิ่งไปหาฮันเซลและร้องว่า \"เราเป็นอิสระแล้ว! แม่มดแก่ตายแล้ว!\""
+        }
+      },
+      {
+        "id": "cl-hansel-gretel-24",
+        "english": "Gretel freed her brother, and they hugged each other.",
+        "turkish": "Gretel kardeşini kurtardı ve birbirlerine sarıldılar.",
+        "translations": {
+          "es-419": "Gretel liberó a su hermano, y se abrazaron.",
+          "pt-BR": "Maria libertou o irmão, e os dois se abraçaram.",
+          "id": "Gretel membebaskan kakaknya, dan mereka saling berpelukan.",
+          "ar": "حرّرت غريتل أخاها، وعانق كل منهما الآخر.",
+          "vi": "Gretel giải thoát cho anh trai, và hai anh em ôm chầm lấy nhau.",
+          "hi": "ग्रेटल ने अपने भाई को आज़ाद किया, और दोनों ने एक-दूसरे को गले लगाया।",
+          "ru": "Гретель освободила брата, и они обняли друг друга.",
+          "bn": "গ্রেটেল ভাইকে মুক্ত করল, আর তারা একে অপরকে জড়িয়ে ধরল।",
+          "ur": "گریٹل نے اپنے بھائی کو آزاد کیا، اور دونوں ایک دوسرے سے لپٹ گئے۔",
+          "th": "เกรเทลปล่อยพี่ชายออกมา และทั้งสองก็กอดกัน"
+        }
+      },
+      {
+        "id": "cl-hansel-gretel-25",
+        "english": "They found jewels in the house and filled their pockets.",
+        "turkish": "Evde mücevherler bulup ceplerini doldurdular.",
+        "translations": {
+          "es-419": "Encontraron joyas en la casa y se llenaron los bolsillos.",
+          "pt-BR": "Eles encontraram joias na casa e encheram os bolsos.",
+          "id": "Mereka menemukan perhiasan di rumah itu dan mengisi saku mereka.",
+          "ar": "وجدا جواهر في البيت وملآ جيوبهما.",
+          "vi": "Chúng tìm thấy châu báu trong nhà và nhét đầy túi.",
+          "hi": "उन्हें घर में गहने मिले और उन्होंने अपनी जेबें भर लीं।",
+          "ru": "В доме они нашли драгоценности и набили ими карманы.",
+          "bn": "তারা বাড়িটায় রত্ন খুঁজে পেল আর পকেট ভরে নিল।",
+          "ur": "انہیں گھر میں جواہرات ملے اور انہوں نے اپنی جیبیں بھر لیں۔",
+          "th": "พวกเขาพบอัญมณีในบ้านและใส่จนเต็มกระเป๋า"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-25-01",
+        "english": "\"These are much better than pebbles,\" said Hansel.",
+        "turkish": "\"Bunlar çakıl taşlarından çok daha iyi,\" dedi Hansel.",
+        "translations": {
+          "es-419": "\"Estas son mucho mejores que las piedritas\", dijo Hansel.",
+          "pt-BR": "— Isso é muito melhor do que pedrinhas — disse João.",
+          "id": "\"Ini jauh lebih bagus daripada kerikil,\" kata Hansel.",
+          "ar": "قال هانسل: «هذه أفضل بكثير من الحصى.»",
+          "vi": "\"Mấy thứ này tốt hơn sỏi nhiều,\" Hansel nói.",
+          "hi": "हैंसल ने कहा, \"ये तो कंकड़ों से कहीं बढ़िया हैं।\"",
+          "ru": "«Это куда лучше камешков», — сказал Гензель.",
+          "bn": "হ্যানসেল বলল, \"এগুলো নুড়ির চেয়ে অনেক ভালো।\"",
+          "ur": "ہینسل نے کہا، \"یہ تو کنکروں سے کہیں بہتر ہیں۔\"",
+          "th": "\"พวกนี้ดีกว่าก้อนกรวดเยอะเลย\" ฮันเซลพูด"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-25-02",
+        "english": "After walking for a few hours, they came to a wide lake.",
+        "turkish": "Birkaç saat yürüdükten sonra geniş bir göle vardılar.",
+        "translations": {
+          "es-419": "Después de caminar unas horas, llegaron a un lago ancho.",
+          "pt-BR": "Depois de andar algumas horas, eles chegaram a um lago largo.",
+          "id": "Setelah berjalan beberapa jam, mereka sampai di sebuah danau yang luas.",
+          "ar": "وبعد أن مشيا بضع ساعات، وصلا إلى بحيرة واسعة.",
+          "vi": "Đi được vài giờ, hai anh em đến bên một cái hồ rộng.",
+          "hi": "कुछ घंटे चलने के बाद वे एक चौड़ी झील के पास पहुँचे।",
+          "ru": "Через несколько часов пути они вышли к широкому озеру.",
+          "bn": "কয়েক ঘণ্টা হাঁটার পর তারা একটা চওড়া হ্রদের ধারে পৌঁছাল।",
+          "ur": "چند گھنٹے چلنے کے بعد وہ ایک چوڑی جھیل پر پہنچے۔",
+          "th": "เดินไปได้ไม่กี่ชั่วโมง พวกเขาก็มาถึงทะเลสาบกว้างแห่งหนึ่ง"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-25-03",
+        "english": "\"We cannot get across,\" said Hansel. \"There is no bridge and no boat.\"",
+        "turkish": "\"Karşıya geçemeyiz,\" dedi Hansel. \"Ne köprü var ne de kayık.\"",
+        "translations": {
+          "es-419": "\"No podemos cruzar\", dijo Hansel. \"No hay puente ni barca\".",
+          "pt-BR": "— Não dá para atravessar — disse João. — Não tem ponte nem barco.",
+          "id": "\"Kita tidak bisa menyeberang,\" kata Hansel. \"Tidak ada jembatan dan tidak ada perahu.\"",
+          "ar": "قال هانسل: «لا نستطيع العبور. لا يوجد جسر ولا قارب.»",
+          "vi": "\"Mình không qua được đâu,\" Hansel nói. \"Chẳng có cầu cũng chẳng có thuyền.\"",
+          "hi": "हैंसल ने कहा, \"हम पार नहीं जा सकते। यहाँ न पुल है, न नाव।\"",
+          "ru": "«Нам не перебраться, — сказал Гензель. — Нет ни моста, ни лодки».",
+          "bn": "হ্যানসেল বলল, \"আমরা পার হতে পারব না। এখানে না আছে সেতু, না আছে নৌকা।\"",
+          "ur": "ہینسل نے کہا، \"ہم پار نہیں جا سکتے۔ یہاں نہ پل ہے نہ کشتی۔\"",
+          "th": "\"เราข้ามไปไม่ได้หรอก\" ฮันเซลพูด \"ไม่มีทั้งสะพานและเรือ\""
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-25-04",
+        "english": "Then Gretel saw a white duck and asked it for help.",
+        "turkish": "Sonra Gretel beyaz bir ördek gördü ve ondan yardım istedi.",
+        "translations": {
+          "es-419": "Entonces Gretel vio una pata blanca y le pidió ayuda.",
+          "pt-BR": "Então Maria viu uma pata branca e pediu ajuda a ela.",
+          "id": "Lalu Gretel melihat seekor bebek putih dan meminta bantuannya.",
+          "ar": "ثم رأت غريتل بطّة بيضاء وطلبت منها المساعدة.",
+          "vi": "Rồi Gretel nhìn thấy một con vịt trắng và nhờ nó giúp.",
+          "hi": "तभी ग्रेटल ने एक सफ़ेद बत्तख देखी और उससे मदद माँगी।",
+          "ru": "Тут Гретель увидела белую утку и попросила её о помощи.",
+          "bn": "তখন গ্রেটেল একটা সাদা হাঁস দেখে তার কাছে সাহায্য চাইল।",
+          "ur": "تبھی گریٹل نے ایک سفید بطخ دیکھی اور اس سے مدد مانگی۔",
+          "th": "แล้วเกรเทลก็เห็นเป็ดสีขาวตัวหนึ่ง จึงขอให้มันช่วย"
+        }
+      },
+      {
+        "id": "cl-hansel-gretel-26",
+        "english": "On the way home, a duck carried them across some water, one at a time.",
+        "turkish": "Eve dönerken bir ördek onları suyun karşısına teker teker taşıdı.",
+        "translations": {
+          "es-419": "De camino a casa, una pata los llevó al otro lado del agua, uno a la vez.",
+          "pt-BR": "No caminho de volta, uma pata os levou, um de cada vez, para o outro lado da água.",
+          "id": "Dalam perjalanan pulang, seekor bebek membawa mereka menyeberangi air, satu per satu.",
+          "ar": "في طريق العودة، حملتهما بطّة عبر الماء، واحدًا تلو الآخر.",
+          "vi": "Trên đường về, một con vịt chở chúng qua sông, mỗi lần một người.",
+          "hi": "घर लौटते समय एक बत्तख ने उन्हें एक-एक करके पानी के पार पहुँचाया।",
+          "ru": "По дороге домой утка перевезла их через воду, по одному.",
+          "bn": "বাড়ি ফেরার পথে একটা হাঁস তাদের একজন একজন করে জল পার করে দিল।",
+          "ur": "گھر جاتے ہوئے ایک بطخ نے انہیں ایک ایک کر کے پانی کے پار پہنچایا۔",
+          "th": "ระหว่างทางกลับบ้าน เป็ดตัวหนึ่งพาพวกเขาข้ามน้ำไปทีละคน"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-26-01",
+        "english": "Gretel said the little duck could not carry both of them together.",
+        "turkish": "Gretel, küçük ördeğin ikisini birden taşıyamayacağını söylemişti.",
+        "translations": {
+          "es-419": "Gretel dijo que la patita no podía llevarlos a los dos juntos.",
+          "pt-BR": "Maria disse que a patinha não conseguiria levar os dois juntos.",
+          "id": "Gretel bilang bebek kecil itu tidak akan kuat membawa mereka berdua sekaligus.",
+          "ar": "فقد قالت غريتل إن البطّة الصغيرة لا تستطيع أن تحملهما معًا.",
+          "vi": "Gretel bảo rằng chú vịt nhỏ không thể chở cả hai cùng một lúc.",
+          "hi": "ग्रेटल ने कहा था कि नन्ही बत्तख उन दोनों को एक साथ नहीं ले जा सकती।",
+          "ru": "Гретель сказала, что маленькой утке не под силу везти их обоих сразу.",
+          "bn": "গ্রেটেল বলেছিল, ছোট্ট হাঁসটা দুজনকে একসঙ্গে বইতে পারবে না।",
+          "ur": "گریٹل نے کہا تھا کہ ننھی بطخ ان دونوں کو ایک ساتھ نہیں لے جا سکتی۔",
+          "th": "เกรเทลบอกว่าเป็ดตัวน้อยพาทั้งสองคนไปพร้อมกันไม่ไหว"
+        }
+      },
+      {
+        "id": "cl-hansel-gretel-27",
+        "english": "Soon they recognized the forest and found their father's house.",
+        "turkish": "Çok geçmeden ormanı tanıdılar ve babalarının evini buldular.",
+        "translations": {
+          "es-419": "Pronto reconocieron el bosque y encontraron la casa de su padre.",
+          "pt-BR": "Logo reconheceram a floresta e encontraram a casa do pai.",
+          "id": "Tak lama kemudian, mereka mengenali hutan itu dan menemukan rumah ayah mereka.",
+          "ar": "سرعان ما عرفا الغابة ووجدا بيت أبيهما.",
+          "vi": "Chẳng bao lâu sau, chúng nhận ra khu rừng và tìm thấy nhà của cha.",
+          "hi": "जल्दी ही उन्होंने जंगल को पहचान लिया और अपने पिता का घर ढूँढ लिया।",
+          "ru": "Вскоре они узнали знакомый лес и нашли дом отца.",
+          "bn": "শিগগিরই তারা বনটা চিনতে পারল আর বাবার বাড়ি খুঁজে পেল।",
+          "ur": "جلد ہی انہوں نے جنگل کو پہچان لیا اور اپنے باپ کا گھر ڈھونڈ لیا۔",
+          "th": "ไม่นานพวกเขาก็จำป่าได้และพบบ้านของพ่อ"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-27-01",
+        "english": "They began to run, rushed into the house and threw their arms around their father.",
+        "turkish": "Koşmaya başladılar, eve daldılar ve babalarının boynuna sarıldılar.",
+        "translations": {
+          "es-419": "Echaron a correr, entraron de golpe en la casa y abrazaron a su padre.",
+          "pt-BR": "Eles começaram a correr, entraram correndo em casa e se jogaram nos braços do pai.",
+          "id": "Mereka mulai berlari, masuk ke rumah, dan memeluk ayah mereka erat-erat.",
+          "ar": "بدآ يركضان، واندفعا إلى البيت، وارتميا في حضن أبيهما.",
+          "vi": "Hai anh em chạy ào vào nhà và ôm chầm lấy cha.",
+          "hi": "वे दौड़ने लगे, घर के अंदर लपके और अपने पिता से लिपट गए।",
+          "ru": "Они побежали, ворвались в дом и бросились отцу на шею.",
+          "bn": "তারা দৌড়াতে শুরু করল, ছুটে ঘরে ঢুকল আর বাবাকে জড়িয়ে ধরল।",
+          "ur": "وہ دوڑنے لگے، لپک کر گھر میں داخل ہوئے اور اپنے باپ سے لپٹ گئے۔",
+          "th": "พวกเขาเริ่มวิ่ง พุ่งเข้าไปในบ้าน แล้วโผกอดพ่อไว้แน่น"
+        }
+      },
+      {
+        "id": "cl-hansel-gretel-28",
+        "english": "Their stepmother had died, and their father welcomed them with joy.",
+        "turkish": "Üvey anneleri ölmüştü ve babaları onları sevinçle karşıladı.",
+        "translations": {
+          "es-419": "Su madrastra había muerto, y su padre los recibió con alegría.",
+          "pt-BR": "A madrasta tinha morrido, e o pai os recebeu com alegria.",
+          "id": "Ibu tiri mereka sudah meninggal, dan ayah mereka menyambut mereka dengan gembira.",
+          "ar": "كانت زوجة أبيهما قد ماتت، فاستقبلهما أبوهما بفرح.",
+          "vi": "Bà mẹ kế đã qua đời, và người cha vui mừng đón các con trở về.",
+          "hi": "उनकी सौतेली माँ मर चुकी थी, और पिता ने खुशी-खुशी उनका स्वागत किया।",
+          "ru": "Мачеха к тому времени умерла, а отец встретил их с радостью.",
+          "bn": "তাদের সৎমা মারা গিয়েছিল, আর বাবা আনন্দে তাদের বরণ করে নিলেন।",
+          "ur": "ان کی سوتیلی ماں مر چکی تھی، اور ان کے باپ نے خوشی خوشی ان کا استقبال کیا۔",
+          "th": "แม่เลี้ยงเสียชีวิตไปแล้ว และพ่อก็ต้อนรับพวกเขาด้วยความดีใจ"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-28-01",
+        "english": "He had not been happy for one hour since he left them in the forest.",
+        "turkish": "Onları ormanda bıraktığından beri bir saat bile mutlu olmamıştı.",
+        "translations": {
+          "es-419": "No había tenido ni una hora feliz desde que los dejó en el bosque.",
+          "pt-BR": "Ele não tinha tido uma hora feliz desde que os deixara na floresta.",
+          "id": "Sejak meninggalkan mereka di hutan, ia tidak pernah bahagia barang sejam pun.",
+          "ar": "لم يعرف ساعة سعيدة واحدة منذ أن تركهما في الغابة.",
+          "vi": "Từ khi bỏ các con lại trong rừng, ông chưa có lấy một giờ vui vẻ.",
+          "hi": "जंगल में उन्हें छोड़ने के बाद से वे एक घड़ी भी ख़ुश नहीं रहे थे।",
+          "ru": "С тех пор как он оставил их в лесу, у него не было ни одного радостного часа.",
+          "bn": "বনে তাদের ফেলে আসার পর থেকে তিনি এক ঘণ্টাও শান্তিতে ছিলেন না।",
+          "ur": "جنگل میں انہیں چھوڑنے کے بعد سے وہ ایک گھڑی بھی خوش نہیں رہا تھا۔",
+          "th": "ตั้งแต่ทิ้งลูก ๆ ไว้ในป่า เขาก็ไม่มีความสุขเลยแม้แต่ชั่วโมงเดียว"
+        }
+      },
+      {
+        "id": "classic-hansel-gretel-ext-28-02",
+        "english": "Gretel emptied her pockets, and pearls and jewels rolled across the floor.",
+        "turkish": "Gretel ceplerini boşalttı ve inciler, mücevherler yere yuvarlandı.",
+        "translations": {
+          "es-419": "Gretel vació sus bolsillos, y perlas y joyas rodaron por el suelo.",
+          "pt-BR": "Maria esvaziou os bolsos, e pérolas e joias rolaram pelo chão.",
+          "id": "Gretel mengosongkan sakunya, dan mutiara serta permata berguling di lantai.",
+          "ar": "أفرغت غريتل جيوبها، فتدحرجت اللآلئ والجواهر على الأرض.",
+          "vi": "Gretel dốc hết túi ra, và ngọc trai cùng châu báu lăn khắp sàn nhà.",
+          "hi": "ग्रेटल ने अपनी जेबें ख़ाली कीं, और मोती और जवाहरात फ़र्श पर लुढ़क गए।",
+          "ru": "Гретель вывернула карманы, и по полу покатились жемчуг и драгоценные камни.",
+          "bn": "গ্রেটেল তার পকেট খালি করল, আর মুক্তো আর রত্ন মেঝেতে গড়িয়ে পড়ল।",
+          "ur": "گریٹل نے اپنی جیبیں خالی کیں، اور موتی اور جواہرات فرش پر لڑھک گئے۔",
+          "th": "เกรเทลเทของออกจากกระเป๋า ไข่มุกและอัญมณีก็กลิ้งกระจายไปทั่วพื้น"
+        }
+      },
+      {
+        "id": "cl-hansel-gretel-29",
+        "english": "The jewels ended their hunger, and the family lived happily together.",
+        "turkish": "Mücevherler açlıklarını sona erdirdi ve aile birlikte mutlu bir hayat sürdü.",
+        "translations": {
+          "es-419": "Las joyas acabaron con su hambre, y la familia vivió feliz junta.",
+          "pt-BR": "As joias acabaram com a fome deles, e a família viveu feliz.",
+          "id": "Perhiasan itu mengakhiri kelaparan mereka, dan keluarga itu hidup bahagia bersama.",
+          "ar": "أنهت الجواهر جوعهم، وعاشت العائلة معًا في سعادة.",
+          "vi": "Số châu báu giúp cả nhà không còn đói nữa, và gia đình sống hạnh phúc bên nhau.",
+          "hi": "गहनों से उनकी भूख मिट गई, और परिवार खुशी से साथ रहने लगा।",
+          "ru": "Драгоценности избавили их от голода, и семья счастливо зажила вместе.",
+          "bn": "রত্নগুলো তাদের অভাব দূর করল, আর পরিবারটা সুখে একসঙ্গে থাকতে লাগল।",
+          "ur": "جواہرات سے ان کی بھوک ختم ہو گئی، اور سارا خاندان خوشی سے رہنے لگا۔",
+          "th": "อัญมณีทำให้พวกเขาไม่ต้องอดอยากอีก และครอบครัวก็อยู่ด้วยกันอย่างมีความสุข"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-hansel-gretel-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "Two children build a forest house for their family",
+          "Two children help their father search for lost jewels",
+          "Two children escape a witch and return to their father",
+          "Two children help a witch find her missing birds"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "classic-hansel-gretel-q2",
+        "kind": "detail",
+        "prompt": "How did the children find their way home the first time?",
+        "options": [
+          "They followed bread crumbs",
+          "They followed white pebbles",
+          "A duck showed them",
+          "Their father came"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-hansel-gretel-q3",
+        "kind": "detail",
+        "prompt": "How did Hansel make the witch think he was still thin?",
+        "options": [
+          "He hid most of his food under his bed",
+          "He held out a bone for her to feel",
+          "He asked Gretel to tell her he was ill",
+          "He made his clothes look much too big"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-hansel-gretel-q4",
+        "kind": "inference",
+        "prompt": "Why did the bread crumbs not help them?",
+        "options": [
+          "They were too small",
+          "Birds ate them",
+          "It rained",
+          "The stepmother took them"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-hansel-gretel-q5",
+        "kind": "detail",
+        "prompt": "What did Hansel say he was looking at on the roof?",
+        "options": [
+          "His white cat",
+          "A white bird",
+          "The moon",
+          "His father's hat"
+        ],
+        "answer": 0
+      }
+    ],
+    "tags": [
+      "masal",
+      "macera"
+    ],
+    "descriptions": {
+      "es-419": "Hansel y Gretel. El regreso a casa, con valor e ingenio, de dos hermanos abandonados en el bosque. Adaptación breve de nivel A2. Adaptación: English Tales. Imagen histórica: Walter Crane; ilustración interior del libro, no es una portada aparte de primera edición.",
+      "pt-BR": "João e Maria. A volta para casa, com coragem e esperteza, de dois irmãos abandonados na floresta. Adaptação curta de nível A2. Adaptação: English Tales. Imagem histórica: Walter Crane; ilustração interna do livro, não é uma capa separada de primeira edição.",
+      "id": "Hansel dan Gretel. Dua kakak beradik yang ditinggalkan di hutan pulang ke rumah berkat keberanian dan kecerdikan. Adaptasi singkat tingkat A2. Adaptasi: English Tales. Gambar historis: Walter Crane; ilustrasi di dalam buku, bukan sampul edisi pertama tersendiri.",
+      "ar": "هانسل وغريتل. عودة أخوين تُركا في الغابة إلى البيت بالشجاعة والذكاء. اقتباس قصير بمستوى A2. الاقتباس: English Tales. صورة تاريخية: والتر كرين؛ رسم توضيحي داخل الكتاب، وليس غلافًا منفصلًا للطبعة الأولى.",
+      "vi": "Hansel và Gretel. Hai anh em bị bỏ lại trong rừng tìm đường về nhà nhờ lòng dũng cảm và trí thông minh. Bản phóng tác ngắn trình độ A2. Phóng tác: English Tales. Hình ảnh lịch sử: Walter Crane; tranh minh họa bên trong sách, không phải bìa riêng của ấn bản đầu tiên.",
+      "hi": "हैंसल और ग्रेटल। जंगल में छोड़ दिए गए दो भाई-बहनों की हिम्मत और समझदारी से घर वापसी। A2 स्तर का छोटा रूपांतरण। रूपांतरण: English Tales। ऐतिहासिक चित्र: Walter Crane; किताब के अंदर का चित्र, पहले संस्करण का अलग कवर नहीं।",
+      "ru": "Гензель и Гретель. Как брат и сестра, брошенные в лесу, благодаря смелости и смекалке вернулись домой. Краткая адаптация уровня A2. Адаптация: English Tales. Историческое изображение: Уолтер Крейн; внутренняя иллюстрация из книги, а не отдельная обложка первого издания.",
+      "bn": "হ্যানসেল আর গ্রেটেল। বনে ফেলে আসা দুই ভাইবোন সাহস আর বুদ্ধি দিয়ে বাড়ি ফেরে। A2 স্তরের ছোট রূপান্তর। রূপান্তর: English Tales। ঐতিহাসিক ছবি: Walter Crane; বইয়ের ভেতরের ছবি, প্রথম সংস্করণের আলাদা প্রচ্ছদ নয়।",
+      "ur": "ہینسل اور گریٹل۔ جنگل میں چھوڑ دیے گئے دو بہن بھائیوں کی ہمت اور سمجھ داری سے گھر واپسی۔ A2 سطح کی مختصر ماخوذ کہانی۔ ترتیب: English Tales۔ تاریخی تصویر: Walter Crane؛ کتاب کے اندر کی تصویر، پہلے ایڈیشن کا الگ سرورق نہیں۔",
+      "th": "ฮันเซลกับเกรเทล: สองพี่น้องที่ถูกทิ้งไว้ในป่ากลับบ้านได้ด้วยความกล้าหาญและไหวพริบ ฉบับดัดแปลงสั้น ๆ ระดับ A2 ดัดแปลงโดย English Tales ภาพเก่าทางประวัติศาสตร์: Walter Crane; ภาพประกอบภายในเล่ม ไม่ใช่ปกแยกของฉบับพิมพ์ครั้งแรก"
+    }
+  },
+  "words": [
+    {
+      "id": "forest",
+      "word": "forest",
+      "translation": "orman",
+      "pronunciation": "/ˈfɔːrɪst/",
+      "example": "The forest was full of birds.",
+      "translations": {
+        "es-419": "bosque",
+        "pt-BR": "floresta",
+        "id": "hutan",
+        "ar": "غابة",
+        "vi": "khu rừng",
+        "hi": "जंगल",
+        "ru": "лес",
+        "bn": "বন, জঙ্গল",
+        "ur": "جنگل",
+        "th": "ป่า"
+      }
+    },
+    {
+      "id": "father",
+      "word": "father",
+      "translation": "baba",
+      "pronunciation": "/ˈfɑːðə(r)/",
+      "example": "A father has several sons.",
+      "translations": {
+        "es-419": "padre",
+        "pt-BR": "pai",
+        "id": "ayah",
+        "ar": "أب",
+        "vi": "người cha",
+        "hi": "पिता",
+        "ru": "отец",
+        "bn": "বাবা",
+        "ur": "باپ، والد",
+        "th": "พ่อ"
+      }
+    },
+    {
+      "id": "food",
+      "word": "food",
+      "translation": "yiyecek",
+      "pronunciation": "/fuːd/",
+      "example": "He offers simple food from the fields.",
+      "translations": {
+        "es-419": "comida",
+        "pt-BR": "comida",
+        "id": "makanan",
+        "ar": "طعام",
+        "vi": "thức ăn",
+        "hi": "खाना",
+        "ru": "еда",
+        "bn": "খাবার",
+        "ur": "کھانا، خوراک",
+        "th": "อาหาร"
+      }
+    },
+    {
+      "id": "pocket",
+      "word": "pocket",
+      "translation": "cep",
+      "pronunciation": "/ˈpɑːkɪt/",
+      "example": "He put it in his pocket.",
+      "translations": {
+        "es-419": "bolsillo",
+        "pt-BR": "bolso",
+        "id": "saku",
+        "ar": "جيب",
+        "vi": "túi (áo, quần)",
+        "hi": "जेब",
+        "ru": "карман",
+        "bn": "পকেট",
+        "ur": "جیب",
+        "th": "กระเป๋าเสื้อ, กระเป๋ากางเกง"
+      }
+    },
+    {
+      "id": "pebbles",
+      "word": "pebbles",
+      "translation": "çakıl taşları",
+      "pronunciation": "/ˈpeblz/",
+      "example": "Hansel drops white pebbles.",
+      "translations": {
+        "es-419": "piedritas, guijarros",
+        "pt-BR": "pedrinhas, seixos",
+        "id": "kerikil",
+        "ar": "حصى",
+        "vi": "sỏi, đá cuội",
+        "hi": "कंकड़",
+        "ru": "камешки, галька",
+        "bn": "নুড়ি পাথর",
+        "ur": "کنکر",
+        "th": "ก้อนกรวด"
+      }
+    },
+    {
+      "id": "crumbs",
+      "word": "crumbs",
+      "translation": "kırıntılar",
+      "pronunciation": "/krʌmz/",
+      "example": "Birds eat the bread crumbs.",
+      "translations": {
+        "es-419": "migas, migajas",
+        "pt-BR": "migalhas",
+        "id": "remah-remah",
+        "ar": "فُتات",
+        "vi": "vụn bánh",
+        "hi": "टुकड़े, चूरा",
+        "ru": "крошки",
+        "bn": "রুটির গুঁড়ো",
+        "ur": "ٹکڑے، چورا",
+        "th": "เศษขนมปัง"
+      }
+    },
+    {
+      "id": "path",
+      "word": "path",
+      "translation": "patika",
+      "pronunciation": "/pæθ/",
+      "example": "A narrow path led uphill.",
+      "translations": {
+        "es-419": "sendero, camino",
+        "pt-BR": "trilha, caminho",
+        "id": "jalan setapak",
+        "ar": "ممرّ، درب",
+        "vi": "lối mòn, con đường nhỏ",
+        "hi": "पगडंडी, रास्ता",
+        "ru": "тропинка, дорожка",
+        "bn": "পথ, সরু রাস্তা",
+        "ur": "پگڈنڈی، راستہ",
+        "th": "ทางเดิน"
+      }
+    },
+    {
+      "id": "hungry",
+      "word": "hungry",
+      "translation": "aç",
+      "pronunciation": "/ˈhʌŋɡri/",
+      "example": "I am hungry after school.",
+      "translations": {
+        "es-419": "hambriento",
+        "pt-BR": "com fome, faminto",
+        "id": "lapar",
+        "ar": "جائع",
+        "vi": "đói",
+        "hi": "भूखा",
+        "ru": "голодный",
+        "bn": "ক্ষুধার্ত",
+        "ur": "بھوکا",
+        "th": "หิว"
+      }
+    },
+    {
+      "id": "witch",
+      "word": "witch",
+      "translation": "cadı",
+      "pronunciation": "/wɪtʃ/",
+      "example": "The old woman is a witch.",
+      "translations": {
+        "es-419": "bruja",
+        "pt-BR": "bruxa",
+        "id": "penyihir",
+        "ar": "ساحرة",
+        "vi": "mụ phù thủy",
+        "hi": "चुड़ैल",
+        "ru": "ведьма",
+        "bn": "ডাইনি",
+        "ur": "چڑیل، جادوگرنی",
+        "th": "แม่มด"
+      }
+    },
+    {
+      "id": "barred",
+      "word": "barred",
+      "translation": "parmaklıklı",
+      "pronunciation": "/bɑːd/",
+      "example": "Hansel waits behind a barred door.",
+      "translations": {
+        "es-419": "con barrotes",
+        "pt-BR": "com grades",
+        "id": "berjeruji",
+        "ar": "ذو قضبان",
+        "vi": "có song sắt",
+        "hi": "सलाखों वाला",
+        "ru": "зарешеченный",
+        "bn": "শিক লাগানো",
+        "ur": "سلاخوں والا",
+        "th": "มีลูกกรง"
+      }
+    },
+    {
+      "id": "bone",
+      "word": "bone",
+      "translation": "kemik",
+      "pronunciation": "/bəʊn/",
+      "example": "He holds out a bone.",
+      "translations": {
+        "es-419": "hueso",
+        "pt-BR": "osso",
+        "id": "tulang",
+        "ar": "عظمة",
+        "vi": "khúc xương",
+        "hi": "हड्डी",
+        "ru": "кость, косточка",
+        "bn": "হাড়",
+        "ur": "ہڈی",
+        "th": "กระดูก"
+      }
+    },
+    {
+      "id": "oven",
+      "word": "oven",
+      "translation": "fırın",
+      "pronunciation": "/ˈʌvn/",
+      "example": "The oven is hot.",
+      "translations": {
+        "es-419": "horno",
+        "pt-BR": "forno",
+        "id": "oven, tungku",
+        "ar": "فرن",
+        "vi": "lò nướng",
+        "hi": "भट्टी, तंदूर",
+        "ru": "печь",
+        "bn": "চুলা, উনুন",
+        "ur": "تندور، اوون",
+        "th": "เตาอบ"
+      }
+    },
+    {
+      "id": "jewels",
+      "word": "jewels",
+      "translation": "mücevherler",
+      "pronunciation": "/ˈdʒuːəlz/",
+      "example": "They find jewels in the house.",
+      "translations": {
+        "es-419": "joyas",
+        "pt-BR": "joias",
+        "id": "perhiasan, permata",
+        "ar": "جواهر",
+        "vi": "châu báu, đồ trang sức",
+        "hi": "गहने, जवाहरात",
+        "ru": "драгоценности",
+        "bn": "রত্ন, গয়না",
+        "ur": "جواہرات",
+        "th": "อัญมณี, เพชรพลอย"
+      }
+    },
+    {
+      "id": "duck",
+      "word": "duck",
+      "translation": "ördek",
+      "pronunciation": "/dʌk/",
+      "example": "A duck sat on her nest, waiting for the last and largest egg to hatch.",
+      "translations": {
+        "es-419": "pata",
+        "pt-BR": "pata",
+        "id": "bebek, itik",
+        "ar": "بطّة",
+        "vi": "con vịt",
+        "hi": "बत्तख",
+        "ru": "утка",
+        "bn": "হাঁস",
+        "ur": "بطخ",
+        "th": "เป็ด"
+      }
+    },
+    {
+      "id": "hunger",
+      "word": "hunger",
+      "translation": "açlık",
+      "pronunciation": "/ˈhʌŋɡə(r)/",
+      "example": "Together they rose beyond cold, hunger, and fear.",
+      "translations": {
+        "es-419": "hambre",
+        "pt-BR": "fome",
+        "id": "kelaparan",
+        "ar": "جوع",
+        "vi": "cơn đói",
+        "hi": "भूख",
+        "ru": "голод",
+        "bn": "খিদে",
+        "ur": "بھوک",
+        "th": "ความหิว"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "forest",
+    "father",
+    "food",
+    "pocket",
+    "pebbles",
+    "crumbs",
+    "path",
+    "hungry",
+    "witch",
+    "barred",
+    "bone",
+    "oven",
+    "jewels",
+    "duck",
+    "hunger"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-hansel-gretel-q1",
+      "sentenceIds": [
+        "cl-hansel-gretel-22",
+        "cl-hansel-gretel-24",
+        "cl-hansel-gretel-27",
+        "cl-hansel-gretel-28"
+      ],
+      "rationale": "Gretel pushes the witch into the oven, frees Hansel, and they return to their father."
+    },
+    {
+      "questionId": "classic-hansel-gretel-q2",
+      "sentenceIds": [
+        "cl-hansel-gretel-04",
+        "cl-hansel-gretel-05",
+        "cl-hansel-gretel-06"
+      ],
+      "rationale": "Hansel drops white pebbles and they follow the shining stones home."
+    },
+    {
+      "questionId": "classic-hansel-gretel-q3",
+      "sentenceIds": [
+        "cl-hansel-gretel-17",
+        "cl-hansel-gretel-18"
+      ],
+      "rationale": "He holds out a little bone, so the witch thinks he is still thin."
+    },
+    {
+      "questionId": "classic-hansel-gretel-q4",
+      "sentenceIds": [
+        "cl-hansel-gretel-08",
+        "cl-hansel-gretel-09"
+      ],
+      "rationale": "Birds eat the bread crumbs, so the children cannot find their way back."
+    },
+    {
+      "questionId": "classic-hansel-gretel-q5",
+      "sentenceIds": [
+        "classic-hansel-gretel-ext-05-03"
+      ],
+      "rationale": "He said he was looking at his white cat on the roof."
+    }
+  ],
+  "publicationBlockers": [
+    "Owner (oguz) approval of the English text, questions and translations required.",
+    "Fresh live source snapshot and publisher validation required."
+  ],
+  "lengthening": {
+    "wordsBefore": 337,
+    "wordsAfter": 924,
+    "sentencesBefore": 29,
+    "sentencesAfter": 77
+  }
+}

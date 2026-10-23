@@ -1,0 +1,1796 @@
+{
+  "status": "draft",
+  "kind": "revision",
+  "source": "story-lengthening-a2-batch1-2026-10-22",
+  "reviewedBy": null,
+  "baseStoryId": "classic-red-riding-hood",
+  "baseStorySHA256": "e063af3d93f95a03f211fd7cae14c013f932333b3f7877f403f8b43dbde118ba",
+  "editorialNotes": [
+    "Restores scenes from the Grimm text (KHM 26) that the adaptation had skipped: the velvet cap from the grandmother, the mother's advice, the wolf's thoughts and flower trick, the latch, the closed curtains, the hunter's choice not to shoot, the stones, and the second wolf on the roof drawn down by the sausage smell.",
+    "Every legacy sentence, its ID and its translations are kept unchanged; new sentences are only inserted between them. Plot, characters, ending and lesson are unchanged.",
+    "New sentences have AI-drafted translations in all ten additional support languages, following the gender and wording already used in each legacy translation. No native-speaker review."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "unchangedTranslationsPreserved": true,
+    "newSentenceIds": [
+      "classic-red-riding-hood-ext-01-01",
+      "classic-red-riding-hood-ext-01-02",
+      "classic-red-riding-hood-ext-01-03",
+      "classic-red-riding-hood-ext-02-01",
+      "classic-red-riding-hood-ext-03-01",
+      "classic-red-riding-hood-ext-04-01",
+      "classic-red-riding-hood-ext-04-02",
+      "classic-red-riding-hood-ext-05-01",
+      "classic-red-riding-hood-ext-06-01",
+      "classic-red-riding-hood-ext-06-02",
+      "classic-red-riding-hood-ext-07-01",
+      "classic-red-riding-hood-ext-07-02",
+      "classic-red-riding-hood-ext-08-01",
+      "classic-red-riding-hood-ext-08-02",
+      "classic-red-riding-hood-ext-08-03",
+      "classic-red-riding-hood-ext-08-04",
+      "classic-red-riding-hood-ext-09-01",
+      "classic-red-riding-hood-ext-09-02",
+      "classic-red-riding-hood-ext-09-03",
+      "classic-red-riding-hood-ext-10-01",
+      "classic-red-riding-hood-ext-11-01",
+      "classic-red-riding-hood-ext-11-02",
+      "classic-red-riding-hood-ext-11-03",
+      "classic-red-riding-hood-ext-12-01",
+      "classic-red-riding-hood-ext-12-02",
+      "classic-red-riding-hood-ext-12-03",
+      "classic-red-riding-hood-ext-20-01",
+      "classic-red-riding-hood-ext-20-02",
+      "classic-red-riding-hood-ext-21-01",
+      "classic-red-riding-hood-ext-22-01",
+      "classic-red-riding-hood-ext-23-01",
+      "classic-red-riding-hood-ext-23-02",
+      "classic-red-riding-hood-ext-24-01",
+      "classic-red-riding-hood-ext-25-01",
+      "classic-red-riding-hood-ext-26-01",
+      "classic-red-riding-hood-ext-27-01",
+      "classic-red-riding-hood-ext-27-02",
+      "classic-red-riding-hood-ext-27-03",
+      "classic-red-riding-hood-ext-27-04",
+      "classic-red-riding-hood-ext-27-05",
+      "classic-red-riding-hood-ext-27-06",
+      "classic-red-riding-hood-ext-28-01",
+      "classic-red-riding-hood-ext-28-02",
+      "classic-red-riding-hood-ext-30-01"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+  },
+  "story": {
+    "id": "classic-red-riding-hood",
+    "title": "Little Red Riding Hood",
+    "author": "Jacob and Wilhelm Grimm",
+    "level": "A2",
+    "genre": "Macera",
+    "description": "Kırmızı Başlıklı Kız. Büyükannesine giderken yoldan ayrılan bir kızın ormandaki macerası. A2 düzeyinde kısa uyarlama. Uyarlama ve Türkçe çeviri: English Tales. Tarihî görsel: Walter Crane; kitap içi illüstrasyon, ayrı bir ilk baskı kapağı değildir.",
+    "coverKey": "cover_classic_red_riding_hood",
+    "sentences": [
+      {
+        "id": "cl-red-riding-hood-01",
+        "english": "Everyone called the girl Little Red Riding Hood because of her red cap.",
+        "turkish": "Kırmızı başlığı yüzünden herkes kıza Kırmızı Başlıklı Kız derdi.",
+        "translations": {
+          "es-419": "Todos llamaban a la niña Caperucita Roja por su gorro rojo.",
+          "pt-BR": "Todos chamavam a menina de Chapeuzinho Vermelho por causa do seu capuz vermelho.",
+          "id": "Semua orang memanggil gadis itu Si Kerudung Merah karena kerudung merahnya.",
+          "ar": "كان الجميع يسمّون الفتاة «ذات الرداء الأحمر» بسبب قبّعتها الحمراء.",
+          "vi": "Mọi người gọi cô bé là Cô bé quàng khăn đỏ vì chiếc mũ trùm màu đỏ của cô.",
+          "hi": "उस लड़की की लाल टोपी की वजह से सब उसे \"लाल टोपी\" कहते थे।",
+          "ru": "Все звали девочку Красной Шапочкой из-за её красной шапочки.",
+          "bn": "মেয়েটার মাথায় লাল টুপি থাকত বলে সবাই তাকে লাল টুপি বলে ডাকত।",
+          "ur": "سب لوگ اس لڑکی کو اس کی سرخ ٹوپی کی وجہ سے \"سرخ ٹوپی والی لڑکی\" کہتے تھے۔",
+          "th": "ทุกคนเรียกเด็กหญิงคนนี้ว่าหนูน้อยหมวกแดง เพราะเธอสวมหมวกสีแดง"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-01-01",
+        "english": "Her grandmother loved her very much.",
+        "turkish": "Büyükannesi onu çok severdi.",
+        "translations": {
+          "es-419": "Su abuela la quería muchísimo.",
+          "pt-BR": "A avó gostava muito dela.",
+          "id": "Neneknya sangat menyayanginya.",
+          "ar": "كانت جدّتها تحبّها كثيرًا.",
+          "vi": "Bà rất thương cô bé.",
+          "hi": "उसकी दादी उसे बहुत प्यार करती थीं।",
+          "ru": "Бабушка очень её любила.",
+          "bn": "তার দিদিমা তাকে খুব ভালোবাসতেন।",
+          "ur": "اس کی نانی اس سے بہت پیار کرتی تھیں۔",
+          "th": "คุณยายรักเธอมาก"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-01-02",
+        "english": "She once gave the girl a little cap of red velvet.",
+        "turkish": "Bir keresinde kıza kırmızı kadifeden küçük bir başlık vermişti.",
+        "translations": {
+          "es-419": "Una vez le regaló a la niña un gorrito de terciopelo rojo.",
+          "pt-BR": "Certa vez, ela deu à menina um capuzinho de veludo vermelho.",
+          "id": "Suatu kali, nenek memberi gadis itu kerudung kecil dari beludru merah.",
+          "ar": "وقد أهدت الفتاة مرّة قبّعة صغيرة من المخمل الأحمر.",
+          "vi": "Có lần, bà tặng cô bé một chiếc mũ nhỏ bằng nhung đỏ.",
+          "hi": "एक बार उन्होंने लड़की को लाल मख़मल की एक छोटी-सी टोपी दी थी।",
+          "ru": "Однажды она подарила девочке маленькую шапочку из красного бархата.",
+          "bn": "একবার তিনি মেয়েটাকে লাল মখমলের একটা ছোট্ট টুপি দিয়েছিলেন।",
+          "ur": "ایک بار انہوں نے لڑکی کو سرخ مخمل کی ایک چھوٹی سی ٹوپی دی تھی۔",
+          "th": "ครั้งหนึ่ง คุณยายให้หมวกกำมะหยี่สีแดงใบเล็กแก่เธอ"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-01-03",
+        "english": "The girl liked it so much that she wore it every day.",
+        "turkish": "Kız onu o kadar sevdi ki her gün taktı.",
+        "translations": {
+          "es-419": "A la niña le gustó tanto que lo usaba todos los días.",
+          "pt-BR": "A menina gostou tanto que o usava todos os dias.",
+          "id": "Gadis itu sangat menyukainya sehingga memakainya setiap hari.",
+          "ar": "أحبّتها الفتاة كثيرًا حتى صارت تلبسها كل يوم.",
+          "vi": "Cô bé thích nó đến nỗi ngày nào cũng đội.",
+          "hi": "लड़की को वह इतनी पसंद आई कि वह उसे रोज़ पहनती थी।",
+          "ru": "Девочке она так понравилась, что она носила её каждый день.",
+          "bn": "মেয়েটার সেটা এত পছন্দ হলো যে সে রোজ সেটা পরত।",
+          "ur": "لڑکی کو وہ اتنی پسند آئی کہ وہ اسے روز پہنتی تھی۔",
+          "th": "เด็กหญิงชอบมันมากจนสวมทุกวัน"
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-02",
+        "english": "One day, her mother asked her to visit her sick grandmother.",
+        "turkish": "Bir gün annesi, hasta büyükannesini ziyaret etmesini istedi.",
+        "translations": {
+          "es-419": "Un día, su madre le pidió que visitara a su abuela enferma.",
+          "pt-BR": "Um dia, a mãe pediu que ela fosse visitar a avó, que estava doente.",
+          "id": "Suatu hari, ibunya memintanya mengunjungi neneknya yang sedang sakit.",
+          "ar": "ذات يوم، طلبت منها أمها أن تزور جدّتها المريضة.",
+          "vi": "Một hôm, mẹ bảo cô bé đi thăm bà ngoại đang bị ốm.",
+          "hi": "एक दिन उसकी माँ ने उससे अपनी बीमार दादी से मिलने जाने को कहा।",
+          "ru": "Однажды мама попросила её навестить больную бабушку.",
+          "bn": "একদিন তার মা তাকে তার অসুস্থ দিদিমাকে দেখে আসতে বললেন।",
+          "ur": "ایک دن اس کی امی نے اسے اپنی بیمار نانی سے ملنے جانے کو کہا۔",
+          "th": "วันหนึ่ง แม่ขอให้เธอไปเยี่ยมคุณยายที่กำลังป่วย"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-02-01",
+        "english": "Her grandmother lived in the forest, half an hour from the village.",
+        "turkish": "Büyükannesi ormanda, köyden yarım saat uzakta yaşıyordu.",
+        "translations": {
+          "es-419": "Su abuela vivía en el bosque, a media hora del pueblo.",
+          "pt-BR": "A avó morava na floresta, a meia hora da aldeia.",
+          "id": "Neneknya tinggal di hutan, setengah jam dari desa.",
+          "ar": "كانت جدّتها تعيش في الغابة، على بُعد نصف ساعة من القرية.",
+          "vi": "Bà sống trong rừng, cách làng nửa tiếng đi bộ.",
+          "hi": "उसकी दादी जंगल में रहती थीं, गाँव से आधे घंटे की दूरी पर।",
+          "ru": "Бабушка жила в лесу, в получасе ходьбы от деревни.",
+          "bn": "তার দিদিমা থাকতেন বনের ভেতরে, গ্রাম থেকে আধ ঘণ্টার পথ।",
+          "ur": "اس کی نانی جنگل میں رہتی تھیں، گاؤں سے آدھے گھنٹے کے فاصلے پر۔",
+          "th": "คุณยายอาศัยอยู่ในป่า ห่างจากหมู่บ้านครึ่งชั่วโมง"
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-03",
+        "english": "She gave the girl cake and a bottle of wine.",
+        "turkish": "Kıza kek ve bir şişe şarap verdi.",
+        "translations": {
+          "es-419": "Le dio a la niña un pastel y una botella de vino.",
+          "pt-BR": "Ela deu à menina um bolo e uma garrafa de vinho.",
+          "id": "Ibunya memberinya kue dan sebotol anggur.",
+          "ar": "أعطت الفتاة كعكة وزجاجة نبيذ.",
+          "vi": "Mẹ đưa cho cô bé bánh ngọt và một chai rượu vang.",
+          "hi": "माँ ने लड़की को केक और वाइन की एक बोतल दी।",
+          "ru": "Она дала девочке пирог и бутылку вина.",
+          "bn": "তিনি মেয়েটাকে কেক আর এক বোতল ওয়াইন দিলেন।",
+          "ur": "امی نے لڑکی کو کیک اور وائن کی ایک بوتل دی۔",
+          "th": "แม่ให้ขนมเค้กกับไวน์หนึ่งขวดแก่เธอ"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-03-01",
+        "english": "\"Take these to her, because they will make her strong again.\"",
+        "turkish": "\"Bunları ona götür, onu yeniden güçlendirirler.\"",
+        "translations": {
+          "es-419": "\"Llévaselos, porque la van a fortalecer.\"",
+          "pt-BR": "— Leve isto para ela, porque vai deixá-la forte de novo.",
+          "id": "\"Bawalah ini untuknya, supaya ia kuat lagi.\"",
+          "ar": "«خذي هذا إليها، فسيعيد إليها قوّتها.»",
+          "vi": "\"Con mang cho bà nhé, ăn vào bà sẽ khỏe lại.\"",
+          "hi": "\"यह उनके लिए ले जाओ, इससे उन्हें फिर से ताक़त मिलेगी।\"",
+          "ru": "«Отнеси это ей, это поможет ей набраться сил».",
+          "bn": "\"এগুলো ওঁর কাছে নিয়ে যাও, খেলে উনি আবার শক্তি পাবেন।\"",
+          "ur": "\"یہ ان کے لیے لے جاؤ، اس سے انہیں پھر سے طاقت ملے گی۔\"",
+          "th": "\"เอาไปให้คุณยายนะ จะได้ช่วยให้คุณยายแข็งแรงขึ้น\""
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-04",
+        "english": "\"Stay on the path through the forest,\" her mother said.",
+        "turkish": "\"Ormandaki patikadan ayrılma,\" dedi annesi.",
+        "translations": {
+          "es-419": "\"No te salgas del camino que atraviesa el bosque\", le dijo su madre.",
+          "pt-BR": "— Fique no caminho que atravessa a floresta — disse a mãe.",
+          "id": "\"Tetaplah di jalan setapak saat melewati hutan,\" kata ibunya.",
+          "ar": "قالت أمها: «ابقي على الطريق عبر الغابة.»",
+          "vi": "\"Hãy đi đúng con đường xuyên qua khu rừng nhé,\" mẹ dặn.",
+          "hi": "\"जंगल में रास्ते पर ही चलना,\" माँ ने कहा।",
+          "ru": "«Не сходи с тропинки в лесу», — сказала мама.",
+          "bn": "\"বনের ভেতর দিয়ে রাস্তা ধরেই যাবে,\" মা বললেন।",
+          "ur": "\"جنگل سے گزرتے ہوئے پگڈنڈی پر ہی رہنا،\" امی نے کہا۔",
+          "th": "\"เดินตามทางผ่านป่าไปนะ อย่าออกนอกทาง\" แม่บอก"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-04-01",
+        "english": "\"Walk nicely, and do not drop the bottle.\"",
+        "turkish": "\"Usul usul yürü ve şişeyi düşürme.\"",
+        "translations": {
+          "es-419": "\"Camina con cuidado y no dejes caer la botella.\"",
+          "pt-BR": "— Ande com cuidado e não deixe a garrafa cair.",
+          "id": "\"Berjalanlah baik-baik, dan jangan sampai botolnya jatuh.\"",
+          "ar": "«امشي بهدوء، ولا توقعي الزجاجة.»",
+          "vi": "\"Đi cẩn thận, đừng làm rơi chai rượu.\"",
+          "hi": "\"आराम से चलना, और बोतल मत गिराना।\"",
+          "ru": "«Иди аккуратно и не урони бутылку».",
+          "bn": "\"সাবধানে হাঁটবে, বোতলটা যেন না পড়ে।\"",
+          "ur": "\"آرام سے چلنا، اور بوتل مت گرانا۔\"",
+          "th": "\"เดินดี ๆ อย่าทำขวดตกนะ\""
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-04-02",
+        "english": "\"When you arrive, remember to say good morning.\"",
+        "turkish": "\"Varınca günaydın demeyi unutma.\"",
+        "translations": {
+          "es-419": "\"Cuando llegues, acuérdate de decir buenos días.\"",
+          "pt-BR": "— Quando chegar, lembre-se de dizer bom dia.",
+          "id": "\"Kalau sudah sampai, jangan lupa mengucapkan selamat pagi.\"",
+          "ar": "«وعندما تصلين، لا تنسَي أن تقولي صباح الخير.»",
+          "vi": "\"Đến nơi thì nhớ chào bà nhé.\"",
+          "hi": "\"पहुँचकर नमस्ते कहना मत भूलना।\"",
+          "ru": "«Когда придёшь, не забудь поздороваться».",
+          "bn": "\"পৌঁছে সুপ্রভাত বলতে ভুলো না।\"",
+          "ur": "\"پہنچ کر سلام کرنا مت بھولنا۔\"",
+          "th": "\"ไปถึงแล้วอย่าลืมทักทายคุณยายนะ\""
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-05",
+        "english": "The girl promised to be careful and set off.",
+        "turkish": "Kız dikkatli olacağına söz verip yola çıktı.",
+        "translations": {
+          "es-419": "La niña prometió tener cuidado y se puso en marcha.",
+          "pt-BR": "A menina prometeu tomar cuidado e partiu.",
+          "id": "Gadis itu berjanji akan berhati-hati, lalu berangkat.",
+          "ar": "وعدت الفتاة بأن تكون حذرة وانطلقت.",
+          "vi": "Cô bé hứa sẽ cẩn thận và lên đường.",
+          "hi": "लड़की ने सावधान रहने का वादा किया और चल पड़ी।",
+          "ru": "Девочка пообещала быть осторожной и отправилась в путь.",
+          "bn": "মেয়েটা সাবধানে থাকার কথা দিয়ে রওনা হলো।",
+          "ur": "لڑکی نے احتیاط کرنے کا وعدہ کیا اور چل پڑی۔",
+          "th": "เด็กหญิงสัญญาว่าจะระวังตัวแล้วก็ออกเดินทาง"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-05-01",
+        "english": "The forest was quiet, and the birds were singing.",
+        "turkish": "Orman sessizdi ve kuşlar ötüyordu.",
+        "translations": {
+          "es-419": "El bosque estaba tranquilo, y los pájaros cantaban.",
+          "pt-BR": "A floresta estava quieta, e os pássaros cantavam.",
+          "id": "Hutan itu tenang, dan burung-burung berkicau.",
+          "ar": "كانت الغابة هادئة، والطيور تغرّد.",
+          "vi": "Khu rừng yên tĩnh, chim chóc líu lo hót.",
+          "hi": "जंगल शांत था, और चिड़ियाँ गा रही थीं।",
+          "ru": "В лесу было тихо, пели птицы.",
+          "bn": "বনটা ছিল শান্ত, আর পাখিরা গান গাইছিল।",
+          "ur": "جنگل خاموش تھا اور پرندے چہچہا رہے تھے۔",
+          "th": "ป่าเงียบสงบ และนกก็กำลังร้องเพลง"
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-06",
+        "english": "On the way, a wolf asked where she was going.",
+        "turkish": "Yolda bir kurt nereye gittiğini sordu.",
+        "translations": {
+          "es-419": "En el camino, un lobo le preguntó adónde iba.",
+          "pt-BR": "No caminho, um lobo perguntou aonde ela ia.",
+          "id": "Di tengah jalan, seekor serigala bertanya ke mana ia pergi.",
+          "ar": "في الطريق، سألها ذئب إلى أين هي ذاهبة.",
+          "vi": "Trên đường đi, một con sói hỏi cô bé đang đi đâu.",
+          "hi": "रास्ते में एक भेड़िये ने पूछा कि वह कहाँ जा रही है।",
+          "ru": "По дороге волк спросил, куда она идёт.",
+          "bn": "পথে একটা নেকড়ে জিজ্ঞেস করল, সে কোথায় যাচ্ছে।",
+          "ur": "راستے میں ایک بھیڑیے نے پوچھا کہ وہ کہاں جا رہی ہے۔",
+          "th": "ระหว่างทาง หมาป่าตัวหนึ่งถามว่าเธอจะไปไหน"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-06-01",
+        "english": "The girl did not know that he was a wicked animal, so she was not afraid.",
+        "turkish": "Kız onun kötü bir hayvan olduğunu bilmiyordu, bu yüzden korkmadı.",
+        "translations": {
+          "es-419": "La niña no sabía que era un animal malvado, así que no tuvo miedo.",
+          "pt-BR": "A menina não sabia que ele era um animal malvado, então não teve medo.",
+          "id": "Gadis itu tidak tahu bahwa ia hewan yang jahat, jadi ia tidak takut.",
+          "ar": "لم تكن الفتاة تعرف أنه حيوان شرّير، فلم تخَف.",
+          "vi": "Cô bé không biết nó là con vật độc ác nên chẳng hề sợ.",
+          "hi": "लड़की नहीं जानती थी कि वह एक दुष्ट जानवर है, इसलिए वह डरी नहीं।",
+          "ru": "Девочка не знала, что это злой зверь, и не испугалась.",
+          "bn": "মেয়েটা জানত না যে সে একটা দুষ্ট প্রাণী, তাই সে ভয় পেল না।",
+          "ur": "لڑکی نہیں جانتی تھی کہ وہ ایک بدمعاش جانور ہے، اس لیے وہ نہیں ڈری۔",
+          "th": "เด็กหญิงไม่รู้ว่ามันเป็นสัตว์ร้าย เธอจึงไม่กลัว"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-06-02",
+        "english": "\"I am going to my grandmother's house,\" she said.",
+        "turkish": "\"Büyükannemin evine gidiyorum,\" dedi.",
+        "translations": {
+          "es-419": "\"Voy a casa de mi abuela\", dijo.",
+          "pt-BR": "— Estou indo para a casa da minha avó — disse ela.",
+          "id": "\"Aku mau ke rumah nenekku,\" katanya.",
+          "ar": "قالت: «أنا ذاهبة إلى بيت جدّتي.»",
+          "vi": "\"Cháu đi đến nhà bà,\" cô bé nói.",
+          "hi": "\"मैं अपनी दादी के घर जा रही हूँ,\" उसने कहा।",
+          "ru": "«Я иду к бабушке», — сказала она.",
+          "bn": "\"আমি দিদিমার বাড়ি যাচ্ছি,\" সে বলল।",
+          "ur": "\"میں اپنی نانی کے گھر جا رہی ہوں،\" اس نے کہا۔",
+          "th": "\"หนูจะไปบ้านคุณยาย\" เธอตอบ"
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-07",
+        "english": "She told him about the little house under the oak trees.",
+        "turkish": "Ona meşe ağaçlarının altındaki küçük evi anlattı.",
+        "translations": {
+          "es-419": "Ella le habló de la casita debajo de los robles.",
+          "pt-BR": "Ela contou a ele sobre a casinha debaixo dos carvalhos.",
+          "id": "Ia bercerita tentang rumah kecil di bawah pohon-pohon ek.",
+          "ar": "أخبرته عن البيت الصغير تحت أشجار البلّوط.",
+          "vi": "Cô bé kể cho sói nghe về ngôi nhà nhỏ dưới những cây sồi.",
+          "hi": "उसने उसे बलूत के पेड़ों के नीचे बने छोटे घर के बारे में बता दिया।",
+          "ru": "Она рассказала ему о маленьком домике под дубами.",
+          "bn": "সে তাকে ওক গাছগুলোর নিচের ছোট বাড়িটার কথা বলল।",
+          "ur": "اس نے بھیڑیے کو بلوط کے درختوں کے نیچے بنے چھوٹے سے گھر کے بارے میں بتا دیا۔",
+          "th": "เธอเล่าให้มันฟังถึงบ้านหลังเล็กใต้ต้นโอ๊ก"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-07-01",
+        "english": "The wolf thought, \"This young girl will be a tasty meal.\"",
+        "turkish": "Kurt, \"Bu küçük kız lezzetli bir yemek olur,\" diye düşündü.",
+        "translations": {
+          "es-419": "El lobo pensó: \"Esta niña será una comida sabrosa\".",
+          "pt-BR": "O lobo pensou: \"Esta menina vai ser uma refeição gostosa.\"",
+          "id": "Serigala itu berpikir, \"Gadis kecil ini pasti lezat.\"",
+          "ar": "فكّر الذئب: «ستكون هذه الفتاة الصغيرة وجبة لذيذة.»",
+          "vi": "Sói nghĩ: \"Con bé này hẳn là một bữa ăn ngon.\"",
+          "hi": "भेड़िये ने सोचा, \"यह छोटी लड़की बड़ा स्वादिष्ट खाना बनेगी।\"",
+          "ru": "Волк подумал: «Эта девочка будет вкусной едой».",
+          "bn": "নেকড়েটা ভাবল, \"এই মেয়েটা বেশ সুস্বাদু খাবার হবে।\"",
+          "ur": "بھیڑیے نے سوچا، \"یہ چھوٹی لڑکی مزے دار کھانا بنے گی۔\"",
+          "th": "หมาป่าคิดว่า \"เด็กน้อยคนนี้คงอร่อยน่าดู\""
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-07-02",
+        "english": "\"But I want the old woman, too.\"",
+        "turkish": "\"Ama yaşlı kadını da istiyorum.\"",
+        "translations": {
+          "es-419": "\"Pero también quiero a la anciana.\"",
+          "pt-BR": "\"Mas eu quero a velhinha também.\"",
+          "id": "\"Tapi aku juga mau nenek tua itu.\"",
+          "ar": "«لكني أريد العجوز أيضًا.»",
+          "vi": "\"Nhưng mình cũng muốn cả bà già nữa.\"",
+          "hi": "\"लेकिन मुझे बूढ़ी औरत भी चाहिए।\"",
+          "ru": "«Но я хочу и старушку».",
+          "bn": "\"কিন্তু বুড়িটাকেও আমার চাই।\"",
+          "ur": "\"لیکن مجھے بڑھیا بھی چاہیے۔\"",
+          "th": "\"แต่ข้าอยากได้ยายแก่นั่นด้วย\""
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-08",
+        "english": "The wolf suggested picking flowers for her grandmother.",
+        "turkish": "Kurt, büyükannesi için çiçek toplamasını önerdi.",
+        "translations": {
+          "es-419": "El lobo le sugirió recoger flores para su abuela.",
+          "pt-BR": "O lobo sugeriu que ela colhesse flores para a avó.",
+          "id": "Serigala menyarankan agar ia memetik bunga untuk neneknya.",
+          "ar": "اقترح الذئب أن تقطف أزهارًا لجدّتها.",
+          "vi": "Sói gợi ý cô bé hái hoa tặng bà.",
+          "hi": "भेड़िये ने सुझाव दिया कि वह दादी के लिए फूल तोड़ ले।",
+          "ru": "Волк предложил ей нарвать цветов для бабушки.",
+          "bn": "নেকড়েটা দিদিমার জন্য ফুল তোলার পরামর্শ দিল।",
+          "ur": "بھیڑیے نے مشورہ دیا کہ وہ نانی کے لیے پھول توڑ لے۔",
+          "th": "หมาป่าแนะนำให้เธอเก็บดอกไม้ไปฝากคุณยาย"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-08-01",
+        "english": "\"Look at the beautiful flowers around you,\" he said.",
+        "turkish": "\"Etrafındaki güzel çiçeklere bak,\" dedi.",
+        "translations": {
+          "es-419": "\"Mira las flores tan bonitas que hay a tu alrededor\", dijo.",
+          "pt-BR": "— Olhe as flores lindas à sua volta — disse ele.",
+          "id": "\"Lihatlah bunga-bunga indah di sekitarmu,\" katanya.",
+          "ar": "قال: «انظري إلى الأزهار الجميلة من حولك.»",
+          "vi": "\"Cháu nhìn những bông hoa đẹp quanh đây kìa,\" nó nói.",
+          "hi": "\"अपने चारों ओर के सुंदर फूल तो देखो,\" उसने कहा।",
+          "ru": "«Посмотри, какие вокруг красивые цветы», — сказал он.",
+          "bn": "\"তোমার চারপাশের সুন্দর ফুলগুলো দেখো,\" সে বলল।",
+          "ur": "\"اپنے آس پاس کے خوبصورت پھول تو دیکھو،\" اس نے کہا۔",
+          "th": "\"ดูดอกไม้สวย ๆ รอบตัวสิ\" มันพูด"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-08-02",
+        "english": "\"Listen to the birds! Why are you walking so fast?\"",
+        "turkish": "\"Kuşları dinle! Neden bu kadar hızlı yürüyorsun?\"",
+        "translations": {
+          "es-419": "\"¡Escucha a los pájaros! ¿Por qué caminas tan rápido?\"",
+          "pt-BR": "— Escute os passarinhos! Por que você está andando tão depressa?",
+          "id": "\"Dengarkan burung-burung itu! Kenapa kamu berjalan begitu cepat?\"",
+          "ar": "«استمعي إلى الطيور! لماذا تمشين بهذه السرعة؟»",
+          "vi": "\"Nghe chim hót kìa! Sao cháu đi vội thế?\"",
+          "hi": "\"चिड़ियों का गाना सुनो! तुम इतनी जल्दी-जल्दी क्यों चल रही हो?\"",
+          "ru": "«Послушай птиц! Куда ты так спешишь?»",
+          "bn": "\"পাখির গান শোনো! এত তাড়াতাড়ি হাঁটছ কেন?\"",
+          "ur": "\"پرندوں کو سنو! تم اتنی جلدی جلدی کیوں چل رہی ہو؟\"",
+          "th": "\"ฟังเสียงนกสิ! ทำไมเดินเร็วจัง\""
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-08-03",
+        "english": "The girl looked up and saw the sunlight dancing between the trees.",
+        "turkish": "Kız başını kaldırdı ve ağaçların arasında dans eden güneş ışığını gördü.",
+        "translations": {
+          "es-419": "La niña levantó la vista y vio la luz del sol bailando entre los árboles.",
+          "pt-BR": "A menina olhou para cima e viu a luz do sol dançando entre as árvores.",
+          "id": "Gadis itu mendongak dan melihat sinar matahari menari di antara pepohonan.",
+          "ar": "رفعت الفتاة عينيها فرأت ضوء الشمس يرقص بين الأشجار.",
+          "vi": "Cô bé ngước lên và thấy ánh nắng nhảy múa giữa những tán cây.",
+          "hi": "लड़की ने ऊपर देखा और पेड़ों के बीच धूप को नाचते हुए देखा।",
+          "ru": "Девочка подняла глаза и увидела, как солнечные лучи танцуют между деревьями.",
+          "bn": "মেয়েটা ওপরে তাকিয়ে দেখল, গাছের ফাঁকে ফাঁকে রোদ নাচছে।",
+          "ur": "لڑکی نے اوپر دیکھا تو درختوں کے بیچ دھوپ ناچتی نظر آئی۔",
+          "th": "เด็กหญิงเงยหน้าขึ้นและเห็นแสงแดดเต้นระบำอยู่ระหว่างต้นไม้"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-08-04",
+        "english": "\"Grandmother will be happy with some fresh flowers,\" she thought.",
+        "turkish": "\"Büyükannem taze çiçeklere sevinir,\" diye düşündü.",
+        "translations": {
+          "es-419": "\"A la abuela le gustarán unas flores frescas\", pensó.",
+          "pt-BR": "\"A vovó vai ficar feliz com umas flores frescas\", pensou ela.",
+          "id": "\"Nenek pasti senang kalau kubawakan bunga segar,\" pikirnya.",
+          "ar": "فكّرت: «ستفرح جدّتي ببعض الأزهار الطازجة.»",
+          "vi": "\"Bà sẽ vui khi có hoa tươi,\" cô bé nghĩ.",
+          "hi": "\"ताज़े फूल देखकर दादी खुश हो जाएँगी,\" उसने सोचा।",
+          "ru": "«Бабушка обрадуется свежим цветам», — подумала она.",
+          "bn": "\"তাজা ফুল পেলে দিদিমা খুশি হবেন,\" সে ভাবল।",
+          "ur": "\"تازہ پھول دیکھ کر نانی خوش ہو جائیں گی،\" اس نے سوچا۔",
+          "th": "\"คุณยายคงดีใจถ้าได้ดอกไม้สด ๆ\" เธอคิด"
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-09",
+        "english": "While she left the path, he ran straight to the house.",
+        "turkish": "Kız patikadan ayrılırken kurt doğruca eve koştu.",
+        "translations": {
+          "es-419": "Mientras ella se salía del camino, él corrió directo a la casa.",
+          "pt-BR": "Enquanto ela saía do caminho, ele correu direto para a casa.",
+          "id": "Sementara gadis itu meninggalkan jalan setapak, serigala berlari langsung ke rumah itu.",
+          "ar": "وبينما ابتعدت عن الطريق، ركض مباشرة إلى البيت.",
+          "vi": "Trong lúc cô bé rời khỏi con đường, sói chạy thẳng đến ngôi nhà.",
+          "hi": "जब वह रास्ते से हटी, तो भेड़िया सीधा उस घर की ओर दौड़ा।",
+          "ru": "Пока она бродила в стороне от тропинки, он побежал прямо к дому.",
+          "bn": "মেয়েটা যখন রাস্তা ছেড়ে সরে গেল, নেকড়েটা সোজা বাড়িটার দিকে দৌড়াল।",
+          "ur": "جب وہ پگڈنڈی چھوڑ کر ادھر ادھر گئی تو بھیڑیا سیدھا گھر کی طرف دوڑا۔",
+          "th": "ขณะที่เธอออกนอกทาง มันก็วิ่งตรงไปที่บ้านทันที"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-09-01",
+        "english": "Each time she picked a flower, she saw a prettier one farther away.",
+        "turkish": "Her çiçek kopardığında, biraz ileride daha güzelini görüyordu.",
+        "translations": {
+          "es-419": "Cada vez que cortaba una flor, veía otra más bonita un poco más lejos.",
+          "pt-BR": "Cada vez que colhia uma flor, ela via outra mais bonita mais adiante.",
+          "id": "Setiap kali memetik sekuntum bunga, ia melihat bunga yang lebih cantik di tempat yang lebih jauh.",
+          "ar": "كلّما قطفت زهرة، رأت زهرة أجمل أبعد قليلًا.",
+          "vi": "Cứ hái được một bông, cô bé lại thấy một bông đẹp hơn ở xa hơn.",
+          "hi": "जब भी वह एक फूल तोड़ती, उसे थोड़ा आगे उससे भी सुंदर फूल दिख जाता।",
+          "ru": "Каждый раз, сорвав цветок, она замечала ещё красивее чуть подальше.",
+          "bn": "যতবার সে একটা ফুল তুলত, একটু দূরে আরও সুন্দর একটা ফুল দেখতে পেত।",
+          "ur": "جب بھی وہ ایک پھول توڑتی، اسے تھوڑا آگے اس سے بھی خوبصورت پھول نظر آ جاتا۔",
+          "th": "ทุกครั้งที่เก็บดอกไม้ได้หนึ่งดอก เธอก็เห็นดอกที่สวยกว่าอยู่ไกลออกไป"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-09-02",
+        "english": "So she went deeper and deeper into the forest.",
+        "turkish": "Böylece ormanın gitgide derinlerine girdi.",
+        "translations": {
+          "es-419": "Así se fue metiendo cada vez más en el bosque.",
+          "pt-BR": "Assim, ela foi entrando cada vez mais fundo na floresta.",
+          "id": "Maka ia masuk semakin jauh ke dalam hutan.",
+          "ar": "وهكذا توغّلت في الغابة أكثر فأكثر.",
+          "vi": "Thế là cô bé càng lúc càng đi sâu vào rừng.",
+          "hi": "इस तरह वह जंगल में और गहरे, और गहरे चली गई।",
+          "ru": "Так она уходила всё глубже и глубже в лес.",
+          "bn": "এভাবে সে বনের আরও গভীরে, আরও গভীরে চলে গেল।",
+          "ur": "یوں وہ جنگل میں اور اندر، اور اندر چلی گئی۔",
+          "th": "เธอจึงเดินลึกเข้าไปในป่ามากขึ้นเรื่อย ๆ"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-09-03",
+        "english": "At the house, the wolf knocked on the door.",
+        "turkish": "Evde kurt kapıyı çaldı.",
+        "translations": {
+          "es-419": "En la casa, el lobo tocó a la puerta.",
+          "pt-BR": "Na casa, o lobo bateu à porta.",
+          "id": "Di rumah itu, serigala mengetuk pintu.",
+          "ar": "عند البيت، طرق الذئب الباب.",
+          "vi": "Đến ngôi nhà, sói gõ cửa.",
+          "hi": "घर पहुँचकर भेड़िये ने दरवाज़ा खटखटाया।",
+          "ru": "У дома волк постучал в дверь.",
+          "bn": "বাড়িতে পৌঁছে নেকড়েটা দরজায় টোকা দিল।",
+          "ur": "گھر پہنچ کر بھیڑیے نے دروازہ کھٹکھٹایا۔",
+          "th": "ที่บ้านหลังนั้น หมาป่าเคาะประตู"
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-10",
+        "english": "He pretended to be the girl, and the grandmother told him to come in.",
+        "turkish": "Kızmış gibi davrandı ve büyükanne ona içeri girmesini söyledi.",
+        "translations": {
+          "es-419": "Fingió ser la niña, y la abuela le dijo que entrara.",
+          "pt-BR": "Ele fingiu ser a menina, e a avó mandou que ele entrasse.",
+          "id": "Ia berpura-pura menjadi gadis itu, dan nenek menyuruhnya masuk.",
+          "ar": "تظاهر بأنه الفتاة، فقالت له الجدّة أن يدخل.",
+          "vi": "Sói giả làm cô bé, và bà bảo nó vào nhà.",
+          "hi": "उसने लड़की होने का नाटक किया, और दादी ने उसे अंदर आने को कहा।",
+          "ru": "Он притворился девочкой, и бабушка позволила ему войти.",
+          "bn": "সে মেয়েটা সেজে গলা বদলাল, আর দিদিমা তাকে ভেতরে আসতে বললেন।",
+          "ur": "اس نے لڑکی ہونے کا بہانہ کیا، اور نانی نے اسے اندر آنے کو کہا۔",
+          "th": "มันแกล้งทำเป็นเด็กหญิง และคุณยายก็บอกให้มันเข้ามา"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-10-01",
+        "english": "\"Just lift the latch,\" she called. \"I am too weak to get up.\"",
+        "turkish": "\"Mandalı kaldırman yeter,\" diye seslendi. \"Kalkamayacak kadar halsizim.\"",
+        "translations": {
+          "es-419": "\"Solo levanta el pestillo\", gritó. \"Estoy demasiado débil para levantarme\".",
+          "pt-BR": "— É só levantar o trinco — disse ela em voz alta. — Estou fraca demais para me levantar.",
+          "id": "\"Angkat saja palang pintunya,\" serunya. \"Aku terlalu lemah untuk bangun.\"",
+          "ar": "نادت: «ارفع المزلاج فقط. أنا أضعف من أن أنهض.»",
+          "vi": "\"Cháu cứ nhấc then cửa lên,\" bà gọi. \"Bà yếu quá, không dậy được.\"",
+          "hi": "\"बस कुंडी उठा लो,\" उन्होंने पुकारा। \"मैं उठ नहीं सकती, बहुत कमज़ोर हूँ।\"",
+          "ru": "«Просто подними щеколду, — крикнула она. — Я слишком слаба, чтобы встать».",
+          "bn": "\"শুধু খিলটা তুলে দাও,\" তিনি ডেকে বললেন। \"আমি এত দুর্বল যে উঠতে পারছি না।\"",
+          "ur": "\"بس کنڈی اٹھا لو،\" انہوں نے آواز دی۔ \"میں بہت کمزور ہوں، اٹھ نہیں سکتی۔\"",
+          "th": "\"แค่ยกกลอนประตูขึ้นก็ได้จ้ะ\" คุณยายร้องบอก \"ยายอ่อนแรงเกินกว่าจะลุกไหว\""
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-11",
+        "english": "The wolf swallowed her, put on her cap, and lay in her bed.",
+        "turkish": "Kurt onu yuttu, başlığını taktı ve yatağına uzandı.",
+        "translations": {
+          "es-419": "El lobo se la tragó, se puso su gorro y se acostó en su cama.",
+          "pt-BR": "O lobo a engoliu, pôs a touca dela e se deitou na cama.",
+          "id": "Serigala menelan nenek, memakai kerudungnya, lalu berbaring di tempat tidurnya.",
+          "ar": "ابتلعها الذئب، ولبس قبّعتها، واستلقى في سريرها.",
+          "vi": "Sói nuốt chửng bà, đội chiếc mũ của bà và nằm lên giường của bà.",
+          "hi": "भेड़िये ने दादी को निगल लिया, उनकी टोपी पहनी और उनके बिस्तर पर लेट गया।",
+          "ru": "Волк проглотил её, надел её чепец и лёг в её кровать.",
+          "bn": "নেকড়েটা দিদিমাকে গিলে ফেলল, তাঁর টুপি পরল আর তাঁর বিছানায় শুয়ে পড়ল।",
+          "ur": "بھیڑیے نے نانی کو نگل لیا، ان کی ٹوپی پہنی اور ان کے بستر میں لیٹ گیا۔",
+          "th": "หมาป่ากลืนคุณยายลงไป สวมหมวกของคุณยาย แล้วนอนบนเตียง"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-11-01",
+        "english": "Then he closed the curtains around the bed.",
+        "turkish": "Sonra yatağın etrafındaki perdeleri kapattı.",
+        "translations": {
+          "es-419": "Luego cerró las cortinas alrededor de la cama.",
+          "pt-BR": "Depois fechou as cortinas em volta da cama.",
+          "id": "Lalu ia menutup tirai di sekeliling tempat tidur.",
+          "ar": "ثم أسدل الستائر حول السرير.",
+          "vi": "Rồi nó kéo rèm quanh giường lại.",
+          "hi": "फिर उसने बिस्तर के चारों ओर के पर्दे खींच दिए।",
+          "ru": "Потом он задёрнул занавески вокруг кровати.",
+          "bn": "তারপর সে বিছানার চারপাশের পর্দা টেনে দিল।",
+          "ur": "پھر اس نے بستر کے چاروں طرف کے پردے کھینچ دیے۔",
+          "th": "แล้วมันก็ปิดม่านรอบเตียง"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-11-02",
+        "english": "Meanwhile, the girl picked flowers until she could not carry any more.",
+        "turkish": "Bu sırada kız, daha fazlasını taşıyamayacak hale gelene kadar çiçek topladı.",
+        "translations": {
+          "es-419": "Mientras tanto, la niña recogió flores hasta que ya no pudo cargar más.",
+          "pt-BR": "Enquanto isso, a menina colheu flores até não conseguir carregar mais nenhuma.",
+          "id": "Sementara itu, gadis itu memetik bunga sampai ia tidak bisa membawa lebih banyak lagi.",
+          "ar": "وفي هذه الأثناء، ظلّت الفتاة تقطف الأزهار حتى لم تعد تستطيع حمل المزيد.",
+          "vi": "Trong khi đó, cô bé hái hoa cho đến khi không ôm nổi nữa.",
+          "hi": "इस बीच लड़की तब तक फूल तोड़ती रही जब तक उससे और उठाए न गए।",
+          "ru": "А девочка тем временем собирала цветы, пока не набрала столько, что больше не могла унести.",
+          "bn": "এদিকে মেয়েটা ততক্ষণ ফুল তুলল, যতক্ষণ না আর বইতে পারল।",
+          "ur": "اس دوران لڑکی اتنے پھول توڑتی رہی کہ اس سے اور اٹھائے نہیں جا سکتے تھے۔",
+          "th": "ระหว่างนั้น เด็กหญิงเก็บดอกไม้จนถือไม่ไหวอีกแล้ว"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-11-03",
+        "english": "Then she remembered her grandmother and hurried to the house.",
+        "turkish": "Sonra büyükannesini hatırladı ve aceleyle eve gitti.",
+        "translations": {
+          "es-419": "Entonces se acordó de su abuela y se fue deprisa a la casa.",
+          "pt-BR": "Então ela se lembrou da avó e correu para a casa.",
+          "id": "Lalu ia teringat neneknya dan bergegas ke rumah itu.",
+          "ar": "ثم تذكّرت جدّتها وأسرعت إلى البيت.",
+          "vi": "Rồi cô bé nhớ đến bà và vội vã đi đến nhà bà.",
+          "hi": "फिर उसे अपनी दादी की याद आई और वह जल्दी से घर की ओर चल पड़ी।",
+          "ru": "Тут она вспомнила о бабушке и поспешила к дому.",
+          "bn": "তখন তার দিদিমার কথা মনে পড়ল, আর সে তাড়াতাড়ি বাড়িটার দিকে গেল।",
+          "ur": "پھر اسے نانی یاد آئیں اور وہ جلدی سے گھر کی طرف چل پڑی۔",
+          "th": "แล้วเธอก็นึกถึงคุณยายและรีบไปที่บ้าน"
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-12",
+        "english": "When the girl arrived, the door was open.",
+        "turkish": "Kız geldiğinde kapı açıktı.",
+        "translations": {
+          "es-419": "Cuando la niña llegó, la puerta estaba abierta.",
+          "pt-BR": "Quando a menina chegou, a porta estava aberta.",
+          "id": "Ketika gadis itu tiba, pintunya terbuka.",
+          "ar": "عندما وصلت الفتاة، كان الباب مفتوحًا.",
+          "vi": "Khi cô bé đến nơi, cửa đang mở.",
+          "hi": "जब लड़की पहुँची, तो दरवाज़ा खुला था।",
+          "ru": "Когда девочка пришла, дверь была открыта.",
+          "bn": "মেয়েটা পৌঁছে দেখল দরজা খোলা।",
+          "ur": "جب لڑکی پہنچی تو دروازہ کھلا تھا۔",
+          "th": "เมื่อเด็กหญิงมาถึง ประตูเปิดอยู่"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-12-01",
+        "english": "She felt strange as she went inside.",
+        "turkish": "İçeri girerken tuhaf hissetti.",
+        "translations": {
+          "es-419": "Se sintió rara al entrar.",
+          "pt-BR": "Ela sentiu algo estranho ao entrar.",
+          "id": "Ia merasa aneh saat masuk ke dalam.",
+          "ar": "شعرت بشيء غريب وهي تدخل.",
+          "vi": "Bước vào trong, cô bé thấy có gì đó lạ lắm.",
+          "hi": "अंदर जाते हुए उसे कुछ अजीब-सा लगा।",
+          "ru": "Входя, она почувствовала что-то неладное.",
+          "bn": "ভেতরে ঢুকতেই তার কেমন যেন অদ্ভুত লাগল।",
+          "ur": "اندر جاتے ہوئے اسے کچھ عجیب سا لگا۔",
+          "th": "เธอรู้สึกแปลก ๆ ขณะเดินเข้าไปข้างใน"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-12-02",
+        "english": "\"Good morning!\" she called, but nobody answered.",
+        "turkish": "\"Günaydın!\" diye seslendi ama kimse cevap vermedi.",
+        "translations": {
+          "es-419": "\"¡Buenos días!\", dijo en voz alta, pero nadie contestó.",
+          "pt-BR": "— Bom dia! — disse ela, mas ninguém respondeu.",
+          "id": "\"Selamat pagi!\" serunya, tetapi tidak ada yang menjawab.",
+          "ar": "نادت: «صباح الخير!» لكن أحدًا لم يُجب.",
+          "vi": "\"Cháu chào bà ạ!\" cô bé gọi, nhưng không ai trả lời.",
+          "hi": "\"नमस्ते!\" उसने पुकारा, पर किसी ने जवाब नहीं दिया।",
+          "ru": "«Доброе утро!» — крикнула она, но никто не ответил.",
+          "bn": "\"সুপ্রভাত!\" সে ডাকল, কিন্তু কেউ সাড়া দিল না।",
+          "ur": "\"السلام علیکم!\" اس نے آواز دی، لیکن کسی نے جواب نہیں دیا۔",
+          "th": "\"สวัสดีค่ะ!\" เธอร้องทัก แต่ไม่มีใครตอบ"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-12-03",
+        "english": "She went to the bed and opened the curtains.",
+        "turkish": "Yatağa gitti ve perdeleri açtı.",
+        "translations": {
+          "es-419": "Fue a la cama y abrió las cortinas.",
+          "pt-BR": "Ela foi até a cama e abriu as cortinas.",
+          "id": "Ia mendekati tempat tidur dan membuka tirainya.",
+          "ar": "ذهبت إلى السرير وفتحت الستائر.",
+          "vi": "Cô bé đến bên giường và kéo rèm ra.",
+          "hi": "वह बिस्तर के पास गई और पर्दे हटा दिए।",
+          "ru": "Она подошла к кровати и раздвинула занавески.",
+          "bn": "সে বিছানার কাছে গিয়ে পর্দা সরাল।",
+          "ur": "وہ بستر کے پاس گئی اور پردے ہٹا دیے۔",
+          "th": "เธอเดินไปที่เตียงและเปิดม่านออก"
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-13",
+        "english": "Her grandmother looked very strange under the blankets.",
+        "turkish": "Büyükannesi battaniyelerin altında çok tuhaf görünüyordu.",
+        "translations": {
+          "es-419": "Su abuela se veía muy rara debajo de las cobijas.",
+          "pt-BR": "A avó parecia muito estranha debaixo dos cobertores.",
+          "id": "Neneknya tampak sangat aneh di balik selimut.",
+          "ar": "بدت جدّتها غريبة جدًا تحت البطانيات.",
+          "vi": "Bà trông rất lạ dưới lớp chăn.",
+          "hi": "कंबलों के नीचे उसकी दादी बहुत अजीब लग रही थीं।",
+          "ru": "Бабушка под одеялом выглядела очень странно.",
+          "bn": "কম্বলের নিচে দিদিমাকে খুব অদ্ভুত দেখাচ্ছিল।",
+          "ur": "کمبلوں کے نیچے نانی بہت عجیب لگ رہی تھیں۔",
+          "th": "คุณยายดูแปลกมากใต้ผ้าห่ม"
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-14",
+        "english": "\"What big ears you have!\" the girl said.",
+        "turkish": "\"Ne büyük kulakların var!\" dedi kız.",
+        "translations": {
+          "es-419": "\"¡Qué orejas tan grandes tienes!\", dijo la niña.",
+          "pt-BR": "— Que orelhas grandes você tem! — disse a menina.",
+          "id": "\"Besar sekali telingamu!\" kata gadis itu.",
+          "ar": "قالت الفتاة: «ما أكبر أذنيكِ!»",
+          "vi": "\"Bà ơi, sao tai bà to thế!\" cô bé nói.",
+          "hi": "\"आपके कान कितने बड़े हैं!\" लड़की ने कहा।",
+          "ru": "«Какие у тебя большие уши!» — сказала девочка.",
+          "bn": "\"তোমার কান দুটো কত বড়!\" মেয়েটা বলল।",
+          "ur": "\"آپ کے کان کتنے بڑے ہیں!\" لڑکی نے کہا۔",
+          "th": "\"หูของคุณยายใหญ่จังเลย!\" เด็กหญิงพูด"
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-15",
+        "english": "\"They help me hear you better,\" answered the wolf.",
+        "turkish": "\"Seni daha iyi duymamı sağlıyorlar,\" diye cevap verdi kurt.",
+        "translations": {
+          "es-419": "\"Me ayudan a oírte mejor\", respondió el lobo.",
+          "pt-BR": "— São para te ouvir melhor — respondeu o lobo.",
+          "id": "\"Supaya aku bisa mendengarmu lebih baik,\" jawab serigala.",
+          "ar": "أجاب الذئب: «لكي أسمعكِ أفضل.»",
+          "vi": "\"Để bà nghe cháu rõ hơn,\" sói đáp.",
+          "hi": "\"इनसे मैं तुम्हें अच्छी तरह सुन सकती हूँ,\" भेड़िये ने जवाब दिया।",
+          "ru": "«Это чтобы лучше тебя слышать», — ответил волк.",
+          "bn": "\"যাতে তোমার কথা আরও ভালো করে শুনতে পাই,\" নেকড়ে উত্তর দিল।",
+          "ur": "\"ان سے میں تمہاری بات بہتر سن سکتا ہوں،\" بھیڑیے نے جواب دیا۔",
+          "th": "\"จะได้ฟังเสียงหลานชัด ๆ ไงจ๊ะ\" หมาป่าตอบ"
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-16",
+        "english": "The girl asked about his big eyes and large hands, too.",
+        "turkish": "Kız onun büyük gözlerini ve kocaman ellerini de sordu.",
+        "translations": {
+          "es-419": "La niña también le preguntó por sus ojos grandes y sus manos enormes.",
+          "pt-BR": "A menina perguntou também sobre os olhos grandes e as mãos enormes.",
+          "id": "Gadis itu juga bertanya tentang matanya yang besar dan tangannya yang lebar.",
+          "ar": "سألت الفتاة أيضًا عن عينيه الكبيرتين ويديه الضخمتين.",
+          "vi": "Cô bé còn hỏi về đôi mắt to và đôi bàn tay lớn của nó.",
+          "hi": "लड़की ने उसकी बड़ी आँखों और बड़े हाथों के बारे में भी पूछा।",
+          "ru": "Девочка спросила и про его большие глаза и большие руки.",
+          "bn": "মেয়েটা তার বড় বড় চোখ আর বিশাল হাতের কথাও জিজ্ঞেস করল।",
+          "ur": "لڑکی نے اس کی بڑی بڑی آنکھوں اور بڑے بڑے ہاتھوں کے بارے میں بھی پوچھا۔",
+          "th": "เด็กหญิงถามถึงดวงตาโต ๆ และมือใหญ่ ๆ ของมันด้วย"
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-17",
+        "english": "Then she noticed his enormous mouth.",
+        "turkish": "Sonra onun kocaman ağzını fark etti.",
+        "translations": {
+          "es-419": "Entonces notó su boca enorme.",
+          "pt-BR": "Então ela reparou na boca gigantesca.",
+          "id": "Lalu ia melihat mulutnya yang sangat besar.",
+          "ar": "ثم لاحظت فمه الهائل.",
+          "vi": "Rồi cô bé để ý thấy cái miệng khổng lồ của nó.",
+          "hi": "फिर उसका ध्यान उसके बहुत बड़े मुँह पर गया।",
+          "ru": "Потом она заметила его огромный рот.",
+          "bn": "তারপর সে তার প্রকাণ্ড মুখটা লক্ষ করল।",
+          "ur": "پھر اس کی نظر اس کے بہت بڑے منہ پر پڑی۔",
+          "th": "แล้วเธอก็สังเกตเห็นปากที่ใหญ่โตของมัน"
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-18",
+        "english": "\"It helps me eat you!\" he cried, and swallowed her.",
+        "turkish": "\"Seni yememi sağlıyor!\" diye bağırdı ve onu yuttu.",
+        "translations": {
+          "es-419": "\"¡Me ayuda a comerte!\", gritó, y se la tragó.",
+          "pt-BR": "— É para te comer! — gritou ele, e a engoliu.",
+          "id": "\"Supaya aku bisa memakanmu!\" seru serigala, lalu menelannya.",
+          "ar": "صاح: «لكي آكلكِ!» وابتلعها.",
+          "vi": "\"Để ăn thịt cháu đấy!\" nó kêu lên, rồi nuốt chửng cô bé.",
+          "hi": "\"इससे मैं तुम्हें खा सकता हूँ!\" वह चिल्लाया, और उसे निगल गया।",
+          "ru": "«А это чтобы тебя съесть!» — крикнул он и проглотил её.",
+          "bn": "\"যাতে তোমাকে খেয়ে ফেলতে পারি!\" বলে চেঁচিয়ে উঠে নেকড়েটা তাকে গিলে ফেলল।",
+          "ur": "\"اس سے میں تمہیں کھا سکتا ہوں!\" وہ چلایا اور اسے نگل گیا۔",
+          "th": "\"จะได้กินหลานไงล่ะ!\" มันร้อง แล้วกลืนเธอลงไป"
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-19",
+        "english": "Soon the wolf fell asleep and began to snore.",
+        "turkish": "Çok geçmeden kurt uykuya daldı ve horlamaya başladı.",
+        "translations": {
+          "es-419": "Pronto el lobo se quedó dormido y empezó a roncar.",
+          "pt-BR": "Logo o lobo adormeceu e começou a roncar.",
+          "id": "Tak lama kemudian, serigala tertidur dan mulai mendengkur.",
+          "ar": "بعد قليل، نام الذئب وبدأ يشخر.",
+          "vi": "Chẳng bao lâu sau, sói ngủ thiếp đi và bắt đầu ngáy.",
+          "hi": "जल्दी ही भेड़िया सो गया और खर्राटे लेने लगा।",
+          "ru": "Вскоре волк уснул и захрапел.",
+          "bn": "একটু পরেই নেকড়েটা ঘুমিয়ে পড়ল আর নাক ডাকতে শুরু করল।",
+          "ur": "جلد ہی بھیڑیا سو گیا اور خراٹے لینے لگا۔",
+          "th": "ไม่นานหมาป่าก็หลับและเริ่มกรน"
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-20",
+        "english": "A hunter passing the house heard the noise.",
+        "turkish": "Evin önünden geçen bir avcı gürültüyü duydu.",
+        "translations": {
+          "es-419": "Un cazador que pasaba junto a la casa oyó el ruido.",
+          "pt-BR": "Um caçador que passava pela casa ouviu o barulho.",
+          "id": "Seorang pemburu yang lewat di dekat rumah itu mendengar suara itu.",
+          "ar": "سمع صيّاد كان يمرّ بالبيت الصوت.",
+          "vi": "Một bác thợ săn đi ngang qua ngôi nhà nghe thấy tiếng động.",
+          "hi": "घर के पास से गुज़रते एक शिकारी ने वह आवाज़ सुनी।",
+          "ru": "Мимо дома проходил охотник и услышал этот шум.",
+          "bn": "বাড়ির পাশ দিয়ে যাওয়া এক শিকারি সেই শব্দ শুনতে পেলেন।",
+          "ur": "گھر کے پاس سے گزرنے والے ایک شکاری نے یہ آواز سنی۔",
+          "th": "นายพรานคนหนึ่งเดินผ่านบ้านและได้ยินเสียงนั้น"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-20-01",
+        "english": "\"The old woman is snoring very loudly,\" he thought.",
+        "turkish": "\"Yaşlı kadın çok yüksek sesle horluyor,\" diye düşündü.",
+        "translations": {
+          "es-419": "\"La anciana está roncando muy fuerte\", pensó.",
+          "pt-BR": "\"A velhinha está roncando muito alto\", pensou ele.",
+          "id": "\"Nenek tua itu mendengkur keras sekali,\" pikirnya.",
+          "ar": "فكّر: «العجوز تشخر بصوت عالٍ جدًا.»",
+          "vi": "\"Bà cụ ngáy to quá,\" bác nghĩ.",
+          "hi": "\"बूढ़ी अम्मा बहुत ज़ोर से खर्राटे ले रही हैं,\" उसने सोचा।",
+          "ru": "«Как громко храпит старушка», — подумал он.",
+          "bn": "\"বুড়ি মা খুব জোরে নাক ডাকছেন,\" তিনি ভাবলেন।",
+          "ur": "\"بڑی بی بہت زور سے خراٹے لے رہی ہیں،\" اس نے سوچا۔",
+          "th": "\"คุณยายกรนเสียงดังจริง ๆ\" เขาคิด"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-20-02",
+        "english": "\"I must see if something is wrong.\"",
+        "turkish": "\"Bir sorun var mı, bakmalıyım.\"",
+        "translations": {
+          "es-419": "\"Tengo que ver si pasa algo\".",
+          "pt-BR": "\"Preciso ver se aconteceu alguma coisa.\"",
+          "id": "\"Aku harus memeriksa apakah ada yang tidak beres.\"",
+          "ar": "«يجب أن أرى إن كان هناك خطب ما.»",
+          "vi": "\"Mình phải xem có chuyện gì không.\"",
+          "hi": "\"मुझे देखना चाहिए कि कहीं कुछ गड़बड़ तो नहीं।\"",
+          "ru": "«Надо посмотреть, не случилось ли чего».",
+          "bn": "\"দেখতে হবে কিছু গোলমাল হলো কি না।\"",
+          "ur": "\"مجھے دیکھنا چاہیے کہ کہیں کوئی گڑبڑ تو نہیں۔\"",
+          "th": "\"ข้าต้องไปดูว่ามีอะไรผิดปกติหรือเปล่า\""
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-21",
+        "english": "He found the wolf and thought the grandmother might still be alive.",
+        "turkish": "Kurdu buldu ve büyükannenin hâlâ hayatta olabileceğini düşündü.",
+        "translations": {
+          "es-419": "Encontró al lobo y pensó que tal vez la abuela todavía estaba viva.",
+          "pt-BR": "Ele encontrou o lobo e pensou que a avó ainda podia estar viva.",
+          "id": "Ia menemukan serigala dan berpikir nenek mungkin masih hidup.",
+          "ar": "وجد الذئب، وظنّ أن الجدّة قد تكون ما زالت حيّة.",
+          "vi": "Bác tìm thấy con sói và nghĩ rằng bà cụ có thể vẫn còn sống.",
+          "hi": "उसने भेड़िये को देखा और सोचा कि शायद दादी अब भी ज़िंदा हों।",
+          "ru": "Он нашёл волка и подумал, что бабушка, может быть, ещё жива.",
+          "bn": "তিনি নেকড়েটাকে দেখে ভাবলেন, দিদিমা হয়তো এখনও বেঁচে আছেন।",
+          "ur": "اسے بھیڑیا ملا اور اس نے سوچا کہ شاید نانی ابھی زندہ ہوں۔",
+          "th": "เขาพบหมาป่าและคิดว่าคุณยายอาจจะยังมีชีวิตอยู่"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-21-01",
+        "english": "He wanted to shoot the wolf, but he stopped.",
+        "turkish": "Kurdu vurmak istedi ama durdu.",
+        "translations": {
+          "es-419": "Quiso dispararle al lobo, pero se detuvo.",
+          "pt-BR": "Ele quis atirar no lobo, mas parou.",
+          "id": "Ia ingin menembak serigala itu, tetapi ia berhenti.",
+          "ar": "أراد أن يطلق النار على الذئب، لكنه توقّف.",
+          "vi": "Bác định bắn con sói, nhưng rồi dừng lại.",
+          "hi": "वह भेड़िये को गोली मारना चाहता था, लेकिन रुक गया।",
+          "ru": "Он хотел застрелить волка, но остановился.",
+          "bn": "তিনি নেকড়েটাকে গুলি করতে চাইলেন, কিন্তু থেমে গেলেন।",
+          "ur": "وہ بھیڑیے کو گولی مارنا چاہتا تھا، لیکن رک گیا۔",
+          "th": "เขาอยากยิงหมาป่า แต่ก็หยุดไว้ก่อน"
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-22",
+        "english": "He carefully cut open the sleeping wolf's belly with scissors.",
+        "turkish": "Uyuyan kurdun karnını makasla dikkatlice açtı.",
+        "translations": {
+          "es-419": "Con cuidado, abrió con unas tijeras la panza del lobo dormido.",
+          "pt-BR": "Com cuidado, ele abriu a barriga do lobo adormecido com uma tesoura.",
+          "id": "Dengan hati-hati, ia menggunting perut serigala yang sedang tidur itu.",
+          "ar": "شقّ بطن الذئب النائم بالمقصّ بحذر.",
+          "vi": "Bác cẩn thận dùng kéo rạch bụng con sói đang ngủ.",
+          "hi": "उसने सोते हुए भेड़िये का पेट कैंची से ध्यान से काटकर खोला।",
+          "ru": "Он осторожно разрезал ножницами живот спящего волка.",
+          "bn": "তিনি কাঁচি দিয়ে সাবধানে ঘুমন্ত নেকড়ের পেট কেটে খুললেন।",
+          "ur": "اس نے قینچی سے سوئے ہوئے بھیڑیے کا پیٹ احتیاط سے کاٹ کر کھولا۔",
+          "th": "เขาใช้กรรไกรตัดท้องของหมาป่าที่กำลังหลับอย่างระมัดระวัง"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-22-01",
+        "english": "After a few cuts, he saw the red cap shining.",
+        "turkish": "Birkaç kesikten sonra parlayan kırmızı başlığı gördü.",
+        "translations": {
+          "es-419": "Después de unos cortes, vio brillar el gorro rojo.",
+          "pt-BR": "Depois de alguns cortes, ele viu o capuz vermelho brilhando.",
+          "id": "Setelah beberapa guntingan, ia melihat kerudung merah itu berkilau.",
+          "ar": "بعد بضع قصّات، رأى القبّعة الحمراء تلمع.",
+          "vi": "Sau vài nhát kéo, bác thấy chiếc mũ đỏ lấp ló.",
+          "hi": "कुछ ही बार काटने के बाद उसे लाल टोपी चमकती दिखाई दी।",
+          "ru": "После нескольких надрезов он увидел, как мелькнула красная шапочка.",
+          "bn": "কয়েকবার কাটার পরেই তিনি লাল টুপিটা ঝলমল করতে দেখলেন।",
+          "ur": "چند بار کاٹنے کے بعد اسے سرخ ٹوپی چمکتی نظر آئی۔",
+          "th": "ตัดไปได้ไม่กี่ครั้ง เขาก็เห็นหมวกสีแดงโผล่ออกมา"
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-23",
+        "english": "The girl and her grandmother climbed out alive.",
+        "turkish": "Kız ile büyükannesi sağ olarak dışarı çıktı.",
+        "translations": {
+          "es-419": "La niña y su abuela salieron vivas.",
+          "pt-BR": "A menina e a avó saíram de lá vivas.",
+          "id": "Gadis itu dan neneknya keluar dalam keadaan hidup.",
+          "ar": "خرجت الفتاة وجدّتها حيّتين.",
+          "vi": "Cô bé và bà bước ra ngoài, vẫn còn sống.",
+          "hi": "लड़की और उसकी दादी ज़िंदा बाहर निकल आईं।",
+          "ru": "Девочка и её бабушка вылезли живыми.",
+          "bn": "মেয়েটা আর তার দিদিমা জীবিত অবস্থায় বেরিয়ে এল।",
+          "ur": "لڑکی اور اس کی نانی زندہ سلامت باہر نکل آئیں۔",
+          "th": "เด็กหญิงกับคุณยายปีนออกมาโดยยังมีชีวิตอยู่"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-23-01",
+        "english": "\"I was so frightened!\" the girl cried. \"It was so dark inside the wolf!\"",
+        "turkish": "\"Çok korktum!\" diye bağırdı kız. \"Kurdun içi o kadar karanlıktı ki!\"",
+        "translations": {
+          "es-419": "\"¡Qué susto tan grande!\", gritó la niña. \"¡Qué oscuro estaba dentro del lobo!\"",
+          "pt-BR": "— Que medo eu senti! — gritou a menina. — Estava tão escuro dentro do lobo!",
+          "id": "\"Aku takut sekali!\" seru gadis itu. \"Di dalam perut serigala gelap sekali!\"",
+          "ar": "صاحت الفتاة: «كنتُ خائفة جدًا! كان الظلام شديدًا داخل الذئب!»",
+          "vi": "\"Cháu sợ quá!\" cô bé kêu lên. \"Trong bụng sói tối om!\"",
+          "hi": "\"मैं बहुत डर गई थी!\" लड़की चिल्लाई। \"भेड़िये के पेट में कितना अँधेरा था!\"",
+          "ru": "«Как же мне было страшно! — воскликнула девочка. — Как темно было у волка внутри!»",
+          "bn": "\"আমি খুব ভয় পেয়েছিলাম!\" মেয়েটা চেঁচিয়ে বলল। \"নেকড়ের পেটের ভেতর কী অন্ধকার!\"",
+          "ur": "\"میں بہت ڈر گئی تھی!\" لڑکی چلائی۔ \"بھیڑیے کے پیٹ میں کتنا اندھیرا تھا!\"",
+          "th": "\"หนูกลัวมากเลย!\" เด็กหญิงร้อง \"ในท้องหมาป่ามืดมากเลย!\""
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-23-02",
+        "english": "Then the girl quickly brought some big stones.",
+        "turkish": "Sonra kız hemen birkaç büyük taş getirdi.",
+        "translations": {
+          "es-419": "Luego la niña trajo rápidamente unas piedras grandes.",
+          "pt-BR": "Depois a menina trouxe depressa algumas pedras grandes.",
+          "id": "Lalu gadis itu cepat-cepat membawa beberapa batu besar.",
+          "ar": "ثم أحضرت الفتاة بسرعة بعض الحجارة الكبيرة.",
+          "vi": "Rồi cô bé nhanh chóng mang đến mấy hòn đá to.",
+          "hi": "फिर लड़की जल्दी से कुछ बड़े पत्थर ले आई।",
+          "ru": "Потом девочка быстро принесла большие камни.",
+          "bn": "তারপর মেয়েটা তাড়াতাড়ি কয়েকটা বড় পাথর নিয়ে এল।",
+          "ur": "پھر لڑکی جلدی سے کچھ بڑے پتھر لے آئی۔",
+          "th": "แล้วเด็กหญิงก็รีบไปหาก้อนหินใหญ่ ๆ มา"
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-24",
+        "english": "They filled the wolf's belly with stones, and he died when he tried to run.",
+        "turkish": "Kurdun karnını taşlarla doldurdular ve kurt koşmaya çalıştığında öldü.",
+        "translations": {
+          "es-419": "Llenaron la panza del lobo con piedras, y él murió cuando intentó correr.",
+          "pt-BR": "Eles encheram a barriga do lobo de pedras, e ele morreu quando tentou correr.",
+          "id": "Mereka mengisi perut serigala dengan batu, dan serigala mati ketika mencoba berlari.",
+          "ar": "ملأوا بطن الذئب بالحجارة، فمات عندما حاول أن يركض.",
+          "vi": "Họ nhét đầy đá vào bụng sói, và nó chết khi cố chạy đi.",
+          "hi": "उन्होंने भेड़िये का पेट पत्थरों से भर दिया, और जब उसने भागने की कोशिश की तो वह मर गया।",
+          "ru": "Они набили волку брюхо камнями, и когда он попытался убежать, то упал замертво.",
+          "bn": "তারা নেকড়ের পেট পাথর দিয়ে ভরে দিল, আর দৌড়াতে গিয়ে নেকড়েটা মারা গেল।",
+          "ur": "انہوں نے بھیڑیے کا پیٹ پتھروں سے بھر دیا، اور جب اس نے بھاگنے کی کوشش کی تو وہ مر گیا۔",
+          "th": "พวกเขาใส่ก้อนหินลงในท้องหมาป่า และมันก็ตายเมื่อพยายามจะวิ่งหนี"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-24-01",
+        "english": "The hunter took the wolf's skin and went home happily.",
+        "turkish": "Avcı kurdun postunu aldı ve mutlu bir şekilde evine gitti.",
+        "translations": {
+          "es-419": "El cazador se llevó la piel del lobo y se fue a casa contento.",
+          "pt-BR": "O caçador levou a pele do lobo e voltou feliz para casa.",
+          "id": "Pemburu itu mengambil kulit serigala dan pulang dengan gembira.",
+          "ar": "أخذ الصيّاد جلد الذئب وعاد إلى بيته سعيدًا.",
+          "vi": "Bác thợ săn lột lấy bộ da sói và vui vẻ ra về.",
+          "hi": "शिकारी भेड़िये की खाल लेकर खुशी-खुशी घर चला गया।",
+          "ru": "Охотник забрал волчью шкуру и довольный пошёл домой.",
+          "bn": "শিকারি নেকড়ের চামড়াটা নিয়ে খুশিমনে বাড়ি ফিরলেন।",
+          "ur": "شکاری بھیڑیے کی کھال لے کر خوشی خوشی گھر چلا گیا۔",
+          "th": "นายพรานเอาหนังหมาป่าไปและกลับบ้านอย่างมีความสุข"
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-25",
+        "english": "The grandmother enjoyed her food, and the girl remembered her mother's warning.",
+        "turkish": "Büyükanne yemeğini afiyetle yedi ve kız annesinin uyarısını hatırladı.",
+        "translations": {
+          "es-419": "La abuela disfrutó su comida, y la niña recordó la advertencia de su madre.",
+          "pt-BR": "A avó aproveitou a comida, e a menina se lembrou do aviso da mãe.",
+          "id": "Nenek menikmati makanannya, dan gadis itu teringat akan peringatan ibunya.",
+          "ar": "استمتعت الجدّة بطعامها، وتذكّرت الفتاة تحذير أمها.",
+          "vi": "Bà ăn ngon lành, còn cô bé thì nhớ mãi lời dặn của mẹ.",
+          "hi": "दादी ने अपने खाने का मज़ा लिया, और लड़की को माँ की चेतावनी याद रही।",
+          "ru": "Бабушка с удовольствием поела гостинцев, а девочка запомнила мамино предупреждение.",
+          "bn": "দিদিমা তৃপ্তি করে খাবার খেলেন, আর মেয়েটা মায়ের সতর্কবাণী মনে রাখল।",
+          "ur": "نانی نے مزے سے کھانا کھایا، اور لڑکی کو اپنی امی کی تنبیہ یاد رہی۔",
+          "th": "คุณยายกินอาหารอย่างเอร็ดอร่อย และเด็กหญิงก็จำคำเตือนของแม่ไว้"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-25-01",
+        "english": "\"I will never leave the path again,\" the girl said to herself.",
+        "turkish": "\"Bir daha asla patikadan ayrılmayacağım,\" dedi kız kendi kendine.",
+        "translations": {
+          "es-419": "\"Nunca más me voy a salir del camino\", se dijo la niña.",
+          "pt-BR": "\"Nunca mais vou sair do caminho\", disse a menina para si mesma.",
+          "id": "\"Aku tidak akan pernah meninggalkan jalan setapak lagi,\" kata gadis itu dalam hati.",
+          "ar": "قالت الفتاة في نفسها: «لن أترك الطريق أبدًا مرة أخرى.»",
+          "vi": "\"Mình sẽ không bao giờ rời khỏi con đường nữa,\" cô bé tự nhủ.",
+          "hi": "\"मैं फिर कभी रास्ता नहीं छोड़ूँगी,\" लड़की ने मन ही मन कहा।",
+          "ru": "«Больше никогда не сойду с тропинки», — сказала себе девочка.",
+          "bn": "\"আমি আর কখনো রাস্তা ছেড়ে যাব না,\" মেয়েটা মনে মনে বলল।",
+          "ur": "\"میں پھر کبھی پگڈنڈی نہیں چھوڑوں گی،\" لڑکی نے دل میں کہا۔",
+          "th": "\"หนูจะไม่ออกนอกทางอีกแล้ว\" เด็กหญิงบอกกับตัวเอง"
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-26",
+        "english": "On a later visit, another wolf tried to stop the girl.",
+        "turkish": "Daha sonraki bir ziyaretinde başka bir kurt kızı durdurmaya çalıştı.",
+        "translations": {
+          "es-419": "En otra visita, otro lobo intentó detener a la niña.",
+          "pt-BR": "Em outra visita, outro lobo tentou parar a menina.",
+          "id": "Pada kunjungan berikutnya, seekor serigala lain mencoba menghentikan gadis itu.",
+          "ar": "في زيارة لاحقة، حاول ذئب آخر أن يوقف الفتاة.",
+          "vi": "Trong một lần đi thăm bà sau đó, một con sói khác tìm cách chặn đường cô bé.",
+          "hi": "बाद में एक बार जब वह फिर दादी के घर जा रही थी, तो एक दूसरे भेड़िये ने उसे रोकने की कोशिश की।",
+          "ru": "В другой раз другой волк попытался остановить девочку.",
+          "bn": "পরে আরেকবার যাওয়ার সময় আরেকটা নেকড়ে মেয়েটাকে থামাতে চাইল।",
+          "ur": "بعد میں ایک اور بار جاتے ہوئے ایک دوسرے بھیڑیے نے لڑکی کو روکنے کی کوشش کی۔",
+          "th": "ในการไปเยี่ยมครั้งต่อมา หมาป่าอีกตัวพยายามขวางทางเด็กหญิง"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-26-01",
+        "english": "But she did not listen to him and kept walking.",
+        "turkish": "Ama onu dinlemedi ve yürümeye devam etti.",
+        "translations": {
+          "es-419": "Pero ella no le hizo caso y siguió caminando.",
+          "pt-BR": "Mas ela não deu ouvidos a ele e continuou andando.",
+          "id": "Tetapi ia tidak menghiraukannya dan terus berjalan.",
+          "ar": "لكنها لم تستمع إليه وواصلت السير.",
+          "vi": "Nhưng cô bé không nghe lời nó và cứ thế đi tiếp.",
+          "hi": "लेकिन उसने उसकी बात नहीं सुनी और चलती रही।",
+          "ru": "Но она не стала его слушать и пошла дальше.",
+          "bn": "কিন্তু সে তার কথা শুনল না, হাঁটতেই থাকল।",
+          "ur": "لیکن اس نے اس کی بات نہیں سنی اور چلتی رہی۔",
+          "th": "แต่เธอไม่ฟังมันและเดินต่อไป"
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-27",
+        "english": "This time, she went straight to her grandmother and told her everything.",
+        "turkish": "Bu kez doğruca büyükannesine gidip ona her şeyi anlattı.",
+        "translations": {
+          "es-419": "Esta vez, ella fue directo a casa de su abuela y le contó todo.",
+          "pt-BR": "Dessa vez, ela foi direto para a casa da avó e contou tudo a ela.",
+          "id": "Kali ini, ia langsung pergi ke rumah neneknya dan menceritakan semuanya.",
+          "ar": "هذه المرة، ذهبت مباشرة إلى جدّتها وأخبرتها بكل شيء.",
+          "vi": "Lần này, cô bé đi thẳng đến nhà bà và kể cho bà nghe mọi chuyện.",
+          "hi": "इस बार वह सीधे अपनी दादी के पास गई और उन्हें सब कुछ बता दिया।",
+          "ru": "На этот раз она пошла прямо к бабушке и всё ей рассказала.",
+          "bn": "এবার সে সোজা দিদিমার কাছে গিয়ে তাঁকে সব খুলে বলল।",
+          "ur": "اس بار وہ سیدھی نانی کے پاس گئی اور انہیں سب کچھ بتا دیا۔",
+          "th": "ครั้งนี้ เธอตรงไปหาคุณยายและเล่าเรื่องทั้งหมดให้ฟัง"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-27-01",
+        "english": "\"The wolf said good morning, but his eyes looked wicked,\" she said.",
+        "turkish": "\"Kurt bana günaydın dedi ama gözleri kötü bakıyordu,\" dedi.",
+        "translations": {
+          "es-419": "\"El lobo me dio los buenos días, pero tenía una mirada malvada\", dijo.",
+          "pt-BR": "— O lobo me deu bom dia, mas os olhos dele pareciam maus — disse ela.",
+          "id": "\"Serigala itu mengucapkan selamat pagi, tetapi matanya tampak jahat,\" katanya.",
+          "ar": "قالت: «قال لي الذئب صباح الخير، لكن عينيه كانتا شرّيرتين.»",
+          "vi": "\"Con sói chào cháu, nhưng mắt nó trông độc ác lắm,\" cô bé nói.",
+          "hi": "\"भेड़िये ने नमस्ते तो कहा, लेकिन उसकी आँखें बहुत बुरी लग रही थीं,\" उसने कहा।",
+          "ru": "«Волк поздоровался со мной, но глаза у него были злые», — сказала она.",
+          "bn": "\"নেকড়েটা সুপ্রভাত বলল, কিন্তু ওর চোখ দুটো দেখতে খুব খারাপ লাগছিল,\" সে বলল।",
+          "ur": "\"بھیڑیے نے سلام تو کیا، لیکن اس کی آنکھیں بہت بری لگ رہی تھیں،\" اس نے کہا۔",
+          "th": "\"หมาป่าทักทายหนู แต่ตาของมันดูร้ายกาจมาก\" เธอบอก"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-27-02",
+        "english": "Soon the wolf knocked and said, \"Open the door, Grandmother. I have some cake for you.\"",
+        "turkish": "Çok geçmeden kurt kapıyı çaldı ve \"Kapıyı aç, büyükanne. Sana kek getirdim,\" dedi.",
+        "translations": {
+          "es-419": "Pronto el lobo tocó a la puerta y dijo: \"Ábreme, abuela. Te traigo pastel\".",
+          "pt-BR": "Logo o lobo bateu à porta e disse: \"Abra, vovó. Eu trouxe bolo para você.\"",
+          "id": "Tak lama kemudian, serigala mengetuk pintu dan berkata, \"Buka pintunya, Nek. Aku membawa kue untukmu.\"",
+          "ar": "بعد قليل طرق الذئب الباب وقال: «افتحي الباب يا جدّتي. معي كعكة لكِ.»",
+          "vi": "Chẳng bao lâu, sói gõ cửa và nói: \"Bà ơi, mở cửa cho cháu. Cháu mang bánh cho bà đây.\"",
+          "hi": "जल्दी ही भेड़िये ने दरवाज़ा खटखटाया और कहा, \"दादी, दरवाज़ा खोलिए। मैं आपके लिए केक लाई हूँ।\"",
+          "ru": "Вскоре волк постучал и сказал: «Открой, бабушка. Я принесла тебе пирог».",
+          "bn": "একটু পরেই নেকড়েটা দরজায় টোকা দিয়ে বলল, \"দিদিমা, দরজা খোলো। তোমার জন্য কেক এনেছি।\"",
+          "ur": "جلد ہی بھیڑیے نے دروازہ کھٹکھٹایا اور کہا، \"نانی، دروازہ کھولیے۔ میں آپ کے لیے کیک لائی ہوں۔\"",
+          "th": "ไม่นาน หมาป่าก็มาเคาะประตูและพูดว่า \"คุณยายเปิดประตูหน่อยค่ะ หนูเอาขนมเค้กมาให้\""
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-27-03",
+        "english": "The two of them did not open it.",
+        "turkish": "İkisi de kapıyı açmadı.",
+        "translations": {
+          "es-419": "Ellas dos no abrieron.",
+          "pt-BR": "As duas não abriram.",
+          "id": "Mereka berdua tidak membukanya.",
+          "ar": "لم تفتحه الاثنتان.",
+          "vi": "Hai bà cháu không mở cửa.",
+          "hi": "दोनों ने दरवाज़ा नहीं खोला।",
+          "ru": "Но они не открыли.",
+          "bn": "দুজনের কেউই দরজা খুলল না।",
+          "ur": "دونوں نے دروازہ نہیں کھولا۔",
+          "th": "ยายหลานไม่ยอมเปิดประตู"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-27-04",
+        "english": "The wolf walked around the house and jumped onto the roof.",
+        "turkish": "Kurt evin etrafında dolaştı ve çatıya atladı.",
+        "translations": {
+          "es-419": "El lobo dio vueltas alrededor de la casa y saltó al techo.",
+          "pt-BR": "O lobo deu a volta na casa e pulou para o telhado.",
+          "id": "Serigala itu berjalan mengelilingi rumah, lalu melompat ke atap.",
+          "ar": "دار الذئب حول البيت وقفز إلى السطح.",
+          "vi": "Sói đi vòng quanh nhà rồi nhảy lên mái.",
+          "hi": "भेड़िया घर के चारों ओर घूमा और छत पर कूद गया।",
+          "ru": "Волк обошёл дом и запрыгнул на крышу.",
+          "bn": "নেকড়েটা বাড়ির চারপাশে ঘুরে ছাদে লাফিয়ে উঠল।",
+          "ur": "بھیڑیا گھر کے چاروں طرف گھوما اور چھت پر کود گیا۔",
+          "th": "หมาป่าเดินวนรอบบ้านแล้วกระโดดขึ้นไปบนหลังคา"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-27-05",
+        "english": "He wanted to wait there until the girl went home in the evening.",
+        "turkish": "Akşam kız eve dönene kadar orada beklemek istiyordu.",
+        "translations": {
+          "es-419": "Quería esperar allí hasta que la niña volviera a casa por la tarde.",
+          "pt-BR": "Ele queria esperar ali até a menina voltar para casa à tardinha.",
+          "id": "Ia ingin menunggu di sana sampai gadis itu pulang pada sore hari.",
+          "ar": "أراد أن ينتظر هناك حتى تعود الفتاة إلى بيتها في المساء.",
+          "vi": "Nó định đợi ở đó cho đến khi cô bé về nhà lúc chiều tối.",
+          "hi": "वह शाम को लड़की के घर लौटने तक वहीं इंतज़ार करना चाहता था।",
+          "ru": "Он хотел дождаться там вечера, когда девочка пойдёт домой.",
+          "bn": "সে চাইছিল, সন্ধ্যায় মেয়েটা বাড়ি না ফেরা পর্যন্ত সেখানেই অপেক্ষা করবে।",
+          "ur": "وہ شام کو لڑکی کے گھر لوٹنے تک وہیں انتظار کرنا چاہتا تھا۔",
+          "th": "มันตั้งใจจะรออยู่ตรงนั้นจนกว่าเด็กหญิงจะกลับบ้านตอนเย็น"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-27-06",
+        "english": "But the grandmother had a clever idea.",
+        "turkish": "Ama büyükannenin aklına zekice bir fikir geldi.",
+        "translations": {
+          "es-419": "Pero la abuela tuvo una idea muy astuta.",
+          "pt-BR": "Mas a avó teve uma ideia esperta.",
+          "id": "Tetapi nenek punya ide yang cerdik.",
+          "ar": "لكن الجدّة خطرت لها فكرة ذكية.",
+          "vi": "Nhưng bà nghĩ ra một mẹo rất hay.",
+          "hi": "लेकिन दादी को एक चतुर उपाय सूझा।",
+          "ru": "Но у бабушки появилась хитрая мысль.",
+          "bn": "কিন্তু দিদিমার মাথায় একটা চমৎকার বুদ্ধি এল।",
+          "ur": "لیکن نانی کو ایک ہوشیار ترکیب سوجھی۔",
+          "th": "แต่คุณยายคิดแผนฉลาด ๆ ออก"
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-28",
+        "english": "They kept the door shut and filled a trough with water that smelled of sausages.",
+        "turkish": "Kapıyı kapalı tuttular ve bir yalağı sosis kokulu suyla doldurdular.",
+        "translations": {
+          "es-419": "Mantuvieron la puerta cerrada y llenaron un abrevadero con agua que olía a salchichas.",
+          "pt-BR": "Elas mantiveram a porta fechada e encheram um cocho com água com cheiro de linguiça.",
+          "id": "Mereka menutup pintu rapat-rapat dan mengisi sebuah palung dengan air yang berbau sosis.",
+          "ar": "أبقتا الباب مغلقًا، وملأتا حوضًا بماء له رائحة النقانق.",
+          "vi": "Họ đóng chặt cửa và đổ đầy vào máng thứ nước có mùi xúc xích.",
+          "hi": "उन्होंने दरवाज़ा बंद रखा और एक बड़ी नाँद को ऐसे पानी से भर दिया जिसमें सॉसेज की खुशबू थी।",
+          "ru": "Они держали дверь закрытой и наполнили корыто водой, которая пахла колбасой.",
+          "bn": "তারা দরজা বন্ধ রাখল আর একটা গামলা সসেজের গন্ধওয়ালা জলে ভরে রাখল।",
+          "ur": "انہوں نے دروازہ بند رکھا اور ایک بڑے حوض کو ایسے پانی سے بھر دیا جس میں ساسیج کی خوشبو تھی۔",
+          "th": "พวกเขาปิดประตูไว้และเติมน้ำที่มีกลิ่นไส้กรอกลงในรางน้ำ"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-28-01",
+        "english": "The smell rose up to the roof.",
+        "turkish": "Koku çatıya kadar yükseldi.",
+        "translations": {
+          "es-419": "El olor subió hasta el techo.",
+          "pt-BR": "O cheiro subiu até o telhado.",
+          "id": "Baunya naik sampai ke atap.",
+          "ar": "صعدت الرائحة إلى السطح.",
+          "vi": "Mùi thơm bay lên tận mái nhà.",
+          "hi": "खुशबू ऊपर छत तक पहुँची।",
+          "ru": "Запах поднялся до самой крыши.",
+          "bn": "গন্ধটা ছাদ পর্যন্ত উঠে গেল।",
+          "ur": "خوشبو اوپر چھت تک پہنچ گئی۔",
+          "th": "กลิ่นนั้นลอยขึ้นไปถึงหลังคา"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-28-02",
+        "english": "The wolf sniffed and stretched his neck farther and farther.",
+        "turkish": "Kurt kokladı ve boynunu gitgide daha fazla uzattı.",
+        "translations": {
+          "es-419": "El lobo olfateó y estiró el cuello cada vez más.",
+          "pt-BR": "O lobo farejou e esticou o pescoço cada vez mais.",
+          "id": "Serigala mengendus dan menjulurkan lehernya makin jauh.",
+          "ar": "تشمّم الذئب ومدّ رقبته أكثر فأكثر.",
+          "vi": "Sói hít hà và rướn cổ ra mỗi lúc một xa hơn.",
+          "hi": "भेड़िये ने सूँघा और अपनी गर्दन और आगे, और आगे बढ़ाई।",
+          "ru": "Волк принюхивался и вытягивал шею всё дальше и дальше.",
+          "bn": "নেকড়েটা শুঁকতে শুঁকতে গলাটা আরও, আরও বাড়িয়ে দিল।",
+          "ur": "بھیڑیے نے سونگھا اور اپنی گردن اور آگے، اور آگے بڑھائی۔",
+          "th": "หมาป่าสูดดมและยื่นคอออกไปไกลขึ้นเรื่อย ๆ"
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-29",
+        "english": "The wolf leaned down from the roof, fell into the water, and drowned.",
+        "turkish": "Kurt çatıdan aşağı eğildi, suya düştü ve boğuldu.",
+        "translations": {
+          "es-419": "El lobo se inclinó desde el techo, cayó al agua y se ahogó.",
+          "pt-BR": "O lobo se debruçou do telhado, caiu na água e se afogou.",
+          "id": "Serigala itu menjulurkan badan dari atap, jatuh ke dalam air, dan tenggelam.",
+          "ar": "انحنى الذئب من السطح، فسقط في الماء وغرق.",
+          "vi": "Con sói chồm xuống từ mái nhà, rơi vào máng nước và chết đuối.",
+          "hi": "भेड़िया छत से नीचे झुका, पानी में गिर पड़ा और डूब गया।",
+          "ru": "Волк свесился с крыши, упал в воду и утонул.",
+          "bn": "নেকড়েটা ছাদ থেকে ঝুঁকে পড়ে জলে পড়ে গেল আর ডুবে মরল।",
+          "ur": "بھیڑیا چھت سے نیچے جھکا، پانی میں گر پڑا اور ڈوب گیا۔",
+          "th": "หมาป่าชะโงกตัวลงมาจากหลังคา ตกลงไปในน้ำ และจมน้ำตาย"
+        }
+      },
+      {
+        "id": "cl-red-riding-hood-30",
+        "english": "The girl went home safely after listening to good advice.",
+        "turkish": "Kız iyi öğütleri dinleyerek güvenle evine döndü.",
+        "translations": {
+          "es-419": "La niña volvió a casa sana y salva por escuchar un buen consejo.",
+          "pt-BR": "A menina voltou para casa em segurança, depois de ouvir bons conselhos.",
+          "id": "Gadis itu pulang dengan selamat karena mendengarkan nasihat yang baik.",
+          "ar": "عادت الفتاة إلى البيت بأمان لأنها استمعت إلى النصيحة الجيدة.",
+          "vi": "Cô bé về nhà an toàn nhờ biết nghe lời khuyên tốt.",
+          "hi": "अच्छी सलाह मानकर लड़की सुरक्षित घर लौट गई।",
+          "ru": "Девочка благополучно вернулась домой, потому что послушалась доброго совета.",
+          "bn": "ভালো পরামর্শ শুনে মেয়েটা নিরাপদে বাড়ি ফিরে গেল।",
+          "ur": "اچھی نصیحت ماننے کی وجہ سے لڑکی خیریت سے گھر پہنچ گئی۔",
+          "th": "เด็กหญิงกลับบ้านอย่างปลอดภัยเพราะเชื่อฟังคำแนะนำที่ดี"
+        }
+      },
+      {
+        "id": "classic-red-riding-hood-ext-30-01",
+        "english": "After that, nobody ever hurt her again.",
+        "turkish": "O günden sonra kimse ona bir daha zarar vermedi.",
+        "translations": {
+          "es-419": "Después de eso, nadie volvió a hacerle daño.",
+          "pt-BR": "Depois disso, ninguém nunca mais lhe fez mal.",
+          "id": "Sejak itu, tidak ada lagi yang menyakitinya.",
+          "ar": "وبعد ذلك، لم يؤذِها أحد أبدًا.",
+          "vi": "Từ đó về sau, không ai làm hại cô bé nữa.",
+          "hi": "उसके बाद किसी ने उसे फिर कभी नुकसान नहीं पहुँचाया।",
+          "ru": "С тех пор никто её больше не обижал.",
+          "bn": "এরপর আর কেউ কখনো তার ক্ষতি করেনি।",
+          "ur": "اس کے بعد کسی نے اسے کبھی نقصان نہیں پہنچایا۔",
+          "th": "หลังจากนั้น ก็ไม่มีใครทำร้ายเธออีกเลย"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-red-riding-hood-q1",
+        "kind": "main",
+        "prompt": "Which sentence best describes the girl's visits to her grandmother?",
+        "options": [
+          "She gets lost twice and asks wolves to show her the way",
+          "She brings a hunter each time to keep her grandmother safe",
+          "She is tricked once, then follows her mother's advice next time",
+          "She finds an empty house, then takes her grandmother back home"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "classic-red-riding-hood-q2",
+        "kind": "detail",
+        "prompt": "What did the wolf suggest on the way?",
+        "options": [
+          "Picking flowers for her grandmother",
+          "Eating the cake",
+          "Running to the house",
+          "Going home"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "classic-red-riding-hood-q3",
+        "kind": "detail",
+        "prompt": "Who saved the girl and her grandmother?",
+        "options": [
+          "A neighbor",
+          "Her mother",
+          "Another wolf",
+          "A hunter"
+        ],
+        "answer": 3
+      },
+      {
+        "id": "classic-red-riding-hood-q4",
+        "kind": "inference",
+        "prompt": "What did the girl do differently when she met another wolf?",
+        "options": [
+          "She went back home and stayed with her mother",
+          "She went straight to her grandmother and warned her",
+          "She asked a hunter to walk through the forest",
+          "She picked flowers and waited beside the path"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-red-riding-hood-q5",
+        "kind": "detail",
+        "prompt": "Where did the grandmother live?",
+        "options": [
+          "In the forest, half an hour from the village",
+          "Next to the girl's house",
+          "In a big town far away",
+          "On a farm by the sea"
+        ],
+        "answer": 0
+      }
+    ],
+    "tags": [
+      "masal",
+      "macera"
+    ],
+    "descriptions": {
+      "es-419": "Caperucita Roja. La aventura en el bosque de una niña que se aparta del camino cuando va a ver a su abuela. Adaptación breve de nivel A2. Adaptación: English Tales. Imagen histórica: Walter Crane; ilustración interior del libro, no es una portada aparte de primera edición.",
+      "pt-BR": "Chapeuzinho Vermelho. A aventura na floresta de uma menina que sai do caminho quando vai visitar a avó. Adaptação curta de nível A2. Adaptação: English Tales. Imagem histórica: Walter Crane; ilustração interna do livro, não é uma capa separada de primeira edição.",
+      "id": "Si Kerudung Merah. Petualangan di hutan seorang gadis yang menyimpang dari jalan saat pergi ke rumah neneknya. Adaptasi singkat tingkat A2. Adaptasi: English Tales. Gambar historis: Walter Crane; ilustrasi di dalam buku, bukan sampul edisi pertama tersendiri.",
+      "ar": "ذات الرداء الأحمر. مغامرة فتاة في الغابة تبتعد عن الطريق وهي ذاهبة إلى جدّتها. اقتباس قصير بمستوى A2. الاقتباس: English Tales. صورة تاريخية: والتر كرين؛ رسم توضيحي داخل الكتاب، وليس غلافًا منفصلًا للطبعة الأولى.",
+      "vi": "Cô bé quàng khăn đỏ. Cuộc phiêu lưu trong rừng của một cô bé rời khỏi con đường khi đi thăm bà. Bản phóng tác ngắn trình độ A2. Phóng tác: English Tales. Hình ảnh lịch sử: Walter Crane; tranh minh họa bên trong sách, không phải bìa riêng của ấn bản đầu tiên.",
+      "hi": "लाल टोपी वाली लड़की। दादी के घर जाते समय रास्ते से भटकने वाली एक लड़की का जंगल में रोमांच। A2 स्तर का छोटा रूपांतरण। रूपांतरण: English Tales। ऐतिहासिक चित्र: Walter Crane; किताब के अंदर का चित्र, पहले संस्करण का अलग कवर नहीं।",
+      "ru": "Красная Шапочка. Приключение в лесу девочки, которая сошла с тропинки по дороге к бабушке. Краткая адаптация уровня A2. Адаптация: English Tales. Историческое изображение: Уолтер Крейн; внутренняя иллюстрация из книги, а не отдельная обложка первого издания.",
+      "bn": "লাল টুপি। দিদিমার বাড়ি যাওয়ার পথে রাস্তা ছেড়ে সরে যাওয়া এক মেয়ের বনের অভিযান। A2 স্তরের ছোট রূপান্তর। রূপান্তর: English Tales। ঐতিহাসিক ছবি: Walter Crane; বইয়ের ভেতরের ছবি, প্রথম সংস্করণের আলাদা প্রচ্ছদ নয়।",
+      "ur": "سرخ ٹوپی والی لڑکی۔ نانی کے گھر جاتے ہوئے راستے سے بھٹک جانے والی ایک لڑکی کی جنگل میں مہم۔ A2 سطح کی مختصر ماخوذ کہانی۔ ترتیب: English Tales۔ تاریخی تصویر: Walter Crane؛ کتاب کے اندر کی تصویر، پہلے ایڈیشن کا الگ سرورق نہیں۔",
+      "th": "หนูน้อยหมวกแดง: การผจญภัยในป่าของเด็กหญิงที่ออกนอกเส้นทางระหว่างไปหาคุณยาย ฉบับดัดแปลงสั้น ๆ ระดับ A2 ดัดแปลงโดย English Tales ภาพเก่าทางประวัติศาสตร์: Walter Crane; ภาพประกอบภายในเล่ม ไม่ใช่ปกแยกของฉบับพิมพ์ครั้งแรก"
+    }
+  },
+  "words": [
+    {
+      "id": "cap",
+      "word": "cap",
+      "translation": "başlık",
+      "pronunciation": "/kæp/",
+      "example": "The girl wears a red cap.",
+      "translations": {
+        "es-419": "gorro, caperuza",
+        "pt-BR": "capuz, gorro",
+        "id": "topi, kerudung",
+        "ar": "قبّعة",
+        "vi": "mũ trùm",
+        "hi": "टोपी",
+        "ru": "шапочка",
+        "bn": "টুপি",
+        "ur": "ٹوپی",
+        "th": "หมวก, ผ้าคลุมหัว"
+      }
+    },
+    {
+      "id": "one-day",
+      "word": "one day",
+      "translation": "bir gün",
+      "pronunciation": "/wʌn deɪ/",
+      "example": "One day, I want to visit London.",
+      "translations": {
+        "es-419": "algún día, un día",
+        "pt-BR": "um dia",
+        "id": "suatu hari",
+        "ar": "ذات يوم",
+        "vi": "một ngày nào đó; một hôm",
+        "hi": "एक दिन",
+        "ru": "однажды",
+        "bn": "একদিন",
+        "ur": "ایک دن",
+        "th": "วันหนึ่ง"
+      }
+    },
+    {
+      "id": "path",
+      "word": "path",
+      "translation": "patika",
+      "pronunciation": "/pæθ/",
+      "example": "A narrow path led uphill.",
+      "translations": {
+        "es-419": "sendero, camino",
+        "pt-BR": "trilha, caminho",
+        "id": "jalan setapak",
+        "ar": "ممرّ، درب",
+        "vi": "lối mòn, con đường nhỏ",
+        "hi": "पगडंडी, रास्ता",
+        "ru": "тропинка, дорожка",
+        "bn": "পথ, সরু রাস্তা",
+        "ur": "پگڈنڈی، راستہ",
+        "th": "ทางเดิน"
+      }
+    },
+    {
+      "id": "forest",
+      "word": "forest",
+      "translation": "orman",
+      "pronunciation": "/ˈfɔːrɪst/",
+      "example": "The forest was full of birds.",
+      "translations": {
+        "es-419": "bosque",
+        "pt-BR": "floresta",
+        "id": "hutan",
+        "ar": "غابة",
+        "vi": "khu rừng",
+        "hi": "जंगल",
+        "ru": "лес",
+        "bn": "বন, জঙ্গল",
+        "ur": "جنگل",
+        "th": "ป่า"
+      }
+    },
+    {
+      "id": "wolf",
+      "word": "wolf",
+      "translation": "kurt",
+      "pronunciation": "/wʊlf/",
+      "example": "The wolf runs to the house.",
+      "translations": {
+        "es-419": "lobo",
+        "pt-BR": "lobo",
+        "id": "serigala",
+        "ar": "ذئب",
+        "vi": "chó sói",
+        "hi": "भेड़िया",
+        "ru": "волк",
+        "bn": "নেকড়ে",
+        "ur": "بھیڑیا",
+        "th": "หมาป่า"
+      }
+    },
+    {
+      "id": "oak",
+      "word": "oak",
+      "translation": "meşe",
+      "pronunciation": "/əʊk/",
+      "example": "The house stands under oak trees.",
+      "translations": {
+        "es-419": "roble",
+        "pt-BR": "carvalho",
+        "id": "pohon ek",
+        "ar": "بلّوط",
+        "vi": "cây sồi",
+        "hi": "बलूत (ओक) का पेड़",
+        "ru": "дуб",
+        "bn": "ওক গাছ",
+        "ur": "بلوط (درخت)",
+        "th": "ต้นโอ๊ก"
+      }
+    },
+    {
+      "id": "help",
+      "word": "help",
+      "translation": "yardım",
+      "pronunciation": "/help/",
+      "example": "Thank you for your help.",
+      "translations": {
+        "es-419": "ayuda",
+        "pt-BR": "ajuda",
+        "id": "bantuan",
+        "ar": "مساعدة",
+        "vi": "sự giúp đỡ",
+        "hi": "मदद",
+        "ru": "помощь; помогать",
+        "bn": "সাহায্য",
+        "ur": "مدد",
+        "th": "ความช่วยเหลือ"
+      }
+    },
+    {
+      "id": "mouth",
+      "word": "mouth",
+      "translation": "ağız",
+      "pronunciation": "/maʊθ/",
+      "example": "A dog carries a piece of meat in his mouth.",
+      "translations": {
+        "es-419": "boca",
+        "pt-BR": "boca",
+        "id": "mulut",
+        "ar": "فم",
+        "vi": "miệng",
+        "hi": "मुँह",
+        "ru": "рот, пасть",
+        "bn": "মুখ",
+        "ur": "منہ",
+        "th": "ปาก"
+      }
+    },
+    {
+      "id": "asleep",
+      "word": "asleep",
+      "translation": "uykuda",
+      "pronunciation": "/əˈsliːp/",
+      "example": "The hare is asleep.",
+      "translations": {
+        "es-419": "dormido",
+        "pt-BR": "dormindo",
+        "id": "tertidur",
+        "ar": "نائم",
+        "vi": "đang ngủ",
+        "hi": "सोया हुआ",
+        "ru": "спящий",
+        "bn": "ঘুমন্ত",
+        "ur": "سویا ہوا",
+        "th": "หลับอยู่"
+      }
+    },
+    {
+      "id": "hunter",
+      "word": "hunter",
+      "translation": "avcı",
+      "pronunciation": "/ˈhʌntə(r)/",
+      "example": "A hunter hears the noise.",
+      "translations": {
+        "es-419": "cazador",
+        "pt-BR": "caçador",
+        "id": "pemburu",
+        "ar": "صيّاد",
+        "vi": "thợ săn",
+        "hi": "शिकारी",
+        "ru": "охотник",
+        "bn": "শিকারি",
+        "ur": "شکاری",
+        "th": "นายพราน"
+      }
+    },
+    {
+      "id": "belly",
+      "word": "belly",
+      "translation": "karın",
+      "pronunciation": "/ˈbeli/",
+      "example": "The wolf has a full belly.",
+      "translations": {
+        "es-419": "panza, barriga",
+        "pt-BR": "barriga",
+        "id": "perut",
+        "ar": "بطن",
+        "vi": "bụng",
+        "hi": "पेट",
+        "ru": "живот, брюхо",
+        "bn": "পেট",
+        "ur": "پیٹ",
+        "th": "ท้อง"
+      }
+    },
+    {
+      "id": "scissors",
+      "word": "scissors",
+      "translation": "makas",
+      "pronunciation": "/ˈsɪzəz/",
+      "example": "He carefully uses the scissors.",
+      "translations": {
+        "es-419": "tijeras",
+        "pt-BR": "tesoura",
+        "id": "gunting",
+        "ar": "مقصّ",
+        "vi": "cái kéo",
+        "hi": "कैंची",
+        "ru": "ножницы",
+        "bn": "কাঁচি",
+        "ur": "قینچی",
+        "th": "กรรไกร"
+      }
+    },
+    {
+      "id": "food",
+      "word": "food",
+      "translation": "yiyecek",
+      "pronunciation": "/fuːd/",
+      "example": "He offers simple food from the fields.",
+      "translations": {
+        "es-419": "comida",
+        "pt-BR": "comida",
+        "id": "makanan",
+        "ar": "طعام",
+        "vi": "thức ăn",
+        "hi": "खाना",
+        "ru": "еда",
+        "bn": "খাবার",
+        "ur": "کھانا، خوراک",
+        "th": "อาหาร"
+      }
+    },
+    {
+      "id": "warning",
+      "word": "warning",
+      "translation": "uyarı",
+      "pronunciation": "/ˈwɔːnɪŋ/",
+      "example": "She remembers her mother's warning.",
+      "translations": {
+        "es-419": "advertencia",
+        "pt-BR": "aviso",
+        "id": "peringatan",
+        "ar": "تحذير",
+        "vi": "lời cảnh báo, lời dặn",
+        "hi": "चेतावनी",
+        "ru": "предупреждение",
+        "bn": "সতর্কবাণী",
+        "ur": "تنبیہ، خبردار کرنا",
+        "th": "คำเตือน"
+      }
+    },
+    {
+      "id": "safely",
+      "word": "safely",
+      "translation": "güvenli bir şekilde",
+      "pronunciation": "/ˈseɪfli/",
+      "example": "He put the ticket safely in his pocket.",
+      "translations": {
+        "es-419": "a salvo, de forma segura",
+        "pt-BR": "em segurança, a salvo",
+        "id": "dengan aman",
+        "ar": "بأمان",
+        "vi": "an toàn, cẩn thận",
+        "hi": "सुरक्षित तरीके से, सँभालकर",
+        "ru": "благополучно, в безопасности",
+        "bn": "নিরাপদে",
+        "ur": "حفاظت سے",
+        "th": "อย่างปลอดภัย"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "cap",
+    "one-day",
+    "path",
+    "forest",
+    "wolf",
+    "oak",
+    "help",
+    "mouth",
+    "asleep",
+    "hunter",
+    "belly",
+    "scissors",
+    "food",
+    "warning",
+    "safely"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-red-riding-hood-q1",
+      "sentenceIds": [
+        "cl-red-riding-hood-09",
+        "cl-red-riding-hood-10",
+        "cl-red-riding-hood-27",
+        "cl-red-riding-hood-28",
+        "cl-red-riding-hood-29"
+      ],
+      "rationale": "The wolf tricks her once; on the second visit she goes straight to her grandmother."
+    },
+    {
+      "questionId": "classic-red-riding-hood-q2",
+      "sentenceIds": [
+        "cl-red-riding-hood-08"
+      ],
+      "rationale": "The wolf suggests picking flowers for her grandmother."
+    },
+    {
+      "questionId": "classic-red-riding-hood-q3",
+      "sentenceIds": [
+        "cl-red-riding-hood-20",
+        "cl-red-riding-hood-22",
+        "cl-red-riding-hood-23"
+      ],
+      "rationale": "A hunter cuts the wolf open and they climb out alive."
+    },
+    {
+      "questionId": "classic-red-riding-hood-q4",
+      "sentenceIds": [
+        "cl-red-riding-hood-26",
+        "cl-red-riding-hood-27"
+      ],
+      "rationale": "She goes straight to her grandmother and tells her everything."
+    },
+    {
+      "questionId": "classic-red-riding-hood-q5",
+      "sentenceIds": [
+        "classic-red-riding-hood-ext-02-01"
+      ],
+      "rationale": "She lived in the forest, half an hour from the village."
+    }
+  ],
+  "publicationBlockers": [
+    "Owner (oguz) approval of the English text, questions and translations required.",
+    "Fresh live source snapshot and publisher validation required."
+  ],
+  "lengthening": {
+    "wordsBefore": 315,
+    "wordsAfter": 753,
+    "sentencesBefore": 30,
+    "sentencesAfter": 74
+  }
+}

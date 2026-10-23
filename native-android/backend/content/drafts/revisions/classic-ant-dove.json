@@ -1,0 +1,945 @@
+{
+  "status": "draft",
+  "kind": "revision",
+  "source": "story-lengthening-a1-batch1-2026-10-22",
+  "reviewedBy": null,
+  "baseStoryId": "classic-ant-dove",
+  "baseStorySHA256": "681db327b978742fcd038921287bba25c2818ddd9b1ccaa70467b090c362f506",
+  "editorialNotes": [
+    "Adds the hot day, the ant's call for help, the dove's pity and quick leaf, the ant's promise, and the hunter's quiet approach.",
+    "Every legacy sentence, its ID and its translations are kept unchanged; new sentences are only inserted between them. Plot, characters, ending and lesson are unchanged.",
+    "New sentences have AI-drafted translations in all ten additional support languages, following the gender and wording already used in each legacy translation. No native-speaker review."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "unchangedTranslationsPreserved": true,
+    "newSentenceIds": [
+      "classic-ant-dove-ext-01-01",
+      "classic-ant-dove-ext-02-01",
+      "classic-ant-dove-ext-03-01",
+      "classic-ant-dove-ext-03-02",
+      "classic-ant-dove-ext-04-01",
+      "classic-ant-dove-ext-04-02",
+      "classic-ant-dove-ext-05-01",
+      "classic-ant-dove-ext-06-01",
+      "classic-ant-dove-ext-07-01",
+      "classic-ant-dove-ext-07-02",
+      "classic-ant-dove-ext-08-01",
+      "classic-ant-dove-ext-08-02",
+      "classic-ant-dove-ext-09-01",
+      "classic-ant-dove-ext-11-01",
+      "classic-ant-dove-ext-12-01"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+  },
+  "story": {
+    "id": "classic-ant-dove",
+    "title": "The Ant and the Dove",
+    "author": "Aesop",
+    "level": "A1",
+    "genre": "Macera",
+    "description": "Karınca ile Güvercin. Bir güvercin ile bir karınca, birbirlerinin hayatını kurtarır. A1 düzeyinde kısa uyarlama. Uyarlama ve Türkçe çeviri: English Tales. Tarihî görsel: Arthur Rackham; koleksiyonun iç başlık sayfası, ayrı bir ilk baskı kapağı değildir.",
+    "coverKey": "cover_classic_ant_dove",
+    "sentences": [
+      {
+        "id": "cl-ant-dove-01",
+        "english": "An ant goes to a river to drink.",
+        "turkish": "Bir karınca su içmek için nehre gider.",
+        "translations": {
+          "es-419": "Una hormiga va a un río a beber.",
+          "pt-BR": "Uma formiga vai até um rio para beber água.",
+          "id": "Seekor semut pergi ke sungai untuk minum.",
+          "ar": "تذهب نملة إلى نهر لتشرب.",
+          "vi": "Một cô kiến ra sông để uống nước.",
+          "hi": "एक चींटी पानी पीने नदी पर जाती है।",
+          "ru": "Муравей идёт к реке попить.",
+          "bn": "একটা পিঁপড়ে জল খেতে নদীতে যায়।",
+          "ur": "ایک چیونٹی پانی پینے دریا پر جاتی ہے۔",
+          "th": "มดตัวหนึ่งไปดื่มน้ำที่แม่น้ำ"
+        }
+      },
+      {
+        "id": "classic-ant-dove-ext-01-01",
+        "english": "It is a hot day, and she is very thirsty.",
+        "turkish": "Sıcak bir gündür ve çok susamıştır.",
+        "translations": {
+          "es-419": "Es un día caluroso, y tiene mucha sed.",
+          "pt-BR": "É um dia quente, e ela está com muita sede.",
+          "id": "Hari itu panas, dan ia sangat haus.",
+          "ar": "إنه يوم حار، وهي عطشى جدًا.",
+          "vi": "Hôm ấy trời nóng, và cô rất khát.",
+          "hi": "गर्मी का दिन है और उसे बहुत प्यास लगी है।",
+          "ru": "День жаркий, и ему очень хочется пить.",
+          "bn": "দিনটা গরম, আর তার খুব তেষ্টা পেয়েছে।",
+          "ur": "گرم دن ہے اور اسے بہت پیاس لگی ہے۔",
+          "th": "วันนั้นอากาศร้อน และเธอกระหายน้ำมาก"
+        }
+      },
+      {
+        "id": "cl-ant-dove-02",
+        "english": "She slips and falls into the water.",
+        "turkish": "Ayağı kayar ve suya düşer.",
+        "translations": {
+          "es-419": "Se resbala y cae al agua.",
+          "pt-BR": "Ela escorrega e cai na água.",
+          "id": "Ia terpeleset dan jatuh ke air.",
+          "ar": "تنزلق وتسقط في الماء.",
+          "vi": "Cô trượt chân và rơi xuống nước.",
+          "hi": "उसका पैर फिसल जाता है और वह पानी में गिर जाती है।",
+          "ru": "Он поскальзывается и падает в воду.",
+          "bn": "সে পা পিছলে জলে পড়ে যায়।",
+          "ur": "اس کا پاؤں پھسلتا ہے اور وہ پانی میں گر جاتی ہے۔",
+          "th": "เธอลื่นและตกลงไปในน้ำ"
+        }
+      },
+      {
+        "id": "classic-ant-dove-ext-02-01",
+        "english": "The water is deep and fast.",
+        "turkish": "Su derin ve hızlıdır.",
+        "translations": {
+          "es-419": "El agua es profunda y rápida.",
+          "pt-BR": "A água é funda e rápida.",
+          "id": "Airnya dalam dan deras.",
+          "ar": "الماء عميق وسريع.",
+          "vi": "Nước sâu và chảy xiết.",
+          "hi": "पानी गहरा है और तेज़ बह रहा है।",
+          "ru": "Вода глубокая и быстрая.",
+          "bn": "জলটা গভীর আর খরস্রোতা।",
+          "ur": "پانی گہرا ہے اور تیزی سے بہہ رہا ہے۔",
+          "th": "น้ำลึกและไหลเชี่ยว"
+        }
+      },
+      {
+        "id": "cl-ant-dove-03",
+        "english": "The current carries her away.",
+        "turkish": "Akıntı onu sürükler.",
+        "translations": {
+          "es-419": "La corriente se la lleva.",
+          "pt-BR": "A correnteza a leva embora.",
+          "id": "Arus menghanyutkannya.",
+          "ar": "يحملها التيار بعيدًا.",
+          "vi": "Dòng nước cuốn cô đi.",
+          "hi": "धारा उसे बहा ले जाती है।",
+          "ru": "Течение уносит его.",
+          "bn": "স্রোত তাকে ভাসিয়ে নিয়ে যায়।",
+          "ur": "پانی کا بہاؤ اسے بہا لے جاتا ہے۔",
+          "th": "กระแสน้ำพัดเธอไป"
+        }
+      },
+      {
+        "id": "classic-ant-dove-ext-03-01",
+        "english": "\"Help! Help!\" she cries.",
+        "turkish": "\"İmdat! İmdat!\" diye bağırır.",
+        "translations": {
+          "es-419": "\"¡Ayuda! ¡Ayuda!\", grita.",
+          "pt-BR": "— Socorro! Socorro! — grita ela.",
+          "id": "\"Tolong! Tolong!\" teriaknya.",
+          "ar": "تصرخ: «النجدة! النجدة!»",
+          "vi": "\"Cứu với! Cứu với!\" cô kêu lên.",
+          "hi": "\"बचाओ! बचाओ!\" वह चिल्लाती है।",
+          "ru": "«Помогите! Помогите!» — кричит он.",
+          "bn": "\"বাঁচাও! বাঁচাও!\" সে চিৎকার করে।",
+          "ur": "\"بچاؤ! بچاؤ!\" وہ چلاتی ہے۔",
+          "th": "\"ช่วยด้วย! ช่วยด้วย!\" เธอร้อง"
+        }
+      },
+      {
+        "id": "classic-ant-dove-ext-03-02",
+        "english": "She is too small to swim to the bank.",
+        "turkish": "Kıyıya yüzemeyecek kadar küçüktür.",
+        "translations": {
+          "es-419": "Es demasiado pequeña para nadar hasta la orilla.",
+          "pt-BR": "Ela é pequena demais para nadar até a margem.",
+          "id": "Ia terlalu kecil untuk berenang ke tepi.",
+          "ar": "إنها أصغر من أن تسبح إلى الضفّة.",
+          "vi": "Cô quá nhỏ để bơi vào bờ.",
+          "hi": "वह इतनी छोटी है कि तैरकर किनारे तक नहीं पहुँच सकती।",
+          "ru": "Он слишком мал, чтобы доплыть до берега.",
+          "bn": "সে এত ছোট যে সাঁতরে তীরে যেতে পারে না।",
+          "ur": "وہ اتنی چھوٹی ہے کہ تیر کر کنارے تک نہیں جا سکتی۔",
+          "th": "เธอตัวเล็กเกินกว่าจะว่ายเข้าฝั่งได้"
+        }
+      },
+      {
+        "id": "cl-ant-dove-04",
+        "english": "A dove sees the ant from a tree.",
+        "turkish": "Bir güvercin karıncayı ağaçtan görür.",
+        "translations": {
+          "es-419": "Una paloma ve a la hormiga desde un árbol.",
+          "pt-BR": "Uma pomba vê a formiga de uma árvore.",
+          "id": "Seekor burung merpati melihat semut itu dari pohon.",
+          "ar": "ترى حمامة النملة من شجرة.",
+          "vi": "Một chú bồ câu trên cây nhìn thấy kiến.",
+          "hi": "एक कबूतर पेड़ पर से चींटी को देखता है।",
+          "ru": "Голубка видит муравья с дерева.",
+          "bn": "একটা ঘুঘু গাছ থেকে পিঁপড়েটাকে দেখতে পায়।",
+          "ur": "ایک کبوتر درخت سے چیونٹی کو دیکھتا ہے۔",
+          "th": "นกพิราบตัวหนึ่งเห็นมดจากบนต้นไม้"
+        }
+      },
+      {
+        "id": "classic-ant-dove-ext-04-01",
+        "english": "He feels sorry for the little ant.",
+        "turkish": "Küçük karıncaya acır.",
+        "translations": {
+          "es-419": "Siente lástima por la pequeña hormiga.",
+          "pt-BR": "Ela sente pena da formiguinha.",
+          "id": "Ia merasa kasihan pada semut kecil itu.",
+          "ar": "تشعر بالشفقة على النملة الصغيرة.",
+          "vi": "Chú thấy thương cô kiến nhỏ.",
+          "hi": "उसे नन्ही चींटी पर तरस आता है।",
+          "ru": "Ей жаль маленького муравья.",
+          "bn": "ছোট্ট পিঁপড়েটার জন্য তার মায়া হয়।",
+          "ur": "اسے ننھی چیونٹی پر ترس آتا ہے۔",
+          "th": "เขารู้สึกสงสารมดตัวน้อย"
+        }
+      },
+      {
+        "id": "classic-ant-dove-ext-04-02",
+        "english": "He quickly picks a leaf with his beak.",
+        "turkish": "Gagasıyla hemen bir yaprak koparır.",
+        "translations": {
+          "es-419": "Rápidamente arranca una hoja con el pico.",
+          "pt-BR": "Ela arranca depressa uma folha com o bico.",
+          "id": "Ia segera memetik sehelai daun dengan paruhnya.",
+          "ar": "تقطف بسرعة ورقة بمنقارها.",
+          "vi": "Chú nhanh chóng dùng mỏ ngắt một chiếc lá.",
+          "hi": "वह जल्दी से अपनी चोंच से एक पत्ता तोड़ता है।",
+          "ru": "Она быстро срывает клювом листок.",
+          "bn": "সে তাড়াতাড়ি ঠোঁট দিয়ে একটা পাতা ছেঁড়ে।",
+          "ur": "وہ جلدی سے اپنی چونچ سے ایک پتا توڑتا ہے۔",
+          "th": "เขารีบใช้จะงอยปากเด็ดใบไม้มาใบหนึ่ง"
+        }
+      },
+      {
+        "id": "cl-ant-dove-05",
+        "english": "He drops a leaf into the river.",
+        "turkish": "Nehre bir yaprak bırakır.",
+        "translations": {
+          "es-419": "Deja caer una hoja en el río.",
+          "pt-BR": "Ela deixa cair uma folha no rio.",
+          "id": "Ia menjatuhkan sehelai daun ke sungai.",
+          "ar": "تُسقط ورقة شجر في النهر.",
+          "vi": "Chú thả một chiếc lá xuống sông.",
+          "hi": "वह नदी में एक पत्ता गिरा देता है।",
+          "ru": "Она бросает в реку листок.",
+          "bn": "সে নদীতে একটা পাতা ফেলে দেয়।",
+          "ur": "وہ دریا میں ایک پتا گرا دیتا ہے۔",
+          "th": "เขาทิ้งใบไม้ลงไปในแม่น้ำ"
+        }
+      },
+      {
+        "id": "classic-ant-dove-ext-05-01",
+        "english": "The leaf lands near the ant.",
+        "turkish": "Yaprak karıncanın yanına düşer.",
+        "translations": {
+          "es-419": "La hoja cae cerca de la hormiga.",
+          "pt-BR": "A folha cai perto da formiga.",
+          "id": "Daun itu jatuh di dekat semut.",
+          "ar": "تقع الورقة قرب النملة.",
+          "vi": "Chiếc lá rơi xuống gần cô kiến.",
+          "hi": "पत्ता चींटी के पास आकर गिरता है।",
+          "ru": "Листок падает рядом с муравьём.",
+          "bn": "পাতাটা পিঁপড়েটার কাছে এসে পড়ে।",
+          "ur": "پتا چیونٹی کے پاس آ گرتا ہے۔",
+          "th": "ใบไม้ตกลงใกล้ ๆ มด"
+        }
+      },
+      {
+        "id": "cl-ant-dove-06",
+        "english": "The ant climbs onto the leaf.",
+        "turkish": "Karınca yaprağın üzerine çıkar.",
+        "translations": {
+          "es-419": "La hormiga se sube a la hoja.",
+          "pt-BR": "A formiga sobe na folha.",
+          "id": "Semut memanjat ke atas daun itu.",
+          "ar": "تتسلّق النملة على الورقة.",
+          "vi": "Kiến bò lên chiếc lá.",
+          "hi": "चींटी पत्ते पर चढ़ जाती है।",
+          "ru": "Муравей забирается на листок.",
+          "bn": "পিঁপড়েটা পাতার ওপর উঠে পড়ে।",
+          "ur": "چیونٹی پتے پر چڑھ جاتی ہے۔",
+          "th": "มดปีนขึ้นไปบนใบไม้"
+        }
+      },
+      {
+        "id": "classic-ant-dove-ext-06-01",
+        "english": "The leaf floats like a little boat.",
+        "turkish": "Yaprak küçük bir kayık gibi yüzer.",
+        "translations": {
+          "es-419": "La hoja flota como un barquito.",
+          "pt-BR": "A folha flutua como um barquinho.",
+          "id": "Daun itu mengapung seperti perahu kecil.",
+          "ar": "تطفو الورقة مثل قارب صغير.",
+          "vi": "Chiếc lá nổi trên mặt nước như một chiếc thuyền nhỏ.",
+          "hi": "पत्ता एक छोटी नाव की तरह तैरता है।",
+          "ru": "Листок плывёт, как маленькая лодочка.",
+          "bn": "পাতাটা ছোট্ট নৌকার মতো ভাসে।",
+          "ur": "پتا ایک چھوٹی کشتی کی طرح تیرتا ہے۔",
+          "th": "ใบไม้ลอยไปเหมือนเรือลำน้อย"
+        }
+      },
+      {
+        "id": "cl-ant-dove-07",
+        "english": "Soon, she reaches the bank safely.",
+        "turkish": "Çok geçmeden güvenle kıyıya ulaşır.",
+        "translations": {
+          "es-419": "Pronto, llega sana y salva a la orilla.",
+          "pt-BR": "Logo, ela chega à margem em segurança.",
+          "id": "Tak lama kemudian, ia sampai di tepi sungai dengan selamat.",
+          "ar": "بعد قليل، تصل إلى الضفّة بأمان.",
+          "vi": "Chẳng mấy chốc, cô vào được bờ an toàn.",
+          "hi": "जल्दी ही वह सुरक्षित किनारे तक पहुँच जाती है।",
+          "ru": "Вскоре он благополучно добирается до берега.",
+          "bn": "একটু পরেই সে নিরাপদে তীরে পৌঁছে যায়।",
+          "ur": "جلد ہی وہ حفاظت سے کنارے پر پہنچ جاتی ہے۔",
+          "th": "ไม่นาน เธอก็ขึ้นฝั่งได้อย่างปลอดภัย"
+        }
+      },
+      {
+        "id": "classic-ant-dove-ext-07-01",
+        "english": "\"Thank you, kind dove!\" she calls.",
+        "turkish": "\"Teşekkürler, iyi kalpli güvercin!\" diye seslenir.",
+        "translations": {
+          "es-419": "\"¡Gracias, paloma buena!\", grita.",
+          "pt-BR": "— Obrigada, pomba bondosa! — grita ela.",
+          "id": "\"Terima kasih, merpati yang baik!\" serunya.",
+          "ar": "تنادي: «شكرًا لكِ أيتها الحمامة الطيبة!»",
+          "vi": "\"Cảm ơn anh, bồ câu tốt bụng!\" cô gọi to.",
+          "hi": "\"धन्यवाद, दयालु कबूतर!\" वह पुकारती है।",
+          "ru": "«Спасибо, добрая голубка!» — кричит он.",
+          "bn": "\"ধন্যবাদ, দয়ালু ঘুঘু!\" সে ডেকে বলে।",
+          "ur": "\"شکریہ، مہربان کبوتر!\" وہ پکار کر کہتی ہے۔",
+          "th": "\"ขอบคุณนะ นกพิราบใจดี!\" เธอร้องบอก"
+        }
+      },
+      {
+        "id": "classic-ant-dove-ext-07-02",
+        "english": "\"I will not forget your help.\"",
+        "turkish": "\"Yardımını unutmayacağım.\"",
+        "translations": {
+          "es-419": "\"No olvidaré tu ayuda.\"",
+          "pt-BR": "— Não vou esquecer a sua ajuda.",
+          "id": "\"Aku tidak akan melupakan bantuanmu.\"",
+          "ar": "«لن أنسى مساعدتكِ.»",
+          "vi": "\"Tôi sẽ không quên sự giúp đỡ của anh.\"",
+          "hi": "\"मैं तुम्हारी मदद कभी नहीं भूलूँगी।\"",
+          "ru": "«Я не забуду твою помощь».",
+          "bn": "\"তোমার সাহায্য আমি ভুলব না।\"",
+          "ur": "\"میں تمہاری مدد نہیں بھولوں گی۔\"",
+          "th": "\"ฉันจะไม่ลืมความช่วยเหลือของเธอ\""
+        }
+      },
+      {
+        "id": "cl-ant-dove-08",
+        "english": "Later, a hunter gets ready to catch the dove.",
+        "turkish": "Daha sonra bir avcı güvercini yakalamaya hazırlanır.",
+        "translations": {
+          "es-419": "Más tarde, un cazador se prepara para atrapar a la paloma.",
+          "pt-BR": "Mais tarde, um caçador se prepara para pegar a pomba.",
+          "id": "Kemudian, seorang pemburu bersiap menangkap merpati itu.",
+          "ar": "لاحقًا، يستعدّ صيّاد ليمسك الحمامة.",
+          "vi": "Sau đó, một người thợ săn chuẩn bị bắt bồ câu.",
+          "hi": "बाद में एक शिकारी कबूतर को पकड़ने की तैयारी करता है।",
+          "ru": "Позже охотник собирается поймать голубку.",
+          "bn": "পরে এক শিকারি ঘুঘুটাকে ধরার জন্য তৈরি হয়।",
+          "ur": "بعد میں ایک شکاری کبوتر کو پکڑنے کی تیاری کرتا ہے۔",
+          "th": "ต่อมา นายพรานคนหนึ่งเตรียมจะจับนกพิราบ"
+        }
+      },
+      {
+        "id": "classic-ant-dove-ext-08-01",
+        "english": "The dove does not see him.",
+        "turkish": "Güvercin onu görmez.",
+        "translations": {
+          "es-419": "La paloma no lo ve.",
+          "pt-BR": "A pomba não o vê.",
+          "id": "Merpati itu tidak melihatnya.",
+          "ar": "الحمامة لا تراه.",
+          "vi": "Bồ câu không nhìn thấy ông ta.",
+          "hi": "कबूतर उसे नहीं देखता।",
+          "ru": "Голубка его не видит.",
+          "bn": "ঘুঘুটা তাকে দেখতে পায় না।",
+          "ur": "کبوتر اسے نہیں دیکھتا۔",
+          "th": "นกพิราบไม่เห็นเขา"
+        }
+      },
+      {
+        "id": "classic-ant-dove-ext-08-02",
+        "english": "The hunter moves quietly between the trees.",
+        "turkish": "Avcı ağaçların arasında sessizce ilerler.",
+        "translations": {
+          "es-419": "El cazador se mueve en silencio entre los árboles.",
+          "pt-BR": "O caçador anda em silêncio entre as árvores.",
+          "id": "Pemburu itu bergerak diam-diam di antara pepohonan.",
+          "ar": "يتحرّك الصيّاد بهدوء بين الأشجار.",
+          "vi": "Người thợ săn lặng lẽ di chuyển giữa những hàng cây.",
+          "hi": "शिकारी पेड़ों के बीच चुपचाप आगे बढ़ता है।",
+          "ru": "Охотник тихо пробирается между деревьями.",
+          "bn": "শিকারি গাছের ফাঁকে ফাঁকে চুপিচুপি এগোয়।",
+          "ur": "شکاری درختوں کے بیچ خاموشی سے آگے بڑھتا ہے۔",
+          "th": "นายพรานค่อย ๆ ย่องไปตามระหว่างต้นไม้"
+        }
+      },
+      {
+        "id": "cl-ant-dove-09",
+        "english": "The ant sees him and runs to his foot.",
+        "turkish": "Karınca onu görür ve ayağına koşar.",
+        "translations": {
+          "es-419": "La hormiga lo ve y corre hacia su pie.",
+          "pt-BR": "A formiga o vê e corre até o pé dele.",
+          "id": "Semut melihatnya dan berlari ke kakinya.",
+          "ar": "تراه النملة وتركض إلى قدمه.",
+          "vi": "Kiến nhìn thấy ông ta và chạy đến chân ông ta.",
+          "hi": "चींटी उसे देखती है और उसके पैर की ओर दौड़ती है।",
+          "ru": "Муравей видит его и бежит к его ноге.",
+          "bn": "পিঁপড়েটা তাকে দেখে দৌড়ে তার পায়ের কাছে যায়।",
+          "ur": "چیونٹی اسے دیکھ لیتی ہے اور دوڑ کر اس کے پاؤں تک جاتی ہے۔",
+          "th": "มดเห็นเขาและวิ่งไปที่เท้าของเขา"
+        }
+      },
+      {
+        "id": "classic-ant-dove-ext-09-01",
+        "english": "\"I must help my friend,\" she thinks.",
+        "turkish": "\"Dostuma yardım etmeliyim,\" diye düşünür.",
+        "translations": {
+          "es-419": "\"Tengo que ayudar a mi amiga\", piensa.",
+          "pt-BR": "— Preciso ajudar a minha amiga — pensa ela.",
+          "id": "\"Aku harus menolong temanku,\" pikirnya.",
+          "ar": "تفكّر: «يجب أن أساعد صديقتي.»",
+          "vi": "\"Mình phải giúp bạn mình,\" cô nghĩ.",
+          "hi": "\"मुझे अपने दोस्त की मदद करनी है,\" वह सोचती है।",
+          "ru": "«Я должен помочь своей подруге», — думает он.",
+          "bn": "\"আমাকে আমার বন্ধুকে সাহায্য করতেই হবে,\" সে ভাবে।",
+          "ur": "\"مجھے اپنے دوست کی مدد کرنی ہے،\" وہ سوچتی ہے۔",
+          "th": "\"ฉันต้องช่วยเพื่อนของฉัน\" เธอคิด"
+        }
+      },
+      {
+        "id": "cl-ant-dove-10",
+        "english": "She bites his heel.",
+        "turkish": "Topuğunu ısırır.",
+        "translations": {
+          "es-419": "Le muerde el talón.",
+          "pt-BR": "Ela morde o calcanhar dele.",
+          "id": "Ia menggigit tumit pemburu itu.",
+          "ar": "تلدغ كعبه.",
+          "vi": "Cô cắn vào gót chân ông ta.",
+          "hi": "वह उसकी एड़ी पर काट लेती है।",
+          "ru": "Он кусает охотника за пятку.",
+          "bn": "সে তার গোড়ালিতে কামড়ে দেয়।",
+          "ur": "وہ اس کی ایڑی پر کاٹ لیتی ہے۔",
+          "th": "เธอกัดส้นเท้าของเขา"
+        }
+      },
+      {
+        "id": "cl-ant-dove-11",
+        "english": "The hunter cries out and drops his trap.",
+        "turkish": "Avcı bağırır ve tuzağını düşürür.",
+        "translations": {
+          "es-419": "El cazador grita y suelta su trampa.",
+          "pt-BR": "O caçador grita e deixa cair a armadilha.",
+          "id": "Pemburu itu berteriak dan menjatuhkan perangkapnya.",
+          "ar": "يصرخ الصيّاد ويُسقط فخّه.",
+          "vi": "Người thợ săn kêu lên và đánh rơi cái bẫy.",
+          "hi": "शिकारी चीख़ता है और उसका जाल गिर जाता है।",
+          "ru": "Охотник вскрикивает и роняет силок.",
+          "bn": "শিকারি চেঁচিয়ে ওঠে আর তার ফাঁদটা ফেলে দেয়।",
+          "ur": "شکاری چیخ اٹھتا ہے اور اس کا جال گر جاتا ہے۔",
+          "th": "นายพรานร้องออกมาและทำกับดักหล่น"
+        }
+      },
+      {
+        "id": "classic-ant-dove-ext-11-01",
+        "english": "His foot hurts very much.",
+        "turkish": "Ayağı çok acır.",
+        "translations": {
+          "es-419": "Le duele mucho el pie.",
+          "pt-BR": "O pé dele dói muito.",
+          "id": "Kakinya terasa sangat sakit.",
+          "ar": "تؤلمه قدمه كثيرًا.",
+          "vi": "Chân ông ta đau lắm.",
+          "hi": "उसके पैर में बहुत दर्द होता है।",
+          "ru": "У него сильно болит нога.",
+          "bn": "তার পায়ে খুব ব্যথা লাগে।",
+          "ur": "اس کے پاؤں میں بہت درد ہوتا ہے۔",
+          "th": "เท้าของเขาเจ็บมาก"
+        }
+      },
+      {
+        "id": "cl-ant-dove-12",
+        "english": "The dove hears him and flies away.",
+        "turkish": "Güvercin onu duyar ve uçup gider.",
+        "translations": {
+          "es-419": "La paloma lo oye y se va volando.",
+          "pt-BR": "A pomba ouve o grito e sai voando.",
+          "id": "Merpati mendengarnya dan terbang pergi.",
+          "ar": "تسمعه الحمامة وتطير بعيدًا.",
+          "vi": "Bồ câu nghe thấy và bay đi.",
+          "hi": "कबूतर उसकी आवाज़ सुनता है और उड़ जाता है।",
+          "ru": "Голубка слышит его и улетает.",
+          "bn": "ঘুঘুটা শব্দ শুনে উড়ে পালায়।",
+          "ur": "کبوتر اس کی آواز سنتا ہے اور اڑ جاتا ہے۔",
+          "th": "นกพิราบได้ยินเสียงและบินหนีไป"
+        }
+      },
+      {
+        "id": "classic-ant-dove-ext-12-01",
+        "english": "Soon he is high up in the sky.",
+        "turkish": "Çok geçmeden gökyüzünde, yükseklerdedir.",
+        "translations": {
+          "es-419": "Pronto está muy alto en el cielo.",
+          "pt-BR": "Logo ela está bem alto no céu.",
+          "id": "Tak lama kemudian, ia sudah tinggi di langit.",
+          "ar": "بعد قليل تصبح عاليًا في السماء.",
+          "vi": "Chẳng mấy chốc, chú đã bay cao trên bầu trời.",
+          "hi": "जल्दी ही वह आसमान में ऊँचा पहुँच जाता है।",
+          "ru": "Вскоре она уже высоко в небе.",
+          "bn": "একটু পরেই সে আকাশের অনেক ওপরে।",
+          "ur": "جلد ہی وہ آسمان میں بہت اونچا پہنچ جاتا ہے۔",
+          "th": "ไม่นาน เขาก็บินขึ้นไปสูงบนท้องฟ้า"
+        }
+      },
+      {
+        "id": "cl-ant-dove-13",
+        "english": "Both friends are safe because they help each other.",
+        "turkish": "İki dost birbirlerine yardım ettikleri için güvendedir.",
+        "translations": {
+          "es-419": "Los dos amigos están a salvo porque se ayudan el uno al otro.",
+          "pt-BR": "As duas amigas estão a salvo porque ajudam uma à outra.",
+          "id": "Kedua sahabat itu selamat karena mereka saling menolong.",
+          "ar": "الصديقتان كلتاهما في أمان لأنهما تساعد إحداهما الأخرى.",
+          "vi": "Cả hai người bạn đều được an toàn vì họ đã giúp đỡ lẫn nhau.",
+          "hi": "दोनों दोस्त सुरक्षित हैं, क्योंकि वे एक-दूसरे की मदद करते हैं।",
+          "ru": "Оба друга спасены, потому что помогают друг другу.",
+          "bn": "দুই বন্ধুই নিরাপদ, কারণ তারা একে অপরকে সাহায্য করে।",
+          "ur": "دونوں دوست محفوظ ہیں کیونکہ وہ ایک دوسرے کی مدد کرتے ہیں۔",
+          "th": "เพื่อนทั้งสองปลอดภัยเพราะช่วยเหลือกันและกัน"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-ant-dove-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "An ant and a dove look for a new home",
+          "An ant and a dove find food for a hunter",
+          "An ant and a dove each save the other",
+          "An ant and a dove build a nest together"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "classic-ant-dove-q2",
+        "kind": "detail",
+        "prompt": "How does the dove help the ant?",
+        "options": [
+          "He drops a leaf into the river",
+          "He carries her in his beak",
+          "He pushes her to the bank",
+          "He calls other birds"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "classic-ant-dove-q3",
+        "kind": "inference",
+        "prompt": "Why does the ant bite the hunter?",
+        "options": [
+          "She does not like people",
+          "She wants to save the dove",
+          "She is hungry",
+          "She is afraid of him"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-ant-dove-q4",
+        "kind": "detail",
+        "prompt": "Why can't the ant get out of the river alone?",
+        "options": [
+          "She is too small to swim to the bank",
+          "She does not want to leave the water",
+          "She is sleeping on a leaf",
+          "The dove holds her down"
+        ],
+        "answer": 0
+      }
+    ],
+    "tags": [
+      "fabl",
+      "macera"
+    ],
+    "descriptions": {
+      "es-419": "La hormiga y la paloma. Una paloma y una hormiga se salvan la vida mutuamente. Adaptación breve de nivel A1. Adaptación: English Tales. Imagen histórica: Arthur Rackham; portadilla interior de la colección, no es una portada aparte de primera edición.",
+      "pt-BR": "A formiga e a pomba. Uma pomba e uma formiga salvam a vida uma da outra. Adaptação curta de nível A1. Adaptação: English Tales. Imagem histórica: Arthur Rackham; folha de rosto interna da coleção, não é uma capa separada de primeira edição.",
+      "id": "Semut dan Merpati. Seekor merpati dan seekor semut saling menyelamatkan nyawa. Adaptasi singkat tingkat A1. Adaptasi: English Tales. Gambar historis: Arthur Rackham; halaman judul bagian dalam koleksi, bukan sampul edisi pertama tersendiri.",
+      "ar": "النملة والحمامة. حمامة ونملة تنقذ كل منهما حياة الأخرى. اقتباس قصير بمستوى A1. الاقتباس: English Tales. صورة تاريخية: آرثر راكهام؛ صفحة العنوان الداخلية للمجموعة، وليست غلافًا منفصلًا للطبعة الأولى.",
+      "vi": "Kiến và Bồ câu. Một chú bồ câu và một cô kiến cứu sống lẫn nhau. Bản phóng tác ngắn trình độ A1. Phóng tác: English Tales. Hình ảnh lịch sử: Arthur Rackham; trang tiêu đề bên trong tuyển tập, không phải bìa riêng của ấn bản đầu tiên.",
+      "hi": "चींटी और कबूतर। एक कबूतर और एक चींटी एक-दूसरे की जान बचाते हैं। A1 स्तर का छोटा रूपांतरण। रूपांतरण: English Tales। ऐतिहासिक चित्र: Arthur Rackham; संग्रह का अंदरूनी शीर्षक पृष्ठ, पहले संस्करण का अलग कवर नहीं।",
+      "ru": "Муравей и голубка. Голубка и муравей спасают друг другу жизнь. Краткая адаптация уровня A1. Адаптация: English Tales. Историческое изображение: Артур Рэкхем; внутренний титульный лист сборника, а не отдельная обложка первого издания.",
+      "bn": "পিঁপড়ে আর ঘুঘু। একটা ঘুঘু আর একটা পিঁপড়ে একে অপরের প্রাণ বাঁচায়। A1 স্তরের ছোট রূপান্তর। রূপান্তর: English Tales। ঐতিহাসিক ছবি: Arthur Rackham; সংকলনের ভেতরের শিরোনাম পাতা, প্রথম সংস্করণের আলাদা প্রচ্ছদ নয়।",
+      "ur": "چیونٹی اور کبوتر۔ ایک کبوتر اور ایک چیونٹی ایک دوسرے کی جان بچاتے ہیں۔ A1 سطح کی مختصر ماخوذ کہانی۔ ترتیب: English Tales۔ تاریخی تصویر: Arthur Rackham؛ مجموعے کا اندرونی عنوان صفحہ، پہلے ایڈیشن کا الگ سرورق نہیں۔",
+      "th": "มดกับนกพิราบ: นกพิราบกับมดช่วยชีวิตกันและกัน ฉบับดัดแปลงสั้น ๆ ระดับ A1 ดัดแปลงโดย English Tales ภาพเก่าทางประวัติศาสตร์: Arthur Rackham; หน้าชื่อเรื่องด้านในของหนังสือรวมเรื่อง ไม่ใช่ปกแยกของฉบับพิมพ์ครั้งแรก"
+    }
+  },
+  "words": [
+    {
+      "id": "ant",
+      "word": "ant",
+      "translation": "karınca",
+      "pronunciation": "/ænt/",
+      "example": "An ant goes to a river to drink.",
+      "translations": {
+        "es-419": "hormiga",
+        "pt-BR": "formiga",
+        "id": "semut",
+        "ar": "نملة",
+        "vi": "con kiến",
+        "hi": "चींटी",
+        "ru": "муравей",
+        "bn": "পিঁপড়ে",
+        "ur": "چیونٹی",
+        "th": "มด"
+      }
+    },
+    {
+      "id": "river",
+      "word": "river",
+      "translation": "nehir",
+      "pronunciation": "/ˈrɪvər/",
+      "example": "The river moved slowly.",
+      "translations": {
+        "es-419": "río",
+        "pt-BR": "rio",
+        "id": "sungai",
+        "ar": "نهر",
+        "vi": "dòng sông",
+        "hi": "नदी",
+        "ru": "река",
+        "bn": "নদী",
+        "ur": "دریا",
+        "th": "แม่น้ำ"
+      }
+    },
+    {
+      "id": "current",
+      "word": "current",
+      "translation": "akıntı",
+      "pronunciation": "/ˈkʌrənt/",
+      "example": "The current carries her away.",
+      "translations": {
+        "es-419": "corriente",
+        "pt-BR": "correnteza",
+        "id": "arus",
+        "ar": "تيار الماء",
+        "vi": "dòng nước",
+        "hi": "धारा, बहाव",
+        "ru": "течение",
+        "bn": "স্রোত",
+        "ur": "بہاؤ، دھارا",
+        "th": "กระแสน้ำ"
+      }
+    },
+    {
+      "id": "carries",
+      "word": "carries",
+      "translation": "taşır",
+      "pronunciation": "/ˈkæriz/",
+      "example": "He carries a big box.",
+      "translations": {
+        "es-419": "lleva, carga",
+        "pt-BR": "carrega, leva",
+        "id": "membawa",
+        "ar": "يحمل",
+        "vi": "mang, chở",
+        "hi": "ले जाता है, उठाता है",
+        "ru": "несёт",
+        "bn": "বয়ে নিয়ে যায়",
+        "ur": "اٹھائے پھرتا ہے، لے جاتا ہے",
+        "th": "แบก, ถือ"
+      }
+    },
+    {
+      "id": "dove",
+      "word": "dove",
+      "translation": "güvercin",
+      "pronunciation": "/dʌv/",
+      "example": "A dove sees the ant from a tree.",
+      "translations": {
+        "es-419": "paloma",
+        "pt-BR": "pomba",
+        "id": "burung merpati",
+        "ar": "حمامة",
+        "vi": "chim bồ câu",
+        "hi": "कबूतर, फ़ाख़्ता",
+        "ru": "голубка, голубь",
+        "bn": "ঘুঘু, পায়রা",
+        "ur": "فاختہ، کبوتر",
+        "th": "นกพิราบ"
+      }
+    },
+    {
+      "id": "leaf",
+      "word": "leaf",
+      "translation": "yaprak",
+      "pronunciation": "/liːf/",
+      "example": "He drops a leaf into the river.",
+      "translations": {
+        "es-419": "hoja",
+        "pt-BR": "folha",
+        "id": "daun",
+        "ar": "ورقة شجر",
+        "vi": "chiếc lá",
+        "hi": "पत्ता",
+        "ru": "лист, листок",
+        "bn": "পাতা",
+        "ur": "پتا",
+        "th": "ใบไม้"
+      }
+    },
+    {
+      "id": "bank",
+      "word": "bank",
+      "translation": "nehir kıyısı",
+      "pronunciation": "/bæŋk/",
+      "example": "Soon, she reaches the bank safely.",
+      "translations": {
+        "es-419": "orilla",
+        "pt-BR": "margem (de rio)",
+        "id": "tepi sungai",
+        "ar": "ضفّة النهر",
+        "vi": "bờ sông",
+        "hi": "नदी का किनारा",
+        "ru": "берег",
+        "bn": "নদীর তীর",
+        "ur": "کنارہ",
+        "th": "ริมฝั่งแม่น้ำ"
+      }
+    },
+    {
+      "id": "safely",
+      "word": "safely",
+      "translation": "güvenli bir şekilde",
+      "pronunciation": "/ˈseɪfli/",
+      "example": "He put the ticket safely in his pocket.",
+      "translations": {
+        "es-419": "a salvo, de forma segura",
+        "pt-BR": "em segurança, a salvo",
+        "id": "dengan aman",
+        "ar": "بأمان",
+        "vi": "an toàn, cẩn thận",
+        "hi": "सुरक्षित तरीके से, सँभालकर",
+        "ru": "благополучно, в безопасности",
+        "bn": "নিরাপদে",
+        "ur": "حفاظت سے",
+        "th": "อย่างปลอดภัย"
+      }
+    },
+    {
+      "id": "hunter",
+      "word": "hunter",
+      "translation": "avcı",
+      "pronunciation": "/ˈhʌntə(r)/",
+      "example": "A hunter hears the noise.",
+      "translations": {
+        "es-419": "cazador",
+        "pt-BR": "caçador",
+        "id": "pemburu",
+        "ar": "صيّاد",
+        "vi": "thợ săn",
+        "hi": "शिकारी",
+        "ru": "охотник",
+        "bn": "শিকারি",
+        "ur": "شکاری",
+        "th": "นายพราน"
+      }
+    },
+    {
+      "id": "bites",
+      "word": "bites",
+      "translation": "ısırır",
+      "pronunciation": "/baɪts/",
+      "example": "The small dog bites the toy.",
+      "translations": {
+        "es-419": "muerde",
+        "pt-BR": "morde",
+        "id": "menggigit",
+        "ar": "يعضّ",
+        "vi": "cắn",
+        "hi": "काटता है",
+        "ru": "кусает, перегрызает",
+        "bn": "কামড়ায়",
+        "ur": "کاٹتا ہے",
+        "th": "กัด"
+      }
+    },
+    {
+      "id": "heel",
+      "word": "heel",
+      "translation": "topuk",
+      "pronunciation": "/hiːl/",
+      "example": "She bites his heel.",
+      "translations": {
+        "es-419": "talón",
+        "pt-BR": "calcanhar",
+        "id": "tumit",
+        "ar": "كعب القدم",
+        "vi": "gót chân",
+        "hi": "एड़ी",
+        "ru": "пятка",
+        "bn": "গোড়ালি",
+        "ur": "ایڑی",
+        "th": "ส้นเท้า"
+      }
+    },
+    {
+      "id": "trap",
+      "word": "trap",
+      "translation": "tuzak",
+      "pronunciation": "/træp/",
+      "example": "The hunter cries out and drops his trap.",
+      "translations": {
+        "es-419": "trampa",
+        "pt-BR": "armadilha",
+        "id": "perangkap",
+        "ar": "فخّ",
+        "vi": "cái bẫy",
+        "hi": "जाल, फंदा",
+        "ru": "ловушка, силок",
+        "bn": "ফাঁদ",
+        "ur": "جال، پھندا",
+        "th": "กับดัก"
+      }
+    },
+    {
+      "id": "safe",
+      "word": "safe",
+      "translation": "güvenli",
+      "pronunciation": "/seɪf/",
+      "example": "\"I prefer a simple meal and a safe home.\"",
+      "translations": {
+        "es-419": "seguro",
+        "pt-BR": "seguro",
+        "id": "aman",
+        "ar": "آمن",
+        "vi": "an toàn",
+        "hi": "सुरक्षित",
+        "ru": "безопасный, в безопасности",
+        "bn": "নিরাপদ",
+        "ur": "محفوظ",
+        "th": "ปลอดภัย"
+      }
+    },
+    {
+      "id": "help",
+      "word": "help",
+      "translation": "yardım",
+      "pronunciation": "/help/",
+      "example": "Thank you for your help.",
+      "translations": {
+        "es-419": "ayuda",
+        "pt-BR": "ajuda",
+        "id": "bantuan",
+        "ar": "مساعدة",
+        "vi": "sự giúp đỡ",
+        "hi": "मदद",
+        "ru": "помощь; помогать",
+        "bn": "সাহায্য",
+        "ur": "مدد",
+        "th": "ความช่วยเหลือ"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "ant",
+    "river",
+    "current",
+    "carries",
+    "dove",
+    "leaf",
+    "bank",
+    "safely",
+    "hunter",
+    "bites",
+    "heel",
+    "trap",
+    "safe",
+    "help"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-ant-dove-q1",
+      "sentenceIds": [
+        "cl-ant-dove-05",
+        "cl-ant-dove-06",
+        "cl-ant-dove-07",
+        "cl-ant-dove-10",
+        "cl-ant-dove-12"
+      ],
+      "rationale": "The dove saves the ant with a leaf; the ant saves the dove by biting the hunter."
+    },
+    {
+      "questionId": "classic-ant-dove-q2",
+      "sentenceIds": [
+        "cl-ant-dove-05"
+      ],
+      "rationale": "The dove drops a leaf into the river."
+    },
+    {
+      "questionId": "classic-ant-dove-q3",
+      "sentenceIds": [
+        "cl-ant-dove-08",
+        "cl-ant-dove-09",
+        "cl-ant-dove-10"
+      ],
+      "rationale": "The ant bites the hunter who is getting ready to catch the dove."
+    },
+    {
+      "questionId": "classic-ant-dove-q4",
+      "sentenceIds": [
+        "classic-ant-dove-ext-03-02"
+      ],
+      "rationale": "The ant is too small to swim to the bank."
+    }
+  ],
+  "publicationBlockers": [
+    "Owner (oguz) approval of the English text, questions and translations required.",
+    "Fresh live source snapshot and publisher validation required."
+  ],
+  "lengthening": {
+    "wordsBefore": 93,
+    "wordsAfter": 195,
+    "sentencesBefore": 13,
+    "sentencesAfter": 28
+  }
+}

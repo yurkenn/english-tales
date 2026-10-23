@@ -1,0 +1,2336 @@
+{
+  "status": "draft",
+  "kind": "long-story",
+  "source": "long-story-classics-2026-10-22",
+  "reviewedBy": null,
+  "rights": {
+    "credit": "Charlotte Brontë",
+    "sourceTitle": "Jane Eyre: An Autobiography",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/1260",
+    "sourceTextUrl": "https://www.gutenberg.org/cache/epub/1260/pg1260-images.html",
+    "identifiedContributor": {
+      "name": "Charlotte Brontë",
+      "role": "author",
+      "deathYear": 1855
+    },
+    "firstPublished": 1847,
+    "sourceCopyrightStatement": "Public domain in the USA",
+    "checkedOn": "2026-10-22",
+    "adaptation": "New graded B1 retelling written by English Tales, with English Tales translations. No modern abridgement, film script or translation was used.",
+    "turkeyAssessment": "Author died in 1855, more than 70 years before 2026, so the work is out of protection in Turkey and in life+70 countries.",
+    "rightsGuidanceUrl": "https://telifhaklari.ktb.gov.tr/TR-332373/telif-hakki-kac-yil-sureyle-korunur.html",
+    "sourceTextSha256": null,
+    "sourceTextSha256Pending": "Gutenberg is not reachable from the cloud session; record the source text hash on the owner's Mac before publication."
+  },
+  "editorialNotes": [
+    "B1 target: past tense narration, sentences of at most 20 words, about 1,250 words (about 10 minutes of reading).",
+    "Third-person retelling of the novel's main line: Gateshead and the red room, Lowood and Helen Burns, Thornfield and the strange laugh, the fire, the proposal, the interrupted wedding and Bertha, Jane's flight, the Rivers family and the inheritance, the voice, the burnt house and Ferndean.",
+    "Family terms: Mrs Reed is the wife of Jane's maternal uncle; the Madeira uncle is her father's brother; the Rivers siblings are children of her father's sister. Translations follow this where the language marks it.",
+    "Bertha's illness is described simply and without mocking language.",
+    "Reading sections are editorial groupings for a future chapter view; the app currently shows the story as one text."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+  },
+  "readingSections": [
+    {
+      "title": "Gateshead and Lowood",
+      "firstSentenceId": "cl-eyre-001",
+      "lastSentenceId": "cl-eyre-027"
+    },
+    {
+      "title": "Thornfield",
+      "firstSentenceId": "cl-eyre-028",
+      "lastSentenceId": "cl-eyre-054"
+    },
+    {
+      "title": "The secret",
+      "firstSentenceId": "cl-eyre-055",
+      "lastSentenceId": "cl-eyre-078"
+    },
+    {
+      "title": "Coming home",
+      "firstSentenceId": "cl-eyre-079",
+      "lastSentenceId": "cl-eyre-109"
+    }
+  ],
+  "story": {
+    "id": "classic-jane-eyre",
+    "title": "Jane Eyre",
+    "author": "Charlotte Brontë",
+    "level": "B1",
+    "genre": "Gizem",
+    "description": "Jane Eyre. Yoksul bir öksüz olan Jane, mürebbiye olarak gittiği Thornfield'da Bay Rochester'a âşık olur; ama evin üst katında korkunç bir sır saklıdır. B1 düzeyinde uzun uyarlama. Uyarlama ve Türkçe çeviri: English Tales.",
+    "descriptions": {
+      "es-419": "Jane Eyre. Jane, una huérfana pobre, se enamora del señor Rochester en Thornfield, donde trabaja como institutriz; pero en el piso de arriba se esconde un terrible secreto. Adaptación larga de nivel B1. Adaptación: English Tales.",
+      "pt-BR": "Jane Eyre. Jane, uma órfã pobre, se apaixona pelo senhor Rochester em Thornfield, onde trabalha como preceptora; mas no último andar se esconde um segredo terrível. Adaptação longa de nível B1. Adaptação: English Tales.",
+      "id": "Jane Eyre. Jane, seorang yatim piatu miskin, jatuh cinta kepada Tuan Rochester di Thornfield, tempat ia bekerja sebagai guru pribadi; tetapi di lantai atas tersimpan rahasia yang mengerikan. Adaptasi panjang tingkat B1. Adaptasi: English Tales.",
+      "ar": "جين إير. جين يتيمة فقيرة تقع في حب السيد روتشستر في ثورنفيلد حيث تعمل مربّية، لكن الطابق العلوي يخفي سرًّا رهيبًا. اقتباس طويل بمستوى B1. الاقتباس: English Tales.",
+      "vi": "Jane Eyre. Jane, một cô gái mồ côi nghèo, đem lòng yêu ông Rochester ở Thornfield, nơi cô làm gia sư; nhưng tầng trên cùng của ngôi nhà đang giấu một bí mật khủng khiếp. Bản phóng tác dài trình độ B1. Phóng tác: English Tales.",
+      "hi": "जेन आयर। ग़रीब अनाथ जेन को थॉर्नफ़ील्ड में, जहाँ वह गवर्नेस है, मिस्टर रॉचेस्टर से प्यार हो जाता है; पर घर की सबसे ऊपरी मंज़िल पर एक भयानक राज़ छिपा है। B1 स्तर का लंबा रूपांतरण। रूपांतरण: English Tales।",
+      "ru": "Джейн Эйр. Бедная сирота Джейн, гувернантка в Торнфилде, влюбляется в мистера Рочестера, но на верхнем этаже дома скрыта страшная тайна. Длинная адаптация уровня B1. Адаптация: English Tales.",
+      "bn": "জেন আয়ার। গরিব অনাথ জেন থর্নফিল্ডে গৃহশিক্ষিকার কাজ করতে গিয়ে মিস্টার রচেস্টারের প্রেমে পড়ে, কিন্তু বাড়ির ওপরতলায় লুকিয়ে আছে এক ভয়ংকর রহস্য। B1 স্তরের দীর্ঘ রূপান্তর। রূপান্তর: English Tales।",
+      "ur": "جین آئر۔ غریب یتیم جین کو تھورنفیلڈ میں، جہاں وہ گورنس ہے، مسٹر روچسٹر سے محبت ہو جاتی ہے؛ مگر گھر کی سب سے اوپری منزل پر ایک خوفناک راز چھپا ہے۔ B1 سطح کی طویل ماخوذ کہانی۔ ترتیب: English Tales۔",
+      "th": "เจน แอร์: เจน เด็กกำพร้ายากจน ตกหลุมรักคุณโรเชสเตอร์ที่ธอร์นฟิลด์ ซึ่งเธอไปเป็นครูพี่เลี้ยง แต่ที่ชั้นบนสุดของบ้านกลับซ่อนความลับอันน่ากลัวไว้ ฉบับดัดแปลงขนาดยาวระดับ B1 ดัดแปลงโดย English Tales"
+    },
+    "coverKey": "cover_classic_jane_eyre",
+    "tags": [
+      "gizem"
+    ],
+    "sentences": [
+      {
+        "id": "cl-eyre-001",
+        "english": "Jane Eyre was a poor orphan who lived with her rich aunt, Mrs Reed.",
+        "turkish": "Jane Eyre, zengin yengesi Bayan Reed'in yanında yaşayan yoksul bir öksüzdü.",
+        "translations": {
+          "es-419": "Jane Eyre era una huérfana pobre que vivía con su tía rica, la señora Reed.",
+          "pt-BR": "Jane Eyre era uma órfã pobre que morava com a tia rica, a senhora Reed.",
+          "id": "Jane Eyre adalah seorang yatim piatu miskin yang tinggal bersama bibinya yang kaya, Nyonya Reed.",
+          "ar": "كانت جين إير يتيمة فقيرة تعيش عند زوجة خالها الغنية، السيدة ريد.",
+          "vi": "Jane Eyre là một cô bé mồ côi nghèo sống cùng người mợ giàu có, bà Reed.",
+          "hi": "जेन आयर एक ग़रीब अनाथ लड़की थी, जो अपनी अमीर मामी श्रीमती रीड के साथ रहती थी।",
+          "ru": "Джейн Эйр была бедной сиротой и жила у своей богатой тёти, миссис Рид.",
+          "bn": "জেন আয়ার ছিল এক গরিব অনাথ মেয়ে, থাকত তার ধনী মামি মিসেস রিডের কাছে।",
+          "ur": "جین آئر ایک غریب یتیم لڑکی تھی جو اپنی امیر ممانی مسز ریڈ کے ساتھ رہتی تھی۔",
+          "th": "เจน แอร์เป็นเด็กกำพร้ายากจนที่อาศัยอยู่กับคุณนายรีด ป้าสะใภ้ผู้ร่ำรวย"
+        }
+      },
+      {
+        "id": "cl-eyre-002",
+        "english": "Her aunt and her cousins treated her badly.",
+        "turkish": "Yengesi ve kuzenleri ona kötü davranıyordu.",
+        "translations": {
+          "es-419": "Su tía y sus primos la trataban mal.",
+          "pt-BR": "A tia e os primos a tratavam mal.",
+          "id": "Bibi dan sepupu-sepupunya memperlakukannya dengan buruk.",
+          "ar": "كانت زوجة خالها وأبناؤها يعاملونها معاملة سيئة.",
+          "vi": "Bà mợ và các anh chị em họ đối xử tệ bạc với cô.",
+          "hi": "उसकी मामी और ममेरे भाई-बहन उसके साथ बुरा बर्ताव करते थे।",
+          "ru": "Тётя и двоюродные братья и сёстры плохо с ней обращались.",
+          "bn": "মামি আর মামাতো ভাইবোনেরা তার সঙ্গে খারাপ ব্যবহার করত।",
+          "ur": "اس کی ممانی اور کزن اس کے ساتھ برا سلوک کرتے تھے۔",
+          "th": "ป้าสะใภ้และลูกพี่ลูกน้องปฏิบัติต่อเธออย่างไม่ดี"
+        }
+      },
+      {
+        "id": "cl-eyre-003",
+        "english": "Her cousin John often hit her, and Jane was always blamed.",
+        "turkish": "Kuzeni John ona sık sık vuruyordu ve suçlanan hep Jane oluyordu.",
+        "translations": {
+          "es-419": "Su primo John la golpeaba a menudo, y siempre culpaban a Jane.",
+          "pt-BR": "O primo John batia nela com frequência, e a culpa era sempre de Jane.",
+          "id": "Sepupunya, John, sering memukulnya, dan Jane-lah yang selalu disalahkan.",
+          "ar": "كان ابن خالها جون يضربها كثيرًا، وكانت جين هي من تُلام دائمًا.",
+          "vi": "Người anh họ John thường đánh cô, vậy mà Jane luôn là người bị đổ lỗi.",
+          "hi": "उसका ममेरा भाई जॉन अक्सर उसे मारता था, और दोष हमेशा जेन पर ही आता था।",
+          "ru": "Её двоюродный брат Джон часто бил её, а виноватой всегда оказывалась Джейн.",
+          "bn": "মামাতো ভাই জন প্রায়ই তাকে মারত, আর দোষ সবসময় পড়ত জেনের ঘাড়েই।",
+          "ur": "اس کا کزن جان اکثر اسے مارتا تھا، اور الزام ہمیشہ جین پر ہی آتا تھا۔",
+          "th": "จอห์น ลูกพี่ลูกน้องของเธอ ชอบตีเธอบ่อย ๆ แต่คนที่ถูกตำหนิกลับเป็นเจนเสมอ"
+        }
+      },
+      {
+        "id": "cl-eyre-004",
+        "english": "One day Jane finally fought back.",
+        "turkish": "Bir gün Jane sonunda karşılık verdi.",
+        "translations": {
+          "es-419": "Un día Jane por fin se defendió.",
+          "pt-BR": "Um dia, Jane finalmente revidou.",
+          "id": "Suatu hari, Jane akhirnya melawan.",
+          "ar": "وذات يوم، ردّت جين أخيرًا.",
+          "vi": "Một ngày nọ, cuối cùng Jane cũng đánh trả.",
+          "hi": "एक दिन आख़िरकार जेन ने पलटकर जवाब दिया।",
+          "ru": "Однажды Джейн наконец дала отпор.",
+          "bn": "একদিন অবশেষে জেন পাল্টা লড়ল।",
+          "ur": "ایک دن آخرکار جین نے پلٹ کر مقابلہ کیا۔",
+          "th": "วันหนึ่ง ในที่สุดเจนก็สู้กลับ"
+        }
+      },
+      {
+        "id": "cl-eyre-005",
+        "english": "As a punishment, she was locked in the red room, where her uncle had died.",
+        "turkish": "Ceza olarak, dayısının öldüğü kırmızı odaya kilitlendi.",
+        "translations": {
+          "es-419": "Como castigo, la encerraron en el cuarto rojo, donde había muerto su tío.",
+          "pt-BR": "Como castigo, ela foi trancada no quarto vermelho, onde o tio tinha morrido.",
+          "id": "Sebagai hukuman, ia dikurung di kamar merah, tempat pamannya meninggal.",
+          "ar": "وعقابًا لها، حُبست في الغرفة الحمراء، حيث مات خالها.",
+          "vi": "Để trừng phạt, cô bị nhốt trong căn phòng đỏ, nơi người cậu của cô đã qua đời.",
+          "hi": "सज़ा के तौर पर उसे लाल कमरे में बंद कर दिया गया, जहाँ उसके मामा की मौत हुई थी।",
+          "ru": "В наказание её заперли в красной комнате, где умер её дядя.",
+          "bn": "শাস্তি হিসেবে তাকে লাল ঘরে আটকে রাখা হলো, যেখানে তার মামা মারা গিয়েছিলেন।",
+          "ur": "سزا کے طور پر اسے لال کمرے میں بند کر دیا گیا، جہاں اس کے ماموں کی موت ہوئی تھی۔",
+          "th": "เธอถูกลงโทษด้วยการขังไว้ในห้องสีแดง ซึ่งเป็นห้องที่ลุงของเธอเสียชีวิต"
+        }
+      },
+      {
+        "id": "cl-eyre-006",
+        "english": "In the dark, she thought she saw a ghost and fainted with fear.",
+        "turkish": "Karanlıkta bir hayalet gördüğünü sandı ve korkudan bayıldı.",
+        "translations": {
+          "es-419": "En la oscuridad, creyó ver un fantasma y se desmayó de miedo.",
+          "pt-BR": "No escuro, ela achou que viu um fantasma e desmaiou de medo.",
+          "id": "Dalam gelap, ia mengira melihat hantu dan pingsan karena takut.",
+          "ar": "وفي الظلام، ظنّت أنها رأت شبحًا، فأُغمي عليها من الخوف.",
+          "vi": "Trong bóng tối, cô tưởng mình thấy một bóng ma và ngất đi vì sợ.",
+          "hi": "अँधेरे में उसे लगा कि उसने कोई भूत देखा, और वह डर से बेहोश हो गई।",
+          "ru": "В темноте ей почудилось привидение, и она упала в обморок от страха.",
+          "bn": "অন্ধকারে তার মনে হলো সে একটা ভূত দেখেছে, আর ভয়ে অজ্ঞান হয়ে গেল।",
+          "ur": "اندھیرے میں اسے لگا کہ اس نے کوئی بھوت دیکھا، اور وہ ڈر سے بے ہوش ہو گئی۔",
+          "th": "ในความมืด เธอคิดว่าเห็นผี และเป็นลมไปด้วยความกลัว"
+        }
+      },
+      {
+        "id": "cl-eyre-007",
+        "english": "Soon after, Mrs Reed sent her away to Lowood, a school for poor girls.",
+        "turkish": "Kısa süre sonra Bayan Reed onu yoksul kızlara yönelik bir okul olan Lowood'a gönderdi.",
+        "translations": {
+          "es-419": "Poco después, la señora Reed la mandó a Lowood, una escuela para niñas pobres.",
+          "pt-BR": "Pouco depois, a senhora Reed a mandou para Lowood, uma escola para meninas pobres.",
+          "id": "Tak lama kemudian, Nyonya Reed mengirimnya ke Lowood, sekolah untuk anak-anak perempuan miskin.",
+          "ar": "وبعد ذلك بقليل، أرسلتها السيدة ريد إلى لوود، وهي مدرسة للفتيات الفقيرات.",
+          "vi": "Ít lâu sau, bà Reed gửi cô đến Lowood, một ngôi trường dành cho các bé gái nghèo.",
+          "hi": "कुछ ही समय बाद श्रीमती रीड ने उसे ग़रीब लड़कियों के स्कूल लोवुड भेज दिया।",
+          "ru": "Вскоре миссис Рид отправила её в Ловуд, школу для бедных девочек.",
+          "bn": "কিছুদিন পরেই মিসেস রিড তাকে গরিব মেয়েদের স্কুল লোউডে পাঠিয়ে দিলেন।",
+          "ur": "کچھ ہی عرصے بعد مسز ریڈ نے اسے غریب لڑکیوں کے اسکول لوووڈ بھیج دیا۔",
+          "th": "ไม่นานหลังจากนั้น คุณนายรีดก็ส่งเธอไปโลวูด โรงเรียนสำหรับเด็กหญิงยากจน"
+        }
+      },
+      {
+        "id": "cl-eyre-008",
+        "english": "\"This child is a liar,\" Mrs Reed told the head of the school.",
+        "turkish": "\"Bu çocuk yalancıdır,\" dedi Bayan Reed okulun müdürüne.",
+        "translations": {
+          "es-419": "\"Esta niña es una mentirosa\", le dijo la señora Reed al director de la escuela.",
+          "pt-BR": "\"Esta menina é mentirosa\", disse a senhora Reed ao diretor da escola.",
+          "id": "\"Anak ini pembohong,\" kata Nyonya Reed kepada kepala sekolah.",
+          "ar": "قالت السيدة ريد لمدير المدرسة: \"هذه الطفلة كاذبة.\"",
+          "vi": "\"Con bé này là đứa nói dối,\" bà Reed nói với người đứng đầu trường.",
+          "hi": "\"यह बच्ची झूठी है,\" श्रीमती रीड ने स्कूल के प्रमुख से कहा।",
+          "ru": "«Эта девочка — лгунья», — сказала миссис Рид начальнику школы.",
+          "bn": "\"এই মেয়েটা মিথ্যুক,\" মিসেস রিড স্কুলের প্রধানকে বললেন।",
+          "ur": "\"یہ بچی جھوٹی ہے،\" مسز ریڈ نے اسکول کے سربراہ سے کہا۔",
+          "th": "\"เด็กคนนี้ขี้โกหก\" คุณนายรีดบอกผู้ดูแลโรงเรียน"
+        }
+      },
+      {
+        "id": "cl-eyre-009",
+        "english": "Mr Brocklehurst, the owner of Lowood, was a cruel and greedy man.",
+        "turkish": "Lowood'un sahibi Bay Brocklehurst, acımasız ve açgözlü bir adamdı.",
+        "translations": {
+          "es-419": "El señor Brocklehurst, dueño de Lowood, era un hombre cruel y avaro.",
+          "pt-BR": "O senhor Brocklehurst, dono de Lowood, era um homem cruel e ganancioso.",
+          "id": "Tuan Brocklehurst, pemilik Lowood, adalah pria yang kejam dan serakah.",
+          "ar": "كان السيد بروكلهيرست، صاحب لوود، رجلًا قاسيًا جشعًا.",
+          "vi": "Ông Brocklehurst, chủ trường Lowood, là một người tàn nhẫn và tham lam.",
+          "hi": "लोवुड के मालिक मिस्टर ब्रॉकलहर्स्ट क्रूर और लालची आदमी थे।",
+          "ru": "Мистер Брокльхерст, владелец Ловуда, был жестоким и жадным человеком.",
+          "bn": "লোউডের মালিক মিস্টার ব্রকলহার্স্ট ছিলেন নিষ্ঠুর আর লোভী মানুষ।",
+          "ur": "لوووڈ کے مالک مسٹر بروکلہرسٹ ظالم اور لالچی آدمی تھے۔",
+          "th": "คุณบร็อกเคิลเฮิร์สต์ เจ้าของโลวูด เป็นชายที่โหดร้ายและละโมบ"
+        }
+      },
+      {
+        "id": "cl-eyre-010",
+        "english": "The girls had thin clothes, cold rooms and burnt porridge for breakfast.",
+        "turkish": "Kızların ince giysileri, soğuk odaları vardı ve kahvaltıda yanık lapa yiyorlardı.",
+        "translations": {
+          "es-419": "Las niñas tenían ropa delgada, cuartos fríos y avena quemada en el desayuno.",
+          "pt-BR": "As meninas tinham roupas finas, quartos frios e mingau queimado no café da manhã.",
+          "id": "Anak-anak itu berpakaian tipis, tidur di kamar dingin, dan sarapan bubur gosong.",
+          "ar": "كانت للفتيات ثياب رقيقة وغرف باردة، وعصيدة محترقة على الفطور.",
+          "vi": "Các bé gái mặc áo mỏng, ở phòng lạnh và ăn cháo khê vào bữa sáng.",
+          "hi": "लड़कियों के कपड़े पतले थे, कमरे ठंडे थे, और नाश्ते में जला हुआ दलिया मिलता था।",
+          "ru": "У девочек была тонкая одежда, холодные комнаты и подгоревшая каша на завтрак.",
+          "bn": "মেয়েদের পরনে পাতলা জামা, ঘর ঠান্ডা, আর সকালের খাবারে পোড়া জাউ।",
+          "ur": "لڑکیوں کے کپڑے پتلے تھے، کمرے ٹھنڈے تھے، اور ناشتے میں جلا ہوا دلیہ ملتا تھا۔",
+          "th": "เด็กหญิงมีเสื้อผ้าบาง ๆ ห้องที่หนาวเย็น และข้าวต้มไหม้เป็นอาหารเช้า"
+        }
+      },
+      {
+        "id": "cl-eyre-011",
+        "english": "He made Jane stand on a stool in front of the whole school.",
+        "turkish": "Jane'i bütün okulun önünde bir taburenin üstüne çıkarıp ayakta durdurdu.",
+        "translations": {
+          "es-419": "Hizo que Jane se subiera a un taburete delante de toda la escuela.",
+          "pt-BR": "Ele fez Jane ficar em pé num banquinho diante da escola inteira.",
+          "id": "Ia menyuruh Jane berdiri di atas bangku di depan seluruh sekolah.",
+          "ar": "أجبر جين على الوقوف فوق كرسي صغير أمام المدرسة كلها.",
+          "vi": "Ông bắt Jane đứng trên một chiếc ghế đẩu trước toàn trường.",
+          "hi": "उन्होंने जेन को पूरे स्कूल के सामने एक स्टूल पर खड़ा कर दिया।",
+          "ru": "Он заставил Джейн стоять на табурете перед всей школой.",
+          "bn": "তিনি জেনকে পুরো স্কুলের সামনে একটা টুলের ওপর দাঁড় করিয়ে রাখলেন।",
+          "ur": "انہوں نے جین کو پورے اسکول کے سامنے ایک اسٹول پر کھڑا کر دیا۔",
+          "th": "เขาให้เจนยืนบนเก้าอี้ตัวเล็กต่อหน้าทั้งโรงเรียน"
+        }
+      },
+      {
+        "id": "cl-eyre-012",
+        "english": "\"Do not speak to this girl,\" he said. \"She is a liar.\"",
+        "turkish": "\"Bu kızla konuşmayın,\" dedi. \"O bir yalancı.\"",
+        "translations": {
+          "es-419": "\"No le hablen a esta niña\", dijo. \"Es una mentirosa\".",
+          "pt-BR": "\"Não falem com esta menina\", disse ele. \"Ela é mentirosa.\"",
+          "id": "\"Jangan bicara dengan anak ini,\" katanya. \"Dia pembohong.\"",
+          "ar": "قال: \"لا تكلّموا هذه الفتاة. إنها كاذبة.\"",
+          "vi": "\"Đừng nói chuyện với con bé này,\" ông nói. \"Nó là đứa nói dối.\"",
+          "hi": "\"इस लड़की से बात मत करना,\" उन्होंने कहा। \"यह झूठी है।\"",
+          "ru": "«Не разговаривайте с этой девочкой, — сказал он. — Она лгунья».",
+          "bn": "\"এই মেয়ের সঙ্গে কেউ কথা বলবে না,\" তিনি বললেন। \"ও মিথ্যুক।\"",
+          "ur": "\"اس لڑکی سے بات مت کرنا،\" انہوں نے کہا۔ \"یہ جھوٹی ہے۔\"",
+          "th": "\"ห้ามพูดกับเด็กคนนี้\" เขากล่าว \"นางเป็นคนขี้โกหก\""
+        }
+      },
+      {
+        "id": "cl-eyre-013",
+        "english": "Jane felt that her heart would break.",
+        "turkish": "Jane kalbinin kırılacağını hissetti.",
+        "translations": {
+          "es-419": "Jane sintió que se le iba a romper el corazón.",
+          "pt-BR": "Jane sentiu que seu coração ia se partir.",
+          "id": "Jane merasa hatinya akan hancur.",
+          "ar": "شعرت جين أن قلبها سينكسر.",
+          "vi": "Jane cảm thấy tim mình như sắp vỡ.",
+          "hi": "जेन को लगा कि उसका दिल टूट जाएगा।",
+          "ru": "Джейн казалось, что её сердце разорвётся.",
+          "bn": "জেনের মনে হলো তার বুকটা ভেঙে যাবে।",
+          "ur": "جین کو لگا کہ اس کا دل ٹوٹ جائے گا۔",
+          "th": "เจนรู้สึกราวกับหัวใจจะแตกสลาย"
+        }
+      },
+      {
+        "id": "cl-eyre-014",
+        "english": "But one girl, Helen Burns, brought her bread and smiled at her.",
+        "turkish": "Ama Helen Burns adında bir kız ona ekmek getirdi ve gülümsedi.",
+        "translations": {
+          "es-419": "Pero una niña, Helen Burns, le llevó pan y le sonrió.",
+          "pt-BR": "Mas uma menina, Helen Burns, levou pão para ela e sorriu.",
+          "id": "Namun seorang anak, Helen Burns, membawakannya roti dan tersenyum kepadanya.",
+          "ar": "لكن فتاة واحدة، هيلين بيرنز، أحضرت لها خبزًا وابتسمت لها.",
+          "vi": "Nhưng có một cô bé, Helen Burns, mang bánh mì đến và mỉm cười với cô.",
+          "hi": "लेकिन एक लड़की, हेलेन बर्न्स, उसके लिए रोटी लाई और उसे देखकर मुस्कुराई।",
+          "ru": "Но одна девочка, Хелен Бернс, принесла ей хлеба и улыбнулась.",
+          "bn": "কিন্তু হেলেন বার্নস নামে একটা মেয়ে তার জন্য রুটি নিয়ে এল আর হাসল।",
+          "ur": "لیکن ایک لڑکی، ہیلن برنز، اس کے لیے روٹی لائی اور مسکرائی۔",
+          "th": "แต่เด็กหญิงคนหนึ่งชื่อเฮเลน เบิร์นส์ นำขนมปังมาให้และยิ้มให้เธอ"
+        }
+      },
+      {
+        "id": "cl-eyre-015",
+        "english": "Helen was patient and gentle, and she never complained.",
+        "turkish": "Helen sabırlı ve yumuşak huyluydu, hiç şikâyet etmezdi.",
+        "translations": {
+          "es-419": "Helen era paciente y dulce, y nunca se quejaba.",
+          "pt-BR": "Helen era paciente e meiga, e nunca reclamava.",
+          "id": "Helen sabar dan lembut, dan ia tak pernah mengeluh.",
+          "ar": "كانت هيلين صبورة رقيقة، ولم تكن تشكو أبدًا.",
+          "vi": "Helen kiên nhẫn, hiền lành và không bao giờ than phiền.",
+          "hi": "हेलेन धीरज वाली और कोमल थी, और कभी शिकायत नहीं करती थी।",
+          "ru": "Хелен была терпеливой и кроткой и никогда не жаловалась.",
+          "bn": "হেলেন ছিল ধৈর্যশীল আর শান্ত, কখনো নালিশ করত না।",
+          "ur": "ہیلن صابر اور نرم مزاج تھی، اور کبھی شکایت نہیں کرتی تھی۔",
+          "th": "เฮเลนเป็นคนอดทนและอ่อนโยน ไม่เคยบ่นเลย"
+        }
+      },
+      {
+        "id": "cl-eyre-016",
+        "english": "\"Do not hate people who hurt you,\" she told Jane.",
+        "turkish": "\"Seni incitenlerden nefret etme,\" dedi Jane'e.",
+        "translations": {
+          "es-419": "\"No odies a quienes te hacen daño\", le dijo a Jane.",
+          "pt-BR": "\"Não odeie quem machuca você\", disse ela a Jane.",
+          "id": "\"Jangan membenci orang yang menyakitimu,\" katanya kepada Jane.",
+          "ar": "قالت لجين: \"لا تكرهي من يؤذونك.\"",
+          "vi": "\"Đừng ghét những người làm tổn thương mình,\" cô bảo Jane.",
+          "hi": "\"जो तुम्हें चोट पहुँचाएँ, उनसे नफ़रत मत करो,\" उसने जेन से कहा।",
+          "ru": "«Не надо ненавидеть тех, кто тебя обижает», — сказала она Джейн.",
+          "bn": "\"যারা তোমাকে কষ্ট দেয়, তাদের ঘৃণা কোরো না,\" সে জেনকে বলল।",
+          "ur": "\"جو تمہیں تکلیف دیں، ان سے نفرت مت کرو،\" اس نے جین سے کہا۔",
+          "th": "\"อย่าเกลียดคนที่ทำร้ายเรา\" เธอบอกเจน"
+        }
+      },
+      {
+        "id": "cl-eyre-017",
+        "english": "The kind teacher, Miss Temple, listened to Jane's story and believed her.",
+        "turkish": "İyi kalpli öğretmen Bayan Temple, Jane'in anlattıklarını dinledi ve ona inandı.",
+        "translations": {
+          "es-419": "La amable maestra, la señorita Temple, escuchó la historia de Jane y le creyó.",
+          "pt-BR": "A professora bondosa, a senhorita Temple, ouviu a história de Jane e acreditou nela.",
+          "id": "Guru yang baik hati, Nona Temple, mendengarkan cerita Jane dan memercayainya.",
+          "ar": "استمعت المعلّمة الطيبة، الآنسة تمبل، إلى قصة جين وصدّقتها.",
+          "vi": "Cô giáo tốt bụng, cô Temple, lắng nghe câu chuyện của Jane và tin cô.",
+          "hi": "दयालु शिक्षिका मिस टेम्पल ने जेन की बात सुनी और उस पर यक़ीन किया।",
+          "ru": "Добрая учительница мисс Темпл выслушала Джейн и поверила ей.",
+          "bn": "দয়ালু শিক্ষিকা মিস টেম্পল জেনের কথা শুনলেন আর তাকে বিশ্বাস করলেন।",
+          "ur": "مہربان استانی مس ٹیمپل نے جین کی بات سنی اور اس پر یقین کیا۔",
+          "th": "มิสเทมเปิล ครูผู้ใจดี รับฟังเรื่องราวของเจนและเชื่อเธอ"
+        }
+      },
+      {
+        "id": "cl-eyre-018",
+        "english": "In spring, a terrible fever spread through the school.",
+        "turkish": "İlkbaharda okulda korkunç bir ateşli hastalık yayıldı.",
+        "translations": {
+          "es-419": "En primavera, una fiebre terrible se extendió por la escuela.",
+          "pt-BR": "Na primavera, uma febre terrível se espalhou pela escola.",
+          "id": "Pada musim semi, demam yang mengerikan menyebar di sekolah.",
+          "ar": "وفي الربيع، انتشرت حمّى رهيبة في المدرسة.",
+          "vi": "Mùa xuân, một cơn sốt dịch khủng khiếp lan khắp trường.",
+          "hi": "वसंत में स्कूल में एक भयानक बुख़ार फैल गया।",
+          "ru": "Весной по школе прокатилась страшная лихорадка.",
+          "bn": "বসন্তে স্কুলে এক ভয়ংকর জ্বর ছড়িয়ে পড়ল।",
+          "ur": "بہار میں اسکول میں ایک خوفناک بخار پھیل گیا۔",
+          "th": "ในฤดูใบไม้ผลิ ไข้ร้ายแรงระบาดไปทั่วโรงเรียน"
+        }
+      },
+      {
+        "id": "cl-eyre-019",
+        "english": "Many girls became ill, and Helen was already weak.",
+        "turkish": "Pek çok kız hastalandı, Helen ise zaten zayıf düşmüştü.",
+        "translations": {
+          "es-419": "Muchas niñas enfermaron, y Helen ya estaba débil.",
+          "pt-BR": "Muitas meninas adoeceram, e Helen já estava fraca.",
+          "id": "Banyak anak jatuh sakit, dan Helen memang sudah lemah.",
+          "ar": "مرضت فتيات كثيرات، وكانت هيلين ضعيفة أصلًا.",
+          "vi": "Nhiều bé gái ngã bệnh, còn Helen vốn đã yếu sẵn.",
+          "hi": "कई लड़कियाँ बीमार पड़ गईं, और हेलेन तो पहले से ही कमज़ोर थी।",
+          "ru": "Многие девочки заболели, а Хелен и так была слаба.",
+          "bn": "অনেক মেয়ে অসুস্থ হয়ে পড়ল, আর হেলেন তো আগে থেকেই দুর্বল।",
+          "ur": "کئی لڑکیاں بیمار ہو گئیں، اور ہیلن تو پہلے ہی کمزور تھی۔",
+          "th": "เด็กหญิงหลายคนล้มป่วย และเฮเลนก็อ่อนแออยู่แล้ว"
+        }
+      },
+      {
+        "id": "cl-eyre-020",
+        "english": "One night Jane crept into Helen's bed.",
+        "turkish": "Bir gece Jane sessizce Helen'in yatağına girdi.",
+        "translations": {
+          "es-419": "Una noche, Jane se metió en silencio en la cama de Helen.",
+          "pt-BR": "Uma noite, Jane entrou de mansinho na cama de Helen.",
+          "id": "Suatu malam, Jane menyelinap ke tempat tidur Helen.",
+          "ar": "وذات ليلة، تسلّلت جين إلى سرير هيلين.",
+          "vi": "Một đêm, Jane lẻn vào giường của Helen.",
+          "hi": "एक रात जेन चुपके से हेलेन के बिस्तर में जा लेटी।",
+          "ru": "Однажды ночью Джейн тихонько забралась к Хелен в постель.",
+          "bn": "এক রাতে জেন চুপিচুপি হেলেনের বিছানায় গিয়ে শুল।",
+          "ur": "ایک رات جین چپکے سے ہیلن کے بستر میں جا لیٹی۔",
+          "th": "คืนหนึ่ง เจนแอบเข้าไปนอนบนเตียงของเฮเลน"
+        }
+      },
+      {
+        "id": "cl-eyre-021",
+        "english": "They held each other and fell asleep.",
+        "turkish": "Birbirlerine sarılıp uykuya daldılar.",
+        "translations": {
+          "es-419": "Se abrazaron y se quedaron dormidas.",
+          "pt-BR": "Elas se abraçaram e adormeceram.",
+          "id": "Mereka saling berpelukan dan tertidur.",
+          "ar": "تعانقتا ونامتا.",
+          "vi": "Hai cô bé ôm nhau rồi thiếp đi.",
+          "hi": "दोनों एक-दूसरे से लिपटकर सो गईं।",
+          "ru": "Они обнялись и уснули.",
+          "bn": "দুজনে জড়াজড়ি করে ঘুমিয়ে পড়ল।",
+          "ur": "دونوں ایک دوسرے سے لپٹ کر سو گئیں۔",
+          "th": "ทั้งสองกอดกันแล้วหลับไป"
+        }
+      },
+      {
+        "id": "cl-eyre-022",
+        "english": "In the morning Jane woke up, but Helen did not.",
+        "turkish": "Sabah Jane uyandı, ama Helen uyanmadı.",
+        "translations": {
+          "es-419": "Por la mañana Jane despertó, pero Helen no.",
+          "pt-BR": "De manhã, Jane acordou, mas Helen não.",
+          "id": "Pagi harinya Jane terbangun, tetapi Helen tidak.",
+          "ar": "وفي الصباح استيقظت جين، أما هيلين فلم تستيقظ.",
+          "vi": "Sáng hôm sau Jane tỉnh dậy, nhưng Helen thì không.",
+          "hi": "सुबह जेन जागी, पर हेलेन नहीं जागी।",
+          "ru": "Утром Джейн проснулась, а Хелен — нет.",
+          "bn": "সকালে জেন জেগে উঠল, কিন্তু হেলেন আর জাগল না।",
+          "ur": "صبح جین جاگ گئی، مگر ہیلن نہیں جاگی۔",
+          "th": "ตอนเช้า เจนตื่นขึ้น แต่เฮเลนไม่ตื่นอีกเลย"
+        }
+      },
+      {
+        "id": "cl-eyre-023",
+        "english": "After that sad spring, things at Lowood slowly got better.",
+        "turkish": "O hüzünlü ilkbahardan sonra Lowood'da işler yavaş yavaş düzeldi.",
+        "translations": {
+          "es-419": "Después de aquella triste primavera, las cosas en Lowood mejoraron poco a poco.",
+          "pt-BR": "Depois daquela primavera triste, as coisas em Lowood foram melhorando aos poucos.",
+          "id": "Setelah musim semi yang menyedihkan itu, keadaan di Lowood perlahan membaik.",
+          "ar": "بعد ذلك الربيع الحزين، تحسّنت الأمور في لوود شيئًا فشيئًا.",
+          "vi": "Sau mùa xuân buồn ấy, mọi thứ ở Lowood dần dần khá hơn.",
+          "hi": "उस दुखभरे वसंत के बाद लोवुड में हालात धीरे-धीरे सुधरने लगे।",
+          "ru": "После той печальной весны жизнь в Ловуде понемногу наладилась.",
+          "bn": "সেই দুঃখের বসন্তের পর লোউডে অবস্থা ধীরে ধীরে ভালো হলো।",
+          "ur": "اس دکھ بھری بہار کے بعد لوووڈ میں حالات آہستہ آہستہ بہتر ہو گئے۔",
+          "th": "หลังฤดูใบไม้ผลิอันแสนเศร้านั้น สิ่งต่าง ๆ ที่โลวูดก็ค่อย ๆ ดีขึ้น"
+        }
+      },
+      {
+        "id": "cl-eyre-024",
+        "english": "Jane studied hard and became a teacher there.",
+        "turkish": "Jane çok çalıştı ve orada öğretmen oldu.",
+        "translations": {
+          "es-419": "Jane estudió mucho y llegó a ser maestra allí.",
+          "pt-BR": "Jane estudou muito e se tornou professora ali.",
+          "id": "Jane belajar dengan tekun dan menjadi guru di sana.",
+          "ar": "درست جين بجدّ وصارت معلّمة هناك.",
+          "vi": "Jane chăm chỉ học hành và trở thành giáo viên ở đó.",
+          "hi": "जेन ने मन लगाकर पढ़ाई की और वहीं शिक्षिका बन गई।",
+          "ru": "Джейн усердно училась и стала там учительницей.",
+          "bn": "জেন মন দিয়ে পড়াশোনা করে সেখানেই শিক্ষিকা হলো।",
+          "ur": "جین نے دل لگا کر پڑھائی کی اور وہیں استانی بن گئی۔",
+          "th": "เจนตั้งใจเรียนอย่างหนัก และได้เป็นครูที่นั่น"
+        }
+      },
+      {
+        "id": "cl-eyre-025",
+        "english": "But at eighteen she wanted to see more of the world.",
+        "turkish": "Ama on sekiz yaşında dünyayı daha çok görmek istedi.",
+        "translations": {
+          "es-419": "Pero a los dieciocho años quiso conocer más del mundo.",
+          "pt-BR": "Mas aos dezoito anos ela quis conhecer mais do mundo.",
+          "id": "Namun pada usia delapan belas, ia ingin melihat dunia yang lebih luas.",
+          "ar": "لكنها في الثامنة عشرة أرادت أن ترى المزيد من العالم.",
+          "vi": "Nhưng năm mười tám tuổi, cô muốn được nhìn ngắm thế giới nhiều hơn.",
+          "hi": "लेकिन अठारह साल की उम्र में वह दुनिया को और देखना चाहती थी।",
+          "ru": "Но в восемнадцать лет ей захотелось повидать мир.",
+          "bn": "কিন্তু আঠারো বছর বয়সে সে পৃথিবীটা আরও দেখতে চাইল।",
+          "ur": "لیکن اٹھارہ سال کی عمر میں وہ دنیا کو اور دیکھنا چاہتی تھی۔",
+          "th": "แต่เมื่ออายุสิบแปด เธออยากออกไปเห็นโลกให้กว้างขึ้น"
+        }
+      },
+      {
+        "id": "cl-eyre-026",
+        "english": "She put an advertisement in a newspaper.",
+        "turkish": "Bir gazeteye ilan verdi.",
+        "translations": {
+          "es-419": "Puso un anuncio en un periódico.",
+          "pt-BR": "Ela pôs um anúncio num jornal.",
+          "id": "Ia memasang iklan di surat kabar.",
+          "ar": "نشرت إعلانًا في إحدى الصحف.",
+          "vi": "Cô đăng một mẩu quảng cáo trên báo.",
+          "hi": "उसने एक अख़बार में विज्ञापन दिया।",
+          "ru": "Она дала объявление в газету.",
+          "bn": "সে একটা খবরের কাগজে বিজ্ঞাপন দিল।",
+          "ur": "اس نے ایک اخبار میں اشتہار دیا۔",
+          "th": "เธอลงประกาศในหนังสือพิมพ์"
+        }
+      },
+      {
+        "id": "cl-eyre-027",
+        "english": "Soon she got a job as a governess at a house called Thornfield.",
+        "turkish": "Çok geçmeden Thornfield adlı bir evde mürebbiye olarak iş buldu.",
+        "translations": {
+          "es-419": "Pronto consiguió trabajo como institutriz en una casa llamada Thornfield.",
+          "pt-BR": "Logo conseguiu um emprego de preceptora numa casa chamada Thornfield.",
+          "id": "Tak lama kemudian ia mendapat pekerjaan sebagai guru pribadi di sebuah rumah bernama Thornfield.",
+          "ar": "وسرعان ما حصلت على عمل مربّية في بيت يُدعى ثورنفيلد.",
+          "vi": "Chẳng bao lâu, cô nhận được việc làm gia sư ở một ngôi nhà tên là Thornfield.",
+          "hi": "जल्द ही उसे थॉर्नफ़ील्ड नाम के एक घर में गवर्नेस की नौकरी मिल गई।",
+          "ru": "Вскоре она получила место гувернантки в доме под названием Торнфилд.",
+          "bn": "শিগগিরই সে থর্নফিল্ড নামের এক বাড়িতে গৃহশিক্ষিকার কাজ পেল।",
+          "ur": "جلد ہی اسے تھورنفیلڈ نامی ایک گھر میں گورنس کی نوکری مل گئی۔",
+          "th": "ไม่นานเธอก็ได้งานเป็นครูพี่เลี้ยงที่บ้านหลังหนึ่งชื่อธอร์นฟิลด์"
+        }
+      },
+      {
+        "id": "cl-eyre-028",
+        "english": "Thornfield was a large, grey house in the north of England.",
+        "turkish": "Thornfield, İngiltere'nin kuzeyinde büyük, gri bir evdi.",
+        "translations": {
+          "es-419": "Thornfield era una casa grande y gris en el norte de Inglaterra.",
+          "pt-BR": "Thornfield era uma casa grande e cinzenta no norte da Inglaterra.",
+          "id": "Thornfield adalah rumah besar berwarna kelabu di Inggris bagian utara.",
+          "ar": "كان ثورنفيلد بيتًا كبيرًا رماديًّا في شمال إنجلترا.",
+          "vi": "Thornfield là một ngôi nhà lớn màu xám ở miền bắc nước Anh.",
+          "hi": "थॉर्नफ़ील्ड उत्तरी इंग्लैंड में एक बड़ा, धूसर घर था।",
+          "ru": "Торнфилд был большим серым домом на севере Англии.",
+          "bn": "থর্নফিল্ড ছিল উত্তর ইংল্যান্ডের এক বিশাল ধূসর বাড়ি।",
+          "ur": "تھورنفیلڈ شمالی انگلینڈ میں ایک بڑا، سرمئی گھر تھا۔",
+          "th": "ธอร์นฟิลด์เป็นบ้านหลังใหญ่สีเทาทางตอนเหนือของอังกฤษ"
+        }
+      },
+      {
+        "id": "cl-eyre-029",
+        "english": "The kind housekeeper, Mrs Fairfax, welcomed her warmly.",
+        "turkish": "İyi kalpli kâhya Bayan Fairfax onu sıcak bir şekilde karşıladı.",
+        "translations": {
+          "es-419": "La amable ama de llaves, la señora Fairfax, la recibió con cariño.",
+          "pt-BR": "A bondosa governanta, a senhora Fairfax, recebeu-a com carinho.",
+          "id": "Kepala rumah tangga yang ramah, Nyonya Fairfax, menyambutnya dengan hangat.",
+          "ar": "رحّبت بها مدبّرة البيت الطيبة، السيدة فيرفاكس، ترحيبًا حارًّا.",
+          "vi": "Bà quản gia hiền hậu, bà Fairfax, đón tiếp cô thật nồng hậu.",
+          "hi": "दयालु गृह-प्रबंधिका श्रीमती फ़ेयरफ़ैक्स ने उसका गर्मजोशी से स्वागत किया।",
+          "ru": "Добрая экономка миссис Фэрфакс тепло её встретила.",
+          "bn": "দয়ালু গৃহকর্ত্রী মিসেস ফেয়ারফ্যাক্স তাকে সাদরে গ্রহণ করলেন।",
+          "ur": "مہربان منتظمہ مسز فیئرفیکس نے اس کا گرم جوشی سے استقبال کیا۔",
+          "th": "คุณนายแฟร์แฟกซ์ แม่บ้านผู้ใจดี ต้อนรับเธออย่างอบอุ่น"
+        }
+      },
+      {
+        "id": "cl-eyre-030",
+        "english": "Jane's pupil was a lively French girl named Adèle.",
+        "turkish": "Jane'in öğrencisi Adèle adında neşeli, Fransız bir kızdı.",
+        "translations": {
+          "es-419": "La alumna de Jane era una niña francesa muy alegre llamada Adèle.",
+          "pt-BR": "A aluna de Jane era uma menina francesa animada chamada Adèle.",
+          "id": "Murid Jane adalah seorang gadis kecil Prancis yang ceria bernama Adèle.",
+          "ar": "كانت تلميذة جين فتاة فرنسية مرحة تُدعى أديل.",
+          "vi": "Học trò của Jane là một cô bé người Pháp hoạt bát tên là Adèle.",
+          "hi": "जेन की शिष्या अदेल नाम की एक चंचल फ़्रांसीसी बच्ची थी।",
+          "ru": "Ученицей Джейн была живая французская девочка по имени Адель.",
+          "bn": "জেনের ছাত্রী ছিল আদেল নামে এক চঞ্চল ফরাসি মেয়ে।",
+          "ur": "جین کی شاگرد ایڈیل نام کی ایک چنچل فرانسیسی بچی تھی۔",
+          "th": "ลูกศิษย์ของเจนคือเด็กหญิงชาวฝรั่งเศสช่างร่าเริงชื่ออาเดล"
+        }
+      },
+      {
+        "id": "cl-eyre-031",
+        "english": "Adèle was the ward of the owner, Mr Rochester, who was often away.",
+        "turkish": "Adèle, sık sık evden uzakta olan ev sahibi Bay Rochester'ın vesayetindeydi.",
+        "translations": {
+          "es-419": "Adèle era la pupila del dueño, el señor Rochester, que solía estar fuera.",
+          "pt-BR": "Adèle era a pupila do dono, o senhor Rochester, que vivia viajando.",
+          "id": "Adèle adalah anak asuh pemilik rumah, Tuan Rochester, yang sering bepergian.",
+          "ar": "كانت أديل في رعاية صاحب البيت، السيد روتشستر، الذي كان كثير الغياب.",
+          "vi": "Adèle được chủ nhà, ông Rochester, nhận nuôi; ông thường xuyên đi vắng.",
+          "hi": "अदेल घर के मालिक मिस्टर रॉचेस्टर की संरक्षिता थी, जो अक्सर बाहर रहते थे।",
+          "ru": "Адель была воспитанницей хозяина, мистера Рочестера, который часто уезжал.",
+          "bn": "আদেল ছিল বাড়ির মালিক মিস্টার রচেস্টারের আশ্রিতা, যিনি প্রায়ই বাইরে থাকতেন।",
+          "ur": "ایڈیل گھر کے مالک مسٹر روچسٹر کی زیرِ سرپرستی تھی، جو اکثر باہر رہتے تھے۔",
+          "th": "อาเดลอยู่ในความดูแลของคุณโรเชสเตอร์ เจ้าของบ้าน ซึ่งมักไม่อยู่บ้าน"
+        }
+      },
+      {
+        "id": "cl-eyre-032",
+        "english": "One day Jane heard a strange laugh from the top floor.",
+        "turkish": "Bir gün Jane en üst kattan tuhaf bir kahkaha duydu.",
+        "translations": {
+          "es-419": "Un día Jane oyó una risa extraña en el último piso.",
+          "pt-BR": "Um dia, Jane ouviu uma risada estranha vinda do último andar.",
+          "id": "Suatu hari Jane mendengar tawa aneh dari lantai paling atas.",
+          "ar": "وذات يوم، سمعت جين ضحكة غريبة من الطابق العلوي.",
+          "vi": "Một hôm Jane nghe thấy tiếng cười kỳ lạ vọng xuống từ tầng trên cùng.",
+          "hi": "एक दिन जेन ने सबसे ऊपर की मंज़िल से एक अजीब हँसी सुनी।",
+          "ru": "Однажды Джейн услышала странный смех с верхнего этажа.",
+          "bn": "একদিন জেন সবচেয়ে ওপরের তলা থেকে একটা অদ্ভুত হাসি শুনল।",
+          "ur": "ایک دن جین نے سب سے اوپر کی منزل سے ایک عجیب ہنسی سنی۔",
+          "th": "วันหนึ่งเจนได้ยินเสียงหัวเราะประหลาดจากชั้นบนสุด"
+        }
+      },
+      {
+        "id": "cl-eyre-033",
+        "english": "It was low and slow, and it made her shiver.",
+        "turkish": "Alçak ve ağır bir kahkahaydı, Jane'i ürpertti.",
+        "translations": {
+          "es-419": "Era grave y lenta, y la hizo temblar.",
+          "pt-BR": "Era baixa e lenta, e a fez estremecer.",
+          "id": "Tawa itu rendah dan lambat, dan membuatnya merinding.",
+          "ar": "كانت منخفضة بطيئة، فارتجفت لها.",
+          "vi": "Tiếng cười trầm và chậm, khiến cô rùng mình.",
+          "hi": "वह धीमी और भारी थी, और उसे सुनकर वह काँप उठी।",
+          "ru": "Он был низким и медленным, и Джейн вздрогнула.",
+          "bn": "হাসিটা ছিল নিচু আর ধীর, শুনে তার গা শিউরে উঠল।",
+          "ur": "وہ دھیمی اور بھاری تھی، اور اسے سن کر وہ کانپ اٹھی۔",
+          "th": "เสียงนั้นต่ำและช้า ทำให้เธอขนลุก"
+        }
+      },
+      {
+        "id": "cl-eyre-034",
+        "english": "\"It is only Grace Poole, one of the servants,\" said Mrs Fairfax.",
+        "turkish": "\"Hizmetçilerden Grace Poole'dur, o kadar,\" dedi Bayan Fairfax.",
+        "translations": {
+          "es-419": "\"Es solo Grace Poole, una de las criadas\", dijo la señora Fairfax.",
+          "pt-BR": "\"É só Grace Poole, uma das criadas\", disse a senhora Fairfax.",
+          "id": "\"Itu hanya Grace Poole, salah satu pelayan,\" kata Nyonya Fairfax.",
+          "ar": "قالت السيدة فيرفاكس: \"إنها غريس بول فقط، إحدى الخادمات.\"",
+          "vi": "\"Chỉ là Grace Poole, một người hầu thôi,\" bà Fairfax nói.",
+          "hi": "\"वह तो बस ग्रेस पूल है, एक नौकरानी,\" श्रीमती फ़ेयरफ़ैक्स ने कहा।",
+          "ru": "«Это всего лишь Грейс Пул, одна из служанок», — сказала миссис Фэрфакс.",
+          "bn": "\"ও তো গ্রেস পুল, এক কাজের লোক,\" বললেন মিসেস ফেয়ারফ্যাক্স।",
+          "ur": "\"وہ تو بس گریس پول ہے، ایک نوکرانی،\" مسز فیئرفیکس نے کہا۔",
+          "th": "\"ก็แค่เกรซ พูล คนรับใช้คนหนึ่งเท่านั้นแหละ\" คุณนายแฟร์แฟกซ์กล่าว"
+        }
+      },
+      {
+        "id": "cl-eyre-035",
+        "english": "One winter evening, Jane was walking along a frozen road.",
+        "turkish": "Bir kış akşamı Jane donmuş bir yolda yürüyordu.",
+        "translations": {
+          "es-419": "Una tarde de invierno, Jane caminaba por un camino helado.",
+          "pt-BR": "Numa tarde de inverno, Jane caminhava por uma estrada congelada.",
+          "id": "Pada suatu senja musim dingin, Jane berjalan di jalan yang membeku.",
+          "ar": "في مساء شتوي، كانت جين تمشي على طريق متجمّد.",
+          "vi": "Một buổi chiều mùa đông, Jane đang đi bộ trên con đường đóng băng.",
+          "hi": "सर्दियों की एक शाम जेन एक जमी हुई सड़क पर चल रही थी।",
+          "ru": "Однажды зимним вечером Джейн шла по обледенелой дороге.",
+          "bn": "এক শীতের সন্ধ্যায় জেন বরফে জমা একটা রাস্তা দিয়ে হাঁটছিল।",
+          "ur": "سردیوں کی ایک شام جین ایک جمی ہوئی سڑک پر چل رہی تھی۔",
+          "th": "เย็นวันหนึ่งในฤดูหนาว เจนกำลังเดินไปตามถนนที่เป็นน้ำแข็ง"
+        }
+      },
+      {
+        "id": "cl-eyre-036",
+        "english": "A horse slipped on the ice, and its rider fell.",
+        "turkish": "Bir at buzda kaydı ve binicisi yere düştü.",
+        "translations": {
+          "es-419": "Un caballo resbaló en el hielo, y su jinete se cayó.",
+          "pt-BR": "Um cavalo escorregou no gelo, e o cavaleiro caiu.",
+          "id": "Seekor kuda tergelincir di atas es, dan penunggangnya terjatuh.",
+          "ar": "انزلق حصان على الجليد، فسقط راكبه.",
+          "vi": "Một con ngựa trượt trên băng, và người cưỡi ngã xuống.",
+          "hi": "एक घोड़ा बर्फ़ पर फिसला, और उसका सवार गिर पड़ा।",
+          "ru": "Лошадь поскользнулась на льду, и всадник упал.",
+          "bn": "একটা ঘোড়া বরফে পিছলে গেল, আর তার সওয়ার পড়ে গেলেন।",
+          "ur": "ایک گھوڑا برف پر پھسلا، اور اس کا سوار گر پڑا۔",
+          "th": "ม้าตัวหนึ่งลื่นบนน้ำแข็ง และคนขี่ก็ตกลงมา"
+        }
+      },
+      {
+        "id": "cl-eyre-037",
+        "english": "Jane helped him back onto his horse.",
+        "turkish": "Jane onun yeniden atına binmesine yardım etti.",
+        "translations": {
+          "es-419": "Jane lo ayudó a subir de nuevo al caballo.",
+          "pt-BR": "Jane o ajudou a montar de novo no cavalo.",
+          "id": "Jane membantunya naik kembali ke atas kuda.",
+          "ar": "ساعدته جين على الصعود إلى حصانه من جديد.",
+          "vi": "Jane giúp ông leo lại lên ngựa.",
+          "hi": "जेन ने उन्हें फिर से घोड़े पर चढ़ने में मदद की।",
+          "ru": "Джейн помогла ему снова сесть на лошадь.",
+          "bn": "জেন তাঁকে আবার ঘোড়ায় উঠতে সাহায্য করল।",
+          "ur": "جین نے انہیں دوبارہ گھوڑے پر چڑھنے میں مدد دی۔",
+          "th": "เจนช่วยพยุงเขาขึ้นหลังม้าอีกครั้ง"
+        }
+      },
+      {
+        "id": "cl-eyre-038",
+        "english": "Later she discovered that the stranger was Mr Rochester himself.",
+        "turkish": "Sonradan o yabancının Bay Rochester'ın ta kendisi olduğunu öğrendi.",
+        "translations": {
+          "es-419": "Más tarde descubrió que el desconocido era el mismísimo señor Rochester.",
+          "pt-BR": "Mais tarde, ela descobriu que o desconhecido era o próprio senhor Rochester.",
+          "id": "Belakangan ia tahu bahwa orang asing itu ternyata Tuan Rochester sendiri.",
+          "ar": "وفيما بعد، اكتشفت أن الغريب هو السيد روتشستر نفسه.",
+          "vi": "Sau đó cô mới biết người lạ ấy chính là ông Rochester.",
+          "hi": "बाद में उसे पता चला कि वह अजनबी ख़ुद मिस्टर रॉचेस्टर थे।",
+          "ru": "Позже она узнала, что незнакомцем был сам мистер Рочестер.",
+          "bn": "পরে সে জানল, সেই অচেনা মানুষটি স্বয়ং মিস্টার রচেস্টার।",
+          "ur": "بعد میں اسے پتا چلا کہ وہ اجنبی خود مسٹر روچسٹر تھے۔",
+          "th": "ต่อมาเธอจึงรู้ว่าชายแปลกหน้าคนนั้นคือคุณโรเชสเตอร์นั่นเอง"
+        }
+      },
+      {
+        "id": "cl-eyre-039",
+        "english": "He was not handsome, and he was often rude and moody.",
+        "turkish": "Yakışıklı değildi; sık sık kaba ve huysuz davranıyordu.",
+        "translations": {
+          "es-419": "No era guapo, y a menudo era grosero y malhumorado.",
+          "pt-BR": "Ele não era bonito e muitas vezes era grosseiro e mal-humorado.",
+          "id": "Ia tidak tampan, dan sering bersikap kasar serta mudah berubah suasana hati.",
+          "ar": "لم يكن وسيمًا، وكثيرًا ما كان فظًّا متقلّب المزاج.",
+          "vi": "Ông không đẹp trai, lại thường thô lỗ và thất thường.",
+          "hi": "वे सुंदर नहीं थे, और अक्सर रूखे और चिड़चिड़े रहते थे।",
+          "ru": "Он не был красив и часто бывал груб и угрюм.",
+          "bn": "তিনি সুদর্শন ছিলেন না, প্রায়ই রূঢ় আর মেজাজি থাকতেন।",
+          "ur": "وہ خوبصورت نہیں تھے، اور اکثر روکھے اور چڑچڑے رہتے تھے۔",
+          "th": "เขาไม่ได้รูปงาม และมักจะหยาบคายกับอารมณ์แปรปรวน"
+        }
+      },
+      {
+        "id": "cl-eyre-040",
+        "english": "But he enjoyed talking with Jane, because she was honest and clever.",
+        "turkish": "Ama Jane'le konuşmaktan hoşlanıyordu, çünkü Jane dürüst ve zekiydi.",
+        "translations": {
+          "es-419": "Pero le gustaba hablar con Jane, porque ella era sincera e inteligente.",
+          "pt-BR": "Mas ele gostava de conversar com Jane, porque ela era honesta e inteligente.",
+          "id": "Namun ia senang berbicara dengan Jane, karena Jane jujur dan cerdas.",
+          "ar": "لكنه كان يستمتع بالحديث مع جين، لأنها صادقة وذكية.",
+          "vi": "Nhưng ông thích trò chuyện với Jane, vì cô thật thà và thông minh.",
+          "hi": "लेकिन उन्हें जेन से बातें करना अच्छा लगता था, क्योंकि वह ईमानदार और समझदार थी।",
+          "ru": "Но ему нравилось разговаривать с Джейн, потому что она была честной и умной.",
+          "bn": "কিন্তু জেনের সঙ্গে কথা বলতে তাঁর ভালো লাগত, কারণ সে সৎ আর বুদ্ধিমতী।",
+          "ur": "لیکن انہیں جین سے باتیں کرنا اچھا لگتا تھا، کیونکہ وہ ایماندار اور سمجھدار تھی۔",
+          "th": "แต่เขาชอบพูดคุยกับเจน เพราะเธอซื่อตรงและฉลาด"
+        }
+      },
+      {
+        "id": "cl-eyre-041",
+        "english": "They spent many evenings in front of the fire, talking about life.",
+        "turkish": "Pek çok akşamı ateşin karşısında hayat üzerine konuşarak geçirdiler.",
+        "translations": {
+          "es-419": "Pasaron muchas noches frente al fuego, hablando de la vida.",
+          "pt-BR": "Passaram muitas noites diante da lareira, conversando sobre a vida.",
+          "id": "Mereka melewatkan banyak malam di depan perapian, berbincang tentang kehidupan.",
+          "ar": "قضيا أمسيات كثيرة أمام النار يتحدّثان عن الحياة.",
+          "vi": "Họ dành nhiều buổi tối bên lò sưởi, trò chuyện về cuộc đời.",
+          "hi": "उन्होंने कई शामें आग के सामने ज़िंदगी के बारे में बातें करते हुए बिताईं।",
+          "ru": "Много вечеров они провели у камина, беседуя о жизни.",
+          "bn": "তাঁরা অনেক সন্ধ্যা আগুনের পাশে বসে জীবন নিয়ে গল্প করে কাটালেন।",
+          "ur": "انہوں نے کئی شامیں آگ کے سامنے زندگی کے بارے میں باتیں کرتے گزاریں۔",
+          "th": "ทั้งสองใช้เวลาหลายค่ำคืนหน้าเตาผิง พูดคุยกันเรื่องชีวิต"
+        }
+      },
+      {
+        "id": "cl-eyre-042",
+        "english": "Slowly, Jane fell in love with him.",
+        "turkish": "Jane yavaş yavaş ona âşık oldu.",
+        "translations": {
+          "es-419": "Poco a poco, Jane se enamoró de él.",
+          "pt-BR": "Aos poucos, Jane se apaixonou por ele.",
+          "id": "Perlahan-lahan, Jane jatuh cinta kepadanya.",
+          "ar": "وشيئًا فشيئًا، وقعت جين في حبه.",
+          "vi": "Dần dần, Jane đem lòng yêu ông.",
+          "hi": "धीरे-धीरे जेन को उनसे प्यार हो गया।",
+          "ru": "Постепенно Джейн полюбила его.",
+          "bn": "ধীরে ধীরে জেন তাঁর প্রেমে পড়ল।",
+          "ur": "آہستہ آہستہ جین کو ان سے محبت ہو گئی۔",
+          "th": "ทีละน้อย เจนก็ตกหลุมรักเขา"
+        }
+      },
+      {
+        "id": "cl-eyre-043",
+        "english": "One night she woke up and smelled smoke.",
+        "turkish": "Bir gece uyandı ve duman kokusu aldı.",
+        "translations": {
+          "es-419": "Una noche se despertó y olió humo.",
+          "pt-BR": "Uma noite, ela acordou e sentiu cheiro de fumaça.",
+          "id": "Suatu malam ia terbangun dan mencium bau asap.",
+          "ar": "وذات ليلة، استيقظت وشمّت رائحة دخان.",
+          "vi": "Một đêm, cô thức giấc và ngửi thấy mùi khói.",
+          "hi": "एक रात वह जागी और उसे धुएँ की गंध आई।",
+          "ru": "Однажды ночью она проснулась и почувствовала запах дыма.",
+          "bn": "এক রাতে সে জেগে উঠে ধোঁয়ার গন্ধ পেল।",
+          "ur": "ایک رات وہ جاگی اور اسے دھوئیں کی بو آئی۔",
+          "th": "คืนหนึ่งเธอตื่นขึ้นมาและได้กลิ่นควัน"
+        }
+      },
+      {
+        "id": "cl-eyre-044",
+        "english": "Mr Rochester's bed was on fire, and he was fast asleep.",
+        "turkish": "Bay Rochester'ın yatağı yanıyordu ve o derin uykudaydı.",
+        "translations": {
+          "es-419": "La cama del señor Rochester estaba en llamas, y él dormía profundamente.",
+          "pt-BR": "A cama do senhor Rochester estava pegando fogo, e ele dormia profundamente.",
+          "id": "Tempat tidur Tuan Rochester terbakar, dan ia tertidur lelap.",
+          "ar": "كان سرير السيد روتشستر يحترق، وهو غارق في النوم.",
+          "vi": "Giường của ông Rochester đang bốc cháy, còn ông thì ngủ say.",
+          "hi": "मिस्टर रॉचेस्टर के बिस्तर में आग लगी थी, और वे गहरी नींद में थे।",
+          "ru": "Кровать мистера Рочестера горела, а он крепко спал.",
+          "bn": "মিস্টার রচেস্টারের বিছানায় আগুন লেগেছে, আর তিনি গভীর ঘুমে।",
+          "ur": "مسٹر روچسٹر کے بستر میں آگ لگی تھی، اور وہ گہری نیند میں تھے۔",
+          "th": "เตียงของคุณโรเชสเตอร์กำลังลุกไหม้ ขณะที่เขาหลับสนิท"
+        }
+      },
+      {
+        "id": "cl-eyre-045",
+        "english": "Jane threw water on the flames and saved his life.",
+        "turkish": "Jane alevlere su döktü ve onun hayatını kurtardı.",
+        "translations": {
+          "es-419": "Jane echó agua sobre las llamas y le salvó la vida.",
+          "pt-BR": "Jane jogou água nas chamas e salvou a vida dele.",
+          "id": "Jane menyiramkan air ke api dan menyelamatkan nyawanya.",
+          "ar": "سكبت جين الماء على اللهب وأنقذت حياته.",
+          "vi": "Jane hắt nước vào ngọn lửa và cứu sống ông.",
+          "hi": "जेन ने लपटों पर पानी डाला और उनकी जान बचा ली।",
+          "ru": "Джейн залила пламя водой и спасла ему жизнь.",
+          "bn": "জেন আগুনে জল ঢেলে তাঁর প্রাণ বাঁচাল।",
+          "ur": "جین نے شعلوں پر پانی ڈالا اور ان کی جان بچا لی۔",
+          "th": "เจนสาดน้ำใส่เปลวไฟและช่วยชีวิตเขาไว้"
+        }
+      },
+      {
+        "id": "cl-eyre-046",
+        "english": "He thanked her warmly, but he told her to keep silent.",
+        "turkish": "Ona içtenlikle teşekkür etti, ama kimseye söylememesini istedi.",
+        "translations": {
+          "es-419": "Él le dio las gracias con cariño, pero le pidió que guardara silencio.",
+          "pt-BR": "Ele agradeceu com carinho, mas pediu que ela guardasse segredo.",
+          "id": "Ia berterima kasih dengan tulus, tetapi menyuruhnya tutup mulut.",
+          "ar": "شكرها بحرارة، لكنه طلب منها أن تلتزم الصمت.",
+          "vi": "Ông cảm ơn cô rối rít, nhưng dặn cô phải giữ im lặng.",
+          "hi": "उन्होंने दिल से उसका शुक्रिया अदा किया, पर उसे चुप रहने को कहा।",
+          "ru": "Он горячо поблагодарил её, но велел молчать.",
+          "bn": "তিনি আন্তরিকভাবে ধন্যবাদ দিলেন, কিন্তু চুপ থাকতে বললেন।",
+          "ur": "انہوں نے دل سے اس کا شکریہ ادا کیا، مگر اسے خاموش رہنے کو کہا۔",
+          "th": "เขาขอบคุณเธออย่างจริงใจ แต่สั่งให้เธอเก็บเรื่องนี้เป็นความลับ"
+        }
+      },
+      {
+        "id": "cl-eyre-047",
+        "english": "He said that Grace Poole had started the fire.",
+        "turkish": "Yangını Grace Poole'un çıkardığını söyledi.",
+        "translations": {
+          "es-419": "Dijo que Grace Poole había provocado el incendio.",
+          "pt-BR": "Disse que Grace Poole tinha começado o incêndio.",
+          "id": "Ia berkata bahwa Grace Poole-lah yang menyulut api itu.",
+          "ar": "وقال إن غريس بول هي من أشعلت النار.",
+          "vi": "Ông nói Grace Poole là người đã gây ra đám cháy.",
+          "hi": "उन्होंने कहा कि आग ग्रेस पूल ने लगाई थी।",
+          "ru": "Он сказал, что пожар устроила Грейс Пул.",
+          "bn": "তিনি বললেন, আগুনটা লাগিয়েছিল গ্রেস পুল।",
+          "ur": "انہوں نے کہا کہ آگ گریس پول نے لگائی تھی۔",
+          "th": "เขาบอกว่าเกรซ พูลเป็นคนจุดไฟ"
+        }
+      },
+      {
+        "id": "cl-eyre-048",
+        "english": "Soon after, Mr Rochester brought guests to Thornfield.",
+        "turkish": "Kısa süre sonra Bay Rochester, Thornfield'a misafirler getirdi.",
+        "translations": {
+          "es-419": "Poco después, el señor Rochester llevó invitados a Thornfield.",
+          "pt-BR": "Pouco depois, o senhor Rochester levou convidados a Thornfield.",
+          "id": "Tak lama kemudian, Tuan Rochester membawa tamu-tamu ke Thornfield.",
+          "ar": "وبعد ذلك بقليل، جاء السيد روتشستر بضيوف إلى ثورنفيلد.",
+          "vi": "Ít lâu sau, ông Rochester đưa khách về Thornfield.",
+          "hi": "कुछ ही समय बाद मिस्टर रॉचेस्टर थॉर्नफ़ील्ड में मेहमान ले आए।",
+          "ru": "Вскоре мистер Рочестер привёз в Торнфилд гостей.",
+          "bn": "কিছুদিন পরেই মিস্টার রচেস্টার থর্নফিল্ডে অতিথিদের নিয়ে এলেন।",
+          "ur": "کچھ ہی عرصے بعد مسٹر روچسٹر تھورنفیلڈ میں مہمان لے آئے۔",
+          "th": "ไม่นานหลังจากนั้น คุณโรเชสเตอร์ก็พาแขกมาที่ธอร์นฟิลด์"
+        }
+      },
+      {
+        "id": "cl-eyre-049",
+        "english": "Among them was Blanche Ingram, a beautiful and proud lady.",
+        "turkish": "Aralarında güzel ve kibirli bir hanım olan Blanche Ingram da vardı.",
+        "translations": {
+          "es-419": "Entre ellos estaba Blanche Ingram, una dama hermosa y orgullosa.",
+          "pt-BR": "Entre eles estava Blanche Ingram, uma dama bonita e orgulhosa.",
+          "id": "Di antara mereka ada Blanche Ingram, seorang wanita cantik yang angkuh.",
+          "ar": "وكانت بينهم بلانش إنغرام، سيدة جميلة متكبّرة.",
+          "vi": "Trong số đó có Blanche Ingram, một quý cô xinh đẹp và kiêu kỳ.",
+          "hi": "उनमें ब्लांश इंग्राम भी थी, एक सुंदर और घमंडी महिला।",
+          "ru": "Среди них была Бланш Инграм, красивая и надменная дама.",
+          "bn": "তাদের মধ্যে ছিলেন ব্লাঁশ ইনগ্রাম, এক সুন্দরী আর অহংকারী মহিলা।",
+          "ur": "ان میں بلانش انگرام بھی تھی، ایک خوبصورت اور مغرور خاتون۔",
+          "th": "ในหมู่แขกมีบลองช์ อิงแกรม หญิงสาวที่ทั้งสวยและหยิ่งทะนง"
+        }
+      },
+      {
+        "id": "cl-eyre-050",
+        "english": "Everyone said that he would marry her.",
+        "turkish": "Herkes onunla evleneceğini söylüyordu.",
+        "translations": {
+          "es-419": "Todos decían que él se casaría con ella.",
+          "pt-BR": "Todos diziam que ele ia se casar com ela.",
+          "id": "Semua orang berkata bahwa ia akan menikahinya.",
+          "ar": "وكان الجميع يقولون إنه سيتزوّجها.",
+          "vi": "Ai cũng nói ông sẽ cưới cô ta.",
+          "hi": "सब कहते थे कि वे उससे शादी करेंगे।",
+          "ru": "Все говорили, что он на ней женится.",
+          "bn": "সবাই বলত, তিনি তাকেই বিয়ে করবেন।",
+          "ur": "سب کہتے تھے کہ وہ اس سے شادی کریں گے۔",
+          "th": "ใคร ๆ ก็พูดกันว่าเขาจะแต่งงานกับเธอ"
+        }
+      },
+      {
+        "id": "cl-eyre-051",
+        "english": "Jane watched them together and felt deeply unhappy.",
+        "turkish": "Jane onları birlikte izledi ve derin bir mutsuzluk duydu.",
+        "translations": {
+          "es-419": "Jane los miraba juntos y se sentía muy desdichada.",
+          "pt-BR": "Jane os observava juntos e se sentia profundamente infeliz.",
+          "id": "Jane memperhatikan mereka berdua dan merasa sangat sedih.",
+          "ar": "كانت جين تراقبهما معًا وتشعر بتعاسة عميقة.",
+          "vi": "Jane nhìn họ bên nhau và cảm thấy vô cùng đau khổ.",
+          "hi": "जेन उन्हें साथ देखती और बहुत दुखी होती।",
+          "ru": "Джейн смотрела на них и чувствовала себя глубоко несчастной.",
+          "bn": "জেন তাদের একসঙ্গে দেখত আর গভীর কষ্ট পেত।",
+          "ur": "جین انہیں ساتھ دیکھتی اور بہت دکھی ہوتی۔",
+          "th": "เจนเฝ้ามองทั้งคู่และรู้สึกทุกข์ใจอย่างยิ่ง"
+        }
+      },
+      {
+        "id": "cl-eyre-052",
+        "english": "But one summer evening, in the garden, Mr Rochester asked Jane to marry him.",
+        "turkish": "Ama bir yaz akşamı bahçede Bay Rochester, Jane'e evlenme teklif etti.",
+        "translations": {
+          "es-419": "Pero una tarde de verano, en el jardín, el señor Rochester le pidió a Jane que se casara con él.",
+          "pt-BR": "Mas numa tarde de verão, no jardim, o senhor Rochester pediu Jane em casamento.",
+          "id": "Namun pada suatu senja musim panas, di taman, Tuan Rochester melamar Jane.",
+          "ar": "لكن في مساء صيفي، في الحديقة، طلب السيد روتشستر من جين أن تتزوّجه.",
+          "vi": "Nhưng vào một buổi chiều hè, trong khu vườn, ông Rochester đã cầu hôn Jane.",
+          "hi": "लेकिन गर्मियों की एक शाम, बाग़ में, मिस्टर रॉचेस्टर ने जेन से शादी का प्रस्ताव रखा।",
+          "ru": "Но однажды летним вечером в саду мистер Рочестер сделал Джейн предложение.",
+          "bn": "কিন্তু এক গ্রীষ্মের সন্ধ্যায়, বাগানে, মিস্টার রচেস্টার জেনকে বিয়ের প্রস্তাব দিলেন।",
+          "ur": "لیکن گرمیوں کی ایک شام، باغ میں، مسٹر روچسٹر نے جین کو شادی کی پیشکش کی۔",
+          "th": "แต่ในเย็นวันหนึ่งของฤดูร้อน ที่ในสวน คุณโรเชสเตอร์ขอเจนแต่งงาน"
+        }
+      },
+      {
+        "id": "cl-eyre-053",
+        "english": "He had only pretended to love Blanche, to make Jane jealous.",
+        "turkish": "Blanche'ı seviyormuş gibi yapmasının tek nedeni Jane'i kıskandırmaktı.",
+        "translations": {
+          "es-419": "Solo había fingido amar a Blanche, para poner celosa a Jane.",
+          "pt-BR": "Ele só tinha fingido amar Blanche, para deixar Jane com ciúmes.",
+          "id": "Ia hanya berpura-pura mencintai Blanche agar Jane cemburu.",
+          "ar": "لقد تظاهر بحب بلانش فقط ليثير غيرة جين.",
+          "vi": "Ông chỉ giả vờ yêu Blanche để khiến Jane ghen.",
+          "hi": "उन्होंने ब्लांश से प्यार का बस दिखावा किया था, ताकि जेन को जलन हो।",
+          "ru": "Он лишь притворялся, что любит Бланш, чтобы Джейн ревновала.",
+          "bn": "তিনি শুধু জেনকে ঈর্ষান্বিত করতে ব্লাঁশকে ভালোবাসার ভান করেছিলেন।",
+          "ur": "انہوں نے بلانش سے محبت کا بس دکھاوا کیا تھا، تاکہ جین کو حسد ہو۔",
+          "th": "เขาเพียงแสร้งทำเป็นรักบลองช์ เพื่อให้เจนหึง"
+        }
+      },
+      {
+        "id": "cl-eyre-054",
+        "english": "Jane could hardly believe it, and she said yes with joy.",
+        "turkish": "Jane buna inanamadı ve sevinçle evet dedi.",
+        "translations": {
+          "es-419": "Jane casi no podía creerlo, y dijo que sí con alegría.",
+          "pt-BR": "Jane mal podia acreditar, e disse sim com alegria.",
+          "id": "Jane hampir tak percaya, dan ia menjawab ya dengan gembira.",
+          "ar": "لم تكد جين تصدّق، وقالت نعم بفرح.",
+          "vi": "Jane gần như không dám tin, và vui sướng nhận lời.",
+          "hi": "जेन को यक़ीन ही नहीं हुआ, और उसने ख़ुशी से हाँ कह दी।",
+          "ru": "Джейн с трудом в это верила и радостно ответила «да».",
+          "bn": "জেন বিশ্বাসই করতে পারছিল না, আনন্দে রাজি হয়ে গেল।",
+          "ur": "جین کو یقین ہی نہیں آیا، اور اس نے خوشی سے ہاں کہہ دی۔",
+          "th": "เจนแทบไม่อยากเชื่อ และตอบตกลงด้วยความยินดี"
+        }
+      },
+      {
+        "id": "cl-eyre-055",
+        "english": "Two nights before the wedding, Jane woke up in fear.",
+        "turkish": "Düğünden iki gece önce Jane korkuyla uyandı.",
+        "translations": {
+          "es-419": "Dos noches antes de la boda, Jane despertó asustada.",
+          "pt-BR": "Duas noites antes do casamento, Jane acordou com medo.",
+          "id": "Dua malam sebelum pernikahan, Jane terbangun ketakutan.",
+          "ar": "قبل الزفاف بليلتين، استيقظت جين مذعورة.",
+          "vi": "Hai đêm trước đám cưới, Jane giật mình tỉnh dậy vì sợ hãi.",
+          "hi": "शादी से दो रात पहले जेन डरकर जाग गई।",
+          "ru": "За две ночи до свадьбы Джейн проснулась от страха.",
+          "bn": "বিয়ের দুই রাত আগে জেন ভয়ে জেগে উঠল।",
+          "ur": "شادی سے دو رات پہلے جین ڈر کر جاگ گئی۔",
+          "th": "สองคืนก่อนวันแต่งงาน เจนสะดุ้งตื่นด้วยความกลัว"
+        }
+      },
+      {
+        "id": "cl-eyre-056",
+        "english": "A strange woman with wild hair stood beside her bed.",
+        "turkish": "Yatağının yanında saçları darmadağınık, tuhaf bir kadın duruyordu.",
+        "translations": {
+          "es-419": "Una mujer extraña, con el pelo revuelto, estaba junto a su cama.",
+          "pt-BR": "Uma mulher estranha, de cabelos desgrenhados, estava ao lado da cama.",
+          "id": "Seorang perempuan aneh berambut kusut berdiri di samping tempat tidurnya.",
+          "ar": "كانت امرأة غريبة، شعرها أشعث، تقف بجانب سريرها.",
+          "vi": "Một người đàn bà lạ với mái tóc rối bù đứng cạnh giường cô.",
+          "hi": "उसके बिस्तर के पास बिखरे बालों वाली एक अजीब औरत खड़ी थी।",
+          "ru": "У её кровати стояла странная женщина с растрёпанными волосами.",
+          "bn": "তার বিছানার পাশে দাঁড়িয়ে ছিল এলোমেলো চুলের এক অদ্ভুত মহিলা।",
+          "ur": "اس کے بستر کے پاس بکھرے بالوں والی ایک عجیب عورت کھڑی تھی۔",
+          "th": "หญิงแปลกหน้าผมยุ่งเหยิงคนหนึ่งยืนอยู่ข้างเตียงของเธอ"
+        }
+      },
+      {
+        "id": "cl-eyre-057",
+        "english": "She put on Jane's wedding veil, then tore it in two.",
+        "turkish": "Jane'in gelin duvağını başına taktı, sonra onu ikiye yırttı.",
+        "translations": {
+          "es-419": "Se puso el velo de novia de Jane y luego lo rasgó en dos.",
+          "pt-BR": "Ela pôs o véu de noiva de Jane e depois o rasgou em dois.",
+          "id": "Ia mengenakan kerudung pengantin Jane, lalu merobeknya menjadi dua.",
+          "ar": "لبست طرحة زفاف جين، ثم مزّقتها نصفين.",
+          "vi": "Bà ta đội tấm khăn voan cưới của Jane, rồi xé nó làm đôi.",
+          "hi": "उसने जेन का शादी का घूँघट ओढ़ा, फिर उसे फाड़कर दो टुकड़े कर दिए।",
+          "ru": "Она надела свадебную фату Джейн, а потом разорвала её надвое.",
+          "bn": "সে জেনের বিয়ের ওড়না মাথায় দিল, তারপর ছিঁড়ে দু'টুকরো করে ফেলল।",
+          "ur": "اس نے جین کا شادی کا گھونگھٹ اوڑھا، پھر اسے پھاڑ کر دو ٹکڑے کر دیے۔",
+          "th": "นางสวมผ้าคลุมหน้าเจ้าสาวของเจน แล้วฉีกมันออกเป็นสองชิ้น"
+        }
+      },
+      {
+        "id": "cl-eyre-058",
+        "english": "In the morning, Mr Rochester told Jane it was only a bad dream.",
+        "turkish": "Sabah Bay Rochester, Jane'e bunun sadece kötü bir rüya olduğunu söyledi.",
+        "translations": {
+          "es-419": "Por la mañana, el señor Rochester le dijo a Jane que solo había sido un mal sueño.",
+          "pt-BR": "De manhã, o senhor Rochester disse a Jane que tinha sido só um pesadelo.",
+          "id": "Pagi harinya, Tuan Rochester berkata kepada Jane bahwa itu hanya mimpi buruk.",
+          "ar": "وفي الصباح، قال السيد روتشستر لجين إنه مجرد كابوس.",
+          "vi": "Sáng hôm sau, ông Rochester bảo Jane đó chỉ là một giấc mơ xấu.",
+          "hi": "सुबह मिस्टर रॉचेस्टर ने जेन से कहा कि वह बस एक बुरा सपना था।",
+          "ru": "Утром мистер Рочестер сказал Джейн, что это был лишь дурной сон.",
+          "bn": "সকালে মিস্টার রচেস্টার জেনকে বললেন, ওটা শুধুই একটা দুঃস্বপ্ন।",
+          "ur": "صبح مسٹر روچسٹر نے جین سے کہا کہ وہ بس ایک برا خواب تھا۔",
+          "th": "ตอนเช้า คุณโรเชสเตอร์บอกเจนว่านั่นเป็นแค่ฝันร้าย"
+        }
+      },
+      {
+        "id": "cl-eyre-059",
+        "english": "On the wedding day, they stood together in the small church.",
+        "turkish": "Düğün günü küçük kilisede yan yana durdular.",
+        "translations": {
+          "es-419": "El día de la boda, estaban juntos en la pequeña iglesia.",
+          "pt-BR": "No dia do casamento, os dois estavam juntos na pequena igreja.",
+          "id": "Pada hari pernikahan, mereka berdiri berdampingan di gereja kecil.",
+          "ar": "وفي يوم الزفاف، وقفا معًا في الكنيسة الصغيرة.",
+          "vi": "Vào ngày cưới, hai người đứng bên nhau trong ngôi nhà thờ nhỏ.",
+          "hi": "शादी के दिन वे दोनों छोटे-से गिरजाघर में साथ खड़े थे।",
+          "ru": "В день свадьбы они стояли рядом в маленькой церкви.",
+          "bn": "বিয়ের দিন তাঁরা দুজনে ছোট্ট গির্জায় পাশাপাশি দাঁড়ালেন।",
+          "ur": "شادی کے دن وہ دونوں چھوٹے سے گرجا گھر میں ساتھ کھڑے تھے۔",
+          "th": "ในวันแต่งงาน ทั้งสองยืนเคียงกันในโบสถ์เล็ก ๆ"
+        }
+      },
+      {
+        "id": "cl-eyre-060",
+        "english": "Suddenly a man's voice called out, \"This marriage cannot happen!\"",
+        "turkish": "Birden bir erkek sesi yükseldi: \"Bu evlilik yapılamaz!\"",
+        "translations": {
+          "es-419": "De pronto, la voz de un hombre gritó: \"¡Este matrimonio no puede celebrarse!\".",
+          "pt-BR": "De repente, a voz de um homem gritou: \"Este casamento não pode acontecer!\"",
+          "id": "Tiba-tiba suara seorang pria berseru, \"Pernikahan ini tidak boleh terjadi!\"",
+          "ar": "فجأة، صاح صوت رجل: \"لا يمكن أن يتمّ هذا الزواج!\"",
+          "vi": "Bỗng một giọng đàn ông vang lên: \"Cuộc hôn nhân này không thể diễn ra!\"",
+          "hi": "अचानक एक आदमी की आवाज़ गूँजी, \"यह शादी नहीं हो सकती!\"",
+          "ru": "Вдруг раздался мужской голос: «Этот брак невозможен!»",
+          "bn": "হঠাৎ এক পুরুষকণ্ঠ বলে উঠল, \"এই বিয়ে হতে পারে না!\"",
+          "ur": "اچانک ایک آدمی کی آواز گونجی، \"یہ شادی نہیں ہو سکتی!\"",
+          "th": "ทันใดนั้นมีเสียงผู้ชายร้องขึ้นว่า \"การแต่งงานนี้เกิดขึ้นไม่ได้!\""
+        }
+      },
+      {
+        "id": "cl-eyre-061",
+        "english": "\"Mr Rochester already has a wife, and she is still alive.\"",
+        "turkish": "\"Bay Rochester'ın zaten bir karısı var ve o hâlâ hayatta.\"",
+        "translations": {
+          "es-419": "\"El señor Rochester ya tiene esposa, y ella todavía vive\".",
+          "pt-BR": "\"O senhor Rochester já tem uma esposa, e ela ainda está viva.\"",
+          "id": "\"Tuan Rochester sudah punya istri, dan istrinya masih hidup.\"",
+          "ar": "\"للسيد روتشستر زوجة بالفعل، وهي ما زالت على قيد الحياة.\"",
+          "vi": "\"Ông Rochester đã có vợ, và bà ấy vẫn còn sống.\"",
+          "hi": "\"मिस्टर रॉचेस्टर की पहले से एक पत्नी है, और वह अभी ज़िंदा है।\"",
+          "ru": "«У мистера Рочестера уже есть жена, и она жива».",
+          "bn": "\"মিস্টার রচেস্টারের আগে থেকেই একজন স্ত্রী আছেন, আর তিনি এখনো বেঁচে।\"",
+          "ur": "\"مسٹر روچسٹر کی پہلے سے ایک بیوی ہے، اور وہ ابھی زندہ ہے۔\"",
+          "th": "\"คุณโรเชสเตอร์มีภรรยาอยู่แล้ว และเธอยังมีชีวิตอยู่\""
+        }
+      },
+      {
+        "id": "cl-eyre-062",
+        "english": "Mr Rochester went pale, and then he admitted the truth.",
+        "turkish": "Bay Rochester'ın benzi attı, sonra gerçeği itiraf etti.",
+        "translations": {
+          "es-419": "El señor Rochester palideció, y luego admitió la verdad.",
+          "pt-BR": "O senhor Rochester empalideceu e depois admitiu a verdade.",
+          "id": "Wajah Tuan Rochester memucat, lalu ia mengakui kebenarannya.",
+          "ar": "شحب وجه السيد روتشستر، ثم اعترف بالحقيقة.",
+          "vi": "Ông Rochester tái mặt, rồi thừa nhận sự thật.",
+          "hi": "मिस्टर रॉचेस्टर का चेहरा पीला पड़ गया, और फिर उन्होंने सच मान लिया।",
+          "ru": "Мистер Рочестер побледнел, а потом признал правду.",
+          "bn": "মিস্টার রচেস্টার ফ্যাকাশে হয়ে গেলেন, তারপর সত্যিটা স্বীকার করলেন।",
+          "ur": "مسٹر روچسٹر کا چہرہ زرد پڑ گیا، اور پھر انہوں نے سچ مان لیا۔",
+          "th": "คุณโรเชสเตอร์หน้าซีด แล้วจึงยอมรับความจริง"
+        }
+      },
+      {
+        "id": "cl-eyre-063",
+        "english": "He took everyone back to Thornfield and up to the top floor.",
+        "turkish": "Herkesi Thornfield'a geri götürdü ve en üst kata çıkardı.",
+        "translations": {
+          "es-419": "Llevó a todos de vuelta a Thornfield y subió con ellos al último piso.",
+          "pt-BR": "Ele levou todos de volta a Thornfield e subiu com eles ao último andar.",
+          "id": "Ia membawa semua orang kembali ke Thornfield dan naik ke lantai paling atas.",
+          "ar": "أعاد الجميع إلى ثورنفيلد وصعد بهم إلى الطابق العلوي.",
+          "vi": "Ông đưa mọi người trở về Thornfield và dẫn lên tầng trên cùng.",
+          "hi": "वे सबको वापस थॉर्नफ़ील्ड ले गए और सबसे ऊपर की मंज़िल पर चढ़े।",
+          "ru": "Он привёл всех обратно в Торнфилд и поднялся с ними на верхний этаж.",
+          "bn": "তিনি সবাইকে থর্নফিল্ডে ফিরিয়ে নিয়ে সবচেয়ে ওপরের তলায় উঠলেন।",
+          "ur": "وہ سب کو واپس تھورنفیلڈ لے گئے اور سب سے اوپر کی منزل پر چڑھے۔",
+          "th": "เขาพาทุกคนกลับไปที่ธอร์นฟิลด์ แล้วขึ้นไปยังชั้นบนสุด"
+        }
+      },
+      {
+        "id": "cl-eyre-064",
+        "english": "There, in a locked room, lived his wife, Bertha.",
+        "turkish": "Orada, kilitli bir odada karısı Bertha yaşıyordu.",
+        "translations": {
+          "es-419": "Allí, en un cuarto cerrado con llave, vivía su esposa, Bertha.",
+          "pt-BR": "Ali, num quarto trancado, vivia sua esposa, Bertha.",
+          "id": "Di sana, di sebuah kamar terkunci, tinggallah istrinya, Bertha.",
+          "ar": "هناك، في غرفة مقفلة، كانت تعيش زوجته بيرثا.",
+          "vi": "Ở đó, trong một căn phòng khóa kín, là nơi vợ ông, bà Bertha, sống.",
+          "hi": "वहाँ, एक बंद कमरे में, उनकी पत्नी बर्था रहती थी।",
+          "ru": "Там, в запертой комнате, жила его жена Берта.",
+          "bn": "সেখানে, একটা তালাবন্ধ ঘরে থাকতেন তাঁর স্ত্রী বার্থা।",
+          "ur": "وہاں، ایک بند کمرے میں، ان کی بیوی برتھا رہتی تھی۔",
+          "th": "ที่นั่น ในห้องที่ถูกล็อกไว้ คือที่อยู่ของเบอร์ธา ภรรยาของเขา"
+        }
+      },
+      {
+        "id": "cl-eyre-065",
+        "english": "Many years before, he had married her in Jamaica.",
+        "turkish": "Yıllar önce onunla Jamaika'da evlenmişti.",
+        "translations": {
+          "es-419": "Muchos años antes, se había casado con ella en Jamaica.",
+          "pt-BR": "Muitos anos antes, ele tinha se casado com ela na Jamaica.",
+          "id": "Bertahun-tahun sebelumnya, ia menikahinya di Jamaika.",
+          "ar": "قبل سنوات طويلة، كان قد تزوّجها في جامايكا.",
+          "vi": "Nhiều năm trước, ông đã cưới bà ở Jamaica.",
+          "hi": "कई साल पहले उन्होंने जमैका में उससे शादी की थी।",
+          "ru": "Много лет назад он женился на ней на Ямайке.",
+          "bn": "বহু বছর আগে তিনি তাঁকে জ্যামাইকায় বিয়ে করেছিলেন।",
+          "ur": "کئی سال پہلے انہوں نے جمیکا میں اس سے شادی کی تھی۔",
+          "th": "หลายปีก่อน เขาแต่งงานกับเธอที่จาเมกา"
+        }
+      },
+      {
+        "id": "cl-eyre-066",
+        "english": "Later she had become dangerously ill in her mind.",
+        "turkish": "Sonradan kadın tehlikeli bir akıl hastalığına yakalanmıştı.",
+        "translations": {
+          "es-419": "Más tarde ella había sufrido una peligrosa enfermedad mental.",
+          "pt-BR": "Mais tarde, ela tinha ficado gravemente doente da mente.",
+          "id": "Kemudian istrinya menderita sakit jiwa yang berbahaya.",
+          "ar": "ثم أصيبت بمرض عقلي خطير.",
+          "vi": "Về sau, bà mắc một chứng bệnh tâm thần nguy hiểm.",
+          "hi": "बाद में वह एक ख़तरनाक मानसिक बीमारी की शिकार हो गई थी।",
+          "ru": "Позже она тяжело и опасно заболела душевно.",
+          "bn": "পরে তিনি ভয়ংকর মানসিক অসুখে পড়েছিলেন।",
+          "ur": "بعد میں وہ ایک خطرناک ذہنی بیماری میں مبتلا ہو گئی تھی۔",
+          "th": "ต่อมาเธอป่วยทางจิตอย่างรุนแรงจนเป็นอันตราย"
+        }
+      },
+      {
+        "id": "cl-eyre-067",
+        "english": "Grace Poole looked after her, but sometimes Bertha escaped.",
+        "turkish": "Grace Poole ona bakıyordu, ama Bertha bazen kaçıyordu.",
+        "translations": {
+          "es-419": "Grace Poole la cuidaba, pero a veces Bertha se escapaba.",
+          "pt-BR": "Grace Poole cuidava dela, mas às vezes Bertha escapava.",
+          "id": "Grace Poole merawatnya, tetapi kadang-kadang Bertha berhasil kabur.",
+          "ar": "كانت غريس بول ترعاها، لكن بيرثا كانت تهرب أحيانًا.",
+          "vi": "Grace Poole chăm sóc bà, nhưng thỉnh thoảng Bertha trốn ra được.",
+          "hi": "ग्रेस पूल उसकी देखभाल करती थी, पर कभी-कभी बर्था निकल भागती थी।",
+          "ru": "За ней присматривала Грейс Пул, но иногда Берте удавалось вырваться.",
+          "bn": "গ্রেস পুল তাঁর দেখাশোনা করত, কিন্তু মাঝে মাঝে বার্থা পালিয়ে যেতেন।",
+          "ur": "گریس پول اس کی دیکھ بھال کرتی تھی، مگر کبھی کبھی برتھا نکل بھاگتی تھی۔",
+          "th": "เกรซ พูลคอยดูแลเธอ แต่บางครั้งเบอร์ธาก็หนีออกมาได้"
+        }
+      },
+      {
+        "id": "cl-eyre-068",
+        "english": "It was Bertha who had laughed, started the fire and torn the veil.",
+        "turkish": "Gülen, yangını çıkaran ve duvağı yırtan Bertha'ydı.",
+        "translations": {
+          "es-419": "Era Bertha quien se había reído, había provocado el incendio y había rasgado el velo.",
+          "pt-BR": "Tinha sido Bertha quem riu, começou o incêndio e rasgou o véu.",
+          "id": "Bertha-lah yang tertawa, menyulut api, dan merobek kerudung itu.",
+          "ar": "كانت بيرثا هي التي ضحكت، وأشعلت النار، ومزّقت الطرحة.",
+          "vi": "Chính Bertha là người đã cười, gây ra đám cháy và xé tấm khăn voan.",
+          "hi": "हँसने वाली, आग लगाने वाली और घूँघट फाड़ने वाली बर्था ही थी।",
+          "ru": "Это Берта смеялась, устроила пожар и разорвала фату.",
+          "bn": "হাসি, আগুন আর ওড়না ছেঁড়া, সবই ছিল বার্থার কাজ।",
+          "ur": "ہنسنے والی، آگ لگانے والی اور گھونگھٹ پھاڑنے والی برتھا ہی تھی۔",
+          "th": "คนที่หัวเราะ จุดไฟ และฉีกผ้าคลุมหน้าก็คือเบอร์ธานั่นเอง"
+        }
+      },
+      {
+        "id": "cl-eyre-069",
+        "english": "Mr Rochester begged Jane to stay with him anyway.",
+        "turkish": "Bay Rochester yine de yanında kalması için Jane'e yalvardı.",
+        "translations": {
+          "es-419": "Aun así, el señor Rochester le rogó a Jane que se quedara con él.",
+          "pt-BR": "Mesmo assim, o senhor Rochester implorou que Jane ficasse com ele.",
+          "id": "Meski begitu, Tuan Rochester memohon agar Jane tetap tinggal bersamanya.",
+          "ar": "ومع ذلك، توسّل السيد روتشستر إلى جين أن تبقى معه.",
+          "vi": "Dù vậy, ông Rochester vẫn van nài Jane ở lại bên mình.",
+          "hi": "फिर भी मिस्टर रॉचेस्टर ने जेन से अपने साथ रहने की मिन्नत की।",
+          "ru": "И всё же мистер Рочестер умолял Джейн остаться с ним.",
+          "bn": "তবু মিস্টার রচেস্টার জেনকে তাঁর কাছে থেকে যেতে মিনতি করলেন।",
+          "ur": "پھر بھی مسٹر روچسٹر نے جین سے اپنے ساتھ رہنے کی منت کی۔",
+          "th": "ถึงอย่างนั้น คุณโรเชสเตอร์ก็ยังอ้อนวอนให้เจนอยู่กับเขา"
+        }
+      },
+      {
+        "id": "cl-eyre-070",
+        "english": "Jane loved him with all her heart.",
+        "turkish": "Jane onu bütün kalbiyle seviyordu.",
+        "translations": {
+          "es-419": "Jane lo amaba con todo su corazón.",
+          "pt-BR": "Jane o amava de todo o coração.",
+          "id": "Jane mencintainya dengan sepenuh hati.",
+          "ar": "كانت جين تحبه من كل قلبها.",
+          "vi": "Jane yêu ông bằng cả trái tim.",
+          "hi": "जेन उनसे पूरे दिल से प्यार करती थी।",
+          "ru": "Джейн любила его всем сердцем.",
+          "bn": "জেন তাঁকে মনপ্রাণ দিয়ে ভালোবাসত।",
+          "ur": "جین ان سے پورے دل سے محبت کرتی تھی۔",
+          "th": "เจนรักเขาสุดหัวใจ"
+        }
+      },
+      {
+        "id": "cl-eyre-071",
+        "english": "But she knew that she could not live with a married man.",
+        "turkish": "Ama evli bir adamla yaşayamayacağını biliyordu.",
+        "translations": {
+          "es-419": "Pero sabía que no podía vivir con un hombre casado.",
+          "pt-BR": "Mas sabia que não podia viver com um homem casado.",
+          "id": "Namun ia tahu bahwa ia tidak bisa hidup bersama pria yang sudah beristri.",
+          "ar": "لكنها كانت تعلم أنها لا تستطيع العيش مع رجل متزوّج.",
+          "vi": "Nhưng cô biết mình không thể sống với một người đàn ông đã có vợ.",
+          "hi": "लेकिन वह जानती थी कि वह एक शादीशुदा आदमी के साथ नहीं रह सकती।",
+          "ru": "Но она знала, что не может жить с женатым человеком.",
+          "bn": "কিন্তু সে জানত, একজন বিবাহিত পুরুষের সঙ্গে সে থাকতে পারে না।",
+          "ur": "لیکن وہ جانتی تھی کہ وہ ایک شادی شدہ آدمی کے ساتھ نہیں رہ سکتی۔",
+          "th": "แต่เธอรู้ว่าเธออยู่กับชายที่มีภรรยาแล้วไม่ได้"
+        }
+      },
+      {
+        "id": "cl-eyre-072",
+        "english": "Before dawn, she left Thornfield with almost no money.",
+        "turkish": "Şafaktan önce, neredeyse hiç parası olmadan Thornfield'dan ayrıldı.",
+        "translations": {
+          "es-419": "Antes del amanecer, dejó Thornfield casi sin dinero.",
+          "pt-BR": "Antes do amanhecer, ela deixou Thornfield quase sem dinheiro.",
+          "id": "Sebelum fajar, ia meninggalkan Thornfield hampir tanpa uang.",
+          "ar": "قبل الفجر، غادرت ثورنفيلد وليس معها مال تقريبًا.",
+          "vi": "Trước bình minh, cô rời Thornfield mà gần như không có tiền.",
+          "hi": "भोर से पहले वह लगभग बिना पैसों के थॉर्नफ़ील्ड छोड़कर चली गई।",
+          "ru": "До рассвета она покинула Торнфилд почти без денег.",
+          "bn": "ভোরের আগেই সে প্রায় কপর্দকশূন্য অবস্থায় থর্নফিল্ড ছেড়ে চলে গেল।",
+          "ur": "فجر سے پہلے وہ تقریباً خالی ہاتھ تھورنفیلڈ چھوڑ کر چلی گئی۔",
+          "th": "ก่อนรุ่งสาง เธอออกจากธอร์นฟิลด์ไปโดยแทบไม่มีเงินติดตัว"
+        }
+      },
+      {
+        "id": "cl-eyre-073",
+        "english": "She travelled for two days and then walked across the wild moors.",
+        "turkish": "İki gün yol aldı, sonra ıssız kırlardan yürüyerek geçti.",
+        "translations": {
+          "es-419": "Viajó durante dos días y luego cruzó a pie los páramos salvajes.",
+          "pt-BR": "Viajou por dois dias e depois atravessou a pé as charnecas selvagens.",
+          "id": "Ia bepergian selama dua hari, lalu berjalan kaki melintasi padang liar.",
+          "ar": "سافرت يومين، ثم مشت عبر البراري الموحشة.",
+          "vi": "Cô đi xe hai ngày, rồi đi bộ băng qua những vùng đồng hoang hoang dã.",
+          "hi": "उसने दो दिन सफ़र किया और फिर वीरान बंजर मैदानों में पैदल चलती रही।",
+          "ru": "Два дня она ехала, а потом пошла пешком через дикие пустоши.",
+          "bn": "দু'দিন যাত্রার পর সে হেঁটে পেরোল জনমানবহীন প্রান্তর।",
+          "ur": "اس نے دو دن سفر کیا اور پھر ویران بنجر میدانوں میں پیدل چلتی رہی۔",
+          "th": "เธอเดินทางสองวัน แล้วเดินเท้าข้ามทุ่งรกร้าง"
+        }
+      },
+      {
+        "id": "cl-eyre-074",
+        "english": "She was cold, hungry and lost.",
+        "turkish": "Üşümüştü, açtı ve yolunu kaybetmişti.",
+        "translations": {
+          "es-419": "Tenía frío y hambre, y estaba perdida.",
+          "pt-BR": "Ela estava com frio, com fome e perdida.",
+          "id": "Ia kedinginan, lapar, dan tersesat.",
+          "ar": "كانت تشعر بالبرد والجوع، وقد ضلّت طريقها.",
+          "vi": "Cô lạnh, đói và lạc đường.",
+          "hi": "उसे ठंड लग रही थी, वह भूखी थी और रास्ता भटक गई थी।",
+          "ru": "Ей было холодно и голодно, и она заблудилась.",
+          "bn": "সে ছিল শীতার্ত, ক্ষুধার্ত আর পথহারা।",
+          "ur": "اسے سردی لگ رہی تھی، وہ بھوکی تھی اور راستہ بھٹک گئی تھی۔",
+          "th": "เธอทั้งหนาว หิว และหลงทาง"
+        }
+      },
+      {
+        "id": "cl-eyre-075",
+        "english": "At last, half dead, she knocked at the door of a small house.",
+        "turkish": "Sonunda yarı ölü halde küçük bir evin kapısını çaldı.",
+        "translations": {
+          "es-419": "Por fin, medio muerta, llamó a la puerta de una casita.",
+          "pt-BR": "Por fim, quase morta, bateu à porta de uma casinha.",
+          "id": "Akhirnya, dalam keadaan setengah mati, ia mengetuk pintu sebuah rumah kecil.",
+          "ar": "وأخيرًا، وهي بين الحياة والموت، طرقت باب بيت صغير.",
+          "vi": "Cuối cùng, kiệt sức gần chết, cô gõ cửa một ngôi nhà nhỏ.",
+          "hi": "आख़िरकार, अधमरी हालत में, उसने एक छोटे-से घर का दरवाज़ा खटखटाया।",
+          "ru": "Наконец, едва живая, она постучала в дверь маленького дома.",
+          "bn": "অবশেষে আধমরা অবস্থায় সে একটা ছোট বাড়ির দরজায় কড়া নাড়ল।",
+          "ur": "آخرکار، ادھ موئی حالت میں، اس نے ایک چھوٹے سے گھر کا دروازہ کھٹکھٹایا۔",
+          "th": "ในที่สุด ในสภาพเกือบตาย เธอเคาะประตูบ้านหลังเล็ก ๆ หลังหนึ่ง"
+        }
+      },
+      {
+        "id": "cl-eyre-076",
+        "english": "A young priest called St John Rivers and his two sisters took her in.",
+        "turkish": "St John Rivers adında genç bir papaz ile iki kız kardeşi onu evlerine aldılar.",
+        "translations": {
+          "es-419": "Un joven clérigo llamado St John Rivers y sus dos hermanas la acogieron.",
+          "pt-BR": "Um jovem clérigo chamado St John Rivers e as duas irmãs dele a acolheram.",
+          "id": "Seorang pendeta muda bernama St John Rivers dan dua saudarinya menampungnya.",
+          "ar": "آواها قسّ شاب يُدعى سانت جون ريفرز وأختاه.",
+          "vi": "Một mục sư trẻ tên St John Rivers cùng hai cô em gái đã cưu mang cô.",
+          "hi": "सेंट जॉन रिवर्स नाम के एक नौजवान पादरी और उनकी दो बहनों ने उसे आसरा दिया।",
+          "ru": "Молодой священник Сент-Джон Риверс и две его сестры приютили её.",
+          "bn": "সেন্ট জন রিভার্স নামে এক তরুণ যাজক আর তাঁর দুই বোন তাকে আশ্রয় দিলেন।",
+          "ur": "سینٹ جان ریورز نامی ایک نوجوان پادری اور ان کی دو بہنوں نے اسے پناہ دی۔",
+          "th": "นักบวชหนุ่มชื่อเซนต์จอห์น ริเวอร์ส กับน้องสาวสองคนรับเธอไว้"
+        }
+      },
+      {
+        "id": "cl-eyre-077",
+        "english": "They gave her food and a warm bed, and slowly she grew strong again.",
+        "turkish": "Ona yemek ve sıcak bir yatak verdiler; Jane yavaş yavaş yeniden güçlendi.",
+        "translations": {
+          "es-419": "Le dieron comida y una cama caliente, y poco a poco recuperó las fuerzas.",
+          "pt-BR": "Deram-lhe comida e uma cama quente, e aos poucos ela recuperou as forças.",
+          "id": "Mereka memberinya makanan dan tempat tidur hangat, dan perlahan ia pulih.",
+          "ar": "أعطوها طعامًا وسريرًا دافئًا، فاستعادت قوتها شيئًا فشيئًا.",
+          "vi": "Họ cho cô ăn và một chiếc giường ấm, và dần dần cô khỏe lại.",
+          "hi": "उन्होंने उसे खाना और गर्म बिस्तर दिया, और धीरे-धीरे वह फिर से ताक़तवर हो गई।",
+          "ru": "Они дали ей еду и тёплую постель, и понемногу она окрепла.",
+          "bn": "তাঁরা তাকে খাবার আর গরম বিছানা দিলেন, ধীরে ধীরে সে আবার সুস্থ হয়ে উঠল।",
+          "ur": "انہوں نے اسے کھانا اور گرم بستر دیا، اور آہستہ آہستہ وہ پھر سے توانا ہو گئی۔",
+          "th": "พวกเขาให้อาหารและเตียงอุ่น ๆ แก่เธอ แล้วเธอก็ค่อย ๆ แข็งแรงขึ้น"
+        }
+      },
+      {
+        "id": "cl-eyre-078",
+        "english": "St John found her work as a teacher in a village school.",
+        "turkish": "St John ona bir köy okulunda öğretmenlik işi buldu.",
+        "translations": {
+          "es-419": "St John le consiguió trabajo como maestra en una escuela de pueblo.",
+          "pt-BR": "St John lhe arranjou trabalho como professora numa escola de aldeia.",
+          "id": "St John mencarikannya pekerjaan sebagai guru di sekolah desa.",
+          "ar": "وجد لها سانت جون عملًا معلّمةً في مدرسة القرية.",
+          "vi": "St John tìm cho cô một việc dạy học ở trường làng.",
+          "hi": "सेंट जॉन ने उसके लिए गाँव के स्कूल में शिक्षिका की नौकरी ढूँढ़ दी।",
+          "ru": "Сент-Джон нашёл ей место учительницы в деревенской школе.",
+          "bn": "সেন্ট জন তাকে গ্রামের স্কুলে শিক্ষিকার কাজ জোগাড় করে দিলেন।",
+          "ur": "سینٹ جان نے اس کے لیے گاؤں کے اسکول میں استانی کی نوکری ڈھونڈ دی۔",
+          "th": "เซนต์จอห์นหางานครูในโรงเรียนประจำหมู่บ้านให้เธอ"
+        }
+      },
+      {
+        "id": "cl-eyre-079",
+        "english": "One day St John came to Jane with surprising news.",
+        "turkish": "Bir gün St John, Jane'e şaşırtıcı bir haberle geldi.",
+        "translations": {
+          "es-419": "Un día St John fue a ver a Jane con una noticia sorprendente.",
+          "pt-BR": "Um dia, St John procurou Jane com uma notícia surpreendente.",
+          "id": "Suatu hari St John datang kepada Jane membawa kabar yang mengejutkan.",
+          "ar": "وذات يوم، جاء سانت جون إلى جين بخبر مدهش.",
+          "vi": "Một hôm St John đến gặp Jane với một tin bất ngờ.",
+          "hi": "एक दिन सेंट जॉन एक चौंकाने वाली ख़बर लेकर जेन के पास आए।",
+          "ru": "Однажды Сент-Джон пришёл к Джейн с удивительной новостью.",
+          "bn": "একদিন সেন্ট জন জেনের কাছে এক আশ্চর্য খবর নিয়ে এলেন।",
+          "ur": "ایک دن سینٹ جان ایک حیران کن خبر لے کر جین کے پاس آئے۔",
+          "th": "วันหนึ่งเซนต์จอห์นมาหาเจนพร้อมข่าวที่น่าประหลาดใจ"
+        }
+      },
+      {
+        "id": "cl-eyre-080",
+        "english": "Jane's uncle in Madeira had died and left her a fortune.",
+        "turkish": "Jane'in Madeira'daki amcası ölmüş ve ona bir servet bırakmıştı.",
+        "translations": {
+          "es-419": "El tío de Jane en Madeira había muerto y le había dejado una fortuna.",
+          "pt-BR": "O tio de Jane na Madeira tinha morrido e lhe deixado uma fortuna.",
+          "id": "Paman Jane di Madeira telah meninggal dan mewariskan harta besar kepadanya.",
+          "ar": "لقد مات عمّ جين في ماديرا وترك لها ثروة.",
+          "vi": "Người chú của Jane ở Madeira đã qua đời và để lại cho cô cả một gia tài.",
+          "hi": "मदीरा में रहने वाले जेन के चाचा की मृत्यु हो गई थी, और वे उसके लिए एक बड़ी दौलत छोड़ गए थे।",
+          "ru": "Дядя Джейн на Мадейре умер и оставил ей состояние.",
+          "bn": "মাদেইরায় জেনের কাকা মারা গেছেন, আর তার জন্য রেখে গেছেন বিপুল সম্পত্তি।",
+          "ur": "مادیرا میں رہنے والے جین کے چچا کا انتقال ہو گیا تھا، اور وہ اس کے لیے بڑی دولت چھوڑ گئے تھے۔",
+          "th": "ลุงของเจนที่มาเดราเสียชีวิต และทิ้งทรัพย์สมบัติก้อนใหญ่ไว้ให้เธอ"
+        }
+      },
+      {
+        "id": "cl-eyre-081",
+        "english": "Even more surprising, St John and his sisters were her cousins.",
+        "turkish": "Daha da şaşırtıcısı, St John ve kız kardeşleri onun kuzenleriydi.",
+        "translations": {
+          "es-419": "Más sorprendente aún, St John y sus hermanas eran sus primos.",
+          "pt-BR": "Mais surpreendente ainda, St John e as irmãs eram primos dela.",
+          "id": "Lebih mengejutkan lagi, St John dan saudari-saudarinya adalah sepupunya.",
+          "ar": "والأكثر إدهاشًا أن سانت جون وأختيه كانوا أبناء عمّتها.",
+          "vi": "Bất ngờ hơn nữa, St John và hai cô em gái chính là anh chị em họ của cô.",
+          "hi": "इससे भी ज़्यादा हैरानी की बात यह थी कि सेंट जॉन और उनकी बहनें उसके फुफेरे भाई-बहन थे।",
+          "ru": "Ещё удивительнее было то, что Сент-Джон и его сёстры оказались её двоюродными братом и сёстрами.",
+          "bn": "আরও আশ্চর্যের কথা, সেন্ট জন আর তাঁর বোনেরা ছিলেন তার পিসতুতো ভাইবোন।",
+          "ur": "اس سے بھی زیادہ حیرت کی بات یہ تھی کہ سینٹ جان اور ان کی بہنیں اس کے کزن تھے۔",
+          "th": "ที่น่าประหลาดใจยิ่งกว่านั้น เซนต์จอห์นและน้องสาวทั้งสองเป็นลูกพี่ลูกน้องของเธอ"
+        }
+      },
+      {
+        "id": "cl-eyre-082",
+        "english": "Jane had a family at last, and she shared the money with them.",
+        "turkish": "Jane'in sonunda bir ailesi olmuştu ve parayı onlarla paylaştı.",
+        "translations": {
+          "es-419": "Jane por fin tenía una familia, y compartió el dinero con ellos.",
+          "pt-BR": "Jane finalmente tinha uma família, e dividiu o dinheiro com eles.",
+          "id": "Jane akhirnya punya keluarga, dan ia membagi uang itu dengan mereka.",
+          "ar": "صارت لجين عائلة أخيرًا، فتقاسمت المال معهم.",
+          "vi": "Cuối cùng Jane cũng có một gia đình, và cô chia số tiền với họ.",
+          "hi": "आख़िरकार जेन का भी एक परिवार था, और उसने पैसे उनके साथ बाँट लिए।",
+          "ru": "У Джейн наконец появилась семья, и она разделила с ними деньги.",
+          "bn": "অবশেষে জেনের একটা পরিবার হলো, আর সে টাকাটা তাদের সঙ্গে ভাগ করে নিল।",
+          "ur": "آخرکار جین کا بھی ایک خاندان تھا، اور اس نے پیسے ان کے ساتھ بانٹ لیے۔",
+          "th": "ในที่สุดเจนก็มีครอบครัว และเธอแบ่งเงินให้พวกเขาด้วย"
+        }
+      },
+      {
+        "id": "cl-eyre-083",
+        "english": "Then St John asked her to marry him and go with him to India.",
+        "turkish": "Sonra St John onunla evlenip kendisiyle Hindistan'a gelmesini istedi.",
+        "translations": {
+          "es-419": "Entonces St John le pidió que se casara con él y lo acompañara a la India.",
+          "pt-BR": "Então St John pediu que ela se casasse com ele e fosse com ele para a Índia.",
+          "id": "Lalu St John memintanya menikah dengannya dan ikut ke India.",
+          "ar": "ثم طلب منها سانت جون أن تتزوّجه وترافقه إلى الهند.",
+          "vi": "Rồi St John ngỏ lời muốn cưới cô và đưa cô cùng sang Ấn Độ.",
+          "hi": "फिर सेंट जॉन ने उससे शादी करके अपने साथ भारत चलने को कहा।",
+          "ru": "Затем Сент-Джон предложил ей выйти за него и уехать с ним в Индию.",
+          "bn": "তারপর সেন্ট জন তাকে বিয়ে করে তাঁর সঙ্গে ভারতে যেতে বললেন।",
+          "ur": "پھر سینٹ جان نے اس سے شادی کر کے اپنے ساتھ ہندوستان چلنے کو کہا۔",
+          "th": "แล้วเซนต์จอห์นก็ขอเธอแต่งงานและให้ไปอินเดียด้วยกัน"
+        }
+      },
+      {
+        "id": "cl-eyre-084",
+        "english": "He did not love her, but he thought she would be a useful wife.",
+        "turkish": "Onu sevmiyordu, ama işe yarar bir eş olacağını düşünüyordu.",
+        "translations": {
+          "es-419": "No la amaba, pero pensaba que sería una esposa útil.",
+          "pt-BR": "Ele não a amava, mas achava que ela seria uma esposa útil.",
+          "id": "Ia tidak mencintainya, tetapi menganggap Jane akan menjadi istri yang berguna.",
+          "ar": "لم يكن يحبها، لكنه رأى أنها ستكون زوجة نافعة.",
+          "vi": "Anh không yêu cô, nhưng nghĩ cô sẽ là một người vợ có ích.",
+          "hi": "वे उससे प्यार नहीं करते थे, पर उन्हें लगता था कि वह काम की पत्नी साबित होगी।",
+          "ru": "Он не любил её, но считал, что она будет полезной женой.",
+          "bn": "তিনি তাকে ভালোবাসতেন না, কিন্তু ভাবতেন সে কাজের স্ত্রী হবে।",
+          "ur": "وہ اس سے محبت نہیں کرتے تھے، مگر انہیں لگتا تھا کہ وہ کام کی بیوی ثابت ہوگی۔",
+          "th": "เขาไม่ได้รักเธอ แต่คิดว่าเธอจะเป็นภรรยาที่มีประโยชน์"
+        }
+      },
+      {
+        "id": "cl-eyre-085",
+        "english": "Jane almost agreed, because he was so serious and good.",
+        "turkish": "Jane neredeyse kabul edecekti, çünkü o çok ciddi ve iyi bir insandı.",
+        "translations": {
+          "es-419": "Jane casi aceptó, porque él era muy serio y bueno.",
+          "pt-BR": "Jane quase aceitou, porque ele era muito sério e bom.",
+          "id": "Jane hampir setuju, karena ia begitu sungguh-sungguh dan baik.",
+          "ar": "كادت جين توافق، لأنه كان جادًّا طيبًا جدًّا.",
+          "vi": "Jane suýt nữa đã đồng ý, vì anh nghiêm túc và tốt bụng đến thế.",
+          "hi": "जेन लगभग मान गई थी, क्योंकि वे बहुत गंभीर और भले इंसान थे।",
+          "ru": "Джейн почти согласилась, потому что он был так серьёзен и добр.",
+          "bn": "জেন প্রায় রাজি হয়ে যাচ্ছিল, কারণ তিনি ছিলেন খুব গম্ভীর আর ভালো মানুষ।",
+          "ur": "جین تقریباً مان گئی تھی، کیونکہ وہ بہت سنجیدہ اور نیک انسان تھے۔",
+          "th": "เจนเกือบจะตกลง เพราะเขาเป็นคนจริงจังและดีมาก"
+        }
+      },
+      {
+        "id": "cl-eyre-086",
+        "english": "But that night she seemed to hear a voice far away.",
+        "turkish": "Ama o gece uzaklardan bir ses duyar gibi oldu.",
+        "translations": {
+          "es-419": "Pero esa noche le pareció oír una voz a lo lejos.",
+          "pt-BR": "Mas naquela noite ela pareceu ouvir uma voz ao longe.",
+          "id": "Namun malam itu ia seperti mendengar suara dari kejauhan.",
+          "ar": "لكنها في تلك الليلة خُيّل إليها أنها تسمع صوتًا بعيدًا.",
+          "vi": "Nhưng đêm ấy, cô dường như nghe thấy một giọng nói từ rất xa.",
+          "hi": "लेकिन उस रात उसे लगा जैसे दूर से कोई आवाज़ आ रही हो।",
+          "ru": "Но в ту ночь ей почудился далёкий голос.",
+          "bn": "কিন্তু সে রাতে তার মনে হলো দূর থেকে কেউ ডাকছে।",
+          "ur": "لیکن اس رات اسے لگا جیسے دور سے کوئی آواز آ رہی ہو۔",
+          "th": "แต่คืนนั้น เธอรู้สึกเหมือนได้ยินเสียงจากที่ไกลแสนไกล"
+        }
+      },
+      {
+        "id": "cl-eyre-087",
+        "english": "\"Jane! Jane! Jane!\" It was Mr Rochester's voice.",
+        "turkish": "\"Jane! Jane! Jane!\" Bu, Bay Rochester'ın sesiydi.",
+        "translations": {
+          "es-419": "\"¡Jane! ¡Jane! ¡Jane!\". Era la voz del señor Rochester.",
+          "pt-BR": "\"Jane! Jane! Jane!\" Era a voz do senhor Rochester.",
+          "id": "\"Jane! Jane! Jane!\" Itu suara Tuan Rochester.",
+          "ar": "\"جين! جين! جين!\" كان ذلك صوت السيد روتشستر.",
+          "vi": "\"Jane! Jane! Jane!\" Đó là giọng của ông Rochester.",
+          "hi": "\"जेन! जेन! जेन!\" वह मिस्टर रॉचेस्टर की आवाज़ थी।",
+          "ru": "«Джейн! Джейн! Джейн!» Это был голос мистера Рочестера.",
+          "bn": "\"জেন! জেন! জেন!\" ওটা মিস্টার রচেস্টারের গলা।",
+          "ur": "\"جین! جین! جین!\" وہ مسٹر روچسٹر کی آواز تھی۔",
+          "th": "\"เจน! เจน! เจน!\" นั่นคือเสียงของคุณโรเชสเตอร์"
+        }
+      },
+      {
+        "id": "cl-eyre-088",
+        "english": "The next morning she set off for Thornfield.",
+        "turkish": "Ertesi sabah Thornfield'a doğru yola çıktı.",
+        "translations": {
+          "es-419": "A la mañana siguiente, partió hacia Thornfield.",
+          "pt-BR": "Na manhã seguinte, ela partiu para Thornfield.",
+          "id": "Keesokan paginya ia berangkat ke Thornfield.",
+          "ar": "وفي صباح اليوم التالي، انطلقت إلى ثورنفيلد.",
+          "vi": "Sáng hôm sau, cô lên đường về Thornfield.",
+          "hi": "अगली सुबह वह थॉर्नफ़ील्ड के लिए निकल पड़ी।",
+          "ru": "На следующее утро она отправилась в Торнфилд.",
+          "bn": "পরদিন সকালে সে থর্নফিল্ডের পথে রওনা দিল।",
+          "ur": "اگلی صبح وہ تھورنفیلڈ کے لیے روانہ ہو گئی۔",
+          "th": "เช้าวันรุ่งขึ้น เธอออกเดินทางไปธอร์นฟิลด์"
+        }
+      },
+      {
+        "id": "cl-eyre-089",
+        "english": "When she arrived, she found only black, burnt walls.",
+        "turkish": "Oraya vardığında yalnızca kapkara, yanık duvarlar buldu.",
+        "translations": {
+          "es-419": "Al llegar, solo encontró paredes negras y quemadas.",
+          "pt-BR": "Quando chegou, encontrou só paredes pretas e queimadas.",
+          "id": "Saat tiba, ia hanya menemukan dinding-dinding hitam yang hangus.",
+          "ar": "وحين وصلت، لم تجد سوى جدران سوداء محترقة.",
+          "vi": "Khi đến nơi, cô chỉ thấy những bức tường đen cháy sém.",
+          "hi": "वहाँ पहुँचकर उसे सिर्फ़ काली, जली हुई दीवारें मिलीं।",
+          "ru": "Приехав, она нашла лишь чёрные обгоревшие стены.",
+          "bn": "পৌঁছে সে দেখল শুধু কালো, পোড়া দেয়াল।",
+          "ur": "وہاں پہنچ کر اسے صرف کالی، جلی ہوئی دیواریں ملیں۔",
+          "th": "เมื่อไปถึง เธอพบเพียงกำแพงดำไหม้เกรียม"
+        }
+      },
+      {
+        "id": "cl-eyre-090",
+        "english": "An innkeeper told her what had happened.",
+        "turkish": "Bir hancı ona olanları anlattı.",
+        "translations": {
+          "es-419": "Un posadero le contó lo que había pasado.",
+          "pt-BR": "Um estalajadeiro contou o que tinha acontecido.",
+          "id": "Seorang pemilik penginapan menceritakan apa yang terjadi.",
+          "ar": "أخبرها صاحب نُزُل بما حدث.",
+          "vi": "Một ông chủ quán trọ kể cho cô nghe chuyện đã xảy ra.",
+          "hi": "एक सराय वाले ने उसे बताया कि क्या हुआ था।",
+          "ru": "Хозяин гостиницы рассказал ей, что случилось.",
+          "bn": "এক সরাইখানার মালিক তাকে সব ঘটনা খুলে বললেন।",
+          "ur": "ایک سرائے والے نے اسے بتایا کہ کیا ہوا تھا۔",
+          "th": "เจ้าของโรงเตี๊ยมคนหนึ่งเล่าให้เธอฟังว่าเกิดอะไรขึ้น"
+        }
+      },
+      {
+        "id": "cl-eyre-091",
+        "english": "Bertha had set the house on fire and jumped from the roof.",
+        "turkish": "Bertha evi ateşe vermiş ve damdan atlamıştı.",
+        "translations": {
+          "es-419": "Bertha había incendiado la casa y se había tirado desde el tejado.",
+          "pt-BR": "Bertha tinha posto fogo na casa e pulado do telhado.",
+          "id": "Bertha membakar rumah itu lalu melompat dari atap.",
+          "ar": "أضرمت بيرثا النار في البيت وقفزت من السطح.",
+          "vi": "Bertha đã phóng hỏa ngôi nhà và nhảy từ mái xuống.",
+          "hi": "बर्था ने घर में आग लगा दी थी और छत से कूद गई थी।",
+          "ru": "Берта подожгла дом и бросилась с крыши.",
+          "bn": "বার্থা বাড়িতে আগুন লাগিয়ে ছাদ থেকে ঝাঁপ দিয়েছিলেন।",
+          "ur": "برتھا نے گھر میں آگ لگا دی تھی اور چھت سے کود گئی تھی۔",
+          "th": "เบอร์ธาจุดไฟเผาบ้าน แล้วกระโดดลงมาจากหลังคา"
+        }
+      },
+      {
+        "id": "cl-eyre-092",
+        "english": "Mr Rochester had tried to save her, and he had saved all the servants.",
+        "turkish": "Bay Rochester onu kurtarmaya çalışmış ve bütün hizmetkârları kurtarmıştı.",
+        "translations": {
+          "es-419": "El señor Rochester había intentado salvarla, y había salvado a todos los criados.",
+          "pt-BR": "O senhor Rochester tinha tentado salvá-la e tinha salvado todos os criados.",
+          "id": "Tuan Rochester berusaha menyelamatkannya, dan ia menyelamatkan semua pelayan.",
+          "ar": "حاول السيد روتشستر إنقاذها، وأنقذ جميع الخدم.",
+          "vi": "Ông Rochester đã cố cứu bà, và ông đã cứu được tất cả người hầu.",
+          "hi": "मिस्टर रॉचेस्टर ने उसे बचाने की कोशिश की थी, और सभी नौकरों को बचा लिया था।",
+          "ru": "Мистер Рочестер пытался её спасти и спас всех слуг.",
+          "bn": "মিস্টার রচেস্টার তাঁকে বাঁচানোর চেষ্টা করেছিলেন, আর সব কাজের লোককে বাঁচিয়েছিলেন।",
+          "ur": "مسٹر روچسٹر نے اسے بچانے کی کوشش کی تھی، اور سب نوکروں کو بچا لیا تھا۔",
+          "th": "คุณโรเชสเตอร์พยายามช่วยเธอ และได้ช่วยคนรับใช้ทุกคนไว้"
+        }
+      },
+      {
+        "id": "cl-eyre-093",
+        "english": "But a burning beam had fallen on him.",
+        "turkish": "Ama yanan bir kiriş üstüne düşmüştü.",
+        "translations": {
+          "es-419": "Pero una viga en llamas le había caído encima.",
+          "pt-BR": "Mas uma viga em chamas tinha caído sobre ele.",
+          "id": "Namun sebatang balok yang terbakar menimpanya.",
+          "ar": "لكن عارضة مشتعلة سقطت عليه.",
+          "vi": "Nhưng một thanh xà đang cháy đã đổ xuống người ông.",
+          "hi": "लेकिन एक जलता हुआ शहतीर उन पर आ गिरा था।",
+          "ru": "Но на него упала горящая балка.",
+          "bn": "কিন্তু একটা জ্বলন্ত কড়িকাঠ তাঁর ওপর পড়েছিল।",
+          "ur": "لیکن ایک جلتا ہوا شہتیر ان پر آ گرا تھا۔",
+          "th": "แต่คานที่ลุกเป็นไฟหล่นลงมาทับเขา"
+        }
+      },
+      {
+        "id": "cl-eyre-094",
+        "english": "He had lost one hand, and he was now blind.",
+        "turkish": "Bir elini kaybetmişti ve artık kördü.",
+        "translations": {
+          "es-419": "Había perdido una mano, y ahora estaba ciego.",
+          "pt-BR": "Ele tinha perdido uma das mãos e agora estava cego.",
+          "id": "Ia kehilangan satu tangan, dan kini ia buta.",
+          "ar": "فقد إحدى يديه، وصار الآن أعمى.",
+          "vi": "Ông mất một bàn tay và giờ đã bị mù.",
+          "hi": "उन्होंने एक हाथ खो दिया था, और अब वे अंधे थे।",
+          "ru": "Он лишился руки и ослеп.",
+          "bn": "তিনি একটা হাত হারিয়েছেন, আর এখন তিনি অন্ধ।",
+          "ur": "وہ ایک ہاتھ کھو چکے تھے، اور اب نابینا تھے۔",
+          "th": "เขาเสียมือไปข้างหนึ่ง และตอนนี้ตาบอดแล้ว"
+        }
+      },
+      {
+        "id": "cl-eyre-095",
+        "english": "He lived alone in a small house in the woods called Ferndean.",
+        "turkish": "Ormandaki Ferndean adında küçük bir evde yalnız yaşıyordu.",
+        "translations": {
+          "es-419": "Vivía solo en una casita del bosque llamada Ferndean.",
+          "pt-BR": "Ele morava sozinho numa casinha no bosque chamada Ferndean.",
+          "id": "Ia tinggal sendirian di sebuah rumah kecil di hutan bernama Ferndean.",
+          "ar": "كان يعيش وحيدًا في بيت صغير في الغابة يُدعى فيرندين.",
+          "vi": "Ông sống một mình trong một ngôi nhà nhỏ giữa rừng tên là Ferndean.",
+          "hi": "वे जंगल में फ़र्नडीन नाम के एक छोटे-से घर में अकेले रहते थे।",
+          "ru": "Он жил один в маленьком лесном доме под названием Ферндин.",
+          "bn": "তিনি বনের মধ্যে ফার্নডিন নামে একটা ছোট বাড়িতে একা থাকতেন।",
+          "ur": "وہ جنگل میں فرنڈین نامی ایک چھوٹے سے گھر میں اکیلے رہتے تھے۔",
+          "th": "เขาอาศัยอยู่ตามลำพังในบ้านหลังเล็กกลางป่าชื่อเฟิร์นดีน"
+        }
+      },
+      {
+        "id": "cl-eyre-096",
+        "english": "Jane went there that evening.",
+        "turkish": "Jane o akşam oraya gitti.",
+        "translations": {
+          "es-419": "Jane fue allí esa misma tarde.",
+          "pt-BR": "Jane foi para lá naquela tarde.",
+          "id": "Jane pergi ke sana sore itu.",
+          "ar": "ذهبت جين إلى هناك في ذلك المساء.",
+          "vi": "Chiều tối hôm ấy, Jane tìm đến đó.",
+          "hi": "जेन उसी शाम वहाँ गई।",
+          "ru": "В тот же вечер Джейн отправилась туда.",
+          "bn": "জেন সেদিন সন্ধ্যাতেই সেখানে গেল।",
+          "ur": "جین اسی شام وہاں گئی۔",
+          "th": "เย็นวันนั้น เจนไปที่นั่น"
+        }
+      },
+      {
+        "id": "cl-eyre-097",
+        "english": "She found Mr Rochester sitting by the fire, sad and silent.",
+        "turkish": "Bay Rochester'ı ateşin başında, üzgün ve sessiz otururken buldu.",
+        "translations": {
+          "es-419": "Encontró al señor Rochester sentado junto al fuego, triste y callado.",
+          "pt-BR": "Encontrou o senhor Rochester sentado junto à lareira, triste e calado.",
+          "id": "Ia mendapati Tuan Rochester duduk di dekat perapian, sedih dan diam.",
+          "ar": "وجدت السيد روتشستر جالسًا قرب النار، حزينًا صامتًا.",
+          "vi": "Cô thấy ông Rochester ngồi bên lò sưởi, buồn bã và lặng lẽ.",
+          "hi": "उसने मिस्टर रॉचेस्टर को आग के पास उदास और चुपचाप बैठे पाया।",
+          "ru": "Она застала мистера Рочестера у камина, печального и молчаливого.",
+          "bn": "সে দেখল মিস্টার রচেস্টার আগুনের পাশে বিষণ্ণ আর নীরব হয়ে বসে আছেন।",
+          "ur": "اس نے مسٹر روچسٹر کو آگ کے پاس اداس اور خاموش بیٹھے پایا۔",
+          "th": "เธอพบคุณโรเชสเตอร์นั่งอยู่ข้างเตาผิง เศร้าสร้อยและเงียบงัน"
+        }
+      },
+      {
+        "id": "cl-eyre-098",
+        "english": "She brought him a glass of water, and he heard her voice.",
+        "turkish": "Ona bir bardak su getirdi ve o da onun sesini duydu.",
+        "translations": {
+          "es-419": "Le llevó un vaso de agua, y él oyó su voz.",
+          "pt-BR": "Ela levou um copo d'água para ele, e ele ouviu a voz dela.",
+          "id": "Ia membawakannya segelas air, dan Tuan Rochester mendengar suaranya.",
+          "ar": "أحضرت له كوبًا من الماء، فسمع صوتها.",
+          "vi": "Cô mang cho ông một cốc nước, và ông nghe thấy giọng cô.",
+          "hi": "वह उनके लिए एक गिलास पानी लाई, और उन्होंने उसकी आवाज़ सुनी।",
+          "ru": "Она принесла ему стакан воды, и он услышал её голос.",
+          "bn": "সে তাঁর জন্য এক গ্লাস জল আনল, আর তিনি তার গলা শুনতে পেলেন।",
+          "ur": "وہ ان کے لیے ایک گلاس پانی لائی، اور انہوں نے اس کی آواز سنی۔",
+          "th": "เธอนำน้ำมาให้เขาแก้วหนึ่ง และเขาก็ได้ยินเสียงของเธอ"
+        }
+      },
+      {
+        "id": "cl-eyre-099",
+        "english": "\"Who is this? Is it Jane?\" he cried, and he reached out his hand.",
+        "turkish": "\"Kim o? Jane mi?\" diye bağırdı ve elini uzattı.",
+        "translations": {
+          "es-419": "\"¿Quién es? ¿Es Jane?\", exclamó, y extendió la mano.",
+          "pt-BR": "\"Quem é? É a Jane?\", gritou ele, e estendeu a mão.",
+          "id": "\"Siapa ini? Jane-kah?\" serunya sambil mengulurkan tangan.",
+          "ar": "صاح: \"من هذا؟ أهي جين؟\" ومدّ يده.",
+          "vi": "\"Ai đó? Có phải Jane không?\" ông kêu lên và đưa tay ra.",
+          "hi": "\"कौन है? क्या यह जेन है?\" वे चिल्लाए, और उन्होंने अपना हाथ आगे बढ़ाया।",
+          "ru": "«Кто это? Это Джейн?» — воскликнул он и протянул руку.",
+          "bn": "\"কে? জেন নাকি?\" তিনি চেঁচিয়ে উঠলেন, আর হাত বাড়িয়ে দিলেন।",
+          "ur": "\"کون ہے؟ کیا یہ جین ہے؟\" وہ چلائے، اور انہوں نے اپنا ہاتھ آگے بڑھایا۔",
+          "th": "\"ใครน่ะ เจนใช่ไหม\" เขาร้องถาม แล้วยื่นมือออกไป"
+        }
+      },
+      {
+        "id": "cl-eyre-100",
+        "english": "\"I have come home,\" she said, \"and I will never leave you again.\"",
+        "turkish": "\"Eve döndüm,\" dedi, \"ve seni bir daha asla bırakmayacağım.\"",
+        "translations": {
+          "es-419": "\"He vuelto a casa\", dijo ella, \"y nunca más te dejaré\".",
+          "pt-BR": "\"Voltei para casa\", disse ela, \"e nunca mais vou deixar você.\"",
+          "id": "\"Aku sudah pulang,\" katanya, \"dan aku takkan pernah meninggalkanmu lagi.\"",
+          "ar": "قالت: \"لقد عدتُ إلى البيت، ولن أتركك مرة أخرى أبدًا.\"",
+          "vi": "\"Em đã về nhà,\" cô nói, \"và em sẽ không bao giờ rời xa anh nữa.\"",
+          "hi": "\"मैं घर लौट आई हूँ,\" उसने कहा, \"और अब आपको कभी छोड़कर नहीं जाऊँगी।\"",
+          "ru": "«Я вернулась домой, — сказала она, — и больше никогда вас не оставлю».",
+          "bn": "\"আমি ঘরে ফিরে এসেছি,\" সে বলল, \"আর কখনো আপনাকে ছেড়ে যাব না।\"",
+          "ur": "\"میں گھر لوٹ آئی ہوں،\" اس نے کہا، \"اور اب آپ کو کبھی چھوڑ کر نہیں جاؤں گی۔\"",
+          "th": "\"ฉันกลับบ้านแล้ว\" เธอกล่าว \"และจะไม่จากคุณไปไหนอีก\""
+        }
+      },
+      {
+        "id": "cl-eyre-101",
+        "english": "He was afraid that she pitied him.",
+        "turkish": "Jane'in ona acıdığından korkuyordu.",
+        "translations": {
+          "es-419": "Él temía que ella sintiera lástima por él.",
+          "pt-BR": "Ele tinha medo de que ela sentisse pena dele.",
+          "id": "Ia takut Jane hanya merasa kasihan kepadanya.",
+          "ar": "كان يخشى أن تكون مشفقة عليه.",
+          "vi": "Ông sợ rằng cô chỉ thương hại mình.",
+          "hi": "उन्हें डर था कि वह उन पर तरस खा रही है।",
+          "ru": "Он боялся, что она его жалеет.",
+          "bn": "তাঁর ভয় হলো, সে হয়তো তাঁকে করুণা করছে।",
+          "ur": "انہیں ڈر تھا کہ وہ ان پر ترس کھا رہی ہے۔",
+          "th": "เขากลัวว่าเธอเพียงสงสารเขา"
+        }
+      },
+      {
+        "id": "cl-eyre-102",
+        "english": "But Jane loved him as much as ever.",
+        "turkish": "Ama Jane onu her zamanki kadar seviyordu.",
+        "translations": {
+          "es-419": "Pero Jane lo amaba tanto como siempre.",
+          "pt-BR": "Mas Jane o amava tanto quanto antes.",
+          "id": "Namun Jane mencintainya sama seperti dulu.",
+          "ar": "لكن جين كانت تحبه كما كانت دائمًا.",
+          "vi": "Nhưng Jane vẫn yêu ông như ngày nào.",
+          "hi": "लेकिन जेन उनसे पहले जितना ही प्यार करती थी।",
+          "ru": "Но Джейн любила его так же, как прежде.",
+          "bn": "কিন্তু জেন তাঁকে আগের মতোই ভালোবাসত।",
+          "ur": "لیکن جین ان سے پہلے جتنی ہی محبت کرتی تھی۔",
+          "th": "แต่เจนยังคงรักเขาเหมือนที่เคยรัก"
+        }
+      },
+      {
+        "id": "cl-eyre-103",
+        "english": "Now she was rich and free, and she could choose for herself.",
+        "turkish": "Artık zengin ve özgürdü, kendi kararını kendisi verebilirdi.",
+        "translations": {
+          "es-419": "Ahora era rica y libre, y podía decidir por sí misma.",
+          "pt-BR": "Agora ela era rica e livre, e podia escolher por si mesma.",
+          "id": "Kini ia kaya dan bebas, dan bisa memilih sendiri.",
+          "ar": "صارت الآن غنية حرّة، تستطيع أن تختار بنفسها.",
+          "vi": "Giờ đây cô giàu có và tự do, có thể tự mình lựa chọn.",
+          "hi": "अब वह अमीर और आज़ाद थी, और अपना फ़ैसला ख़ुद कर सकती थी।",
+          "ru": "Теперь она была богата и свободна и могла выбирать сама.",
+          "bn": "এখন সে ধনী আর স্বাধীন, নিজের সিদ্ধান্ত নিজেই নিতে পারে।",
+          "ur": "اب وہ امیر اور آزاد تھی، اور اپنا فیصلہ خود کر سکتی تھی۔",
+          "th": "ตอนนี้เธอร่ำรวยและเป็นอิสระ เลือกทางของตัวเองได้"
+        }
+      },
+      {
+        "id": "cl-eyre-104",
+        "english": "A few weeks later, they were married in a quiet ceremony.",
+        "turkish": "Birkaç hafta sonra sade bir törenle evlendiler.",
+        "translations": {
+          "es-419": "Unas semanas después, se casaron en una ceremonia sencilla.",
+          "pt-BR": "Algumas semanas depois, eles se casaram numa cerimônia discreta.",
+          "id": "Beberapa minggu kemudian, mereka menikah dalam upacara sederhana.",
+          "ar": "وبعد أسابيع قليلة، تزوّجا في حفل هادئ.",
+          "vi": "Vài tuần sau, họ kết hôn trong một buổi lễ giản dị.",
+          "hi": "कुछ हफ़्तों बाद एक सादे समारोह में उनकी शादी हो गई।",
+          "ru": "Через несколько недель они тихо обвенчались.",
+          "bn": "কয়েক সপ্তাহ পরে এক নিরিবিলি অনুষ্ঠানে তাঁদের বিয়ে হলো।",
+          "ur": "چند ہفتوں بعد ایک سادہ تقریب میں ان کی شادی ہو گئی۔",
+          "th": "ไม่กี่สัปดาห์ต่อมา ทั้งสองก็แต่งงานกันในพิธีเรียบง่าย"
+        }
+      },
+      {
+        "id": "cl-eyre-105",
+        "english": "Jane wrote the happy news to her cousins.",
+        "turkish": "Jane bu mutlu haberi kuzenlerine yazdı.",
+        "translations": {
+          "es-419": "Jane les escribió la feliz noticia a sus primos.",
+          "pt-BR": "Jane escreveu a boa notícia aos primos.",
+          "id": "Jane menuliskan kabar bahagia itu kepada sepupu-sepupunya.",
+          "ar": "كتبت جين الخبر السعيد إلى أبناء عمّتها.",
+          "vi": "Jane viết thư báo tin vui cho các anh chị em họ.",
+          "hi": "जेन ने यह ख़ुशख़बरी अपने भाई-बहनों को लिख भेजी।",
+          "ru": "Джейн написала о радостной новости своим кузенам.",
+          "bn": "জেন এই সুখবর চিঠিতে তার ভাইবোনদের জানাল।",
+          "ur": "جین نے یہ خوش خبری اپنے کزنوں کو لکھ بھیجی۔",
+          "th": "เจนเขียนจดหมายบอกข่าวดีนี้แก่ลูกพี่ลูกน้อง"
+        }
+      },
+      {
+        "id": "cl-eyre-106",
+        "english": "After two years, Mr Rochester's sight came back in one eye.",
+        "turkish": "İki yıl sonra Bay Rochester'ın bir gözü yeniden görmeye başladı.",
+        "translations": {
+          "es-419": "Dos años después, el señor Rochester recuperó la vista de un ojo.",
+          "pt-BR": "Dois anos depois, o senhor Rochester voltou a enxergar de um olho.",
+          "id": "Dua tahun kemudian, penglihatan Tuan Rochester pulih pada satu matanya.",
+          "ar": "بعد عامين، عاد البصر إلى إحدى عينَي السيد روتشستر.",
+          "vi": "Hai năm sau, một bên mắt của ông Rochester đã nhìn thấy trở lại.",
+          "hi": "दो साल बाद मिस्टर रॉचेस्टर की एक आँख की रोशनी लौट आई।",
+          "ru": "Через два года к мистеру Рочестеру вернулось зрение на один глаз.",
+          "bn": "দু'বছর পরে মিস্টার রচেস্টারের একটা চোখের দৃষ্টি ফিরে এল।",
+          "ur": "دو سال بعد مسٹر روچسٹر کی ایک آنکھ کی بینائی لوٹ آئی۔",
+          "th": "สองปีต่อมา ตาข้างหนึ่งของคุณโรเชสเตอร์ก็กลับมามองเห็น"
+        }
+      },
+      {
+        "id": "cl-eyre-107",
+        "english": "When their first son was born, he could see the baby's face.",
+        "turkish": "İlk oğulları doğduğunda bebeğin yüzünü görebildi.",
+        "translations": {
+          "es-419": "Cuando nació su primer hijo, pudo ver la cara del bebé.",
+          "pt-BR": "Quando o primeiro filho nasceu, ele pôde ver o rosto do bebê.",
+          "id": "Ketika putra pertama mereka lahir, ia bisa melihat wajah bayinya.",
+          "ar": "وعندما وُلد ابنهما الأول، استطاع أن يرى وجه الطفل.",
+          "vi": "Khi đứa con trai đầu lòng chào đời, ông đã nhìn thấy khuôn mặt của bé.",
+          "hi": "जब उनका पहला बेटा पैदा हुआ, तो वे बच्चे का चेहरा देख सके।",
+          "ru": "Когда родился их первый сын, он смог увидеть лицо малыша.",
+          "bn": "তাঁদের প্রথম ছেলে জন্মালে তিনি শিশুটির মুখ দেখতে পেলেন।",
+          "ur": "جب ان کا پہلا بیٹا پیدا ہوا تو وہ بچے کا چہرہ دیکھ سکے۔",
+          "th": "เมื่อลูกชายคนแรกเกิด เขาก็ได้เห็นหน้าลูก"
+        }
+      },
+      {
+        "id": "cl-eyre-108",
+        "english": "Jane had started life as a lonely orphan.",
+        "turkish": "Jane hayata yalnız bir öksüz olarak başlamıştı.",
+        "translations": {
+          "es-419": "Jane había empezado la vida como una huérfana solitaria.",
+          "pt-BR": "Jane tinha começado a vida como uma órfã solitária.",
+          "id": "Jane memulai hidupnya sebagai yatim piatu yang kesepian.",
+          "ar": "كانت جين قد بدأت حياتها يتيمة وحيدة.",
+          "vi": "Jane đã bắt đầu cuộc đời là một cô bé mồ côi cô đơn.",
+          "hi": "जेन ने ज़िंदगी एक अकेली अनाथ के रूप में शुरू की थी।",
+          "ru": "Джейн начала жизнь одинокой сиротой.",
+          "bn": "জেন জীবন শুরু করেছিল এক নিঃসঙ্গ অনাথ হিসেবে।",
+          "ur": "جین نے زندگی ایک تنہا یتیم کے طور پر شروع کی تھی۔",
+          "th": "เจนเริ่มต้นชีวิตในฐานะเด็กกำพร้าผู้โดดเดี่ยว"
+        }
+      },
+      {
+        "id": "cl-eyre-109",
+        "english": "Now she had a home, a family and the love she had always wanted.",
+        "turkish": "Artık bir yuvası, bir ailesi ve hep istediği sevgi vardı.",
+        "translations": {
+          "es-419": "Ahora tenía un hogar, una familia y el amor que siempre había deseado.",
+          "pt-BR": "Agora ela tinha um lar, uma família e o amor que sempre quis.",
+          "id": "Kini ia punya rumah, keluarga, dan cinta yang selalu ia dambakan.",
+          "ar": "والآن صار لها بيت وعائلة والحب الذي طالما تمنّته.",
+          "vi": "Giờ đây cô có một mái nhà, một gia đình và tình yêu mà cô hằng mong ước.",
+          "hi": "अब उसके पास एक घर था, एक परिवार था, और वह प्यार था जो वह हमेशा से चाहती थी।",
+          "ru": "Теперь у неё был дом, семья и любовь, о которой она всегда мечтала.",
+          "bn": "এখন তার আছে একটা ঘর, একটা পরিবার, আর সেই ভালোবাসা যা সে সবসময় চেয়েছিল।",
+          "ur": "اب اس کے پاس ایک گھر تھا، ایک خاندان تھا، اور وہ محبت تھی جو وہ ہمیشہ سے چاہتی تھی۔",
+          "th": "บัดนี้เธอมีบ้าน มีครอบครัว และมีความรักที่เธอปรารถนามาตลอด"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-jane-eyre-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "A rich girl who travels to India",
+          "A poor orphan who finds love, family and a home through hard choices",
+          "A teacher who opens her own school in London",
+          "A family that loses its house in a fire and moves abroad"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-jane-eyre-q2",
+        "kind": "detail",
+        "prompt": "Who was really laughing on the top floor at Thornfield?",
+        "options": [
+          "Grace Poole",
+          "Adèle",
+          "Bertha",
+          "Mrs Fairfax"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "classic-jane-eyre-q3",
+        "kind": "detail",
+        "prompt": "Why could Jane not marry Mr Rochester on the wedding day?",
+        "options": [
+          "He already had a living wife",
+          "He had lost all his money",
+          "Her aunt did not allow it",
+          "He wanted to marry Blanche"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "classic-jane-eyre-q4",
+        "kind": "inference",
+        "prompt": "Why did Jane leave Thornfield although she loved Mr Rochester?",
+        "options": [
+          "She was afraid of the fire",
+          "She did not want to live with a married man",
+          "She wanted to find her uncle in Madeira",
+          "Mrs Fairfax told her to go"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-jane-eyre-q5",
+        "kind": "inference",
+        "prompt": "Why did Jane say no to St John?",
+        "options": [
+          "He was too poor",
+          "He did not love her, and she still loved Mr Rochester",
+          "He wanted to stay in England",
+          "Her cousins did not like him"
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  "words": [
+    {
+      "id": "orphan",
+      "word": "orphan",
+      "translation": "öksüz, yetim",
+      "pronunciation": "/ˈɔːfn/",
+      "example": "The orphan lived with her aunt.",
+      "translations": {
+        "es-419": "huérfano",
+        "pt-BR": "órfão",
+        "id": "yatim piatu",
+        "ar": "يتيم",
+        "vi": "trẻ mồ côi",
+        "hi": "अनाथ",
+        "ru": "сирота",
+        "bn": "অনাথ",
+        "ur": "یتیم",
+        "th": "เด็กกำพร้า"
+      }
+    },
+    {
+      "id": "governess",
+      "word": "governess",
+      "translation": "mürebbiye",
+      "pronunciation": "/ˈɡʌvənəs/",
+      "example": "The governess taught the little girl French.",
+      "translations": {
+        "es-419": "institutriz",
+        "pt-BR": "preceptora",
+        "id": "guru pribadi, pengasuh",
+        "ar": "مربّية",
+        "vi": "nữ gia sư",
+        "hi": "गवर्नेस, शिक्षिका",
+        "ru": "гувернантка",
+        "bn": "গৃহশিক্ষিকা",
+        "ur": "گورنس، اتالیق",
+        "th": "ครูพี่เลี้ยง"
+      }
+    },
+    {
+      "id": "fever",
+      "word": "fever",
+      "translation": "ateş, ateşli hastalık",
+      "pronunciation": "/ˈfiːvə(r)/",
+      "example": "The child had a high fever.",
+      "translations": {
+        "es-419": "fiebre",
+        "pt-BR": "febre",
+        "id": "demam",
+        "ar": "حمّى",
+        "vi": "cơn sốt",
+        "hi": "बुख़ार",
+        "ru": "лихорадка, жар",
+        "bn": "জ্বর",
+        "ur": "بخار",
+        "th": "ไข้"
+      }
+    },
+    {
+      "id": "veil",
+      "word": "veil",
+      "translation": "duvak, peçe",
+      "pronunciation": "/veɪl/",
+      "example": "The bride wore a long white veil.",
+      "translations": {
+        "es-419": "velo",
+        "pt-BR": "véu",
+        "id": "kerudung, cadar",
+        "ar": "طرحة، حجاب",
+        "vi": "khăn voan",
+        "hi": "घूँघट, परदा",
+        "ru": "фата, вуаль",
+        "bn": "ঘোমটা, ওড়না",
+        "ur": "گھونگھٹ، نقاب",
+        "th": "ผ้าคลุมหน้า"
+      }
+    },
+    {
+      "id": "ghost",
+      "word": "ghost",
+      "translation": "hayalet",
+      "pronunciation": "/ɡəʊst/",
+      "example": "Some people say there is a ghost in the old house.",
+      "translations": {
+        "es-419": "fantasma",
+        "pt-BR": "fantasma",
+        "id": "hantu",
+        "ar": "شبح",
+        "vi": "bóng ma",
+        "hi": "भूत",
+        "ru": "привидение",
+        "bn": "ভূত",
+        "ur": "بھوت",
+        "th": "ผี"
+      }
+    },
+    {
+      "id": "lonely",
+      "word": "lonely",
+      "translation": "yalnız, kimsesiz",
+      "pronunciation": "/ˈləʊnli/",
+      "example": "He felt lonely in the big city.",
+      "translations": {
+        "es-419": "solitario, solo",
+        "pt-BR": "solitário",
+        "id": "kesepian",
+        "ar": "وحيد",
+        "vi": "cô đơn",
+        "hi": "अकेला",
+        "ru": "одинокий",
+        "bn": "নিঃসঙ্গ, একা",
+        "ur": "تنہا، اکیلا",
+        "th": "เหงา, โดดเดี่ยว"
+      }
+    },
+    {
+      "id": "honest",
+      "word": "honest",
+      "translation": "dürüst",
+      "pronunciation": "/ˈɒnɪst/",
+      "example": "She gave an honest answer.",
+      "translations": {
+        "es-419": "sincero, honesto",
+        "pt-BR": "honesto",
+        "id": "jujur",
+        "ar": "صادق",
+        "vi": "thật thà",
+        "hi": "ईमानदार",
+        "ru": "честный",
+        "bn": "সৎ",
+        "ur": "ایماندار",
+        "th": "ซื่อสัตย์"
+      }
+    },
+    {
+      "id": "cruel",
+      "word": "cruel",
+      "translation": "acımasız, zalim",
+      "pronunciation": "/ˈkruːəl/",
+      "example": "It is cruel to hurt animals.",
+      "translations": {
+        "es-419": "cruel",
+        "pt-BR": "cruel",
+        "id": "kejam",
+        "ar": "قاسٍ",
+        "vi": "tàn nhẫn",
+        "hi": "क्रूर, निर्दयी",
+        "ru": "жестокий",
+        "bn": "নিষ্ঠুর",
+        "ur": "ظالم، بے رحم",
+        "th": "โหดร้าย"
+      }
+    },
+    {
+      "id": "punishment",
+      "word": "punishment",
+      "translation": "ceza",
+      "pronunciation": "/ˈpʌnɪʃmənt/",
+      "example": "His punishment was to stay inside all day.",
+      "translations": {
+        "es-419": "castigo",
+        "pt-BR": "castigo",
+        "id": "hukuman",
+        "ar": "عقاب",
+        "vi": "sự trừng phạt",
+        "hi": "सज़ा",
+        "ru": "наказание",
+        "bn": "শাস্তি",
+        "ur": "سزا",
+        "th": "การลงโทษ"
+      }
+    },
+    {
+      "id": "blind",
+      "word": "blind",
+      "translation": "kör",
+      "pronunciation": "/blaɪnd/",
+      "example": "Blind and unhappy, he wandered for years until he heard Rapunzel's voice again.",
+      "translations": {
+        "es-419": "ciego",
+        "pt-BR": "cego",
+        "id": "buta",
+        "ar": "أعمى",
+        "vi": "mù",
+        "hi": "अंधा",
+        "ru": "слепой",
+        "bn": "অন্ধ",
+        "ur": "اندھا",
+        "th": "ตาบอด"
+      }
+    },
+    {
+      "id": "clever",
+      "word": "clever",
+      "translation": "akıllı",
+      "pronunciation": "/ˈklevə(r)/",
+      "example": "A clever idea can solve a difficult problem.",
+      "translations": {
+        "es-419": "listo, inteligente",
+        "pt-BR": "esperto, inteligente",
+        "id": "cerdik, pintar",
+        "ar": "ذكي",
+        "vi": "thông minh, khéo léo",
+        "hi": "चतुर, होशियार",
+        "ru": "умный, сообразительный",
+        "bn": "চালাক, বুদ্ধিমান",
+        "ur": "چالاک، ہوشیار",
+        "th": "ฉลาด"
+      }
+    },
+    {
+      "id": "fortune",
+      "word": "fortune",
+      "translation": "talih; servet",
+      "pronunciation": "/ˈfɔːtʃuːn/",
+      "example": "His greed has taken away his good fortune.",
+      "translations": {
+        "es-419": "fortuna, suerte",
+        "pt-BR": "fortuna, sorte",
+        "id": "keberuntungan",
+        "ar": "حظّ؛ ثروة",
+        "vi": "vận may; của cải",
+        "hi": "किस्मत; दौलत",
+        "ru": "богатство, состояние",
+        "bn": "সৌভাগ্য; ধনসম্পদ",
+        "ur": "قسمت؛ دولت",
+        "th": "โชคลาภ"
+      }
+    },
+    {
+      "id": "hungry",
+      "word": "hungry",
+      "translation": "aç",
+      "pronunciation": "/ˈhʌŋɡri/",
+      "example": "I am hungry after school.",
+      "translations": {
+        "es-419": "hambriento",
+        "pt-BR": "com fome, faminto",
+        "id": "lapar",
+        "ar": "جائع",
+        "vi": "đói",
+        "hi": "भूखा",
+        "ru": "голодный",
+        "bn": "ক্ষুধার্ত",
+        "ur": "بھوکا",
+        "th": "หิว"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "orphan",
+    "governess",
+    "fever",
+    "veil",
+    "ghost",
+    "lonely",
+    "honest",
+    "cruel",
+    "punishment",
+    "blind",
+    "clever",
+    "fortune",
+    "hungry"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-jane-eyre-q1",
+      "sentenceIds": [
+        "cl-eyre-001",
+        "cl-eyre-109"
+      ],
+      "rationale": "Jane begins as a poor orphan and ends with a home, a family and love."
+    },
+    {
+      "questionId": "classic-jane-eyre-q2",
+      "sentenceIds": [
+        "cl-eyre-068"
+      ],
+      "rationale": "Mrs Fairfax blamed Grace Poole, but the laugh came from Bertha."
+    },
+    {
+      "questionId": "classic-jane-eyre-q3",
+      "sentenceIds": [
+        "cl-eyre-061"
+      ],
+      "rationale": "A man stopped the wedding because Mr Rochester's wife was still alive."
+    },
+    {
+      "questionId": "classic-jane-eyre-q4",
+      "sentenceIds": [
+        "cl-eyre-070",
+        "cl-eyre-071"
+      ],
+      "rationale": "Jane loved him, but she would not live with a man who was already married."
+    },
+    {
+      "questionId": "classic-jane-eyre-q5",
+      "sentenceIds": [
+        "cl-eyre-084",
+        "cl-eyre-087"
+      ],
+      "rationale": "St John offered a marriage without love, and Jane's heart still belonged to Mr Rochester."
+    }
+  ],
+  "publicationBlockers": [
+    "Owner (oguz) approval of the English text, questions and translations required.",
+    "Native-speaker language review not done.",
+    "Source text hash pending (Gutenberg not reachable from the cloud session).",
+    "Publisher story creation, validation and publication pending."
+  ]
+}

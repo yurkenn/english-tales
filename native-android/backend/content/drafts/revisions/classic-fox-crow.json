@@ -1,0 +1,956 @@
+{
+  "status": "draft",
+  "kind": "revision",
+  "source": "story-lengthening-a1-batch1-2026-10-22",
+  "reviewedBy": null,
+  "baseStoryId": "classic-fox-crow",
+  "baseStorySHA256": "033e91f56340d56af4032308cb65800c04864486b3276ab89ffc93789b662d32",
+  "editorialNotes": [
+    "Adds the crow's height and pleasure, the fox's hunger and plan, the Aesop 'queen of the birds' flattery and the crow's lesson.",
+    "Every legacy sentence, its ID and its translations are kept unchanged; new sentences are only inserted between them. Plot, characters, ending and lesson are unchanged.",
+    "New sentences have AI-drafted translations in all ten additional support languages, following the gender and wording already used in each legacy translation. No native-speaker review."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "unchangedTranslationsPreserved": true,
+    "newSentenceIds": [
+      "classic-fox-crow-ext-01-01",
+      "classic-fox-crow-ext-01-02",
+      "classic-fox-crow-ext-02-01",
+      "classic-fox-crow-ext-02-02",
+      "classic-fox-crow-ext-02-03",
+      "classic-fox-crow-ext-03-01",
+      "classic-fox-crow-ext-03-02",
+      "classic-fox-crow-ext-04-01",
+      "classic-fox-crow-ext-04-02",
+      "classic-fox-crow-ext-05-01",
+      "classic-fox-crow-ext-06-01",
+      "classic-fox-crow-ext-06-02",
+      "classic-fox-crow-ext-07-01",
+      "classic-fox-crow-ext-11-01",
+      "classic-fox-crow-ext-12-01",
+      "classic-fox-crow-ext-13-01",
+      "classic-fox-crow-ext-13-02"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+  },
+  "story": {
+    "id": "classic-fox-crow",
+    "title": "The Fox and the Crow",
+    "author": "Aesop",
+    "level": "A1",
+    "genre": "Macera",
+    "description": "Tilki ile Karga. Güzel sözlere kanan bir karganın elinden düşürdüğü yiyecek. A1 düzeyinde kısa uyarlama. Uyarlama ve Türkçe çeviri: English Tales. Tarihî görsel: Arthur Rackham; kitap içi illüstrasyon, ayrı bir ilk baskı kapağı değildir.",
+    "coverKey": "cover_classic_fox_crow",
+    "sentences": [
+      {
+        "id": "cl-fox-crow-01",
+        "english": "A crow sits on a branch with a piece of meat.",
+        "turkish": "Bir karga, gagasında bir parça etle bir dalda oturur.",
+        "translations": {
+          "es-419": "Una cuerva está en una rama con un pedazo de carne.",
+          "pt-BR": "Um corvo está pousado em um galho com um pedaço de carne.",
+          "id": "Seekor burung gagak bertengger di dahan sambil membawa sepotong daging.",
+          "ar": "تجلس غرابة على غصن ومعها قطعة لحم.",
+          "vi": "Một cô quạ đậu trên cành cây, ngậm một miếng thịt.",
+          "hi": "एक कौआ मांस का एक टुकड़ा लिए डाल पर बैठा है।",
+          "ru": "Ворона сидит на ветке с куском мяса.",
+          "bn": "একটা কাক এক টুকরো মাংস নিয়ে একটা ডালে বসে আছে।",
+          "ur": "ایک کوّی گوشت کا ٹکڑا لیے ایک شاخ پر بیٹھی ہے۔",
+          "th": "อีกาตัวหนึ่งเกาะอยู่บนกิ่งไม้พร้อมกับเนื้อชิ้นหนึ่ง"
+        }
+      },
+      {
+        "id": "classic-fox-crow-ext-01-01",
+        "english": "The branch is high in a tall tree.",
+        "turkish": "Bu dal, uzun bir ağacın yükseklerindedir.",
+        "translations": {
+          "es-419": "La rama está alta, en un árbol grande.",
+          "pt-BR": "O galho fica no alto de uma árvore grande.",
+          "id": "Dahan itu berada tinggi di sebuah pohon besar.",
+          "ar": "الغصن عالٍ في شجرة طويلة.",
+          "vi": "Cành cây ở trên cao của một cái cây lớn.",
+          "hi": "वह डाल एक ऊँचे पेड़ पर बहुत ऊपर है।",
+          "ru": "Ветка находится высоко на большом дереве.",
+          "bn": "ডালটা একটা লম্বা গাছের অনেক ওপরে।",
+          "ur": "وہ شاخ ایک اونچے درخت پر بہت اوپر ہے۔",
+          "th": "กิ่งไม้นั้นอยู่สูงบนต้นไม้ใหญ่"
+        }
+      },
+      {
+        "id": "classic-fox-crow-ext-01-02",
+        "english": "The crow is happy with her good meal.",
+        "turkish": "Karga güzel yemeğinden memnundur.",
+        "translations": {
+          "es-419": "La cuerva está feliz con su buena comida.",
+          "pt-BR": "O corvo está feliz com a sua boa refeição.",
+          "id": "Burung gagak itu senang dengan makanannya yang enak.",
+          "ar": "الغرابة سعيدة بوجبتها الطيبة.",
+          "vi": "Cô quạ rất vui với bữa ăn ngon của mình.",
+          "hi": "कौआ अपने अच्छे खाने से खुश है।",
+          "ru": "Ворона рада своему вкусному обеду.",
+          "bn": "কাকটা তার ভালো খাবার পেয়ে খুশি।",
+          "ur": "کوّی اپنے اچھے کھانے سے خوش ہے۔",
+          "th": "อีกามีความสุขกับอาหารอร่อยของเธอ"
+        }
+      },
+      {
+        "id": "cl-fox-crow-02",
+        "english": "A fox sees the meat and wants it.",
+        "turkish": "Bir tilki eti görür ve onu ister.",
+        "translations": {
+          "es-419": "Un zorro ve la carne y la quiere.",
+          "pt-BR": "Uma raposa vê a carne e a quer.",
+          "id": "Seekor rubah melihat daging itu dan menginginkannya.",
+          "ar": "يرى ثعلب اللحم ويريده.",
+          "vi": "Một con cáo nhìn thấy miếng thịt và muốn có nó.",
+          "hi": "एक लोमड़ी मांस देखती है और उसे पाना चाहती है।",
+          "ru": "Лиса видит мясо, и ей хочется его заполучить.",
+          "bn": "একটা শেয়াল মাংসটা দেখে সেটা পেতে চায়।",
+          "ur": "ایک لومڑ گوشت دیکھتا ہے اور اسے لینا چاہتا ہے۔",
+          "th": "สุนัขจิ้งจอกตัวหนึ่งเห็นเนื้อและอยากได้"
+        }
+      },
+      {
+        "id": "classic-fox-crow-ext-02-01",
+        "english": "He is very hungry this morning.",
+        "turkish": "Bu sabah çok açtır.",
+        "translations": {
+          "es-419": "Esta mañana tiene mucha hambre.",
+          "pt-BR": "Ela está com muita fome esta manhã.",
+          "id": "Pagi ini ia sangat lapar.",
+          "ar": "إنه جائع جدًا هذا الصباح.",
+          "vi": "Sáng nay cáo rất đói.",
+          "hi": "आज सुबह उसे बहुत भूख लगी है।",
+          "ru": "Сегодня утром она очень голодна.",
+          "bn": "আজ সকালে তার খুব খিদে পেয়েছে।",
+          "ur": "آج صبح اسے بہت بھوک لگی ہے۔",
+          "th": "เช้านี้มันหิวมาก"
+        }
+      },
+      {
+        "id": "classic-fox-crow-ext-02-02",
+        "english": "He sits under the tree and looks up.",
+        "turkish": "Ağacın altına oturur ve yukarı bakar.",
+        "translations": {
+          "es-419": "Se sienta debajo del árbol y mira hacia arriba.",
+          "pt-BR": "Ela se senta debaixo da árvore e olha para cima.",
+          "id": "Ia duduk di bawah pohon dan melihat ke atas.",
+          "ar": "يجلس تحت الشجرة وينظر إلى الأعلى.",
+          "vi": "Cáo ngồi dưới gốc cây và nhìn lên.",
+          "hi": "वह पेड़ के नीचे बैठ जाती है और ऊपर देखती है।",
+          "ru": "Она садится под деревом и смотрит вверх.",
+          "bn": "সে গাছের নিচে বসে ওপরে তাকায়।",
+          "ur": "وہ درخت کے نیچے بیٹھ جاتا ہے اور اوپر دیکھتا ہے۔",
+          "th": "มันนั่งลงใต้ต้นไม้และมองขึ้นไป"
+        }
+      },
+      {
+        "id": "classic-fox-crow-ext-02-03",
+        "english": "\"That meat must be mine,\" he thinks.",
+        "turkish": "\"O et benim olmalı,\" diye düşünür.",
+        "translations": {
+          "es-419": "\"Esa carne tiene que ser mía\", piensa.",
+          "pt-BR": "— Essa carne tem que ser minha — pensa ela.",
+          "id": "\"Daging itu harus jadi milikku,\" pikirnya.",
+          "ar": "يفكّر: «يجب أن يكون ذلك اللحم لي.»",
+          "vi": "\"Miếng thịt đó phải là của mình,\" cáo nghĩ.",
+          "hi": "\"वह मांस मेरा होना चाहिए,\" वह सोचती है।",
+          "ru": "«Это мясо должно быть моим», — думает она.",
+          "bn": "\"ওই মাংসটা আমার হতেই হবে,\" সে ভাবে।",
+          "ur": "\"وہ گوشت میرا ہونا چاہیے،\" وہ سوچتا ہے۔",
+          "th": "\"เนื้อชิ้นนั้นต้องเป็นของข้า\" มันคิด"
+        }
+      },
+      {
+        "id": "cl-fox-crow-03",
+        "english": "He cannot climb up to take it.",
+        "turkish": "Onu almak için yukarı tırmanamaz.",
+        "translations": {
+          "es-419": "No puede trepar para tomarla.",
+          "pt-BR": "Ela não consegue subir para pegá-la.",
+          "id": "Ia tidak bisa memanjat untuk mengambilnya.",
+          "ar": "لا يستطيع أن يتسلّق ليأخذه.",
+          "vi": "Cáo không thể trèo lên để lấy.",
+          "hi": "वह ऊपर चढ़कर उसे नहीं ले सकती।",
+          "ru": "Она не может забраться наверх и взять его.",
+          "bn": "সে গাছে চড়ে সেটা নিতে পারে না।",
+          "ur": "وہ اوپر چڑھ کر اسے نہیں لے سکتا۔",
+          "th": "มันปีนขึ้นไปเอาไม่ได้"
+        }
+      },
+      {
+        "id": "classic-fox-crow-ext-03-01",
+        "english": "He thinks for a long time.",
+        "turkish": "Uzun süre düşünür.",
+        "translations": {
+          "es-419": "Piensa durante mucho tiempo.",
+          "pt-BR": "Ela pensa por muito tempo.",
+          "id": "Ia berpikir lama sekali.",
+          "ar": "يفكّر وقتًا طويلًا.",
+          "vi": "Cáo suy nghĩ rất lâu.",
+          "hi": "वह बहुत देर तक सोचती है।",
+          "ru": "Она долго думает.",
+          "bn": "সে অনেকক্ষণ ধরে ভাবে।",
+          "ur": "وہ دیر تک سوچتا ہے۔",
+          "th": "มันคิดอยู่นาน"
+        }
+      },
+      {
+        "id": "classic-fox-crow-ext-03-02",
+        "english": "Then he has an idea.",
+        "turkish": "Sonra aklına bir fikir gelir.",
+        "translations": {
+          "es-419": "Entonces tiene una idea.",
+          "pt-BR": "Então ela tem uma ideia.",
+          "id": "Lalu ia mendapat sebuah ide.",
+          "ar": "ثم تخطر له فكرة.",
+          "vi": "Rồi cáo nghĩ ra một ý.",
+          "hi": "फिर उसे एक तरकीब सूझती है।",
+          "ru": "И тут ей приходит в голову мысль.",
+          "bn": "তারপর তার মাথায় একটা বুদ্ধি আসে।",
+          "ur": "پھر اسے ایک ترکیب سوجھتی ہے۔",
+          "th": "แล้วมันก็คิดออก"
+        }
+      },
+      {
+        "id": "cl-fox-crow-04",
+        "english": "So he begins to praise the crow.",
+        "turkish": "Bu yüzden kargayı övmeye başlar.",
+        "translations": {
+          "es-419": "Así que empieza a elogiar a la cuerva.",
+          "pt-BR": "Então ela começa a elogiar o corvo.",
+          "id": "Jadi ia mulai memuji burung gagak itu.",
+          "ar": "فيبدأ يمدح الغرابة.",
+          "vi": "Vì vậy, cáo bắt đầu khen ngợi quạ.",
+          "hi": "इसलिए वह कौए की तारीफ़ करने लगती है।",
+          "ru": "Тогда она начинает хвалить ворону.",
+          "bn": "তাই সে কাকের প্রশংসা করতে শুরু করে।",
+          "ur": "اس لیے وہ کوّی کی تعریف کرنے لگتا ہے۔",
+          "th": "มันจึงเริ่มยกยออีกา"
+        }
+      },
+      {
+        "id": "classic-fox-crow-ext-04-01",
+        "english": "\"Good morning, dear crow,\" he says in a soft voice.",
+        "turkish": "\"Günaydın, sevgili karga,\" der yumuşak bir sesle.",
+        "translations": {
+          "es-419": "\"Buenos días, querida cuerva\", dice con voz suave.",
+          "pt-BR": "— Bom dia, querido corvo — diz ela com voz suave.",
+          "id": "\"Selamat pagi, gagak yang baik,\" katanya dengan suara lembut.",
+          "ar": "يقول بصوت ناعم: «صباح الخير يا عزيزتي الغرابة.»",
+          "vi": "\"Chào buổi sáng, cô quạ thân mến,\" cáo nói bằng giọng ngọt ngào.",
+          "hi": "\"सुप्रभात, प्यारे कौए,\" वह मीठी आवाज़ में कहती है।",
+          "ru": "«Доброе утро, милая ворона», — говорит она мягким голосом.",
+          "bn": "\"সুপ্রভাত, প্রিয় কাক,\" সে নরম গলায় বলে।",
+          "ur": "\"صبح بخیر، پیاری کوّی،\" وہ نرم آواز میں کہتا ہے۔",
+          "th": "\"สวัสดีตอนเช้า อีกาที่รัก\" มันพูดด้วยเสียงอ่อนหวาน"
+        }
+      },
+      {
+        "id": "classic-fox-crow-ext-04-02",
+        "english": "\"You look very beautiful today.\"",
+        "turkish": "\"Bugün çok güzel görünüyorsun.\"",
+        "translations": {
+          "es-419": "\"Hoy te ves muy hermosa.\"",
+          "pt-BR": "— Você está muito bonito hoje.",
+          "id": "\"Hari ini kamu terlihat sangat cantik.\"",
+          "ar": "«تبدين جميلة جدًا اليوم.»",
+          "vi": "\"Hôm nay trông cô đẹp lắm.\"",
+          "hi": "\"आज तुम बहुत सुंदर लग रहे हो।\"",
+          "ru": "«Ты сегодня очень красивая».",
+          "bn": "\"আজ তোমাকে খুব সুন্দর দেখাচ্ছে।\"",
+          "ur": "\"آج تم بہت خوبصورت لگ رہی ہو۔\"",
+          "th": "\"วันนี้เธอดูสวยมาก\""
+        }
+      },
+      {
+        "id": "cl-fox-crow-05",
+        "english": "\"What beautiful feathers you have!\" he says.",
+        "turkish": "\"Ne güzel tüylerin var!\" der.",
+        "translations": {
+          "es-419": "\"¡Qué plumas tan hermosas tienes!\", dice.",
+          "pt-BR": "— Que penas lindas você tem! — diz ela.",
+          "id": "\"Betapa indahnya bulumu!\" katanya.",
+          "ar": "يقول: «ما أجمل ريشك!»",
+          "vi": "\"Bộ lông của cô đẹp làm sao!\" cáo nói.",
+          "hi": "\"तुम्हारे पंख कितने सुंदर हैं!\" वह कहती है।",
+          "ru": "«Какие у тебя красивые перья!» — говорит она.",
+          "bn": "\"তোমার পালকগুলো কী সুন্দর!\" সে বলে।",
+          "ur": "\"تمہارے پر کتنے خوبصورت ہیں!\" وہ کہتا ہے۔",
+          "th": "\"ขนของเธอช่างสวยงามเหลือเกิน!\" มันพูด"
+        }
+      },
+      {
+        "id": "classic-fox-crow-ext-05-01",
+        "english": "\"They shine like black glass in the sun.\"",
+        "turkish": "\"Güneşte siyah cam gibi parlıyorlar.\"",
+        "translations": {
+          "es-419": "\"Brillan como vidrio negro bajo el sol.\"",
+          "pt-BR": "— Elas brilham como vidro preto ao sol.",
+          "id": "\"Bulumu berkilau seperti kaca hitam di bawah matahari.\"",
+          "ar": "«إنه يلمع تحت الشمس مثل الزجاج الأسود.»",
+          "vi": "\"Chúng óng ánh như thủy tinh đen dưới nắng.\"",
+          "hi": "\"वे धूप में काले शीशे की तरह चमकते हैं।\"",
+          "ru": "«Они блестят на солнце, как чёрное стекло».",
+          "bn": "\"রোদে সেগুলো কালো কাচের মতো ঝকঝক করে।\"",
+          "ur": "\"وہ دھوپ میں کالے شیشے کی طرح چمکتے ہیں۔\"",
+          "th": "\"มันเป็นเงาวาวเหมือนแก้วสีดำยามต้องแสงแดด\""
+        }
+      },
+      {
+        "id": "cl-fox-crow-06",
+        "english": "\"You must have a beautiful voice, too.\"",
+        "turkish": "\"Sesin de güzel olmalı.\"",
+        "translations": {
+          "es-419": "\"Seguro que también tienes una voz hermosa.\"",
+          "pt-BR": "— Você também deve ter uma voz linda.",
+          "id": "\"Suaramu pasti indah juga.\"",
+          "ar": "«لا بدّ أن صوتك جميل أيضًا.»",
+          "vi": "\"Chắc hẳn giọng hát của cô cũng hay lắm.\"",
+          "hi": "\"तुम्हारी आवाज़ भी ज़रूर सुंदर होगी।\"",
+          "ru": "«Наверное, и голос у тебя прекрасный».",
+          "bn": "\"নিশ্চয়ই তোমার গলাটাও খুব সুন্দর।\"",
+          "ur": "\"تمہاری آواز بھی ضرور خوبصورت ہو گی۔\"",
+          "th": "\"เสียงของเธอก็คงไพเราะด้วยแน่ ๆ\""
+        }
+      },
+      {
+        "id": "classic-fox-crow-ext-06-01",
+        "english": "\"Please sing one song for me.\"",
+        "turkish": "\"Lütfen benim için bir şarkı söyle.\"",
+        "translations": {
+          "es-419": "\"Por favor, canta una canción para mí.\"",
+          "pt-BR": "— Por favor, cante uma música para mim.",
+          "id": "\"Tolong nyanyikan satu lagu untukku.\"",
+          "ar": "«أرجوكِ، غنّي لي أغنية واحدة.»",
+          "vi": "\"Cô hãy hát cho tôi nghe một bài nhé.\"",
+          "hi": "\"कृपया मेरे लिए एक गाना गाओ।\"",
+          "ru": "«Спой мне, пожалуйста, одну песенку».",
+          "bn": "\"দয়া করে আমার জন্য একটা গান গাও।\"",
+          "ur": "\"مہربانی کر کے میرے لیے ایک گانا گاؤ۔\"",
+          "th": "\"ช่วยร้องเพลงให้ข้าฟังสักเพลงเถอะ\""
+        }
+      },
+      {
+        "id": "classic-fox-crow-ext-06-02",
+        "english": "\"Then everyone will know you are the queen of the birds.\"",
+        "turkish": "\"O zaman herkes senin kuşların kraliçesi olduğunu bilir.\"",
+        "translations": {
+          "es-419": "\"Así todos sabrán que eres la reina de las aves.\"",
+          "pt-BR": "— Assim todos vão saber que você é o rei dos pássaros.",
+          "id": "\"Dengan begitu semua akan tahu bahwa kamu ratu para burung.\"",
+          "ar": "«عندها سيعرف الجميع أنكِ ملكة الطيور.»",
+          "vi": "\"Rồi ai cũng sẽ biết cô là nữ hoàng của loài chim.\"",
+          "hi": "\"तब सब जान जाएँगे कि तुम पक्षियों के राजा हो।\"",
+          "ru": "«Тогда все узнают, что ты царица птиц».",
+          "bn": "\"তখন সবাই জানবে তুমিই পাখিদের রানি।\"",
+          "ur": "\"پھر سب جان جائیں گے کہ تم پرندوں کی ملکہ ہو۔\"",
+          "th": "\"แล้วใคร ๆ ก็จะรู้ว่าเธอคือราชินีแห่งนก\""
+        }
+      },
+      {
+        "id": "cl-fox-crow-07",
+        "english": "The crow feels proud.",
+        "turkish": "Karga gururlanır.",
+        "translations": {
+          "es-419": "La cuerva se siente orgullosa.",
+          "pt-BR": "O corvo fica orgulhoso.",
+          "id": "Burung gagak itu merasa bangga.",
+          "ar": "تشعر الغرابة بالفخر.",
+          "vi": "Quạ cảm thấy rất tự hào.",
+          "hi": "कौए को गर्व महसूस होता है।",
+          "ru": "Ворона чувствует гордость.",
+          "bn": "কাকটা গর্বিত বোধ করে।",
+          "ur": "کوّی کو بہت فخر محسوس ہوتا ہے۔",
+          "th": "อีการู้สึกภูมิใจ"
+        }
+      },
+      {
+        "id": "classic-fox-crow-ext-07-01",
+        "english": "She does not often hear such nice words.",
+        "turkish": "Böyle güzel sözleri sık sık duymaz.",
+        "translations": {
+          "es-419": "No escucha palabras tan bonitas muy a menudo.",
+          "pt-BR": "Ele não ouve palavras tão bonitas com frequência.",
+          "id": "Ia jarang mendengar kata-kata seindah itu.",
+          "ar": "فهي لا تسمع كلامًا لطيفًا كهذا كثيرًا.",
+          "vi": "Cô ít khi được nghe những lời hay như vậy.",
+          "hi": "उसे ऐसी अच्छी बातें अक्सर सुनने को नहीं मिलतीं।",
+          "ru": "Она нечасто слышит такие приятные слова.",
+          "bn": "এমন সুন্দর কথা সে প্রায়ই শোনে না।",
+          "ur": "اسے ایسی اچھی باتیں اکثر سننے کو نہیں ملتیں۔",
+          "th": "เธอไม่ค่อยได้ยินคำพูดดี ๆ แบบนี้บ่อยนัก"
+        }
+      },
+      {
+        "id": "cl-fox-crow-08",
+        "english": "She wants to show him her voice.",
+        "turkish": "Ona sesini göstermek ister.",
+        "translations": {
+          "es-419": "Quiere mostrarle su voz.",
+          "pt-BR": "Ele quer mostrar a sua voz.",
+          "id": "Ia ingin memperdengarkan suaranya kepada rubah.",
+          "ar": "تريد أن تُسمعه صوتها.",
+          "vi": "Cô muốn cho cáo nghe giọng hát của mình.",
+          "hi": "वह लोमड़ी को अपनी आवाज़ सुनाना चाहता है।",
+          "ru": "Ей хочется показать лисе свой голос.",
+          "bn": "সে শেয়ালকে তার গলা শোনাতে চায়।",
+          "ur": "وہ لومڑ کو اپنی آواز سنانا چاہتی ہے۔",
+          "th": "เธออยากให้มันได้ฟังเสียงของเธอ"
+        }
+      },
+      {
+        "id": "cl-fox-crow-09",
+        "english": "She opens her beak and makes a loud sound.",
+        "turkish": "Gagasını açar ve yüksek bir ses çıkarır.",
+        "translations": {
+          "es-419": "Abre el pico y hace un sonido fuerte.",
+          "pt-BR": "Ele abre o bico e solta um grito alto.",
+          "id": "Ia membuka paruhnya dan bersuara keras.",
+          "ar": "تفتح منقارها وتُصدر صوتًا عاليًا.",
+          "vi": "Cô há mỏ ra và kêu lên một tiếng thật to.",
+          "hi": "वह अपनी चोंच खोलता है और ज़ोर से काँव-काँव करता है।",
+          "ru": "Она открывает клюв и громко каркает.",
+          "bn": "সে ঠোঁট খুলে জোরে ডেকে ওঠে।",
+          "ur": "وہ اپنی چونچ کھولتی ہے اور زور سے کائیں کائیں کرتی ہے۔",
+          "th": "เธออ้าปากและร้องเสียงดัง"
+        }
+      },
+      {
+        "id": "cl-fox-crow-10",
+        "english": "The meat falls to the ground.",
+        "turkish": "Et yere düşer.",
+        "translations": {
+          "es-419": "La carne cae al suelo.",
+          "pt-BR": "A carne cai no chão.",
+          "id": "Daging itu jatuh ke tanah.",
+          "ar": "يسقط اللحم على الأرض.",
+          "vi": "Miếng thịt rơi xuống đất.",
+          "hi": "मांस ज़मीन पर गिर जाता है।",
+          "ru": "Мясо падает на землю.",
+          "bn": "মাংসটা মাটিতে পড়ে যায়।",
+          "ur": "گوشت زمین پر گر پڑتا ہے۔",
+          "th": "เนื้อหล่นลงไปบนพื้น"
+        }
+      },
+      {
+        "id": "cl-fox-crow-11",
+        "english": "The fox picks it up and laughs.",
+        "turkish": "Tilki onu alır ve güler.",
+        "translations": {
+          "es-419": "El zorro la recoge y se ríe.",
+          "pt-BR": "A raposa a pega e ri.",
+          "id": "Rubah memungutnya dan tertawa.",
+          "ar": "يلتقطه الثعلب ويضحك.",
+          "vi": "Cáo nhặt miếng thịt lên và cười.",
+          "hi": "लोमड़ी उसे उठा लेती है और हँसती है।",
+          "ru": "Лиса подбирает его и смеётся.",
+          "bn": "শেয়াল সেটা তুলে নিয়ে হাসে।",
+          "ur": "لومڑ اسے اٹھا لیتا ہے اور ہنستا ہے۔",
+          "th": "สุนัขจิ้งจอกคาบมันขึ้นมาและหัวเราะ"
+        }
+      },
+      {
+        "id": "classic-fox-crow-ext-11-01",
+        "english": "Now the meat is his.",
+        "turkish": "Artık et onundur.",
+        "translations": {
+          "es-419": "Ahora la carne es suya.",
+          "pt-BR": "Agora a carne é dela.",
+          "id": "Sekarang daging itu miliknya.",
+          "ar": "الآن صار اللحم له.",
+          "vi": "Giờ miếng thịt đã là của cáo.",
+          "hi": "अब मांस उसका है।",
+          "ru": "Теперь мясо досталось ей.",
+          "bn": "এখন মাংসটা তার।",
+          "ur": "اب گوشت اس کا ہے۔",
+          "th": "ตอนนี้เนื้อเป็นของมันแล้ว"
+        }
+      },
+      {
+        "id": "cl-fox-crow-12",
+        "english": "\"You have a voice, but you need more sense,\" he says.",
+        "turkish": "\"Sesin var ama daha akıllı olman gerekiyor,\" der.",
+        "translations": {
+          "es-419": "\"Tienes voz, pero te falta sentido común\", le dice.",
+          "pt-BR": "— Você tem voz, mas precisa de mais juízo — diz ela.",
+          "id": "\"Kamu memang punya suara, tetapi kamu perlu lebih banyak akal sehat,\" katanya.",
+          "ar": "يقول: «عندك صوت، لكنك تحتاجين إلى عقل أكثر.»",
+          "vi": "\"Cô có giọng hát đấy, nhưng cô cần khôn ngoan hơn,\" cáo nói.",
+          "hi": "\"तुम्हारे पास आवाज़ तो है, लेकिन तुम्हें थोड़ी और अक्ल चाहिए,\" वह कहती है।",
+          "ru": "«Голос у тебя есть, а вот ума не хватает», — говорит она.",
+          "bn": "\"তোমার গলা আছে, কিন্তু আরও একটু বুদ্ধি দরকার,\" সে বলে।",
+          "ur": "\"تمہارے پاس آواز تو ہے، لیکن تمہیں تھوڑی اور عقل کی ضرورت ہے،\" وہ کہتا ہے۔",
+          "th": "\"เธอมีเสียง แต่เธอต้องรู้จักคิดให้มากกว่านี้\" มันพูด"
+        }
+      },
+      {
+        "id": "classic-fox-crow-ext-12-01",
+        "english": "\"Next time, do not believe every sweet word.\"",
+        "turkish": "\"Bir dahaki sefere her tatlı söze inanma.\"",
+        "translations": {
+          "es-419": "\"La próxima vez, no creas cada palabra bonita.\"",
+          "pt-BR": "— Da próxima vez, não acredite em toda palavra doce.",
+          "id": "\"Lain kali, jangan percaya setiap kata manis.\"",
+          "ar": "«في المرة القادمة، لا تصدّقي كل كلمة حلوة.»",
+          "vi": "\"Lần sau, đừng tin mọi lời ngọt ngào nhé.\"",
+          "hi": "\"अगली बार हर मीठी बात पर भरोसा मत करना।\"",
+          "ru": "«В следующий раз не верь каждому сладкому слову».",
+          "bn": "\"পরের বার প্রতিটা মিষ্টি কথায় বিশ্বাস কোরো না।\"",
+          "ur": "\"اگلی بار ہر میٹھی بات پر یقین نہ کرنا۔\"",
+          "th": "\"คราวหน้าอย่าเชื่อคำหวานทุกคำนะ\""
+        }
+      },
+      {
+        "id": "cl-fox-crow-13",
+        "english": "The crow watches him leave with her meal.",
+        "turkish": "Karga, tilkinin yemeğiyle uzaklaşmasını izler.",
+        "translations": {
+          "es-419": "La cuerva lo ve irse con su comida.",
+          "pt-BR": "O corvo a vê ir embora com a sua refeição.",
+          "id": "Burung gagak itu melihat rubah pergi membawa makanannya.",
+          "ar": "تراقبه الغرابة وهو يرحل بوجبتها.",
+          "vi": "Quạ nhìn cáo bỏ đi cùng bữa ăn của mình.",
+          "hi": "कौआ उसे अपना खाना लेकर जाते हुए देखता रहता है।",
+          "ru": "Ворона смотрит, как лиса уходит с её едой.",
+          "bn": "কাকটা চেয়ে চেয়ে দেখে শেয়াল তার খাবার নিয়ে চলে যাচ্ছে।",
+          "ur": "کوّی اسے اپنا کھانا لے کر جاتے ہوئے دیکھتی رہ جاتی ہے۔",
+          "th": "อีกามองดูมันจากไปพร้อมกับอาหารของเธอ"
+        }
+      },
+      {
+        "id": "classic-fox-crow-ext-13-01",
+        "english": "She is still hungry, and she feels foolish.",
+        "turkish": "Hâlâ açtır ve kendini aptal gibi hisseder.",
+        "translations": {
+          "es-419": "Todavía tiene hambre y se siente tonta.",
+          "pt-BR": "Ele ainda está com fome e se sente bobo.",
+          "id": "Ia masih lapar, dan ia merasa bodoh.",
+          "ar": "ما زالت جائعة، وتشعر بالحماقة.",
+          "vi": "Cô vẫn còn đói và thấy mình thật ngốc.",
+          "hi": "वह अब भी भूखा है और खुद को मूर्ख महसूस करता है।",
+          "ru": "Она всё ещё голодна и чувствует себя глупо.",
+          "bn": "সে এখনও ক্ষুধার্ত, আর নিজেকে বোকা মনে হয়।",
+          "ur": "وہ اب بھی بھوکی ہے اور خود کو بے وقوف محسوس کرتی ہے۔",
+          "th": "เธอยังหิวอยู่ และรู้สึกว่าตัวเองโง่"
+        }
+      },
+      {
+        "id": "classic-fox-crow-ext-13-02",
+        "english": "She learns an important lesson that day.",
+        "turkish": "O gün önemli bir ders alır.",
+        "translations": {
+          "es-419": "Ese día aprende una lección importante.",
+          "pt-BR": "Naquele dia, ele aprende uma lição importante.",
+          "id": "Hari itu ia mendapat pelajaran penting.",
+          "ar": "تتعلّم في ذلك اليوم درسًا مهمًا.",
+          "vi": "Hôm đó, cô học được một bài học quan trọng.",
+          "hi": "उस दिन वह एक ज़रूरी सबक सीखता है।",
+          "ru": "В тот день она получает важный урок.",
+          "bn": "সেদিন সে একটা গুরুত্বপূর্ণ শিক্ষা পায়।",
+          "ur": "اس دن وہ ایک اہم سبق سیکھتی ہے۔",
+          "th": "วันนั้นเธอได้รับบทเรียนสำคัญ"
+        }
+      },
+      {
+        "id": "cl-fox-crow-14",
+        "english": "Flattery is not always friendship.",
+        "turkish": "Pohpohlamak her zaman dostluk değildir.",
+        "translations": {
+          "es-419": "La adulación no siempre es amistad.",
+          "pt-BR": "Bajulação nem sempre é amizade.",
+          "id": "Sanjungan tidak selalu berarti persahabatan.",
+          "ar": "التملّق ليس صداقة دائمًا.",
+          "vi": "Lời nịnh hót không phải lúc nào cũng là tình bạn.",
+          "hi": "चापलूसी हमेशा दोस्ती नहीं होती।",
+          "ru": "Лесть — не всегда дружба.",
+          "bn": "তোষামোদ সবসময় বন্ধুত্ব নয়।",
+          "ur": "خوشامد ہمیشہ دوستی نہیں ہوتی۔",
+          "th": "คำเยินยอไม่ใช่มิตรภาพเสมอไป"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-fox-crow-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "A fox uses kind words to take a crow's food",
+          "A fox climbs a tree to get a crow's food",
+          "A crow gives a fox food to help his family",
+          "A crow teaches a fox to sing for his food"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "classic-fox-crow-q2",
+        "kind": "detail",
+        "prompt": "What does the crow do just before the meat falls?",
+        "options": [
+          "She puts her food on another branch",
+          "She flies down to meet the fox",
+          "She closes her eyes and falls asleep",
+          "She opens her beak and makes a sound"
+        ],
+        "answer": 3
+      },
+      {
+        "id": "classic-fox-crow-q3",
+        "kind": "inference",
+        "prompt": "Why does the crow open her beak?",
+        "options": [
+          "She wants to give him her food",
+          "She wants him to hear her voice",
+          "She wants to ask him for water",
+          "She wants to tell him to leave"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-fox-crow-q4",
+        "kind": "detail",
+        "prompt": "What does the fox ask the crow to do?",
+        "options": [
+          "Sing a song for him",
+          "Give him half of the meat",
+          "Fly down from the tree",
+          "Show him her nest"
+        ],
+        "answer": 0
+      }
+    ],
+    "tags": [
+      "fabl",
+      "macera"
+    ],
+    "descriptions": {
+      "es-419": "La zorra y el cuervo. La comida que deja caer un cuervo que se deja engañar por palabras bonitas. Adaptación breve de nivel A1. Adaptación: English Tales. Imagen histórica: Arthur Rackham; ilustración interior del libro, no es una portada aparte de primera edición.",
+      "pt-BR": "A raposa e o corvo. A comida que um corvo deixa cair por acreditar em palavras bonitas. Adaptação curta de nível A1. Adaptação: English Tales. Imagem histórica: Arthur Rackham; ilustração interna do livro, não é uma capa separada de primeira edição.",
+      "id": "Rubah dan Burung Gagak. Makanan yang dijatuhkan seekor burung gagak karena terbuai oleh kata-kata manis. Adaptasi singkat tingkat A1. Adaptasi: English Tales. Gambar historis: Arthur Rackham; ilustrasi di dalam buku, bukan sampul edisi pertama tersendiri.",
+      "ar": "الثعلب والغراب. طعام يُسقطه غراب انخدع بالكلام الجميل. اقتباس قصير بمستوى A1. الاقتباس: English Tales. صورة تاريخية: آرثر راكهام؛ رسم توضيحي داخل الكتاب، وليس غلافًا منفصلًا للطبعة الأولى.",
+      "vi": "Con cáo và con quạ. Một cô quạ đánh rơi miếng mồi vì tin vào những lời ngọt ngào. Bản phóng tác ngắn trình độ A1. Phóng tác: English Tales. Hình ảnh lịch sử: Arthur Rackham; tranh minh họa bên trong sách, không phải bìa riêng của ấn bản đầu tiên.",
+      "hi": "लोमड़ी और कौआ। मीठी बातों में आकर एक कौआ अपना खाना गिरा देता है। A1 स्तर का छोटा रूपांतरण। रूपांतरण: English Tales। ऐतिहासिक चित्र: Arthur Rackham; किताब के अंदर का चित्र, पहले संस्करण का अलग कवर नहीं।",
+      "ru": "Ворона и лисица. Ворона, поверившая красивым словам, роняет свою еду. Краткая адаптация уровня A1. Адаптация: English Tales. Историческое изображение: Артур Рэкхем; внутренняя иллюстрация из книги, а не отдельная обложка первого издания.",
+      "bn": "শেয়াল আর কাক। মিষ্টি কথায় ভুলে এক কাক তার খাবার ফেলে দেয়। A1 স্তরের ছোট রূপান্তর। রূপান্তর: English Tales। ঐতিহাসিক ছবি: Arthur Rackham; বইয়ের ভেতরের ছবি, প্রথম সংস্করণের আলাদা প্রচ্ছদ নয়।",
+      "ur": "لومڑی اور کوا۔ میٹھی باتوں میں آ کر ایک کوّی اپنا کھانا گرا دیتی ہے۔ A1 سطح کی مختصر ماخوذ کہانی۔ ترتیب: English Tales۔ تاریخی تصویر: Arthur Rackham؛ کتاب کے اندر کی تصویر، پہلے ایڈیشن کا الگ سرورق نہیں۔",
+      "th": "สุนัขจิ้งจอกกับอีกา: อาหารที่หล่นจากปากอีกาเพราะหลงเชื่อคำหวาน ฉบับดัดแปลงสั้น ๆ ระดับ A1 ดัดแปลงโดย English Tales ภาพเก่าทางประวัติศาสตร์: Arthur Rackham; ภาพประกอบภายในเล่ม ไม่ใช่ปกแยกของฉบับพิมพ์ครั้งแรก"
+    }
+  },
+  "words": [
+    {
+      "id": "crow",
+      "word": "crow",
+      "translation": "karga",
+      "pronunciation": "/krəʊ/",
+      "example": "A thirsty crow looks for water.",
+      "translations": {
+        "es-419": "cuervo",
+        "pt-BR": "corvo",
+        "id": "burung gagak",
+        "ar": "غراب",
+        "vi": "con quạ",
+        "hi": "कौआ",
+        "ru": "ворона",
+        "bn": "কাক",
+        "ur": "کوا",
+        "th": "อีกา"
+      }
+    },
+    {
+      "id": "meat",
+      "word": "meat",
+      "translation": "et",
+      "pronunciation": "/miːt/",
+      "example": "A dog carries a piece of meat in his mouth.",
+      "translations": {
+        "es-419": "carne",
+        "pt-BR": "carne",
+        "id": "daging",
+        "ar": "لحم",
+        "vi": "thịt",
+        "hi": "मांस",
+        "ru": "мясо",
+        "bn": "মাংস",
+        "ur": "گوشت",
+        "th": "เนื้อ"
+      }
+    },
+    {
+      "id": "fox",
+      "word": "fox",
+      "translation": "tilki",
+      "pronunciation": "/fɒks/",
+      "example": "The fox sees some grapes.",
+      "translations": {
+        "es-419": "zorro",
+        "pt-BR": "raposa",
+        "id": "rubah",
+        "ar": "ثعلب",
+        "vi": "con cáo",
+        "hi": "लोमड़ी",
+        "ru": "лиса",
+        "bn": "শেয়াল",
+        "ur": "لومڑی",
+        "th": "สุนัขจิ้งจอก"
+      }
+    },
+    {
+      "id": "praise",
+      "word": "praise",
+      "translation": "övmek",
+      "pronunciation": "/preɪz/",
+      "example": "So he begins to praise the crow.",
+      "translations": {
+        "es-419": "elogiar",
+        "pt-BR": "elogiar",
+        "id": "memuji",
+        "ar": "يمدح",
+        "vi": "khen ngợi",
+        "hi": "तारीफ़ करना",
+        "ru": "хвалить",
+        "bn": "প্রশংসা করা",
+        "ur": "تعریف کرنا",
+        "th": "ชมเชย, ยกยอ"
+      }
+    },
+    {
+      "id": "feathers",
+      "word": "feathers",
+      "translation": "tüyler",
+      "pronunciation": "/ˈfeðəz/",
+      "example": "\"What beautiful feathers you have!\" he says.",
+      "translations": {
+        "es-419": "plumas",
+        "pt-BR": "penas",
+        "id": "bulu",
+        "ar": "ريش",
+        "vi": "lông vũ",
+        "hi": "पंख",
+        "ru": "перья",
+        "bn": "পালক",
+        "ur": "پر",
+        "th": "ขนนก"
+      }
+    },
+    {
+      "id": "voice",
+      "word": "voice",
+      "translation": "ses",
+      "pronunciation": "/vɔɪs/",
+      "example": "\"You must have a beautiful voice, too.\"",
+      "translations": {
+        "es-419": "voz",
+        "pt-BR": "voz",
+        "id": "suara",
+        "ar": "صوت",
+        "vi": "giọng nói, giọng hát",
+        "hi": "आवाज़",
+        "ru": "голос",
+        "bn": "গলা, কণ্ঠস্বর",
+        "ur": "آواز",
+        "th": "เสียง"
+      }
+    },
+    {
+      "id": "proud",
+      "word": "proud",
+      "translation": "gururlu",
+      "pronunciation": "/praʊd/",
+      "example": "The crow feels proud.",
+      "translations": {
+        "es-419": "orgulloso",
+        "pt-BR": "orgulhoso",
+        "id": "bangga",
+        "ar": "فخور",
+        "vi": "tự hào, kiêu hãnh",
+        "hi": "घमंडी, गर्व से भरा",
+        "ru": "гордый",
+        "bn": "গর্বিত",
+        "ur": "مغرور، فخر کرنے والا",
+        "th": "ภูมิใจ, หยิ่ง"
+      }
+    },
+    {
+      "id": "beak",
+      "word": "beak",
+      "translation": "gaga",
+      "pronunciation": "/biːk/",
+      "example": "The crow puts her beak inside.",
+      "translations": {
+        "es-419": "pico",
+        "pt-BR": "bico",
+        "id": "paruh",
+        "ar": "منقار",
+        "vi": "cái mỏ",
+        "hi": "चोंच",
+        "ru": "клюв",
+        "bn": "ঠোঁট (পাখির)",
+        "ur": "چونچ",
+        "th": "จะงอยปาก"
+      }
+    },
+    {
+      "id": "laughs",
+      "word": "laughs",
+      "translation": "güler",
+      "pronunciation": "/læfs/",
+      "example": "She laughs at the funny story.",
+      "translations": {
+        "es-419": "se ríe",
+        "pt-BR": "ri",
+        "id": "tertawa",
+        "ar": "يضحك",
+        "vi": "cười",
+        "hi": "हँसता है, हँसती है",
+        "ru": "смеётся",
+        "bn": "হাসে",
+        "ur": "ہنستا ہے",
+        "th": "หัวเราะ"
+      }
+    },
+    {
+      "id": "sense",
+      "word": "sense",
+      "translation": "akıl; sağduyu",
+      "pronunciation": "/sens/",
+      "example": "\"You have a voice, but you need more sense,\" he says.",
+      "translations": {
+        "es-419": "sentido común",
+        "pt-BR": "bom senso",
+        "id": "akal sehat",
+        "ar": "عقل، حكمة",
+        "vi": "sự khôn ngoan, lý trí",
+        "hi": "समझ, अक्ल",
+        "ru": "ум, здравый смысл",
+        "bn": "বুদ্ধি, কাণ্ডজ্ঞান",
+        "ur": "عقل، سمجھ",
+        "th": "สามัญสำนึก, ความรอบคอบ"
+      }
+    },
+    {
+      "id": "meal",
+      "word": "meal",
+      "translation": "öğün",
+      "pronunciation": "/miːl/",
+      "example": "The town mouse is not happy with the meal.",
+      "translations": {
+        "es-419": "comida",
+        "pt-BR": "refeição",
+        "id": "hidangan, makanan",
+        "ar": "وجبة",
+        "vi": "bữa ăn",
+        "hi": "खाना, भोजन",
+        "ru": "еда, трапеза",
+        "bn": "খাবার",
+        "ur": "کھانا",
+        "th": "มื้ออาหาร"
+      }
+    },
+    {
+      "id": "flattery",
+      "word": "flattery",
+      "translation": "pohpohlama",
+      "pronunciation": "/ˈflætəri/",
+      "example": "Flattery is not always friendship.",
+      "translations": {
+        "es-419": "adulación",
+        "pt-BR": "bajulação",
+        "id": "sanjungan, pujian kosong",
+        "ar": "تملّق",
+        "vi": "lời nịnh hót",
+        "hi": "चापलूसी",
+        "ru": "лесть",
+        "bn": "তোষামোদ",
+        "ur": "خوشامد",
+        "th": "คำเยินยอ, คำประจบ"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "crow",
+    "meat",
+    "fox",
+    "praise",
+    "feathers",
+    "voice",
+    "proud",
+    "beak",
+    "laughs",
+    "sense",
+    "meal",
+    "flattery"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-fox-crow-q1",
+      "sentenceIds": [
+        "cl-fox-crow-04",
+        "cl-fox-crow-10",
+        "cl-fox-crow-11"
+      ],
+      "rationale": "The fox praises the crow, the meat falls and he takes it."
+    },
+    {
+      "questionId": "classic-fox-crow-q2",
+      "sentenceIds": [
+        "cl-fox-crow-09",
+        "cl-fox-crow-10"
+      ],
+      "rationale": "The crow opens her beak just before the meat falls."
+    },
+    {
+      "questionId": "classic-fox-crow-q3",
+      "sentenceIds": [
+        "cl-fox-crow-08",
+        "cl-fox-crow-09"
+      ],
+      "rationale": "She wants the fox to hear her voice, so she opens her beak."
+    },
+    {
+      "questionId": "classic-fox-crow-q4",
+      "sentenceIds": [
+        "classic-fox-crow-ext-06-01"
+      ],
+      "rationale": "The fox asks the crow to sing one song for him."
+    }
+  ],
+  "publicationBlockers": [
+    "Owner (oguz) approval of the English text, questions and translations required.",
+    "Fresh live source snapshot and publisher validation required."
+  ],
+  "lengthening": {
+    "wordsBefore": 104,
+    "wordsAfter": 228,
+    "sentencesBefore": 14,
+    "sentencesAfter": 31
+  }
+}

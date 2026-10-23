@@ -45,7 +45,9 @@ test('drafts stay out of the bundled catalog until reviewed',()=>{
 });
 
 const revisionDir=new URL('../content/drafts/revisions/',import.meta.url);
-const revisions=readdirSync(revisionDir).filter(f=>f.endsWith('.json')).map(file=>JSON.parse(readFileSync(new URL(file,revisionDir),'utf8')));
+// The quality pilot's five revisions; lengthening batches are checked in story-lengthening.test.mjs.
+const pilotIds=JSON.parse(readFileSync(new URL('../content/drafts/pilot-scope.json',import.meta.url),'utf8')).activeRevisionStoryIds;
+const revisions=pilotIds.map(id=>JSON.parse(readFileSync(new URL(`${id}.json`,revisionDir),'utf8')));
 const {createHash}=await import('node:crypto');
 const canonical=value=>Array.isArray(value)?value.map(canonical):value&&typeof value==='object'?Object.fromEntries(Object.keys(value).sort().map(key=>[key,canonical(value[key])])):value;
 const digest=value=>createHash('sha256').update(JSON.stringify(canonical(value))).digest('hex');

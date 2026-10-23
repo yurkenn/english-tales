@@ -1,0 +1,873 @@
+{
+  "status": "draft",
+  "kind": "revision",
+  "source": "story-lengthening-a1-batch2-2026-10-22",
+  "reviewedBy": null,
+  "baseStoryId": "classic-bundle-sticks",
+  "baseStorySHA256": "e1a56e03c092c66523ecf50c63f07448b44ded6f3dced8c6c0adea9878f57bf6",
+  "editorialNotes": [
+    "Adds what the sons argue about, the father's failed talks, the tightly tied rope, the oldest son's effort, the father's plea and the sons' shame and change.",
+    "Every legacy sentence, its ID and its translations are kept unchanged; new sentences are only inserted between them. Plot, characters, ending and lesson are unchanged.",
+    "New sentences have AI-drafted translations in all ten additional support languages, following the gender and wording already used in each legacy translation. No native-speaker review."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "unchangedTranslationsPreserved": true,
+    "newSentenceIds": [
+      "classic-bundle-sticks-ext-01-01",
+      "classic-bundle-sticks-ext-02-01",
+      "classic-bundle-sticks-ext-02-02",
+      "classic-bundle-sticks-ext-03-01",
+      "classic-bundle-sticks-ext-04-01",
+      "classic-bundle-sticks-ext-06-01",
+      "classic-bundle-sticks-ext-06-02",
+      "classic-bundle-sticks-ext-09-01",
+      "classic-bundle-sticks-ext-11-01",
+      "classic-bundle-sticks-ext-12-01",
+      "classic-bundle-sticks-ext-12-02"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+  },
+  "story": {
+    "id": "classic-bundle-sticks",
+    "title": "The Bundle of Sticks",
+    "author": "Aesop",
+    "level": "A1",
+    "genre": "Günlük yaşam",
+    "description": "Bir Demet Çubuk. Bir baba, sürekli tartışan oğullarına birlikte olmanın gücünü gösterir. A1 düzeyinde kısa uyarlama. Uyarlama ve Türkçe çeviri: English Tales. Tarihî görsel: Arthur Rackham; koleksiyonun iç başlık sayfası, ayrı bir ilk baskı kapağı değildir.",
+    "coverKey": "cover_classic_bundle_sticks",
+    "sentences": [
+      {
+        "id": "cl-bundle-sticks-01",
+        "english": "A father has several sons.",
+        "turkish": "Bir babanın birkaç oğlu vardır.",
+        "translations": {
+          "es-419": "Un padre tiene varios hijos.",
+          "pt-BR": "Um pai tem vários filhos.",
+          "id": "Seorang ayah mempunyai beberapa anak laki-laki.",
+          "ar": "لأب عدة أبناء.",
+          "vi": "Một người cha có mấy người con trai.",
+          "hi": "एक पिता के कई बेटे हैं।",
+          "ru": "У отца есть несколько сыновей.",
+          "bn": "এক বাবার কয়েকজন ছেলে আছে।",
+          "ur": "ایک باپ کے کئی بیٹے ہیں۔",
+          "th": "พ่อคนหนึ่งมีลูกชายหลายคน"
+        }
+      },
+      {
+        "id": "classic-bundle-sticks-ext-01-01",
+        "english": "They live together in one house.",
+        "turkish": "Hepsi aynı evde birlikte yaşar.",
+        "translations": {
+          "es-419": "Viven juntos en una sola casa.",
+          "pt-BR": "Eles moram juntos na mesma casa.",
+          "id": "Mereka tinggal bersama di satu rumah.",
+          "ar": "يعيشون معًا في بيت واحد.",
+          "vi": "Họ sống chung trong một ngôi nhà.",
+          "hi": "वे सब एक ही घर में साथ रहते हैं।",
+          "ru": "Они живут вместе в одном доме.",
+          "bn": "তারা সবাই একই বাড়িতে একসঙ্গে থাকে।",
+          "ur": "وہ سب ایک ہی گھر میں ساتھ رہتے ہیں۔",
+          "th": "พวกเขาอาศัยอยู่ด้วยกันในบ้านหลังเดียว"
+        }
+      },
+      {
+        "id": "cl-bundle-sticks-02",
+        "english": "They often argue with each other.",
+        "turkish": "Birbirleriyle sık sık tartışırlar.",
+        "translations": {
+          "es-419": "A menudo discuten entre ellos.",
+          "pt-BR": "Eles discutem muito uns com os outros.",
+          "id": "Mereka sering bertengkar satu sama lain.",
+          "ar": "كثيرًا ما يتجادلون فيما بينهم.",
+          "vi": "Họ thường cãi nhau.",
+          "hi": "वे अक्सर आपस में झगड़ते हैं।",
+          "ru": "Они часто спорят друг с другом.",
+          "bn": "তারা প্রায়ই নিজেদের মধ্যে তর্ক করে।",
+          "ur": "وہ اکثر آپس میں جھگڑتے رہتے ہیں۔",
+          "th": "พวกเขามักจะเถียงกันอยู่บ่อย ๆ"
+        }
+      },
+      {
+        "id": "classic-bundle-sticks-ext-02-01",
+        "english": "They argue about food, work and money.",
+        "turkish": "Yemek, iş ve para yüzünden tartışırlar.",
+        "translations": {
+          "es-419": "Discuten por la comida, el trabajo y el dinero.",
+          "pt-BR": "Eles discutem por causa de comida, trabalho e dinheiro.",
+          "id": "Mereka bertengkar soal makanan, pekerjaan, dan uang.",
+          "ar": "يتجادلون حول الطعام والعمل والمال.",
+          "vi": "Họ cãi nhau về chuyện ăn uống, công việc và tiền bạc.",
+          "hi": "वे खाने, काम और पैसों को लेकर झगड़ते हैं।",
+          "ru": "Они спорят из-за еды, работы и денег.",
+          "bn": "তারা খাবার, কাজ আর টাকা নিয়ে তর্ক করে।",
+          "ur": "وہ کھانے، کام اور پیسوں پر جھگڑتے ہیں۔",
+          "th": "พวกเขาเถียงกันเรื่องอาหาร งาน และเงิน"
+        }
+      },
+      {
+        "id": "classic-bundle-sticks-ext-02-02",
+        "english": "Every day, the house is full of angry voices.",
+        "turkish": "Ev her gün öfkeli seslerle doludur.",
+        "translations": {
+          "es-419": "Todos los días, la casa está llena de voces enojadas.",
+          "pt-BR": "Todos os dias, a casa fica cheia de vozes bravas.",
+          "id": "Setiap hari, rumah itu penuh dengan suara marah.",
+          "ar": "كل يوم، يمتلئ البيت بالأصوات الغاضبة.",
+          "vi": "Ngày nào ngôi nhà cũng đầy những tiếng cãi vã giận dữ.",
+          "hi": "हर दिन घर ग़ुस्से भरी आवाज़ों से भरा रहता है।",
+          "ru": "Каждый день в доме слышны сердитые голоса.",
+          "bn": "রোজ বাড়িটা রাগী গলার আওয়াজে ভরে থাকে।",
+          "ur": "ہر روز گھر غصے بھری آوازوں سے بھرا رہتا ہے۔",
+          "th": "ทุกวัน บ้านเต็มไปด้วยเสียงโกรธเกรี้ยว"
+        }
+      },
+      {
+        "id": "cl-bundle-sticks-03",
+        "english": "Their father wants them to live in peace.",
+        "turkish": "Babaları onların barış içinde yaşamasını ister.",
+        "translations": {
+          "es-419": "Su padre quiere que vivan en paz.",
+          "pt-BR": "O pai quer que eles vivam em paz.",
+          "id": "Ayah mereka ingin mereka hidup rukun.",
+          "ar": "يريد أبوهم أن يعيشوا في وئام.",
+          "vi": "Người cha muốn các con sống hòa thuận.",
+          "hi": "उनके पिता चाहते हैं कि वे मेल से रहें।",
+          "ru": "Отец хочет, чтобы они жили в мире.",
+          "bn": "তাদের বাবা চান, তারা মিলেমিশে থাকুক।",
+          "ur": "ان کا باپ چاہتا ہے کہ وہ مل جل کر رہیں۔",
+          "th": "พ่ออยากให้พวกเขาอยู่กันอย่างสงบสุข"
+        }
+      },
+      {
+        "id": "classic-bundle-sticks-ext-03-01",
+        "english": "He talks to them many times, but they do not listen.",
+        "turkish": "Onlarla defalarca konuşur ama dinlemezler.",
+        "translations": {
+          "es-419": "Habla con ellos muchas veces, pero no escuchan.",
+          "pt-BR": "Ele conversa com eles muitas vezes, mas eles não escutam.",
+          "id": "Ia sudah berkali-kali menasihati mereka, tetapi mereka tidak mendengarkan.",
+          "ar": "يكلّمهم مرات كثيرة، لكنهم لا يستمعون.",
+          "vi": "Ông nói với họ nhiều lần, nhưng họ không nghe.",
+          "hi": "वह उनसे कई बार बात करते हैं, लेकिन वे नहीं सुनते।",
+          "ru": "Он много раз говорит с ними, но они не слушают.",
+          "bn": "তিনি তাদের সঙ্গে অনেকবার কথা বলেন, কিন্তু তারা শোনে না।",
+          "ur": "وہ ان سے کئی بار بات کرتا ہے، لیکن وہ نہیں سنتے۔",
+          "th": "พ่อพูดกับพวกเขาหลายครั้ง แต่พวกเขาไม่ฟัง"
+        }
+      },
+      {
+        "id": "cl-bundle-sticks-04",
+        "english": "One day, he brings them a bundle of sticks.",
+        "turkish": "Bir gün onlara bir demet çubuk getirir.",
+        "translations": {
+          "es-419": "Un día, les trae un manojo de palos.",
+          "pt-BR": "Um dia, ele traz para eles um feixe de varas.",
+          "id": "Suatu hari, ia membawakan mereka seikat ranting.",
+          "ar": "ذات يوم، يُحضر لهم حزمة من العصيّ.",
+          "vi": "Một hôm, ông mang đến cho họ một bó que.",
+          "hi": "एक दिन वह उनके लिए लकड़ियों का एक गट्ठर लाते हैं।",
+          "ru": "Однажды он приносит им связку прутьев.",
+          "bn": "একদিন তিনি তাদের কাছে এক আঁটি লাঠি নিয়ে আসেন।",
+          "ur": "ایک دن وہ ان کے پاس لکڑیوں کا ایک گٹھا لاتا ہے۔",
+          "th": "วันหนึ่ง พ่อนำกิ่งไม้มัดหนึ่งมาให้พวกเขา"
+        }
+      },
+      {
+        "id": "classic-bundle-sticks-ext-04-01",
+        "english": "The sticks are tied tightly with a rope.",
+        "turkish": "Çubuklar bir iple sıkıca bağlanmıştır.",
+        "translations": {
+          "es-419": "Los palos están bien atados con una cuerda.",
+          "pt-BR": "As varas estão bem amarradas com uma corda.",
+          "id": "Ranting-ranting itu diikat erat dengan tali.",
+          "ar": "العصيّ مربوطة بإحكام بحبل.",
+          "vi": "Những que này được buộc chặt bằng một sợi dây.",
+          "hi": "लकड़ियाँ एक रस्सी से कसकर बँधी हैं।",
+          "ru": "Прутья крепко связаны верёвкой.",
+          "bn": "লাঠিগুলো একটা দড়ি দিয়ে শক্ত করে বাঁধা।",
+          "ur": "لکڑیاں ایک رسی سے کس کر بندھی ہوئی ہیں۔",
+          "th": "กิ่งไม้ถูกมัดไว้แน่นด้วยเชือก"
+        }
+      },
+      {
+        "id": "cl-bundle-sticks-05",
+        "english": "\"Try to break this bundle,\" he says.",
+        "turkish": "\"Bu demeti kırmayı deneyin,\" der.",
+        "translations": {
+          "es-419": "\"Intenten romper este manojo\", les dice.",
+          "pt-BR": "— Tentem quebrar este feixe — diz ele.",
+          "id": "\"Cobalah patahkan ikatan ini,\" katanya.",
+          "ar": "يقول: «حاولوا أن تكسروا هذه الحزمة.»",
+          "vi": "\"Hãy thử bẻ gãy bó que này,\" ông nói.",
+          "hi": "\"इस गट्ठर को तोड़ने की कोशिश करो,\" वह कहते हैं।",
+          "ru": "«Попробуйте сломать эту связку», — говорит он.",
+          "bn": "\"এই আঁটিটা ভাঙার চেষ্টা করো,\" তিনি বলেন।",
+          "ur": "\"اس گٹھے کو توڑ کر دکھاؤ،\" وہ کہتا ہے۔",
+          "th": "\"ลองหักมัดไม้นี้ดูสิ\" พ่อพูด"
+        }
+      },
+      {
+        "id": "cl-bundle-sticks-06",
+        "english": "Each son tries, but nobody can break it.",
+        "turkish": "Her oğul dener ama hiçbiri onu kıramaz.",
+        "translations": {
+          "es-419": "Cada hijo lo intenta, pero nadie puede romperlo.",
+          "pt-BR": "Cada filho tenta, mas ninguém consegue quebrá-lo.",
+          "id": "Setiap anak mencoba, tetapi tidak ada yang bisa mematahkannya.",
+          "ar": "يحاول كل ابن، لكن لا أحد يستطيع كسرها.",
+          "vi": "Người con nào cũng thử, nhưng không ai bẻ gãy được.",
+          "hi": "हर बेटा कोशिश करता है, लेकिन कोई उसे तोड़ नहीं पाता।",
+          "ru": "Каждый сын пробует, но никто не может её сломать.",
+          "bn": "প্রত্যেক ছেলে চেষ্টা করে, কিন্তু কেউই ভাঙতে পারে না।",
+          "ur": "ہر بیٹا کوشش کرتا ہے، لیکن کوئی اسے نہیں توڑ پاتا۔",
+          "th": "ลูกชายแต่ละคนพยายาม แต่ไม่มีใครหักมันได้"
+        }
+      },
+      {
+        "id": "classic-bundle-sticks-ext-06-01",
+        "english": "The oldest son pushes it against his knee.",
+        "turkish": "En büyük oğul onu dizine bastırır.",
+        "translations": {
+          "es-419": "El hijo mayor lo empuja contra su rodilla.",
+          "pt-BR": "O filho mais velho força o feixe contra o joelho.",
+          "id": "Anak sulung menekannya ke lututnya.",
+          "ar": "يضغطها الابن الأكبر على ركبته.",
+          "vi": "Người con cả tì bó que vào đầu gối mà bẻ.",
+          "hi": "सबसे बड़ा बेटा उसे अपने घुटने पर दबाता है।",
+          "ru": "Старший сын давит на неё коленом.",
+          "bn": "বড় ছেলে সেটা হাঁটুতে চেপে ধরে।",
+          "ur": "سب سے بڑا بیٹا اسے اپنے گھٹنے پر دباتا ہے۔",
+          "th": "ลูกชายคนโตเอามัดไม้กดกับเข่า"
+        }
+      },
+      {
+        "id": "classic-bundle-sticks-ext-06-02",
+        "english": "His face turns red, but the bundle does not break.",
+        "turkish": "Yüzü kıpkırmızı olur ama demet kırılmaz.",
+        "translations": {
+          "es-419": "Se le pone roja la cara, pero el manojo no se rompe.",
+          "pt-BR": "O rosto dele fica vermelho, mas o feixe não quebra.",
+          "id": "Wajahnya memerah, tetapi ikatan itu tidak patah.",
+          "ar": "يحمرّ وجهه، لكن الحزمة لا تنكسر.",
+          "vi": "Mặt anh đỏ bừng, nhưng bó que vẫn không gãy.",
+          "hi": "उसका चेहरा लाल हो जाता है, लेकिन गट्ठर नहीं टूटता।",
+          "ru": "Его лицо краснеет, но связка не ломается.",
+          "bn": "তার মুখ লাল হয়ে যায়, কিন্তু আঁটিটা ভাঙে না।",
+          "ur": "اس کا چہرہ لال ہو جاتا ہے، لیکن گٹھا نہیں ٹوٹتا۔",
+          "th": "หน้าของเขาแดงก่ำ แต่มัดไม้ก็ไม่หัก"
+        }
+      },
+      {
+        "id": "cl-bundle-sticks-07",
+        "english": "Then the father unties the bundle.",
+        "turkish": "Sonra baba demetin bağını çözer.",
+        "translations": {
+          "es-419": "Entonces el padre desata el manojo.",
+          "pt-BR": "Então o pai desamarra o feixe.",
+          "id": "Lalu ayah itu membuka ikatannya.",
+          "ar": "ثم يفكّ الأب الحزمة.",
+          "vi": "Rồi người cha tháo bó que ra.",
+          "hi": "फिर पिता गट्ठर खोल देते हैं।",
+          "ru": "Тогда отец развязывает связку.",
+          "bn": "তখন বাবা আঁটির বাঁধন খুলে দেন।",
+          "ur": "پھر باپ گٹھا کھول دیتا ہے۔",
+          "th": "แล้วพ่อก็แก้มัดไม้ออก"
+        }
+      },
+      {
+        "id": "cl-bundle-sticks-08",
+        "english": "He gives each son a single stick.",
+        "turkish": "Her oğluna tek bir çubuk verir.",
+        "translations": {
+          "es-419": "Le da a cada hijo un solo palo.",
+          "pt-BR": "Ele dá a cada filho uma única vara.",
+          "id": "Ia memberi setiap anak sebatang ranting.",
+          "ar": "يعطي كل ابن عصا واحدة.",
+          "vi": "Ông đưa cho mỗi người con một que.",
+          "hi": "वह हर बेटे को एक-एक लकड़ी देते हैं।",
+          "ru": "Он даёт каждому сыну по одному пруту.",
+          "bn": "তিনি প্রত্যেক ছেলের হাতে একটা করে লাঠি দেন।",
+          "ur": "وہ ہر بیٹے کو ایک ایک لکڑی دیتا ہے۔",
+          "th": "พ่อให้กิ่งไม้แก่ลูกชายแต่ละคนคนละกิ่ง"
+        }
+      },
+      {
+        "id": "cl-bundle-sticks-09",
+        "english": "Now they break the sticks easily.",
+        "turkish": "Şimdi çubukları kolayca kırarlar.",
+        "translations": {
+          "es-419": "Ahora rompen los palos con facilidad.",
+          "pt-BR": "Agora eles quebram as varas com facilidade.",
+          "id": "Sekarang mereka mematahkan ranting-ranting itu dengan mudah.",
+          "ar": "الآن يكسرون العصيّ بسهولة.",
+          "vi": "Giờ thì họ bẻ gãy từng que một cách dễ dàng.",
+          "hi": "अब वे लकड़ियाँ आसानी से तोड़ देते हैं।",
+          "ru": "Теперь они легко ломают прутья.",
+          "bn": "এবার তারা সহজেই লাঠিগুলো ভেঙে ফেলে।",
+          "ur": "اب وہ لکڑیاں آسانی سے توڑ دیتے ہیں۔",
+          "th": "คราวนี้พวกเขาหักกิ่งไม้ได้อย่างง่ายดาย"
+        }
+      },
+      {
+        "id": "classic-bundle-sticks-ext-09-01",
+        "english": "This time, it is very easy.",
+        "turkish": "Bu sefer çok kolaydır.",
+        "translations": {
+          "es-419": "Esta vez, es muy fácil.",
+          "pt-BR": "Desta vez, é muito fácil.",
+          "id": "Kali ini, sangat mudah.",
+          "ar": "هذه المرة، الأمر سهل جدًا.",
+          "vi": "Lần này thì thật dễ dàng.",
+          "hi": "इस बार यह बहुत आसान है।",
+          "ru": "На этот раз это очень легко.",
+          "bn": "এবার কাজটা খুব সহজ।",
+          "ur": "اس بار یہ بہت آسان ہے۔",
+          "th": "ครั้งนี้มันง่ายมาก"
+        }
+      },
+      {
+        "id": "cl-bundle-sticks-10",
+        "english": "\"Together, you are strong like the bundle,\" says their father.",
+        "turkish": "Babaları, \"Birlikteyken bu demet gibi güçlüsünüz,\" der.",
+        "translations": {
+          "es-419": "\"Juntos, son fuertes como el manojo\", dice su padre.",
+          "pt-BR": "— Juntos, vocês são fortes como o feixe — diz o pai.",
+          "id": "\"Kalau bersama, kalian kuat seperti ikatan ranting ini,\" kata ayah mereka.",
+          "ar": "يقول أبوهم: «معًا، أنتم أقوياء مثل الحزمة.»",
+          "vi": "\"Khi ở bên nhau, các con mạnh mẽ như bó que này,\" người cha nói.",
+          "hi": "\"साथ रहोगे, तो तुम इस गट्ठर की तरह मज़बूत हो,\" उनके पिता कहते हैं।",
+          "ru": "«Вместе вы сильны, как эта связка, — говорит отец. —",
+          "bn": "\"একসঙ্গে থাকলে তোমরা এই আঁটির মতোই শক্ত,\" বাবা বলেন।",
+          "ur": "\"مل کر رہو تو تم اس گٹھے کی طرح مضبوط ہو،\" ان کا باپ کہتا ہے۔",
+          "th": "\"เมื่ออยู่ด้วยกัน พวกเจ้าก็แข็งแรงเหมือนมัดไม้นี้\" พ่อพูด"
+        }
+      },
+      {
+        "id": "cl-bundle-sticks-11",
+        "english": "\"Alone, each of you is easy to hurt.\"",
+        "turkish": "\"Yalnızken her birinizi incitmek kolaydır.\"",
+        "translations": {
+          "es-419": "\"Solos, a cada uno de ustedes es fácil hacerle daño.\"",
+          "pt-BR": "— Sozinho, cada um de vocês é fácil de ferir.",
+          "id": "\"Kalau sendirian, kalian masing-masing mudah dilukai.\"",
+          "ar": "«ووحده، كل واحد منكم سهل الإيذاء.»",
+          "vi": "\"Khi đứng một mình, mỗi đứa đều dễ bị tổn thương.\"",
+          "hi": "\"अकेले में तुम में से हर किसी को आसानी से नुकसान पहुँचाया जा सकता है।\"",
+          "ru": "А поодиночке каждого из вас легко обидеть».",
+          "bn": "\"একা থাকলে তোমাদের প্রত্যেককে সহজেই আঘাত করা যায়।\"",
+          "ur": "\"اکیلے ہو تو تم میں سے ہر ایک کو آسانی سے نقصان پہنچایا جا سکتا ہے۔\"",
+          "th": "\"แต่เมื่ออยู่ลำพัง แต่ละคนก็ถูกทำร้ายได้ง่าย\""
+        }
+      },
+      {
+        "id": "classic-bundle-sticks-ext-11-01",
+        "english": "\"So please stop fighting and help each other.\"",
+        "turkish": "\"O yüzden lütfen kavga etmeyi bırakın ve birbirinize yardım edin.\"",
+        "translations": {
+          "es-419": "\"Así que, por favor, dejen de pelear y ayúdense.\"",
+          "pt-BR": "— Então, por favor, parem de brigar e ajudem uns aos outros.",
+          "id": "\"Jadi, berhentilah bertengkar dan saling membantu.\"",
+          "ar": "«لذلك أرجوكم، توقّفوا عن الشجار وساعدوا بعضكم بعضًا.»",
+          "vi": "\"Vì vậy, các con hãy thôi cãi nhau và giúp đỡ lẫn nhau.\"",
+          "hi": "\"इसलिए झगड़ना बंद करो और एक-दूसरे की मदद करो।\"",
+          "ru": "«Так что, прошу вас, перестаньте ссориться и помогайте друг другу».",
+          "bn": "\"তাই দয়া করে ঝগড়া থামাও আর একে অপরকে সাহায্য করো।\"",
+          "ur": "\"اس لیے جھگڑنا چھوڑ دو اور ایک دوسرے کی مدد کرو۔\"",
+          "th": "\"ฉะนั้นเลิกทะเลาะกันแล้วช่วยเหลือกันเถิด\""
+        }
+      },
+      {
+        "id": "cl-bundle-sticks-12",
+        "english": "The sons listen to his lesson.",
+        "turkish": "Oğullar babalarının verdiği dersi dinler.",
+        "translations": {
+          "es-419": "Los hijos escuchan su lección.",
+          "pt-BR": "Os filhos escutam a lição dele.",
+          "id": "Anak-anak itu mendengarkan pelajaran darinya.",
+          "ar": "يستمع الأبناء إلى درسه.",
+          "vi": "Những người con lắng nghe bài học của cha.",
+          "hi": "बेटे उनकी सीख ध्यान से सुनते हैं।",
+          "ru": "Сыновья прислушиваются к его уроку.",
+          "bn": "ছেলেরা তাঁর শিক্ষা মন দিয়ে শোনে।",
+          "ur": "بیٹے اس کا سبق غور سے سنتے ہیں۔",
+          "th": "ลูกชายทั้งหลายตั้งใจฟังบทเรียนของพ่อ"
+        }
+      },
+      {
+        "id": "classic-bundle-sticks-ext-12-01",
+        "english": "They look at the broken sticks and feel ashamed.",
+        "turkish": "Kırık çubuklara bakarlar ve utanırlar.",
+        "translations": {
+          "es-419": "Miran los palos rotos y sienten vergüenza.",
+          "pt-BR": "Eles olham para as varas quebradas e sentem vergonha.",
+          "id": "Mereka memandangi ranting-ranting yang patah dan merasa malu.",
+          "ar": "ينظرون إلى العصيّ المكسورة ويشعرون بالخجل.",
+          "vi": "Họ nhìn những que gãy và thấy xấu hổ.",
+          "hi": "वे टूटी लकड़ियों को देखते हैं और शर्मिंदा होते हैं।",
+          "ru": "Они смотрят на сломанные прутья, и им становится стыдно.",
+          "bn": "তারা ভাঙা লাঠিগুলোর দিকে তাকায় আর লজ্জা পায়।",
+          "ur": "وہ ٹوٹی ہوئی لکڑیوں کو دیکھتے ہیں اور شرمندہ ہوتے ہیں۔",
+          "th": "พวกเขามองดูกิ่งไม้ที่หักและรู้สึกละอายใจ"
+        }
+      },
+      {
+        "id": "classic-bundle-sticks-ext-12-02",
+        "english": "From that day, they try to work together.",
+        "turkish": "O günden sonra birlikte çalışmaya çabalarlar.",
+        "translations": {
+          "es-419": "Desde ese día, intentan trabajar juntos.",
+          "pt-BR": "A partir daquele dia, eles tentam trabalhar juntos.",
+          "id": "Sejak hari itu, mereka berusaha bekerja sama.",
+          "ar": "منذ ذلك اليوم، يحاولون أن يعملوا معًا.",
+          "vi": "Từ hôm đó, họ cố gắng cùng nhau làm việc.",
+          "hi": "उस दिन से वे मिलकर काम करने की कोशिश करते हैं।",
+          "ru": "С того дня они стараются работать вместе.",
+          "bn": "সেদিন থেকে তারা একসঙ্গে কাজ করার চেষ্টা করে।",
+          "ur": "اس دن سے وہ مل کر کام کرنے کی کوشش کرتے ہیں۔",
+          "th": "ตั้งแต่วันนั้น พวกเขาก็พยายามทำงานร่วมกัน"
+        }
+      },
+      {
+        "id": "cl-bundle-sticks-13",
+        "english": "People are stronger when they stand together.",
+        "turkish": "İnsanlar birlikte durduklarında daha güçlüdür.",
+        "translations": {
+          "es-419": "Las personas son más fuertes cuando se mantienen unidas.",
+          "pt-BR": "As pessoas são mais fortes quando ficam unidas.",
+          "id": "Orang lebih kuat ketika mereka bersatu.",
+          "ar": "الناس أقوى عندما يقفون معًا.",
+          "vi": "Con người mạnh mẽ hơn khi họ đoàn kết với nhau.",
+          "hi": "जब लोग एक साथ खड़े होते हैं, तो वे ज़्यादा ताकतवर होते हैं।",
+          "ru": "Люди сильнее, когда держатся вместе.",
+          "bn": "মানুষ একসঙ্গে থাকলে বেশি শক্তিশালী হয়।",
+          "ur": "لوگ مل کر کھڑے ہوں تو زیادہ مضبوط ہوتے ہیں۔",
+          "th": "ผู้คนจะแข็งแกร่งกว่าเมื่อร่วมมือกัน"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-bundle-sticks-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "A father uses sticks to show his sons they are stronger together",
+          "A father asks his sons to find sticks for a cooking fire",
+          "Some sons use sticks to build a new house for their father",
+          "Some sons sell sticks to buy food for their family"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "classic-bundle-sticks-q2",
+        "kind": "detail",
+        "prompt": "What can the sons do with single sticks?",
+        "options": [
+          "Nothing at all",
+          "Break them easily",
+          "Build a house",
+          "Make a fire"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-bundle-sticks-q3",
+        "kind": "inference",
+        "prompt": "What does the father want his sons to learn from the sticks?",
+        "options": [
+          "They can earn money by selling sticks",
+          "They should collect wood before it gets cold",
+          "They can make a fire with dry sticks",
+          "They are stronger when they stay together"
+        ],
+        "answer": 3
+      },
+      {
+        "id": "classic-bundle-sticks-q4",
+        "kind": "detail",
+        "prompt": "What do the sons argue about?",
+        "options": [
+          "Food, work and money",
+          "The weather",
+          "Their father's sticks",
+          "A lost horse"
+        ],
+        "answer": 0
+      }
+    ],
+    "tags": [
+      "fabl",
+      "gunluk-yasam"
+    ],
+    "descriptions": {
+      "es-419": "El haz de varas. Un padre les muestra a sus hijos, que siempre discuten, la fuerza de estar unidos. Adaptación breve de nivel A1. Adaptación: English Tales. Imagen histórica: Arthur Rackham; portadilla interior de la colección, no es una portada aparte de primera edición.",
+      "pt-BR": "O feixe de varas. Um pai mostra aos filhos, que vivem brigando, a força de estar unidos. Adaptação curta de nível A1. Adaptação: English Tales. Imagem histórica: Arthur Rackham; folha de rosto interna da coleção, não é uma capa separada de primeira edição.",
+      "id": "Seikat Ranting. Seorang ayah menunjukkan kekuatan persatuan kepada anak-anaknya yang selalu bertengkar. Adaptasi singkat tingkat A1. Adaptasi: English Tales. Gambar historis: Arthur Rackham; halaman judul bagian dalam koleksi, bukan sampul edisi pertama tersendiri.",
+      "ar": "حزمة العصيّ. أب يُري أبناءه الذين يتشاجرون دائمًا قوة الاتحاد. اقتباس قصير بمستوى A1. الاقتباس: English Tales. صورة تاريخية: آرثر راكهام؛ صفحة العنوان الداخلية للمجموعة، وليست غلافًا منفصلًا للطبعة الأولى.",
+      "vi": "Bó đũa. Một người cha cho những người con trai hay cãi nhau thấy sức mạnh của sự đoàn kết. Bản phóng tác ngắn trình độ A1. Phóng tác: English Tales. Hình ảnh lịch sử: Arthur Rackham; trang tiêu đề bên trong tuyển tập, không phải bìa riêng của ấn bản đầu tiên.",
+      "hi": "लकड़ियों का गट्ठर। एक पिता हमेशा झगड़ने वाले अपने बेटों को एकता की ताकत दिखाता है। A1 स्तर का छोटा रूपांतरण। रूपांतरण: English Tales। ऐतिहासिक चित्र: Arthur Rackham; संग्रह का अंदरूनी शीर्षक पृष्ठ, पहले संस्करण का अलग कवर नहीं।",
+      "ru": "Связка прутьев. Отец показывает вечно спорящим сыновьям, какая сила в единстве. Краткая адаптация уровня A1. Адаптация: English Tales. Историческое изображение: Артур Рэкхем; внутренний титульный лист сборника, а не отдельная обложка первого издания.",
+      "bn": "এক আঁটি লাঠি। সবসময় ঝগড়া করা ছেলেদের এক বাবা একতার শক্তি দেখিয়ে দেন। A1 স্তরের ছোট রূপান্তর। রূপান্তর: English Tales। ঐতিহাসিক ছবি: Arthur Rackham; সংকলনের ভেতরের শিরোনাম পাতা, প্রথম সংস্করণের আলাদা প্রচ্ছদ নয়।",
+      "ur": "لکڑیوں کا گٹھا۔ ایک باپ ہر وقت جھگڑنے والے اپنے بیٹوں کو اتفاق کی طاقت دکھاتا ہے۔ A1 سطح کی مختصر ماخوذ کہانی۔ ترتیب: English Tales۔ تاریخی تصویر: Arthur Rackham؛ مجموعے کا اندرونی عنوان صفحہ، پہلے ایڈیشن کا الگ سرورق نہیں۔",
+      "th": "มัดไม้: พ่อแสดงให้ลูกชายที่ทะเลาะกันอยู่เสมอเห็นพลังของความสามัคคี ฉบับดัดแปลงสั้น ๆ ระดับ A1 ดัดแปลงโดย English Tales ภาพเก่าทางประวัติศาสตร์: Arthur Rackham; หน้าชื่อเรื่องด้านในของหนังสือรวมเรื่อง ไม่ใช่ปกแยกของฉบับพิมพ์ครั้งแรก"
+    }
+  },
+  "words": [
+    {
+      "id": "father",
+      "word": "father",
+      "translation": "baba",
+      "pronunciation": "/ˈfɑːðə(r)/",
+      "example": "A father has several sons.",
+      "translations": {
+        "es-419": "padre",
+        "pt-BR": "pai",
+        "id": "ayah",
+        "ar": "أب",
+        "vi": "người cha",
+        "hi": "पिता",
+        "ru": "отец",
+        "bn": "বাবা",
+        "ur": "باپ، والد",
+        "th": "พ่อ"
+      }
+    },
+    {
+      "id": "sons",
+      "word": "sons",
+      "translation": "oğullar",
+      "pronunciation": "/sʌnz/",
+      "example": "A father has several sons.",
+      "translations": {
+        "es-419": "hijos",
+        "pt-BR": "filhos",
+        "id": "anak-anak lelaki",
+        "ar": "أبناء",
+        "vi": "các con trai",
+        "hi": "बेटे",
+        "ru": "сыновья",
+        "bn": "ছেলেরা",
+        "ur": "بیٹے",
+        "th": "ลูกชาย (หลายคน)"
+      }
+    },
+    {
+      "id": "argue",
+      "word": "argue",
+      "translation": "tartışmak",
+      "pronunciation": "/ˈɑːɡjuː/",
+      "example": "The North Wind and the Sun argue.",
+      "translations": {
+        "es-419": "discutir",
+        "pt-BR": "discutir",
+        "id": "berdebat",
+        "ar": "يتجادل",
+        "vi": "tranh cãi",
+        "hi": "बहस करना",
+        "ru": "спорить",
+        "bn": "তর্ক করা",
+        "ur": "بحث کرنا، جھگڑنا",
+        "th": "เถียงกัน"
+      }
+    },
+    {
+      "id": "peace",
+      "word": "peace",
+      "translation": "barış; huzur",
+      "pronunciation": "/piːs/",
+      "example": "Their father wants them to live in peace.",
+      "translations": {
+        "es-419": "paz",
+        "pt-BR": "paz",
+        "id": "damai, rukun",
+        "ar": "سلام؛ وئام",
+        "vi": "hòa thuận, bình yên",
+        "hi": "शांति, मेल",
+        "ru": "мир, согласие",
+        "bn": "শান্তি, মিলমিশ",
+        "ur": "امن؛ سکون",
+        "th": "ความสงบสุข"
+      }
+    },
+    {
+      "id": "one-day",
+      "word": "one day",
+      "translation": "bir gün",
+      "pronunciation": "/wʌn deɪ/",
+      "example": "One day, I want to visit London.",
+      "translations": {
+        "es-419": "algún día, un día",
+        "pt-BR": "um dia",
+        "id": "suatu hari",
+        "ar": "ذات يوم",
+        "vi": "một ngày nào đó; một hôm",
+        "hi": "एक दिन",
+        "ru": "однажды",
+        "bn": "একদিন",
+        "ur": "ایک دن",
+        "th": "วันหนึ่ง"
+      }
+    },
+    {
+      "id": "bundle",
+      "word": "bundle",
+      "translation": "demet",
+      "pronunciation": "/ˈbʌndl/",
+      "example": "One day, he brings them a bundle of sticks.",
+      "translations": {
+        "es-419": "manojo, atado",
+        "pt-BR": "feixe, molho",
+        "id": "ikat, berkas",
+        "ar": "حزمة",
+        "vi": "bó",
+        "hi": "गट्ठर",
+        "ru": "связка, пучок",
+        "bn": "আঁটি, বান্ডিল",
+        "ur": "گٹھا",
+        "th": "มัด"
+      }
+    },
+    {
+      "id": "sticks",
+      "word": "sticks",
+      "translation": "çubuklar",
+      "pronunciation": "/stɪks/",
+      "example": "One day, he brings them a bundle of sticks.",
+      "translations": {
+        "es-419": "palos, varas",
+        "pt-BR": "varas, gravetos",
+        "id": "ranting, tongkat",
+        "ar": "عصيّ",
+        "vi": "que, cành cây",
+        "hi": "लकड़ियाँ, डंडियाँ",
+        "ru": "прутья, палки",
+        "bn": "লাঠি, কাঠি",
+        "ur": "لکڑیاں، ڈنڈے",
+        "th": "กิ่งไม้, ไม้ท่อน"
+      }
+    },
+    {
+      "id": "break",
+      "word": "break",
+      "translation": "kırmak",
+      "pronunciation": "/breɪk/",
+      "example": "\"Try to break this bundle,\" he says.",
+      "translations": {
+        "es-419": "romper",
+        "pt-BR": "quebrar",
+        "id": "mematahkan",
+        "ar": "يكسر",
+        "vi": "bẻ gãy",
+        "hi": "तोड़ना",
+        "ru": "ломать",
+        "bn": "ভাঙা",
+        "ur": "توڑنا",
+        "th": "หัก"
+      }
+    },
+    {
+      "id": "tries",
+      "word": "tries",
+      "translation": "dener",
+      "pronunciation": "/traɪz/",
+      "example": "He tries to open the door.",
+      "translations": {
+        "es-419": "intenta",
+        "pt-BR": "tenta",
+        "id": "mencoba",
+        "ar": "يحاول",
+        "vi": "cố gắng, thử",
+        "hi": "कोशिश करता है",
+        "ru": "пытается, пробует",
+        "bn": "চেষ্টা করে",
+        "ur": "کوشش کرتا ہے",
+        "th": "พยายาม"
+      }
+    },
+    {
+      "id": "nobody",
+      "word": "nobody",
+      "translation": "hiç kimse",
+      "pronunciation": "/ˈnoʊbədi/",
+      "example": "Nobody is at home today.",
+      "translations": {
+        "es-419": "nadie",
+        "pt-BR": "ninguém",
+        "id": "tidak ada seorang pun",
+        "ar": "لا أحد",
+        "vi": "không ai",
+        "hi": "कोई नहीं",
+        "ru": "никто",
+        "bn": "কেউ না",
+        "ur": "کوئی نہیں",
+        "th": "ไม่มีใคร"
+      }
+    },
+    {
+      "id": "single",
+      "word": "single",
+      "translation": "tek",
+      "pronunciation": "/ˈsɪŋɡl/",
+      "example": "He gives each son a single stick.",
+      "translations": {
+        "es-419": "solo, único",
+        "pt-BR": "único, sozinho",
+        "id": "satu, tunggal",
+        "ar": "واحد، مفرد",
+        "vi": "đơn lẻ, một",
+        "hi": "अकेला, एक",
+        "ru": "один, отдельный",
+        "bn": "একটিমাত্র",
+        "ur": "اکیلا، ایک",
+        "th": "อันเดียว"
+      }
+    },
+    {
+      "id": "strong",
+      "word": "strong",
+      "translation": "güçlü, sağlam",
+      "pronunciation": "/strɔːŋ/",
+      "example": "This bag is strong.",
+      "translations": {
+        "es-419": "fuerte, resistente",
+        "pt-BR": "forte, resistente",
+        "id": "kuat",
+        "ar": "قوي، متين",
+        "vi": "chắc, khỏe",
+        "hi": "मज़बूत, ताकतवर",
+        "ru": "сильный, прочный",
+        "bn": "মজবুত, শক্ত",
+        "ur": "مضبوط، طاقتور",
+        "th": "แข็งแรง, เหนียว"
+      }
+    },
+    {
+      "id": "alone",
+      "word": "alone",
+      "translation": "yalnız",
+      "pronunciation": "/əˈloʊn/",
+      "example": "He walks home alone.",
+      "translations": {
+        "es-419": "solo",
+        "pt-BR": "sozinho",
+        "id": "sendirian",
+        "ar": "وحيدًا",
+        "vi": "một mình",
+        "hi": "अकेला",
+        "ru": "один, в одиночестве",
+        "bn": "একা",
+        "ur": "اکیلا",
+        "th": "ตามลำพัง"
+      }
+    },
+    {
+      "id": "stronger",
+      "word": "stronger",
+      "translation": "daha güçlü",
+      "pronunciation": "/ˈstrɒŋɡə(r)/",
+      "example": "Each thinks he is stronger.",
+      "translations": {
+        "es-419": "más fuerte",
+        "pt-BR": "mais forte",
+        "id": "lebih kuat",
+        "ar": "أقوى",
+        "vi": "mạnh hơn",
+        "hi": "ज़्यादा ताकतवर",
+        "ru": "сильнее",
+        "bn": "বেশি শক্তিশালী",
+        "ur": "زیادہ طاقتور",
+        "th": "แข็งแรงกว่า"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "father",
+    "sons",
+    "argue",
+    "peace",
+    "one-day",
+    "bundle",
+    "sticks",
+    "break",
+    "tries",
+    "nobody",
+    "single",
+    "strong",
+    "alone",
+    "stronger"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-bundle-sticks-q1",
+      "sentenceIds": [
+        "cl-bundle-sticks-04",
+        "cl-bundle-sticks-06",
+        "cl-bundle-sticks-09",
+        "cl-bundle-sticks-10"
+      ],
+      "rationale": "The tied bundle does not break, single sticks do, and the father explains why."
+    },
+    {
+      "questionId": "classic-bundle-sticks-q2",
+      "sentenceIds": [
+        "cl-bundle-sticks-08",
+        "cl-bundle-sticks-09"
+      ],
+      "rationale": "With single sticks, they break them easily."
+    },
+    {
+      "questionId": "classic-bundle-sticks-q3",
+      "sentenceIds": [
+        "cl-bundle-sticks-10",
+        "cl-bundle-sticks-11",
+        "cl-bundle-sticks-13"
+      ],
+      "rationale": "Together they are strong like the bundle; alone they are easy to hurt."
+    },
+    {
+      "questionId": "classic-bundle-sticks-q4",
+      "sentenceIds": [
+        "classic-bundle-sticks-ext-02-01"
+      ],
+      "rationale": "They argue about food, work and money."
+    }
+  ],
+  "publicationBlockers": [
+    "Owner (oguz) approval of the English text, questions and translations required.",
+    "Fresh live source snapshot and publisher validation required."
+  ],
+  "lengthening": {
+    "wordsBefore": 93,
+    "wordsAfter": 183,
+    "sentencesBefore": 13,
+    "sentencesAfter": 24
+  }
+}

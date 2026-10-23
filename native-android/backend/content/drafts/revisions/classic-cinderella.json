@@ -1,0 +1,1723 @@
+{
+  "status": "draft",
+  "kind": "revision",
+  "source": "story-lengthening-a2-batch1-2026-10-22",
+  "reviewedBy": null,
+  "baseStoryId": "classic-cinderella",
+  "baseStorySHA256": "c5c67891fc8c19dc2594c35cfbf15d29d194a685b526d3981bfc7662ff64394a",
+  "editorialNotes": [
+    "Restores scenes from the Grimm text (KHM 21) that the adaptation had skipped: the mother's last words, the cruel stepsisters, the grey dress and wooden shoes, the father's market trip and the hazel branch, the lentil test, the tree's rhyme, the hidden escape, the pure-gold slipper, the birds' song, the father's 'kitchen girl' and the walk to the church.",
+    "Every legacy sentence, its ID and its translations are kept unchanged; new sentences are only inserted between them. Plot, characters, ending and lesson are unchanged.",
+    "New sentences have AI-drafted translations in all ten additional support languages, following the gender and wording already used in each legacy translation. No native-speaker review."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "unchangedTranslationsPreserved": true,
+    "newSentenceIds": [
+      "classic-cinderella-ext-01-01",
+      "classic-cinderella-ext-01-02",
+      "classic-cinderella-ext-01-03",
+      "classic-cinderella-ext-01-04",
+      "classic-cinderella-ext-02-01",
+      "classic-cinderella-ext-02-02",
+      "classic-cinderella-ext-02-03",
+      "classic-cinderella-ext-03-01",
+      "classic-cinderella-ext-03-02",
+      "classic-cinderella-ext-04-01",
+      "classic-cinderella-ext-04-02",
+      "classic-cinderella-ext-05-01",
+      "classic-cinderella-ext-06-01",
+      "classic-cinderella-ext-09-01",
+      "classic-cinderella-ext-09-02",
+      "classic-cinderella-ext-09-03",
+      "classic-cinderella-ext-10-01",
+      "classic-cinderella-ext-10-02",
+      "classic-cinderella-ext-10-03",
+      "classic-cinderella-ext-10-04",
+      "classic-cinderella-ext-11-01",
+      "classic-cinderella-ext-11-02",
+      "classic-cinderella-ext-12-01",
+      "classic-cinderella-ext-12-02",
+      "classic-cinderella-ext-13-01",
+      "classic-cinderella-ext-14-01",
+      "classic-cinderella-ext-14-02",
+      "classic-cinderella-ext-15-01",
+      "classic-cinderella-ext-16-01",
+      "classic-cinderella-ext-16-02",
+      "classic-cinderella-ext-17-01",
+      "classic-cinderella-ext-19-01",
+      "classic-cinderella-ext-20-01",
+      "classic-cinderella-ext-20-02",
+      "classic-cinderella-ext-22-01",
+      "classic-cinderella-ext-22-02",
+      "classic-cinderella-ext-22-03",
+      "classic-cinderella-ext-22-04",
+      "classic-cinderella-ext-22-05",
+      "classic-cinderella-ext-25-01",
+      "classic-cinderella-ext-25-02",
+      "classic-cinderella-ext-27-01"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+  },
+  "story": {
+    "id": "classic-cinderella",
+    "title": "Cinderella",
+    "author": "Jacob and Wilhelm Grimm",
+    "level": "A2",
+    "genre": "Macera",
+    "description": "Külkedisi. Grimm anlatısındaki fındık ağacı, yardımcı kuşlar ve altın ayakkabı. A2 düzeyinde kısa uyarlama. Uyarlama ve Türkçe çeviri: English Tales. Tarihî görsel: Walter Crane; kitap içi illüstrasyon, ayrı bir ilk baskı kapağı değildir.",
+    "coverKey": "cover_classic_cinderella",
+    "sentences": [
+      {
+        "id": "cl-cinderella-01",
+        "english": "After her mother died, a young girl lived with her father and his new family.",
+        "turkish": "Annesi öldükten sonra genç bir kız, babası ve onun yeni ailesiyle yaşadı.",
+        "translations": {
+          "es-419": "Después de que murió su madre, una joven vivía con su padre y la nueva familia de él.",
+          "pt-BR": "Depois que a mãe morreu, uma jovem passou a viver com o pai e a nova família dele.",
+          "id": "Setelah ibunya meninggal, seorang gadis muda tinggal bersama ayahnya dan keluarga barunya.",
+          "ar": "بعد أن ماتت أمها، عاشت فتاة صغيرة مع أبيها وعائلته الجديدة.",
+          "vi": "Sau khi mẹ mất, một cô gái trẻ sống cùng cha và gia đình mới của ông.",
+          "hi": "माँ के मरने के बाद एक लड़की अपने पिता और उनके नए परिवार के साथ रहने लगी।",
+          "ru": "После смерти матери девочка жила с отцом и его новой семьёй.",
+          "bn": "মা মারা যাওয়ার পর একটি কিশোরী মেয়ে তার বাবা আর বাবার নতুন পরিবারের সঙ্গে থাকত।",
+          "ur": "ماں کے مرنے کے بعد ایک لڑکی اپنے باپ اور اس کے نئے خاندان کے ساتھ رہنے لگی۔",
+          "th": "หลังจากแม่เสียชีวิต เด็กหญิงคนหนึ่งอาศัยอยู่กับพ่อและครอบครัวใหม่ของพ่อ"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-01-01",
+        "english": "Before she died, her mother had said, \"Always be good and kind, and I will watch over you.\"",
+        "turkish": "Annesi ölmeden önce ona, \"Her zaman iyi ve nazik ol, ben de seni hep kollayacağım,\" demişti.",
+        "translations": {
+          "es-419": "Antes de morir, su madre le había dicho: \"Sé siempre buena y amable, y yo cuidaré de ti\".",
+          "pt-BR": "Antes de morrer, a mãe tinha dito: — Seja sempre boa e gentil, e eu vou cuidar de você.",
+          "id": "Sebelum meninggal, ibunya pernah berkata, \"Jadilah selalu baik dan lembut, dan Ibu akan menjagamu.\"",
+          "ar": "قبل أن تموت، كانت أمها قد قالت لها: «كوني دائمًا طيّبة ولطيفة، وسأظلّ أرعاكِ.»",
+          "vi": "Trước khi mất, mẹ cô đã dặn: \"Con hãy luôn ngoan hiền và tốt bụng, mẹ sẽ luôn dõi theo con.\"",
+          "hi": "मरने से पहले उसकी माँ ने कहा था, \"हमेशा अच्छी और दयालु रहना, मैं सदा तुम्हारा ध्यान रखूँगी।\"",
+          "ru": "Перед смертью мать сказала ей: «Будь всегда доброй и ласковой, а я буду тебя оберегать».",
+          "bn": "মারা যাওয়ার আগে তার মা বলেছিলেন, \"সবসময় ভালো আর দয়ালু থেকো, আমি সবসময় তোমাকে দেখে রাখব।\"",
+          "ur": "مرنے سے پہلے اس کی ماں نے کہا تھا، \"ہمیشہ اچھی اور نرم دل رہنا، میں سدا تمہارا خیال رکھوں گی۔\"",
+          "th": "ก่อนตาย แม่ของเธอบอกว่า \"จงเป็นคนดีและใจดีเสมอนะลูก แล้วแม่จะคอยดูแลลูกเอง\""
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-01-02",
+        "english": "Every day, the girl went to her mother's grave and cried.",
+        "turkish": "Kız her gün annesinin mezarına gidip ağlıyordu.",
+        "translations": {
+          "es-419": "Todos los días, la muchacha iba a la tumba de su madre y lloraba.",
+          "pt-BR": "Todos os dias, a menina ia ao túmulo da mãe e chorava.",
+          "id": "Setiap hari, gadis itu pergi ke makam ibunya dan menangis.",
+          "ar": "وكانت الفتاة تذهب كل يوم إلى قبر أمها وتبكي.",
+          "vi": "Ngày nào cô cũng ra mộ mẹ mà khóc.",
+          "hi": "लड़की हर दिन अपनी माँ की कब्र पर जाकर रोती थी।",
+          "ru": "Каждый день девушка ходила на могилу матери и плакала.",
+          "bn": "মেয়েটি রোজ মায়ের কবরে গিয়ে কাঁদত।",
+          "ur": "لڑکی ہر روز اپنی ماں کی قبر پر جا کر روتی تھی۔",
+          "th": "ทุกวัน เด็กสาวจะไปร้องไห้ที่หลุมศพของแม่"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-01-03",
+        "english": "The new wife brought two daughters with her.",
+        "turkish": "Yeni eş yanında iki kızını da getirdi.",
+        "translations": {
+          "es-419": "La nueva esposa llegó con sus dos hijas.",
+          "pt-BR": "A nova esposa trouxe consigo duas filhas.",
+          "id": "Istri baru itu membawa dua anak perempuannya.",
+          "ar": "وجاءت الزوجة الجديدة ومعها ابنتان.",
+          "vi": "Người vợ mới mang theo hai cô con gái.",
+          "hi": "नई पत्नी अपने साथ दो बेटियाँ लेकर आई।",
+          "ru": "Новая жена привела с собой двух дочерей.",
+          "bn": "নতুন স্ত্রী সঙ্গে করে দুই মেয়েকে নিয়ে এল।",
+          "ur": "نئی بیوی اپنے ساتھ دو بیٹیاں لے کر آئی۔",
+          "th": "ภรรยาใหม่พาลูกสาวสองคนมาด้วย"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-01-04",
+        "english": "They had pretty faces but cruel hearts.",
+        "turkish": "Yüzleri güzeldi ama kalpleri zalimdi.",
+        "translations": {
+          "es-419": "Tenían caras bonitas, pero corazones crueles.",
+          "pt-BR": "Elas tinham rostos bonitos, mas corações cruéis.",
+          "id": "Wajah mereka cantik, tetapi hati mereka kejam.",
+          "ar": "كان لهما وجهان جميلان، لكن قلبيهما قاسيان.",
+          "vi": "Họ có khuôn mặt xinh đẹp nhưng tâm địa độc ác.",
+          "hi": "उनके चेहरे सुंदर थे, पर दिल बड़े क्रूर थे।",
+          "ru": "Лица у них были красивые, а сердца жестокие.",
+          "bn": "তাদের মুখ ছিল সুন্দর, কিন্তু মন ছিল নিষ্ঠুর।",
+          "ur": "ان کے چہرے خوبصورت تھے، مگر دل بڑے ظالم تھے۔",
+          "th": "พวกนางหน้าตาสวย แต่ใจร้ายกาจ"
+        }
+      },
+      {
+        "id": "cl-cinderella-02",
+        "english": "Her stepmother and stepsisters made her do all the hard work.",
+        "turkish": "Üvey annesi ile üvey kız kardeşleri bütün zor işleri ona yaptırıyordu.",
+        "translations": {
+          "es-419": "Su madrastra y sus hermanastras la obligaban a hacer todo el trabajo pesado.",
+          "pt-BR": "A madrasta e as filhas dela a obrigavam a fazer todo o trabalho pesado.",
+          "id": "Ibu tiri dan saudara-saudara tirinya menyuruhnya mengerjakan semua pekerjaan berat.",
+          "ar": "جعلتها زوجة أبيها وأختاها غير الشقيقتين تقوم بكل الأعمال الشاقة.",
+          "vi": "Mẹ kế và các chị kế bắt cô làm mọi việc nặng nhọc.",
+          "hi": "उसकी सौतेली माँ और सौतेली बहनें उससे सारा कड़ी मेहनत वाला काम करवाती थीं।",
+          "ru": "Мачеха и сводные сёстры заставляли её делать всю тяжёлую работу.",
+          "bn": "তার সৎমা আর সৎবোনেরা তাকে দিয়ে সব কঠিন কাজ করাত।",
+          "ur": "اس کی سوتیلی ماں اور سوتیلی بہنیں سارا مشکل کام اسی سے کرواتی تھیں۔",
+          "th": "แม่เลี้ยงและพี่สาวต่างมารดาให้เธอทำงานหนักทุกอย่าง"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-02-01",
+        "english": "They took away her pretty clothes and gave her an old grey dress and wooden shoes.",
+        "turkish": "Onun güzel giysilerini alıp ona eski gri bir elbise ve tahta ayakkabılar verdiler.",
+        "translations": {
+          "es-419": "Le quitaron su ropa bonita y le dieron un vestido gris viejo y zuecos de madera.",
+          "pt-BR": "Tiraram as roupas bonitas dela e lhe deram um vestido cinza velho e tamancos de madeira.",
+          "id": "Mereka mengambil pakaian bagusnya dan memberinya gaun abu-abu tua serta sepatu kayu.",
+          "ar": "أخذن منها ثيابها الجميلة، وأعطينها ثوبًا رماديًا قديمًا وحذاءً من خشب.",
+          "vi": "Họ lấy hết quần áo đẹp của cô và đưa cho cô một chiếc váy xám cũ cùng đôi guốc gỗ.",
+          "hi": "उन्होंने उसके सुंदर कपड़े छीन लिए और उसे एक पुरानी स्लेटी पोशाक और लकड़ी के जूते दे दिए।",
+          "ru": "Они отняли у неё красивые платья и дали ей старое серое платье и деревянные башмаки.",
+          "bn": "তারা তার সুন্দর জামাকাপড় কেড়ে নিয়ে তাকে একটা পুরোনো ধূসর পোশাক আর কাঠের জুতো দিল।",
+          "ur": "انہوں نے اس کے خوبصورت کپڑے چھین لیے اور اسے ایک پرانا سرمئی لباس اور لکڑی کے جوتے دے دیے۔",
+          "th": "พวกนางเอาเสื้อผ้าสวย ๆ ของเธอไป แล้วให้ชุดสีเทาเก่า ๆ กับรองเท้าไม้แก่เธอ"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-02-02",
+        "english": "She had to get up before sunrise, carry water, make the fire, cook and wash.",
+        "turkish": "Güneş doğmadan kalkmak, su taşımak, ateş yakmak, yemek pişirmek ve çamaşır yıkamak zorundaydı.",
+        "translations": {
+          "es-419": "Tenía que levantarse antes del amanecer, cargar agua, encender el fuego, cocinar y lavar.",
+          "pt-BR": "Ela tinha que acordar antes do sol nascer, carregar água, acender o fogo, cozinhar e lavar.",
+          "id": "Ia harus bangun sebelum matahari terbit, mengangkut air, menyalakan api, memasak, dan mencuci.",
+          "ar": "كان عليها أن تستيقظ قبل شروق الشمس، وتحمل الماء، وتشعل النار، وتطبخ وتغسل.",
+          "vi": "Cô phải dậy trước khi mặt trời mọc, gánh nước, nhóm lửa, nấu ăn và giặt giũ.",
+          "hi": "उसे सूरज निकलने से पहले उठना, पानी ढोना, आग जलाना, खाना पकाना और कपड़े धोना पड़ता था।",
+          "ru": "Ей приходилось вставать до рассвета, носить воду, разводить огонь, готовить и стирать.",
+          "bn": "তাকে সূর্য ওঠার আগে উঠতে হতো, জল বইতে হতো, আগুন জ্বালাতে, রান্না করতে আর কাপড় কাচতে হতো।",
+          "ur": "اسے سورج نکلنے سے پہلے اٹھنا، پانی ڈھونا، آگ جلانا، کھانا پکانا اور کپڑے دھونا پڑتا تھا۔",
+          "th": "เธอต้องตื่นก่อนพระอาทิตย์ขึ้น หาบน้ำ ก่อไฟ ทำอาหาร และซักผ้า"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-02-03",
+        "english": "The sisters laughed at her and threw peas and lentils into the ashes for her to pick out.",
+        "turkish": "Kız kardeşler onunla alay ediyor, ayıklasın diye küllerin içine bezelye ve mercimek atıyorlardı.",
+        "translations": {
+          "es-419": "Las hermanastras se burlaban de ella y echaban guisantes y lentejas en las cenizas para que los recogiera.",
+          "pt-BR": "As irmãs riam dela e jogavam ervilhas e lentilhas nas cinzas para ela catar.",
+          "id": "Saudara-saudara tirinya menertawakannya dan melemparkan kacang polong dan lentil ke abu agar ia memungutnya.",
+          "ar": "وكانت الأختان تسخران منها وترميان البازلاء والعدس في الرماد لتلتقطه.",
+          "vi": "Hai chị kế chế giễu cô và ném đậu Hà Lan cùng đậu lăng vào tro bắt cô nhặt ra.",
+          "hi": "बहनें उसका मज़ाक उड़ातीं और राख में मटर और दाल फेंक देतीं ताकि वह उन्हें चुने।",
+          "ru": "Сёстры смеялись над ней и бросали в золу горох и чечевицу, чтобы она их выбирала.",
+          "bn": "বোনেরা তাকে নিয়ে হাসাহাসি করত আর ছাইয়ের মধ্যে মটর আর ডাল ফেলে দিত, যাতে সে বেছে তোলে।",
+          "ur": "بہنیں اس کا مذاق اڑاتیں اور راکھ میں مٹر اور دالیں پھینک دیتیں تاکہ وہ انہیں چنے۔",
+          "th": "พวกพี่สาวหัวเราะเยาะเธอ และโยนถั่วลันเตากับถั่วเลนทิลลงในขี้เถ้าให้เธอเก็บ"
+        }
+      },
+      {
+        "id": "cl-cinderella-03",
+        "english": "She slept beside the fire, so they called her Cinderella.",
+        "turkish": "Ocağın yanında uyuduğu için ona Külkedisi diyorlardı.",
+        "translations": {
+          "es-419": "Dormía junto al fuego, así que la llamaban Cenicienta.",
+          "pt-BR": "Ela dormia perto do fogo, então a chamavam de Cinderela.",
+          "id": "Ia tidur di dekat perapian, jadi mereka memanggilnya Cinderella.",
+          "ar": "كانت تنام بجانب النار، فسمّوها سندريلا.",
+          "vi": "Cô ngủ bên cạnh bếp lửa, nên họ gọi cô là Lọ Lem.",
+          "hi": "वह आग के पास राख में सोती थी, इसलिए वे उसे सिंड्रेला कहते थे।",
+          "ru": "Она спала у очага, поэтому её прозвали Золушкой.",
+          "bn": "সে আগুনের পাশে ছাইয়ের মধ্যে ঘুমাত, তাই তারা তাকে সিন্ডারেলা বলে ডাকত।",
+          "ur": "وہ آگ کے پاس سوتی تھی، اس لیے وہ اسے سنڈریلا کہتی تھیں۔",
+          "th": "เธอนอนข้างกองไฟ พวกเขาจึงเรียกเธอว่าซินเดอเรลล่า"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-03-01",
+        "english": "One day, her father was going to the market, and he asked the girls what they wanted.",
+        "turkish": "Bir gün babası pazara gidecekti ve kızlara ne istediklerini sordu.",
+        "translations": {
+          "es-419": "Un día, su padre iba a ir al mercado y les preguntó a las muchachas qué querían.",
+          "pt-BR": "Um dia, o pai ia à feira e perguntou às moças o que elas queriam.",
+          "id": "Suatu hari, ayahnya hendak pergi ke pasar, dan ia bertanya kepada anak-anak perempuan itu apa yang mereka inginkan.",
+          "ar": "وذات يوم، كان أبوها ذاهبًا إلى السوق، فسأل الفتيات عمّا يرغبن فيه.",
+          "vi": "Một hôm, cha cô sắp đi chợ phiên và hỏi các cô gái muốn gì.",
+          "hi": "एक दिन उसके पिता बाज़ार जा रहे थे, और उन्होंने लड़कियों से पूछा कि उन्हें क्या चाहिए।",
+          "ru": "Однажды отец собрался на ярмарку и спросил девушек, что им привезти.",
+          "bn": "একদিন তার বাবা হাটে যাচ্ছিলেন, আর তিনি মেয়েদের জিজ্ঞেস করলেন তারা কী চায়।",
+          "ur": "ایک دن اس کا باپ بازار جا رہا تھا، اور اس نے لڑکیوں سے پوچھا کہ انہیں کیا چاہیے۔",
+          "th": "วันหนึ่ง พ่อของเธอจะไปตลาด จึงถามลูกสาวทั้งสามว่าอยากได้อะไร"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-03-02",
+        "english": "The stepsisters asked for beautiful dresses, pearls and jewels.",
+        "turkish": "Üvey kız kardeşler güzel elbiseler, inciler ve mücevherler istedi.",
+        "translations": {
+          "es-419": "Las hermanastras pidieron vestidos hermosos, perlas y joyas.",
+          "pt-BR": "As irmãs postiças pediram vestidos lindos, pérolas e joias.",
+          "id": "Saudara-saudara tirinya meminta gaun-gaun indah, mutiara, dan permata.",
+          "ar": "طلبت الأختان فساتين جميلة ولآلئ وجواهر.",
+          "vi": "Hai chị kế đòi những chiếc váy đẹp, ngọc trai và châu báu.",
+          "hi": "सौतेली बहनों ने सुंदर पोशाकें, मोती और जवाहरात माँगे।",
+          "ru": "Сводные сёстры попросили красивых платьев, жемчуга и драгоценностей.",
+          "bn": "সৎবোনেরা সুন্দর পোশাক, মুক্তো আর রত্ন চাইল।",
+          "ur": "سوتیلی بہنوں نے خوبصورت لباس، موتی اور جواہرات مانگے۔",
+          "th": "พี่สาวต่างมารดาขอชุดสวย ๆ ไข่มุก และอัญมณี"
+        }
+      },
+      {
+        "id": "cl-cinderella-04",
+        "english": "When her father went away, she asked him for a branch.",
+        "turkish": "Babası yolculuğa çıktığında ondan bir dal istedi.",
+        "translations": {
+          "es-419": "Cuando su padre se fue de viaje, ella le pidió una rama.",
+          "pt-BR": "Quando o pai viajou, ela lhe pediu um galho.",
+          "id": "Ketika ayahnya hendak bepergian, ia meminta sebatang ranting kepadanya.",
+          "ar": "عندما سافر أبوها، طلبت منه غصنًا.",
+          "vi": "Khi cha đi xa, cô xin cha mang về cho mình một cành cây.",
+          "hi": "जब उसके पिता सफ़र पर गए, तो उसने उनसे एक टहनी माँगी।",
+          "ru": "Когда отец уезжал, она попросила его привезти ей веточку.",
+          "bn": "বাবা যখন বাইরে গেলেন, সে তাঁর কাছে একটা ডাল চাইল।",
+          "ur": "جب اس کا باپ سفر پر گیا تو اس نے اس سے ایک ٹہنی مانگی۔",
+          "th": "เมื่อพ่อจะเดินทางไปไกล เธอขอกิ่งไม้จากพ่อหนึ่งกิ่ง"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-04-01",
+        "english": "\"Bring me the first branch that touches your hat on the way home,\" she said.",
+        "turkish": "\"Eve dönerken şapkana ilk değen dalı bana getir,\" dedi.",
+        "translations": {
+          "es-419": "\"Tráeme la primera rama que te toque el sombrero de regreso a casa\", dijo.",
+          "pt-BR": "— Traga para mim o primeiro galho que tocar no seu chapéu na volta para casa — disse ela.",
+          "id": "\"Bawakan aku ranting pertama yang menyentuh topi Ayah dalam perjalanan pulang,\" katanya.",
+          "ar": "قالت: «أحضر لي أول غصن يلمس قبّعتك وأنت في طريق العودة.»",
+          "vi": "\"Cha hãy mang về cho con cành cây đầu tiên chạm vào mũ cha trên đường về,\" cô nói.",
+          "hi": "उसने कहा, \"घर लौटते समय जो पहली टहनी आपकी टोपी को छुए, वही मेरे लिए ले आइए।\"",
+          "ru": "«Привези мне первую веточку, которая заденет твою шляпу по дороге домой», — сказала она.",
+          "bn": "সে বলল, \"বাড়ি ফেরার পথে যে ডালটা প্রথম আপনার টুপিতে লাগবে, সেটাই আমার জন্য আনবেন।\"",
+          "ur": "اس نے کہا، \"گھر لوٹتے ہوئے جو پہلی ٹہنی آپ کی ٹوپی کو چھوئے، وہی میرے لیے لے آئیے گا۔\"",
+          "th": "\"ขอกิ่งไม้กิ่งแรกที่ปัดหมวกของพ่อระหว่างทางกลับบ้านค่ะ\" เธอพูด"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-04-02",
+        "english": "On his way back, a hazel branch knocked off his hat, so he broke it off and brought it to her.",
+        "turkish": "Dönüş yolunda bir fındık dalı şapkasını düşürdü; o da dalı koparıp kızına getirdi.",
+        "translations": {
+          "es-419": "De regreso, una rama de avellano le tiró el sombrero, así que la cortó y se la llevó.",
+          "pt-BR": "Na volta, um galho de aveleira derrubou o chapéu dele, então ele o quebrou e o levou para ela.",
+          "id": "Dalam perjalanan pulang, sebatang ranting hazel menjatuhkan topinya, jadi ia mematahkannya dan membawanya pulang untuk putrinya.",
+          "ar": "وفي طريق العودة، أسقط غصن بندق قبّعته، فكسره وأحضره لها.",
+          "vi": "Trên đường về, một cành phỉ quệt rơi mũ của ông, nên ông bẻ nó mang về cho cô.",
+          "hi": "लौटते समय हेज़ल की एक टहनी ने उनकी टोपी गिरा दी, तो उन्होंने उसे तोड़ा और उसके लिए ले आए।",
+          "ru": "На обратном пути ветка орешника сбила с него шляпу, и он отломил её и привёз дочери.",
+          "bn": "ফেরার পথে একটা হ্যাজেলের ডাল তাঁর টুপি ফেলে দিল, তাই তিনি সেটা ভেঙে মেয়ের জন্য নিয়ে এলেন।",
+          "ur": "واپسی پر فندق کی ایک ٹہنی نے اس کی ٹوپی گرا دی، تو اس نے اسے توڑا اور بیٹی کے لیے لے آیا۔",
+          "th": "ระหว่างทางกลับ กิ่งเฮเซลกิ่งหนึ่งปัดหมวกของพ่อหล่น พ่อจึงหักกิ่งนั้นมาให้เธอ"
+        }
+      },
+      {
+        "id": "cl-cinderella-05",
+        "english": "She planted the hazel branch on her mother's grave.",
+        "turkish": "Fındık dalını annesinin mezarına dikti.",
+        "translations": {
+          "es-419": "Plantó la rama de avellano en la tumba de su madre.",
+          "pt-BR": "Ela plantou o galho de aveleira no túmulo da mãe.",
+          "id": "Ia menanam ranting hazel itu di makam ibunya.",
+          "ar": "زرعت غصن البندق على قبر أمها.",
+          "vi": "Cô trồng cành phỉ trên mộ mẹ.",
+          "hi": "उसने हेज़ल की वह टहनी अपनी माँ की कब्र पर लगा दी।",
+          "ru": "Она посадила веточку орешника на могиле матери.",
+          "bn": "সে হ্যাজেল গাছের ডালটা মায়ের কবরের ওপর পুঁতে দিল।",
+          "ur": "اس نے فندق کی وہ ٹہنی اپنی ماں کی قبر پر لگا دی۔",
+          "th": "เธอปลูกกิ่งเฮเซลไว้บนหลุมศพของแม่"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-05-01",
+        "english": "She cried so much over it that her tears watered the branch.",
+        "turkish": "Dalın başında o kadar çok ağladı ki gözyaşları onu suladı.",
+        "translations": {
+          "es-419": "Lloró tanto sobre ella que sus lágrimas regaron la rama.",
+          "pt-BR": "Ela chorou tanto sobre ele que suas lágrimas regaram o galho.",
+          "id": "Ia menangis begitu banyak di atasnya sehingga air matanya menyirami ranting itu.",
+          "ar": "وبكت فوقه كثيرًا حتى سقت دموعُها الغصن.",
+          "vi": "Cô khóc nhiều đến nỗi nước mắt tưới ướt cả cành cây.",
+          "hi": "वह उस पर इतना रोई कि उसके आँसुओं ने टहनी को सींच दिया।",
+          "ru": "Она так плакала над ней, что слёзы полили веточку.",
+          "bn": "সে তার ওপর এত কাঁদল যে চোখের জলে ডালটায় জল দেওয়া হয়ে গেল।",
+          "ur": "وہ اس پر اتنا روئی کہ اس کے آنسوؤں نے ٹہنی کو سینچ دیا۔",
+          "th": "เธอร้องไห้มากจนน้ำตารดกิ่งไม้นั้น"
+        }
+      },
+      {
+        "id": "cl-cinderella-06",
+        "english": "It grew into a tree, and a white bird came to it.",
+        "turkish": "Dal bir ağaca dönüştü ve ağaca beyaz bir kuş geldi.",
+        "translations": {
+          "es-419": "Creció hasta convertirse en un árbol, y un pájaro blanco llegó a él.",
+          "pt-BR": "Ele cresceu e virou uma árvore, e um pássaro branco começou a visitá-la.",
+          "id": "Ranting itu tumbuh menjadi pohon, dan seekor burung putih datang ke sana.",
+          "ar": "نما وصار شجرة، وجاء إليها طائر أبيض.",
+          "vi": "Cành cây lớn lên thành một cái cây, và một chú chim trắng bay đến đậu.",
+          "hi": "वह बढ़कर एक पेड़ बन गई, और उस पर एक सफ़ेद चिड़िया आने लगी।",
+          "ru": "Из неё выросло дерево, и к нему прилетела белая птичка.",
+          "bn": "সেটা বড় হয়ে একটা গাছ হলো, আর একটা সাদা পাখি সেখানে আসতে লাগল।",
+          "ur": "وہ بڑھ کر درخت بن گئی، اور ایک سفید پرندہ اس پر آنے لگا۔",
+          "th": "มันเติบโตเป็นต้นไม้ และมีนกสีขาวตัวหนึ่งมาเกาะ"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-06-01",
+        "english": "Three times a day, Cinderella sat under the tree and cried.",
+        "turkish": "Külkedisi günde üç kez ağacın altına oturup ağlıyordu.",
+        "translations": {
+          "es-419": "Tres veces al día, Cenicienta se sentaba bajo el árbol y lloraba.",
+          "pt-BR": "Três vezes por dia, Cinderela se sentava debaixo da árvore e chorava.",
+          "id": "Tiga kali sehari, Cinderella duduk di bawah pohon itu dan menangis.",
+          "ar": "وكانت سندريلا تجلس تحت الشجرة ثلاث مرات في اليوم وتبكي.",
+          "vi": "Mỗi ngày ba lần, Lọ Lem ngồi dưới gốc cây mà khóc.",
+          "hi": "सिंड्रेला दिन में तीन बार उस पेड़ के नीचे बैठकर रोती थी।",
+          "ru": "Три раза в день Золушка садилась под деревом и плакала.",
+          "bn": "দিনে তিনবার সিন্ডারেলা গাছটার নিচে বসে কাঁদত।",
+          "ur": "سنڈریلا دن میں تین بار اس درخت کے نیچے بیٹھ کر روتی تھی۔",
+          "th": "วันละสามครั้ง ซินเดอเรลล่าจะนั่งร้องไห้อยู่ใต้ต้นไม้"
+        }
+      },
+      {
+        "id": "cl-cinderella-07",
+        "english": "The bird brought her things she wished for.",
+        "turkish": "Kuş ona dilediği şeyleri getiriyordu.",
+        "translations": {
+          "es-419": "El pájaro le traía las cosas que ella deseaba.",
+          "pt-BR": "O pássaro lhe trazia as coisas que ela desejava.",
+          "id": "Burung itu membawakan apa saja yang ia inginkan.",
+          "ar": "كان الطائر يحضر لها ما تتمنّاه.",
+          "vi": "Chú chim mang đến cho cô những thứ cô mong ước.",
+          "hi": "वह चिड़िया उसे वे चीज़ें ला देती थी जिनकी वह इच्छा करती थी।",
+          "ru": "Птичка приносила ей всё, чего она желала.",
+          "bn": "সে যা চাইত, পাখিটা তাকে তা এনে দিত।",
+          "ur": "وہ پرندہ اس کی من چاہی چیزیں لا دیتا تھا۔",
+          "th": "นกนำสิ่งที่เธอปรารถนามาให้"
+        }
+      },
+      {
+        "id": "cl-cinderella-08",
+        "english": "One day, the king invited young women to a three-day festival.",
+        "turkish": "Bir gün kral genç kadınları üç günlük bir şenliğe davet etti.",
+        "translations": {
+          "es-419": "Un día, el rey invitó a las jóvenes a una fiesta de tres días.",
+          "pt-BR": "Um dia, o rei convidou as moças para uma festa de três dias.",
+          "id": "Suatu hari, raja mengundang para gadis muda ke sebuah pesta selama tiga hari.",
+          "ar": "ذات يوم، دعا الملك الفتيات إلى احتفال يدوم ثلاثة أيام.",
+          "vi": "Một hôm, nhà vua mời các thiếu nữ đến dự một lễ hội kéo dài ba ngày.",
+          "hi": "एक दिन राजा ने जवान लड़कियों को तीन दिन के एक उत्सव में बुलाया।",
+          "ru": "Однажды король пригласил девушек на трёхдневный праздник.",
+          "bn": "একদিন রাজা তরুণীদের তিন দিনের এক উৎসবে নিমন্ত্রণ করলেন।",
+          "ur": "ایک دن بادشاہ نے نوجوان لڑکیوں کو تین دن کے جشن میں بلایا۔",
+          "th": "วันหนึ่ง พระราชาเชิญหญิงสาวทั้งหลายมาร่วมงานเทศกาลสามวัน"
+        }
+      },
+      {
+        "id": "cl-cinderella-09",
+        "english": "His son hoped to find a bride there.",
+        "turkish": "Oğlu orada evleneceği kişiyi bulmayı umuyordu.",
+        "translations": {
+          "es-419": "Su hijo esperaba encontrar allí una esposa.",
+          "pt-BR": "O filho dele esperava encontrar uma noiva ali.",
+          "id": "Putranya berharap menemukan calon istri di sana.",
+          "ar": "كان ابنه يأمل أن يجد عروسًا هناك.",
+          "vi": "Con trai của vua hy vọng sẽ tìm được vợ ở đó.",
+          "hi": "उनके बेटे को उम्मीद थी कि उसे वहाँ अपनी दुल्हन मिल जाएगी।",
+          "ru": "Его сын надеялся найти там невесту.",
+          "bn": "তাঁর ছেলে সেখানে একজন কনে খুঁজে পাওয়ার আশা করছিলেন।",
+          "ur": "اس کے بیٹے کو امید تھی کہ وہاں اسے دلہن مل جائے گی۔",
+          "th": "พระโอรสของพระองค์หวังจะได้พบเจ้าสาวที่นั่น"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-09-01",
+        "english": "The stepsisters were very excited and called Cinderella.",
+        "turkish": "Üvey kız kardeşler çok heyecanlandı ve Külkedisi'ni çağırdı.",
+        "translations": {
+          "es-419": "Las hermanastras se emocionaron mucho y llamaron a Cenicienta.",
+          "pt-BR": "As irmãs postiças ficaram muito animadas e chamaram Cinderela.",
+          "id": "Saudara-saudara tirinya sangat bersemangat dan memanggil Cinderella.",
+          "ar": "تحمّست الأختان كثيرًا ونادتا سندريلا.",
+          "vi": "Hai chị kế vô cùng háo hức và gọi Lọ Lem đến.",
+          "hi": "सौतेली बहनें बहुत उत्साहित हुईं और उन्होंने सिंड्रेला को बुलाया।",
+          "ru": "Сводные сёстры очень обрадовались и позвали Золушку.",
+          "bn": "সৎবোনেরা খুব উত্তেজিত হয়ে সিন্ডারেলাকে ডাকল।",
+          "ur": "سوتیلی بہنیں بہت پرجوش ہوئیں اور انہوں نے سنڈریلا کو بلایا۔",
+          "th": "พี่สาวต่างมารดาตื่นเต้นมาก แล้วเรียกซินเดอเรลล่ามา"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-09-02",
+        "english": "\"Comb our hair, brush our shoes and fasten our belts,\" they said. \"We are going to the king's festival.\"",
+        "turkish": "\"Saçlarımızı tara, ayakkabılarımızı fırçala, kemerlerimizi bağla,\" dediler. \"Kralın şenliğine gidiyoruz.\"",
+        "translations": {
+          "es-419": "\"Péinanos, cepíllanos los zapatos y abróchanos los cinturones\", dijeron. \"Vamos a la fiesta del rey\".",
+          "pt-BR": "— Penteie nosso cabelo, escove nossos sapatos e aperte nossos cintos — disseram. — Vamos à festa do rei.",
+          "id": "\"Sisir rambut kami, sikat sepatu kami, dan kencangkan ikat pinggang kami,\" kata mereka. \"Kami akan pergi ke pesta raja.\"",
+          "ar": "قالتا: «مشّطي شعرنا، ولمّعي حذاءنا، واربطي حزامينا. نحن ذاهبتان إلى حفل الملك.»",
+          "vi": "\"Chải tóc cho bọn ta, đánh giày và thắt lưng cho bọn ta,\" họ nói. \"Bọn ta sắp đi dự hội của nhà vua.\"",
+          "hi": "उन्होंने कहा, \"हमारे बाल सँवारो, जूते चमकाओ और कमरबंद बाँधो। हम राजा के उत्सव में जा रही हैं।\"",
+          "ru": "«Причеши нас, почисти нам туфли и затяни пояса, — сказали они. — Мы едем на праздник к королю».",
+          "bn": "তারা বলল, \"আমাদের চুল আঁচড়ে দে, জুতো পরিষ্কার কর আর কোমরবন্ধ বেঁধে দে। আমরা রাজার উৎসবে যাচ্ছি।\"",
+          "ur": "انہوں نے کہا، \"ہمارے بال سنوارو، جوتے چمکاؤ اور کمر بند باندھو۔ ہم بادشاہ کے جشن میں جا رہی ہیں۔\"",
+          "th": "\"หวีผมให้เรา ขัดรองเท้า แล้วคาดเข็มขัดให้ด้วย\" พวกนางพูด \"เราจะไปงานเฉลิมฉลองของพระราชา\""
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-09-03",
+        "english": "Cinderella did as they asked, but she cried, because she wanted to dance too.",
+        "turkish": "Külkedisi istediklerini yaptı ama ağladı, çünkü o da dans etmek istiyordu.",
+        "translations": {
+          "es-419": "Cenicienta hizo lo que le pidieron, pero lloró, porque ella también quería bailar.",
+          "pt-BR": "Cinderela fez o que pediram, mas chorou, porque também queria dançar.",
+          "id": "Cinderella melakukan apa yang mereka minta, tetapi ia menangis karena ia juga ingin berdansa.",
+          "ar": "فعلت سندريلا ما طلبتاه، لكنها بكت، لأنها هي أيضًا أرادت أن ترقص.",
+          "vi": "Lọ Lem làm theo lời họ, nhưng cô khóc, vì cô cũng muốn được khiêu vũ.",
+          "hi": "सिंड्रेला ने वैसा ही किया, लेकिन वह रो पड़ी, क्योंकि वह भी नाचना चाहती थी।",
+          "ru": "Золушка сделала всё, как они просили, но заплакала, потому что ей тоже хотелось танцевать.",
+          "bn": "সিন্ডারেলা তাদের কথামতো সব করল, কিন্তু কাঁদল, কারণ সেও নাচতে চাইছিল।",
+          "ur": "سنڈریلا نے ویسا ہی کیا، لیکن وہ رو پڑی، کیونکہ وہ بھی ناچنا چاہتی تھی۔",
+          "th": "ซินเดอเรลล่าทำตามที่พวกนางสั่ง แต่เธอร้องไห้ เพราะเธอก็อยากไปเต้นรำเหมือนกัน"
+        }
+      },
+      {
+        "id": "cl-cinderella-10",
+        "english": "Cinderella wanted to go, but her stepmother gave her more work.",
+        "turkish": "Külkedisi gitmek istiyordu ama üvey annesi ona daha fazla iş verdi.",
+        "translations": {
+          "es-419": "Cenicienta quería ir, pero su madrastra le dio más trabajo.",
+          "pt-BR": "Cinderela queria ir, mas a madrasta lhe deu mais trabalho.",
+          "id": "Cinderella ingin pergi, tetapi ibu tirinya memberinya lebih banyak pekerjaan.",
+          "ar": "أرادت سندريلا أن تذهب، لكن زوجة أبيها أعطتها عملًا أكثر.",
+          "vi": "Lọ Lem muốn đi, nhưng mẹ kế giao thêm việc cho cô.",
+          "hi": "सिंड्रेला जाना चाहती थी, लेकिन सौतेली माँ ने उसे और काम दे दिया।",
+          "ru": "Золушке хотелось пойти, но мачеха дала ей ещё больше работы.",
+          "bn": "সিন্ডারেলা যেতে চাইল, কিন্তু সৎমা তাকে আরও কাজ দিল।",
+          "ur": "سنڈریلا جانا چاہتی تھی، لیکن سوتیلی ماں نے اسے اور کام دے دیا۔",
+          "th": "ซินเดอเรลล่าอยากไป แต่แม่เลี้ยงสั่งงานเพิ่มให้เธอ"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-10-01",
+        "english": "\"I have thrown a bowl of lentils into the ashes,\" said the stepmother.",
+        "turkish": "\"Küllerin içine bir kâse mercimek döktüm,\" dedi üvey anne.",
+        "translations": {
+          "es-419": "\"He echado un tazón de lentejas en las cenizas\", dijo la madrastra.",
+          "pt-BR": "— Joguei uma tigela de lentilhas nas cinzas — disse a madrasta.",
+          "id": "\"Aku sudah menumpahkan semangkuk lentil ke dalam abu,\" kata ibu tiri.",
+          "ar": "قالت زوجة الأب: «لقد رميتُ وعاءً من العدس في الرماد.»",
+          "vi": "\"Ta đã đổ một bát đậu lăng vào tro,\" bà mẹ kế nói.",
+          "hi": "सौतेली माँ ने कहा, \"मैंने एक कटोरा दाल राख में डाल दी है।\"",
+          "ru": "«Я высыпала в золу миску чечевицы», — сказала мачеха.",
+          "bn": "সৎমা বলল, \"আমি এক বাটি ডাল ছাইয়ের মধ্যে ফেলে দিয়েছি।\"",
+          "ur": "سوتیلی ماں نے کہا، \"میں نے ایک پیالہ دال راکھ میں ڈال دی ہے۔\"",
+          "th": "\"ข้าเทถั่วเลนทิลลงไปในขี้เถ้าหนึ่งชาม\" แม่เลี้ยงพูด"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-10-02",
+        "english": "\"If you can pick them all out in two hours, you can come with us.\"",
+        "turkish": "\"Hepsini iki saatte ayıklarsan bizimle gelebilirsin.\"",
+        "translations": {
+          "es-419": "\"Si puedes sacarlas todas en dos horas, podrás venir con nosotras\".",
+          "pt-BR": "— Se conseguir catar todas em duas horas, pode vir com a gente.",
+          "id": "\"Kalau kau bisa memungut semuanya dalam dua jam, kau boleh ikut kami.\"",
+          "ar": "«إن استطعتِ أن تلتقطيه كلّه في ساعتين، فيمكنكِ أن تأتي معنا.»",
+          "vi": "\"Nếu nhặt hết trong hai tiếng thì mày được đi cùng.\"",
+          "hi": "\"अगर तुम दो घंटे में सारी दाल चुन लो, तो हमारे साथ चल सकती हो।\"",
+          "ru": "«Если выберешь всю за два часа, поедешь с нами».",
+          "bn": "\"দুই ঘণ্টার মধ্যে সব বেছে তুলতে পারলে তুই আমাদের সঙ্গে যেতে পারবি।\"",
+          "ur": "\"اگر تم دو گھنٹے میں ساری دال چن لو تو ہمارے ساتھ چل سکتی ہو۔\"",
+          "th": "\"ถ้าเจ้าเก็บได้หมดภายในสองชั่วโมง ก็ไปกับพวกเราได้\""
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-10-03",
+        "english": "Cinderella went into the garden and called the birds to help her.",
+        "turkish": "Külkedisi bahçeye çıktı ve kuşları yardıma çağırdı.",
+        "translations": {
+          "es-419": "Cenicienta salió al jardín y llamó a los pájaros para que la ayudaran.",
+          "pt-BR": "Cinderela foi ao jardim e chamou os pássaros para ajudá-la.",
+          "id": "Cinderella pergi ke kebun dan memanggil burung-burung untuk membantunya.",
+          "ar": "خرجت سندريلا إلى الحديقة ونادت الطيور لتساعدها.",
+          "vi": "Lọ Lem ra vườn và gọi các chú chim đến giúp mình.",
+          "hi": "सिंड्रेला बगीचे में गई और उसने चिड़ियों को मदद के लिए बुलाया।",
+          "ru": "Золушка вышла в сад и позвала птиц на помощь.",
+          "bn": "সিন্ডারেলা বাগানে গিয়ে পাখিদের সাহায্যের জন্য ডাকল।",
+          "ur": "سنڈریلا باغ میں گئی اور پرندوں کو مدد کے لیے بلایا۔",
+          "th": "ซินเดอเรลล่าออกไปที่สวน แล้วเรียกนกมาช่วย"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-10-04",
+        "english": "\"Put the good ones in the pot,\" she said, \"and eat the bad ones.\"",
+        "turkish": "\"İyileri tencereye koyun,\" dedi, \"kötüleri de siz yiyin.\"",
+        "translations": {
+          "es-419": "\"Pongan las buenas en la olla\", dijo, \"y cómanse las malas\".",
+          "pt-BR": "— Ponham as boas na panela — disse ela — e comam as ruins.",
+          "id": "\"Masukkan yang baik ke dalam panci,\" katanya, \"dan makanlah yang buruk.\"",
+          "ar": "قالت: «ضعي الحبّات الجيدة في القِدر، وكُلي الرديئة.»",
+          "vi": "\"Hạt tốt bỏ vào nồi,\" cô nói, \"còn hạt xấu thì các bạn ăn đi.\"",
+          "hi": "उसने कहा, \"अच्छे दाने हांडी में डालो, और ख़राब दाने खा लो।\"",
+          "ru": "«Хорошие зёрнышки — в горшок, — сказала она, — а плохие — себе в зобок».",
+          "bn": "সে বলল, \"ভালো দানাগুলো হাঁড়িতে রাখো, আর খারাপগুলো খেয়ে নাও।\"",
+          "ur": "اس نے کہا، \"اچھے دانے ہانڈی میں ڈالو، اور خراب دانے کھا لو۔\"",
+          "th": "\"เม็ดดีใส่หม้อ\" เธอพูด \"เม็ดเสียก็กินเสียเลย\""
+        }
+      },
+      {
+        "id": "cl-cinderella-11",
+        "english": "Birds helped her pick lentils out of the ashes.",
+        "turkish": "Kuşlar küllerin arasından mercimekleri ayıklamasına yardım etti.",
+        "translations": {
+          "es-419": "Unos pájaros la ayudaron a sacar lentejas de entre las cenizas.",
+          "pt-BR": "Os pássaros a ajudaram a catar as lentilhas no meio das cinzas.",
+          "id": "Burung-burung membantunya memungut kacang lentil dari abu.",
+          "ar": "ساعدتها الطيور على التقاط العدس من الرماد.",
+          "vi": "Những chú chim giúp cô nhặt đậu lăng ra khỏi tro.",
+          "hi": "चिड़ियों ने राख में से दाल के दाने चुनने में उसकी मदद की।",
+          "ru": "Птицы помогли ей выбрать чечевицу из золы.",
+          "bn": "পাখিরা তাকে ছাইয়ের মধ্য থেকে ডাল বেছে তুলতে সাহায্য করল।",
+          "ur": "پرندوں نے راکھ میں سے دالیں چننے میں اس کی مدد کی۔",
+          "th": "นกช่วยเธอเก็บถั่วเลนทิลออกจากขี้เถ้า"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-11-01",
+        "english": "In less than an hour, they had finished and flown away again.",
+        "turkish": "Bir saat bile dolmadan işi bitirip yeniden uçup gitmişlerdi.",
+        "translations": {
+          "es-419": "En menos de una hora, ya habían terminado y se habían ido volando.",
+          "pt-BR": "Em menos de uma hora, eles terminaram e foram embora voando.",
+          "id": "Dalam waktu kurang dari satu jam, mereka sudah selesai dan terbang pergi lagi.",
+          "ar": "وفي أقل من ساعة، كانت قد انتهت وطارت بعيدًا من جديد.",
+          "vi": "Chưa đầy một giờ, chúng đã làm xong và bay đi mất.",
+          "hi": "एक घंटे से भी कम समय में वे काम पूरा करके फिर उड़ गईं।",
+          "ru": "Меньше чем через час они всё сделали и снова улетели.",
+          "bn": "এক ঘণ্টারও কম সময়ে তারা কাজ শেষ করে আবার উড়ে গেল।",
+          "ur": "ایک گھنٹے سے بھی کم وقت میں وہ کام ختم کر کے پھر اڑ گئے۔",
+          "th": "ไม่ถึงชั่วโมง พวกนกก็ทำเสร็จและบินจากไป"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-11-02",
+        "english": "Cinderella happily took the bowl to her stepmother.",
+        "turkish": "Külkedisi sevinçle kâseyi üvey annesine götürdü.",
+        "translations": {
+          "es-419": "Cenicienta, feliz, le llevó el tazón a su madrastra.",
+          "pt-BR": "Cinderela, feliz, levou a tigela para a madrasta.",
+          "id": "Dengan gembira, Cinderella membawa mangkuk itu kepada ibu tirinya.",
+          "ar": "حملت سندريلا الوعاء إلى زوجة أبيها وهي فرحة.",
+          "vi": "Lọ Lem vui mừng mang bát đậu đến cho mẹ kế.",
+          "hi": "सिंड्रेला ख़ुशी-ख़ुशी कटोरा सौतेली माँ के पास ले गई।",
+          "ru": "Золушка радостно отнесла миску мачехе.",
+          "bn": "সিন্ডারেলা খুশি মনে বাটিটা সৎমার কাছে নিয়ে গেল।",
+          "ur": "سنڈریلا خوشی خوشی پیالہ سوتیلی ماں کے پاس لے گئی۔",
+          "th": "ซินเดอเรลล่านำชามไปให้แม่เลี้ยงอย่างดีใจ"
+        }
+      },
+      {
+        "id": "cl-cinderella-12",
+        "english": "Even then, her stepmother would not let her go.",
+        "turkish": "Buna rağmen üvey annesi gitmesine izin vermedi.",
+        "translations": {
+          "es-419": "Aun así, su madrastra no la dejó ir.",
+          "pt-BR": "Mesmo assim, a madrasta não a deixou ir.",
+          "id": "Meski begitu, ibu tirinya tetap tidak mengizinkannya pergi.",
+          "ar": "وحتى بعد ذلك، لم تسمح لها زوجة أبيها بالذهاب.",
+          "vi": "Dù vậy, mẹ kế vẫn không cho cô đi.",
+          "hi": "फिर भी सौतेली माँ ने उसे जाने नहीं दिया।",
+          "ru": "Но даже тогда мачеха не отпустила её.",
+          "bn": "তবুও সৎমা তাকে যেতে দিল না।",
+          "ur": "اس کے بعد بھی سوتیلی ماں نے اسے جانے نہ دیا۔",
+          "th": "แม้จะเป็นอย่างนั้น แม่เลี้ยงก็ไม่ยอมให้เธอไป"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-12-01",
+        "english": "\"You have no dress, and you cannot dance,\" she said. \"Everyone would laugh at you.\"",
+        "turkish": "\"Ne elbisen var ne de dans etmeyi biliyorsun,\" dedi. \"Herkes sana güler.\"",
+        "translations": {
+          "es-419": "\"No tienes vestido y no sabes bailar\", dijo. \"Todos se reirían de ti\".",
+          "pt-BR": "— Você não tem vestido e não sabe dançar — disse ela. — Todo mundo ia rir de você.",
+          "id": "\"Kau tidak punya gaun, dan kau tidak bisa berdansa,\" katanya. \"Semua orang akan menertawakanmu.\"",
+          "ar": "قالت: «ليس لديكِ فستان، ولا تعرفين الرقص. سيضحك عليكِ الجميع.»",
+          "vi": "\"Mày không có váy, cũng chẳng biết nhảy,\" bà ta nói. \"Ai cũng sẽ cười vào mặt mày.\"",
+          "hi": "उसने कहा, \"तुम्हारे पास न पोशाक है, न तुम्हें नाचना आता है। सब तुम पर हँसेंगे।\"",
+          "ru": "«У тебя нет платья, и танцевать ты не умеешь, — сказала она. — Все будут над тобой смеяться».",
+          "bn": "সে বলল, \"তোর না আছে পোশাক, না জানিস নাচতে। সবাই তোকে দেখে হাসবে।\"",
+          "ur": "اس نے کہا، \"تمہارے پاس نہ لباس ہے، نہ تمہیں ناچنا آتا ہے۔ سب تم پر ہنسیں گے۔\"",
+          "th": "\"เจ้าไม่มีชุด แล้วก็เต้นรำไม่เป็น\" นางพูด \"ใคร ๆ ก็จะหัวเราะเยาะเจ้า\""
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-12-02",
+        "english": "Then she and her two daughters hurried off to the festival.",
+        "turkish": "Sonra o ve iki kızı aceleyle şenliğe gitti.",
+        "translations": {
+          "es-419": "Luego ella y sus dos hijas se fueron deprisa a la fiesta.",
+          "pt-BR": "Depois ela e as duas filhas saíram correndo para a festa.",
+          "id": "Lalu ia dan kedua putrinya bergegas pergi ke pesta.",
+          "ar": "ثم أسرعت هي وابنتاها إلى الحفل.",
+          "vi": "Rồi bà ta cùng hai cô con gái vội vã đi dự hội.",
+          "hi": "फिर वह और उसकी दोनों बेटियाँ जल्दी-जल्दी उत्सव में चली गईं।",
+          "ru": "И она с двумя дочерьми поспешила на праздник.",
+          "bn": "তারপর সে আর তার দুই মেয়ে তাড়াতাড়ি উৎসবে চলে গেল।",
+          "ur": "پھر وہ اور اس کی دونوں بیٹیاں جلدی جلدی جشن میں چلی گئیں۔",
+          "th": "จากนั้นนางกับลูกสาวทั้งสองก็รีบไปงานเฉลิมฉลอง"
+        }
+      },
+      {
+        "id": "cl-cinderella-13",
+        "english": "Cinderella went to the hazel tree and asked for help.",
+        "turkish": "Külkedisi fındık ağacına gidip yardım istedi.",
+        "translations": {
+          "es-419": "Cenicienta fue al avellano y pidió ayuda.",
+          "pt-BR": "Cinderela foi até a aveleira e pediu ajuda.",
+          "id": "Cinderella pergi ke pohon hazel dan meminta pertolongan.",
+          "ar": "ذهبت سندريلا إلى شجرة البندق وطلبت المساعدة.",
+          "vi": "Lọ Lem đến bên cây phỉ và xin giúp đỡ.",
+          "hi": "सिंड्रेला हेज़ल के पेड़ के पास गई और मदद माँगी।",
+          "ru": "Золушка пошла к орешнику и попросила о помощи.",
+          "bn": "সিন্ডারেলা হ্যাজেল গাছের কাছে গিয়ে সাহায্য চাইল।",
+          "ur": "سنڈریلا فندق کے درخت کے پاس گئی اور مدد مانگی۔",
+          "th": "ซินเดอเรลล่าไปที่ต้นเฮเซลและขอความช่วยเหลือ"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-13-01",
+        "english": "\"Shake yourself, little tree, and throw gold and silver over me,\" she said.",
+        "turkish": "\"Silkelen, küçük ağaç, üstüme altın ve gümüş saç,\" dedi.",
+        "translations": {
+          "es-419": "\"Sacúdete, arbolito, y échame oro y plata encima\", dijo.",
+          "pt-BR": "— Sacuda-se, arvorezinha, e jogue ouro e prata sobre mim — disse ela.",
+          "id": "\"Bergoyanglah, pohon kecil, dan taburkan emas dan perak ke atasku,\" katanya.",
+          "ar": "قالت: «اهتزّي يا شجرتي الصغيرة، وانثري عليّ الذهب والفضة.»",
+          "vi": "\"Cây ơi, rung mình đi, rắc vàng bạc xuống cho em,\" cô nói.",
+          "hi": "उसने कहा, \"हिल जा, नन्हे पेड़, और मुझ पर सोना-चाँदी बरसा दे।\"",
+          "ru": "«Деревце, встряхнись, осыпь меня золотом и серебром», — сказала она.",
+          "bn": "সে বলল, \"নড়ে ওঠো, ছোট্ট গাছ, আমার ওপর সোনা-রুপো ঝরিয়ে দাও।\"",
+          "ur": "اس نے کہا، \"ہل جا، ننھے درخت، اور مجھ پر سونا چاندی برسا دے۔\"",
+          "th": "\"เขย่าตัวหน่อยนะต้นไม้น้อย โปรยทองและเงินลงมาให้ฉันที\" เธอพูด"
+        }
+      },
+      {
+        "id": "cl-cinderella-14",
+        "english": "The bird gave her a beautiful dress and fine slippers.",
+        "turkish": "Kuş ona güzel bir elbise ve zarif ayakkabılar verdi.",
+        "translations": {
+          "es-419": "El pájaro le dio un vestido hermoso y unas zapatillas finas.",
+          "pt-BR": "O pássaro lhe deu um vestido lindo e sapatinhos finos.",
+          "id": "Burung itu memberinya gaun yang indah dan sepatu yang bagus.",
+          "ar": "أعطاها الطائر فستانًا جميلًا وحذاءً أنيقًا.",
+          "vi": "Chú chim cho cô một chiếc váy tuyệt đẹp và một đôi giày xinh xắn.",
+          "hi": "चिड़िया ने उसे एक सुंदर पोशाक और बढ़िया जूतियाँ दीं।",
+          "ru": "Птичка дала ей красивое платье и чудесные туфельки.",
+          "bn": "পাখিটা তাকে একটা সুন্দর পোশাক আর চমৎকার জুতো দিল।",
+          "ur": "پرندے نے اسے ایک خوبصورت لباس اور عمدہ جوتیاں دیں۔",
+          "th": "นกให้ชุดที่สวยงามและรองเท้าคู่งามแก่เธอ"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-14-01",
+        "english": "She put on the dress quickly and went to the festival.",
+        "turkish": "Elbiseyi hemen giydi ve şenliğe gitti.",
+        "translations": {
+          "es-419": "Se puso el vestido rápidamente y fue a la fiesta.",
+          "pt-BR": "Ela vestiu o vestido depressa e foi à festa.",
+          "id": "Ia segera mengenakan gaun itu dan pergi ke pesta.",
+          "ar": "لبست الفستان بسرعة وذهبت إلى الحفل.",
+          "vi": "Cô vội mặc váy vào rồi đi dự hội.",
+          "hi": "उसने जल्दी से पोशाक पहनी और उत्सव में चली गई।",
+          "ru": "Она быстро надела платье и отправилась на праздник.",
+          "bn": "সে তাড়াতাড়ি পোশাকটা পরে উৎসবে চলে গেল।",
+          "ur": "اس نے جلدی سے لباس پہنا اور جشن میں چلی گئی۔",
+          "th": "เธอรีบสวมชุดแล้วไปที่งาน"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-14-02",
+        "english": "Her stepsisters did not recognize her and thought she was a foreign princess.",
+        "turkish": "Üvey kız kardeşleri onu tanımadı ve yabancı bir prenses olduğunu sandı.",
+        "translations": {
+          "es-419": "Sus hermanastras no la reconocieron y pensaron que era una princesa extranjera.",
+          "pt-BR": "As irmãs postiças não a reconheceram e acharam que ela era uma princesa estrangeira.",
+          "id": "Saudara-saudara tirinya tidak mengenalinya dan mengira ia putri dari negeri asing.",
+          "ar": "لم تعرفها أختاها غير الشقيقتين، وظنّتا أنها أميرة غريبة.",
+          "vi": "Hai chị kế không nhận ra cô và tưởng cô là công chúa nước ngoài.",
+          "hi": "सौतेली बहनों ने उसे नहीं पहचाना और सोचा कि वह किसी दूसरे देश की राजकुमारी है।",
+          "ru": "Сводные сёстры её не узнали и решили, что это иноземная принцесса.",
+          "bn": "সৎবোনেরা তাকে চিনতে পারল না, ভাবল সে কোনো বিদেশি রাজকন্যা।",
+          "ur": "سوتیلی بہنوں نے اسے نہیں پہچانا اور سمجھا کہ وہ کسی دوسرے ملک کی شہزادی ہے۔",
+          "th": "พี่สาวต่างมารดาจำเธอไม่ได้ และคิดว่าเธอเป็นเจ้าหญิงจากต่างแดน"
+        }
+      },
+      {
+        "id": "cl-cinderella-15",
+        "english": "At the palace, the prince danced only with her.",
+        "turkish": "Sarayda prens yalnızca onunla dans etti.",
+        "translations": {
+          "es-419": "En el palacio, el príncipe bailó solo con ella.",
+          "pt-BR": "No palácio, o príncipe dançou só com ela.",
+          "id": "Di istana, pangeran hanya berdansa dengannya.",
+          "ar": "في القصر، لم يرقص الأمير إلا معها.",
+          "vi": "Ở cung điện, hoàng tử chỉ khiêu vũ với cô.",
+          "hi": "महल में राजकुमार ने सिर्फ़ उसी के साथ नृत्य किया।",
+          "ru": "Во дворце принц танцевал только с ней.",
+          "bn": "প্রাসাদে রাজপুত্র শুধু তার সঙ্গেই নাচলেন।",
+          "ur": "محل میں شہزادے نے صرف اسی کے ساتھ رقص کیا۔",
+          "th": "ที่พระราชวัง เจ้าชายเต้นรำกับเธอเพียงคนเดียว"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-15-01",
+        "english": "When anyone else asked her to dance, he said, \"She is my partner.\"",
+        "turkish": "Başka biri onu dansa davet edince prens, \"O benim dans arkadaşım,\" diyordu.",
+        "translations": {
+          "es-419": "Cuando alguien más la invitaba a bailar, él decía: \"Ella baila conmigo\".",
+          "pt-BR": "Quando outra pessoa a convidava para dançar, ele dizia: — Ela é o meu par.",
+          "id": "Setiap kali ada orang lain yang mengajaknya berdansa, pangeran berkata, \"Dia pasanganku.\"",
+          "ar": "وكلّما دعاها أحد غيره إلى الرقص، قال: «إنها شريكتي.»",
+          "vi": "Hễ có ai khác mời cô nhảy, chàng liền nói: \"Cô ấy là bạn nhảy của ta.\"",
+          "hi": "जब भी कोई और उसे नाचने के लिए बुलाता, वह कहता, \"यह मेरी साथी है।\"",
+          "ru": "Когда кто-нибудь другой приглашал её танцевать, он говорил: «Она танцует со мной».",
+          "bn": "অন্য কেউ তাকে নাচতে ডাকলে তিনি বলতেন, \"ও আমার সঙ্গী।\"",
+          "ur": "جب بھی کوئی اور اسے ناچنے کے لیے بلاتا، وہ کہتا، \"یہ میری ساتھی ہے۔\"",
+          "th": "เมื่อมีใครมาขอเธอเต้นรำ เจ้าชายก็จะตอบว่า \"เธอเป็นคู่เต้นรำของเรา\""
+        }
+      },
+      {
+        "id": "cl-cinderella-16",
+        "english": "She escaped before he could find out where she lived.",
+        "turkish": "Prens nerede yaşadığını öğrenemeden oradan kaçtı.",
+        "translations": {
+          "es-419": "Ella escapó antes de que él pudiera averiguar dónde vivía.",
+          "pt-BR": "Ela fugiu antes que ele descobrisse onde ela morava.",
+          "id": "Ia melarikan diri sebelum pangeran sempat mengetahui tempat tinggalnya.",
+          "ar": "هربت قبل أن يعرف أين تسكن.",
+          "vi": "Cô trốn đi trước khi chàng kịp biết cô sống ở đâu.",
+          "hi": "राजकुमार को पता चलने से पहले कि वह कहाँ रहती है, वह भाग निकली।",
+          "ru": "Она убежала, прежде чем он успел узнать, где она живёт.",
+          "bn": "সে কোথায় থাকে তা রাজপুত্র জানার আগেই সে পালিয়ে গেল।",
+          "ur": "شہزادے کو یہ پتا چلنے سے پہلے کہ وہ کہاں رہتی ہے، وہ وہاں سے نکل گئی۔",
+          "th": "เธอหนีไปก่อนที่เจ้าชายจะรู้ว่าเธออาศัยอยู่ที่ไหน"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-16-01",
+        "english": "She hid in the garden, and soon she was back by the fire in her old grey dress.",
+        "turkish": "Bahçeye saklandı ve kısa süre sonra eski gri elbisesiyle yine ocağın başındaydı.",
+        "translations": {
+          "es-419": "Se escondió en el jardín, y pronto estaba otra vez junto al fuego con su viejo vestido gris.",
+          "pt-BR": "Ela se escondeu no jardim e logo estava de volta perto do fogo, com seu vestido cinza velho.",
+          "id": "Ia bersembunyi di kebun, dan tak lama kemudian sudah kembali di dekat perapian dengan gaun abu-abu tuanya.",
+          "ar": "اختبأت في الحديقة، وسرعان ما عادت إلى جانب النار في ثوبها الرمادي القديم.",
+          "vi": "Cô trốn vào vườn, và chẳng mấy chốc đã lại ngồi bên bếp lửa trong chiếc váy xám cũ.",
+          "hi": "वह बगीचे में छिप गई, और जल्द ही अपनी पुरानी स्लेटी पोशाक में फिर आग के पास बैठी थी।",
+          "ru": "Она спряталась в саду и вскоре уже снова сидела у очага в своём старом сером платье.",
+          "bn": "সে বাগানে লুকিয়ে পড়ল, আর একটু পরেই পুরোনো ধূসর পোশাক পরে আবার আগুনের পাশে বসে ছিল।",
+          "ur": "وہ باغ میں چھپ گئی، اور جلد ہی اپنے پرانے سرمئی لباس میں پھر آگ کے پاس بیٹھی تھی۔",
+          "th": "เธอซ่อนตัวในสวน และไม่นานก็กลับมานั่งข้างกองไฟในชุดสีเทาเก่า ๆ"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-16-02",
+        "english": "She had left the beautiful dress on her mother's grave, and the bird had taken it away.",
+        "turkish": "Güzel elbiseyi annesinin mezarına bırakmıştı, kuş da onu alıp götürmüştü.",
+        "translations": {
+          "es-419": "Había dejado el vestido hermoso en la tumba de su madre, y el pájaro se lo había llevado.",
+          "pt-BR": "Ela tinha deixado o vestido lindo no túmulo da mãe, e o pássaro o levara embora.",
+          "id": "Ia meninggalkan gaun indah itu di makam ibunya, dan burung itu membawanya pergi.",
+          "ar": "كانت قد تركت الفستان الجميل على قبر أمها، وأخذه الطائر.",
+          "vi": "Cô đã để chiếc váy đẹp lại trên mộ mẹ, và chú chim đã mang nó đi.",
+          "hi": "उसने सुंदर पोशाक माँ की कब्र पर छोड़ दी थी, और चिड़िया उसे ले गई थी।",
+          "ru": "Красивое платье она оставила на могиле матери, и птичка его унесла.",
+          "bn": "সে সুন্দর পোশাকটা মায়ের কবরের ওপর রেখে এসেছিল, আর পাখিটা সেটা নিয়ে গিয়েছিল।",
+          "ur": "اس نے خوبصورت لباس ماں کی قبر پر چھوڑ دیا تھا، اور پرندہ اسے لے گیا تھا۔",
+          "th": "เธอทิ้งชุดสวยไว้บนหลุมศพของแม่ และนกก็คาบมันไปแล้ว"
+        }
+      },
+      {
+        "id": "cl-cinderella-17",
+        "english": "She returned on the next two days in even finer dresses.",
+        "turkish": "Sonraki iki gün daha da güzel elbiselerle geri döndü.",
+        "translations": {
+          "es-419": "Volvió los dos días siguientes con vestidos todavía más finos.",
+          "pt-BR": "Ela voltou nos dois dias seguintes com vestidos ainda mais bonitos.",
+          "id": "Ia kembali pada dua hari berikutnya dengan gaun yang lebih indah lagi.",
+          "ar": "عادت في اليومين التاليين بفساتين أجمل.",
+          "vi": "Hai ngày sau đó, cô lại đến trong những chiếc váy còn đẹp hơn.",
+          "hi": "अगले दो दिन वह और भी सुंदर पोशाकों में लौटी।",
+          "ru": "В следующие два дня она приходила снова, в ещё более нарядных платьях.",
+          "bn": "পরের দুই দিনও সে আরও সুন্দর পোশাক পরে ফিরে এল।",
+          "ur": "اگلے دو دن وہ اور بھی عمدہ لباس پہن کر آئی۔",
+          "th": "สองวันต่อมา เธอกลับมาอีกในชุดที่งดงามยิ่งกว่าเดิม"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-17-01",
+        "english": "Each time, the prince danced only with her, and each time she ran away.",
+        "turkish": "Her seferinde prens yalnızca onunla dans etti ve her seferinde kız kaçıp gitti.",
+        "translations": {
+          "es-419": "Cada vez, el príncipe bailó solo con ella, y cada vez ella se escapó.",
+          "pt-BR": "Todas as vezes, o príncipe dançou só com ela, e todas as vezes ela fugiu.",
+          "id": "Setiap kali, pangeran hanya berdansa dengannya, dan setiap kali pula ia melarikan diri.",
+          "ar": "وفي كل مرة، لم يرقص الأمير إلا معها، وفي كل مرة كانت تهرب.",
+          "vi": "Lần nào hoàng tử cũng chỉ khiêu vũ với cô, và lần nào cô cũng bỏ chạy.",
+          "hi": "हर बार राजकुमार ने सिर्फ़ उसी के साथ नृत्य किया, और हर बार वह भाग गई।",
+          "ru": "Каждый раз принц танцевал только с ней, и каждый раз она убегала.",
+          "bn": "প্রতিবার রাজপুত্র শুধু তার সঙ্গেই নাচলেন, আর প্রতিবার সে পালিয়ে গেল।",
+          "ur": "ہر بار شہزادے نے صرف اسی کے ساتھ رقص کیا، اور ہر بار وہ بھاگ گئی۔",
+          "th": "ทุกครั้งเจ้าชายเต้นรำกับเธอเพียงคนเดียว และทุกครั้งเธอก็หนีไป"
+        }
+      },
+      {
+        "id": "cl-cinderella-18",
+        "english": "On the third evening, the prince put sticky pitch on the stairs.",
+        "turkish": "Üçüncü akşam prens merdivenlere yapışkan zift sürdü.",
+        "translations": {
+          "es-419": "La tercera noche, el príncipe puso brea pegajosa en las escaleras.",
+          "pt-BR": "Na terceira noite, o príncipe passou piche grudento na escada.",
+          "id": "Pada malam ketiga, pangeran mengoleskan ter yang lengket di tangga.",
+          "ar": "في المساء الثالث، وضع الأمير قارًا لزجًا على الدرج.",
+          "vi": "Vào buổi tối thứ ba, hoàng tử cho quét hắc ín dính lên cầu thang.",
+          "hi": "तीसरी शाम राजकुमार ने सीढ़ियों पर चिपचिपा डामर लगवा दिया।",
+          "ru": "На третий вечер принц велел намазать лестницу липкой смолой.",
+          "bn": "তৃতীয় সন্ধ্যায় রাজপুত্র সিঁড়িতে চটচটে আলকাতরা লাগিয়ে রাখলেন।",
+          "ur": "تیسری شام شہزادے نے سیڑھیوں پر چپچپی رال لگوا دی۔",
+          "th": "ในค่ำคืนที่สาม เจ้าชายทายางเหนียวไว้บนบันได"
+        }
+      },
+      {
+        "id": "cl-cinderella-19",
+        "english": "As she hurried away, one golden slipper stuck there.",
+        "turkish": "Kız aceleyle uzaklaşırken altın ayakkabılarından biri oraya yapıştı.",
+        "translations": {
+          "es-419": "Mientras ella se iba deprisa, una zapatilla de oro se quedó pegada allí.",
+          "pt-BR": "Quando ela saiu correndo, um sapatinho de ouro ficou grudado ali.",
+          "id": "Saat Cinderella bergegas pergi, salah satu sepatu emasnya tertinggal di sana.",
+          "ar": "وبينما كانت تُسرع مبتعدة، علقت فردة من حذائها الذهبي هناك.",
+          "vi": "Khi cô vội vã chạy đi, một chiếc giày vàng bị dính lại ở đó.",
+          "hi": "जब वह जल्दी में भागी, तो उसकी एक सोने की जूती वहीं चिपक गई।",
+          "ru": "Когда она спешила прочь, одна золотая туфелька прилипла к ступеньке.",
+          "bn": "সে তাড়াতাড়ি চলে যাওয়ার সময় একটা সোনার জুতো সেখানে আটকে গেল।",
+          "ur": "جب وہ جلدی سے بھاگی تو سونے کی ایک جوتی وہیں چپک گئی۔",
+          "th": "ขณะที่เธอรีบหนีไป รองเท้าทองคำข้างหนึ่งก็ติดอยู่ตรงนั้น"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-19-01",
+        "english": "The prince picked it up. It was small and pretty, and made of pure gold.",
+        "turkish": "Prens ayakkabıyı yerden aldı. Küçük ve güzeldi, saf altından yapılmıştı.",
+        "translations": {
+          "es-419": "El príncipe la recogió. Era pequeña y bonita, y de oro puro.",
+          "pt-BR": "O príncipe o pegou. Era pequeno, bonito e feito de ouro puro.",
+          "id": "Pangeran memungutnya. Sepatu itu kecil, cantik, dan terbuat dari emas murni.",
+          "ar": "التقطها الأمير. كانت صغيرة وجميلة، ومن الذهب الخالص.",
+          "vi": "Hoàng tử nhặt chiếc giày lên. Nó nhỏ xinh và làm bằng vàng ròng.",
+          "hi": "राजकुमार ने उसे उठा लिया। वह छोटी-सी, सुंदर और खरे सोने की थी।",
+          "ru": "Принц поднял её. Туфелька была маленькая, красивая и из чистого золота.",
+          "bn": "রাজপুত্র জুতোটা তুলে নিলেন। সেটা ছোট্ট, সুন্দর আর খাঁটি সোনার তৈরি।",
+          "ur": "شہزادے نے اسے اٹھا لیا۔ وہ چھوٹی سی، خوبصورت اور خالص سونے کی تھی۔",
+          "th": "เจ้าชายหยิบรองเท้าขึ้นมา มันเล็ก สวยงาม และทำจากทองคำแท้"
+        }
+      },
+      {
+        "id": "cl-cinderella-20",
+        "english": "The prince said he would marry the woman whose foot fitted it.",
+        "turkish": "Prens, ayakkabı ayağına uyan kadınla evleneceğini söyledi.",
+        "translations": {
+          "es-419": "El príncipe dijo que se casaría con la mujer a quien le quedara el zapato.",
+          "pt-BR": "O príncipe disse que se casaria com a moça em cujo pé ele servisse.",
+          "id": "Pangeran berkata bahwa ia akan menikahi perempuan yang kakinya pas dengan sepatu itu.",
+          "ar": "قال الأمير إنه سيتزوّج المرأة التي تناسب قدمُها الحذاء.",
+          "vi": "Hoàng tử nói chàng sẽ cưới người con gái nào vừa chân với chiếc giày.",
+          "hi": "राजकुमार ने कहा कि जिसके पैर में यह जूती ठीक आएगी, वह उसी से शादी करेगा।",
+          "ru": "Принц сказал, что женится на той, кому туфелька придётся впору.",
+          "bn": "রাজপুত্র বললেন, যার পায়ে এই জুতো ঠিকমতো লাগবে, তিনি তাকেই বিয়ে করবেন।",
+          "ur": "شہزادے نے کہا کہ وہ اسی لڑکی سے شادی کرے گا جس کے پاؤں میں یہ جوتی پوری آئے گی۔",
+          "th": "เจ้าชายบอกว่าจะแต่งงานกับหญิงสาวที่สวมรองเท้านี้ได้พอดี"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-20-01",
+        "english": "The next morning, he took the slipper to Cinderella's father.",
+        "turkish": "Ertesi sabah ayakkabıyı Külkedisi'nin babasına götürdü.",
+        "translations": {
+          "es-419": "A la mañana siguiente, llevó la zapatilla a casa del padre de Cenicienta.",
+          "pt-BR": "Na manhã seguinte, ele levou o sapatinho ao pai de Cinderela.",
+          "id": "Keesokan paginya, ia membawa sepatu itu kepada ayah Cinderella.",
+          "ar": "وفي الصباح التالي، أخذ الحذاء إلى والد سندريلا.",
+          "vi": "Sáng hôm sau, chàng mang chiếc giày đến nhà cha của Lọ Lem.",
+          "hi": "अगली सुबह वह जूती लेकर सिंड्रेला के पिता के पास गया।",
+          "ru": "На следующее утро он отправился с туфелькой к отцу Золушки.",
+          "bn": "পরদিন সকালে তিনি জুতোটা নিয়ে সিন্ডারেলার বাবার কাছে গেলেন।",
+          "ur": "اگلی صبح وہ جوتی لے کر سنڈریلا کے باپ کے پاس گیا۔",
+          "th": "เช้าวันรุ่งขึ้น เจ้าชายนำรองเท้าไปหาพ่อของซินเดอเรลล่า"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-20-02",
+        "english": "The two stepsisters were glad, because they had pretty feet.",
+        "turkish": "İki üvey kız kardeş sevindi, çünkü ayakları güzeldi.",
+        "translations": {
+          "es-419": "Las dos hermanastras se alegraron, porque tenían pies bonitos.",
+          "pt-BR": "As duas irmãs postiças ficaram contentes, porque tinham pés bonitos.",
+          "id": "Kedua saudara tiri itu senang, karena kaki mereka indah.",
+          "ar": "فرحت الأختان، لأن قدميهما كانتا جميلتين.",
+          "vi": "Hai chị kế mừng lắm, vì họ có đôi chân đẹp.",
+          "hi": "दोनों सौतेली बहनें ख़ुश हुईं, क्योंकि उनके पैर सुंदर थे।",
+          "ru": "Обе сводные сестры обрадовались, ведь ножки у них были красивые.",
+          "bn": "দুই সৎবোন খুশি হলো, কারণ তাদের পা ছিল সুন্দর।",
+          "ur": "دونوں سوتیلی بہنیں خوش ہوئیں، کیونکہ ان کے پاؤں خوبصورت تھے۔",
+          "th": "พี่สาวต่างมารดาทั้งสองดีใจ เพราะพวกนางมีเท้าที่สวย"
+        }
+      },
+      {
+        "id": "cl-cinderella-21",
+        "english": "Each stepsister injured her foot to force it into the slipper.",
+        "turkish": "Üvey kız kardeşlerin her biri ayağını ayakkabıya zorla sokmak için yaraladı.",
+        "translations": {
+          "es-419": "Cada hermanastra se lastimó el pie para meterlo a la fuerza en la zapatilla.",
+          "pt-BR": "Cada uma das irmãs postiças machucou o próprio pé para enfiá-lo à força no sapatinho.",
+          "id": "Masing-masing saudara tiri melukai kakinya agar bisa memaksakan kakinya masuk ke sepatu itu.",
+          "ar": "جرحت كل واحدة من الأختين قدمها لتُدخلها في الحذاء بالقوة.",
+          "vi": "Mỗi cô chị kế đều tự làm đau chân mình để cố nhét vừa vào chiếc giày.",
+          "hi": "दोनों सौतेली बहनों ने जूती में पैर घुसाने के लिए अपने पैर को चोट पहुँचाई।",
+          "ru": "Каждая сводная сестра поранила себе ногу, чтобы втиснуть её в туфельку.",
+          "bn": "প্রত্যেক সৎবোন জুতোয় জোর করে পা ঢোকাতে গিয়ে নিজের পা কেটে ফেলল।",
+          "ur": "دونوں سوتیلی بہنوں نے جوتی میں پاؤں ٹھونسنے کے لیے اپنے پاؤں زخمی کر لیے۔",
+          "th": "พี่สาวต่างมารดาแต่ละคนทำร้ายเท้าตัวเองเพื่อยัดเท้าลงในรองเท้า"
+        }
+      },
+      {
+        "id": "cl-cinderella-22",
+        "english": "But the birds warned the prince, and he discovered the blood.",
+        "turkish": "Ama kuşlar prensi uyardı ve prens kanı fark etti.",
+        "translations": {
+          "es-419": "Pero los pájaros le avisaron al príncipe, y él descubrió la sangre.",
+          "pt-BR": "Mas os pássaros avisaram o príncipe, e ele descobriu o sangue.",
+          "id": "Tetapi burung-burung memperingatkan pangeran, dan ia melihat darahnya.",
+          "ar": "لكن الطيور حذّرت الأمير، فاكتشف الدم.",
+          "vi": "Nhưng những chú chim đã báo cho hoàng tử, và chàng phát hiện ra vết máu.",
+          "hi": "लेकिन चिड़ियों ने राजकुमार को सावधान कर दिया, और उसने ख़ून देख लिया।",
+          "ru": "Но птицы предупредили принца, и он увидел кровь.",
+          "bn": "কিন্তু পাখিরা রাজপুত্রকে সাবধান করে দিল, আর তিনি রক্ত দেখতে পেলেন।",
+          "ur": "لیکن پرندوں نے شہزادے کو خبردار کر دیا، اور اس نے خون دیکھ لیا۔",
+          "th": "แต่นกเตือนเจ้าชาย และเขาก็เห็นเลือด"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-22-01",
+        "english": "\"Look, there is blood in the shoe!\" the birds sang from the hazel tree. \"The true bride is still at home.\"",
+        "turkish": "\"Bakın, ayakkabıda kan var!\" diye öttü kuşlar fındık ağacından. \"Gerçek gelin hâlâ evde.\"",
+        "translations": {
+          "es-419": "\"¡Miren, hay sangre en el zapato!\", cantaron los pájaros desde el avellano. \"La verdadera novia sigue en casa\".",
+          "pt-BR": "— Olhe, tem sangue no sapato! — cantaram os pássaros na aveleira. — A noiva verdadeira ainda está em casa.",
+          "id": "\"Lihat, ada darah di sepatu!\" nyanyi burung-burung dari pohon hazel. \"Pengantin yang sejati masih di rumah.\"",
+          "ar": "غنّت الطيور من شجرة البندق: «انظر، في الحذاء دم! العروس الحقيقية ما زالت في البيت.»",
+          "vi": "\"Nhìn kìa, trong giày có máu!\" lũ chim hót vang từ cây phỉ. \"Cô dâu thật vẫn còn ở nhà.\"",
+          "hi": "चिड़ियाँ हेज़ल के पेड़ से गाने लगीं, \"देखो, जूती में ख़ून है! असली दुल्हन अभी घर पर है।\"",
+          "ru": "«Смотри, в туфельке кровь! — пели птицы с орешника. — Настоящая невеста осталась дома».",
+          "bn": "পাখিরা হ্যাজেল গাছ থেকে গেয়ে উঠল, \"দেখুন, জুতোয় রক্ত! আসল কনে এখনও বাড়িতে।\"",
+          "ur": "پرندے فندق کے درخت سے گانے لگے، \"دیکھو، جوتی میں خون ہے! اصلی دلہن ابھی گھر پر ہے۔\"",
+          "th": "นกร้องเพลงจากต้นเฮเซลว่า \"ดูสิ มีเลือดในรองเท้า! เจ้าสาวตัวจริงยังอยู่ที่บ้าน\""
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-22-02",
+        "english": "Each time, the prince took the false bride back to her house.",
+        "turkish": "Prens her seferinde sahte gelini evine geri götürdü.",
+        "translations": {
+          "es-419": "Cada vez, el príncipe devolvió a la falsa novia a su casa.",
+          "pt-BR": "Todas as vezes, o príncipe levou a noiva falsa de volta para casa.",
+          "id": "Setiap kali, pangeran mengantar pengantin palsu itu kembali ke rumahnya.",
+          "ar": "وفي كل مرة، أعاد الأمير العروس المزيّفة إلى بيتها.",
+          "vi": "Lần nào hoàng tử cũng đưa cô dâu giả trở về nhà.",
+          "hi": "हर बार राजकुमार नक़ली दुल्हन को उसके घर वापस ले गया।",
+          "ru": "Каждый раз принц отвозил ненастоящую невесту обратно домой.",
+          "bn": "প্রতিবার রাজপুত্র নকল কনেকে তার বাড়িতে ফিরিয়ে দিয়ে এলেন।",
+          "ur": "ہر بار شہزادہ نقلی دلہن کو اس کے گھر واپس لے گیا۔",
+          "th": "ทุกครั้งเจ้าชายก็พาเจ้าสาวตัวปลอมกลับไปส่งที่บ้าน"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-22-03",
+        "english": "\"Do you have another daughter?\" he asked.",
+        "turkish": "\"Başka kızınız var mı?\" diye sordu.",
+        "translations": {
+          "es-419": "\"¿Tiene usted otra hija?\", preguntó.",
+          "pt-BR": "— O senhor tem outra filha? — perguntou ele.",
+          "id": "\"Apakah Bapak punya putri lain?\" tanyanya.",
+          "ar": "سأل: «أليست لديك ابنة أخرى؟»",
+          "vi": "\"Ông còn cô con gái nào khác không?\" chàng hỏi.",
+          "hi": "उसने पूछा, \"क्या आपकी कोई और बेटी है?\"",
+          "ru": "«Нет ли у вас другой дочери?» — спросил он.",
+          "bn": "তিনি জিজ্ঞেস করলেন, \"আপনার কি আর কোনো মেয়ে আছে?\"",
+          "ur": "اس نے پوچھا، \"کیا آپ کی کوئی اور بیٹی ہے؟\"",
+          "th": "\"ท่านมีลูกสาวอีกคนไหม\" เจ้าชายถาม"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-22-04",
+        "english": "\"Only a little kitchen girl,\" said the father. \"She cannot be the bride.\"",
+        "turkish": "\"Sadece küçük bir mutfak kızı var,\" dedi baba. \"O gelin olamaz.\"",
+        "translations": {
+          "es-419": "\"Solo una muchachita de la cocina\", dijo el padre. \"Ella no puede ser la novia\".",
+          "pt-BR": "— Só uma menina que trabalha na cozinha — disse o pai. — Ela não pode ser a noiva.",
+          "id": "\"Hanya seorang gadis dapur kecil,\" kata sang ayah. \"Dia tidak mungkin pengantinnya.\"",
+          "ar": "قال الأب: «لا يوجد إلا فتاة صغيرة تعمل في المطبخ. لا يمكن أن تكون هي العروس.»",
+          "vi": "\"Chỉ có một đứa con gái nhỏ làm bếp thôi,\" người cha đáp. \"Nó không thể là cô dâu được.\"",
+          "hi": "पिता ने कहा, \"बस रसोई में काम करने वाली एक छोटी लड़की है। वह दुल्हन नहीं हो सकती।\"",
+          "ru": "«Есть только маленькая замарашка на кухне, — сказал отец. — Она не может быть невестой».",
+          "bn": "বাবা বললেন, \"শুধু রান্নাঘরের একটা ছোট মেয়ে আছে। সে কনে হতে পারে না।\"",
+          "ur": "باپ نے کہا، \"بس باورچی خانے والی ایک چھوٹی لڑکی ہے۔ وہ دلہن نہیں ہو سکتی۔\"",
+          "th": "\"มีแค่เด็กสาวในครัวคนหนึ่ง\" พ่อตอบ \"นางเป็นเจ้าสาวไม่ได้หรอก\""
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-22-05",
+        "english": "\"Oh no, she is much too dirty to be seen,\" said the stepmother.",
+        "turkish": "\"Aman, o görülemeyecek kadar kirli,\" dedi üvey anne.",
+        "translations": {
+          "es-419": "\"Ay, no, está demasiado sucia para que la vean\", dijo la madrastra.",
+          "pt-BR": "— Ah, não, ela está suja demais para aparecer — disse a madrasta.",
+          "id": "\"Oh, jangan, dia terlalu kotor untuk dilihat,\" kata ibu tiri.",
+          "ar": "قالت زوجة الأب: «لا، إنها متّسخة جدًا ولا يليق أن تُرى.»",
+          "vi": "\"Ôi không, nó bẩn thỉu lắm, không ra mắt được đâu,\" bà mẹ kế nói.",
+          "hi": "सौतेली माँ ने कहा, \"अरे नहीं, वह इतनी गंदी है कि किसी के सामने आने लायक नहीं।\"",
+          "ru": "«Ах нет, она слишком грязная, чтобы её показывать», — сказала мачеха.",
+          "bn": "সৎমা বলল, \"না না, সে এত নোংরা যে কারও সামনে আসার মতো নয়।\"",
+          "ur": "سوتیلی ماں نے کہا، \"ارے نہیں، وہ اتنی میلی ہے کہ کسی کے سامنے آنے کے لائق نہیں۔\"",
+          "th": "\"โอ๊ย ไม่ได้หรอก นางสกปรกเกินกว่าจะออกมาให้ใครเห็น\" แม่เลี้ยงพูด"
+        }
+      },
+      {
+        "id": "cl-cinderella-23",
+        "english": "At last, he insisted on seeing Cinderella.",
+        "turkish": "Sonunda Külkedisi'ni görmekte ısrar etti.",
+        "translations": {
+          "es-419": "Por fin, insistió en ver a Cenicienta.",
+          "pt-BR": "Por fim, ele insistiu em ver Cinderela.",
+          "id": "Akhirnya, pangeran bersikeras ingin melihat Cinderella.",
+          "ar": "أخيرًا، أصرّ على أن يرى سندريلا.",
+          "vi": "Cuối cùng, chàng nhất quyết đòi gặp Lọ Lem.",
+          "hi": "आख़िर में उसने सिंड्रेला से मिलने की ज़िद की।",
+          "ru": "Наконец он потребовал позвать Золушку.",
+          "bn": "অবশেষে তিনি জোর দিয়ে বললেন যে সিন্ডারেলাকে দেখতে চান।",
+          "ur": "آخرکار اس نے سنڈریلا کو دیکھنے پر اصرار کیا۔",
+          "th": "ในที่สุด เขายืนกรานขอพบซินเดอเรลล่า"
+        }
+      },
+      {
+        "id": "cl-cinderella-24",
+        "english": "She washed her face and tried on the golden slipper.",
+        "turkish": "Kız yüzünü yıkadı ve altın ayakkabıyı denedi.",
+        "translations": {
+          "es-419": "Ella se lavó la cara y se probó la zapatilla de oro.",
+          "pt-BR": "Ela lavou o rosto e experimentou o sapatinho de ouro.",
+          "id": "Cinderella membasuh wajahnya dan mencoba sepatu emas itu.",
+          "ar": "غسلت وجهها وجرّبت الحذاء الذهبي.",
+          "vi": "Cô rửa mặt và thử chiếc giày vàng.",
+          "hi": "उसने अपना चेहरा धोया और सोने की जूती पहनकर देखी।",
+          "ru": "Она умыла лицо и примерила золотую туфельку.",
+          "bn": "সে মুখ ধুয়ে সোনার জুতোটা পায়ে দিল।",
+          "ur": "سنڈریلا نے منہ دھویا اور سونے کی جوتی پہن کر دیکھی۔",
+          "th": "เธอล้างหน้าและลองสวมรองเท้าทองคำ"
+        }
+      },
+      {
+        "id": "cl-cinderella-25",
+        "english": "It fitted perfectly, and the prince recognized his dancing partner.",
+        "turkish": "Ayakkabı tam oldu ve prens dans ettiği kızı tanıdı.",
+        "translations": {
+          "es-419": "Le quedó perfecta, y el príncipe reconoció a su compañera de baile.",
+          "pt-BR": "Ele serviu perfeitamente, e o príncipe reconheceu sua parceira de dança.",
+          "id": "Sepatu itu sangat pas, dan pangeran mengenali pasangan dansanya.",
+          "ar": "ناسبها تمامًا، وعرف الأمير شريكته في الرقص.",
+          "vi": "Chiếc giày vừa khít, và hoàng tử nhận ra người bạn nhảy của mình.",
+          "hi": "जूती बिल्कुल ठीक आ गई, और राजकुमार ने अपनी नृत्य-साथी को पहचान लिया।",
+          "ru": "Туфелька пришлась ей точно впору, и принц узнал свою партнёршу по танцам.",
+          "bn": "জুতোটা একদম ঠিকঠাক লাগল, আর রাজপুত্র চিনতে পারলেন তাঁর নাচের সঙ্গিনীকে।",
+          "ur": "جوتی بالکل پوری آئی، اور شہزادے نے اپنی رقص کی ساتھی کو پہچان لیا۔",
+          "th": "มันพอดีเป๊ะ และเจ้าชายก็จำคู่เต้นรำของเขาได้"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-25-01",
+        "english": "\"This is the true bride!\" he cried.",
+        "turkish": "\"İşte gerçek gelin bu!\" diye bağırdı.",
+        "translations": {
+          "es-419": "\"¡Esta es la verdadera novia!\", exclamó.",
+          "pt-BR": "— Esta é a noiva verdadeira! — exclamou ele.",
+          "id": "\"Inilah pengantin yang sejati!\" serunya.",
+          "ar": "صاح: «هذه هي العروس الحقيقية!»",
+          "vi": "\"Đây mới là cô dâu thật!\" chàng reo lên.",
+          "hi": "वह चिल्लाया, \"यही असली दुल्हन है!\"",
+          "ru": "«Вот настоящая невеста!» — воскликнул он.",
+          "bn": "তিনি চেঁচিয়ে উঠলেন, \"এই তো আসল কনে!\"",
+          "ur": "وہ پکار اٹھا، \"یہی اصلی دلہن ہے!\"",
+          "th": "\"นี่แหละเจ้าสาวตัวจริง!\" เจ้าชายร้องขึ้น"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-25-02",
+        "english": "The stepmother and the two sisters turned pale with anger.",
+        "turkish": "Üvey anne ile iki kız kardeş öfkeden bembeyaz kesildi.",
+        "translations": {
+          "es-419": "La madrastra y las dos hermanas se pusieron pálidas de rabia.",
+          "pt-BR": "A madrasta e as duas irmãs ficaram pálidas de raiva.",
+          "id": "Ibu tiri dan kedua saudari itu menjadi pucat karena marah.",
+          "ar": "اصفرّ وجه زوجة الأب والأختين من الغضب.",
+          "vi": "Bà mẹ kế và hai chị kế tái mặt vì tức giận.",
+          "hi": "सौतेली माँ और दोनों बहनें ग़ुस्से से पीली पड़ गईं।",
+          "ru": "Мачеха и обе сестры побледнели от злости.",
+          "bn": "সৎমা আর দুই বোন রাগে ফ্যাকাশে হয়ে গেল।",
+          "ur": "سوتیلی ماں اور دونوں بہنیں غصے سے پیلی پڑ گئیں۔",
+          "th": "แม่เลี้ยงกับพี่สาวทั้งสองหน้าซีดด้วยความโกรธ"
+        }
+      },
+      {
+        "id": "cl-cinderella-26",
+        "english": "He took her away, with two white birds sitting on her shoulders.",
+        "turkish": "Omuzlarında iki beyaz kuş oturan kızı yanına alıp götürdü.",
+        "translations": {
+          "es-419": "Se la llevó, con dos pájaros blancos posados en sus hombros.",
+          "pt-BR": "Ele a levou embora, com dois pássaros brancos pousados nos ombros dela.",
+          "id": "Ia membawa Cinderella pergi, dengan dua burung putih bertengger di bahunya.",
+          "ar": "أخذها معه، وطائران أبيضان يجلسان على كتفيها.",
+          "vi": "Chàng đưa cô đi, với hai chú chim trắng đậu trên vai cô.",
+          "hi": "वह उसे अपने साथ ले गया, और दो सफ़ेद चिड़ियाँ उसके कंधों पर बैठी थीं।",
+          "ru": "Он увёз её с собой, а на плечах у неё сидели две белые птички.",
+          "bn": "তিনি তাকে সঙ্গে নিয়ে গেলেন, আর তার কাঁধে বসে ছিল দুটো সাদা পাখি।",
+          "ur": "وہ اسے اپنے ساتھ لے گیا، اور دو سفید پرندے اس کے کندھوں پر بیٹھے تھے۔",
+          "th": "เขาพาเธอไป โดยมีนกสีขาวสองตัวเกาะอยู่บนบ่าของเธอ"
+        }
+      },
+      {
+        "id": "cl-cinderella-27",
+        "english": "At the wedding, the stepsisters tried to share Cinderella's good fortune.",
+        "turkish": "Düğünde üvey kız kardeşleri Külkedisi'nin mutluluğundan pay almaya çalıştı.",
+        "translations": {
+          "es-419": "En la boda, las hermanastras intentaron compartir la buena suerte de Cenicienta.",
+          "pt-BR": "No casamento, as irmãs postiças tentaram aproveitar a boa sorte de Cinderela.",
+          "id": "Di pesta pernikahan, saudara-saudara tirinya mencoba ikut menikmati keberuntungan Cinderella.",
+          "ar": "في العرس، حاولت الأختان أن تشاركا سندريلا حظّها الطيب.",
+          "vi": "Trong đám cưới, các chị kế tìm cách chia phần vận may của Lọ Lem.",
+          "hi": "शादी में सौतेली बहनों ने सिंड्रेला की अच्छी किस्मत में हिस्सा लेने की कोशिश की।",
+          "ru": "На свадьбе сводные сёстры попытались примазаться к счастью Золушки.",
+          "bn": "বিয়েতে সৎবোনেরা সিন্ডারেলার সৌভাগ্যের ভাগ নিতে চাইল।",
+          "ur": "شادی پر سوتیلی بہنوں نے سنڈریلا کی خوش قسمتی میں حصہ دار بننے کی کوشش کی۔",
+          "th": "ในงานแต่งงาน พี่สาวต่างมารดาพยายามขอแบ่งโชคดีของซินเดอเรลล่า"
+        }
+      },
+      {
+        "id": "classic-cinderella-ext-27-01",
+        "english": "On the way to the church, one walked on her right and the other on her left.",
+        "turkish": "Kiliseye giderken biri onun sağında, öteki solunda yürüdü.",
+        "translations": {
+          "es-419": "Camino a la iglesia, una caminó a su derecha y la otra a su izquierda.",
+          "pt-BR": "A caminho da igreja, uma andou à direita dela e a outra à esquerda.",
+          "id": "Dalam perjalanan ke gereja, yang satu berjalan di sebelah kanannya dan yang lain di sebelah kirinya.",
+          "ar": "وفي الطريق إلى الكنيسة، سارت إحداهما عن يمينها والأخرى عن يسارها.",
+          "vi": "Trên đường đến nhà thờ, một người đi bên phải cô, người kia đi bên trái.",
+          "hi": "गिरजाघर जाते समय एक उसके दाईं ओर चली और दूसरी बाईं ओर।",
+          "ru": "По дороге в церковь одна шла справа от неё, а другая слева.",
+          "bn": "গির্জায় যাওয়ার পথে একজন তার ডান দিকে আর অন্যজন বাঁ দিকে হাঁটল।",
+          "ur": "گرجا گھر جاتے ہوئے ایک اس کے دائیں طرف چلی اور دوسری بائیں طرف۔",
+          "th": "ระหว่างทางไปโบสถ์ คนหนึ่งเดินอยู่ทางขวาของเธอ อีกคนเดินทางซ้าย"
+        }
+      },
+      {
+        "id": "cl-cinderella-28",
+        "english": "The birds punished their cruelty by taking away their sight.",
+        "turkish": "Kuşlar onların görme yetisini alarak zalimliklerini cezalandırdı.",
+        "translations": {
+          "es-419": "Los pájaros castigaron su crueldad quitándoles la vista.",
+          "pt-BR": "Os pássaros castigaram a crueldade delas tirando-lhes a visão.",
+          "id": "Burung-burung menghukum kekejaman mereka dengan membuat mereka buta.",
+          "ar": "عاقبت الطيور قسوتهما بأن أخذت منهما البصر.",
+          "vi": "Những chú chim trừng phạt sự độc ác của họ bằng cách lấy đi đôi mắt của họ.",
+          "hi": "चिड़ियों ने उनकी क्रूरता की सज़ा उनकी आँखों की रोशनी छीनकर दी।",
+          "ru": "В наказание за жестокость птицы лишили их зрения.",
+          "bn": "পাখিরা তাদের নিষ্ঠুরতার শাস্তি দিল তাদের চোখের দৃষ্টি কেড়ে নিয়ে।",
+          "ur": "پرندوں نے ان کی بینائی چھین کر ان کے ظلم کی سزا دی۔",
+          "th": "นกลงโทษความใจร้ายของพวกนางด้วยการทำให้ตาบอด"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-cinderella-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "A girl finds help and marries a prince",
+          "A girl finds gold and buys a palace",
+          "A girl helps her sisters marry two princes",
+          "A girl leaves home to become a queen's servant"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "classic-cinderella-q2",
+        "kind": "detail",
+        "prompt": "What did Cinderella plant on her mother's grave?",
+        "options": [
+          "A hazel branch",
+          "An apple tree",
+          "Lentils",
+          "A rose"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "classic-cinderella-q3",
+        "kind": "detail",
+        "prompt": "How did the prince get Cinderella's golden slipper?",
+        "options": [
+          "He asked a bird to take it",
+          "He found it beside the garden tree",
+          "He caught it as she threw it",
+          "He made it stick to the stairs"
+        ],
+        "answer": 3
+      },
+      {
+        "id": "classic-cinderella-q4",
+        "kind": "inference",
+        "prompt": "What helped the prince discover the stepsisters' trick?",
+        "options": [
+          "Their father explained how they had hurt their feet",
+          "The king showed him their shoes beside the stairs",
+          "The birds warned him, and he saw the blood",
+          "Cinderella told him, and he found the other slipper"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "classic-cinderella-q5",
+        "kind": "detail",
+        "prompt": "What did the stepsisters think when they saw Cinderella at the festival?",
+        "options": [
+          "That she was a foreign princess",
+          "That she was their sister",
+          "That she was a kitchen girl",
+          "That she was the queen"
+        ],
+        "answer": 0
+      }
+    ],
+    "tags": [
+      "masal",
+      "macera"
+    ],
+    "descriptions": {
+      "es-419": "Cenicienta. El avellano, los pájaros que ayudan y la zapatilla de oro del relato de Grimm. Adaptación breve de nivel A2. Adaptación: English Tales. Imagen histórica: Walter Crane; ilustración interior del libro, no es una portada aparte de primera edición.",
+      "pt-BR": "Cinderela. A aveleira, os pássaros que ajudam e o sapatinho de ouro do conto dos Grimm. Adaptação curta de nível A2. Adaptação: English Tales. Imagem histórica: Walter Crane; ilustração interna do livro, não é uma capa separada de primeira edição.",
+      "id": "Cinderella. Pohon hazel, burung-burung penolong, dan sepatu emas dalam kisah versi Grimm. Adaptasi singkat tingkat A2. Adaptasi: English Tales. Gambar historis: Walter Crane; ilustrasi di dalam buku, bukan sampul edisi pertama tersendiri.",
+      "ar": "سندريلا. شجرة البندق والطيور المساعدة والحذاء الذهبي في رواية الأخوين غريم. اقتباس قصير بمستوى A2. الاقتباس: English Tales. صورة تاريخية: والتر كرين؛ رسم توضيحي داخل الكتاب، وليس غلافًا منفصلًا للطبعة الأولى.",
+      "vi": "Cô bé Lọ Lem. Cây phỉ, những chú chim giúp đỡ và chiếc giày vàng trong truyện kể của anh em Grimm. Bản phóng tác ngắn trình độ A2. Phóng tác: English Tales. Hình ảnh lịch sử: Walter Crane; tranh minh họa bên trong sách, không phải bìa riêng của ấn bản đầu tiên.",
+      "hi": "सिंड्रेला। ग्रिम की कहानी वाला हेज़ल का पेड़, मदद करने वाली चिड़ियाँ और सोने की जूती। A2 स्तर का छोटा रूपांतरण। रूपांतरण: English Tales। ऐतिहासिक चित्र: Walter Crane; किताब के अंदर का चित्र, पहले संस्करण का अलग कवर नहीं।",
+      "ru": "Золушка. Орешник, птицы-помощницы и золотая туфелька из сказки братьев Гримм. Краткая адаптация уровня A2. Адаптация: English Tales. Историческое изображение: Уолтер Крейн; внутренняя иллюстрация из книги, а не отдельная обложка первого издания.",
+      "bn": "সিন্ডারেলা। গ্রিমের গল্পের হ্যাজেল গাছ, সাহায্যকারী পাখি আর সোনার জুতো। A2 স্তরের ছোট রূপান্তর। রূপান্তর: English Tales। ঐতিহাসিক ছবি: Walter Crane; বইয়ের ভেতরের ছবি, প্রথম সংস্করণের আলাদা প্রচ্ছদ নয়।",
+      "ur": "سنڈریلا۔ گریم کی کہانی کا فندق کا درخت، مدد کرنے والے پرندے اور سونے کی جوتی۔ A2 سطح کی مختصر ماخوذ کہانی۔ ترتیب: English Tales۔ تاریخی تصویر: Walter Crane؛ کتاب کے اندر کی تصویر، پہلے ایڈیشن کا الگ سرورق نہیں۔",
+      "th": "ซินเดอเรลล่า: ต้นเฮเซล นกผู้ช่วยเหลือ และรองเท้าทองคำในฉบับของพี่น้องกริมม์ ฉบับดัดแปลงสั้น ๆ ระดับ A2 ดัดแปลงโดย English Tales ภาพเก่าทางประวัติศาสตร์: Walter Crane; ภาพประกอบภายในเล่ม ไม่ใช่ปกแยกของฉบับพิมพ์ครั้งแรก"
+    }
+  },
+  "words": [
+    {
+      "id": "father",
+      "word": "father",
+      "translation": "baba",
+      "pronunciation": "/ˈfɑːðə(r)/",
+      "example": "A father has several sons.",
+      "translations": {
+        "es-419": "padre",
+        "pt-BR": "pai",
+        "id": "ayah",
+        "ar": "أب",
+        "vi": "người cha",
+        "hi": "पिता",
+        "ru": "отец",
+        "bn": "বাবা",
+        "ur": "باپ، والد",
+        "th": "พ่อ"
+      }
+    },
+    {
+      "id": "hazel",
+      "word": "hazel",
+      "translation": "fındık",
+      "pronunciation": "/ˈheɪzl/",
+      "example": "A hazel tree grows there.",
+      "translations": {
+        "es-419": "avellano",
+        "pt-BR": "aveleira",
+        "id": "pohon hazel",
+        "ar": "بندق (شجرة)",
+        "vi": "cây phỉ",
+        "hi": "हेज़ल का पेड़",
+        "ru": "орешник, лещина",
+        "bn": "হ্যাজেল গাছ",
+        "ur": "فندق کا درخت",
+        "th": "ต้นเฮเซล"
+      }
+    },
+    {
+      "id": "grave",
+      "word": "grave",
+      "translation": "mezar",
+      "pronunciation": "/ɡreɪv/",
+      "example": "She visits her mother's grave.",
+      "translations": {
+        "es-419": "tumba",
+        "pt-BR": "túmulo",
+        "id": "makam, kuburan",
+        "ar": "قبر",
+        "vi": "ngôi mộ",
+        "hi": "कब्र",
+        "ru": "могила",
+        "bn": "কবর",
+        "ur": "قبر",
+        "th": "หลุมศพ"
+      }
+    },
+    {
+      "id": "king",
+      "word": "king",
+      "translation": "kral",
+      "pronunciation": "/kɪŋ/",
+      "example": "After the queen died, the king married another woman.",
+      "translations": {
+        "es-419": "rey",
+        "pt-BR": "rei",
+        "id": "raja",
+        "ar": "ملك",
+        "vi": "nhà vua",
+        "hi": "राजा",
+        "ru": "король",
+        "bn": "রাজা",
+        "ur": "بادشاہ",
+        "th": "พระราชา"
+      }
+    },
+    {
+      "id": "festival",
+      "word": "festival",
+      "translation": "şenlik",
+      "pronunciation": "/ˈfestɪvl/",
+      "example": "The festival lasts three days.",
+      "translations": {
+        "es-419": "fiesta",
+        "pt-BR": "festa",
+        "id": "pesta",
+        "ar": "احتفال، مهرجان",
+        "vi": "lễ hội",
+        "hi": "उत्सव, मेला",
+        "ru": "праздник, бал",
+        "bn": "উৎসব",
+        "ur": "میلہ، جشن",
+        "th": "งานเทศกาล, งานรื่นเริง"
+      }
+    },
+    {
+      "id": "bride",
+      "word": "bride",
+      "translation": "gelin",
+      "pronunciation": "/braɪd/",
+      "example": "The prince hopes to find a bride.",
+      "translations": {
+        "es-419": "novia, esposa",
+        "pt-BR": "noiva, esposa",
+        "id": "pengantin perempuan, istri",
+        "ar": "عروس",
+        "vi": "cô dâu, vợ",
+        "hi": "दुल्हन",
+        "ru": "невеста",
+        "bn": "কনে, বউ",
+        "ur": "دلہن",
+        "th": "เจ้าสาว"
+      }
+    },
+    {
+      "id": "lentils",
+      "word": "lentils",
+      "translation": "mercimekler",
+      "pronunciation": "/ˈlentlz/",
+      "example": "The birds pick up the lentils.",
+      "translations": {
+        "es-419": "lentejas",
+        "pt-BR": "lentilhas",
+        "id": "kacang lentil",
+        "ar": "عدس",
+        "vi": "đậu lăng",
+        "hi": "दालें, मसूर",
+        "ru": "чечевица",
+        "bn": "ডাল, মসুর",
+        "ur": "دالیں، مسور",
+        "th": "ถั่วเลนทิล"
+      }
+    },
+    {
+      "id": "ashes",
+      "word": "ashes",
+      "translation": "küller",
+      "pronunciation": "/ˈæʃɪz/",
+      "example": "She sits beside the ashes.",
+      "translations": {
+        "es-419": "cenizas",
+        "pt-BR": "cinzas",
+        "id": "abu",
+        "ar": "رماد",
+        "vi": "tro",
+        "hi": "राख",
+        "ru": "зола, пепел",
+        "bn": "ছাই",
+        "ur": "راکھ",
+        "th": "ขี้เถ้า"
+      }
+    },
+    {
+      "id": "help",
+      "word": "help",
+      "translation": "yardım",
+      "pronunciation": "/help/",
+      "example": "Thank you for your help.",
+      "translations": {
+        "es-419": "ayuda",
+        "pt-BR": "ajuda",
+        "id": "bantuan",
+        "ar": "مساعدة",
+        "vi": "sự giúp đỡ",
+        "hi": "मदद",
+        "ru": "помощь; помогать",
+        "bn": "সাহায্য",
+        "ur": "مدد",
+        "th": "ความช่วยเหลือ"
+      }
+    },
+    {
+      "id": "dress",
+      "word": "dress",
+      "translation": "elbise",
+      "pronunciation": "/dres/",
+      "example": "\"Then I can sell the chickens and buy a fine dress.\"",
+      "translations": {
+        "es-419": "vestido",
+        "pt-BR": "vestido",
+        "id": "gaun",
+        "ar": "فستان",
+        "vi": "chiếc váy",
+        "hi": "पोशाक, ड्रेस",
+        "ru": "платье",
+        "bn": "পোশাক, জামা",
+        "ur": "لباس، فراک",
+        "th": "ชุดกระโปรง"
+      }
+    },
+    {
+      "id": "prince",
+      "word": "prince",
+      "translation": "prens",
+      "pronunciation": "/prɪns/",
+      "example": "A prince saw her and asked to take the coffin with him.",
+      "translations": {
+        "es-419": "príncipe",
+        "pt-BR": "príncipe",
+        "id": "pangeran",
+        "ar": "أمير",
+        "vi": "hoàng tử",
+        "hi": "राजकुमार",
+        "ru": "принц",
+        "bn": "রাজপুত্র",
+        "ur": "شہزادہ",
+        "th": "เจ้าชาย"
+      }
+    },
+    {
+      "id": "pitch",
+      "word": "pitch",
+      "translation": "zift",
+      "pronunciation": "/pɪtʃ/",
+      "example": "Sticky pitch covers the stairs.",
+      "translations": {
+        "es-419": "brea",
+        "pt-BR": "piche",
+        "id": "ter",
+        "ar": "قار، زفت",
+        "vi": "nhựa đường, hắc ín",
+        "hi": "डामर, राल",
+        "ru": "смола",
+        "bn": "আলকাতরা",
+        "ur": "رال، تارکول",
+        "th": "ยางมะตอย, ชัน"
+      }
+    },
+    {
+      "id": "golden",
+      "word": "golden",
+      "translation": "altın; altından",
+      "pronunciation": "/ˈɡəʊldən/",
+      "example": "Every day, she lays a golden egg.",
+      "translations": {
+        "es-419": "de oro, dorado",
+        "pt-BR": "de ouro, dourado",
+        "id": "emas",
+        "ar": "ذهبي",
+        "vi": "bằng vàng, vàng óng",
+        "hi": "सोने का, सुनहरा",
+        "ru": "золотой",
+        "bn": "সোনার, সোনালি",
+        "ur": "سنہری؛ سونے کا",
+        "th": "ทองคำ, สีทอง"
+      }
+    },
+    {
+      "id": "slipper",
+      "word": "slipper",
+      "translation": "ayakkabı",
+      "pronunciation": "/ˈslɪpə(r)/",
+      "example": "The golden slipper fits her.",
+      "translations": {
+        "es-419": "zapatilla",
+        "pt-BR": "sapatinho",
+        "id": "sepatu, selop",
+        "ar": "حذاء، خُفّ",
+        "vi": "chiếc giày",
+        "hi": "जूती",
+        "ru": "туфелька",
+        "bn": "জুতো, চটি",
+        "ur": "جوتی",
+        "th": "รองเท้า"
+      }
+    },
+    {
+      "id": "fortune",
+      "word": "fortune",
+      "translation": "talih; servet",
+      "pronunciation": "/ˈfɔːtʃuːn/",
+      "example": "His greed has taken away his good fortune.",
+      "translations": {
+        "es-419": "fortuna, suerte",
+        "pt-BR": "fortuna, sorte",
+        "id": "keberuntungan",
+        "ar": "حظّ؛ ثروة",
+        "vi": "vận may; của cải",
+        "hi": "किस्मत; दौलत",
+        "ru": "богатство, состояние",
+        "bn": "সৌভাগ্য; ধনসম্পদ",
+        "ur": "قسمت؛ دولت",
+        "th": "โชคลาภ"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "father",
+    "hazel",
+    "grave",
+    "king",
+    "festival",
+    "bride",
+    "lentils",
+    "ashes",
+    "help",
+    "dress",
+    "prince",
+    "pitch",
+    "golden",
+    "slipper",
+    "fortune"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-cinderella-q1",
+      "sentenceIds": [
+        "cl-cinderella-14",
+        "cl-cinderella-15",
+        "cl-cinderella-25",
+        "cl-cinderella-26"
+      ],
+      "rationale": "With the bird's help she goes to the festival, and the prince finds her and takes her away."
+    },
+    {
+      "questionId": "classic-cinderella-q2",
+      "sentenceIds": [
+        "cl-cinderella-05"
+      ],
+      "rationale": "She plants the hazel branch on her mother's grave."
+    },
+    {
+      "questionId": "classic-cinderella-q3",
+      "sentenceIds": [
+        "cl-cinderella-18",
+        "cl-cinderella-19"
+      ],
+      "rationale": "The prince puts pitch on the stairs and her golden slipper sticks there."
+    },
+    {
+      "questionId": "classic-cinderella-q4",
+      "sentenceIds": [
+        "cl-cinderella-22"
+      ],
+      "rationale": "The birds warn the prince, and he sees the blood."
+    },
+    {
+      "questionId": "classic-cinderella-q5",
+      "sentenceIds": [
+        "classic-cinderella-ext-14-02"
+      ],
+      "rationale": "They did not recognize her and thought she was a foreign princess."
+    }
+  ],
+  "publicationBlockers": [
+    "Owner (oguz) approval of the English text, questions and translations required.",
+    "Fresh live source snapshot and publisher validation required."
+  ],
+  "lengthening": {
+    "wordsBefore": 290,
+    "wordsAfter": 843,
+    "sentencesBefore": 28,
+    "sentencesAfter": 70
+  }
+}

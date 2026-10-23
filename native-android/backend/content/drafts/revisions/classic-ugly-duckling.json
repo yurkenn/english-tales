@@ -1,0 +1,2319 @@
+{
+  "status": "draft",
+  "kind": "revision",
+  "source": "story-lengthening-b1-batch1-2026-10-22",
+  "reviewedBy": null,
+  "baseStoryId": "classic-ugly-duckling",
+  "baseStorySHA256": "d401c000559e70571f19de2f618e993e9f746d91e34673186af9187cddc61a3d",
+  "editorialNotes": [
+    "Restores scenes from Andersen's text (1843) that the adaptation had skipped: the summer countryside, the old duck's turkey-egg warning, the first swim, the farmyard cruelty, the wild ducks and geese, the hunters and the dog, the cat and hen's questions, the autumn swans, the shrinking ice hole, the milk pan and flour barrel, the spring garden, and the duckling's last cry of happiness.",
+    "Every legacy sentence, its ID and its translations are kept unchanged; new sentences are only inserted between them. Plot, characters, ending and lesson are unchanged.",
+    "New sentences have AI-drafted translations in all ten additional support languages, following the gender and wording already used in each legacy translation. No native-speaker review."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "unchangedTranslationsPreserved": true,
+    "newSentenceIds": [
+      "classic-ugly-duckling-ext-01-01",
+      "classic-ugly-duckling-ext-01-02",
+      "classic-ugly-duckling-ext-01-03",
+      "classic-ugly-duckling-ext-01-04",
+      "classic-ugly-duckling-ext-01-05",
+      "classic-ugly-duckling-ext-02-01",
+      "classic-ugly-duckling-ext-02-02",
+      "classic-ugly-duckling-ext-02-03",
+      "classic-ugly-duckling-ext-03-01",
+      "classic-ugly-duckling-ext-03-02",
+      "classic-ugly-duckling-ext-03-03",
+      "classic-ugly-duckling-ext-03-04",
+      "classic-ugly-duckling-ext-04-01",
+      "classic-ugly-duckling-ext-04-02",
+      "classic-ugly-duckling-ext-05-01",
+      "classic-ugly-duckling-ext-05-02",
+      "classic-ugly-duckling-ext-05-03",
+      "classic-ugly-duckling-ext-05-04",
+      "classic-ugly-duckling-ext-05-05",
+      "classic-ugly-duckling-ext-05-06",
+      "classic-ugly-duckling-ext-06-01",
+      "classic-ugly-duckling-ext-06-02",
+      "classic-ugly-duckling-ext-07-01",
+      "classic-ugly-duckling-ext-07-02",
+      "classic-ugly-duckling-ext-07-03",
+      "classic-ugly-duckling-ext-08-01",
+      "classic-ugly-duckling-ext-08-02",
+      "classic-ugly-duckling-ext-08-03",
+      "classic-ugly-duckling-ext-08-04",
+      "classic-ugly-duckling-ext-08-05",
+      "classic-ugly-duckling-ext-09-01",
+      "classic-ugly-duckling-ext-09-02",
+      "classic-ugly-duckling-ext-10-01",
+      "classic-ugly-duckling-ext-10-02",
+      "classic-ugly-duckling-ext-10-03",
+      "classic-ugly-duckling-ext-11-01",
+      "classic-ugly-duckling-ext-11-02",
+      "classic-ugly-duckling-ext-11-03",
+      "classic-ugly-duckling-ext-11-04",
+      "classic-ugly-duckling-ext-11-05",
+      "classic-ugly-duckling-ext-12-01",
+      "classic-ugly-duckling-ext-13-01",
+      "classic-ugly-duckling-ext-13-02",
+      "classic-ugly-duckling-ext-13-03",
+      "classic-ugly-duckling-ext-14-01",
+      "classic-ugly-duckling-ext-15-01",
+      "classic-ugly-duckling-ext-15-02",
+      "classic-ugly-duckling-ext-16-01",
+      "classic-ugly-duckling-ext-16-02",
+      "classic-ugly-duckling-ext-17-01",
+      "classic-ugly-duckling-ext-18-01",
+      "classic-ugly-duckling-ext-19-01",
+      "classic-ugly-duckling-ext-19-02",
+      "classic-ugly-duckling-ext-19-03",
+      "classic-ugly-duckling-ext-19-04",
+      "classic-ugly-duckling-ext-20-01",
+      "classic-ugly-duckling-ext-20-02",
+      "classic-ugly-duckling-ext-20-03",
+      "classic-ugly-duckling-ext-21-01",
+      "classic-ugly-duckling-ext-21-02",
+      "classic-ugly-duckling-ext-22-01",
+      "classic-ugly-duckling-ext-22-02",
+      "classic-ugly-duckling-ext-23-01",
+      "classic-ugly-duckling-ext-23-02",
+      "classic-ugly-duckling-ext-23-03",
+      "classic-ugly-duckling-ext-25-01",
+      "classic-ugly-duckling-ext-25-02",
+      "classic-ugly-duckling-ext-25-03",
+      "classic-ugly-duckling-ext-26-01",
+      "classic-ugly-duckling-ext-26-02",
+      "classic-ugly-duckling-ext-26-03",
+      "classic-ugly-duckling-ext-26-04",
+      "classic-ugly-duckling-ext-26-05",
+      "classic-ugly-duckling-ext-27-01",
+      "classic-ugly-duckling-ext-27-02"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+  },
+  "story": {
+    "id": "classic-ugly-duckling",
+    "title": "The Ugly Duckling",
+    "author": "Hans Christian Andersen",
+    "level": "B1",
+    "genre": "Macera",
+    "description": "Çirkin Ördek Yavrusu. Kendini ait olmadığı bir yerde bulan yavrunun, kim olduğunu keşfetmesi. B1 düzeyinde kısa uyarlama. Uyarlama ve Türkçe çeviri: English Tales. Tarihî görsel: Vilhelm Pedersen; kitap içi illüstrasyon, ayrı bir ilk baskı kapağı değildir.",
+    "coverKey": "cover_classic_ugly_duckling",
+    "sentences": [
+      {
+        "id": "cl-ugly-duckling-01",
+        "english": "A duck sat on her nest, waiting for the last and largest egg to hatch.",
+        "turkish": "Bir ördek yuvasında oturmuş, son ve en büyük yumurtanın çatlamasını bekliyordu.",
+        "translations": {
+          "es-419": "Una pata estaba echada en su nido, esperando que saliera del cascarón el último y más grande de sus huevos.",
+          "pt-BR": "Uma pata estava no ninho, esperando o último e maior ovo chocar.",
+          "id": "Seekor induk itik duduk di sarangnya, menunggu telur terakhir dan terbesar menetas.",
+          "ar": "جلست بطّة على عشّها تنتظر أن تفقس البيضة الأخيرة والأكبر.",
+          "vi": "Một cô vịt nằm ấp trong tổ, chờ quả trứng cuối cùng và to nhất nở ra.",
+          "hi": "एक बत्तख अपने घोंसले पर बैठी थी और आख़िरी, सबसे बड़े अंडे के फूटने का इंतज़ार कर रही थी।",
+          "ru": "Утка сидела на гнезде и ждала, когда вылупится последнее, самое большое яйцо.",
+          "bn": "একটা হাঁস তার বাসায় বসে ছিল, শেষ আর সবচেয়ে বড় ডিমটা ফোটার অপেক্ষায়।",
+          "ur": "ایک بطخ اپنے گھونسلے پر بیٹھی آخری اور سب سے بڑے انڈے کے پھوٹنے کا انتظار کر رہی تھی۔",
+          "th": "แม่เป็ดตัวหนึ่งนั่งกกไข่อยู่ในรัง รอให้ไข่ฟองสุดท้ายซึ่งใหญ่ที่สุดฟักออกมา"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-01-01",
+        "english": "It was summer, and the countryside was lovely, with golden corn and green fields.",
+        "turkish": "Yaz mevsimiydi ve kırlar altın sarısı ekinler ile yeşil tarlalarla çok güzeldi.",
+        "translations": {
+          "es-419": "Era verano, y el campo estaba precioso, con trigo dorado y prados verdes.",
+          "pt-BR": "Era verão, e o campo estava lindo, com o trigo dourado e os pastos verdes.",
+          "id": "Saat itu musim panas, dan pedesaan tampak indah dengan gandum keemasan dan ladang hijau.",
+          "ar": "كان الصيف، وكان الريف جميلًا بسنابل القمح الذهبية والحقول الخضراء.",
+          "vi": "Đó là mùa hè, miền quê thật đẹp với những cánh đồng lúa vàng và đồng cỏ xanh.",
+          "hi": "गर्मियों के दिन थे, और सुनहरी फ़सलों और हरे खेतों से गाँव बहुत सुंदर लग रहा था।",
+          "ru": "Было лето, и в деревне было чудесно: золотилась пшеница, зеленели луга.",
+          "bn": "তখন গ্রীষ্মকাল, সোনালি ফসল আর সবুজ মাঠে গ্রামটা ভারি সুন্দর দেখাচ্ছিল।",
+          "ur": "گرمیوں کے دن تھے، اور سنہری فصلوں اور ہرے کھیتوں سے دیہات بہت خوبصورت لگ رہا تھا۔",
+          "th": "ตอนนั้นเป็นฤดูร้อน ชนบทงดงามด้วยทุ่งข้าวสีทองและท้องทุ่งเขียวขจี"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-01-02",
+        "english": "The duck's nest was hidden among large leaves near the water.",
+        "turkish": "Ördeğin yuvası suyun yakınında, iri yaprakların arasına gizlenmişti.",
+        "translations": {
+          "es-419": "El nido de la pata estaba escondido entre hojas grandes, cerca del agua.",
+          "pt-BR": "O ninho da pata ficava escondido entre folhas grandes, perto da água.",
+          "id": "Sarang induk itik itu tersembunyi di antara daun-daun besar di dekat air.",
+          "ar": "كان عشّ البطّة مخبّأً بين أوراق كبيرة قرب الماء.",
+          "vi": "Tổ của vịt mẹ nằm khuất giữa những tán lá to gần mặt nước.",
+          "hi": "बत्तख का घोंसला पानी के पास बड़े-बड़े पत्तों के बीच छिपा था।",
+          "ru": "Гнездо утки пряталось среди больших листьев у самой воды.",
+          "bn": "হাঁসের বাসাটা জলের ধারে বড় বড় পাতার আড়ালে লুকোনো ছিল।",
+          "ur": "بطخ کا گھونسلا پانی کے قریب بڑے بڑے پتوں کے بیچ چھپا ہوا تھا۔",
+          "th": "รังของแม่เป็ดซ่อนอยู่ท่ามกลางใบไม้ใหญ่ริมน้ำ"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-01-03",
+        "english": "She was tired of sitting, because the other ducks rarely came to visit her.",
+        "turkish": "Oturmaktan yorulmuştu, çünkü diğer ördekler onu pek ziyarete gelmiyordu.",
+        "translations": {
+          "es-419": "Estaba cansada de estar echada, porque las otras patas casi nunca iban a visitarla.",
+          "pt-BR": "Ela estava cansada de chocar, porque as outras patas quase nunca vinham visitá-la.",
+          "id": "Ia sudah lelah duduk, karena itik-itik lain jarang datang menjenguknya.",
+          "ar": "كانت قد تعبت من الجلوس، لأن البطّ الآخر نادرًا ما كان يأتي لزيارتها.",
+          "vi": "Vịt mẹ đã mỏi mệt vì ngồi ấp, bởi những con vịt khác hiếm khi ghé thăm.",
+          "hi": "वह बैठे-बैठे थक गई थी, क्योंकि दूसरी बत्तखें उससे मिलने कम ही आती थीं।",
+          "ru": "Ей надоело сидеть, ведь другие утки редко её навещали.",
+          "bn": "বসে থাকতে থাকতে সে ক্লান্ত হয়ে পড়েছিল, কারণ অন্য হাঁসেরা কমই তার সঙ্গে দেখা করতে আসত।",
+          "ur": "وہ بیٹھے بیٹھے تھک گئی تھی، کیونکہ دوسری بطخیں اس سے ملنے کم ہی آتی تھیں۔",
+          "th": "นางเบื่อการนั่งกกไข่ เพราะเป็ดตัวอื่นแทบไม่เคยมาเยี่ยมเลย"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-01-04",
+        "english": "An old duck looked at the big egg and said, \"That is a turkey's egg. Leave it and teach the others to swim.\"",
+        "turkish": "Yaşlı bir ördek büyük yumurtaya baktı ve \"Bu bir hindi yumurtası. Onu bırak da ötekilere yüzmeyi öğret,\" dedi.",
+        "translations": {
+          "es-419": "Una pata vieja miró el huevo grande y dijo: \"Ese es un huevo de pavo. Déjalo y enséñales a nadar a los demás\".",
+          "pt-BR": "Uma pata velha olhou para o ovo grande e disse: — Isso é ovo de peru. Deixe-o aí e ensine os outros a nadar.",
+          "id": "Seekor itik tua melihat telur besar itu dan berkata, \"Itu telur kalkun. Tinggalkan saja dan ajari yang lain berenang.\"",
+          "ar": "نظرت بطّة عجوز إلى البيضة الكبيرة وقالت: «هذه بيضة ديك رومي. اتركيها وعلّمي الآخرين السباحة.»",
+          "vi": "Một bà vịt già nhìn quả trứng to và nói: \"Đó là trứng gà tây đấy. Bỏ nó đi mà dạy mấy đứa kia bơi.\"",
+          "hi": "एक बूढ़ी बत्तख ने बड़े अंडे को देखकर कहा, \"यह तो टर्की का अंडा है। इसे छोड़ो और बाकियों को तैरना सिखाओ।\"",
+          "ru": "Старая утка посмотрела на большое яйцо и сказала: «Это индюшачье яйцо. Брось его и учи остальных плавать».",
+          "bn": "এক বুড়ো হাঁস বড় ডিমটা দেখে বলল, \"এটা তো টার্কির ডিম। এটা ছেড়ে দাও, বাকিদের সাঁতার শেখাও।\"",
+          "ur": "ایک بوڑھی بطخ نے بڑے انڈے کو دیکھ کر کہا، \"یہ تو ٹرکی کا انڈا ہے۔ اسے چھوڑو اور باقیوں کو تیرنا سکھاؤ۔\"",
+          "th": "เป็ดแก่ตัวหนึ่งมองไข่ฟองใหญ่แล้วพูดว่า \"นั่นไข่ไก่งวงนี่ ทิ้งไว้เถอะ ไปสอนลูกตัวอื่นว่ายน้ำดีกว่า\""
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-01-05",
+        "english": "But the mother said, \"I have sat so long already that I can sit a little longer.\"",
+        "turkish": "Ama anne ördek, \"Bu kadar uzun oturdum, biraz daha oturabilirim,\" dedi.",
+        "translations": {
+          "es-419": "Pero la madre dijo: \"Ya he estado echada tanto tiempo que puedo aguantar un poco más\".",
+          "pt-BR": "Mas a mãe disse: — Já fiquei tanto tempo aqui que posso ficar mais um pouco.",
+          "id": "Tetapi sang induk berkata, \"Aku sudah duduk begitu lama, jadi aku bisa duduk sedikit lebih lama lagi.\"",
+          "ar": "لكن الأم قالت: «لقد جلستُ طويلًا حتى الآن، فلا بأس أن أجلس قليلًا بعد.»",
+          "vi": "Nhưng vịt mẹ nói: \"Tôi đã ấp lâu thế rồi, ấp thêm chút nữa cũng chẳng sao.\"",
+          "hi": "लेकिन माँ बत्तख बोली, \"इतने दिन बैठी हूँ, तो थोड़ा और बैठ सकती हूँ।\"",
+          "ru": "Но мать ответила: «Я так долго сидела, что посижу ещё немножко».",
+          "bn": "কিন্তু মা-হাঁস বলল, \"এত দিন যখন বসেছি, আর একটু বসতে পারব।\"",
+          "ur": "لیکن ماں بطخ بولی، \"اتنے دن بیٹھی ہوں، تو تھوڑا اور بیٹھ سکتی ہوں۔\"",
+          "th": "แต่แม่เป็ดตอบว่า \"ข้านั่งมานานขนาดนี้แล้ว นั่งต่ออีกหน่อยก็ได้\""
+        }
+      },
+      {
+        "id": "cl-ugly-duckling-02",
+        "english": "When it opened, a large grey bird stepped out among her little ducklings.",
+        "turkish": "Yumurta açıldığında küçük ördek yavrularının arasına iri, gri bir kuş çıktı.",
+        "translations": {
+          "es-419": "Cuando se abrió, un pájaro grande y gris salió entre sus patitos.",
+          "pt-BR": "Quando ele se abriu, um pássaro grande e cinzento saiu no meio dos seus patinhos.",
+          "id": "Ketika telur itu pecah, seekor burung besar berwarna kelabu keluar di antara anak-anak itiknya yang kecil.",
+          "ar": "عندما انفتحت، خرج طائر رمادي كبير بين فراخها الصغيرة.",
+          "vi": "Khi trứng nở, một chú chim to lớn màu xám bước ra giữa đàn vịt con nhỏ bé.",
+          "hi": "जब वह फूटा, तो उसके छोटे-छोटे बच्चों के बीच एक बड़ा धूसर पंछी बाहर निकला।",
+          "ru": "Когда оно раскрылось, среди её маленьких утят оказался большой серый птенец.",
+          "bn": "ডিমটা ফুটতেই তার ছোট্ট ছানাদের মধ্যে বেরিয়ে এল একটা বড়সড় ধূসর পাখি।",
+          "ur": "جب وہ کھلا تو اس کے ننھے بچوں کے بیچ ایک بڑا سرمئی پرندہ باہر نکلا۔",
+          "th": "เมื่อไข่แตกออก นกตัวใหญ่สีเทาตัวหนึ่งก็ก้าวออกมาท่ามกลางลูกเป็ดตัวน้อยของนาง"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-02-01",
+        "english": "\"Peep, peep,\" said the newcomer, and he tumbled out of the shell.",
+        "turkish": "Yeni gelen \"Cik, cik,\" dedi ve kabuğundan yuvarlanarak çıktı.",
+        "translations": {
+          "es-419": "\"Pío, pío\", dijo el recién llegado, y salió rodando del cascarón.",
+          "pt-BR": "— Piu, piu — disse o recém-chegado, e saiu rolando da casca.",
+          "id": "\"Ciap, ciap,\" kata si pendatang baru, lalu ia terguling keluar dari cangkangnya.",
+          "ar": "قال القادم الجديد: «صوصو، صوصو»، وتدحرج خارجًا من القشرة.",
+          "vi": "\"Chíp, chíp,\" kẻ mới đến kêu lên rồi lăn ra khỏi vỏ trứng.",
+          "hi": "नए बच्चे ने \"चीं, चीं\" कहा और लुढ़ककर खोल से बाहर आ गया।",
+          "ru": "«Пи-пи», — пискнул новенький и вывалился из скорлупы.",
+          "bn": "নতুন ছানাটা \"চিঁ চিঁ\" করে ডিমের খোসা থেকে গড়িয়ে বেরিয়ে এল।",
+          "ur": "نئے بچے نے \"چوں، چوں\" کہا اور لڑھک کر چھلکے سے باہر آ گیا۔",
+          "th": "\"จิ๊บ จิ๊บ\" เจ้าตัวใหม่ร้อง แล้วก็กลิ้งออกมาจากเปลือกไข่"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-02-02",
+        "english": "He was very large and very ugly.",
+        "turkish": "Çok iriydi ve çok çirkindi.",
+        "translations": {
+          "es-419": "Era muy grande y muy feo.",
+          "pt-BR": "Ele era muito grande e muito feio.",
+          "id": "Ia sangat besar dan sangat jelek.",
+          "ar": "كان كبيرًا جدًا وقبيحًا جدًا.",
+          "vi": "Chú rất to và rất xấu xí.",
+          "hi": "वह बहुत बड़ा और बहुत बदसूरत था।",
+          "ru": "Он был очень большой и очень некрасивый.",
+          "bn": "সে ছিল খুব বড় আর খুব কুৎসিত।",
+          "ur": "وہ بہت بڑا اور بہت بدصورت تھا۔",
+          "th": "มันตัวใหญ่มากและน่าเกลียดมาก"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-02-03",
+        "english": "The duck looked at him and thought, \"Could he be a turkey chick? I will soon find out.\"",
+        "turkish": "Ördek ona baktı ve \"Acaba bir hindi yavrusu mu? Yakında anlarım,\" diye düşündü.",
+        "translations": {
+          "es-419": "La pata lo miró y pensó: \"¿Será un pavito? Pronto lo sabré\".",
+          "pt-BR": "A pata olhou para ele e pensou: \"Será que é um filhote de peru? Logo vou descobrir.\"",
+          "id": "Induk itik memandanginya dan berpikir, \"Apakah ia anak kalkun? Aku akan segera tahu.\"",
+          "ar": "نظرت إليه البطّة وفكّرت: «هل يكون فرخ ديك رومي؟ سأعرف ذلك قريبًا.»",
+          "vi": "Vịt mẹ nhìn chú và nghĩ: \"Hay nó là gà tây con? Rồi mình sẽ biết ngay.\"",
+          "hi": "बत्तख ने उसे देखा और सोचा, \"कहीं यह टर्की का बच्चा तो नहीं? जल्दी ही पता चल जाएगा।\"",
+          "ru": "Утка посмотрела на него и подумала: «Неужели это индюшонок? Скоро узнаю».",
+          "bn": "হাঁসটা তার দিকে তাকিয়ে ভাবল, \"এ কি টার্কির ছানা? শিগগিরই বুঝতে পারব।\"",
+          "ur": "بطخ نے اسے دیکھا اور سوچا، \"کہیں یہ ٹرکی کا بچہ تو نہیں؟ جلد ہی پتا چل جائے گا۔\"",
+          "th": "แม่เป็ดมองมันแล้วคิดว่า \"หรือจะเป็นลูกไก่งวง เดี๋ยวก็รู้\""
+        }
+      },
+      {
+        "id": "cl-ugly-duckling-03",
+        "english": "He looked different from the others, but he could swim very well.",
+        "turkish": "Diğerlerinden farklı görünüyordu ama çok iyi yüzebiliyordu.",
+        "translations": {
+          "es-419": "Se veía diferente de los demás, pero nadaba muy bien.",
+          "pt-BR": "Ele era diferente dos outros, mas nadava muito bem.",
+          "id": "Ia tampak berbeda dari yang lain, tetapi ia bisa berenang dengan sangat baik.",
+          "ar": "كان يبدو مختلفًا عن الآخرين، لكنه كان يسبح جيدًا جدًا.",
+          "vi": "Chú trông khác với những con khác, nhưng chú bơi rất giỏi.",
+          "hi": "वह बाकियों से अलग दिखता था, लेकिन बहुत अच्छा तैर सकता था।",
+          "ru": "Он был не похож на остальных, но плавал очень хорошо.",
+          "bn": "তাকে অন্যদের থেকে আলাদা দেখাত, কিন্তু সে খুব ভালো সাঁতার কাটতে পারত।",
+          "ur": "وہ باقیوں سے مختلف دکھائی دیتا تھا، لیکن وہ بہت اچھا تیر سکتا تھا۔",
+          "th": "มันดูแตกต่างจากตัวอื่น ๆ แต่มันว่ายน้ำเก่งมาก"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-03-01",
+        "english": "The next day, the whole family went down to the water, and the mother jumped in with a splash.",
+        "turkish": "Ertesi gün bütün aile suya indi ve anne ördek şapırtıyla suya atladı.",
+        "translations": {
+          "es-419": "Al día siguiente, toda la familia bajó al agua, y la madre se lanzó con un chapuzón.",
+          "pt-BR": "No dia seguinte, a família toda desceu até a água, e a mãe pulou com um splash.",
+          "id": "Keesokan harinya, seluruh keluarga turun ke air, dan sang induk melompat masuk dengan bunyi byur.",
+          "ar": "في اليوم التالي، نزلت العائلة كلّها إلى الماء، وقفزت الأم فيه بطرطشة.",
+          "vi": "Hôm sau, cả nhà xuống nước, và vịt mẹ nhảy ùm xuống trước.",
+          "hi": "अगले दिन पूरा परिवार पानी की ओर गया, और माँ छपाक से पानी में कूद गई।",
+          "ru": "На следующий день вся семья спустилась к воде, и мать с плеском прыгнула в неё.",
+          "bn": "পরদিন পুরো পরিবার জলের ধারে গেল, আর মা ঝপাং করে জলে লাফ দিল।",
+          "ur": "اگلے دن سارا خاندان پانی کی طرف گیا، اور ماں چھپاک سے پانی میں کود گئی۔",
+          "th": "วันรุ่งขึ้น ทั้งครอบครัวลงไปที่น้ำ แม่เป็ดกระโดดลงไปเสียงดังตูม"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-03-02",
+        "english": "One after another, the ducklings followed her, and the big grey one swam with them.",
+        "turkish": "Yavrular birbiri ardına onu izledi; iri gri yavru da onlarla birlikte yüzdü.",
+        "translations": {
+          "es-419": "Uno tras otro, los patitos la siguieron, y el grande y gris nadó con ellos.",
+          "pt-BR": "Um depois do outro, os patinhos foram atrás dela, e o grandão cinzento nadou com eles.",
+          "id": "Satu per satu, anak-anak itik mengikutinya, dan si kelabu besar ikut berenang bersama mereka.",
+          "ar": "وتبعتها الفراخ واحدًا تلو الآخر، وسبح الرمادي الكبير معها.",
+          "vi": "Lần lượt từng chú vịt con theo sau, và chú chim xám to lớn cũng bơi cùng.",
+          "hi": "एक-एक करके बच्चे उसके पीछे गए, और बड़ा धूसर बच्चा भी उनके साथ तैरने लगा।",
+          "ru": "Один за другим утята поплыли за ней, и большой серый плыл вместе с ними.",
+          "bn": "একে একে ছানারা তার পিছু নিল, আর বড় ধূসরটাও তাদের সঙ্গে সাঁতরাল।",
+          "ur": "ایک ایک کر کے بچے اس کے پیچھے گئے، اور بڑا سرمئی بچہ بھی ان کے ساتھ تیرنے لگا۔",
+          "th": "ลูกเป็ดตามแม่ลงน้ำไปทีละตัว และเจ้าตัวใหญ่สีเทาก็ว่ายไปกับพวกมันด้วย"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-03-03",
+        "english": "\"He is no turkey,\" said the mother proudly. \"He uses his legs well, and he holds himself very straight.\"",
+        "turkish": "\"O hindi değil,\" dedi anne gururla. \"Bacaklarını iyi kullanıyor ve dimdik duruyor.\"",
+        "translations": {
+          "es-419": "\"No es ningún pavo\", dijo la madre con orgullo. \"Mueve muy bien las patas y se mantiene muy derecho\".",
+          "pt-BR": "— Ele não é peru coisa nenhuma — disse a mãe, orgulhosa. — Usa bem as patas e se mantém bem reto.",
+          "id": "\"Ia bukan kalkun,\" kata sang induk dengan bangga. \"Kakinya ia gunakan dengan baik, dan tubuhnya tegak sekali.\"",
+          "ar": "قالت الأم بفخر: «ليس ديكًا روميًا. إنه يحرّك رجليه جيدًا ويرفع جسمه مستقيمًا.»",
+          "vi": "\"Nó chẳng phải gà tây đâu,\" vịt mẹ tự hào nói. \"Nó đạp chân giỏi lắm, lại còn giữ mình thẳng thớm.\"",
+          "hi": "माँ ने गर्व से कहा, \"यह टर्की नहीं है। यह अपने पैर अच्छे से चलाता है और बिल्कुल सीधा रहता है।\"",
+          "ru": "«Это не индюшонок, — гордо сказала мать. — Как хорошо он гребёт лапками и как прямо держится!»",
+          "bn": "মা গর্ব করে বলল, \"এ টার্কি নয়। কী সুন্দর পা চালায়, আর কেমন সোজা হয়ে থাকে।\"",
+          "ur": "ماں نے فخر سے کہا، \"یہ ٹرکی نہیں ہے۔ یہ اپنے پاؤں اچھی طرح چلاتا ہے اور بالکل سیدھا رہتا ہے۔\"",
+          "th": "\"มันไม่ใช่ไก่งวงหรอก\" แม่เป็ดพูดอย่างภูมิใจ \"มันใช้ขาเก่ง แถมยังวางตัวตรงเชียว\""
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-03-04",
+        "english": "\"He is my own child, and he is really quite handsome if you look at him properly.\"",
+        "turkish": "\"O benim kendi yavrum ve dikkatle bakarsan aslında oldukça yakışıklı.\"",
+        "translations": {
+          "es-419": "\"Es mi propio hijo, y en realidad es bastante guapo si uno lo mira bien\".",
+          "pt-BR": "— Ele é meu filho mesmo, e até que é bem bonito, se a gente olhar direito.",
+          "id": "\"Ia anakku sendiri, dan sebenarnya ia cukup tampan kalau dilihat baik-baik.\"",
+          "ar": "«إنه ابني، وهو في الحقيقة وسيم إذا نظرتَ إليه جيدًا.»",
+          "vi": "\"Nó là con ruột của tôi, mà nhìn kỹ thì nó cũng khá đẹp đấy chứ.\"",
+          "hi": "\"यह मेरा अपना बच्चा है, और ध्यान से देखो तो सचमुच काफ़ी सुंदर है।\"",
+          "ru": "«Это мой родной сын, и если хорошенько присмотреться, он очень даже хорош».",
+          "bn": "\"ও আমারই ছানা, আর ভালো করে দেখলে আসলে বেশ সুন্দর।\"",
+          "ur": "\"یہ میرا اپنا بچہ ہے، اور غور سے دیکھو تو سچ مچ کافی خوبصورت ہے۔\"",
+          "th": "\"มันเป็นลูกของข้าเอง และถ้ามองดี ๆ ก็หน้าตาดีทีเดียว\""
+        }
+      },
+      {
+        "id": "cl-ugly-duckling-04",
+        "english": "His mother took all her young to the farmyard and tried to protect him.",
+        "turkish": "Annesi bütün yavrularını çiftliğin avlusuna götürdü ve onu korumaya çalıştı.",
+        "translations": {
+          "es-419": "Su madre llevó a todos sus pequeños al corral e intentó protegerlo.",
+          "pt-BR": "A mãe levou todos os filhotes ao terreiro e tentou protegê-lo.",
+          "id": "Induknya membawa semua anaknya ke halaman peternakan dan berusaha melindunginya.",
+          "ar": "أخذت أمه كل صغارها إلى ساحة المزرعة وحاولت أن تحميه.",
+          "vi": "Vịt mẹ dẫn tất cả các con ra sân trại và cố gắng che chở cho chú.",
+          "hi": "उसकी माँ अपने सब बच्चों को बाड़े में ले गई और उसकी रक्षा करने की कोशिश की।",
+          "ru": "Мать привела всех своих малышей на птичий двор и старалась его защищать.",
+          "bn": "মা তার সব ছানাকে খামারের উঠোনে নিয়ে গেল আর তাকে রক্ষা করার চেষ্টা করল।",
+          "ur": "اس کی ماں اپنے سب بچوں کو فارم کے احاطے میں لے گئی اور اسے بچانے کی کوشش کی۔",
+          "th": "แม่เป็ดพาลูก ๆ ทั้งหมดไปที่ลานฟาร์มและพยายามปกป้องมัน"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-04-01",
+        "english": "\"Stay close to me,\" she told them, \"and watch out for the cat.\"",
+        "turkish": "\"Yanımdan ayrılmayın,\" dedi onlara, \"ve kediye dikkat edin.\"",
+        "translations": {
+          "es-419": "\"Quédense cerca de mí\", les dijo, \"y cuidado con el gato\".",
+          "pt-BR": "— Fiquem pertinho de mim — disse ela — e cuidado com o gato.",
+          "id": "\"Tetaplah dekat denganku,\" katanya kepada mereka, \"dan hati-hati dengan kucing.\"",
+          "ar": "قالت لهم: «ابقوا قريبين مني، واحذروا القطّ.»",
+          "vi": "\"Ở sát bên mẹ,\" vịt mẹ dặn, \"và coi chừng con mèo.\"",
+          "hi": "उसने उनसे कहा, \"मेरे पास रहना, और बिल्ली से बचकर रहना।\"",
+          "ru": "«Держитесь поближе ко мне, — сказала она, — и берегитесь кошки».",
+          "bn": "সে তাদের বলল, \"আমার কাছে কাছে থাকবে, আর বিড়াল থেকে সাবধান।\"",
+          "ur": "اس نے ان سے کہا، \"میرے پاس رہنا، اور بلی سے بچ کر رہنا۔\"",
+          "th": "\"อยู่ใกล้ ๆ แม่ไว้นะ\" นางบอกลูก ๆ \"แล้วระวังแมวด้วย\""
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-04-02",
+        "english": "\"Bow your heads to the old duck over there. She is the most important bird in the yard.\"",
+        "turkish": "\"Şuradaki yaşlı ördeğin önünde başınızı eğin. O, avludaki en önemli kuştur.\"",
+        "translations": {
+          "es-419": "\"Inclinen la cabeza ante la pata vieja de allá. Es el ave más importante del corral\".",
+          "pt-BR": "— Abaixem a cabeça para a pata velha ali. Ela é a ave mais importante do terreiro.",
+          "id": "\"Tundukkan kepala kalian kepada itik tua di sana. Dialah burung terpenting di halaman ini.\"",
+          "ar": "«انحنوا للبطّة العجوز هناك. إنها أهمّ طائر في الحظيرة.»",
+          "vi": "\"Cúi đầu chào bà vịt già đằng kia đi. Bà ấy là con vật quan trọng nhất trong sân.\"",
+          "hi": "\"वहाँ उस बूढ़ी बत्तख के आगे सिर झुकाओ। वह इस आँगन की सबसे बड़ी बत्तख है।\"",
+          "ru": "«Поклонитесь вон той старой утке. Она самая знатная птица на всём дворе».",
+          "bn": "\"ওই বুড়ো হাঁসটার সামনে মাথা নোয়াও। সে এই উঠোনের সবচেয়ে মান্যগণ্য পাখি।\"",
+          "ur": "\"وہاں اس بوڑھی بطخ کے آگے سر جھکاؤ۔ وہ اس احاطے کا سب سے اہم پرندہ ہے۔\"",
+          "th": "\"ก้มหัวให้เป็ดแก่ตรงโน้นนะ นางเป็นนกที่สำคัญที่สุดในลานนี้\""
+        }
+      },
+      {
+        "id": "cl-ugly-duckling-05",
+        "english": "The other animals mocked him, and even his brothers and sisters treated him cruelly.",
+        "turkish": "Diğer hayvanlar onunla alay ediyor, kardeşleri bile ona zalimce davranıyordu.",
+        "translations": {
+          "es-419": "Los otros animales se burlaban de él, y hasta sus hermanos y hermanas lo trataban con crueldad.",
+          "pt-BR": "Os outros animais zombavam dele, e até os irmãos e as irmãs o tratavam com crueldade.",
+          "id": "Hewan-hewan lain mengejeknya, dan bahkan saudara-saudaranya sendiri memperlakukannya dengan kejam.",
+          "ar": "سخرت منه الحيوانات الأخرى، وحتى إخوته وأخواته عاملوه بقسوة.",
+          "vi": "Các con vật khác chế giễu chú, và ngay cả anh chị em của chú cũng đối xử tàn nhẫn với chú.",
+          "hi": "दूसरे जानवर उसका मज़ाक उड़ाते थे, और उसके अपने भाई-बहन भी उसके साथ बुरा बर्ताव करते थे।",
+          "ru": "Другие животные насмехались над ним, и даже братья и сёстры обращались с ним жестоко.",
+          "bn": "অন্য প্রাণীরা তাকে নিয়ে ঠাট্টা করত, এমনকি তার ভাইবোনেরাও তার সঙ্গে নিষ্ঠুর আচরণ করত।",
+          "ur": "دوسرے جانور اس کا مذاق اڑاتے، اور اس کے اپنے بہن بھائی بھی اس سے بے رحمی سے پیش آتے۔",
+          "th": "สัตว์อื่น ๆ ล้อเลียนมัน และแม้แต่พี่น้องของมันเองก็ใจร้ายกับมัน"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-05-01",
+        "english": "One duck flew at him and bit him on the neck.",
+        "turkish": "Ördeklerden biri üstüne atılıp boynunu ısırdı.",
+        "translations": {
+          "es-419": "Una pata se le lanzó encima y le mordió el cuello.",
+          "pt-BR": "Uma pata voou para cima dele e mordeu o seu pescoço.",
+          "id": "Seekor itik terbang menyerangnya dan menggigit lehernya.",
+          "ar": "وطارت إليه بطّة وعضّته في رقبته.",
+          "vi": "Một con vịt lao tới và cắn vào cổ chú.",
+          "hi": "एक बत्तख उस पर झपटी और उसकी गर्दन पर काट लिया।",
+          "ru": "Одна утка налетела на него и клюнула в шею.",
+          "bn": "একটা হাঁস তার ওপর ঝাঁপিয়ে পড়ে ঘাড়ে কামড়ে দিল।",
+          "ur": "ایک بطخ اس پر جھپٹی اور اس کی گردن پر کاٹ لیا۔",
+          "th": "เป็ดตัวหนึ่งพุ่งเข้าใส่แล้วจิกคอมัน"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-05-02",
+        "english": "\"He is too big and too strange,\" she said. \"He must be pushed around.\"",
+        "turkish": "\"Çok iri ve çok tuhaf,\" dedi. \"Ona haddini bildirmek lazım.\"",
+        "translations": {
+          "es-419": "\"Es demasiado grande y demasiado raro\", dijo. \"Hay que darle empujones\".",
+          "pt-BR": "— Ele é grande demais e esquisito demais — disse ela. — Tem que levar uns empurrões.",
+          "id": "\"Ia terlalu besar dan terlalu aneh,\" katanya. \"Ia harus didorong-dorong.\"",
+          "ar": "قالت: «إنه كبير جدًا وغريب جدًا. يجب أن يُدفَع ويُطرَد.»",
+          "vi": "\"Nó to quá mà lại kỳ quặc quá,\" con vịt nói. \"Phải xô đẩy cho nó biết thân.\"",
+          "hi": "उसने कहा, \"यह बहुत बड़ा और बहुत अजीब है। इसे धक्के देने चाहिए।\"",
+          "ru": "«Он слишком большой и странный, — сказала она. — Его надо проучить».",
+          "bn": "সে বলল, \"ও বড্ড বড় আর বড্ড অদ্ভুত। ওকে ঠেলে সরিয়ে দিতে হবে।\"",
+          "ur": "اس نے کہا، \"یہ بہت بڑا اور بہت عجیب ہے۔ اسے دھکے دینے چاہییں۔\"",
+          "th": "\"มันตัวใหญ่และแปลกเกินไป\" นางพูด \"ต้องผลักไสมันออกไป\""
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-05-03",
+        "english": "The hens pecked him, and the turkey puffed himself up and gobbled at him until his face turned red.",
+        "turkish": "Tavuklar onu gagaladı; hindi de kabarıp yüzü kızarana kadar ona glu glu diye bağırdı.",
+        "translations": {
+          "es-419": "Las gallinas lo picotearon, y el pavo se infló y le gorgoteó hasta ponerse rojo.",
+          "pt-BR": "As galinhas o bicaram, e o peru se estufou e gorgolejou para ele até ficar vermelho.",
+          "id": "Ayam-ayam mematuknya, dan kalkun menggembungkan badannya lalu berkokok marah sampai wajahnya merah.",
+          "ar": "نقرته الدجاجات، وانتفخ الديك الرومي وصاح عليه حتى احمرّ وجهه.",
+          "vi": "Đám gà mái mổ chú, còn con gà tây xù lông lên kêu ầm ĩ đến đỏ cả mặt.",
+          "hi": "मुर्गियों ने उसे चोंच मारी, और टर्की फूलकर उस पर तब तक गुर्राता रहा जब तक उसका मुँह लाल न हो गया।",
+          "ru": "Куры клевали его, а индюк надулся и болботал на него, пока не покраснел.",
+          "bn": "মুরগিরা তাকে ঠোকরাল, আর টার্কিটা ফুলে উঠে তার দিকে গরগর করতে লাগল যতক্ষণ না তার মুখ লাল হয়ে গেল।",
+          "ur": "مرغیوں نے اسے چونچیں ماریں، اور ٹرکی پھول کر اس پر تب تک غراتا رہا جب تک اس کا منہ لال نہ ہو گیا۔",
+          "th": "แม่ไก่จิกมัน ส่วนไก่งวงก็พองขนแล้วร้องใส่มันจนหน้าแดงก่ำ"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-05-04",
+        "english": "Even the girl who fed the birds kicked him with her foot.",
+        "turkish": "Kuşlara yem veren kız bile onu tekmeledi.",
+        "translations": {
+          "es-419": "Hasta la muchacha que daba de comer a las aves le daba patadas.",
+          "pt-BR": "Até a moça que dava comida às aves lhe dava pontapés.",
+          "id": "Bahkan gadis yang memberi makan unggas pun menendangnya.",
+          "ar": "حتى الفتاة التي كانت تُطعم الطيور ركلته بقدمها.",
+          "vi": "Ngay cả cô gái cho gia cầm ăn cũng đá chú.",
+          "hi": "यहाँ तक कि पक्षियों को दाना डालने वाली लड़की भी उसे लात मारती थी।",
+          "ru": "Даже девушка, что кормила птицу, пинала его ногой.",
+          "bn": "এমনকি যে মেয়েটা পাখিদের খাবার দিত, সেও তাকে লাথি মারত।",
+          "ur": "یہاں تک کہ پرندوں کو دانہ ڈالنے والی لڑکی بھی اسے لات مارتی تھی۔",
+          "th": "แม้แต่เด็กสาวที่ให้อาหารสัตว์ปีกก็ยังเตะมัน"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-05-05",
+        "english": "His brothers and sisters said, \"We wish the cat would catch you, you ugly creature!\"",
+        "turkish": "Kardeşleri, \"Keşke kedi seni yakalasa, seni çirkin yaratık!\" diyorlardı.",
+        "translations": {
+          "es-419": "Sus hermanos decían: \"¡Ojalá te atrape el gato, bicho feo!\"",
+          "pt-BR": "Os irmãos diziam: — Tomara que o gato pegue você, seu bicho feio!",
+          "id": "Saudara-saudaranya berkata, \"Semoga kucing menangkapmu, makhluk jelek!\"",
+          "ar": "وكان إخوته وأخواته يقولون: «ليت القطّ يمسك بك، أيها المخلوق القبيح!»",
+          "vi": "Anh chị em của chú nói: \"Ước gì mèo bắt mày đi, đồ xấu xí!\"",
+          "hi": "उसके भाई-बहन कहते, \"काश बिल्ली तुझे पकड़ ले, बदसूरत कहीं के!\"",
+          "ru": "Братья и сёстры говорили: «Хоть бы кошка тебя утащила, уродина!»",
+          "bn": "তার ভাইবোনেরা বলত, \"বিড়ালে তোকে ধরে নিয়ে যাক, কুৎসিত কোথাকার!\"",
+          "ur": "اس کے بہن بھائی کہتے، \"کاش بلی تجھے پکڑ لے، بدصورت کہیں کے!\"",
+          "th": "พี่น้องของมันพูดว่า \"ขอให้แมวมาจับแกไปเถอะ เจ้าตัวน่าเกลียด!\""
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-05-06",
+        "english": "Then even his mother sighed, \"I wish you were far away.\"",
+        "turkish": "Sonra annesi bile iç çekerek \"Keşke çok uzaklarda olsaydın,\" dedi.",
+        "translations": {
+          "es-419": "Entonces hasta su madre suspiró: \"Ojalá estuvieras muy lejos\".",
+          "pt-BR": "Então até a mãe suspirou: — Queria que você estivesse bem longe.",
+          "id": "Lalu bahkan ibunya mendesah, \"Andai saja kau berada jauh dari sini.\"",
+          "ar": "ثم حتى أمّه تنهّدت: «ليتك كنتَ بعيدًا.»",
+          "vi": "Rồi đến cả mẹ chú cũng thở dài: \"Giá mà con ở thật xa.\"",
+          "hi": "फिर उसकी माँ ने भी आह भरकर कहा, \"काश तुम कहीं दूर होते।\"",
+          "ru": "И даже мать вздохнула: «Лучше бы ты был где-нибудь далеко».",
+          "bn": "তারপর তার মা-ও দীর্ঘশ্বাস ফেলে বলল, \"তুই যদি অনেক দূরে থাকতিস!\"",
+          "ur": "پھر اس کی ماں نے بھی آہ بھر کر کہا، \"کاش تم کہیں دور ہوتے۔\"",
+          "th": "แล้วแม้แต่แม่ของมันก็ถอนใจว่า \"แม่อยากให้เจ้าไปอยู่ไกล ๆ\""
+        }
+      },
+      {
+        "id": "cl-ugly-duckling-06",
+        "english": "At last, he fled through the hedge, believing that nobody could ever like him.",
+        "turkish": "Sonunda kimsenin kendisini sevemeyeceğine inanarak çitin arasından kaçtı.",
+        "translations": {
+          "es-419": "Por fin, huyó a través del seto, creyendo que nadie podría quererlo nunca.",
+          "pt-BR": "Por fim, ele fugiu pela cerca viva, acreditando que ninguém jamais poderia gostar dele.",
+          "id": "Akhirnya, ia kabur melewati pagar semak, karena yakin tidak akan ada yang pernah menyukainya.",
+          "ar": "أخيرًا، هرب عبر السياج، معتقدًا أن أحدًا لن يحبّه أبدًا.",
+          "vi": "Cuối cùng, chú bỏ trốn qua hàng rào, tin rằng sẽ chẳng bao giờ có ai thích mình.",
+          "hi": "आख़िर में वह बाड़ के बीच से भाग निकला, यह सोचकर कि उसे कभी कोई पसंद नहीं करेगा।",
+          "ru": "Наконец он убежал через изгородь, думая, что его никто никогда не полюбит.",
+          "bn": "অবশেষে কেউ কখনো তাকে পছন্দ করবে না ভেবে সে ঝোপের বেড়া পেরিয়ে পালিয়ে গেল।",
+          "ur": "آخرکار وہ یہ سوچ کر باڑ کے پار بھاگ گیا کہ اسے کبھی کوئی پسند نہیں کرے گا۔",
+          "th": "ในที่สุด มันก็หนีลอดพุ่มไม้ออกไป โดยเชื่อว่าไม่มีใครจะชอบมันได้เลย"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-06-01",
+        "english": "The little birds in the bushes flew up in fright when they saw him.",
+        "turkish": "Çalılardaki küçük kuşlar onu görünce korkuyla havalandı.",
+        "translations": {
+          "es-419": "Los pajaritos de los arbustos echaron a volar asustados al verlo.",
+          "pt-BR": "Os passarinhos dos arbustos saíram voando de medo quando o viram.",
+          "id": "Burung-burung kecil di semak-semak terbang ketakutan ketika melihatnya.",
+          "ar": "طارت العصافير الصغيرة في الشجيرات خائفة حين رأته.",
+          "vi": "Những chú chim nhỏ trong bụi cây hoảng sợ bay vụt lên khi thấy chú.",
+          "hi": "झाड़ियों की छोटी चिड़ियाँ उसे देखते ही डरकर उड़ गईं।",
+          "ru": "Маленькие птички в кустах в испуге вспорхнули, увидев его.",
+          "bn": "ঝোপের ছোট পাখিরা তাকে দেখে ভয়ে উড়ে গেল।",
+          "ur": "جھاڑیوں کی ننھی چڑیاں اسے دیکھتے ہی ڈر کر اڑ گئیں۔",
+          "th": "นกตัวเล็ก ๆ ในพุ่มไม้ตกใจบินหนีเมื่อเห็นมัน"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-06-02",
+        "english": "\"That is because I am so ugly,\" he thought, and he closed his eyes and ran on.",
+        "turkish": "\"Bu, çok çirkin olduğum için,\" diye düşündü, gözlerini kapadı ve koşmaya devam etti.",
+        "translations": {
+          "es-419": "\"Es porque soy muy feo\", pensó, y cerró los ojos y siguió corriendo.",
+          "pt-BR": "\"É porque sou muito feio\", pensou ele, e fechou os olhos e continuou correndo.",
+          "id": "\"Itu karena aku sangat jelek,\" pikirnya, lalu ia memejamkan mata dan terus berlari.",
+          "ar": "فكّر: «هذا لأنني قبيح جدًا»، وأغمض عينيه وواصل الركض.",
+          "vi": "\"Đó là vì mình xấu xí quá,\" chú nghĩ, rồi nhắm mắt chạy tiếp.",
+          "hi": "\"यह इसलिए है क्योंकि मैं बहुत बदसूरत हूँ,\" उसने सोचा, और आँखें बंद करके दौड़ता रहा।",
+          "ru": "«Это потому, что я такой некрасивый», — подумал он, закрыл глаза и побежал дальше.",
+          "bn": "\"আমি খুব কুৎসিত বলেই এমন হলো,\" সে ভাবল, তারপর চোখ বুজে দৌড়াতে থাকল।",
+          "ur": "\"یہ اس لیے ہے کہ میں بہت بدصورت ہوں،\" اس نے سوچا، اور آنکھیں بند کر کے دوڑتا رہا۔",
+          "th": "\"นั่นเพราะข้าน่าเกลียดเหลือเกิน\" มันคิด แล้วหลับตาวิ่งต่อไป"
+        }
+      },
+      {
+        "id": "cl-ugly-duckling-07",
+        "english": "He found wild ducks in a marsh, but he could not stay there in peace.",
+        "turkish": "Bir bataklıkta yaban ördekleri buldu ama orada huzur içinde kalamadı.",
+        "translations": {
+          "es-419": "Encontró patos salvajes en un pantano, pero no pudo quedarse allí en paz.",
+          "pt-BR": "Ele encontrou patos selvagens em um pântano, mas não conseguiu ficar ali em paz.",
+          "id": "Ia menemukan itik-itik liar di sebuah rawa, tetapi ia tidak bisa tinggal di sana dengan tenang.",
+          "ar": "وجد بطًّا برّيًا في مستنقع، لكنه لم يستطع البقاء هناك في سلام.",
+          "vi": "Chú gặp những con vịt trời ở một đầm lầy, nhưng chú không thể sống yên ổn ở đó.",
+          "hi": "उसे एक दलदल में जंगली बत्तखें मिलीं, लेकिन वह वहाँ भी चैन से नहीं रह पाया।",
+          "ru": "На болоте он нашёл диких уток, но не смог жить там спокойно.",
+          "bn": "এক জলাভূমিতে সে বুনো হাঁসদের দেখা পেল, কিন্তু সেখানে শান্তিতে থাকতে পারল না।",
+          "ur": "اسے ایک دلدل میں جنگلی بطخیں ملیں، لیکن وہ وہاں بھی سکون سے نہ رہ سکا۔",
+          "th": "มันพบเป็ดป่าในบึงแห่งหนึ่ง แต่ก็ไม่อาจอยู่ที่นั่นอย่างสงบได้"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-07-01",
+        "english": "\"You are very ugly,\" the wild ducks told him, \"but that does not matter, as long as you do not marry into our family.\"",
+        "turkish": "Yaban ördekleri ona, \"Çok çirkinsin,\" dedi, \"ama ailemizden biriyle evlenmedikçe bunun önemi yok.\"",
+        "translations": {
+          "es-419": "\"Eres muy feo\", le dijeron los patos salvajes, \"pero no importa, mientras no te cases con alguien de nuestra familia\".",
+          "pt-BR": "— Você é muito feio — disseram os patos selvagens —, mas não faz mal, contanto que não se case com alguém da nossa família.",
+          "id": "\"Kau sangat jelek,\" kata itik-itik liar kepadanya, \"tetapi tidak apa-apa, asal kau tidak menikah dengan keluarga kami.\"",
+          "ar": "قال له البطّ البرّي: «أنت قبيح جدًا، لكن لا بأس، ما دمتَ لن تتزوّج من عائلتنا.»",
+          "vi": "\"Mày xấu lắm,\" đám vịt trời bảo chú, \"nhưng chẳng sao, miễn là mày đừng cưới ai trong họ nhà tao.\"",
+          "hi": "जंगली बत्तखों ने उससे कहा, \"तुम बहुत बदसूरत हो, पर कोई बात नहीं, बस हमारे परिवार में शादी मत करना।\"",
+          "ru": "«Ты очень некрасивый, — сказали ему дикие утки, — но это не беда, лишь бы ты не вздумал породниться с нами».",
+          "bn": "বুনো হাঁসেরা তাকে বলল, \"তুমি খুব কুৎসিত, কিন্তু তাতে কিছু যায় আসে না, যদি না আমাদের পরিবারে বিয়ে করো।\"",
+          "ur": "جنگلی بطخوں نے اس سے کہا، \"تم بہت بدصورت ہو، مگر کوئی بات نہیں، بس ہمارے خاندان میں شادی مت کرنا۔\"",
+          "th": "\"เจ้าน่าเกลียดมาก\" เป็ดป่าบอกมัน \"แต่ไม่เป็นไรหรอก ขอแค่อย่ามาแต่งงานกับครอบครัวเราก็พอ\""
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-07-02",
+        "english": "The poor bird had never even thought of marrying; he only wanted to lie among the reeds and drink a little water.",
+        "turkish": "Zavallı kuş evlenmeyi hiç düşünmemişti bile; tek istediği sazların arasında yatıp biraz su içmekti.",
+        "translations": {
+          "es-419": "El pobre pájaro jamás había pensado en casarse; solo quería echarse entre los juncos y beber un poco de agua.",
+          "pt-BR": "O pobre pássaro nunca tinha nem pensado em casar; só queria ficar deitado entre os juncos e beber um pouco de água.",
+          "id": "Burung malang itu tidak pernah berpikir untuk menikah; ia hanya ingin berbaring di antara alang-alang dan minum sedikit air.",
+          "ar": "لم يفكّر الطائر المسكين في الزواج قطّ؛ كان كل ما يريده أن يستلقي بين القصب ويشرب قليلًا من الماء.",
+          "vi": "Chú chim tội nghiệp chưa từng nghĩ đến chuyện cưới xin; chú chỉ muốn nằm giữa đám lau sậy và uống chút nước.",
+          "hi": "बेचारे पंछी ने शादी के बारे में कभी सोचा भी नहीं था; वह तो बस सरकंडों के बीच लेटकर थोड़ा पानी पीना चाहता था।",
+          "ru": "Бедняга и не думал жениться; ему только хотелось полежать в камышах и попить водички.",
+          "bn": "বেচারা পাখিটা কখনো বিয়ের কথা ভাবেইনি; সে শুধু নলখাগড়ার মধ্যে শুয়ে একটু জল খেতে চাইত।",
+          "ur": "بے چارے پرندے نے شادی کے بارے میں کبھی سوچا بھی نہیں تھا؛ وہ تو بس سرکنڈوں کے بیچ لیٹ کر تھوڑا پانی پینا چاہتا تھا۔",
+          "th": "นกผู้น่าสงสารไม่เคยคิดเรื่องแต่งงานเลย มันแค่อยากนอนอยู่ในกอต้นกกและดื่มน้ำสักหน่อย"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-07-03",
+        "english": "After two days, two young wild geese came and invited him to fly away with them.",
+        "turkish": "İki gün sonra iki genç yaban kazı gelip onu kendileriyle birlikte uçmaya çağırdı.",
+        "translations": {
+          "es-419": "Dos días después, llegaron dos gansos salvajes jóvenes y lo invitaron a volar con ellos.",
+          "pt-BR": "Dois dias depois, dois gansos selvagens jovens chegaram e o convidaram para voar com eles.",
+          "id": "Dua hari kemudian, dua ekor angsa liar muda datang dan mengajaknya terbang bersama mereka.",
+          "ar": "وبعد يومين، جاءت إوزّتان بريّتان صغيرتان ودعتاه إلى الطيران معهما.",
+          "vi": "Hai ngày sau, hai chú ngỗng trời trẻ tuổi đến và rủ chú cùng bay đi.",
+          "hi": "दो दिन बाद दो जवान जंगली हंस आए और उसे अपने साथ उड़ चलने को कहा।",
+          "ru": "Через два дня прилетели два молодых диких гуся и позвали его лететь с ними.",
+          "bn": "দুদিন পর দুটো কমবয়সী বুনো রাজহাঁস এসে তাকে তাদের সঙ্গে উড়ে যেতে ডাকল।",
+          "ur": "دو دن بعد دو جوان جنگلی ہنس آئے اور اسے اپنے ساتھ اڑ چلنے کو کہا۔",
+          "th": "สองวันต่อมา ห่านป่าหนุ่มสองตัวมาชวนมันบินไปด้วยกัน"
+        }
+      },
+      {
+        "id": "cl-ugly-duckling-08",
+        "english": "Hunters arrived, and frightened birds rose into the air.",
+        "turkish": "Avcılar geldi ve korkan kuşlar havalandı.",
+        "translations": {
+          "es-419": "Llegaron unos cazadores, y los pájaros asustados alzaron el vuelo.",
+          "pt-BR": "Chegaram caçadores, e os pássaros, assustados, levantaram voo.",
+          "id": "Para pemburu datang, dan burung-burung yang ketakutan terbang ke udara.",
+          "ar": "جاء الصيّادون، فارتفعت الطيور الخائفة في الهواء.",
+          "vi": "Những người thợ săn kéo đến, và lũ chim hoảng sợ bay vút lên không trung.",
+          "hi": "शिकारी आ गए, और डरे हुए पंछी हवा में उड़ गए।",
+          "ru": "Пришли охотники, и испуганные птицы взмыли в воздух.",
+          "bn": "শিকারিরা এল, আর ভয় পাওয়া পাখিরা আকাশে উড়ে গেল।",
+          "ur": "شکاری آ گئے، اور ڈرے ہوئے پرندے ہوا میں اڑ گئے۔",
+          "th": "นายพรานมาถึง และนกที่ตกใจกลัวก็บินขึ้นสู่ท้องฟ้า"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-08-01",
+        "english": "There was a loud bang, and the two geese fell dead among the reeds.",
+        "turkish": "Yüksek bir patlama oldu ve iki kaz sazların arasına ölü düştü.",
+        "translations": {
+          "es-419": "Se oyó un fuerte estallido, y los dos gansos cayeron muertos entre los juncos.",
+          "pt-BR": "Ouviu-se um estrondo, e os dois gansos caíram mortos entre os juncos.",
+          "id": "Terdengar letusan keras, dan kedua angsa itu jatuh mati di antara alang-alang.",
+          "ar": "دوّى صوت عالٍ، وسقطت الإوزّتان ميتتين بين القصب.",
+          "vi": "Một tiếng nổ vang lên, và hai con ngỗng rơi xuống chết giữa đám lau sậy.",
+          "hi": "एक ज़ोर का धमाका हुआ, और दोनों हंस मरकर सरकंडों में गिर पड़े।",
+          "ru": "Раздался громкий выстрел, и оба гуся упали замертво в камыши.",
+          "bn": "জোরে একটা গুলির শব্দ হলো, আর রাজহাঁস দুটো মরে নলখাগড়ার মধ্যে পড়ে গেল।",
+          "ur": "زور کا ایک دھماکا ہوا، اور دونوں ہنس مر کر سرکنڈوں میں گر پڑے۔",
+          "th": "เสียงปืนดังปัง และห่านทั้งสองก็ตกลงมาตายในกอต้นกก"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-08-02",
+        "english": "Blue smoke drifted over the water, and hunting dogs splashed through the mud.",
+        "turkish": "Suyun üzerinde mavi bir duman süzülüyor, av köpekleri çamurda şapırdatarak koşuyordu.",
+        "translations": {
+          "es-419": "Un humo azul flotaba sobre el agua, y los perros de caza chapoteaban en el barro.",
+          "pt-BR": "Uma fumaça azul pairava sobre a água, e os cães de caça chapinhavam na lama.",
+          "id": "Asap biru melayang di atas air, dan anjing-anjing pemburu berlari mencebur di lumpur.",
+          "ar": "انساب دخان أزرق فوق الماء، وراحت كلاب الصيد تخوض في الوحل.",
+          "vi": "Khói xanh lơ lửng trên mặt nước, và lũ chó săn lội bì bõm qua bùn.",
+          "hi": "पानी के ऊपर नीला धुआँ तैरने लगा, और शिकारी कुत्ते कीचड़ में छपछपाते हुए दौड़े।",
+          "ru": "Над водой поплыл синий дым, а охотничьи собаки зашлёпали по грязи.",
+          "bn": "জলের ওপর নীল ধোঁয়া ভেসে বেড়াতে লাগল, আর শিকারি কুকুরগুলো কাদায় ছপছপ করে ছুটল।",
+          "ur": "پانی پر نیلا دھواں تیرنے لگا، اور شکاری کتے کیچڑ میں چھپ چھپ کرتے دوڑے۔",
+          "th": "ควันสีฟ้าลอยอยู่เหนือน้ำ และสุนัขล่าเนื้อก็วิ่งลุยโคลนเสียงดังจ๋อมแจ๋ม"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-08-03",
+        "english": "A huge dog came right up to him, with its tongue hanging out and its eyes shining.",
+        "turkish": "Kocaman bir köpek dili dışarıda, gözleri parlayarak tam yanına geldi.",
+        "translations": {
+          "es-419": "Un perro enorme se le acercó, con la lengua afuera y los ojos brillantes.",
+          "pt-BR": "Um cachorro enorme chegou bem perto dele, com a língua de fora e os olhos brilhando.",
+          "id": "Seekor anjing besar datang tepat ke dekatnya, dengan lidah terjulur dan mata berkilat.",
+          "ar": "اقترب منه كلب ضخم، لسانه متدلٍّ وعيناه تلمعان.",
+          "vi": "Một con chó khổng lồ tiến sát đến chỗ chú, lưỡi thè ra, mắt sáng quắc.",
+          "hi": "एक बहुत बड़ा कुत्ता ठीक उसके पास आ गया, जीभ बाहर लटकाए और आँखें चमकाते हुए।",
+          "ru": "Огромный пёс подошёл к нему вплотную, высунув язык и сверкая глазами.",
+          "bn": "একটা বিশাল কুকুর জিভ বের করে, চোখ জ্বলজ্বল করতে করতে একেবারে তার কাছে চলে এল।",
+          "ur": "ایک بہت بڑا کتا زبان باہر لٹکائے اور آنکھیں چمکاتا ہوا بالکل اس کے پاس آ گیا۔",
+          "th": "สุนัขตัวมหึมาเข้ามาใกล้มัน ลิ้นห้อย ตาเป็นประกาย"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-08-04",
+        "english": "It showed its sharp teeth, and then it ran away without touching him.",
+        "turkish": "Sivri dişlerini gösterdi, sonra ona dokunmadan koşup gitti.",
+        "translations": {
+          "es-419": "Le mostró sus dientes afilados, y luego se fue corriendo sin tocarlo.",
+          "pt-BR": "Mostrou os dentes afiados e depois foi embora correndo sem tocar nele.",
+          "id": "Anjing itu memperlihatkan giginya yang tajam, lalu lari tanpa menyentuhnya.",
+          "ar": "كشّر عن أنيابه الحادّة، ثم ركض بعيدًا دون أن يمسّه.",
+          "vi": "Nó nhe hàm răng sắc nhọn, rồi chạy đi mà không đụng đến chú.",
+          "hi": "उसने अपने नुकीले दाँत दिखाए, और फिर उसे छुए बिना भाग गया।",
+          "ru": "Он оскалил острые зубы — и убежал, даже не тронув его.",
+          "bn": "সে তার ধারালো দাঁত দেখাল, তারপর তাকে না ছুঁয়েই ছুটে চলে গেল।",
+          "ur": "اس نے اپنے نوکیلے دانت دکھائے، اور پھر اسے چھوئے بغیر بھاگ گیا۔",
+          "th": "มันแยกเขี้ยวคม ๆ ให้ดู แล้วก็วิ่งจากไปโดยไม่แตะต้องมันเลย"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-08-05",
+        "english": "\"I am so ugly that even the dog does not want to bite me,\" he sighed.",
+        "turkish": "\"O kadar çirkinim ki köpek bile beni ısırmak istemiyor,\" diye iç çekti.",
+        "translations": {
+          "es-419": "\"Soy tan feo que ni el perro quiere morderme\", suspiró.",
+          "pt-BR": "— Sou tão feio que nem o cachorro quer me morder — suspirou ele.",
+          "id": "\"Aku begitu jelek sampai anjing pun tidak mau menggigitku,\" keluhnya.",
+          "ar": "تنهّد قائلًا: «أنا قبيح إلى حدّ أن الكلب نفسه لا يريد أن يعضّني.»",
+          "vi": "\"Mình xấu đến nỗi chó cũng chẳng thèm cắn,\" chú thở dài.",
+          "hi": "उसने आह भरी, \"मैं इतना बदसूरत हूँ कि कुत्ता भी मुझे काटना नहीं चाहता।\"",
+          "ru": "«Я такой некрасивый, что даже собака не хочет меня кусать», — вздохнул он.",
+          "bn": "সে দীর্ঘশ্বাস ফেলল, \"আমি এতই কুৎসিত যে কুকুরও আমাকে কামড়াতে চায় না।\"",
+          "ur": "اس نے آہ بھری، \"میں اتنا بدصورت ہوں کہ کتا بھی مجھے کاٹنا نہیں چاہتا۔\"",
+          "th": "\"ข้าน่าเกลียดจนแม้แต่หมายังไม่อยากกัด\" มันถอนใจ"
+        }
+      },
+      {
+        "id": "cl-ugly-duckling-09",
+        "english": "The lonely bird escaped and eventually reached a poor woman's cottage.",
+        "turkish": "Yalnız kuş kaçtı ve sonunda yoksul bir kadının kulübesine ulaştı.",
+        "translations": {
+          "es-419": "El pájaro solitario escapó y al final llegó a la casita de una mujer pobre.",
+          "pt-BR": "O pássaro solitário escapou e, depois de muito tempo, chegou à cabana de uma mulher pobre.",
+          "id": "Burung yang kesepian itu melarikan diri dan akhirnya sampai di pondok seorang wanita miskin.",
+          "ar": "نجا الطائر الوحيد، ووصل في النهاية إلى كوخ امرأة فقيرة.",
+          "vi": "Chú chim cô đơn trốn thoát và cuối cùng đến được túp lều của một bà lão nghèo.",
+          "hi": "वह अकेला पंछी बच निकला और आख़िरकार एक गरीब औरत की झोपड़ी तक पहुँचा।",
+          "ru": "Одинокая птица спаслась и в конце концов добралась до избушки бедной старушки.",
+          "bn": "একাকী পাখিটা পালিয়ে বাঁচল আর শেষে এক গরিব মহিলার কুটিরে পৌঁছাল।",
+          "ur": "تنہا پرندہ بچ نکلا اور آخرکار ایک غریب عورت کی جھونپڑی تک جا پہنچا۔",
+          "th": "นกผู้โดดเดี่ยวหนีรอดมาได้ และในที่สุดก็มาถึงกระท่อมของหญิงยากจนคนหนึ่ง"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-09-01",
+        "english": "A terrible storm was blowing, and he could hardly stand against the wind.",
+        "turkish": "Korkunç bir fırtına esiyordu ve rüzgâra karşı ayakta zor duruyordu.",
+        "translations": {
+          "es-419": "Soplaba una tormenta terrible, y él apenas podía sostenerse contra el viento.",
+          "pt-BR": "Soprava uma tempestade terrível, e ele mal conseguia ficar de pé contra o vento.",
+          "id": "Badai dahsyat sedang bertiup, dan ia hampir tidak bisa berdiri melawan angin.",
+          "ar": "كانت عاصفة رهيبة تهبّ، ولم يكد يقوى على الوقوف في وجه الريح.",
+          "vi": "Một cơn bão khủng khiếp đang thổi, chú gần như không đứng vững trước gió.",
+          "hi": "भयानक तूफ़ान चल रहा था, और वह हवा के सामने मुश्किल से खड़ा रह पा रहा था।",
+          "ru": "Бушевала страшная буря, и он едва держался на ногах против ветра.",
+          "bn": "ভয়ংকর ঝড় বইছিল, আর বাতাসের বিরুদ্ধে সে কোনোমতে দাঁড়িয়ে থাকতে পারছিল।",
+          "ur": "خوفناک طوفان چل رہا تھا، اور وہ ہوا کے سامنے مشکل سے کھڑا رہ پا رہا تھا۔",
+          "th": "พายุร้ายกำลังโหมกระหน่ำ มันแทบยืนต้านลมไม่ไหว"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-09-02",
+        "english": "The cottage door had come off one of its hinges, so he slipped inside through the gap.",
+        "turkish": "Kulübenin kapısı menteşelerinden biri kopmuş olarak sarkıyordu; o da aradaki boşluktan içeri süzüldü.",
+        "translations": {
+          "es-419": "La puerta de la casita se había salido de una bisagra, así que él se coló por la abertura.",
+          "pt-BR": "A porta da cabana tinha saído de uma das dobradiças, então ele se enfiou pela fresta.",
+          "id": "Pintu pondok itu terlepas dari salah satu engselnya, jadi ia menyelinap masuk lewat celahnya.",
+          "ar": "كان باب الكوخ قد انخلع من أحد مفاصله، فتسلّل إلى الداخل من الفتحة.",
+          "vi": "Cánh cửa túp lều đã bung khỏi một bản lề, nên chú lách vào qua khe hở.",
+          "hi": "झोपड़ी का दरवाज़ा एक कब्ज़े से उखड़ गया था, इसलिए वह दरार में से अंदर घुस गया।",
+          "ru": "Дверь избушки соскочила с одной петли, и он проскользнул внутрь через щель.",
+          "bn": "কুটিরের দরজাটা একটা কবজা থেকে খুলে ঝুলছিল, তাই সে ফাঁক গলে ভেতরে ঢুকে পড়ল।",
+          "ur": "جھونپڑی کا دروازہ ایک قبضے سے اکھڑ گیا تھا، اس لیے وہ درز میں سے اندر گھس گیا۔",
+          "th": "ประตูกระท่อมหลุดจากบานพับไปข้างหนึ่ง มันจึงแทรกตัวเข้าไปทางช่องนั้น"
+        }
+      },
+      {
+        "id": "cl-ugly-duckling-10",
+        "english": "She kept a cat and a hen, who thought their own abilities were the only ones that mattered.",
+        "turkish": "Kadının bir kedisi ve bir tavuğu vardı; onlar yalnızca kendi yeteneklerinin önemli olduğunu düşünüyordu.",
+        "translations": {
+          "es-419": "Ella tenía un gato y una gallina, que pensaban que solo importaban sus propias habilidades.",
+          "pt-BR": "Ela tinha um gato e uma galinha, que achavam que só as habilidades deles tinham importância.",
+          "id": "Wanita itu memelihara seekor kucing dan seekor ayam betina, yang mengira hanya kemampuan merekalah yang penting.",
+          "ar": "كان عندها قطّ ودجاجة، يظنّان أن قدراتهما وحدها هي المهمّة.",
+          "vi": "Bà nuôi một con mèo và một con gà mái, hai con vật nghĩ rằng chỉ có tài năng của chúng mới là quan trọng.",
+          "hi": "उसके पास एक बिल्ली और एक मुर्गी थी, जो सोचती थीं कि बस उन्हीं के हुनर मायने रखते हैं।",
+          "ru": "У неё жили кот и курица, которые считали, что важно только то, что умеют они.",
+          "bn": "মহিলার একটা বিড়াল আর একটা মুরগি ছিল, যারা ভাবত কেবল তাদের নিজেদের গুণগুলোই আসল।",
+          "ur": "اس کے پاس ایک بلی اور ایک مرغی تھی، جو سمجھتی تھیں کہ صرف ان کی اپنی صلاحیتیں ہی اہم ہیں۔",
+          "th": "นางเลี้ยงแมวและแม่ไก่ ซึ่งคิดว่าความสามารถของพวกมันเท่านั้นที่สำคัญ"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-10-01",
+        "english": "The cat could arch his back and purr, and the hen could lay good eggs.",
+        "turkish": "Kedi sırtını kamburlaştırıp mırlayabiliyor, tavuk da güzel yumurtalar yumurtlayabiliyordu.",
+        "translations": {
+          "es-419": "El gato sabía arquear el lomo y ronronear, y la gallina ponía buenos huevos.",
+          "pt-BR": "O gato sabia arquear as costas e ronronar, e a galinha botava ovos bons.",
+          "id": "Kucing itu bisa melengkungkan punggung dan mendengkur, dan ayam betina itu bisa bertelur dengan baik.",
+          "ar": "كان القطّ يستطيع أن يقوّس ظهره ويُخرخر، وكانت الدجاجة تبيض بيضًا جيدًا.",
+          "vi": "Con mèo biết cong lưng và kêu gừ gừ, còn con gà mái thì đẻ trứng rất ngon.",
+          "hi": "बिल्ली अपनी पीठ उठाकर घुरघुरा सकती थी, और मुर्गी अच्छे अंडे दे सकती थी।",
+          "ru": "Кот умел выгибать спину и мурлыкать, а курица несла хорошие яйца.",
+          "bn": "বিড়ালটা পিঠ বাঁকিয়ে গরগর করতে পারত, আর মুরগিটা ভালো ডিম পাড়ত।",
+          "ur": "بلی اپنی کمر اٹھا کر خرخر کر سکتی تھی، اور مرغی اچھے انڈے دیتی تھی۔",
+          "th": "แมวทำหลังโก่งและครางได้ ส่วนแม่ไก่ก็ออกไข่ได้ดี"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-10-02",
+        "english": "The old woman could not see well, and she thought the newcomer was a fat duck that would lay eggs.",
+        "turkish": "Yaşlı kadın iyi göremiyordu ve yeni geleni yumurtlayacak şişman bir ördek sandı.",
+        "translations": {
+          "es-419": "La anciana no veía bien, y creyó que el recién llegado era una pata gorda que pondría huevos.",
+          "pt-BR": "A velha não enxergava bem e achou que o recém-chegado era uma pata gorda que ia botar ovos.",
+          "id": "Nenek tua itu tidak bisa melihat dengan jelas, dan ia mengira pendatang baru itu itik betina gemuk yang akan bertelur.",
+          "ar": "لم تكن العجوز ترى جيدًا، فظنّت أن القادم الجديد بطّة سمينة ستبيض.",
+          "vi": "Bà lão mắt kém, nên tưởng kẻ mới đến là một cô vịt béo sẽ đẻ trứng.",
+          "hi": "बूढ़ी औरत को ठीक से दिखता नहीं था, और उसने सोचा कि यह नया मेहमान कोई मोटी बत्तख है जो अंडे देगी।",
+          "ru": "Старушка плохо видела и решила, что к ней забрела жирная утка, которая будет нести яйца.",
+          "bn": "বৃদ্ধা চোখে ভালো দেখতেন না, তিনি ভাবলেন নতুন অতিথিটা একটা মোটা হাঁস, যে ডিম পাড়বে।",
+          "ur": "بوڑھی عورت کو ٹھیک سے دکھائی نہیں دیتا تھا، اور اس نے سوچا کہ یہ نیا مہمان کوئی موٹی بطخ ہے جو انڈے دے گی۔",
+          "th": "หญิงชราสายตาไม่ดี จึงคิดว่าเจ้าตัวใหม่เป็นเป็ดตัวเมียอ้วน ๆ ที่จะออกไข่ให้"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-10-03",
+        "english": "So the bird was allowed to stay for three weeks, but no eggs came.",
+        "turkish": "Böylece kuşun üç hafta kalmasına izin verildi ama hiç yumurta çıkmadı.",
+        "translations": {
+          "es-419": "Así que dejaron que el pájaro se quedara tres semanas, pero no hubo ningún huevo.",
+          "pt-BR": "Então deixaram o pássaro ficar por três semanas, mas nenhum ovo apareceu.",
+          "id": "Maka burung itu boleh tinggal selama tiga minggu, tetapi tidak ada telur yang muncul.",
+          "ar": "فسُمح للطائر بالبقاء ثلاثة أسابيع، لكن لم تظهر أيّ بيضة.",
+          "vi": "Thế là chú được ở lại ba tuần, nhưng chẳng thấy quả trứng nào.",
+          "hi": "इसलिए पंछी को तीन हफ़्ते रहने दिया गया, पर एक भी अंडा नहीं आया।",
+          "ru": "Так птице позволили пожить три недели, но яиц так и не появилось.",
+          "bn": "তাই পাখিটাকে তিন সপ্তাহ থাকতে দেওয়া হলো, কিন্তু একটা ডিমও এল না।",
+          "ur": "اس لیے پرندے کو تین ہفتے رہنے دیا گیا، مگر ایک بھی انڈا نہ آیا۔",
+          "th": "นกจึงได้อยู่ต่อสามสัปดาห์ แต่ก็ไม่มีไข่สักฟอง"
+        }
+      },
+      {
+        "id": "cl-ugly-duckling-11",
+        "english": "The bird could neither lay eggs nor purr, and he missed swimming.",
+        "turkish": "Kuş ne yumurtlayabiliyor ne de mırıldanabiliyordu; yüzmeyi de özlüyordu.",
+        "translations": {
+          "es-419": "El pájaro no podía poner huevos ni ronronear, y extrañaba nadar.",
+          "pt-BR": "O pássaro não sabia botar ovos nem ronronar, e sentia falta de nadar.",
+          "id": "Burung itu tidak bisa bertelur maupun mendengkur seperti kucing, dan ia rindu berenang.",
+          "ar": "لم يكن الطائر يستطيع أن يبيض أو أن يُخرخر، وكان يشتاق إلى السباحة.",
+          "vi": "Chú chim không biết đẻ trứng cũng không biết kêu gừ gừ, và chú thèm được bơi lội.",
+          "hi": "वह पंछी न अंडे दे सकता था, न बिल्ली की तरह घुरघुरा सकता था, और उसे तैरने की याद आती थी।",
+          "ru": "Утёнок не умел ни нести яйца, ни мурлыкать, и ему не хватало плавания.",
+          "bn": "পাখিটা না পারত ডিম পাড়তে, না পারত বিড়ালের মতো গরগর করতে, আর সাঁতারের জন্য তার মন কেমন করত।",
+          "ur": "وہ پرندہ نہ انڈے دے سکتا تھا نہ بلی کی طرح خرخر کر سکتا تھا، اور اسے تیرنے کی یاد ستاتی تھی۔",
+          "th": "นกตัวนั้นทั้งออกไข่ไม่ได้และทำเสียงครางแบบแมวไม่ได้ และมันก็คิดถึงการว่ายน้ำ"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-11-01",
+        "english": "\"Can you lay eggs?\" asked the hen. \"No,\" he said. \"Then be quiet!\"",
+        "turkish": "\"Yumurtlayabiliyor musun?\" diye sordu tavuk. \"Hayır,\" dedi. \"O zaman sus!\"",
+        "translations": {
+          "es-419": "\"¿Sabes poner huevos?\", preguntó la gallina. \"No\", dijo él. \"¡Entonces cállate!\"",
+          "pt-BR": "— Você sabe botar ovos? — perguntou a galinha. — Não — disse ele. — Então fique quieto!",
+          "id": "\"Bisakah kau bertelur?\" tanya ayam betina. \"Tidak,\" jawabnya. \"Kalau begitu, diamlah!\"",
+          "ar": "سألته الدجاجة: «هل تستطيع أن تبيض؟» قال: «لا.» «إذن اسكت!»",
+          "vi": "\"Mày có biết đẻ trứng không?\" con gà mái hỏi. \"Không,\" chú đáp. \"Thế thì im đi!\"",
+          "hi": "मुर्गी ने पूछा, \"क्या तुम अंडे दे सकते हो?\" उसने कहा, \"नहीं।\" \"तो चुप रहो!\"",
+          "ru": "«Ты умеешь нести яйца?» — спросила курица. «Нет», — ответил он. «Тогда помалкивай!»",
+          "bn": "মুরগি জিজ্ঞেস করল, \"তুমি কি ডিম পাড়তে পারো?\" সে বলল, \"না।\" \"তাহলে চুপ করে থাকো!\"",
+          "ur": "مرغی نے پوچھا، \"کیا تم انڈے دے سکتے ہو؟\" اس نے کہا، \"نہیں۔\" \"تو چپ رہو!\"",
+          "th": "\"เจ้าออกไข่ได้ไหม\" แม่ไก่ถาม \"ไม่ได้\" มันตอบ \"งั้นก็เงียบไปซะ!\""
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-11-02",
+        "english": "\"Can you arch your back and purr?\" asked the cat. \"No.\" \"Then keep your opinions to yourself!\"",
+        "turkish": "\"Sırtını kamburlaştırıp mırlayabiliyor musun?\" diye sordu kedi. \"Hayır.\" \"O zaman fikirlerini kendine sakla!\"",
+        "translations": {
+          "es-419": "\"¿Sabes arquear el lomo y ronronear?\", preguntó el gato. \"No\". \"¡Entonces guárdate tus opiniones!\"",
+          "pt-BR": "— Você sabe arquear as costas e ronronar? — perguntou o gato. — Não. — Então guarde suas opiniões para você!",
+          "id": "\"Bisakah kau melengkungkan punggung dan mendengkur?\" tanya kucing. \"Tidak.\" \"Kalau begitu, simpan saja pendapatmu!\"",
+          "ar": "سأله القطّ: «هل تستطيع أن تقوّس ظهرك وتُخرخر؟» «لا.» «إذن احتفظ بآرائك لنفسك!»",
+          "vi": "\"Mày có biết cong lưng và kêu gừ gừ không?\" con mèo hỏi. \"Không.\" \"Thế thì giữ ý kiến cho riêng mày!\"",
+          "hi": "बिल्ली ने पूछा, \"क्या तुम पीठ उठाकर घुरघुरा सकते हो?\" \"नहीं।\" \"तो अपनी राय अपने पास रखो!\"",
+          "ru": "«А ты умеешь выгибать спину и мурлыкать?» — спросил кот. «Нет». «Тогда держи своё мнение при себе!»",
+          "bn": "বিড়াল জিজ্ঞেস করল, \"তুমি কি পিঠ বাঁকিয়ে গরগর করতে পারো?\" \"না।\" \"তাহলে নিজের মতামত নিজের কাছেই রাখো!\"",
+          "ur": "بلی نے پوچھا، \"کیا تم کمر اٹھا کر خرخر کر سکتے ہو؟\" \"نہیں۔\" \"تو اپنی رائے اپنے پاس رکھو!\"",
+          "th": "\"เจ้าทำหลังโก่งแล้วครางได้ไหม\" แมวถาม \"ไม่ได้\" \"งั้นก็เก็บความเห็นไว้กับตัวเถอะ!\""
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-11-03",
+        "english": "He sat in a corner, feeling sad, until he began to think of fresh air and sunshine.",
+        "turkish": "Hüzünle bir köşede oturdu, ta ki temiz havayı ve güneş ışığını düşünmeye başlayana dek.",
+        "translations": {
+          "es-419": "Se sentó en un rincón, triste, hasta que empezó a pensar en el aire fresco y en el sol.",
+          "pt-BR": "Ele ficou sentado num canto, triste, até começar a pensar no ar fresco e no sol.",
+          "id": "Ia duduk di sudut dengan sedih, sampai ia mulai memikirkan udara segar dan sinar matahari.",
+          "ar": "جلس في زاوية حزينًا، حتى بدأ يفكّر في الهواء النقيّ وضوء الشمس.",
+          "vi": "Chú ngồi buồn bã trong góc, cho đến khi bắt đầu nghĩ về không khí trong lành và ánh nắng.",
+          "hi": "वह उदास होकर एक कोने में बैठा रहा, जब तक उसे ताज़ी हवा और धूप की याद नहीं आने लगी।",
+          "ru": "Он грустно сидел в углу, пока не начал думать о свежем воздухе и солнце.",
+          "bn": "সে মন খারাপ করে এক কোণে বসে রইল, যতক্ষণ না তার খোলা হাওয়া আর রোদের কথা মনে পড়তে লাগল।",
+          "ur": "وہ اداس ہو کر ایک کونے میں بیٹھا رہا، یہاں تک کہ اسے تازہ ہوا اور دھوپ کی یاد آنے لگی۔",
+          "th": "มันนั่งเศร้าอยู่ในมุมห้อง จนเริ่มคิดถึงอากาศบริสุทธิ์และแสงแดด"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-11-04",
+        "english": "He told the hen how wonderful it was to float on the water and dive to the bottom.",
+        "turkish": "Tavuğa suyun üstünde süzülmenin ve dibe dalmanın ne kadar harika olduğunu anlattı.",
+        "translations": {
+          "es-419": "Le contó a la gallina lo maravilloso que era flotar en el agua y zambullirse hasta el fondo.",
+          "pt-BR": "Ele contou à galinha como era maravilhoso boiar na água e mergulhar até o fundo.",
+          "id": "Ia bercerita kepada ayam betina betapa indahnya mengapung di air dan menyelam sampai ke dasar.",
+          "ar": "وحكى للدجاجة كم هو رائع أن يطفو على الماء ويغوص إلى القاع.",
+          "vi": "Chú kể cho gà mái nghe được nổi trên mặt nước và lặn xuống đáy thì tuyệt vời biết bao.",
+          "hi": "उसने मुर्गी को बताया कि पानी पर तैरना और तले तक डुबकी लगाना कितना शानदार लगता है।",
+          "ru": "Он рассказал курице, как чудесно качаться на воде и нырять до самого дна.",
+          "bn": "সে মুরগিকে বলল জলে ভেসে থাকা আর তলা পর্যন্ত ডুব দেওয়া কী দারুণ ব্যাপার।",
+          "ur": "اس نے مرغی کو بتایا کہ پانی پر تیرنا اور تہہ تک غوطہ لگانا کتنا شاندار لگتا ہے۔",
+          "th": "มันเล่าให้แม่ไก่ฟังว่าการลอยตัวบนน้ำและดำลงไปถึงก้นน้ำนั้นวิเศษเพียงใด"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-11-05",
+        "english": "\"You must be mad,\" said the hen. \"Ask the cat or the old woman if they want to swim!\"",
+        "turkish": "\"Sen aklını kaçırmış olmalısın,\" dedi tavuk. \"Kediye ya da yaşlı kadına sor bakalım, yüzmek istiyorlar mı!\"",
+        "translations": {
+          "es-419": "\"Debes de estar loco\", dijo la gallina. \"¡Pregúntales al gato o a la anciana si quieren nadar!\"",
+          "pt-BR": "— Você deve estar maluco — disse a galinha. — Pergunte ao gato ou à velha se eles querem nadar!",
+          "id": "\"Kau pasti sudah gila,\" kata ayam betina. \"Tanya saja kucing atau nenek itu, apakah mereka mau berenang!\"",
+          "ar": "قالت الدجاجة: «لا بدّ أنك مجنون. اسأل القطّ أو العجوز إن كانا يريدان السباحة!»",
+          "vi": "\"Mày điên rồi,\" gà mái nói. \"Thử hỏi con mèo hay bà lão xem họ có muốn bơi không!\"",
+          "hi": "मुर्गी बोली, \"तुम पागल हो गए हो। बिल्ली से या बूढ़ी अम्मा से पूछो, क्या वे तैरना चाहेंगी!\"",
+          "ru": "«Ты, верно, рехнулся, — сказала курица. — Спроси кота или старушку, хотят ли они плавать!»",
+          "bn": "মুরগি বলল, \"তুমি নিশ্চয়ই পাগল হয়ে গেছ। বিড়াল বা বুড়িমাকে জিজ্ঞেস করো তো, ওরা সাঁতার কাটতে চায় কি না!\"",
+          "ur": "مرغی بولی، \"تم پاگل ہو گئے ہو۔ بلی سے یا بڑی اماں سے پوچھو، کیا وہ تیرنا چاہیں گی!\"",
+          "th": "\"เจ้าคงบ้าไปแล้ว\" แม่ไก่พูด \"ลองไปถามแมวหรือยายดูสิว่าอยากว่ายน้ำไหม!\""
+        }
+      },
+      {
+        "id": "cl-ugly-duckling-12",
+        "english": "Unable to explain his feelings, he left the cottage and returned to the open water.",
+        "turkish": "Duygularını anlatamayınca kulübeyi bırakıp açık suya döndü.",
+        "translations": {
+          "es-419": "Como no podía explicar lo que sentía, dejó la casita y volvió a las aguas abiertas.",
+          "pt-BR": "Sem conseguir explicar o que sentia, ele deixou a cabana e voltou para as águas abertas.",
+          "id": "Karena tidak bisa menjelaskan perasaannya, ia meninggalkan pondok itu dan kembali ke perairan terbuka.",
+          "ar": "لم يستطع أن يشرح مشاعره، فترك الكوخ وعاد إلى الماء المفتوح.",
+          "vi": "Không thể giải thích cảm xúc của mình, chú rời túp lều và quay lại với mặt nước rộng lớn.",
+          "hi": "अपनी भावनाएँ समझा न पाने के कारण वह झोपड़ी छोड़कर फिर खुले पानी की ओर लौट गया।",
+          "ru": "Не сумев объяснить своих чувств, он покинул избушку и вернулся на открытую воду.",
+          "bn": "নিজের অনুভূতি বোঝাতে না পেরে সে কুটির ছেড়ে আবার খোলা জলে ফিরে গেল।",
+          "ur": "اپنے احساسات سمجھا نہ پانے پر وہ جھونپڑی چھوڑ کر کھلے پانی کی طرف لوٹ گیا۔",
+          "th": "มันไม่อาจอธิบายความรู้สึกของตัวเองได้ จึงออกจากกระท่อมและกลับไปยังผืนน้ำกว้าง"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-12-01",
+        "english": "There he swam and dived, but all the other animals still avoided him because he was so ugly.",
+        "turkish": "Orada yüzdü ve daldı ama diğer bütün hayvanlar çok çirkin olduğu için ondan hâlâ uzak duruyordu.",
+        "translations": {
+          "es-419": "Allí nadaba y se zambullía, pero todos los demás animales seguían evitándolo porque era muy feo.",
+          "pt-BR": "Lá ele nadava e mergulhava, mas todos os outros animais ainda o evitavam porque ele era muito feio.",
+          "id": "Di sana ia berenang dan menyelam, tetapi semua hewan lain masih menghindarinya karena ia sangat jelek.",
+          "ar": "هناك سبح وغاص، لكن كل الحيوانات الأخرى ظلّت تتجنّبه لأنه قبيح جدًا.",
+          "vi": "Ở đó chú bơi lội và lặn ngụp, nhưng mọi con vật khác vẫn xa lánh chú vì chú quá xấu xí.",
+          "hi": "वहाँ वह तैरता और डुबकी लगाता, पर बाकी सब जानवर अब भी उससे दूर रहते, क्योंकि वह बहुत बदसूरत था।",
+          "ru": "Там он плавал и нырял, но все остальные звери по-прежнему сторонились его, потому что он был очень некрасив.",
+          "bn": "সেখানে সে সাঁতার কাটত আর ডুব দিত, কিন্তু খুব কুৎসিত বলে অন্য সব প্রাণী তখনও তাকে এড়িয়ে চলত।",
+          "ur": "وہاں وہ تیرتا اور غوطے لگاتا، مگر باقی سب جانور اب بھی اس سے دور رہتے، کیونکہ وہ بہت بدصورت تھا۔",
+          "th": "ที่นั่นมันได้ว่ายน้ำและดำน้ำ แต่สัตว์อื่นทั้งหมดก็ยังหลบหน้ามันเพราะมันน่าเกลียดนัก"
+        }
+      },
+      {
+        "id": "cl-ugly-duckling-13",
+        "english": "Autumn came, and he saw a flock of beautiful white swans flying overhead.",
+        "turkish": "Sonbahar geldi ve tepesinden geçen güzel beyaz kuğulardan oluşan bir sürü gördü.",
+        "translations": {
+          "es-419": "Llegó el otoño, y vio una bandada de hermosos cisnes blancos que volaban por encima de él.",
+          "pt-BR": "O outono chegou, e ele viu um bando de lindos cisnes brancos voando lá no alto.",
+          "id": "Musim gugur tiba, dan ia melihat sekawanan angsa putih yang indah terbang di atasnya.",
+          "ar": "جاء الخريف، فرأى سربًا من البجع الأبيض الجميل يطير فوقه.",
+          "vi": "Mùa thu đến, và chú nhìn thấy một đàn thiên nga trắng xinh đẹp bay trên đầu.",
+          "hi": "पतझड़ आया, और उसने सुंदर सफ़ेद राजहंसों के एक झुंड को ऊपर उड़ते देखा।",
+          "ru": "Пришла осень, и он увидел стаю прекрасных белых лебедей, летевших над ним.",
+          "bn": "শরৎ এল, আর সে মাথার ওপর দিয়ে একঝাঁক সুন্দর সাদা রাজহংসকে উড়ে যেতে দেখল।",
+          "ur": "خزاں آئی، اور اس نے اپنے اوپر سے سفید خوبصورت راج ہنسوں کا ایک غول اڑتے دیکھا۔",
+          "th": "ฤดูใบไม้ร่วงมาถึง และมันเห็นฝูงหงส์ขาวที่สวยงามบินผ่านไปบนฟ้า"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-13-01",
+        "english": "The leaves in the forest turned yellow and brown, and the wind made them dance.",
+        "turkish": "Ormandaki yapraklar sarıya ve kahverengiye döndü; rüzgâr onları dans ettiriyordu.",
+        "translations": {
+          "es-419": "Las hojas del bosque se volvieron amarillas y marrones, y el viento las hacía bailar.",
+          "pt-BR": "As folhas da floresta ficaram amarelas e marrons, e o vento as fazia dançar.",
+          "id": "Daun-daun di hutan berubah kuning dan cokelat, dan angin membuatnya menari-nari.",
+          "ar": "اصفرّت أوراق الغابة واسمرّت، وراحت الريح تجعلها ترقص.",
+          "vi": "Lá trong rừng chuyển sang màu vàng và nâu, và gió làm chúng nhảy múa.",
+          "hi": "जंगल के पत्ते पीले और भूरे हो गए, और हवा उन्हें नचाने लगी।",
+          "ru": "Листья в лесу пожелтели и побурели, и ветер кружил их в танце.",
+          "bn": "বনের পাতাগুলো হলুদ আর বাদামি হয়ে গেল, আর বাতাস তাদের নাচাতে লাগল।",
+          "ur": "جنگل کے پتے پیلے اور بھورے ہو گئے، اور ہوا انہیں نچانے لگی۔",
+          "th": "ใบไม้ในป่าเปลี่ยนเป็นสีเหลืองและสีน้ำตาล แล้วสายลมก็พัดให้มันร่ายรำ"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-13-02",
+        "english": "Clouds heavy with snow hung low in the sky, and a raven on the fence cried, \"Caw! Caw!\"",
+        "turkish": "Karla dolu bulutlar gökyüzünde alçakta asılı duruyordu ve çitin üstündeki bir kuzgun \"Gak! Gak!\" diye bağırıyordu.",
+        "translations": {
+          "es-419": "Nubes cargadas de nieve colgaban bajas en el cielo, y un cuervo en la cerca graznaba: \"¡Cra! ¡Cra!\"",
+          "pt-BR": "Nuvens carregadas de neve pairavam baixas no céu, e um corvo na cerca gritava: — Cróc! Cróc!",
+          "id": "Awan yang penuh salju menggantung rendah di langit, dan seekor gagak di pagar berteriak, \"Gaak! Gaak!\"",
+          "ar": "تدلّت في السماء غيوم منخفضة مثقلة بالثلج، وصاح غراب على السياج: «غاق! غاق!»",
+          "vi": "Những đám mây nặng trĩu tuyết sà thấp trên trời, và một con quạ đậu trên hàng rào kêu: \"Quạ! Quạ!\"",
+          "hi": "बर्फ़ से भरे बादल आसमान में नीचे झुके थे, और बाड़ पर बैठा एक कौआ \"काँव! काँव!\" कर रहा था।",
+          "ru": "Тяжёлые снежные тучи низко висели в небе, а ворон на заборе кричал: «Кар! Кар!»",
+          "bn": "বরফে ভরা মেঘ আকাশে নিচু হয়ে ঝুলছিল, আর বেড়ার ওপর একটা দাঁড়কাক ডাকছিল, \"কা! কা!\"",
+          "ur": "برف سے لدے بادل آسمان میں نیچے جھکے تھے، اور باڑ پر بیٹھا ایک کوا \"کائیں! کائیں!\" کر رہا تھا۔",
+          "th": "เมฆหนักอึ้งด้วยหิมะลอยต่ำอยู่บนฟ้า และอีกาบนรั้วก็ร้อง \"กา! กา!\""
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-13-03",
+        "english": "The swans were flying away to warmer countries and open lakes.",
+        "turkish": "Kuğular daha sıcak ülkelere ve donmamış göllere uçup gidiyordu.",
+        "translations": {
+          "es-419": "Los cisnes se iban volando hacia países más cálidos y lagos sin hielo.",
+          "pt-BR": "Os cisnes estavam voando para países mais quentes e lagos sem gelo.",
+          "id": "Angsa-angsa itu sedang terbang menuju negeri-negeri yang lebih hangat dan danau-danau yang tidak membeku.",
+          "ar": "كانت البجعات تطير إلى بلاد أدفأ وبحيرات لا يغطّيها الجليد.",
+          "vi": "Đàn thiên nga đang bay về những xứ ấm áp hơn và những hồ nước không đóng băng.",
+          "hi": "राजहंस गरम देशों और खुली झीलों की ओर उड़े जा रहे थे।",
+          "ru": "Лебеди улетали в тёплые края, к незамерзающим озёрам.",
+          "bn": "রাজহংসরা উড়ে যাচ্ছিল উষ্ণ দেশ আর খোলা হ্রদের দিকে।",
+          "ur": "راج ہنس گرم ملکوں اور کھلی جھیلوں کی طرف اڑے جا رہے تھے۔",
+          "th": "ฝูงหงส์กำลังบินไปยังดินแดนที่อบอุ่นกว่าและทะเลสาบที่น้ำไม่เป็นน้ำแข็ง"
+        }
+      },
+      {
+        "id": "cl-ugly-duckling-14",
+        "english": "Their long necks and powerful wings filled him with a feeling he did not understand.",
+        "turkish": "Uzun boyunları ve güçlü kanatları, içini anlamadığı bir duyguyla doldurdu.",
+        "translations": {
+          "es-419": "Sus cuellos largos y sus alas poderosas lo llenaron de un sentimiento que no entendía.",
+          "pt-BR": "Os pescoços longos e as asas poderosas deles o encheram de um sentimento que ele não entendia.",
+          "id": "Leher mereka yang panjang dan sayap mereka yang kuat membangkitkan perasaan yang tidak ia pahami.",
+          "ar": "ملأته أعناقها الطويلة وأجنحتها القوية بشعور لم يفهمه.",
+          "vi": "Chiếc cổ dài và đôi cánh mạnh mẽ của chúng khiến chú dâng lên một cảm giác mà chú không hiểu nổi.",
+          "hi": "उनकी लंबी गर्दनों और ताकतवर पंखों ने उसके मन में एक ऐसी भावना भर दी जिसे वह समझ नहीं पाया।",
+          "ru": "Их длинные шеи и сильные крылья наполнили его чувством, которого он не понимал.",
+          "bn": "তাদের লম্বা গলা আর শক্তিশালী ডানা তার মনে এমন এক অনুভূতি জাগাল, যা সে বুঝতে পারল না।",
+          "ur": "ان کی لمبی گردنوں اور طاقتور پروں نے اس کے دل میں ایک ایسا احساس جگایا جسے وہ سمجھ نہ سکا۔",
+          "th": "คอยาวและปีกอันทรงพลังของพวกมันทำให้มันรู้สึกบางอย่างที่มันไม่เข้าใจ"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-14-01",
+        "english": "He turned round and round in the water, stretched his neck toward them, and gave a cry so strange that it frightened him.",
+        "turkish": "Suyun içinde dönüp durdu, boynunu onlara doğru uzattı ve öyle tuhaf bir çığlık attı ki kendisi bile korktu.",
+        "translations": {
+          "es-419": "Dio vueltas y vueltas en el agua, estiró el cuello hacia ellos y lanzó un grito tan extraño que se asustó a sí mismo.",
+          "pt-BR": "Ele girou e girou na água, esticou o pescoço na direção deles e soltou um grito tão estranho que se assustou.",
+          "id": "Ia berputar-putar di air, menjulurkan lehernya ke arah mereka, dan mengeluarkan teriakan yang begitu aneh sampai ia sendiri takut.",
+          "ar": "دار في الماء مرّة بعد مرّة، ومدّ عنقه نحوها، وأطلق صيحة غريبة جدًا حتى أخافته هو نفسه.",
+          "vi": "Chú xoay tròn mãi trong nước, vươn cổ về phía chúng và cất lên một tiếng kêu lạ đến nỗi chính chú cũng hoảng sợ.",
+          "hi": "वह पानी में गोल-गोल घूमा, उनकी ओर गर्दन बढ़ाई, और ऐसी अजीब आवाज़ निकाली कि ख़ुद ही डर गया।",
+          "ru": "Он кружился и кружился на воде, тянул к ним шею и вдруг издал такой странный крик, что сам испугался.",
+          "bn": "সে জলের মধ্যে ঘুরপাক খেল, তাদের দিকে গলা বাড়িয়ে দিল, আর এমন অদ্ভুত একটা ডাক দিল যে নিজেই ভয় পেয়ে গেল।",
+          "ur": "وہ پانی میں گول گول گھوما، ان کی طرف گردن بڑھائی، اور ایسی عجیب آواز نکالی کہ خود ہی ڈر گیا۔",
+          "th": "มันหมุนตัวไปมาในน้ำ ยืดคอไปทางพวกหงส์ แล้วส่งเสียงร้องประหลาดจนตัวเองยังตกใจ"
+        }
+      },
+      {
+        "id": "cl-ugly-duckling-15",
+        "english": "He loved them without knowing why, although he did not dare to join them.",
+        "turkish": "Aralarına katılmaya cesaret edemese de nedenini bilmeden onları sevdi.",
+        "translations": {
+          "es-419": "Los amaba sin saber por qué, aunque no se atrevía a unirse a ellos.",
+          "pt-BR": "Ele os amava sem saber por quê, embora não tivesse coragem de se juntar a eles.",
+          "id": "Ia menyayangi mereka tanpa tahu sebabnya, meskipun ia tidak berani bergabung dengan mereka.",
+          "ar": "أحبّها من غير أن يعرف السبب، مع أنه لم يجرؤ على اللحاق بها.",
+          "vi": "Chú yêu mến chúng mà không biết vì sao, dù chú không dám nhập đàn.",
+          "hi": "वह बिना जाने क्यों उनसे प्यार करने लगा, हालाँकि उनके पास जाने की उसकी हिम्मत नहीं हुई।",
+          "ru": "Он полюбил их, сам не зная почему, но не решался к ним присоединиться.",
+          "bn": "কেন জানে না, তবু সে তাদের ভালোবেসে ফেলল, যদিও তাদের দলে যোগ দেওয়ার সাহস তার হলো না।",
+          "ur": "وہ بغیر جانے ان سے محبت کرنے لگا، حالانکہ اسے ان کے ساتھ شامل ہونے کی ہمت نہ ہوئی۔",
+          "th": "มันรักพวกหงส์โดยไม่รู้ว่าทำไม แม้ว่ามันจะไม่กล้าเข้าไปอยู่ด้วยก็ตาม"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-15-01",
+        "english": "He did not envy them; how could he ever hope to be so beautiful?",
+        "turkish": "Onları kıskanmıyordu; hiç o kadar güzel olmayı umabilir miydi?",
+        "translations": {
+          "es-419": "No los envidiaba; ¿cómo iba a esperar ser alguna vez tan hermoso?",
+          "pt-BR": "Ele não os invejava; como poderia algum dia esperar ser tão bonito?",
+          "id": "Ia tidak iri kepada mereka; bagaimana mungkin ia berharap bisa seindah itu?",
+          "ar": "لم يحسدها؛ فكيف له أن يأمل يومًا أن يكون بهذا الجمال؟",
+          "vi": "Chú không ghen tị với chúng; làm sao chú dám mong mình đẹp được như thế?",
+          "hi": "उसे उनसे जलन नहीं हुई; वह इतना सुंदर होने की उम्मीद भी कैसे कर सकता था?",
+          "ru": "Он им не завидовал: разве мог он надеяться стать таким же красивым?",
+          "bn": "সে তাদের হিংসা করল না; অত সুন্দর হওয়ার আশা সে কীভাবেই বা করতে পারে?",
+          "ur": "اسے ان سے حسد نہیں ہوا؛ وہ اتنا خوبصورت ہونے کی امید بھی کیسے کر سکتا تھا؟",
+          "th": "มันไม่ได้อิจฉาพวกหงส์ มันจะหวังว่าจะงดงามได้ถึงเพียงนั้นได้อย่างไร"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-15-02",
+        "english": "He would have been happy if only the ducks had let him stay with them.",
+        "turkish": "Ördekler yanlarında kalmasına izin verseydi bile mutlu olurdu.",
+        "translations": {
+          "es-419": "Habría sido feliz con que los patos lo hubieran dejado quedarse con ellos.",
+          "pt-BR": "Ele já teria ficado feliz se os patos o tivessem deixado ficar com eles.",
+          "id": "Ia sudah akan bahagia seandainya itik-itik itu mengizinkannya tinggal bersama mereka.",
+          "ar": "كان سيكون سعيدًا لو أن البطّ سمح له فقط بالبقاء معه.",
+          "vi": "Chỉ cần đàn vịt cho chú ở cùng là chú đã vui lắm rồi.",
+          "hi": "अगर बत्तखें ही उसे अपने साथ रहने देतीं, तो वह ख़ुश हो जाता।",
+          "ru": "Он был бы счастлив, если бы хоть утки позволили ему жить с ними.",
+          "bn": "হাঁসেরা যদি শুধু তাকে তাদের সঙ্গে থাকতে দিত, তাতেই সে খুশি হতো।",
+          "ur": "اگر بطخیں ہی اسے اپنے ساتھ رہنے دیتیں تو وہ خوش ہو جاتا۔",
+          "th": "แค่พวกเป็ดยอมให้มันอยู่ด้วย มันก็คงมีความสุขแล้ว"
+        }
+      },
+      {
+        "id": "cl-ugly-duckling-16",
+        "english": "Winter grew bitterly cold, and he swam to keep a small patch of water from freezing.",
+        "turkish": "Kış çok soğudu; küçük bir su parçasının donmasını önlemek için yüzdü.",
+        "translations": {
+          "es-419": "El invierno se volvió terriblemente frío, y él nadaba para que un pedacito de agua no se congelara.",
+          "pt-BR": "O inverno ficou terrivelmente frio, e ele nadava para impedir que um pedacinho de água congelasse.",
+          "id": "Musim dingin menjadi sangat dingin, dan ia terus berenang agar sepetak kecil air tidak membeku.",
+          "ar": "اشتدّ برد الشتاء كثيرًا، فكان يسبح ليمنع بقعة صغيرة من الماء من أن تتجمّد.",
+          "vi": "Mùa đông trở nên lạnh buốt, và chú phải bơi liên tục để giữ cho một khoảng nước nhỏ không bị đóng băng.",
+          "hi": "सर्दी कड़ाके की हो गई, और वह थोड़े-से पानी को जमने से रोकने के लिए उसमें तैरता रहा।",
+          "ru": "Зима стала лютой, и он всё плавал, чтобы маленькая полынья не замёрзла.",
+          "bn": "শীত হাড়কাঁপানো হয়ে উঠল, আর জলের একটা ছোট অংশ জমে যাওয়া থেকে বাঁচাতে সে সাঁতরে চলল।",
+          "ur": "سردی بہت سخت ہو گئی، اور وہ پانی کے ایک چھوٹے سے حصے کو جمنے سے بچانے کے لیے تیرتا رہا۔",
+          "th": "ฤดูหนาวหนาวเหน็บขึ้นเรื่อย ๆ และมันต้องว่ายน้ำไปมาเพื่อไม่ให้น้ำเล็ก ๆ ตรงนั้นแข็งตัว"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-16-01",
+        "english": "Every night, the space in which he swam became smaller and smaller.",
+        "turkish": "Her gece yüzdüğü yer giderek daha da küçülüyordu.",
+        "translations": {
+          "es-419": "Cada noche, el espacio donde nadaba se hacía más y más pequeño.",
+          "pt-BR": "A cada noite, o espaço onde ele nadava ficava menor.",
+          "id": "Setiap malam, ruang tempat ia berenang menjadi semakin kecil.",
+          "ar": "وفي كل ليلة، كانت المساحة التي يسبح فيها تصغر أكثر فأكثر.",
+          "vi": "Đêm nào khoảng nước chú bơi cũng nhỏ lại thêm.",
+          "hi": "हर रात वह जगह, जहाँ वह तैरता था, और छोटी होती जाती।",
+          "ru": "С каждой ночью полынья, в которой он плавал, становилась всё меньше.",
+          "bn": "প্রতি রাতে যে জায়গাটুকুতে সে সাঁতার কাটত, তা আরও ছোট হয়ে আসত।",
+          "ur": "ہر رات وہ جگہ، جہاں وہ تیرتا تھا، اور چھوٹی ہوتی جاتی۔",
+          "th": "ทุกคืน พื้นที่ที่มันว่ายน้ำก็เล็กลงเรื่อย ๆ"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-16-02",
+        "english": "He had to paddle with his legs all the time so that the water would not close up.",
+        "turkish": "Suyun kapanmaması için durmadan ayaklarını çırpması gerekiyordu.",
+        "translations": {
+          "es-419": "Tenía que mover las patas todo el tiempo para que el agua no se cerrara.",
+          "pt-BR": "Ele tinha que bater as patas o tempo todo para a água não fechar.",
+          "id": "Ia harus terus mengayuh kakinya agar air itu tidak menutup.",
+          "ar": "كان عليه أن يحرّك رجليه طوال الوقت حتى لا ينغلق الماء.",
+          "vi": "Chú phải quạt chân liên tục để mặt nước khỏi đóng băng kín lại.",
+          "hi": "उसे लगातार पैर चलाने पड़ते ताकि पानी जम न जाए।",
+          "ru": "Ему приходилось всё время грести лапками, чтобы вода не затянулась.",
+          "bn": "জলটা যাতে জমে বন্ধ না হয়ে যায়, সেজন্য তাকে সারাক্ষণ পা চালাতে হতো।",
+          "ur": "اسے لگاتار پاؤں چلانے پڑتے تاکہ پانی جم نہ جائے۔",
+          "th": "มันต้องตีขาไม่หยุดเพื่อไม่ให้น้ำปิดเป็นน้ำแข็ง"
+        }
+      },
+      {
+        "id": "cl-ugly-duckling-17",
+        "english": "One night, he became exhausted and was trapped in the ice.",
+        "turkish": "Bir gece bitkin düşerek buzun içinde mahsur kaldı.",
+        "translations": {
+          "es-419": "Una noche, quedó agotado y atrapado en el hielo.",
+          "pt-BR": "Uma noite, ele ficou exausto e acabou preso no gelo.",
+          "id": "Suatu malam, ia kelelahan dan terjebak di dalam es.",
+          "ar": "ذات ليلة، أنهكه التعب فعلق في الجليد.",
+          "vi": "Một đêm, chú kiệt sức và bị mắc kẹt trong băng.",
+          "hi": "एक रात वह थककर चूर हो गया और बर्फ़ में फँस गया।",
+          "ru": "Однажды ночью он совсем обессилел и вмёрз в лёд.",
+          "bn": "এক রাতে সে ক্লান্ত হয়ে পড়ল আর বরফে আটকে গেল।",
+          "ur": "ایک رات وہ تھک کر چور ہو گیا اور برف میں پھنس گیا۔",
+          "th": "คืนหนึ่ง มันหมดแรงและติดอยู่ในน้ำแข็ง"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-17-01",
+        "english": "Early in the morning, a farmer came by and saw him lying there.",
+        "turkish": "Sabah erkenden bir çiftçi oradan geçti ve onu orada yatarken gördü.",
+        "translations": {
+          "es-419": "Muy temprano, un campesino pasó por allí y lo vio tendido en el hielo.",
+          "pt-BR": "Bem cedo, um fazendeiro passou por ali e o viu caído no gelo.",
+          "id": "Pagi-pagi sekali, seorang petani lewat dan melihatnya tergeletak di sana.",
+          "ar": "في الصباح الباكر، مرّ مزارع ورآه ملقًى هناك.",
+          "vi": "Sáng sớm, một bác nông dân đi ngang qua và thấy chú nằm đó.",
+          "hi": "सुबह-सुबह एक किसान उधर से गुज़रा और उसे वहाँ पड़ा देखा।",
+          "ru": "Рано утром мимо проходил крестьянин и увидел его во льду.",
+          "bn": "ভোরবেলা এক কৃষক সেখান দিয়ে যাচ্ছিলেন, আর তাকে পড়ে থাকতে দেখলেন।",
+          "ur": "صبح سویرے ایک کسان ادھر سے گزرا اور اسے وہاں پڑا دیکھا۔",
+          "th": "เช้าตรู่ ชาวนาคนหนึ่งเดินผ่านมาและเห็นมันนอนอยู่ตรงนั้น"
+        }
+      },
+      {
+        "id": "cl-ugly-duckling-18",
+        "english": "A farmer broke the ice and carried him home.",
+        "turkish": "Bir çiftçi buzu kırıp onu evine taşıdı.",
+        "translations": {
+          "es-419": "Un campesino rompió el hielo y se lo llevó a su casa.",
+          "pt-BR": "Um fazendeiro quebrou o gelo e o levou para casa.",
+          "id": "Seorang petani memecahkan es itu dan membawanya pulang.",
+          "ar": "كسر مزارع الجليد وحمله إلى بيته.",
+          "vi": "Một bác nông dân đập vỡ băng và mang chú về nhà.",
+          "hi": "एक किसान ने बर्फ़ तोड़ी और उसे अपने घर ले गया।",
+          "ru": "Крестьянин разбил лёд и отнёс его домой.",
+          "bn": "এক কৃষক বরফ ভেঙে তাকে বাড়ি নিয়ে গেলেন।",
+          "ur": "ایک کسان نے برف توڑی اور اسے اپنے گھر لے گیا۔",
+          "th": "ชาวนาคนหนึ่งทุบน้ำแข็งและอุ้มมันกลับบ้าน"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-18-01",
+        "english": "In the warm kitchen, the bird slowly came back to life.",
+        "turkish": "Sıcak mutfakta kuş yavaş yavaş kendine geldi.",
+        "translations": {
+          "es-419": "En la cocina tibia, el pájaro volvió poco a poco a la vida.",
+          "pt-BR": "Na cozinha quentinha, o pássaro aos poucos voltou à vida.",
+          "id": "Di dapur yang hangat, burung itu perlahan-lahan pulih kembali.",
+          "ar": "وفي المطبخ الدافئ، عادت الحياة إلى الطائر شيئًا فشيئًا.",
+          "vi": "Trong gian bếp ấm áp, chú chim dần dần tỉnh lại.",
+          "hi": "गरम रसोई में पंछी धीरे-धीरे होश में आ गया।",
+          "ru": "В тёплой кухне птица понемногу ожила.",
+          "bn": "উষ্ণ রান্নাঘরে পাখিটা ধীরে ধীরে চাঙ্গা হয়ে উঠল।",
+          "ur": "گرم باورچی خانے میں پرندہ آہستہ آہستہ ہوش میں آ گیا۔",
+          "th": "ในครัวที่อบอุ่น นกค่อย ๆ ฟื้นคืนสติ"
+        }
+      },
+      {
+        "id": "cl-ugly-duckling-19",
+        "english": "The children wanted to play, but the frightened bird thought they would hurt him.",
+        "turkish": "Çocuklar oynamak istedi ama korkmuş kuş onların kendisine zarar vereceğini sandı.",
+        "translations": {
+          "es-419": "Los niños querían jugar, pero el pájaro asustado creyó que le harían daño.",
+          "pt-BR": "As crianças queriam brincar, mas o pássaro, assustado, pensou que elas iam machucá-lo.",
+          "id": "Anak-anak ingin bermain, tetapi burung yang ketakutan itu mengira mereka akan menyakitinya.",
+          "ar": "أراد الأطفال أن يلعبوا، لكن الطائر الخائف ظنّ أنهم سيؤذونه.",
+          "vi": "Lũ trẻ muốn chơi với chú, nhưng chú chim sợ hãi nghĩ rằng chúng sẽ làm hại mình.",
+          "hi": "बच्चे उसके साथ खेलना चाहते थे, लेकिन डरे हुए पंछी को लगा कि वे उसे चोट पहुँचाएँगे।",
+          "ru": "Дети хотели поиграть, но испуганный утёнок подумал, что они сделают ему больно.",
+          "bn": "ছেলেমেয়েরা তার সঙ্গে খেলতে চাইল, কিন্তু ভয় পাওয়া পাখিটা ভাবল তারা তাকে আঘাত করবে।",
+          "ur": "بچے اس سے کھیلنا چاہتے تھے، لیکن ڈرا ہوا پرندہ سمجھا کہ وہ اسے تکلیف دیں گے۔",
+          "th": "เด็ก ๆ อยากเล่นกับมัน แต่นกที่ตกใจกลัวคิดว่าพวกเขาจะทำร้ายมัน"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-19-01",
+        "english": "He flew into the milk pan and splashed milk all over the room.",
+        "turkish": "Süt tenceresine uçtu ve bütün odaya süt sıçrattı.",
+        "translations": {
+          "es-419": "Voló dentro de la olla de la leche y salpicó leche por toda la habitación.",
+          "pt-BR": "Ele voou para dentro da panela de leite e espirrou leite pela sala toda.",
+          "id": "Ia terbang ke dalam panci susu dan memercikkan susu ke seluruh ruangan.",
+          "ar": "طار إلى قِدر الحليب ورشّ الحليب في أرجاء الغرفة.",
+          "vi": "Chú bay sà vào nồi sữa, làm sữa bắn tung tóe khắp phòng.",
+          "hi": "वह उड़कर दूध के बर्तन में जा गिरा और पूरे कमरे में दूध छितरा दिया।",
+          "ru": "Он влетел прямо в кастрюлю с молоком и забрызгал молоком всю комнату.",
+          "bn": "সে উড়ে গিয়ে দুধের পাত্রে পড়ল আর সারা ঘরে দুধ ছিটিয়ে দিল।",
+          "ur": "وہ اڑ کر دودھ کے برتن میں جا گرا اور سارے کمرے میں دودھ اچھال دیا۔",
+          "th": "มันบินลงไปในหม้อนมจนนมกระเซ็นไปทั่วห้อง"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-19-02",
+        "english": "The woman screamed and clapped her hands, which frightened him even more.",
+        "turkish": "Kadın çığlık atıp ellerini çırptı, bu da onu daha çok korkuttu.",
+        "translations": {
+          "es-419": "La mujer gritó y dio palmadas, lo que lo asustó todavía más.",
+          "pt-BR": "A mulher gritou e bateu palmas, o que o assustou ainda mais.",
+          "id": "Perempuan itu menjerit dan bertepuk tangan, sehingga ia semakin ketakutan.",
+          "ar": "صرخت المرأة وصفّقت بيديها، فزاد خوفه.",
+          "vi": "Người phụ nữ hét lên và vỗ tay, khiến chú càng sợ hơn.",
+          "hi": "औरत चीख़ी और तालियाँ बजाने लगी, जिससे वह और भी डर गया।",
+          "ru": "Женщина закричала и всплеснула руками, и он испугался ещё больше.",
+          "bn": "মহিলা চেঁচিয়ে উঠে হাততালি দিলেন, তাতে সে আরও ভয় পেয়ে গেল।",
+          "ur": "عورت چیخی اور تالیاں بجانے لگی، جس سے وہ اور بھی ڈر گیا۔",
+          "th": "ผู้หญิงกรีดร้องและตบมือ ซึ่งยิ่งทำให้มันตกใจกลัวหนักขึ้น"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-19-03",
+        "english": "Then he flew into the butter tub and down into the flour barrel, and came out again covered in white.",
+        "turkish": "Sonra tereyağı küpüne, oradan da un fıçısına uçtu ve bembeyaz olmuş halde dışarı çıktı.",
+        "translations": {
+          "es-419": "Luego voló a la tina de la mantequilla y bajó al barril de harina, y salió todo cubierto de blanco.",
+          "pt-BR": "Depois voou para a tina de manteiga, caiu no barril de farinha e saiu todo coberto de branco.",
+          "id": "Lalu ia terbang ke dalam tong mentega dan turun ke tong tepung, lalu keluar lagi dengan tubuh putih semua.",
+          "ar": "ثم طار إلى وعاء الزبدة، ونزل في برميل الطحين، وخرج مغطًّى بالبياض.",
+          "vi": "Rồi chú bay vào thùng bơ, rơi xuống thùng bột, và chui ra trắng toát cả người.",
+          "hi": "फिर वह मक्खन के बर्तन में गया, वहाँ से आटे के ड्रम में गिरा, और सफ़ेद होकर बाहर निकला।",
+          "ru": "Потом он угодил в кадку с маслом, а оттуда в бочку с мукой и вылез весь белый.",
+          "bn": "তারপর সে উড়ে গিয়ে মাখনের গামলায় পড়ল, সেখান থেকে ময়দার পিপেয়, আর বেরিয়ে এল একেবারে সাদা হয়ে।",
+          "ur": "پھر وہ مکھن کے برتن میں گیا، وہاں سے آٹے کے ڈرم میں گرا، اور سفید ہو کر باہر نکلا۔",
+          "th": "จากนั้นมันก็บินลงไปในถังเนย แล้วตกลงไปในถังแป้ง ออกมาอีกทีก็ขาวโพลนไปทั้งตัว"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-19-04",
+        "english": "The children fell over each other as they tried to catch him, laughing and shouting.",
+        "turkish": "Çocuklar gülüp bağırarak onu yakalamaya çalışırken birbirlerinin üstüne düştüler.",
+        "translations": {
+          "es-419": "Los niños se tropezaban unos con otros tratando de atraparlo, entre risas y gritos.",
+          "pt-BR": "As crianças caíam umas por cima das outras tentando pegá-lo, rindo e gritando.",
+          "id": "Anak-anak saling bertabrakan saat mencoba menangkapnya, sambil tertawa dan berteriak.",
+          "ar": "وتعثّر الأطفال بعضهم ببعض وهم يحاولون الإمساك به، يضحكون ويصيحون.",
+          "vi": "Lũ trẻ ngã chồng lên nhau khi cố bắt chú, vừa cười vừa la hét.",
+          "hi": "बच्चे उसे पकड़ने की कोशिश में हँसते-चिल्लाते एक-दूसरे पर गिर पड़े।",
+          "ru": "Дети, смеясь и крича, гонялись за ним и валились друг на друга.",
+          "bn": "ছেলেমেয়েরা হাসতে হাসতে, চেঁচাতে চেঁচাতে তাকে ধরতে গিয়ে একে অন্যের ঘাড়ে পড়ল।",
+          "ur": "بچے اسے پکڑنے کی کوشش میں ہنستے چلاتے ایک دوسرے پر گر پڑے۔",
+          "th": "เด็ก ๆ หัวเราะและตะโกนขณะพยายามจับมัน จนล้มทับกันระเนระนาด"
+        }
+      },
+      {
+        "id": "cl-ugly-duckling-20",
+        "english": "After causing confusion in the kitchen, he escaped outside again.",
+        "turkish": "Mutfakta karışıklık çıkardıktan sonra yeniden dışarı kaçtı.",
+        "translations": {
+          "es-419": "Después de causar un desorden en la cocina, escapó afuera otra vez.",
+          "pt-BR": "Depois de causar uma confusão na cozinha, ele escapou de novo para fora.",
+          "id": "Setelah membuat kekacauan di dapur, ia kabur keluar lagi.",
+          "ar": "بعد أن أحدث فوضى في المطبخ، هرب إلى الخارج مرة أخرى.",
+          "vi": "Sau khi gây náo loạn trong bếp, chú lại trốn ra ngoài.",
+          "hi": "रसोई में खलबली मचाने के बाद वह फिर बाहर भाग गया।",
+          "ru": "Устроив переполох на кухне, он снова убежал на улицу.",
+          "bn": "রান্নাঘরে হুলুস্থুল বাধিয়ে সে আবার বাইরে পালিয়ে গেল।",
+          "ur": "باورچی خانے میں افراتفری مچانے کے بعد وہ پھر باہر بھاگ نکلا۔",
+          "th": "หลังจากทำให้ในครัววุ่นวายไปหมด มันก็หนีออกไปข้างนอกอีกครั้ง"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-20-01",
+        "english": "He slipped through the open door and lay down, exhausted, in the fresh snow under the bushes.",
+        "turkish": "Açık kapıdan süzülüp çıktı ve bitkin halde çalıların altındaki taze karın üstüne uzandı.",
+        "translations": {
+          "es-419": "Se escabulló por la puerta abierta y se echó, agotado, en la nieve recién caída bajo los arbustos.",
+          "pt-BR": "Ele escapuliu pela porta aberta e se deitou, exausto, na neve fresca debaixo dos arbustos.",
+          "id": "Ia menyelinap keluar lewat pintu yang terbuka dan berbaring kelelahan di salju segar di bawah semak-semak.",
+          "ar": "انسلّ من الباب المفتوح، واستلقى منهكًا على الثلج الطازج تحت الشجيرات.",
+          "vi": "Chú lách qua cánh cửa mở và nằm vật xuống, kiệt sức, trên lớp tuyết mới dưới bụi cây.",
+          "hi": "वह खुले दरवाज़े से निकल गया और थककर झाड़ियों के नीचे ताज़ी बर्फ़ पर लेट गया।",
+          "ru": "Он выскользнул в открытую дверь и без сил улёгся на свежем снегу под кустами.",
+          "bn": "খোলা দরজা দিয়ে সে বেরিয়ে গেল, তারপর ক্লান্ত হয়ে ঝোপের নিচে নতুন বরফের ওপর শুয়ে পড়ল।",
+          "ur": "وہ کھلے دروازے سے نکل گیا اور تھک کر جھاڑیوں کے نیچے تازہ برف پر لیٹ گیا۔",
+          "th": "มันลอดออกทางประตูที่เปิดอยู่ แล้วล้มตัวลงนอนอย่างหมดแรงบนหิมะใหม่ใต้พุ่มไม้"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-20-02",
+        "english": "It would be too sad to tell of all the hunger and cold he suffered that hard winter.",
+        "turkish": "O zorlu kışta çektiği bütün açlığı ve soğuğu anlatmak fazla hüzünlü olurdu.",
+        "translations": {
+          "es-419": "Sería demasiado triste contar todo el hambre y el frío que pasó aquel duro invierno.",
+          "pt-BR": "Seria triste demais contar toda a fome e o frio que ele passou naquele inverno duro.",
+          "id": "Terlalu menyedihkan untuk menceritakan semua lapar dan dingin yang ia derita pada musim dingin yang berat itu.",
+          "ar": "سيكون من المحزن جدًا أن نحكي كل ما عاناه من جوع وبرد في ذلك الشتاء القاسي.",
+          "vi": "Thật quá buồn nếu kể hết những đói rét mà chú phải chịu trong mùa đông khắc nghiệt ấy.",
+          "hi": "उस कठिन सर्दी में उसने जो भूख और ठंड सही, उसे बताना बहुत दुखद होगा।",
+          "ru": "Слишком грустно было бы рассказывать, сколько голода и холода он вытерпел той суровой зимой.",
+          "bn": "সেই কঠিন শীতে সে যত খিদে আর ঠান্ডা সয়েছিল, তা বলতে গেলে বড্ড কষ্ট হয়।",
+          "ur": "اس سخت سردی میں اس نے جو بھوک اور ٹھنڈ سہی، اسے بیان کرنا بہت دکھ کی بات ہوگی۔",
+          "th": "หากจะเล่าถึงความหิวและความหนาวทั้งหมดที่มันต้องทนในฤดูหนาวอันโหดร้ายนั้นก็คงเศร้าเกินไป"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-20-03",
+        "english": "He spent it lying among the reeds in the marsh.",
+        "turkish": "O kışı bataklıktaki sazların arasında yatarak geçirdi.",
+        "translations": {
+          "es-419": "Lo pasó echado entre los juncos del pantano.",
+          "pt-BR": "Ele o passou deitado entre os juncos do brejo.",
+          "id": "Ia melewatinya dengan berbaring di antara alang-alang di rawa.",
+          "ar": "قضاه مستلقيًا بين القصب في المستنقع.",
+          "vi": "Chú trải qua mùa đông ấy nằm giữa đám lau sậy trong đầm lầy.",
+          "hi": "उसने वह सर्दी दलदल के सरकंडों के बीच पड़े-पड़े काटी।",
+          "ru": "Он провёл её, лёжа в камышах на болоте.",
+          "bn": "সে শীতটা জলার নলখাগড়ার মধ্যে শুয়ে শুয়ে কাটাল।",
+          "ur": "اس نے وہ سردی دلدل کے سرکنڈوں کے بیچ پڑے پڑے گزاری۔",
+          "th": "มันใช้ชีวิตช่วงนั้นนอนอยู่ท่ามกลางต้นกกในหนองน้ำ"
+        }
+      },
+      {
+        "id": "cl-ugly-duckling-21",
+        "english": "At last, spring returned, and he discovered that his wings had grown strong.",
+        "turkish": "Sonunda bahar geri döndü ve kuş kanatlarının güçlendiğini fark etti.",
+        "translations": {
+          "es-419": "Por fin volvió la primavera, y descubrió que sus alas se habían hecho fuertes.",
+          "pt-BR": "Finalmente, a primavera voltou, e ele descobriu que as suas asas tinham ficado fortes.",
+          "id": "Akhirnya, musim semi kembali, dan ia mendapati bahwa sayapnya telah menjadi kuat.",
+          "ar": "أخيرًا، عاد الربيع، فاكتشف أن جناحيه صارا قويين.",
+          "vi": "Cuối cùng, mùa xuân trở lại, và chú phát hiện ra đôi cánh của mình đã trở nên mạnh mẽ.",
+          "hi": "आख़िरकार वसंत लौटा, और उसने पाया कि उसके पंख मज़बूत हो गए हैं।",
+          "ru": "Наконец вернулась весна, и он обнаружил, что его крылья стали сильными.",
+          "bn": "অবশেষে বসন্ত ফিরে এল, আর সে দেখল তার ডানা শক্তিশালী হয়ে উঠেছে।",
+          "ur": "آخرکار بہار لوٹ آئی، اور اسے پتا چلا کہ اس کے پر مضبوط ہو چکے ہیں۔",
+          "th": "ในที่สุด ฤดูใบไม้ผลิก็กลับมา และมันพบว่าปีกของมันแข็งแรงขึ้นแล้ว"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-21-01",
+        "english": "The sun shone warmly again, and the larks were singing.",
+        "turkish": "Güneş yine ılık ılık parlıyor, tarlakuşları şarkı söylüyordu.",
+        "translations": {
+          "es-419": "El sol volvió a brillar con calor, y las alondras cantaban.",
+          "pt-BR": "O sol voltou a brilhar quentinho, e as cotovias cantavam.",
+          "id": "Matahari kembali bersinar hangat, dan burung-burung branjangan bernyanyi.",
+          "ar": "عادت الشمس تشرق دافئة، وكانت القبّرات تغرّد.",
+          "vi": "Mặt trời lại tỏa nắng ấm áp, và chim sơn ca hót vang.",
+          "hi": "सूरज फिर से गुनगुनी धूप बिखेरने लगा, और चंडूल गाने लगे।",
+          "ru": "Снова пригревало солнышко, и пели жаворонки.",
+          "bn": "সূর্য আবার উষ্ণ আলো ছড়াল, আর ভরতপাখিরা গান গাইছিল।",
+          "ur": "سورج پھر سے گرم دھوپ بکھیرنے لگا، اور چنڈول گانے لگے۔",
+          "th": "ดวงอาทิตย์กลับมาส่องแสงอบอุ่นอีกครั้ง และนกลาร์กก็ร้องเพลง"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-21-02",
+        "english": "He spread his wings, and they carried him away before he knew it.",
+        "turkish": "Kanatlarını açtı ve kanatları onu daha ne olduğunu anlamadan uzaklara taşıdı.",
+        "translations": {
+          "es-419": "Extendió las alas, y estas lo llevaron lejos antes de que se diera cuenta.",
+          "pt-BR": "Ele abriu as asas, e elas o levaram embora antes que ele percebesse.",
+          "id": "Ia membentangkan sayapnya, dan sayap itu membawanya terbang sebelum ia menyadarinya.",
+          "ar": "فرد جناحيه، فحملاه بعيدًا قبل أن يدرك ذلك.",
+          "vi": "Chú dang cánh, và đôi cánh đưa chú bay đi lúc nào không hay.",
+          "hi": "उसने अपने पंख फैलाए, और पता चलने से पहले ही वे उसे दूर उड़ा ले गए।",
+          "ru": "Он расправил крылья, и они унесли его прежде, чем он успел опомниться.",
+          "bn": "সে ডানা মেলল, আর বুঝে ওঠার আগেই ডানাগুলো তাকে উড়িয়ে নিয়ে গেল।",
+          "ur": "اس نے اپنے پر پھیلائے، اور پتا چلنے سے پہلے ہی وہ اسے دور اڑا لے گئے۔",
+          "th": "มันกางปีก แล้วปีกก็พามันบินไปก่อนที่มันจะรู้ตัว"
+        }
+      },
+      {
+        "id": "cl-ugly-duckling-22",
+        "english": "He flew into a garden where three white swans moved across the water.",
+        "turkish": "Üç beyaz kuğunun suyun üzerinde süzüldüğü bir bahçeye uçtu.",
+        "translations": {
+          "es-419": "Voló a un jardín donde tres cisnes blancos se deslizaban por el agua.",
+          "pt-BR": "Ele voou até um jardim onde três cisnes brancos deslizavam pela água.",
+          "id": "Ia terbang ke sebuah taman tempat tiga ekor angsa putih berenang di atas air.",
+          "ar": "طار إلى حديقة كانت ثلاث بجعات بيضاء تتهادى فيها على الماء.",
+          "vi": "Chú bay vào một khu vườn nơi có ba con thiên nga trắng đang lướt trên mặt nước.",
+          "hi": "वह उड़कर एक बगीचे में पहुँचा, जहाँ तीन सफ़ेद राजहंस पानी पर तैर रहे थे।",
+          "ru": "Он прилетел в сад, где по воде скользили три белых лебедя.",
+          "bn": "সে উড়ে একটা বাগানে গেল, যেখানে তিনটে সাদা রাজহংস জলে ভেসে বেড়াচ্ছিল।",
+          "ur": "وہ اڑ کر ایک باغ میں پہنچا جہاں تین سفید راج ہنس پانی پر تیر رہے تھے۔",
+          "th": "มันบินเข้าไปในสวนแห่งหนึ่งที่มีหงส์ขาวสามตัวกำลังว่ายอยู่บนผิวน้ำ"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-22-01",
+        "english": "Apple trees were in blossom, and the lilac hung its long green branches over the canal.",
+        "turkish": "Elma ağaçları çiçek açmıştı ve leylak uzun yeşil dallarını kanalın üzerine sarkıtmıştı.",
+        "translations": {
+          "es-419": "Los manzanos estaban en flor, y la lila dejaba caer sus largas ramas verdes sobre el canal.",
+          "pt-BR": "As macieiras estavam em flor, e o lilás pendia seus longos galhos verdes sobre o canal.",
+          "id": "Pohon-pohon apel sedang berbunga, dan pohon lilak menjuntaikan dahan-dahan hijaunya yang panjang di atas kanal.",
+          "ar": "كانت أشجار التفاح مزهرة، وتدلّت أغصان الليلك الخضراء الطويلة فوق القناة.",
+          "vi": "Những cây táo đang nở hoa, và cây tử đinh hương rủ những cành xanh dài xuống mặt kênh.",
+          "hi": "सेब के पेड़ों पर फूल खिले थे, और बकाइन अपनी लंबी हरी डालियाँ नहर पर झुकाए खड़ा था।",
+          "ru": "Цвели яблони, и сирень склоняла свои длинные зелёные ветви над каналом.",
+          "bn": "আপেলগাছে ফুল ফুটেছিল, আর লাইলাক গাছ তার লম্বা সবুজ ডালগুলো খালের ওপর নুইয়ে রেখেছিল।",
+          "ur": "سیب کے درختوں پر پھول کھلے تھے، اور بکائن اپنی لمبی ہری شاخیں نہر پر جھکائے کھڑا تھا۔",
+          "th": "ต้นแอปเปิลกำลังออกดอก และต้นไลแลคก็ห้อยกิ่งยาวสีเขียวลงเหนือลำคลอง"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-22-02",
+        "english": "The swans ruffled their feathers and floated lightly over the water.",
+        "turkish": "Kuğular tüylerini kabartıp suyun üstünde hafifçe süzülüyordu.",
+        "translations": {
+          "es-419": "Los cisnes erizaban sus plumas y flotaban ligeros sobre el agua.",
+          "pt-BR": "Os cisnes eriçavam as penas e deslizavam levemente sobre a água.",
+          "id": "Angsa-angsa itu mengembangkan bulunya dan mengapung ringan di atas air.",
+          "ar": "نفشت البجعات ريشها وانسابت بخفّة فوق الماء.",
+          "vi": "Đàn thiên nga xù lông và nhẹ nhàng lướt trên mặt nước.",
+          "hi": "राजहंस अपने पंख फुलाकर हल्के-हल्के पानी पर तैर रहे थे।",
+          "ru": "Лебеди распушили перья и легко скользили по воде.",
+          "bn": "রাজহংসরা পালক ফুলিয়ে হালকাভাবে জলের ওপর ভেসে বেড়াচ্ছিল।",
+          "ur": "راج ہنس اپنے پر پھلا کر ہلکے ہلکے پانی پر تیر رہے تھے۔",
+          "th": "หงส์ทั้งสามพองขนและลอยตัวไปบนน้ำอย่างแผ่วเบา"
+        }
+      },
+      {
+        "id": "cl-ugly-duckling-23",
+        "english": "He approached them, expecting rejection even from these beautiful birds.",
+        "turkish": "Bu güzel kuşların bile kendisini reddedeceğini düşünerek onlara yaklaştı.",
+        "translations": {
+          "es-419": "Se acercó a ellos, esperando que hasta estos hermosos pájaros lo rechazaran.",
+          "pt-BR": "Ele se aproximou deles, esperando ser rejeitado até por aquelas aves tão lindas.",
+          "id": "Ia mendekati mereka, menduga bahwa burung-burung yang indah ini pun akan menolaknya.",
+          "ar": "اقترب منها، وهو يتوقّع أن ترفضه حتى هذه الطيور الجميلة.",
+          "vi": "Chú tiến lại gần chúng, đinh ninh rằng ngay cả những con chim xinh đẹp này cũng sẽ xua đuổi mình.",
+          "hi": "वह उनके पास गया, यह सोचते हुए कि ये सुंदर पंछी भी उसे ठुकरा देंगे।",
+          "ru": "Он подплыл к ним, ожидая, что даже эти прекрасные птицы его прогонят.",
+          "bn": "সে তাদের কাছে গেল, ভাবল এই সুন্দর পাখিরাও তাকে তাড়িয়ে দেবে।",
+          "ur": "وہ ان کے پاس گیا، یہ سوچ کر کہ یہ خوبصورت پرندے بھی اسے ٹھکرا دیں گے۔",
+          "th": "มันเข้าไปหาพวกหงส์ โดยคาดว่าแม้แต่นกที่สวยงามเหล่านี้ก็คงไม่ต้อนรับมัน"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-23-01",
+        "english": "\"I will fly to those royal birds,\" he thought. \"They may kill me because I am so ugly, but it does not matter.\"",
+        "turkish": "\"O soylu kuşların yanına uçacağım,\" diye düşündü. \"Çok çirkin olduğum için beni öldürebilirler ama önemi yok.\"",
+        "translations": {
+          "es-419": "\"Volaré hacia esas aves reales\", pensó. \"Puede que me maten por ser tan feo, pero no importa\".",
+          "pt-BR": "\"Vou voar até aquelas aves reais\", pensou ele. \"Talvez me matem por eu ser tão feio, mas não faz mal.\"",
+          "id": "\"Aku akan terbang ke burung-burung agung itu,\" pikirnya. \"Mungkin mereka akan membunuhku karena aku begitu jelek, tetapi tidak apa-apa.\"",
+          "ar": "فكّر: «سأطير إلى تلك الطيور الملكية. قد تقتلني لأنني قبيح جدًا، لكن لا يهمّ.»",
+          "vi": "\"Mình sẽ bay đến chỗ những con chim cao quý kia,\" chú nghĩ. \"Có thể chúng sẽ giết mình vì mình xấu xí quá, nhưng cũng chẳng sao.\"",
+          "hi": "उसने सोचा, \"मैं उन शाही पंछियों के पास उड़कर जाऊँगा। शायद वे मुझे मार डालें, क्योंकि मैं बहुत बदसूरत हूँ, पर कोई बात नहीं।\"",
+          "ru": "«Полечу к этим царственным птицам, — подумал он. — Может, они убьют меня за то, что я такой некрасивый, но пусть».",
+          "bn": "সে ভাবল, \"আমি ওই রাজকীয় পাখিদের কাছে উড়ে যাব। আমি এত কুৎসিত বলে ওরা হয়তো আমাকে মেরে ফেলবে, তাতে কিছু যায় আসে না।\"",
+          "ur": "اس نے سوچا، \"میں ان شاہی پرندوں کے پاس اڑ کر جاؤں گا۔ شاید وہ مجھے مار ڈالیں کیونکہ میں بہت بدصورت ہوں، پر کوئی بات نہیں۔\"",
+          "th": "\"ข้าจะบินไปหานกผู้สูงศักดิ์เหล่านั้น\" มันคิด \"พวกมันอาจฆ่าข้าเพราะข้าน่าเกลียดนัก แต่ก็ช่างเถอะ\""
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-23-02",
+        "english": "\"It is better to be killed by them than to be bitten by ducks, pecked by hens, and kicked by the girl who feeds them.\"",
+        "turkish": "\"Onlar tarafından öldürülmek, ördeklerce ısırılmaktan, tavuklarca gagalanmaktan ve onlara yem veren kızın tekmelerinden iyidir.\"",
+        "translations": {
+          "es-419": "\"Es mejor que ellos me maten a que me muerdan los patos, me picoteen las gallinas y me patee la muchacha que les da de comer\".",
+          "pt-BR": "\"É melhor ser morto por eles do que ser mordido pelos patos, bicado pelas galinhas e chutado pela moça que lhes dá comida.\"",
+          "id": "\"Lebih baik dibunuh oleh mereka daripada digigit itik, dipatuk ayam, dan ditendang gadis yang memberi mereka makan.\"",
+          "ar": "«خيرٌ لي أن تقتلني هذه الطيور من أن يعضّني البطّ، وتنقرني الدجاجات، وتركلني الفتاة التي تُطعمها.»",
+          "vi": "\"Thà bị chúng giết còn hơn bị vịt cắn, bị gà mổ và bị cô gái cho gia cầm ăn đá.\"",
+          "hi": "\"बत्तखों के काटने, मुर्गियों की चोंचों और दाना डालने वाली लड़की की लातों से तो इनके हाथों मरना ही बेहतर है।\"",
+          "ru": "«Лучше погибнуть от них, чем терпеть укусы уток, клевки кур и пинки девушки, что кормит птицу».",
+          "bn": "\"হাঁসের কামড়, মুরগির ঠোকর আর খাবার দেওয়া মেয়েটার লাথি খাওয়ার চেয়ে ওদের হাতে মরাও ভালো।\"",
+          "ur": "\"بطخوں کے کاٹنے، مرغیوں کی چونچوں اور دانہ ڈالنے والی لڑکی کی لاتوں سے تو ان کے ہاتھوں مرنا ہی بہتر ہے۔\"",
+          "th": "\"ถูกพวกมันฆ่ายังดีกว่าถูกเป็ดกัด ถูกไก่จิก และถูกเด็กสาวที่ให้อาหารเตะ\""
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-23-03",
+        "english": "\"Kill me,\" he said softly, and he bent his head down to the water and waited.",
+        "turkish": "\"Öldürün beni,\" dedi usulca, başını suya doğru eğdi ve bekledi.",
+        "translations": {
+          "es-419": "\"Mátenme\", dijo en voz baja, e inclinó la cabeza hacia el agua y esperó.",
+          "pt-BR": "— Podem me matar — disse ele baixinho, e inclinou a cabeça para a água e esperou.",
+          "id": "\"Bunuhlah aku,\" katanya lirih, lalu ia menundukkan kepala ke air dan menunggu.",
+          "ar": "قال بهدوء: «اقتلنني»، وأحنى رأسه نحو الماء وانتظر.",
+          "vi": "\"Hãy giết tôi đi,\" chú khẽ nói, rồi cúi đầu xuống mặt nước và chờ đợi.",
+          "hi": "\"मुझे मार डालो,\" उसने धीरे से कहा, और सिर पानी की ओर झुकाकर इंतज़ार करने लगा।",
+          "ru": "«Убейте меня», — тихо сказал он, склонил голову к воде и стал ждать.",
+          "bn": "\"আমাকে মেরে ফেলো,\" সে আস্তে বলল, তারপর মাথা জলের দিকে নুইয়ে অপেক্ষা করতে লাগল।",
+          "ur": "\"مجھے مار ڈالو،\" اس نے آہستہ سے کہا، اور سر پانی کی طرف جھکا کر انتظار کرنے لگا۔",
+          "th": "\"ฆ่าข้าเถิด\" มันพูดเบา ๆ แล้วก้มหัวลงสู่ผิวน้ำและรอคอย"
+        }
+      },
+      {
+        "id": "cl-ugly-duckling-24",
+        "english": "But they welcomed him, and when he lowered his head, he saw his reflection.",
+        "turkish": "Ama onu sevinçle karşıladılar; başını eğdiğinde sudaki yansımasını gördü.",
+        "translations": {
+          "es-419": "Pero lo recibieron bien, y cuando bajó la cabeza, vio su reflejo.",
+          "pt-BR": "Mas eles o receberam bem, e, quando ele abaixou a cabeça, viu o seu reflexo.",
+          "id": "Tetapi mereka menyambutnya, dan ketika ia menundukkan kepala, ia melihat bayangannya.",
+          "ar": "لكنها رحّبت به، وعندما أحنى رأسه رأى انعكاسه.",
+          "vi": "Nhưng chúng chào đón chú, và khi cúi đầu xuống, chú nhìn thấy bóng mình dưới nước.",
+          "hi": "लेकिन उन्होंने उसका स्वागत किया, और जब उसने अपना सिर झुकाया, तो उसे अपनी परछाईं दिखी।",
+          "ru": "Но они приветливо встретили его, а когда он опустил голову, то увидел своё отражение.",
+          "bn": "কিন্তু তারা তাকে সাদরে গ্রহণ করল, আর মাথা নিচু করতেই সে নিজের প্রতিবিম্ব দেখতে পেল।",
+          "ur": "لیکن انہوں نے اس کا خیرمقدم کیا، اور جب اس نے سر جھکایا تو اسے اپنا عکس نظر آیا۔",
+          "th": "แต่พวกหงส์กลับต้อนรับมัน และเมื่อมันก้มหัวลง มันก็เห็นเงาสะท้อนของตัวเอง"
+        }
+      },
+      {
+        "id": "cl-ugly-duckling-25",
+        "english": "He was no longer a grey, awkward youngster but a graceful white swan.",
+        "turkish": "Artık gri ve sakar bir yavru değil, zarif beyaz bir kuğuydu.",
+        "translations": {
+          "es-419": "Ya no era un pequeño gris y torpe, sino un elegante cisne blanco.",
+          "pt-BR": "Ele já não era um filhote cinzento e desajeitado, mas um elegante cisne branco.",
+          "id": "Ia bukan lagi anak burung kelabu yang canggung, melainkan seekor angsa putih yang anggun.",
+          "ar": "لم يعد فرخًا رماديًا أخرق، بل صار بجعة بيضاء رشيقة.",
+          "vi": "Chú không còn là một con chim non xám xịt, vụng về nữa, mà là một con thiên nga trắng duyên dáng.",
+          "hi": "वह अब कोई धूसर, बेढंगा बच्चा नहीं था, बल्कि एक सुंदर सफ़ेद राजहंस था।",
+          "ru": "Он больше не был серым неуклюжим птенцом — он стал изящным белым лебедем.",
+          "bn": "সে আর ধূসর, আনাড়ি ছানা নয়, বরং এক সুন্দর সাদা রাজহংস।",
+          "ur": "اب وہ سرمئی، بھدا سا بچہ نہیں رہا تھا بلکہ ایک خوش نما سفید راج ہنس بن چکا تھا۔",
+          "th": "มันไม่ใช่ลูกนกสีเทาท่าทางเก้งก้างอีกต่อไป แต่เป็นหงส์ขาวที่สง่างาม"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-25-01",
+        "english": "It does not matter if you are born in a duck's nest, if you have come from a swan's egg.",
+        "turkish": "Bir kuğu yumurtasından çıktıysan, ördek yuvasında doğmuş olmanın hiçbir önemi yoktur.",
+        "translations": {
+          "es-419": "No importa nacer en un nido de pato si uno ha salido de un huevo de cisne.",
+          "pt-BR": "Não importa nascer num ninho de pato, se você saiu de um ovo de cisne.",
+          "id": "Tidak penting jika kau lahir di sarang itik, asalkan kau menetas dari telur angsa.",
+          "ar": "لا يهمّ أن تولد في عشّ بطّة، ما دمتَ قد خرجتَ من بيضة بجعة.",
+          "vi": "Sinh ra trong tổ vịt cũng chẳng sao, nếu ta nở ra từ một quả trứng thiên nga.",
+          "hi": "बत्तख के घोंसले में पैदा होने से कोई फ़र्क नहीं पड़ता, अगर तुम राजहंस के अंडे से निकले हो।",
+          "ru": "Не беда появиться на свет в утином гнезде, если ты вылупился из лебединого яйца.",
+          "bn": "হাঁসের বাসায় জন্মালে কিছু যায় আসে না, যদি তুমি রাজহংসের ডিম থেকে বেরিয়ে থাকো।",
+          "ur": "بطخ کے گھونسلے میں پیدا ہونے سے کوئی فرق نہیں پڑتا، اگر تم راج ہنس کے انڈے سے نکلے ہو۔",
+          "th": "เกิดในรังเป็ดก็ไม่เป็นไร ถ้าเราฟักออกมาจากไข่หงส์"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-25-02",
+        "english": "Now he felt glad that he had suffered so much, because he could enjoy his happiness even more.",
+        "turkish": "Artık bu kadar acı çektiğine seviniyordu, çünkü mutluluğunun tadını çok daha iyi çıkarabiliyordu.",
+        "translations": {
+          "es-419": "Ahora se alegraba de haber sufrido tanto, porque podía disfrutar aún más de su felicidad.",
+          "pt-BR": "Agora ele estava contente por ter sofrido tanto, porque podia aproveitar ainda mais a sua felicidade.",
+          "id": "Kini ia senang telah begitu banyak menderita, karena ia bisa menikmati kebahagiaannya lebih dalam lagi.",
+          "ar": "والآن فرح بأنه عانى كثيرًا، لأنه صار يستطيع أن يستمتع بسعادته أكثر.",
+          "vi": "Giờ đây chú thấy mừng vì đã chịu nhiều khổ đau, vì chú càng biết trân trọng hạnh phúc của mình hơn.",
+          "hi": "अब उसे ख़ुशी थी कि उसने इतना दुख सहा, क्योंकि अब वह अपनी ख़ुशी का और भी आनंद ले सकता था।",
+          "ru": "Теперь он был даже рад, что столько вытерпел: тем сильнее он мог радоваться своему счастью.",
+          "bn": "এখন সে খুশি যে এত কষ্ট সয়েছে, কারণ তাতে নিজের সুখটা সে আরও বেশি উপভোগ করতে পারছিল।",
+          "ur": "اب اسے خوشی تھی کہ اس نے اتنا دکھ سہا، کیونکہ اب وہ اپنی خوشی کا اور بھی لطف اٹھا سکتا تھا۔",
+          "th": "ตอนนี้มันกลับดีใจที่เคยทนทุกข์มามาก เพราะทำให้มันซาบซึ้งกับความสุขได้ยิ่งขึ้น"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-25-03",
+        "english": "The great swans swam around the newcomer and stroked his neck with their beaks.",
+        "turkish": "Büyük kuğular yeni gelenin çevresinde yüzdü ve gagalarıyla boynunu okşadı.",
+        "translations": {
+          "es-419": "Los grandes cisnes nadaban alrededor del recién llegado y le acariciaban el cuello con el pico.",
+          "pt-BR": "Os grandes cisnes nadavam em volta do recém-chegado e acariciavam o pescoço dele com o bico.",
+          "id": "Angsa-angsa besar itu berenang mengelilingi pendatang baru dan membelai lehernya dengan paruh mereka.",
+          "ar": "سبحت البجعات الكبيرة حول القادم الجديد، ومسحت عنقه بمناقيرها.",
+          "vi": "Những con thiên nga lớn bơi quanh kẻ mới đến và dùng mỏ vuốt ve cổ chú.",
+          "hi": "बड़े राजहंस नए साथी के चारों ओर तैरे और अपनी चोंचों से उसकी गर्दन सहलाई।",
+          "ru": "Большие лебеди плавали вокруг новичка и гладили его шею клювами.",
+          "bn": "বড় রাজহংসরা নতুন অতিথির চারপাশে সাঁতরে বেড়াল আর ঠোঁট দিয়ে তার গলায় আদর করল।",
+          "ur": "بڑے راج ہنس نئے ساتھی کے گرد تیرے اور اپنی چونچوں سے اس کی گردن سہلائی۔",
+          "th": "หงส์ตัวใหญ่ว่ายวนรอบเจ้าตัวใหม่ และใช้จะงอยปากลูบไล้คอของมัน"
+        }
+      },
+      {
+        "id": "cl-ugly-duckling-26",
+        "english": "Children came to feed the swans and admired the beautiful newcomer.",
+        "turkish": "Çocuklar kuğuları beslemeye geldi ve güzel yeni kuşa hayran kaldı.",
+        "translations": {
+          "es-419": "Unos niños vinieron a darles de comer a los cisnes y admiraron al hermoso recién llegado.",
+          "pt-BR": "As crianças vieram dar comida aos cisnes e admiraram o lindo recém-chegado.",
+          "id": "Anak-anak datang untuk memberi makan angsa-angsa dan mengagumi pendatang baru yang indah itu.",
+          "ar": "جاء الأطفال ليطعموا البجع، وأُعجبوا بالقادم الجديد الجميل.",
+          "vi": "Trẻ em đến cho thiên nga ăn và trầm trồ khen ngợi con thiên nga mới xinh đẹp.",
+          "hi": "बच्चे राजहंसों को दाना डालने आए और उस सुंदर नए पंछी की तारीफ़ करने लगे।",
+          "ru": "Дети пришли покормить лебедей и любовались прекрасным новичком.",
+          "bn": "ছেলেমেয়েরা রাজহংসদের খাওয়াতে এল আর সুন্দর নতুন অতিথির প্রশংসা করল।",
+          "ur": "بچے راج ہنسوں کو دانہ ڈالنے آئے اور خوبصورت نئے مہمان کی تعریف کرنے لگے۔",
+          "th": "เด็ก ๆ มาให้อาหารหงส์และชื่นชมหงส์ตัวใหม่ที่สวยงาม"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-26-01",
+        "english": "\"There is a new one!\" cried the youngest child, and the others shouted with joy.",
+        "turkish": "\"Yeni bir tane var!\" diye bağırdı en küçük çocuk ve ötekiler sevinçle haykırdı.",
+        "translations": {
+          "es-419": "\"¡Hay uno nuevo!\", gritó el niño más pequeño, y los demás gritaron de alegría.",
+          "pt-BR": "— Tem um novo! — gritou a criança mais nova, e as outras gritaram de alegria.",
+          "id": "\"Ada yang baru!\" seru anak yang paling kecil, dan yang lain bersorak gembira.",
+          "ar": "صاح أصغر الأطفال: «هناك واحد جديد!»، فهتف الآخرون فرحًا.",
+          "vi": "\"Có một con mới kìa!\" đứa bé nhất reo lên, và những đứa khác hò reo vui sướng.",
+          "hi": "सबसे छोटा बच्चा चिल्लाया, \"एक नया आया है!\" और बाकी बच्चे ख़ुशी से चिल्ला उठे।",
+          "ru": "«Новый прилетел!» — закричал самый младший, и остальные радостно подхватили.",
+          "bn": "সবচেয়ে ছোট বাচ্চাটা চেঁচিয়ে উঠল, \"একটা নতুন এসেছে!\" আর বাকিরা আনন্দে হইহই করে উঠল।",
+          "ur": "سب سے چھوٹا بچہ چلایا، \"ایک نیا آیا ہے!\" اور باقی بچے خوشی سے چلا اٹھے۔",
+          "th": "\"มีตัวใหม่มาด้วย!\" เด็กคนเล็กที่สุดร้อง แล้วเด็กคนอื่น ๆ ก็ส่งเสียงดีใจ"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-26-02",
+        "english": "They clapped their hands and danced, and ran to tell their father and mother.",
+        "turkish": "Ellerini çırpıp dans ettiler ve annelerine babalarına haber vermeye koştular.",
+        "translations": {
+          "es-419": "Aplaudieron y bailaron, y corrieron a contárselo a su padre y a su madre.",
+          "pt-BR": "Elas bateram palmas e dançaram, e correram para contar ao pai e à mãe.",
+          "id": "Mereka bertepuk tangan dan menari, lalu berlari memberi tahu ayah dan ibu mereka.",
+          "ar": "صفّقوا ورقصوا، وركضوا ليخبروا أباهم وأمّهم.",
+          "vi": "Chúng vỗ tay, nhảy múa rồi chạy đi báo cho cha mẹ.",
+          "hi": "उन्होंने तालियाँ बजाईं, नाचे, और अपने माता-पिता को बताने दौड़े।",
+          "ru": "Они хлопали в ладоши, плясали и побежали рассказать отцу с матерью.",
+          "bn": "তারা হাততালি দিল, নাচল, আর বাবা-মাকে খবর দিতে ছুটল।",
+          "ur": "انہوں نے تالیاں بجائیں، ناچے، اور اپنے ماں باپ کو بتانے دوڑے۔",
+          "th": "พวกเขาตบมือ เต้นรำ แล้ววิ่งไปบอกพ่อแม่"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-26-03",
+        "english": "They threw bread and cake into the water and said, \"The new one is the most beautiful of all!\"",
+        "turkish": "Suya ekmek ve kek attılar ve \"Yeni gelen hepsinden güzel!\" dediler.",
+        "translations": {
+          "es-419": "Echaron pan y pastel al agua y dijeron: \"¡El nuevo es el más hermoso de todos!\"",
+          "pt-BR": "Jogaram pão e bolo na água e disseram: — O novo é o mais bonito de todos!",
+          "id": "Mereka melemparkan roti dan kue ke air dan berkata, \"Yang baru ini paling indah dari semuanya!\"",
+          "ar": "رموا الخبز والكعك في الماء وقالوا: «الجديد أجملها جميعًا!»",
+          "vi": "Chúng ném bánh mì và bánh ngọt xuống nước và nói: \"Con mới là con đẹp nhất!\"",
+          "hi": "उन्होंने पानी में रोटी और केक डाला और कहा, \"नया वाला सबसे सुंदर है!\"",
+          "ru": "Они бросали в воду хлеб и пирожные и говорили: «Новый лучше всех!»",
+          "bn": "তারা জলে রুটি আর কেক ছুড়ে দিয়ে বলল, \"নতুনটাই সবার চেয়ে সুন্দর!\"",
+          "ur": "انہوں نے پانی میں روٹی اور کیک ڈالا اور کہا، \"نیا والا سب سے خوبصورت ہے!\"",
+          "th": "พวกเขาโยนขนมปังและขนมเค้กลงน้ำแล้วพูดว่า \"ตัวใหม่สวยที่สุดเลย!\""
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-26-04",
+        "english": "And the old swans bowed their heads before him.",
+        "turkish": "Yaşlı kuğular da onun önünde başlarını eğdi.",
+        "translations": {
+          "es-419": "Y los cisnes viejos inclinaron la cabeza ante él.",
+          "pt-BR": "E os cisnes velhos abaixaram a cabeça diante dele.",
+          "id": "Dan angsa-angsa tua menundukkan kepala di hadapannya.",
+          "ar": "وأحنت البجعات العجوز رؤوسها أمامه.",
+          "vi": "Và những con thiên nga già cúi đầu trước chú.",
+          "hi": "और बूढ़े राजहंसों ने उसके आगे सिर झुका दिया।",
+          "ru": "И старые лебеди склонили перед ним головы.",
+          "bn": "আর বুড়ো রাজহংসরা তার সামনে মাথা নত করল।",
+          "ur": "اور بوڑھے راج ہنسوں نے اس کے آگے سر جھکا دیا۔",
+          "th": "และหงส์แก่ ๆ ก็ก้มหัวให้มัน"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-26-05",
+        "english": "He felt shy and hid his head under his wing, because a good heart is never proud.",
+        "turkish": "Utandı ve başını kanadının altına sakladı, çünkü iyi bir yürek asla kibirli olmaz.",
+        "translations": {
+          "es-419": "Sintió vergüenza y escondió la cabeza bajo el ala, porque un buen corazón nunca es orgulloso.",
+          "pt-BR": "Ele ficou tímido e escondeu a cabeça debaixo da asa, porque um bom coração nunca é orgulhoso.",
+          "id": "Ia merasa malu dan menyembunyikan kepalanya di bawah sayap, karena hati yang baik tidak pernah sombong.",
+          "ar": "شعر بالخجل وأخفى رأسه تحت جناحه، لأن القلب الطيّب لا يتكبّر أبدًا.",
+          "vi": "Chú thấy ngượng ngùng và giấu đầu dưới cánh, vì một trái tim nhân hậu chẳng bao giờ kiêu căng.",
+          "hi": "उसे शर्म आई और उसने अपना सिर पंख के नीचे छिपा लिया, क्योंकि अच्छा दिल कभी घमंडी नहीं होता।",
+          "ru": "Ему стало неловко, и он спрятал голову под крыло, ведь доброе сердце никогда не бывает гордым.",
+          "bn": "সে লজ্জা পেয়ে ডানার নিচে মাথা লুকোল, কারণ ভালো মন কখনো অহংকারী হয় না।",
+          "ur": "اسے شرم آئی اور اس نے اپنا سر پر کے نیچے چھپا لیا، کیونکہ اچھا دل کبھی مغرور نہیں ہوتا۔",
+          "th": "มันรู้สึกเขินอายและซุกหัวไว้ใต้ปีก เพราะใจที่ดีย่อมไม่หยิ่งผยอง"
+        }
+      },
+      {
+        "id": "cl-ugly-duckling-27",
+        "english": "He remembered his suffering, but happiness had not made him proud or unkind.",
+        "turkish": "Çektiği acıları hatırlıyordu ama mutluluk onu kibirli ya da kötü biri yapmamıştı.",
+        "translations": {
+          "es-419": "Recordaba su sufrimiento, pero la felicidad no lo había vuelto orgulloso ni cruel.",
+          "pt-BR": "Ele se lembrava do seu sofrimento, mas a felicidade não o tinha deixado orgulhoso nem cruel.",
+          "id": "Ia mengingat penderitaannya, tetapi kebahagiaan tidak membuatnya sombong atau tidak baik hati.",
+          "ar": "تذكّر معاناته، لكن السعادة لم تجعله متكبّرًا ولا قاسيًا.",
+          "vi": "Chú nhớ lại những nỗi khổ đã qua, nhưng hạnh phúc không khiến chú trở nên kiêu căng hay tàn nhẫn.",
+          "hi": "उसे अपना दुख याद था, लेकिन खुशी ने उसे घमंडी या रूखा नहीं बनाया था।",
+          "ru": "Он помнил о своих страданиях, но счастье не сделало его ни гордым, ни злым.",
+          "bn": "তার দুঃখের দিনগুলোর কথা তার মনে ছিল, কিন্তু সুখ তাকে অহংকারী বা নিষ্ঠুর করেনি।",
+          "ur": "اسے اپنی تکلیفیں یاد تھیں، لیکن خوشی نے اسے مغرور یا بے رحم نہیں بنایا۔",
+          "th": "มันจำความทุกข์ที่เคยผ่านมาได้ แต่ความสุขไม่ได้ทำให้มันหยิ่งหรือใจร้าย"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-27-01",
+        "english": "The lilac bent its branches down to him, and the sun shone warm and bright.",
+        "turkish": "Leylak dallarını ona doğru eğdi ve güneş ılık ve parlak bir şekilde parladı.",
+        "translations": {
+          "es-419": "La lila inclinó sus ramas hacia él, y el sol brillaba cálido y radiante.",
+          "pt-BR": "O lilás inclinou os galhos na direção dele, e o sol brilhava quente e forte.",
+          "id": "Pohon lilak merundukkan dahannya ke arahnya, dan matahari bersinar hangat dan cerah.",
+          "ar": "أمال الليلك أغصانه نحوه، وأشرقت الشمس دافئة ساطعة.",
+          "vi": "Cây tử đinh hương nghiêng cành về phía chú, và mặt trời tỏa nắng ấm áp, rực rỡ.",
+          "hi": "बकाइन ने अपनी डालियाँ उसकी ओर झुका दीं, और सूरज गरम और उजली धूप बिखेरने लगा।",
+          "ru": "Сирень склонила к нему свои ветви, и солнце светило тепло и ярко.",
+          "bn": "লাইলাক গাছ তার দিকে ডাল নুইয়ে দিল, আর সূর্য উষ্ণ উজ্জ্বল আলো ছড়াল।",
+          "ur": "بکائن نے اپنی شاخیں اس کی طرف جھکا دیں، اور سورج گرم اور روشن دھوپ بکھیرنے لگا۔",
+          "th": "ต้นไลแลคน้อมกิ่งลงมาหามัน และดวงอาทิตย์ก็ส่องแสงอบอุ่นสดใส"
+        }
+      },
+      {
+        "id": "classic-ugly-duckling-ext-27-02",
+        "english": "He ruffled his feathers, raised his slender neck, and cried from the bottom of his heart, \"I never dreamed of such happiness when I was the ugly duckling!\"",
+        "turkish": "Tüylerini kabarttı, ince boynunu kaldırdı ve yüreğinin ta derinlerinden haykırdı: \"Çirkin ördek yavrusuyken böyle bir mutluluğu hayal bile etmemiştim!\"",
+        "translations": {
+          "es-419": "Erizó las plumas, alzó su cuello esbelto y gritó desde el fondo del corazón: \"¡Nunca soñé con tanta felicidad cuando era el patito feo!\"",
+          "pt-BR": "Ele eriçou as penas, ergueu o pescoço esguio e gritou do fundo do coração: — Nunca sonhei com tanta felicidade quando eu era o patinho feio!",
+          "id": "Ia mengembangkan bulunya, menegakkan lehernya yang ramping, dan berseru dari lubuk hatinya, \"Aku tak pernah memimpikan kebahagiaan seperti ini ketika aku masih anak itik buruk rupa!\"",
+          "ar": "نفش ريشه، ورفع عنقه النحيل، وصاح من أعماق قلبه: «لم أحلم قطّ بمثل هذه السعادة حين كنتُ البطّ الصغير القبيح!»",
+          "vi": "Chú xù lông, vươn chiếc cổ thon dài và reo lên từ tận đáy lòng: \"Hồi còn là vịt con xấu xí, mình chưa bao giờ dám mơ đến hạnh phúc như thế này!\"",
+          "hi": "उसने अपने पंख फुलाए, अपनी पतली गर्दन ऊपर उठाई, और दिल की गहराई से पुकारा, \"जब मैं बदसूरत बत्तख का बच्चा था, तब मैंने ऐसी ख़ुशी का सपना भी नहीं देखा था!\"",
+          "ru": "Он распушил перья, поднял стройную шею и от всего сердца воскликнул: «Мог ли я мечтать о таком счастье, когда был гадким утёнком!»",
+          "bn": "সে পালক ফুলিয়ে, সরু গলাটা উঁচু করে মনের গভীর থেকে বলে উঠল, \"যখন আমি কুৎসিত হাঁসের ছানা ছিলাম, তখন এমন সুখের স্বপ্নও দেখিনি!\"",
+          "ur": "اس نے اپنے پر پھلائے، اپنی پتلی گردن اوپر اٹھائی، اور دل کی گہرائی سے پکارا، \"جب میں بدصورت بطخ کا بچہ تھا، تب میں نے ایسی خوشی کا خواب بھی نہیں دیکھا تھا!\"",
+          "th": "มันพองขน ชูคอเรียวยาว แล้วร้องออกมาจากก้นบึ้งของหัวใจว่า \"ตอนเป็นลูกเป็ดขี้เหร่ ข้าไม่เคยฝันเลยว่าจะมีความสุขได้ถึงเพียงนี้!\""
+        }
+      },
+      {
+        "id": "cl-ugly-duckling-28",
+        "english": "He had never dreamed that he could belong so completely.",
+        "turkish": "Bir yere böylesine ait olabileceğini hiç hayal etmemişti.",
+        "translations": {
+          "es-419": "Nunca había soñado que podría pertenecer a un lugar tan por completo.",
+          "pt-BR": "Ele nunca tinha sonhado que poderia pertencer a um lugar de forma tão completa.",
+          "id": "Ia tidak pernah bermimpi bahwa ia bisa benar-benar menjadi bagian dari suatu tempat.",
+          "ar": "لم يحلم قطّ بأنه يستطيع أن ينتمي إلى مكان بهذا الكمال.",
+          "vi": "Chú chưa bao giờ dám mơ rằng mình có thể thuộc về một nơi trọn vẹn đến thế.",
+          "hi": "उसने कभी सपने में भी नहीं सोचा था कि वह कहीं इतनी पूरी तरह अपनापन महसूस कर सकेगा।",
+          "ru": "Он никогда и не мечтал, что сможет так полностью найти своё место.",
+          "bn": "সে কখনো স্বপ্নেও ভাবেনি যে কোথাও সে এতটা আপন হয়ে উঠতে পারবে।",
+          "ur": "اس نے کبھی خواب میں بھی نہیں سوچا تھا کہ وہ کہیں اس طرح پوری طرح اپنا بن جائے گا۔",
+          "th": "มันไม่เคยฝันเลยว่าจะได้เป็นส่วนหนึ่งของที่ใดได้อย่างสมบูรณ์ถึงเพียงนี้"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-ugly-duckling-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "A farmer raises young swans and teaches them how to fly",
+          "A duck leads the farmyard animals to a safer new home",
+          "A lonely young bird grows into a swan and finds acceptance",
+          "A cat and a hen leave home to search for friends"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "classic-ugly-duckling-q2",
+        "kind": "detail",
+        "prompt": "How did the cat and hen judge the young bird?",
+        "options": [
+          "By whether he could do the things they could",
+          "By whether he could bring food to the cottage",
+          "By whether he could swim faster than the ducks",
+          "By whether he could behave politely during meals"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "classic-ugly-duckling-q3",
+        "kind": "detail",
+        "prompt": "Who rescued the bird from the ice?",
+        "options": [
+          "A farmer",
+          "A swan",
+          "A hunter",
+          "A child"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "classic-ugly-duckling-q4",
+        "kind": "inference",
+        "prompt": "How did the bird feel when he finally saw his reflection?",
+        "options": [
+          "Proud and unkind",
+          "Angry at the other ducks",
+          "Surprised and happy to belong",
+          "Afraid of the swans"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "classic-ugly-duckling-q5",
+        "kind": "detail",
+        "prompt": "What did the old duck think the big egg was?",
+        "options": [
+          "A turkey's egg",
+          "A goose's egg",
+          "A swan's egg",
+          "A hen's egg"
+        ],
+        "answer": 0
+      }
+    ],
+    "tags": [
+      "masal",
+      "macera"
+    ],
+    "descriptions": {
+      "es-419": "El patito feo. Un pequeño que no encaja en ningún lugar descubre quién es en realidad. Adaptación breve de nivel B1. Adaptación: English Tales. Imagen histórica: Vilhelm Pedersen; ilustración interior del libro, no es una portada aparte de primera edición.",
+      "pt-BR": "O patinho feio. Um filhote que não se encaixa em lugar nenhum descobre quem realmente é. Adaptação curta de nível B1. Adaptação: English Tales. Imagem histórica: Vilhelm Pedersen; ilustração interna do livro, não é uma capa separada de primeira edição.",
+      "id": "Itik Buruk Rupa. Seekor anak itik yang merasa tidak punya tempat akhirnya menemukan siapa dirinya. Adaptasi singkat tingkat B1. Adaptasi: English Tales. Gambar historis: Vilhelm Pedersen; ilustrasi di dalam buku, bukan sampul edisi pertama tersendiri.",
+      "ar": "فرخ البطّ القبيح. صغير يجد نفسه في مكان لا ينتمي إليه، فيكتشف من هو حقًا. اقتباس قصير بمستوى B1. الاقتباس: English Tales. صورة تاريخية: فيلهلم بيدرسن؛ رسم توضيحي داخل الكتاب، وليس غلافًا منفصلًا للطبعة الأولى.",
+      "vi": "Vịt con xấu xí. Một chú chim non lạc loài khám phá ra mình thật sự là ai. Bản phóng tác ngắn trình độ B1. Phóng tác: English Tales. Hình ảnh lịch sử: Vilhelm Pedersen; tranh minh họa bên trong sách, không phải bìa riêng của ấn bản đầu tiên.",
+      "hi": "बदसूरत बत्तख का बच्चा। ख़ुद को एक पराई जगह पर पाने वाला एक बच्चा पहचानता है कि वह असल में कौन है। B1 स्तर का छोटा रूपांतरण। रूपांतरण: English Tales। ऐतिहासिक चित्र: Vilhelm Pedersen; किताब के अंदर का चित्र, पहले संस्करण का अलग कवर नहीं।",
+      "ru": "Гадкий утёнок. Малыш, который нигде не находит себе места, узнаёт, кто он на самом деле. Краткая адаптация уровня B1. Адаптация: English Tales. Историческое изображение: Вильгельм Педерсен; внутренняя иллюстрация из книги, а не отдельная обложка первого издания.",
+      "bn": "কুৎসিত হাঁসের ছানা। যেখানে তার জায়গা নয়, এমন জায়গায় জন্মানো এক ছানা খুঁজে পায় সে আসলে কে। B1 স্তরের ছোট রূপান্তর। রূপান্তর: English Tales। ঐতিহাসিক ছবি: Vilhelm Pedersen; বইয়ের ভেতরের ছবি, প্রথম সংস্করণের আলাদা প্রচ্ছদ নয়।",
+      "ur": "بدصورت بطخ کا بچہ۔ خود کو ایک پرائی جگہ پر پانے والا ایک بچہ پہچانتا ہے کہ وہ اصل میں کون ہے۔ B1 سطح کی مختصر ماخوذ کہانی۔ ترتیب: English Tales۔ تاریخی تصویر: Vilhelm Pedersen؛ کتاب کے اندر کی تصویر، پہلے ایڈیشن کا الگ سرورق نہیں۔",
+      "th": "ลูกเป็ดขี้เหร่: ลูกนกที่รู้สึกว่าตัวเองไม่เข้าพวกได้ค้นพบว่าแท้จริงแล้วตนเป็นใคร ฉบับดัดแปลงสั้น ๆ ระดับ B1 ดัดแปลงโดย English Tales ภาพเก่าทางประวัติศาสตร์: Vilhelm Pedersen; ภาพประกอบภายในเล่ม ไม่ใช่ปกแยกของฉบับพิมพ์ครั้งแรก"
+    }
+  },
+  "words": [
+    {
+      "id": "duck",
+      "word": "duck",
+      "translation": "ördek",
+      "pronunciation": "/dʌk/",
+      "example": "A duck sat on her nest, waiting for the last and largest egg to hatch.",
+      "translations": {
+        "es-419": "pata",
+        "pt-BR": "pata",
+        "id": "bebek, itik",
+        "ar": "بطّة",
+        "vi": "con vịt",
+        "hi": "बत्तख",
+        "ru": "утка",
+        "bn": "হাঁস",
+        "ur": "بطخ",
+        "th": "เป็ด"
+      }
+    },
+    {
+      "id": "nest",
+      "word": "nest",
+      "translation": "yuva",
+      "pronunciation": "/nest/",
+      "example": "A duck sat on her nest, waiting for the last and largest egg to hatch.",
+      "translations": {
+        "es-419": "nido",
+        "pt-BR": "ninho",
+        "id": "sarang",
+        "ar": "عشّ",
+        "vi": "cái tổ",
+        "hi": "घोंसला",
+        "ru": "гнездо",
+        "bn": "বাসা",
+        "ur": "گھونسلا",
+        "th": "รัง"
+      }
+    },
+    {
+      "id": "egg",
+      "word": "egg",
+      "translation": "yumurta",
+      "pronunciation": "/eɡ/",
+      "example": "Every day, she lays a golden egg.",
+      "translations": {
+        "es-419": "huevo",
+        "pt-BR": "ovo",
+        "id": "telur",
+        "ar": "بيضة",
+        "vi": "quả trứng",
+        "hi": "अंडा",
+        "ru": "яйцо",
+        "bn": "ডিম",
+        "ur": "انڈا",
+        "th": "ไข่"
+      }
+    },
+    {
+      "id": "ducklings",
+      "word": "ducklings",
+      "translation": "ördek yavruları",
+      "pronunciation": "/ˈdʌklɪŋz/",
+      "example": "When it opened, a large grey bird stepped out among her little ducklings.",
+      "translations": {
+        "es-419": "patitos",
+        "pt-BR": "patinhos",
+        "id": "anak bebek, anak itik",
+        "ar": "فراخ البط",
+        "vi": "vịt con",
+        "hi": "बत्तख के बच्चे",
+        "ru": "утята",
+        "bn": "হাঁসের ছানা",
+        "ur": "بطخ کے بچے",
+        "th": "ลูกเป็ด"
+      }
+    },
+    {
+      "id": "swim",
+      "word": "swim",
+      "translation": "yüzmek",
+      "pronunciation": "/swɪm/",
+      "example": "He looked different from the others, but he could swim very well.",
+      "translations": {
+        "es-419": "nadar",
+        "pt-BR": "nadar",
+        "id": "berenang",
+        "ar": "يسبح",
+        "vi": "bơi",
+        "hi": "तैरना",
+        "ru": "плавать",
+        "bn": "সাঁতার কাটা",
+        "ur": "تیرنا",
+        "th": "ว่ายน้ำ"
+      }
+    },
+    {
+      "id": "hunters",
+      "word": "hunters",
+      "translation": "avcılar",
+      "pronunciation": "/ˈhʌntərz/",
+      "example": "The hunters walk into the forest.",
+      "translations": {
+        "es-419": "cazadores",
+        "pt-BR": "caçadores",
+        "id": "para pemburu",
+        "ar": "صيّادون",
+        "vi": "những người thợ săn",
+        "hi": "शिकारी",
+        "ru": "охотники",
+        "bn": "শিকারিরা",
+        "ur": "شکاری (جمع)",
+        "th": "นายพราน (หลายคน)"
+      }
+    },
+    {
+      "id": "frightened",
+      "word": "frightened",
+      "translation": "korkmuş",
+      "pronunciation": "/ˈfraɪtnd/",
+      "example": "The frightened cat hides under the bed.",
+      "translations": {
+        "es-419": "asustado",
+        "pt-BR": "assustado, com medo",
+        "id": "ketakutan",
+        "ar": "خائف",
+        "vi": "sợ hãi",
+        "hi": "डरा हुआ",
+        "ru": "испуганный",
+        "bn": "ভয় পাওয়া",
+        "ur": "ڈرا ہوا",
+        "th": "ตกใจกลัว"
+      }
+    },
+    {
+      "id": "hen",
+      "word": "hen",
+      "translation": "tavuk",
+      "pronunciation": "/hen/",
+      "example": "A man owns a special hen.",
+      "translations": {
+        "es-419": "gallina",
+        "pt-BR": "galinha",
+        "id": "ayam betina",
+        "ar": "دجاجة",
+        "vi": "gà mái",
+        "hi": "मुर्गी",
+        "ru": "курица",
+        "bn": "মুরগি",
+        "ur": "مرغی",
+        "th": "แม่ไก่"
+      }
+    },
+    {
+      "id": "swans",
+      "word": "swans",
+      "translation": "kuğular",
+      "pronunciation": "/swɒnz/",
+      "example": "Autumn came, and he saw a flock of beautiful white swans flying overhead.",
+      "translations": {
+        "es-419": "cisnes",
+        "pt-BR": "cisnes",
+        "id": "angsa-angsa putih",
+        "ar": "بجع",
+        "vi": "những con thiên nga",
+        "hi": "राजहंस",
+        "ru": "лебеди",
+        "bn": "মরালের দল, রাজহংস",
+        "ur": "راج ہنس (جمع)",
+        "th": "หงส์ (หลายตัว)"
+      }
+    },
+    {
+      "id": "wings",
+      "word": "wings",
+      "translation": "kanatlar",
+      "pronunciation": "/wɪŋz/",
+      "example": "Their long necks and powerful wings filled him with a feeling he did not understand.",
+      "translations": {
+        "es-419": "alas",
+        "pt-BR": "asas",
+        "id": "sayap",
+        "ar": "أجنحة",
+        "vi": "đôi cánh",
+        "hi": "पंख",
+        "ru": "крылья",
+        "bn": "ডানা",
+        "ur": "پر، بازو",
+        "th": "ปีก"
+      }
+    },
+    {
+      "id": "winter",
+      "word": "winter",
+      "translation": "kış",
+      "pronunciation": "/ˈwɪntə(r)/",
+      "example": "Winter is cold.",
+      "translations": {
+        "es-419": "invierno",
+        "pt-BR": "inverno",
+        "id": "musim dingin",
+        "ar": "شتاء",
+        "vi": "mùa đông",
+        "hi": "सर्दी, जाड़ा",
+        "ru": "зима",
+        "bn": "শীতকাল",
+        "ur": "سردی، جاڑا",
+        "th": "ฤดูหนาว"
+      }
+    },
+    {
+      "id": "ice",
+      "word": "ice",
+      "translation": "buz",
+      "pronunciation": "/aɪs/",
+      "example": "One night, he became exhausted and was trapped in the ice.",
+      "translations": {
+        "es-419": "hielo",
+        "pt-BR": "gelo",
+        "id": "es",
+        "ar": "جليد",
+        "vi": "băng",
+        "hi": "बर्फ़",
+        "ru": "лёд",
+        "bn": "বরফ",
+        "ur": "برف",
+        "th": "น้ำแข็ง"
+      }
+    },
+    {
+      "id": "reflection",
+      "word": "reflection",
+      "translation": "yansıma",
+      "pronunciation": "/rɪˈflekʃn/",
+      "example": "When he looks down, he sees his reflection.",
+      "translations": {
+        "es-419": "reflejo",
+        "pt-BR": "reflexo",
+        "id": "bayangan, pantulan",
+        "ar": "انعكاس",
+        "vi": "bóng phản chiếu",
+        "hi": "परछाईं, प्रतिबिंब",
+        "ru": "отражение",
+        "bn": "প্রতিবিম্ব, ছায়া",
+        "ur": "عکس",
+        "th": "เงาสะท้อน"
+      }
+    },
+    {
+      "id": "suffering",
+      "word": "suffering",
+      "translation": "acı",
+      "pronunciation": "/ˈsʌfərɪŋ/",
+      "example": "The Prince sees the people's suffering.",
+      "translations": {
+        "es-419": "sufrimiento",
+        "pt-BR": "sofrimento",
+        "id": "penderitaan",
+        "ar": "معاناة",
+        "vi": "nỗi khổ",
+        "hi": "दुख, पीड़ा",
+        "ru": "страдание",
+        "bn": "দুঃখকষ্ট",
+        "ur": "دکھ، تکلیف",
+        "th": "ความทุกข์ยาก"
+      }
+    },
+    {
+      "id": "proud",
+      "word": "proud",
+      "translation": "gururlu",
+      "pronunciation": "/praʊd/",
+      "example": "The crow feels proud.",
+      "translations": {
+        "es-419": "orgulloso",
+        "pt-BR": "orgulhoso",
+        "id": "bangga",
+        "ar": "فخور",
+        "vi": "tự hào, kiêu hãnh",
+        "hi": "घमंडी, गर्व से भरा",
+        "ru": "гордый",
+        "bn": "গর্বিত",
+        "ur": "مغرور، فخر کرنے والا",
+        "th": "ภูมิใจ, หยิ่ง"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "duck",
+    "nest",
+    "egg",
+    "ducklings",
+    "swim",
+    "hunters",
+    "frightened",
+    "hen",
+    "swans",
+    "wings",
+    "winter",
+    "ice",
+    "reflection",
+    "suffering",
+    "proud"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-ugly-duckling-q1",
+      "sentenceIds": [
+        "cl-ugly-duckling-02",
+        "cl-ugly-duckling-13",
+        "cl-ugly-duckling-24",
+        "cl-ugly-duckling-25"
+      ],
+      "rationale": "A large grey bird hatches among ducklings and grows into a graceful white swan who is welcomed."
+    },
+    {
+      "questionId": "classic-ugly-duckling-q2",
+      "sentenceIds": [
+        "cl-ugly-duckling-10",
+        "cl-ugly-duckling-11"
+      ],
+      "rationale": "The cat and hen value only what they can do, and he can neither lay eggs nor purr."
+    },
+    {
+      "questionId": "classic-ugly-duckling-q3",
+      "sentenceIds": [
+        "cl-ugly-duckling-18"
+      ],
+      "rationale": "A farmer breaks the ice and carries him home."
+    },
+    {
+      "questionId": "classic-ugly-duckling-q4",
+      "sentenceIds": [
+        "cl-ugly-duckling-24",
+        "cl-ugly-duckling-25",
+        "cl-ugly-duckling-28"
+      ],
+      "rationale": "He sees his reflection, finds he is a swan, and feels he belongs."
+    },
+    {
+      "questionId": "classic-ugly-duckling-q5",
+      "sentenceIds": [
+        "classic-ugly-duckling-ext-01-04"
+      ],
+      "rationale": "The old duck said it was a turkey's egg."
+    }
+  ],
+  "publicationBlockers": [
+    "Owner (oguz) approval of the English text, questions and translations required.",
+    "Fresh live source snapshot and publisher validation required."
+  ],
+  "lengthening": {
+    "wordsBefore": 361,
+    "wordsAfter": 1545,
+    "sentencesBefore": 28,
+    "sentencesAfter": 103
+  }
+}

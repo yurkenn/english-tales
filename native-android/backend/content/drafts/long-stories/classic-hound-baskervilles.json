@@ -1,0 +1,2150 @@
+{
+  "status": "draft",
+  "kind": "long-story",
+  "source": "long-story-classics-2026-10-22",
+  "reviewedBy": null,
+  "rights": {
+    "credit": "Arthur Conan Doyle",
+    "sourceTitle": "The Hound of the Baskervilles",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/2852",
+    "sourceTextUrl": "https://www.gutenberg.org/cache/epub/2852/pg2852-images.html",
+    "identifiedContributor": {
+      "name": "Arthur Conan Doyle",
+      "role": "author",
+      "deathYear": 1930
+    },
+    "firstPublished": 1902,
+    "sourceCopyrightStatement": "Public domain in the USA",
+    "checkedOn": "2026-10-22",
+    "adaptation": "New graded B1 retelling written by English Tales, with English Tales translations. No modern abridgement, film script or translation was used.",
+    "turkeyAssessment": "Author died in 1930, more than 70 years before 2026, so the work is out of protection in Turkey and in life+70 countries.",
+    "rightsGuidanceUrl": "https://telifhaklari.ktb.gov.tr/TR-332373/telif-hakki-kac-yil-sureyle-korunur.html",
+    "sourceTextSha256": null,
+    "sourceTextSha256Pending": "Gutenberg is not reachable from the cloud session; record the source text hash on the owner's Mac before publication."
+  },
+  "editorialNotes": [
+    "B1 target: past tense narration, sentences of at most 20 words, about 1,250 words (about 10 minutes of reading).",
+    "Abridged retelling of the novel's main line: the legend, the London warnings, Watson's reports from the moor, the convict, the portrait clue, the final night on the moor and Stapleton's disappearance in the mire.",
+    "Reading sections are editorial groupings for a future chapter view; the app currently shows the story as one text."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+  },
+  "readingSections": [
+    {
+      "title": "The legend",
+      "firstSentenceId": "cl-hound-001",
+      "lastSentenceId": "cl-hound-025"
+    },
+    {
+      "title": "Danger in London",
+      "firstSentenceId": "cl-hound-026",
+      "lastSentenceId": "cl-hound-040"
+    },
+    {
+      "title": "Watson on the moor",
+      "firstSentenceId": "cl-hound-041",
+      "lastSentenceId": "cl-hound-067"
+    },
+    {
+      "title": "The hound",
+      "firstSentenceId": "cl-hound-068",
+      "lastSentenceId": "cl-hound-098"
+    }
+  ],
+  "story": {
+    "id": "classic-hound-baskervilles",
+    "title": "The Hound of the Baskervilles",
+    "author": "Arthur Conan Doyle",
+    "level": "B1",
+    "genre": "Gizem",
+    "description": "Baskerville'lerin Köpeği. Sherlock Holmes ve Dr. Watson, sisli bir bozkırda bir aileyi yüzyıllardır korkutan dev köpeğin sırrını çözer. B1 düzeyinde uzun uyarlama. Uyarlama ve Türkçe çeviri: English Tales.",
+    "descriptions": {
+      "es-419": "El sabueso de los Baskerville. Sherlock Holmes y el doctor Watson resuelven el misterio del perro gigante que aterroriza a una familia desde hace siglos en un páramo con niebla. Adaptación larga de nivel B1. Adaptación: English Tales.",
+      "pt-BR": "O cão dos Baskerville. Sherlock Holmes e o doutor Watson desvendam o mistério do cão gigante que aterroriza uma família há séculos numa charneca cheia de neblina. Adaptação longa de nível B1. Adaptação: English Tales.",
+      "id": "Anjing Keluarga Baskerville. Sherlock Holmes dan Dokter Watson memecahkan misteri anjing raksasa yang menghantui sebuah keluarga selama berabad-abad di padang berkabut. Adaptasi panjang tingkat B1. Adaptasi: English Tales.",
+      "ar": "كلب آل باسكرفيل. شيرلوك هولمز والدكتور واتسون يكشفان سرّ الكلب العملاق الذي يرعب عائلة منذ قرون في براري يلفّها الضباب. اقتباس طويل بمستوى B1. الاقتباس: English Tales.",
+      "vi": "Con chó săn của dòng họ Baskerville. Sherlock Holmes và bác sĩ Watson giải mã bí ẩn về con chó khổng lồ đã ám ảnh một dòng họ suốt nhiều thế kỷ trên vùng đồng hoang sương mù. Bản phóng tác dài trình độ B1. Phóng tác: English Tales.",
+      "hi": "बास्करविल का शिकारी कुत्ता। शरलॉक होम्स और डॉ. वॉटसन धुंध भरे वीरान मैदान में सदियों से एक परिवार को डराने वाले विशाल कुत्ते का रहस्य सुलझाते हैं। B1 स्तर का लंबा रूपांतरण। रूपांतरण: English Tales।",
+      "ru": "Собака Баскервилей. Шерлок Холмс и доктор Ватсон раскрывают тайну огромной собаки, которая веками наводит ужас на целый род на туманных болотах. Длинная адаптация уровня B1. Адаптация: English Tales.",
+      "bn": "বাস্কারভিলদের কুকুর। কুয়াশাঢাকা প্রান্তরে শত শত বছর ধরে এক পরিবারকে আতঙ্কে রাখা দানবীয় কুকুরের রহস্য ভেদ করেন শার্লক হোমস আর ডা. ওয়াটসন। B1 স্তরের দীর্ঘ রূপান্তর। রূপান্তর: English Tales।",
+      "ur": "باسکرویل کا شکاری کتا۔ شرلاک ہومز اور ڈاکٹر واٹسن دھند بھرے ویران میدان میں صدیوں سے ایک خاندان کو ڈرانے والے دیو ہیکل کتے کا راز حل کرتے ہیں۔ B1 سطح کی طویل ماخوذ کہانی۔ ترتیب: English Tales۔",
+      "th": "สุนัขแห่งตระกูลบาสเกอร์วิลล์: เชอร์ล็อก โฮมส์ และ ดร.วัตสัน ไขปริศนาสุนัขยักษ์ที่หลอกหลอนตระกูลหนึ่งมานานหลายศตวรรษบนทุ่งรกร้างที่ปกคลุมด้วยหมอก ฉบับดัดแปลงขนาดยาวระดับ B1 ดัดแปลงโดย English Tales"
+    },
+    "coverKey": "cover_classic_hound_baskervilles",
+    "tags": [
+      "gizem"
+    ],
+    "sentences": [
+      {
+        "id": "cl-hound-001",
+        "english": "One foggy morning in London, a young doctor came to see Sherlock Holmes.",
+        "turkish": "Londra'da sisli bir sabah, genç bir doktor Sherlock Holmes'u görmeye geldi.",
+        "translations": {
+          "es-419": "Una mañana de niebla en Londres, un joven médico fue a ver a Sherlock Holmes.",
+          "pt-BR": "Numa manhã de neblina em Londres, um jovem médico foi ver Sherlock Holmes.",
+          "id": "Pada suatu pagi berkabut di London, seorang dokter muda datang menemui Sherlock Holmes.",
+          "ar": "في صباح ضبابي في لندن، جاء طبيب شاب لرؤية شيرلوك هولمز.",
+          "vi": "Vào một buổi sáng sương mù ở London, một bác sĩ trẻ đến gặp Sherlock Holmes.",
+          "hi": "लंदन की एक धुंध भरी सुबह, एक नौजवान डॉक्टर शरलॉक होम्स से मिलने आए।",
+          "ru": "Туманным утром в Лондоне к Шерлоку Холмсу пришёл молодой доктор.",
+          "bn": "লন্ডনের এক কুয়াশাভরা সকালে এক তরুণ ডাক্তার শার্লক হোমসের সঙ্গে দেখা করতে এলেন।",
+          "ur": "لندن کی ایک دھند بھری صبح، ایک نوجوان ڈاکٹر شرلاک ہومز سے ملنے آئے۔",
+          "th": "เช้าวันหนึ่งที่มีหมอกลงจัดในลอนดอน หมอหนุ่มคนหนึ่งมาพบเชอร์ล็อก โฮมส์"
+        }
+      },
+      {
+        "id": "cl-hound-002",
+        "english": "His name was Dr Mortimer, and he lived in a small village in Devon.",
+        "turkish": "Adı Dr. Mortimer'dı ve Devon'da küçük bir köyde yaşıyordu.",
+        "translations": {
+          "es-419": "Se llamaba doctor Mortimer y vivía en un pueblito de Devon.",
+          "pt-BR": "Ele se chamava doutor Mortimer e morava num pequeno vilarejo em Devon.",
+          "id": "Namanya Dokter Mortimer, dan ia tinggal di sebuah desa kecil di Devon.",
+          "ar": "كان اسمه الدكتور مورتيمر، وكان يعيش في قرية صغيرة في ديفون.",
+          "vi": "Ông tên là bác sĩ Mortimer và sống ở một ngôi làng nhỏ tại Devon.",
+          "hi": "उनका नाम डॉ. मॉर्टिमर था, और वे डेवन के एक छोटे-से गाँव में रहते थे।",
+          "ru": "Его звали доктор Мортимер, и он жил в маленькой деревне в Девоне.",
+          "bn": "তাঁর নাম ডা. মর্টিমার, তিনি ডেভনের একটা ছোট গ্রামে থাকতেন।",
+          "ur": "ان کا نام ڈاکٹر مورٹیمر تھا، اور وہ ڈیون کے ایک چھوٹے سے گاؤں میں رہتے تھے۔",
+          "th": "เขาชื่อ ดร.มอร์ติเมอร์ และอาศัยอยู่ในหมู่บ้านเล็ก ๆ แห่งหนึ่งในเดวอน"
+        }
+      },
+      {
+        "id": "cl-hound-003",
+        "english": "He carried an old piece of paper, brown and dry with age.",
+        "turkish": "Elinde, yıllar içinde kahverengileşip kurumuş eski bir kâğıt vardı.",
+        "translations": {
+          "es-419": "Traía un papel viejo, marrón y reseco por los años.",
+          "pt-BR": "Ele trazia um papel velho, marrom e ressecado pelo tempo.",
+          "id": "Ia membawa selembar kertas tua yang sudah cokelat dan kering dimakan usia.",
+          "ar": "كان يحمل ورقة قديمة، صفراء داكنة وجافّة من طول الزمن.",
+          "vi": "Ông mang theo một tờ giấy cũ, đã ngả nâu và khô giòn vì năm tháng.",
+          "hi": "उनके हाथ में एक पुराना काग़ज़ था, जो बरसों में भूरा और सूखा हो गया था।",
+          "ru": "В руках у него был старый листок, побуревший и высохший от времени.",
+          "bn": "তাঁর হাতে ছিল একটা পুরোনো কাগজ, বয়সের ভারে বাদামি আর শুকনো।",
+          "ur": "ان کے ہاتھ میں ایک پرانا کاغذ تھا، جو برسوں میں بھورا اور خشک ہو چکا تھا۔",
+          "th": "เขาถือกระดาษเก่าแผ่นหนึ่งมาด้วย ซึ่งเป็นสีน้ำตาลและแห้งกรอบตามกาลเวลา"
+        }
+      },
+      {
+        "id": "cl-hound-004",
+        "english": "\"This is a family story about the Baskervilles,\" he said. \"It is more than two hundred years old.\"",
+        "turkish": "\"Bu, Baskerville ailesiyle ilgili bir aile hikâyesi,\" dedi. \"İki yüz yıldan daha eski.\"",
+        "translations": {
+          "es-419": "\"Esta es una historia de la familia Baskerville\", dijo. \"Tiene más de doscientos años\".",
+          "pt-BR": "— Esta é uma história da família Baskerville — disse ele. — Tem mais de duzentos anos.",
+          "id": "\"Ini kisah keluarga Baskerville,\" katanya. \"Umurnya lebih dari dua ratus tahun.\"",
+          "ar": "قال: «هذه حكاية عائلية عن آل باسكرفيل. عمرها أكثر من مئتي سنة.»",
+          "vi": "\"Đây là một câu chuyện về dòng họ Baskerville,\" ông nói. \"Nó đã hơn hai trăm năm tuổi.\"",
+          "hi": "उन्होंने कहा, \"यह बास्करविल परिवार की एक कहानी है। यह दो सौ साल से भी ज़्यादा पुरानी है।\"",
+          "ru": "«Это семейное предание Баскервилей, — сказал он. — Ему больше двухсот лет».",
+          "bn": "তিনি বললেন, \"এটা বাস্কারভিল পরিবারের একটা কাহিনি। এর বয়স দুশো বছরেরও বেশি।\"",
+          "ur": "انہوں نے کہا، \"یہ باسکرویل خاندان کی ایک کہانی ہے۔ یہ دو سو سال سے بھی زیادہ پرانی ہے۔\"",
+          "th": "\"นี่คือเรื่องเล่าของตระกูลบาสเกอร์วิลล์\" เขาพูด \"มันเก่าแก่กว่าสองร้อยปีแล้ว\""
+        }
+      },
+      {
+        "id": "cl-hound-005",
+        "english": "Long ago, a cruel man named Hugo Baskerville lived at Baskerville Hall.",
+        "turkish": "Uzun zaman önce Baskerville Malikânesi'nde Hugo Baskerville adında zalim bir adam yaşardı.",
+        "translations": {
+          "es-419": "Hace mucho tiempo, un hombre cruel llamado Hugo Baskerville vivía en la mansión Baskerville.",
+          "pt-BR": "Há muito tempo, um homem cruel chamado Hugo Baskerville morava na mansão Baskerville.",
+          "id": "Dahulu kala, seorang pria kejam bernama Hugo Baskerville tinggal di Puri Baskerville.",
+          "ar": "منذ زمن بعيد، عاش رجل قاسٍ اسمه هوغو باسكرفيل في قصر باسكرفيل.",
+          "vi": "Ngày xưa, có một người đàn ông độc ác tên là Hugo Baskerville sống ở dinh thự Baskerville.",
+          "hi": "बहुत पहले बास्करविल हॉल में ह्यूगो बास्करविल नाम का एक क्रूर आदमी रहता था।",
+          "ru": "Давным-давно в Баскервиль-холле жил жестокий человек по имени Хьюго Баскервиль.",
+          "bn": "অনেক কাল আগে বাস্কারভিল হলে হিউগো বাস্কারভিল নামে এক নিষ্ঠুর লোক থাকত।",
+          "ur": "بہت پہلے باسکرویل ہال میں ہیوگو باسکرویل نام کا ایک ظالم آدمی رہتا تھا۔",
+          "th": "นานมาแล้ว ชายใจร้ายชื่อฮิวโก บาสเกอร์วิลล์ อาศัยอยู่ที่คฤหาสน์บาสเกอร์วิลล์"
+        }
+      },
+      {
+        "id": "cl-hound-006",
+        "english": "One night, he chased a young woman across the dark moor with his dogs.",
+        "turkish": "Bir gece, köpekleriyle birlikte genç bir kadını karanlık bozkırda kovaladı.",
+        "translations": {
+          "es-419": "Una noche, persiguió con sus perros a una joven por el oscuro páramo.",
+          "pt-BR": "Certa noite, ele perseguiu uma moça pela charneca escura com seus cães.",
+          "id": "Suatu malam, ia mengejar seorang perempuan muda melintasi padang gelap bersama anjing-anjingnya.",
+          "ar": "وذات ليلة، طارد امرأة شابة عبر البراري المظلمة مع كلابه.",
+          "vi": "Một đêm, hắn cùng bầy chó đuổi theo một cô gái trẻ băng qua vùng đồng hoang tối tăm.",
+          "hi": "एक रात उसने अपने कुत्तों के साथ एक नौजवान औरत का अँधेरे वीरान मैदान में पीछा किया।",
+          "ru": "Однажды ночью он со своими собаками погнался за девушкой по тёмным болотам.",
+          "bn": "এক রাতে সে তার কুকুরদের নিয়ে অন্ধকার প্রান্তরে এক তরুণীকে তাড়া করল।",
+          "ur": "ایک رات اس نے اپنے کتوں کے ساتھ ایک نوجوان عورت کا اندھیرے ویران میدان میں پیچھا کیا۔",
+          "th": "คืนหนึ่ง เขาพาฝูงสุนัขไล่ตามหญิงสาวคนหนึ่งข้ามทุ่งรกร้างอันมืดมิด"
+        }
+      },
+      {
+        "id": "cl-hound-007",
+        "english": "His friends followed him, and they found the poor woman dead from fear and tiredness.",
+        "turkish": "Arkadaşları onun peşinden gitti ve zavallı kadını korkudan ve yorgunluktan ölmüş buldular.",
+        "translations": {
+          "es-419": "Sus amigos lo siguieron y encontraron a la pobre mujer muerta de miedo y cansancio.",
+          "pt-BR": "Os amigos dele o seguiram e encontraram a pobre moça morta de medo e cansaço.",
+          "id": "Teman-temannya mengikutinya dan menemukan perempuan malang itu mati karena takut dan kelelahan.",
+          "ar": "تبعه أصدقاؤه، فوجدوا المرأة المسكينة ميتة من الخوف والتعب.",
+          "vi": "Bạn bè hắn đi theo và thấy cô gái tội nghiệp đã chết vì sợ hãi và kiệt sức.",
+          "hi": "उसके दोस्त उसके पीछे गए, और उन्होंने उस बेचारी औरत को डर और थकान से मरा हुआ पाया।",
+          "ru": "Друзья поскакали следом и нашли несчастную девушку мёртвой от страха и усталости.",
+          "bn": "তার বন্ধুরা পিছু পিছু গেল, আর দেখল বেচারি মেয়েটি ভয় আর ক্লান্তিতে মারা গেছে।",
+          "ur": "اس کے دوست اس کے پیچھے گئے، اور انہوں نے اس بے چاری عورت کو ڈر اور تھکن سے مرا ہوا پایا۔",
+          "th": "เพื่อน ๆ ของเขาตามไป และพบว่าหญิงสาวผู้น่าสงสารเสียชีวิตเพราะความกลัวและความเหนื่อยล้า"
+        }
+      },
+      {
+        "id": "cl-hound-008",
+        "english": "Next to her lay Hugo, and a huge black hound was standing over his body.",
+        "turkish": "Yanında Hugo yatıyordu ve kocaman siyah bir köpek onun bedeninin üstünde duruyordu.",
+        "translations": {
+          "es-419": "A su lado yacía Hugo, y un enorme sabueso negro estaba de pie sobre su cuerpo.",
+          "pt-BR": "Ao lado dela estava Hugo, caído, e um enorme cão preto estava de pé sobre o corpo dele.",
+          "id": "Di sebelahnya tergeletak Hugo, dan seekor anjing hitam raksasa berdiri di atas tubuhnya.",
+          "ar": "وبجانبها كان هوغو ملقًى، وكلب أسود ضخم واقف فوق جسده.",
+          "vi": "Bên cạnh cô là Hugo nằm sõng soài, và một con chó săn đen khổng lồ đang đứng trên người hắn.",
+          "hi": "उसके पास ह्यूगो पड़ा था, और एक विशाल काला शिकारी कुत्ता उसके शरीर पर खड़ा था।",
+          "ru": "Рядом лежал Хьюго, а над ним стояла огромная чёрная собака.",
+          "bn": "তার পাশে পড়ে ছিল হিউগো, আর তার শরীরের ওপর দাঁড়িয়ে ছিল একটা বিশাল কালো শিকারি কুকুর।",
+          "ur": "اس کے پاس ہیوگو پڑا تھا، اور ایک بہت بڑا کالا شکاری کتا اس کے جسم پر کھڑا تھا۔",
+          "th": "ข้าง ๆ เธอคือร่างของฮิวโก และมีสุนัขดำตัวมหึมายืนคร่อมร่างเขาอยู่"
+        }
+      },
+      {
+        "id": "cl-hound-009",
+        "english": "As they watched, the hound tore out Hugo's throat.",
+        "turkish": "Onlar bakarken köpek Hugo'nun gırtlağını parçaladı.",
+        "translations": {
+          "es-419": "Mientras miraban, el sabueso le desgarró la garganta a Hugo.",
+          "pt-BR": "Enquanto eles olhavam, o cão rasgou a garganta de Hugo.",
+          "id": "Saat mereka menyaksikan, anjing itu mengoyak leher Hugo.",
+          "ar": "وبينما كانوا ينظرون، مزّق الكلب عنق هوغو.",
+          "vi": "Ngay trước mắt họ, con chó săn xé toạc cổ họng Hugo.",
+          "hi": "उनके देखते-देखते उस कुत्ते ने ह्यूगो का गला फाड़ डाला।",
+          "ru": "У них на глазах собака перегрызла Хьюго горло.",
+          "bn": "তাদের চোখের সামনেই কুকুরটা হিউগোর গলা ছিঁড়ে ফেলল।",
+          "ur": "ان کے دیکھتے دیکھتے اس کتے نے ہیوگو کا گلا پھاڑ ڈالا۔",
+          "th": "ขณะที่พวกเขามองอยู่ สุนัขตัวนั้นก็ฉีกลำคอของฮิวโก"
+        }
+      },
+      {
+        "id": "cl-hound-010",
+        "english": "\"Since that night, a hound has followed the Baskerville family,\" said Dr Mortimer.",
+        "turkish": "\"O geceden beri bir köpek Baskerville ailesinin peşini bırakmıyor,\" dedi Dr. Mortimer.",
+        "translations": {
+          "es-419": "\"Desde esa noche, un sabueso persigue a la familia Baskerville\", dijo el doctor Mortimer.",
+          "pt-BR": "— Desde aquela noite, um cão persegue a família Baskerville — disse o doutor Mortimer.",
+          "id": "\"Sejak malam itu, seekor anjing terus menghantui keluarga Baskerville,\" kata Dokter Mortimer.",
+          "ar": "قال الدكتور مورتيمر: «منذ تلك الليلة، وكلبٌ يلاحق عائلة باسكرفيل.»",
+          "vi": "\"Kể từ đêm đó, một con chó săn đã đeo bám dòng họ Baskerville,\" bác sĩ Mortimer nói.",
+          "hi": "डॉ. मॉर्टिमर ने कहा, \"उस रात से एक शिकारी कुत्ता बास्करविल परिवार का पीछा कर रहा है।\"",
+          "ru": "«С той ночи собака преследует род Баскервилей», — сказал доктор Мортимер.",
+          "bn": "ডা. মর্টিমার বললেন, \"সেই রাত থেকে একটা শিকারি কুকুর বাস্কারভিল পরিবারের পিছু নিয়েছে।\"",
+          "ur": "ڈاکٹر مورٹیمر نے کہا، \"اس رات سے ایک شکاری کتا باسکرویل خاندان کا پیچھا کر رہا ہے۔\"",
+          "th": "\"ตั้งแต่คืนนั้นมา สุนัขตัวหนึ่งก็ตามหลอกหลอนตระกูลบาสเกอร์วิลล์\" ดร.มอร์ติเมอร์กล่าว"
+        }
+      },
+      {
+        "id": "cl-hound-011",
+        "english": "Holmes yawned. \"A fairy tale,\" he said. \"Why are you telling me this?\"",
+        "turkish": "Holmes esnedi. \"Bir masal,\" dedi. \"Bunu bana neden anlatıyorsunuz?\"",
+        "translations": {
+          "es-419": "Holmes bostezó. \"Un cuento de hadas\", dijo. \"¿Por qué me cuenta esto?\"",
+          "pt-BR": "Holmes bocejou. — Um conto de fadas — disse ele. — Por que o senhor está me contando isso?",
+          "id": "Holmes menguap. \"Dongeng,\" katanya. \"Mengapa Anda menceritakan ini kepada saya?\"",
+          "ar": "تثاءب هولمز وقال: «حكاية خرافية. لماذا تخبرني بهذا؟»",
+          "vi": "Holmes ngáp. \"Chuyện cổ tích thôi,\" anh nói. \"Sao ông lại kể cho tôi nghe chuyện này?\"",
+          "hi": "होम्स ने जम्हाई ली। \"परियों की कहानी,\" उन्होंने कहा। \"आप मुझे यह क्यों सुना रहे हैं?\"",
+          "ru": "Холмс зевнул. «Сказка, — сказал он. — Зачем вы мне это рассказываете?»",
+          "bn": "হোমস হাই তুললেন। \"রূপকথা,\" তিনি বললেন। \"আপনি আমাকে এটা বলছেন কেন?\"",
+          "ur": "ہومز نے جمائی لی۔ \"پریوں کی کہانی،\" انہوں نے کہا۔ \"آپ مجھے یہ کیوں سنا رہے ہیں؟\"",
+          "th": "โฮมส์หาว \"นิทานนี่\" เขาพูด \"คุณมาเล่าเรื่องนี้ให้ผมฟังทำไม\""
+        }
+      },
+      {
+        "id": "cl-hound-012",
+        "english": "\"Because three months ago, Sir Charles Baskerville died on the moor,\" the doctor answered.",
+        "turkish": "\"Çünkü üç ay önce Sir Charles Baskerville bozkırda öldü,\" diye cevap verdi doktor.",
+        "translations": {
+          "es-419": "\"Porque hace tres meses, sir Charles Baskerville murió en el páramo\", respondió el médico.",
+          "pt-BR": "— Porque, há três meses, Sir Charles Baskerville morreu na charneca — respondeu o médico.",
+          "id": "\"Karena tiga bulan lalu, Sir Charles Baskerville meninggal di padang itu,\" jawab sang dokter.",
+          "ar": "أجاب الطبيب: «لأن السير تشارلز باسكرفيل مات في البراري قبل ثلاثة أشهر.»",
+          "vi": "\"Vì ba tháng trước, ngài Charles Baskerville đã chết trên vùng đồng hoang,\" vị bác sĩ đáp.",
+          "hi": "डॉक्टर ने जवाब दिया, \"क्योंकि तीन महीने पहले सर चार्ल्स बास्करविल की उस वीरान मैदान में मौत हो गई।\"",
+          "ru": "«Потому что три месяца назад на болотах умер сэр Чарльз Баскервиль», — ответил доктор.",
+          "bn": "ডাক্তার উত্তর দিলেন, \"কারণ তিন মাস আগে স্যার চার্লস বাস্কারভিল প্রান্তরে মারা গেছেন।\"",
+          "ur": "ڈاکٹر نے جواب دیا، \"کیونکہ تین مہینے پہلے سر چارلس باسکرویل اس ویران میدان میں مر گئے۔\"",
+          "th": "\"เพราะเมื่อสามเดือนก่อน เซอร์ชาลส์ บาสเกอร์วิลล์ เสียชีวิตที่ทุ่งรกร้าง\" หมอตอบ"
+        }
+      },
+      {
+        "id": "cl-hound-013",
+        "english": "Sir Charles was a kind, rich old man who believed the old story.",
+        "turkish": "Sir Charles eski hikâyeye inanan, iyi kalpli, zengin, yaşlı bir adamdı.",
+        "translations": {
+          "es-419": "Sir Charles era un anciano rico y bondadoso que creía en la vieja historia.",
+          "pt-BR": "Sir Charles era um senhor rico e bondoso que acreditava na velha história.",
+          "id": "Sir Charles adalah pria tua yang kaya dan baik hati, yang percaya pada kisah lama itu.",
+          "ar": "كان السير تشارلز رجلًا عجوزًا غنيًّا طيّبًا يصدّق الحكاية القديمة.",
+          "vi": "Ngài Charles là một ông già giàu có, tốt bụng và tin vào câu chuyện xưa.",
+          "hi": "सर चार्ल्स एक दयालु, अमीर बुज़ुर्ग थे जो उस पुरानी कहानी पर विश्वास करते थे।",
+          "ru": "Сэр Чарльз был добрым, богатым стариком и верил в старую легенду.",
+          "bn": "স্যার চার্লস ছিলেন এক দয়ালু, ধনী বৃদ্ধ, যিনি পুরোনো কাহিনিটা বিশ্বাস করতেন।",
+          "ur": "سر چارلس ایک مہربان، امیر بزرگ تھے جو اس پرانی کہانی پر یقین رکھتے تھے۔",
+          "th": "เซอร์ชาลส์เป็นชายชราผู้ร่ำรวยและใจดี และเชื่อในเรื่องเล่าเก่านั้น"
+        }
+      },
+      {
+        "id": "cl-hound-014",
+        "english": "Every evening, he walked along a path between tall trees behind his house.",
+        "turkish": "Her akşam evinin arkasındaki uzun ağaçların arasından geçen bir yolda yürürdü.",
+        "translations": {
+          "es-419": "Todas las tardes, caminaba por un sendero entre árboles altos detrás de su casa.",
+          "pt-BR": "Toda noite, ele caminhava por uma alameda entre árvores altas atrás da casa.",
+          "id": "Setiap sore, ia berjalan di sebuah jalan setapak di antara pohon-pohon tinggi di belakang rumahnya.",
+          "ar": "كان يمشي كل مساء على ممرّ بين أشجار عالية خلف بيته.",
+          "vi": "Chiều nào ông cũng đi dạo trên con đường giữa hàng cây cao phía sau nhà.",
+          "hi": "हर शाम वे अपने घर के पीछे ऊँचे पेड़ों के बीच बने एक रास्ते पर टहलते थे।",
+          "ru": "Каждый вечер он гулял по аллее между высокими деревьями за домом.",
+          "bn": "প্রতি সন্ধ্যায় তিনি বাড়ির পেছনে উঁচু গাছের সারির মাঝের একটা পথে হাঁটতেন।",
+          "ur": "ہر شام وہ اپنے گھر کے پیچھے اونچے درختوں کے بیچ ایک راستے پر ٹہلتے تھے۔",
+          "th": "ทุกเย็น เขาจะเดินเล่นไปตามทางระหว่างแถวต้นไม้สูงหลังบ้าน"
+        }
+      },
+      {
+        "id": "cl-hound-015",
+        "english": "One night he did not return, and his servant found him dead at the path's end.",
+        "turkish": "Bir gece geri dönmedi ve uşağı onu yolun sonunda ölü buldu.",
+        "translations": {
+          "es-419": "Una noche no regresó, y su criado lo encontró muerto al final del sendero.",
+          "pt-BR": "Certa noite ele não voltou, e o criado o encontrou morto no fim da alameda.",
+          "id": "Suatu malam ia tidak kembali, dan pelayannya menemukannya tewas di ujung jalan setapak itu.",
+          "ar": "وذات ليلة لم يعد، فوجده خادمه ميتًا في آخر الممرّ.",
+          "vi": "Một đêm ông không trở về, và người hầu thấy ông nằm chết ở cuối con đường.",
+          "hi": "एक रात वे नहीं लौटे, और उनके नौकर ने उन्हें रास्ते के आख़िर में मरा हुआ पाया।",
+          "ru": "Однажды ночью он не вернулся, и слуга нашёл его мёртвым в конце аллеи.",
+          "bn": "এক রাতে তিনি আর ফিরলেন না, আর তাঁর চাকর তাঁকে পথের শেষে মৃত অবস্থায় পেল।",
+          "ur": "ایک رات وہ واپس نہیں آئے، اور ان کے نوکر نے انہیں راستے کے آخر میں مرا ہوا پایا۔",
+          "th": "คืนหนึ่งเขาไม่กลับมา และคนรับใช้ก็พบเขาเสียชีวิตอยู่ที่ปลายทางเดิน"
+        }
+      },
+      {
+        "id": "cl-hound-016",
+        "english": "His face was twisted with terror, but there was no wound on his body.",
+        "turkish": "Yüzü dehşetten çarpılmıştı ama vücudunda hiç yara yoktu.",
+        "translations": {
+          "es-419": "Tenía la cara torcida de terror, pero no había ninguna herida en su cuerpo.",
+          "pt-BR": "O rosto dele estava contorcido de terror, mas não havia nenhum ferimento no corpo.",
+          "id": "Wajahnya berkerut ketakutan, tetapi tidak ada luka di tubuhnya.",
+          "ar": "كان وجهه ملتويًا من الرعب، لكن لم يكن على جسده أيّ جرح.",
+          "vi": "Khuôn mặt ông méo mó vì kinh hoàng, nhưng trên người không có vết thương nào.",
+          "hi": "उनका चेहरा डर से बिगड़ा हुआ था, लेकिन शरीर पर कोई घाव नहीं था।",
+          "ru": "Его лицо было искажено ужасом, но на теле не было ни одной раны.",
+          "bn": "তাঁর মুখ আতঙ্কে বিকৃত হয়ে ছিল, কিন্তু শরীরে কোনো ক্ষত ছিল না।",
+          "ur": "ان کا چہرہ خوف سے بگڑا ہوا تھا، مگر جسم پر کوئی زخم نہیں تھا۔",
+          "th": "ใบหน้าของเขาบิดเบี้ยวด้วยความหวาดกลัว แต่ร่างกายไม่มีบาดแผลเลย"
+        }
+      },
+      {
+        "id": "cl-hound-017",
+        "english": "The police said that his weak heart had stopped.",
+        "turkish": "Polis zayıf kalbinin durduğunu söyledi.",
+        "translations": {
+          "es-419": "La policía dijo que su corazón débil se había detenido.",
+          "pt-BR": "A polícia disse que o coração fraco dele tinha parado.",
+          "id": "Polisi mengatakan bahwa jantungnya yang lemah telah berhenti.",
+          "ar": "قالت الشرطة إن قلبه الضعيف قد توقّف.",
+          "vi": "Cảnh sát nói rằng trái tim yếu của ông đã ngừng đập.",
+          "hi": "पुलिस ने कहा कि उनका कमज़ोर दिल रुक गया था।",
+          "ru": "Полиция решила, что у него остановилось слабое сердце.",
+          "bn": "পুলিশ বলল, তাঁর দুর্বল হৃৎপিণ্ড থেমে গিয়েছিল।",
+          "ur": "پولیس نے کہا کہ ان کا کمزور دل بند ہو گیا تھا۔",
+          "th": "ตำรวจบอกว่าหัวใจที่อ่อนแอของเขาหยุดเต้น"
+        }
+      },
+      {
+        "id": "cl-hound-018",
+        "english": "Dr Mortimer leaned closer to Holmes and spoke very quietly.",
+        "turkish": "Dr. Mortimer Holmes'a doğru eğildi ve çok alçak sesle konuştu.",
+        "translations": {
+          "es-419": "El doctor Mortimer se acercó a Holmes y habló muy bajito.",
+          "pt-BR": "O doutor Mortimer se inclinou para perto de Holmes e falou bem baixinho.",
+          "id": "Dokter Mortimer mencondongkan badan ke arah Holmes dan berbicara sangat pelan.",
+          "ar": "مال الدكتور مورتيمر نحو هولمز وتكلّم بصوت خافت جدًا.",
+          "vi": "Bác sĩ Mortimer nghiêng người lại gần Holmes và nói rất khẽ.",
+          "hi": "डॉ. मॉर्टिमर होम्स की ओर झुके और बहुत धीमी आवाज़ में बोले।",
+          "ru": "Доктор Мортимер наклонился к Холмсу и заговорил совсем тихо.",
+          "bn": "ডা. মর্টিমার হোমসের দিকে ঝুঁকে খুব আস্তে কথা বললেন।",
+          "ur": "ڈاکٹر مورٹیمر ہومز کی طرف جھکے اور بہت دھیمی آواز میں بولے۔",
+          "th": "ดร.มอร์ติเมอร์เอนตัวเข้าไปใกล้โฮมส์และพูดเสียงเบามาก"
+        }
+      },
+      {
+        "id": "cl-hound-019",
+        "english": "\"Near the body, I saw footprints on the ground.\"",
+        "turkish": "\"Cesedin yakınında yerde ayak izleri gördüm.\"",
+        "translations": {
+          "es-419": "\"Cerca del cuerpo, vi huellas en el suelo\".",
+          "pt-BR": "— Perto do corpo, eu vi pegadas no chão.",
+          "id": "\"Di dekat jenazahnya, saya melihat jejak kaki di tanah.\"",
+          "ar": "«رأيت قرب الجثة آثار أقدام على الأرض.»",
+          "vi": "\"Gần thi thể, tôi thấy những dấu chân trên mặt đất.\"",
+          "hi": "\"लाश के पास मैंने ज़मीन पर पैरों के निशान देखे।\"",
+          "ru": "«Возле тела я увидел на земле следы».",
+          "bn": "\"লাশের কাছে মাটিতে আমি পায়ের ছাপ দেখেছিলাম।\"",
+          "ur": "\"لاش کے پاس میں نے زمین پر قدموں کے نشان دیکھے۔\"",
+          "th": "\"ใกล้ศพ ผมเห็นรอยเท้าบนพื้น\""
+        }
+      },
+      {
+        "id": "cl-hound-020",
+        "english": "\"A man's or a woman's?\" asked Holmes.",
+        "turkish": "\"Bir erkeğin mi, bir kadının mı?\" diye sordu Holmes.",
+        "translations": {
+          "es-419": "\"¿De hombre o de mujer?\", preguntó Holmes.",
+          "pt-BR": "— De homem ou de mulher? — perguntou Holmes.",
+          "id": "\"Jejak laki-laki atau perempuan?\" tanya Holmes.",
+          "ar": "سأل هولمز: «لرجل أم لامرأة؟»",
+          "vi": "\"Của đàn ông hay đàn bà?\" Holmes hỏi.",
+          "hi": "होम्स ने पूछा, \"किसी आदमी के या किसी औरत के?\"",
+          "ru": "«Мужские или женские?» — спросил Холмс.",
+          "bn": "হোমস জিজ্ঞেস করলেন, \"পুরুষের না মহিলার?\"",
+          "ur": "ہومز نے پوچھا، \"کسی مرد کے یا کسی عورت کے؟\"",
+          "th": "\"ของผู้ชายหรือผู้หญิง\" โฮมส์ถาม"
+        }
+      },
+      {
+        "id": "cl-hound-021",
+        "english": "\"Mr Holmes, they were the footprints of a gigantic hound!\"",
+        "turkish": "\"Bay Holmes, bunlar devasa bir köpeğin ayak izleriydi!\"",
+        "translations": {
+          "es-419": "\"¡Señor Holmes, eran las huellas de un sabueso gigantesco!\"",
+          "pt-BR": "— Senhor Holmes, eram as pegadas de um cão gigantesco!",
+          "id": "\"Tuan Holmes, itu jejak kaki seekor anjing raksasa!\"",
+          "ar": "«يا سيد هولمز، كانت آثار أقدام كلب عملاق!»",
+          "vi": "\"Thưa ông Holmes, đó là dấu chân của một con chó săn khổng lồ!\"",
+          "hi": "\"मिस्टर होम्स, वे एक विशाल शिकारी कुत्ते के पंजों के निशान थे!\"",
+          "ru": "«Мистер Холмс, это были следы огромной собаки!»",
+          "bn": "\"মিস্টার হোমস, সেগুলো ছিল এক দানবীয় শিকারি কুকুরের পায়ের ছাপ!\"",
+          "ur": "\"مسٹر ہومز، وہ ایک دیو ہیکل شکاری کتے کے پنجوں کے نشان تھے!\"",
+          "th": "\"คุณโฮมส์ นั่นคือรอยเท้าของสุนัขตัวมหึมา!\""
+        }
+      },
+      {
+        "id": "cl-hound-022",
+        "english": "For a moment, nobody in the room said a word.",
+        "turkish": "Bir an odadaki kimse tek kelime etmedi.",
+        "translations": {
+          "es-419": "Por un momento, nadie en la habitación dijo una palabra.",
+          "pt-BR": "Por um momento, ninguém na sala disse uma palavra.",
+          "id": "Sejenak, tidak ada seorang pun di ruangan itu yang berbicara.",
+          "ar": "للحظة، لم ينطق أحد في الغرفة بكلمة.",
+          "vi": "Trong giây lát, không ai trong phòng nói một lời.",
+          "hi": "एक पल के लिए कमरे में कोई कुछ नहीं बोला।",
+          "ru": "На мгновение в комнате воцарилась тишина.",
+          "bn": "এক মুহূর্তের জন্য ঘরে কেউ একটা কথাও বলল না।",
+          "ur": "ایک لمحے کے لیے کمرے میں کوئی کچھ نہ بولا۔",
+          "th": "ชั่วขณะหนึ่ง ไม่มีใครในห้องพูดอะไรสักคำ"
+        }
+      },
+      {
+        "id": "cl-hound-023",
+        "english": "\"Now the new owner of Baskerville Hall is arriving from Canada,\" said Dr Mortimer.",
+        "turkish": "\"Şimdi Baskerville Malikânesi'nin yeni sahibi Kanada'dan geliyor,\" dedi Dr. Mortimer.",
+        "translations": {
+          "es-419": "\"Ahora el nuevo dueño de la mansión Baskerville llega desde Canadá\", dijo el doctor Mortimer.",
+          "pt-BR": "— Agora o novo dono da mansão Baskerville está chegando do Canadá — disse o doutor Mortimer.",
+          "id": "\"Sekarang pemilik baru Puri Baskerville akan datang dari Kanada,\" kata Dokter Mortimer.",
+          "ar": "قال الدكتور مورتيمر: «والآن سيصل المالك الجديد لقصر باسكرفيل من كندا.»",
+          "vi": "\"Giờ đây, chủ nhân mới của dinh thự Baskerville sắp từ Canada về,\" bác sĩ Mortimer nói.",
+          "hi": "डॉ. मॉर्टिमर ने कहा, \"अब बास्करविल हॉल के नए मालिक कनाडा से आ रहे हैं।\"",
+          "ru": "«Теперь из Канады приезжает новый владелец Баскервиль-холла», — сказал доктор Мортимер.",
+          "bn": "ডা. মর্টিমার বললেন, \"এখন বাস্কারভিল হলের নতুন মালিক কানাডা থেকে আসছেন।\"",
+          "ur": "ڈاکٹر مورٹیمر نے کہا، \"اب باسکرویل ہال کے نئے مالک کینیڈا سے آ رہے ہیں۔\"",
+          "th": "\"ตอนนี้เจ้าของคนใหม่ของคฤหาสน์บาสเกอร์วิลล์กำลังเดินทางมาจากแคนาดา\" ดร.มอร์ติเมอร์กล่าว"
+        }
+      },
+      {
+        "id": "cl-hound-024",
+        "english": "\"His name is Sir Henry, and he is the last of the family.\"",
+        "turkish": "\"Adı Sir Henry ve ailenin son ferdi.\"",
+        "translations": {
+          "es-419": "\"Se llama sir Henry, y es el último de la familia\".",
+          "pt-BR": "— O nome dele é Sir Henry, e ele é o último da família.",
+          "id": "\"Namanya Sir Henry, dan dialah keturunan terakhir keluarga itu.\"",
+          "ar": "«اسمه السير هنري، وهو آخر من بقي من العائلة.»",
+          "vi": "\"Tên anh ấy là ngài Henry, người cuối cùng của dòng họ.\"",
+          "hi": "\"उनका नाम सर हेनरी है, और वे इस परिवार के आख़िरी वारिस हैं।\"",
+          "ru": "«Его зовут сэр Генри, и он последний в роду».",
+          "bn": "\"তাঁর নাম স্যার হেনরি, আর তিনিই এই পরিবারের শেষ উত্তরাধিকারী।\"",
+          "ur": "\"ان کا نام سر ہنری ہے، اور وہ اس خاندان کے آخری وارث ہیں۔\"",
+          "th": "\"เขาชื่อเซอร์เฮนรี และเป็นทายาทคนสุดท้ายของตระกูล\""
+        }
+      },
+      {
+        "id": "cl-hound-025",
+        "english": "\"Is it safe for him to go there?\"",
+        "turkish": "\"Oraya gitmesi güvenli mi?\"",
+        "translations": {
+          "es-419": "\"¿Es seguro que vaya allí?\"",
+          "pt-BR": "— É seguro ele ir para lá?",
+          "id": "\"Amankah baginya pergi ke sana?\"",
+          "ar": "«هل من الآمن أن يذهب إلى هناك؟»",
+          "vi": "\"Liệu anh ấy đến đó có an toàn không?\"",
+          "hi": "\"क्या उनका वहाँ जाना सुरक्षित है?\"",
+          "ru": "«Не опасно ли ему туда ехать?»",
+          "bn": "\"সেখানে যাওয়া কি তাঁর পক্ষে নিরাপদ?\"",
+          "ur": "\"کیا ان کا وہاں جانا محفوظ ہے؟\"",
+          "th": "\"เขาไปที่นั่นจะปลอดภัยหรือเปล่า\""
+        }
+      },
+      {
+        "id": "cl-hound-026",
+        "english": "The next morning, Dr Mortimer brought Sir Henry to Baker Street.",
+        "turkish": "Ertesi sabah Dr. Mortimer, Sir Henry'yi Baker Sokağı'na getirdi.",
+        "translations": {
+          "es-419": "A la mañana siguiente, el doctor Mortimer llevó a sir Henry a Baker Street.",
+          "pt-BR": "Na manhã seguinte, o doutor Mortimer levou Sir Henry à Baker Street.",
+          "id": "Keesokan paginya, Dokter Mortimer membawa Sir Henry ke Baker Street.",
+          "ar": "في صباح اليوم التالي، أحضر الدكتور مورتيمر السير هنري إلى شارع بيكر.",
+          "vi": "Sáng hôm sau, bác sĩ Mortimer đưa ngài Henry đến phố Baker.",
+          "hi": "अगली सुबह डॉ. मॉर्टिमर सर हेनरी को बेकर स्ट्रीट ले आए।",
+          "ru": "На следующее утро доктор Мортимер привёз сэра Генри на Бейкер-стрит.",
+          "bn": "পরদিন সকালে ডা. মর্টিমার স্যার হেনরিকে বেকার স্ট্রিটে নিয়ে এলেন।",
+          "ur": "اگلی صبح ڈاکٹر مورٹیمر سر ہنری کو بیکر اسٹریٹ لے آئے۔",
+          "th": "เช้าวันรุ่งขึ้น ดร.มอร์ติเมอร์พาเซอร์เฮนรีมาที่ถนนเบเกอร์"
+        }
+      },
+      {
+        "id": "cl-hound-027",
+        "english": "He was a strong young man with dark eyes and a friendly smile.",
+        "turkish": "Koyu gözlü, sıcak gülüşlü, güçlü bir gençti.",
+        "translations": {
+          "es-419": "Era un joven fuerte, de ojos oscuros y sonrisa amable.",
+          "pt-BR": "Ele era um rapaz forte, de olhos escuros e sorriso simpático.",
+          "id": "Ia pemuda yang kuat, bermata gelap dan bersenyum ramah.",
+          "ar": "كان شابًّا قويًّا، داكن العينين، ذا ابتسامة ودودة.",
+          "vi": "Anh là một chàng trai khỏe mạnh với đôi mắt sẫm màu và nụ cười thân thiện.",
+          "hi": "वे गहरी आँखों और दोस्ताना मुस्कान वाले एक मज़बूत नौजवान थे।",
+          "ru": "Это был крепкий молодой человек с тёмными глазами и дружелюбной улыбкой.",
+          "bn": "তিনি ছিলেন কালো চোখ আর বন্ধুসুলভ হাসির এক বলিষ্ঠ যুবক।",
+          "ur": "وہ گہری آنکھوں اور دوستانہ مسکراہٹ والے ایک مضبوط نوجوان تھے۔",
+          "th": "เขาเป็นชายหนุ่มร่างกำยำ ดวงตาสีเข้ม และมีรอยยิ้มเป็นมิตร"
+        }
+      },
+      {
+        "id": "cl-hound-028",
+        "english": "\"Something strange has happened already,\" Sir Henry said, and he showed them a letter.",
+        "turkish": "\"Şimdiden tuhaf bir şey oldu,\" dedi Sir Henry ve onlara bir mektup gösterdi.",
+        "translations": {
+          "es-419": "\"Ya ha pasado algo extraño\", dijo sir Henry, y les mostró una carta.",
+          "pt-BR": "— Já aconteceu uma coisa estranha — disse Sir Henry, e mostrou a eles uma carta.",
+          "id": "\"Sesuatu yang aneh sudah terjadi,\" kata Sir Henry, lalu ia menunjukkan sepucuk surat.",
+          "ar": "قال السير هنري: «لقد حدث شيء غريب بالفعل»، وأراهم رسالة.",
+          "vi": "\"Đã có chuyện lạ xảy ra rồi,\" ngài Henry nói và đưa cho họ xem một lá thư.",
+          "hi": "सर हेनरी ने कहा, \"एक अजीब बात तो हो भी चुकी है,\" और उन्हें एक चिट्ठी दिखाई।",
+          "ru": "«Кое-что странное уже случилось», — сказал сэр Генри и показал им письмо.",
+          "bn": "স্যার হেনরি বললেন, \"এর মধ্যেই একটা অদ্ভুত ব্যাপার ঘটেছে,\" বলে তিনি তাঁদের একটা চিঠি দেখালেন।",
+          "ur": "سر ہنری نے کہا، \"ایک عجیب بات تو ہو بھی چکی ہے،\" اور انہیں ایک خط دکھایا۔",
+          "th": "\"มีเรื่องแปลก ๆ เกิดขึ้นแล้ว\" เซอร์เฮนรีพูด แล้วยื่นจดหมายฉบับหนึ่งให้พวกเขาดู"
+        }
+      },
+      {
+        "id": "cl-hound-029",
+        "english": "Its words were cut from a newspaper and glued onto the paper.",
+        "turkish": "Kelimeleri bir gazeteden kesilip kâğıda yapıştırılmıştı.",
+        "translations": {
+          "es-419": "Sus palabras estaban recortadas de un periódico y pegadas en el papel.",
+          "pt-BR": "As palavras tinham sido recortadas de um jornal e coladas no papel.",
+          "id": "Kata-katanya digunting dari koran dan ditempelkan di kertas.",
+          "ar": "كانت كلماتها مقصوصة من جريدة وملصقة على الورقة.",
+          "vi": "Các chữ trong thư được cắt từ báo và dán lên giấy.",
+          "hi": "उसके शब्द अख़बार से काटकर काग़ज़ पर चिपकाए गए थे।",
+          "ru": "Слова были вырезаны из газеты и наклеены на бумагу.",
+          "bn": "তার শব্দগুলো খবরের কাগজ থেকে কেটে কাগজে আঠা দিয়ে লাগানো হয়েছিল।",
+          "ur": "اس کے الفاظ اخبار سے کاٹ کر کاغذ پر چپکائے گئے تھے۔",
+          "th": "ถ้อยคำในจดหมายถูกตัดมาจากหนังสือพิมพ์แล้วแปะลงบนกระดาษ"
+        }
+      },
+      {
+        "id": "cl-hound-030",
+        "english": "\"Keep away from the moor if you value your life,\" it said.",
+        "turkish": "\"Hayatına değer veriyorsan bozkırdan uzak dur,\" diyordu.",
+        "translations": {
+          "es-419": "\"Aléjese del páramo si valora su vida\", decía.",
+          "pt-BR": "\"Fique longe da charneca se dá valor à sua vida\", dizia.",
+          "id": "Isinya, \"Jauhi padang itu jika kau menghargai nyawamu.\"",
+          "ar": "كان مكتوبًا فيها: «ابتعد عن البراري إن كنت تقدّر حياتك.»",
+          "vi": "Thư viết: \"Hãy tránh xa vùng đồng hoang nếu còn quý mạng sống.\"",
+          "hi": "उसमें लिखा था, \"अगर अपनी जान प्यारी है तो उस वीरान मैदान से दूर रहो।\"",
+          "ru": "В нём говорилось: «Если вам дорога жизнь, держитесь подальше от болот».",
+          "bn": "তাতে লেখা ছিল, \"প্রাণের মায়া থাকলে প্রান্তর থেকে দূরে থাকো।\"",
+          "ur": "اس میں لکھا تھا، \"اگر اپنی جان پیاری ہے تو اس ویران میدان سے دور رہو۔\"",
+          "th": "ในนั้นเขียนว่า \"ถ้ารักชีวิต จงอยู่ให้ห่างจากทุ่งรกร้าง\""
+        }
+      },
+      {
+        "id": "cl-hound-031",
+        "english": "\"And someone has stolen one of my new brown boots from the hotel,\" he added.",
+        "turkish": "\"Bir de otelde biri yeni kahverengi botlarımdan birini çaldı,\" diye ekledi.",
+        "translations": {
+          "es-419": "\"Y alguien me robó una de mis botas marrones nuevas en el hotel\", añadió.",
+          "pt-BR": "— E alguém roubou uma das minhas botas marrons novas no hotel — acrescentou ele.",
+          "id": "\"Dan seseorang mencuri salah satu sepatu bot cokelat baruku dari hotel,\" tambahnya.",
+          "ar": "وأضاف: «وقد سرق أحدهم من الفندق فردة من حذائي البنّي الجديد.»",
+          "vi": "\"Còn nữa, có kẻ đã lấy trộm một chiếc ủng nâu mới của tôi ở khách sạn,\" anh nói thêm.",
+          "hi": "उन्होंने आगे कहा, \"और होटल से किसी ने मेरे नए भूरे जूतों में से एक चुरा लिया है।\"",
+          "ru": "«И кто-то украл в гостинице один из моих новых коричневых ботинок», — добавил он.",
+          "bn": "তিনি আরও বললেন, \"আর হোটেল থেকে কেউ আমার নতুন বাদামি বুটের একটা চুরি করেছে।\"",
+          "ur": "انہوں نے مزید کہا، \"اور ہوٹل سے کسی نے میرے نئے بھورے جوتوں میں سے ایک چرا لیا ہے۔\"",
+          "th": "\"แล้วก็มีคนขโมยรองเท้าบูตสีน้ำตาลคู่ใหม่ของผมไปข้างหนึ่งจากโรงแรมด้วย\" เขาพูดเสริม"
+        }
+      },
+      {
+        "id": "cl-hound-032",
+        "english": "Holmes listened carefully and asked many questions.",
+        "turkish": "Holmes dikkatle dinledi ve pek çok soru sordu.",
+        "translations": {
+          "es-419": "Holmes escuchó con atención e hizo muchas preguntas.",
+          "pt-BR": "Holmes ouviu com atenção e fez muitas perguntas.",
+          "id": "Holmes mendengarkan dengan saksama dan mengajukan banyak pertanyaan.",
+          "ar": "أصغى هولمز بانتباه وطرح أسئلة كثيرة.",
+          "vi": "Holmes chăm chú lắng nghe và hỏi rất nhiều câu.",
+          "hi": "होम्स ने ध्यान से सुना और बहुत-से सवाल पूछे।",
+          "ru": "Холмс внимательно слушал и задавал много вопросов.",
+          "bn": "হোমস মন দিয়ে শুনলেন আর অনেক প্রশ্ন করলেন।",
+          "ur": "ہومز نے غور سے سنا اور بہت سے سوال پوچھے۔",
+          "th": "โฮมส์ฟังอย่างตั้งใจและถามคำถามมากมาย"
+        }
+      },
+      {
+        "id": "cl-hound-033",
+        "english": "When the visitors left, Holmes and Watson followed them along the busy street.",
+        "turkish": "Ziyaretçiler gidince Holmes ile Watson kalabalık caddede onları takip etti.",
+        "translations": {
+          "es-419": "Cuando los visitantes se fueron, Holmes y Watson los siguieron por la calle concurrida.",
+          "pt-BR": "Quando os visitantes saíram, Holmes e Watson os seguiram pela rua movimentada.",
+          "id": "Ketika para tamu pergi, Holmes dan Watson membuntuti mereka di jalan yang ramai.",
+          "ar": "وعندما غادر الزائران، تبعهما هولمز وواتسون في الشارع المزدحم.",
+          "vi": "Khi khách ra về, Holmes và Watson bám theo họ trên con phố đông đúc.",
+          "hi": "मेहमानों के जाने पर होम्स और वॉटसन भीड़ भरी सड़क पर उनके पीछे-पीछे चले।",
+          "ru": "Когда гости ушли, Холмс и Ватсон пошли за ними по людной улице.",
+          "bn": "অতিথিরা চলে গেলে হোমস আর ওয়াটসন ভিড়ের রাস্তায় তাঁদের পিছু নিলেন।",
+          "ur": "مہمانوں کے جانے پر ہومز اور واٹسن بھیڑ بھری سڑک پر ان کے پیچھے چلے۔",
+          "th": "เมื่อแขกกลับไป โฮมส์และวัตสันก็สะกดรอยตามพวกเขาไปตามถนนที่พลุกพล่าน"
+        }
+      },
+      {
+        "id": "cl-hound-034",
+        "english": "A man with a black beard was watching Sir Henry from a cab.",
+        "turkish": "Siyah sakallı bir adam bir faytonun içinden Sir Henry'yi izliyordu.",
+        "translations": {
+          "es-419": "Un hombre de barba negra observaba a sir Henry desde un coche de alquiler.",
+          "pt-BR": "Um homem de barba preta observava Sir Henry de dentro de um carro de aluguel.",
+          "id": "Seorang pria berjanggut hitam mengamati Sir Henry dari dalam kereta sewaan.",
+          "ar": "كان رجل ذو لحية سوداء يراقب السير هنري من داخل عربة أجرة.",
+          "vi": "Một người đàn ông râu đen đang theo dõi ngài Henry từ trong một chiếc xe ngựa thuê.",
+          "hi": "काली दाढ़ी वाला एक आदमी एक किराए की बग्घी में बैठकर सर हेनरी पर नज़र रख रहा था।",
+          "ru": "Из кеба за сэром Генри следил человек с чёрной бородой.",
+          "bn": "কালো দাড়িওয়ালা একজন লোক একটা ভাড়ার গাড়ি থেকে স্যার হেনরির ওপর নজর রাখছিল।",
+          "ur": "کالی داڑھی والا ایک آدمی ایک کرائے کی بگھی میں بیٹھ کر سر ہنری پر نظر رکھ رہا تھا۔",
+          "th": "ชายเคราดำคนหนึ่งกำลังจับตาดูเซอร์เฮนรีจากในรถม้ารับจ้าง"
+        }
+      },
+      {
+        "id": "cl-hound-035",
+        "english": "When he saw Holmes, he shouted to the driver, and the cab raced away.",
+        "turkish": "Holmes'u görünce sürücüye bağırdı ve fayton hızla uzaklaştı.",
+        "translations": {
+          "es-419": "Cuando vio a Holmes, le gritó al cochero, y el coche se alejó a toda velocidad.",
+          "pt-BR": "Quando viu Holmes, ele gritou para o cocheiro, e o carro partiu em disparada.",
+          "id": "Ketika melihat Holmes, ia berteriak kepada kusir, dan kereta itu melesat pergi.",
+          "ar": "وحين رأى هولمز، صاح بالسائق، فانطلقت العربة مسرعة.",
+          "vi": "Thấy Holmes, hắn quát người đánh xe, và chiếc xe phóng vụt đi.",
+          "hi": "होम्स को देखते ही उसने गाड़ीवान को आवाज़ दी, और बग्घी तेज़ी से भाग गई।",
+          "ru": "Увидев Холмса, он крикнул кучеру, и кеб умчался.",
+          "bn": "হোমসকে দেখেই সে চালককে চেঁচিয়ে কিছু বলল, আর গাড়িটা ছুটে চলে গেল।",
+          "ur": "ہومز کو دیکھتے ہی اس نے گاڑی بان کو آواز دی، اور بگھی تیزی سے بھاگ گئی۔",
+          "th": "พอเห็นโฮมส์ เขาก็ตะโกนบอกคนขับ แล้วรถม้าก็ควบหายไป"
+        }
+      },
+      {
+        "id": "cl-hound-036",
+        "english": "\"We are dealing with a clever enemy,\" said Holmes.",
+        "turkish": "\"Zeki bir düşmanla karşı karşıyayız,\" dedi Holmes.",
+        "translations": {
+          "es-419": "\"Nos enfrentamos a un enemigo astuto\", dijo Holmes.",
+          "pt-BR": "— Estamos lidando com um inimigo esperto — disse Holmes.",
+          "id": "\"Kita berhadapan dengan musuh yang cerdik,\" kata Holmes.",
+          "ar": "قال هولمز: «نحن أمام عدوّ ذكي.»",
+          "vi": "\"Chúng ta đang đối đầu với một kẻ thù thông minh,\" Holmes nói.",
+          "hi": "होम्स ने कहा, \"हमारा सामना एक चालाक दुश्मन से है।\"",
+          "ru": "«Мы имеем дело с умным противником», — сказал Холмс.",
+          "bn": "হোমস বললেন, \"আমাদের পাল্লা পড়েছে এক চতুর শত্রুর সঙ্গে।\"",
+          "ur": "ہومز نے کہا، \"ہمارا مقابلہ ایک چالاک دشمن سے ہے۔\"",
+          "th": "\"เรากำลังเผชิญกับศัตรูที่ฉลาด\" โฮมส์กล่าว"
+        }
+      },
+      {
+        "id": "cl-hound-037",
+        "english": "The next day, Sir Henry's new boot came back, but now an old black boot was missing.",
+        "turkish": "Ertesi gün Sir Henry'nin yeni botu geri geldi ama bu kez eski siyah botlarından biri kayıptı.",
+        "translations": {
+          "es-419": "Al día siguiente, la bota nueva de sir Henry apareció, pero ahora faltaba una bota negra vieja.",
+          "pt-BR": "No dia seguinte, a bota nova de Sir Henry voltou, mas agora uma bota preta velha tinha sumido.",
+          "id": "Keesokan harinya, sepatu bot baru Sir Henry kembali, tetapi kini sebuah sepatu bot hitam lama yang hilang.",
+          "ar": "في اليوم التالي، عادت فردة الحذاء الجديدة، لكن فردة من حذاء أسود قديم اختفت هذه المرة.",
+          "vi": "Hôm sau, chiếc ủng mới của ngài Henry quay về, nhưng giờ lại mất một chiếc ủng đen cũ.",
+          "hi": "अगले दिन सर हेनरी का नया जूता लौट आया, लेकिन अब एक पुराना काला जूता ग़ायब था।",
+          "ru": "На следующий день новый ботинок сэра Генри нашёлся, но теперь пропал старый чёрный.",
+          "bn": "পরদিন স্যার হেনরির নতুন বুটটা ফিরে এল, কিন্তু এবার একটা পুরোনো কালো বুট উধাও।",
+          "ur": "اگلے دن سر ہنری کا نیا جوتا واپس آ گیا، مگر اب ایک پرانا کالا جوتا غائب تھا۔",
+          "th": "วันต่อมา รองเท้าบูตใหม่ของเซอร์เฮนรีกลับคืนมา แต่คราวนี้รองเท้าบูตสีดำเก่าข้างหนึ่งหายไปแทน"
+        }
+      },
+      {
+        "id": "cl-hound-038",
+        "english": "\"Very interesting,\" Holmes said slowly. \"Someone needs a boot that he has already worn.\"",
+        "turkish": "\"Çok ilginç,\" dedi Holmes yavaşça. \"Birinin, daha önce giyilmiş bir bota ihtiyacı var.\"",
+        "translations": {
+          "es-419": "\"Muy interesante\", dijo Holmes despacio. \"Alguien necesita una bota que él ya ha usado\".",
+          "pt-BR": "— Muito interessante — disse Holmes devagar. — Alguém precisa de uma bota que ele já usou.",
+          "id": "\"Sangat menarik,\" kata Holmes perlahan. \"Seseorang membutuhkan sepatu yang sudah pernah ia pakai.\"",
+          "ar": "قال هولمز ببطء: «مثير جدًا للاهتمام. أحدهم يحتاج إلى حذاء لبسه صاحبه من قبل.»",
+          "vi": "\"Thú vị lắm,\" Holmes chậm rãi nói. \"Có kẻ cần một chiếc ủng mà anh ấy đã từng mang.\"",
+          "hi": "होम्स ने धीरे से कहा, \"बहुत दिलचस्प। किसी को ऐसा जूता चाहिए जिसे वे पहले पहन चुके हों।\"",
+          "ru": "«Очень интересно, — медленно произнёс Холмс. — Кому-то нужен ботинок, который он уже носил».",
+          "bn": "হোমস ধীরে ধীরে বললেন, \"ভারি মজার ব্যাপার। কারও এমন একটা বুট দরকার, যেটা তিনি আগে পরেছেন।\"",
+          "ur": "ہومز نے آہستہ سے کہا، \"بہت دلچسپ۔ کسی کو ایسا جوتا چاہیے جسے وہ پہلے پہن چکے ہوں۔\"",
+          "th": "\"น่าสนใจมาก\" โฮมส์พูดช้า ๆ \"มีคนต้องการรองเท้าที่เขาเคยใส่แล้ว\""
+        }
+      },
+      {
+        "id": "cl-hound-039",
+        "english": "Holmes had important work in London, so he could not go to Devon.",
+        "turkish": "Holmes'un Londra'da önemli işleri vardı, bu yüzden Devon'a gidemiyordu.",
+        "translations": {
+          "es-419": "Holmes tenía un trabajo importante en Londres, así que no podía ir a Devon.",
+          "pt-BR": "Holmes tinha um trabalho importante em Londres, por isso não podia ir a Devon.",
+          "id": "Holmes punya pekerjaan penting di London, jadi ia tidak bisa pergi ke Devon.",
+          "ar": "كان لدى هولمز عمل مهمّ في لندن، فلم يستطع الذهاب إلى ديفون.",
+          "vi": "Holmes có việc quan trọng ở London, nên anh không thể đi Devon.",
+          "hi": "होम्स को लंदन में ज़रूरी काम था, इसलिए वे डेवन नहीं जा सकते थे।",
+          "ru": "У Холмса были важные дела в Лондоне, поэтому он не мог поехать в Девон.",
+          "bn": "লন্ডনে হোমসের জরুরি কাজ ছিল, তাই তিনি ডেভনে যেতে পারলেন না।",
+          "ur": "ہومز کو لندن میں ضروری کام تھا، اس لیے وہ ڈیون نہیں جا سکتے تھے۔",
+          "th": "โฮมส์มีงานสำคัญในลอนดอน จึงไปเดวอนไม่ได้"
+        }
+      },
+      {
+        "id": "cl-hound-040",
+        "english": "\"Watson, go with Sir Henry,\" he said. \"Never let him walk on the moor alone at night.\"",
+        "turkish": "\"Watson, Sir Henry'yle sen git,\" dedi. \"Onun geceleri bozkırda yalnız yürümesine asla izin verme.\"",
+        "translations": {
+          "es-419": "\"Watson, vaya usted con sir Henry\", dijo. \"Nunca lo deje caminar solo por el páramo de noche\".",
+          "pt-BR": "— Watson, vá com Sir Henry — disse ele. — Nunca o deixe andar sozinho na charneca à noite.",
+          "id": "\"Watson, pergilah bersama Sir Henry,\" katanya. \"Jangan pernah biarkan ia berjalan sendirian di padang pada malam hari.\"",
+          "ar": "قال: «يا واتسون، اذهب مع السير هنري. لا تدعه أبدًا يمشي في البراري وحده ليلًا.»",
+          "vi": "\"Watson, anh hãy đi cùng ngài Henry,\" Holmes nói. \"Đừng bao giờ để ngài ấy đi một mình trên đồng hoang vào ban đêm.\"",
+          "hi": "उन्होंने कहा, \"वॉटसन, आप सर हेनरी के साथ जाइए। उन्हें रात में उस मैदान पर कभी अकेले मत घूमने दीजिए।\"",
+          "ru": "«Ватсон, поезжайте с сэром Генри, — сказал он. — Никогда не отпускайте его ночью на болота одного».",
+          "bn": "তিনি বললেন, \"ওয়াটসন, তুমি স্যার হেনরির সঙ্গে যাও। রাতে তাঁকে কখনো একা প্রান্তরে হাঁটতে দিয়ো না।\"",
+          "ur": "انہوں نے کہا، \"واٹسن، آپ سر ہنری کے ساتھ جائیے۔ انہیں رات کو اس میدان میں کبھی اکیلے مت جانے دیجیے۔\"",
+          "th": "\"วัตสัน คุณไปกับเซอร์เฮนรีเถอะ\" เขาพูด \"อย่าปล่อยให้เขาเดินบนทุ่งรกร้างคนเดียวตอนกลางคืนเด็ดขาด\""
+        }
+      },
+      {
+        "id": "cl-hound-041",
+        "english": "The train took them west, and soon they saw the wide, wild moor.",
+        "turkish": "Tren onları batıya götürdü ve çok geçmeden geniş, vahşi bozkırı gördüler.",
+        "translations": {
+          "es-419": "El tren los llevó al oeste, y pronto vieron el páramo ancho y salvaje.",
+          "pt-BR": "O trem os levou para o oeste, e logo eles avistaram a charneca larga e selvagem.",
+          "id": "Kereta membawa mereka ke barat, dan tak lama kemudian mereka melihat padang yang luas dan liar.",
+          "ar": "أخذهم القطار غربًا، وسرعان ما رأوا البراري الواسعة الموحشة.",
+          "vi": "Đoàn tàu đưa họ về phía tây, và chẳng bao lâu họ đã thấy vùng đồng hoang rộng lớn, hoang dã.",
+          "hi": "ट्रेन उन्हें पश्चिम की ओर ले गई, और जल्द ही उन्हें चौड़ा, जंगली वीरान मैदान दिखाई दिया।",
+          "ru": "Поезд увёз их на запад, и вскоре они увидели широкие дикие болота.",
+          "bn": "ট্রেন তাঁদের পশ্চিমে নিয়ে গেল, আর শিগগিরই তাঁরা দেখলেন বিশাল, বুনো প্রান্তর।",
+          "ur": "ٹرین انہیں مغرب کی طرف لے گئی، اور جلد ہی انہیں چوڑا، جنگلی ویران میدان دکھائی دیا۔",
+          "th": "รถไฟพาพวกเขามุ่งหน้าไปทางตะวันตก และไม่นานก็มองเห็นทุ่งรกร้างที่กว้างใหญ่และป่าเถื่อน"
+        }
+      },
+      {
+        "id": "cl-hound-042",
+        "english": "It was grey and brown, with strange rocks on the hills and no trees at all.",
+        "turkish": "Gri ve kahverengiydi; tepelerde tuhaf kayalar vardı ve hiç ağaç yoktu.",
+        "translations": {
+          "es-419": "Era gris y marrón, con rocas extrañas en las colinas y ni un solo árbol.",
+          "pt-BR": "Era cinza e marrom, com pedras estranhas nos morros e nenhuma árvore.",
+          "id": "Padang itu kelabu dan cokelat, dengan batu-batu aneh di perbukitan dan tanpa pohon sama sekali.",
+          "ar": "كانت رمادية وبنّية، فوق تلالها صخور غريبة، ولا شجرة فيها على الإطلاق.",
+          "vi": "Nó xám và nâu, với những tảng đá kỳ lạ trên đồi và không có lấy một cái cây.",
+          "hi": "वह धूसर और भूरा था, पहाड़ियों पर अजीब चट्टानें थीं और एक भी पेड़ नहीं था।",
+          "ru": "Они были серые и бурые, со странными скалами на холмах и без единого дерева.",
+          "bn": "প্রান্তরটা ধূসর আর বাদামি, পাহাড়ের ওপর অদ্ভুত পাথর, আর কোথাও একটাও গাছ নেই।",
+          "ur": "وہ سرمئی اور بھورا تھا، پہاڑیوں پر عجیب چٹانیں تھیں اور ایک بھی درخت نہیں تھا۔",
+          "th": "ทุ่งนั้นเป็นสีเทาและสีน้ำตาล มีโขดหินแปลกตาบนเนินเขา และไม่มีต้นไม้เลยสักต้น"
+        }
+      },
+      {
+        "id": "cl-hound-043",
+        "english": "Baskerville Hall was a dark old house with two tall towers.",
+        "turkish": "Baskerville Malikânesi iki yüksek kulesi olan karanlık, eski bir evdi.",
+        "translations": {
+          "es-419": "La mansión Baskerville era una casa vieja y oscura con dos torres altas.",
+          "pt-BR": "A mansão Baskerville era uma casa velha e escura com duas torres altas.",
+          "id": "Puri Baskerville adalah rumah tua yang gelap dengan dua menara tinggi.",
+          "ar": "كان قصر باسكرفيل بيتًا قديمًا مظلمًا له برجان عاليان.",
+          "vi": "Dinh thự Baskerville là một ngôi nhà cổ u tối với hai ngọn tháp cao.",
+          "hi": "बास्करविल हॉल दो ऊँची मीनारों वाला एक अँधेरा, पुराना घर था।",
+          "ru": "Баскервиль-холл был мрачным старым домом с двумя высокими башнями.",
+          "bn": "বাস্কারভিল হল ছিল দুটো উঁচু মিনারওয়ালা এক অন্ধকার পুরোনো বাড়ি।",
+          "ur": "باسکرویل ہال دو اونچے میناروں والا ایک اندھیرا، پرانا گھر تھا۔",
+          "th": "คฤหาสน์บาสเกอร์วิลล์เป็นบ้านเก่าที่มืดทึม มีหอคอยสูงสองหอ"
+        }
+      },
+      {
+        "id": "cl-hound-044",
+        "english": "Barrymore, the butler, and his wife looked after the house.",
+        "turkish": "Eve kâhya Barrymore ile karısı bakıyordu.",
+        "translations": {
+          "es-419": "Barrymore, el mayordomo, y su esposa cuidaban la casa.",
+          "pt-BR": "Barrymore, o mordomo, e a esposa cuidavam da casa.",
+          "id": "Barrymore, kepala pelayan, dan istrinya mengurus rumah itu.",
+          "ar": "كان باريمور، كبير الخدم، وزوجته يعتنيان بالبيت.",
+          "vi": "Quản gia Barrymore và vợ ông ta trông coi ngôi nhà.",
+          "hi": "बटलर बैरीमोर और उसकी पत्नी घर की देखभाल करते थे।",
+          "ru": "За домом смотрели дворецкий Бэрримор и его жена.",
+          "bn": "খানসামা ব্যারিমোর আর তার স্ত্রী বাড়িটা দেখাশোনা করত।",
+          "ur": "بٹلر بیری مور اور اس کی بیوی گھر کی دیکھ بھال کرتے تھے۔",
+          "th": "แบร์รีมอร์ พ่อบ้าน กับภรรยาเป็นผู้ดูแลบ้านหลังนี้"
+        }
+      },
+      {
+        "id": "cl-hound-045",
+        "english": "Barrymore had a black beard, just like the man in the cab.",
+        "turkish": "Barrymore'un, tıpkı faytondaki adam gibi siyah sakalı vardı.",
+        "translations": {
+          "es-419": "Barrymore tenía barba negra, igual que el hombre del coche.",
+          "pt-BR": "Barrymore tinha barba preta, igualzinho ao homem do carro de aluguel.",
+          "id": "Barrymore berjanggut hitam, persis seperti pria di kereta sewaan itu.",
+          "ar": "كانت لباريمور لحية سوداء، تمامًا مثل الرجل الذي كان في العربة.",
+          "vi": "Barrymore có bộ râu đen, giống hệt người đàn ông trong xe ngựa.",
+          "hi": "बैरीमोर की दाढ़ी काली थी, ठीक बग्घी वाले आदमी की तरह।",
+          "ru": "У Бэрримора была чёрная борода — точь-в-точь как у человека в кебе.",
+          "bn": "ব্যারিমোরের কালো দাড়ি ছিল, ঠিক সেই গাড়ির লোকটার মতো।",
+          "ur": "بیری مور کی داڑھی کالی تھی، بالکل بگھی والے آدمی کی طرح۔",
+          "th": "แบร์รีมอร์มีเคราสีดำ เหมือนชายในรถม้าไม่มีผิด"
+        }
+      },
+      {
+        "id": "cl-hound-046",
+        "english": "That night, Watson heard a woman crying somewhere in the house.",
+        "turkish": "O gece Watson evin bir yerinde bir kadının ağladığını duydu.",
+        "translations": {
+          "es-419": "Esa noche, Watson oyó a una mujer llorar en algún lugar de la casa.",
+          "pt-BR": "Naquela noite, Watson ouviu uma mulher chorando em algum lugar da casa.",
+          "id": "Malam itu, Watson mendengar seorang perempuan menangis di suatu tempat di rumah itu.",
+          "ar": "في تلك الليلة، سمع واتسون امرأة تبكي في مكان ما من البيت.",
+          "vi": "Đêm ấy, Watson nghe tiếng một người phụ nữ khóc ở đâu đó trong nhà.",
+          "hi": "उस रात वॉटसन ने घर में कहीं किसी औरत के रोने की आवाज़ सुनी।",
+          "ru": "Той ночью Ватсон услышал, как где-то в доме плачет женщина.",
+          "bn": "সেই রাতে ওয়াটসন বাড়ির কোথাও এক মহিলার কান্না শুনতে পেলেন।",
+          "ur": "اس رات واٹسن نے گھر میں کہیں کسی عورت کے رونے کی آواز سنی۔",
+          "th": "คืนนั้น วัตสันได้ยินเสียงผู้หญิงร้องไห้ที่ไหนสักแห่งในบ้าน"
+        }
+      },
+      {
+        "id": "cl-hound-047",
+        "english": "In the morning, Mrs Barrymore's eyes were red, but she said nothing.",
+        "turkish": "Sabah Bayan Barrymore'un gözleri kıpkırmızıydı ama hiçbir şey söylemedi.",
+        "translations": {
+          "es-419": "Por la mañana, la señora Barrymore tenía los ojos rojos, pero no dijo nada.",
+          "pt-BR": "De manhã, a senhora Barrymore estava com os olhos vermelhos, mas não disse nada.",
+          "id": "Pagi harinya, mata Nyonya Barrymore merah, tetapi ia tidak berkata apa-apa.",
+          "ar": "في الصباح، كانت عينا السيدة باريمور حمراوين، لكنها لم تقل شيئًا.",
+          "vi": "Sáng hôm sau, mắt bà Barrymore đỏ hoe, nhưng bà không nói gì.",
+          "hi": "सुबह मिसेज़ बैरीमोर की आँखें लाल थीं, पर उसने कुछ नहीं कहा।",
+          "ru": "Утром глаза у миссис Бэрримор были красные, но она ничего не сказала.",
+          "bn": "সকালে মিসেস ব্যারিমোরের চোখ লাল ছিল, কিন্তু সে কিছু বলল না।",
+          "ur": "صبح مسز بیری مور کی آنکھیں لال تھیں، مگر اس نے کچھ نہیں کہا۔",
+          "th": "ตอนเช้า ตาของนางแบร์รีมอร์แดงก่ำ แต่นางไม่พูดอะไรเลย"
+        }
+      },
+      {
+        "id": "cl-hound-048",
+        "english": "A few days later, Watson met a neighbour on the moor.",
+        "turkish": "Birkaç gün sonra Watson bozkırda bir komşuyla karşılaştı.",
+        "translations": {
+          "es-419": "Unos días después, Watson conoció a un vecino en el páramo.",
+          "pt-BR": "Alguns dias depois, Watson conheceu um vizinho na charneca.",
+          "id": "Beberapa hari kemudian, Watson bertemu seorang tetangga di padang.",
+          "ar": "بعد بضعة أيام، التقى واتسون بأحد الجيران في البراري.",
+          "vi": "Vài ngày sau, Watson gặp một người hàng xóm trên đồng hoang.",
+          "hi": "कुछ दिन बाद वॉटसन की उस मैदान पर एक पड़ोसी से मुलाक़ात हुई।",
+          "ru": "Через несколько дней Ватсон встретил на болотах соседа.",
+          "bn": "কয়েক দিন পর প্রান্তরে ওয়াটসনের এক প্রতিবেশীর সঙ্গে দেখা হলো।",
+          "ur": "چند دن بعد واٹسن کی اس میدان میں ایک پڑوسی سے ملاقات ہوئی۔",
+          "th": "ไม่กี่วันต่อมา วัตสันพบเพื่อนบ้านคนหนึ่งบนทุ่งรกร้าง"
+        }
+      },
+      {
+        "id": "cl-hound-049",
+        "english": "His name was Stapleton, and he was a thin, friendly man who collected butterflies.",
+        "turkish": "Adı Stapleton'dı; kelebek toplayan, zayıf ve cana yakın bir adamdı.",
+        "translations": {
+          "es-419": "Se llamaba Stapleton y era un hombre delgado y amable que coleccionaba mariposas.",
+          "pt-BR": "Ele se chamava Stapleton e era um homem magro e simpático que colecionava borboletas.",
+          "id": "Namanya Stapleton, seorang pria kurus dan ramah yang mengoleksi kupu-kupu.",
+          "ar": "كان اسمه ستابلتون، رجلًا نحيفًا ودودًا يجمع الفراشات.",
+          "vi": "Ông ta tên là Stapleton, một người gầy gò, thân thiện, thích sưu tầm bướm.",
+          "hi": "उसका नाम स्टेपलटन था; वह एक दुबला, मिलनसार आदमी था जो तितलियाँ इकट्ठा करता था।",
+          "ru": "Его звали Стэплтон; это был худой приветливый человек, собиравший бабочек.",
+          "bn": "তার নাম স্টেপলটন; রোগা, মিশুকে একজন লোক, যে প্রজাপতি সংগ্রহ করত।",
+          "ur": "اس کا نام اسٹیپلٹن تھا؛ وہ ایک دبلا، ملنسار آدمی تھا جو تتلیاں جمع کرتا تھا۔",
+          "th": "เขาชื่อสเตเปิลตัน เป็นชายผอมบางท่าทางเป็นมิตร ชอบสะสมผีเสื้อ"
+        }
+      },
+      {
+        "id": "cl-hound-050",
+        "english": "\"Be careful,\" Stapleton said, and he pointed to a green, flat place.",
+        "turkish": "\"Dikkatli olun,\" dedi Stapleton ve yeşil, düz bir yeri gösterdi.",
+        "translations": {
+          "es-419": "\"Tenga cuidado\", dijo Stapleton, y señaló un lugar verde y plano.",
+          "pt-BR": "— Tome cuidado — disse Stapleton, apontando para um lugar verde e plano.",
+          "id": "\"Hati-hati,\" kata Stapleton sambil menunjuk sebuah tempat datar berwarna hijau.",
+          "ar": "قال ستابلتون: «انتبه»، وأشار إلى مكان أخضر مستوٍ.",
+          "vi": "\"Cẩn thận đấy,\" Stapleton nói và chỉ về một khoảng đất xanh bằng phẳng.",
+          "hi": "स्टेपलटन ने कहा, \"सावधान रहिए,\" और एक हरी, समतल जगह की ओर इशारा किया।",
+          "ru": "«Осторожнее», — сказал Стэплтон и показал на ровное зелёное место.",
+          "bn": "স্টেপলটন বলল, \"সাবধান,\" তারপর একটা সবুজ, সমতল জায়গার দিকে আঙুল দেখাল।",
+          "ur": "اسٹیپلٹن نے کہا، \"احتیاط کیجیے،\" اور ایک ہری، ہموار جگہ کی طرف اشارہ کیا۔",
+          "th": "\"ระวังนะครับ\" สเตเปิลตันพูด แล้วชี้ไปยังพื้นที่ราบสีเขียวแห่งหนึ่ง"
+        }
+      },
+      {
+        "id": "cl-hound-051",
+        "english": "\"That is the Grimpen Mire. One false step means death for a man or an animal.\"",
+        "turkish": "\"Orası Grimpen Bataklığı. Tek bir yanlış adım, insan ya da hayvan için ölüm demektir.\"",
+        "translations": {
+          "es-419": "\"Esa es la ciénaga de Grimpen. Un paso en falso significa la muerte para un hombre o un animal\".",
+          "pt-BR": "— Aquele é o pântano de Grimpen. Um passo em falso significa a morte para um homem ou um animal.",
+          "id": "\"Itu Rawa Grimpen. Satu langkah keliru berarti kematian bagi manusia atau hewan.\"",
+          "ar": "«ذلك مستنقع غريمبن. خطوة واحدة خاطئة تعني الموت لإنسان أو حيوان.»",
+          "vi": "\"Đó là đầm lầy Grimpen. Chỉ một bước sai thôi là người hay vật cũng đều mất mạng.\"",
+          "hi": "\"वह ग्रिम्पेन दलदल है। एक ग़लत क़दम और इंसान हो या जानवर, मौत तय है।\"",
+          "ru": "«Это Гримпенская трясина. Один неверный шаг — и смерть человеку или зверю».",
+          "bn": "\"ওটা গ্রিম্পেন জলা। একটা ভুল পা ফেললেই মানুষ হোক বা পশু, মৃত্যু নিশ্চিত।\"",
+          "ur": "\"وہ گرمپن دلدل ہے۔ ایک غلط قدم اور انسان ہو یا جانور، موت یقینی ہے۔\"",
+          "th": "\"นั่นคือหนองกริมเพน ก้าวพลาดเพียงก้าวเดียว ไม่ว่าคนหรือสัตว์ก็ต้องตาย\""
+        }
+      },
+      {
+        "id": "cl-hound-052",
+        "english": "Just then, a long, low howl came across the moor.",
+        "turkish": "Tam o sırada bozkırın öbür ucundan uzun, boğuk bir uluma geldi.",
+        "translations": {
+          "es-419": "Justo entonces, un aullido largo y grave cruzó el páramo.",
+          "pt-BR": "Naquele instante, um uivo longo e grave atravessou a charneca.",
+          "id": "Tepat saat itu, lolongan panjang yang rendah terdengar dari seberang padang.",
+          "ar": "وفي تلك اللحظة، تردّد عواء طويل عميق عبر البراري.",
+          "vi": "Đúng lúc ấy, một tiếng tru dài và trầm vọng qua đồng hoang.",
+          "hi": "ठीक उसी समय मैदान के पार से एक लंबी, भारी हुँकार सुनाई दी।",
+          "ru": "В этот миг над болотами пронёсся долгий низкий вой.",
+          "bn": "ঠিক তখনই প্রান্তরের ওপার থেকে একটা লম্বা, গম্ভীর চিৎকার ভেসে এল।",
+          "ur": "ٹھیک اسی وقت میدان کے پار سے ایک لمبی، بھاری غراہٹ سنائی دی۔",
+          "th": "ทันใดนั้น เสียงหอนยาวต่ำ ๆ ก็ดังข้ามทุ่งมา"
+        }
+      },
+      {
+        "id": "cl-hound-053",
+        "english": "\"The farmers say it is the Hound of the Baskervilles,\" said Stapleton with a smile.",
+        "turkish": "\"Çiftçiler bunun Baskervillelerin Köpeği olduğunu söyler,\" dedi Stapleton gülümseyerek.",
+        "translations": {
+          "es-419": "\"Los granjeros dicen que es el sabueso de los Baskerville\", dijo Stapleton con una sonrisa.",
+          "pt-BR": "— Os camponeses dizem que é o cão dos Baskerville — disse Stapleton, sorrindo.",
+          "id": "\"Para petani bilang itu Anjing Keluarga Baskerville,\" kata Stapleton sambil tersenyum.",
+          "ar": "قال ستابلتون مبتسمًا: «يقول المزارعون إنه كلب آل باسكرفيل.»",
+          "vi": "\"Nông dân bảo đó là con chó của dòng họ Baskerville,\" Stapleton mỉm cười nói.",
+          "hi": "स्टेपलटन ने मुस्कुराकर कहा, \"किसान कहते हैं कि यह बास्करविल का शिकारी कुत्ता है।\"",
+          "ru": "«Крестьяне говорят, что это собака Баскервилей», — с улыбкой сказал Стэплтон.",
+          "bn": "স্টেপলটন হেসে বলল, \"চাষিরা বলে, এটা বাস্কারভিলদের সেই কুকুর।\"",
+          "ur": "اسٹیپلٹن نے مسکرا کر کہا، \"کسان کہتے ہیں کہ یہ باسکرویل کا شکاری کتا ہے۔\"",
+          "th": "\"ชาวนาบอกว่านั่นคือสุนัขแห่งตระกูลบาสเกอร์วิลล์\" สเตเปิลตันพูดพลางยิ้ม"
+        }
+      },
+      {
+        "id": "cl-hound-054",
+        "english": "Then his beautiful sister, Beryl, came along the path.",
+        "turkish": "Sonra güzel kız kardeşi Beryl patikadan geldi.",
+        "translations": {
+          "es-419": "Entonces su hermosa hermana, Beryl, llegó por el sendero.",
+          "pt-BR": "Então a bela irmã dele, Beryl, veio pelo caminho.",
+          "id": "Lalu adik perempuannya yang cantik, Beryl, datang menyusuri jalan setapak.",
+          "ar": "ثم جاءت أخته الجميلة بيريل على الطريق.",
+          "vi": "Rồi cô em gái xinh đẹp của ông ta, Beryl, đi tới trên lối mòn.",
+          "hi": "तभी उसकी सुंदर बहन बेरिल रास्ते पर आती दिखाई दी।",
+          "ru": "Тут по тропинке подошла его красавица сестра Берил.",
+          "bn": "তখন তার সুন্দরী বোন বেরিল পথ ধরে এগিয়ে এল।",
+          "ur": "تبھی اس کی خوبصورت بہن بیرل راستے پر آتی دکھائی دی۔",
+          "th": "แล้วเบริล น้องสาวคนสวยของเขา ก็เดินมาตามทาง"
+        }
+      },
+      {
+        "id": "cl-hound-055",
+        "english": "She thought that Watson was Sir Henry, and she spoke to him quickly.",
+        "turkish": "Watson'ı Sir Henry sandı ve onunla hızlı hızlı konuştu.",
+        "translations": {
+          "es-419": "Ella creyó que Watson era sir Henry y le habló deprisa.",
+          "pt-BR": "Ela pensou que Watson fosse Sir Henry e falou com ele depressa.",
+          "id": "Ia mengira Watson adalah Sir Henry, lalu berbicara kepadanya dengan cepat.",
+          "ar": "ظنّت أن واتسون هو السير هنري، فكلّمته بسرعة.",
+          "vi": "Cô tưởng Watson là ngài Henry nên vội vàng nói với anh.",
+          "hi": "उसने सोचा कि वॉटसन ही सर हेनरी हैं, और वह जल्दी-जल्दी उनसे बोली।",
+          "ru": "Она приняла Ватсона за сэра Генри и быстро заговорила с ним.",
+          "bn": "সে ভাবল ওয়াটসনই স্যার হেনরি, আর তাড়াতাড়ি তাঁর সঙ্গে কথা বলল।",
+          "ur": "اس نے سمجھا کہ واٹسن ہی سر ہنری ہیں، اور وہ جلدی جلدی ان سے بولی۔",
+          "th": "เธอคิดว่าวัตสันคือเซอร์เฮนรี จึงรีบพูดกับเขา"
+        }
+      },
+      {
+        "id": "cl-hound-056",
+        "english": "\"Go back to London at once!\" she whispered. \"Do not ask me why.\"",
+        "turkish": "\"Hemen Londra'ya dönün!\" diye fısıldadı. \"Bana nedenini sormayın.\"",
+        "translations": {
+          "es-419": "\"¡Vuelva a Londres enseguida!\", susurró. \"No me pregunte por qué\".",
+          "pt-BR": "— Volte para Londres agora mesmo! — sussurrou ela. — Não me pergunte por quê.",
+          "id": "\"Segeralah kembali ke London!\" bisiknya. \"Jangan tanya mengapa.\"",
+          "ar": "همست: «عُد إلى لندن فورًا! ولا تسألني لماذا.»",
+          "vi": "\"Hãy quay về London ngay!\" cô thì thầm. \"Đừng hỏi tôi tại sao.\"",
+          "hi": "उसने फुसफुसाकर कहा, \"फ़ौरन लंदन लौट जाइए! मुझसे वजह मत पूछिए।\"",
+          "ru": "«Немедленно возвращайтесь в Лондон! — прошептала она. — Не спрашивайте почему».",
+          "bn": "সে ফিসফিস করে বলল, \"এখনই লন্ডনে ফিরে যান! কেন, তা জিজ্ঞেস করবেন না।\"",
+          "ur": "اس نے سرگوشی کی، \"فوراً لندن واپس چلے جائیے! مجھ سے وجہ مت پوچھیے۔\"",
+          "th": "\"กลับลอนดอนเดี๋ยวนี้เลยค่ะ!\" เธอกระซิบ \"อย่าถามว่าทำไม\""
+        }
+      },
+      {
+        "id": "cl-hound-057",
+        "english": "Late one night, Watson saw Barrymore holding a candle at a window.",
+        "turkish": "Bir gece geç saatte Watson, Barrymore'u bir pencerenin önünde elinde mumla gördü.",
+        "translations": {
+          "es-419": "Una noche tarde, Watson vio a Barrymore con una vela junto a una ventana.",
+          "pt-BR": "Tarde da noite, Watson viu Barrymore segurando uma vela diante de uma janela.",
+          "id": "Suatu malam larut, Watson melihat Barrymore memegang lilin di dekat jendela.",
+          "ar": "في وقت متأخر من إحدى الليالي، رأى واتسون باريمور يحمل شمعة عند نافذة.",
+          "vi": "Một đêm khuya, Watson thấy Barrymore cầm một cây nến đứng bên cửa sổ.",
+          "hi": "एक रात देर से वॉटसन ने बैरीमोर को एक खिड़की पर मोमबत्ती लिए खड़ा देखा।",
+          "ru": "Однажды поздно ночью Ватсон увидел Бэрримора со свечой у окна.",
+          "bn": "এক গভীর রাতে ওয়াটসন দেখলেন, ব্যারিমোর একটা জানালার সামনে মোমবাতি হাতে দাঁড়িয়ে।",
+          "ur": "ایک رات دیر سے واٹسن نے بیری مور کو ایک کھڑکی پر موم بتی لیے کھڑا دیکھا۔",
+          "th": "ดึกคืนหนึ่ง วัตสันเห็นแบร์รีมอร์ถือเทียนยืนอยู่ที่หน้าต่าง"
+        }
+      },
+      {
+        "id": "cl-hound-058",
+        "english": "He was looking out at the dark moor, and far away, a small light answered.",
+        "turkish": "Karanlık bozkıra bakıyordu ve çok uzakta küçük bir ışık ona karşılık verdi.",
+        "translations": {
+          "es-419": "Miraba hacia el páramo oscuro, y a lo lejos, una lucecita respondió.",
+          "pt-BR": "Ele olhava para a charneca escura, e lá longe uma luzinha respondeu.",
+          "id": "Ia memandang ke padang yang gelap, dan jauh di sana, sebuah cahaya kecil membalas.",
+          "ar": "كان ينظر إلى البراري المظلمة، وفي البعيد ردّ عليه ضوء صغير.",
+          "vi": "Hắn nhìn ra vùng đồng hoang tối om, và ở đằng xa, một đốm sáng nhỏ đáp lại.",
+          "hi": "वह अँधेरे मैदान की ओर देख रहा था, और बहुत दूर एक छोटी रोशनी ने जवाब दिया।",
+          "ru": "Он смотрел на тёмные болота, и вдалеке ему ответил маленький огонёк.",
+          "bn": "সে অন্ধকার প্রান্তরের দিকে তাকিয়ে ছিল, আর অনেক দূরে একটা ছোট আলো সাড়া দিল।",
+          "ur": "وہ اندھیرے میدان کی طرف دیکھ رہا تھا، اور بہت دور ایک چھوٹی سی روشنی نے جواب دیا۔",
+          "th": "เขามองออกไปยังทุ่งมืด และไกลออกไป มีแสงไฟดวงเล็ก ๆ ส่องตอบกลับมา"
+        }
+      },
+      {
+        "id": "cl-hound-059",
+        "english": "The next day, Sir Henry and Watson asked Barrymore to explain.",
+        "turkish": "Ertesi gün Sir Henry ile Watson, Barrymore'dan bir açıklama istedi.",
+        "translations": {
+          "es-419": "Al día siguiente, sir Henry y Watson le pidieron a Barrymore una explicación.",
+          "pt-BR": "No dia seguinte, Sir Henry e Watson pediram a Barrymore que explicasse.",
+          "id": "Keesokan harinya, Sir Henry dan Watson meminta Barrymore menjelaskan.",
+          "ar": "في اليوم التالي، طلب السير هنري وواتسون من باريمور أن يشرح الأمر.",
+          "vi": "Hôm sau, ngài Henry và Watson yêu cầu Barrymore giải thích.",
+          "hi": "अगले दिन सर हेनरी और वॉटसन ने बैरीमोर से सफ़ाई माँगी।",
+          "ru": "На следующий день сэр Генри и Ватсон потребовали у Бэрримора объяснений.",
+          "bn": "পরদিন স্যার হেনরি আর ওয়াটসন ব্যারিমোরের কাছে কৈফিয়ত চাইলেন।",
+          "ur": "اگلے دن سر ہنری اور واٹسن نے بیری مور سے وضاحت مانگی۔",
+          "th": "วันต่อมา เซอร์เฮนรีกับวัตสันขอให้แบร์รีมอร์อธิบาย"
+        }
+      },
+      {
+        "id": "cl-hound-060",
+        "english": "Mrs Barrymore began to cry. \"It is my brother, Selden,\" she said.",
+        "turkish": "Bayan Barrymore ağlamaya başladı. \"O benim kardeşim Selden,\" dedi.",
+        "translations": {
+          "es-419": "La señora Barrymore se echó a llorar. \"Es mi hermano, Selden\", dijo.",
+          "pt-BR": "A senhora Barrymore começou a chorar. — É o meu irmão, Selden — disse ela.",
+          "id": "Nyonya Barrymore mulai menangis. \"Itu adikku, Selden,\" katanya.",
+          "ar": "بدأت السيدة باريمور تبكي وقالت: «إنه أخي، سيلدن.»",
+          "vi": "Bà Barrymore bật khóc. \"Đó là em trai tôi, Selden,\" bà nói.",
+          "hi": "मिसेज़ बैरीमोर रोने लगी। \"वह मेरा भाई सेल्डन है,\" उसने कहा।",
+          "ru": "Миссис Бэрримор заплакала. «Это мой брат, Селден», — сказала она.",
+          "bn": "মিসেস ব্যারিমোর কাঁদতে শুরু করল। \"ও আমার ভাই, সেলডেন,\" সে বলল।",
+          "ur": "مسز بیری مور رونے لگی۔ \"وہ میرا بھائی سیلڈن ہے،\" اس نے کہا۔",
+          "th": "นางแบร์รีมอร์เริ่มร้องไห้ \"นั่นคือเซลเดน น้องชายของฉันเอง\" นางพูด"
+        }
+      },
+      {
+        "id": "cl-hound-061",
+        "english": "Selden was a dangerous prisoner who had escaped and was hiding on the moor.",
+        "turkish": "Selden hapisten kaçmış, bozkırda saklanan tehlikeli bir mahkûmdu.",
+        "translations": {
+          "es-419": "Selden era un preso peligroso que se había escapado y se escondía en el páramo.",
+          "pt-BR": "Selden era um prisioneiro perigoso que tinha fugido e estava escondido na charneca.",
+          "id": "Selden adalah narapidana berbahaya yang melarikan diri dan bersembunyi di padang.",
+          "ar": "كان سيلدن سجينًا خطيرًا هرب من السجن ويختبئ في البراري.",
+          "vi": "Selden là một tù nhân nguy hiểm đã vượt ngục và đang trốn trên đồng hoang.",
+          "hi": "सेल्डन एक ख़तरनाक क़ैदी था जो जेल से भागकर उस मैदान में छिपा हुआ था।",
+          "ru": "Селден был опасным каторжником, который сбежал и прятался на болотах.",
+          "bn": "সেলডেন ছিল এক বিপজ্জনক কয়েদি, যে জেল থেকে পালিয়ে প্রান্তরে লুকিয়ে ছিল।",
+          "ur": "سیلڈن ایک خطرناک قیدی تھا جو جیل سے بھاگ کر اس میدان میں چھپا ہوا تھا۔",
+          "th": "เซลเดนเป็นนักโทษอันตรายที่แหกคุกออกมาและซ่อนตัวอยู่บนทุ่งรกร้าง"
+        }
+      },
+      {
+        "id": "cl-hound-062",
+        "english": "\"He is my little brother,\" she said. \"I cannot let him die of hunger.\"",
+        "turkish": "\"O benim küçük kardeşim,\" dedi. \"Açlıktan ölmesine izin veremem.\"",
+        "translations": {
+          "es-419": "\"Es mi hermano menor\", dijo. \"No puedo dejar que muera de hambre\".",
+          "pt-BR": "— Ele é meu irmão caçula — disse ela. — Não posso deixá-lo morrer de fome.",
+          "id": "\"Dia adik kecilku,\" katanya. \"Aku tidak bisa membiarkannya mati kelaparan.\"",
+          "ar": "قالت: «إنه أخي الصغير. لا أستطيع أن أتركه يموت جوعًا.»",
+          "vi": "\"Nó là em út của tôi,\" bà nói. \"Tôi không thể để nó chết đói.\"",
+          "hi": "उसने कहा, \"वह मेरा छोटा भाई है। मैं उसे भूखा मरने नहीं दे सकती।\"",
+          "ru": "«Это мой младший брат, — сказала она. — Я не могу дать ему умереть с голоду».",
+          "bn": "সে বলল, \"ও আমার ছোট ভাই। ওকে আমি না খেয়ে মরতে দিতে পারি না।\"",
+          "ur": "اس نے کہا، \"وہ میرا چھوٹا بھائی ہے۔ میں اسے بھوکا مرنے نہیں دے سکتی۔\"",
+          "th": "\"เขาเป็นน้องชายคนเล็กของฉัน\" นางพูด \"ฉันปล่อยให้เขาอดตายไม่ได้\""
+        }
+      },
+      {
+        "id": "cl-hound-063",
+        "english": "Watson also learned that a second stranger was living on the moor.",
+        "turkish": "Watson, bozkırda ikinci bir yabancının daha yaşadığını da öğrendi.",
+        "translations": {
+          "es-419": "Watson también supo que un segundo desconocido vivía en el páramo.",
+          "pt-BR": "Watson também descobriu que um segundo desconhecido vivia na charneca.",
+          "id": "Watson juga mengetahui bahwa ada orang asing kedua yang tinggal di padang.",
+          "ar": "وعرف واتسون أيضًا أن غريبًا ثانيًا يعيش في البراري.",
+          "vi": "Watson còn biết được rằng có một người lạ thứ hai đang sống trên đồng hoang.",
+          "hi": "वॉटसन को यह भी पता चला कि उस मैदान पर एक और अजनबी रह रहा है।",
+          "ru": "Ватсон узнал также, что на болотах живёт ещё один незнакомец.",
+          "bn": "ওয়াটসন এটাও জানতে পারলেন যে প্রান্তরে আরও একজন অচেনা লোক থাকে।",
+          "ur": "واٹسن کو یہ بھی پتا چلا کہ اس میدان میں ایک اور اجنبی رہ رہا ہے۔",
+          "th": "วัตสันยังรู้อีกว่ามีคนแปลกหน้าอีกคนหนึ่งอาศัยอยู่บนทุ่งรกร้าง"
+        }
+      },
+      {
+        "id": "cl-hound-064",
+        "english": "He walked out to the old stone huts on the hills to find this man.",
+        "turkish": "Bu adamı bulmak için tepelerdeki eski taş kulübelere yürüdü.",
+        "translations": {
+          "es-419": "Caminó hasta las viejas cabañas de piedra de las colinas para encontrar a ese hombre.",
+          "pt-BR": "Ele caminhou até as velhas cabanas de pedra nos morros para encontrar esse homem.",
+          "id": "Ia berjalan ke pondok-pondok batu tua di perbukitan untuk mencari orang itu.",
+          "ar": "مشى إلى الأكواخ الحجرية القديمة فوق التلال ليجد ذلك الرجل.",
+          "vi": "Anh đi bộ lên những túp lều đá cổ trên đồi để tìm người đó.",
+          "hi": "उस आदमी को ढूँढने के लिए वे पैदल पहाड़ियों पर बनी पुरानी पत्थर की झोपड़ियों तक गए।",
+          "ru": "Он отправился к старым каменным хижинам на холмах, чтобы найти этого человека.",
+          "bn": "লোকটাকে খুঁজতে তিনি হেঁটে পাহাড়ের ওপরের পুরোনো পাথরের কুঁড়েঘরগুলোর দিকে গেলেন।",
+          "ur": "اس آدمی کو ڈھونڈنے کے لیے وہ پیدل پہاڑیوں پر بنی پرانی پتھر کی جھونپڑیوں تک گئے۔",
+          "th": "เขาเดินออกไปยังกระท่อมหินเก่า ๆ บนเนินเขาเพื่อตามหาชายคนนี้"
+        }
+      },
+      {
+        "id": "cl-hound-065",
+        "english": "Inside one hut, he found food, a blanket and his own reports to Holmes.",
+        "turkish": "Kulübelerden birinin içinde yiyecek, bir battaniye ve Holmes'a yazdığı kendi raporlarını buldu.",
+        "translations": {
+          "es-419": "Dentro de una cabaña encontró comida, una manta y sus propios informes para Holmes.",
+          "pt-BR": "Dentro de uma cabana, ele encontrou comida, um cobertor e os próprios relatórios que escrevera para Holmes.",
+          "id": "Di dalam salah satu pondok, ia menemukan makanan, selimut, dan laporan-laporannya sendiri untuk Holmes.",
+          "ar": "وفي أحد الأكواخ، وجد طعامًا وبطانية وتقاريره هو التي كتبها لهولمز.",
+          "vi": "Trong một túp lều, anh tìm thấy thức ăn, một tấm chăn và chính những bản báo cáo anh gửi cho Holmes.",
+          "hi": "एक झोपड़ी के अंदर उन्हें खाना, एक कंबल और होम्स को भेजी अपनी ही रिपोर्टें मिलीं।",
+          "ru": "В одной хижине он нашёл еду, одеяло и свои собственные отчёты Холмсу.",
+          "bn": "একটা কুঁড়েঘরের ভেতরে তিনি পেলেন খাবার, একটা কম্বল, আর হোমসকে লেখা তাঁর নিজেরই রিপোর্ট।",
+          "ur": "ایک جھونپڑی کے اندر انہیں کھانا، ایک کمبل اور ہومز کو بھیجی اپنی ہی رپورٹیں ملیں۔",
+          "th": "ในกระท่อมหลังหนึ่ง เขาพบอาหาร ผ้าห่ม และรายงานที่ตัวเขาเองเขียนส่งถึงโฮมส์"
+        }
+      },
+      {
+        "id": "cl-hound-066",
+        "english": "Watson sat in the shadows with his gun and waited.",
+        "turkish": "Watson silahıyla gölgelere oturdu ve bekledi.",
+        "translations": {
+          "es-419": "Watson se sentó en la sombra con su pistola y esperó.",
+          "pt-BR": "Watson se sentou nas sombras com a arma e esperou.",
+          "id": "Watson duduk dalam kegelapan sambil memegang pistolnya dan menunggu.",
+          "ar": "جلس واتسون في الظلّ ومعه مسدّسه وانتظر.",
+          "vi": "Watson ngồi trong bóng tối, tay cầm súng, và chờ đợi.",
+          "hi": "वॉटसन अपनी बंदूक लेकर अँधेरे कोने में बैठ गए और इंतज़ार करने लगे।",
+          "ru": "Ватсон сел в тени с револьвером и стал ждать.",
+          "bn": "ওয়াটসন বন্দুক হাতে ছায়ায় বসে অপেক্ষা করতে লাগলেন।",
+          "ur": "واٹسن اپنی بندوق لے کر اندھیرے کونے میں بیٹھ گئے اور انتظار کرنے لگے۔",
+          "th": "วัตสันนั่งอยู่ในเงามืดพร้อมปืนและรอคอย"
+        }
+      },
+      {
+        "id": "cl-hound-067",
+        "english": "At last he heard steps, and a familiar voice said, \"Come out, Watson. It is a lovely evening.\"",
+        "turkish": "Sonunda ayak sesleri duydu ve tanıdık bir ses, \"Dışarı çık, Watson. Çok güzel bir akşam,\" dedi.",
+        "translations": {
+          "es-419": "Por fin oyó pasos, y una voz conocida dijo: \"Salga, Watson. Hace una tarde preciosa\".",
+          "pt-BR": "Por fim ele ouviu passos, e uma voz conhecida disse: — Saia, Watson. A noite está linda.",
+          "id": "Akhirnya ia mendengar langkah kaki, dan suara yang dikenalnya berkata, \"Keluarlah, Watson. Sore ini indah sekali.\"",
+          "ar": "وأخيرًا سمع خطوات، وقال صوت مألوف: «اخرج يا واتسون. إنها أمسية جميلة.»",
+          "vi": "Cuối cùng anh nghe tiếng bước chân, và một giọng nói quen thuộc vang lên: \"Ra đây đi, Watson. Chiều nay đẹp lắm.\"",
+          "hi": "आख़िर उन्हें क़दमों की आहट सुनाई दी, और एक जानी-पहचानी आवाज़ आई, \"बाहर आ जाइए, वॉटसन। शाम बड़ी सुहानी है।\"",
+          "ru": "Наконец он услышал шаги, и знакомый голос сказал: «Выходите, Ватсон. Чудесный вечер».",
+          "bn": "অবশেষে তিনি পায়ের শব্দ শুনলেন, আর একটা চেনা গলা বলল, \"বেরিয়ে এসো, ওয়াটসন। চমৎকার সন্ধে।\"",
+          "ur": "آخرکار انہیں قدموں کی آہٹ سنائی دی، اور ایک جانی پہچانی آواز آئی، \"باہر آ جائیے، واٹسن۔ شام بڑی سہانی ہے۔\"",
+          "th": "ในที่สุดเขาก็ได้ยินเสียงฝีเท้า และเสียงที่คุ้นเคยพูดว่า \"ออกมาเถอะ วัตสัน เย็นนี้อากาศดีจริง ๆ\""
+        }
+      },
+      {
+        "id": "cl-hound-068",
+        "english": "It was Sherlock Holmes himself!",
+        "turkish": "Gelen Sherlock Holmes'un ta kendisiydi!",
+        "translations": {
+          "es-419": "¡Era el mismísimo Sherlock Holmes!",
+          "pt-BR": "Era o próprio Sherlock Holmes!",
+          "id": "Ternyata itu Sherlock Holmes sendiri!",
+          "ar": "كان شيرلوك هولمز نفسه!",
+          "vi": "Đó chính là Sherlock Holmes!",
+          "hi": "वे ख़ुद शरलॉक होम्स थे!",
+          "ru": "Это был сам Шерлок Холмс!",
+          "bn": "তিনি স্বয়ং শার্লক হোমস!",
+          "ur": "وہ خود شرلاک ہومز تھے!",
+          "th": "นั่นคือเชอร์ล็อก โฮมส์ตัวจริง!"
+        }
+      },
+      {
+        "id": "cl-hound-069",
+        "english": "\"I have been here for days,\" he said. \"It was safer if nobody knew.\"",
+        "turkish": "\"Günlerdir buradayım,\" dedi. \"Kimsenin bilmemesi daha güvenliydi.\"",
+        "translations": {
+          "es-419": "\"Llevo días aquí\", dijo. \"Era más seguro que nadie lo supiera\".",
+          "pt-BR": "— Estou aqui há dias — disse ele. — Era mais seguro que ninguém soubesse.",
+          "id": "\"Aku sudah berhari-hari di sini,\" katanya. \"Lebih aman kalau tidak ada yang tahu.\"",
+          "ar": "قال: «أنا هنا منذ أيام. كان الأسلم ألّا يعرف أحد.»",
+          "vi": "\"Tôi đã ở đây nhiều ngày rồi,\" anh nói. \"Không ai biết thì an toàn hơn.\"",
+          "hi": "उन्होंने कहा, \"मैं कई दिनों से यहीं हूँ। किसी को पता न चलना ज़्यादा सुरक्षित था।\"",
+          "ru": "«Я здесь уже несколько дней, — сказал он. — Безопаснее было, чтобы никто не знал».",
+          "bn": "তিনি বললেন, \"আমি কয়েক দিন ধরে এখানেই আছি। কেউ না জানলেই নিরাপদ ছিল।\"",
+          "ur": "انہوں نے کہا، \"میں کئی دن سے یہیں ہوں۔ کسی کو پتا نہ چلنا زیادہ محفوظ تھا۔\"",
+          "th": "\"ผมอยู่ที่นี่มาหลายวันแล้ว\" เขาพูด \"ไม่ให้ใครรู้จะปลอดภัยกว่า\""
+        }
+      },
+      {
+        "id": "cl-hound-070",
+        "english": "He had discovered that Beryl was not Stapleton's sister at all; she was his wife.",
+        "turkish": "Beryl'in aslında Stapleton'ın kız kardeşi değil, karısı olduğunu keşfetmişti.",
+        "translations": {
+          "es-419": "Había descubierto que Beryl no era la hermana de Stapleton, sino su esposa.",
+          "pt-BR": "Ele tinha descoberto que Beryl não era irmã de Stapleton coisa nenhuma; era a esposa dele.",
+          "id": "Ia telah menemukan bahwa Beryl sama sekali bukan adik Stapleton; ia adalah istrinya.",
+          "ar": "كان قد اكتشف أن بيريل ليست أخت ستابلتون أبدًا؛ بل زوجته.",
+          "vi": "Anh đã phát hiện ra Beryl hoàn toàn không phải em gái Stapleton; cô là vợ hắn.",
+          "hi": "उन्हें पता चल गया था कि बेरिल स्टेपलटन की बहन नहीं, बल्कि उसकी पत्नी थी।",
+          "ru": "Он выяснил, что Берил вовсе не сестра Стэплтона, а его жена.",
+          "bn": "তিনি জানতে পেরেছিলেন, বেরিল আসলে স্টেপলটনের বোন নয়, তার স্ত্রী।",
+          "ur": "انہیں پتا چل گیا تھا کہ بیرل اسٹیپلٹن کی بہن نہیں، بلکہ اس کی بیوی تھی۔",
+          "th": "เขาค้นพบว่าเบริลไม่ใช่น้องสาวของสเตเปิลตันเลย แต่เป็นภรรยาของเขา"
+        }
+      },
+      {
+        "id": "cl-hound-071",
+        "english": "Suddenly, a terrible scream rang out across the moor.",
+        "turkish": "Birden bozkırda korkunç bir çığlık yankılandı.",
+        "translations": {
+          "es-419": "De repente, un grito terrible resonó en el páramo.",
+          "pt-BR": "De repente, um grito terrível ecoou pela charneca.",
+          "id": "Tiba-tiba, jeritan mengerikan terdengar di seluruh padang.",
+          "ar": "وفجأة، دوّت صرخة رهيبة في أرجاء البراري.",
+          "vi": "Bỗng một tiếng thét khủng khiếp vang vọng khắp đồng hoang.",
+          "hi": "अचानक पूरे मैदान में एक भयानक चीख़ गूँज उठी।",
+          "ru": "Вдруг над болотами раздался страшный крик.",
+          "bn": "হঠাৎ প্রান্তর জুড়ে একটা ভয়ংকর আর্তনাদ শোনা গেল।",
+          "ur": "اچانک پورے میدان میں ایک خوفناک چیخ گونج اٹھی۔",
+          "th": "ทันใดนั้น เสียงกรีดร้องอันน่าสะพรึงกลัวก็ดังก้องไปทั่วทุ่ง"
+        }
+      },
+      {
+        "id": "cl-hound-072",
+        "english": "They ran towards the sound and found a man lying dead below the rocks.",
+        "turkish": "Sese doğru koştular ve kayaların dibinde ölü yatan bir adam buldular.",
+        "translations": {
+          "es-419": "Corrieron hacia el sonido y encontraron a un hombre muerto al pie de las rocas.",
+          "pt-BR": "Eles correram na direção do som e encontraram um homem morto ao pé das pedras.",
+          "id": "Mereka berlari ke arah suara itu dan menemukan seorang pria tergeletak tewas di bawah bebatuan.",
+          "ar": "ركضا نحو الصوت، فوجدا رجلًا ميتًا ممدّدًا أسفل الصخور.",
+          "vi": "Họ chạy về phía tiếng thét và thấy một người đàn ông nằm chết dưới chân vách đá.",
+          "hi": "वे आवाज़ की ओर दौड़े और चट्टानों के नीचे एक आदमी को मरा पड़ा पाया।",
+          "ru": "Они побежали на звук и нашли под скалами мёртвого человека.",
+          "bn": "তাঁরা শব্দের দিকে ছুটলেন, আর পাথরের নিচে একজন লোককে মরে পড়ে থাকতে দেখলেন।",
+          "ur": "وہ آواز کی طرف دوڑے اور چٹانوں کے نیچے ایک آدمی کو مرا پڑا پایا۔",
+          "th": "พวกเขาวิ่งไปทางต้นเสียง และพบชายคนหนึ่งนอนตายอยู่ใต้โขดหิน"
+        }
+      },
+      {
+        "id": "cl-hound-073",
+        "english": "He was wearing Sir Henry's old clothes, and for a moment their hearts stopped.",
+        "turkish": "Sir Henry'nin eski giysilerini giyiyordu ve bir an kalpleri durdu.",
+        "translations": {
+          "es-419": "Llevaba la ropa vieja de sir Henry, y por un momento se les paró el corazón.",
+          "pt-BR": "Ele vestia as roupas velhas de Sir Henry, e por um momento o coração deles parou.",
+          "id": "Ia mengenakan pakaian lama Sir Henry, dan sejenak jantung mereka seakan berhenti.",
+          "ar": "كان يرتدي ملابس السير هنري القديمة، فتوقّف قلباهما للحظة.",
+          "vi": "Người đó mặc quần áo cũ của ngài Henry, và trong một khoảnh khắc tim họ như ngừng đập.",
+          "hi": "उसने सर हेनरी के पुराने कपड़े पहन रखे थे, और एक पल के लिए उनका दिल जैसे रुक गया।",
+          "ru": "На нём была старая одежда сэра Генри, и на миг у них замерло сердце.",
+          "bn": "তার গায়ে ছিল স্যার হেনরির পুরোনো জামাকাপড়, আর এক মুহূর্তের জন্য তাঁদের বুক কেঁপে উঠল।",
+          "ur": "اس نے سر ہنری کے پرانے کپڑے پہن رکھے تھے، اور ایک لمحے کو ان کا دل جیسے رک گیا۔",
+          "th": "เขาสวมเสื้อผ้าเก่าของเซอร์เฮนรี และชั่วขณะหนึ่งหัวใจของพวกเขาแทบหยุดเต้น"
+        }
+      },
+      {
+        "id": "cl-hound-074",
+        "english": "But it was Selden, who had fallen while he was running from the hound.",
+        "turkish": "Ama bu, köpekten kaçarken düşen Selden'dı.",
+        "translations": {
+          "es-419": "Pero era Selden, que se había caído mientras huía del sabueso.",
+          "pt-BR": "Mas era Selden, que tinha caído enquanto fugia do cão.",
+          "id": "Tetapi itu Selden, yang terjatuh saat berlari menghindari anjing itu.",
+          "ar": "لكنه كان سيلدن، الذي سقط وهو يهرب من الكلب.",
+          "vi": "Nhưng đó là Selden, kẻ đã ngã khi đang chạy trốn con chó săn.",
+          "hi": "लेकिन वह सेल्डन था, जो शिकारी कुत्ते से भागते हुए गिर पड़ा था।",
+          "ru": "Но это был Селден: он сорвался со скалы, убегая от собаки.",
+          "bn": "কিন্তু সে ছিল সেলডেন, যে শিকারি কুকুরের হাত থেকে পালাতে গিয়ে পড়ে গিয়েছিল।",
+          "ur": "لیکن وہ سیلڈن تھا، جو شکاری کتے سے بھاگتے ہوئے گر پڑا تھا۔",
+          "th": "แต่นั่นคือเซลเดน ซึ่งพลัดตกขณะวิ่งหนีสุนัขตัวนั้น"
+        }
+      },
+      {
+        "id": "cl-hound-075",
+        "english": "Barrymore had given him Sir Henry's old clothes, so the hound followed their smell.",
+        "turkish": "Barrymore ona Sir Henry'nin eski giysilerini vermişti; köpek de onların kokusunu izlemişti.",
+        "translations": {
+          "es-419": "Barrymore le había dado la ropa vieja de sir Henry, así que el sabueso siguió su olor.",
+          "pt-BR": "Barrymore tinha dado a ele as roupas velhas de Sir Henry, então o cão seguiu o cheiro delas.",
+          "id": "Barrymore telah memberinya pakaian lama Sir Henry, sehingga anjing itu mengikuti baunya.",
+          "ar": "كان باريمور قد أعطاه ملابس السير هنري القديمة، فتبع الكلب رائحتها.",
+          "vi": "Barrymore đã cho hắn quần áo cũ của ngài Henry, nên con chó lần theo mùi của chúng.",
+          "hi": "बैरीमोर ने उसे सर हेनरी के पुराने कपड़े दिए थे, इसलिए कुत्ता उनकी गंध के पीछे आया।",
+          "ru": "Бэрримор отдал ему старую одежду сэра Генри, и собака пошла по её запаху.",
+          "bn": "ব্যারিমোর তাকে স্যার হেনরির পুরোনো জামাকাপড় দিয়েছিল, তাই কুকুরটা সেই গন্ধ ধরে এসেছিল।",
+          "ur": "بیری مور نے اسے سر ہنری کے پرانے کپڑے دیے تھے، اس لیے کتا ان کی بو کے پیچھے آیا۔",
+          "th": "แบร์รีมอร์เคยให้เสื้อผ้าเก่าของเซอร์เฮนรีแก่เขา สุนัขจึงตามกลิ่นนั้นมา"
+        }
+      },
+      {
+        "id": "cl-hound-076",
+        "english": "Back at the Hall, Holmes looked at the family paintings on the wall.",
+        "turkish": "Malikâneye dönünce Holmes duvardaki aile portrelerine baktı.",
+        "translations": {
+          "es-419": "De vuelta en la mansión, Holmes miró los retratos de la familia en la pared.",
+          "pt-BR": "De volta à mansão, Holmes olhou os retratos da família na parede.",
+          "id": "Kembali di puri, Holmes memandangi lukisan-lukisan keluarga di dinding.",
+          "ar": "وفي القصر، نظر هولمز إلى لوحات العائلة المعلّقة على الجدار.",
+          "vi": "Trở về dinh thự, Holmes ngắm những bức chân dung gia đình trên tường.",
+          "hi": "हॉल लौटकर होम्स दीवार पर टँगी परिवार की तस्वीरों को देखने लगे।",
+          "ru": "Вернувшись в Холл, Холмс стал разглядывать фамильные портреты на стене.",
+          "bn": "হলে ফিরে হোমস দেওয়ালে টাঙানো পারিবারিক ছবিগুলো দেখতে লাগলেন।",
+          "ur": "ہال واپس آ کر ہومز دیوار پر لگی خاندانی تصویروں کو دیکھنے لگے۔",
+          "th": "เมื่อกลับมาถึงคฤหาสน์ โฮมส์มองดูภาพวาดของตระกูลบนผนัง"
+        }
+      },
+      {
+        "id": "cl-hound-077",
+        "english": "He covered the hat and hair of Hugo Baskerville with his hand.",
+        "turkish": "Eliyle Hugo Baskerville'in şapkasını ve saçlarını kapattı.",
+        "translations": {
+          "es-419": "Tapó con la mano el sombrero y el cabello de Hugo Baskerville.",
+          "pt-BR": "Ele cobriu com a mão o chapéu e o cabelo de Hugo Baskerville.",
+          "id": "Ia menutupi topi dan rambut Hugo Baskerville dengan tangannya.",
+          "ar": "غطّى بيده قبّعة هوغو باسكرفيل وشعره.",
+          "vi": "Anh lấy tay che chiếc mũ và mái tóc của Hugo Baskerville.",
+          "hi": "उन्होंने अपने हाथ से ह्यूगो बास्करविल की टोपी और बालों को ढक दिया।",
+          "ru": "Он закрыл рукой шляпу и волосы Хьюго Баскервиля.",
+          "bn": "তিনি হাত দিয়ে হিউগো বাস্কারভিলের টুপি আর চুল ঢেকে দিলেন।",
+          "ur": "انہوں نے اپنے ہاتھ سے ہیوگو باسکرویل کی ٹوپی اور بالوں کو ڈھانپ دیا۔",
+          "th": "เขาใช้มือปิดหมวกและผมของฮิวโก บาสเกอร์วิลล์"
+        }
+      },
+      {
+        "id": "cl-hound-078",
+        "english": "The face underneath was the face of Stapleton!",
+        "turkish": "Altında kalan yüz Stapleton'ın yüzüydü!",
+        "translations": {
+          "es-419": "¡El rostro que quedó era el de Stapleton!",
+          "pt-BR": "O rosto que apareceu era o de Stapleton!",
+          "id": "Wajah di baliknya adalah wajah Stapleton!",
+          "ar": "كان الوجه الظاهر تحتها هو وجه ستابلتون!",
+          "vi": "Gương mặt bên dưới chính là gương mặt của Stapleton!",
+          "hi": "नीचे दिखने वाला चेहरा स्टेपलटन का था!",
+          "ru": "Под ней оказалось лицо Стэплтона!",
+          "bn": "নিচে যে মুখ দেখা গেল, তা স্টেপলটনের!",
+          "ur": "نیچے دکھائی دینے والا چہرہ اسٹیپلٹن کا تھا!",
+          "th": "ใบหน้าที่เหลืออยู่คือใบหน้าของสเตเปิลตัน!"
+        }
+      },
+      {
+        "id": "cl-hound-079",
+        "english": "\"He is a Baskerville too,\" Holmes said. \"If Sir Henry dies, he gets the money and the house.\"",
+        "turkish": "\"O da bir Baskerville,\" dedi Holmes. \"Sir Henry ölürse para da ev de ona kalır.\"",
+        "translations": {
+          "es-419": "\"Él también es un Baskerville\", dijo Holmes. \"Si sir Henry muere, se queda con el dinero y la casa\".",
+          "pt-BR": "— Ele também é um Baskerville — disse Holmes. — Se Sir Henry morrer, ele fica com o dinheiro e a casa.",
+          "id": "\"Dia juga seorang Baskerville,\" kata Holmes. \"Kalau Sir Henry mati, dialah yang mendapat uang dan rumahnya.\"",
+          "ar": "قال هولمز: «إنه من آل باسكرفيل أيضًا. إذا مات السير هنري، فسيرث المال والبيت.»",
+          "vi": "\"Hắn cũng là người nhà Baskerville,\" Holmes nói. \"Nếu ngài Henry chết, hắn sẽ có tiền và ngôi nhà.\"",
+          "hi": "होम्स ने कहा, \"वह भी बास्करविल है। अगर सर हेनरी मर गए, तो पैसा और घर उसे मिलेंगे।\"",
+          "ru": "«Он тоже Баскервиль, — сказал Холмс. — Если сэр Генри умрёт, деньги и дом достанутся ему».",
+          "bn": "হোমস বললেন, \"সেও একজন বাস্কারভিল। স্যার হেনরি মারা গেলে টাকা আর বাড়ি সে-ই পাবে।\"",
+          "ur": "ہومز نے کہا، \"وہ بھی باسکرویل ہے۔ اگر سر ہنری مر گئے تو پیسہ اور گھر اسے ملیں گے۔\"",
+          "th": "\"เขาก็เป็นคนตระกูลบาสเกอร์วิลล์เหมือนกัน\" โฮมส์พูด \"ถ้าเซอร์เฮนรีตาย เงินและบ้านจะตกเป็นของเขา\""
+        }
+      },
+      {
+        "id": "cl-hound-080",
+        "english": "Holmes made a bold plan, but it put Sir Henry in danger.",
+        "turkish": "Holmes cesur bir plan yaptı ama bu plan Sir Henry'yi tehlikeye atıyordu.",
+        "translations": {
+          "es-419": "Holmes trazó un plan audaz, pero ponía a sir Henry en peligro.",
+          "pt-BR": "Holmes fez um plano ousado, mas que colocava Sir Henry em perigo.",
+          "id": "Holmes menyusun rencana yang berani, tetapi rencana itu membahayakan Sir Henry.",
+          "ar": "وضع هولمز خطة جريئة، لكنها عرّضت السير هنري للخطر.",
+          "vi": "Holmes vạch ra một kế hoạch táo bạo, nhưng nó đặt ngài Henry vào vòng nguy hiểm.",
+          "hi": "होम्स ने एक साहसी योजना बनाई, लेकिन उसमें सर हेनरी की जान ख़तरे में थी।",
+          "ru": "Холмс придумал смелый план, но он подвергал сэра Генри опасности.",
+          "bn": "হোমস একটা সাহসী পরিকল্পনা করলেন, কিন্তু তাতে স্যার হেনরির বিপদ ছিল।",
+          "ur": "ہومز نے ایک دلیرانہ منصوبہ بنایا، لیکن اس میں سر ہنری کی جان خطرے میں تھی۔",
+          "th": "โฮมส์วางแผนอันกล้าหาญ แต่แผนนี้ทำให้เซอร์เฮนรีตกอยู่ในอันตราย"
+        }
+      },
+      {
+        "id": "cl-hound-081",
+        "english": "Sir Henry went to dinner at Stapleton's house and walked home alone across the moor.",
+        "turkish": "Sir Henry, Stapleton'ın evine yemeğe gitti ve bozkırdan eve yalnız yürüdü.",
+        "translations": {
+          "es-419": "Sir Henry fue a cenar a casa de Stapleton y volvió solo a pie por el páramo.",
+          "pt-BR": "Sir Henry foi jantar na casa de Stapleton e voltou sozinho a pé pela charneca.",
+          "id": "Sir Henry pergi makan malam di rumah Stapleton, lalu berjalan pulang sendirian melintasi padang.",
+          "ar": "ذهب السير هنري إلى العشاء في بيت ستابلتون، ثم عاد إلى بيته وحده مشيًا عبر البراري.",
+          "vi": "Ngài Henry đến dùng bữa tối ở nhà Stapleton rồi đi bộ một mình băng qua đồng hoang về nhà.",
+          "hi": "सर हेनरी स्टेपलटन के घर खाने पर गए और मैदान पार करके अकेले पैदल घर लौटे।",
+          "ru": "Сэр Генри пошёл ужинать к Стэплтону и возвращался домой через болота один.",
+          "bn": "স্যার হেনরি স্টেপলটনের বাড়িতে রাতের খাবার খেতে গেলেন, তারপর একা হেঁটে প্রান্তর পেরিয়ে বাড়ি ফিরলেন।",
+          "ur": "سر ہنری اسٹیپلٹن کے گھر کھانے پر گئے اور میدان پار کر کے اکیلے پیدل گھر لوٹے۔",
+          "th": "เซอร์เฮนรีไปกินมื้อค่ำที่บ้านของสเตเปิลตัน แล้วเดินกลับบ้านคนเดียวข้ามทุ่งรกร้าง"
+        }
+      },
+      {
+        "id": "cl-hound-082",
+        "english": "Holmes, Watson and a police officer hid behind the rocks and waited.",
+        "turkish": "Holmes, Watson ve bir polis memuru kayaların arkasına saklanıp beklediler.",
+        "translations": {
+          "es-419": "Holmes, Watson y un policía se escondieron detrás de las rocas y esperaron.",
+          "pt-BR": "Holmes, Watson e um policial se esconderam atrás das pedras e esperaram.",
+          "id": "Holmes, Watson, dan seorang polisi bersembunyi di balik bebatuan dan menunggu.",
+          "ar": "اختبأ هولمز وواتسون وضابط شرطة خلف الصخور وانتظروا.",
+          "vi": "Holmes, Watson và một viên cảnh sát nấp sau những tảng đá và chờ đợi.",
+          "hi": "होम्स, वॉटसन और एक पुलिस अफ़सर चट्टानों के पीछे छिपकर इंतज़ार करने लगे।",
+          "ru": "Холмс, Ватсон и полицейский спрятались за скалами и стали ждать.",
+          "bn": "হোমস, ওয়াটসন আর একজন পুলিশ অফিসার পাথরের আড়ালে লুকিয়ে অপেক্ষা করতে লাগলেন।",
+          "ur": "ہومز، واٹسن اور ایک پولیس افسر چٹانوں کے پیچھے چھپ کر انتظار کرنے لگے۔",
+          "th": "โฮมส์ วัตสัน และนายตำรวจคนหนึ่งซ่อนตัวอยู่หลังโขดหินและรอคอย"
+        }
+      },
+      {
+        "id": "cl-hound-083",
+        "english": "A thick white fog came slowly over the moor.",
+        "turkish": "Bozkırın üzerine yavaş yavaş kalın, beyaz bir sis çöktü.",
+        "translations": {
+          "es-419": "Una niebla blanca y espesa fue cubriendo despacio el páramo.",
+          "pt-BR": "Uma neblina branca e densa foi cobrindo devagar a charneca.",
+          "id": "Kabut putih tebal perlahan-lahan menyelimuti padang.",
+          "ar": "زحف ضباب أبيض كثيف ببطء فوق البراري.",
+          "vi": "Một màn sương trắng dày đặc từ từ trùm lên đồng hoang.",
+          "hi": "एक घना सफ़ेद कोहरा धीरे-धीरे पूरे मैदान पर छा गया।",
+          "ru": "Над болотами медленно пополз густой белый туман.",
+          "bn": "একটা ঘন সাদা কুয়াশা ধীরে ধীরে প্রান্তর ঢেকে ফেলল।",
+          "ur": "ایک گھنی سفید دھند آہستہ آہستہ پورے میدان پر چھا گئی۔",
+          "th": "หมอกขาวหนาทึบค่อย ๆ ลอยมาปกคลุมทุ่ง"
+        }
+      },
+      {
+        "id": "cl-hound-084",
+        "english": "Then they heard quick, heavy steps, and something huge jumped out of the fog.",
+        "turkish": "Sonra hızlı ve ağır adımlar duydular ve sisin içinden kocaman bir şey fırladı.",
+        "translations": {
+          "es-419": "Entonces oyeron pasos rápidos y pesados, y algo enorme saltó de la niebla.",
+          "pt-BR": "Então ouviram passos rápidos e pesados, e algo enorme saltou da neblina.",
+          "id": "Lalu mereka mendengar langkah cepat dan berat, dan sesuatu yang sangat besar melompat keluar dari kabut.",
+          "ar": "ثم سمعوا خطوات سريعة ثقيلة، وقفز شيء ضخم من الضباب.",
+          "vi": "Rồi họ nghe những bước chân nhanh và nặng nề, và một thứ khổng lồ lao vọt ra từ trong sương.",
+          "hi": "तभी उन्हें तेज़ और भारी क़दमों की आवाज़ आई, और कोहरे में से कोई विशाल चीज़ उछलकर बाहर आई।",
+          "ru": "Потом они услышали быстрые тяжёлые шаги, и из тумана выпрыгнуло что-то огромное.",
+          "bn": "তারপর তাঁরা দ্রুত, ভারী পায়ের শব্দ শুনলেন, আর কুয়াশা ফুঁড়ে বিশাল কিছু একটা লাফিয়ে বেরিয়ে এল।",
+          "ur": "تبھی انہیں تیز اور بھاری قدموں کی آواز آئی، اور دھند میں سے کوئی بہت بڑی چیز اچھل کر باہر آئی۔",
+          "th": "แล้วพวกเขาก็ได้ยินเสียงฝีเท้าหนักและเร็ว และบางสิ่งตัวมหึมาก็กระโจนออกมาจากหมอก"
+        }
+      },
+      {
+        "id": "cl-hound-085",
+        "english": "It was an enormous black hound, and fire seemed to burn in its mouth and eyes.",
+        "turkish": "Kocaman siyah bir köpekti ve ağzında, gözlerinde sanki ateş yanıyordu.",
+        "translations": {
+          "es-419": "Era un sabueso negro enorme, y parecía que le ardía fuego en la boca y en los ojos.",
+          "pt-BR": "Era um cão preto enorme, e parecia que fogo ardia na boca e nos olhos dele.",
+          "id": "Itu anjing hitam raksasa, dan api seolah menyala di mulut dan matanya.",
+          "ar": "كان كلبًا أسود هائلًا، وبدا كأن النار تشتعل في فمه وعينيه.",
+          "vi": "Đó là một con chó săn đen khổng lồ, và lửa như đang cháy trong miệng và mắt nó.",
+          "hi": "वह एक विशालकाय काला शिकारी कुत्ता था, और उसके मुँह और आँखों में जैसे आग जल रही थी।",
+          "ru": "Это была огромная чёрная собака, и в её пасти и глазах будто горел огонь.",
+          "bn": "সেটা ছিল একটা বিশাল কালো শিকারি কুকুর, আর তার মুখে আর চোখে যেন আগুন জ্বলছিল।",
+          "ur": "وہ ایک دیو ہیکل کالا شکاری کتا تھا، اور اس کے منہ اور آنکھوں میں جیسے آگ جل رہی تھی۔",
+          "th": "มันคือสุนัขดำตัวมหึมา และดูเหมือนมีไฟลุกโชนอยู่ในปากและดวงตาของมัน"
+        }
+      },
+      {
+        "id": "cl-hound-086",
+        "english": "Holmes and Watson fired their guns, and the hound howled with pain.",
+        "turkish": "Holmes ile Watson silahlarını ateşledi ve köpek acıyla uludu.",
+        "translations": {
+          "es-419": "Holmes y Watson dispararon, y el sabueso aulló de dolor.",
+          "pt-BR": "Holmes e Watson atiraram, e o cão uivou de dor.",
+          "id": "Holmes dan Watson menembakkan senjata mereka, dan anjing itu melolong kesakitan.",
+          "ar": "أطلق هولمز وواتسون النار، فعوى الكلب من الألم.",
+          "vi": "Holmes và Watson nổ súng, và con chó tru lên vì đau.",
+          "hi": "होम्स और वॉटसन ने गोलियाँ चलाईं, और कुत्ता दर्द से हुँकारा।",
+          "ru": "Холмс и Ватсон выстрелили, и собака взвыла от боли.",
+          "bn": "হোমস আর ওয়াটসন গুলি চালালেন, আর কুকুরটা যন্ত্রণায় চিৎকার করে উঠল।",
+          "ur": "ہومز اور واٹسن نے گولیاں چلائیں، اور کتا درد سے چلایا۔",
+          "th": "โฮมส์และวัตสันยิงปืน และสุนัขก็หอนด้วยความเจ็บปวด"
+        }
+      },
+      {
+        "id": "cl-hound-087",
+        "english": "But it did not stop, and it threw Sir Henry to the ground.",
+        "turkish": "Ama durmadı ve Sir Henry'yi yere devirdi.",
+        "translations": {
+          "es-419": "Pero no se detuvo, y derribó a sir Henry al suelo.",
+          "pt-BR": "Mas ele não parou e derrubou Sir Henry no chão.",
+          "id": "Tetapi anjing itu tidak berhenti, dan menjatuhkan Sir Henry ke tanah.",
+          "ar": "لكنه لم يتوقّف، وطرح السير هنري أرضًا.",
+          "vi": "Nhưng nó không dừng lại, và quật ngã ngài Henry xuống đất.",
+          "hi": "लेकिन वह रुका नहीं, और उसने सर हेनरी को ज़मीन पर पटक दिया।",
+          "ru": "Но она не остановилась и повалила сэра Генри на землю.",
+          "bn": "কিন্তু সেটা থামল না, স্যার হেনরিকে মাটিতে ফেলে দিল।",
+          "ur": "لیکن وہ رکا نہیں، اور اس نے سر ہنری کو زمین پر گرا دیا۔",
+          "th": "แต่มันไม่หยุด และกระโจนใส่เซอร์เฮนรีจนล้มลงกับพื้น"
+        }
+      },
+      {
+        "id": "cl-hound-088",
+        "english": "Holmes fired five more shots into its side, and at last it lay still.",
+        "turkish": "Holmes böğrüne beş el daha ateş etti ve sonunda köpek kıpırtısız kaldı.",
+        "translations": {
+          "es-419": "Holmes le disparó cinco veces más en el costado, y por fin quedó inmóvil.",
+          "pt-BR": "Holmes deu mais cinco tiros no flanco dele, e por fim ele ficou imóvel.",
+          "id": "Holmes menembakkan lima peluru lagi ke lambungnya, dan akhirnya anjing itu terbaring diam.",
+          "ar": "أطلق هولمز خمس رصاصات أخرى في جنبه، وأخيرًا سكن بلا حراك.",
+          "vi": "Holmes bắn thêm năm phát vào sườn nó, và cuối cùng nó nằm im.",
+          "hi": "होम्स ने उसकी पसली में पाँच गोलियाँ और दाग़ीं, और आख़िरकार वह बेजान पड़ गया।",
+          "ru": "Холмс всадил ей в бок ещё пять пуль, и наконец она затихла.",
+          "bn": "হোমস তার পাঁজরে আরও পাঁচটা গুলি করলেন, আর অবশেষে সেটা নিথর হয়ে পড়ল।",
+          "ur": "ہومز نے اس کی پسلی میں پانچ گولیاں اور ماریں، اور آخرکار وہ بے حس و حرکت ہو گیا۔",
+          "th": "โฮมส์ยิงเข้าที่สีข้างของมันอีกห้านัด และในที่สุดมันก็นอนนิ่ง"
+        }
+      },
+      {
+        "id": "cl-hound-089",
+        "english": "The fire on its face was only paint that shone in the dark.",
+        "turkish": "Yüzündeki ateş, karanlıkta parlayan bir boyadan başka bir şey değildi.",
+        "translations": {
+          "es-419": "El fuego de su cara era solo pintura que brillaba en la oscuridad.",
+          "pt-BR": "O fogo no focinho dele era só uma tinta que brilhava no escuro.",
+          "id": "Api di wajahnya hanyalah cat yang bersinar dalam gelap.",
+          "ar": "لم تكن النار على وجهه سوى طلاء يلمع في الظلام.",
+          "vi": "Ngọn lửa trên mặt nó chỉ là thứ sơn phát sáng trong bóng tối.",
+          "hi": "उसके चेहरे की आग बस एक रंग था जो अँधेरे में चमकता था।",
+          "ru": "Огонь на её морде оказался всего лишь светящейся в темноте краской.",
+          "bn": "তার মুখের আগুন আসলে ছিল অন্ধকারে জ্বলজ্বল করা একরকম রং।",
+          "ur": "اس کے چہرے کی آگ بس ایک رنگ تھا جو اندھیرے میں چمکتا تھا۔",
+          "th": "ไฟบนหน้าของมันเป็นเพียงสีที่เรืองแสงในความมืด"
+        }
+      },
+      {
+        "id": "cl-hound-090",
+        "english": "At Stapleton's house, they found Beryl tied up and badly hurt.",
+        "turkish": "Stapleton'ın evinde Beryl'i bağlanmış ve ağır yaralanmış halde buldular.",
+        "translations": {
+          "es-419": "En la casa de Stapleton, encontraron a Beryl atada y malherida.",
+          "pt-BR": "Na casa de Stapleton, eles encontraram Beryl amarrada e muito machucada.",
+          "id": "Di rumah Stapleton, mereka menemukan Beryl terikat dan terluka parah.",
+          "ar": "وفي بيت ستابلتون، وجدوا بيريل مقيّدة ومصابة إصابات بالغة.",
+          "vi": "Ở nhà Stapleton, họ thấy Beryl bị trói và bị thương nặng.",
+          "hi": "स्टेपलटन के घर पर उन्होंने बेरिल को बँधा हुआ और बुरी तरह घायल पाया।",
+          "ru": "В доме Стэплтона они нашли Берил связанной и сильно избитой.",
+          "bn": "স্টেপলটনের বাড়িতে তাঁরা বেরিলকে বাঁধা আর গুরুতর আহত অবস্থায় পেলেন।",
+          "ur": "اسٹیپلٹن کے گھر پر انہوں نے بیرل کو بندھا ہوا اور بری طرح زخمی پایا۔",
+          "th": "ที่บ้านของสเตเปิลตัน พวกเขาพบเบริลถูกมัดไว้และบาดเจ็บสาหัส"
+        }
+      },
+      {
+        "id": "cl-hound-091",
+        "english": "\"He has a hiding place in the middle of the mire,\" she said. \"He will run there.\"",
+        "turkish": "\"Bataklığın ortasında bir saklanma yeri var,\" dedi. \"Oraya kaçacaktır.\"",
+        "translations": {
+          "es-419": "\"Tiene un escondite en medio de la ciénaga\", dijo. \"Huirá allí\".",
+          "pt-BR": "— Ele tem um esconderijo no meio do pântano — disse ela. — Vai fugir para lá.",
+          "id": "\"Dia punya tempat persembunyian di tengah rawa,\" katanya. \"Dia pasti lari ke sana.\"",
+          "ar": "قالت: «لديه مخبأ في وسط المستنقع. سيهرب إلى هناك.»",
+          "vi": "\"Hắn có một chỗ ẩn náu giữa đầm lầy,\" cô nói. \"Hắn sẽ chạy đến đó.\"",
+          "hi": "उसने कहा, \"दलदल के बीच उसका एक छिपने का ठिकाना है। वह वहीं भागेगा।\"",
+          "ru": "«У него есть убежище посреди трясины, — сказала она. — Он побежит туда».",
+          "bn": "সে বলল, \"জলার মাঝখানে ওর একটা লুকোনোর জায়গা আছে। ও সেখানেই পালাবে।\"",
+          "ur": "اس نے کہا، \"دلدل کے بیچ اس کا ایک چھپنے کا ٹھکانا ہے۔ وہ وہیں بھاگے گا۔\"",
+          "th": "\"เขามีที่ซ่อนอยู่กลางหนองน้ำ\" เธอพูด \"เขาต้องหนีไปที่นั่นแน่\""
+        }
+      },
+      {
+        "id": "cl-hound-092",
+        "english": "The next morning, they followed his path into the mire, but the fog had been too thick.",
+        "turkish": "Ertesi sabah onun izini bataklığa kadar sürdüler ama sis çok yoğun olmuştu.",
+        "translations": {
+          "es-419": "A la mañana siguiente, siguieron su camino por la ciénaga, pero la niebla había sido demasiado espesa.",
+          "pt-BR": "Na manhã seguinte, eles seguiram o caminho dele pelo pântano, mas a neblina tinha sido densa demais.",
+          "id": "Keesokan paginya, mereka menelusuri jalurnya ke dalam rawa, tetapi kabutnya terlalu tebal semalam.",
+          "ar": "في الصباح التالي، تتبّعوا طريقه إلى داخل المستنقع، لكن الضباب كان كثيفًا جدًا.",
+          "vi": "Sáng hôm sau, họ lần theo lối hắn đi vào đầm lầy, nhưng đêm qua sương mù đã quá dày.",
+          "hi": "अगली सुबह वे उसके रास्ते पर चलते हुए दलदल में गए, लेकिन रात को कोहरा बहुत घना था।",
+          "ru": "Наутро они пошли по его тропе в трясину, но ночью туман был слишком густым.",
+          "bn": "পরদিন সকালে তাঁরা তার পথ ধরে জলার ভেতরে গেলেন, কিন্তু রাতে কুয়াশা খুব ঘন ছিল।",
+          "ur": "اگلی صبح وہ اس کے راستے پر چلتے ہوئے دلدل میں گئے، لیکن رات کو دھند بہت گھنی تھی۔",
+          "th": "เช้าวันต่อมา พวกเขาตามรอยทางของเขาเข้าไปในหนองน้ำ แต่เมื่อคืนหมอกหนาเกินไป"
+        }
+      },
+      {
+        "id": "cl-hound-093",
+        "english": "They found only Sir Henry's old black boot, stuck in the mud.",
+        "turkish": "Yalnızca çamura saplanmış, Sir Henry'nin eski siyah botunu buldular.",
+        "translations": {
+          "es-419": "Solo encontraron la vieja bota negra de sir Henry, hundida en el barro.",
+          "pt-BR": "Só encontraram a velha bota preta de Sir Henry, presa na lama.",
+          "id": "Mereka hanya menemukan sepatu bot hitam lama milik Sir Henry, terbenam di lumpur.",
+          "ar": "لم يجدوا إلا فردة حذاء السير هنري السوداء القديمة، عالقة في الوحل.",
+          "vi": "Họ chỉ tìm thấy chiếc ủng đen cũ của ngài Henry, cắm trong bùn.",
+          "hi": "उन्हें बस कीचड़ में धँसा सर हेनरी का पुराना काला जूता मिला।",
+          "ru": "Они нашли лишь старый чёрный ботинок сэра Генри, застрявший в грязи.",
+          "bn": "তাঁরা কেবল কাদায় আটকে থাকা স্যার হেনরির পুরোনো কালো বুটটা পেলেন।",
+          "ur": "انہیں بس کیچڑ میں دھنسا ہوا سر ہنری کا پرانا کالا جوتا ملا۔",
+          "th": "พวกเขาพบเพียงรองเท้าบูตสีดำเก่าของเซอร์เฮนรีจมติดอยู่ในโคลน"
+        }
+      },
+      {
+        "id": "cl-hound-094",
+        "english": "Stapleton was never seen again; the Grimpen Mire had swallowed him.",
+        "turkish": "Stapleton bir daha hiç görülmedi; Grimpen Bataklığı onu yutmuştu.",
+        "translations": {
+          "es-419": "Nunca más se volvió a ver a Stapleton; la ciénaga de Grimpen se lo había tragado.",
+          "pt-BR": "Stapleton nunca mais foi visto; o pântano de Grimpen o tinha engolido.",
+          "id": "Stapleton tidak pernah terlihat lagi; Rawa Grimpen telah menelannya.",
+          "ar": "لم يُرَ ستابلتون مرّة أخرى؛ لقد ابتلعه مستنقع غريمبن.",
+          "vi": "Không ai còn thấy Stapleton nữa; đầm lầy Grimpen đã nuốt chửng hắn.",
+          "hi": "स्टेपलटन फिर कभी दिखाई नहीं दिया; ग्रिम्पेन दलदल उसे निगल गया था।",
+          "ru": "Стэплтона больше никто не видел: его поглотила Гримпенская трясина.",
+          "bn": "স্টেপলটনকে আর কোনো দিন দেখা যায়নি; গ্রিম্পেন জলা তাকে গিলে খেয়েছিল।",
+          "ur": "اسٹیپلٹن پھر کبھی دکھائی نہیں دیا؛ گرمپن دلدل اسے نگل گئی تھی۔",
+          "th": "ไม่มีใครเห็นสเตเปิลตันอีกเลย หนองกริมเพนได้กลืนเขาหายไปแล้ว"
+        }
+      },
+      {
+        "id": "cl-hound-095",
+        "english": "Sir Henry was safe, but his nerves were badly shaken.",
+        "turkish": "Sir Henry güvendeydi ama sinirleri fena halde sarsılmıştı.",
+        "translations": {
+          "es-419": "Sir Henry estaba a salvo, pero tenía los nervios destrozados.",
+          "pt-BR": "Sir Henry estava a salvo, mas os nervos dele estavam muito abalados.",
+          "id": "Sir Henry selamat, tetapi sarafnya sangat terguncang.",
+          "ar": "كان السير هنري في أمان، لكن أعصابه كانت مهزوزة بشدّة.",
+          "vi": "Ngài Henry đã an toàn, nhưng thần kinh bị chấn động nặng.",
+          "hi": "सर हेनरी सुरक्षित थे, पर उनकी नसें बुरी तरह हिल गई थीं।",
+          "ru": "Сэр Генри был спасён, но его нервы были сильно расшатаны.",
+          "bn": "স্যার হেনরি নিরাপদ ছিলেন, কিন্তু তাঁর মন ভীষণভাবে নাড়া খেয়েছিল।",
+          "ur": "سر ہنری محفوظ تھے، مگر ان کے اعصاب بری طرح ہل گئے تھے۔",
+          "th": "เซอร์เฮนรีปลอดภัย แต่จิตใจของเขาบอบช้ำอย่างหนัก"
+        }
+      },
+      {
+        "id": "cl-hound-096",
+        "english": "He went on a long journey with Dr Mortimer to rest and to forget.",
+        "turkish": "Dinlenmek ve unutmak için Dr. Mortimer'la uzun bir yolculuğa çıktı.",
+        "translations": {
+          "es-419": "Se fue de viaje largo con el doctor Mortimer para descansar y olvidar.",
+          "pt-BR": "Ele fez uma longa viagem com o doutor Mortimer para descansar e esquecer.",
+          "id": "Ia melakukan perjalanan panjang bersama Dokter Mortimer untuk beristirahat dan melupakan semuanya.",
+          "ar": "ذهب في رحلة طويلة مع الدكتور مورتيمر ليستريح وينسى.",
+          "vi": "Ngài lên đường đi xa cùng bác sĩ Mortimer để nghỉ ngơi và quên đi mọi chuyện.",
+          "hi": "वे आराम करने और सब भूलने के लिए डॉ. मॉर्टिमर के साथ एक लंबी यात्रा पर गए।",
+          "ru": "Он отправился с доктором Мортимером в долгое путешествие, чтобы отдохнуть и забыть.",
+          "bn": "বিশ্রাম নিতে আর সব ভুলে যেতে তিনি ডা. মর্টিমারের সঙ্গে দীর্ঘ এক ভ্রমণে বেরোলেন।",
+          "ur": "وہ آرام کرنے اور سب بھولنے کے لیے ڈاکٹر مورٹیمر کے ساتھ ایک لمبے سفر پر گئے۔",
+          "th": "เขาออกเดินทางไกลกับ ดร.มอร์ติเมอร์ เพื่อพักผ่อนและลืมเรื่องทั้งหมด"
+        }
+      },
+      {
+        "id": "cl-hound-097",
+        "english": "Back in London, Holmes sat by the fire and smiled at Watson.",
+        "turkish": "Londra'ya döndüklerinde Holmes şöminenin başına oturdu ve Watson'a gülümsedi.",
+        "translations": {
+          "es-419": "De vuelta en Londres, Holmes se sentó junto al fuego y le sonrió a Watson.",
+          "pt-BR": "De volta a Londres, Holmes se sentou perto da lareira e sorriu para Watson.",
+          "id": "Kembali di London, Holmes duduk di dekat perapian dan tersenyum kepada Watson.",
+          "ar": "وفي لندن، جلس هولمز قرب المدفأة وابتسم لواتسون.",
+          "vi": "Trở về London, Holmes ngồi bên lò sưởi và mỉm cười với Watson.",
+          "hi": "लंदन लौटकर होम्स आग के पास बैठे और वॉटसन की ओर देखकर मुस्कुराए।",
+          "ru": "Вернувшись в Лондон, Холмс сел у камина и улыбнулся Ватсону.",
+          "bn": "লন্ডনে ফিরে হোমস আগুনের পাশে বসে ওয়াটসনের দিকে চেয়ে হাসলেন।",
+          "ur": "لندن واپس آ کر ہومز آگ کے پاس بیٹھے اور واٹسن کی طرف دیکھ کر مسکرائے۔",
+          "th": "เมื่อกลับถึงลอนดอน โฮมส์นั่งข้างเตาผิงและยิ้มให้วัตสัน"
+        }
+      },
+      {
+        "id": "cl-hound-098",
+        "english": "\"And now,\" he said, \"shall we go to the opera tonight?\"",
+        "turkish": "\"Ve şimdi,\" dedi, \"bu akşam operaya gidelim mi?\"",
+        "translations": {
+          "es-419": "\"Y ahora\", dijo, \"¿vamos a la ópera esta noche?\"",
+          "pt-BR": "— E agora — disse ele —, que tal irmos à ópera hoje à noite?",
+          "id": "\"Dan sekarang,\" katanya, \"bagaimana kalau malam ini kita pergi ke opera?\"",
+          "ar": "قال: «والآن، هل نذهب إلى الأوبرا الليلة؟»",
+          "vi": "\"Còn bây giờ,\" anh nói, \"tối nay chúng ta đi xem nhạc kịch nhé?\"",
+          "hi": "उन्होंने कहा, \"और अब, क्यों न आज रात ओपेरा देखने चलें?\"",
+          "ru": "«А теперь, — сказал он, — не сходить ли нам сегодня в оперу?»",
+          "bn": "তিনি বললেন, \"আর এখন, আজ রাতে অপেরায় গেলে কেমন হয়?\"",
+          "ur": "انہوں نے کہا، \"اور اب، کیوں نہ آج رات اوپیرا دیکھنے چلیں؟\"",
+          "th": "\"และตอนนี้\" เขาพูด \"คืนนี้เราไปดูอุปรากรกันดีไหม\""
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-hound-baskervilles-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "A family hunts a wild dog to sell it in London",
+          "Holmes solves the mystery of a deadly hound and saves Sir Henry",
+          "Watson buys an old house and lives on the moor",
+          "An escaped prisoner helps the police catch a thief"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-hound-baskervilles-q2",
+        "kind": "detail",
+        "prompt": "What was strange about the letter that Sir Henry received?",
+        "options": [
+          "It was written in blood",
+          "It came from Canada",
+          "Its words were cut from a newspaper",
+          "It had no words at all"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "classic-hound-baskervilles-q3",
+        "kind": "inference",
+        "prompt": "Why did someone steal one of Sir Henry's old boots?",
+        "options": [
+          "So the hound could learn his smell",
+          "Because the boots were very expensive",
+          "To sell it at a London market",
+          "To give it to Barrymore as a present"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "classic-hound-baskervilles-q4",
+        "kind": "detail",
+        "prompt": "Who was Beryl really?",
+        "options": [
+          "Stapleton's sister",
+          "Stapleton's wife",
+          "Barrymore's daughter",
+          "Sir Henry's cousin"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-hound-baskervilles-q5",
+        "kind": "inference",
+        "prompt": "How did Holmes realise that Stapleton wanted the Baskerville money?",
+        "options": [
+          "Stapleton told him at dinner",
+          "He saw Stapleton's face in Hugo's portrait",
+          "Beryl wrote him a letter",
+          "He found a will in the stone hut"
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  "words": [
+    {
+      "id": "hound",
+      "word": "hound",
+      "translation": "av köpeği, tazı",
+      "pronunciation": "/haʊnd/",
+      "example": "The hound ran across the moor.",
+      "translations": {
+        "es-419": "sabueso, perro de caza",
+        "pt-BR": "cão de caça",
+        "id": "anjing pemburu",
+        "ar": "كلب صيد",
+        "vi": "chó săn",
+        "hi": "शिकारी कुत्ता",
+        "ru": "гончая, собака",
+        "bn": "শিকারি কুকুর",
+        "ur": "شکاری کتا",
+        "th": "สุนัขล่าเนื้อ"
+      }
+    },
+    {
+      "id": "moor",
+      "word": "moor",
+      "translation": "bozkır, çorak arazi",
+      "pronunciation": "/mʊə/",
+      "example": "They walked across the wide moor.",
+      "translations": {
+        "es-419": "páramo",
+        "pt-BR": "charneca",
+        "id": "padang belantara",
+        "ar": "أرض بور، براري",
+        "vi": "vùng đồng hoang",
+        "hi": "वीरान मैदान",
+        "ru": "вересковая пустошь, болота",
+        "bn": "প্রান্তর, জলাভূমি",
+        "ur": "ویران میدان",
+        "th": "ทุ่งรกร้าง"
+      }
+    },
+    {
+      "id": "footprints",
+      "word": "footprints",
+      "translation": "ayak izleri",
+      "pronunciation": "/ˈfʊtprɪnts/",
+      "example": "There were footprints in the mud.",
+      "translations": {
+        "es-419": "huellas",
+        "pt-BR": "pegadas",
+        "id": "jejak kaki",
+        "ar": "آثار أقدام",
+        "vi": "dấu chân",
+        "hi": "पैरों के निशान",
+        "ru": "следы",
+        "bn": "পায়ের ছাপ",
+        "ur": "قدموں کے نشان",
+        "th": "รอยเท้า"
+      }
+    },
+    {
+      "id": "fog",
+      "word": "fog",
+      "translation": "sis",
+      "pronunciation": "/fɒɡ/",
+      "example": "A thick fog covered the town.",
+      "translations": {
+        "es-419": "niebla",
+        "pt-BR": "neblina",
+        "id": "kabut",
+        "ar": "ضباب",
+        "vi": "sương mù",
+        "hi": "कोहरा",
+        "ru": "туман",
+        "bn": "কুয়াশা",
+        "ur": "دھند",
+        "th": "หมอก"
+      }
+    },
+    {
+      "id": "prisoner",
+      "word": "prisoner",
+      "translation": "mahkûm",
+      "pronunciation": "/ˈprɪznə/",
+      "example": "The prisoner escaped at night.",
+      "translations": {
+        "es-419": "preso, prisionero",
+        "pt-BR": "prisioneiro",
+        "id": "narapidana, tahanan",
+        "ar": "سجين",
+        "vi": "tù nhân",
+        "hi": "क़ैदी",
+        "ru": "заключённый, каторжник",
+        "bn": "কয়েদি, বন্দি",
+        "ur": "قیدی",
+        "th": "นักโทษ"
+      }
+    },
+    {
+      "id": "howl",
+      "word": "howl",
+      "translation": "uluma",
+      "pronunciation": "/haʊl/",
+      "example": "We heard a howl in the dark.",
+      "translations": {
+        "es-419": "aullido",
+        "pt-BR": "uivo",
+        "id": "lolongan",
+        "ar": "عواء",
+        "vi": "tiếng tru",
+        "hi": "हुँकार, चीख़",
+        "ru": "вой",
+        "bn": "গর্জন, চিৎকার",
+        "ur": "غراہٹ، چیخ",
+        "th": "เสียงหอน"
+      }
+    },
+    {
+      "id": "mire",
+      "word": "mire",
+      "translation": "bataklık",
+      "pronunciation": "/maɪə/",
+      "example": "The horse fell into the mire.",
+      "translations": {
+        "es-419": "ciénaga",
+        "pt-BR": "pântano, lamaçal",
+        "id": "rawa, lumpur",
+        "ar": "مستنقع، وحل",
+        "vi": "đầm lầy",
+        "hi": "दलदल",
+        "ru": "трясина",
+        "bn": "জলা, কাদা",
+        "ur": "دلدل",
+        "th": "หนองโคลน"
+      }
+    },
+    {
+      "id": "path",
+      "word": "path",
+      "translation": "patika",
+      "pronunciation": "/pæθ/",
+      "example": "A narrow path led uphill.",
+      "translations": {
+        "es-419": "sendero, camino",
+        "pt-BR": "trilha, caminho",
+        "id": "jalan setapak",
+        "ar": "ممرّ، درب",
+        "vi": "lối mòn, con đường nhỏ",
+        "hi": "पगडंडी, रास्ता",
+        "ru": "тропинка, дорожка",
+        "bn": "পথ, সরু রাস্তা",
+        "ur": "پگڈنڈی، راستہ",
+        "th": "ทางเดิน"
+      }
+    },
+    {
+      "id": "safe",
+      "word": "safe",
+      "translation": "güvenli",
+      "pronunciation": "/seɪf/",
+      "example": "\"I prefer a simple meal and a safe home.\"",
+      "translations": {
+        "es-419": "seguro",
+        "pt-BR": "seguro",
+        "id": "aman",
+        "ar": "آمن",
+        "vi": "an toàn",
+        "hi": "सुरक्षित",
+        "ru": "безопасный, в безопасности",
+        "bn": "নিরাপদ",
+        "ur": "محفوظ",
+        "th": "ปลอดภัย"
+      }
+    },
+    {
+      "id": "clever",
+      "word": "clever",
+      "translation": "akıllı",
+      "pronunciation": "/ˈklevə(r)/",
+      "example": "A clever idea can solve a difficult problem.",
+      "translations": {
+        "es-419": "listo, inteligente",
+        "pt-BR": "esperto, inteligente",
+        "id": "cerdik, pintar",
+        "ar": "ذكي",
+        "vi": "thông minh, khéo léo",
+        "hi": "चतुर, होशियार",
+        "ru": "умный, сообразительный",
+        "bn": "চালাক, বুদ্ধিমান",
+        "ur": "چالاک، ہوشیار",
+        "th": "ฉลาด"
+      }
+    },
+    {
+      "id": "servant",
+      "word": "servant",
+      "translation": "hizmetçi",
+      "pronunciation": "/ˈsɜːvənt/",
+      "example": "A carriage arrived with the prince's loyal servant, Iron Henry.",
+      "translations": {
+        "es-419": "sirviente",
+        "pt-BR": "criado, criada",
+        "id": "pelayan",
+        "ar": "خادم",
+        "vi": "người hầu",
+        "hi": "नौकर",
+        "ru": "служанка, слуга",
+        "bn": "চাকর, ভৃত্য",
+        "ur": "نوکر، خادم",
+        "th": "คนรับใช้"
+      }
+    },
+    {
+      "id": "journey",
+      "word": "journey",
+      "translation": "yolculuk",
+      "pronunciation": "/ˈdʒɜːrni/",
+      "example": "Every journey starts somewhere.",
+      "translations": {
+        "es-419": "viaje",
+        "pt-BR": "viagem, jornada",
+        "id": "perjalanan",
+        "ar": "رحلة",
+        "vi": "chuyến đi, hành trình",
+        "hi": "सफ़र, यात्रा",
+        "ru": "путешествие, поездка",
+        "bn": "যাত্রা, সফর",
+        "ur": "سفر",
+        "th": "การเดินทาง"
+      }
+    },
+    {
+      "id": "voice",
+      "word": "voice",
+      "translation": "ses",
+      "pronunciation": "/vɔɪs/",
+      "example": "\"You must have a beautiful voice, too.\"",
+      "translations": {
+        "es-419": "voz",
+        "pt-BR": "voz",
+        "id": "suara",
+        "ar": "صوت",
+        "vi": "giọng nói, giọng hát",
+        "hi": "आवाज़",
+        "ru": "голос",
+        "bn": "গলা, কণ্ঠস্বর",
+        "ur": "آواز",
+        "th": "เสียง"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "hound",
+    "moor",
+    "footprints",
+    "fog",
+    "prisoner",
+    "howl",
+    "mire",
+    "path",
+    "safe",
+    "clever",
+    "servant",
+    "journey",
+    "voice"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-hound-baskervilles-q1",
+      "sentenceIds": [
+        "cl-hound-010",
+        "cl-hound-088",
+        "cl-hound-094",
+        "cl-hound-095"
+      ],
+      "rationale": "The legend of the hound is explained, the hound is killed, Stapleton disappears and Sir Henry is safe."
+    },
+    {
+      "questionId": "classic-hound-baskervilles-q2",
+      "sentenceIds": [
+        "cl-hound-029"
+      ],
+      "rationale": "The letter's words were cut from a newspaper and glued onto the paper."
+    },
+    {
+      "questionId": "classic-hound-baskervilles-q3",
+      "sentenceIds": [
+        "cl-hound-038",
+        "cl-hound-075"
+      ],
+      "rationale": "Holmes notes the thief wanted a worn boot, and the hound follows the smell of Sir Henry's old clothes."
+    },
+    {
+      "questionId": "classic-hound-baskervilles-q4",
+      "sentenceIds": [
+        "cl-hound-070"
+      ],
+      "rationale": "Holmes discovered that Beryl was Stapleton's wife, not his sister."
+    },
+    {
+      "questionId": "classic-hound-baskervilles-q5",
+      "sentenceIds": [
+        "cl-hound-077",
+        "cl-hound-078",
+        "cl-hound-079"
+      ],
+      "rationale": "The portrait shows Stapleton is a Baskerville, so he would inherit if Sir Henry died."
+    }
+  ],
+  "publicationBlockers": [
+    "Owner (oguz) approval of the English text, questions and translations required.",
+    "Native-speaker language review not done.",
+    "Source text hash pending (Gutenberg not reachable from the cloud session).",
+    "Publisher story creation, validation and publication pending."
+  ]
+}

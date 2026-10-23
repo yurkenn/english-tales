@@ -1,0 +1,1956 @@
+{
+  "status": "draft",
+  "kind": "long-story",
+  "source": "long-story-classics-2026-10-22",
+  "reviewedBy": null,
+  "rights": {
+    "credit": "H. G. Wells",
+    "sourceTitle": "The Invisible Man",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/5230",
+    "sourceTextUrl": "https://www.gutenberg.org/cache/epub/5230/pg5230-images.html",
+    "identifiedContributor": {
+      "name": "H. G. Wells",
+      "role": "author",
+      "deathYear": 1946
+    },
+    "firstPublished": 1897,
+    "sourceCopyrightStatement": "Public domain in the USA",
+    "checkedOn": "2026-10-22",
+    "adaptation": "New graded B1 retelling written by English Tales, with English Tales translations. No modern abridgement, film script or translation was used.",
+    "turkeyAssessment": "Author died in 1946, more than 70 years before 2026, so the work is out of protection in Turkey and in life+70 countries.",
+    "rightsGuidanceUrl": "https://telifhaklari.ktb.gov.tr/TR-332373/telif-hakki-kac-yil-sureyle-korunur.html",
+    "sourceTextSha256": null,
+    "sourceTextSha256Pending": "Gutenberg is not reachable from the cloud session; record the source text hash on the owner's Mac before publication."
+  },
+  "editorialNotes": [
+    "B1 target: past tense narration, sentences of at most 20 words, about 1,050 words (about 9 minutes of reading).",
+    "Retelling of the 1897 novel's main line: the bandaged stranger at the Iping inn, the burglary, the unmasking, Marvel and the books, Griffin's story told to Kemp, Kemp's note to the police, the hunt and Griffin's death, Marvel and the secret books.",
+    "Violence is kept short and without detail; Griffin's death is told in one plain sentence.",
+    "Reading sections are editorial groupings for a future chapter view; the app currently shows the story as one text."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+  },
+  "readingSections": [
+    {
+      "title": "A stranger in the snow",
+      "firstSentenceId": "cl-invisible-001",
+      "lastSentenceId": "cl-invisible-024"
+    },
+    {
+      "title": "Nobody inside the clothes",
+      "firstSentenceId": "cl-invisible-025",
+      "lastSentenceId": "cl-invisible-045"
+    },
+    {
+      "title": "Griffin's story",
+      "firstSentenceId": "cl-invisible-046",
+      "lastSentenceId": "cl-invisible-064"
+    },
+    {
+      "title": "The hunt",
+      "firstSentenceId": "cl-invisible-065",
+      "lastSentenceId": "cl-invisible-088"
+    }
+  ],
+  "story": {
+    "id": "classic-invisible-man",
+    "title": "The Invisible Man",
+    "author": "H. G. Wells",
+    "level": "B1",
+    "genre": "Gizem",
+    "description": "Görünmez Adam. Başı sargılarla sarılı bir yabancı, karlı bir köy hanına yerleşir; sırrı ortaya çıkınca köy dehşete düşer, çünkü sargıların altında hiçbir şey yoktur. B1 düzeyinde uzun uyarlama. Uyarlama ve Türkçe çeviri: English Tales.",
+    "descriptions": {
+      "es-419": "El hombre invisible. Un desconocido con la cabeza vendada se aloja en una posada de un pueblo nevado; cuando se descubre su secreto, el pueblo entra en pánico, porque bajo las vendas no hay nada. Adaptación larga de nivel B1. Adaptación: English Tales.",
+      "pt-BR": "O homem invisível. Um desconhecido com a cabeça enfaixada se hospeda numa estalagem de uma aldeia coberta de neve; quando o segredo é descoberto, a aldeia entra em pânico, porque sob as ataduras não há nada. Adaptação longa de nível B1. Adaptação: English Tales.",
+      "id": "Manusia Tak Terlihat. Seorang asing berkepala dibalut perban menginap di penginapan sebuah desa bersalju; saat rahasianya terbongkar, desa itu panik, karena di balik perban tidak ada apa-apa. Adaptasi panjang tingkat B1. Adaptasi: English Tales.",
+      "ar": "الرجل الخفيّ. غريب ملفوف الرأس بالضمادات ينزل في نُزُل قرية مغطّاة بالثلج؛ وحين ينكشف سرّه يعمّ الذعر القرية، لأنّه لا شيء تحت الضمادات. اقتباس طويل بمستوى B1. الاقتباس: English Tales.",
+      "vi": "Người vô hình. Một người lạ quấn băng kín đầu đến trọ tại quán trọ của một ngôi làng phủ tuyết; khi bí mật bị lộ, cả làng hoảng loạn, vì bên dưới lớp băng chẳng có gì. Bản phóng tác dài trình độ B1. Phóng tác: English Tales.",
+      "hi": "अदृश्य आदमी। सिर पर पट्टियाँ लपेटे एक अजनबी बर्फ़ से ढके गाँव की सराय में ठहरता है; जब उसका रहस्य खुलता है, तो गाँव दहशत में आ जाता है, क्योंकि पट्टियों के नीचे कुछ भी नहीं है। B1 स्तर का लंबा रूपांतरण। रूपांतरण: English Tales.",
+      "ru": "Человек-невидимка. Незнакомец с забинтованной головой поселяется в гостинице заснеженной деревни; когда его тайна раскрывается, деревню охватывает ужас: под бинтами ничего нет. Длинный пересказ уровня B1. Адаптация: English Tales.",
+      "bn": "অদৃশ্য মানুষ। মাথায় ব্যান্ডেজ জড়ানো এক অচেনা লোক বরফে ঢাকা গ্রামের সরাইখানায় ওঠে; তার রহস্য ফাঁস হলে গ্রামে আতঙ্ক ছড়ায়, কারণ ব্যান্ডেজের নিচে কিছুই নেই। B1 স্তরের দীর্ঘ রূপান্তর। রূপান্তর: English Tales.",
+      "ur": "غائب آدمی۔ سر پر پٹیاں لپیٹے ایک اجنبی برف سے ڈھکے گاؤں کی سرائے میں ٹھہرتا ہے؛ جب اس کا راز کھلتا ہے تو گاؤں میں دہشت پھیل جاتی ہے، کیونکہ پٹیوں کے نیچے کچھ بھی نہیں۔ B1 سطح کی طویل ماخوذ کہانی۔ ماخوذ: English Tales.",
+      "th": "มนุษย์ล่องหน ชายแปลกหน้าที่พันผ้าพันแผลทั้งศีรษะมาพักที่โรงเตี๊ยมในหมู่บ้านที่หิมะปกคลุม เมื่อความลับถูกเปิดเผย ทั้งหมู่บ้านก็ตื่นตระหนก เพราะใต้ผ้าพันแผลไม่มีอะไรเลย ฉบับเรียบเรียงยาวระดับ B1 เรียบเรียงโดย English Tales"
+    },
+    "coverKey": "cover_classic_invisible_man",
+    "tags": [
+      "gizem"
+    ],
+    "sentences": [
+      {
+        "id": "cl-invisible-001",
+        "english": "On a cold February day, a stranger walked through the snow into the village of Iping.",
+        "turkish": "Soğuk bir şubat gününde bir yabancı, karların içinden yürüyerek Iping köyüne geldi.",
+        "translations": {
+          "es-419": "Un frío día de febrero, un desconocido llegó caminando por la nieve al pueblo de Iping.",
+          "pt-BR": "Num dia frio de fevereiro, um desconhecido chegou caminhando pela neve à aldeia de Iping.",
+          "id": "Pada suatu hari yang dingin di bulan Februari, seorang asing berjalan menembus salju ke desa Iping.",
+          "ar": "في يوم بارد من شهر فبراير، دخل غريب قرية آيبينغ ماشيًا عبر الثلج.",
+          "vi": "Vào một ngày tháng Hai lạnh giá, một người lạ băng qua tuyết đi vào làng Iping.",
+          "hi": "फ़रवरी के एक ठंडे दिन एक अजनबी बर्फ़ में चलता हुआ आइपिंग गाँव में आया।",
+          "ru": "Холодным февральским днём в деревню Айпинг сквозь снег пришёл незнакомец.",
+          "bn": "ফেব্রুয়ারির এক ঠান্ডা দিনে এক অচেনা লোক বরফের মধ্য দিয়ে হেঁটে আইপিং গ্রামে এল।",
+          "ur": "فروری کے ایک ٹھنڈے دن ایک اجنبی برف میں چلتا ہوا آئپنگ گاؤں میں آیا۔",
+          "th": "ในวันที่หนาวเหน็บวันหนึ่งของเดือนกุมภาพันธ์ ชายแปลกหน้าคนหนึ่งเดินฝ่าหิมะเข้ามาในหมู่บ้านไอปิ้ง"
+        }
+      },
+      {
+        "id": "cl-invisible-002",
+        "english": "He went into the village inn and asked for a room and a fire.",
+        "turkish": "Köyün hanına girdi, bir oda ve yanan bir ocak istedi.",
+        "translations": {
+          "es-419": "Entró en la posada del pueblo y pidió una habitación y fuego.",
+          "pt-BR": "Ele entrou na estalagem da aldeia e pediu um quarto e uma lareira acesa.",
+          "id": "Ia masuk ke penginapan desa dan meminta sebuah kamar dan perapian yang menyala.",
+          "ar": "دخل نُزُل القرية وطلب غرفة ونارًا.",
+          "vi": "Ông ta bước vào quán trọ của làng, xin một phòng và một lò sưởi.",
+          "hi": "वह गाँव की सराय में गया और एक कमरा और आग माँगी।",
+          "ru": "Он зашёл в деревенскую гостиницу и попросил комнату и огонь в камине.",
+          "bn": "সে গ্রামের সরাইখানায় ঢুকে একটা ঘর আর আগুন চাইল।",
+          "ur": "وہ گاؤں کی سرائے میں گیا اور ایک کمرہ اور آگ مانگی۔",
+          "th": "เขาเข้าไปในโรงเตี๊ยมของหมู่บ้าน ขอห้องพักหนึ่งห้องและไฟผิงสักกอง"
+        }
+      },
+      {
+        "id": "cl-invisible-003",
+        "english": "He wore a long coat, thick gloves and a wide hat.",
+        "turkish": "Uzun bir palto, kalın eldivenler ve geniş bir şapka giyiyordu.",
+        "translations": {
+          "es-419": "Llevaba un abrigo largo, guantes gruesos y un sombrero ancho.",
+          "pt-BR": "Ele usava um casaco comprido, luvas grossas e um chapéu largo.",
+          "id": "Ia memakai mantel panjang, sarung tangan tebal, dan topi lebar.",
+          "ar": "كان يرتدي معطفًا طويلًا وقفّازين سميكين وقبّعة عريضة.",
+          "vi": "Ông ta mặc áo choàng dài, đeo găng tay dày và đội mũ rộng vành.",
+          "hi": "उसने लंबा कोट, मोटे दस्ताने और चौड़ी टोपी पहनी थी।",
+          "ru": "На нём было длинное пальто, толстые перчатки и широкая шляпа.",
+          "bn": "তার পরনে ছিল লম্বা কোট, মোটা দস্তানা আর চওড়া টুপি।",
+          "ur": "اس نے لمبا کوٹ، موٹے دستانے اور چوڑی ٹوپی پہن رکھی تھی۔",
+          "th": "เขาสวมเสื้อโค้ตยาว ถุงมือหนา และหมวกปีกกว้าง"
+        }
+      },
+      {
+        "id": "cl-invisible-004",
+        "english": "His whole head was wrapped in white bandages, and he wore big blue glasses.",
+        "turkish": "Bütün başı beyaz sargılarla sarılıydı ve iri, mavi gözlükler takıyordu.",
+        "translations": {
+          "es-419": "Tenía toda la cabeza envuelta en vendas blancas y llevaba unas grandes gafas azules.",
+          "pt-BR": "A cabeça inteira estava enrolada em ataduras brancas, e ele usava óculos azuis enormes.",
+          "id": "Seluruh kepalanya dibalut perban putih, dan ia memakai kacamata biru yang besar.",
+          "ar": "كان رأسه كلّه ملفوفًا بضمادات بيضاء، ويضع نظّارة زرقاء كبيرة.",
+          "vi": "Cả đầu ông ta quấn băng trắng, và ông ta đeo cặp kính xanh to.",
+          "hi": "उसका पूरा सिर सफ़ेद पट्टियों में लिपटा था, और उसने बड़ा नीला चश्मा लगा रखा था।",
+          "ru": "Вся его голова была обмотана белыми бинтами, а на глазах были большие синие очки.",
+          "bn": "তার গোটা মাথা সাদা ব্যান্ডেজে মোড়া, আর চোখে বড় নীল চশমা।",
+          "ur": "اس کا پورا سر سفید پٹیوں میں لپٹا تھا، اور اس نے بڑی نیلی عینک لگا رکھی تھی۔",
+          "th": "ศีรษะของเขาพันด้วยผ้าพันแผลสีขาวทั้งหัว และสวมแว่นตาสีฟ้าอันใหญ่"
+        }
+      },
+      {
+        "id": "cl-invisible-005",
+        "english": "Only the pink tip of his nose could be seen.",
+        "turkish": "Yalnızca burnunun pembe ucu görünüyordu.",
+        "translations": {
+          "es-419": "Solo se le veía la punta rosada de la nariz.",
+          "pt-BR": "Só dava para ver a ponta rosada do nariz.",
+          "id": "Hanya ujung hidungnya yang merah muda yang terlihat.",
+          "ar": "لم يكن يُرى منه سوى طرف أنفه الورديّ.",
+          "vi": "Chỉ thấy được mỗi chóp mũi màu hồng của ông ta.",
+          "hi": "सिर्फ़ उसकी नाक की गुलाबी नोक दिखाई देती थी।",
+          "ru": "Был виден только розовый кончик носа.",
+          "bn": "শুধু তার নাকের গোলাপি ডগাটুকু দেখা যাচ্ছিল।",
+          "ur": "صرف اس کی ناک کی گلابی نوک دکھائی دیتی تھی۔",
+          "th": "มองเห็นได้เพียงปลายจมูกสีชมพูของเขาเท่านั้น"
+        }
+      },
+      {
+        "id": "cl-invisible-006",
+        "english": "Mrs Hall, who kept the inn, was happy to have a guest in winter.",
+        "turkish": "Hanı işleten Bayan Hall, kışın bir müşterisi olduğu için sevinçliydi.",
+        "translations": {
+          "es-419": "La señora Hall, dueña de la posada, estaba contenta de tener un huésped en invierno.",
+          "pt-BR": "A senhora Hall, dona da estalagem, ficou feliz por ter um hóspede no inverno.",
+          "id": "Nyonya Hall, pemilik penginapan, senang ada tamu di musim dingin.",
+          "ar": "كانت السيّدة هول، صاحبة النُّزُل، سعيدة بوجود نزيل في الشتاء.",
+          "vi": "Bà Hall, chủ quán trọ, rất mừng vì có khách vào mùa đông.",
+          "hi": "सराय चलाने वाली मिसेज़ हॉल सर्दियों में एक मेहमान पाकर ख़ुश थीं।",
+          "ru": "Миссис Холл, хозяйка гостиницы, была рада постояльцу зимой.",
+          "bn": "সরাইখানার মালকিন মিসেস হল শীতকালে একজন অতিথি পেয়ে খুশি হলেন।",
+          "ur": "سرائے چلانے والی مسز ہال سردیوں میں ایک مہمان پا کر خوش تھیں۔",
+          "th": "นางฮอลล์ เจ้าของโรงเตี๊ยม ดีใจที่มีแขกมาพักในหน้าหนาว"
+        }
+      },
+      {
+        "id": "cl-invisible-007",
+        "english": "\"I think he had an accident,\" she told her neighbors.",
+        "turkish": "\"Sanırım bir kaza geçirmiş,\" dedi komşularına.",
+        "translations": {
+          "es-419": "—Creo que tuvo un accidente —les dijo a sus vecinos.",
+          "pt-BR": "— Acho que ele sofreu um acidente — disse ela aos vizinhos.",
+          "id": "\"Kurasa ia mengalami kecelakaan,\" katanya kepada para tetangga.",
+          "ar": "قالت لجيرانها: «أظنّ أنّه تعرّض لحادث».",
+          "vi": "\"Tôi nghĩ ông ta bị tai nạn,\" bà nói với hàng xóm.",
+          "hi": "\"मुझे लगता है उसके साथ कोई दुर्घटना हुई है,\" उन्होंने पड़ोसियों से कहा।",
+          "ru": "«Наверное, с ним случилось несчастье», — сказала она соседям.",
+          "bn": "\"মনে হয় ওঁর কোনো দুর্ঘটনা ঘটেছে,\" তিনি প্রতিবেশীদের বললেন।",
+          "ur": "\"میرا خیال ہے اس کے ساتھ کوئی حادثہ ہوا ہے،\" انہوں نے پڑوسیوں سے کہا۔",
+          "th": "\"ฉันว่าเขาคงประสบอุบัติเหตุมา\" นางบอกเพื่อนบ้าน"
+        }
+      },
+      {
+        "id": "cl-invisible-008",
+        "english": "But the stranger was not friendly at all.",
+        "turkish": "Ama yabancı hiç de dost canlısı değildi.",
+        "translations": {
+          "es-419": "Pero el desconocido no era nada amable.",
+          "pt-BR": "Mas o desconhecido não era nada simpático.",
+          "id": "Tetapi orang asing itu sama sekali tidak ramah.",
+          "ar": "لكنّ الغريب لم يكن ودودًا على الإطلاق.",
+          "vi": "Nhưng người lạ chẳng thân thiện chút nào.",
+          "hi": "पर अजनबी बिल्कुल भी मिलनसार नहीं था।",
+          "ru": "Но незнакомец был совсем не приветлив.",
+          "bn": "কিন্তু অচেনা লোকটি একটুও মিশুক ছিল না।",
+          "ur": "مگر اجنبی ذرا بھی ملنسار نہیں تھا۔",
+          "th": "แต่ชายแปลกหน้าไม่เป็นมิตรเลยสักนิด"
+        }
+      },
+      {
+        "id": "cl-invisible-009",
+        "english": "He kept his door locked and shouted at anyone who came in.",
+        "turkish": "Kapısını kilitli tutuyor, içeri giren herkese bağırıyordu.",
+        "translations": {
+          "es-419": "Mantenía la puerta cerrada con llave y le gritaba a quien entrara.",
+          "pt-BR": "Mantinha a porta trancada e gritava com quem entrasse.",
+          "id": "Ia selalu mengunci pintunya dan membentak siapa pun yang masuk.",
+          "ar": "كان يُبقي بابه مقفلًا ويصرخ في كلّ من يدخل.",
+          "vi": "Ông ta luôn khóa cửa và quát tháo bất cứ ai bước vào.",
+          "hi": "वह अपना दरवाज़ा बंद रखता और जो भी अंदर आता, उस पर चिल्लाता।",
+          "ru": "Он держал дверь на замке и кричал на всякого, кто входил.",
+          "bn": "সে দরজা তালা দিয়ে রাখত আর কেউ ঢুকলেই চেঁচাত।",
+          "ur": "وہ اپنا دروازہ بند رکھتا اور جو بھی اندر آتا، اس پر چلاتا۔",
+          "th": "เขาล็อกประตูไว้ตลอด และตะคอกใส่ใครก็ตามที่เข้ามา"
+        }
+      },
+      {
+        "id": "cl-invisible-010",
+        "english": "\"I am a scientist, and I need to be alone for my work,\" he said.",
+        "turkish": "\"Ben bir bilim insanıyım ve çalışmam için yalnız kalmam gerek,\" dedi.",
+        "translations": {
+          "es-419": "—Soy científico y necesito estar solo para mi trabajo —dijo.",
+          "pt-BR": "— Sou cientista e preciso ficar sozinho para o meu trabalho — disse ele.",
+          "id": "\"Aku seorang ilmuwan, dan aku perlu menyendiri untuk pekerjaanku,\" katanya.",
+          "ar": "قال: «أنا عالِم، وأحتاج إلى أن أكون وحدي من أجل عملي».",
+          "vi": "\"Tôi là nhà khoa học, và tôi cần ở một mình để làm việc,\" ông ta nói.",
+          "hi": "\"मैं एक वैज्ञानिक हूँ, और अपने काम के लिए मुझे अकेला रहना है,\" उसने कहा।",
+          "ru": "«Я учёный, и для работы мне нужно одиночество», — сказал он.",
+          "bn": "\"আমি একজন বিজ্ঞানী, কাজের জন্য আমার একা থাকা দরকার,\" সে বলল।",
+          "ur": "\"میں ایک سائنس دان ہوں، اور اپنے کام کے لیے مجھے اکیلا رہنا ہے،\" اس نے کہا۔",
+          "th": "\"ผมเป็นนักวิทยาศาสตร์ และต้องอยู่คนเดียวเพื่อทำงาน\" เขาพูด"
+        }
+      },
+      {
+        "id": "cl-invisible-011",
+        "english": "Soon many boxes arrived for him, full of bottles and glass tubes.",
+        "turkish": "Çok geçmeden ona şişeler ve cam tüplerle dolu bir sürü kutu geldi.",
+        "translations": {
+          "es-419": "Pronto le llegaron muchas cajas llenas de botellas y tubos de vidrio.",
+          "pt-BR": "Logo chegaram para ele muitas caixas cheias de frascos e tubos de vidro.",
+          "id": "Tak lama kemudian, banyak kotak tiba untuknya, penuh botol dan tabung kaca.",
+          "ar": "وسرعان ما وصلته صناديق كثيرة مليئة بالزجاجات والأنابيب الزجاجية.",
+          "vi": "Chẳng bao lâu, nhiều thùng hàng gửi đến cho ông ta, đầy chai lọ và ống thủy tinh.",
+          "hi": "जल्दी ही उसके लिए बहुत-से बक्से आए, बोतलों और काँच की नलियों से भरे।",
+          "ru": "Вскоре ему привезли много ящиков с бутылками и стеклянными трубками.",
+          "bn": "শিগগিরই তার জন্য অনেক বাক্স এল, বোতল আর কাচের নলে ভরা।",
+          "ur": "جلد ہی اس کے لیے بہت سے صندوق آئے، بوتلوں اور شیشے کی نلکیوں سے بھرے۔",
+          "th": "ไม่นานก็มีกล่องหลายใบส่งมาถึงเขา เต็มไปด้วยขวดและหลอดแก้ว"
+        }
+      },
+      {
+        "id": "cl-invisible-012",
+        "english": "All day and night he worked on some strange experiment.",
+        "turkish": "Gece gündüz garip bir deney üzerinde çalıştı.",
+        "translations": {
+          "es-419": "Día y noche trabajaba en algún experimento extraño.",
+          "pt-BR": "Dia e noite ele trabalhava em alguma experiência estranha.",
+          "id": "Siang dan malam ia mengerjakan suatu percobaan yang aneh.",
+          "ar": "كان يعمل ليلًا ونهارًا على تجربة غريبة.",
+          "vi": "Ngày đêm ông ta miệt mài với một thí nghiệm kỳ lạ nào đó.",
+          "hi": "दिन-रात वह किसी अजीब प्रयोग में लगा रहता।",
+          "ru": "Днём и ночью он работал над каким-то странным опытом.",
+          "bn": "দিনরাত সে কোনো এক অদ্ভুত পরীক্ষা নিয়ে কাজ করত।",
+          "ur": "دن رات وہ کسی عجیب تجربے میں لگا رہتا۔",
+          "th": "เขาทำการทดลองประหลาดบางอย่างทั้งวันทั้งคืน"
+        }
+      },
+      {
+        "id": "cl-invisible-013",
+        "english": "The room smelled of chemicals, and the floor was covered with broken glass.",
+        "turkish": "Oda kimyasal kokuyordu ve yer kırık camlarla kaplıydı.",
+        "translations": {
+          "es-419": "La habitación olía a productos químicos, y el suelo estaba cubierto de vidrios rotos.",
+          "pt-BR": "O quarto cheirava a produtos químicos, e o chão estava coberto de vidro quebrado.",
+          "id": "Kamar itu berbau bahan kimia, dan lantainya penuh pecahan kaca.",
+          "ar": "كانت الغرفة تفوح برائحة الموادّ الكيميائية، والأرض مغطّاة بالزجاج المكسور.",
+          "vi": "Căn phòng nồng mùi hóa chất, và sàn nhà đầy mảnh thủy tinh vỡ.",
+          "hi": "कमरे से रसायनों की गंध आती थी, और फ़र्श टूटे काँच से भरा था।",
+          "ru": "В комнате пахло химикатами, а пол был усыпан битым стеклом.",
+          "bn": "ঘরে রাসায়নিকের গন্ধ, আর মেঝে ভাঙা কাচে ঢাকা।",
+          "ur": "کمرے سے کیمیکلز کی بو آتی تھی، اور فرش ٹوٹے شیشے سے بھرا تھا۔",
+          "th": "ห้องนั้นมีกลิ่นสารเคมี และพื้นเต็มไปด้วยเศษแก้วแตก"
+        }
+      },
+      {
+        "id": "cl-invisible-014",
+        "english": "One day Mrs Hall went in without knocking.",
+        "turkish": "Bir gün Bayan Hall kapıyı çalmadan içeri girdi.",
+        "translations": {
+          "es-419": "Un día la señora Hall entró sin llamar.",
+          "pt-BR": "Um dia a senhora Hall entrou sem bater.",
+          "id": "Suatu hari Nyonya Hall masuk tanpa mengetuk pintu.",
+          "ar": "في أحد الأيّام دخلت السيّدة هول من دون أن تطرق الباب.",
+          "vi": "Một hôm bà Hall đi vào mà không gõ cửa.",
+          "hi": "एक दिन मिसेज़ हॉल बिना दस्तक दिए अंदर चली गईं।",
+          "ru": "Однажды миссис Холл вошла без стука.",
+          "bn": "একদিন মিসেস হল দরজায় টোকা না দিয়েই ভেতরে ঢুকে পড়লেন।",
+          "ur": "ایک دن مسز ہال دستک دیے بغیر اندر چلی گئیں۔",
+          "th": "วันหนึ่งนางฮอลล์เข้าไปโดยไม่ได้เคาะประตู"
+        }
+      },
+      {
+        "id": "cl-invisible-015",
+        "english": "The stranger had no bandages on, and he held a napkin over his face.",
+        "turkish": "Yabancının başında sargı yoktu ve yüzünü bir peçeteyle kapatıyordu.",
+        "translations": {
+          "es-419": "El desconocido no llevaba las vendas, y se tapaba la cara con una servilleta.",
+          "pt-BR": "O desconhecido estava sem as ataduras e segurava um guardanapo sobre o rosto.",
+          "id": "Orang asing itu tidak memakai perban, dan ia menutupi wajahnya dengan serbet.",
+          "ar": "لم يكن الغريب يضع ضماداته، وكان يغطّي وجهه بمنديل.",
+          "vi": "Người lạ không quấn băng, và ông ta lấy khăn ăn che mặt.",
+          "hi": "अजनबी ने पट्टियाँ नहीं बाँधी थीं, और उसने अपने चेहरे पर नैपकिन रखा हुआ था।",
+          "ru": "Незнакомец был без бинтов и прикрывал лицо салфеткой.",
+          "bn": "অচেনা লোকটির মাথায় ব্যান্ডেজ ছিল না, আর সে মুখের ওপর একটা ন্যাপকিন ধরে ছিল।",
+          "ur": "اجنبی نے پٹیاں نہیں باندھی تھیں، اور اس نے اپنے چہرے پر نیپکن رکھا ہوا تھا۔",
+          "th": "ชายแปลกหน้าไม่ได้พันผ้าพันแผล และเอาผ้าเช็ดปากปิดหน้าไว้"
+        }
+      },
+      {
+        "id": "cl-invisible-016",
+        "english": "Below the napkin, there seemed to be a huge dark hole where his mouth should be.",
+        "turkish": "Peçetenin altında, ağzının olması gereken yerde kocaman, karanlık bir delik var gibiydi.",
+        "translations": {
+          "es-419": "Debajo de la servilleta parecía haber un enorme agujero oscuro donde debía estar la boca.",
+          "pt-BR": "Debaixo do guardanapo parecia haver um enorme buraco escuro no lugar da boca.",
+          "id": "Di bawah serbet itu, seolah ada lubang gelap yang besar di tempat mulutnya seharusnya berada.",
+          "ar": "تحت المنديل، بدا كأنّ هناك ثقبًا مظلمًا كبيرًا في مكان فمه.",
+          "vi": "Bên dưới chiếc khăn, dường như có một cái hố đen khổng lồ ở chỗ lẽ ra là miệng.",
+          "hi": "नैपकिन के नीचे, जहाँ उसका मुँह होना चाहिए था, वहाँ एक बड़ा काला गड्ढा-सा लगता था।",
+          "ru": "Под салфеткой, на месте рта, словно зияла огромная тёмная дыра.",
+          "bn": "ন্যাপকিনের নিচে, যেখানে মুখ থাকার কথা, সেখানে যেন একটা বিশাল কালো গর্ত।",
+          "ur": "نیپکن کے نیچے، جہاں اس کا منہ ہونا چاہیے تھا، وہاں ایک بڑا کالا گڑھا سا لگتا تھا۔",
+          "th": "ใต้ผ้าเช็ดปากนั้น ดูเหมือนจะมีหลุมดำขนาดใหญ่อยู่ตรงที่ควรจะเป็นปาก"
+        }
+      },
+      {
+        "id": "cl-invisible-017",
+        "english": "Mrs Hall ran out, telling herself that she had imagined it.",
+        "turkish": "Bayan Hall, bunu hayal ettiğini kendi kendine söyleyerek dışarı koştu.",
+        "translations": {
+          "es-419": "La señora Hall salió corriendo, diciéndose que lo había imaginado.",
+          "pt-BR": "A senhora Hall saiu correndo, dizendo a si mesma que tinha imaginado aquilo.",
+          "id": "Nyonya Hall berlari keluar, sambil meyakinkan diri bahwa ia hanya membayangkannya.",
+          "ar": "ركضت السيّدة هول إلى الخارج وهي تقول لنفسها إنّها تخيّلت ذلك.",
+          "vi": "Bà Hall chạy ra, tự nhủ rằng mình chỉ tưởng tượng thôi.",
+          "hi": "मिसेज़ हॉल बाहर भागीं, ख़ुद से कहती हुई कि यह उनका वहम था।",
+          "ru": "Миссис Холл выбежала, убеждая себя, что ей это померещилось.",
+          "bn": "মিসেস হল দৌড়ে বেরিয়ে এলেন, নিজেকে বোঝালেন যে এটা তাঁর কল্পনা।",
+          "ur": "مسز ہال باہر بھاگیں، خود سے کہتی ہوئی کہ یہ ان کا وہم تھا۔",
+          "th": "นางฮอลล์วิ่งออกมา พลางบอกตัวเองว่าคงคิดไปเอง"
+        }
+      },
+      {
+        "id": "cl-invisible-018",
+        "english": "The villagers began to talk about the strange man.",
+        "turkish": "Köylüler bu tuhaf adam hakkında konuşmaya başladı.",
+        "translations": {
+          "es-419": "Los del pueblo empezaron a hablar del hombre extraño.",
+          "pt-BR": "Os moradores da aldeia começaram a falar do homem estranho.",
+          "id": "Penduduk desa mulai membicarakan pria aneh itu.",
+          "ar": "بدأ أهل القرية يتحدّثون عن الرجل الغريب.",
+          "vi": "Dân làng bắt đầu bàn tán về người đàn ông kỳ lạ.",
+          "hi": "गाँव वाले उस अजीब आदमी के बारे में बातें करने लगे।",
+          "ru": "Деревенские стали судачить о странном человеке.",
+          "bn": "গ্রামের লোকেরা সেই অদ্ভুত লোকটাকে নিয়ে কথা বলতে লাগল।",
+          "ur": "گاؤں والے اس عجیب آدمی کے بارے میں باتیں کرنے لگے۔",
+          "th": "ชาวบ้านเริ่มพูดถึงชายประหลาดคนนี้"
+        }
+      },
+      {
+        "id": "cl-invisible-019",
+        "english": "Some said he was a criminal hiding from the police.",
+        "turkish": "Bazıları onun polisten saklanan bir suçlu olduğunu söyledi.",
+        "translations": {
+          "es-419": "Algunos decían que era un criminal escondido de la policía.",
+          "pt-BR": "Alguns diziam que ele era um criminoso fugindo da polícia.",
+          "id": "Ada yang bilang ia penjahat yang bersembunyi dari polisi.",
+          "ar": "قال بعضهم إنّه مجرم يختبئ من الشرطة.",
+          "vi": "Có người bảo ông ta là tội phạm đang trốn cảnh sát.",
+          "hi": "कुछ ने कहा कि वह पुलिस से छिपा हुआ कोई अपराधी है।",
+          "ru": "Одни говорили, что он преступник, который прячется от полиции.",
+          "bn": "কেউ কেউ বলল, সে পুলিশের কাছ থেকে লুকিয়ে থাকা কোনো অপরাধী।",
+          "ur": "کچھ نے کہا کہ وہ پولیس سے چھپا ہوا کوئی مجرم ہے۔",
+          "th": "บางคนว่าเขาเป็นอาชญากรที่หลบหนีตำรวจ"
+        }
+      },
+      {
+        "id": "cl-invisible-020",
+        "english": "Others said he was a man with a terrible illness of the skin.",
+        "turkish": "Diğerleri onun korkunç bir cilt hastalığı olan bir adam olduğunu söyledi.",
+        "translations": {
+          "es-419": "Otros decían que tenía una terrible enfermedad de la piel.",
+          "pt-BR": "Outros diziam que ele tinha uma doença terrível de pele.",
+          "id": "Yang lain bilang ia pria yang mengidap penyakit kulit yang parah.",
+          "ar": "وقال آخرون إنّه رجل مصاب بمرض جلديّ رهيب.",
+          "vi": "Người khác lại bảo ông ta mắc một căn bệnh da khủng khiếp.",
+          "hi": "दूसरों ने कहा कि उसे त्वचा की कोई भयानक बीमारी है।",
+          "ru": "Другие — что у него ужасная кожная болезнь.",
+          "bn": "অন্যেরা বলল, তার চামড়ার কোনো ভয়ংকর অসুখ আছে।",
+          "ur": "دوسروں نے کہا کہ اسے جلد کی کوئی خوفناک بیماری ہے۔",
+          "th": "บางคนก็ว่าเขาเป็นโรคผิวหนังร้ายแรง"
+        }
+      },
+      {
+        "id": "cl-invisible-021",
+        "english": "Then, early one morning, someone robbed the vicar's house.",
+        "turkish": "Sonra bir sabah erkenden biri papazın evini soydu.",
+        "translations": {
+          "es-419": "Entonces, una mañana temprano, alguien robó en la casa del párroco.",
+          "pt-BR": "Então, numa manhã bem cedo, alguém roubou a casa do vigário.",
+          "id": "Lalu, pada suatu pagi buta, seseorang merampok rumah pendeta desa.",
+          "ar": "ثمّ، في صباح باكر، سرق أحدهم بيت كاهن القرية.",
+          "vi": "Rồi một sáng sớm, có kẻ trộm vào nhà ông mục sư.",
+          "hi": "फिर एक सुबह तड़के किसी ने पादरी के घर में चोरी कर ली।",
+          "ru": "А потом однажды рано утром кто-то обокрал дом викария.",
+          "bn": "তারপর এক ভোরে কেউ পাদ্রির বাড়িতে চুরি করল।",
+          "ur": "پھر ایک صبح سویرے کسی نے پادری کے گھر چوری کر لی۔",
+          "th": "แล้วเช้าตรู่วันหนึ่ง ก็มีคนขโมยของในบ้านของบาทหลวง"
+        }
+      },
+      {
+        "id": "cl-invisible-022",
+        "english": "The vicar heard footsteps and saw his money disappear from the desk.",
+        "turkish": "Papaz ayak sesleri duydu ve parasının masadan kaybolduğunu gördü.",
+        "translations": {
+          "es-419": "El párroco oyó pasos y vio desaparecer su dinero del escritorio.",
+          "pt-BR": "O vigário ouviu passos e viu o dinheiro sumir da escrivaninha.",
+          "id": "Pendeta itu mendengar langkah kaki dan melihat uangnya lenyap dari meja.",
+          "ar": "سمع الكاهن خطوات ورأى ماله يختفي من على المكتب.",
+          "vi": "Ông mục sư nghe tiếng bước chân và thấy tiền của mình biến mất khỏi bàn.",
+          "hi": "पादरी ने क़दमों की आहट सुनी और अपने पैसे मेज़ से ग़ायब होते देखे।",
+          "ru": "Викарий услышал шаги и увидел, как его деньги исчезли со стола.",
+          "bn": "পাদ্রি পায়ের শব্দ শুনলেন আর দেখলেন তাঁর টাকা টেবিল থেকে উধাও হয়ে গেল।",
+          "ur": "پادری نے قدموں کی آہٹ سنی اور اپنے پیسے میز سے غائب ہوتے دیکھے۔",
+          "th": "บาทหลวงได้ยินเสียงฝีเท้า และเห็นเงินของตนหายไปจากโต๊ะ"
+        }
+      },
+      {
+        "id": "cl-invisible-023",
+        "english": "But there was nobody in the room.",
+        "turkish": "Ama odada kimse yoktu.",
+        "translations": {
+          "es-419": "Pero no había nadie en la habitación.",
+          "pt-BR": "Mas não havia ninguém no quarto.",
+          "id": "Tetapi tidak ada siapa pun di ruangan itu.",
+          "ar": "لكن لم يكن في الغرفة أحد.",
+          "vi": "Nhưng trong phòng không có ai cả.",
+          "hi": "पर कमरे में कोई नहीं था।",
+          "ru": "Но в комнате никого не было.",
+          "bn": "কিন্তু ঘরে কেউ ছিল না।",
+          "ur": "مگر کمرے میں کوئی نہیں تھا۔",
+          "th": "แต่ในห้องไม่มีใครอยู่เลย"
+        }
+      },
+      {
+        "id": "cl-invisible-024",
+        "english": "That same day, the stranger suddenly had money to pay his bill.",
+        "turkish": "Aynı gün yabancının birden hesabını ödeyecek parası oldu.",
+        "translations": {
+          "es-419": "Ese mismo día, el desconocido de pronto tuvo dinero para pagar su cuenta.",
+          "pt-BR": "Naquele mesmo dia, o desconhecido de repente tinha dinheiro para pagar a conta.",
+          "id": "Hari itu juga, orang asing itu tiba-tiba punya uang untuk membayar tagihannya.",
+          "ar": "وفي اليوم نفسه، صار لدى الغريب فجأة مال ليدفع حسابه.",
+          "vi": "Ngay hôm đó, người lạ bỗng có tiền trả hóa đơn.",
+          "hi": "उसी दिन अजनबी के पास अचानक अपना बिल चुकाने के पैसे आ गए।",
+          "ru": "В тот же день у незнакомца вдруг появились деньги, чтобы оплатить счёт.",
+          "bn": "সেই দিনই অচেনা লোকটির কাছে হঠাৎ বিল মেটানোর টাকা চলে এল।",
+          "ur": "اسی دن اجنبی کے پاس اچانک اپنا بل ادا کرنے کے پیسے آ گئے۔",
+          "th": "ในวันเดียวกันนั้น ชายแปลกหน้าก็มีเงินจ่ายค่าห้องขึ้นมาทันที"
+        }
+      },
+      {
+        "id": "cl-invisible-025",
+        "english": "A few days later, Mrs Hall asked the stranger for her rent.",
+        "turkish": "Birkaç gün sonra Bayan Hall yabancıdan kirasını istedi.",
+        "translations": {
+          "es-419": "Unos días después, la señora Hall le pidió el alquiler al desconocido.",
+          "pt-BR": "Alguns dias depois, a senhora Hall cobrou o aluguel do desconhecido.",
+          "id": "Beberapa hari kemudian, Nyonya Hall meminta uang sewa kepada orang asing itu.",
+          "ar": "بعد أيّام قليلة، طالبت السيّدة هول الغريب بالأجرة.",
+          "vi": "Vài ngày sau, bà Hall đòi người lạ trả tiền phòng.",
+          "hi": "कुछ दिन बाद मिसेज़ हॉल ने अजनबी से किराया माँगा।",
+          "ru": "Через несколько дней миссис Холл потребовала у незнакомца плату за комнату.",
+          "bn": "কয়েক দিন পর মিসেস হল অচেনা লোকটির কাছে ভাড়া চাইলেন।",
+          "ur": "چند دن بعد مسز ہال نے اجنبی سے کرایہ مانگا۔",
+          "th": "ไม่กี่วันต่อมา นางฮอลล์ขอค่าเช่าห้องจากชายแปลกหน้า"
+        }
+      },
+      {
+        "id": "cl-invisible-026",
+        "english": "She also asked about the strange noises and the broken furniture.",
+        "turkish": "Ayrıca tuhaf seslerin ve kırık mobilyaların nedenini sordu.",
+        "translations": {
+          "es-419": "También le preguntó por los ruidos extraños y los muebles rotos.",
+          "pt-BR": "Ela também perguntou sobre os barulhos estranhos e os móveis quebrados.",
+          "id": "Ia juga bertanya tentang suara-suara aneh dan perabot yang rusak.",
+          "ar": "وسألته أيضًا عن الأصوات الغريبة والأثاث المكسور.",
+          "vi": "Bà còn hỏi về những tiếng động lạ và đồ đạc bị vỡ.",
+          "hi": "उन्होंने अजीब आवाज़ों और टूटे फ़र्नीचर के बारे में भी पूछा।",
+          "ru": "Ещё она спросила о странных звуках и сломанной мебели.",
+          "bn": "তিনি অদ্ভুত শব্দ আর ভাঙা আসবাবের কথাও জিজ্ঞেস করলেন।",
+          "ur": "انہوں نے عجیب آوازوں اور ٹوٹے فرنیچر کے بارے میں بھی پوچھا۔",
+          "th": "นางยังถามถึงเสียงแปลก ๆ และเครื่องเรือนที่พังด้วย"
+        }
+      },
+      {
+        "id": "cl-invisible-027",
+        "english": "A crowd of curious villagers stood behind her in the doorway.",
+        "turkish": "Arkasında, kapı aralığında meraklı köylülerden bir kalabalık duruyordu.",
+        "translations": {
+          "es-419": "Detrás de ella, en la puerta, había un grupo de vecinos curiosos.",
+          "pt-BR": "Atrás dela, na porta, havia uma multidão de moradores curiosos.",
+          "id": "Di belakangnya, di ambang pintu, berdiri kerumunan penduduk desa yang penasaran.",
+          "ar": "وقف خلفها عند الباب حشد من أهل القرية الفضوليّين.",
+          "vi": "Sau lưng bà, ở ngưỡng cửa, có một đám đông dân làng tò mò.",
+          "hi": "उनके पीछे दरवाज़े पर उत्सुक गाँव वालों की भीड़ खड़ी थी।",
+          "ru": "За её спиной в дверях стояла толпа любопытных деревенских жителей.",
+          "bn": "তাঁর পেছনে দরজায় কৌতূহলী গ্রামবাসীদের ভিড় দাঁড়িয়ে ছিল।",
+          "ur": "ان کے پیچھے دروازے پر متجسس گاؤں والوں کی بھیڑ کھڑی تھی۔",
+          "th": "ข้างหลังนาง มีชาวบ้านที่อยากรู้อยากเห็นยืนออกันอยู่ที่ประตู"
+        }
+      },
+      {
+        "id": "cl-invisible-028",
+        "english": "The stranger stood up, angry and shaking.",
+        "turkish": "Yabancı öfkeyle ve titreyerek ayağa kalktı.",
+        "translations": {
+          "es-419": "El desconocido se levantó, furioso y temblando.",
+          "pt-BR": "O desconhecido se levantou, furioso e tremendo.",
+          "id": "Orang asing itu berdiri, marah dan gemetar.",
+          "ar": "وقف الغريب غاضبًا يرتجف.",
+          "vi": "Người lạ đứng bật dậy, giận dữ và run rẩy.",
+          "hi": "अजनबी उठ खड़ा हुआ, ग़ुस्से में काँपता हुआ।",
+          "ru": "Незнакомец встал, злой и дрожащий.",
+          "bn": "অচেনা লোকটি রেগে কাঁপতে কাঁপতে উঠে দাঁড়াল।",
+          "ur": "اجنبی اٹھ کھڑا ہوا، غصے میں کانپتا ہوا۔",
+          "th": "ชายแปลกหน้าลุกขึ้นยืน ตัวสั่นด้วยความโกรธ"
+        }
+      },
+      {
+        "id": "cl-invisible-029",
+        "english": "\"You want to know who I am? I will show you!\" he cried.",
+        "turkish": "\"Kim olduğumu mu öğrenmek istiyorsunuz? Size göstereyim!\" diye bağırdı.",
+        "translations": {
+          "es-419": "—¿Quieren saber quién soy? ¡Se lo mostraré! —gritó.",
+          "pt-BR": "— Querem saber quem eu sou? Vou mostrar! — gritou ele.",
+          "id": "\"Kalian ingin tahu siapa aku? Akan kutunjukkan!\" teriaknya.",
+          "ar": "صاح: «تريدون أن تعرفوا من أنا؟ سأريكم!»",
+          "vi": "\"Các người muốn biết tôi là ai à? Tôi sẽ cho các người thấy!\" hắn hét lên.",
+          "hi": "\"तुम जानना चाहते हो कि मैं कौन हूँ? मैं दिखाता हूँ!\" वह चिल्लाया।",
+          "ru": "«Хотите знать, кто я? Сейчас покажу!» — крикнул он.",
+          "bn": "\"জানতে চাও আমি কে? দেখাচ্ছি!\" সে চেঁচিয়ে উঠল।",
+          "ur": "\"تم جاننا چاہتے ہو کہ میں کون ہوں؟ میں دکھاتا ہوں!\" وہ چلایا۔",
+          "th": "\"อยากรู้นักหรือว่าผมเป็นใคร ผมจะให้ดู!\" เขาตะโกน"
+        }
+      },
+      {
+        "id": "cl-invisible-030",
+        "english": "He took off his glasses, then his false nose.",
+        "turkish": "Önce gözlüklerini, sonra takma burnunu çıkardı.",
+        "translations": {
+          "es-419": "Se quitó las gafas y luego la nariz postiza.",
+          "pt-BR": "Tirou os óculos e depois o nariz falso.",
+          "id": "Ia melepas kacamatanya, lalu hidung palsunya.",
+          "ar": "نزع نظّارته، ثمّ أنفه المزيّف.",
+          "vi": "Hắn tháo kính ra, rồi tháo cả cái mũi giả.",
+          "hi": "उसने अपना चश्मा उतारा, फिर अपनी नक़ली नाक।",
+          "ru": "Он снял очки, потом накладной нос.",
+          "bn": "সে চশমা খুলল, তারপর তার নকল নাক।",
+          "ur": "اس نے اپنی عینک اتاری، پھر اپنی نقلی ناک۔",
+          "th": "เขาถอดแว่นตาออก แล้วถอดจมูกปลอมตามออกมา"
+        }
+      },
+      {
+        "id": "cl-invisible-031",
+        "english": "Then he pulled off one bandage after another.",
+        "turkish": "Sonra sargıları birer birer çekip çıkardı.",
+        "translations": {
+          "es-419": "Luego se fue arrancando una venda tras otra.",
+          "pt-BR": "Depois arrancou uma atadura atrás da outra.",
+          "id": "Lalu ia menarik lepas perban satu demi satu.",
+          "ar": "ثمّ نزع الضمادات واحدة تلو الأخرى.",
+          "vi": "Rồi hắn giật từng dải băng ra.",
+          "hi": "फिर उसने एक के बाद एक पट्टी खींचकर उतार दी।",
+          "ru": "Потом стал срывать бинты один за другим.",
+          "bn": "তারপর সে একটার পর একটা ব্যান্ডেজ টেনে খুলল।",
+          "ur": "پھر اس نے ایک کے بعد ایک پٹی کھینچ کر اتار دی۔",
+          "th": "จากนั้นเขาก็ดึงผ้าพันแผลออกทีละชั้น"
+        }
+      },
+      {
+        "id": "cl-invisible-032",
+        "english": "The people screamed and ran, because there was no head at all.",
+        "turkish": "İnsanlar çığlık atıp kaçıştı, çünkü ortada hiç baş yoktu.",
+        "translations": {
+          "es-419": "La gente gritó y huyó, porque no había ninguna cabeza.",
+          "pt-BR": "As pessoas gritaram e fugiram, porque não havia cabeça nenhuma.",
+          "id": "Orang-orang menjerit dan lari, karena sama sekali tidak ada kepala.",
+          "ar": "صرخ الناس وهربوا، لأنّه لم يكن هناك رأس على الإطلاق.",
+          "vi": "Mọi người hét lên và bỏ chạy, vì chẳng có cái đầu nào cả.",
+          "hi": "लोग चीख़कर भागे, क्योंकि वहाँ कोई सिर था ही नहीं।",
+          "ru": "Люди закричали и бросились бежать: головы не было вовсе.",
+          "bn": "লোকেরা চিৎকার করে পালাল, কারণ সেখানে কোনো মাথাই ছিল না।",
+          "ur": "لوگ چیخ کر بھاگے، کیونکہ وہاں کوئی سر تھا ہی نہیں۔",
+          "th": "ผู้คนกรีดร้องและวิ่งหนี เพราะไม่มีศีรษะอยู่เลย"
+        }
+      },
+      {
+        "id": "cl-invisible-033",
+        "english": "Above the collar of the coat, there was only empty air.",
+        "turkish": "Paltonun yakasının üstünde yalnızca boşluk vardı.",
+        "translations": {
+          "es-419": "Por encima del cuello del abrigo, solo había aire vacío.",
+          "pt-BR": "Acima da gola do casaco, só havia ar vazio.",
+          "id": "Di atas kerah mantel itu, hanya ada udara kosong.",
+          "ar": "فوق ياقة المعطف، لم يكن هناك سوى هواء فارغ.",
+          "vi": "Phía trên cổ áo choàng chỉ có khoảng không trống rỗng.",
+          "hi": "कोट के कॉलर के ऊपर सिर्फ़ ख़ाली हवा थी।",
+          "ru": "Над воротником пальто была одна пустота.",
+          "bn": "কোটের কলারের ওপরে ছিল শুধু ফাঁকা বাতাস।",
+          "ur": "کوٹ کے کالر کے اوپر صرف خالی ہوا تھی۔",
+          "th": "เหนือปกเสื้อโค้ตขึ้นไปมีแต่อากาศว่างเปล่า"
+        }
+      },
+      {
+        "id": "cl-invisible-034",
+        "english": "The village policeman arrived to arrest him.",
+        "turkish": "Köyün polisi onu tutuklamaya geldi.",
+        "translations": {
+          "es-419": "Llegó el policía del pueblo para arrestarlo.",
+          "pt-BR": "O policial da aldeia chegou para prendê-lo.",
+          "id": "Polisi desa datang untuk menangkapnya.",
+          "ar": "وصل شرطيّ القرية ليقبض عليه.",
+          "vi": "Viên cảnh sát của làng đến để bắt hắn.",
+          "hi": "गाँव का सिपाही उसे गिरफ़्तार करने आया।",
+          "ru": "Пришёл деревенский полицейский, чтобы его арестовать.",
+          "bn": "গ্রামের পুলিশ তাকে গ্রেপ্তার করতে এল।",
+          "ur": "گاؤں کا سپاہی اسے گرفتار کرنے آیا۔",
+          "th": "ตำรวจประจำหมู่บ้านมาถึงเพื่อจับกุมเขา"
+        }
+      },
+      {
+        "id": "cl-invisible-035",
+        "english": "But the headless man quickly took off his gloves and his clothes.",
+        "turkish": "Ama başsız adam hızla eldivenlerini ve giysilerini çıkardı.",
+        "translations": {
+          "es-419": "Pero el hombre sin cabeza se quitó rápidamente los guantes y la ropa.",
+          "pt-BR": "Mas o homem sem cabeça tirou depressa as luvas e as roupas.",
+          "id": "Tetapi pria tanpa kepala itu dengan cepat melepas sarung tangan dan pakaiannya.",
+          "ar": "لكنّ الرجل بلا رأس خلع بسرعة قفّازيه وثيابه.",
+          "vi": "Nhưng gã không đầu nhanh chóng cởi găng tay và quần áo.",
+          "hi": "पर बिना सिर वाले आदमी ने झट से अपने दस्ताने और कपड़े उतार दिए।",
+          "ru": "Но безголовый быстро снял перчатки и одежду.",
+          "bn": "কিন্তু মাথাহীন লোকটি চট করে দস্তানা আর জামাকাপড় খুলে ফেলল।",
+          "ur": "مگر بغیر سر کے آدمی نے جھٹ سے اپنے دستانے اور کپڑے اتار دیے۔",
+          "th": "แต่ชายไร้ศีรษะรีบถอดถุงมือและเสื้อผ้าออกอย่างรวดเร็ว"
+        }
+      },
+      {
+        "id": "cl-invisible-036",
+        "english": "In a moment, he was completely invisible.",
+        "turkish": "Bir anda tamamen görünmez oldu.",
+        "translations": {
+          "es-419": "En un instante, quedó completamente invisible.",
+          "pt-BR": "Num instante, ele ficou completamente invisível.",
+          "id": "Dalam sekejap, ia benar-benar tidak terlihat.",
+          "ar": "وفي لحظة، صار خفيًّا تمامًا.",
+          "vi": "Chỉ trong chốc lát, hắn đã hoàn toàn vô hình.",
+          "hi": "पल भर में वह पूरी तरह अदृश्य हो गया।",
+          "ru": "В одно мгновение он стал совершенно невидимым.",
+          "bn": "মুহূর্তের মধ্যে সে পুরোপুরি অদৃশ্য হয়ে গেল।",
+          "ur": "پل بھر میں وہ پوری طرح غائب ہو گیا۔",
+          "th": "ชั่วพริบตาเดียว เขาก็ล่องหนไปทั้งตัว"
+        }
+      },
+      {
+        "id": "cl-invisible-037",
+        "english": "Something hit the policeman, and he fell to the floor.",
+        "turkish": "Bir şey polise vurdu ve polis yere düştü.",
+        "translations": {
+          "es-419": "Algo golpeó al policía, y este cayó al suelo.",
+          "pt-BR": "Alguma coisa atingiu o policial, e ele caiu no chão.",
+          "id": "Sesuatu memukul polisi itu, dan ia jatuh ke lantai.",
+          "ar": "ضرب شيءٌ الشرطيّ فسقط على الأرض.",
+          "vi": "Có cái gì đó đánh viên cảnh sát, và ông ngã xuống sàn.",
+          "hi": "किसी चीज़ ने सिपाही को मारा, और वह फ़र्श पर गिर पड़ा।",
+          "ru": "Что-то ударило полицейского, и он упал на пол.",
+          "bn": "কিছু একটা পুলিশকে আঘাত করল, আর সে মেঝেতে পড়ে গেল।",
+          "ur": "کسی چیز نے سپاہی کو مارا، اور وہ فرش پر گر پڑا۔",
+          "th": "มีบางอย่างกระแทกตำรวจ จนเขาล้มลงกับพื้น"
+        }
+      },
+      {
+        "id": "cl-invisible-038",
+        "english": "Doors opened and closed by themselves, and people were pushed and kicked.",
+        "turkish": "Kapılar kendi kendine açılıp kapanıyor, insanlar itilip tekmeleniyordu.",
+        "translations": {
+          "es-419": "Las puertas se abrían y cerraban solas, y la gente recibía empujones y patadas.",
+          "pt-BR": "As portas abriam e fechavam sozinhas, e as pessoas levavam empurrões e chutes.",
+          "id": "Pintu-pintu terbuka dan tertutup sendiri, dan orang-orang didorong dan ditendang.",
+          "ar": "كانت الأبواب تُفتح وتُغلق من تلقاء نفسها، والناس يُدفعون ويُركلون.",
+          "vi": "Cửa tự mở rồi tự đóng, và người ta bị xô đẩy, bị đá.",
+          "hi": "दरवाज़े अपने-आप खुलते-बंद होते रहे, और लोगों को धक्के और लातें पड़ीं।",
+          "ru": "Двери сами открывались и закрывались, людей толкали и пинали.",
+          "bn": "দরজাগুলো নিজে নিজে খুলছিল আর বন্ধ হচ্ছিল, আর লোকজন ধাক্কা আর লাথি খাচ্ছিল।",
+          "ur": "دروازے خود بخود کھلتے بند ہوتے رہے، اور لوگوں کو دھکے اور لاتیں پڑیں۔",
+          "th": "ประตูเปิดปิดเองได้ ผู้คนถูกผลักและถูกเตะ"
+        }
+      },
+      {
+        "id": "cl-invisible-039",
+        "english": "Then the invisible man ran out of the inn and was gone.",
+        "turkish": "Sonra görünmez adam handan kaçıp gözden kayboldu.",
+        "translations": {
+          "es-419": "Luego el hombre invisible salió corriendo de la posada y desapareció.",
+          "pt-BR": "Depois o homem invisível saiu correndo da estalagem e sumiu.",
+          "id": "Lalu manusia tak terlihat itu berlari keluar dari penginapan dan menghilang.",
+          "ar": "ثمّ ركض الرجل الخفيّ خارج النُّزُل واختفى.",
+          "vi": "Rồi người vô hình chạy ra khỏi quán trọ và biến mất.",
+          "hi": "फिर अदृश्य आदमी सराय से भाग निकला और ग़ायब हो गया।",
+          "ru": "Потом невидимка выбежал из гостиницы и исчез.",
+          "bn": "তারপর অদৃশ্য মানুষটি সরাইখানা থেকে ছুটে বেরিয়ে উধাও হয়ে গেল।",
+          "ur": "پھر غائب آدمی سرائے سے بھاگ نکلا اور غائب ہو گیا۔",
+          "th": "แล้วมนุษย์ล่องหนก็วิ่งออกจากโรงเตี๊ยมและหายไป"
+        }
+      },
+      {
+        "id": "cl-invisible-040",
+        "english": "Outside, a poor tramp named Thomas Marvel was resting by the road.",
+        "turkish": "Dışarıda, Thomas Marvel adında yoksul bir serseri yol kenarında dinleniyordu.",
+        "translations": {
+          "es-419": "Afuera, un pobre vagabundo llamado Thomas Marvel descansaba junto al camino.",
+          "pt-BR": "Lá fora, um pobre andarilho chamado Thomas Marvel descansava à beira da estrada.",
+          "id": "Di luar, seorang gelandangan miskin bernama Thomas Marvel sedang beristirahat di tepi jalan.",
+          "ar": "في الخارج، كان متشرّد فقير اسمه توماس مارفل يستريح على جانب الطريق.",
+          "vi": "Bên ngoài, một gã lang thang nghèo tên là Thomas Marvel đang nghỉ bên vệ đường.",
+          "hi": "बाहर थॉमस मार्वल नाम का एक ग़रीब आवारा सड़क किनारे आराम कर रहा था।",
+          "ru": "Снаружи, у дороги, отдыхал бедный бродяга Томас Марвел.",
+          "bn": "বাইরে টমাস মার্ভেল নামে এক গরিব ভবঘুরে রাস্তার ধারে বিশ্রাম নিচ্ছিল।",
+          "ur": "باہر تھامس مارول نام کا ایک غریب آوارہ گرد سڑک کنارے آرام کر رہا تھا۔",
+          "th": "ข้างนอก คนพเนจรยากจนชื่อโทมัส มาร์เวลกำลังนั่งพักอยู่ริมถนน"
+        }
+      },
+      {
+        "id": "cl-invisible-041",
+        "english": "Suddenly, a voice spoke to him from the empty air.",
+        "turkish": "Birden boşluktan bir ses ona seslendi.",
+        "translations": {
+          "es-419": "De repente, una voz le habló desde el aire vacío.",
+          "pt-BR": "De repente, uma voz falou com ele do ar vazio.",
+          "id": "Tiba-tiba, sebuah suara berbicara kepadanya dari udara kosong.",
+          "ar": "فجأة، كلّمه صوت من الهواء الفارغ.",
+          "vi": "Bỗng nhiên, có một giọng nói cất lên từ khoảng không.",
+          "hi": "अचानक ख़ाली हवा में से एक आवाज़ ने उससे बात की।",
+          "ru": "Вдруг из пустоты с ним заговорил голос.",
+          "bn": "হঠাৎ ফাঁকা বাতাস থেকে একটা গলা তার সঙ্গে কথা বলল।",
+          "ur": "اچانک خالی ہوا میں سے ایک آواز نے اس سے بات کی۔",
+          "th": "ทันใดนั้น ก็มีเสียงพูดกับเขาจากอากาศว่างเปล่า"
+        }
+      },
+      {
+        "id": "cl-invisible-042",
+        "english": "\"Do not be afraid. I am invisible, and I need your help,\" it said.",
+        "turkish": "\"Korkma. Ben görünmezim ve yardımına ihtiyacım var,\" dedi ses.",
+        "translations": {
+          "es-419": "—No tengas miedo. Soy invisible y necesito tu ayuda —dijo.",
+          "pt-BR": "— Não tenha medo. Sou invisível e preciso da sua ajuda — disse a voz.",
+          "id": "\"Jangan takut. Aku tidak terlihat, dan aku butuh bantuanmu,\" kata suara itu.",
+          "ar": "قال الصوت: «لا تخف. أنا خفيّ، وأحتاج إلى مساعدتك».",
+          "vi": "\"Đừng sợ. Ta vô hình, và ta cần ngươi giúp,\" giọng nói bảo.",
+          "hi": "\"डरो मत। मैं अदृश्य हूँ, और मुझे तुम्हारी मदद चाहिए,\" आवाज़ ने कहा।",
+          "ru": "«Не бойся. Я невидим, и мне нужна твоя помощь», — сказал голос.",
+          "bn": "\"ভয় পেয়ো না। আমি অদৃশ্য, আর আমার তোমার সাহায্য দরকার,\" গলাটা বলল।",
+          "ur": "\"ڈرو مت۔ میں نظر نہیں آتا، اور مجھے تمہاری مدد چاہیے،\" آواز نے کہا۔",
+          "th": "\"อย่ากลัว ฉันล่องหนอยู่ และฉันต้องการความช่วยเหลือจากแก\" เสียงนั้นพูด"
+        }
+      },
+      {
+        "id": "cl-invisible-043",
+        "english": "\"You will carry my books and find me clothes, or I will hurt you.\"",
+        "turkish": "\"Kitaplarımı taşıyacak ve bana giysi bulacaksın, yoksa canını yakarım.\"",
+        "translations": {
+          "es-419": "—Llevarás mis libros y me conseguirás ropa, o te haré daño.",
+          "pt-BR": "— Você vai carregar os meus livros e arranjar roupas para mim, senão eu te machuco.",
+          "id": "\"Kau akan membawa buku-bukuku dan mencarikan pakaian untukku, atau aku akan menyakitimu.\"",
+          "ar": "«ستحمل كتبي وتجد لي ثيابًا، وإلّا آذيتك».",
+          "vi": "\"Ngươi sẽ mang sách cho ta và kiếm quần áo cho ta, nếu không ta sẽ làm ngươi đau.\"",
+          "hi": "\"तुम मेरी किताबें उठाओगे और मेरे लिए कपड़े ढूँढोगे, वरना मैं तुम्हें चोट पहुँचाऊँगा।\"",
+          "ru": "«Ты понесёшь мои книги и найдёшь мне одежду, иначе я тебя покалечу».",
+          "bn": "\"তুমি আমার বই বইবে আর আমার জন্য জামাকাপড় জোগাড় করবে, নইলে তোমাকে আঘাত করব।\"",
+          "ur": "\"تم میری کتابیں اٹھاؤ گے اور میرے لیے کپڑے ڈھونڈو گے، ورنہ میں تمہیں نقصان پہنچاؤں گا۔\"",
+          "th": "\"แกจะต้องแบกหนังสือของฉันและหาเสื้อผ้าให้ฉัน ไม่อย่างนั้นฉันจะทำร้ายแก\""
+        }
+      },
+      {
+        "id": "cl-invisible-044",
+        "english": "Marvel was terrified, so he did what the voice told him.",
+        "turkish": "Marvel dehşete kapıldı ve sesin söylediklerini yaptı.",
+        "translations": {
+          "es-419": "Marvel estaba aterrado, así que hizo lo que le ordenó la voz.",
+          "pt-BR": "Marvel ficou apavorado e fez o que a voz mandou.",
+          "id": "Marvel sangat ketakutan, jadi ia melakukan apa yang diperintahkan suara itu.",
+          "ar": "ارتعب مارفل، ففعل ما أمره به الصوت.",
+          "vi": "Marvel sợ hãi tột độ, nên làm theo lời giọng nói.",
+          "hi": "मार्वल बुरी तरह डर गया, इसलिए उसने वही किया जो आवाज़ ने कहा।",
+          "ru": "Марвел перепугался и сделал всё, что велел голос.",
+          "bn": "মার্ভেল ভীষণ ভয় পেল, তাই গলাটা যা বলল তাই করল।",
+          "ur": "مارول بری طرح ڈر گیا، اس لیے اس نے وہی کیا جو آواز نے کہا۔",
+          "th": "มาร์เวลหวาดกลัวสุดขีด จึงทำตามที่เสียงนั้นสั่ง"
+        }
+      },
+      {
+        "id": "cl-invisible-045",
+        "english": "But at the first chance, he ran away to the seaside town of Port Burdock with the books.",
+        "turkish": "Ama ilk fırsatta kitaplarla birlikte sahil kasabası Port Burdock'a kaçtı.",
+        "translations": {
+          "es-419": "Pero en cuanto pudo, huyó con los libros al pueblo costero de Port Burdock.",
+          "pt-BR": "Mas na primeira chance, fugiu com os livros para a cidade litorânea de Port Burdock.",
+          "id": "Tetapi pada kesempatan pertama, ia kabur membawa buku-buku itu ke kota pantai Port Burdock.",
+          "ar": "لكن في أوّل فرصة، هرب بالكتب إلى بلدة بورت بردوك الساحلية.",
+          "vi": "Nhưng có dịp đầu tiên là gã ôm sách trốn đến thị trấn ven biển Port Burdock.",
+          "hi": "पर पहला मौक़ा मिलते ही वह किताबें लेकर समुद्र किनारे के क़स्बे पोर्ट बर्डॉक भाग गया।",
+          "ru": "Но при первой же возможности он сбежал с книгами в приморский городок Порт-Бердок.",
+          "bn": "কিন্তু প্রথম সুযোগেই সে বইগুলো নিয়ে সমুদ্রতীরের শহর পোর্ট বারডকে পালিয়ে গেল।",
+          "ur": "مگر پہلا موقع ملتے ہی وہ کتابیں لے کر ساحلی قصبے پورٹ برڈاک بھاگ گیا۔",
+          "th": "แต่พอมีโอกาสแรก เขาก็หอบหนังสือหนีไปยังเมืองชายทะเลพอร์ตเบอร์ด็อก"
+        }
+      },
+      {
+        "id": "cl-invisible-046",
+        "english": "That night, in the town near Port Burdock, Dr Kemp was working late in his study.",
+        "turkish": "O gece, Port Burdock yakınlarındaki kasabada Dr. Kemp çalışma odasında geç saate kadar çalışıyordu.",
+        "translations": {
+          "es-419": "Esa noche, en el pueblo cercano a Port Burdock, el doctor Kemp trabajaba hasta tarde en su estudio.",
+          "pt-BR": "Naquela noite, na cidade perto de Port Burdock, o doutor Kemp trabalhava até tarde no escritório.",
+          "id": "Malam itu, di kota dekat Port Burdock, Dr. Kemp sedang bekerja hingga larut di ruang kerjanya.",
+          "ar": "في تلك الليلة، في البلدة القريبة من بورت بردوك، كان الدكتور كيمب يعمل حتّى وقت متأخّر في مكتبه.",
+          "vi": "Đêm đó, ở thị trấn gần Port Burdock, bác sĩ Kemp đang làm việc khuya trong phòng làm việc.",
+          "hi": "उस रात पोर्ट बर्डॉक के पास वाले क़स्बे में डॉक्टर केम्प अपने अध्ययन-कक्ष में देर तक काम कर रहे थे।",
+          "ru": "В ту ночь в городке близ Порт-Бердока доктор Кемп допоздна работал в своём кабинете.",
+          "bn": "সেই রাতে পোর্ট বারডকের কাছের শহরে ডাক্তার কেম্প তাঁর পড়ার ঘরে অনেক রাত পর্যন্ত কাজ করছিলেন।",
+          "ur": "اس رات پورٹ برڈاک کے قریب والے قصبے میں ڈاکٹر کیمپ اپنے مطالعے کے کمرے میں دیر تک کام کر رہے تھے۔",
+          "th": "คืนนั้น ในเมืองใกล้พอร์ตเบอร์ด็อก หมอเคมป์กำลังทำงานดึกอยู่ในห้องทำงาน"
+        }
+      },
+      {
+        "id": "cl-invisible-047",
+        "english": "He went upstairs and saw spots of blood on the floor of his bedroom.",
+        "turkish": "Yukarı çıktı ve yatak odasının zemininde kan lekeleri gördü.",
+        "translations": {
+          "es-419": "Subió y vio manchas de sangre en el suelo de su dormitorio.",
+          "pt-BR": "Ele subiu e viu manchas de sangue no chão do quarto.",
+          "id": "Ia naik ke atas dan melihat bercak darah di lantai kamar tidurnya.",
+          "ar": "صعد إلى الطابق العلويّ فرأى بقع دم على أرض غرفة نومه.",
+          "vi": "Ông lên lầu và thấy những vết máu trên sàn phòng ngủ.",
+          "hi": "वे ऊपर गए और अपने सोने के कमरे के फ़र्श पर ख़ून के धब्बे देखे।",
+          "ru": "Он поднялся наверх и увидел на полу спальни пятна крови.",
+          "bn": "তিনি ওপরে গিয়ে শোবার ঘরের মেঝেতে রক্তের দাগ দেখলেন।",
+          "ur": "وہ اوپر گئے اور اپنے سونے کے کمرے کے فرش پر خون کے دھبے دیکھے۔",
+          "th": "เขาขึ้นไปชั้นบนและเห็นรอยเลือดบนพื้นห้องนอน"
+        }
+      },
+      {
+        "id": "cl-invisible-048",
+        "english": "Then a voice said, \"Kemp! Do not shout. It is Griffin, from college.\"",
+        "turkish": "Sonra bir ses, \"Kemp! Bağırma. Benim, üniversiteden Griffin,\" dedi.",
+        "translations": {
+          "es-419": "Entonces una voz dijo: «¡Kemp! No grites. Soy Griffin, de la universidad».",
+          "pt-BR": "Então uma voz disse: \"Kemp! Não grite. Sou eu, Griffin, da faculdade.\"",
+          "id": "Lalu sebuah suara berkata, \"Kemp! Jangan berteriak. Ini Griffin, teman kuliahmu.\"",
+          "ar": "ثمّ قال صوت: «كيمب! لا تصرخ. أنا غريفين، زميلك في الجامعة».",
+          "vi": "Rồi một giọng nói vang lên: \"Kemp! Đừng la lên. Tôi là Griffin, bạn đại học đây.\"",
+          "hi": "फिर एक आवाज़ ने कहा, \"केम्प! चिल्लाना मत। मैं ग्रिफ़िन हूँ, कॉलेज वाला।\"",
+          "ru": "И голос сказал: «Кемп! Не кричите. Это Гриффин, мы вместе учились».",
+          "bn": "তারপর একটা গলা বলল, \"কেম্প! চেঁচিও না। আমি গ্রিফিন, কলেজের।\"",
+          "ur": "پھر ایک آواز نے کہا، \"کیمپ! چلانا مت۔ میں گرفن ہوں، کالج والا۔\"",
+          "th": "แล้วก็มีเสียงพูดว่า \"เคมป์! อย่าตะโกน นี่กริฟฟิน เพื่อนสมัยมหาวิทยาลัย\""
+        }
+      },
+      {
+        "id": "cl-invisible-049",
+        "english": "The invisible man had been shot in the arm, and he was tired and hungry.",
+        "turkish": "Görünmez adam kolundan vurulmuştu; yorgun ve açtı.",
+        "translations": {
+          "es-419": "El hombre invisible tenía una herida de bala en el brazo, y estaba cansado y hambriento.",
+          "pt-BR": "O homem invisível tinha levado um tiro no braço e estava cansado e faminto.",
+          "id": "Manusia tak terlihat itu tertembak di lengannya, dan ia lelah serta lapar.",
+          "ar": "كان الرجل الخفيّ قد أُصيب برصاصة في ذراعه، وكان متعبًا جائعًا.",
+          "vi": "Người vô hình bị trúng đạn ở cánh tay, vừa mệt vừa đói.",
+          "hi": "अदृश्य आदमी की बाँह में गोली लगी थी, और वह थका और भूखा था।",
+          "ru": "Невидимка был ранен в руку пулей, устал и проголодался.",
+          "bn": "অদৃশ্য মানুষটির হাতে গুলি লেগেছিল, আর সে ক্লান্ত ও ক্ষুধার্ত ছিল।",
+          "ur": "غائب آدمی کے بازو میں گولی لگی تھی، اور وہ تھکا ہوا اور بھوکا تھا۔",
+          "th": "มนุษย์ล่องหนถูกยิงที่แขน ทั้งเหนื่อยทั้งหิว"
+        }
+      },
+      {
+        "id": "cl-invisible-050",
+        "english": "Kemp gave him food and a dressing gown, and Griffin told his story.",
+        "turkish": "Kemp ona yiyecek ve bir sabahlık verdi, Griffin de hikâyesini anlattı.",
+        "translations": {
+          "es-419": "Kemp le dio comida y una bata, y Griffin le contó su historia.",
+          "pt-BR": "Kemp lhe deu comida e um roupão, e Griffin contou a sua história.",
+          "id": "Kemp memberinya makanan dan jubah tidur, lalu Griffin menceritakan kisahnya.",
+          "ar": "أعطاه كيمب طعامًا ورداءً منزليًّا، فحكى غريفين قصّته.",
+          "vi": "Kemp đưa cho hắn đồ ăn và một chiếc áo choàng ngủ, rồi Griffin kể lại câu chuyện của mình.",
+          "hi": "केम्प ने उसे खाना और एक ड्रेसिंग गाउन दिया, और ग्रिफ़िन ने अपनी कहानी सुनाई।",
+          "ru": "Кемп дал ему еды и халат, и Гриффин рассказал свою историю.",
+          "bn": "কেম্প তাকে খাবার আর একটা ড্রেসিং গাউন দিলেন, আর গ্রিফিন তার কাহিনি শোনাল।",
+          "ur": "کیمپ نے اسے کھانا اور ایک ڈریسنگ گاؤن دیا، اور گرفن نے اپنی کہانی سنائی۔",
+          "th": "เคมป์ให้อาหารและเสื้อคลุมแก่เขา แล้วกริฟฟินก็เล่าเรื่องของตน"
+        }
+      },
+      {
+        "id": "cl-invisible-051",
+        "english": "\"For years I studied light, and I found a way to make the body clear like glass.\"",
+        "turkish": "\"Yıllarca ışığı inceledim ve vücudu cam gibi saydam yapmanın bir yolunu buldum.\"",
+        "translations": {
+          "es-419": "—Durante años estudié la luz, y encontré la forma de volver el cuerpo transparente como el vidrio.",
+          "pt-BR": "— Estudei a luz durante anos e descobri um jeito de deixar o corpo transparente como vidro.",
+          "id": "\"Bertahun-tahun aku mempelajari cahaya, dan aku menemukan cara membuat tubuh bening seperti kaca.\"",
+          "ar": "«لسنوات درستُ الضوء، ووجدت طريقة تجعل الجسم شفّافًا كالزجاج».",
+          "vi": "\"Nhiều năm liền tôi nghiên cứu ánh sáng, và tìm ra cách làm cơ thể trong suốt như thủy tinh.\"",
+          "hi": "\"सालों तक मैंने रोशनी का अध्ययन किया, और शरीर को काँच जैसा पारदर्शी बनाने का तरीक़ा खोज लिया।\"",
+          "ru": "«Годами я изучал свет и нашёл способ сделать тело прозрачным, как стекло».",
+          "bn": "\"বছরের পর বছর আমি আলো নিয়ে পড়াশোনা করেছি, আর শরীরকে কাচের মতো স্বচ্ছ করার উপায় বের করেছি।\"",
+          "ur": "\"برسوں میں نے روشنی کا مطالعہ کیا، اور جسم کو شیشے جیسا شفاف بنانے کا طریقہ ڈھونڈ لیا۔\"",
+          "th": "\"ผมศึกษาเรื่องแสงอยู่หลายปี และพบวิธีทำให้ร่างกายใสเหมือนแก้ว\""
+        }
+      },
+      {
+        "id": "cl-invisible-052",
+        "english": "\"First I tried it on a white cat, and the cat disappeared.\"",
+        "turkish": "\"Önce beyaz bir kedi üzerinde denedim ve kedi gözden kayboldu.\"",
+        "translations": {
+          "es-419": "—Primero lo probé con un gato blanco, y el gato desapareció.",
+          "pt-BR": "— Primeiro testei num gato branco, e o gato desapareceu.",
+          "id": "\"Pertama aku mencobanya pada seekor kucing putih, dan kucing itu lenyap.\"",
+          "ar": "«جرّبتها أوّلًا على قطّة بيضاء، فاختفت القطّة».",
+          "vi": "\"Đầu tiên tôi thử trên một con mèo trắng, và con mèo biến mất.\"",
+          "hi": "\"पहले मैंने इसे एक सफ़ेद बिल्ली पर आज़माया, और बिल्ली ग़ायब हो गई।\"",
+          "ru": "«Сначала я испытал это на белой кошке, и кошка исчезла».",
+          "bn": "\"প্রথমে আমি একটা সাদা বিড়ালের ওপর চেষ্টা করলাম, আর বিড়ালটা অদৃশ্য হয়ে গেল।\"",
+          "ur": "\"پہلے میں نے اسے ایک سفید بلی پر آزمایا، اور بلی غائب ہو گئی۔\"",
+          "th": "\"ตอนแรกผมลองกับแมวสีขาวตัวหนึ่ง แล้วแมวก็หายไป\""
+        }
+      },
+      {
+        "id": "cl-invisible-053",
+        "english": "\"Then I did it to myself. It was painful, and it took a whole night.\"",
+        "turkish": "\"Sonra kendime uyguladım. Acı vericiydi ve bütün bir gece sürdü.\"",
+        "translations": {
+          "es-419": "—Después lo hice conmigo. Fue doloroso y duró toda una noche.",
+          "pt-BR": "— Depois fiz em mim mesmo. Foi doloroso e levou uma noite inteira.",
+          "id": "\"Lalu aku melakukannya pada diriku sendiri. Rasanya menyakitkan, dan butuh semalam penuh.\"",
+          "ar": "«ثمّ فعلتُها بنفسي. كان الأمر مؤلمًا، واستغرق ليلة كاملة».",
+          "vi": "\"Rồi tôi làm với chính mình. Đau đớn lắm, và mất trọn một đêm.\"",
+          "hi": "\"फिर मैंने इसे अपने ऊपर किया। यह दर्दनाक था, और पूरी रात लगी।\"",
+          "ru": "«Потом я сделал это с собой. Это было мучительно и длилось целую ночь».",
+          "bn": "\"তারপর নিজের ওপর করলাম। খুব যন্ত্রণার ছিল, আর পুরো একটা রাত লেগেছিল।\"",
+          "ur": "\"پھر میں نے اسے اپنے اوپر کیا۔ یہ تکلیف دہ تھا، اور پوری رات لگی۔\"",
+          "th": "\"แล้วผมก็ทำกับตัวเอง มันเจ็บปวด และใช้เวลาทั้งคืน\""
+        }
+      },
+      {
+        "id": "cl-invisible-054",
+        "english": "\"In the morning, I looked in the mirror and saw nothing.\"",
+        "turkish": "\"Sabah aynaya baktım ve hiçbir şey göremedim.\"",
+        "translations": {
+          "es-419": "—Por la mañana me miré al espejo y no vi nada.",
+          "pt-BR": "— De manhã, olhei no espelho e não vi nada.",
+          "id": "\"Pagi harinya, aku bercermin dan tidak melihat apa-apa.\"",
+          "ar": "«في الصباح، نظرتُ في المرآة فلم أرَ شيئًا».",
+          "vi": "\"Sáng ra, tôi soi gương và chẳng thấy gì cả.\"",
+          "hi": "\"सुबह मैंने आईने में देखा और कुछ भी नहीं दिखा।\"",
+          "ru": "«Утром я посмотрел в зеркало и ничего не увидел».",
+          "bn": "\"সকালে আয়নায় তাকিয়ে কিছুই দেখতে পেলাম না।\"",
+          "ur": "\"صبح میں نے آئینے میں دیکھا اور کچھ بھی نظر نہیں آیا۔\"",
+          "th": "\"ตอนเช้า ผมส่องกระจกแล้วไม่เห็นอะไรเลย\""
+        }
+      },
+      {
+        "id": "cl-invisible-055",
+        "english": "\"I thought I would be the most powerful man in the world.\"",
+        "turkish": "\"Dünyanın en güçlü adamı olacağımı sanıyordum.\"",
+        "translations": {
+          "es-419": "—Creí que sería el hombre más poderoso del mundo.",
+          "pt-BR": "— Achei que seria o homem mais poderoso do mundo.",
+          "id": "\"Kukira aku akan menjadi orang paling berkuasa di dunia.\"",
+          "ar": "«ظننتُ أنّني سأصبح أقوى رجل في العالم».",
+          "vi": "\"Tôi tưởng mình sẽ thành người quyền lực nhất thế giới.\"",
+          "hi": "\"मुझे लगा मैं दुनिया का सबसे ताक़तवर आदमी बन जाऊँगा।\"",
+          "ru": "«Я думал, что стану самым могущественным человеком в мире».",
+          "bn": "\"ভেবেছিলাম আমি পৃথিবীর সবচেয়ে শক্তিশালী মানুষ হব।\"",
+          "ur": "\"میں نے سوچا میں دنیا کا سب سے طاقتور آدمی بن جاؤں گا۔\"",
+          "th": "\"ผมคิดว่าผมจะกลายเป็นคนที่มีอำนาจที่สุดในโลก\""
+        }
+      },
+      {
+        "id": "cl-invisible-056",
+        "english": "\"But it was terrible, Kemp. In winter, I had to walk the streets with no clothes.\"",
+        "turkish": "\"Ama korkunçtu Kemp. Kışın sokaklarda giysisiz yürümek zorundaydım.\"",
+        "translations": {
+          "es-419": "—Pero fue terrible, Kemp. En invierno tenía que andar por las calles sin ropa.",
+          "pt-BR": "— Mas foi terrível, Kemp. No inverno, eu tinha que andar pelas ruas sem roupa.",
+          "id": "\"Tetapi itu mengerikan, Kemp. Di musim dingin, aku harus berjalan di jalanan tanpa pakaian.\"",
+          "ar": "«لكنّ الأمر كان فظيعًا يا كيمب. في الشتاء، كان عليّ أن أمشي في الشوارع بلا ثياب».",
+          "vi": "\"Nhưng thật kinh khủng, Kemp ạ. Giữa mùa đông, tôi phải đi ngoài phố mà không mặc gì.\"",
+          "hi": "\"पर यह भयानक था, केम्प। सर्दियों में मुझे बिना कपड़ों के गलियों में चलना पड़ता था।\"",
+          "ru": "«Но это было ужасно, Кемп. Зимой мне приходилось ходить по улицам без одежды».",
+          "bn": "\"কিন্তু ব্যাপারটা ভয়ংকর ছিল, কেম্প। শীতে আমাকে জামাকাপড় ছাড়া রাস্তায় হাঁটতে হত।\"",
+          "ur": "\"مگر یہ خوفناک تھا، کیمپ۔ سردیوں میں مجھے بغیر کپڑوں کے گلیوں میں چلنا پڑتا تھا۔\"",
+          "th": "\"แต่มันแย่มาก เคมป์ ในหน้าหนาว ผมต้องเดินตามถนนโดยไม่มีเสื้อผ้า\""
+        }
+      },
+      {
+        "id": "cl-invisible-057",
+        "english": "\"People walked into me, dogs barked at me, and I was always cold.\"",
+        "turkish": "\"İnsanlar bana çarpıyor, köpekler bana havlıyordu ve hep üşüyordum.\"",
+        "translations": {
+          "es-419": "—La gente chocaba conmigo, los perros me ladraban y siempre tenía frío.",
+          "pt-BR": "— As pessoas esbarravam em mim, os cães latiam para mim, e eu sempre sentia frio.",
+          "id": "\"Orang-orang menabrakku, anjing-anjing menggonggongiku, dan aku selalu kedinginan.\"",
+          "ar": "«كان الناس يصطدمون بي، والكلاب تنبحني، وكنت أشعر بالبرد دائمًا».",
+          "vi": "\"Người ta va vào tôi, chó sủa tôi, và lúc nào tôi cũng lạnh cóng.\"",
+          "hi": "\"लोग मुझसे टकरा जाते, कुत्ते मुझ पर भौंकते, और मुझे हमेशा ठंड लगती।\"",
+          "ru": "«Люди натыкались на меня, собаки лаяли, и мне всегда было холодно».",
+          "bn": "\"লোকে আমার গায়ে ধাক্কা খেত, কুকুরেরা আমাকে দেখে ঘেউ ঘেউ করত, আর আমি সারাক্ষণ শীতে কাঁপতাম।\"",
+          "ur": "\"لوگ مجھ سے ٹکرا جاتے، کتے مجھ پر بھونکتے، اور مجھے ہمیشہ سردی لگتی۔\"",
+          "th": "\"ผู้คนเดินชนผม หมาเห่าใส่ผม และผมหนาวอยู่ตลอดเวลา\""
+        }
+      },
+      {
+        "id": "cl-invisible-058",
+        "english": "\"Food stayed visible inside me until my body had changed it.\"",
+        "turkish": "\"Yediğim yemek, vücudum onu sindirene kadar içimde görünür kalıyordu.\"",
+        "translations": {
+          "es-419": "—La comida seguía siendo visible dentro de mí hasta que el cuerpo la digería.",
+          "pt-BR": "— A comida continuava visível dentro de mim até o corpo digeri-la.",
+          "id": "\"Makanan tetap terlihat di dalam tubuhku sampai tubuhku mencernanya.\"",
+          "ar": "«كان الطعام يبقى مرئيًّا داخلي حتّى يهضمه جسمي».",
+          "vi": "\"Thức ăn vẫn còn nhìn thấy được trong người tôi cho đến khi cơ thể tiêu hóa xong.\"",
+          "hi": "\"खाया हुआ खाना तब तक मेरे अंदर दिखता रहता, जब तक शरीर उसे पचा नहीं लेता।\"",
+          "ru": "«Еда оставалась видимой у меня внутри, пока тело её не переварит».",
+          "bn": "\"খাবার আমার ভেতরে দেখা যেত, যতক্ষণ না শরীর সেটা হজম করত।\"",
+          "ur": "\"کھایا ہوا کھانا تب تک میرے اندر دکھائی دیتا رہتا، جب تک جسم اسے ہضم نہ کر لیتا۔\"",
+          "th": "\"อาหารที่กินเข้าไปยังมองเห็นได้อยู่ในตัวผม จนกว่าร่างกายจะย่อยมัน\""
+        }
+      },
+      {
+        "id": "cl-invisible-059",
+        "english": "\"So I covered myself with bandages and went to Iping to find a way back.\"",
+        "turkish": "\"Ben de kendimi sargılarla kapatıp eski hâlime dönmenin yolunu bulmak için Iping'e gittim.\"",
+        "translations": {
+          "es-419": "—Así que me cubrí de vendas y fui a Iping a buscar la manera de volver atrás.",
+          "pt-BR": "— Então me cobri de ataduras e fui a Iping procurar um jeito de voltar ao normal.",
+          "id": "\"Jadi aku membalut diriku dengan perban dan pergi ke Iping untuk mencari cara kembali.\"",
+          "ar": "«فغطّيت نفسي بالضمادات وذهبت إلى آيبينغ لأجد طريقة للعودة».",
+          "vi": "\"Vì thế tôi quấn băng khắp người và đến Iping để tìm cách trở lại như cũ.\"",
+          "hi": "\"इसलिए मैंने ख़ुद को पट्टियों से ढका और वापस पहले जैसा होने का रास्ता ढूँढने आइपिंग चला गया।\"",
+          "ru": "«Поэтому я обмотался бинтами и поехал в Айпинг искать способ вернуться назад».",
+          "bn": "\"তাই আমি ব্যান্ডেজে নিজেকে ঢেকে আগের অবস্থায় ফেরার উপায় খুঁজতে আইপিং গেলাম।\"",
+          "ur": "\"اس لیے میں نے خود کو پٹیوں سے ڈھکا اور واپس پہلے جیسا ہونے کا راستہ ڈھونڈنے آئپنگ چلا گیا۔\"",
+          "th": "\"ผมจึงพันตัวด้วยผ้าพันแผลแล้วไปไอปิ้งเพื่อหาทางกลับคืนสู่สภาพเดิม\""
+        }
+      },
+      {
+        "id": "cl-invisible-060",
+        "english": "Kemp listened carefully, and he became more and more afraid.",
+        "turkish": "Kemp dikkatle dinledi ve giderek daha çok korktu.",
+        "translations": {
+          "es-419": "Kemp escuchó con atención, y cada vez tenía más miedo.",
+          "pt-BR": "Kemp ouviu com atenção e foi ficando cada vez mais assustado.",
+          "id": "Kemp mendengarkan dengan saksama, dan ia semakin takut.",
+          "ar": "أصغى كيمب بانتباه، وازداد خوفه شيئًا فشيئًا.",
+          "vi": "Kemp chăm chú lắng nghe, và càng lúc càng sợ hãi.",
+          "hi": "केम्प ध्यान से सुनते रहे, और उनका डर बढ़ता गया।",
+          "ru": "Кемп внимательно слушал, и ему становилось всё страшнее.",
+          "bn": "কেম্প মন দিয়ে শুনছিলেন, আর ক্রমশ আরও ভয় পাচ্ছিলেন।",
+          "ur": "کیمپ غور سے سنتے رہے، اور ان کا خوف بڑھتا گیا۔",
+          "th": "เคมป์ฟังอย่างตั้งใจ และยิ่งฟังก็ยิ่งกลัว"
+        }
+      },
+      {
+        "id": "cl-invisible-061",
+        "english": "\"Help me, Kemp,\" said Griffin. \"Together we can rule this country by fear.\"",
+        "turkish": "\"Bana yardım et Kemp,\" dedi Griffin. \"Birlikte bu ülkeyi korkuyla yönetebiliriz.\"",
+        "translations": {
+          "es-419": "—Ayúdame, Kemp —dijo Griffin—. Juntos podemos gobernar este país con el miedo.",
+          "pt-BR": "— Me ajude, Kemp — disse Griffin. — Juntos podemos governar este país pelo medo.",
+          "id": "\"Bantu aku, Kemp,\" kata Griffin. \"Bersama, kita bisa menguasai negeri ini dengan rasa takut.\"",
+          "ar": "قال غريفين: «ساعدني يا كيمب. معًا نستطيع أن نحكم هذا البلد بالخوف».",
+          "vi": "\"Giúp tôi đi, Kemp,\" Griffin nói. \"Cùng nhau, ta có thể cai trị đất nước này bằng nỗi sợ.\"",
+          "hi": "\"मेरी मदद करो, केम्प,\" ग्रिफ़िन ने कहा। \"हम मिलकर डर के बल पर इस देश पर राज कर सकते हैं।\"",
+          "ru": "«Помогите мне, Кемп, — сказал Гриффин. — Вместе мы сможем править этой страной с помощью страха».",
+          "bn": "\"আমাকে সাহায্য করো, কেম্প,\" গ্রিফিন বলল। \"দুজনে মিলে আমরা ভয় দেখিয়ে এই দেশ শাসন করতে পারি।\"",
+          "ur": "\"میری مدد کرو، کیمپ،\" گرفن نے کہا۔ \"ہم مل کر خوف کے زور پر اس ملک پر حکومت کر سکتے ہیں۔\"",
+          "th": "\"ช่วยผมเถอะ เคมป์\" กริฟฟินพูด \"เราสองคนจะปกครองประเทศนี้ด้วยความกลัว\""
+        }
+      },
+      {
+        "id": "cl-invisible-062",
+        "english": "\"Anyone who stands against us will die.\"",
+        "turkish": "\"Bize karşı çıkan herkes ölecek.\"",
+        "translations": {
+          "es-419": "—Quien se ponga en nuestra contra morirá.",
+          "pt-BR": "— Quem ficar contra nós vai morrer.",
+          "id": "\"Siapa pun yang melawan kita akan mati.\"",
+          "ar": "«كلّ من يقف في وجهنا سيموت».",
+          "vi": "\"Kẻ nào chống lại chúng ta sẽ phải chết.\"",
+          "hi": "\"जो भी हमारे ख़िलाफ़ खड़ा होगा, वह मरेगा।\"",
+          "ru": "«Всякий, кто встанет против нас, умрёт».",
+          "bn": "\"যে আমাদের বিরুদ্ধে দাঁড়াবে, সে মরবে।\"",
+          "ur": "\"جو بھی ہمارے خلاف کھڑا ہوگا، وہ مرے گا۔\"",
+          "th": "\"ใครก็ตามที่ขัดขวางเราจะต้องตาย\""
+        }
+      },
+      {
+        "id": "cl-invisible-063",
+        "english": "Kemp now understood that his old friend had become a dangerous madman.",
+        "turkish": "Kemp, eski arkadaşının tehlikeli bir deliye dönüştüğünü artık anlamıştı.",
+        "translations": {
+          "es-419": "Kemp comprendió entonces que su viejo amigo se había vuelto un loco peligroso.",
+          "pt-BR": "Kemp entendeu então que o velho amigo tinha se tornado um louco perigoso.",
+          "id": "Kemp kini mengerti bahwa teman lamanya telah menjadi orang gila yang berbahaya.",
+          "ar": "أدرك كيمب الآن أنّ صديقه القديم صار مجنونًا خطيرًا.",
+          "vi": "Giờ thì Kemp hiểu rằng người bạn cũ đã trở thành một kẻ điên nguy hiểm.",
+          "hi": "केम्प अब समझ गए कि उनका पुराना दोस्त एक ख़तरनाक पागल बन चुका है।",
+          "ru": "Теперь Кемп понял, что его старый товарищ стал опасным безумцем.",
+          "bn": "কেম্প এবার বুঝলেন, তাঁর পুরোনো বন্ধু এক বিপজ্জনক পাগলে পরিণত হয়েছে।",
+          "ur": "کیمپ اب سمجھ گئے کہ ان کا پرانا دوست ایک خطرناک پاگل بن چکا ہے۔",
+          "th": "ตอนนี้เคมป์เข้าใจแล้วว่าเพื่อนเก่าของเขากลายเป็นคนบ้าที่อันตราย"
+        }
+      },
+      {
+        "id": "cl-invisible-064",
+        "english": "While Griffin slept, Kemp quietly wrote a note to the chief of police.",
+        "turkish": "Griffin uyurken Kemp sessizce emniyet müdürüne bir not yazdı.",
+        "translations": {
+          "es-419": "Mientras Griffin dormía, Kemp escribió en silencio una nota al jefe de policía.",
+          "pt-BR": "Enquanto Griffin dormia, Kemp escreveu em silêncio um bilhete para o chefe de polícia.",
+          "id": "Saat Griffin tidur, Kemp diam-diam menulis catatan kepada kepala polisi.",
+          "ar": "وبينما كان غريفين نائمًا، كتب كيمب بهدوء رسالة إلى قائد الشرطة.",
+          "vi": "Trong lúc Griffin ngủ, Kemp lặng lẽ viết thư cho cảnh sát trưởng.",
+          "hi": "जब ग्रिफ़िन सो रहा था, केम्प ने चुपचाप पुलिस प्रमुख को एक चिट्ठी लिखी।",
+          "ru": "Пока Гриффин спал, Кемп тихонько написал записку начальнику полиции.",
+          "bn": "গ্রিফিন যখন ঘুমোচ্ছিল, কেম্প চুপচাপ পুলিশপ্রধানকে একটা চিরকুট লিখলেন।",
+          "ur": "جب گرفن سو رہا تھا، کیمپ نے چپکے سے پولیس کے سربراہ کو ایک رقعہ لکھا۔",
+          "th": "ขณะที่กริฟฟินหลับ เคมป์แอบเขียนจดหมายถึงหัวหน้าตำรวจอย่างเงียบ ๆ"
+        }
+      },
+      {
+        "id": "cl-invisible-065",
+        "english": "In the morning, the police came to the house.",
+        "turkish": "Sabah polis eve geldi.",
+        "translations": {
+          "es-419": "Por la mañana, la policía llegó a la casa.",
+          "pt-BR": "De manhã, a polícia chegou à casa.",
+          "id": "Pagi harinya, polisi datang ke rumah itu.",
+          "ar": "في الصباح، جاءت الشرطة إلى البيت.",
+          "vi": "Buổi sáng, cảnh sát đến ngôi nhà.",
+          "hi": "सुबह पुलिस घर पर आ पहुँची।",
+          "ru": "Утром к дому подошла полиция.",
+          "bn": "সকালে পুলিশ বাড়িতে এল।",
+          "ur": "صبح پولیس گھر پر آ پہنچی۔",
+          "th": "ตอนเช้า ตำรวจมาถึงบ้าน"
+        }
+      },
+      {
+        "id": "cl-invisible-066",
+        "english": "Griffin heard them on the stairs and understood at once.",
+        "turkish": "Griffin onları merdivende duydu ve hemen anladı.",
+        "translations": {
+          "es-419": "Griffin los oyó en la escalera y lo entendió enseguida.",
+          "pt-BR": "Griffin os ouviu na escada e entendeu na hora.",
+          "id": "Griffin mendengar mereka di tangga dan langsung mengerti.",
+          "ar": "سمعهم غريفين على الدرج فأدرك الأمر فورًا.",
+          "vi": "Griffin nghe tiếng họ trên cầu thang và hiểu ngay.",
+          "hi": "ग्रिफ़िन ने उन्हें सीढ़ियों पर सुना और तुरंत समझ गया।",
+          "ru": "Гриффин услышал их на лестнице и сразу всё понял.",
+          "bn": "গ্রিফিন সিঁড়িতে তাদের শব্দ শুনে সঙ্গে সঙ্গে বুঝে গেল।",
+          "ur": "گرفن نے انہیں سیڑھیوں پر سنا اور فوراً سمجھ گیا۔",
+          "th": "กริฟฟินได้ยินเสียงพวกเขาที่บันไดและเข้าใจทันที"
+        }
+      },
+      {
+        "id": "cl-invisible-067",
+        "english": "\"You have betrayed me, Kemp!\" he screamed.",
+        "turkish": "\"Bana ihanet ettin Kemp!\" diye haykırdı.",
+        "translations": {
+          "es-419": "—¡Me has traicionado, Kemp! —gritó.",
+          "pt-BR": "— Você me traiu, Kemp! — gritou ele.",
+          "id": "\"Kau mengkhianatiku, Kemp!\" jeritnya.",
+          "ar": "صرخ: «لقد خنتني يا كيمب!»",
+          "vi": "\"Anh đã phản bội tôi, Kemp!\" hắn gào lên.",
+          "hi": "\"तुमने मुझे धोखा दिया, केम्प!\" वह चीख़ा।",
+          "ru": "«Вы предали меня, Кемп!» — завопил он.",
+          "bn": "\"তুমি আমার সঙ্গে বিশ্বাসঘাতকতা করেছ, কেম্প!\" সে চিৎকার করে উঠল।",
+          "ur": "\"تم نے مجھے دھوکا دیا، کیمپ!\" وہ چیخا۔",
+          "th": "\"แกทรยศฉัน เคมป์!\" เขากรีดร้อง"
+        }
+      },
+      {
+        "id": "cl-invisible-068",
+        "english": "He threw off the dressing gown and escaped through the open door.",
+        "turkish": "Sabahlığı fırlatıp attı ve açık kapıdan kaçtı.",
+        "translations": {
+          "es-419": "Se quitó la bata de un tirón y escapó por la puerta abierta.",
+          "pt-BR": "Ele arrancou o roupão e fugiu pela porta aberta.",
+          "id": "Ia melempar jubah tidurnya dan kabur lewat pintu yang terbuka.",
+          "ar": "رمى الرداء وهرب عبر الباب المفتوح.",
+          "vi": "Hắn quăng chiếc áo choàng ngủ và trốn thoát qua cánh cửa đang mở.",
+          "hi": "उसने ड्रेसिंग गाउन उतार फेंका और खुले दरवाज़े से भाग निकला।",
+          "ru": "Он сбросил халат и выскользнул в открытую дверь.",
+          "bn": "সে ড্রেসিং গাউনটা ছুড়ে ফেলে খোলা দরজা দিয়ে পালিয়ে গেল।",
+          "ur": "اس نے ڈریسنگ گاؤن اتار پھینکا اور کھلے دروازے سے بھاگ نکلا۔",
+          "th": "เขาสลัดเสื้อคลุมทิ้งแล้วหนีออกไปทางประตูที่เปิดอยู่"
+        }
+      },
+      {
+        "id": "cl-invisible-069",
+        "english": "Kemp told the police how to catch him.",
+        "turkish": "Kemp polise onu nasıl yakalayabileceklerini anlattı.",
+        "translations": {
+          "es-419": "Kemp le explicó a la policía cómo atraparlo.",
+          "pt-BR": "Kemp explicou à polícia como pegá-lo.",
+          "id": "Kemp memberi tahu polisi cara menangkapnya.",
+          "ar": "أخبر كيمب الشرطة كيف يمسكون به.",
+          "vi": "Kemp chỉ cho cảnh sát cách bắt hắn.",
+          "hi": "केम्प ने पुलिस को बताया कि उसे कैसे पकड़ा जाए।",
+          "ru": "Кемп рассказал полиции, как его поймать.",
+          "bn": "কেম্প পুলিশকে বললেন কীভাবে তাকে ধরা যায়।",
+          "ur": "کیمپ نے پولیس کو بتایا کہ اسے کیسے پکڑا جائے۔",
+          "th": "เคมป์บอกตำรวจถึงวิธีจับเขา"
+        }
+      },
+      {
+        "id": "cl-invisible-070",
+        "english": "\"Lock every door and hide all the food. He must eat and sleep.\"",
+        "turkish": "\"Bütün kapıları kilitleyin ve bütün yiyecekleri saklayın. Yemek yemesi ve uyuması gerek.\"",
+        "translations": {
+          "es-419": "—Cierren todas las puertas y escondan toda la comida. Tiene que comer y dormir.",
+          "pt-BR": "— Tranquem todas as portas e escondam toda a comida. Ele precisa comer e dormir.",
+          "id": "\"Kunci setiap pintu dan sembunyikan semua makanan. Ia harus makan dan tidur.\"",
+          "ar": "«أقفلوا كلّ باب وخبّئوا الطعام كلّه. لا بدّ أن يأكل وينام».",
+          "vi": "\"Hãy khóa mọi cánh cửa và giấu hết thức ăn. Hắn phải ăn và ngủ.\"",
+          "hi": "\"हर दरवाज़ा बंद कर दो और सारा खाना छिपा दो। उसे खाना और सोना तो पड़ेगा।\"",
+          "ru": "«Заприте все двери и спрячьте всю еду. Ему нужно есть и спать».",
+          "bn": "\"সব দরজায় তালা দিন আর সব খাবার লুকিয়ে ফেলুন। ওকে তো খেতে আর ঘুমোতে হবে।\"",
+          "ur": "\"ہر دروازہ بند کر دو اور سارا کھانا چھپا دو۔ اسے کھانا اور سونا تو پڑے گا۔\"",
+          "th": "\"ล็อกประตูทุกบานและซ่อนอาหารทั้งหมด เขาต้องกินและต้องนอน\""
+        }
+      },
+      {
+        "id": "cl-invisible-071",
+        "english": "\"Put broken glass on the roads, and use dogs. Dogs can smell him.\"",
+        "turkish": "\"Yollara kırık cam serpin ve köpek kullanın. Köpekler onun kokusunu alabilir.\"",
+        "translations": {
+          "es-419": "—Pongan vidrios rotos en los caminos y usen perros. Los perros pueden olerlo.",
+          "pt-BR": "— Espalhem vidro quebrado nas estradas e usem cães. Os cães sentem o cheiro dele.",
+          "id": "\"Taburkan pecahan kaca di jalan-jalan, dan gunakan anjing. Anjing bisa mencium baunya.\"",
+          "ar": "«انثروا الزجاج المكسور على الطرق، واستعينوا بالكلاب. الكلاب تشمّ رائحته».",
+          "vi": "\"Rải mảnh thủy tinh vỡ trên đường, và dùng chó. Chó có thể đánh hơi được hắn.\"",
+          "hi": "\"सड़कों पर टूटा काँच बिछा दो, और कुत्तों से काम लो। कुत्ते उसकी गंध सूँघ सकते हैं।\"",
+          "ru": "«Рассыпьте по дорогам битое стекло и возьмите собак. Собаки чуют его запах».",
+          "bn": "\"রাস্তায় ভাঙা কাচ ছড়িয়ে দিন, আর কুকুর লাগান। কুকুর ওর গন্ধ পায়।\"",
+          "ur": "\"سڑکوں پر ٹوٹا شیشہ بچھا دو، اور کتوں سے کام لو۔ کتے اس کی بو سونگھ سکتے ہیں۔\"",
+          "th": "\"โรยเศษแก้วตามถนน และใช้หมา หมาได้กลิ่นเขา\""
+        }
+      },
+      {
+        "id": "cl-invisible-072",
+        "english": "Soon the whole country was searching for the invisible man.",
+        "turkish": "Çok geçmeden bütün ülke görünmez adamı arıyordu.",
+        "translations": {
+          "es-419": "Pronto todo el país buscaba al hombre invisible.",
+          "pt-BR": "Logo o país inteiro procurava o homem invisível.",
+          "id": "Tak lama kemudian, seluruh negeri mencari manusia tak terlihat itu.",
+          "ar": "وسرعان ما صارت البلاد كلّها تبحث عن الرجل الخفيّ.",
+          "vi": "Chẳng bao lâu, cả nước đều truy lùng người vô hình.",
+          "hi": "जल्दी ही पूरा देश अदृश्य आदमी को ढूँढ रहा था।",
+          "ru": "Вскоре вся страна искала человека-невидимку.",
+          "bn": "শিগগিরই গোটা দেশ অদৃশ্য মানুষটিকে খুঁজতে লাগল।",
+          "ur": "جلد ہی پورا ملک غائب آدمی کو ڈھونڈ رہا تھا۔",
+          "th": "ไม่นานคนทั้งประเทศก็ออกตามหามนุษย์ล่องหน"
+        }
+      },
+      {
+        "id": "cl-invisible-073",
+        "english": "Griffin sent Kemp a letter: \"Today I will kill you. Nothing can protect you.\"",
+        "turkish": "Griffin, Kemp'e bir mektup gönderdi: \"Bugün seni öldüreceğim. Hiçbir şey seni koruyamaz.\"",
+        "translations": {
+          "es-419": "Griffin le envió a Kemp una carta: «Hoy te mataré. Nada puede protegerte».",
+          "pt-BR": "Griffin mandou uma carta a Kemp: \"Hoje vou matar você. Nada pode protegê-lo.\"",
+          "id": "Griffin mengirim surat kepada Kemp: \"Hari ini aku akan membunuhmu. Tidak ada yang bisa melindungimu.\"",
+          "ar": "أرسل غريفين إلى كيمب رسالة: «اليوم سأقتلك. لا شيء يستطيع أن يحميك».",
+          "vi": "Griffin gửi cho Kemp một lá thư: \"Hôm nay ta sẽ giết ngươi. Không gì bảo vệ được ngươi đâu.\"",
+          "hi": "ग्रिफ़िन ने केम्प को चिट्ठी भेजी: \"आज मैं तुम्हें मार डालूँगा। तुम्हें कोई नहीं बचा सकता।\"",
+          "ru": "Гриффин прислал Кемпу письмо: «Сегодня я убью вас. Ничто вас не спасёт».",
+          "bn": "গ্রিফিন কেম্পকে একটা চিঠি পাঠাল: \"আজ আমি তোমাকে মারব। কিছুই তোমাকে বাঁচাতে পারবে না।\"",
+          "ur": "گرفن نے کیمپ کو خط بھیجا: \"آج میں تمہیں مار ڈالوں گا۔ تمہیں کوئی نہیں بچا سکتا۔\"",
+          "th": "กริฟฟินส่งจดหมายถึงเคมป์ว่า \"วันนี้ฉันจะฆ่าแก ไม่มีอะไรปกป้องแกได้\""
+        }
+      },
+      {
+        "id": "cl-invisible-074",
+        "english": "That afternoon, the windows of Kemp's house broke one by one.",
+        "turkish": "O öğleden sonra Kemp'in evinin camları birer birer kırıldı.",
+        "translations": {
+          "es-419": "Esa tarde, las ventanas de la casa de Kemp se rompieron una por una.",
+          "pt-BR": "Naquela tarde, as janelas da casa de Kemp se quebraram uma a uma.",
+          "id": "Sore itu, jendela-jendela rumah Kemp pecah satu per satu.",
+          "ar": "في ذلك العصر، تحطّمت نوافذ بيت كيمب واحدة تلو الأخرى.",
+          "vi": "Chiều hôm đó, các cửa sổ nhà Kemp lần lượt vỡ tan.",
+          "hi": "उस दोपहर केम्प के घर की खिड़कियाँ एक-एक करके टूट गईं।",
+          "ru": "В тот день окна в доме Кемпа разбивались одно за другим.",
+          "bn": "সেদিন বিকেলে কেম্পের বাড়ির জানালাগুলো একে একে ভেঙে গেল।",
+          "ur": "اس سہ پہر کیمپ کے گھر کی کھڑکیاں ایک ایک کر کے ٹوٹ گئیں۔",
+          "th": "บ่ายวันนั้น หน้าต่างบ้านของเคมป์แตกทีละบาน"
+        }
+      },
+      {
+        "id": "cl-invisible-075",
+        "english": "Kemp jumped out of a back window and ran down the hill toward the town.",
+        "turkish": "Kemp arka pencerelerden birinden atladı ve tepeden kasabaya doğru koştu.",
+        "translations": {
+          "es-419": "Kemp saltó por una ventana trasera y bajó corriendo la colina hacia el pueblo.",
+          "pt-BR": "Kemp pulou por uma janela dos fundos e desceu correndo o morro em direção à cidade.",
+          "id": "Kemp melompat dari jendela belakang dan berlari menuruni bukit menuju kota.",
+          "ar": "قفز كيمب من نافذة خلفيّة وركض نازلًا التلّ نحو البلدة.",
+          "vi": "Kemp nhảy ra từ một cửa sổ phía sau và chạy xuống đồi về phía thị trấn.",
+          "hi": "केम्प पीछे की एक खिड़की से कूदे और पहाड़ी से नीचे क़स्बे की ओर भागे।",
+          "ru": "Кемп выпрыгнул из заднего окна и побежал с холма к городу.",
+          "bn": "কেম্প পেছনের একটা জানালা দিয়ে লাফিয়ে নেমে পাহাড় বেয়ে শহরের দিকে ছুটলেন।",
+          "ur": "کیمپ پیچھے کی ایک کھڑکی سے کودے اور پہاڑی سے نیچے قصبے کی طرف بھاگے۔",
+          "th": "เคมป์กระโดดออกทางหน้าต่างด้านหลัง แล้ววิ่งลงเนินไปทางตัวเมือง"
+        }
+      },
+      {
+        "id": "cl-invisible-076",
+        "english": "Behind him he heard quick, light footsteps on the road.",
+        "turkish": "Arkasından yolda hızlı, hafif ayak sesleri duydu.",
+        "translations": {
+          "es-419": "Detrás de él oyó pasos rápidos y ligeros en el camino.",
+          "pt-BR": "Atrás dele, ouviu passos rápidos e leves na estrada.",
+          "id": "Di belakangnya ia mendengar langkah kaki yang cepat dan ringan di jalan.",
+          "ar": "سمع خلفه وقع خطوات سريعة خفيفة على الطريق.",
+          "vi": "Phía sau, ông nghe tiếng bước chân nhanh và nhẹ trên đường.",
+          "hi": "पीछे से उन्हें सड़क पर तेज़, हल्के क़दमों की आहट सुनाई दी।",
+          "ru": "Позади он слышал на дороге быстрые лёгкие шаги.",
+          "bn": "পেছনে তিনি রাস্তায় দ্রুত, হালকা পায়ের শব্দ শুনলেন।",
+          "ur": "پیچھے سے انہیں سڑک پر تیز، ہلکے قدموں کی آہٹ سنائی دی۔",
+          "th": "เขาได้ยินเสียงฝีเท้าเบาและเร็วไล่ตามมาบนถนน"
+        }
+      },
+      {
+        "id": "cl-invisible-077",
+        "english": "\"The invisible man is here!\" Kemp shouted to the workers in the street.",
+        "turkish": "\"Görünmez adam burada!\" diye bağırdı Kemp sokaktaki işçilere.",
+        "translations": {
+          "es-419": "—¡El hombre invisible está aquí! —les gritó Kemp a los obreros de la calle.",
+          "pt-BR": "— O homem invisível está aqui! — gritou Kemp para os trabalhadores na rua.",
+          "id": "\"Manusia tak terlihat ada di sini!\" teriak Kemp kepada para pekerja di jalan.",
+          "ar": "صاح كيمب بالعمّال في الشارع: «الرجل الخفيّ هنا!»",
+          "vi": "\"Người vô hình ở đây!\" Kemp hét lên với những người thợ ngoài phố.",
+          "hi": "\"अदृश्य आदमी यहाँ है!\" केम्प गली के मज़दूरों से चिल्लाए।",
+          "ru": "«Невидимка здесь!» — крикнул Кемп рабочим на улице.",
+          "bn": "\"অদৃশ্য মানুষ এখানে!\" কেম্প রাস্তার শ্রমিকদের উদ্দেশে চেঁচালেন।",
+          "ur": "\"غائب آدمی یہاں ہے!\" کیمپ گلی کے مزدوروں سے چلائے۔",
+          "th": "\"มนุษย์ล่องหนอยู่ที่นี่!\" เคมป์ตะโกนบอกคนงานบนถนน"
+        }
+      },
+      {
+        "id": "cl-invisible-078",
+        "english": "Then invisible hands caught him by the throat, and he fell.",
+        "turkish": "Sonra görünmez eller onu gırtlağından yakaladı ve yere düştü.",
+        "translations": {
+          "es-419": "Entonces unas manos invisibles lo agarraron del cuello, y cayó.",
+          "pt-BR": "Então mãos invisíveis o agarraram pelo pescoço, e ele caiu.",
+          "id": "Lalu tangan-tangan tak terlihat mencekik lehernya, dan ia jatuh.",
+          "ar": "ثمّ أمسكت يدان خفيّتان بحلقه، فسقط.",
+          "vi": "Rồi những bàn tay vô hình bóp lấy cổ ông, và ông ngã xuống.",
+          "hi": "तभी अदृश्य हाथों ने उनका गला पकड़ लिया, और वे गिर पड़े।",
+          "ru": "И тут невидимые руки схватили его за горло, и он упал.",
+          "bn": "তখন অদৃশ্য হাত তাঁর গলা চেপে ধরল, আর তিনি পড়ে গেলেন।",
+          "ur": "تبھی غیبی ہاتھوں نے ان کا گلا پکڑ لیا، اور وہ گر پڑے۔",
+          "th": "แล้วมือที่มองไม่เห็นก็คว้าคอเขาไว้ เขาล้มลง"
+        }
+      },
+      {
+        "id": "cl-invisible-079",
+        "english": "A big crowd ran up and threw themselves on the empty air above him.",
+        "turkish": "Büyük bir kalabalık koşup geldi ve onun üstündeki boşluğa atıldı.",
+        "translations": {
+          "es-419": "Una gran multitud llegó corriendo y se lanzó sobre el aire vacío que había encima de él.",
+          "pt-BR": "Uma grande multidão veio correndo e se atirou sobre o ar vazio acima dele.",
+          "id": "Kerumunan besar berlari datang dan menerjang udara kosong di atasnya.",
+          "ar": "ركض حشد كبير وألقى بنفسه على الهواء الفارغ فوقه.",
+          "vi": "Một đám đông lớn chạy tới và lao vào khoảng không phía trên ông.",
+          "hi": "एक बड़ी भीड़ दौड़कर आई और उनके ऊपर की ख़ाली हवा पर टूट पड़ी।",
+          "ru": "Подбежала большая толпа и навалилась на пустоту над ним.",
+          "bn": "এক বিরাট ভিড় ছুটে এসে তাঁর ওপরের ফাঁকা বাতাসের ওপর ঝাঁপিয়ে পড়ল।",
+          "ur": "ایک بڑی بھیڑ دوڑ کر آئی اور ان کے اوپر کی خالی ہوا پر ٹوٹ پڑی۔",
+          "th": "ฝูงชนจำนวนมากวิ่งเข้ามาแล้วกระโจนทับอากาศว่างเปล่าเหนือตัวเขา"
+        }
+      },
+      {
+        "id": "cl-invisible-080",
+        "english": "They held something they could not see, and they hit it again and again.",
+        "turkish": "Göremedikleri bir şeyi tuttular ve ona tekrar tekrar vurdular.",
+        "translations": {
+          "es-419": "Sujetaron algo que no podían ver y lo golpearon una y otra vez.",
+          "pt-BR": "Seguraram algo que não podiam ver e bateram nele várias vezes.",
+          "id": "Mereka memegangi sesuatu yang tidak bisa mereka lihat, dan memukulnya berkali-kali.",
+          "ar": "أمسكوا شيئًا لا يرونه، وضربوه مرّة بعد مرّة.",
+          "vi": "Họ giữ chặt một thứ mà họ không nhìn thấy, và đánh nó hết lần này đến lần khác.",
+          "hi": "उन्होंने कुछ ऐसा पकड़ा जो उन्हें दिख नहीं रहा था, और उसे बार-बार मारा।",
+          "ru": "Они держали что-то невидимое и били его снова и снова.",
+          "bn": "তারা এমন কিছু চেপে ধরল যা দেখা যায় না, আর বারবার সেটাকে মারল।",
+          "ur": "انہوں نے کچھ ایسا پکڑا جو انہیں دکھائی نہیں دے رہا تھا، اور اسے بار بار مارا۔",
+          "th": "พวกเขาจับสิ่งที่มองไม่เห็นไว้ แล้วทุบตีมันครั้งแล้วครั้งเล่า"
+        }
+      },
+      {
+        "id": "cl-invisible-081",
+        "english": "\"Stop! He is hurt,\" cried Kemp. But it was too late.",
+        "turkish": "\"Durun! Yaralandı,\" diye bağırdı Kemp. Ama artık çok geçti.",
+        "translations": {
+          "es-419": "—¡Basta! Está herido —gritó Kemp. Pero ya era demasiado tarde.",
+          "pt-BR": "— Parem! Ele está ferido — gritou Kemp. Mas já era tarde demais.",
+          "id": "\"Berhenti! Ia terluka,\" seru Kemp. Tetapi sudah terlambat.",
+          "ar": "صاح كيمب: «توقّفوا! إنّه مصاب». لكنّ الأوان كان قد فات.",
+          "vi": "\"Dừng lại! Hắn bị thương rồi,\" Kemp kêu lên. Nhưng đã quá muộn.",
+          "hi": "\"रुको! वह घायल है,\" केम्प चिल्लाए। पर बहुत देर हो चुकी थी।",
+          "ru": "«Стойте! Он ранен!» — крикнул Кемп. Но было уже поздно.",
+          "bn": "\"থামুন! ও আহত,\" চেঁচিয়ে উঠলেন কেম্প। কিন্তু তখন অনেক দেরি হয়ে গেছে।",
+          "ur": "\"رکو! وہ زخمی ہے،\" کیمپ چلائے۔ مگر بہت دیر ہو چکی تھی۔",
+          "th": "\"หยุด! เขาบาดเจ็บแล้ว\" เคมป์ร้อง แต่ก็สายเกินไป"
+        }
+      },
+      {
+        "id": "cl-invisible-082",
+        "english": "Slowly, as everyone watched, a body became visible on the ground.",
+        "turkish": "Herkes bakarken yerde yavaş yavaş bir beden görünür hâle geldi.",
+        "translations": {
+          "es-419": "Poco a poco, mientras todos miraban, un cuerpo se hizo visible en el suelo.",
+          "pt-BR": "Aos poucos, enquanto todos olhavam, um corpo foi ficando visível no chão.",
+          "id": "Perlahan-lahan, saat semua orang menonton, sesosok tubuh mulai terlihat di tanah.",
+          "ar": "ببطء، وأمام أعين الجميع، صار جسد مرئيًّا على الأرض.",
+          "vi": "Từ từ, trước mắt mọi người, một thân thể hiện ra trên mặt đất.",
+          "hi": "धीरे-धीरे, सबके देखते-देखते, ज़मीन पर एक शरीर दिखाई देने लगा।",
+          "ru": "Медленно, у всех на глазах, на земле проступило тело.",
+          "bn": "সবার চোখের সামনে ধীরে ধীরে মাটিতে একটা দেহ দেখা দিল।",
+          "ur": "آہستہ آہستہ، سب کے دیکھتے دیکھتے، زمین پر ایک جسم نظر آنے لگا۔",
+          "th": "ร่างหนึ่งค่อย ๆ ปรากฏให้เห็นบนพื้นต่อหน้าทุกคน"
+        }
+      },
+      {
+        "id": "cl-invisible-083",
+        "english": "First the bones, then the flesh, and at last the white skin and hair.",
+        "turkish": "Önce kemikler, sonra et, en sonunda da beyaz deri ve saçlar.",
+        "translations": {
+          "es-419": "Primero los huesos, luego la carne y, al final, la piel blanca y el pelo.",
+          "pt-BR": "Primeiro os ossos, depois a carne e, por fim, a pele branca e o cabelo.",
+          "id": "Mula-mula tulangnya, lalu dagingnya, dan akhirnya kulit dan rambut yang putih.",
+          "ar": "العظام أوّلًا، ثمّ اللحم، وأخيرًا الجلد الأبيض والشعر.",
+          "vi": "Đầu tiên là xương, rồi đến thịt, và cuối cùng là làn da và mái tóc trắng.",
+          "hi": "पहले हड्डियाँ, फिर मांस, और आख़िर में सफ़ेद त्वचा और बाल।",
+          "ru": "Сначала кости, потом плоть и наконец белая кожа и волосы.",
+          "bn": "প্রথমে হাড়, তারপর মাংস, আর শেষে সাদা চামড়া আর চুল।",
+          "ur": "پہلے ہڈیاں، پھر گوشت، اور آخر میں سفید جلد اور بال۔",
+          "th": "กระดูกปรากฏก่อน ตามด้วยเนื้อ และสุดท้ายคือผิวหนังกับเส้นผมสีขาว"
+        }
+      },
+      {
+        "id": "cl-invisible-084",
+        "english": "It was a young man, thin and pale, with his eyes still open.",
+        "turkish": "Zayıf, solgun ve gözleri hâlâ açık genç bir adamdı.",
+        "translations": {
+          "es-419": "Era un hombre joven, delgado y pálido, con los ojos todavía abiertos.",
+          "pt-BR": "Era um homem jovem, magro e pálido, com os olhos ainda abertos.",
+          "id": "Ia seorang pemuda, kurus dan pucat, dengan mata yang masih terbuka.",
+          "ar": "كان شابًّا نحيلًا شاحبًا، وعيناه لا تزالان مفتوحتين.",
+          "vi": "Đó là một chàng trai trẻ, gầy gò và xanh xao, mắt vẫn còn mở.",
+          "hi": "वह एक दुबला, पीला नौजवान था, जिसकी आँखें अब भी खुली थीं।",
+          "ru": "Это был молодой человек, худой и бледный, с открытыми ещё глазами.",
+          "bn": "সে ছিল এক রোগা, ফ্যাকাশে তরুণ, চোখ তখনও খোলা।",
+          "ur": "وہ ایک دبلا، زرد نوجوان تھا، جس کی آنکھیں اب بھی کھلی تھیں۔",
+          "th": "เขาเป็นชายหนุ่มร่างผอมซีด ดวงตายังคงเปิดอยู่"
+        }
+      },
+      {
+        "id": "cl-invisible-085",
+        "english": "The brilliant scientist who wanted to rule the world was dead.",
+        "turkish": "Dünyayı yönetmek isteyen parlak bilim insanı ölmüştü.",
+        "translations": {
+          "es-419": "El brillante científico que quería gobernar el mundo estaba muerto.",
+          "pt-BR": "O brilhante cientista que queria governar o mundo estava morto.",
+          "id": "Ilmuwan cemerlang yang ingin menguasai dunia itu telah mati.",
+          "ar": "مات العالِم اللامع الذي أراد أن يحكم العالم.",
+          "vi": "Nhà khoa học lỗi lạc từng muốn thống trị thế giới đã chết.",
+          "hi": "दुनिया पर राज करना चाहने वाला वह प्रतिभाशाली वैज्ञानिक मर चुका था।",
+          "ru": "Блестящий учёный, мечтавший править миром, был мёртв.",
+          "bn": "পৃথিবী শাসন করতে চাওয়া সেই প্রতিভাবান বিজ্ঞানী মারা গিয়েছিল।",
+          "ur": "دنیا پر حکومت کرنے کا خواہش مند وہ ذہین سائنس دان مر چکا تھا۔",
+          "th": "นักวิทยาศาสตร์ผู้ปราดเปรื่องที่อยากปกครองโลกได้ตายไปแล้ว"
+        }
+      },
+      {
+        "id": "cl-invisible-086",
+        "english": "Years later, Thomas Marvel kept a little inn of his own.",
+        "turkish": "Yıllar sonra Thomas Marvel'ın kendine ait küçük bir hanı vardı.",
+        "translations": {
+          "es-419": "Años después, Thomas Marvel tenía su propia posada pequeña.",
+          "pt-BR": "Anos depois, Thomas Marvel tinha uma pequena estalagem só sua.",
+          "id": "Bertahun-tahun kemudian, Thomas Marvel memiliki penginapan kecilnya sendiri.",
+          "ar": "بعد سنوات، صار لتوماس مارفل نُزُل صغير خاصّ به.",
+          "vi": "Nhiều năm sau, Thomas Marvel có một quán trọ nhỏ của riêng mình.",
+          "hi": "बरसों बाद थॉमस मार्वल की अपनी एक छोटी-सी सराय थी।",
+          "ru": "Много лет спустя у Томаса Марвела был свой маленький трактир.",
+          "bn": "বহু বছর পরে টমাস মার্ভেলের নিজের একটা ছোট সরাইখানা হল।",
+          "ur": "برسوں بعد تھامس مارول کی اپنی ایک چھوٹی سی سرائے تھی۔",
+          "th": "หลายปีต่อมา โทมัส มาร์เวลมีโรงเตี๊ยมเล็ก ๆ เป็นของตัวเอง"
+        }
+      },
+      {
+        "id": "cl-invisible-087",
+        "english": "Late at night, he still opens Griffin's secret books and tries to read them.",
+        "turkish": "Gece geç saatlerde hâlâ Griffin'in gizli kitaplarını açıp okumaya çalışır.",
+        "translations": {
+          "es-419": "Por las noches, todavía abre los libros secretos de Griffin e intenta leerlos.",
+          "pt-BR": "Tarde da noite, ele ainda abre os livros secretos de Griffin e tenta lê-los.",
+          "id": "Larut malam, ia masih membuka buku-buku rahasia Griffin dan mencoba membacanya.",
+          "ar": "في الليل المتأخّر، لا يزال يفتح كتب غريفين السرّيّة ويحاول قراءتها.",
+          "vi": "Đêm khuya, gã vẫn mở những cuốn sách bí mật của Griffin ra và cố đọc.",
+          "hi": "देर रात वह आज भी ग्रिफ़िन की गुप्त किताबें खोलकर पढ़ने की कोशिश करता है।",
+          "ru": "Поздно ночью он до сих пор открывает тайные книги Гриффина и пытается их читать.",
+          "bn": "গভীর রাতে সে আজও গ্রিফিনের গোপন বইগুলো খুলে পড়ার চেষ্টা করে।",
+          "ur": "رات گئے وہ آج بھی گرفن کی خفیہ کتابیں کھول کر پڑھنے کی کوشش کرتا ہے۔",
+          "th": "ดึก ๆ เขายังคงเปิดหนังสือลับของกริฟฟินขึ้นมาพยายามอ่าน"
+        }
+      },
+      {
+        "id": "cl-invisible-088",
+        "english": "But he understands nothing, and nobody else knows the secret.",
+        "turkish": "Ama hiçbir şey anlamaz, sırrı da başka kimse bilmez.",
+        "translations": {
+          "es-419": "Pero no entiende nada, y nadie más conoce el secreto.",
+          "pt-BR": "Mas não entende nada, e mais ninguém conhece o segredo.",
+          "id": "Tetapi ia tidak memahami apa pun, dan tak ada orang lain yang tahu rahasianya.",
+          "ar": "لكنّه لا يفهم شيئًا، ولا أحد غيره يعرف السرّ.",
+          "vi": "Nhưng gã chẳng hiểu gì, và cũng không ai khác biết bí mật ấy.",
+          "hi": "पर उसे कुछ समझ नहीं आता, और कोई दूसरा यह रहस्य नहीं जानता।",
+          "ru": "Но он ничего не понимает, а больше никто этой тайны не знает.",
+          "bn": "কিন্তু সে কিছুই বোঝে না, আর অন্য কেউ রহস্যটা জানে না।",
+          "ur": "مگر اسے کچھ سمجھ نہیں آتا، اور کوئی دوسرا یہ راز نہیں جانتا۔",
+          "th": "แต่เขาไม่เข้าใจอะไรเลย และไม่มีใครอื่นรู้ความลับนั้น"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-invisible-man-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "A doctor who opens a hospital in a village",
+          "A scientist who makes himself invisible and becomes dangerous",
+          "A tramp who finds a treasure in the snow",
+          "A policeman who catches a famous thief"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-invisible-man-q2",
+        "kind": "detail",
+        "prompt": "Why did the stranger wear bandages and glasses?",
+        "options": [
+          "He had a bad accident",
+          "He wanted to look like a doctor",
+          "So that people could not see he was invisible",
+          "Because it was very cold"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "classic-invisible-man-q3",
+        "kind": "detail",
+        "prompt": "What did Kemp do while Griffin slept?",
+        "options": [
+          "He ran away to London",
+          "He wrote a note to the police",
+          "He burned Griffin's books",
+          "He went back to sleep"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-invisible-man-q4",
+        "kind": "inference",
+        "prompt": "Why did Kemp tell the police to hide all the food?",
+        "options": [
+          "Because the food was bad",
+          "Because Griffin had to eat and could not live long without food",
+          "To save money for the town",
+          "Because dogs were stealing it"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-invisible-man-q5",
+        "kind": "inference",
+        "prompt": "What does the ending suggest about Griffin's secret?",
+        "options": [
+          "Marvel will soon become invisible too",
+          "The secret is safe because nobody can understand the books",
+          "The police burned the books",
+          "Kemp will finish the experiment"
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  "words": [
+    {
+      "id": "stranger",
+      "word": "stranger",
+      "translation": "yabancı",
+      "pronunciation": "/ˈstreɪndʒə(r)/",
+      "example": "A stranger asked me the way to the station.",
+      "translations": {
+        "es-419": "desconocido",
+        "pt-BR": "desconhecido, estranho",
+        "id": "orang asing",
+        "ar": "غريب",
+        "vi": "người lạ",
+        "hi": "अजनबी",
+        "ru": "незнакомец",
+        "bn": "অচেনা লোক",
+        "ur": "اجنبی",
+        "th": "คนแปลกหน้า"
+      }
+    },
+    {
+      "id": "bandage",
+      "word": "bandage",
+      "translation": "sargı, bandaj",
+      "pronunciation": "/ˈbændɪdʒ/",
+      "example": "The nurse put a bandage on my arm.",
+      "translations": {
+        "es-419": "venda",
+        "pt-BR": "atadura, curativo",
+        "id": "perban",
+        "ar": "ضمادة",
+        "vi": "băng (y tế)",
+        "hi": "पट्टी",
+        "ru": "бинт, повязка",
+        "bn": "ব্যান্ডেজ",
+        "ur": "پٹی",
+        "th": "ผ้าพันแผล"
+      }
+    },
+    {
+      "id": "glasses",
+      "word": "glasses",
+      "translation": "gözlük",
+      "pronunciation": "/ˈɡlɑːsɪz/",
+      "example": "My grandfather needs glasses to read.",
+      "translations": {
+        "es-419": "gafas, lentes",
+        "pt-BR": "óculos",
+        "id": "kacamata",
+        "ar": "نظّارة",
+        "vi": "kính (đeo mắt)",
+        "hi": "चश्मा",
+        "ru": "очки",
+        "bn": "চশমা",
+        "ur": "عینک",
+        "th": "แว่นตา"
+      }
+    },
+    {
+      "id": "scientist",
+      "word": "scientist",
+      "translation": "bilim insanı",
+      "pronunciation": "/ˈsaɪəntɪst/",
+      "example": "The scientist worked in a large laboratory.",
+      "translations": {
+        "es-419": "científico",
+        "pt-BR": "cientista",
+        "id": "ilmuwan",
+        "ar": "عالِم",
+        "vi": "nhà khoa học",
+        "hi": "वैज्ञानिक",
+        "ru": "учёный",
+        "bn": "বিজ্ঞানী",
+        "ur": "سائنس دان",
+        "th": "นักวิทยาศาสตร์"
+      }
+    },
+    {
+      "id": "experiment",
+      "word": "experiment",
+      "translation": "deney",
+      "pronunciation": "/ɪkˈsperɪmənt/",
+      "example": "We did an experiment with water and salt.",
+      "translations": {
+        "es-419": "experimento",
+        "pt-BR": "experiência, experimento",
+        "id": "percobaan, eksperimen",
+        "ar": "تجربة",
+        "vi": "thí nghiệm",
+        "hi": "प्रयोग",
+        "ru": "опыт, эксперимент",
+        "bn": "পরীক্ষা",
+        "ur": "تجربہ",
+        "th": "การทดลอง"
+      }
+    },
+    {
+      "id": "police",
+      "word": "police",
+      "translation": "polis",
+      "pronunciation": "/pəˈliːs/",
+      "example": "Someone called the police after the accident.",
+      "translations": {
+        "es-419": "policía",
+        "pt-BR": "polícia",
+        "id": "polisi",
+        "ar": "الشرطة",
+        "vi": "cảnh sát",
+        "hi": "पुलिस",
+        "ru": "полиция",
+        "bn": "পুলিশ",
+        "ur": "پولیس",
+        "th": "ตำรวจ"
+      }
+    },
+    {
+      "id": "crowd",
+      "word": "crowd",
+      "translation": "kalabalık",
+      "pronunciation": "/kraʊd/",
+      "example": "A large crowd waited outside the stadium.",
+      "translations": {
+        "es-419": "multitud",
+        "pt-BR": "multidão",
+        "id": "kerumunan",
+        "ar": "حشد",
+        "vi": "đám đông",
+        "hi": "भीड़",
+        "ru": "толпа",
+        "bn": "ভিড়",
+        "ur": "بھیڑ",
+        "th": "ฝูงชน"
+      }
+    },
+    {
+      "id": "visible",
+      "word": "visible",
+      "translation": "görünür",
+      "pronunciation": "/ˈvɪzəbl/",
+      "example": "The mountains are visible on a clear day.",
+      "translations": {
+        "es-419": "visible",
+        "pt-BR": "visível",
+        "id": "terlihat",
+        "ar": "مرئيّ",
+        "vi": "có thể nhìn thấy",
+        "hi": "दिखाई देने वाला",
+        "ru": "видимый",
+        "bn": "দৃশ্যমান",
+        "ur": "نظر آنے والا",
+        "th": "มองเห็นได้"
+      }
+    },
+    {
+      "id": "invisible",
+      "word": "invisible",
+      "translation": "görünmez",
+      "pronunciation": "/ɪnˈvɪzəbl/",
+      "example": "An old soldier met a woman who gave him useful advice and an invisible cloak.",
+      "translations": {
+        "es-419": "invisible",
+        "pt-BR": "invisível",
+        "id": "tak terlihat",
+        "ar": "خفيّ",
+        "vi": "vô hình, tàng hình",
+        "hi": "अदृश्य",
+        "ru": "невидимый",
+        "bn": "অদৃশ্য",
+        "ur": "نظر نہ آنے والا، غائب",
+        "th": "ล่องหน, มองไม่เห็น"
+      }
+    },
+    {
+      "id": "inn",
+      "word": "inn",
+      "translation": "han",
+      "pronunciation": "/ɪn/",
+      "example": "He took the goose to an inn, where three sisters wanted to steal its feathers.",
+      "translations": {
+        "es-419": "posada",
+        "pt-BR": "estalagem",
+        "id": "penginapan",
+        "ar": "نُزُل",
+        "vi": "quán trọ",
+        "hi": "सराय",
+        "ru": "постоялый двор",
+        "bn": "সরাইখানা",
+        "ur": "سرائے",
+        "th": "โรงเตี๊ยม"
+      }
+    },
+    {
+      "id": "coat",
+      "word": "coat",
+      "translation": "palto",
+      "pronunciation": "/koʊt/",
+      "example": "His coat is wet.",
+      "translations": {
+        "es-419": "abrigo",
+        "pt-BR": "casaco",
+        "id": "mantel",
+        "ar": "معطف",
+        "vi": "áo khoác",
+        "hi": "कोट",
+        "ru": "пальто",
+        "bn": "কোট",
+        "ur": "کوٹ",
+        "th": "เสื้อโค้ต"
+      }
+    },
+    {
+      "id": "village",
+      "word": "village",
+      "translation": "köy",
+      "pronunciation": "/ˈvɪlɪdʒ/",
+      "example": "They visited a small village.",
+      "translations": {
+        "es-419": "pueblo, aldea",
+        "pt-BR": "vila, aldeia",
+        "id": "desa",
+        "ar": "قرية",
+        "vi": "ngôi làng",
+        "hi": "गाँव",
+        "ru": "деревня",
+        "bn": "গ্রাম",
+        "ur": "گاؤں",
+        "th": "หมู่บ้าน"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "stranger",
+    "bandage",
+    "glasses",
+    "scientist",
+    "experiment",
+    "police",
+    "crowd",
+    "visible",
+    "invisible",
+    "inn",
+    "coat",
+    "village"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-invisible-man-q1",
+      "sentenceIds": [
+        "cl-invisible-051",
+        "cl-invisible-063"
+      ],
+      "rationale": "Griffin made himself invisible and turned into a dangerous man."
+    },
+    {
+      "questionId": "classic-invisible-man-q2",
+      "sentenceIds": [
+        "cl-invisible-059"
+      ],
+      "rationale": "He covered himself so that nobody would see there was nothing there."
+    },
+    {
+      "questionId": "classic-invisible-man-q3",
+      "sentenceIds": [
+        "cl-invisible-064"
+      ],
+      "rationale": "Kemp secretly told the police."
+    },
+    {
+      "questionId": "classic-invisible-man-q4",
+      "sentenceIds": [
+        "cl-invisible-070"
+      ],
+      "rationale": "Without food and rest, the invisible man would grow weak and be easier to catch."
+    },
+    {
+      "questionId": "classic-invisible-man-q5",
+      "sentenceIds": [
+        "cl-invisible-088"
+      ],
+      "rationale": "Marvel has the books but cannot understand them, so the secret is lost."
+    }
+  ],
+  "publicationBlockers": [
+    "Owner (oguz) approval of the English text, questions and translations required.",
+    "Native-speaker language review not done.",
+    "Source text hash pending (Gutenberg not reachable from the cloud session).",
+    "Publisher story creation, validation and publication pending."
+  ]
+}

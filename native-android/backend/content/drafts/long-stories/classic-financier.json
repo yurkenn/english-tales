@@ -1,0 +1,2027 @@
+{
+  "status": "draft",
+  "kind": "long-story",
+  "source": "long-story-classics-2026-10-22",
+  "reviewedBy": null,
+  "rights": {
+    "credit": "Theodore Dreiser",
+    "sourceTitle": "The Financier",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/1840",
+    "sourceTextUrl": "https://www.gutenberg.org/cache/epub/1840/pg1840-images.html",
+    "identifiedContributor": {
+      "name": "Theodore Dreiser",
+      "role": "author",
+      "deathYear": 1945
+    },
+    "firstPublished": 1912,
+    "sourceCopyrightStatement": "Public domain in the USA",
+    "checkedOn": "2026-10-22",
+    "adaptation": "New graded B1 retelling written by English Tales, with English Tales translations. No modern abridgement, film script or translation was used.",
+    "turkeyAssessment": "Author died in 1945, more than 70 years before 2026, so the work is out of protection in Turkey and in life+70 countries.",
+    "rightsGuidanceUrl": "https://telifhaklari.ktb.gov.tr/TR-332373/telif-hakki-kac-yil-sureyle-korunur.html",
+    "sourceTextSha256": null,
+    "sourceTextSha256Pending": "Gutenberg is not reachable from the cloud session; record the source text hash on the owner's Mac before publication."
+  },
+  "editorialNotes": [
+    "B1 target: past tense narration, sentences of at most 20 words, about 1,050 words (about 9 minutes of reading).",
+    "Retelling of the novel's main line: the lobster and the squid, the soap deal, the young broker and banker, Lillian, Butler and Stener, the city loans and streetcar stock, Aileen, the Chicago fire panic, the anonymous letter, the trial and prison, the pardon, the 1873 panic and the move to Chicago.",
+    "Political detail, the long trial and the second marriage are simplified; the source should be checked against the 1912 text before publication.",
+    "Reading sections are editorial groupings for a future chapter view; the app currently shows the story as one text."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+  },
+  "readingSections": [
+    {
+      "title": "The lobster and the squid",
+      "firstSentenceId": "cl-financier-001",
+      "lastSentenceId": "cl-financier-022"
+    },
+    {
+      "title": "The city's money",
+      "firstSentenceId": "cl-financier-023",
+      "lastSentenceId": "cl-financier-041"
+    },
+    {
+      "title": "The great fire",
+      "firstSentenceId": "cl-financier-042",
+      "lastSentenceId": "cl-financier-065"
+    },
+    {
+      "title": "A second fortune",
+      "firstSentenceId": "cl-financier-066",
+      "lastSentenceId": "cl-financier-092"
+    }
+  ],
+  "story": {
+    "id": "classic-financier",
+    "title": "The Financier",
+    "author": "Theodore Dreiser",
+    "level": "B1",
+    "genre": "Günlük yaşam",
+    "description": "Finansçı. Philadelphia'da büyüyen Frank Cowperwood, çocukken bir balık tankında hayatın kuralını öğrenir: güçlü olan zayıfı yer. Zeki bankacı zirveye çıkar, büyük bir yangınla her şeyini kaybeder ve yeniden ayağa kalkar. B1 düzeyinde uzun uyarlama. Uyarlama ve Türkçe çeviri: English Tales.",
+    "descriptions": {
+      "es-419": "El financiero. Frank Cowperwood crece en Filadelfia y de niño aprende en una pecera la regla de la vida: el fuerte se come al débil. El astuto banquero llega a la cima, lo pierde todo tras un gran incendio y vuelve a levantarse. Adaptación larga de nivel B1. Adaptación: English Tales.",
+      "pt-BR": "O financista. Frank Cowperwood cresce na Filadélfia e, ainda menino, aprende num aquário a regra da vida: o forte come o fraco. O banqueiro esperto chega ao topo, perde tudo depois de um grande incêndio e se levanta de novo. Adaptação longa de nível B1. Adaptação: English Tales.",
+      "id": "Sang Pemodal. Frank Cowperwood tumbuh di Philadelphia dan sejak kecil belajar aturan hidup dari sebuah akuarium: yang kuat memakan yang lemah. Bankir cerdas itu naik ke puncak, kehilangan segalanya setelah kebakaran besar, lalu bangkit lagi. Adaptasi panjang tingkat B1. Adaptasi: English Tales.",
+      "ar": "المموِّل. يكبر فرانك كاوبروود في فيلادلفيا، ويتعلّم وهو طفل قاعدة الحياة من حوض سمك: القويّ يأكل الضعيف. يصعد المصرفيّ الذكيّ إلى القمّة، ويخسر كلّ شيء بعد حريق كبير، ثمّ ينهض من جديد. اقتباس طويل بمستوى B1. الاقتباس: English Tales.",
+      "vi": "Nhà tài phiệt. Frank Cowperwood lớn lên ở Philadelphia và từ nhỏ đã học được quy luật cuộc đời qua một bể cá: kẻ mạnh ăn thịt kẻ yếu. Chàng chủ ngân hàng thông minh leo lên đỉnh cao, mất tất cả sau một trận hỏa hoạn lớn, rồi lại đứng dậy. Bản phóng tác dài trình độ B1. Phóng tác: English Tales.",
+      "hi": "द फ़ाइनैंसर। फ़िलाडेल्फ़िया में बड़ा होता फ़्रैंक काउपरवुड बचपन में एक मछली-टैंक से ज़िंदगी का नियम सीखता है: ताक़तवर कमज़ोर को खा जाता है। चतुर बैंकर शिखर पर पहुँचता है, एक बड़ी आग के बाद सब कुछ खो देता है और फिर उठ खड़ा होता है। B1 स्तर का लंबा रूपांतरण। रूपांतरण: English Tales.",
+      "ru": "Финансист. Фрэнк Каупервуд растёт в Филадельфии и ещё мальчиком узнаёт у аквариума закон жизни: сильный ест слабого. Умный банкир поднимается на вершину, теряет всё после большого пожара и снова встаёт на ноги. Длинный пересказ уровня B1. Адаптация: English Tales.",
+      "bn": "দ্য ফিনান্সিয়ার। ফিলাডেলফিয়ায় বড় হওয়া ফ্র্যাঙ্ক কাউপারউড ছোটবেলায় একটা মাছের ট্যাঙ্ক দেখে জীবনের নিয়ম শেখে: সবলেরা দুর্বলকে খায়। চতুর ব্যাংকার শিখরে ওঠে, এক বড় আগুনের পর সব হারায়, তারপর আবার উঠে দাঁড়ায়। B1 স্তরের দীর্ঘ রূপান্তর। রূপান্তর: English Tales.",
+      "ur": "دی فنانسر۔ فلاڈیلفیا میں پلنے بڑھنے والا فرینک کاؤپروڈ بچپن میں ایک مچھلی ٹینک سے زندگی کا اصول سیکھتا ہے: طاقتور کمزور کو کھا جاتا ہے۔ چالاک بینکار عروج پر پہنچتا ہے، ایک بڑی آگ کے بعد سب کچھ کھو دیتا ہے اور پھر اٹھ کھڑا ہوتا ہے۔ B1 سطح کی طویل ماخوذ کہانی۔ ماخوذ: English Tales.",
+      "th": "นักการเงิน แฟรงก์ คาวเปอร์วูด เติบโตในฟิลาเดลเฟีย และเรียนรู้กฎของชีวิตจากตู้ปลาตั้งแต่เด็ก ว่าผู้แข็งแรงกินผู้อ่อนแอ นายธนาคารผู้ฉลาดไต่ขึ้นสู่จุดสูงสุด สูญเสียทุกอย่างหลังไฟไหม้ครั้งใหญ่ แล้วลุกขึ้นได้อีกครั้ง ฉบับเรียบเรียงยาวระดับ B1 เรียบเรียงโดย English Tales"
+    },
+    "coverKey": "cover_classic_financier",
+    "tags": [
+      "gunluk-yasam"
+    ],
+    "sentences": [
+      {
+        "id": "cl-financier-001",
+        "english": "Frank Cowperwood was a boy in Philadelphia in the 1840s, the son of a bank clerk.",
+        "turkish": "Frank Cowperwood 1840'larda Philadelphia'da yaşayan bir çocuktu, bir banka memurunun oğluydu.",
+        "translations": {
+          "es-419": "Frank Cowperwood era un niño en Filadelfia en la década de 1840, hijo de un empleado de banco.",
+          "pt-BR": "Frank Cowperwood era um menino na Filadélfia nos anos 1840, filho de um funcionário de banco.",
+          "id": "Frank Cowperwood adalah seorang anak di Philadelphia pada tahun 1840-an, putra seorang pegawai bank.",
+          "ar": "كان فرانك كاوبروود صبيًّا في فيلادلفيا في أربعينيّات القرن التاسع عشر، ابنًا لموظّف في مصرف.",
+          "vi": "Frank Cowperwood là một cậu bé ở Philadelphia vào những năm 1840, con trai của một nhân viên ngân hàng.",
+          "hi": "फ़्रैंक काउपरवुड 1840 के दशक में फ़िलाडेल्फ़िया का एक लड़का था, एक बैंक क्लर्क का बेटा।",
+          "ru": "Фрэнк Каупервуд рос в Филадельфии в 1840-х годах, он был сыном банковского служащего.",
+          "bn": "ফ্র্যাঙ্ক কাউপারউড ছিল ১৮৪০-এর দশকে ফিলাডেলফিয়ার এক বালক, এক ব্যাংক কেরানির ছেলে।",
+          "ur": "فرینک کاؤپروڈ 1840 کی دہائی میں فلاڈیلفیا کا ایک لڑکا تھا، ایک بینک کلرک کا بیٹا۔",
+          "th": "แฟรงก์ คาวเปอร์วูด เป็นเด็กชายในฟิลาเดลเฟียช่วงทศวรรษ 1840 เป็นลูกของเสมียนธนาคาร"
+        }
+      },
+      {
+        "id": "cl-financier-002",
+        "english": "Even as a child, he wanted to know how the world really worked.",
+        "turkish": "Daha çocukken bile dünyanın gerçekte nasıl işlediğini bilmek istiyordu.",
+        "translations": {
+          "es-419": "Ya de niño, quería saber cómo funcionaba de verdad el mundo.",
+          "pt-BR": "Mesmo criança, ele queria saber como o mundo funcionava de verdade.",
+          "id": "Sejak kecil, ia ingin tahu bagaimana dunia sebenarnya bekerja.",
+          "ar": "حتّى وهو طفل، كان يريد أن يعرف كيف يسير العالم حقًّا.",
+          "vi": "Ngay từ nhỏ, cậu đã muốn biết thế giới thật sự vận hành ra sao.",
+          "hi": "बचपन में भी वह जानना चाहता था कि दुनिया असल में कैसे चलती है।",
+          "ru": "Уже ребёнком он хотел понять, как на самом деле устроен мир.",
+          "bn": "ছোটবেলা থেকেই সে জানতে চাইত, পৃথিবী আসলে কীভাবে চলে।",
+          "ur": "بچپن میں بھی وہ جاننا چاہتا تھا کہ دنیا اصل میں کیسے چلتی ہے۔",
+          "th": "ตั้งแต่ยังเด็ก เขาอยากรู้ว่าโลกนี้ทำงานอย่างไรจริง ๆ"
+        }
+      },
+      {
+        "id": "cl-financier-003",
+        "english": "One day he saw a lobster and a squid in the glass tank of a fish shop.",
+        "turkish": "Bir gün bir balıkçı dükkânının cam tankında bir ıstakoz ile bir mürekkep balığı gördü.",
+        "translations": {
+          "es-419": "Un día vio una langosta y un calamar en la pecera de vidrio de una pescadería.",
+          "pt-BR": "Um dia ele viu uma lagosta e uma lula no tanque de vidro de uma peixaria.",
+          "id": "Suatu hari ia melihat seekor lobster dan seekor cumi-cumi di dalam akuarium kaca sebuah toko ikan.",
+          "ar": "وذات يوم، رأى جراد بحر وحبّارًا في حوض زجاجيّ لدى بائع سمك.",
+          "vi": "Một hôm, cậu thấy một con tôm hùm và một con mực trong bể kính của một cửa hàng cá.",
+          "hi": "एक दिन उसने मछली की एक दुकान के शीशे के टैंक में एक लॉबस्टर और एक स्क्विड देखा।",
+          "ru": "Однажды он увидел в стеклянном аквариуме рыбной лавки омара и кальмара.",
+          "bn": "একদিন সে মাছের দোকানের কাচের ট্যাঙ্কে একটা লবস্টার আর একটা স্কুইড দেখল।",
+          "ur": "ایک دن اس نے مچھلی کی ایک دکان کے شیشے کے ٹینک میں ایک لابسٹر اور ایک اسکوئڈ دیکھا۔",
+          "th": "วันหนึ่งเขาเห็นกุ้งมังกรกับปลาหมึกอยู่ในตู้กระจกของร้านขายปลา"
+        }
+      },
+      {
+        "id": "cl-financier-004",
+        "english": "Every day, the lobster tore off a small piece of the squid.",
+        "turkish": "Istakoz her gün mürekkep balığından küçük bir parça koparıyordu.",
+        "translations": {
+          "es-419": "Cada día, la langosta le arrancaba un pedacito al calamar.",
+          "pt-BR": "Todos os dias, a lagosta arrancava um pedacinho da lula.",
+          "id": "Setiap hari, lobster itu merobek sepotong kecil tubuh cumi-cumi.",
+          "ar": "وكلّ يوم، كان جراد البحر يقطع قطعة صغيرة من الحبّار.",
+          "vi": "Mỗi ngày, con tôm hùm lại xé một mẩu nhỏ của con mực.",
+          "hi": "हर दिन लॉबस्टर स्क्विड का एक छोटा-सा टुकड़ा नोच लेता।",
+          "ru": "Каждый день омар отрывал от кальмара маленький кусочек.",
+          "bn": "প্রতিদিন লবস্টারটা স্কুইডের গা থেকে একটু করে ছিঁড়ে নিত।",
+          "ur": "ہر دن لابسٹر اسکوئڈ کا ایک چھوٹا سا ٹکڑا نوچ لیتا۔",
+          "th": "ทุกวัน กุ้งมังกรจะฉีกเนื้อปลาหมึกไปทีละชิ้นเล็ก ๆ"
+        }
+      },
+      {
+        "id": "cl-financier-005",
+        "english": "Frank came back again and again to watch.",
+        "turkish": "Frank izlemek için tekrar tekrar geri geldi.",
+        "translations": {
+          "es-419": "Frank volvía una y otra vez a mirar.",
+          "pt-BR": "Frank voltava de novo e de novo para olhar.",
+          "id": "Frank datang lagi dan lagi untuk menontonnya.",
+          "ar": "وكان فرانك يعود مرّة بعد مرّة ليشاهد.",
+          "vi": "Frank cứ quay lại xem hết lần này đến lần khác.",
+          "hi": "फ़्रैंक बार-बार देखने लौटता रहा।",
+          "ru": "Фрэнк приходил смотреть снова и снова.",
+          "bn": "ফ্র্যাঙ্ক বারবার ফিরে এসে দেখত।",
+          "ur": "فرینک بار بار دیکھنے لوٹتا رہا۔",
+          "th": "แฟรงก์กลับมาดูซ้ำแล้วซ้ำเล่า"
+        }
+      },
+      {
+        "id": "cl-financier-006",
+        "english": "The squid was fast, and it hid in clouds of its own black ink.",
+        "turkish": "Mürekkep balığı hızlıydı ve kendi kara mürekkebinin bulutlarına saklanıyordu.",
+        "translations": {
+          "es-419": "El calamar era rápido, y se escondía en nubes de su propia tinta negra.",
+          "pt-BR": "A lula era rápida, e se escondia em nuvens da sua própria tinta preta.",
+          "id": "Cumi-cumi itu gesit, dan ia bersembunyi di balik awan tintanya sendiri yang hitam.",
+          "ar": "كان الحبّار سريعًا، ويختبئ في سحب من حبره الأسود.",
+          "vi": "Con mực rất nhanh, và nó trốn trong những đám mực đen của chính mình.",
+          "hi": "स्क्विड फुर्तीला था, और अपनी ही काली स्याही के बादलों में छिप जाता था।",
+          "ru": "Кальмар был быстрым и прятался в облаках собственных чёрных чернил.",
+          "bn": "স্কুইডটা ছিল চটপটে, নিজের কালো কালির মেঘে সে লুকিয়ে পড়ত।",
+          "ur": "اسکوئڈ پھرتیلا تھا، اور اپنی ہی کالی سیاہی کے بادلوں میں چھپ جاتا تھا۔",
+          "th": "ปลาหมึกว่องไว และหลบซ่อนอยู่ในกลุ่มหมึกสีดำของตัวเอง"
+        }
+      },
+      {
+        "id": "cl-financier-007",
+        "english": "But the lobster was patient. It always waited for its chance.",
+        "turkish": "Ama ıstakoz sabırlıydı. Hep fırsatını kolluyordu.",
+        "translations": {
+          "es-419": "Pero la langosta era paciente. Siempre esperaba su oportunidad.",
+          "pt-BR": "Mas a lagosta era paciente. Sempre esperava a sua chance.",
+          "id": "Tetapi lobster itu sabar. Ia selalu menunggu kesempatannya.",
+          "ar": "لكنّ جراد البحر كان صبورًا، ينتظر فرصته دائمًا.",
+          "vi": "Nhưng con tôm hùm rất kiên nhẫn. Nó luôn chờ thời cơ.",
+          "hi": "पर लॉबस्टर धैर्यवान था। वह हमेशा अपने मौक़े का इंतज़ार करता।",
+          "ru": "Но омар был терпелив. Он всегда ждал своего часа.",
+          "bn": "কিন্তু লবস্টারটা ছিল ধৈর্যশীল। সে সবসময় সুযোগের অপেক্ষায় থাকত।",
+          "ur": "مگر لابسٹر صابر تھا۔ وہ ہمیشہ اپنے موقع کا انتظار کرتا۔",
+          "th": "แต่กุ้งมังกรอดทน มันรอจังหวะของมันอยู่เสมอ"
+        }
+      },
+      {
+        "id": "cl-financier-008",
+        "english": "After a few days, the squid was gone. The lobster had eaten it all.",
+        "turkish": "Birkaç gün sonra mürekkep balığı kalmamıştı. Istakoz hepsini yemişti.",
+        "translations": {
+          "es-419": "A los pocos días, el calamar ya no estaba. La langosta se lo había comido entero.",
+          "pt-BR": "Depois de alguns dias, a lula tinha sumido. A lagosta tinha comido tudo.",
+          "id": "Setelah beberapa hari, cumi-cumi itu habis. Lobster telah memakan semuanya.",
+          "ar": "وبعد أيّام قليلة، اختفى الحبّار. كان جراد البحر قد أكله كلّه.",
+          "vi": "Vài ngày sau, con mực không còn nữa. Con tôm hùm đã ăn hết.",
+          "hi": "कुछ दिनों बाद स्क्विड ग़ायब था। लॉबस्टर उसे पूरा खा चुका था।",
+          "ru": "Через несколько дней кальмара не стало. Омар съел его целиком.",
+          "bn": "কয়েক দিন পরে স্কুইডটা আর নেই। লবস্টার পুরোটাই খেয়ে ফেলেছে।",
+          "ur": "کچھ دن بعد اسکوئڈ غائب تھا۔ لابسٹر اسے پورا کھا چکا تھا۔",
+          "th": "ไม่กี่วันต่อมา ปลาหมึกก็หายไป กุ้งมังกรกินมันจนหมด"
+        }
+      },
+      {
+        "id": "cl-financier-009",
+        "english": "\"That is how life is,\" Frank thought. \"Things live on other things.\"",
+        "turkish": "\"Hayat böyle işte,\" diye düşündü Frank. \"Canlılar başka canlılarla beslenir.\"",
+        "translations": {
+          "es-419": "«Así es la vida —pensó Frank—. Unos seres viven de otros».",
+          "pt-BR": "\"A vida é assim\", pensou Frank. \"Uns seres vivem de outros.\"",
+          "id": "\"Begitulah hidup,\" pikir Frank. \"Makhluk hidup dari makhluk lain.\"",
+          "ar": "فكّر فرانك: «هكذا هي الحياة. الكائنات تعيش على كائنات أخرى».",
+          "vi": "\"Cuộc đời là thế,\" Frank nghĩ. \"Sinh vật này sống nhờ sinh vật khác.\"",
+          "hi": "फ़्रैंक ने सोचा, \"ज़िंदगी ऐसी ही है। एक जीव दूसरे जीव पर जीता है।\"",
+          "ru": "«Такова жизнь, — подумал Фрэнк. — Одни живут за счёт других».",
+          "bn": "ফ্র্যাঙ্ক ভাবল, \"জীবন এমনই। এক প্রাণী আরেক প্রাণীকে খেয়ে বাঁচে।\"",
+          "ur": "فرینک نے سوچا، \"زندگی ایسی ہی ہے۔ ایک جاندار دوسرے جاندار پر جیتا ہے۔\"",
+          "th": "\"ชีวิตก็เป็นอย่างนี้\" แฟรงก์คิด \"สิ่งหนึ่งมีชีวิตอยู่ได้ด้วยการกินอีกสิ่ง\""
+        }
+      },
+      {
+        "id": "cl-financier-010",
+        "english": "\"Men live on other men. The strong eat the weak.\"",
+        "turkish": "\"İnsanlar da başka insanlarla beslenir. Güçlü olan zayıfı yer.\"",
+        "translations": {
+          "es-419": "«Los hombres viven de otros hombres. Los fuertes se comen a los débiles».",
+          "pt-BR": "\"Os homens vivem de outros homens. Os fortes comem os fracos.\"",
+          "id": "\"Manusia hidup dari manusia lain. Yang kuat memakan yang lemah.\"",
+          "ar": "«والبشر يعيشون على بشر آخرين. القويّ يأكل الضعيف».",
+          "vi": "\"Con người sống nhờ con người. Kẻ mạnh ăn thịt kẻ yếu.\"",
+          "hi": "\"इंसान भी दूसरे इंसानों पर जीते हैं। ताक़तवर कमज़ोर को खा जाता है।\"",
+          "ru": "«Люди живут за счёт других людей. Сильные едят слабых».",
+          "bn": "\"মানুষও অন্য মানুষকে খেয়ে বাঁচে। সবলেরা দুর্বলকে খায়।\"",
+          "ur": "\"انسان بھی دوسرے انسانوں پر جیتے ہیں۔ طاقتور کمزور کو کھا جاتا ہے۔\"",
+          "th": "\"คนก็อยู่ได้ด้วยการกินคนอื่น ผู้แข็งแรงกินผู้อ่อนแอ\""
+        }
+      },
+      {
+        "id": "cl-financier-011",
+        "english": "He never forgot that lesson.",
+        "turkish": "O dersi hiç unutmadı.",
+        "translations": {
+          "es-419": "Nunca olvidó esa lección.",
+          "pt-BR": "Ele nunca esqueceu aquela lição.",
+          "id": "Ia tak pernah melupakan pelajaran itu.",
+          "ar": "ولم ينسَ ذلك الدرس أبدًا.",
+          "vi": "Cậu không bao giờ quên bài học ấy.",
+          "hi": "वह यह सबक़ कभी नहीं भूला।",
+          "ru": "Этот урок он не забыл никогда.",
+          "bn": "সেই শিক্ষা সে কখনো ভোলেনি।",
+          "ur": "وہ یہ سبق کبھی نہیں بھولا۔",
+          "th": "เขาไม่เคยลืมบทเรียนนั้นเลย"
+        }
+      },
+      {
+        "id": "cl-financier-012",
+        "english": "At thirteen, he bought seven boxes of soap at a sale for thirty-two dollars.",
+        "turkish": "On üç yaşında bir mezatta otuz iki dolara yedi kutu sabun aldı.",
+        "translations": {
+          "es-419": "A los trece años, compró siete cajas de jabón en una subasta por treinta y dos dólares.",
+          "pt-BR": "Aos treze anos, comprou sete caixas de sabão num leilão por trinta e dois dólares.",
+          "id": "Pada usia tiga belas, ia membeli tujuh kotak sabun di sebuah lelang seharga tiga puluh dua dolar.",
+          "ar": "وفي الثالثة عشرة، اشترى سبعة صناديق من الصابون في مزاد باثنين وثلاثين دولارًا.",
+          "vi": "Năm mười ba tuổi, cậu mua bảy thùng xà phòng ở một cuộc đấu giá với giá ba mươi hai đô la.",
+          "hi": "तेरह साल की उम्र में उसने एक नीलामी में बत्तीस डॉलर में साबुन के सात बक्से ख़रीदे।",
+          "ru": "В тринадцать лет он купил на аукционе семь ящиков мыла за тридцать два доллара.",
+          "bn": "তেরো বছর বয়সে সে এক নিলামে বত্রিশ ডলারে সাত বাক্স সাবান কিনল।",
+          "ur": "تیرہ سال کی عمر میں اس نے ایک نیلامی میں بتیس ڈالر میں صابن کے سات ڈبے خریدے۔",
+          "th": "ตอนอายุสิบสาม เขาซื้อสบู่เจ็ดลังจากการประมูลในราคาสามสิบสองดอลลาร์"
+        }
+      },
+      {
+        "id": "cl-financier-013",
+        "english": "The same day, he sold them to a shop for sixty-two dollars.",
+        "turkish": "Aynı gün onları bir dükkâna altmış iki dolara sattı.",
+        "translations": {
+          "es-419": "Ese mismo día, las vendió a una tienda por sesenta y dos dólares.",
+          "pt-BR": "No mesmo dia, vendeu-as a uma loja por sessenta e dois dólares.",
+          "id": "Hari itu juga, ia menjualnya ke sebuah toko seharga enam puluh dua dolar.",
+          "ar": "وفي اليوم نفسه، باعها لمتجر باثنين وستّين دولارًا.",
+          "vi": "Ngay hôm đó, cậu bán lại cho một cửa hàng với giá sáu mươi hai đô la.",
+          "hi": "उसी दिन उसने उन्हें एक दुकान को बासठ डॉलर में बेच दिया।",
+          "ru": "В тот же день он продал их лавке за шестьдесят два доллара.",
+          "bn": "সেদিনই সে সেগুলো একটা দোকানে বাষট্টি ডলারে বেচে দিল।",
+          "ur": "اسی دن اس نے انہیں ایک دکان کو باسٹھ ڈالر میں بیچ دیا۔",
+          "th": "วันเดียวกันนั้น เขาขายต่อให้ร้านค้าในราคาหกสิบสองดอลลาร์"
+        }
+      },
+      {
+        "id": "cl-financier-014",
+        "english": "His father laughed. \"The boy has a head for business.\"",
+        "turkish": "Babası güldü. \"Bu çocuğun ticarete kafası çalışıyor.\"",
+        "translations": {
+          "es-419": "Su padre se rio. —El chico tiene cabeza para los negocios.",
+          "pt-BR": "O pai riu. — O menino tem cabeça para os negócios.",
+          "id": "Ayahnya tertawa. \"Anak ini berbakat dalam bisnis.\"",
+          "ar": "ضحك أبوه وقال: «لهذا الولد عقل تجاريّ».",
+          "vi": "Cha cậu bật cười. \"Thằng bé có đầu óc kinh doanh đấy.\"",
+          "hi": "उसके पिता हँस पड़े। \"इस लड़के का दिमाग़ कारोबार में चलता है।\"",
+          "ru": "Отец рассмеялся: «У мальчика деловая голова».",
+          "bn": "তার বাবা হেসে ফেললেন। \"ছেলেটার ব্যবসাবুদ্ধি আছে।\"",
+          "ur": "اس کے والد ہنس پڑے۔ \"اس لڑکے کا دماغ کاروبار میں چلتا ہے۔\"",
+          "th": "พ่อของเขาหัวเราะ \"เด็กคนนี้มีหัวทางธุรกิจ\""
+        }
+      },
+      {
+        "id": "cl-financier-015",
+        "english": "At nineteen, he worked for a broker, buying and selling stock all day.",
+        "turkish": "On dokuz yaşında bir borsacının yanında çalışıyor, bütün gün hisse senedi alıp satıyordu.",
+        "translations": {
+          "es-419": "A los diecinueve, trabajaba para un corredor, comprando y vendiendo acciones todo el día.",
+          "pt-BR": "Aos dezenove, trabalhava para um corretor, comprando e vendendo ações o dia todo.",
+          "id": "Pada usia sembilan belas, ia bekerja untuk seorang pialang, membeli dan menjual saham sepanjang hari.",
+          "ar": "وفي التاسعة عشرة، كان يعمل لدى سمسار، يشتري الأسهم ويبيعها طوال اليوم.",
+          "vi": "Mười chín tuổi, anh làm cho một người môi giới, suốt ngày mua bán cổ phiếu.",
+          "hi": "उन्नीस साल की उम्र में वह एक दलाल के यहाँ काम करता था, दिन भर शेयर ख़रीदता-बेचता।",
+          "ru": "В девятнадцать он работал у маклера и целыми днями покупал и продавал акции.",
+          "bn": "উনিশ বছর বয়সে সে এক দালালের কাছে কাজ করত, সারাদিন শেয়ার কেনাবেচা করত।",
+          "ur": "انیس سال کی عمر میں وہ ایک دلال کے ہاں کام کرتا تھا، دن بھر شیئر خریدتا بیچتا۔",
+          "th": "ตอนอายุสิบเก้า เขาทำงานให้นายหน้าคนหนึ่ง ซื้อขายหุ้นตลอดทั้งวัน"
+        }
+      },
+      {
+        "id": "cl-financier-016",
+        "english": "He loved the noise and the speed of the stock exchange.",
+        "turkish": "Borsanın gürültüsünü ve hızını seviyordu.",
+        "translations": {
+          "es-419": "Le encantaban el ruido y la velocidad de la bolsa.",
+          "pt-BR": "Ele adorava o barulho e a velocidade da bolsa.",
+          "id": "Ia menyukai kebisingan dan kecepatan bursa saham.",
+          "ar": "كان يحبّ ضجيج البورصة وسرعتها.",
+          "vi": "Anh mê tiếng ồn và nhịp độ của sàn chứng khoán.",
+          "hi": "उसे शेयर बाज़ार का शोर और रफ़्तार बहुत पसंद थी।",
+          "ru": "Он любил шум и скорость биржи.",
+          "bn": "শেয়ারবাজারের হইচই আর গতি তার খুব ভালো লাগত।",
+          "ur": "اسے اسٹاک ایکسچینج کا شور اور رفتار بہت پسند تھی۔",
+          "th": "เขาชอบความวุ่นวายและความรวดเร็วของตลาดหุ้น"
+        }
+      },
+      {
+        "id": "cl-financier-017",
+        "english": "He was calm, quick and clever, and men began to trust him.",
+        "turkish": "Sakin, çabuk ve zekiydi; insanlar ona güvenmeye başladı.",
+        "translations": {
+          "es-419": "Era tranquilo, rápido e inteligente, y los hombres empezaron a confiar en él.",
+          "pt-BR": "Era calmo, rápido e esperto, e os homens começaram a confiar nele.",
+          "id": "Ia tenang, cepat, dan cerdas, dan orang-orang mulai percaya kepadanya.",
+          "ar": "كان هادئًا سريعًا ذكيًّا، فبدأ الرجال يثقون به.",
+          "vi": "Anh điềm tĩnh, nhanh nhẹn và thông minh, và người ta bắt đầu tin tưởng anh.",
+          "hi": "वह शांत, फुर्तीला और चतुर था, और लोग उस पर भरोसा करने लगे।",
+          "ru": "Он был спокоен, быстр и умён, и люди начали ему доверять.",
+          "bn": "সে ছিল শান্ত, চটপটে আর চালাক, আর লোকে তাকে বিশ্বাস করতে শুরু করল।",
+          "ur": "وہ پرسکون، پھرتیلا اور چالاک تھا، اور لوگ اس پر بھروسا کرنے لگے۔",
+          "th": "เขาใจเย็น ว่องไว และฉลาด ผู้คนจึงเริ่มไว้ใจเขา"
+        }
+      },
+      {
+        "id": "cl-financier-018",
+        "english": "Soon he opened his own small bank.",
+        "turkish": "Çok geçmeden kendi küçük bankasını açtı.",
+        "translations": {
+          "es-419": "Pronto abrió su propio banco pequeño.",
+          "pt-BR": "Logo abriu seu próprio banco pequeno.",
+          "id": "Tak lama kemudian ia membuka bank kecilnya sendiri.",
+          "ar": "وسرعان ما افتتح مصرفه الصغير الخاصّ.",
+          "vi": "Chẳng bao lâu, anh mở ngân hàng nhỏ của riêng mình.",
+          "hi": "जल्दी ही उसने अपना एक छोटा-सा बैंक खोल लिया।",
+          "ru": "Вскоре он открыл свой собственный небольшой банк.",
+          "bn": "শিগগিরই সে নিজের একটা ছোট ব্যাংক খুলল।",
+          "ur": "جلد ہی اس نے اپنا ایک چھوٹا سا بینک کھول لیا۔",
+          "th": "ไม่นานเขาก็เปิดธนาคารเล็ก ๆ ของตัวเอง"
+        }
+      },
+      {
+        "id": "cl-financier-019",
+        "english": "He married Lillian, a quiet, pretty widow five years older than him.",
+        "turkish": "Kendinden beş yaş büyük, sessiz ve güzel bir dul olan Lillian'la evlendi.",
+        "translations": {
+          "es-419": "Se casó con Lillian, una viuda tranquila y bonita, cinco años mayor que él.",
+          "pt-BR": "Casou-se com Lillian, uma viúva quieta e bonita, cinco anos mais velha que ele.",
+          "id": "Ia menikahi Lillian, seorang janda pendiam dan cantik yang lima tahun lebih tua darinya.",
+          "ar": "وتزوّج ليليان، وهي أرملة هادئة جميلة تكبره بخمس سنوات.",
+          "vi": "Anh cưới Lillian, một góa phụ trầm lặng, xinh đẹp, hơn anh năm tuổi.",
+          "hi": "उसने लिलियन से शादी की, जो एक शांत, सुंदर विधवा थी और उससे पाँच साल बड़ी थी।",
+          "ru": "Он женился на Лилиан, тихой, миловидной вдове на пять лет старше его.",
+          "bn": "সে বিয়ে করল লিলিয়ানকে, এক শান্ত, সুন্দরী বিধবা, তার চেয়ে পাঁচ বছরের বড়।",
+          "ur": "اس نے لِلیئن سے شادی کی، جو ایک خاموش، خوبصورت بیوہ تھی اور اس سے پانچ سال بڑی تھی۔",
+          "th": "เขาแต่งงานกับลิลเลียน หญิงม่ายผู้เงียบขรึมและสวย ซึ่งอายุมากกว่าเขาห้าปี"
+        }
+      },
+      {
+        "id": "cl-financier-020",
+        "english": "She was gentle, and Frank liked to take care of her.",
+        "turkish": "Yumuşak huyluydu ve Frank ona bakmaktan hoşlanıyordu.",
+        "translations": {
+          "es-419": "Era dulce, y a Frank le gustaba cuidarla.",
+          "pt-BR": "Era meiga, e Frank gostava de cuidar dela.",
+          "id": "Ia lembut, dan Frank senang menjaganya.",
+          "ar": "كانت رقيقة، وكان فرانك يحبّ أن يعتني بها.",
+          "vi": "Cô dịu dàng, và Frank thích chăm sóc cô.",
+          "hi": "वह कोमल स्वभाव की थी, और फ़्रैंक को उसका ख़याल रखना अच्छा लगता था।",
+          "ru": "Она была кроткой, и Фрэнку нравилось о ней заботиться.",
+          "bn": "সে ছিল নরম স্বভাবের, আর ফ্র্যাঙ্ক তার যত্ন নিতে ভালোবাসত।",
+          "ur": "وہ نرم مزاج تھی، اور فرینک کو اس کا خیال رکھنا اچھا لگتا تھا۔",
+          "th": "เธอเป็นคนอ่อนโยน และแฟรงก์ก็ชอบดูแลเธอ"
+        }
+      },
+      {
+        "id": "cl-financier-021",
+        "english": "They had two children and a fine house, and he collected beautiful paintings.",
+        "turkish": "İki çocukları ve güzel bir evleri oldu; Frank da güzel tablolar topladı.",
+        "translations": {
+          "es-419": "Tuvieron dos hijos y una casa elegante, y él coleccionaba cuadros hermosos.",
+          "pt-BR": "Tiveram dois filhos e uma bela casa, e ele colecionava quadros bonitos.",
+          "id": "Mereka punya dua anak dan rumah yang bagus, dan ia mengoleksi lukisan-lukisan indah.",
+          "ar": "رُزقا بطفلين وبيت جميل، وصار يجمع اللوحات الجميلة.",
+          "vi": "Họ có hai đứa con, một ngôi nhà đẹp, và anh sưu tầm những bức tranh quý.",
+          "hi": "उनके दो बच्चे और एक शानदार घर था, और वह सुंदर चित्र इकट्ठा करता था।",
+          "ru": "У них было двое детей и прекрасный дом, а он собирал красивые картины.",
+          "bn": "তাদের দুটি সন্তান আর একটা সুন্দর বাড়ি হল, আর সে সুন্দর সুন্দর ছবি জমাত।",
+          "ur": "ان کے دو بچے اور ایک شاندار گھر تھا، اور وہ خوبصورت تصویریں جمع کرتا تھا۔",
+          "th": "ทั้งคู่มีลูกสองคนและบ้านหลังงาม ส่วนเขาก็สะสมภาพวาดสวย ๆ"
+        }
+      },
+      {
+        "id": "cl-financier-022",
+        "english": "But Frank always wanted more.",
+        "turkish": "Ama Frank hep daha fazlasını istedi.",
+        "translations": {
+          "es-419": "Pero Frank siempre quería más.",
+          "pt-BR": "Mas Frank sempre queria mais.",
+          "id": "Tetapi Frank selalu menginginkan lebih.",
+          "ar": "لكنّ فرانك كان يريد المزيد دائمًا.",
+          "vi": "Nhưng Frank lúc nào cũng muốn nhiều hơn.",
+          "hi": "पर फ़्रैंक हमेशा और चाहता था।",
+          "ru": "Но Фрэнку всегда хотелось большего.",
+          "bn": "কিন্তু ফ্র্যাঙ্ক সবসময় আরও চাইত।",
+          "ur": "مگر فرینک ہمیشہ اور چاہتا تھا۔",
+          "th": "แต่แฟรงก์ต้องการมากกว่านั้นเสมอ"
+        }
+      },
+      {
+        "id": "cl-financier-023",
+        "english": "In those days, Philadelphia was ruled by a few powerful men.",
+        "turkish": "O günlerde Philadelphia'yı birkaç güçlü adam yönetiyordu.",
+        "translations": {
+          "es-419": "En aquellos tiempos, Filadelfia estaba gobernada por unos pocos hombres poderosos.",
+          "pt-BR": "Naquela época, a Filadélfia era governada por alguns homens poderosos.",
+          "id": "Pada masa itu, Philadelphia dikuasai oleh segelintir pria berkuasa.",
+          "ar": "في تلك الأيّام، كان يحكم فيلادلفيا عدد قليل من الرجال الأقوياء.",
+          "vi": "Thời ấy, Philadelphia nằm trong tay một vài người đàn ông quyền thế.",
+          "hi": "उन दिनों फ़िलाडेल्फ़िया पर कुछ ताक़तवर लोगों का राज था।",
+          "ru": "В те времена Филадельфией правили несколько могущественных людей.",
+          "bn": "সেকালে ফিলাডেলফিয়া চালাত মুষ্টিমেয় কয়েকজন ক্ষমতাবান লোক।",
+          "ur": "ان دنوں فلاڈیلفیا پر کچھ طاقتور لوگوں کا راج تھا۔",
+          "th": "ในสมัยนั้น ฟิลาเดลเฟียถูกปกครองโดยชายผู้ทรงอิทธิพลเพียงไม่กี่คน"
+        }
+      },
+      {
+        "id": "cl-financier-024",
+        "english": "One of them was Edward Butler, an old Irishman who had become very rich.",
+        "turkish": "Bunlardan biri, çok zengin olmuş yaşlı bir İrlandalı olan Edward Butler'dı.",
+        "translations": {
+          "es-419": "Uno de ellos era Edward Butler, un viejo irlandés que se había hecho muy rico.",
+          "pt-BR": "Um deles era Edward Butler, um velho irlandês que tinha ficado muito rico.",
+          "id": "Salah satunya adalah Edward Butler, seorang lelaki tua Irlandia yang sudah menjadi sangat kaya.",
+          "ar": "كان أحدهم إدوارد بتلر، وهو إيرلنديّ عجوز صار غنيًّا جدًّا.",
+          "vi": "Một trong số đó là Edward Butler, một ông già người Ireland đã trở nên rất giàu có.",
+          "hi": "उनमें से एक थे एडवर्ड बटलर, एक बूढ़े आयरिश, जो बहुत अमीर हो चुके थे।",
+          "ru": "Одним из них был Эдвард Батлер, старый ирландец, который очень разбогател.",
+          "bn": "তাঁদের একজন এডওয়ার্ড বাটলার, এক বৃদ্ধ আইরিশ, যিনি অনেক ধনী হয়ে উঠেছিলেন।",
+          "ur": "ان میں سے ایک ایڈورڈ بٹلر تھے، ایک بوڑھے آئرش، جو بہت امیر ہو چکے تھے۔",
+          "th": "หนึ่งในนั้นคือเอ็ดเวิร์ด บัตเลอร์ ชายชาวไอริชสูงวัยที่ร่ำรวยมาก"
+        }
+      },
+      {
+        "id": "cl-financier-025",
+        "english": "He liked Frank and often asked him for advice about money.",
+        "turkish": "Frank'i severdi ve para konusunda sık sık ona danışırdı.",
+        "translations": {
+          "es-419": "Le caía bien Frank y a menudo le pedía consejo sobre dinero.",
+          "pt-BR": "Ele gostava de Frank e muitas vezes lhe pedia conselhos sobre dinheiro.",
+          "id": "Ia menyukai Frank dan sering meminta nasihatnya soal uang.",
+          "ar": "كان يحبّ فرانك، وكثيرًا ما يستشيره في شؤون المال.",
+          "vi": "Ông quý Frank và thường hỏi ý kiến anh về chuyện tiền bạc.",
+          "hi": "वे फ़्रैंक को पसंद करते थे और अक्सर पैसों के बारे में उससे सलाह लेते थे।",
+          "ru": "Он хорошо относился к Фрэнку и часто советовался с ним о деньгах.",
+          "bn": "তিনি ফ্র্যাঙ্ককে পছন্দ করতেন, প্রায়ই টাকাপয়সা নিয়ে তার পরামর্শ নিতেন।",
+          "ur": "وہ فرینک کو پسند کرتے تھے اور اکثر پیسوں کے بارے میں اس سے مشورہ لیتے تھے۔",
+          "th": "เขาชอบแฟรงก์ และมักขอคำแนะนำเรื่องเงินจากเขา"
+        }
+      },
+      {
+        "id": "cl-financier-026",
+        "english": "Another was George Stener, the new city treasurer.",
+        "turkish": "Bir diğeri yeni şehir saymanı George Stener'dı.",
+        "translations": {
+          "es-419": "Otro era George Stener, el nuevo tesorero de la ciudad.",
+          "pt-BR": "Outro era George Stener, o novo tesoureiro da cidade.",
+          "id": "Yang lain adalah George Stener, bendahara kota yang baru.",
+          "ar": "وكان آخر هو جورج ستينر، أمين خزينة المدينة الجديد.",
+          "vi": "Một người khác là George Stener, thủ quỹ mới của thành phố.",
+          "hi": "दूसरे थे जॉर्ज स्टेनर, शहर के नए ख़ज़ांची।",
+          "ru": "Другим был Джордж Стинер, новый городской казначей.",
+          "bn": "আরেকজন জর্জ স্টেনার, শহরের নতুন কোষাধ্যক্ষ।",
+          "ur": "دوسرے جارج اسٹینر تھے، شہر کے نئے خزانچی۔",
+          "th": "อีกคนคือจอร์จ สเตเนอร์ เหรัญญิกคนใหม่ของเมือง"
+        }
+      },
+      {
+        "id": "cl-financier-027",
+        "english": "Stener had owned a small shop before Butler's friends gave him the job.",
+        "turkish": "Stener, Butler'ın dostları ona bu işi vermeden önce küçük bir dükkân işletiyordu.",
+        "translations": {
+          "es-419": "Stener había tenido una tiendita antes de que los amigos de Butler le dieran el puesto.",
+          "pt-BR": "Stener tinha uma lojinha antes de os amigos de Butler lhe darem o cargo.",
+          "id": "Stener dulu punya toko kecil sebelum teman-teman Butler memberinya jabatan itu.",
+          "ar": "كان ستينر يملك دكّانًا صغيرًا قبل أن يمنحه أصدقاء بتلر هذا المنصب.",
+          "vi": "Stener từng có một cửa hàng nhỏ trước khi bạn bè của Butler trao cho ông chức vụ đó.",
+          "hi": "बटलर के दोस्तों से यह पद मिलने से पहले स्टेनर की एक छोटी-सी दुकान थी।",
+          "ru": "До того как друзья Батлера дали ему эту должность, у Стинера была маленькая лавка.",
+          "bn": "বাটলারের বন্ধুরা পদটা দেওয়ার আগে স্টেনারের একটা ছোট দোকান ছিল।",
+          "ur": "بٹلر کے دوستوں سے یہ عہدہ ملنے سے پہلے اسٹینر کی ایک چھوٹی سی دکان تھی۔",
+          "th": "ก่อนที่เพื่อน ๆ ของบัตเลอร์จะให้ตำแหน่งนี้ สเตเนอร์เคยมีร้านเล็ก ๆ ร้านหนึ่ง"
+        }
+      },
+      {
+        "id": "cl-financier-028",
+        "english": "Stener was weak and not very clever, but he controlled a lot of public money.",
+        "turkish": "Stener zayıf ve pek zeki olmayan biriydi, ama çok miktarda kamu parasını elinde tutuyordu.",
+        "translations": {
+          "es-419": "Stener era débil y no muy listo, pero controlaba mucho dinero público.",
+          "pt-BR": "Stener era fraco e não muito esperto, mas controlava muito dinheiro público.",
+          "id": "Stener lemah dan tidak terlalu pintar, tetapi ia menguasai banyak uang rakyat.",
+          "ar": "كان ستينر ضعيفًا وغير ذكيّ كثيرًا، لكنّه كان يتحكّم في مال عامّ كثير.",
+          "vi": "Stener yếu đuối và không mấy thông minh, nhưng ông nắm trong tay rất nhiều tiền công.",
+          "hi": "स्टेनर कमज़ोर थे और बहुत समझदार नहीं थे, पर बहुत-सा सरकारी पैसा उनके हाथ में था।",
+          "ru": "Стинер был слаб и не очень умён, но распоряжался большими общественными деньгами.",
+          "bn": "স্টেনার ছিলেন দুর্বল আর খুব একটা বুদ্ধিমান নন, কিন্তু অনেক সরকারি টাকা তাঁর হাতে ছিল।",
+          "ur": "اسٹینر کمزور تھے اور زیادہ سمجھ دار نہیں تھے، مگر بہت سا سرکاری پیسہ ان کے ہاتھ میں تھا۔",
+          "th": "สเตเนอร์เป็นคนอ่อนแอและไม่ค่อยฉลาด แต่เขาคุมเงินของรัฐอยู่มหาศาล"
+        }
+      },
+      {
+        "id": "cl-financier-029",
+        "english": "Frank made a secret plan with him.",
+        "turkish": "Frank onunla gizli bir plan yaptı.",
+        "translations": {
+          "es-419": "Frank hizo un plan secreto con él.",
+          "pt-BR": "Frank fez um plano secreto com ele.",
+          "id": "Frank membuat rencana rahasia bersamanya.",
+          "ar": "وضع فرانك معه خطّة سرّيّة.",
+          "vi": "Frank cùng ông lập một kế hoạch bí mật.",
+          "hi": "फ़्रैंक ने उनके साथ मिलकर एक गुप्त योजना बनाई।",
+          "ru": "Фрэнк придумал вместе с ним тайный план.",
+          "bn": "ফ্র্যাঙ্ক তাঁর সঙ্গে মিলে একটা গোপন মতলব আঁটল।",
+          "ur": "فرینک نے ان کے ساتھ مل کر ایک خفیہ منصوبہ بنایا۔",
+          "th": "แฟรงก์วางแผนลับกับเขา"
+        }
+      },
+      {
+        "id": "cl-financier-030",
+        "english": "Stener gave Frank city money as a loan, at very low interest.",
+        "turkish": "Stener şehrin parasını Frank'e çok düşük faizle borç olarak verdi.",
+        "translations": {
+          "es-419": "Stener le daba a Frank dinero de la ciudad como préstamo, con un interés muy bajo.",
+          "pt-BR": "Stener dava a Frank dinheiro da cidade como empréstimo, com juros muito baixos.",
+          "id": "Stener memberi Frank uang kota sebagai pinjaman, dengan bunga yang sangat rendah.",
+          "ar": "كان ستينر يعطي فرانك مال المدينة قرضًا بفائدة زهيدة جدًّا.",
+          "vi": "Stener cho Frank vay tiền của thành phố với lãi suất rất thấp.",
+          "hi": "स्टेनर ने फ़्रैंक को शहर का पैसा बहुत कम ब्याज पर क़र्ज़ के रूप में दिया।",
+          "ru": "Стинер давал Фрэнку городские деньги в заём под очень низкий процент.",
+          "bn": "স্টেনার খুব কম সুদে ফ্র্যাঙ্ককে শহরের টাকা ধার দিতেন।",
+          "ur": "اسٹینر نے فرینک کو شہر کا پیسہ بہت کم سود پر قرض کے طور پر دیا۔",
+          "th": "สเตเนอร์ให้แฟรงก์กู้เงินของเมืองโดยคิดดอกเบี้ยต่ำมาก"
+        }
+      },
+      {
+        "id": "cl-financier-031",
+        "english": "Frank used it to buy stock in the new streetcar lines.",
+        "turkish": "Frank bu parayla yeni tramvay hatlarının hisselerini aldı.",
+        "translations": {
+          "es-419": "Frank lo usó para comprar acciones de las nuevas líneas de tranvía.",
+          "pt-BR": "Frank o usou para comprar ações das novas linhas de bonde.",
+          "id": "Frank memakainya untuk membeli saham jalur trem yang baru.",
+          "ar": "استخدمه فرانك لشراء أسهم في خطوط الترام الجديدة.",
+          "vi": "Frank dùng số tiền đó mua cổ phiếu các tuyến xe điện mới.",
+          "hi": "फ़्रैंक ने उससे नई ट्राम लाइनों के शेयर ख़रीदे।",
+          "ru": "Фрэнк покупал на них акции новых трамвайных линий.",
+          "bn": "ফ্র্যাঙ্ক সেই টাকায় নতুন ট্রাম লাইনের শেয়ার কিনত।",
+          "ur": "فرینک نے اس سے نئی ٹرام لائنوں کے شیئر خریدے۔",
+          "th": "แฟรงก์ใช้เงินนั้นซื้อหุ้นของเส้นทางรถรางสายใหม่"
+        }
+      },
+      {
+        "id": "cl-financier-032",
+        "english": "When the prices went up, they both made a fortune.",
+        "turkish": "Fiyatlar yükselince ikisi de servet kazandı.",
+        "translations": {
+          "es-419": "Cuando subieron los precios, los dos hicieron una fortuna.",
+          "pt-BR": "Quando os preços subiram, os dois fizeram fortuna.",
+          "id": "Ketika harganya naik, keduanya meraup kekayaan besar.",
+          "ar": "وحين ارتفعت الأسعار، جمع كلاهما ثروة.",
+          "vi": "Khi giá tăng, cả hai đều kiếm được cả một gia tài.",
+          "hi": "जब दाम बढ़े, तो दोनों ने ढेर सारी दौलत कमाई।",
+          "ru": "Когда цены выросли, оба сколотили состояние.",
+          "bn": "দাম যখন বাড়ল, দুজনেই প্রচুর টাকা কামাল।",
+          "ur": "جب دام بڑھے، تو دونوں نے بہت دولت کمائی۔",
+          "th": "เมื่อราคาขึ้น ทั้งคู่ก็ร่ำรวยมหาศาล"
+        }
+      },
+      {
+        "id": "cl-financier-033",
+        "english": "Frank built a big new house and filled it with art from Europe.",
+        "turkish": "Frank büyük, yeni bir ev yaptırdı ve onu Avrupa'dan getirttiği sanat eserleriyle doldurdu.",
+        "translations": {
+          "es-419": "Frank construyó una casa nueva y grande y la llenó de arte de Europa.",
+          "pt-BR": "Frank construiu uma casa nova e grande e a encheu de arte da Europa.",
+          "id": "Frank membangun rumah baru yang besar dan mengisinya dengan karya seni dari Eropa.",
+          "ar": "بنى فرانك بيتًا جديدًا كبيرًا وملأه بالتحف الفنّيّة من أوروبا.",
+          "vi": "Frank xây một ngôi nhà mới thật lớn và bày đầy tác phẩm nghệ thuật từ châu Âu.",
+          "hi": "फ़्रैंक ने एक बड़ा नया घर बनवाया और उसे यूरोप की कलाकृतियों से भर दिया।",
+          "ru": "Фрэнк построил большой новый дом и наполнил его произведениями искусства из Европы.",
+          "bn": "ফ্র্যাঙ্ক একটা বড় নতুন বাড়ি বানাল আর সেটা ইউরোপের শিল্পকর্মে ভরিয়ে দিল।",
+          "ur": "فرینک نے ایک بڑا نیا گھر بنوایا اور اسے یورپ کے فن پاروں سے بھر دیا۔",
+          "th": "แฟรงก์สร้างบ้านหลังใหม่ขนาดใหญ่ และประดับด้วยงานศิลปะจากยุโรปจนเต็ม"
+        }
+      },
+      {
+        "id": "cl-financier-034",
+        "english": "It was not quite legal, but in Philadelphia many men did such things.",
+        "turkish": "Pek yasal değildi, ama Philadelphia'da birçok adam böyle şeyler yapardı.",
+        "translations": {
+          "es-419": "No era del todo legal, pero en Filadelfia muchos hombres hacían cosas así.",
+          "pt-BR": "Não era bem legal, mas na Filadélfia muitos homens faziam coisas assim.",
+          "id": "Itu tidak sepenuhnya legal, tetapi di Philadelphia banyak orang melakukan hal semacam itu.",
+          "ar": "لم يكن ذلك قانونيًّا تمامًا، لكنّ رجالًا كثيرين في فيلادلفيا كانوا يفعلون مثله.",
+          "vi": "Việc đó không hẳn hợp pháp, nhưng ở Philadelphia nhiều người vẫn làm như vậy.",
+          "hi": "यह पूरी तरह क़ानूनी नहीं था, पर फ़िलाडेल्फ़िया में बहुत लोग ऐसा करते थे।",
+          "ru": "Это было не совсем законно, но в Филадельфии многие так поступали.",
+          "bn": "কাজটা পুরোপুরি আইনসম্মত ছিল না, কিন্তু ফিলাডেলফিয়ায় অনেকেই এমন করত।",
+          "ur": "یہ پوری طرح قانونی نہیں تھا، مگر فلاڈیلفیا میں بہت لوگ ایسا کرتے تھے۔",
+          "th": "มันไม่ถูกกฎหมายเสียทีเดียว แต่ในฟิลาเดลเฟียก็มีหลายคนทำแบบนี้"
+        }
+      },
+      {
+        "id": "cl-financier-035",
+        "english": "At Butler's house, Frank met Butler's daughter, Aileen.",
+        "turkish": "Frank, Butler'ın evinde Butler'ın kızı Aileen'le tanıştı.",
+        "translations": {
+          "es-419": "En casa de Butler, Frank conoció a la hija de Butler, Aileen.",
+          "pt-BR": "Na casa de Butler, Frank conheceu a filha dele, Aileen.",
+          "id": "Di rumah Butler, Frank bertemu putri Butler, Aileen.",
+          "ar": "وفي بيت بتلر، تعرّف فرانك إلى ابنته أيلين.",
+          "vi": "Ở nhà Butler, Frank gặp con gái ông, Aileen.",
+          "hi": "बटलर के घर फ़्रैंक की मुलाक़ात उनकी बेटी एलीन से हुई।",
+          "ru": "В доме Батлера Фрэнк познакомился с его дочерью Эйлин.",
+          "bn": "বাটলারের বাড়িতে ফ্র্যাঙ্কের সঙ্গে তাঁর মেয়ে আইলিনের দেখা হল।",
+          "ur": "بٹلر کے گھر فرینک کی ملاقات ان کی بیٹی آئلین سے ہوئی۔",
+          "th": "ที่บ้านของบัตเลอร์ แฟรงก์ได้พบกับไอลีน ลูกสาวของบัตเลอร์"
+        }
+      },
+      {
+        "id": "cl-financier-036",
+        "english": "She was young, proud and full of life, with red-gold hair.",
+        "turkish": "Genç, gururlu ve hayat doluydu; kızıl altın renginde saçları vardı.",
+        "translations": {
+          "es-419": "Era joven, orgullosa y llena de vida, con el pelo rojizo y dorado.",
+          "pt-BR": "Era jovem, orgulhosa e cheia de vida, com cabelos de um ruivo dourado.",
+          "id": "Ia muda, angkuh, dan penuh semangat, dengan rambut merah keemasan.",
+          "ar": "كانت شابّة فخورة مفعمة بالحياة، ذات شعر أحمر ذهبيّ.",
+          "vi": "Cô trẻ trung, kiêu hãnh và tràn đầy sức sống, với mái tóc vàng ánh đỏ.",
+          "hi": "वह जवान, स्वाभिमानी और ज़िंदादिल थी, और उसके बाल लाल-सुनहरे थे।",
+          "ru": "Она была молода, горда и полна жизни, с рыжевато-золотыми волосами.",
+          "bn": "সে ছিল তরুণী, গর্বিত আর প্রাণে ভরপুর, মাথায় লালচে-সোনালি চুল।",
+          "ur": "وہ جوان، خوددار اور زندہ دل تھی، اور اس کے بال سرخی مائل سنہرے تھے۔",
+          "th": "เธอยังสาว หยิ่งทะนง และเต็มไปด้วยชีวิตชีวา ผมสีทองอมแดง"
+        }
+      },
+      {
+        "id": "cl-financier-037",
+        "english": "She was not afraid of anything, and she liked strong men like Frank.",
+        "turkish": "Hiçbir şeyden korkmazdı ve Frank gibi güçlü adamlardan hoşlanırdı.",
+        "translations": {
+          "es-419": "No le tenía miedo a nada, y le gustaban los hombres fuertes como Frank.",
+          "pt-BR": "Não tinha medo de nada, e gostava de homens fortes como Frank.",
+          "id": "Ia tak takut pada apa pun, dan ia menyukai pria kuat seperti Frank.",
+          "ar": "لم تكن تخاف شيئًا، وكانت تحبّ الرجال الأقوياء مثل فرانك.",
+          "vi": "Cô chẳng sợ điều gì, và cô thích những người đàn ông mạnh mẽ như Frank.",
+          "hi": "वह किसी चीज़ से नहीं डरती थी, और उसे फ़्रैंक जैसे ताक़तवर आदमी पसंद थे।",
+          "ru": "Она ничего не боялась, и ей нравились сильные мужчины вроде Фрэнка.",
+          "bn": "সে কিছুতেই ভয় পেত না, আর ফ্র্যাঙ্কের মতো শক্ত পুরুষ তার পছন্দ ছিল।",
+          "ur": "وہ کسی چیز سے نہیں ڈرتی تھی، اور اسے فرینک جیسے طاقتور آدمی پسند تھے۔",
+          "th": "เธอไม่กลัวอะไรเลย และชอบผู้ชายที่แข็งแกร่งอย่างแฟรงก์"
+        }
+      },
+      {
+        "id": "cl-financier-038",
+        "english": "Frank fell in love with her, and she loved him with all her heart.",
+        "turkish": "Frank ona âşık oldu, o da Frank'i bütün kalbiyle sevdi.",
+        "translations": {
+          "es-419": "Frank se enamoró de ella, y ella lo amó con todo su corazón.",
+          "pt-BR": "Frank se apaixonou por ela, e ela o amou de todo o coração.",
+          "id": "Frank jatuh cinta kepadanya, dan Aileen mencintainya dengan sepenuh hati.",
+          "ar": "وقع فرانك في حبّها، وأحبّته هي من كلّ قلبها.",
+          "vi": "Frank phải lòng cô, và cô yêu anh bằng cả trái tim.",
+          "hi": "फ़्रैंक को उससे प्यार हो गया, और वह भी उसे पूरे दिल से चाहने लगी।",
+          "ru": "Фрэнк влюбился в неё, а она полюбила его всем сердцем.",
+          "bn": "ফ্র্যাঙ্ক তার প্রেমে পড়ল, আর আইলিনও তাকে মনপ্রাণ দিয়ে ভালোবাসল।",
+          "ur": "فرینک کو اس سے محبت ہو گئی، اور وہ بھی اسے پورے دل سے چاہنے لگی۔",
+          "th": "แฟรงก์ตกหลุมรักเธอ และเธอก็รักเขาสุดหัวใจ"
+        }
+      },
+      {
+        "id": "cl-financier-039",
+        "english": "They began to meet in secret, in a small house that Frank rented.",
+        "turkish": "Frank'in kiraladığı küçük bir evde gizlice buluşmaya başladılar.",
+        "translations": {
+          "es-419": "Empezaron a verse en secreto, en una casita que Frank alquilaba.",
+          "pt-BR": "Começaram a se encontrar em segredo, numa casinha que Frank alugava.",
+          "id": "Mereka mulai bertemu diam-diam di sebuah rumah kecil yang disewa Frank.",
+          "ar": "بدآ يلتقيان سرًّا في بيت صغير استأجره فرانك.",
+          "vi": "Họ bắt đầu gặp nhau lén lút trong một căn nhà nhỏ Frank thuê.",
+          "hi": "वे फ़्रैंक के किराए के एक छोटे-से घर में चुपके से मिलने लगे।",
+          "ru": "Они начали тайно встречаться в маленьком доме, который снимал Фрэнк.",
+          "bn": "তারা ফ্র্যাঙ্কের ভাড়া নেওয়া একটা ছোট বাড়িতে গোপনে দেখা করতে লাগল।",
+          "ur": "وہ فرینک کے کرائے کے ایک چھوٹے سے گھر میں چپکے سے ملنے لگے۔",
+          "th": "ทั้งสองเริ่มแอบพบกันในบ้านหลังเล็กที่แฟรงก์เช่าไว้"
+        }
+      },
+      {
+        "id": "cl-financier-040",
+        "english": "Frank knew that it was dangerous, but he did not want to stop.",
+        "turkish": "Frank bunun tehlikeli olduğunu biliyordu, ama durmak istemiyordu.",
+        "translations": {
+          "es-419": "Frank sabía que era peligroso, pero no quería parar.",
+          "pt-BR": "Frank sabia que era perigoso, mas não queria parar.",
+          "id": "Frank tahu itu berbahaya, tetapi ia tidak mau berhenti.",
+          "ar": "كان فرانك يعرف أنّ ذلك خطر، لكنّه لم يرد أن يتوقّف.",
+          "vi": "Frank biết điều đó nguy hiểm, nhưng anh không muốn dừng lại.",
+          "hi": "फ़्रैंक जानता था कि यह ख़तरनाक है, पर वह रुकना नहीं चाहता था।",
+          "ru": "Фрэнк знал, что это опасно, но не хотел останавливаться.",
+          "bn": "ফ্র্যাঙ্ক জানত এটা বিপজ্জনক, কিন্তু সে থামতে চাইল না।",
+          "ur": "فرینک جانتا تھا کہ یہ خطرناک ہے، مگر وہ رکنا نہیں چاہتا تھا۔",
+          "th": "แฟรงก์รู้ว่ามันอันตราย แต่เขาไม่อยากหยุด"
+        }
+      },
+      {
+        "id": "cl-financier-041",
+        "english": "He felt strong, like the lobster in the tank. Nothing could stop him.",
+        "turkish": "Kendini tanktaki ıstakoz gibi güçlü hissediyordu. Hiçbir şey onu durduramazdı.",
+        "translations": {
+          "es-419": "Se sentía fuerte, como la langosta de la pecera. Nada podía detenerlo.",
+          "pt-BR": "Sentia-se forte, como a lagosta no tanque. Nada podia detê-lo.",
+          "id": "Ia merasa kuat, seperti lobster di dalam akuarium. Tak ada yang bisa menghentikannya.",
+          "ar": "كان يشعر بالقوّة، مثل جراد البحر في الحوض. لا شيء يستطيع أن يوقفه.",
+          "vi": "Anh thấy mình mạnh mẽ như con tôm hùm trong bể. Không gì có thể cản được anh.",
+          "hi": "वह ख़ुद को टैंक वाले लॉबस्टर जैसा ताक़तवर महसूस करता था। उसे कोई नहीं रोक सकता था।",
+          "ru": "Он чувствовал себя сильным, как омар в аквариуме. Ничто не могло его остановить.",
+          "bn": "সে নিজেকে ট্যাঙ্কের সেই লবস্টারের মতো শক্তিশালী মনে করত। কেউ তাকে থামাতে পারবে না।",
+          "ur": "وہ خود کو ٹینک والے لابسٹر جیسا طاقتور محسوس کرتا تھا۔ اسے کوئی نہیں روک سکتا تھا۔",
+          "th": "เขารู้สึกแข็งแกร่งเหมือนกุ้งมังกรในตู้ ไม่มีอะไรหยุดเขาได้"
+        }
+      },
+      {
+        "id": "cl-financier-042",
+        "english": "Then, in October 1871, a terrible fire burned the city of Chicago.",
+        "turkish": "Sonra, Ekim 1871'de korkunç bir yangın Chicago şehrini yaktı.",
+        "translations": {
+          "es-419": "Entonces, en octubre de 1871, un terrible incendio quemó la ciudad de Chicago.",
+          "pt-BR": "Então, em outubro de 1871, um incêndio terrível queimou a cidade de Chicago.",
+          "id": "Lalu, pada bulan Oktober 1871, kebakaran dahsyat melanda kota Chicago.",
+          "ar": "ثمّ، في أكتوبر عام 1871، أحرق حريق رهيب مدينة شيكاغو.",
+          "vi": "Rồi vào tháng Mười năm 1871, một trận hỏa hoạn khủng khiếp thiêu rụi thành phố Chicago.",
+          "hi": "फिर अक्टूबर 1871 में एक भयानक आग ने शिकागो शहर को जला दिया।",
+          "ru": "А потом, в октябре 1871 года, страшный пожар сжёг город Чикаго.",
+          "bn": "তারপর ১৮৭১ সালের অক্টোবরে এক ভয়ংকর আগুনে শিকাগো শহর পুড়ে গেল।",
+          "ur": "پھر اکتوبر 1871 میں ایک خوفناک آگ نے شکاگو شہر کو جلا دیا۔",
+          "th": "แล้วในเดือนตุลาคม ปี 1871 ไฟไหม้ครั้งใหญ่ได้เผาผลาญเมืองชิคาโก"
+        }
+      },
+      {
+        "id": "cl-financier-043",
+        "english": "The news caused a panic at the stock exchange in Philadelphia.",
+        "turkish": "Haber Philadelphia borsasında paniğe yol açtı.",
+        "translations": {
+          "es-419": "La noticia causó pánico en la bolsa de Filadelfia.",
+          "pt-BR": "A notícia causou pânico na bolsa de valores da Filadélfia.",
+          "id": "Kabar itu menimbulkan kepanikan di bursa saham Philadelphia.",
+          "ar": "أثار الخبر ذعرًا في بورصة فيلادلفيا.",
+          "vi": "Tin này gây hoảng loạn ở sàn giao dịch chứng khoán Philadelphia.",
+          "hi": "इस ख़बर से फ़िलाडेल्फ़िया के शेयर बाज़ार में अफ़रा-तफ़री मच गई।",
+          "ru": "Эта новость вызвала панику на филадельфийской бирже.",
+          "bn": "এই খবরে ফিলাডেলফিয়ার শেয়ারবাজারে আতঙ্ক ছড়িয়ে পড়ল।",
+          "ur": "اس خبر سے فلاڈیلفیا کی اسٹاک ایکسچینج میں بھگدڑ مچ گئی۔",
+          "th": "ข่าวนี้ทำให้เกิดความตื่นตระหนกในตลาดหุ้นฟิลาเดลเฟีย"
+        }
+      },
+      {
+        "id": "cl-financier-044",
+        "english": "Everyone wanted to sell, and prices fell like stones.",
+        "turkish": "Herkes satmak istedi ve fiyatlar taş gibi düştü.",
+        "translations": {
+          "es-419": "Todos querían vender, y los precios cayeron como piedras.",
+          "pt-BR": "Todos queriam vender, e os preços despencaram como pedras.",
+          "id": "Semua orang ingin menjual, dan harga-harga jatuh seperti batu.",
+          "ar": "أراد الجميع أن يبيعوا، فهوت الأسعار كالحجارة.",
+          "vi": "Ai cũng muốn bán, và giá cả rơi như đá.",
+          "hi": "सब बेचना चाहते थे, और दाम पत्थरों की तरह गिरने लगे।",
+          "ru": "Все хотели продавать, и цены падали, как камни.",
+          "bn": "সবাই বেচতে চাইল, আর দাম পাথরের মতো পড়তে লাগল।",
+          "ur": "سب بیچنا چاہتے تھے، اور دام پتھروں کی طرح گرنے لگے۔",
+          "th": "ทุกคนอยากขาย และราคาก็ร่วงลงราวก้อนหิน"
+        }
+      },
+      {
+        "id": "cl-financier-045",
+        "english": "The banks asked Frank to pay back his loans at once.",
+        "turkish": "Bankalar Frank'ten borçlarını hemen geri ödemesini istedi.",
+        "translations": {
+          "es-419": "Los bancos le pidieron a Frank que devolviera sus préstamos de inmediato.",
+          "pt-BR": "Os bancos pediram que Frank pagasse os empréstimos imediatamente.",
+          "id": "Bank-bank meminta Frank segera melunasi pinjamannya.",
+          "ar": "طالبت المصارف فرانك بأن يسدّد قروضه فورًا.",
+          "vi": "Các ngân hàng đòi Frank trả nợ ngay lập tức.",
+          "hi": "बैंकों ने फ़्रैंक से तुरंत अपने क़र्ज़ लौटाने को कहा।",
+          "ru": "Банки потребовали, чтобы Фрэнк немедленно вернул займы.",
+          "bn": "ব্যাংকগুলো ফ্র্যাঙ্ককে এখনই ধার শোধ করতে বলল।",
+          "ur": "بینکوں نے فرینک سے فوراً اپنے قرض لوٹانے کو کہا۔",
+          "th": "ธนาคารต่าง ๆ เรียกให้แฟรงก์ใช้หนี้คืนทันที"
+        }
+      },
+      {
+        "id": "cl-financier-046",
+        "english": "He needed money quickly, so he ran to Stener.",
+        "turkish": "Çabucak paraya ihtiyacı vardı, bu yüzden Stener'a koştu.",
+        "translations": {
+          "es-419": "Necesitaba dinero rápido, así que corrió a ver a Stener.",
+          "pt-BR": "Precisava de dinheiro depressa, então correu até Stener.",
+          "id": "Ia butuh uang dengan cepat, jadi ia bergegas menemui Stener.",
+          "ar": "كان بحاجة إلى المال بسرعة، فهرع إلى ستينر.",
+          "vi": "Anh cần tiền gấp, nên chạy đến gặp Stener.",
+          "hi": "उसे जल्दी पैसों की ज़रूरत थी, इसलिए वह भागकर स्टेनर के पास गया।",
+          "ru": "Ему срочно нужны были деньги, и он побежал к Стинеру.",
+          "bn": "তার তাড়াতাড়ি টাকার দরকার ছিল, তাই সে ছুটে গেল স্টেনারের কাছে।",
+          "ur": "اسے جلدی پیسوں کی ضرورت تھی، اس لیے وہ بھاگ کر اسٹینر کے پاس گیا۔",
+          "th": "เขาต้องการเงินด่วน จึงรีบไปหาสเตเนอร์"
+        }
+      },
+      {
+        "id": "cl-financier-047",
+        "english": "\"Give me another five hundred thousand dollars, and I can save us both.\"",
+        "turkish": "\"Bana beş yüz bin dolar daha ver, ikimizi de kurtarabilirim.\"",
+        "translations": {
+          "es-419": "—Deme otros quinientos mil dólares, y podré salvarnos a los dos.",
+          "pt-BR": "— Dê-me mais quinhentos mil dólares, e eu consigo salvar nós dois.",
+          "id": "\"Beri aku lima ratus ribu dolar lagi, dan aku bisa menyelamatkan kita berdua.\"",
+          "ar": "«أعطني خمسمئة ألف دولار أخرى، وأستطيع أن أنقذنا كلينا».",
+          "vi": "\"Đưa tôi thêm năm trăm nghìn đô nữa, tôi có thể cứu cả hai chúng ta.\"",
+          "hi": "\"मुझे पाँच लाख डॉलर और दीजिए, तो मैं हम दोनों को बचा सकता हूँ।\"",
+          "ru": "«Дайте мне ещё пятьсот тысяч долларов, и я спасу нас обоих».",
+          "bn": "\"আমাকে আরও পাঁচ লাখ ডলার দিন, আমি আমাদের দুজনকেই বাঁচাতে পারব।\"",
+          "ur": "\"مجھے پانچ لاکھ ڈالر اور دیجیے، تو میں ہم دونوں کو بچا سکتا ہوں۔\"",
+          "th": "\"ให้ผมอีกห้าแสนดอลลาร์ แล้วผมจะช่วยเราทั้งคู่ไว้ได้\""
+        }
+      },
+      {
+        "id": "cl-financier-048",
+        "english": "But Stener was too frightened, and his friends told him to say no.",
+        "turkish": "Ama Stener çok korkmuştu ve arkadaşları ona hayır demesini söyledi.",
+        "translations": {
+          "es-419": "Pero Stener estaba demasiado asustado, y sus amigos le dijeron que se negara.",
+          "pt-BR": "Mas Stener estava assustado demais, e os amigos lhe disseram para recusar.",
+          "id": "Tetapi Stener terlalu takut, dan teman-temannya menyuruhnya menolak.",
+          "ar": "لكنّ ستينر كان خائفًا جدًّا، ونصحه أصدقاؤه بأن يرفض.",
+          "vi": "Nhưng Stener quá sợ hãi, và bạn bè ông khuyên ông từ chối.",
+          "hi": "पर स्टेनर बहुत डरे हुए थे, और उनके दोस्तों ने उन्हें मना करने को कहा।",
+          "ru": "Но Стинер слишком испугался, и друзья велели ему отказать.",
+          "bn": "কিন্তু স্টেনার ভীষণ ভয় পেয়েছিলেন, আর তাঁর বন্ধুরা তাঁকে না বলতে বলল।",
+          "ur": "مگر اسٹینر بہت ڈرے ہوئے تھے، اور ان کے دوستوں نے انہیں انکار کرنے کو کہا۔",
+          "th": "แต่สเตเนอร์กลัวเกินไป และเพื่อน ๆ ก็บอกให้เขาปฏิเสธ"
+        }
+      },
+      {
+        "id": "cl-financier-049",
+        "english": "In the same days, Butler received a letter without a name.",
+        "turkish": "Aynı günlerde Butler imzasız bir mektup aldı.",
+        "translations": {
+          "es-419": "Por esos mismos días, Butler recibió una carta sin firma.",
+          "pt-BR": "Naqueles mesmos dias, Butler recebeu uma carta sem assinatura.",
+          "id": "Pada hari-hari yang sama, Butler menerima surat tanpa nama.",
+          "ar": "وفي الأيّام نفسها، تلقّى بتلر رسالة بلا اسم.",
+          "vi": "Cũng trong những ngày đó, Butler nhận được một lá thư nặc danh.",
+          "hi": "उन्हीं दिनों बटलर को बिना नाम की एक चिट्ठी मिली।",
+          "ru": "В те же дни Батлер получил письмо без подписи.",
+          "bn": "সেই একই দিনগুলোতে বাটলার একটা বেনামি চিঠি পেলেন।",
+          "ur": "انہی دنوں بٹلر کو بغیر نام کا ایک خط ملا۔",
+          "th": "ในช่วงเวลาเดียวกันนั้น บัตเลอร์ได้รับจดหมายไม่ลงชื่อฉบับหนึ่ง"
+        }
+      },
+      {
+        "id": "cl-financier-050",
+        "english": "It said that his daughter was meeting Frank Cowperwood in secret.",
+        "turkish": "Mektupta kızının Frank Cowperwood'la gizlice buluştuğu yazıyordu.",
+        "translations": {
+          "es-419": "Decía que su hija se veía en secreto con Frank Cowperwood.",
+          "pt-BR": "Dizia que a filha dele se encontrava em segredo com Frank Cowperwood.",
+          "id": "Isinya mengatakan bahwa putrinya diam-diam bertemu Frank Cowperwood.",
+          "ar": "كانت تقول إنّ ابنته تلتقي فرانك كاوبروود سرًّا.",
+          "vi": "Thư nói rằng con gái ông đang lén gặp Frank Cowperwood.",
+          "hi": "उसमें लिखा था कि उनकी बेटी चुपके से फ़्रैंक काउपरवुड से मिलती है।",
+          "ru": "В нём говорилось, что его дочь тайно встречается с Фрэнком Каупервудом.",
+          "bn": "তাতে লেখা ছিল, তাঁর মেয়ে গোপনে ফ্র্যাঙ্ক কাউপারউডের সঙ্গে দেখা করে।",
+          "ur": "اس میں لکھا تھا کہ ان کی بیٹی چپکے سے فرینک کاؤپروڈ سے ملتی ہے۔",
+          "th": "ในจดหมายบอกว่าลูกสาวของเขาแอบพบกับแฟรงก์ คาวเปอร์วูด"
+        }
+      },
+      {
+        "id": "cl-financier-051",
+        "english": "Butler followed Aileen and found them together.",
+        "turkish": "Butler, Aileen'i izledi ve onları birlikte buldu.",
+        "translations": {
+          "es-419": "Butler siguió a Aileen y los encontró juntos.",
+          "pt-BR": "Butler seguiu Aileen e os encontrou juntos.",
+          "id": "Butler membuntuti Aileen dan memergoki mereka berdua.",
+          "ar": "تبع بتلر أيلين ووجدهما معًا.",
+          "vi": "Butler bám theo Aileen và bắt gặp hai người ở bên nhau.",
+          "hi": "बटलर ने एलीन का पीछा किया और दोनों को साथ पकड़ लिया।",
+          "ru": "Батлер проследил за Эйлин и застал их вместе.",
+          "bn": "বাটলার আইলিনের পিছু নিলেন আর দুজনকে একসঙ্গে ধরে ফেললেন।",
+          "ur": "بٹلر نے آئلین کا پیچھا کیا اور دونوں کو ساتھ پکڑ لیا۔",
+          "th": "บัตเลอร์สะกดรอยตามไอลีน และพบทั้งสองอยู่ด้วยกัน"
+        }
+      },
+      {
+        "id": "cl-financier-052",
+        "english": "The old man's face went white with anger.",
+        "turkish": "Yaşlı adamın yüzü öfkeden bembeyaz oldu.",
+        "translations": {
+          "es-419": "La cara del viejo se puso blanca de ira.",
+          "pt-BR": "O rosto do velho ficou branco de raiva.",
+          "id": "Wajah lelaki tua itu memutih karena marah.",
+          "ar": "ابيضّ وجه العجوز من الغضب.",
+          "vi": "Mặt ông già trắng bệch vì giận dữ.",
+          "hi": "बूढ़े आदमी का चेहरा ग़ुस्से से सफ़ेद पड़ गया।",
+          "ru": "Лицо старика побелело от гнева.",
+          "bn": "বৃদ্ধের মুখ রাগে সাদা হয়ে গেল।",
+          "ur": "بوڑھے آدمی کا چہرہ غصے سے سفید پڑ گیا۔",
+          "th": "ใบหน้าของชายชราซีดขาวด้วยความโกรธ"
+        }
+      },
+      {
+        "id": "cl-financier-053",
+        "english": "\"I will break you for this,\" he told Frank quietly.",
+        "turkish": "\"Bunun için seni mahvedeceğim,\" dedi Frank'e sessizce.",
+        "translations": {
+          "es-419": "—Por esto te voy a destruir —le dijo a Frank en voz baja.",
+          "pt-BR": "— Vou destruí-lo por isso — disse ele a Frank, baixinho.",
+          "id": "\"Aku akan menghancurkanmu karena ini,\" katanya pelan kepada Frank.",
+          "ar": "قال لفرانك بهدوء: «سأحطّمك بسبب هذا».",
+          "vi": "\"Ta sẽ nghiền nát cậu vì chuyện này,\" ông nói khẽ với Frank.",
+          "hi": "उन्होंने फ़्रैंक से धीरे से कहा, \"इसके लिए मैं तुम्हें बर्बाद कर दूँगा।\"",
+          "ru": "«За это я тебя уничтожу», — тихо сказал он Фрэнку.",
+          "bn": "তিনি ফ্র্যাঙ্ককে শান্ত গলায় বললেন, \"এর জন্য আমি তোমাকে শেষ করে দেব।\"",
+          "ur": "انہوں نے فرینک سے آہستہ سے کہا، \"اس کے لیے میں تمہیں برباد کر دوں گا۔\"",
+          "th": "\"ข้าจะทำลายเจ้าเพราะเรื่องนี้\" เขาบอกแฟรงก์ด้วยเสียงเรียบ ๆ"
+        }
+      },
+      {
+        "id": "cl-financier-054",
+        "english": "Frank's bank failed, and the city lost half a million dollars.",
+        "turkish": "Frank'in bankası battı ve şehir yarım milyon dolar kaybetti.",
+        "translations": {
+          "es-419": "El banco de Frank quebró, y la ciudad perdió medio millón de dólares.",
+          "pt-BR": "O banco de Frank faliu, e a cidade perdeu meio milhão de dólares.",
+          "id": "Bank Frank bangkrut, dan kota kehilangan setengah juta dolar.",
+          "ar": "أفلس مصرف فرانك، وخسرت المدينة نصف مليون دولار.",
+          "vi": "Ngân hàng của Frank sụp đổ, và thành phố mất nửa triệu đô la.",
+          "hi": "फ़्रैंक का बैंक डूब गया, और शहर के पाँच लाख डॉलर चले गए।",
+          "ru": "Банк Фрэнка лопнул, и город потерял полмиллиона долларов.",
+          "bn": "ফ্র্যাঙ্কের ব্যাংক দেউলিয়া হল, আর শহর হারাল পাঁচ লাখ ডলার।",
+          "ur": "فرینک کا بینک ڈوب گیا، اور شہر کے پانچ لاکھ ڈالر چلے گئے۔",
+          "th": "ธนาคารของแฟรงก์ล้ม และเมืองก็สูญเงินไปครึ่งล้านดอลลาร์"
+        }
+      },
+      {
+        "id": "cl-financier-055",
+        "english": "His fine house, his paintings and his carriages were all sold.",
+        "turkish": "Güzel evi, tabloları ve arabaları hepsi satıldı.",
+        "translations": {
+          "es-419": "Su elegante casa, sus cuadros y sus carruajes se vendieron todos.",
+          "pt-BR": "A bela casa, os quadros e as carruagens dele foram todos vendidos.",
+          "id": "Rumahnya yang indah, lukisan-lukisannya, dan kereta kudanya semua dijual.",
+          "ar": "بيعت كلّها: بيته الجميل ولوحاته وعرباته.",
+          "vi": "Ngôi nhà đẹp, những bức tranh và những cỗ xe ngựa của anh đều bị bán sạch.",
+          "hi": "उसका शानदार घर, उसके चित्र और उसकी बग्घियाँ, सब बिक गए।",
+          "ru": "Его прекрасный дом, картины и экипажи — всё было продано.",
+          "bn": "তার সুন্দর বাড়ি, ছবি আর ঘোড়ার গাড়ি সব বিক্রি হয়ে গেল।",
+          "ur": "اس کا شاندار گھر، اس کی تصویریں اور اس کی بگھیاں، سب بک گئیں۔",
+          "th": "บ้านหลังงาม ภาพวาด และรถม้าของเขาถูกขายไปจนหมด"
+        }
+      },
+      {
+        "id": "cl-financier-056",
+        "english": "Someone had to be punished, and Butler made sure it was Frank.",
+        "turkish": "Birinin cezalandırılması gerekiyordu ve Butler bunun Frank olmasını sağladı.",
+        "translations": {
+          "es-419": "Alguien tenía que ser castigado, y Butler se aseguró de que fuera Frank.",
+          "pt-BR": "Alguém tinha de ser punido, e Butler garantiu que fosse Frank.",
+          "id": "Seseorang harus dihukum, dan Butler memastikan orang itu adalah Frank.",
+          "ar": "كان لا بدّ من معاقبة أحد، وحرص بتلر على أن يكون فرانك.",
+          "vi": "Phải có người bị trừng phạt, và Butler đảm bảo người đó là Frank.",
+          "hi": "किसी को तो सज़ा मिलनी थी, और बटलर ने पक्का किया कि वह फ़्रैंक ही हो।",
+          "ru": "Кто-то должен был понести наказание, и Батлер позаботился, чтобы это был Фрэнк.",
+          "bn": "কাউকে না কাউকে শাস্তি পেতেই হত, আর বাটলার নিশ্চিত করলেন সেটা যেন ফ্র্যাঙ্কই হয়।",
+          "ur": "کسی کو تو سزا ملنی تھی، اور بٹلر نے یقینی بنایا کہ وہ فرینک ہی ہو۔",
+          "th": "ต้องมีใครสักคนถูกลงโทษ และบัตเลอร์ก็ทำให้แน่ใจว่าคนนั้นคือแฟรงก์"
+        }
+      },
+      {
+        "id": "cl-financier-057",
+        "english": "The newspapers said that he had stolen the people's money.",
+        "turkish": "Gazeteler onun halkın parasını çaldığını yazdı.",
+        "translations": {
+          "es-419": "Los periódicos dijeron que había robado el dinero del pueblo.",
+          "pt-BR": "Os jornais disseram que ele tinha roubado o dinheiro do povo.",
+          "id": "Surat-surat kabar menulis bahwa ia telah mencuri uang rakyat.",
+          "ar": "قالت الصحف إنّه سرق مال الشعب.",
+          "vi": "Báo chí nói anh đã ăn cắp tiền của dân.",
+          "hi": "अख़बारों ने लिखा कि उसने जनता का पैसा चुराया है।",
+          "ru": "Газеты писали, что он украл народные деньги.",
+          "bn": "খবরের কাগজগুলো লিখল, সে জনগণের টাকা চুরি করেছে।",
+          "ur": "اخباروں نے لکھا کہ اس نے عوام کا پیسہ چرایا ہے۔",
+          "th": "หนังสือพิมพ์ต่างลงข่าวว่าเขาขโมยเงินของประชาชน"
+        }
+      },
+      {
+        "id": "cl-financier-058",
+        "english": "Frank's father lost his job at the bank because of his son.",
+        "turkish": "Frank'in babası oğlu yüzünden bankadaki işini kaybetti.",
+        "translations": {
+          "es-419": "El padre de Frank perdió su empleo en el banco por culpa de su hijo.",
+          "pt-BR": "O pai de Frank perdeu o emprego no banco por causa do filho.",
+          "id": "Ayah Frank kehilangan pekerjaannya di bank karena ulah putranya.",
+          "ar": "فقد والد فرانك وظيفته في المصرف بسبب ابنه.",
+          "vi": "Cha của Frank mất việc ở ngân hàng vì con trai.",
+          "hi": "बेटे की वजह से फ़्रैंक के पिता की बैंक की नौकरी चली गई।",
+          "ru": "Из-за сына отец Фрэнка потерял место в банке.",
+          "bn": "ছেলের জন্য ফ্র্যাঙ্কের বাবা ব্যাংকের চাকরি হারালেন।",
+          "ur": "بیٹے کی وجہ سے فرینک کے والد کی بینک کی نوکری چلی گئی۔",
+          "th": "พ่อของแฟรงก์ต้องออกจากงานที่ธนาคารเพราะลูกชาย"
+        }
+      },
+      {
+        "id": "cl-financier-059",
+        "english": "On the last day, Frank had taken a city check for sixty thousand dollars.",
+        "turkish": "Son gün Frank şehirden altmış bin dolarlık bir çek almıştı.",
+        "translations": {
+          "es-419": "El último día, Frank había cobrado un cheque de la ciudad por sesenta mil dólares.",
+          "pt-BR": "No último dia, Frank tinha pegado um cheque da cidade de sessenta mil dólares.",
+          "id": "Pada hari terakhir, Frank telah mengambil cek kota senilai enam puluh ribu dolar.",
+          "ar": "وفي اليوم الأخير، كان فرانك قد أخذ شيكًا من المدينة بستّين ألف دولار.",
+          "vi": "Vào ngày cuối cùng, Frank đã nhận một tấm séc của thành phố trị giá sáu mươi nghìn đô.",
+          "hi": "आख़िरी दिन फ़्रैंक ने शहर का साठ हज़ार डॉलर का एक चेक लिया था।",
+          "ru": "В последний день Фрэнк получил городской чек на шестьдесят тысяч долларов.",
+          "bn": "শেষ দিনে ফ্র্যাঙ্ক শহরের ষাট হাজার ডলারের একটা চেক নিয়েছিল।",
+          "ur": "آخری دن فرینک نے شہر کا ساٹھ ہزار ڈالر کا ایک چیک لیا تھا۔",
+          "th": "ในวันสุดท้าย แฟรงก์ได้รับเช็คของเมืองมูลค่าหกหมื่นดอลลาร์ไป"
+        }
+      },
+      {
+        "id": "cl-financier-060",
+        "english": "He said it was legal, but the judge did not agree.",
+        "turkish": "Bunun yasal olduğunu söyledi, ama yargıç aynı fikirde değildi.",
+        "translations": {
+          "es-419": "Él dijo que era legal, pero el juez no estuvo de acuerdo.",
+          "pt-BR": "Ele disse que era legal, mas o juiz não concordou.",
+          "id": "Ia berkata itu legal, tetapi hakim tidak setuju.",
+          "ar": "قال إنّ ذلك قانونيّ، لكنّ القاضي لم يوافق.",
+          "vi": "Anh nói việc đó hợp pháp, nhưng thẩm phán không đồng ý.",
+          "hi": "उसने कहा कि यह क़ानूनी था, पर जज सहमत नहीं हुए।",
+          "ru": "Он утверждал, что это законно, но судья не согласился.",
+          "bn": "সে বলল কাজটা আইনসম্মত, কিন্তু বিচারক একমত হলেন না।",
+          "ur": "اس نے کہا کہ یہ قانونی تھا، مگر جج متفق نہیں ہوئے۔",
+          "th": "เขาบอกว่ามันถูกกฎหมาย แต่ผู้พิพากษาไม่เห็นด้วย"
+        }
+      },
+      {
+        "id": "cl-financier-061",
+        "english": "At the trial, the jury decided that he was guilty.",
+        "turkish": "Duruşmada jüri onun suçlu olduğuna karar verdi.",
+        "translations": {
+          "es-419": "En el juicio, el jurado decidió que era culpable.",
+          "pt-BR": "No julgamento, o júri decidiu que ele era culpado.",
+          "id": "Di persidangan, juri memutuskan bahwa ia bersalah.",
+          "ar": "وفي المحاكمة، قرّرت هيئة المحلّفين أنّه مذنب.",
+          "vi": "Tại phiên tòa, bồi thẩm đoàn kết luận anh có tội.",
+          "hi": "मुक़दमे में जूरी ने फ़ैसला किया कि वह दोषी है।",
+          "ru": "На суде присяжные признали его виновным.",
+          "bn": "বিচারে জুরি রায় দিল, সে দোষী।",
+          "ur": "مقدمے میں جیوری نے فیصلہ کیا کہ وہ قصوروار ہے۔",
+          "th": "ในการพิจารณาคดี คณะลูกขุนตัดสินว่าเขามีความผิด"
+        }
+      },
+      {
+        "id": "cl-financier-062",
+        "english": "The judge gave him four years and three months.",
+        "turkish": "Yargıç ona dört yıl üç ay verdi.",
+        "translations": {
+          "es-419": "El juez lo condenó a cuatro años y tres meses.",
+          "pt-BR": "O juiz o condenou a quatro anos e três meses.",
+          "id": "Hakim menjatuhkan hukuman empat tahun tiga bulan kepadanya.",
+          "ar": "حكم عليه القاضي بأربع سنوات وثلاثة أشهر.",
+          "vi": "Thẩm phán tuyên phạt anh bốn năm ba tháng tù.",
+          "hi": "जज ने उसे चार साल तीन महीने की सज़ा दी।",
+          "ru": "Судья приговорил его к четырём годам и трём месяцам.",
+          "bn": "বিচারক তাকে চার বছর তিন মাসের সাজা দিলেন।",
+          "ur": "جج نے اسے چار سال تین مہینے کی سزا دی۔",
+          "th": "ผู้พิพากษาตัดสินจำคุกเขาสี่ปีสามเดือน"
+        }
+      },
+      {
+        "id": "cl-financier-063",
+        "english": "Frank and Stener were both sent to prison.",
+        "turkish": "Frank ile Stener ikisi de hapse gönderildi.",
+        "translations": {
+          "es-419": "Frank y Stener fueron enviados a prisión.",
+          "pt-BR": "Frank e Stener foram ambos mandados para a prisão.",
+          "id": "Frank dan Stener sama-sama dijebloskan ke penjara.",
+          "ar": "أُرسل فرانك وستينر كلاهما إلى السجن.",
+          "vi": "Cả Frank và Stener đều bị tống vào tù.",
+          "hi": "फ़्रैंक और स्टेनर दोनों को जेल भेज दिया गया।",
+          "ru": "Фрэнка и Стинера отправили в тюрьму.",
+          "bn": "ফ্র্যাঙ্ক আর স্টেনার দুজনকেই জেলে পাঠানো হল।",
+          "ur": "فرینک اور اسٹینر دونوں کو جیل بھیج دیا گیا۔",
+          "th": "ทั้งแฟรงก์และสเตเนอร์ถูกส่งเข้าคุก"
+        }
+      },
+      {
+        "id": "cl-financier-064",
+        "english": "Frank listened to the judge without moving a muscle.",
+        "turkish": "Frank yargıcı kılını bile kıpırdatmadan dinledi.",
+        "translations": {
+          "es-419": "Frank escuchó al juez sin mover un músculo.",
+          "pt-BR": "Frank ouviu o juiz sem mexer um músculo.",
+          "id": "Frank mendengarkan hakim tanpa bergerak sedikit pun.",
+          "ar": "أصغى فرانك إلى القاضي دون أن تتحرّك فيه عضلة.",
+          "vi": "Frank nghe thẩm phán mà không hề nhúc nhích.",
+          "hi": "फ़्रैंक ने बिना ज़रा भी हिले जज की बात सुनी।",
+          "ru": "Фрэнк выслушал судью, не дрогнув ни одним мускулом.",
+          "bn": "ফ্র্যাঙ্ক একচুলও না নড়ে বিচারকের কথা শুনল।",
+          "ur": "فرینک نے ذرا بھی ہلے بغیر جج کی بات سنی۔",
+          "th": "แฟรงก์ฟังผู้พิพากษาโดยไม่ขยับแม้แต่นิดเดียว"
+        }
+      },
+      {
+        "id": "cl-financier-065",
+        "english": "\"I am down,\" he thought, \"but I am not finished.\"",
+        "turkish": "\"Yere düştüm,\" diye düşündü, \"ama işim bitmedi.\"",
+        "translations": {
+          "es-419": "«Estoy caído —pensó—, pero no estoy acabado».",
+          "pt-BR": "\"Estou caído\", pensou ele, \"mas não estou acabado.\"",
+          "id": "\"Aku jatuh,\" pikirnya, \"tetapi aku belum habis.\"",
+          "ar": "فكّر: «لقد سقطت، لكنّني لم أنتهِ».",
+          "vi": "\"Mình đã ngã,\" anh nghĩ, \"nhưng mình chưa gục hẳn.\"",
+          "hi": "उसने सोचा, \"मैं गिरा ज़रूर हूँ, पर ख़त्म नहीं हुआ।\"",
+          "ru": "«Я повержен, — подумал он, — но не сломлен».",
+          "bn": "সে ভাবল, \"আমি পড়ে গেছি ঠিকই, কিন্তু শেষ হয়ে যাইনি।\"",
+          "ur": "اس نے سوچا، \"میں گرا ضرور ہوں، مگر ختم نہیں ہوا۔\"",
+          "th": "\"ฉันล้มลงแล้ว\" เขาคิด \"แต่ฉันยังไม่จบ\""
+        }
+      },
+      {
+        "id": "cl-financier-066",
+        "english": "In the prison, each man lived alone in a small grey cell.",
+        "turkish": "Hapishanede her adam küçük, gri bir hücrede tek başına yaşıyordu.",
+        "translations": {
+          "es-419": "En la prisión, cada hombre vivía solo en una pequeña celda gris.",
+          "pt-BR": "Na prisão, cada homem vivia sozinho numa pequena cela cinzenta.",
+          "id": "Di penjara itu, setiap orang tinggal sendirian di sel kecil berwarna kelabu.",
+          "ar": "في السجن، كان كلّ رجل يعيش وحده في زنزانة رماديّة صغيرة.",
+          "vi": "Trong nhà tù, mỗi người sống một mình trong một phòng giam nhỏ xám xịt.",
+          "hi": "जेल में हर आदमी एक छोटी-सी धूसर कोठरी में अकेला रहता था।",
+          "ru": "В тюрьме каждый жил один в маленькой серой камере.",
+          "bn": "জেলে প্রত্যেকে একা থাকত একটা ছোট্ট ধূসর কুঠুরিতে।",
+          "ur": "جیل میں ہر آدمی ایک چھوٹی سی سرمئی کوٹھری میں اکیلا رہتا تھا۔",
+          "th": "ในคุก นักโทษแต่ละคนอยู่ตามลำพังในห้องขังสีเทาเล็ก ๆ"
+        }
+      },
+      {
+        "id": "cl-financier-067",
+        "english": "Frank wore rough clothes and made chairs with his hands.",
+        "turkish": "Frank kaba giysiler giyiyor ve elleriyle sandalye yapıyordu.",
+        "translations": {
+          "es-419": "Frank llevaba ropa áspera y hacía sillas con sus manos.",
+          "pt-BR": "Frank usava roupas ásperas e fazia cadeiras com as mãos.",
+          "id": "Frank memakai pakaian kasar dan membuat kursi dengan tangannya.",
+          "ar": "كان فرانك يلبس ثيابًا خشنة ويصنع الكراسي بيديه.",
+          "vi": "Frank mặc quần áo thô ráp và làm ghế bằng đôi tay mình.",
+          "hi": "फ़्रैंक मोटे-खुरदरे कपड़े पहनता और अपने हाथों से कुर्सियाँ बनाता।",
+          "ru": "Фрэнк носил грубую одежду и своими руками делал стулья.",
+          "bn": "ফ্র্যাঙ্ক মোটা খসখসে কাপড় পরত আর হাতে চেয়ার বানাত।",
+          "ur": "فرینک موٹے کھردرے کپڑے پہنتا اور اپنے ہاتھوں سے کرسیاں بناتا۔",
+          "th": "แฟรงก์สวมเสื้อผ้าหยาบ ๆ และทำเก้าอี้ด้วยมือของตัวเอง"
+        }
+      },
+      {
+        "id": "cl-financier-068",
+        "english": "Many men would break in such a place, but he stayed calm.",
+        "turkish": "Böyle bir yerde birçok adam çökerdi, ama o sakin kaldı.",
+        "translations": {
+          "es-419": "Muchos hombres se habrían derrumbado en un lugar así, pero él se mantuvo tranquilo.",
+          "pt-BR": "Muitos homens desmoronariam num lugar assim, mas ele continuou calmo.",
+          "id": "Banyak orang akan hancur di tempat seperti itu, tetapi ia tetap tenang.",
+          "ar": "كان كثير من الرجال سينهارون في مكان كهذا، لكنّه ظلّ هادئًا.",
+          "vi": "Nhiều người sẽ suy sụp ở một nơi như thế, nhưng anh vẫn điềm tĩnh.",
+          "hi": "ऐसी जगह कई आदमी टूट जाते, पर वह शांत रहा।",
+          "ru": "Многие сломались бы в таком месте, но он оставался спокоен.",
+          "bn": "এমন জায়গায় অনেকেই ভেঙে পড়ত, কিন্তু সে শান্ত রইল।",
+          "ur": "ایسی جگہ کئی آدمی ٹوٹ جاتے، مگر وہ پرسکون رہا۔",
+          "th": "หลายคนคงแตกสลายในที่แบบนั้น แต่เขายังคงสงบนิ่ง"
+        }
+      },
+      {
+        "id": "cl-financier-069",
+        "english": "He read, he made plans, and he waited.",
+        "turkish": "Okudu, planlar yaptı ve bekledi.",
+        "translations": {
+          "es-419": "Leía, hacía planes y esperaba.",
+          "pt-BR": "Ele lia, fazia planos e esperava.",
+          "id": "Ia membaca, menyusun rencana, dan menunggu.",
+          "ar": "كان يقرأ ويخطّط وينتظر.",
+          "vi": "Anh đọc sách, lập kế hoạch và chờ đợi.",
+          "hi": "वह पढ़ता, योजनाएँ बनाता और इंतज़ार करता।",
+          "ru": "Он читал, строил планы и ждал.",
+          "bn": "সে পড়ত, পরিকল্পনা করত, আর অপেক্ষা করত।",
+          "ur": "وہ پڑھتا، منصوبے بناتا اور انتظار کرتا۔",
+          "th": "เขาอ่านหนังสือ วางแผน และรอคอย"
+        }
+      },
+      {
+        "id": "cl-financier-070",
+        "english": "Through the small window, he could see only a piece of sky.",
+        "turkish": "Küçük pencereden yalnızca bir parça gökyüzü görebiliyordu.",
+        "translations": {
+          "es-419": "Por la ventanita, solo podía ver un trozo de cielo.",
+          "pt-BR": "Pela janelinha, só conseguia ver um pedaço de céu.",
+          "id": "Dari jendela kecil itu, ia hanya bisa melihat sepotong langit.",
+          "ar": "ومن النافذة الصغيرة، لم يكن يرى إلّا قطعة من السماء.",
+          "vi": "Qua ô cửa sổ nhỏ, anh chỉ thấy được một mảnh trời.",
+          "hi": "छोटी-सी खिड़की से उसे आसमान का बस एक टुकड़ा दिखता था।",
+          "ru": "В маленькое окошко он видел лишь кусочек неба.",
+          "bn": "ছোট্ট জানালা দিয়ে সে শুধু এক টুকরো আকাশ দেখতে পেত।",
+          "ur": "چھوٹی سی کھڑکی سے اسے آسمان کا بس ایک ٹکڑا دکھائی دیتا تھا۔",
+          "th": "จากหน้าต่างบานเล็ก เขามองเห็นท้องฟ้าได้เพียงผืนเล็ก ๆ"
+        }
+      },
+      {
+        "id": "cl-financier-071",
+        "english": "Aileen visited him whenever she could, and she never stopped loving him.",
+        "turkish": "Aileen fırsat buldukça onu ziyaret etti ve onu sevmekten hiç vazgeçmedi.",
+        "translations": {
+          "es-419": "Aileen lo visitaba siempre que podía, y nunca dejó de amarlo.",
+          "pt-BR": "Aileen o visitava sempre que podia, e nunca deixou de amá-lo.",
+          "id": "Aileen menjenguknya setiap kali bisa, dan ia tak pernah berhenti mencintainya.",
+          "ar": "كانت أيلين تزوره كلّما استطاعت، ولم تتوقّف عن حبّه أبدًا.",
+          "vi": "Aileen đến thăm anh mỗi khi có thể, và cô không bao giờ thôi yêu anh.",
+          "hi": "एलीन जब भी हो सकता, उससे मिलने आती, और उसने उसे चाहना कभी नहीं छोड़ा।",
+          "ru": "Эйлин навещала его, когда только могла, и не переставала его любить.",
+          "bn": "আইলিন যখনই পারত তাকে দেখতে আসত, আর তাকে ভালোবাসা কখনো ছাড়েনি।",
+          "ur": "آئلین جب بھی ممکن ہوتا، اس سے ملنے آتی، اور اس نے اسے چاہنا کبھی نہیں چھوڑا۔",
+          "th": "ไอลีนมาเยี่ยมเขาทุกครั้งที่ทำได้ และเธอไม่เคยหยุดรักเขาเลย"
+        }
+      },
+      {
+        "id": "cl-financier-072",
+        "english": "His wife Lillian did not come. Their marriage was over.",
+        "turkish": "Karısı Lillian gelmedi. Evlilikleri bitmişti.",
+        "translations": {
+          "es-419": "Su esposa Lillian no fue. Su matrimonio había terminado.",
+          "pt-BR": "A esposa, Lillian, não foi. O casamento tinha acabado.",
+          "id": "Istrinya, Lillian, tidak datang. Pernikahan mereka sudah berakhir.",
+          "ar": "أمّا زوجته ليليان فلم تأتِ. كان زواجهما قد انتهى.",
+          "vi": "Vợ anh, Lillian, không đến. Cuộc hôn nhân của họ đã chấm dứt.",
+          "hi": "उसकी पत्नी लिलियन नहीं आई। उनकी शादी ख़त्म हो चुकी थी।",
+          "ru": "Его жена Лилиан не приходила. Их брак был окончен.",
+          "bn": "তার স্ত্রী লিলিয়ান এল না। তাদের বিয়ে শেষ হয়ে গিয়েছিল।",
+          "ur": "اس کی بیوی للیئن نہیں آئی۔ ان کی شادی ختم ہو چکی تھی۔",
+          "th": "ลิลเลียน ภรรยาของเขาไม่มา ชีวิตคู่ของพวกเขาจบลงแล้ว"
+        }
+      },
+      {
+        "id": "cl-financier-073",
+        "english": "Meanwhile, old Butler became ill and died, still angry with his daughter.",
+        "turkish": "Bu arada yaşlı Butler hastalandı ve kızına hâlâ öfkeliyken öldü.",
+        "translations": {
+          "es-419": "Mientras tanto, el viejo Butler enfermó y murió, todavía enojado con su hija.",
+          "pt-BR": "Enquanto isso, o velho Butler adoeceu e morreu, ainda zangado com a filha.",
+          "id": "Sementara itu, Butler tua jatuh sakit dan meninggal, masih marah kepada putrinya.",
+          "ar": "وفي تلك الأثناء، مرض بتلر العجوز ومات وهو لا يزال غاضبًا من ابنته.",
+          "vi": "Trong khi đó, ông già Butler đổ bệnh rồi qua đời, vẫn còn giận con gái.",
+          "hi": "इस बीच बूढ़े बटलर बीमार पड़े और अपनी बेटी से नाराज़ ही चल बसे।",
+          "ru": "Тем временем старый Батлер заболел и умер, так и не простив дочь.",
+          "bn": "এর মধ্যে বৃদ্ধ বাটলার অসুস্থ হয়ে মারা গেলেন, মেয়ের ওপর তখনো রাগ নিয়ে।",
+          "ur": "اس دوران بوڑھے بٹلر بیمار پڑے اور اپنی بیٹی سے ناراض ہی چل بسے۔",
+          "th": "ระหว่างนั้น บัตเลอร์ผู้ชราล้มป่วยและเสียชีวิต ทั้งที่ยังโกรธลูกสาวอยู่"
+        }
+      },
+      {
+        "id": "cl-financier-074",
+        "english": "After thirteen months, the governor set Frank and Stener free.",
+        "turkish": "On üç ay sonra vali Frank'i ve Stener'ı serbest bıraktı.",
+        "translations": {
+          "es-419": "Después de trece meses, el gobernador dejó libres a Frank y a Stener.",
+          "pt-BR": "Depois de treze meses, o governador libertou Frank e Stener.",
+          "id": "Setelah tiga belas bulan, gubernur membebaskan Frank dan Stener.",
+          "ar": "وبعد ثلاثة عشر شهرًا، أطلق الحاكم سراح فرانك وستينر.",
+          "vi": "Sau mười ba tháng, thống đốc trả tự do cho Frank và Stener.",
+          "hi": "तेरह महीने बाद गवर्नर ने फ़्रैंक और स्टेनर को रिहा कर दिया।",
+          "ru": "Через тринадцать месяцев губернатор освободил Фрэнка и Стинера.",
+          "bn": "তেরো মাস পরে গভর্নর ফ্র্যাঙ্ক আর স্টেনারকে মুক্তি দিলেন।",
+          "ur": "تیرہ مہینے بعد گورنر نے فرینک اور اسٹینر کو رہا کر دیا۔",
+          "th": "หลังจากสิบสามเดือน ผู้ว่าการรัฐก็ปล่อยตัวแฟรงก์และสเตเนอร์"
+        }
+      },
+      {
+        "id": "cl-financier-075",
+        "english": "Frank walked out of prison with almost no money.",
+        "turkish": "Frank neredeyse beş parasız hapisten çıktı.",
+        "translations": {
+          "es-419": "Frank salió de la prisión casi sin dinero.",
+          "pt-BR": "Frank saiu da prisão quase sem dinheiro.",
+          "id": "Frank keluar dari penjara nyaris tanpa uang.",
+          "ar": "خرج فرانك من السجن وليس معه مال تقريبًا.",
+          "vi": "Frank bước ra khỏi nhà tù gần như không một xu dính túi.",
+          "hi": "फ़्रैंक लगभग ख़ाली हाथ जेल से बाहर निकला।",
+          "ru": "Фрэнк вышел из тюрьмы почти без денег.",
+          "bn": "ফ্র্যাঙ্ক প্রায় কপর্দকশূন্য অবস্থায় জেল থেকে বেরোল।",
+          "ur": "فرینک تقریباً خالی ہاتھ جیل سے باہر نکلا۔",
+          "th": "แฟรงก์เดินออกจากคุกโดยแทบไม่มีเงินติดตัว"
+        }
+      },
+      {
+        "id": "cl-financier-076",
+        "english": "It was a cold March morning, and Aileen was waiting at the gate.",
+        "turkish": "Soğuk bir mart sabahıydı ve Aileen kapıda bekliyordu.",
+        "translations": {
+          "es-419": "Era una fría mañana de marzo, y Aileen lo esperaba en la puerta.",
+          "pt-BR": "Era uma fria manhã de março, e Aileen o esperava no portão.",
+          "id": "Pagi itu pagi bulan Maret yang dingin, dan Aileen menunggu di gerbang.",
+          "ar": "كان صباحًا باردًا من صباحات مارس، وكانت أيلين تنتظر عند البوّابة.",
+          "vi": "Đó là một buổi sáng tháng Ba lạnh giá, và Aileen đang chờ ở cổng.",
+          "hi": "मार्च की एक ठंडी सुबह थी, और एलीन फाटक पर इंतज़ार कर रही थी।",
+          "ru": "Было холодное мартовское утро, и Эйлин ждала у ворот.",
+          "bn": "মার্চের এক ঠান্ডা সকাল, আর আইলিন ফটকে অপেক্ষা করছিল।",
+          "ur": "مارچ کی ایک ٹھنڈی صبح تھی، اور آئلین پھاٹک پر انتظار کر رہی تھی۔",
+          "th": "เป็นเช้าเดือนมีนาคมที่หนาวเย็น และไอลีนรออยู่ที่ประตู"
+        }
+      },
+      {
+        "id": "cl-financier-077",
+        "english": "But he still had his clever head and a few friends who trusted him.",
+        "turkish": "Ama hâlâ zeki kafası ve ona güvenen birkaç dostu vardı.",
+        "translations": {
+          "es-419": "Pero todavía tenía su cabeza inteligente y unos cuantos amigos que confiaban en él.",
+          "pt-BR": "Mas ainda tinha a cabeça esperta e alguns amigos que confiavam nele.",
+          "id": "Tetapi ia masih punya otak yang cerdas dan beberapa teman yang memercayainya.",
+          "ar": "لكن بقي له عقله الذكيّ وبضعة أصدقاء يثقون به.",
+          "vi": "Nhưng anh vẫn còn cái đầu thông minh và vài người bạn tin tưởng mình.",
+          "hi": "पर उसके पास अब भी तेज़ दिमाग़ था और कुछ दोस्त, जो उस पर भरोसा करते थे।",
+          "ru": "Но у него остались светлая голова и несколько друзей, которые ему доверяли.",
+          "bn": "তবু তার ছিল ধারালো মাথা আর কয়েকজন বন্ধু, যারা তাকে বিশ্বাস করত।",
+          "ur": "مگر اس کے پاس اب بھی تیز دماغ تھا اور کچھ دوست، جو اس پر بھروسا کرتے تھے۔",
+          "th": "แต่เขายังมีหัวที่ฉลาดและเพื่อนไม่กี่คนที่ไว้ใจเขา"
+        }
+      },
+      {
+        "id": "cl-financier-078",
+        "english": "Quietly, he began to work at the stock exchange again.",
+        "turkish": "Sessizce yeniden borsada çalışmaya başladı.",
+        "translations": {
+          "es-419": "En silencio, volvió a trabajar en la bolsa.",
+          "pt-BR": "Discretamente, voltou a trabalhar na bolsa de valores.",
+          "id": "Diam-diam, ia mulai bekerja lagi di bursa saham.",
+          "ar": "وبهدوء، عاد يعمل في البورصة.",
+          "vi": "Lặng lẽ, anh bắt đầu làm việc lại ở sàn chứng khoán.",
+          "hi": "चुपचाप वह फिर से शेयर बाज़ार में काम करने लगा।",
+          "ru": "Без лишнего шума он снова начал работать на бирже.",
+          "bn": "চুপচাপ সে আবার শেয়ারবাজারে কাজ শুরু করল।",
+          "ur": "خاموشی سے وہ پھر سے اسٹاک ایکسچینج میں کام کرنے لگا۔",
+          "th": "เขาเริ่มกลับไปทำงานในตลาดหุ้นอีกครั้งอย่างเงียบ ๆ"
+        }
+      },
+      {
+        "id": "cl-financier-079",
+        "english": "In September 1873, a great bank in New York suddenly failed.",
+        "turkish": "Eylül 1873'te New York'taki büyük bir banka birden battı.",
+        "translations": {
+          "es-419": "En septiembre de 1873, un gran banco de Nueva York quebró de repente.",
+          "pt-BR": "Em setembro de 1873, um grande banco de Nova York faliu de repente.",
+          "id": "Pada September 1873, sebuah bank besar di New York tiba-tiba bangkrut.",
+          "ar": "وفي سبتمبر 1873، أفلس فجأة مصرف كبير في نيويورك.",
+          "vi": "Tháng Chín năm 1873, một ngân hàng lớn ở New York bất ngờ sụp đổ.",
+          "hi": "सितंबर 1873 में न्यूयॉर्क का एक बड़ा बैंक अचानक डूब गया।",
+          "ru": "В сентябре 1873 года внезапно лопнул крупный банк в Нью-Йорке.",
+          "bn": "১৮৭৩ সালের সেপ্টেম্বরে নিউ ইয়র্কের এক বড় ব্যাংক হঠাৎ দেউলিয়া হয়ে গেল।",
+          "ur": "ستمبر 1873 میں نیویارک کا ایک بڑا بینک اچانک ڈوب گیا۔",
+          "th": "เดือนกันยายน ปี 1873 ธนาคารใหญ่แห่งหนึ่งในนิวยอร์กล้มลงอย่างกะทันหัน"
+        }
+      },
+      {
+        "id": "cl-financier-080",
+        "english": "A new panic began, much bigger than the first one.",
+        "turkish": "İlkinden çok daha büyük yeni bir panik başladı.",
+        "translations": {
+          "es-419": "Comenzó un nuevo pánico, mucho mayor que el primero.",
+          "pt-BR": "Começou um novo pânico, muito maior que o primeiro.",
+          "id": "Kepanikan baru dimulai, jauh lebih besar daripada yang pertama.",
+          "ar": "بدأ ذعر جديد، أكبر بكثير من الأوّل.",
+          "vi": "Một cơn hoảng loạn mới bắt đầu, lớn hơn lần trước rất nhiều.",
+          "hi": "एक नई अफ़रा-तफ़री शुरू हुई, पहली से कहीं बड़ी।",
+          "ru": "Началась новая паника, гораздо сильнее первой.",
+          "bn": "নতুন এক আতঙ্ক শুরু হল, প্রথমবারের চেয়ে অনেক বড়।",
+          "ur": "ایک نئی بھگدڑ شروع ہوئی، پہلی سے کہیں بڑی۔",
+          "th": "ความตื่นตระหนกครั้งใหม่เริ่มขึ้น ใหญ่กว่าครั้งแรกมาก"
+        }
+      },
+      {
+        "id": "cl-financier-081",
+        "english": "This time, Frank was ready.",
+        "turkish": "Bu kez Frank hazırdı.",
+        "translations": {
+          "es-419": "Esta vez, Frank estaba preparado.",
+          "pt-BR": "Desta vez, Frank estava pronto.",
+          "id": "Kali ini, Frank sudah siap.",
+          "ar": "وهذه المرّة، كان فرانك مستعدًّا.",
+          "vi": "Lần này, Frank đã sẵn sàng.",
+          "hi": "इस बार फ़्रैंक तैयार था।",
+          "ru": "На этот раз Фрэнк был готов.",
+          "bn": "এবার ফ্র্যাঙ্ক তৈরি ছিল।",
+          "ur": "اس بار فرینک تیار تھا۔",
+          "th": "คราวนี้ แฟรงก์พร้อมแล้ว"
+        }
+      },
+      {
+        "id": "cl-financier-082",
+        "english": "While other men ran around in fear, he moved calmly and quickly.",
+        "turkish": "Başkaları korkuyla oraya buraya koşuşturken o sakin ve hızlı davrandı.",
+        "translations": {
+          "es-419": "Mientras otros hombres corrían asustados de un lado a otro, él actuaba con calma y rapidez.",
+          "pt-BR": "Enquanto outros homens corriam assustados, ele agia com calma e rapidez.",
+          "id": "Saat orang lain berlarian ketakutan, ia bergerak dengan tenang dan cepat.",
+          "ar": "وبينما كان الرجال الآخرون يركضون في كلّ اتّجاه خائفين، تحرّك هو بهدوء وسرعة.",
+          "vi": "Trong khi người khác chạy tán loạn vì sợ hãi, anh hành động bình tĩnh và nhanh nhẹn.",
+          "hi": "जब दूसरे लोग डर के मारे इधर-उधर भाग रहे थे, वह शांति और तेज़ी से काम करता रहा।",
+          "ru": "Пока другие в страхе метались, он действовал спокойно и быстро.",
+          "bn": "অন্যরা যখন ভয়ে ছোটাছুটি করছিল, সে শান্তভাবে আর দ্রুত কাজ করে গেল।",
+          "ur": "جب دوسرے لوگ ڈر کے مارے ادھر ادھر بھاگ رہے تھے، وہ سکون اور تیزی سے کام کرتا رہا۔",
+          "th": "ขณะที่คนอื่นวิ่งพล่านด้วยความกลัว เขากลับเคลื่อนไหวอย่างใจเย็นและรวดเร็ว"
+        }
+      },
+      {
+        "id": "cl-financier-083",
+        "english": "He sold stock before the prices fell, and bought it back cheaply afterwards.",
+        "turkish": "Fiyatlar düşmeden önce hisse sattı, sonra da ucuza geri aldı.",
+        "translations": {
+          "es-419": "Vendió acciones antes de que bajaran los precios, y luego las volvió a comprar baratas.",
+          "pt-BR": "Vendeu ações antes de os preços caírem, e depois as comprou de volta bem barato.",
+          "id": "Ia menjual saham sebelum harga jatuh, lalu membelinya kembali dengan murah.",
+          "ar": "باع الأسهم قبل أن تهبط الأسعار، ثمّ اشتراها من جديد بثمن بخس.",
+          "vi": "Anh bán cổ phiếu trước khi giá rớt, rồi mua lại với giá rẻ.",
+          "hi": "उसने दाम गिरने से पहले शेयर बेच दिए, और बाद में उन्हें सस्ते में वापस ख़रीद लिया।",
+          "ru": "Он продал акции до падения цен, а потом дёшево купил их обратно.",
+          "bn": "দাম পড়ার আগেই সে শেয়ার বেচে দিল, পরে সস্তায় আবার কিনে নিল।",
+          "ur": "اس نے دام گرنے سے پہلے شیئر بیچ دیے، اور بعد میں انہیں سستے میں واپس خرید لیا۔",
+          "th": "เขาขายหุ้นก่อนราคาจะตก แล้วซื้อคืนในราคาถูกทีหลัง"
+        }
+      },
+      {
+        "id": "cl-financier-084",
+        "english": "In a few days, he made a new fortune of a million dollars.",
+        "turkish": "Birkaç gün içinde bir milyon dolarlık yeni bir servet yaptı.",
+        "translations": {
+          "es-419": "En pocos días, hizo una nueva fortuna de un millón de dólares.",
+          "pt-BR": "Em poucos dias, fez uma nova fortuna de um milhão de dólares.",
+          "id": "Dalam beberapa hari, ia mengumpulkan kekayaan baru senilai sejuta dolar.",
+          "ar": "وفي أيّام قليلة، جمع ثروة جديدة بمليون دولار.",
+          "vi": "Chỉ trong vài ngày, anh gây dựng một gia tài mới trị giá một triệu đô la.",
+          "hi": "कुछ ही दिनों में उसने दस लाख डॉलर की नई दौलत कमा ली।",
+          "ru": "За несколько дней он сколотил новое состояние в миллион долларов.",
+          "bn": "কয়েক দিনের মধ্যে সে দশ লাখ ডলারের নতুন সম্পদ গড়ে ফেলল।",
+          "ur": "چند ہی دنوں میں اس نے دس لاکھ ڈالر کی نئی دولت کما لی۔",
+          "th": "ภายในไม่กี่วัน เขาสร้างความมั่งคั่งใหม่ได้ถึงหนึ่งล้านดอลลาร์"
+        }
+      },
+      {
+        "id": "cl-financier-085",
+        "english": "Men who had laughed at him now came to ask for his advice.",
+        "turkish": "Bir zamanlar ona gülen adamlar şimdi akıl danışmaya geliyordu.",
+        "translations": {
+          "es-419": "Hombres que se habían reído de él ahora venían a pedirle consejo.",
+          "pt-BR": "Homens que tinham rido dele agora vinham pedir seus conselhos.",
+          "id": "Orang-orang yang dulu menertawakannya kini datang meminta nasihatnya.",
+          "ar": "صار الرجال الذين ضحكوا منه يأتون الآن ليطلبوا نصيحته.",
+          "vi": "Những kẻ từng cười nhạo anh giờ lại tìm đến xin lời khuyên.",
+          "hi": "जो लोग कभी उस पर हँसे थे, वे अब उससे सलाह लेने आने लगे।",
+          "ru": "Люди, которые когда-то смеялись над ним, теперь приходили за советом.",
+          "bn": "যারা একসময় তাকে নিয়ে হেসেছিল, তারাই এখন পরামর্শ চাইতে আসত।",
+          "ur": "جو لوگ کبھی اس پر ہنسے تھے، وہ اب اس سے مشورہ لینے آنے لگے۔",
+          "th": "คนที่เคยหัวเราะเยาะเขา ตอนนี้กลับมาขอคำแนะนำจากเขา"
+        }
+      },
+      {
+        "id": "cl-financier-086",
+        "english": "The lobster had won again.",
+        "turkish": "Istakoz yine kazanmıştı.",
+        "translations": {
+          "es-419": "La langosta había vuelto a ganar.",
+          "pt-BR": "A lagosta tinha vencido de novo.",
+          "id": "Lobster itu menang lagi.",
+          "ar": "لقد انتصر جراد البحر من جديد.",
+          "vi": "Con tôm hùm lại thắng.",
+          "hi": "लॉबस्टर फिर जीत गया था।",
+          "ru": "Омар снова победил.",
+          "bn": "লবস্টার আবার জিতে গেল।",
+          "ur": "لابسٹر پھر جیت گیا تھا۔",
+          "th": "กุ้งมังกรชนะอีกครั้ง"
+        }
+      },
+      {
+        "id": "cl-financier-087",
+        "english": "But Philadelphia remembered his past, and he did not want to stay there.",
+        "turkish": "Ama Philadelphia onun geçmişini unutmamıştı ve o da orada kalmak istemiyordu.",
+        "translations": {
+          "es-419": "Pero Filadelfia recordaba su pasado, y él no quería quedarse allí.",
+          "pt-BR": "Mas a Filadélfia se lembrava do passado dele, e ele não queria ficar ali.",
+          "id": "Tetapi Philadelphia mengingat masa lalunya, dan ia tidak ingin tinggal di sana.",
+          "ar": "لكنّ فيلادلفيا كانت تتذكّر ماضيه، ولم يكن يريد البقاء فيها.",
+          "vi": "Nhưng Philadelphia vẫn nhớ quá khứ của anh, và anh không muốn ở lại đó.",
+          "hi": "पर फ़िलाडेल्फ़िया को उसका अतीत याद था, और वह वहाँ रहना नहीं चाहता था।",
+          "ru": "Но Филадельфия помнила его прошлое, и он не хотел там оставаться.",
+          "bn": "কিন্তু ফিলাডেলফিয়া তার অতীত মনে রেখেছিল, আর সে সেখানে থাকতে চাইল না।",
+          "ur": "مگر فلاڈیلفیا کو اس کا ماضی یاد تھا، اور وہ وہاں رہنا نہیں چاہتا تھا۔",
+          "th": "แต่ฟิลาเดลเฟียยังจำอดีตของเขาได้ และเขาก็ไม่อยากอยู่ที่นั่นต่อ"
+        }
+      },
+      {
+        "id": "cl-financier-088",
+        "english": "So he decided to start a new life in the West, in Chicago.",
+        "turkish": "Bu yüzden Batı'da, Chicago'da yeni bir hayata başlamaya karar verdi.",
+        "translations": {
+          "es-419": "Así que decidió empezar una nueva vida en el Oeste, en Chicago.",
+          "pt-BR": "Então decidiu começar uma vida nova no Oeste, em Chicago.",
+          "id": "Maka ia memutuskan memulai hidup baru di Barat, di Chicago.",
+          "ar": "فقرّر أن يبدأ حياة جديدة في الغرب، في شيكاغو.",
+          "vi": "Vì thế anh quyết định bắt đầu cuộc sống mới ở miền Tây, tại Chicago.",
+          "hi": "इसलिए उसने पश्चिम में, शिकागो में नई ज़िंदगी शुरू करने का फ़ैसला किया।",
+          "ru": "И он решил начать новую жизнь на Западе, в Чикаго.",
+          "bn": "তাই সে পশ্চিমে, শিকাগোয় নতুন জীবন শুরু করার সিদ্ধান্ত নিল।",
+          "ur": "اس لیے اس نے مغرب میں، شکاگو میں نئی زندگی شروع کرنے کا فیصلہ کیا۔",
+          "th": "เขาจึงตัดสินใจเริ่มชีวิตใหม่ทางตะวันตก ที่ชิคาโก"
+        }
+      },
+      {
+        "id": "cl-financier-089",
+        "english": "Lillian agreed to live apart from him, and Aileen went with him.",
+        "turkish": "Lillian ondan ayrı yaşamayı kabul etti ve Aileen onunla gitti.",
+        "translations": {
+          "es-419": "Lillian aceptó vivir separada de él, y Aileen se fue con él.",
+          "pt-BR": "Lillian aceitou viver separada dele, e Aileen foi com ele.",
+          "id": "Lillian setuju untuk hidup terpisah darinya, dan Aileen ikut bersamanya.",
+          "ar": "وافقت ليليان على أن تعيش منفصلة عنه، ورحلت أيلين معه.",
+          "vi": "Lillian đồng ý sống ly thân, còn Aileen đi cùng anh.",
+          "hi": "लिलियन उससे अलग रहने को राज़ी हो गई, और एलीन उसके साथ चली गई।",
+          "ru": "Лилиан согласилась жить отдельно, а Эйлин уехала с ним.",
+          "bn": "লিলিয়ান তার থেকে আলাদা থাকতে রাজি হল, আর আইলিন তার সঙ্গে গেল।",
+          "ur": "للیئن اس سے الگ رہنے پر راضی ہو گئی، اور آئلین اس کے ساتھ چلی گئی۔",
+          "th": "ลิลเลียนยอมแยกกันอยู่กับเขา และไอลีนก็ไปกับเขา"
+        }
+      },
+      {
+        "id": "cl-financier-090",
+        "english": "On the train, Frank looked out at the wide, open country.",
+        "turkish": "Trende Frank geniş, açık topraklara baktı.",
+        "translations": {
+          "es-419": "En el tren, Frank miró por la ventana el campo ancho y abierto.",
+          "pt-BR": "No trem, Frank olhou para a terra larga e aberta lá fora.",
+          "id": "Di dalam kereta, Frank memandang ke luar, ke daratan yang luas dan terbuka.",
+          "ar": "وفي القطار، نظر فرانك إلى الأرض الواسعة المفتوحة.",
+          "vi": "Trên tàu hỏa, Frank nhìn ra vùng đất rộng mênh mông.",
+          "hi": "ट्रेन में फ़्रैंक ने बाहर दूर तक फैले खुले देहात को देखा।",
+          "ru": "В поезде Фрэнк смотрел на широкие открытые просторы.",
+          "bn": "ট্রেনে বসে ফ্র্যাঙ্ক বাইরের দিগন্তজোড়া খোলা প্রান্তরের দিকে তাকাল।",
+          "ur": "ٹرین میں فرینک نے باہر دور تک پھیلے کھلے دیہات کو دیکھا۔",
+          "th": "บนรถไฟ แฟรงก์มองออกไปยังผืนแผ่นดินกว้างใหญ่ที่เปิดโล่ง"
+        }
+      },
+      {
+        "id": "cl-financier-091",
+        "english": "\"There are bigger fortunes waiting for us,\" he told Aileen.",
+        "turkish": "\"Bizi daha büyük servetler bekliyor,\" dedi Aileen'e.",
+        "translations": {
+          "es-419": "—Nos esperan fortunas más grandes —le dijo a Aileen.",
+          "pt-BR": "— Há fortunas maiores esperando por nós — disse ele a Aileen.",
+          "id": "\"Ada kekayaan yang lebih besar menanti kita,\" katanya kepada Aileen.",
+          "ar": "قال لأيلين: «ثمّة ثروات أكبر تنتظرنا».",
+          "vi": "\"Có những gia tài lớn hơn đang chờ chúng ta,\" anh nói với Aileen.",
+          "hi": "उसने एलीन से कहा, \"हमारे लिए इससे भी बड़ी दौलत इंतज़ार कर रही है।\"",
+          "ru": "«Нас ждут состояния побольше», — сказал он Эйлин.",
+          "bn": "সে আইলিনকে বলল, \"আমাদের জন্য আরও বড় সম্পদ অপেক্ষা করছে।\"",
+          "ur": "اس نے آئلین سے کہا، \"ہمارے لیے اس سے بھی بڑی دولت انتظار کر رہی ہے۔\"",
+          "th": "\"ยังมีความมั่งคั่งที่ใหญ่กว่านี้รอเราอยู่\" เขาบอกไอลีน"
+        }
+      },
+      {
+        "id": "cl-financier-092",
+        "english": "He was only thirty-six, and his story had only just begun.",
+        "turkish": "Daha otuz altı yaşındaydı ve hikâyesi daha yeni başlıyordu.",
+        "translations": {
+          "es-419": "Tenía solo treinta y seis años, y su historia apenas comenzaba.",
+          "pt-BR": "Ele tinha só trinta e seis anos, e sua história mal tinha começado.",
+          "id": "Ia baru berusia tiga puluh enam, dan kisahnya baru saja dimulai.",
+          "ar": "كان في السادسة والثلاثين فقط، وقصّته لم تكد تبدأ.",
+          "vi": "Anh mới ba mươi sáu tuổi, và câu chuyện của anh chỉ vừa mới bắt đầu.",
+          "hi": "वह सिर्फ़ छत्तीस साल का था, और उसकी कहानी तो अभी शुरू ही हुई थी।",
+          "ru": "Ему было всего тридцать шесть, и его история только начиналась.",
+          "bn": "তার বয়স মাত্র ছত্রিশ, আর তার গল্প সবে শুরু হয়েছে।",
+          "ur": "وہ صرف چھتیس سال کا تھا، اور اس کی کہانی تو ابھی شروع ہی ہوئی تھی۔",
+          "th": "เขาอายุเพียงสามสิบหก และเรื่องราวของเขาเพิ่งจะเริ่มต้นเท่านั้น"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-financier-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "A boy who becomes a famous fisherman",
+          "A clever banker who falls, goes to prison and makes a new fortune",
+          "A politician who becomes the mayor of Chicago",
+          "A young woman who runs a bank"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-financier-q2",
+        "kind": "detail",
+        "prompt": "What did Frank learn from the lobster and the squid?",
+        "options": [
+          "Fish are very expensive",
+          "The strong live on the weak",
+          "Squids are cleverer than lobsters",
+          "Shops cheat their customers"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-financier-q3",
+        "kind": "detail",
+        "prompt": "What caused the first panic?",
+        "options": [
+          "A war in Europe",
+          "A great fire in Chicago",
+          "A bank failing in New York",
+          "Butler's letter"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-financier-q4",
+        "kind": "inference",
+        "prompt": "Why did Butler want Frank to be punished?",
+        "options": [
+          "Frank had lost all of Butler's money",
+          "Frank was secretly meeting Butler's daughter",
+          "Frank laughed at Butler in the newspapers",
+          "Frank wanted Butler's job"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-financier-q5",
+        "kind": "inference",
+        "prompt": "Why did Frank win in the second panic?",
+        "options": [
+          "He was ready and sold his stock before prices fell",
+          "Stener gave him more city money",
+          "He found gold in Chicago",
+          "Butler left him money"
+        ],
+        "answer": 0
+      }
+    ]
+  },
+  "words": [
+    {
+      "id": "lobster",
+      "word": "lobster",
+      "translation": "ıstakoz",
+      "pronunciation": "/ˈlɒbstə(r)/",
+      "example": "The lobster has two big claws.",
+      "translations": {
+        "es-419": "langosta",
+        "pt-BR": "lagosta",
+        "id": "lobster, udang karang",
+        "ar": "جراد البحر",
+        "vi": "tôm hùm",
+        "hi": "लॉबस्टर (बड़ा झींगा)",
+        "ru": "омар",
+        "bn": "লবস্টার, গলদা চিংড়ি",
+        "ur": "لابسٹر (بڑا جھینگا)",
+        "th": "กุ้งมังกร"
+      }
+    },
+    {
+      "id": "squid",
+      "word": "squid",
+      "translation": "mürekkep balığı",
+      "pronunciation": "/skwɪd/",
+      "example": "A squid can swim fast and hide in black ink.",
+      "translations": {
+        "es-419": "calamar",
+        "pt-BR": "lula",
+        "id": "cumi-cumi",
+        "ar": "حبّار",
+        "vi": "con mực",
+        "hi": "स्क्विड",
+        "ru": "кальмар",
+        "bn": "স্কুইড",
+        "ur": "اسکوئڈ",
+        "th": "ปลาหมึก"
+      }
+    },
+    {
+      "id": "business",
+      "word": "business",
+      "translation": "iş, ticaret",
+      "pronunciation": "/ˈbɪznəs/",
+      "example": "My aunt runs a small business selling cakes.",
+      "translations": {
+        "es-419": "negocio",
+        "pt-BR": "negócio",
+        "id": "bisnis, usaha",
+        "ar": "عمل تجاريّ",
+        "vi": "việc kinh doanh",
+        "hi": "कारोबार, व्यापार",
+        "ru": "бизнес, дело",
+        "bn": "ব্যবসা",
+        "ur": "کاروبار",
+        "th": "ธุรกิจ"
+      }
+    },
+    {
+      "id": "stock",
+      "word": "stock",
+      "translation": "hisse senedi",
+      "pronunciation": "/stɒk/",
+      "example": "He bought stock in a large car company.",
+      "translations": {
+        "es-419": "acciones",
+        "pt-BR": "ações",
+        "id": "saham",
+        "ar": "أسهم",
+        "vi": "cổ phiếu",
+        "hi": "शेयर",
+        "ru": "акции",
+        "bn": "শেয়ার",
+        "ur": "شیئر، حصص",
+        "th": "หุ้น"
+      }
+    },
+    {
+      "id": "loan",
+      "word": "loan",
+      "translation": "borç, kredi",
+      "pronunciation": "/ləʊn/",
+      "example": "She got a loan from the bank to buy a house.",
+      "translations": {
+        "es-419": "préstamo",
+        "pt-BR": "empréstimo",
+        "id": "pinjaman",
+        "ar": "قرض",
+        "vi": "khoản vay",
+        "hi": "क़र्ज़, ऋण",
+        "ru": "заём, кредит",
+        "bn": "ধার, ঋণ",
+        "ur": "قرض",
+        "th": "เงินกู้"
+      }
+    },
+    {
+      "id": "panic",
+      "word": "panic",
+      "translation": "panik",
+      "pronunciation": "/ˈpænɪk/",
+      "example": "When the fire started, there was panic in the building.",
+      "translations": {
+        "es-419": "pánico",
+        "pt-BR": "pânico",
+        "id": "kepanikan",
+        "ar": "ذعر",
+        "vi": "sự hoảng loạn",
+        "hi": "घबराहट, अफ़रा-तफ़री",
+        "ru": "паника",
+        "bn": "আতঙ্ক",
+        "ur": "گھبراہٹ، بھگدڑ",
+        "th": "ความตื่นตระหนก"
+      }
+    },
+    {
+      "id": "judge",
+      "word": "judge",
+      "translation": "yargıç, hâkim",
+      "pronunciation": "/dʒʌdʒ/",
+      "example": "The judge listened carefully to both sides.",
+      "translations": {
+        "es-419": "juez",
+        "pt-BR": "juiz",
+        "id": "hakim",
+        "ar": "قاضٍ",
+        "vi": "thẩm phán",
+        "hi": "जज, न्यायाधीश",
+        "ru": "судья",
+        "bn": "বিচারক",
+        "ur": "جج",
+        "th": "ผู้พิพากษา"
+      }
+    },
+    {
+      "id": "prison",
+      "word": "prison",
+      "translation": "hapishane",
+      "pronunciation": "/ˈprɪzn/",
+      "example": "The thief spent two years in prison.",
+      "translations": {
+        "es-419": "prisión",
+        "pt-BR": "prisão",
+        "id": "penjara",
+        "ar": "سجن",
+        "vi": "nhà tù",
+        "hi": "जेल",
+        "ru": "тюрьма",
+        "bn": "জেল, কারাগার",
+        "ur": "جیل",
+        "th": "คุก, เรือนจำ"
+      }
+    },
+    {
+      "id": "rich",
+      "word": "rich",
+      "translation": "zengin",
+      "pronunciation": "/rɪtʃ/",
+      "example": "They find a table full of rich food.",
+      "translations": {
+        "es-419": "rico",
+        "pt-BR": "rico",
+        "id": "kaya, lezat",
+        "ar": "غني؛ دسم",
+        "vi": "giàu có; (đồ ăn) thịnh soạn",
+        "hi": "अमीर; बढ़िया (खाना)",
+        "ru": "богатый; жирный, изысканный (о еде)",
+        "bn": "ধনী; দামি, ভারী (খাবার)",
+        "ur": "امیر؛ مرغن (کھانا)",
+        "th": "ร่ำรวย; (อาหาร) อุดมสมบูรณ์"
+      }
+    },
+    {
+      "id": "money",
+      "word": "money",
+      "translation": "para",
+      "pronunciation": "/ˈmʌni/",
+      "example": "She thinks about the money she can earn.",
+      "translations": {
+        "es-419": "dinero",
+        "pt-BR": "dinheiro",
+        "id": "uang",
+        "ar": "مال",
+        "vi": "tiền",
+        "hi": "पैसा",
+        "ru": "деньги",
+        "bn": "টাকা",
+        "ur": "پیسہ، رقم",
+        "th": "เงิน"
+      }
+    },
+    {
+      "id": "fortune",
+      "word": "fortune",
+      "translation": "talih; servet",
+      "pronunciation": "/ˈfɔːtʃuːn/",
+      "example": "His greed has taken away his good fortune.",
+      "translations": {
+        "es-419": "fortuna, suerte",
+        "pt-BR": "fortuna, sorte",
+        "id": "keberuntungan",
+        "ar": "حظّ؛ ثروة",
+        "vi": "vận may; của cải",
+        "hi": "किस्मत; दौलत",
+        "ru": "богатство, состояние",
+        "bn": "সৌভাগ্য; ধনসম্পদ",
+        "ur": "قسمت؛ دولت",
+        "th": "โชคลาภ"
+      }
+    },
+    {
+      "id": "trust",
+      "word": "trust",
+      "translation": "güven",
+      "pronunciation": "/trʌst/",
+      "example": "A liar can lose people's trust, even when he tells the truth.",
+      "translations": {
+        "es-419": "confianza",
+        "pt-BR": "confiança",
+        "id": "kepercayaan",
+        "ar": "ثقة",
+        "vi": "lòng tin",
+        "hi": "भरोसा",
+        "ru": "доверие",
+        "bn": "বিশ্বাস, আস্থা",
+        "ur": "بھروسا",
+        "th": "ความไว้วางใจ"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "lobster",
+    "squid",
+    "business",
+    "stock",
+    "loan",
+    "panic",
+    "judge",
+    "prison",
+    "rich",
+    "money",
+    "fortune",
+    "trust"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-financier-q1",
+      "sentenceIds": [
+        "cl-financier-054",
+        "cl-financier-084"
+      ],
+      "rationale": "Frank rises, loses everything in the panic and trial, and wins again after prison."
+    },
+    {
+      "questionId": "classic-financier-q2",
+      "sentenceIds": [
+        "cl-financier-010"
+      ],
+      "rationale": "Watching the lobster eat the squid, he decides that the strong live on the weak."
+    },
+    {
+      "questionId": "classic-financier-q3",
+      "sentenceIds": [
+        "cl-financier-042",
+        "cl-financier-043"
+      ],
+      "rationale": "The Chicago fire of 1871 made everyone sell their stock."
+    },
+    {
+      "questionId": "classic-financier-q4",
+      "sentenceIds": [
+        "cl-financier-050",
+        "cl-financier-053"
+      ],
+      "rationale": "Butler's anger comes from finding Frank with Aileen."
+    },
+    {
+      "questionId": "classic-financier-q5",
+      "sentenceIds": [
+        "cl-financier-081",
+        "cl-financier-083"
+      ],
+      "rationale": "He planned in prison, sold early and bought back cheaply."
+    }
+  ],
+  "publicationBlockers": [
+    "Owner (oguz) approval of the English text, questions and translations required.",
+    "Native-speaker language review not done.",
+    "Source text hash pending (Gutenberg not reachable from the cloud session).",
+    "Publisher story creation, validation and publication pending."
+  ]
+}

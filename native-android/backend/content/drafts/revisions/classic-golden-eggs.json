@@ -1,0 +1,753 @@
+{
+  "status": "draft",
+  "kind": "revision",
+  "source": "story-lengthening-a1-batch2-2026-10-22",
+  "reviewedBy": null,
+  "baseStoryId": "classic-golden-eggs",
+  "baseStorySHA256": "e31d1a8505f491214f2ac46f57aba1cf065a114b22820732999da76f15b95323",
+  "editorialNotes": [
+    "Adds the man's small farm and early poverty, the shining egg, what he buys, his impatience and the empty morning that follows; no character is added.",
+    "Every legacy sentence, its ID and its translations are kept unchanged; new sentences are only inserted between them. Plot, characters, ending and lesson are unchanged.",
+    "New sentences have AI-drafted translations in all ten additional support languages, following the gender and wording already used in each legacy translation. No native-speaker review."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "unchangedTranslationsPreserved": true,
+    "newSentenceIds": [
+      "classic-golden-eggs-ext-01-01",
+      "classic-golden-eggs-ext-01-02",
+      "classic-golden-eggs-ext-02-01",
+      "classic-golden-eggs-ext-02-02",
+      "classic-golden-eggs-ext-03-01",
+      "classic-golden-eggs-ext-04-01",
+      "classic-golden-eggs-ext-05-01",
+      "classic-golden-eggs-ext-06-01",
+      "classic-golden-eggs-ext-07-01",
+      "classic-golden-eggs-ext-09-01",
+      "classic-golden-eggs-ext-10-01",
+      "classic-golden-eggs-ext-11-01"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+  },
+  "story": {
+    "id": "classic-golden-eggs",
+    "title": "The Hen and the Golden Eggs",
+    "author": "Aesop",
+    "level": "A1",
+    "genre": "Günlük yaşam",
+    "description": "Altın Yumurtlayan Tavuk. Daha fazlasını isteyen bir adam, elindeki değerli şeyi kaybeder. A1 düzeyinde kısa uyarlama. Uyarlama ve Türkçe çeviri: English Tales. Tarihî görsel: Arthur Rackham; koleksiyonun iç başlık sayfası, ayrı bir ilk baskı kapağı değildir.",
+    "coverKey": "cover_classic_golden_eggs",
+    "sentences": [
+      {
+        "id": "cl-golden-eggs-01",
+        "english": "A man owns a special hen.",
+        "turkish": "Bir adamın özel bir tavuğu vardır.",
+        "translations": {
+          "es-419": "Un hombre tiene una gallina especial.",
+          "pt-BR": "Um homem tem uma galinha especial.",
+          "id": "Seorang pria memiliki seekor ayam betina yang istimewa.",
+          "ar": "يملك رجل دجاجة مميّزة.",
+          "vi": "Một người đàn ông có một con gà mái đặc biệt.",
+          "hi": "एक आदमी के पास एक ख़ास मुर्गी है।",
+          "ru": "У одного человека есть необычная курица.",
+          "bn": "এক লোকের একটা বিশেষ মুরগি আছে।",
+          "ur": "ایک آدمی کے پاس ایک خاص مرغی ہے۔",
+          "th": "ชายคนหนึ่งมีแม่ไก่พิเศษตัวหนึ่ง"
+        }
+      },
+      {
+        "id": "classic-golden-eggs-ext-01-01",
+        "english": "He lives on a small farm near a village.",
+        "turkish": "Bir köyün yakınındaki küçük bir çiftlikte yaşar.",
+        "translations": {
+          "es-419": "Vive en una granja pequeña cerca de un pueblo.",
+          "pt-BR": "Ele mora num pequeno sítio perto de uma aldeia.",
+          "id": "Ia tinggal di sebuah peternakan kecil dekat desa.",
+          "ar": "يعيش في مزرعة صغيرة قرب قرية.",
+          "vi": "Ông sống ở một trang trại nhỏ gần một ngôi làng.",
+          "hi": "वह एक गाँव के पास एक छोटे-से खेत पर रहता है।",
+          "ru": "Он живёт на маленькой ферме возле деревни.",
+          "bn": "সে একটা গ্রামের কাছে ছোট্ট একটা খামারে থাকে।",
+          "ur": "وہ ایک گاؤں کے پاس ایک چھوٹے سے فارم پر رہتا ہے۔",
+          "th": "เขาอาศัยอยู่ในฟาร์มเล็ก ๆ ใกล้หมู่บ้าน"
+        }
+      },
+      {
+        "id": "classic-golden-eggs-ext-01-02",
+        "english": "At first, he is a poor man.",
+        "turkish": "Başlangıçta yoksul bir adamdır.",
+        "translations": {
+          "es-419": "Al principio, es un hombre pobre.",
+          "pt-BR": "No começo, ele é um homem pobre.",
+          "id": "Awalnya, ia orang miskin.",
+          "ar": "في البداية، هو رجل فقير.",
+          "vi": "Lúc đầu, ông là một người nghèo.",
+          "hi": "शुरू में वह एक ग़रीब आदमी है।",
+          "ru": "Сначала он бедный человек.",
+          "bn": "প্রথমে সে একজন গরিব মানুষ।",
+          "ur": "شروع میں وہ ایک غریب آدمی ہے۔",
+          "th": "ตอนแรก เขาเป็นคนยากจน"
+        }
+      },
+      {
+        "id": "cl-golden-eggs-02",
+        "english": "Every day, she lays a golden egg.",
+        "turkish": "Tavuk her gün altın bir yumurta yumurtlar.",
+        "translations": {
+          "es-419": "Todos los días, ella pone un huevo de oro.",
+          "pt-BR": "Todos os dias, ela bota um ovo de ouro.",
+          "id": "Setiap hari, ayam itu bertelur sebutir telur emas.",
+          "ar": "كل يوم، تبيض بيضة ذهبية.",
+          "vi": "Mỗi ngày, nó đẻ một quả trứng vàng.",
+          "hi": "वह हर दिन सोने का एक अंडा देती है।",
+          "ru": "Каждый день она несёт золотое яйцо.",
+          "bn": "সে রোজ একটা করে সোনার ডিম পাড়ে।",
+          "ur": "وہ ہر روز سونے کا ایک انڈا دیتی ہے۔",
+          "th": "ทุกวัน แม่ไก่จะออกไข่ทองคำหนึ่งฟอง"
+        }
+      },
+      {
+        "id": "classic-golden-eggs-ext-02-01",
+        "english": "The egg is heavy and shines like the sun.",
+        "turkish": "Yumurta ağırdır ve güneş gibi parlar.",
+        "translations": {
+          "es-419": "El huevo es pesado y brilla como el sol.",
+          "pt-BR": "O ovo é pesado e brilha como o sol.",
+          "id": "Telur itu berat dan berkilau seperti matahari.",
+          "ar": "البيضة ثقيلة وتلمع مثل الشمس.",
+          "vi": "Quả trứng nặng trĩu và sáng lấp lánh như mặt trời.",
+          "hi": "अंडा भारी है और सूरज की तरह चमकता है।",
+          "ru": "Яйцо тяжёлое и сияет, как солнце.",
+          "bn": "ডিমটা ভারী, আর সূর্যের মতো ঝলমল করে।",
+          "ur": "انڈا بھاری ہے اور سورج کی طرح چمکتا ہے۔",
+          "th": "ไข่ฟองนั้นหนักและเป็นประกายเหมือนดวงอาทิตย์"
+        }
+      },
+      {
+        "id": "classic-golden-eggs-ext-02-02",
+        "english": "The man cannot believe his eyes.",
+        "turkish": "Adam gözlerine inanamaz.",
+        "translations": {
+          "es-419": "El hombre no puede creer lo que ve.",
+          "pt-BR": "O homem não acredita no que vê.",
+          "id": "Pria itu tidak percaya dengan apa yang dilihatnya.",
+          "ar": "لا يصدّق الرجل عينيه.",
+          "vi": "Người đàn ông không tin vào mắt mình.",
+          "hi": "आदमी को अपनी आँखों पर यक़ीन नहीं होता।",
+          "ru": "Человек не верит своим глазам.",
+          "bn": "লোকটা নিজের চোখকে বিশ্বাস করতে পারে না।",
+          "ur": "آدمی کو اپنی آنکھوں پر یقین نہیں آتا۔",
+          "th": "ชายคนนั้นไม่อยากเชื่อสายตาตัวเอง"
+        }
+      },
+      {
+        "id": "cl-golden-eggs-03",
+        "english": "The man sells the eggs and becomes rich.",
+        "turkish": "Adam yumurtaları satar ve zengin olur.",
+        "translations": {
+          "es-419": "El hombre vende los huevos y se hace rico.",
+          "pt-BR": "O homem vende os ovos e fica rico.",
+          "id": "Pria itu menjual telur-telur itu dan menjadi kaya.",
+          "ar": "يبيع الرجل البيض ويصبح غنيًا.",
+          "vi": "Người đàn ông bán những quả trứng và trở nên giàu có.",
+          "hi": "आदमी अंडे बेचता है और अमीर हो जाता है।",
+          "ru": "Человек продаёт яйца и становится богатым.",
+          "bn": "লোকটা ডিমগুলো বিক্রি করে ধনী হয়ে যায়।",
+          "ur": "آدمی انڈے بیچ کر امیر ہو جاتا ہے۔",
+          "th": "ชายคนนั้นขายไข่และร่ำรวยขึ้น"
+        }
+      },
+      {
+        "id": "classic-golden-eggs-ext-03-01",
+        "english": "He buys new clothes, a horse and a big house.",
+        "turkish": "Yeni giysiler, bir at ve büyük bir ev alır.",
+        "translations": {
+          "es-419": "Compra ropa nueva, un caballo y una casa grande.",
+          "pt-BR": "Ele compra roupas novas, um cavalo e uma casa grande.",
+          "id": "Ia membeli pakaian baru, seekor kuda, dan rumah besar.",
+          "ar": "يشتري ملابس جديدة وحصانًا وبيتًا كبيرًا.",
+          "vi": "Ông mua quần áo mới, một con ngựa và một ngôi nhà lớn.",
+          "hi": "वह नए कपड़े, एक घोड़ा और एक बड़ा घर ख़रीदता है।",
+          "ru": "Он покупает новую одежду, лошадь и большой дом.",
+          "bn": "সে নতুন জামাকাপড়, একটা ঘোড়া আর একটা বড় বাড়ি কেনে।",
+          "ur": "وہ نئے کپڑے، ایک گھوڑا اور ایک بڑا گھر خریدتا ہے۔",
+          "th": "เขาซื้อเสื้อผ้าใหม่ ม้าหนึ่งตัว และบ้านหลังใหญ่"
+        }
+      },
+      {
+        "id": "cl-golden-eggs-04",
+        "english": "But one egg a day is not enough for him.",
+        "turkish": "Ama günde bir yumurta ona yetmez.",
+        "translations": {
+          "es-419": "Pero un huevo al día no le basta.",
+          "pt-BR": "Mas um ovo por dia não é suficiente para ele.",
+          "id": "Tetapi sebutir telur sehari tidak cukup baginya.",
+          "ar": "لكن بيضة واحدة في اليوم لا تكفيه.",
+          "vi": "Nhưng mỗi ngày một quả trứng là không đủ với ông ta.",
+          "hi": "लेकिन उसके लिए दिन में एक अंडा काफ़ी नहीं है।",
+          "ru": "Но одного яйца в день ему мало.",
+          "bn": "কিন্তু দিনে একটা ডিম তার কাছে যথেষ্ট নয়।",
+          "ur": "لیکن روز کا ایک انڈا اس کے لیے کافی نہیں ہے۔",
+          "th": "แต่ไข่วันละฟองไม่พอสำหรับเขา"
+        }
+      },
+      {
+        "id": "classic-golden-eggs-ext-04-01",
+        "english": "\"I must wait a whole day for one egg,\" he says.",
+        "turkish": "\"Bir yumurta için koca bir gün beklemem gerekiyor,\" der.",
+        "translations": {
+          "es-419": "\"Tengo que esperar un día entero por un huevo\", dice.",
+          "pt-BR": "— Tenho que esperar um dia inteiro por um ovo — diz ele.",
+          "id": "\"Aku harus menunggu sehari penuh untuk satu telur,\" katanya.",
+          "ar": "يقول: «عليّ أن أنتظر يومًا كاملًا من أجل بيضة واحدة.»",
+          "vi": "\"Mình phải chờ cả một ngày mới có một quả trứng,\" ông ta nói.",
+          "hi": "\"एक अंडे के लिए मुझे पूरा दिन इंतज़ार करना पड़ता है,\" वह कहता है।",
+          "ru": "«Мне приходится ждать целый день ради одного яйца», — говорит он.",
+          "bn": "\"একটা ডিমের জন্য আমাকে গোটা একটা দিন অপেক্ষা করতে হয়,\" সে বলে।",
+          "ur": "\"ایک انڈے کے لیے مجھے پورا دن انتظار کرنا پڑتا ہے،\" وہ کہتا ہے۔",
+          "th": "\"ข้าต้องรอทั้งวันเพื่อไข่ฟองเดียว\" เขาพูด"
+        }
+      },
+      {
+        "id": "cl-golden-eggs-05",
+        "english": "He wants all the gold at once.",
+        "turkish": "Bütün altını bir kerede ister.",
+        "translations": {
+          "es-419": "Quiere todo el oro de una vez.",
+          "pt-BR": "Ele quer todo o ouro de uma vez.",
+          "id": "Ia ingin mendapatkan semua emas itu sekaligus.",
+          "ar": "يريد كل الذهب دفعة واحدة.",
+          "vi": "Ông ta muốn có tất cả số vàng ngay một lúc.",
+          "hi": "वह सारा सोना एक ही बार में चाहता है।",
+          "ru": "Он хочет получить всё золото сразу.",
+          "bn": "সে একবারে সব সোনা চায়।",
+          "ur": "وہ سارا سونا ایک ساتھ چاہتا ہے۔",
+          "th": "เขาอยากได้ทองคำทั้งหมดในคราวเดียว"
+        }
+      },
+      {
+        "id": "classic-golden-eggs-ext-05-01",
+        "english": "He cannot wait any longer.",
+        "turkish": "Artık daha fazla bekleyemez.",
+        "translations": {
+          "es-419": "Ya no puede esperar más.",
+          "pt-BR": "Ele não consegue esperar mais.",
+          "id": "Ia tidak sabar menunggu lagi.",
+          "ar": "لم يعد يستطيع الانتظار أكثر.",
+          "vi": "Ông ta không thể chờ thêm được nữa.",
+          "hi": "वह अब और इंतज़ार नहीं कर सकता।",
+          "ru": "Он больше не может ждать.",
+          "bn": "সে আর অপেক্ষা করতে পারে না।",
+          "ur": "وہ اب مزید انتظار نہیں کر سکتا۔",
+          "th": "เขารอต่อไปไม่ไหวแล้ว"
+        }
+      },
+      {
+        "id": "cl-golden-eggs-06",
+        "english": "\"The gold must be inside the hen,\" he thinks.",
+        "turkish": "\"Altın tavuğun içinde olmalı,\" diye düşünür.",
+        "translations": {
+          "es-419": "\"El oro debe estar dentro de la gallina\", piensa.",
+          "pt-BR": "\"O ouro deve estar dentro da galinha\", ele pensa.",
+          "id": "\"Emasnya pasti ada di dalam tubuh ayam itu,\" pikirnya.",
+          "ar": "يفكّر: «لا بدّ أن الذهب داخل الدجاجة.»",
+          "vi": "\"Chắc hẳn vàng ở bên trong con gà,\" ông ta nghĩ.",
+          "hi": "\"सोना ज़रूर मुर्गी के अंदर होगा,\" वह सोचता है।",
+          "ru": "«Золото, наверное, внутри курицы», — думает он.",
+          "bn": "\"সোনা নিশ্চয়ই মুরগিটার পেটের ভেতরে আছে,\" সে ভাবে।",
+          "ur": "\"سارا سونا مرغی کے اندر ہو گا،\" وہ سوچتا ہے۔",
+          "th": "\"ทองคำต้องอยู่ในตัวแม่ไก่แน่ ๆ\" เขาคิด"
+        }
+      },
+      {
+        "id": "classic-golden-eggs-ext-06-01",
+        "english": "\"If I open her, I can take it all today.\"",
+        "turkish": "\"Onu açarsam, hepsini bugün alabilirim.\"",
+        "translations": {
+          "es-419": "\"Si la abro, puedo sacarlo todo hoy.\"",
+          "pt-BR": "\"Se eu abrir a galinha, posso pegar tudo hoje.\"",
+          "id": "\"Kalau aku membelahnya, aku bisa mengambil semuanya hari ini.\"",
+          "ar": "«إذا فتحتُها، أستطيع أن آخذه كله اليوم.»",
+          "vi": "\"Nếu mổ nó ra, mình có thể lấy hết ngay hôm nay.\"",
+          "hi": "\"अगर मैं उसका पेट खोल दूँ, तो आज ही सारा सोना ले सकता हूँ।\"",
+          "ru": "«Если я её разрежу, то смогу забрать всё сегодня же».",
+          "bn": "\"ওর পেট কাটলে আজই সব সোনা নিয়ে নিতে পারব।\"",
+          "ur": "\"اگر میں اس کا پیٹ چیر دوں تو آج ہی سارا سونا لے سکتا ہوں۔\"",
+          "th": "\"ถ้าข้าผ่ามันออก ข้าก็เอาทองไปได้หมดในวันนี้\""
+        }
+      },
+      {
+        "id": "cl-golden-eggs-07",
+        "english": "He decides to kill her.",
+        "turkish": "Onu öldürmeye karar verir.",
+        "translations": {
+          "es-419": "Decide matarla.",
+          "pt-BR": "Ele decide matá-la.",
+          "id": "Ia memutuskan untuk menyembelihnya.",
+          "ar": "يقرّر أن يذبحها.",
+          "vi": "Ông ta quyết định giết nó.",
+          "hi": "वह उसे मारने का फ़ैसला करता है।",
+          "ru": "Он решает её зарезать.",
+          "bn": "সে মুরগিটাকে মেরে ফেলার সিদ্ধান্ত নেয়।",
+          "ur": "وہ اسے مار ڈالنے کا فیصلہ کرتا ہے۔",
+          "th": "เขาตัดสินใจฆ่าแม่ไก่"
+        }
+      },
+      {
+        "id": "classic-golden-eggs-ext-07-01",
+        "english": "The poor hen does not know what will happen.",
+        "turkish": "Zavallı tavuk ne olacağını bilmez.",
+        "translations": {
+          "es-419": "La pobre gallina no sabe lo que va a pasar.",
+          "pt-BR": "A pobre galinha não sabe o que vai acontecer.",
+          "id": "Ayam yang malang itu tidak tahu apa yang akan terjadi.",
+          "ar": "الدجاجة المسكينة لا تعرف ماذا سيحدث.",
+          "vi": "Con gà tội nghiệp không biết chuyện gì sắp xảy ra.",
+          "hi": "बेचारी मुर्गी को पता नहीं कि क्या होने वाला है।",
+          "ru": "Бедная курица не знает, что её ждёт.",
+          "bn": "বেচারি মুরগিটা জানে না কী ঘটতে চলেছে।",
+          "ur": "بے چاری مرغی کو نہیں معلوم کہ کیا ہونے والا ہے۔",
+          "th": "แม่ไก่ผู้น่าสงสารไม่รู้เลยว่าจะเกิดอะไรขึ้น"
+        }
+      },
+      {
+        "id": "cl-golden-eggs-08",
+        "english": "He opens her body and looks for the gold.",
+        "turkish": "Vücudunu açar ve altını arar.",
+        "translations": {
+          "es-419": "Le abre el cuerpo y busca el oro.",
+          "pt-BR": "Ele abre a galinha e procura o ouro.",
+          "id": "Ia membelah tubuh ayam itu dan mencari emasnya.",
+          "ar": "يفتح جسمها ويبحث عن الذهب.",
+          "vi": "Ông ta mổ bụng con gà và tìm vàng.",
+          "hi": "वह उसका पेट खोलकर सोना ढूँढता है।",
+          "ru": "Он разрезает её и ищет золото.",
+          "bn": "সে তার পেট কেটে সোনা খোঁজে।",
+          "ur": "وہ اس کا پیٹ چیر کر سونا ڈھونڈتا ہے۔",
+          "th": "เขาผ่าท้องมันและค้นหาทองคำ"
+        }
+      },
+      {
+        "id": "cl-golden-eggs-09",
+        "english": "But she is like any other hen inside.",
+        "turkish": "Ama içi diğer tavuklarınki gibidir.",
+        "translations": {
+          "es-419": "Pero por dentro es como cualquier otra gallina.",
+          "pt-BR": "Mas por dentro ela é igual a qualquer outra galinha.",
+          "id": "Tetapi bagian dalamnya sama saja dengan ayam lain.",
+          "ar": "لكنها من الداخل مثل أي دجاجة أخرى.",
+          "vi": "Nhưng bên trong nó cũng giống như mọi con gà mái khác.",
+          "hi": "लेकिन अंदर से वह बाकी मुर्गियों जैसी ही है।",
+          "ru": "Но внутри она такая же, как любая другая курица.",
+          "bn": "কিন্তু ভেতরে সে আর পাঁচটা মুরগির মতোই।",
+          "ur": "لیکن اندر سے وہ باقی مرغیوں جیسی ہی ہے۔",
+          "th": "แต่ข้างในมันก็เหมือนแม่ไก่ทั่วไป"
+        }
+      },
+      {
+        "id": "classic-golden-eggs-ext-09-01",
+        "english": "He looks again and again.",
+        "turkish": "Tekrar tekrar bakar.",
+        "translations": {
+          "es-419": "Busca una y otra vez.",
+          "pt-BR": "Ele procura de novo e de novo.",
+          "id": "Ia mencari berulang kali.",
+          "ar": "يبحث مرة بعد مرة.",
+          "vi": "Ông ta tìm đi tìm lại nhiều lần.",
+          "hi": "वह बार-बार देखता है।",
+          "ru": "Он ищет снова и снова.",
+          "bn": "সে বারবার খুঁজে দেখে।",
+          "ur": "وہ بار بار دیکھتا ہے۔",
+          "th": "เขาค้นดูครั้งแล้วครั้งเล่า"
+        }
+      },
+      {
+        "id": "cl-golden-eggs-10",
+        "english": "There is no treasure to take.",
+        "turkish": "Alınacak bir hazine yoktur.",
+        "translations": {
+          "es-419": "No hay ningún tesoro que sacar.",
+          "pt-BR": "Não há tesouro nenhum para pegar.",
+          "id": "Tidak ada harta yang bisa diambil.",
+          "ar": "لا يوجد كنز ليأخذه.",
+          "vi": "Chẳng có kho báu nào để lấy cả.",
+          "hi": "लेने के लिए कोई ख़ज़ाना नहीं है।",
+          "ru": "Никакого сокровища там нет.",
+          "bn": "নেওয়ার মতো কোনো ধনসম্পদ নেই।",
+          "ur": "لینے کو کوئی خزانہ نہیں ہے۔",
+          "th": "ไม่มีสมบัติอะไรให้เอาไปเลย"
+        }
+      },
+      {
+        "id": "classic-golden-eggs-ext-10-01",
+        "english": "The man sits on the floor and cries.",
+        "turkish": "Adam yere oturur ve ağlar.",
+        "translations": {
+          "es-419": "El hombre se sienta en el suelo y llora.",
+          "pt-BR": "O homem se senta no chão e chora.",
+          "id": "Pria itu duduk di lantai dan menangis.",
+          "ar": "يجلس الرجل على الأرض ويبكي.",
+          "vi": "Người đàn ông ngồi phịch xuống đất và khóc.",
+          "hi": "आदमी ज़मीन पर बैठ जाता है और रोने लगता है।",
+          "ru": "Человек садится на пол и плачет.",
+          "bn": "লোকটা মেঝেতে বসে কাঁদতে থাকে।",
+          "ur": "آدمی زمین پر بیٹھ کر رونے لگتا ہے۔",
+          "th": "ชายคนนั้นนั่งลงกับพื้นและร้องไห้"
+        }
+      },
+      {
+        "id": "cl-golden-eggs-11",
+        "english": "Now the man has no hen and no golden eggs.",
+        "turkish": "Artık adamın ne tavuğu ne de altın yumurtaları vardır.",
+        "translations": {
+          "es-419": "Ahora el hombre no tiene gallina ni huevos de oro.",
+          "pt-BR": "Agora o homem não tem galinha nem ovos de ouro.",
+          "id": "Sekarang pria itu tidak punya ayam dan tidak punya telur emas.",
+          "ar": "الآن لا يملك الرجل دجاجة ولا بيضًا ذهبيًا.",
+          "vi": "Giờ đây người đàn ông không còn gà mái, cũng chẳng còn trứng vàng.",
+          "hi": "अब आदमी के पास न मुर्गी है, न सोने के अंडे।",
+          "ru": "Теперь у человека нет ни курицы, ни золотых яиц.",
+          "bn": "এখন লোকটার না আছে মুরগি, না আছে সোনার ডিম।",
+          "ur": "اب آدمی کے پاس نہ مرغی ہے نہ سونے کے انڈے۔",
+          "th": "ตอนนี้ชายคนนั้นไม่มีทั้งแม่ไก่และไข่ทองคำ"
+        }
+      },
+      {
+        "id": "classic-golden-eggs-ext-11-01",
+        "english": "Tomorrow, there will be no golden egg.",
+        "turkish": "Yarın altın yumurta olmayacaktır.",
+        "translations": {
+          "es-419": "Mañana no habrá ningún huevo de oro.",
+          "pt-BR": "Amanhã não vai ter ovo de ouro.",
+          "id": "Besok tidak akan ada telur emas.",
+          "ar": "غدًا لن تكون هناك بيضة ذهبية.",
+          "vi": "Ngày mai sẽ chẳng còn quả trứng vàng nào.",
+          "hi": "कल कोई सोने का अंडा नहीं होगा।",
+          "ru": "Завтра не будет золотого яйца.",
+          "bn": "কাল আর কোনো সোনার ডিম থাকবে না।",
+          "ur": "کل کوئی سونے کا انڈا نہیں ہو گا۔",
+          "th": "พรุ่งนี้จะไม่มีไข่ทองคำอีกแล้ว"
+        }
+      },
+      {
+        "id": "cl-golden-eggs-12",
+        "english": "His greed has taken away his good fortune.",
+        "turkish": "Açgözlülüğü elindeki talihi yok etmiştir.",
+        "translations": {
+          "es-419": "Su codicia le ha quitado su buena suerte.",
+          "pt-BR": "A ganância dele acabou com a sua boa sorte.",
+          "id": "Keserakahannya telah merenggut keberuntungannya.",
+          "ar": "لقد أضاع طمعُه حظَّه الطيب.",
+          "vi": "Lòng tham đã lấy đi vận may của ông ta.",
+          "hi": "उसके लालच ने उसकी अच्छी किस्मत छीन ली है।",
+          "ru": "Жадность лишила его удачи.",
+          "bn": "তার লোভ তার সৌভাগ্য কেড়ে নিয়েছে।",
+          "ur": "اس کے لالچ نے اس کی خوش قسمتی چھین لی ہے۔",
+          "th": "ความโลภได้พรากโชคดีของเขาไป"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-golden-eggs-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "A man sells his special hen to buy more gold",
+          "A man loses his golden eggs when his hen escapes",
+          "A man wants more gold and kills his special hen",
+          "A man finds gold inside his hen and becomes richer"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "classic-golden-eggs-q2",
+        "kind": "detail",
+        "prompt": "What does the man find inside the hen?",
+        "options": [
+          "A lot of gold",
+          "A golden egg",
+          "A treasure map",
+          "Nothing special"
+        ],
+        "answer": 3
+      },
+      {
+        "id": "classic-golden-eggs-q3",
+        "kind": "inference",
+        "prompt": "Why does the man kill his special hen?",
+        "options": [
+          "He wants to get all the gold inside her",
+          "He thinks she has stopped laying golden eggs",
+          "He wants to sell her meat at the market",
+          "He thinks she has eaten all his other eggs"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "classic-golden-eggs-q4",
+        "kind": "detail",
+        "prompt": "What does the man buy with the money from the eggs?",
+        "options": [
+          "New clothes, a horse and a big house",
+          "A second special hen",
+          "A boat and a shop",
+          "Seeds for his farm"
+        ],
+        "answer": 0
+      }
+    ],
+    "tags": [
+      "fabl",
+      "gunluk-yasam"
+    ],
+    "descriptions": {
+      "es-419": "La gallina de los huevos de oro. Un hombre que quiere más pierde lo valioso que tiene. Adaptación breve de nivel A1. Adaptación: English Tales. Imagen histórica: Arthur Rackham; portadilla interior de la colección, no es una portada aparte de primera edición.",
+      "pt-BR": "A galinha dos ovos de ouro. Um homem que quer mais acaba perdendo o que tem de valioso. Adaptação curta de nível A1. Adaptação: English Tales. Imagem histórica: Arthur Rackham; folha de rosto interna da coleção, não é uma capa separada de primeira edição.",
+      "id": "Ayam Bertelur Emas. Seorang pria yang menginginkan lebih banyak kehilangan sesuatu yang berharga miliknya. Adaptasi singkat tingkat A1. Adaptasi: English Tales. Gambar historis: Arthur Rackham; halaman judul bagian dalam koleksi, bukan sampul edisi pertama tersendiri.",
+      "ar": "الدجاجة التي تبيض ذهبًا. رجل يريد المزيد فيخسر الشيء الثمين الذي يملكه. اقتباس قصير بمستوى A1. الاقتباس: English Tales. صورة تاريخية: آرثر راكهام؛ صفحة العنوان الداخلية للمجموعة، وليست غلافًا منفصلًا للطبعة الأولى.",
+      "vi": "Con gà đẻ trứng vàng. Một người đàn ông muốn có nhiều hơn đã đánh mất thứ quý giá mà mình đang có. Bản phóng tác ngắn trình độ A1. Phóng tác: English Tales. Hình ảnh lịch sử: Arthur Rackham; trang tiêu đề bên trong tuyển tập, không phải bìa riêng của ấn bản đầu tiên.",
+      "hi": "सोने का अंडा देने वाली मुर्गी। और ज़्यादा चाहने वाला एक आदमी अपनी कीमती चीज़ भी खो देता है। A1 स्तर का छोटा रूपांतरण। रूपांतरण: English Tales। ऐतिहासिक चित्र: Arthur Rackham; संग्रह का अंदरूनी शीर्षक पृष्ठ, पहले संस्करण का अलग कवर नहीं।",
+      "ru": "Курица, которая несла золотые яйца. Человек, который хочет большего, теряет то ценное, что у него есть. Краткая адаптация уровня A1. Адаптация: English Tales. Историческое изображение: Артур Рэкхем; внутренний титульный лист сборника, а не отдельная обложка первого издания.",
+      "bn": "সোনার ডিম পাড়া মুরগি। আরও বেশি চাইতে গিয়ে এক লোক হাতের মূল্যবান জিনিসটাও হারায়। A1 স্তরের ছোট রূপান্তর। রূপান্তর: English Tales। ঐতিহাসিক ছবি: Arthur Rackham; সংকলনের ভেতরের শিরোনাম পাতা, প্রথম সংস্করণের আলাদা প্রচ্ছদ নয়।",
+      "ur": "سونے کا انڈا دینے والی مرغی۔ اور زیادہ چاہنے والا ایک آدمی اپنی قیمتی چیز بھی کھو دیتا ہے۔ A1 سطح کی مختصر ماخوذ کہانی۔ ترتیب: English Tales۔ تاریخی تصویر: Arthur Rackham؛ مجموعے کا اندرونی عنوان صفحہ، پہلے ایڈیشن کا الگ سرورق نہیں۔",
+      "th": "แม่ไก่ไข่ทองคำ: ชายผู้อยากได้มากขึ้นต้องสูญเสียสิ่งมีค่าที่ตนมีอยู่ ฉบับดัดแปลงสั้น ๆ ระดับ A1 ดัดแปลงโดย English Tales ภาพเก่าทางประวัติศาสตร์: Arthur Rackham; หน้าชื่อเรื่องด้านในของหนังสือรวมเรื่อง ไม่ใช่ปกแยกของฉบับพิมพ์ครั้งแรก"
+    }
+  },
+  "words": [
+    {
+      "id": "hen",
+      "word": "hen",
+      "translation": "tavuk",
+      "pronunciation": "/hen/",
+      "example": "A man owns a special hen.",
+      "translations": {
+        "es-419": "gallina",
+        "pt-BR": "galinha",
+        "id": "ayam betina",
+        "ar": "دجاجة",
+        "vi": "gà mái",
+        "hi": "मुर्गी",
+        "ru": "курица",
+        "bn": "মুরগি",
+        "ur": "مرغی",
+        "th": "แม่ไก่"
+      }
+    },
+    {
+      "id": "golden",
+      "word": "golden",
+      "translation": "altın; altından",
+      "pronunciation": "/ˈɡəʊldən/",
+      "example": "Every day, she lays a golden egg.",
+      "translations": {
+        "es-419": "de oro, dorado",
+        "pt-BR": "de ouro, dourado",
+        "id": "emas",
+        "ar": "ذهبي",
+        "vi": "bằng vàng, vàng óng",
+        "hi": "सोने का, सुनहरा",
+        "ru": "золотой",
+        "bn": "সোনার, সোনালি",
+        "ur": "سنہری؛ سونے کا",
+        "th": "ทองคำ, สีทอง"
+      }
+    },
+    {
+      "id": "egg",
+      "word": "egg",
+      "translation": "yumurta",
+      "pronunciation": "/eɡ/",
+      "example": "Every day, she lays a golden egg.",
+      "translations": {
+        "es-419": "huevo",
+        "pt-BR": "ovo",
+        "id": "telur",
+        "ar": "بيضة",
+        "vi": "quả trứng",
+        "hi": "अंडा",
+        "ru": "яйцо",
+        "bn": "ডিম",
+        "ur": "انڈا",
+        "th": "ไข่"
+      }
+    },
+    {
+      "id": "eggs",
+      "word": "eggs",
+      "translation": "yumurtalar",
+      "pronunciation": "/eɡz/",
+      "example": "The man sells the eggs and becomes rich.",
+      "translations": {
+        "es-419": "huevos",
+        "pt-BR": "ovos",
+        "id": "telur-telur",
+        "ar": "بيض",
+        "vi": "những quả trứng",
+        "hi": "अंडे",
+        "ru": "яйца",
+        "bn": "ডিমগুলো",
+        "ur": "انڈے",
+        "th": "ไข่ (หลายฟอง)"
+      }
+    },
+    {
+      "id": "rich",
+      "word": "rich",
+      "translation": "zengin",
+      "pronunciation": "/rɪtʃ/",
+      "example": "They find a table full of rich food.",
+      "translations": {
+        "es-419": "rico",
+        "pt-BR": "rico",
+        "id": "kaya, lezat",
+        "ar": "غني؛ دسم",
+        "vi": "giàu có; (đồ ăn) thịnh soạn",
+        "hi": "अमीर; बढ़िया (खाना)",
+        "ru": "богатый; жирный, изысканный (о еде)",
+        "bn": "ধনী; দামি, ভারী (খাবার)",
+        "ur": "امیر؛ مرغن (کھانا)",
+        "th": "ร่ำรวย; (อาหาร) อุดมสมบูรณ์"
+      }
+    },
+    {
+      "id": "gold",
+      "word": "gold",
+      "translation": "altın",
+      "pronunciation": "/ɡəʊld/",
+      "example": "He wants all the gold at once.",
+      "translations": {
+        "es-419": "oro",
+        "pt-BR": "ouro",
+        "id": "emas",
+        "ar": "ذهب",
+        "vi": "vàng",
+        "hi": "सोना",
+        "ru": "золото",
+        "bn": "সোনা",
+        "ur": "سونا",
+        "th": "ทองคำ"
+      }
+    },
+    {
+      "id": "greed",
+      "word": "greed",
+      "translation": "açgözlülük",
+      "pronunciation": "/ɡriːd/",
+      "example": "His greed has taken away his good fortune.",
+      "translations": {
+        "es-419": "codicia",
+        "pt-BR": "ganância",
+        "id": "keserakahan",
+        "ar": "طمع",
+        "vi": "lòng tham",
+        "hi": "लालच",
+        "ru": "жадность",
+        "bn": "লোভ",
+        "ur": "لالچ",
+        "th": "ความโลภ"
+      }
+    },
+    {
+      "id": "fortune",
+      "word": "fortune",
+      "translation": "talih; servet",
+      "pronunciation": "/ˈfɔːtʃuːn/",
+      "example": "His greed has taken away his good fortune.",
+      "translations": {
+        "es-419": "fortuna, suerte",
+        "pt-BR": "fortuna, sorte",
+        "id": "keberuntungan",
+        "ar": "حظّ؛ ثروة",
+        "vi": "vận may; của cải",
+        "hi": "किस्मत; दौलत",
+        "ru": "богатство, состояние",
+        "bn": "সৌভাগ্য; ধনসম্পদ",
+        "ur": "قسمت؛ دولت",
+        "th": "โชคลาภ"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "hen",
+    "golden",
+    "egg",
+    "eggs",
+    "rich",
+    "gold",
+    "greed",
+    "fortune"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-golden-eggs-q1",
+      "sentenceIds": [
+        "cl-golden-eggs-02",
+        "cl-golden-eggs-04",
+        "cl-golden-eggs-07"
+      ],
+      "rationale": "Not happy with one egg a day, he kills the hen."
+    },
+    {
+      "questionId": "classic-golden-eggs-q2",
+      "sentenceIds": [
+        "cl-golden-eggs-09",
+        "cl-golden-eggs-10"
+      ],
+      "rationale": "Inside she is like any other hen; there is no treasure."
+    },
+    {
+      "questionId": "classic-golden-eggs-q3",
+      "sentenceIds": [
+        "cl-golden-eggs-05",
+        "cl-golden-eggs-06",
+        "cl-golden-eggs-07"
+      ],
+      "rationale": "He wants all the gold at once and thinks it is inside her."
+    },
+    {
+      "questionId": "classic-golden-eggs-q4",
+      "sentenceIds": [
+        "classic-golden-eggs-ext-03-01"
+      ],
+      "rationale": "He buys new clothes, a horse and a big house."
+    }
+  ],
+  "publicationBlockers": [
+    "Owner (oguz) approval of the English text, questions and translations required.",
+    "Fresh live source snapshot and publisher validation required."
+  ],
+  "lengthening": {
+    "wordsBefore": 93,
+    "wordsAfter": 189,
+    "sentencesBefore": 12,
+    "sentencesAfter": 24
+  }
+}

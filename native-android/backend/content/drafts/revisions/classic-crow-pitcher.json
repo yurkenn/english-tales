@@ -1,0 +1,940 @@
+{
+  "status": "draft",
+  "kind": "revision",
+  "source": "story-lengthening-a1-batch1-2026-10-22",
+  "reviewedBy": null,
+  "baseStoryId": "classic-crow-pitcher",
+  "baseStorySHA256": "3ce39a327e04868833dc2625586364c6cf6af6ec76667186e3cca8bc6cc1ce4c",
+  "editorialNotes": [
+    "Adds the hot, dry day from Aesop, the crow's short beak and narrow pitcher, her worry, and the slow work with the pebbles.",
+    "Every legacy sentence, its ID and its translations are kept unchanged; new sentences are only inserted between them. Plot, characters, ending and lesson are unchanged.",
+    "New sentences have AI-drafted translations in all ten additional support languages, following the gender and wording already used in each legacy translation. No native-speaker review."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "unchangedTranslationsPreserved": true,
+    "newSentenceIds": [
+      "classic-crow-pitcher-ext-01-01",
+      "classic-crow-pitcher-ext-01-02",
+      "classic-crow-pitcher-ext-01-03",
+      "classic-crow-pitcher-ext-02-01",
+      "classic-crow-pitcher-ext-02-02",
+      "classic-crow-pitcher-ext-05-01",
+      "classic-crow-pitcher-ext-05-02",
+      "classic-crow-pitcher-ext-07-01",
+      "classic-crow-pitcher-ext-07-02",
+      "classic-crow-pitcher-ext-08-01",
+      "classic-crow-pitcher-ext-08-02",
+      "classic-crow-pitcher-ext-09-01",
+      "classic-crow-pitcher-ext-10-01",
+      "classic-crow-pitcher-ext-10-02",
+      "classic-crow-pitcher-ext-12-01",
+      "classic-crow-pitcher-ext-13-01"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+  },
+  "story": {
+    "id": "classic-crow-pitcher",
+    "title": "The Crow and the Pitcher",
+    "author": "Aesop",
+    "level": "A1",
+    "genre": "Macera",
+    "description": "Karga ve Sürahi. Susamış bir karga, suya ulaşmak için akıllıca bir yol bulur. A1 düzeyinde kısa uyarlama. Uyarlama ve Türkçe çeviri: English Tales. Tarihî görsel: Arthur Rackham; kitap içi illüstrasyon, ayrı bir ilk baskı kapağı değildir.",
+    "coverKey": "cover_classic_crow_pitcher",
+    "sentences": [
+      {
+        "id": "cl-crow-pitcher-01",
+        "english": "A thirsty crow looks for water.",
+        "turkish": "Susamış bir karga su arar.",
+        "translations": {
+          "es-419": "Un cuervo sediento busca agua.",
+          "pt-BR": "Um corvo com sede procura água.",
+          "id": "Seekor burung gagak yang haus mencari air.",
+          "ar": "تبحث غرابة عطشى عن الماء.",
+          "vi": "Một cô quạ khát nước đi tìm nước uống.",
+          "hi": "एक प्यासा कौआ पानी ढूँढ रहा है।",
+          "ru": "Ворона хочет пить и ищет воду.",
+          "bn": "একটা তৃষ্ণার্ত কাক জল খোঁজে।",
+          "ur": "ایک پیاسی کوّی پانی ڈھونڈ رہی ہے۔",
+          "th": "อีกาที่กระหายน้ำตัวหนึ่งกำลังมองหาน้ำ"
+        }
+      },
+      {
+        "id": "classic-crow-pitcher-ext-01-01",
+        "english": "It is a hot summer day.",
+        "turkish": "Sıcak bir yaz günüdür.",
+        "translations": {
+          "es-419": "Es un día caluroso de verano.",
+          "pt-BR": "É um dia quente de verão.",
+          "id": "Hari itu adalah hari musim panas yang terik.",
+          "ar": "إنه يوم صيفي حار.",
+          "vi": "Đó là một ngày hè nóng nực.",
+          "hi": "गर्मी का एक तपता हुआ दिन है।",
+          "ru": "Стоит жаркий летний день.",
+          "bn": "গ্রীষ্মের একটা গরম দিন।",
+          "ur": "گرمیوں کا ایک گرم دن ہے۔",
+          "th": "เป็นวันฤดูร้อนที่ร้อนจัด"
+        }
+      },
+      {
+        "id": "classic-crow-pitcher-ext-01-02",
+        "english": "The ground is dry, and the rivers are empty.",
+        "turkish": "Toprak kurudur ve nehirler boştur.",
+        "translations": {
+          "es-419": "La tierra está seca y los ríos están vacíos.",
+          "pt-BR": "O chão está seco, e os rios estão vazios.",
+          "id": "Tanah kering, dan sungai-sungai kosong.",
+          "ar": "الأرض جافة، والأنهار فارغة.",
+          "vi": "Mặt đất khô cằn, sông suối đều cạn nước.",
+          "hi": "ज़मीन सूखी है और नदियाँ खाली हैं।",
+          "ru": "Земля сухая, а реки пересохли.",
+          "bn": "মাটি শুকনো, আর নদীগুলো খালি।",
+          "ur": "زمین خشک ہے اور دریا خالی ہیں۔",
+          "th": "พื้นดินแห้ง และแม่น้ำก็ไม่มีน้ำ"
+        }
+      },
+      {
+        "id": "classic-crow-pitcher-ext-01-03",
+        "english": "She flies over fields and roads, but she finds nothing.",
+        "turkish": "Tarlaların ve yolların üzerinden uçar ama hiçbir şey bulamaz.",
+        "translations": {
+          "es-419": "Vuela sobre campos y caminos, pero no encuentra nada.",
+          "pt-BR": "Ele voa sobre campos e estradas, mas não encontra nada.",
+          "id": "Ia terbang di atas ladang dan jalan, tetapi tidak menemukan apa-apa.",
+          "ar": "تطير فوق الحقول والطرق، لكنها لا تجد شيئًا.",
+          "vi": "Cô bay qua những cánh đồng và con đường nhưng chẳng tìm thấy gì.",
+          "hi": "वह खेतों और सड़कों के ऊपर उड़ता है, लेकिन उसे कुछ नहीं मिलता।",
+          "ru": "Она летает над полями и дорогами, но ничего не находит.",
+          "bn": "সে মাঠ আর রাস্তার ওপর দিয়ে উড়ে বেড়ায়, কিন্তু কিছুই পায় না।",
+          "ur": "وہ کھیتوں اور سڑکوں کے اوپر اڑتی ہے، لیکن اسے کچھ نہیں ملتا۔",
+          "th": "เธอบินผ่านทุ่งนาและถนน แต่ก็ไม่พบอะไรเลย"
+        }
+      },
+      {
+        "id": "cl-crow-pitcher-02",
+        "english": "She sees a pitcher near a house.",
+        "turkish": "Bir evin yakınında bir sürahi görür.",
+        "translations": {
+          "es-419": "Ve una jarra cerca de una casa.",
+          "pt-BR": "Ele vê um jarro perto de uma casa.",
+          "id": "Ia melihat sebuah kendi di dekat sebuah rumah.",
+          "ar": "ترى إبريقًا قرب بيت.",
+          "vi": "Cô nhìn thấy một cái bình gần một ngôi nhà.",
+          "hi": "उसे एक घर के पास एक घड़ा दिखता है।",
+          "ru": "Она видит кувшин возле дома.",
+          "bn": "সে একটা বাড়ির কাছে একটা কলসি দেখতে পায়।",
+          "ur": "اسے ایک گھر کے پاس ایک گھڑا نظر آتا ہے۔",
+          "th": "เธอเห็นเหยือกน้ำใบหนึ่งอยู่ใกล้บ้านหลังหนึ่ง"
+        }
+      },
+      {
+        "id": "classic-crow-pitcher-ext-02-01",
+        "english": "\"Maybe there is water inside,\" she thinks.",
+        "turkish": "\"Belki içinde su vardır,\" diye düşünür.",
+        "translations": {
+          "es-419": "\"Tal vez hay agua adentro\", piensa.",
+          "pt-BR": "— Talvez tenha água lá dentro — pensa ele.",
+          "id": "\"Mungkin ada air di dalamnya,\" pikirnya.",
+          "ar": "تفكّر: «ربما يوجد ماء في داخله.»",
+          "vi": "\"Có lẽ bên trong có nước,\" cô nghĩ.",
+          "hi": "\"शायद इसके अंदर पानी हो,\" वह सोचता है।",
+          "ru": "«Может быть, внутри есть вода», — думает она.",
+          "bn": "\"হয়তো এর ভেতরে জল আছে,\" সে ভাবে।",
+          "ur": "\"شاید اس کے اندر پانی ہو،\" وہ سوچتی ہے۔",
+          "th": "\"บางทีข้างในอาจจะมีน้ำ\" เธอคิด"
+        }
+      },
+      {
+        "id": "classic-crow-pitcher-ext-02-02",
+        "english": "She flies down to it quickly.",
+        "turkish": "Hızla aşağı, sürahinin yanına uçar.",
+        "translations": {
+          "es-419": "Baja volando hasta ella rápidamente.",
+          "pt-BR": "Ele desce voando até o jarro bem depressa.",
+          "id": "Ia cepat-cepat terbang turun ke sana.",
+          "ar": "تطير نحوه بسرعة.",
+          "vi": "Cô vội bay xuống chỗ cái bình.",
+          "hi": "वह जल्दी से उड़कर उसके पास आ जाता है।",
+          "ru": "Она быстро слетает к нему.",
+          "bn": "সে তাড়াতাড়ি উড়ে কলসির কাছে নামে।",
+          "ur": "وہ جلدی سے اڑ کر اس کے پاس آ جاتی ہے۔",
+          "th": "เธอรีบบินลงไปหามัน"
+        }
+      },
+      {
+        "id": "cl-crow-pitcher-03",
+        "english": "There is some water at the bottom.",
+        "turkish": "Dibinde biraz su vardır.",
+        "translations": {
+          "es-419": "Hay un poco de agua en el fondo.",
+          "pt-BR": "Há um pouco de água no fundo.",
+          "id": "Ada sedikit air di dasarnya.",
+          "ar": "في قاع الإبريق قليل من الماء.",
+          "vi": "Dưới đáy bình có một ít nước.",
+          "hi": "घड़े की तली में थोड़ा पानी है।",
+          "ru": "На дне есть немного воды.",
+          "bn": "কলসির তলায় একটু জল আছে।",
+          "ur": "گھڑے کی تہہ میں تھوڑا سا پانی ہے۔",
+          "th": "มีน้ำอยู่นิดหน่อยที่ก้นเหยือก"
+        }
+      },
+      {
+        "id": "cl-crow-pitcher-04",
+        "english": "The crow puts her beak inside.",
+        "turkish": "Karga gagasını içeri sokar.",
+        "translations": {
+          "es-419": "El cuervo mete el pico.",
+          "pt-BR": "O corvo enfia o bico lá dentro.",
+          "id": "Burung gagak itu memasukkan paruhnya ke dalam.",
+          "ar": "تُدخل الغرابة منقارها فيه.",
+          "vi": "Quạ thò mỏ vào trong.",
+          "hi": "कौआ अपनी चोंच अंदर डालता है।",
+          "ru": "Ворона суёт внутрь клюв.",
+          "bn": "কাকটা ভেতরে ঠোঁট ঢোকায়।",
+          "ur": "کوّی اپنی چونچ اندر ڈالتی ہے۔",
+          "th": "อีกาสอดจะงอยปากเข้าไปข้างใน"
+        }
+      },
+      {
+        "id": "cl-crow-pitcher-05",
+        "english": "But she cannot reach the water.",
+        "turkish": "Ama suya ulaşamaz.",
+        "translations": {
+          "es-419": "Pero no alcanza el agua.",
+          "pt-BR": "Mas ele não consegue alcançar a água.",
+          "id": "Tetapi ia tidak bisa mencapai air itu.",
+          "ar": "لكنها لا تستطيع أن تصل إلى الماء.",
+          "vi": "Nhưng cô không với tới nước.",
+          "hi": "लेकिन वह पानी तक नहीं पहुँच पाता।",
+          "ru": "Но она не может достать до воды.",
+          "bn": "কিন্তু সে জলের নাগাল পায় না।",
+          "ur": "لیکن وہ پانی تک نہیں پہنچ پاتی۔",
+          "th": "แต่เธอดื่มน้ำไม่ถึง"
+        }
+      },
+      {
+        "id": "classic-crow-pitcher-ext-05-01",
+        "english": "Her beak is too short.",
+        "turkish": "Gagası çok kısadır.",
+        "translations": {
+          "es-419": "Su pico es demasiado corto.",
+          "pt-BR": "O bico dele é curto demais.",
+          "id": "Paruhnya terlalu pendek.",
+          "ar": "منقارها قصير جدًا.",
+          "vi": "Mỏ của cô quá ngắn.",
+          "hi": "उसकी चोंच बहुत छोटी है।",
+          "ru": "Её клюв слишком короткий.",
+          "bn": "তার ঠোঁটটা খুব ছোট।",
+          "ur": "اس کی چونچ بہت چھوٹی ہے۔",
+          "th": "จะงอยปากของเธอสั้นเกินไป"
+        }
+      },
+      {
+        "id": "classic-crow-pitcher-ext-05-02",
+        "english": "The pitcher is tall and narrow.",
+        "turkish": "Sürahi uzun ve dardır.",
+        "translations": {
+          "es-419": "La jarra es alta y angosta.",
+          "pt-BR": "O jarro é alto e estreito.",
+          "id": "Kendi itu tinggi dan sempit.",
+          "ar": "الإبريق طويل وضيّق.",
+          "vi": "Cái bình vừa cao vừa hẹp.",
+          "hi": "घड़ा ऊँचा और सँकरा है।",
+          "ru": "Кувшин высокий и узкий.",
+          "bn": "কলসিটা লম্বা আর সরু।",
+          "ur": "گھڑا اونچا اور تنگ ہے۔",
+          "th": "เหยือกนั้นทั้งสูงและแคบ"
+        }
+      },
+      {
+        "id": "cl-crow-pitcher-06",
+        "english": "She tries to push the pitcher over.",
+        "turkish": "Sürahiyi devirmeye çalışır.",
+        "translations": {
+          "es-419": "Intenta tirar la jarra empujándola.",
+          "pt-BR": "Ele tenta derrubar o jarro.",
+          "id": "Ia mencoba menjatuhkan kendi itu.",
+          "ar": "تحاول أن تُسقط الإبريق.",
+          "vi": "Cô cố đẩy cho cái bình đổ xuống.",
+          "hi": "वह घड़े को धकेलकर गिराने की कोशिश करता है।",
+          "ru": "Она пытается опрокинуть кувшин.",
+          "bn": "সে কলসিটা ঠেলে উল্টে দেওয়ার চেষ্টা করে।",
+          "ur": "وہ گھڑے کو دھکا دے کر گرانے کی کوشش کرتی ہے۔",
+          "th": "เธอพยายามผลักเหยือกให้ล้ม"
+        }
+      },
+      {
+        "id": "cl-crow-pitcher-07",
+        "english": "It is too heavy to move.",
+        "turkish": "Onu hareket ettirmek çok zordur.",
+        "translations": {
+          "es-419": "Es demasiado pesada para moverla.",
+          "pt-BR": "O jarro é pesado demais para mexer.",
+          "id": "Kendi itu terlalu berat untuk digerakkan.",
+          "ar": "إنه ثقيل جدًا ولا يتحرّك.",
+          "vi": "Cái bình quá nặng, không thể xê dịch.",
+          "hi": "घड़ा इतना भारी है कि हिलता ही नहीं।",
+          "ru": "Он слишком тяжёлый, его не сдвинуть.",
+          "bn": "কলসিটা এত ভারী যে নড়ানো যায় না।",
+          "ur": "وہ اتنا بھاری ہے کہ ہلتا ہی نہیں۔",
+          "th": "แต่มันหนักเกินกว่าจะขยับได้"
+        }
+      },
+      {
+        "id": "classic-crow-pitcher-ext-07-01",
+        "english": "The crow is tired and very sad.",
+        "turkish": "Karga yorgun ve çok üzgündür.",
+        "translations": {
+          "es-419": "El cuervo está cansado y muy triste.",
+          "pt-BR": "O corvo está cansado e muito triste.",
+          "id": "Burung gagak itu lelah dan sangat sedih.",
+          "ar": "الغرابة متعبة وحزينة جدًا.",
+          "vi": "Quạ mệt mỏi và rất buồn.",
+          "hi": "कौआ थका हुआ और बहुत उदास है।",
+          "ru": "Ворона устала, и ей очень грустно.",
+          "bn": "কাকটা ক্লান্ত আর খুব দুঃখী।",
+          "ur": "کوّی تھکی ہوئی اور بہت اداس ہے۔",
+          "th": "อีกาเหนื่อยและเศร้ามาก"
+        }
+      },
+      {
+        "id": "classic-crow-pitcher-ext-07-02",
+        "english": "\"What can I do?\" she asks herself.",
+        "turkish": "\"Ne yapabilirim?\" diye kendine sorar.",
+        "translations": {
+          "es-419": "\"¿Qué puedo hacer?\", se pregunta.",
+          "pt-BR": "— O que eu posso fazer? — pergunta a si mesmo.",
+          "id": "\"Apa yang bisa kulakukan?\" tanyanya pada diri sendiri.",
+          "ar": "تسأل نفسها: «ماذا أستطيع أن أفعل؟»",
+          "vi": "\"Mình có thể làm gì đây?\" cô tự hỏi.",
+          "hi": "\"मैं क्या करूँ?\" वह खुद से पूछता है।",
+          "ru": "«Что же мне делать?» — спрашивает она себя.",
+          "bn": "\"আমি কী করতে পারি?\" সে নিজেকে জিজ্ঞেস করে।",
+          "ur": "\"میں کیا کر سکتی ہوں؟\" وہ خود سے پوچھتی ہے۔",
+          "th": "\"ฉันจะทำอย่างไรดี\" เธอถามตัวเอง"
+        }
+      },
+      {
+        "id": "cl-crow-pitcher-08",
+        "english": "Then the crow notices some pebbles.",
+        "turkish": "Sonra karga birkaç çakıl taşı fark eder.",
+        "translations": {
+          "es-419": "Entonces el cuervo ve unas piedritas.",
+          "pt-BR": "Então o corvo repara em algumas pedrinhas.",
+          "id": "Lalu burung gagak itu melihat beberapa kerikil.",
+          "ar": "ثم تلاحظ الغرابة بعض الحصى.",
+          "vi": "Rồi quạ để ý thấy mấy viên sỏi.",
+          "hi": "फिर कौए की नज़र कुछ कंकड़ों पर पड़ती है।",
+          "ru": "Тогда ворона замечает камешки.",
+          "bn": "তখন কাকটা কিছু নুড়ি পাথর দেখতে পায়।",
+          "ur": "پھر کوّی کی نظر کچھ کنکروں پر پڑتی ہے۔",
+          "th": "แล้วอีกาก็สังเกตเห็นก้อนกรวด"
+        }
+      },
+      {
+        "id": "classic-crow-pitcher-ext-08-01",
+        "english": "They are small and round, and they lie near the house.",
+        "turkish": "Küçük ve yuvarlaktırlar, evin yakınında dururlar.",
+        "translations": {
+          "es-419": "Son pequeñas y redondas, y están cerca de la casa.",
+          "pt-BR": "Elas são pequenas e redondas e estão perto da casa.",
+          "id": "Kerikil itu kecil dan bulat, dan tergeletak di dekat rumah.",
+          "ar": "إنها صغيرة ومستديرة، وتقع قرب البيت.",
+          "vi": "Chúng nhỏ, tròn và nằm gần ngôi nhà.",
+          "hi": "वे छोटे और गोल हैं और घर के पास पड़े हैं।",
+          "ru": "Они маленькие и круглые и лежат возле дома.",
+          "bn": "সেগুলো ছোট আর গোল, বাড়ির কাছে পড়ে আছে।",
+          "ur": "وہ چھوٹے اور گول ہیں اور گھر کے پاس پڑے ہیں۔",
+          "th": "มันเล็กและกลม วางอยู่ใกล้บ้าน"
+        }
+      },
+      {
+        "id": "classic-crow-pitcher-ext-08-02",
+        "english": "She thinks for a moment.",
+        "turkish": "Bir an düşünür.",
+        "translations": {
+          "es-419": "Piensa por un momento.",
+          "pt-BR": "Ele pensa por um momento.",
+          "id": "Ia berpikir sejenak.",
+          "ar": "تفكّر للحظة.",
+          "vi": "Cô suy nghĩ một lát.",
+          "hi": "वह एक पल सोचता है।",
+          "ru": "Она на минуту задумывается.",
+          "bn": "সে এক মুহূর্ত ভাবে।",
+          "ur": "وہ ایک لمحہ سوچتی ہے۔",
+          "th": "เธอคิดอยู่ครู่หนึ่ง"
+        }
+      },
+      {
+        "id": "cl-crow-pitcher-09",
+        "english": "She drops a pebble into the pitcher.",
+        "turkish": "Sürahinin içine bir çakıl taşı atar.",
+        "translations": {
+          "es-419": "Deja caer una piedrita en la jarra.",
+          "pt-BR": "Ele deixa cair uma pedrinha dentro do jarro.",
+          "id": "Ia menjatuhkan sebutir kerikil ke dalam kendi.",
+          "ar": "تُسقط حصاة في الإبريق.",
+          "vi": "Cô thả một viên sỏi vào bình.",
+          "hi": "वह घड़े में एक कंकड़ डालता है।",
+          "ru": "Она бросает камешек в кувшин.",
+          "bn": "সে কলসিতে একটা নুড়ি ফেলে।",
+          "ur": "وہ ایک کنکر گھڑے میں ڈالتی ہے۔",
+          "th": "เธอหย่อนก้อนกรวดลงไปในเหยือกหนึ่งก้อน"
+        }
+      },
+      {
+        "id": "classic-crow-pitcher-ext-09-01",
+        "english": "The water goes up a little.",
+        "turkish": "Su biraz yükselir.",
+        "translations": {
+          "es-419": "El agua sube un poco.",
+          "pt-BR": "A água sobe um pouco.",
+          "id": "Airnya naik sedikit.",
+          "ar": "يرتفع الماء قليلًا.",
+          "vi": "Nước dâng lên một chút.",
+          "hi": "पानी थोड़ा ऊपर आ जाता है।",
+          "ru": "Вода немного поднимается.",
+          "bn": "জল একটু ওপরে ওঠে।",
+          "ur": "پانی تھوڑا سا اوپر آ جاتا ہے۔",
+          "th": "น้ำสูงขึ้นมานิดหนึ่ง"
+        }
+      },
+      {
+        "id": "cl-crow-pitcher-10",
+        "english": "She adds more pebbles, one by one.",
+        "turkish": "Teker teker daha fazla çakıl taşı ekler.",
+        "translations": {
+          "es-419": "Agrega más piedritas, una por una.",
+          "pt-BR": "Ele coloca mais pedrinhas, uma por uma.",
+          "id": "Ia menambahkan kerikil lagi, satu per satu.",
+          "ar": "تضيف المزيد من الحصى، واحدة بعد واحدة.",
+          "vi": "Cô thả thêm sỏi vào, từng viên một.",
+          "hi": "वह एक-एक करके और कंकड़ डालता है।",
+          "ru": "Она добавляет ещё камешки, один за другим.",
+          "bn": "সে একটা একটা করে আরও নুড়ি ফেলে।",
+          "ur": "وہ ایک ایک کر کے اور کنکر ڈالتی جاتی ہے۔",
+          "th": "เธอใส่ก้อนกรวดเพิ่มลงไปทีละก้อน"
+        }
+      },
+      {
+        "id": "classic-crow-pitcher-ext-10-01",
+        "english": "It is slow, hard work.",
+        "turkish": "Bu yavaş ve zor bir iştir.",
+        "translations": {
+          "es-419": "Es un trabajo lento y difícil.",
+          "pt-BR": "É um trabalho lento e difícil.",
+          "id": "Itu pekerjaan yang lambat dan berat.",
+          "ar": "إنه عمل بطيء وشاق.",
+          "vi": "Đó là một công việc chậm chạp và vất vả.",
+          "hi": "यह धीमा और मेहनत का काम है।",
+          "ru": "Это медленная и тяжёлая работа.",
+          "bn": "এটা ধীর আর কঠিন কাজ।",
+          "ur": "یہ سست اور محنت والا کام ہے۔",
+          "th": "เป็นงานที่ช้าและหนัก"
+        }
+      },
+      {
+        "id": "classic-crow-pitcher-ext-10-02",
+        "english": "But she does not stop.",
+        "turkish": "Ama durmaz.",
+        "translations": {
+          "es-419": "Pero no se detiene.",
+          "pt-BR": "Mas ele não para.",
+          "id": "Tetapi ia tidak berhenti.",
+          "ar": "لكنها لا تتوقّف.",
+          "vi": "Nhưng cô không dừng lại.",
+          "hi": "लेकिन वह रुकता नहीं।",
+          "ru": "Но она не останавливается.",
+          "bn": "কিন্তু সে থামে না।",
+          "ur": "لیکن وہ رکتی نہیں۔",
+          "th": "แต่เธอก็ไม่หยุด"
+        }
+      },
+      {
+        "id": "cl-crow-pitcher-11",
+        "english": "Slowly, the water rises.",
+        "turkish": "Su yavaşça yükselir.",
+        "translations": {
+          "es-419": "Poco a poco, el agua sube.",
+          "pt-BR": "Aos poucos, a água sobe.",
+          "id": "Perlahan-lahan, airnya naik.",
+          "ar": "يرتفع الماء ببطء.",
+          "vi": "Nước dâng lên từ từ.",
+          "hi": "धीरे-धीरे पानी ऊपर आ जाता है।",
+          "ru": "Вода медленно поднимается.",
+          "bn": "ধীরে ধীরে জল ওপরে উঠে আসে।",
+          "ur": "آہستہ آہستہ پانی اوپر آ جاتا ہے۔",
+          "th": "น้ำค่อย ๆ สูงขึ้น"
+        }
+      },
+      {
+        "id": "cl-crow-pitcher-12",
+        "english": "Now she can reach it with her beak.",
+        "turkish": "Artık gagasıyla ona ulaşabilir.",
+        "translations": {
+          "es-419": "Ahora puede alcanzarla con el pico.",
+          "pt-BR": "Agora ele consegue alcançá-la com o bico.",
+          "id": "Sekarang ia bisa mencapainya dengan paruhnya.",
+          "ar": "الآن تستطيع أن تصل إليه بمنقارها.",
+          "vi": "Giờ cô đã có thể chạm tới nước bằng mỏ.",
+          "hi": "अब वह अपनी चोंच से पानी तक पहुँच सकता है।",
+          "ru": "Теперь она может достать её клювом.",
+          "bn": "এখন সে ঠোঁট দিয়ে জলের নাগাল পায়।",
+          "ur": "اب وہ اپنی چونچ سے پانی تک پہنچ سکتی ہے۔",
+          "th": "ตอนนี้เธอใช้จะงอยปากดื่มน้ำได้แล้ว"
+        }
+      },
+      {
+        "id": "classic-crow-pitcher-ext-12-01",
+        "english": "The water is cool and fresh.",
+        "turkish": "Su serin ve tazedir.",
+        "translations": {
+          "es-419": "El agua está fresca y limpia.",
+          "pt-BR": "A água está fresquinha e limpa.",
+          "id": "Airnya sejuk dan segar.",
+          "ar": "الماء بارد ومنعش.",
+          "vi": "Nước mát lạnh và trong lành.",
+          "hi": "पानी ठंडा और ताज़ा है।",
+          "ru": "Вода прохладная и свежая.",
+          "bn": "জলটা ঠান্ডা আর তাজা।",
+          "ur": "پانی ٹھنڈا اور تازہ ہے۔",
+          "th": "น้ำเย็นและสดชื่น"
+        }
+      },
+      {
+        "id": "cl-crow-pitcher-13",
+        "english": "The crow drinks and flies away.",
+        "turkish": "Karga su içer ve uçup gider.",
+        "translations": {
+          "es-419": "El cuervo bebe y se va volando.",
+          "pt-BR": "O corvo bebe e vai embora voando.",
+          "id": "Burung gagak itu minum, lalu terbang pergi.",
+          "ar": "تشرب الغرابة وتطير بعيدًا.",
+          "vi": "Quạ uống nước rồi bay đi.",
+          "hi": "कौआ पानी पीता है और उड़ जाता है।",
+          "ru": "Ворона пьёт и улетает.",
+          "bn": "কাকটা জল খেয়ে উড়ে যায়।",
+          "ur": "کوّی پانی پیتی ہے اور اڑ جاتی ہے۔",
+          "th": "อีกาดื่มน้ำแล้วก็บินจากไป"
+        }
+      },
+      {
+        "id": "classic-crow-pitcher-ext-13-01",
+        "english": "She feels strong again.",
+        "turkish": "Kendini yeniden güçlü hisseder.",
+        "translations": {
+          "es-419": "Se siente fuerte otra vez.",
+          "pt-BR": "Ele se sente forte de novo.",
+          "id": "Ia merasa kuat lagi.",
+          "ar": "تشعر بالقوة من جديد.",
+          "vi": "Cô lại thấy khỏe khoắn.",
+          "hi": "उसे फिर से ताक़त महसूस होती है।",
+          "ru": "Она снова чувствует себя сильной.",
+          "bn": "সে আবার শক্তি ফিরে পায়।",
+          "ur": "اسے پھر سے طاقت محسوس ہوتی ہے۔",
+          "th": "เธอรู้สึกมีแรงอีกครั้ง"
+        }
+      },
+      {
+        "id": "cl-crow-pitcher-14",
+        "english": "A clever idea can solve a difficult problem.",
+        "turkish": "Akıllıca bir fikir zor bir sorunu çözebilir.",
+        "translations": {
+          "es-419": "Una idea inteligente puede resolver un problema difícil.",
+          "pt-BR": "Uma ideia esperta pode resolver um problema difícil.",
+          "id": "Ide yang cerdik dapat memecahkan masalah yang sulit.",
+          "ar": "الفكرة الذكية تستطيع أن تحلّ مشكلة صعبة.",
+          "vi": "Một ý tưởng thông minh có thể giải quyết một vấn đề khó khăn.",
+          "hi": "एक चतुर उपाय मुश्किल समस्या को हल कर सकता है।",
+          "ru": "Умная мысль может решить трудную задачу.",
+          "bn": "একটা বুদ্ধিমান চিন্তা কঠিন সমস্যারও সমাধান করতে পারে।",
+          "ur": "ایک ہوشیار ترکیب مشکل مسئلہ حل کر سکتی ہے۔",
+          "th": "ความคิดที่ฉลาดช่วยแก้ปัญหาที่ยากได้"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-crow-pitcher-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "A crow breaks a pitcher to get some water",
+          "A crow calls a friend to move a pitcher",
+          "A crow waits for rain to fill a pitcher",
+          "A crow uses small stones to reach some water"
+        ],
+        "answer": 3
+      },
+      {
+        "id": "classic-crow-pitcher-q2",
+        "kind": "detail",
+        "prompt": "What does the crow put into the pitcher?",
+        "options": [
+          "Sticks",
+          "Bread",
+          "Pebbles",
+          "Leaves"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "classic-crow-pitcher-q3",
+        "kind": "inference",
+        "prompt": "What does the crow try before using the small stones?",
+        "options": [
+          "She tries to drink from a cup",
+          "She tries to push the pitcher over",
+          "She tries to call another crow",
+          "She tries to carry the pitcher home"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-crow-pitcher-q4",
+        "kind": "detail",
+        "prompt": "Why can't the crow drink at first?",
+        "options": [
+          "Her beak is too short",
+          "The water is too hot",
+          "The pitcher is broken",
+          "A man is near the pitcher"
+        ],
+        "answer": 0
+      }
+    ],
+    "tags": [
+      "fabl",
+      "macera"
+    ],
+    "descriptions": {
+      "es-419": "El cuervo y la jarra. Un cuervo sediento encuentra una forma ingeniosa de llegar al agua. Adaptación breve de nivel A1. Adaptación: English Tales. Imagen histórica: Arthur Rackham; ilustración interior del libro, no es una portada aparte de primera edición.",
+      "pt-BR": "O corvo e o jarro. Um corvo com sede encontra um jeito esperto de chegar até a água. Adaptação curta de nível A1. Adaptação: English Tales. Imagem histórica: Arthur Rackham; ilustração interna do livro, não é uma capa separada de primeira edição.",
+      "id": "Burung Gagak dan Kendi. Seekor burung gagak yang haus menemukan cara cerdik untuk mencapai air. Adaptasi singkat tingkat A1. Adaptasi: English Tales. Gambar historis: Arthur Rackham; ilustrasi di dalam buku, bukan sampul edisi pertama tersendiri.",
+      "ar": "الغراب والإبريق. غرابة عطشى تجد طريقة ذكية للوصول إلى الماء. اقتباس قصير بمستوى A1. الاقتباس: English Tales. صورة تاريخية: آرثر راكهام؛ رسم توضيحي داخل الكتاب، وليس غلافًا منفصلًا للطبعة الأولى.",
+      "vi": "Con quạ và cái bình. Một cô quạ khát nước tìm ra cách thông minh để uống được nước. Bản phóng tác ngắn trình độ A1. Phóng tác: English Tales. Hình ảnh lịch sử: Arthur Rackham; tranh minh họa bên trong sách, không phải bìa riêng của ấn bản đầu tiên.",
+      "hi": "प्यासा कौआ। एक प्यासा कौआ पानी तक पहुँचने का एक चतुर तरीका ढूँढ लेता है। A1 स्तर का छोटा रूपांतरण। रूपांतरण: English Tales। ऐतिहासिक चित्र: Arthur Rackham; किताब के अंदर का चित्र, पहले संस्करण का अलग कवर नहीं।",
+      "ru": "Ворона и кувшин. Ворона, которой хочется пить, находит хитрый способ добраться до воды. Краткая адаптация уровня A1. Адаптация: English Tales. Историческое изображение: Артур Рэкхем; внутренняя иллюстрация из книги, а не отдельная обложка первого издания.",
+      "bn": "তৃষ্ণার্ত কাক। এক তৃষ্ণার্ত কাক জলের নাগাল পেতে একটা বুদ্ধিমান উপায় খুঁজে বের করে। A1 স্তরের ছোট রূপান্তর। রূপান্তর: English Tales। ঐতিহাসিক ছবি: Arthur Rackham; বইয়ের ভেতরের ছবি, প্রথম সংস্করণের আলাদা প্রচ্ছদ নয়।",
+      "ur": "پیاسا کوا۔ ایک پیاسا کوا پانی تک پہنچنے کا ایک ہوشیار طریقہ ڈھونڈ لیتا ہے۔ A1 سطح کی مختصر ماخوذ کہانی۔ ترتیب: English Tales۔ تاریخی تصویر: Arthur Rackham؛ کتاب کے اندر کی تصویر، پہلے ایڈیشن کا الگ سرورق نہیں۔",
+      "th": "กากับเหยือกน้ำ: อีกาที่กระหายน้ำหาวิธีอันชาญฉลาดเพื่อดื่มน้ำ ฉบับดัดแปลงสั้น ๆ ระดับ A1 ดัดแปลงโดย English Tales ภาพเก่าทางประวัติศาสตร์: Arthur Rackham; ภาพประกอบภายในเล่ม ไม่ใช่ปกแยกของฉบับพิมพ์ครั้งแรก"
+    }
+  },
+  "words": [
+    {
+      "id": "thirsty",
+      "word": "thirsty",
+      "translation": "susamış",
+      "pronunciation": "/ˈθɜːsti/",
+      "example": "A thirsty crow looks for water.",
+      "translations": {
+        "es-419": "sediento",
+        "pt-BR": "com sede, sedento",
+        "id": "haus",
+        "ar": "عطشان",
+        "vi": "khát nước",
+        "hi": "प्यासा",
+        "ru": "испытывающий жажду",
+        "bn": "তৃষ্ণার্ত",
+        "ur": "پیاسا",
+        "th": "กระหายน้ำ"
+      }
+    },
+    {
+      "id": "crow",
+      "word": "crow",
+      "translation": "karga",
+      "pronunciation": "/krəʊ/",
+      "example": "A thirsty crow looks for water.",
+      "translations": {
+        "es-419": "cuervo",
+        "pt-BR": "corvo",
+        "id": "burung gagak",
+        "ar": "غراب",
+        "vi": "con quạ",
+        "hi": "कौआ",
+        "ru": "ворона",
+        "bn": "কাক",
+        "ur": "کوا",
+        "th": "อีกา"
+      }
+    },
+    {
+      "id": "pitcher",
+      "word": "pitcher",
+      "translation": "sürahi",
+      "pronunciation": "/ˈpɪtʃə(r)/",
+      "example": "She sees a pitcher near a house.",
+      "translations": {
+        "es-419": "jarra, cántaro",
+        "pt-BR": "jarra, cântaro",
+        "id": "kendi",
+        "ar": "إبريق",
+        "vi": "cái bình",
+        "hi": "घड़ा, सुराही",
+        "ru": "кувшин",
+        "bn": "কলসি, জগ",
+        "ur": "گھڑا، صراحی",
+        "th": "เหยือกน้ำ"
+      }
+    },
+    {
+      "id": "beak",
+      "word": "beak",
+      "translation": "gaga",
+      "pronunciation": "/biːk/",
+      "example": "The crow puts her beak inside.",
+      "translations": {
+        "es-419": "pico",
+        "pt-BR": "bico",
+        "id": "paruh",
+        "ar": "منقار",
+        "vi": "cái mỏ",
+        "hi": "चोंच",
+        "ru": "клюв",
+        "bn": "ঠোঁট (পাখির)",
+        "ur": "چونچ",
+        "th": "จะงอยปาก"
+      }
+    },
+    {
+      "id": "reach",
+      "word": "reach",
+      "translation": "ulaşmak, uzanmak",
+      "pronunciation": "/riːtʃ/",
+      "example": "I cannot reach the top shelf.",
+      "translations": {
+        "es-419": "alcanzar",
+        "pt-BR": "alcançar",
+        "id": "mencapai, menggapai",
+        "ar": "يصل إلى",
+        "vi": "với tới",
+        "hi": "पहुँचना",
+        "ru": "достать, дотянуться",
+        "bn": "নাগাল পাওয়া, পৌঁছানো",
+        "ur": "پہنچنا، ہاتھ پہنچانا",
+        "th": "เอื้อมถึง"
+      }
+    },
+    {
+      "id": "tries",
+      "word": "tries",
+      "translation": "dener",
+      "pronunciation": "/traɪz/",
+      "example": "He tries to open the door.",
+      "translations": {
+        "es-419": "intenta",
+        "pt-BR": "tenta",
+        "id": "mencoba",
+        "ar": "يحاول",
+        "vi": "cố gắng, thử",
+        "hi": "कोशिश करता है",
+        "ru": "пытается, пробует",
+        "bn": "চেষ্টা করে",
+        "ur": "کوشش کرتا ہے",
+        "th": "พยายาม"
+      }
+    },
+    {
+      "id": "heavy",
+      "word": "heavy",
+      "translation": "ağır",
+      "pronunciation": "/ˈhevi/",
+      "example": "His bag is heavy.",
+      "translations": {
+        "es-419": "pesado",
+        "pt-BR": "pesado",
+        "id": "berat",
+        "ar": "ثقيل",
+        "vi": "nặng",
+        "hi": "भारी",
+        "ru": "тяжёлый",
+        "bn": "ভারী",
+        "ur": "بھاری",
+        "th": "หนัก"
+      }
+    },
+    {
+      "id": "pebbles",
+      "word": "pebbles",
+      "translation": "çakıl taşları",
+      "pronunciation": "/ˈpeblz/",
+      "example": "Hansel drops white pebbles.",
+      "translations": {
+        "es-419": "piedritas, guijarros",
+        "pt-BR": "pedrinhas, seixos",
+        "id": "kerikil",
+        "ar": "حصى",
+        "vi": "sỏi, đá cuội",
+        "hi": "कंकड़",
+        "ru": "камешки, галька",
+        "bn": "নুড়ি পাথর",
+        "ur": "کنکر",
+        "th": "ก้อนกรวด"
+      }
+    },
+    {
+      "id": "slowly",
+      "word": "slowly",
+      "translation": "yavaşça",
+      "pronunciation": "/ˈsloʊli/",
+      "example": "They walk slowly.",
+      "translations": {
+        "es-419": "lentamente, despacio",
+        "pt-BR": "devagar, lentamente",
+        "id": "perlahan-lahan",
+        "ar": "ببطء",
+        "vi": "chậm rãi",
+        "hi": "धीरे-धीरे",
+        "ru": "медленно",
+        "bn": "ধীরে ধীরে, আস্তে",
+        "ur": "آہستہ آہستہ",
+        "th": "อย่างช้า ๆ"
+      }
+    },
+    {
+      "id": "clever",
+      "word": "clever",
+      "translation": "akıllı",
+      "pronunciation": "/ˈklevə(r)/",
+      "example": "A clever idea can solve a difficult problem.",
+      "translations": {
+        "es-419": "listo, inteligente",
+        "pt-BR": "esperto, inteligente",
+        "id": "cerdik, pintar",
+        "ar": "ذكي",
+        "vi": "thông minh, khéo léo",
+        "hi": "चतुर, होशियार",
+        "ru": "умный, сообразительный",
+        "bn": "চালাক, বুদ্ধিমান",
+        "ur": "چالاک، ہوشیار",
+        "th": "ฉลาด"
+      }
+    },
+    {
+      "id": "solve",
+      "word": "solve",
+      "translation": "çözmek",
+      "pronunciation": "/sɒlv/",
+      "example": "A clever idea can solve a difficult problem.",
+      "translations": {
+        "es-419": "resolver",
+        "pt-BR": "resolver",
+        "id": "memecahkan, menyelesaikan",
+        "ar": "يحلّ",
+        "vi": "giải quyết",
+        "hi": "हल करना",
+        "ru": "решить",
+        "bn": "সমাধান করা",
+        "ur": "حل کرنا",
+        "th": "แก้ (ปัญหา)"
+      }
+    },
+    {
+      "id": "problem",
+      "word": "problem",
+      "translation": "sorun",
+      "pronunciation": "/ˈprɒbləm/",
+      "example": "A clever idea can solve a difficult problem.",
+      "translations": {
+        "es-419": "problema",
+        "pt-BR": "problema",
+        "id": "masalah",
+        "ar": "مشكلة",
+        "vi": "vấn đề",
+        "hi": "समस्या",
+        "ru": "проблема, задача",
+        "bn": "সমস্যা",
+        "ur": "مسئلہ",
+        "th": "ปัญหา"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "thirsty",
+    "crow",
+    "pitcher",
+    "beak",
+    "reach",
+    "tries",
+    "heavy",
+    "pebbles",
+    "slowly",
+    "clever",
+    "solve",
+    "problem"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-crow-pitcher-q1",
+      "sentenceIds": [
+        "cl-crow-pitcher-09",
+        "cl-crow-pitcher-10",
+        "cl-crow-pitcher-11",
+        "cl-crow-pitcher-12"
+      ],
+      "rationale": "The crow drops pebbles until the water rises within reach."
+    },
+    {
+      "questionId": "classic-crow-pitcher-q2",
+      "sentenceIds": [
+        "cl-crow-pitcher-09",
+        "cl-crow-pitcher-10"
+      ],
+      "rationale": "She drops pebbles into the pitcher."
+    },
+    {
+      "questionId": "classic-crow-pitcher-q3",
+      "sentenceIds": [
+        "cl-crow-pitcher-06",
+        "cl-crow-pitcher-08"
+      ],
+      "rationale": "She tries to push the pitcher over before she notices the pebbles."
+    },
+    {
+      "questionId": "classic-crow-pitcher-q4",
+      "sentenceIds": [
+        "cl-crow-pitcher-05",
+        "classic-crow-pitcher-ext-05-01"
+      ],
+      "rationale": "She cannot reach the water because her beak is too short."
+    }
+  ],
+  "publicationBlockers": [
+    "Owner (oguz) approval of the English text, questions and translations required.",
+    "Fresh live source snapshot and publisher validation required."
+  ],
+  "lengthening": {
+    "wordsBefore": 91,
+    "wordsAfter": 196,
+    "sentencesBefore": 14,
+    "sentencesAfter": 30
+  }
+}

@@ -1,0 +1,2163 @@
+{
+  "status": "draft",
+  "kind": "long-story",
+  "source": "long-story-classics-2026-10-22",
+  "reviewedBy": null,
+  "rights": {
+    "credit": "Arthur Conan Doyle",
+    "sourceTitle": "A Scandal in Bohemia (The Adventures of Sherlock Holmes)",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/1661",
+    "sourceTextUrl": "https://www.gutenberg.org/cache/epub/1661/pg1661-images.html",
+    "identifiedContributor": {
+      "name": "Arthur Conan Doyle",
+      "role": "author",
+      "deathYear": 1930
+    },
+    "firstPublished": 1891,
+    "sourceCopyrightStatement": "Public domain in the USA",
+    "checkedOn": "2026-10-22",
+    "adaptation": "New graded B1 retelling written by English Tales, with English Tales translations. No modern abridgement, film script or translation was used.",
+    "turkeyAssessment": "Author died in 1930, more than 70 years before 2026, so the work is out of protection in Turkey and in life+70 countries.",
+    "rightsGuidanceUrl": "https://telifhaklari.ktb.gov.tr/TR-332373/telif-hakki-kac-yil-sureyle-korunur.html",
+    "sourceTextSha256": null,
+    "sourceTextSha256Pending": "Gutenberg is not reachable from the cloud session; record the source text hash on the owner's Mac before publication."
+  },
+  "editorialNotes": [
+    "B1 target: past tense narration, sentences of at most 20 words, about 1,300 words (about 11 minutes of reading).",
+    "Retelling of the 1891 story's main line: the masked King, the photograph, Holmes as a groom, the hurried wedding, the staged fight and smoke rocket, the secret panel, the 'Good night' in Baker Street, the empty house and Irene's letter.",
+    "Told in the third person instead of Watson's first person, to keep the B1 text simple.",
+    "Reading sections are editorial groupings for a future chapter view; the app currently shows the story as one text."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+  },
+  "readingSections": [
+    {
+      "title": "The masked visitor",
+      "firstSentenceId": "cl-scandal-001",
+      "lastSentenceId": "cl-scandal-026"
+    },
+    {
+      "title": "A wedding in a hurry",
+      "firstSentenceId": "cl-scandal-027",
+      "lastSentenceId": "cl-scandal-047"
+    },
+    {
+      "title": "The cry of fire",
+      "firstSentenceId": "cl-scandal-048",
+      "lastSentenceId": "cl-scandal-074"
+    },
+    {
+      "title": "The woman",
+      "firstSentenceId": "cl-scandal-075",
+      "lastSentenceId": "cl-scandal-100"
+    }
+  ],
+  "story": {
+    "id": "classic-scandal-bohemia",
+    "title": "A Scandal in Bohemia",
+    "author": "Arthur Conan Doyle",
+    "level": "B1",
+    "genre": "Gizem",
+    "description": "Bohemya'da Skandal. Bohemya Kralı, evlenmeden önce eski bir fotoğrafı geri almak için Sherlock Holmes'a gelir; ama Holmes bu kez kendisi kadar zeki biriyle karşılaşır: Irene Adler. B1 düzeyinde uzun uyarlama. Uyarlama ve Türkçe çeviri: English Tales.",
+    "descriptions": {
+      "es-419": "Escándalo en Bohemia. El rey de Bohemia le pide a Sherlock Holmes que recupere una vieja fotografía antes de su boda; pero esta vez Holmes se enfrenta a alguien tan astuto como él: Irene Adler. Adaptación larga de nivel B1. Adaptación: English Tales.",
+      "pt-BR": "Um escândalo na Boêmia. O rei da Boêmia pede a Sherlock Holmes que recupere uma velha fotografia antes do casamento; mas desta vez Holmes encontra alguém tão esperto quanto ele: Irene Adler. Adaptação longa de nível B1. Adaptação: English Tales.",
+      "id": "Skandal di Bohemia. Raja Bohemia meminta Sherlock Holmes merebut kembali sebuah foto lama sebelum pernikahannya; tetapi kali ini Holmes bertemu lawan yang secerdik dirinya: Irene Adler. Adaptasi panjang tingkat B1. Adaptasi: English Tales.",
+      "ar": "فضيحة في بوهيميا. يطلب ملك بوهيميا من شيرلوك هولمز استعادة صورة قديمة قبل زفافه؛ لكنّ هولمز يواجه هذه المرّة من هو بذكائه: إيرين أدلر. اقتباس طويل بمستوى B1. الاقتباس: English Tales.",
+      "vi": "Vụ tai tiếng xứ Bohemia. Vua xứ Bohemia nhờ Sherlock Holmes lấy lại một tấm ảnh cũ trước đám cưới; nhưng lần này Holmes gặp một đối thủ thông minh chẳng kém mình: Irene Adler. Bản phóng tác dài trình độ B1. Phóng tác: English Tales.",
+      "hi": "बोहेमिया में एक कांड। बोहेमिया के राजा अपनी शादी से पहले एक पुरानी तस्वीर वापस पाने के लिए शर्लक होम्स के पास आते हैं; पर इस बार होम्स का सामना अपने जितनी ही चतुर आइरीन एडलर से होता है। B1 स्तर का लंबा रूपांतरण। रूपांतरण: English Tales.",
+      "ru": "Скандал в Богемии. Король Богемии просит Шерлока Холмса вернуть старую фотографию перед свадьбой, но на этот раз Холмс встречает соперницу, не уступающую ему в уме, — Ирэн Адлер. Длинный пересказ уровня B1. Адаптация: English Tales.",
+      "bn": "বোহেমিয়ায় কেলেঙ্কারি। বিয়ের আগে একটা পুরোনো ছবি ফিরে পেতে বোহেমিয়ার রাজা শার্লক হোমসের কাছে আসেন; কিন্তু এবার হোমস মুখোমুখি হন তাঁর মতোই বুদ্ধিমতী আইরিন অ্যাডলারের। B1 স্তরের দীর্ঘ রূপান্তর। রূপান্তর: English Tales.",
+      "ur": "بوہیمیا میں اسکینڈل۔ بوہیمیا کے بادشاہ اپنی شادی سے پہلے ایک پرانی تصویر واپس لینے کے لیے شرلاک ہومز کے پاس آتے ہیں؛ مگر اس بار ہومز کا سامنا اپنے جتنی ہی ذہین آئرین ایڈلر سے ہوتا ہے۔ B1 سطح کی طویل ماخوذ کہانی۔ ماخوذ: English Tales.",
+      "th": "เรื่องอื้อฉาวในโบฮีเมีย กษัตริย์แห่งโบฮีเมียขอให้เชอร์ล็อก โฮมส์ชิงรูปถ่ายเก่าคืนก่อนพิธีอภิเษก แต่ครั้งนี้โฮมส์ได้พบคู่ต่อสู้ที่ฉลาดไม่แพ้เขา คือไอรีน แอดเลอร์ ฉบับเรียบเรียงยาวระดับ B1 เรียบเรียงโดย English Tales"
+    },
+    "coverKey": "cover_classic_scandal_bohemia",
+    "tags": [
+      "gizem"
+    ],
+    "sentences": [
+      {
+        "id": "cl-scandal-001",
+        "english": "One wet evening in March, Dr Watson walked past his old home in Baker Street.",
+        "turkish": "Mart ayında yağmurlu bir akşam, Dr. Watson Baker Sokağı'ndaki eski evinin önünden geçiyordu.",
+        "translations": {
+          "es-419": "Una tarde lluviosa de marzo, el doctor Watson pasó por delante de su antiguo hogar en Baker Street.",
+          "pt-BR": "Numa noite chuvosa de março, o doutor Watson passou diante de sua antiga casa na Baker Street.",
+          "id": "Pada suatu malam yang basah di bulan Maret, Dr. Watson berjalan melewati rumah lamanya di Baker Street.",
+          "ar": "في مساء ماطر من شهر مارس، مرّ الدكتور واطسون بمنزله القديم في شارع بيكر.",
+          "vi": "Một buổi tối mưa tháng Ba, bác sĩ Watson đi ngang qua ngôi nhà cũ của mình ở phố Baker.",
+          "hi": "मार्च की एक भीगी शाम डॉक्टर वॉटसन बेकर स्ट्रीट पर अपने पुराने घर के सामने से गुज़रे।",
+          "ru": "Одним сырым мартовским вечером доктор Ватсон проходил мимо своего старого дома на Бейкер-стрит.",
+          "bn": "মার্চের এক ভেজা সন্ধ্যায় ডাক্তার ওয়াটসন বেকার স্ট্রিটে তাঁর পুরোনো বাড়ির পাশ দিয়ে যাচ্ছিলেন।",
+          "ur": "مارچ کی ایک بھیگی شام ڈاکٹر واٹسن بیکر اسٹریٹ پر اپنے پرانے گھر کے سامنے سے گزرے۔",
+          "th": "เย็นวันหนึ่งที่ฝนตกในเดือนมีนาคม หมอวัตสันเดินผ่านบ้านเก่าของเขาบนถนนเบเกอร์"
+        }
+      },
+      {
+        "id": "cl-scandal-002",
+        "english": "He was married now, and he had not seen Sherlock Holmes for months.",
+        "turkish": "Artık evliydi ve aylardır Sherlock Holmes'u görmemişti.",
+        "translations": {
+          "es-419": "Ahora estaba casado, y hacía meses que no veía a Sherlock Holmes.",
+          "pt-BR": "Agora ele era casado e não via Sherlock Holmes havia meses.",
+          "id": "Kini ia sudah menikah, dan sudah berbulan-bulan tidak bertemu Sherlock Holmes.",
+          "ar": "كان متزوّجًا الآن، ولم يرَ شيرلوك هولمز منذ أشهر.",
+          "vi": "Giờ ông đã lập gia đình và đã nhiều tháng không gặp Sherlock Holmes.",
+          "hi": "अब उनकी शादी हो चुकी थी, और उन्होंने महीनों से शर्लक होम्स को नहीं देखा था।",
+          "ru": "Теперь он был женат и уже несколько месяцев не видел Шерлока Холмса.",
+          "bn": "তিনি এখন বিবাহিত, আর কয়েক মাস ধরে শার্লক হোমসকে দেখেননি।",
+          "ur": "اب ان کی شادی ہو چکی تھی، اور انہوں نے مہینوں سے شرلاک ہومز کو نہیں دیکھا تھا۔",
+          "th": "ตอนนี้เขาแต่งงานแล้ว และไม่ได้พบเชอร์ล็อก โฮมส์มาหลายเดือน"
+        }
+      },
+      {
+        "id": "cl-scandal-003",
+        "english": "He saw a light in the window, so he went upstairs.",
+        "turkish": "Pencerede ışık gördü ve yukarı çıktı.",
+        "translations": {
+          "es-419": "Vio una luz en la ventana, así que subió.",
+          "pt-BR": "Viu uma luz na janela e subiu.",
+          "id": "Ia melihat cahaya di jendela, jadi ia naik ke atas.",
+          "ar": "رأى ضوءًا في النافذة، فصعد إلى الطابق العلويّ.",
+          "vi": "Thấy có ánh đèn ở cửa sổ, ông bèn đi lên lầu.",
+          "hi": "उन्होंने खिड़की में रोशनी देखी, तो वे ऊपर चले गए।",
+          "ru": "Он увидел свет в окне и поднялся наверх.",
+          "bn": "জানালায় আলো দেখে তিনি ওপরে উঠে গেলেন।",
+          "ur": "انہوں نے کھڑکی میں روشنی دیکھی، تو وہ اوپر چلے گئے۔",
+          "th": "เขาเห็นแสงไฟที่หน้าต่าง จึงเดินขึ้นไปชั้นบน"
+        }
+      },
+      {
+        "id": "cl-scandal-004",
+        "english": "Holmes looked at him for a moment and smiled.",
+        "turkish": "Holmes ona bir an baktı ve gülümsedi.",
+        "translations": {
+          "es-419": "Holmes lo miró un momento y sonrió.",
+          "pt-BR": "Holmes olhou para ele por um momento e sorriu.",
+          "id": "Holmes menatapnya sejenak lalu tersenyum.",
+          "ar": "نظر إليه هولمز لحظة وابتسم.",
+          "vi": "Holmes nhìn ông một lúc rồi mỉm cười.",
+          "hi": "होम्स ने एक पल उन्हें देखा और मुस्कुराए।",
+          "ru": "Холмс посмотрел на него и улыбнулся.",
+          "bn": "হোমস এক মুহূর্ত তাঁর দিকে তাকিয়ে হাসলেন।",
+          "ur": "ہومز نے ایک لمحہ انہیں دیکھا اور مسکرائے۔",
+          "th": "โฮมส์มองเขาครู่หนึ่งแล้วยิ้ม"
+        }
+      },
+      {
+        "id": "cl-scandal-005",
+        "english": "\"You have been out in the rain, and you have a careless servant girl,\" he said.",
+        "turkish": "\"Yağmurda dışarıdaydın ve dikkatsiz bir hizmetçi kızın var,\" dedi.",
+        "translations": {
+          "es-419": "—Has estado bajo la lluvia, y tienes una criada descuidada —dijo.",
+          "pt-BR": "— Você esteve na chuva e tem uma criada descuidada — disse ele.",
+          "id": "\"Kau baru kehujanan, dan kau punya pelayan perempuan yang ceroboh,\" katanya.",
+          "ar": "قال: «لقد كنتَ تحت المطر، ولديك خادمة مهملة».",
+          "vi": "\"Anh vừa dầm mưa, và anh có một cô người hầu cẩu thả,\" ông nói.",
+          "hi": "\"तुम बारिश में बाहर थे, और तुम्हारी नौकरानी लापरवाह है,\" उन्होंने कहा।",
+          "ru": "«Вы побывали под дождём, и у вас неряшливая служанка», — сказал он.",
+          "bn": "\"তুমি বৃষ্টিতে বাইরে ছিলে, আর তোমার কাজের মেয়েটি অগোছালো,\" তিনি বললেন।",
+          "ur": "\"تم بارش میں باہر تھے، اور تمہاری نوکرانی لاپروا ہے،\" انہوں نے کہا۔",
+          "th": "\"นายเพิ่งตากฝนมา และมีสาวใช้ที่สะเพร่า\" เขาพูด"
+        }
+      },
+      {
+        "id": "cl-scandal-006",
+        "english": "\"How do you know?\" asked Watson in surprise.",
+        "turkish": "\"Nereden biliyorsun?\" diye sordu Watson şaşkınlıkla.",
+        "translations": {
+          "es-419": "—¿Cómo lo sabes? —preguntó Watson, sorprendido.",
+          "pt-BR": "— Como você sabe? — perguntou Watson, surpreso.",
+          "id": "\"Bagaimana kau tahu?\" tanya Watson dengan heran.",
+          "ar": "سأل واطسون بدهشة: «كيف عرفت؟»",
+          "vi": "\"Sao anh biết?\" Watson ngạc nhiên hỏi.",
+          "hi": "\"तुम्हें कैसे पता?\" वॉटसन ने हैरानी से पूछा।",
+          "ru": "«Откуда вы знаете?» — удивлённо спросил Ватсон.",
+          "bn": "\"তুমি কী করে জানলে?\" অবাক হয়ে জিজ্ঞেস করলেন ওয়াটসন।",
+          "ur": "\"تمہیں کیسے پتا؟\" واٹسن نے حیرت سے پوچھا۔",
+          "th": "\"นายรู้ได้ยังไง\" วัตสันถามด้วยความประหลาดใจ"
+        }
+      },
+      {
+        "id": "cl-scandal-007",
+        "english": "\"Your shoe has six long cuts, where someone scraped off the mud badly.\"",
+        "turkish": "\"Ayakkabında altı uzun çizik var; birisi çamuru kötü kazımış.\"",
+        "translations": {
+          "es-419": "—Tu zapato tiene seis cortes largos, donde alguien raspó mal el barro.",
+          "pt-BR": "— Seu sapato tem seis cortes compridos, onde alguém raspou mal a lama.",
+          "id": "\"Sepatumu punya enam goresan panjang, bekas seseorang mengerik lumpur dengan asal-asalan.\"",
+          "ar": "«في حذائك ستّة خدوش طويلة، حيث كشط أحدهم الطين بإهمال».",
+          "vi": "\"Giày anh có sáu vết xước dài, chỗ ai đó cạo bùn rất vụng về.\"",
+          "hi": "\"तुम्हारे जूते पर छह लंबी खरोंचें हैं, जहाँ किसी ने कीचड़ बुरी तरह खुरचा है।\"",
+          "ru": "«На вашем ботинке шесть длинных царапин: кто-то неумело счищал грязь».",
+          "bn": "\"তোমার জুতোয় ছটা লম্বা আঁচড়, যেখানে কেউ বাজেভাবে কাদা চেঁছেছে।\"",
+          "ur": "\"تمہارے جوتے پر چھ لمبی خراشیں ہیں، جہاں کسی نے کیچڑ بری طرح کھرچا ہے۔\"",
+          "th": "\"รองเท้าของนายมีรอยขูดยาวหกรอย ตรงที่มีคนขูดโคลนออกอย่างลวก ๆ\""
+        }
+      },
+      {
+        "id": "cl-scandal-008",
+        "english": "\"You see, but you do not observe,\" Holmes added.",
+        "turkish": "\"Görüyorsun ama gözlemlemiyorsun,\" diye ekledi Holmes.",
+        "translations": {
+          "es-419": "—Tú ves, pero no observas —añadió Holmes.",
+          "pt-BR": "— Você vê, mas não observa — acrescentou Holmes.",
+          "id": "\"Kau melihat, tetapi kau tidak mengamati,\" tambah Holmes.",
+          "ar": "وأضاف هولمز: «أنت ترى، لكنّك لا تلاحظ».",
+          "vi": "\"Anh nhìn, nhưng anh không quan sát,\" Holmes nói thêm.",
+          "hi": "\"तुम देखते हो, पर ग़ौर नहीं करते,\" होम्स ने जोड़ा।",
+          "ru": "«Вы смотрите, но не наблюдаете», — добавил Холмс.",
+          "bn": "\"তুমি দেখো, কিন্তু খেয়াল করো না,\" যোগ করলেন হোমস।",
+          "ur": "\"تم دیکھتے ہو، مگر غور نہیں کرتے،\" ہومز نے مزید کہا۔",
+          "th": "\"นายมอง แต่นายไม่สังเกต\" โฮมส์กล่าวเสริม"
+        }
+      },
+      {
+        "id": "cl-scandal-009",
+        "english": "Then he showed Watson a short note on thick, expensive paper.",
+        "turkish": "Sonra Watson'a kalın, pahalı bir kâğıda yazılmış kısa bir not gösterdi.",
+        "translations": {
+          "es-419": "Luego le mostró a Watson una nota breve en un papel grueso y caro.",
+          "pt-BR": "Depois mostrou a Watson um bilhete curto num papel grosso e caro.",
+          "id": "Lalu ia menunjukkan kepada Watson sebuah catatan pendek di atas kertas tebal yang mahal.",
+          "ar": "ثمّ أرى واطسون رسالة قصيرة على ورق سميك غالي الثمن.",
+          "vi": "Rồi ông cho Watson xem một mẩu thư ngắn trên giấy dày, đắt tiền.",
+          "hi": "फिर उन्होंने वॉटसन को मोटे, महँगे काग़ज़ पर लिखा एक छोटा-सा पत्र दिखाया।",
+          "ru": "Потом он показал Ватсону короткую записку на плотной дорогой бумаге.",
+          "bn": "তারপর তিনি ওয়াটসনকে মোটা, দামি কাগজে লেখা একটা ছোট চিরকুট দেখালেন।",
+          "ur": "پھر انہوں نے واٹسن کو موٹے، مہنگے کاغذ پر لکھا ایک مختصر رقعہ دکھایا۔",
+          "th": "แล้วเขาก็ยื่นบันทึกสั้น ๆ บนกระดาษหนาราคาแพงให้วัตสันดู"
+        }
+      },
+      {
+        "id": "cl-scandal-010",
+        "english": "It said that a visitor would come at a quarter to eight, wearing a mask.",
+        "turkish": "Notta bir ziyaretçinin sekize çeyrek kala, maske takarak geleceği yazıyordu.",
+        "translations": {
+          "es-419": "Decía que un visitante llegaría a las ocho menos cuarto, con una máscara.",
+          "pt-BR": "Dizia que um visitante chegaria às quinze para as oito, usando uma máscara.",
+          "id": "Isinya, seorang tamu akan datang pukul delapan kurang seperempat, memakai topeng.",
+          "ar": "وكان فيها أنّ زائرًا سيأتي في الثامنة إلّا ربعًا، مرتديًا قناعًا.",
+          "vi": "Thư báo rằng một vị khách sẽ đến lúc tám giờ kém mười lăm, đeo mặt nạ.",
+          "hi": "उसमें लिखा था कि एक मेहमान पौने आठ बजे मुखौटा पहनकर आएगा।",
+          "ru": "В ней говорилось, что без четверти восемь придёт посетитель в маске.",
+          "bn": "তাতে লেখা ছিল, পৌনে আটটায় মুখোশ পরে একজন অতিথি আসবেন।",
+          "ur": "اس میں لکھا تھا کہ ایک مہمان پونے آٹھ بجے نقاب پہن کر آئے گا۔",
+          "th": "ในนั้นเขียนว่าจะมีแขกมาตอนสองทุ่มขาดสิบห้านาที โดยสวมหน้ากาก"
+        }
+      },
+      {
+        "id": "cl-scandal-011",
+        "english": "Exactly on time, a fine carriage stopped outside.",
+        "turkish": "Tam vaktinde, dışarıda gösterişli bir araba durdu.",
+        "translations": {
+          "es-419": "Justo a la hora, un elegante carruaje se detuvo afuera.",
+          "pt-BR": "Na hora exata, uma bela carruagem parou lá fora.",
+          "id": "Tepat pada waktunya, sebuah kereta kuda yang bagus berhenti di luar.",
+          "ar": "في الموعد تمامًا، توقّفت عربة فاخرة في الخارج.",
+          "vi": "Đúng giờ, một cỗ xe ngựa sang trọng dừng lại bên ngoài.",
+          "hi": "ठीक समय पर बाहर एक शानदार बग्घी आकर रुकी।",
+          "ru": "Точно в назначенное время у дома остановилась богатая карета.",
+          "bn": "ঠিক সময়মতো বাইরে একটা জমকালো ঘোড়ার গাড়ি এসে থামল।",
+          "ur": "ٹھیک وقت پر باہر ایک شاندار بگھی آ کر رکی۔",
+          "th": "ตรงเวลาเป๊ะ รถม้าหรูคันหนึ่งมาจอดข้างนอก"
+        }
+      },
+      {
+        "id": "cl-scandal-012",
+        "english": "A very tall man came in, dressed in rich clothes, with a black mask over his eyes.",
+        "turkish": "Çok uzun boylu, zengin giyimli, gözlerinde siyah bir maske olan bir adam içeri girdi.",
+        "translations": {
+          "es-419": "Entró un hombre muy alto, con ropa lujosa y una máscara negra sobre los ojos.",
+          "pt-BR": "Entrou um homem muito alto, com roupas luxuosas e uma máscara preta sobre os olhos.",
+          "id": "Seorang pria yang sangat tinggi masuk, berpakaian mewah, dengan topeng hitam menutupi matanya.",
+          "ar": "دخل رجل طويل جدًّا، يرتدي ثيابًا فاخرة، وعلى عينيه قناع أسود.",
+          "vi": "Một người đàn ông rất cao bước vào, ăn mặc sang trọng, đeo mặt nạ đen che mắt.",
+          "hi": "एक बहुत लंबा आदमी अंदर आया, जिसने क़ीमती कपड़े पहने थे और आँखों पर काला मुखौटा था।",
+          "ru": "Вошёл очень высокий человек в богатой одежде, с чёрной маской на глазах.",
+          "bn": "খুব লম্বা এক ভদ্রলোক ঢুকলেন, পরনে দামি পোশাক, চোখের ওপর কালো মুখোশ।",
+          "ur": "ایک بہت لمبا آدمی اندر آیا، قیمتی کپڑے پہنے، آنکھوں پر کالا نقاب۔",
+          "th": "ชายร่างสูงมากคนหนึ่งเดินเข้ามา แต่งกายหรูหรา สวมหน้ากากสีดำปิดตา"
+        }
+      },
+      {
+        "id": "cl-scandal-013",
+        "english": "He said he was a count, but Holmes was not fooled.",
+        "turkish": "Bir kont olduğunu söyledi ama Holmes kanmadı.",
+        "translations": {
+          "es-419": "Dijo que era un conde, pero Holmes no se dejó engañar.",
+          "pt-BR": "Disse que era um conde, mas Holmes não se deixou enganar.",
+          "id": "Ia mengaku seorang bangsawan, tetapi Holmes tidak tertipu.",
+          "ar": "قال إنّه كونت، لكنّ هولمز لم ينخدع.",
+          "vi": "Ông ta tự xưng là bá tước, nhưng Holmes không bị lừa.",
+          "hi": "उसने कहा कि वह एक काउंट है, पर होम्स धोखे में नहीं आए।",
+          "ru": "Он назвался графом, но Холмса было не обмануть.",
+          "bn": "তিনি নিজেকে একজন কাউন্ট বললেন, কিন্তু হোমস ধোঁকা খেলেন না।",
+          "ur": "اس نے کہا کہ وہ ایک کاؤنٹ ہے، مگر ہومز دھوکا نہیں کھائے۔",
+          "th": "เขาบอกว่าตนเป็นท่านเคานต์ แต่โฮมส์ไม่หลงกล"
+        }
+      },
+      {
+        "id": "cl-scandal-014",
+        "english": "\"Please sit down, Your Majesty,\" he said calmly.",
+        "turkish": "\"Lütfen oturun, Majesteleri,\" dedi sakin bir sesle.",
+        "translations": {
+          "es-419": "—Siéntese, por favor, Su Majestad —dijo con calma.",
+          "pt-BR": "— Sente-se, por favor, Vossa Majestade — disse ele calmamente.",
+          "id": "\"Silakan duduk, Yang Mulia,\" katanya dengan tenang.",
+          "ar": "قال بهدوء: «تفضّل بالجلوس يا جلالة الملك».",
+          "vi": "\"Xin mời ngồi, thưa Bệ hạ,\" ông bình thản nói.",
+          "hi": "\"कृपया बैठिए, महाराज,\" उन्होंने शांति से कहा।",
+          "ru": "«Прошу садиться, ваше величество», — спокойно сказал он.",
+          "bn": "\"অনুগ্রহ করে বসুন, মহারাজ,\" শান্তভাবে বললেন তিনি।",
+          "ur": "\"براہِ کرم تشریف رکھیے، عالی جاہ،\" انہوں نے سکون سے کہا۔",
+          "th": "\"เชิญประทับนั่ง ฝ่าบาท\" เขาพูดอย่างใจเย็น"
+        }
+      },
+      {
+        "id": "cl-scandal-015",
+        "english": "The visitor pulled off his mask; he was the King of Bohemia.",
+        "turkish": "Ziyaretçi maskesini çıkardı; o, Bohemya Kralı'ydı.",
+        "translations": {
+          "es-419": "El visitante se quitó la máscara: era el rey de Bohemia.",
+          "pt-BR": "O visitante arrancou a máscara: era o rei da Boêmia.",
+          "id": "Tamu itu melepas topengnya; ia adalah Raja Bohemia.",
+          "ar": "نزع الزائر قناعه؛ كان ملك بوهيميا.",
+          "vi": "Vị khách giật mặt nạ ra; đó chính là vua xứ Bohemia.",
+          "hi": "मेहमान ने मुखौटा उतार दिया; वह बोहेमिया के राजा थे।",
+          "ru": "Гость сорвал маску: это был король Богемии.",
+          "bn": "অতিথি মুখোশ খুলে ফেললেন; তিনি বোহেমিয়ার রাজা।",
+          "ur": "مہمان نے نقاب اتار دیا؛ وہ بوہیمیا کے بادشاہ تھے۔",
+          "th": "แขกถอดหน้ากากออก เขาคือกษัตริย์แห่งโบฮีเมีย"
+        }
+      },
+      {
+        "id": "cl-scandal-016",
+        "english": "\"I am going to marry a princess,\" the King explained.",
+        "turkish": "\"Bir prensesle evlenmek üzereyim,\" diye açıkladı Kral.",
+        "translations": {
+          "es-419": "—Voy a casarme con una princesa —explicó el rey.",
+          "pt-BR": "— Vou me casar com uma princesa — explicou o rei.",
+          "id": "\"Aku akan menikahi seorang putri,\" jelas sang Raja.",
+          "ar": "أوضح الملك: «سأتزوّج أميرة».",
+          "vi": "\"Ta sắp cưới một nàng công chúa,\" nhà vua giải thích.",
+          "hi": "\"मेरा विवाह एक राजकुमारी से होने वाला है,\" राजा ने समझाया।",
+          "ru": "«Я собираюсь жениться на принцессе», — объяснил король.",
+          "bn": "\"আমি এক রাজকুমারীকে বিয়ে করতে চলেছি,\" রাজা বুঝিয়ে বললেন।",
+          "ur": "\"میری شادی ایک شہزادی سے ہونے والی ہے،\" بادشاہ نے سمجھایا۔",
+          "th": "\"ข้ากำลังจะอภิเษกกับเจ้าหญิงองค์หนึ่ง\" กษัตริย์อธิบาย"
+        }
+      },
+      {
+        "id": "cl-scandal-017",
+        "english": "\"But five years ago, I knew an American opera singer called Irene Adler.\"",
+        "turkish": "\"Ama beş yıl önce Irene Adler adında Amerikalı bir opera şarkıcısını tanıyordum.\"",
+        "translations": {
+          "es-419": "—Pero hace cinco años conocí a una cantante de ópera estadounidense llamada Irene Adler.",
+          "pt-BR": "— Mas há cinco anos conheci uma cantora de ópera americana chamada Irene Adler.",
+          "id": "\"Tetapi lima tahun lalu, aku mengenal seorang penyanyi opera Amerika bernama Irene Adler.\"",
+          "ar": "«لكن قبل خمس سنوات، عرفتُ مغنّية أوبرا أمريكية اسمها إيرين أدلر».",
+          "vi": "\"Nhưng năm năm trước, ta quen một nữ ca sĩ opera người Mỹ tên là Irene Adler.\"",
+          "hi": "\"पर पाँच साल पहले मैं आइरीन एडलर नाम की एक अमेरिकी ओपेरा गायिका को जानता था।\"",
+          "ru": "«Но пять лет назад я был знаком с американской оперной певицей Ирэн Адлер».",
+          "bn": "\"কিন্তু পাঁচ বছর আগে আমি আইরিন অ্যাডলার নামে এক আমেরিকান অপেরা গায়িকাকে চিনতাম।\"",
+          "ur": "\"مگر پانچ سال پہلے میں آئرین ایڈلر نام کی ایک امریکی اوپرا گلوکارہ کو جانتا تھا۔\"",
+          "th": "\"แต่เมื่อห้าปีก่อน ข้าเคยรู้จักนักร้องโอเปร่าชาวอเมริกันชื่อไอรีน แอดเลอร์\""
+        }
+      },
+      {
+        "id": "cl-scandal-018",
+        "english": "\"She has a photograph of the two of us together.\"",
+        "turkish": "\"Onda ikimizin birlikte çekilmiş bir fotoğrafı var.\"",
+        "translations": {
+          "es-419": "—Ella tiene una fotografía de los dos juntos.",
+          "pt-BR": "— Ela tem uma fotografia de nós dois juntos.",
+          "id": "\"Ia menyimpan sebuah foto kami berdua.\"",
+          "ar": "«لديها صورة فوتوغرافية لنا معًا».",
+          "vi": "\"Cô ta giữ một tấm ảnh chụp hai chúng ta bên nhau.\"",
+          "hi": "\"उसके पास हम दोनों की एक साथ खींची हुई तस्वीर है।\"",
+          "ru": "«У неё есть фотография, где мы сняты вдвоём».",
+          "bn": "\"তার কাছে আমাদের দুজনের একসঙ্গে তোলা একটা ছবি আছে।\"",
+          "ur": "\"اس کے پاس ہم دونوں کی ایک ساتھ کھنچی ہوئی تصویر ہے۔\"",
+          "th": "\"นางมีรูปถ่ายของเราสองคนอยู่ด้วยกัน\""
+        }
+      },
+      {
+        "id": "cl-scandal-019",
+        "english": "\"If the princess's family sees it, there will be no wedding.\"",
+        "turkish": "\"Prensesin ailesi onu görürse düğün olmaz.\"",
+        "translations": {
+          "es-419": "—Si la familia de la princesa la ve, no habrá boda.",
+          "pt-BR": "— Se a família da princesa a vir, não haverá casamento.",
+          "id": "\"Jika keluarga sang putri melihatnya, pernikahan akan batal.\"",
+          "ar": "«إن رأتها عائلة الأميرة، فلن يكون هناك زفاف».",
+          "vi": "\"Nếu gia đình công chúa nhìn thấy nó, đám cưới sẽ tan vỡ.\"",
+          "hi": "\"अगर राजकुमारी के परिवार ने उसे देख लिया, तो विवाह नहीं होगा।\"",
+          "ru": "«Если семья принцессы её увидит, свадьбы не будет».",
+          "bn": "\"রাজকুমারীর পরিবার ওটা দেখলে বিয়েটাই হবে না।\"",
+          "ur": "\"اگر شہزادی کے خاندان نے اسے دیکھ لیا، تو شادی نہیں ہوگی۔\"",
+          "th": "\"ถ้าครอบครัวของเจ้าหญิงเห็นมัน การอภิเษกก็จะล่ม\""
+        }
+      },
+      {
+        "id": "cl-scandal-020",
+        "english": "\"She says she will send it to them on the day it is announced.\"",
+        "turkish": "\"Nişan ilan edildiği gün fotoğrafı onlara göndereceğini söylüyor.\"",
+        "translations": {
+          "es-419": "—Dice que se la enviará el día en que se anuncie.",
+          "pt-BR": "— Ela diz que vai mandá-la para eles no dia do anúncio.",
+          "id": "\"Ia bilang akan mengirimkannya kepada mereka pada hari pengumuman.\"",
+          "ar": "«تقول إنّها سترسلها إليهم يوم الإعلان عنه».",
+          "vi": "\"Cô ta nói sẽ gửi nó cho họ vào ngày công bố hôn lễ.\"",
+          "hi": "\"वह कहती है कि जिस दिन घोषणा होगी, उसी दिन वह उसे उनके पास भेज देगी।\"",
+          "ru": "«Она говорит, что пошлёт её им в день объявления о помолвке».",
+          "bn": "\"সে বলছে, ঘোষণার দিনই সে ছবিটা ওদের কাছে পাঠিয়ে দেবে।\"",
+          "ur": "\"وہ کہتی ہے کہ جس دن اعلان ہوگا، اسی دن وہ اسے ان کے پاس بھیج دے گی۔\"",
+          "th": "\"นางบอกว่าจะส่งมันไปให้พวกเขาในวันที่ประกาศข่าว\""
+        }
+      },
+      {
+        "id": "cl-scandal-021",
+        "english": "\"That will be next Monday,\" the King said in despair.",
+        "turkish": "\"O gün de önümüzdeki pazartesi,\" dedi Kral çaresizce.",
+        "translations": {
+          "es-419": "—Eso será el próximo lunes —dijo el rey, desesperado.",
+          "pt-BR": "— Isso será na próxima segunda-feira — disse o rei, desesperado.",
+          "id": "\"Itu hari Senin depan,\" kata sang Raja dengan putus asa.",
+          "ar": "قال الملك بيأس: «وسيكون ذلك يوم الاثنين القادم».",
+          "vi": "\"Tức là thứ Hai tới,\" nhà vua tuyệt vọng nói.",
+          "hi": "\"और वह अगले सोमवार है,\" राजा ने हताश होकर कहा।",
+          "ru": "«А это будет в следующий понедельник», — в отчаянии сказал король.",
+          "bn": "\"আর সেটা আসছে সোমবার,\" হতাশ হয়ে বললেন রাজা।",
+          "ur": "\"اور وہ اگلا پیر ہے،\" بادشاہ نے مایوسی سے کہا۔",
+          "th": "\"ซึ่งก็คือวันจันทร์หน้า\" กษัตริย์ตรัสอย่างสิ้นหวัง"
+        }
+      },
+      {
+        "id": "cl-scandal-022",
+        "english": "He had tried to buy it, and thieves had searched her house twice.",
+        "turkish": "Fotoğrafı satın almaya çalışmış, hırsızlar da evini iki kez aramıştı.",
+        "translations": {
+          "es-419": "Había intentado comprarla, y unos ladrones habían registrado su casa dos veces.",
+          "pt-BR": "Ele tinha tentado comprá-la, e ladrões já tinham revistado a casa dela duas vezes.",
+          "id": "Ia sudah mencoba membelinya, dan pencuri sudah dua kali menggeledah rumah wanita itu.",
+          "ar": "كان قد حاول شراءها، وفتّش اللصوص بيتها مرّتين.",
+          "vi": "Ông đã thử mua lại nó, và bọn trộm đã lục soát nhà cô hai lần.",
+          "hi": "उन्होंने उसे ख़रीदने की कोशिश की थी, और चोर दो बार उसके घर की तलाशी ले चुके थे।",
+          "ru": "Он пытался её купить, а воры дважды обыскивали её дом.",
+          "bn": "তিনি ছবিটা কিনে নিতে চেষ্টা করেছিলেন, আর চোরেরা দু'বার তার বাড়ি তল্লাশি করেছিল।",
+          "ur": "انہوں نے اسے خریدنے کی کوشش کی تھی، اور چور دو بار اس کے گھر کی تلاشی لے چکے تھے۔",
+          "th": "พระองค์เคยพยายามซื้อมัน และขโมยก็ค้นบ้านของนางมาแล้วสองครั้ง"
+        }
+      },
+      {
+        "id": "cl-scandal-023",
+        "english": "But nobody could find the photograph.",
+        "turkish": "Ama kimse fotoğrafı bulamamıştı.",
+        "translations": {
+          "es-419": "Pero nadie había podido encontrar la fotografía.",
+          "pt-BR": "Mas ninguém conseguiu encontrar a fotografia.",
+          "id": "Tetapi tidak ada yang bisa menemukan foto itu.",
+          "ar": "لكن لم يستطع أحد أن يجد الصورة.",
+          "vi": "Nhưng không ai tìm thấy tấm ảnh.",
+          "hi": "पर कोई भी तस्वीर ढूँढ नहीं पाया।",
+          "ru": "Но никто не смог найти фотографию.",
+          "bn": "কিন্তু কেউই ছবিটা খুঁজে পায়নি।",
+          "ur": "مگر کوئی بھی تصویر ڈھونڈ نہیں سکا۔",
+          "th": "แต่ไม่มีใครหารูปถ่ายนั้นเจอ"
+        }
+      },
+      {
+        "id": "cl-scandal-024",
+        "english": "The King put a heavy bag of gold on the table.",
+        "turkish": "Kral masaya ağır bir kese altın koydu.",
+        "translations": {
+          "es-419": "El rey puso una pesada bolsa de oro sobre la mesa.",
+          "pt-BR": "O rei colocou uma pesada bolsa de ouro sobre a mesa.",
+          "id": "Sang Raja meletakkan sekantong emas yang berat di atas meja.",
+          "ar": "وضع الملك كيسًا ثقيلًا من الذهب على الطاولة.",
+          "vi": "Nhà vua đặt một túi vàng nặng trĩu lên bàn.",
+          "hi": "राजा ने मेज़ पर सोने से भरी एक भारी थैली रख दी।",
+          "ru": "Король положил на стол тяжёлый мешочек с золотом.",
+          "bn": "রাজা টেবিলের ওপর সোনাভর্তি একটা ভারী থলি রাখলেন।",
+          "ur": "بادشاہ نے میز پر سونے کی ایک بھاری تھیلی رکھ دی۔",
+          "th": "กษัตริย์วางถุงทองคำหนักอึ้งลงบนโต๊ะ"
+        }
+      },
+      {
+        "id": "cl-scandal-025",
+        "english": "\"Get it back for me, and you can have any reward you like.\"",
+        "turkish": "\"Onu bana geri getirin, istediğiniz ödülü alırsınız.\"",
+        "translations": {
+          "es-419": "—Recupérela para mí, y tendrá la recompensa que quiera.",
+          "pt-BR": "— Recupere-a para mim, e o senhor terá a recompensa que quiser.",
+          "id": "\"Dapatkan kembali foto itu untukku, dan kau boleh meminta hadiah apa pun.\"",
+          "ar": "«استعدها لي، ولك أيّ مكافأة تريدها».",
+          "vi": "\"Hãy lấy lại nó cho ta, và ngươi muốn phần thưởng gì cũng được.\"",
+          "hi": "\"उसे मेरे लिए वापस ले आइए, और आप जो चाहें इनाम ले सकते हैं।\"",
+          "ru": "«Верните её мне, и получите любую награду, какую пожелаете».",
+          "bn": "\"ওটা আমার জন্য ফিরিয়ে আনুন, তাহলে যে পুরস্কার চান পাবেন।\"",
+          "ur": "\"اسے میرے لیے واپس لے آئیے، اور آپ جو چاہیں انعام لے سکتے ہیں۔\"",
+          "th": "\"เอามันกลับมาให้ข้า แล้วเจ้าจะได้รางวัลใดก็ตามที่ต้องการ\""
+        }
+      },
+      {
+        "id": "cl-scandal-026",
+        "english": "Holmes wrote down the woman's address and promised to start the next day.",
+        "turkish": "Holmes kadının adresini not etti ve ertesi gün işe başlayacağına söz verdi.",
+        "translations": {
+          "es-419": "Holmes anotó la dirección de la mujer y prometió empezar al día siguiente.",
+          "pt-BR": "Holmes anotou o endereço da mulher e prometeu começar no dia seguinte.",
+          "id": "Holmes mencatat alamat wanita itu dan berjanji akan mulai keesokan harinya.",
+          "ar": "دوّن هولمز عنوان المرأة ووعد بأن يبدأ في اليوم التالي.",
+          "vi": "Holmes ghi lại địa chỉ của người phụ nữ và hứa sẽ bắt tay vào việc ngày hôm sau.",
+          "hi": "होम्स ने उस महिला का पता लिख लिया और अगले दिन से काम शुरू करने का वादा किया।",
+          "ru": "Холмс записал адрес этой женщины и пообещал взяться за дело на следующий день.",
+          "bn": "হোমস মহিলার ঠিকানা লিখে নিলেন আর পরদিনই কাজ শুরু করার কথা দিলেন।",
+          "ur": "ہومز نے اس عورت کا پتا لکھ لیا اور اگلے دن سے کام شروع کرنے کا وعدہ کیا۔",
+          "th": "โฮมส์จดที่อยู่ของผู้หญิงคนนั้นไว้ และสัญญาว่าจะเริ่มงานในวันรุ่งขึ้น"
+        }
+      },
+      {
+        "id": "cl-scandal-027",
+        "english": "The next afternoon, Watson waited for Holmes in Baker Street.",
+        "turkish": "Ertesi öğleden sonra Watson, Baker Sokağı'nda Holmes'u bekledi.",
+        "translations": {
+          "es-419": "La tarde siguiente, Watson esperó a Holmes en Baker Street.",
+          "pt-BR": "Na tarde seguinte, Watson esperou Holmes na Baker Street.",
+          "id": "Sore berikutnya, Watson menunggu Holmes di Baker Street.",
+          "ar": "في عصر اليوم التالي، انتظر واطسون هولمز في شارع بيكر.",
+          "vi": "Chiều hôm sau, Watson chờ Holmes ở phố Baker.",
+          "hi": "अगली दोपहर वॉटसन बेकर स्ट्रीट में होम्स का इंतज़ार करते रहे।",
+          "ru": "На следующий день Ватсон ждал Холмса на Бейкер-стрит.",
+          "bn": "পরদিন বিকেলে ওয়াটসন বেকার স্ট্রিটে হোমসের জন্য অপেক্ষা করছিলেন।",
+          "ur": "اگلی سہ پہر واٹسن بیکر اسٹریٹ میں ہومز کا انتظار کرتے رہے۔",
+          "th": "บ่ายวันรุ่งขึ้น วัตสันรอโฮมส์อยู่ที่ถนนเบเกอร์"
+        }
+      },
+      {
+        "id": "cl-scandal-028",
+        "english": "At four o'clock, a dirty, untidy groom walked in.",
+        "turkish": "Saat dörtte kirli, dağınık bir seyis içeri girdi.",
+        "translations": {
+          "es-419": "A las cuatro, entró un mozo de cuadra sucio y desaliñado.",
+          "pt-BR": "Às quatro horas, entrou um cavalariço sujo e desarrumado.",
+          "id": "Pukul empat, seorang tukang kuda yang kotor dan berantakan masuk.",
+          "ar": "في الساعة الرابعة، دخل سائس متّسخ رثّ الهيئة.",
+          "vi": "Lúc bốn giờ, một gã giữ ngựa bẩn thỉu, lôi thôi bước vào.",
+          "hi": "चार बजे एक गंदा, बिखरा-बिखरा साईस अंदर आया।",
+          "ru": "В четыре часа вошёл грязный, неопрятный конюх.",
+          "bn": "চারটের সময় এক নোংরা, এলোমেলো সহিস ঘরে ঢুকল।",
+          "ur": "چار بجے ایک میلا کچیلا سائیس اندر آیا۔",
+          "th": "สี่โมงเย็น คนเลี้ยงม้าท่าทางสกปรกมอซอคนหนึ่งเดินเข้ามา"
+        }
+      },
+      {
+        "id": "cl-scandal-029",
+        "english": "Watson looked three times before he saw that it was his friend.",
+        "turkish": "Watson, onun arkadaşı olduğunu anlamadan önce üç kez baktı.",
+        "translations": {
+          "es-419": "Watson tuvo que mirar tres veces para darse cuenta de que era su amigo.",
+          "pt-BR": "Watson olhou três vezes antes de perceber que era o amigo.",
+          "id": "Watson harus melihat tiga kali sebelum sadar bahwa itu temannya.",
+          "ar": "نظر واطسون ثلاث مرّات قبل أن يدرك أنّه صديقه.",
+          "vi": "Watson phải nhìn ba lần mới nhận ra đó là bạn mình.",
+          "hi": "वॉटसन ने तीन बार देखा, तब जाकर पहचाना कि वह उनका दोस्त है।",
+          "ru": "Ватсон трижды взглянул на него, прежде чем узнал друга.",
+          "bn": "তিনবার দেখার পর ওয়াটসন বুঝলেন যে এ তাঁর বন্ধু।",
+          "ur": "واٹسن نے تین بار دیکھا، تب جا کر پہچانا کہ یہ ان کا دوست ہے۔",
+          "th": "วัตสันต้องมองถึงสามครั้งกว่าจะรู้ว่าเป็นเพื่อนของเขาเอง"
+        }
+      },
+      {
+        "id": "cl-scandal-030",
+        "english": "Holmes was a master of disguise.",
+        "turkish": "Holmes kılık değiştirmenin ustasıydı.",
+        "translations": {
+          "es-419": "Holmes era un maestro del disfraz.",
+          "pt-BR": "Holmes era um mestre do disfarce.",
+          "id": "Holmes adalah ahli penyamaran.",
+          "ar": "كان هولمز بارعًا في التنكّر.",
+          "vi": "Holmes là bậc thầy cải trang.",
+          "hi": "होम्स भेस बदलने में माहिर थे।",
+          "ru": "Холмс был мастером переодевания.",
+          "bn": "হোমস ছদ্মবেশ ধরায় ওস্তাদ ছিলেন।",
+          "ur": "ہومز بھیس بدلنے کے ماہر تھے۔",
+          "th": "โฮมส์เป็นยอดฝีมือด้านการปลอมตัว"
+        }
+      },
+      {
+        "id": "cl-scandal-031",
+        "english": "He laughed and told Watson about his day.",
+        "turkish": "Gülerek Watson'a gününü anlattı.",
+        "translations": {
+          "es-419": "Se rio y le contó a Watson cómo había pasado el día.",
+          "pt-BR": "Ele riu e contou a Watson sobre o seu dia.",
+          "id": "Ia tertawa dan menceritakan harinya kepada Watson.",
+          "ar": "ضحك وحكى لواطسون عن يومه.",
+          "vi": "Ông bật cười và kể cho Watson nghe về một ngày của mình.",
+          "hi": "वे हँसे और वॉटसन को अपने दिन के बारे में बताया।",
+          "ru": "Он рассмеялся и рассказал Ватсону, как прошёл его день.",
+          "bn": "তিনি হেসে ওয়াটসনকে নিজের দিনের কথা বললেন।",
+          "ur": "وہ ہنسے اور واٹسن کو اپنے دن کے بارے میں بتایا۔",
+          "th": "เขาหัวเราะแล้วเล่าให้วัตสันฟังถึงสิ่งที่เกิดขึ้นทั้งวัน"
+        }
+      },
+      {
+        "id": "cl-scandal-032",
+        "english": "He had gone to Irene Adler's little house, Briony Lodge.",
+        "turkish": "Irene Adler'in küçük evi Briony Lodge'a gitmişti.",
+        "translations": {
+          "es-419": "Había ido a la casita de Irene Adler, Briony Lodge.",
+          "pt-BR": "Ele tinha ido à casinha de Irene Adler, Briony Lodge.",
+          "id": "Ia pergi ke rumah kecil Irene Adler, Briony Lodge.",
+          "ar": "كان قد ذهب إلى بيت إيرين أدلر الصغير، بريوني لودج.",
+          "vi": "Ông đã đến ngôi nhà nhỏ của Irene Adler, Briony Lodge.",
+          "hi": "वे आइरीन एडलर के छोटे-से घर, ब्रायोनी लॉज, गए थे।",
+          "ru": "Он ходил к маленькому дому Ирэн Адлер, Брайони-лодж.",
+          "bn": "তিনি আইরিন অ্যাডলারের ছোট বাড়ি, ব্রায়োনি লজে গিয়েছিলেন।",
+          "ur": "وہ آئرین ایڈلر کے چھوٹے سے گھر، برائیونی لاج، گئے تھے۔",
+          "th": "เขาไปที่บ้านหลังเล็กของไอรีน แอดเลอร์ ชื่อไบรโอนีลอดจ์"
+        }
+      },
+      {
+        "id": "cl-scandal-033",
+        "english": "He helped the men in the stables and listened to their talk.",
+        "turkish": "Ahırdaki adamlara yardım etmiş ve konuşmalarını dinlemişti.",
+        "translations": {
+          "es-419": "Ayudó a los hombres de las caballerizas y escuchó sus conversaciones.",
+          "pt-BR": "Ele ajudou os homens nos estábulos e ouviu as conversas deles.",
+          "id": "Ia membantu para pria di kandang kuda dan mendengarkan obrolan mereka.",
+          "ar": "ساعد الرجال في الإسطبلات واستمع إلى أحاديثهم.",
+          "vi": "Ông giúp những người làm trong chuồng ngựa và nghe họ trò chuyện.",
+          "hi": "उन्होंने अस्तबल के आदमियों की मदद की और उनकी बातें सुनीं।",
+          "ru": "Он помогал конюхам в конюшнях и слушал их разговоры.",
+          "bn": "তিনি আস্তাবলের লোকদের সাহায্য করলেন আর তাদের কথাবার্তা শুনলেন।",
+          "ur": "انہوں نے اصطبل کے آدمیوں کی مدد کی اور ان کی باتیں سنیں۔",
+          "th": "เขาช่วยงานพวกคนในคอกม้าและฟังพวกเขาคุยกัน"
+        }
+      },
+      {
+        "id": "cl-scandal-034",
+        "english": "They said that Miss Adler was lovely, and that she sang beautifully.",
+        "turkish": "Bayan Adler'in çok güzel olduğunu ve harika şarkı söylediğini anlattılar.",
+        "translations": {
+          "es-419": "Dijeron que la señorita Adler era encantadora y que cantaba de maravilla.",
+          "pt-BR": "Disseram que a senhorita Adler era encantadora e cantava lindamente.",
+          "id": "Mereka bilang Nona Adler sangat cantik dan bernyanyi dengan indah.",
+          "ar": "قالوا إنّ الآنسة أدلر فاتنة، وإنّها تغنّي بشكل جميل.",
+          "vi": "Họ nói cô Adler rất duyên dáng và hát rất hay.",
+          "hi": "उन्होंने बताया कि मिस एडलर बहुत सुंदर हैं और बहुत अच्छा गाती हैं।",
+          "ru": "Они говорили, что мисс Адлер прелестна и чудесно поёт.",
+          "bn": "তারা বলল, মিস অ্যাডলার খুব সুন্দরী আর চমৎকার গান করেন।",
+          "ur": "انہوں نے بتایا کہ مس ایڈلر بہت حسین ہیں اور بہت اچھا گاتی ہیں۔",
+          "th": "พวกเขาบอกว่าคุณแอดเลอร์งดงามและร้องเพลงไพเราะ"
+        }
+      },
+      {
+        "id": "cl-scandal-035",
+        "english": "Only one man visited her often, a young lawyer called Godfrey Norton.",
+        "turkish": "Onu sık sık ziyaret eden tek kişi, Godfrey Norton adında genç bir avukattı.",
+        "translations": {
+          "es-419": "Solo un hombre la visitaba a menudo, un joven abogado llamado Godfrey Norton.",
+          "pt-BR": "Só um homem a visitava com frequência, um jovem advogado chamado Godfrey Norton.",
+          "id": "Hanya satu pria yang sering mengunjunginya, seorang pengacara muda bernama Godfrey Norton.",
+          "ar": "لم يكن يزورها كثيرًا سوى رجل واحد، محامٍ شابّ اسمه غودفري نورتون.",
+          "vi": "Chỉ có một người đàn ông hay đến thăm cô, một luật sư trẻ tên là Godfrey Norton.",
+          "hi": "सिर्फ़ एक आदमी उनसे अक्सर मिलने आता था, गॉडफ़्रे नॉर्टन नाम का एक युवा वकील।",
+          "ru": "Часто к ней приходил только один человек, молодой адвокат Годфри Нортон.",
+          "bn": "শুধু একজন লোক প্রায়ই তাঁর কাছে আসতেন, গডফ্রে নর্টন নামে এক তরুণ উকিল।",
+          "ur": "صرف ایک آدمی اکثر ان سے ملنے آتا تھا، گوڈفری نارٹن نام کا ایک نوجوان وکیل۔",
+          "th": "มีชายเพียงคนเดียวที่มาหาเธอบ่อย ๆ คือทนายหนุ่มชื่อก็อดฟรีย์ นอร์ตัน"
+        }
+      },
+      {
+        "id": "cl-scandal-036",
+        "english": "While Holmes watched, Norton arrived in a cab and rushed into the house.",
+        "turkish": "Holmes izlerken Norton bir kiralık arabayla geldi ve koşarak eve girdi.",
+        "translations": {
+          "es-419": "Mientras Holmes observaba, Norton llegó en un coche de alquiler y entró corriendo en la casa.",
+          "pt-BR": "Enquanto Holmes observava, Norton chegou num cabriolé e entrou correndo na casa.",
+          "id": "Saat Holmes mengawasi, Norton tiba dengan kereta sewaan dan bergegas masuk ke rumah.",
+          "ar": "وبينما كان هولمز يراقب، وصل نورتون في عربة أجرة واندفع إلى داخل البيت.",
+          "vi": "Trong lúc Holmes quan sát, Norton đến bằng xe ngựa thuê và vội vã vào nhà.",
+          "hi": "होम्स देख ही रहे थे कि नॉर्टन एक किराए की बग्घी में आया और भागकर घर में घुस गया।",
+          "ru": "Пока Холмс наблюдал, Нортон подъехал в кэбе и бросился в дом.",
+          "bn": "হোমস যখন দেখছিলেন, নর্টন একটা ভাড়ার গাড়িতে এসে ছুটে বাড়িতে ঢুকলেন।",
+          "ur": "ہومز دیکھ ہی رہے تھے کہ نارٹن ایک کرائے کی بگھی میں آیا اور دوڑ کر گھر میں گھس گیا۔",
+          "th": "ขณะที่โฮมส์เฝ้าดู นอร์ตันนั่งรถม้ารับจ้างมาถึงแล้วรีบวิ่งเข้าบ้าน"
+        }
+      },
+      {
+        "id": "cl-scandal-037",
+        "english": "Half an hour later, he ran out again.",
+        "turkish": "Yarım saat sonra yine koşarak çıktı.",
+        "translations": {
+          "es-419": "Media hora después, salió corriendo otra vez.",
+          "pt-BR": "Meia hora depois, ele saiu correndo de novo.",
+          "id": "Setengah jam kemudian, ia berlari keluar lagi.",
+          "ar": "بعد نصف ساعة، خرج مسرعًا من جديد.",
+          "vi": "Nửa giờ sau, anh ta lại chạy ra.",
+          "hi": "आधे घंटे बाद वह फिर भागता हुआ बाहर निकला।",
+          "ru": "Через полчаса он снова выбежал.",
+          "bn": "আধ ঘণ্টা পরে তিনি আবার দৌড়ে বেরিয়ে এলেন।",
+          "ur": "آدھے گھنٹے بعد وہ پھر دوڑتا ہوا باہر نکلا۔",
+          "th": "ครึ่งชั่วโมงต่อมา เขาก็วิ่งออกมาอีก"
+        }
+      },
+      {
+        "id": "cl-scandal-038",
+        "english": "\"Drive to the Church of St Monica as fast as you can!\" he shouted.",
+        "turkish": "\"Olabildiğince hızlı Aziz Monica Kilisesi'ne sür!\" diye bağırdı.",
+        "translations": {
+          "es-419": "—¡Lléveme a la iglesia de Santa Mónica lo más rápido que pueda! —gritó.",
+          "pt-BR": "— Para a Igreja de Santa Mônica, o mais rápido que puder! — gritou ele.",
+          "id": "\"Ke Gereja Santa Monica, secepat mungkin!\" teriaknya.",
+          "ar": "صاح: «إلى كنيسة القدّيسة مونيكا بأقصى سرعة!»",
+          "vi": "\"Đến nhà thờ Thánh Monica, nhanh hết mức có thể!\" anh ta hét.",
+          "hi": "\"जितनी जल्दी हो सके, सेंट मोनिका चर्च चलो!\" वह चिल्लाया।",
+          "ru": "«В церковь Святой Моники, как можно быстрее!» — крикнул он.",
+          "bn": "\"যত জোরে পারো সেন্ট মনিকার গির্জায় চলো!\" তিনি চেঁচালেন।",
+          "ur": "\"جتنی جلدی ہو سکے، سینٹ مونیکا چرچ چلو!\" وہ چلایا۔",
+          "th": "\"ไปโบสถ์เซนต์โมนิกา เร็วที่สุดเท่าที่จะเร็วได้!\" เขาตะโกน"
+        }
+      },
+      {
+        "id": "cl-scandal-039",
+        "english": "A minute later, Irene Adler came out and jumped into another carriage.",
+        "turkish": "Bir dakika sonra Irene Adler dışarı çıktı ve başka bir arabaya atladı.",
+        "translations": {
+          "es-419": "Un minuto después, Irene Adler salió y subió de un salto a otro carruaje.",
+          "pt-BR": "Um minuto depois, Irene Adler saiu e pulou em outra carruagem.",
+          "id": "Semenit kemudian, Irene Adler keluar dan melompat ke kereta lain.",
+          "ar": "بعد دقيقة، خرجت إيرين أدلر وقفزت إلى عربة أخرى.",
+          "vi": "Một phút sau, Irene Adler bước ra và nhảy lên một cỗ xe khác.",
+          "hi": "एक मिनट बाद आइरीन एडलर बाहर आईं और दूसरी बग्घी में बैठ गईं।",
+          "ru": "Через минуту вышла Ирэн Адлер и вскочила в другую карету.",
+          "bn": "এক মিনিট পরে আইরিন অ্যাডলার বেরিয়ে এসে আরেকটা গাড়িতে উঠে পড়লেন।",
+          "ur": "ایک منٹ بعد آئرین ایڈلر باہر آئیں اور ایک دوسری بگھی میں سوار ہو گئیں۔",
+          "th": "หนึ่งนาทีต่อมา ไอรีน แอดเลอร์ก็ออกมาและกระโดดขึ้นรถม้าอีกคัน"
+        }
+      },
+      {
+        "id": "cl-scandal-040",
+        "english": "Holmes took a cab and followed them to the church.",
+        "turkish": "Holmes da bir araba tuttu ve onları kiliseye kadar izledi.",
+        "translations": {
+          "es-419": "Holmes tomó un coche y los siguió hasta la iglesia.",
+          "pt-BR": "Holmes pegou um cabriolé e os seguiu até a igreja.",
+          "id": "Holmes naik kereta sewaan dan mengikuti mereka ke gereja.",
+          "ar": "استقلّ هولمز عربة أجرة وتبعهما إلى الكنيسة.",
+          "vi": "Holmes thuê một chiếc xe và đi theo họ đến nhà thờ.",
+          "hi": "होम्स ने एक बग्घी ली और उनके पीछे-पीछे चर्च तक गए।",
+          "ru": "Холмс взял кэб и поехал за ними в церковь.",
+          "bn": "হোমস একটা গাড়ি নিয়ে তাদের পিছু পিছু গির্জায় গেলেন।",
+          "ur": "ہومز نے ایک بگھی لی اور ان کے پیچھے پیچھے چرچ تک گئے۔",
+          "th": "โฮมส์เรียกรถม้ารับจ้างแล้วตามพวกเขาไปที่โบสถ์"
+        }
+      },
+      {
+        "id": "cl-scandal-041",
+        "english": "Inside, a priest stood waiting with Norton and Irene Adler.",
+        "turkish": "İçeride bir rahip, Norton ve Irene Adler'le birlikte bekliyordu.",
+        "translations": {
+          "es-419": "Dentro, un sacerdote esperaba con Norton e Irene Adler.",
+          "pt-BR": "Lá dentro, um padre esperava com Norton e Irene Adler.",
+          "id": "Di dalam, seorang pendeta berdiri menunggu bersama Norton dan Irene Adler.",
+          "ar": "في الداخل، كان قسّيس واقفًا ينتظر مع نورتون وإيرين أدلر.",
+          "vi": "Bên trong, một vị linh mục đứng chờ cùng Norton và Irene Adler.",
+          "hi": "अंदर एक पादरी नॉर्टन और आइरीन एडलर के साथ इंतज़ार कर रहे थे।",
+          "ru": "Внутри их ждал священник вместе с Нортоном и Ирэн Адлер.",
+          "bn": "ভেতরে একজন পাদ্রি নর্টন আর আইরিন অ্যাডলারের সঙ্গে অপেক্ষা করছিলেন।",
+          "ur": "اندر ایک پادری نارٹن اور آئرین ایڈلر کے ساتھ انتظار کر رہے تھے۔",
+          "th": "ข้างในมีบาทหลวงยืนรออยู่กับนอร์ตันและไอรีน แอดเลอร์"
+        }
+      },
+      {
+        "id": "cl-scandal-042",
+        "english": "Suddenly Norton ran to Holmes and pulled him to the front.",
+        "turkish": "Birden Norton, Holmes'a koştu ve onu öne doğru çekti.",
+        "translations": {
+          "es-419": "De repente Norton corrió hacia Holmes y lo llevó hasta el frente.",
+          "pt-BR": "De repente Norton correu até Holmes e o puxou para a frente.",
+          "id": "Tiba-tiba Norton berlari ke arah Holmes dan menariknya ke depan.",
+          "ar": "فجأة ركض نورتون نحو هولمز وجرّه إلى الأمام.",
+          "vi": "Bỗng Norton chạy đến chỗ Holmes và kéo ông lên phía trước.",
+          "hi": "अचानक नॉर्टन दौड़कर होम्स के पास आया और उन्हें आगे खींच ले गया।",
+          "ru": "Вдруг Нортон подбежал к Холмсу и потащил его вперёд.",
+          "bn": "হঠাৎ নর্টন দৌড়ে হোমসের কাছে এসে তাঁকে সামনে টেনে নিয়ে গেলেন।",
+          "ur": "اچانک نارٹن دوڑ کر ہومز کے پاس آیا اور انہیں آگے کھینچ لے گیا۔",
+          "th": "ทันใดนั้นนอร์ตันก็วิ่งมาหาโฮมส์แล้วดึงเขาไปด้านหน้า"
+        }
+      },
+      {
+        "id": "cl-scandal-043",
+        "english": "\"We need a witness, or the wedding cannot happen!\" he cried.",
+        "turkish": "\"Bir tanığa ihtiyacımız var, yoksa nikâh kıyılamaz!\" diye haykırdı.",
+        "translations": {
+          "es-419": "—¡Necesitamos un testigo, o la boda no puede celebrarse! —exclamó.",
+          "pt-BR": "— Precisamos de uma testemunha, senão o casamento não pode acontecer! — exclamou ele.",
+          "id": "\"Kami butuh saksi, kalau tidak pernikahan ini tidak bisa berlangsung!\" serunya.",
+          "ar": "صاح: «نحتاج إلى شاهد، وإلّا فلن يتمّ الزواج!»",
+          "vi": "\"Chúng tôi cần một nhân chứng, nếu không lễ cưới không thể tiến hành!\" anh ta kêu lên.",
+          "hi": "\"हमें एक गवाह चाहिए, वरना शादी नहीं हो सकती!\" वह चिल्लाया।",
+          "ru": "«Нам нужен свидетель, иначе венчание не состоится!» — воскликнул он.",
+          "bn": "\"আমাদের একজন সাক্ষী দরকার, নইলে বিয়েটা হবে না!\" তিনি চেঁচিয়ে বললেন।",
+          "ur": "\"ہمیں ایک گواہ چاہیے، ورنہ شادی نہیں ہو سکتی!\" وہ پکارا۔",
+          "th": "\"เราต้องการพยาน ไม่อย่างนั้นงานแต่งจะจัดไม่ได้!\" เขาร้อง"
+        }
+      },
+      {
+        "id": "cl-scandal-044",
+        "english": "So Sherlock Holmes, in his disguise, helped Irene Adler to marry Godfrey Norton.",
+        "turkish": "Böylece kılık değiştirmiş Sherlock Holmes, Irene Adler'in Godfrey Norton'la evlenmesine yardım etti.",
+        "translations": {
+          "es-419": "Así, Sherlock Holmes, disfrazado, ayudó a Irene Adler a casarse con Godfrey Norton.",
+          "pt-BR": "Assim, Sherlock Holmes, disfarçado, ajudou Irene Adler a se casar com Godfrey Norton.",
+          "id": "Jadi Sherlock Holmes, dalam penyamarannya, membantu Irene Adler menikah dengan Godfrey Norton.",
+          "ar": "وهكذا ساعد شيرلوك هولمز، وهو متنكّر، إيرين أدلر على الزواج من غودفري نورتون.",
+          "vi": "Thế là Sherlock Holmes, trong bộ dạng cải trang, đã giúp Irene Adler kết hôn với Godfrey Norton.",
+          "hi": "इस तरह भेस बदले शर्लक होम्स ने आइरीन एडलर की गॉडफ़्रे नॉर्टन से शादी कराने में मदद की।",
+          "ru": "Так переодетый Шерлок Холмс помог Ирэн Адлер обвенчаться с Годфри Нортоном.",
+          "bn": "এভাবে ছদ্মবেশী শার্লক হোমস আইরিন অ্যাডলারকে গডফ্রে নর্টনের সঙ্গে বিয়েতে সাহায্য করলেন।",
+          "ur": "یوں بھیس بدلے شرلاک ہومز نے آئرین ایڈلر کی گوڈفری نارٹن سے شادی کرانے میں مدد کی۔",
+          "th": "ด้วยเหตุนี้ เชอร์ล็อก โฮมส์ในคราบปลอมตัวจึงได้ช่วยให้ไอรีน แอดเลอร์แต่งงานกับก็อดฟรีย์ นอร์ตัน"
+        }
+      },
+      {
+        "id": "cl-scandal-045",
+        "english": "The bride even gave him a gold coin for his trouble.",
+        "turkish": "Gelin zahmeti için ona bir altın para bile verdi.",
+        "translations": {
+          "es-419": "La novia hasta le dio una moneda de oro por la molestia.",
+          "pt-BR": "A noiva até lhe deu uma moeda de ouro pelo incômodo.",
+          "id": "Pengantin wanita itu bahkan memberinya sekeping koin emas sebagai upah.",
+          "ar": "حتّى إنّ العروس أعطته قطعة نقدية ذهبية مقابل تعبه.",
+          "vi": "Cô dâu còn tặng ông một đồng tiền vàng để cảm ơn.",
+          "hi": "दुल्हन ने तो उन्हें उनकी तकलीफ़ के लिए एक सोने का सिक्का भी दिया।",
+          "ru": "Невеста даже дала ему золотую монету за беспокойство.",
+          "bn": "কনে এমনকি তাঁর কষ্টের জন্য একটা সোনার মুদ্রাও দিলেন।",
+          "ur": "دلہن نے تو انہیں ان کی زحمت کے بدلے ایک سونے کا سکہ بھی دیا۔",
+          "th": "เจ้าสาวยังให้เหรียญทองแก่เขาเป็นค่าเหนื่อยด้วย"
+        }
+      },
+      {
+        "id": "cl-scandal-046",
+        "english": "\"Now she is married, and she may leave London at any moment,\" said Holmes.",
+        "turkish": "\"Artık evli ve her an Londra'dan ayrılabilir,\" dedi Holmes.",
+        "translations": {
+          "es-419": "—Ahora está casada, y puede irse de Londres en cualquier momento —dijo Holmes.",
+          "pt-BR": "— Agora ela está casada e pode deixar Londres a qualquer momento — disse Holmes.",
+          "id": "\"Sekarang ia sudah menikah, dan bisa meninggalkan London kapan saja,\" kata Holmes.",
+          "ar": "قال هولمز: «الآن هي متزوّجة، وقد تغادر لندن في أيّ لحظة».",
+          "vi": "\"Giờ cô ta đã lấy chồng, và có thể rời London bất cứ lúc nào,\" Holmes nói.",
+          "hi": "\"अब उनकी शादी हो चुकी है, और वे कभी भी लंदन छोड़ सकती हैं,\" होम्स ने कहा।",
+          "ru": "«Теперь она замужем и может в любую минуту уехать из Лондона», — сказал Холмс.",
+          "bn": "\"এখন তিনি বিবাহিত, আর যেকোনো মুহূর্তে লন্ডন ছেড়ে চলে যেতে পারেন,\" বললেন হোমস।",
+          "ur": "\"اب ان کی شادی ہو چکی ہے، اور وہ کسی بھی لمحے لندن چھوڑ سکتی ہیں،\" ہومز نے کہا۔",
+          "th": "\"ตอนนี้เธอแต่งงานแล้ว และอาจออกจากลอนดอนได้ทุกเมื่อ\" โฮมส์กล่าว"
+        }
+      },
+      {
+        "id": "cl-scandal-047",
+        "english": "\"We must find the photograph tonight, and I need your help, Watson.\"",
+        "turkish": "\"Fotoğrafı bu gece bulmalıyız ve yardımına ihtiyacım var, Watson.\"",
+        "translations": {
+          "es-419": "—Debemos encontrar la fotografía esta noche, y necesito tu ayuda, Watson.",
+          "pt-BR": "— Precisamos achar a fotografia hoje à noite, e preciso da sua ajuda, Watson.",
+          "id": "\"Kita harus menemukan foto itu malam ini, dan aku butuh bantuanmu, Watson.\"",
+          "ar": "«يجب أن نجد الصورة الليلة، وأنا بحاجة إلى مساعدتك يا واطسون».",
+          "vi": "\"Chúng ta phải tìm ra tấm ảnh ngay tối nay, và tôi cần anh giúp, Watson.\"",
+          "hi": "\"हमें आज रात ही तस्वीर ढूँढनी होगी, और मुझे तुम्हारी मदद चाहिए, वॉटसन।\"",
+          "ru": "«Мы должны найти фотографию сегодня же вечером, и мне нужна ваша помощь, Ватсон».",
+          "bn": "\"আজ রাতেই আমাদের ছবিটা খুঁজে বের করতে হবে, আর আমার তোমার সাহায্য দরকার, ওয়াটসন।\"",
+          "ur": "\"ہمیں آج رات ہی تصویر ڈھونڈنی ہوگی، اور مجھے تمہاری مدد چاہیے، واٹسن۔\"",
+          "th": "\"เราต้องหารูปถ่ายให้เจอคืนนี้ และฉันต้องการความช่วยเหลือจากนาย วัตสัน\""
+        }
+      },
+      {
+        "id": "cl-scandal-048",
+        "english": "Holmes explained his plan as they ate a quick dinner.",
+        "turkish": "Holmes, aceleyle yemek yerlerken planını anlattı.",
+        "translations": {
+          "es-419": "Holmes explicó su plan mientras cenaban deprisa.",
+          "pt-BR": "Holmes explicou o plano enquanto jantavam às pressas.",
+          "id": "Holmes menjelaskan rencananya sambil mereka makan malam dengan cepat.",
+          "ar": "شرح هولمز خطّته بينما كانا يتناولان عشاءً سريعًا.",
+          "vi": "Holmes giải thích kế hoạch trong lúc hai người ăn tối vội vàng.",
+          "hi": "जल्दी-जल्दी खाना खाते हुए होम्स ने अपनी योजना समझाई।",
+          "ru": "За быстрым ужином Холмс объяснил свой план.",
+          "bn": "তাড়াতাড়ি রাতের খাবার খেতে খেতে হোমস তাঁর পরিকল্পনা বুঝিয়ে বললেন।",
+          "ur": "جلدی جلدی کھانا کھاتے ہوئے ہومز نے اپنا منصوبہ سمجھایا۔",
+          "th": "ระหว่างที่รีบกินอาหารเย็น โฮมส์อธิบายแผนของเขา"
+        }
+      },
+      {
+        "id": "cl-scandal-049",
+        "english": "He gave Watson a small smoke rocket, the kind that plumbers use.",
+        "turkish": "Watson'a, tesisatçıların kullandığı türden küçük bir duman fişeği verdi.",
+        "translations": {
+          "es-419": "Le dio a Watson un pequeño cohete de humo, de los que usan los plomeros.",
+          "pt-BR": "Ele deu a Watson um pequeno foguete de fumaça, do tipo que os encanadores usam.",
+          "id": "Ia memberi Watson sebuah roket asap kecil, jenis yang dipakai tukang ledeng.",
+          "ar": "أعطى واطسون صاروخ دخان صغيرًا، من النوع الذي يستعمله السبّاكون.",
+          "vi": "Ông đưa cho Watson một quả pháo khói nhỏ, loại mà thợ sửa ống nước hay dùng.",
+          "hi": "उन्होंने वॉटसन को धुएँ वाला एक छोटा रॉकेट दिया, जैसा प्लंबर इस्तेमाल करते हैं।",
+          "ru": "Он дал Ватсону маленькую дымовую ракету, какими пользуются водопроводчики.",
+          "bn": "তিনি ওয়াটসনকে একটা ছোট ধোঁয়ার রকেট দিলেন, যেমনটা কলের মিস্ত্রিরা ব্যবহার করে।",
+          "ur": "انہوں نے واٹسن کو دھوئیں والا ایک چھوٹا راکٹ دیا، جیسا پلمبر استعمال کرتے ہیں۔",
+          "th": "เขายื่นจรวดควันลูกเล็ก ๆ ให้วัตสัน แบบที่ช่างประปาใช้กัน"
+        }
+      },
+      {
+        "id": "cl-scandal-050",
+        "english": "\"When I raise my hand, throw this through the open window,\" he said.",
+        "turkish": "\"Elimi kaldırdığımda bunu açık pencereden içeri at,\" dedi.",
+        "translations": {
+          "es-419": "—Cuando levante la mano, lanza esto por la ventana abierta —dijo.",
+          "pt-BR": "— Quando eu levantar a mão, jogue isto pela janela aberta — disse ele.",
+          "id": "\"Saat aku mengangkat tangan, lemparkan ini lewat jendela yang terbuka,\" katanya.",
+          "ar": "قال: «عندما أرفع يدي، ارمِ هذا عبر النافذة المفتوحة».",
+          "vi": "\"Khi tôi giơ tay lên, hãy ném cái này qua cửa sổ đang mở,\" ông nói.",
+          "hi": "\"जब मैं हाथ उठाऊँ, तो इसे खुली खिड़की से अंदर फेंक देना,\" उन्होंने कहा।",
+          "ru": "«Когда я подниму руку, бросьте это в открытое окно», — сказал он.",
+          "bn": "\"আমি হাত তুললে এটা খোলা জানালা দিয়ে ভেতরে ছুড়ে দিও,\" তিনি বললেন।",
+          "ur": "\"جب میں ہاتھ اٹھاؤں، تو اسے کھلی کھڑکی سے اندر پھینک دینا،\" انہوں نے کہا۔",
+          "th": "\"เมื่อฉันยกมือ ให้โยนสิ่งนี้เข้าไปทางหน้าต่างที่เปิดอยู่\" เขาบอก"
+        }
+      },
+      {
+        "id": "cl-scandal-051",
+        "english": "\"Then shout 'Fire!' as loudly as you can.\"",
+        "turkish": "\"Sonra olabildiğince yüksek sesle 'Yangın var!' diye bağır.\"",
+        "translations": {
+          "es-419": "—Luego grita «¡Fuego!» lo más fuerte que puedas.",
+          "pt-BR": "— Depois grite \"Fogo!\" o mais alto que puder.",
+          "id": "\"Lalu teriakkan 'Kebakaran!' sekeras-kerasnya.\"",
+          "ar": "«ثمّ اصرخ: \"حريق!\" بأعلى صوتك».",
+          "vi": "\"Rồi hét 'Cháy!' thật to vào.\"",
+          "hi": "\"फिर जितनी ज़ोर से हो सके 'आग!' चिल्लाना।\"",
+          "ru": "«Потом кричите \"Пожар!\" как можно громче».",
+          "bn": "\"তারপর যত জোরে পারো 'আগুন!' বলে চেঁচাবে।\"",
+          "ur": "\"پھر جتنی زور سے ہو سکے 'آگ!' چلانا۔\"",
+          "th": "\"แล้วตะโกนว่า 'ไฟไหม้!' ให้ดังที่สุด\""
+        }
+      },
+      {
+        "id": "cl-scandal-052",
+        "english": "Then Holmes put on a new disguise, as a kind, simple old priest.",
+        "turkish": "Sonra Holmes yeni bir kılığa girdi: iyi kalpli, saf, yaşlı bir din adamı.",
+        "translations": {
+          "es-419": "Luego Holmes se puso un nuevo disfraz: el de un anciano sacerdote amable y sencillo.",
+          "pt-BR": "Depois Holmes vestiu um novo disfarce, o de um padre velho, bondoso e simples.",
+          "id": "Lalu Holmes mengenakan penyamaran baru, sebagai pendeta tua yang ramah dan sederhana.",
+          "ar": "ثمّ تنكّر هولمز من جديد في هيئة قسّيس عجوز طيّب بسيط.",
+          "vi": "Rồi Holmes cải trang lần nữa, thành một ông mục sư già hiền lành, chất phác.",
+          "hi": "फिर होम्स ने नया भेस धरा, एक दयालु, सीधे-सादे बूढ़े पादरी का।",
+          "ru": "Затем Холмс снова переоделся: теперь он был добродушным, простоватым старым священником.",
+          "bn": "তারপর হোমস নতুন ছদ্মবেশ ধরলেন, এক দয়ালু, সাদাসিধে বুড়ো পাদ্রির।",
+          "ur": "پھر ہومز نے نیا بھیس بدلا، ایک مہربان، سیدھے سادے بوڑھے پادری کا۔",
+          "th": "แล้วโฮมส์ก็ปลอมตัวใหม่ เป็นบาทหลวงชราผู้ใจดีและซื่อ ๆ"
+        }
+      },
+      {
+        "id": "cl-scandal-053",
+        "english": "At seven, they waited in the street outside Briony Lodge.",
+        "turkish": "Saat yedide Briony Lodge'un önündeki sokakta beklediler.",
+        "translations": {
+          "es-419": "A las siete, esperaron en la calle frente a Briony Lodge.",
+          "pt-BR": "Às sete, eles esperaram na rua em frente a Briony Lodge.",
+          "id": "Pukul tujuh, mereka menunggu di jalan di depan Briony Lodge.",
+          "ar": "في السابعة، انتظرا في الشارع أمام بريوني لودج.",
+          "vi": "Lúc bảy giờ, họ chờ ngoài phố trước Briony Lodge.",
+          "hi": "सात बजे वे ब्रायोनी लॉज के बाहर गली में इंतज़ार करने लगे।",
+          "ru": "В семь они ждали на улице у Брайони-лодж.",
+          "bn": "সাতটায় তাঁরা ব্রায়োনি লজের বাইরে রাস্তায় অপেক্ষা করতে লাগলেন।",
+          "ur": "سات بجے وہ برائیونی لاج کے باہر گلی میں انتظار کرنے لگے۔",
+          "th": "ตอนหนึ่งทุ่ม ทั้งสองรออยู่บนถนนหน้าไบรโอนีลอดจ์"
+        }
+      },
+      {
+        "id": "cl-scandal-054",
+        "english": "The street was strangely full of idle men, soldiers and nurses.",
+        "turkish": "Sokak tuhaf biçimde aylak adamlar, askerler ve dadılarla doluydu.",
+        "translations": {
+          "es-419": "La calle estaba extrañamente llena de holgazanes, soldados y niñeras.",
+          "pt-BR": "A rua estava estranhamente cheia de homens à toa, soldados e babás.",
+          "id": "Anehnya, jalan itu penuh dengan pria yang menganggur, tentara, dan pengasuh anak.",
+          "ar": "كان الشارع على نحو غريب مليئًا بالمتسكّعين والجنود والمربّيات.",
+          "vi": "Con phố đông lạ thường, toàn những kẻ vô công rồi nghề, lính tráng và vú em.",
+          "hi": "गली अजीब तरह से आवारा आदमियों, सिपाहियों और आयाओं से भरी थी।",
+          "ru": "Улица была странно полна бездельников, солдат и нянек.",
+          "bn": "রাস্তাটা অদ্ভুতভাবে ভরে ছিল বেকার লোক, সৈনিক আর আয়ায়।",
+          "ur": "گلی عجیب طرح سے آوارہ آدمیوں، سپاہیوں اور آیاؤں سے بھری تھی۔",
+          "th": "ถนนเต็มไปด้วยคนเตร็ดเตร่ ทหาร และพี่เลี้ยงเด็กอย่างน่าประหลาด"
+        }
+      },
+      {
+        "id": "cl-scandal-055",
+        "english": "When Irene's carriage arrived, two men began to fight over opening its door.",
+        "turkish": "Irene'in arabası gelince iki adam kapısını açmak için kavgaya tutuştu.",
+        "translations": {
+          "es-419": "Cuando llegó el carruaje de Irene, dos hombres empezaron a pelear por abrirle la puerta.",
+          "pt-BR": "Quando a carruagem de Irene chegou, dois homens começaram a brigar para abrir a porta.",
+          "id": "Ketika kereta Irene tiba, dua pria mulai berkelahi berebut membukakan pintunya.",
+          "ar": "عندما وصلت عربة إيرين، بدأ رجلان يتعاركان على فتح بابها.",
+          "vi": "Khi xe của Irene tới, hai gã đàn ông bắt đầu đánh nhau để giành mở cửa xe.",
+          "hi": "जैसे ही आइरीन की बग्घी पहुँची, दो आदमी उसका दरवाज़ा खोलने के लिए लड़ने लगे।",
+          "ru": "Когда подъехала карета Ирэн, двое мужчин начали драться за право открыть дверцу.",
+          "bn": "আইরিনের গাড়ি পৌঁছাতেই দুজন লোক তার দরজা খোলা নিয়ে মারামারি শুরু করল।",
+          "ur": "جیسے ہی آئرین کی بگھی پہنچی، دو آدمی اس کا دروازہ کھولنے کے لیے لڑنے لگے۔",
+          "th": "เมื่อรถม้าของไอรีนมาถึง ชายสองคนก็เริ่มต่อยกันเพื่อแย่งเปิดประตูรถ"
+        }
+      },
+      {
+        "id": "cl-scandal-056",
+        "english": "The old priest ran in to protect the lady, and he fell with blood on his face.",
+        "turkish": "Yaşlı din adamı hanımı korumak için araya girdi ve yüzü kan içinde yere düştü.",
+        "translations": {
+          "es-419": "El anciano sacerdote corrió a proteger a la dama y cayó con sangre en la cara.",
+          "pt-BR": "O velho padre correu para proteger a dama e caiu com sangue no rosto.",
+          "id": "Pendeta tua itu berlari untuk melindungi sang nyonya, lalu jatuh dengan wajah berdarah.",
+          "ar": "ركض القسّيس العجوز ليحمي السيّدة، فسقط والدم على وجهه.",
+          "vi": "Ông mục sư già lao vào che chở cho quý cô, rồi ngã xuống, mặt đầy máu.",
+          "hi": "बूढ़ा पादरी महिला को बचाने दौड़ा, और ख़ून से सना चेहरा लिए गिर पड़ा।",
+          "ru": "Старый священник бросился защищать даму и упал с окровавленным лицом.",
+          "bn": "বুড়ো পাদ্রি মহিলাকে বাঁচাতে ছুটে গেলেন, আর মুখে রক্ত নিয়ে পড়ে গেলেন।",
+          "ur": "بوڑھا پادری خاتون کو بچانے دوڑا، اور خون آلود چہرے کے ساتھ گر پڑا۔",
+          "th": "บาทหลวงชราวิ่งเข้าไปปกป้องคุณผู้หญิง แล้วล้มลงโดยมีเลือดเปื้อนหน้า"
+        }
+      },
+      {
+        "id": "cl-scandal-057",
+        "english": "Of course, the fight and the blood were all part of Holmes's trick.",
+        "turkish": "Elbette kavga da kan da Holmes'un oyununun bir parçasıydı.",
+        "translations": {
+          "es-419": "Por supuesto, la pelea y la sangre eran parte del truco de Holmes.",
+          "pt-BR": "É claro que a briga e o sangue faziam parte do truque de Holmes.",
+          "id": "Tentu saja, perkelahian dan darah itu semuanya bagian dari tipuan Holmes.",
+          "ar": "وبالطبع، كان العراك والدم كلّه جزءًا من حيلة هولمز.",
+          "vi": "Dĩ nhiên, trận ẩu đả và máu me đều là một phần mánh khóe của Holmes.",
+          "hi": "बेशक, लड़ाई और ख़ून, सब होम्स की चाल का हिस्सा थे।",
+          "ru": "Конечно, и драка, и кровь были частью уловки Холмса.",
+          "bn": "অবশ্যই, মারামারি আর রক্ত সবই ছিল হোমসের কৌশলের অংশ।",
+          "ur": "بے شک، لڑائی اور خون سب ہومز کی چال کا حصہ تھے۔",
+          "th": "แน่นอนว่าทั้งการต่อยกันและเลือดล้วนเป็นส่วนหนึ่งของกลอุบายของโฮมส์"
+        }
+      },
+      {
+        "id": "cl-scandal-058",
+        "english": "\"The poor gentleman is hurt! Bring him inside,\" said Irene Adler kindly.",
+        "turkish": "\"Zavallı beyefendi yaralandı! Onu içeri getirin,\" dedi Irene Adler şefkatle.",
+        "translations": {
+          "es-419": "—¡El pobre caballero está herido! Tráiganlo adentro —dijo Irene Adler con bondad.",
+          "pt-BR": "— O pobre senhor está ferido! Tragam-no para dentro — disse Irene Adler com bondade.",
+          "id": "\"Tuan malang itu terluka! Bawa dia masuk,\" kata Irene Adler dengan ramah.",
+          "ar": "قالت إيرين أدلر بلطف: «السيّد المسكين مصاب! أدخلوه».",
+          "vi": "\"Ông cụ đáng thương bị thương rồi! Đưa ông ấy vào trong,\" Irene Adler ân cần nói.",
+          "hi": "\"बेचारे सज्जन घायल हो गए हैं! इन्हें अंदर ले आइए,\" आइरीन एडलर ने दया से कहा।",
+          "ru": "«Бедный джентльмен ранен! Внесите его в дом», — ласково сказала Ирэн Адлер.",
+          "bn": "\"বেচারা ভদ্রলোক আহত! ওঁকে ভেতরে নিয়ে আসুন,\" সদয় স্বরে বললেন আইরিন অ্যাডলার।",
+          "ur": "\"بے چارے صاحب زخمی ہو گئے ہیں! انہیں اندر لے آئیے،\" آئرین ایڈلر نے مہربانی سے کہا۔",
+          "th": "\"สุภาพบุรุษผู้น่าสงสารบาดเจ็บ! พาเขาเข้ามาข้างใน\" ไอรีน แอดเลอร์พูดอย่างใจดี"
+        }
+      },
+      {
+        "id": "cl-scandal-059",
+        "english": "They laid him on a sofa in her sitting room.",
+        "turkish": "Onu oturma odasındaki bir kanepeye yatırdılar.",
+        "translations": {
+          "es-419": "Lo acostaron en un sofá de la sala.",
+          "pt-BR": "Eles o deitaram num sofá da sala de estar dela.",
+          "id": "Mereka membaringkannya di sofa di ruang duduknya.",
+          "ar": "مدّدوه على أريكة في غرفة جلوسها.",
+          "vi": "Họ đặt ông nằm trên chiếc ghế sofa trong phòng khách của cô.",
+          "hi": "उन्होंने उसे उनकी बैठक में एक सोफ़े पर लिटा दिया।",
+          "ru": "Его уложили на диван в её гостиной.",
+          "bn": "তাঁকে তাঁর বসার ঘরে একটা সোফায় শুইয়ে দেওয়া হল।",
+          "ur": "انہوں نے اسے ان کی بیٹھک میں ایک صوفے پر لٹا دیا۔",
+          "th": "พวกเขาวางเขาลงบนโซฟาในห้องนั่งเล่นของเธอ"
+        }
+      },
+      {
+        "id": "cl-scandal-060",
+        "english": "He asked for air, so someone opened the window.",
+        "turkish": "Hava istedi, biri de pencereyi açtı.",
+        "translations": {
+          "es-419": "Pidió aire, así que alguien abrió la ventana.",
+          "pt-BR": "Ele pediu ar, e alguém abriu a janela.",
+          "id": "Ia meminta udara segar, jadi seseorang membuka jendela.",
+          "ar": "طلب هواءً، ففتح أحدهم النافذة.",
+          "vi": "Ông xin chút không khí, nên có người mở cửa sổ.",
+          "hi": "उसने हवा माँगी, तो किसी ने खिड़की खोल दी।",
+          "ru": "Он попросил воздуха, и кто-то открыл окно.",
+          "bn": "তিনি একটু হাওয়া চাইলেন, তাই কেউ জানালাটা খুলে দিল।",
+          "ur": "اس نے ہوا مانگی، تو کسی نے کھڑکی کھول دی۔",
+          "th": "เขาขออากาศ ใครคนหนึ่งจึงเปิดหน้าต่าง"
+        }
+      },
+      {
+        "id": "cl-scandal-061",
+        "english": "Holmes raised his hand, and Watson threw the rocket into the room.",
+        "turkish": "Holmes elini kaldırdı ve Watson fişeği odaya fırlattı.",
+        "translations": {
+          "es-419": "Holmes levantó la mano, y Watson lanzó el cohete dentro de la habitación.",
+          "pt-BR": "Holmes levantou a mão, e Watson jogou o foguete dentro da sala.",
+          "id": "Holmes mengangkat tangannya, dan Watson melempar roket itu ke dalam ruangan.",
+          "ar": "رفع هولمز يده، فرمى واطسون الصاروخ داخل الغرفة.",
+          "vi": "Holmes giơ tay lên, và Watson ném quả pháo vào phòng.",
+          "hi": "होम्स ने हाथ उठाया, और वॉटसन ने रॉकेट कमरे में फेंक दिया।",
+          "ru": "Холмс поднял руку, и Ватсон бросил ракету в комнату.",
+          "bn": "হোমস হাত তুললেন, আর ওয়াটসন রকেটটা ঘরের ভেতর ছুড়ে দিলেন।",
+          "ur": "ہومز نے ہاتھ اٹھایا، اور واٹسن نے راکٹ کمرے میں پھینک دیا۔",
+          "th": "โฮมส์ยกมือขึ้น และวัตสันก็โยนจรวดเข้าไปในห้อง"
+        }
+      },
+      {
+        "id": "cl-scandal-062",
+        "english": "\"Fire!\" he shouted, and soon the whole street was shouting with him.",
+        "turkish": "\"Yangın var!\" diye bağırdı ve kısa sürede bütün sokak onunla birlikte bağırıyordu.",
+        "translations": {
+          "es-419": "—¡Fuego! —gritó, y pronto toda la calle gritaba con él.",
+          "pt-BR": "— Fogo! — gritou ele, e logo a rua inteira gritava junto.",
+          "id": "\"Kebakaran!\" teriaknya, dan segera seluruh jalan ikut berteriak.",
+          "ar": "صاح: «حريق!»، وسرعان ما صار الشارع كلّه يصرخ معه.",
+          "vi": "\"Cháy!\" ông hét lên, và chẳng mấy chốc cả con phố hét theo.",
+          "hi": "\"आग!\" वे चिल्लाए, और जल्दी ही पूरी गली उनके साथ चिल्लाने लगी।",
+          "ru": "«Пожар!» — закричал он, и вскоро вся улица кричала вместе с ним.",
+          "bn": "\"আগুন!\" তিনি চেঁচালেন, আর শিগগিরই গোটা রাস্তা তাঁর সঙ্গে চেঁচাতে লাগল।",
+          "ur": "\"آگ!\" وہ چلائے، اور جلد ہی پوری گلی ان کے ساتھ چلانے لگی۔",
+          "th": "\"ไฟไหม้!\" เขาตะโกน แล้วไม่นานคนทั้งถนนก็ตะโกนตาม"
+        }
+      },
+      {
+        "id": "cl-scandal-063",
+        "english": "Thick grey smoke filled the room, and Irene Adler ran across it.",
+        "turkish": "Odayı kalın gri bir duman kapladı ve Irene Adler odanın öbür ucuna koştu.",
+        "translations": {
+          "es-419": "Un humo gris y espeso llenó la habitación, e Irene Adler la cruzó corriendo.",
+          "pt-BR": "Uma fumaça cinza e espessa encheu a sala, e Irene Adler atravessou-a correndo.",
+          "id": "Asap abu-abu tebal memenuhi ruangan, dan Irene Adler berlari menyeberanginya.",
+          "ar": "ملأ دخان رماديّ كثيف الغرفة، فركضت إيرين أدلر عبرها.",
+          "vi": "Khói xám dày đặc tràn ngập căn phòng, và Irene Adler chạy băng qua.",
+          "hi": "गाढ़ा भूरा धुआँ कमरे में भर गया, और आइरीन एडलर दौड़कर कमरे के पार गईं।",
+          "ru": "Густой серый дым заполнил комнату, и Ирэн Адлер бросилась через неё.",
+          "bn": "ঘন ধূসর ধোঁয়ায় ঘর ভরে গেল, আর আইরিন অ্যাডলার ঘরের ওপাশে ছুটে গেলেন।",
+          "ur": "گاڑھا سرمئی دھواں کمرے میں بھر گیا، اور آئرین ایڈلر دوڑ کر کمرے کے پار گئیں۔",
+          "th": "ควันสีเทาหนาทึบตลบอบอวลทั่วห้อง และไอรีน แอดเลอร์ก็วิ่งข้ามห้องไป"
+        }
+      },
+      {
+        "id": "cl-scandal-064",
+        "english": "In danger, a woman always runs first to the thing she values most.",
+        "turkish": "Tehlike anında bir kadın her zaman ilk önce en değer verdiği şeye koşar.",
+        "translations": {
+          "es-419": "En peligro, una mujer siempre corre primero hacia lo que más valora.",
+          "pt-BR": "No perigo, uma mulher sempre corre primeiro para o que mais valoriza.",
+          "id": "Dalam bahaya, seorang wanita selalu berlari dulu ke barang yang paling berharga baginya.",
+          "ar": "في الخطر، تركض المرأة دائمًا أوّلًا إلى أغلى ما تملك.",
+          "vi": "Khi gặp nguy, người phụ nữ bao giờ cũng chạy trước tiên đến thứ quý nhất của mình.",
+          "hi": "ख़तरे में औरत हमेशा सबसे पहले उस चीज़ की ओर दौड़ती है जो उसे सबसे प्यारी हो।",
+          "ru": "В минуту опасности женщина всегда первым делом бросается к самому дорогому.",
+          "bn": "বিপদে পড়লে একজন নারী সবসময় আগে ছুটে যায় তার সবচেয়ে মূল্যবান জিনিসের দিকে।",
+          "ur": "خطرے میں عورت ہمیشہ سب سے پہلے اس چیز کی طرف دوڑتی ہے جو اسے سب سے عزیز ہو۔",
+          "th": "ยามมีภัย ผู้หญิงจะวิ่งไปหาสิ่งที่เธอหวงแหนที่สุดก่อนเสมอ"
+        }
+      },
+      {
+        "id": "cl-scandal-065",
+        "english": "She went straight to a sliding panel in the wall, just above the bell-rope.",
+        "turkish": "Doğruca duvardaki, zil ipinin hemen üstündeki sürgülü bir kapağa gitti.",
+        "translations": {
+          "es-419": "Fue directo a un panel corredizo en la pared, justo encima del cordón de la campanilla.",
+          "pt-BR": "Ela foi direto a um painel corrediço na parede, logo acima do cordão da campainha.",
+          "id": "Ia langsung menuju sebuah panel geser di dinding, tepat di atas tali lonceng.",
+          "ar": "ذهبت مباشرة إلى لوح منزلق في الجدار، فوق حبل الجرس تمامًا.",
+          "vi": "Cô đi thẳng đến một tấm ván trượt trên tường, ngay phía trên sợi dây chuông.",
+          "hi": "वे सीधे दीवार के एक सरकने वाले पटरे की ओर गईं, जो घंटी की डोरी के ठीक ऊपर था।",
+          "ru": "Она кинулась прямо к раздвижной панели в стене, как раз над шнурком звонка.",
+          "bn": "তিনি সোজা দেয়ালের একটা সরানো যায় এমন তক্তার কাছে গেলেন, ঘণ্টার দড়ির ঠিক ওপরে।",
+          "ur": "وہ سیدھی دیوار کے ایک سرکنے والے تختے کی طرف گئیں، جو گھنٹی کی ڈوری کے بالکل اوپر تھا۔",
+          "th": "เธอตรงไปที่แผงเลื่อนบนผนัง เหนือเชือกกระดิ่งพอดี"
+        }
+      },
+      {
+        "id": "cl-scandal-066",
+        "english": "Holmes saw her hand reach for it, and he saw the edge of a photograph.",
+        "turkish": "Holmes onun elinin oraya uzandığını ve bir fotoğrafın kenarını gördü.",
+        "translations": {
+          "es-419": "Holmes vio que su mano lo buscaba, y vio el borde de una fotografía.",
+          "pt-BR": "Holmes viu a mão dela ir até lá e viu a borda de uma fotografia.",
+          "id": "Holmes melihat tangannya meraih ke sana, dan ia melihat ujung sebuah foto.",
+          "ar": "رأى هولمز يدها تمتدّ إليه، ورأى طرف صورة.",
+          "vi": "Holmes thấy tay cô với tới đó, và ông nhìn thấy mép một tấm ảnh.",
+          "hi": "होम्स ने उनका हाथ वहाँ बढ़ते देखा, और एक तस्वीर का किनारा भी देखा।",
+          "ru": "Холмс увидел, как её рука потянулась туда, и заметил край фотографии.",
+          "bn": "হোমস দেখলেন তাঁর হাত সেদিকে এগোচ্ছে, আর একটা ছবির কোণ দেখতে পেলেন।",
+          "ur": "ہومز نے ان کا ہاتھ وہاں بڑھتے دیکھا، اور ایک تصویر کا کنارہ بھی دیکھا۔",
+          "th": "โฮมส์เห็นมือเธอเอื้อมไปที่นั่น และเห็นขอบของรูปถ่ายใบหนึ่ง"
+        }
+      },
+      {
+        "id": "cl-scandal-067",
+        "english": "\"It is a false alarm,\" he called out, and the lady quickly closed the panel.",
+        "turkish": "\"Yanlış alarm,\" diye seslendi; hanım da kapağı hızla kapattı.",
+        "translations": {
+          "es-419": "—¡Es una falsa alarma! —gritó él, y la dama cerró el panel enseguida.",
+          "pt-BR": "— É um alarme falso! — gritou ele, e a dama fechou o painel depressa.",
+          "id": "\"Itu alarm palsu,\" serunya, dan sang nyonya cepat-cepat menutup panel itu.",
+          "ar": "نادى: «إنّه إنذار كاذب»، فأغلقت السيّدة اللوح بسرعة.",
+          "vi": "\"Báo động giả thôi,\" ông nói to, và quý cô vội đóng tấm ván lại.",
+          "hi": "\"यह झूठी चेतावनी है,\" उन्होंने पुकारा, और महिला ने झट से पटरा बंद कर दिया।",
+          "ru": "«Ложная тревога!» — крикнул он, и дама быстро задвинула панель.",
+          "bn": "\"এটা মিথ্যে বিপদসংকেত,\" তিনি ডেকে বললেন, আর মহিলা তাড়াতাড়ি তক্তাটা বন্ধ করে দিলেন।",
+          "ur": "\"یہ جھوٹا الارم ہے،\" انہوں نے پکارا، اور خاتون نے جلدی سے تختہ بند کر دیا۔",
+          "th": "\"สัญญาณเตือนผิดพลาดน่ะ\" เขาร้องบอก และคุณผู้หญิงก็รีบปิดแผงนั้น"
+        }
+      },
+      {
+        "id": "cl-scandal-068",
+        "english": "A few minutes later, Holmes slipped away and joined Watson in the street.",
+        "turkish": "Birkaç dakika sonra Holmes sessizce çıktı ve sokakta Watson'a katıldı.",
+        "translations": {
+          "es-419": "Unos minutos después, Holmes se escabulló y se reunió con Watson en la calle.",
+          "pt-BR": "Alguns minutos depois, Holmes escapuliu e encontrou Watson na rua.",
+          "id": "Beberapa menit kemudian, Holmes menyelinap pergi dan menyusul Watson di jalan.",
+          "ar": "بعد دقائق قليلة، تسلّل هولمز خارجًا ولحق بواطسون في الشارع.",
+          "vi": "Vài phút sau, Holmes lẳng lặng rời đi và gặp Watson ngoài phố.",
+          "hi": "कुछ मिनट बाद होम्स चुपके से निकले और गली में वॉटसन से जा मिले।",
+          "ru": "Через несколько минут Холмс незаметно ускользнул и присоединился к Ватсону на улице.",
+          "bn": "কয়েক মিনিট পরে হোমস চুপিচুপি বেরিয়ে রাস্তায় ওয়াটসনের সঙ্গে মিললেন।",
+          "ur": "چند منٹ بعد ہومز چپکے سے نکلے اور گلی میں واٹسن سے جا ملے۔",
+          "th": "ไม่กี่นาทีต่อมา โฮมส์ก็แอบออกมาสมทบกับวัตสันบนถนน"
+        }
+      },
+      {
+        "id": "cl-scandal-069",
+        "english": "\"Now I know where she chose to hide it,\" he said happily.",
+        "turkish": "\"Artık onu nereye sakladığını biliyorum,\" dedi mutlu bir sesle.",
+        "translations": {
+          "es-419": "—Ahora sé dónde la esconde —dijo, contento.",
+          "pt-BR": "— Agora sei onde ela a esconde — disse ele, contente.",
+          "id": "\"Sekarang aku tahu di mana ia menyembunyikannya,\" katanya dengan gembira.",
+          "ar": "قال بسعادة: «الآن أعرف أين تخبّئها».",
+          "vi": "\"Giờ tôi biết cô ta giấu nó ở đâu rồi,\" ông vui vẻ nói.",
+          "hi": "\"अब मुझे पता है कि वे उसे कहाँ छिपाती हैं,\" उन्होंने ख़ुशी से कहा।",
+          "ru": "«Теперь я знаю, где она её прячет», — радостно сказал он.",
+          "bn": "\"এখন আমি জানি উনি ওটা কোথায় লুকিয়ে রাখেন,\" খুশি হয়ে বললেন তিনি।",
+          "ur": "\"اب مجھے پتا ہے کہ وہ اسے کہاں چھپاتی ہیں،\" انہوں نے خوشی سے کہا۔",
+          "th": "\"ตอนนี้ฉันรู้แล้วว่าเธอซ่อนมันไว้ที่ไหน\" เขาพูดอย่างดีใจ"
+        }
+      },
+      {
+        "id": "cl-scandal-070",
+        "english": "\"Tomorrow we will come with the King and take it before she wakes.\"",
+        "turkish": "\"Yarın Kral'la geleceğiz ve o uyanmadan onu alacağız.\"",
+        "translations": {
+          "es-419": "—Mañana vendremos con el rey y la tomaremos antes de que ella despierte.",
+          "pt-BR": "— Amanhã viremos com o rei e a pegaremos antes que ela acorde.",
+          "id": "\"Besok kita akan datang bersama Raja dan mengambilnya sebelum ia bangun.\"",
+          "ar": "«غدًا سنأتي مع الملك ونأخذها قبل أن تستيقظ».",
+          "vi": "\"Ngày mai chúng ta sẽ đến cùng nhà vua và lấy nó trước khi cô ta thức dậy.\"",
+          "hi": "\"कल हम राजा के साथ आएँगे और उनके जागने से पहले उसे ले लेंगे।\"",
+          "ru": "«Завтра мы придём с королём и заберём её, пока она не проснулась».",
+          "bn": "\"কাল আমরা রাজাকে নিয়ে আসব আর উনি জাগার আগেই ওটা নিয়ে নেব।\"",
+          "ur": "\"کل ہم بادشاہ کے ساتھ آئیں گے اور ان کے جاگنے سے پہلے اسے لے لیں گے۔\"",
+          "th": "\"พรุ่งนี้เราจะมากับกษัตริย์และเอามันไปก่อนที่เธอจะตื่น\""
+        }
+      },
+      {
+        "id": "cl-scandal-071",
+        "english": "Back in Baker Street, Holmes was looking for his key at the door.",
+        "turkish": "Baker Sokağı'na dönünce Holmes kapının önünde anahtarını arıyordu.",
+        "translations": {
+          "es-419": "De vuelta en Baker Street, Holmes buscaba su llave en la puerta.",
+          "pt-BR": "De volta à Baker Street, Holmes procurava a chave na porta.",
+          "id": "Kembali di Baker Street, Holmes sedang mencari kuncinya di depan pintu.",
+          "ar": "عند العودة إلى شارع بيكر، كان هولمز يبحث عن مفتاحه عند الباب.",
+          "vi": "Về đến phố Baker, Holmes đang tìm chìa khóa trước cửa.",
+          "hi": "बेकर स्ट्रीट लौटकर होम्स दरवाज़े पर अपनी चाबी ढूँढ रहे थे।",
+          "ru": "Вернувшись на Бейкер-стрит, Холмс искал у двери ключ.",
+          "bn": "বেকার স্ট্রিটে ফিরে হোমস দরজায় দাঁড়িয়ে চাবি খুঁজছিলেন।",
+          "ur": "بیکر اسٹریٹ واپس آ کر ہومز دروازے پر اپنی چابی ڈھونڈ رہے تھے۔",
+          "th": "เมื่อกลับมาถึงถนนเบเกอร์ โฮมส์กำลังหากุญแจอยู่หน้าประตู"
+        }
+      },
+      {
+        "id": "cl-scandal-072",
+        "english": "A slim young man in a long coat hurried past.",
+        "turkish": "Uzun paltolu, ince yapılı genç bir adam aceleyle yanlarından geçti.",
+        "translations": {
+          "es-419": "Un joven delgado con un abrigo largo pasó deprisa.",
+          "pt-BR": "Um rapaz magro de casaco comprido passou apressado.",
+          "id": "Seorang pemuda kurus bermantel panjang lewat dengan tergesa-gesa.",
+          "ar": "مرّ شابّ نحيل يرتدي معطفًا طويلًا مسرعًا.",
+          "vi": "Một chàng trai mảnh khảnh mặc áo choàng dài vội vã đi ngang qua.",
+          "hi": "लंबा कोट पहने एक दुबला-पतला नौजवान जल्दी-जल्दी पास से गुज़रा।",
+          "ru": "Мимо торопливо прошёл стройный юноша в длинном пальто.",
+          "bn": "লম্বা কোট পরা এক রোগা তরুণ তাড়াহুড়ো করে পাশ দিয়ে চলে গেল।",
+          "ur": "لمبا کوٹ پہنے ایک دبلا پتلا نوجوان جلدی جلدی پاس سے گزرا۔",
+          "th": "ชายหนุ่มรูปร่างผอมบางในเสื้อโค้ตยาวรีบเดินผ่านไป"
+        }
+      },
+      {
+        "id": "cl-scandal-073",
+        "english": "\"Good night, Mister Sherlock Holmes,\" said the stranger, and was gone.",
+        "turkish": "\"İyi geceler, Bay Sherlock Holmes,\" dedi yabancı ve gözden kayboldu.",
+        "translations": {
+          "es-419": "—Buenas noches, señor Sherlock Holmes —dijo el desconocido, y desapareció.",
+          "pt-BR": "— Boa noite, senhor Sherlock Holmes — disse o desconhecido, e sumiu.",
+          "id": "\"Selamat malam, Tuan Sherlock Holmes,\" kata orang asing itu, lalu menghilang.",
+          "ar": "قال الغريب: «تصبح على خير يا سيّد شيرلوك هولمز»، ثمّ اختفى.",
+          "vi": "\"Chúc ngủ ngon, ngài Sherlock Holmes,\" người lạ nói, rồi biến mất.",
+          "hi": "\"शुभ रात्रि, मिस्टर शर्लक होम्स,\" अजनबी ने कहा और ग़ायब हो गया।",
+          "ru": "«Доброй ночи, мистер Шерлок Холмс», — сказал незнакомец и исчез.",
+          "bn": "\"শুভরাত্রি, মিস্টার শার্লক হোমস,\" বলে অচেনা লোকটি মিলিয়ে গেল।",
+          "ur": "\"شب بخیر، مسٹر شرلاک ہومز،\" اجنبی نے کہا اور غائب ہو گیا۔",
+          "th": "\"ราตรีสวัสดิ์ คุณเชอร์ล็อก โฮมส์\" คนแปลกหน้าพูด แล้วก็หายไป"
+        }
+      },
+      {
+        "id": "cl-scandal-074",
+        "english": "\"I have heard that voice before,\" said Holmes, staring down the dark street.",
+        "turkish": "\"Bu sesi daha önce duymuştum,\" dedi Holmes karanlık sokağa bakarak.",
+        "translations": {
+          "es-419": "—He oído esa voz antes —dijo Holmes, mirando la calle oscura.",
+          "pt-BR": "— Já ouvi essa voz antes — disse Holmes, olhando a rua escura.",
+          "id": "\"Aku pernah mendengar suara itu,\" kata Holmes sambil menatap jalan yang gelap.",
+          "ar": "قال هولمز وهو يحدّق في الشارع المظلم: «لقد سمعت هذا الصوت من قبل».",
+          "vi": "\"Tôi đã từng nghe giọng nói đó,\" Holmes nói, nhìn chằm chằm xuống con phố tối.",
+          "hi": "\"यह आवाज़ मैंने पहले सुनी है,\" अँधेरी गली की ओर घूरते हुए होम्स ने कहा।",
+          "ru": "«Я уже слышал этот голос», — сказал Холмс, вглядываясь в тёмную улицу.",
+          "bn": "\"এই গলা আমি আগে শুনেছি,\" অন্ধকার রাস্তার দিকে তাকিয়ে বললেন হোমস।",
+          "ur": "\"یہ آواز میں نے پہلے سنی ہے،\" اندھیری گلی کی طرف گھورتے ہوئے ہومز نے کہا۔",
+          "th": "\"ฉันเคยได้ยินเสียงนั้นมาก่อน\" โฮมส์พูดพลางจ้องไปตามถนนมืด"
+        }
+      },
+      {
+        "id": "cl-scandal-075",
+        "english": "Early the next morning, Holmes, Watson and the King drove to Briony Lodge.",
+        "turkish": "Ertesi sabah erkenden Holmes, Watson ve Kral arabayla Briony Lodge'a gitti.",
+        "translations": {
+          "es-419": "A primera hora de la mañana siguiente, Holmes, Watson y el rey fueron en coche a Briony Lodge.",
+          "pt-BR": "Bem cedo na manhã seguinte, Holmes, Watson e o rei foram de carruagem até Briony Lodge.",
+          "id": "Pagi-pagi sekali keesokan harinya, Holmes, Watson, dan sang Raja berkendara ke Briony Lodge.",
+          "ar": "في الصباح الباكر من اليوم التالي، توجّه هولمز وواطسون والملك بالعربة إلى بريوني لودج.",
+          "vi": "Sáng sớm hôm sau, Holmes, Watson và nhà vua đi xe đến Briony Lodge.",
+          "hi": "अगली सुबह तड़के होम्स, वॉटसन और राजा बग्घी में ब्रायोनी लॉज पहुँचे।",
+          "ru": "Рано утром Холмс, Ватсон и король поехали в Брайони-лодж.",
+          "bn": "পরদিন ভোরে হোমস, ওয়াটসন আর রাজা গাড়ি করে ব্রায়োনি লজে গেলেন।",
+          "ur": "اگلی صبح سویرے ہومز، واٹسن اور بادشاہ بگھی میں برائیونی لاج پہنچے۔",
+          "th": "เช้าตรู่วันรุ่งขึ้น โฮมส์ วัตสัน และกษัตริย์นั่งรถม้าไปที่ไบรโอนีลอดจ์"
+        }
+      },
+      {
+        "id": "cl-scandal-076",
+        "english": "The King was excited, but he also looked a little sad.",
+        "turkish": "Kral heyecanlıydı ama biraz da üzgün görünüyordu.",
+        "translations": {
+          "es-419": "El rey estaba emocionado, pero también parecía un poco triste.",
+          "pt-BR": "O rei estava animado, mas também parecia um pouco triste.",
+          "id": "Sang Raja bersemangat, tetapi ia juga tampak sedikit sedih.",
+          "ar": "كان الملك متحمّسًا، لكنّه بدا حزينًا قليلًا أيضًا.",
+          "vi": "Nhà vua háo hức, nhưng cũng có vẻ hơi buồn.",
+          "hi": "राजा उत्साहित थे, पर थोड़े उदास भी लग रहे थे।",
+          "ru": "Король был взволнован, но выглядел и немного грустным.",
+          "bn": "রাজা উত্তেজিত ছিলেন, তবে একটু বিষণ্ণও দেখাচ্ছিল।",
+          "ur": "بادشاہ پرجوش تھے، مگر تھوڑے اداس بھی لگ رہے تھے۔",
+          "th": "กษัตริย์ทรงตื่นเต้น แต่ก็ดูเศร้าอยู่บ้าง"
+        }
+      },
+      {
+        "id": "cl-scandal-077",
+        "english": "\"So she is married now,\" he said quietly. \"She loves her husband, not me.\"",
+        "turkish": "\"Demek artık evli,\" dedi sessizce. \"Beni değil, kocasını seviyor.\"",
+        "translations": {
+          "es-419": "—Así que ahora está casada —dijo en voz baja—. Ama a su esposo, no a mí.",
+          "pt-BR": "— Então agora ela está casada — disse ele baixinho. — Ela ama o marido, não a mim.",
+          "id": "\"Jadi sekarang ia sudah menikah,\" katanya pelan. \"Ia mencintai suaminya, bukan aku.\"",
+          "ar": "قال بهدوء: «إذن هي متزوّجة الآن. إنّها تحبّ زوجها، لا أنا».",
+          "vi": "\"Vậy là giờ cô ấy đã lấy chồng,\" ông khẽ nói. \"Cô ấy yêu chồng mình, chứ không phải ta.\"",
+          "hi": "\"तो अब उसकी शादी हो गई है,\" उन्होंने धीरे से कहा। \"वह अपने पति से प्यार करती है, मुझसे नहीं।\"",
+          "ru": "«Значит, теперь она замужем, — тихо сказал он. — Она любит мужа, а не меня».",
+          "bn": "\"তাহলে এখন সে বিবাহিত,\" আস্তে বললেন তিনি। \"সে তার স্বামীকে ভালোবাসে, আমাকে নয়।\"",
+          "ur": "\"تو اب اس کی شادی ہو گئی ہے،\" انہوں نے آہستہ سے کہا۔ \"وہ اپنے شوہر سے محبت کرتی ہے، مجھ سے نہیں۔\"",
+          "th": "\"ถ้าเช่นนั้นตอนนี้นางก็แต่งงานแล้ว\" พระองค์ตรัสเบา ๆ \"นางรักสามีของนาง ไม่ใช่ข้า\""
+        }
+      },
+      {
+        "id": "cl-scandal-078",
+        "english": "An old servant opened the door before they could ring.",
+        "turkish": "Daha zili çalamadan yaşlı bir hizmetçi kapıyı açtı.",
+        "translations": {
+          "es-419": "Una vieja criada abrió la puerta antes de que pudieran llamar.",
+          "pt-BR": "Uma velha criada abriu a porta antes que eles pudessem tocar a campainha.",
+          "id": "Seorang pelayan tua membukakan pintu sebelum mereka sempat membunyikan bel.",
+          "ar": "فتحت خادمة عجوز الباب قبل أن يقرعوا الجرس.",
+          "vi": "Một bà người hầu già ra mở cửa trước khi họ kịp bấm chuông.",
+          "hi": "उनके घंटी बजाने से पहले ही एक बूढ़ी नौकरानी ने दरवाज़ा खोल दिया।",
+          "ru": "Старая служанка открыла дверь, прежде чем они успели позвонить.",
+          "bn": "তাঁরা ঘণ্টা বাজানোর আগেই এক বুড়ি কাজের লোক দরজা খুলে দিল।",
+          "ur": "ان کے گھنٹی بجانے سے پہلے ہی ایک بوڑھی نوکرانی نے دروازہ کھول دیا۔",
+          "th": "คนรับใช้สูงวัยคนหนึ่งเปิดประตูก่อนที่พวกเขาจะทันกดกริ่ง"
+        }
+      },
+      {
+        "id": "cl-scandal-079",
+        "english": "\"Mr Sherlock Holmes, I believe?\" she said.",
+        "turkish": "\"Siz Bay Sherlock Holmes olmalısınız, değil mi?\" dedi.",
+        "translations": {
+          "es-419": "—¿El señor Sherlock Holmes, supongo? —dijo.",
+          "pt-BR": "— O senhor Sherlock Holmes, imagino? — disse ela.",
+          "id": "\"Tuan Sherlock Holmes, bukan?\" katanya.",
+          "ar": "قالت: «السيّد شيرلوك هولمز، على ما أظنّ؟»",
+          "vi": "\"Ngài là Sherlock Holmes, phải không ạ?\" bà nói.",
+          "hi": "\"आप मिस्टर शर्लक होम्स हैं न?\" उसने कहा।",
+          "ru": "«Мистер Шерлок Холмс, если не ошибаюсь?» — сказала она.",
+          "bn": "\"আপনিই মিস্টার শার্লক হোমস, তাই না?\" সে বলল।",
+          "ur": "\"آپ مسٹر شرلاک ہومز ہیں نا؟\" اس نے کہا۔",
+          "th": "\"คุณเชอร์ล็อก โฮมส์ใช่ไหมคะ\" เธอพูด"
+        }
+      },
+      {
+        "id": "cl-scandal-080",
+        "english": "\"My mistress left this morning with her husband, on the early train to Europe.\"",
+        "turkish": "\"Hanımım bu sabah kocasıyla birlikte erken trenle Avrupa'ya gitti.\"",
+        "translations": {
+          "es-419": "—Mi señora se fue esta mañana con su esposo, en el primer tren hacia Europa.",
+          "pt-BR": "— Minha patroa partiu hoje cedo com o marido, no primeiro trem para a Europa.",
+          "id": "\"Majikan saya pergi pagi ini bersama suaminya, naik kereta pertama menuju Eropa.\"",
+          "ar": "«لقد غادرت سيّدتي هذا الصباح مع زوجها، في القطار الباكر إلى أوروبا».",
+          "vi": "\"Bà chủ tôi đã đi sáng nay cùng chồng, trên chuyến tàu sớm sang châu Âu.\"",
+          "hi": "\"मेरी मालकिन आज सुबह अपने पति के साथ सुबह की पहली ट्रेन से यूरोप चली गईं।\"",
+          "ru": "«Моя хозяйка уехала сегодня утром с мужем, ранним поездом на континент».",
+          "bn": "\"আমার মালকিন আজ সকালে তাঁর স্বামীর সঙ্গে ভোরের ট্রেনে ইউরোপে চলে গেছেন।\"",
+          "ur": "\"میری مالکن آج صبح اپنے شوہر کے ساتھ صبح کی پہلی ٹرین سے یورپ چلی گئیں۔\"",
+          "th": "\"นายหญิงของฉันออกเดินทางไปกับสามีเมื่อเช้านี้ ด้วยรถไฟเที่ยวแรกไปยุโรป\""
+        }
+      },
+      {
+        "id": "cl-scandal-081",
+        "english": "\"She will not come back,\" the servant added.",
+        "turkish": "\"Bir daha dönmeyecek,\" diye ekledi hizmetçi.",
+        "translations": {
+          "es-419": "—No volverá —añadió la criada.",
+          "pt-BR": "— Ela não vai voltar — acrescentou a criada.",
+          "id": "\"Ia tidak akan kembali,\" tambah pelayan itu.",
+          "ar": "وأضافت الخادمة: «ولن تعود».",
+          "vi": "\"Bà ấy sẽ không quay lại đâu,\" người hầu nói thêm.",
+          "hi": "\"वे वापस नहीं आएँगी,\" नौकरानी ने जोड़ा।",
+          "ru": "«Она не вернётся», — добавила служанка.",
+          "bn": "\"উনি আর ফিরবেন না,\" কাজের লোকটি যোগ করল।",
+          "ur": "\"وہ واپس نہیں آئیں گی،\" نوکرانی نے مزید کہا۔",
+          "th": "\"เธอจะไม่กลับมาอีกแล้ว\" คนรับใช้กล่าวเสริม"
+        }
+      },
+      {
+        "id": "cl-scandal-082",
+        "english": "Holmes pushed past her and ran into the sitting room.",
+        "turkish": "Holmes onu itip geçti ve oturma odasına koştu.",
+        "translations": {
+          "es-419": "Holmes pasó junto a ella a empujones y corrió a la sala.",
+          "pt-BR": "Holmes passou por ela e correu para a sala de estar.",
+          "id": "Holmes menerobos melewatinya dan berlari ke ruang duduk.",
+          "ar": "دفعها هولمز جانبًا وركض إلى غرفة الجلوس.",
+          "vi": "Holmes lách qua bà và chạy vào phòng khách.",
+          "hi": "होम्स उसे हटाकर आगे बढ़े और भागकर बैठक में पहुँचे।",
+          "ru": "Холмс протиснулся мимо неё и вбежал в гостиную.",
+          "bn": "হোমস তাকে পাশ কাটিয়ে বসার ঘরে ছুটে গেলেন।",
+          "ur": "ہومز اسے ہٹا کر آگے بڑھے اور دوڑ کر بیٹھک میں پہنچے۔",
+          "th": "โฮมส์แทรกผ่านเธอไปแล้ววิ่งเข้าห้องนั่งเล่น"
+        }
+      },
+      {
+        "id": "cl-scandal-083",
+        "english": "He opened the secret panel above the bell-rope.",
+        "turkish": "Zil ipinin üstündeki gizli kapağı açtı.",
+        "translations": {
+          "es-419": "Abrió el panel secreto que estaba encima del cordón de la campanilla.",
+          "pt-BR": "Ele abriu o painel secreto acima do cordão da campainha.",
+          "id": "Ia membuka panel rahasia di atas tali lonceng.",
+          "ar": "فتح اللوح السرّيّ فوق حبل الجرس.",
+          "vi": "Ông mở tấm ván bí mật phía trên sợi dây chuông.",
+          "hi": "उन्होंने घंटी की डोरी के ऊपर वाला गुप्त पटरा खोला।",
+          "ru": "Он открыл потайную панель над шнурком звонка.",
+          "bn": "তিনি ঘণ্টার দড়ির ওপরের গোপন তক্তাটা খুললেন।",
+          "ur": "انہوں نے گھنٹی کی ڈوری کے اوپر والا خفیہ تختہ کھولا۔",
+          "th": "เขาเปิดแผงลับเหนือเชือกกระดิ่ง"
+        }
+      },
+      {
+        "id": "cl-scandal-084",
+        "english": "Inside there was a photograph, but not the one the King wanted.",
+        "turkish": "İçeride bir fotoğraf vardı ama Kral'ın istediği fotoğraf değildi.",
+        "translations": {
+          "es-419": "Dentro había una fotografía, pero no la que quería el rey.",
+          "pt-BR": "Lá dentro havia uma fotografia, mas não a que o rei queria.",
+          "id": "Di dalamnya ada sebuah foto, tetapi bukan foto yang diinginkan sang Raja.",
+          "ar": "كانت في الداخل صورة، لكنّها لم تكن الصورة التي أرادها الملك.",
+          "vi": "Bên trong có một tấm ảnh, nhưng không phải tấm nhà vua muốn.",
+          "hi": "अंदर एक तस्वीर थी, पर वह नहीं जो राजा चाहते थे।",
+          "ru": "Внутри лежала фотография, но не та, которую хотел король.",
+          "bn": "ভেতরে একটা ছবি ছিল, কিন্তু রাজা যেটা চাইছিলেন সেটা নয়।",
+          "ur": "اندر ایک تصویر تھی، مگر وہ نہیں جو بادشاہ چاہتے تھے۔",
+          "th": "ข้างในมีรูปถ่ายอยู่ใบหนึ่ง แต่ไม่ใช่ใบที่กษัตริย์ต้องการ"
+        }
+      },
+      {
+        "id": "cl-scandal-085",
+        "english": "It showed Irene Adler alone, in a beautiful evening dress.",
+        "turkish": "Fotoğrafta Irene Adler, güzel bir gece elbisesiyle tek başınaydı.",
+        "translations": {
+          "es-419": "Mostraba a Irene Adler sola, con un hermoso vestido de noche.",
+          "pt-BR": "Mostrava Irene Adler sozinha, num lindo vestido de noite.",
+          "id": "Foto itu menunjukkan Irene Adler sendirian, dalam gaun malam yang indah.",
+          "ar": "كانت تُظهر إيرين أدلر وحدها، في فستان سهرة جميل.",
+          "vi": "Ảnh chụp riêng Irene Adler, trong một chiếc váy dạ hội tuyệt đẹp.",
+          "hi": "उसमें आइरीन एडलर अकेली थीं, एक सुंदर शाम की पोशाक में।",
+          "ru": "На ней была одна Ирэн Адлер в красивом вечернем платье.",
+          "bn": "তাতে আইরিন অ্যাডলার একা, পরনে সুন্দর সান্ধ্য পোশাক।",
+          "ur": "اس میں آئرین ایڈلر اکیلی تھیں، ایک خوبصورت شام کے لباس میں۔",
+          "th": "ในรูปมีไอรีน แอดเลอร์อยู่คนเดียว ในชุดราตรีงดงาม"
+        }
+      },
+      {
+        "id": "cl-scandal-086",
+        "english": "Next to it was a letter addressed to Sherlock Holmes.",
+        "turkish": "Yanında Sherlock Holmes'a yazılmış bir mektup vardı.",
+        "translations": {
+          "es-419": "Al lado había una carta dirigida a Sherlock Holmes.",
+          "pt-BR": "Ao lado havia uma carta endereçada a Sherlock Holmes.",
+          "id": "Di sebelahnya ada sepucuk surat yang ditujukan kepada Sherlock Holmes.",
+          "ar": "وبجانبها رسالة موجّهة إلى شيرلوك هولمز.",
+          "vi": "Bên cạnh là một lá thư gửi Sherlock Holmes.",
+          "hi": "उसके पास शर्लक होम्स के नाम एक पत्र रखा था।",
+          "ru": "Рядом лежало письмо, адресованное Шерлоку Холмсу.",
+          "bn": "তার পাশে শার্লক হোমসের নামে একটা চিঠি।",
+          "ur": "اس کے پاس شرلاک ہومز کے نام ایک خط رکھا تھا۔",
+          "th": "ข้าง ๆ มีจดหมายจ่าหน้าถึงเชอร์ล็อก โฮมส์"
+        }
+      },
+      {
+        "id": "cl-scandal-087",
+        "english": "\"You did it very well,\" the letter began.",
+        "turkish": "Mektup \"Çok iyi becerdiniz,\" diye başlıyordu.",
+        "translations": {
+          "es-419": "«Lo hizo muy bien», comenzaba la carta.",
+          "pt-BR": "\"O senhor fez tudo muito bem\", começava a carta.",
+          "id": "\"Anda melakukannya dengan sangat baik,\" begitu awal surat itu.",
+          "ar": "بدأت الرسالة: «لقد أحسنتَ صنعًا».",
+          "vi": "Lá thư mở đầu: \"Ngài đã làm rất khéo.\"",
+          "hi": "पत्र की शुरुआत थी: \"आपने बहुत अच्छा किया।\"",
+          "ru": "«Вы проделали всё превосходно», — начиналось письмо.",
+          "bn": "চিঠিটা শুরু হয়েছিল: \"আপনি খুব ভালো করেছেন।\"",
+          "ur": "خط یوں شروع ہوتا تھا: \"آپ نے بہت خوب کیا۔\"",
+          "th": "จดหมายขึ้นต้นว่า \"คุณทำได้ดีมาก\""
+        }
+      },
+      {
+        "id": "cl-scandal-088",
+        "english": "\"But after the cry of fire, I understood that the old priest was you.\"",
+        "turkish": "\"Ama yangın çığlığından sonra yaşlı din adamının siz olduğunu anladım.\"",
+        "translations": {
+          "es-419": "«Pero después del grito de fuego, comprendí que el viejo sacerdote era usted».",
+          "pt-BR": "\"Mas, depois do grito de fogo, entendi que o velho padre era o senhor.\"",
+          "id": "\"Tetapi setelah teriakan kebakaran itu, saya sadar bahwa pendeta tua itu adalah Anda.\"",
+          "ar": "«لكن بعد صرخة الحريق، فهمتُ أنّ القسّيس العجوز كان أنت».",
+          "vi": "\"Nhưng sau tiếng hô cháy, tôi hiểu rằng ông mục sư già chính là ngài.\"",
+          "hi": "\"पर आग की चीख़ के बाद मैं समझ गई कि वह बूढ़ा पादरी आप ही थे।\"",
+          "ru": "«Но после крика \"пожар\" я поняла, что старый священник — это вы».",
+          "bn": "\"কিন্তু আগুনের চিৎকারের পর আমি বুঝলাম, সেই বুড়ো পাদ্রি আপনিই।\"",
+          "ur": "\"مگر آگ کی پکار کے بعد میں سمجھ گئی کہ وہ بوڑھا پادری آپ ہی تھے۔\"",
+          "th": "\"แต่หลังจากเสียงร้องว่าไฟไหม้ ฉันก็เข้าใจว่าบาทหลวงชราคนนั้นคือคุณ\""
+        }
+      },
+      {
+        "id": "cl-scandal-089",
+        "english": "\"I put on a man's clothes and followed you home to be sure.\"",
+        "turkish": "\"Emin olmak için erkek kıyafeti giydim ve sizi evinize kadar izledim.\"",
+        "translations": {
+          "es-419": "«Me puse ropa de hombre y lo seguí hasta su casa para estar segura».",
+          "pt-BR": "\"Vesti roupas de homem e o segui até sua casa para ter certeza.\"",
+          "id": "\"Saya mengenakan pakaian pria dan mengikuti Anda pulang untuk memastikannya.\"",
+          "ar": "«ارتديتُ ثياب رجل وتبعتك إلى بيتك لأتأكّد».",
+          "vi": "\"Tôi mặc đồ đàn ông và theo ngài về tận nhà cho chắc.\"",
+          "hi": "\"यक़ीन करने के लिए मैंने आदमी के कपड़े पहने और आपके पीछे-पीछे आपके घर तक गई।\"",
+          "ru": "«Я переоделась в мужской костюм и проводила вас до дома, чтобы убедиться».",
+          "bn": "\"নিশ্চিত হতে আমি পুরুষের পোশাক পরে আপনার পিছু পিছু আপনার বাড়ি পর্যন্ত গেলাম।\"",
+          "ur": "\"یقین کرنے کے لیے میں نے مردانہ کپڑے پہنے اور آپ کے پیچھے پیچھے آپ کے گھر تک گئی۔\"",
+          "th": "\"ฉันแต่งตัวเป็นผู้ชายแล้วตามคุณกลับบ้านเพื่อให้แน่ใจ\""
+        }
+      },
+      {
+        "id": "cl-scandal-090",
+        "english": "\"I love and am loved by a better man than the King.\"",
+        "turkish": "\"Kral'dan daha iyi bir adamı seviyorum ve o da beni seviyor.\"",
+        "translations": {
+          "es-419": "«Amo y soy amada por un hombre mejor que el rey».",
+          "pt-BR": "\"Amo e sou amada por um homem melhor do que o rei.\"",
+          "id": "\"Saya mencintai dan dicintai oleh pria yang lebih baik daripada sang Raja.\"",
+          "ar": "«أنا أحبّ رجلًا أفضل من الملك، وهو يحبّني».",
+          "vi": "\"Tôi yêu và được yêu bởi một người đàn ông tốt hơn nhà vua.\"",
+          "hi": "\"मैं राजा से बेहतर एक आदमी से प्यार करती हूँ, और वह भी मुझसे प्यार करता है।\"",
+          "ru": "«Я люблю и любима человеком, который лучше короля».",
+          "bn": "\"আমি রাজার চেয়ে ভালো একজন মানুষকে ভালোবাসি, আর তিনিও আমাকে ভালোবাসেন।\"",
+          "ur": "\"میں بادشاہ سے بہتر ایک آدمی سے محبت کرتی ہوں، اور وہ بھی مجھ سے محبت کرتا ہے۔\"",
+          "th": "\"ฉันรักและได้รับความรักจากชายที่ดีกว่ากษัตริย์\""
+        }
+      },
+      {
+        "id": "cl-scandal-091",
+        "english": "\"I will never use the photograph against him. I keep it only to protect myself.\"",
+        "turkish": "\"Fotoğrafı ona karşı asla kullanmayacağım. Onu yalnızca kendimi korumak için saklıyorum.\"",
+        "translations": {
+          "es-419": "«Nunca usaré la fotografía contra él. La guardo solo para protegerme».",
+          "pt-BR": "\"Nunca usarei a fotografia contra ele. Guardo-a só para me proteger.\"",
+          "id": "\"Saya tidak akan pernah memakai foto itu untuk melawannya. Saya menyimpannya hanya untuk melindungi diri.\"",
+          "ar": "«لن أستعمل الصورة ضدّه أبدًا. أحتفظ بها فقط لأحمي نفسي».",
+          "vi": "\"Tôi sẽ không bao giờ dùng tấm ảnh để hại ông ta. Tôi giữ nó chỉ để tự bảo vệ.\"",
+          "hi": "\"मैं उस तस्वीर का उनके ख़िलाफ़ कभी इस्तेमाल नहीं करूँगी। उसे सिर्फ़ अपनी हिफ़ाज़त के लिए रखती हूँ।\"",
+          "ru": "«Я никогда не использую фотографию против него. Я храню её лишь для своей защиты».",
+          "bn": "\"আমি ছবিটা কখনো তাঁর বিরুদ্ধে ব্যবহার করব না। শুধু নিজেকে রক্ষা করতে ওটা রেখে দিচ্ছি।\"",
+          "ur": "\"میں وہ تصویر ان کے خلاف کبھی استعمال نہیں کروں گی۔ اسے صرف اپنی حفاظت کے لیے رکھتی ہوں۔\"",
+          "th": "\"ฉันจะไม่มีวันใช้รูปถ่ายนั้นทำร้ายเขา ฉันเก็บมันไว้เพื่อปกป้องตัวเองเท่านั้น\""
+        }
+      },
+      {
+        "id": "cl-scandal-092",
+        "english": "The King read the letter twice, and his face was full of wonder.",
+        "turkish": "Kral mektubu iki kez okudu; yüzü hayranlıkla doluydu.",
+        "translations": {
+          "es-419": "El rey leyó la carta dos veces, y su rostro se llenó de asombro.",
+          "pt-BR": "O rei leu a carta duas vezes, e seu rosto se encheu de admiração.",
+          "id": "Sang Raja membaca surat itu dua kali, dan wajahnya penuh kekaguman.",
+          "ar": "قرأ الملك الرسالة مرّتين، وامتلأ وجهه بالإعجاب.",
+          "vi": "Nhà vua đọc lá thư hai lần, gương mặt đầy kinh ngạc.",
+          "hi": "राजा ने पत्र दो बार पढ़ा, और उनका चेहरा आश्चर्य से भर गया।",
+          "ru": "Король дважды прочёл письмо, и лицо его выражало изумление.",
+          "bn": "রাজা চিঠিটা দু'বার পড়লেন, আর তাঁর মুখ বিস্ময়ে ভরে গেল।",
+          "ur": "بادشاہ نے خط دو بار پڑھا، اور ان کا چہرہ حیرت سے بھر گیا۔",
+          "th": "กษัตริย์ทรงอ่านจดหมายสองรอบ พระพักตร์เต็มไปด้วยความทึ่ง"
+        }
+      },
+      {
+        "id": "cl-scandal-093",
+        "english": "\"What a woman! Would she not have made a wonderful queen?\" he cried.",
+        "turkish": "\"Ne kadın ama! Harika bir kraliçe olmaz mıydı?\" diye haykırdı.",
+        "translations": {
+          "es-419": "—¡Qué mujer! ¿No habría sido una reina maravillosa? —exclamó.",
+          "pt-BR": "— Que mulher! Não teria sido uma rainha maravilhosa? — exclamou ele.",
+          "id": "\"Wanita yang luar biasa! Bukankah ia akan menjadi ratu yang hebat?\" serunya.",
+          "ar": "صاح: «يا لها من امرأة! ألم تكن لتصبح ملكة رائعة؟»",
+          "vi": "\"Thật là một người phụ nữ! Lẽ ra cô ấy đã là một hoàng hậu tuyệt vời, phải không?\" ông kêu lên.",
+          "hi": "\"क्या औरत है! क्या वह एक शानदार रानी न बनती?\" वे बोल उठे।",
+          "ru": "«Какая женщина! Разве не стала бы она чудесной королевой?» — воскликнул он.",
+          "bn": "\"কী নারী! সে কি এক অপূর্ব রানি হত না?\" তিনি বলে উঠলেন।",
+          "ur": "\"کیا عورت ہے! کیا وہ ایک شاندار ملکہ نہ بنتی؟\" وہ پکار اٹھے۔",
+          "th": "\"ช่างเป็นหญิงที่ยอดเยี่ยม! นางคงเป็นราชินีที่วิเศษได้มิใช่หรือ\" พระองค์ร้อง"
+        }
+      },
+      {
+        "id": "cl-scandal-094",
+        "english": "\"Her word is good. I am safe now,\" he said, and he thanked Holmes warmly.",
+        "turkish": "\"Onun sözü sözdür. Artık güvendeyim,\" dedi ve Holmes'a içtenlikle teşekkür etti.",
+        "translations": {
+          "es-419": "—Su palabra vale. Ahora estoy a salvo —dijo, y le dio las gracias a Holmes con calidez.",
+          "pt-BR": "— A palavra dela vale. Agora estou seguro — disse ele, e agradeceu calorosamente a Holmes.",
+          "id": "\"Janjinya bisa dipercaya. Sekarang aku aman,\" katanya, lalu berterima kasih kepada Holmes dengan hangat.",
+          "ar": "قال: «كلمتها صادقة. أنا في أمان الآن»، وشكر هولمز بحرارة.",
+          "vi": "\"Lời cô ấy đáng tin. Giờ ta đã an toàn,\" ông nói, và nồng nhiệt cảm ơn Holmes.",
+          "hi": "\"उसकी बात पक्की है। अब मैं सुरक्षित हूँ,\" उन्होंने कहा, और होम्स को दिल से धन्यवाद दिया।",
+          "ru": "«Её слову можно верить. Теперь я в безопасности», — сказал он и горячо поблагодарил Холмса.",
+          "bn": "\"তার কথার দাম আছে। এখন আমি নিরাপদ,\" বলে তিনি হোমসকে আন্তরিক ধন্যবাদ জানালেন।",
+          "ur": "\"اس کی بات پکی ہے۔ اب میں محفوظ ہوں،\" انہوں نے کہا، اور ہومز کا دل سے شکریہ ادا کیا۔",
+          "th": "\"วาจาของนางเชื่อถือได้ บัดนี้ข้าปลอดภัยแล้ว\" พระองค์ตรัส แล้วขอบใจโฮมส์อย่างอบอุ่น"
+        }
+      },
+      {
+        "id": "cl-scandal-095",
+        "english": "He offered Holmes a beautiful ring from his own finger.",
+        "turkish": "Kendi parmağındaki güzel bir yüzüğü Holmes'a uzattı.",
+        "translations": {
+          "es-419": "Le ofreció a Holmes un hermoso anillo de su propio dedo.",
+          "pt-BR": "Ele ofereceu a Holmes um lindo anel do próprio dedo.",
+          "id": "Ia menawarkan kepada Holmes sebuah cincin indah dari jarinya sendiri.",
+          "ar": "عرض على هولمز خاتمًا جميلًا من إصبعه.",
+          "vi": "Ông tháo chiếc nhẫn đẹp trên tay mình tặng Holmes.",
+          "hi": "उन्होंने अपनी उँगली से एक सुंदर अँगूठी उतारकर होम्स को देनी चाही।",
+          "ru": "Он предложил Холмсу прекрасный перстень со своего пальца.",
+          "bn": "তিনি নিজের আঙুল থেকে একটা সুন্দর আংটি খুলে হোমসকে দিতে চাইলেন।",
+          "ur": "انہوں نے اپنی انگلی سے ایک خوبصورت انگوٹھی اتار کر ہومز کو پیش کی۔",
+          "th": "พระองค์ยื่นแหวนงามจากนิ้วของพระองค์เองให้โฮมส์"
+        }
+      },
+      {
+        "id": "cl-scandal-096",
+        "english": "\"I would rather have this photograph of her,\" said Holmes.",
+        "turkish": "\"Ben onun bu fotoğrafını almayı tercih ederim,\" dedi Holmes.",
+        "translations": {
+          "es-419": "—Prefiero quedarme con esta fotografía de ella —dijo Holmes.",
+          "pt-BR": "— Eu prefiro ficar com esta fotografia dela — disse Holmes.",
+          "id": "\"Saya lebih suka memiliki foto dirinya ini,\" kata Holmes.",
+          "ar": "قال هولمز: «أفضّل أن آخذ صورتها هذه».",
+          "vi": "\"Tôi thà được giữ tấm ảnh này của cô ấy,\" Holmes nói.",
+          "hi": "\"मुझे तो उनकी यह तस्वीर ज़्यादा प्यारी होगी,\" होम्स ने कहा।",
+          "ru": "«Я бы предпочёл эту её фотографию», — сказал Холмс.",
+          "bn": "\"আমি বরং ওঁর এই ছবিটা নিতে চাই,\" বললেন হোমস।",
+          "ur": "\"مجھے تو ان کی یہ تصویر زیادہ پسند ہوگی،\" ہومز نے کہا۔",
+          "th": "\"กระหม่อมขอรูปถ่ายของเธอใบนี้ดีกว่า\" โฮมส์กล่าว"
+        }
+      },
+      {
+        "id": "cl-scandal-097",
+        "english": "The King gave it to him in surprise, and the case was closed.",
+        "turkish": "Kral şaşkınlıkla fotoğrafı ona verdi ve dava kapandı.",
+        "translations": {
+          "es-419": "El rey se la dio, sorprendido, y el caso quedó cerrado.",
+          "pt-BR": "O rei, surpreso, entregou-a a ele, e o caso foi encerrado.",
+          "id": "Sang Raja memberikannya dengan heran, dan kasus itu pun selesai.",
+          "ar": "أعطاه الملك إيّاها مندهشًا، وأُغلقت القضيّة.",
+          "vi": "Nhà vua ngạc nhiên trao nó cho ông, và vụ án khép lại.",
+          "hi": "राजा ने हैरानी से वह उन्हें दे दी, और मामला ख़त्म हो गया।",
+          "ru": "Король удивлённо отдал её, и дело было закрыто.",
+          "bn": "রাজা অবাক হয়ে ছবিটা তাঁকে দিলেন, আর মামলাটা শেষ হল।",
+          "ur": "بادشاہ نے حیرت سے وہ انہیں دے دی، اور معاملہ ختم ہو گیا۔",
+          "th": "กษัตริย์ทรงประทานให้ด้วยความประหลาดพระทัย และคดีก็ปิดลง"
+        }
+      },
+      {
+        "id": "cl-scandal-098",
+        "english": "The great detective had been beaten by a woman's cleverness.",
+        "turkish": "Büyük dedektif bir kadının zekâsına yenilmişti.",
+        "translations": {
+          "es-419": "El gran detective había sido vencido por la astucia de una mujer.",
+          "pt-BR": "O grande detetive tinha sido derrotado pela inteligência de uma mulher.",
+          "id": "Detektif hebat itu telah dikalahkan oleh kecerdikan seorang wanita.",
+          "ar": "لقد هُزم المحقّق العظيم أمام ذكاء امرأة.",
+          "vi": "Vị thám tử lừng danh đã bị trí thông minh của một người phụ nữ đánh bại.",
+          "hi": "महान जासूस एक औरत की चतुराई से हार गए थे।",
+          "ru": "Великого сыщика победил ум женщины.",
+          "bn": "মহান গোয়েন্দা এক নারীর বুদ্ধির কাছে হেরে গিয়েছিলেন।",
+          "ur": "عظیم جاسوس ایک عورت کی ذہانت سے ہار گئے تھے۔",
+          "th": "ยอดนักสืบพ่ายแพ้ให้กับความเฉลียวฉลาดของผู้หญิงคนหนึ่ง"
+        }
+      },
+      {
+        "id": "cl-scandal-099",
+        "english": "He used to laugh at clever women, but he never did again.",
+        "turkish": "Eskiden zeki kadınlara gülerdi ama bir daha hiç gülmedi.",
+        "translations": {
+          "es-419": "Antes se reía de las mujeres inteligentes, pero nunca volvió a hacerlo.",
+          "pt-BR": "Ele costumava rir de mulheres inteligentes, mas nunca mais fez isso.",
+          "id": "Dulu ia suka menertawakan wanita cerdas, tetapi tidak pernah lagi.",
+          "ar": "كان يسخر من النساء الذكيّات، لكنّه لم يفعل ذلك مرّة أخرى قطّ.",
+          "vi": "Trước đây ông hay chê cười những phụ nữ thông minh, nhưng từ đó không bao giờ nữa.",
+          "hi": "पहले वे चतुर औरतों पर हँसा करते थे, पर फिर कभी नहीं हँसे।",
+          "ru": "Раньше он посмеивался над умными женщинами, но больше никогда.",
+          "bn": "আগে তিনি বুদ্ধিমতী মেয়েদের নিয়ে হাসতেন, কিন্তু আর কখনো হাসেননি।",
+          "ur": "پہلے وہ ذہین عورتوں پر ہنسا کرتے تھے، مگر پھر کبھی نہیں ہنسے۔",
+          "th": "แต่ก่อนเขาเคยหัวเราะเยาะผู้หญิงฉลาด แต่หลังจากนั้นไม่เคยอีกเลย"
+        }
+      },
+      {
+        "id": "cl-scandal-100",
+        "english": "And when he speaks of Irene Adler, he always calls her simply \"the woman.\"",
+        "turkish": "Ve Irene Adler'den söz ederken ona hep yalnızca \"o kadın\" der.",
+        "translations": {
+          "es-419": "Y cuando habla de Irene Adler, siempre la llama simplemente «la mujer».",
+          "pt-BR": "E, quando fala de Irene Adler, ele sempre a chama simplesmente de \"a mulher\".",
+          "id": "Dan setiap kali ia membicarakan Irene Adler, ia selalu menyebutnya \"sang wanita.\"",
+          "ar": "وحين يتحدّث عن إيرين أدلر، يسمّيها دائمًا «المرأة» فحسب.",
+          "vi": "Và mỗi khi nhắc đến Irene Adler, ông luôn chỉ gọi cô là \"người phụ nữ ấy\".",
+          "hi": "और जब भी वे आइरीन एडलर की बात करते हैं, उन्हें हमेशा बस \"वह औरत\" कहते हैं।",
+          "ru": "А когда он говорит об Ирэн Адлер, он всегда называет её просто «Та Женщина».",
+          "bn": "আর যখনই তিনি আইরিন অ্যাডলারের কথা বলেন, তাঁকে সবসময় শুধু \"সেই নারী\" বলে ডাকেন।",
+          "ur": "اور جب بھی وہ آئرین ایڈلر کی بات کرتے ہیں، انہیں ہمیشہ بس \"وہ عورت\" کہتے ہیں۔",
+          "th": "และเมื่อใดที่เขาพูดถึงไอรีน แอดเลอร์ เขาจะเรียกเธอเพียงว่า \"ผู้หญิงคนนั้น\" เสมอ"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-scandal-bohemia-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "A king who loses his crown in a card game",
+          "A detective who tries to get back a photograph for a king and is beaten by a clever woman",
+          "A singer who steals a ring from a church",
+          "A doctor who solves a murder in Baker Street"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-scandal-bohemia-q2",
+        "kind": "detail",
+        "prompt": "Why did the King need the photograph?",
+        "options": [
+          "He wanted to sell it",
+          "It could stop his wedding to a princess",
+          "It showed where his gold was hidden",
+          "He wanted to give it to Holmes"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-scandal-bohemia-q3",
+        "kind": "detail",
+        "prompt": "How did Holmes find out where the photograph was hidden?",
+        "options": [
+          "He asked the old servant",
+          "He read Irene's diary",
+          "He made her think the house was on fire",
+          "He followed her to the church"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "classic-scandal-bohemia-q4",
+        "kind": "inference",
+        "prompt": "Who was the young man who said \"Good night\" to Holmes?",
+        "options": [
+          "Godfrey Norton",
+          "The King of Bohemia",
+          "Irene Adler in a man's clothes",
+          "A stable boy"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "classic-scandal-bohemia-q5",
+        "kind": "inference",
+        "prompt": "Why does Holmes call Irene Adler \"the woman\"?",
+        "options": [
+          "He forgot her name",
+          "He respects her because she was cleverer than him",
+          "She asked him to",
+          "The King told him to"
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  "words": [
+    {
+      "id": "photograph",
+      "word": "photograph",
+      "translation": "fotoğraf",
+      "pronunciation": "/ˈfəʊtəɡrɑːf/",
+      "example": "She kept an old photograph of her parents.",
+      "translations": {
+        "es-419": "fotografía",
+        "pt-BR": "fotografia",
+        "id": "foto, potret",
+        "ar": "صورة فوتوغرافية",
+        "vi": "bức ảnh",
+        "hi": "तस्वीर, फ़ोटो",
+        "ru": "фотография",
+        "bn": "ছবি, আলোকচিত্র",
+        "ur": "تصویر، فوٹو",
+        "th": "รูปถ่าย"
+      }
+    },
+    {
+      "id": "singer",
+      "word": "singer",
+      "translation": "şarkıcı",
+      "pronunciation": "/ˈsɪŋə(r)/",
+      "example": "The singer has a beautiful voice.",
+      "translations": {
+        "es-419": "cantante",
+        "pt-BR": "cantor",
+        "id": "penyanyi",
+        "ar": "مغنٍّ، مغنّية",
+        "vi": "ca sĩ",
+        "hi": "गायक, गायिका",
+        "ru": "певец, певица",
+        "bn": "গায়ক, গায়িকা",
+        "ur": "گلوکار",
+        "th": "นักร้อง"
+      }
+    },
+    {
+      "id": "reward",
+      "word": "reward",
+      "translation": "ödül",
+      "pronunciation": "/rɪˈwɔːd/",
+      "example": "They offered a reward for the lost dog.",
+      "translations": {
+        "es-419": "recompensa",
+        "pt-BR": "recompensa",
+        "id": "hadiah, imbalan",
+        "ar": "مكافأة",
+        "vi": "phần thưởng",
+        "hi": "इनाम",
+        "ru": "награда",
+        "bn": "পুরস্কার",
+        "ur": "انعام",
+        "th": "รางวัล"
+      }
+    },
+    {
+      "id": "church",
+      "word": "church",
+      "translation": "kilise",
+      "pronunciation": "/tʃɜːtʃ/",
+      "example": "The old church has a tall tower.",
+      "translations": {
+        "es-419": "iglesia",
+        "pt-BR": "igreja",
+        "id": "gereja",
+        "ar": "كنيسة",
+        "vi": "nhà thờ",
+        "hi": "चर्च, गिरजाघर",
+        "ru": "церковь",
+        "bn": "গির্জা",
+        "ur": "گرجا گھر، چرچ",
+        "th": "โบสถ์"
+      }
+    },
+    {
+      "id": "smoke",
+      "word": "smoke",
+      "translation": "duman",
+      "pronunciation": "/sməʊk/",
+      "example": "Black smoke came out of the chimney.",
+      "translations": {
+        "es-419": "humo",
+        "pt-BR": "fumaça",
+        "id": "asap",
+        "ar": "دخان",
+        "vi": "khói",
+        "hi": "धुआँ",
+        "ru": "дым",
+        "bn": "ধোঁয়া",
+        "ur": "دھواں",
+        "th": "ควัน"
+      }
+    },
+    {
+      "id": "alarm",
+      "word": "alarm",
+      "translation": "alarm",
+      "pronunciation": "/əˈlɑːm/",
+      "example": "The fire alarm rang in the middle of the night.",
+      "translations": {
+        "es-419": "alarma",
+        "pt-BR": "alarme",
+        "id": "alarm, tanda bahaya",
+        "ar": "إنذار",
+        "vi": "báo động",
+        "hi": "चेतावनी, अलार्म",
+        "ru": "тревога, сигнал",
+        "bn": "বিপদসংকেত, অ্যালার্ম",
+        "ur": "الارم، خطرے کی گھنٹی",
+        "th": "สัญญาณเตือนภัย"
+      }
+    },
+    {
+      "id": "hide",
+      "word": "hide",
+      "translation": "saklamak, saklanmak",
+      "pronunciation": "/haɪd/",
+      "example": "The children like to hide behind the door.",
+      "translations": {
+        "es-419": "esconder, esconderse",
+        "pt-BR": "esconder",
+        "id": "menyembunyikan, bersembunyi",
+        "ar": "يخبّئ، يختبئ",
+        "vi": "giấu, trốn",
+        "hi": "छिपाना, छिपना",
+        "ru": "прятать, прятаться",
+        "bn": "লুকানো",
+        "ur": "چھپانا، چھپنا",
+        "th": "ซ่อน"
+      }
+    },
+    {
+      "id": "secret",
+      "word": "secret",
+      "translation": "gizli; sır",
+      "pronunciation": "/ˈsiːkrət/",
+      "example": "Can you keep a secret?",
+      "translations": {
+        "es-419": "secreto",
+        "pt-BR": "secreto",
+        "id": "rahasia",
+        "ar": "سرّ؛ سرّيّ",
+        "vi": "bí mật",
+        "hi": "गुप्त; रहस्य",
+        "ru": "секретный; тайна",
+        "bn": "গোপন; রহস্য",
+        "ur": "خفیہ؛ راز",
+        "th": "ลับ, ความลับ"
+      }
+    },
+    {
+      "id": "king",
+      "word": "king",
+      "translation": "kral",
+      "pronunciation": "/kɪŋ/",
+      "example": "After the queen died, the king married another woman.",
+      "translations": {
+        "es-419": "rey",
+        "pt-BR": "rei",
+        "id": "raja",
+        "ar": "ملك",
+        "vi": "nhà vua",
+        "hi": "राजा",
+        "ru": "король",
+        "bn": "রাজা",
+        "ur": "بادشاہ",
+        "th": "พระราชา"
+      }
+    },
+    {
+      "id": "detective",
+      "word": "detective",
+      "translation": "dedektif",
+      "pronunciation": "/dɪˈtektɪv/",
+      "example": "The stranger is a detective.",
+      "translations": {
+        "es-419": "detective",
+        "pt-BR": "detetive",
+        "id": "detektif",
+        "ar": "محقّق",
+        "vi": "thám tử",
+        "hi": "जासूस",
+        "ru": "сыщик, детектив",
+        "bn": "গোয়েন্দা",
+        "ur": "جاسوس",
+        "th": "นักสืบ"
+      }
+    },
+    {
+      "id": "disguise",
+      "word": "disguise",
+      "translation": "kılık",
+      "pronunciation": "/dɪsˈɡaɪz/",
+      "example": "A fine disguise cannot hide who we are forever.",
+      "translations": {
+        "es-419": "disfraz",
+        "pt-BR": "disfarce",
+        "id": "penyamaran",
+        "ar": "تنكّر",
+        "vi": "sự cải trang",
+        "hi": "भेस",
+        "ru": "маскировка, переодевание",
+        "bn": "ছদ্মবেশ",
+        "ur": "بھیس",
+        "th": "การปลอมตัว"
+      }
+    },
+    {
+      "id": "trick",
+      "word": "trick",
+      "translation": "oyun, numara",
+      "pronunciation": "/trɪk/",
+      "example": "The children play a trick on their friend.",
+      "translations": {
+        "es-419": "broma, truco",
+        "pt-BR": "brincadeira, peça",
+        "id": "tipuan, akal-akalan",
+        "ar": "خدعة، مقلب",
+        "vi": "trò đùa, mẹo",
+        "hi": "मज़ाक, चाल",
+        "ru": "шутка, обман",
+        "bn": "চালাকি, মজা করা",
+        "ur": "شرارت، چال",
+        "th": "การหลอก, กลอุบาย"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "photograph",
+    "singer",
+    "reward",
+    "church",
+    "smoke",
+    "alarm",
+    "hide",
+    "secret",
+    "king",
+    "detective",
+    "disguise",
+    "trick"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-scandal-bohemia-q1",
+      "sentenceIds": [
+        "cl-scandal-018",
+        "cl-scandal-098"
+      ],
+      "rationale": "Holmes works for the King, but Irene Adler outwits him."
+    },
+    {
+      "questionId": "classic-scandal-bohemia-q2",
+      "sentenceIds": [
+        "cl-scandal-019"
+      ],
+      "rationale": "If the princess's family saw it, there would be no wedding."
+    },
+    {
+      "questionId": "classic-scandal-bohemia-q3",
+      "sentenceIds": [
+        "cl-scandal-050",
+        "cl-scandal-065"
+      ],
+      "rationale": "The smoke and the cry of fire made her run to her hiding place."
+    },
+    {
+      "questionId": "classic-scandal-bohemia-q4",
+      "sentenceIds": [
+        "cl-scandal-073",
+        "cl-scandal-089"
+      ],
+      "rationale": "Her letter says she dressed as a man and followed Holmes home."
+    },
+    {
+      "questionId": "classic-scandal-bohemia-q5",
+      "sentenceIds": [
+        "cl-scandal-099",
+        "cl-scandal-100"
+      ],
+      "rationale": "After she beat him, he stopped laughing at clever women and respected her."
+    }
+  ],
+  "publicationBlockers": [
+    "Owner (oguz) approval of the English text, questions and translations required.",
+    "Native-speaker language review not done.",
+    "Source text hash pending (Gutenberg not reachable from the cloud session).",
+    "Publisher story creation, validation and publication pending."
+  ]
+}
