@@ -42,9 +42,7 @@
       "th"
     ],
     "completeLanguages": [
-      "tr"
-    ],
-    "pendingLanguages": [
+      "tr",
       "es-419",
       "pt-BR",
       "id",
@@ -55,7 +53,10 @@
       "bn",
       "ur",
       "th"
-    ]
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-assisted translation drafts; project owner authorized publication on 2026-10-23; not native-speaker-approved"
   },
   "readingSections": [
     {
@@ -89,187 +90,631 @@
       {
         "id": "cl-goldilocks-01",
         "english": "Three bears lived in a small house in the wood.",
-        "turkish": "Üç ayı koruluktaki küçük bir evde yaşıyordu."
+        "turkish": "Üç ayı koruluktaki küçük bir evde yaşıyordu.",
+        "translations": {
+          "es-419": "Tres osos vivían en una casita en el bosque.",
+          "pt-BR": "Três ursos moravam numa casinha na floresta.",
+          "id": "Tiga beruang tinggal di sebuah rumah kecil di hutan.",
+          "ar": "كانت ثلاثة دببة تعيش في بيت صغير في الغابة.",
+          "vi": "Ba chú gấu sống trong một ngôi nhà nhỏ trong rừng.",
+          "hi": "तीन भालू जंगल के एक छोटे घर में रहते थे।",
+          "ru": "Три медведя жили в маленьком доме в лесу.",
+          "bn": "তিনটি ভালুক বনের একটি ছোট বাড়িতে থাকত।",
+          "ur": "تین ریچھ جنگل میں ایک چھوٹے سے گھر میں رہتے تھے۔",
+          "th": "หมีสามตัวอาศัยอยู่ในบ้านหลังเล็กกลางป่า"
+        }
       },
       {
         "id": "cl-goldilocks-02",
         "english": "There was a large bear, a middle-sized bear and a little bear.",
-        "turkish": "Büyük bir ayı, orta boy bir ayı ve küçük bir ayı vardı."
+        "turkish": "Büyük bir ayı, orta boy bir ayı ve küçük bir ayı vardı.",
+        "translations": {
+          "es-419": "Había un oso grande, uno mediano y uno pequeño.",
+          "pt-BR": "Havia um urso grande, um médio e um pequeno.",
+          "id": "Ada beruang besar, beruang sedang, dan beruang kecil.",
+          "ar": "كان هناك دب كبير ودب متوسط الحجم ودب صغير.",
+          "vi": "Có một chú gấu lớn, một chú gấu cỡ vừa và một chú gấu nhỏ.",
+          "hi": "एक बड़ा भालू, एक मझोले आकार का भालू और एक छोटा भालू था।",
+          "ru": "Был большой медведь, средний медведь и маленький медведь.",
+          "bn": "একটি বড় ভালুক, একটি মাঝারি ভালুক আর একটি ছোট ভালুক ছিল।",
+          "ur": "ایک بڑا ریچھ، ایک درمیانے قد کا ریچھ اور ایک چھوٹا ریچھ تھا۔",
+          "th": "มีหมีตัวใหญ่ หมีตัวกลาง และหมีตัวเล็ก"
+        }
       },
       {
         "id": "cl-goldilocks-03",
         "english": "Each bear had a bowl, a chair and a bed.",
-        "turkish": "Her ayının bir kâsesi, bir sandalyesi ve bir yatağı vardı."
+        "turkish": "Her ayının bir kâsesi, bir sandalyesi ve bir yatağı vardı.",
+        "translations": {
+          "es-419": "Cada oso tenía un tazón, una silla y una cama.",
+          "pt-BR": "Cada urso tinha uma tigela, uma cadeira e uma cama.",
+          "id": "Setiap beruang memiliki mangkuk, kursi, dan tempat tidur.",
+          "ar": "كان لكل دب وعاء وكرسي وسرير.",
+          "vi": "Mỗi chú gấu có một cái bát, một cái ghế và một chiếc giường.",
+          "hi": "हर भालू का अपना कटोरा, कुर्सी और बिस्तर था।",
+          "ru": "У каждого медведя были своя миска, стул и кровать.",
+          "bn": "প্রতিটি ভালুকের একটি বাটি, একটি চেয়ার আর একটি বিছানা ছিল।",
+          "ur": "ہر ریچھ کا ایک پیالہ، ایک کرسی اور ایک بستر تھا۔",
+          "th": "หมีแต่ละตัวมีชาม เก้าอี้ และเตียงของตัวเอง"
+        }
       },
       {
         "id": "cl-goldilocks-04",
         "english": "One morning, they made porridge for breakfast.",
-        "turkish": "Bir sabah kahvaltı için yulaf lapası yaptılar."
+        "turkish": "Bir sabah kahvaltı için yulaf lapası yaptılar.",
+        "translations": {
+          "es-419": "Una mañana prepararon avena para desayunar.",
+          "pt-BR": "Certa manhã, eles fizeram mingau para o café da manhã.",
+          "id": "Suatu pagi, mereka membuat bubur untuk sarapan.",
+          "ar": "في صباح يوم، أعدوا العصيدة للإفطار.",
+          "vi": "Một buổi sáng, chúng nấu cháo yến mạch để ăn sáng.",
+          "hi": "एक सुबह उन्होंने नाश्ते के लिए दलिया बनाया।",
+          "ru": "Однажды утром они сварили кашу на завтрак.",
+          "bn": "এক সকালে তারা নাশতার জন্য জাউ রান্না করল।",
+          "ur": "ایک صبح انہوں نے ناشتے کے لیے دلیہ بنایا۔",
+          "th": "เช้าวันหนึ่ง พวกมันทำข้าวโอ๊ตต้มสำหรับอาหารเช้า"
+        }
       },
       {
         "id": "cl-goldilocks-05",
         "english": "The porridge was too hot, so they went for a walk.",
-        "turkish": "Lapa çok sıcaktı, bu yüzden yürüyüşe çıktılar."
+        "turkish": "Lapa çok sıcaktı, bu yüzden yürüyüşe çıktılar.",
+        "translations": {
+          "es-419": "La avena estaba demasiado caliente, así que salieron a pasear.",
+          "pt-BR": "O mingau estava quente demais, então saíram para passear.",
+          "id": "Buburnya terlalu panas, jadi mereka pergi berjalan-jalan.",
+          "ar": "كانت العصيدة ساخنة جدًا، فخرجوا للمشي.",
+          "vi": "Cháo quá nóng nên chúng ra ngoài đi dạo.",
+          "hi": "दलिया बहुत गर्म था, इसलिए वे टहलने निकल गए।",
+          "ru": "Каша была слишком горячей, поэтому они пошли гулять.",
+          "bn": "জাউ খুব গরম ছিল, তাই তারা হাঁটতে বের হলো।",
+          "ur": "دلیہ بہت گرم تھا، اس لیے وہ چہل قدمی کے لیے نکل گئے۔",
+          "th": "ข้าวโอ๊ตต้มร้อนเกินไป พวกมันจึงออกไปเดินเล่น"
+        }
       },
       {
         "id": "cl-goldilocks-06",
         "english": "While they were away, a girl called Goldilocks came along the path.",
-        "turkish": "Onlar dışarıdayken Goldilocks adında bir kız patikadan geldi."
+        "turkish": "Onlar dışarıdayken Goldilocks adında bir kız patikadan geldi.",
+        "translations": {
+          "es-419": "Mientras estaban fuera, una niña llamada Goldilocks llegó por el sendero.",
+          "pt-BR": "Enquanto estavam fora, uma menina chamada Cachinhos Dourados veio pela trilha.",
+          "id": "Saat mereka pergi, seorang gadis bernama Goldilocks datang menyusuri jalan setapak.",
+          "ar": "وبينما كانوا خارج البيت، جاءت فتاة اسمها غولديلوكس على الطريق.",
+          "vi": "Trong lúc chúng đi vắng, một cô bé tên Goldilocks đi tới theo con đường mòn.",
+          "hi": "जब वे बाहर थे, गोल्डीलॉक्स नाम की एक लड़की पगडंडी से आई।",
+          "ru": "Пока их не было, по тропинке пришла девочка по имени Златовласка.",
+          "bn": "তারা বাইরে থাকার সময় গোল্ডিলক্স নামে এক মেয়ে পথ ধরে এল।",
+          "ur": "جب وہ باہر تھے تو گولڈی لاکس نام کی ایک لڑکی راستے سے آئی۔",
+          "th": "ระหว่างที่พวกมันไม่อยู่ เด็กหญิงชื่อโกลดิล็อกส์เดินมาตามทาง"
+        }
       },
       {
         "id": "cl-goldilocks-07",
         "english": "She was tired and hungry after walking through the wood.",
-        "turkish": "Korulukta yürüdükten sonra yorulmuş ve acıkmıştı."
+        "turkish": "Korulukta yürüdükten sonra yorulmuş ve acıkmıştı.",
+        "translations": {
+          "es-419": "Estaba cansada y tenía hambre después de caminar por el bosque.",
+          "pt-BR": "Ela estava cansada e com fome depois de andar pela floresta.",
+          "id": "Ia lelah dan lapar setelah berjalan melewati hutan.",
+          "ar": "كانت متعبة وجائعة بعد المشي في الغابة.",
+          "vi": "Cô bé mệt và đói sau khi đi qua khu rừng.",
+          "hi": "जंगल में चलने के बाद वह थकी हुई और भूखी थी।",
+          "ru": "Она устала и проголодалась после прогулки по лесу.",
+          "bn": "বনের মধ্যে হাঁটার পরে সে ক্লান্ত ও ক্ষুধার্ত ছিল।",
+          "ur": "جنگل میں چلنے کے بعد وہ تھکی ہوئی اور بھوکی تھی۔",
+          "th": "เธอเหนื่อยและหิวหลังจากเดินผ่านป่า"
+        }
       },
       {
         "id": "cl-goldilocks-08",
         "english": "She looked through the window and saw three bowls on a table.",
-        "turkish": "Pencereden baktı ve masanın üstünde üç kâse gördü."
+        "turkish": "Pencereden baktı ve masanın üstünde üç kâse gördü.",
+        "translations": {
+          "es-419": "Miró por la ventana y vio tres tazones sobre una mesa.",
+          "pt-BR": "Olhou pela janela e viu três tigelas sobre uma mesa.",
+          "id": "Ia melihat melalui jendela dan menemukan tiga mangkuk di atas meja.",
+          "ar": "نظرت من النافذة فرأت ثلاثة أوعية على طاولة.",
+          "vi": "Cô nhìn qua cửa sổ và thấy ba bát cháo trên bàn.",
+          "hi": "उसने खिड़की से झाँका और मेज़ पर तीन कटोरे देखे।",
+          "ru": "Она заглянула в окно и увидела на столе три миски.",
+          "bn": "সে জানালা দিয়ে তাকিয়ে টেবিলে তিনটি বাটি দেখল।",
+          "ur": "اس نے کھڑکی سے دیکھا تو میز پر تین پیالے تھے۔",
+          "th": "เธอมองผ่านหน้าต่างและเห็นชามสามใบบนโต๊ะ"
+        }
       },
       {
         "id": "cl-goldilocks-09",
         "english": "She knocked, but nobody answered.",
-        "turkish": "Kapıyı çaldı ama kimse cevap vermedi."
+        "turkish": "Kapıyı çaldı ama kimse cevap vermedi.",
+        "translations": {
+          "es-419": "Tocó la puerta, pero nadie respondió.",
+          "pt-BR": "Bateu à porta, mas ninguém respondeu.",
+          "id": "Ia mengetuk pintu, tetapi tidak ada yang menjawab.",
+          "ar": "طرقت الباب، لكن لم يجب أحد.",
+          "vi": "Cô gõ cửa nhưng không ai trả lời.",
+          "hi": "उसने दरवाज़ा खटखटाया, लेकिन किसी ने जवाब नहीं दिया।",
+          "ru": "Она постучала, но никто не ответил.",
+          "bn": "সে দরজায় টোকা দিল, কিন্তু কেউ উত্তর দিল না।",
+          "ur": "اس نے دستک دی، لیکن کسی نے جواب نہیں دیا۔",
+          "th": "เธอเคาะประตู แต่ไม่มีใครตอบ"
+        }
       },
       {
         "id": "cl-goldilocks-10",
         "english": "Instead of waiting, she opened the door and walked inside.",
-        "turkish": "Beklemek yerine kapıyı açıp içeri girdi."
+        "turkish": "Beklemek yerine kapıyı açıp içeri girdi.",
+        "translations": {
+          "es-419": "En lugar de esperar, abrió la puerta y entró.",
+          "pt-BR": "Em vez de esperar, abriu a porta e entrou.",
+          "id": "Alih-alih menunggu, ia membuka pintu dan masuk.",
+          "ar": "وبدلًا من الانتظار، فتحت الباب ودخلت.",
+          "vi": "Thay vì chờ, cô mở cửa rồi bước vào.",
+          "hi": "इंतज़ार करने के बजाय उसने दरवाज़ा खोला और अंदर चली गई।",
+          "ru": "Вместо того чтобы ждать, она открыла дверь и вошла.",
+          "bn": "অপেক্ষা না করে সে দরজা খুলে ভেতরে ঢুকল।",
+          "ur": "انتظار کرنے کے بجائے اس نے دروازہ کھولا اور اندر چلی گئی۔",
+          "th": "แทนที่จะรอ เธอเปิดประตูแล้วเดินเข้าไป"
+        }
       },
       {
         "id": "cl-goldilocks-11",
         "english": "First, she tried the porridge in the large bowl.",
-        "turkish": "Önce büyük kâsedeki lapayı denedi."
+        "turkish": "Önce büyük kâsedeki lapayı denedi.",
+        "translations": {
+          "es-419": "Primero probó la avena del tazón grande.",
+          "pt-BR": "Primeiro, experimentou o mingau da tigela grande.",
+          "id": "Pertama, ia mencicipi bubur dalam mangkuk besar.",
+          "ar": "أولًا، ذاقت العصيدة في الوعاء الكبير.",
+          "vi": "Đầu tiên, cô nếm cháo trong bát lớn.",
+          "hi": "पहले उसने बड़े कटोरे का दलिया चखा।",
+          "ru": "Сначала она попробовала кашу из большой миски.",
+          "bn": "প্রথমে সে বড় বাটির জাউ চেখে দেখল।",
+          "ur": "پہلے اس نے بڑے پیالے کا دلیہ چکھا۔",
+          "th": "ก่อนอื่น เธอลองชิมข้าวโอ๊ตต้มในชามใหญ่"
+        }
       },
       {
         "id": "cl-goldilocks-12",
         "english": "It was too hot to eat.",
-        "turkish": "Yenmeyecek kadar sıcaktı."
+        "turkish": "Yenmeyecek kadar sıcaktı.",
+        "translations": {
+          "es-419": "Estaba demasiado caliente para comerla.",
+          "pt-BR": "Estava quente demais para comer.",
+          "id": "Bubur itu terlalu panas untuk dimakan.",
+          "ar": "كانت ساخنة جدًا بحيث لا يمكن أكلها.",
+          "vi": "Cháo nóng quá không thể ăn được.",
+          "hi": "वह खाने के लिए बहुत गर्म था।",
+          "ru": "Каша была слишком горячей, чтобы её есть.",
+          "bn": "সেটি খাওয়ার পক্ষে খুব গরম ছিল।",
+          "ur": "وہ کھانے کے لیے بہت گرم تھا۔",
+          "th": "มันร้อนเกินกว่าจะกินได้"
+        }
       },
       {
         "id": "cl-goldilocks-13",
         "english": "The porridge in the middle-sized bowl was too cold.",
-        "turkish": "Orta boy kâsedeki lapa çok soğuktu."
+        "turkish": "Orta boy kâsedeki lapa çok soğuktu.",
+        "translations": {
+          "es-419": "La avena del tazón mediano estaba demasiado fría.",
+          "pt-BR": "O mingau da tigela média estava frio demais.",
+          "id": "Bubur dalam mangkuk sedang terlalu dingin.",
+          "ar": "كانت العصيدة في الوعاء المتوسط باردة جدًا.",
+          "vi": "Cháo trong bát cỡ vừa lại quá nguội.",
+          "hi": "मझोले कटोरे का दलिया बहुत ठंडा था।",
+          "ru": "Каша в средней миске была слишком холодной.",
+          "bn": "মাঝারি বাটির জাউ খুব ঠান্ডা ছিল।",
+          "ur": "درمیانے پیالے کا دلیہ بہت ٹھنڈا تھا۔",
+          "th": "ข้าวโอ๊ตต้มในชามกลางเย็นเกินไป"
+        }
       },
       {
         "id": "cl-goldilocks-14",
         "english": "But the little bear’s porridge was just right.",
-        "turkish": "Ama küçük ayının lapası tam kıvamındaydı."
+        "turkish": "Ama küçük ayının lapası tam kıvamındaydı.",
+        "translations": {
+          "es-419": "Pero la del osito estaba en su punto.",
+          "pt-BR": "Mas o mingau do ursinho estava no ponto certo.",
+          "id": "Namun, bubur beruang kecil pas sekali.",
+          "ar": "لكن عصيدة الدب الصغير كانت مناسبة تمامًا.",
+          "vi": "Nhưng cháo của chú gấu nhỏ thì vừa miệng.",
+          "hi": "लेकिन छोटे भालू का दलिया बिलकुल सही था।",
+          "ru": "А каша маленького медведя была в самый раз.",
+          "bn": "কিন্তু ছোট ভালুকের জাউ একদম ঠিক ছিল।",
+          "ur": "لیکن چھوٹے ریچھ کا دلیہ بالکل ٹھیک تھا۔",
+          "th": "แต่ข้าวโอ๊ตต้มของหมีตัวเล็กกำลังพอดี"
+        }
       },
       {
         "id": "cl-goldilocks-15",
         "english": "Goldilocks ate it until the little bowl was empty.",
-        "turkish": "Goldilocks küçük kâse boşalana kadar lapayı yedi."
+        "turkish": "Goldilocks küçük kâse boşalana kadar lapayı yedi.",
+        "translations": {
+          "es-419": "Goldilocks se la comió hasta dejar vacío el tazón pequeño.",
+          "pt-BR": "Cachinhos Dourados comeu tudo até deixar a tigela pequena vazia.",
+          "id": "Goldilocks memakannya sampai mangkuk kecil itu kosong.",
+          "ar": "أكلتها غولديلوكس حتى أصبح الوعاء الصغير فارغًا.",
+          "vi": "Goldilocks ăn hết cháo trong bát nhỏ.",
+          "hi": "गोल्डीलॉक्स ने उसे खाकर छोटा कटोरा खाली कर दिया।",
+          "ru": "Златовласка съела её всю, и маленькая миска опустела.",
+          "bn": "গোল্ডিলক্স খেয়ে ছোট বাটিটি খালি করে দিল।",
+          "ur": "گولڈی لاکس نے کھا کر چھوٹا پیالہ خالی کر دیا۔",
+          "th": "โกลดิล็อกส์กินจนชามเล็กว่างเปล่า"
+        }
       },
       {
         "id": "cl-goldilocks-16",
         "english": "Then she wanted to rest her tired legs.",
-        "turkish": "Sonra yorgun bacaklarını dinlendirmek istedi."
+        "turkish": "Sonra yorgun bacaklarını dinlendirmek istedi.",
+        "translations": {
+          "es-419": "Luego quiso descansar sus piernas cansadas.",
+          "pt-BR": "Depois quis descansar as pernas cansadas.",
+          "id": "Lalu ia ingin mengistirahatkan kakinya yang lelah.",
+          "ar": "ثم أرادت أن تريح ساقيها المتعبتين.",
+          "vi": "Sau đó, cô muốn nghỉ cho đôi chân mỏi.",
+          "hi": "फिर उसने अपने थके पैरों को आराम देना चाहा।",
+          "ru": "Потом она захотела дать отдых уставшим ногам.",
+          "bn": "তারপর সে ক্লান্ত পা দুটিকে বিশ্রাম দিতে চাইল।",
+          "ur": "پھر اس نے اپنی تھکی ٹانگوں کو آرام دینا چاہا۔",
+          "th": "จากนั้นเธออยากพักขาที่เหนื่อยล้า"
+        }
       },
       {
         "id": "cl-goldilocks-17",
         "english": "The large chair was too hard, and the middle-sized chair was too soft.",
-        "turkish": "Büyük sandalye çok sertti, orta boy sandalye ise çok yumuşaktı."
+        "turkish": "Büyük sandalye çok sertti, orta boy sandalye ise çok yumuşaktı.",
+        "translations": {
+          "es-419": "La silla grande era demasiado dura y la mediana demasiado blanda.",
+          "pt-BR": "A cadeira grande era dura demais e a média era macia demais.",
+          "id": "Kursi besar terlalu keras dan kursi sedang terlalu empuk.",
+          "ar": "كان الكرسي الكبير صلبًا جدًا، والكرسي المتوسط لينًا جدًا.",
+          "vi": "Ghế lớn quá cứng, còn ghế cỡ vừa quá mềm.",
+          "hi": "बड़ी कुर्सी बहुत सख्त थी और मझोली कुर्सी बहुत मुलायम।",
+          "ru": "Большой стул был слишком жёстким, а средний слишком мягким.",
+          "bn": "বড় চেয়ারটি খুব শক্ত ছিল আর মাঝারি চেয়ারটি খুব নরম ছিল।",
+          "ur": "بڑی کرسی بہت سخت تھی اور درمیانی کرسی بہت نرم تھی۔",
+          "th": "เก้าอี้ใหญ่แข็งเกินไป และเก้าอี้กลางนุ่มเกินไป"
+        }
       },
       {
         "id": "cl-goldilocks-18",
         "english": "She sat in the little chair and smiled.",
-        "turkish": "Küçük sandalyeye oturdu ve gülümsedi."
+        "turkish": "Küçük sandalyeye oturdu ve gülümsedi.",
+        "translations": {
+          "es-419": "Se sentó en la silla pequeña y sonrió.",
+          "pt-BR": "Ela se sentou na cadeira pequena e sorriu.",
+          "id": "Ia duduk di kursi kecil dan tersenyum.",
+          "ar": "جلست على الكرسي الصغير وابتسمت.",
+          "vi": "Cô ngồi lên ghế nhỏ và mỉm cười.",
+          "hi": "वह छोटी कुर्सी पर बैठी और मुस्कुराई।",
+          "ru": "Она села на маленький стул и улыбнулась.",
+          "bn": "সে ছোট চেয়ারে বসে হাসল।",
+          "ur": "وہ چھوٹی کرسی پر بیٹھی اور مسکرائی۔",
+          "th": "เธอนั่งบนเก้าอี้เล็กแล้วยิ้ม"
+        }
       },
       {
         "id": "cl-goldilocks-19",
         "english": "But the chair broke under her, and she fell to the floor.",
-        "turkish": "Ama sandalye altında kırıldı ve yere düştü."
+        "turkish": "Ama sandalye altında kırıldı ve yere düştü.",
+        "translations": {
+          "es-419": "Pero la silla se rompió bajo ella y cayó al suelo.",
+          "pt-BR": "Mas a cadeira quebrou debaixo dela e ela caiu no chão.",
+          "id": "Namun, kursi itu patah di bawahnya dan ia jatuh ke lantai.",
+          "ar": "لكن الكرسي انكسر تحتها، فسقطت على الأرض.",
+          "vi": "Nhưng chiếc ghế gãy dưới người cô và cô ngã xuống sàn.",
+          "hi": "लेकिन कुर्सी उसके नीचे टूट गई और वह फ़र्श पर गिर गई।",
+          "ru": "Но стул сломался под ней, и она упала на пол.",
+          "bn": "কিন্তু চেয়ারটি তার নিচে ভেঙে গেল এবং সে মেঝেতে পড়ল।",
+          "ur": "لیکن کرسی اس کے نیچے ٹوٹ گئی اور وہ فرش پر گر گئی۔",
+          "th": "แต่เก้าอี้หักใต้ตัวเธอ ทำให้เธอตกลงบนพื้น"
+        }
       },
       {
         "id": "cl-goldilocks-20",
         "english": "Goldilocks got up and went upstairs to look for a bed.",
-        "turkish": "Goldilocks kalktı ve bir yatak bulmak için üst kata çıktı."
+        "turkish": "Goldilocks kalktı ve bir yatak bulmak için üst kata çıktı.",
+        "translations": {
+          "es-419": "Goldilocks se levantó y subió a buscar una cama.",
+          "pt-BR": "Cachinhos Dourados se levantou e subiu para procurar uma cama.",
+          "id": "Goldilocks bangkit dan naik ke lantai atas untuk mencari tempat tidur.",
+          "ar": "نهضت غولديلوكس وصعدت لتبحث عن سرير.",
+          "vi": "Goldilocks đứng dậy, lên lầu tìm giường.",
+          "hi": "गोल्डीलॉक्स उठी और बिस्तर ढूँढ़ने ऊपर गई।",
+          "ru": "Златовласка поднялась и пошла наверх искать кровать.",
+          "bn": "গোল্ডিলক্স উঠে বিছানা খুঁজতে ওপরতলায় গেল।",
+          "ur": "گولڈی لاکس اٹھی اور بستر تلاش کرنے اوپر گئی۔",
+          "th": "โกลดิล็อกส์ลุกขึ้นแล้วขึ้นบันไดไปหาเตียง"
+        }
       },
       {
         "id": "cl-goldilocks-21",
         "english": "She tried the two larger beds, but neither felt comfortable.",
-        "turkish": "Daha büyük olan iki yatağı denedi ama ikisi de rahat gelmedi."
+        "turkish": "Daha büyük olan iki yatağı denedi ama ikisi de rahat gelmedi.",
+        "translations": {
+          "es-419": "Probó las dos camas más grandes, pero ninguna le pareció cómoda.",
+          "pt-BR": "Experimentou as duas camas maiores, mas nenhuma pareceu confortável.",
+          "id": "Ia mencoba dua tempat tidur yang lebih besar, tetapi keduanya tidak terasa nyaman.",
+          "ar": "جربت السريرين الأكبر، لكن لم يكن أي منهما مريحًا.",
+          "vi": "Cô thử hai chiếc giường lớn hơn nhưng không chiếc nào thoải mái.",
+          "hi": "उसने दोनों बड़े बिस्तर आज़माए, लेकिन कोई भी आरामदायक नहीं लगा।",
+          "ru": "Она попробовала две большие кровати, но ни одна не показалась удобной.",
+          "bn": "সে দুটি বড় বিছানা দেখল, কিন্তু কোনোটাই আরামদায়ক লাগল না।",
+          "ur": "اس نے دونوں بڑے بستر آزمائے، لیکن کوئی بھی آرام دہ نہ لگا۔",
+          "th": "เธอลองเตียงใหญ่ทั้งสอง แต่ไม่มีเตียงไหนสบาย"
+        }
       },
       {
         "id": "cl-goldilocks-22",
         "english": "The little bed was just right, so she lay down.",
-        "turkish": "Küçük yatak tam ona göreydi, o da uzandı."
+        "turkish": "Küçük yatak tam ona göreydi, o da uzandı.",
+        "translations": {
+          "es-419": "La cama pequeña era perfecta, así que se acostó.",
+          "pt-BR": "A cama pequena era perfeita, então ela se deitou.",
+          "id": "Tempat tidur kecil pas sekali, jadi ia berbaring.",
+          "ar": "كان السرير الصغير مناسبًا تمامًا، فاستلقت عليه.",
+          "vi": "Giường nhỏ vừa vặn nên cô nằm xuống.",
+          "hi": "छोटा बिस्तर बिलकुल सही था, इसलिए वह लेट गई।",
+          "ru": "Маленькая кровать была в самый раз, и она легла.",
+          "bn": "ছোট বিছানাটি একদম ঠিক ছিল, তাই সে শুয়ে পড়ল।",
+          "ur": "چھوٹا بستر بالکل ٹھیک تھا، اس لیے وہ لیٹ گئی۔",
+          "th": "เตียงเล็กกำลังพอดี เธอจึงนอนลง"
+        }
       },
       {
         "id": "cl-goldilocks-23",
         "english": "Soon she was fast asleep.",
-        "turkish": "Kısa süre sonra derin bir uykuya daldı."
+        "turkish": "Kısa süre sonra derin bir uykuya daldı.",
+        "translations": {
+          "es-419": "Pronto se quedó profundamente dormida.",
+          "pt-BR": "Logo estava dormindo profundamente.",
+          "id": "Tak lama kemudian, ia tertidur lelap.",
+          "ar": "وسرعان ما نامت نومًا عميقًا.",
+          "vi": "Chẳng mấy chốc cô đã ngủ say.",
+          "hi": "जल्दी ही वह गहरी नींद में सो गई।",
+          "ru": "Вскоре она крепко уснула.",
+          "bn": "শীঘ্রই সে গভীর ঘুমে ঢলে পড়ল।",
+          "ur": "جلد ہی وہ گہری نیند سو گئی۔",
+          "th": "ไม่นานเธอก็หลับสนิท"
+        }
       },
       {
         "id": "cl-goldilocks-24",
         "english": "When the bears returned, they noticed the spoons in their porridge.",
-        "turkish": "Ayılar döndüğünde lapalarındaki kaşıkları fark ettiler."
+        "turkish": "Ayılar döndüğünde lapalarındaki kaşıkları fark ettiler.",
+        "translations": {
+          "es-419": "Cuando los osos regresaron, notaron las cucharas en su avena.",
+          "pt-BR": "Quando os ursos voltaram, notaram as colheres no mingau.",
+          "id": "Ketika beruang-beruang pulang, mereka melihat sendok di dalam bubur mereka.",
+          "ar": "عندما عادت الدببة، لاحظت الملاعق في عصيدتها.",
+          "vi": "Khi những chú gấu trở về, chúng nhận thấy những chiếc thìa trong cháo.",
+          "hi": "भालुओं ने लौटकर अपने दलिये में पड़े चम्मच देखे।",
+          "ru": "Вернувшись, медведи заметили ложки в своей каше.",
+          "bn": "ভালুকেরা ফিরে এসে তাদের জাউয়ের মধ্যে চামচ দেখল।",
+          "ur": "ریچھ واپس آئے تو انہوں نے اپنے دلیے میں چمچ دیکھے۔",
+          "th": "เมื่อหมีกลับมา พวกมันสังเกตเห็นช้อนในข้าวโอ๊ตต้ม"
+        }
       },
       {
         "id": "cl-goldilocks-25",
         "english": "The little bear looked into his bowl and found nothing.",
-        "turkish": "Küçük ayı kâsesine baktı ve içinde hiçbir şey bulamadı."
+        "turkish": "Küçük ayı kâsesine baktı ve içinde hiçbir şey bulamadı.",
+        "translations": {
+          "es-419": "El osito miró su tazón y no encontró nada.",
+          "pt-BR": "O ursinho olhou dentro da tigela e não encontrou nada.",
+          "id": "Beruang kecil melihat ke dalam mangkuknya dan tidak menemukan apa pun.",
+          "ar": "نظر الدب الصغير في وعائه فلم يجد شيئًا.",
+          "vi": "Chú gấu nhỏ nhìn vào bát mà không thấy gì.",
+          "hi": "छोटे भालू ने अपने कटोरे में देखा, लेकिन उसमें कुछ नहीं था।",
+          "ru": "Маленький медведь заглянул в миску и ничего не нашёл.",
+          "bn": "ছোট ভালুক নিজের বাটিতে তাকিয়ে কিছুই পেল না।",
+          "ur": "چھوٹے ریچھ نے اپنے پیالے میں دیکھا تو کچھ نہ ملا۔",
+          "th": "หมีตัวเล็กมองในชามของมัน แต่ไม่พบอะไรเลย"
+        }
       },
       {
         "id": "cl-goldilocks-26",
         "english": "\"Someone has eaten my breakfast!\" he cried.",
-        "turkish": "\"Birisi kahvaltımı yemiş!\" diye bağırdı."
+        "turkish": "\"Birisi kahvaltımı yemiş!\" diye bağırdı.",
+        "translations": {
+          "es-419": "«¡Alguien se ha comido mi desayuno!», gritó.",
+          "pt-BR": "«Alguém comeu meu café da manhã!», gritou ele.",
+          "id": "«Seseorang telah memakan sarapanku!» teriaknya.",
+          "ar": "صاح: «لقد أكل أحدهم إفطاري!»",
+          "vi": "«Ai đó đã ăn hết bữa sáng của mình!», chú kêu lên.",
+          "hi": "वह चिल्लाया, «किसी ने मेरा नाश्ता खा लिया!»",
+          "ru": "«Кто-то съел мой завтрак!» — закричал он.",
+          "bn": "সে চিৎকার করল, «কেউ আমার নাশতা খেয়ে ফেলেছে!»",
+          "ur": "وہ چلایا، «کسی نے میرا ناشتہ کھا لیا!»",
+          "th": "«มีคนกินอาหารเช้าของฉันหมดแล้ว!» มันร้อง"
+        }
       },
       {
         "id": "cl-goldilocks-27",
         "english": "Next, the bears went to their chairs.",
-        "turkish": "Sonra ayılar sandalyelerinin yanına gitti."
+        "turkish": "Sonra ayılar sandalyelerinin yanına gitti.",
+        "translations": {
+          "es-419": "Después, los osos fueron a sus sillas.",
+          "pt-BR": "Em seguida, os ursos foram até suas cadeiras.",
+          "id": "Selanjutnya, beruang-beruang itu menuju kursi mereka.",
+          "ar": "بعد ذلك، ذهبت الدببة إلى كراسيها.",
+          "vi": "Tiếp theo, những chú gấu đến chỗ ghế của mình.",
+          "hi": "इसके बाद भालू अपनी कुर्सियों के पास गए।",
+          "ru": "Потом медведи подошли к своим стульям.",
+          "bn": "তারপর ভালুকেরা তাদের চেয়ারের কাছে গেল।",
+          "ur": "پھر ریچھ اپنی کرسیوں کے پاس گئے۔",
+          "th": "ต่อมา พวกหมีเดินไปที่เก้าอี้ของตน"
+        }
       },
       {
         "id": "cl-goldilocks-28",
         "english": "The little bear’s chair lay broken on the floor.",
-        "turkish": "Küçük ayının sandalyesi yerde kırılmış halde duruyordu."
+        "turkish": "Küçük ayının sandalyesi yerde kırılmış halde duruyordu.",
+        "translations": {
+          "es-419": "La silla del osito estaba rota en el suelo.",
+          "pt-BR": "A cadeira do ursinho estava quebrada no chão.",
+          "id": "Kursi beruang kecil tergeletak patah di lantai.",
+          "ar": "كان كرسي الدب الصغير مكسورًا على الأرض.",
+          "vi": "Chiếc ghế của chú gấu nhỏ nằm gãy trên sàn.",
+          "hi": "छोटे भालू की कुर्सी टूटी हुई फ़र्श पर पड़ी थी।",
+          "ru": "Стульчик маленького медведя лежал сломанным на полу.",
+          "bn": "ছোট ভালুকের চেয়ারটি ভাঙা অবস্থায় মেঝেতে পড়ে ছিল।",
+          "ur": "چھوٹے ریچھ کی کرسی ٹوٹی ہوئی فرش پر پڑی تھی۔",
+          "th": "เก้าอี้ของหมีตัวเล็กหักอยู่บนพื้น"
+        }
       },
       {
         "id": "cl-goldilocks-29",
         "english": "The bears looked at each other and went upstairs.",
-        "turkish": "Ayılar birbirlerine baktı ve üst kata çıktı."
+        "turkish": "Ayılar birbirlerine baktı ve üst kata çıktı.",
+        "translations": {
+          "es-419": "Los osos se miraron y subieron las escaleras.",
+          "pt-BR": "Os ursos se entreolharam e subiram as escadas.",
+          "id": "Mereka saling memandang, lalu naik ke lantai atas.",
+          "ar": "نظرت الدببة إلى بعضها ثم صعدت إلى الطابق العلوي.",
+          "vi": "Những chú gấu nhìn nhau rồi lên lầu.",
+          "hi": "भालुओं ने एक-दूसरे को देखा और ऊपर गए।",
+          "ru": "Медведи переглянулись и пошли наверх.",
+          "bn": "ভালুকেরা একে অন্যের দিকে তাকিয়ে ওপরতলায় গেল।",
+          "ur": "ریچھوں نے ایک دوسرے کو دیکھا اور اوپر گئے۔",
+          "th": "พวกหมีมองหน้ากันแล้วขึ้นบันได"
+        }
       },
       {
         "id": "cl-goldilocks-30",
         "english": "There they found Goldilocks sleeping in the little bed.",
-        "turkish": "Orada Goldilocks’u küçük yatakta uyurken buldular."
+        "turkish": "Orada Goldilocks’u küçük yatakta uyurken buldular.",
+        "translations": {
+          "es-419": "Allí encontraron a Goldilocks durmiendo en la cama pequeña.",
+          "pt-BR": "Lá encontraram Cachinhos Dourados dormindo na cama pequena.",
+          "id": "Di sana, mereka menemukan Goldilocks sedang tidur di tempat tidur kecil.",
+          "ar": "هناك وجدت غولديلوكس نائمة في السرير الصغير.",
+          "vi": "Ở đó, chúng tìm thấy Goldilocks đang ngủ trên giường nhỏ.",
+          "hi": "वहाँ उन्हें गोल्डीलॉक्स छोटे बिस्तर पर सोती हुई मिली।",
+          "ru": "Там они нашли Златовласку, спящую в маленькой кровати.",
+          "bn": "সেখানে তারা গোল্ডিলক্সকে ছোট বিছানায় ঘুমাতে দেখল।",
+          "ur": "وہاں انہیں گولڈی لاکس چھوٹے بستر پر سوئی ہوئی ملی۔",
+          "th": "ที่นั่น พวกมันพบโกลดิล็อกส์กำลังนอนอยู่บนเตียงเล็ก"
+        }
       },
       {
         "id": "cl-goldilocks-31",
         "english": "The large bear spoke, but Goldilocks did not wake up.",
-        "turkish": "Büyük ayı konuştu ama Goldilocks uyanmadı."
+        "turkish": "Büyük ayı konuştu ama Goldilocks uyanmadı.",
+        "translations": {
+          "es-419": "El oso grande habló, pero Goldilocks no despertó.",
+          "pt-BR": "O urso grande falou, mas Cachinhos Dourados não acordou.",
+          "id": "Beruang besar berbicara, tetapi Goldilocks tidak terbangun.",
+          "ar": "تكلم الدب الكبير، لكن غولديلوكس لم تستيقظ.",
+          "vi": "Chú gấu lớn nói nhưng Goldilocks không tỉnh dậy.",
+          "hi": "बड़ा भालू बोला, लेकिन गोल्डीलॉक्स नहीं जागी।",
+          "ru": "Большой медведь заговорил, но Златовласка не проснулась.",
+          "bn": "বড় ভালুক কথা বলল, কিন্তু গোল্ডিলক্স জাগল না।",
+          "ur": "بڑا ریچھ بولا، لیکن گولڈی لاکس نہیں جاگی۔",
+          "th": "หมีตัวใหญ่พูด แต่โกลดิล็อกส์ไม่ตื่น"
+        }
       },
       {
         "id": "cl-goldilocks-32",
         "english": "Then the little bear called out beside his bed.",
-        "turkish": "Sonra küçük ayı yatağının yanında seslendi."
+        "turkish": "Sonra küçük ayı yatağının yanında seslendi.",
+        "translations": {
+          "es-419": "Entonces el osito gritó junto a su cama.",
+          "pt-BR": "Então o ursinho gritou ao lado da cama dele.",
+          "id": "Lalu beruang kecil berteriak di samping tempat tidurnya.",
+          "ar": "ثم نادى الدب الصغير بجانب سريره.",
+          "vi": "Rồi chú gấu nhỏ kêu lên bên cạnh giường mình.",
+          "hi": "फिर छोटा भालू अपने बिस्तर के पास ज़ोर से बोला।",
+          "ru": "Тогда маленький медведь закричал рядом со своей кроватью.",
+          "bn": "তারপর ছোট ভালুক নিজের বিছানার পাশে জোরে ডাকল।",
+          "ur": "پھر چھوٹا ریچھ اپنے بستر کے پاس زور سے پکارا۔",
+          "th": "จากนั้นหมีตัวเล็กร้องขึ้นข้างเตียงของมัน"
+        }
       },
       {
         "id": "cl-goldilocks-33",
         "english": "Goldilocks opened her eyes and saw the three bears watching her.",
-        "turkish": "Goldilocks gözlerini açtı ve üç ayının kendisini izlediğini gördü."
+        "turkish": "Goldilocks gözlerini açtı ve üç ayının kendisini izlediğini gördü.",
+        "translations": {
+          "es-419": "Goldilocks abrió los ojos y vio a los tres osos mirándola.",
+          "pt-BR": "Cachinhos Dourados abriu os olhos e viu os três ursos olhando para ela.",
+          "id": "Goldilocks membuka mata dan melihat tiga beruang sedang menatapnya.",
+          "ar": "فتحت غولديلوكس عينيها ورأت الدببة الثلاثة تنظر إليها.",
+          "vi": "Goldilocks mở mắt và thấy ba chú gấu đang nhìn cô.",
+          "hi": "गोल्डीलॉक्स ने आँखें खोलीं और तीनों भालुओं को अपनी ओर देखते पाया।",
+          "ru": "Златовласка открыла глаза и увидела, что три медведя смотрят на неё.",
+          "bn": "গোল্ডিলক্স চোখ খুলে দেখল তিনটি ভালুক তার দিকে তাকিয়ে আছে।",
+          "ur": "گولڈی لاکس نے آنکھیں کھولیں تو تینوں ریچھ اسے دیکھ رہے تھے۔",
+          "th": "โกลดิล็อกส์ลืมตาและเห็นหมีสามตัวกำลังมองเธอ"
+        }
       },
       {
         "id": "cl-goldilocks-34",
         "english": "She was so frightened that she jumped out of the bed.",
-        "turkish": "O kadar korktu ki yataktan fırladı."
+        "turkish": "O kadar korktu ki yataktan fırladı.",
+        "translations": {
+          "es-419": "Se asustó tanto que saltó de la cama.",
+          "pt-BR": "Ela ficou tão assustada que pulou da cama.",
+          "id": "Ia begitu ketakutan sampai melompat dari tempat tidur.",
+          "ar": "خافت كثيرًا وقفزت من السرير.",
+          "vi": "Cô hoảng sợ đến mức nhảy bật khỏi giường.",
+          "hi": "वह इतनी डर गई कि बिस्तर से कूद पड़ी।",
+          "ru": "Она так испугалась, что выскочила из кровати.",
+          "bn": "সে এত ভয় পেল যে বিছানা থেকে লাফিয়ে উঠল।",
+          "ur": "وہ اتنی ڈری کہ بستر سے کود پڑی۔",
+          "th": "เธอกลัวมากจนกระโดดลงจากเตียง"
+        }
       },
       {
         "id": "cl-goldilocks-35",
         "english": "The window was open, and she climbed out through it.",
-        "turkish": "Pencere açıktı, o da pencereden dışarı çıktı."
+        "turkish": "Pencere açıktı, o da pencereden dışarı çıktı.",
+        "translations": {
+          "es-419": "La ventana estaba abierta y salió por ella.",
+          "pt-BR": "A janela estava aberta e ela saiu por ela.",
+          "id": "Jendelanya terbuka, dan ia memanjat keluar lewat jendela itu.",
+          "ar": "كانت النافذة مفتوحة، فتسلقت وخرجت منها.",
+          "vi": "Cửa sổ đang mở và cô trèo qua đó ra ngoài.",
+          "hi": "खिड़की खुली थी और वह उससे बाहर निकल गई।",
+          "ru": "Окно было открыто, и она выбралась через него наружу.",
+          "bn": "জানালা খোলা ছিল, আর সে সেটি দিয়ে বাইরে বেরিয়ে গেল।",
+          "ur": "کھڑکی کھلی تھی اور وہ اس سے باہر نکل گئی۔",
+          "th": "หน้าต่างเปิดอยู่ เธอจึงปีนออกไปทางนั้น"
+        }
       },
       {
         "id": "cl-goldilocks-36",
         "english": "She ran away into the wood without looking back.",
-        "turkish": "Arkasına bakmadan koruluğa doğru koşup uzaklaştı."
+        "turkish": "Arkasına bakmadan koruluğa doğru koşup uzaklaştı.",
+        "translations": {
+          "es-419": "Corrió hacia el bosque sin mirar atrás.",
+          "pt-BR": "Correu para a floresta sem olhar para trás.",
+          "id": "Ia berlari ke hutan tanpa menoleh ke belakang.",
+          "ar": "ركضت إلى الغابة دون أن تنظر خلفها.",
+          "vi": "Cô chạy vào rừng, không ngoái lại.",
+          "hi": "वह पीछे देखे बिना जंगल की ओर भागी।",
+          "ru": "Она убежала в лес, не оглядываясь.",
+          "bn": "সে পেছনে না তাকিয়ে বনের দিকে দৌড়াল।",
+          "ur": "وہ پیچھے دیکھے بغیر جنگل کی طرف بھاگ گئی۔",
+          "th": "เธอวิ่งหนีเข้าไปในป่าโดยไม่หันกลับมามอง"
+        }
       },
       {
         "id": "cl-goldilocks-37",
         "english": "The bears never saw Goldilocks in their house again.",
-        "turkish": "Ayılar Goldilocks’u bir daha evlerinde hiç görmedi."
+        "turkish": "Ayılar Goldilocks’u bir daha evlerinde hiç görmedi.",
+        "translations": {
+          "es-419": "Los osos nunca volvieron a ver a Goldilocks en su casa.",
+          "pt-BR": "Os ursos nunca mais viram Cachinhos Dourados em sua casa.",
+          "id": "Beruang-beruang itu tidak pernah melihat Goldilocks di rumah mereka lagi.",
+          "ar": "لم تر الدببة غولديلوكس في بيتها مرة أخرى.",
+          "vi": "Những chú gấu không bao giờ thấy Goldilocks trong nhà mình nữa.",
+          "hi": "भालुओं ने गोल्डीलॉक्स को अपने घर में फिर कभी नहीं देखा।",
+          "ru": "Медведи больше никогда не видели Златовласку в своём доме.",
+          "bn": "ভালুকেরা গোল্ডিলক্সকে তাদের বাড়িতে আর কখনও দেখেনি।",
+          "ur": "ریچھوں نے گولڈی لاکس کو اپنے گھر میں پھر کبھی نہیں دیکھا۔",
+          "th": "พวกหมีไม่เคยเห็นโกลดิล็อกส์ในบ้านอีกเลย"
+        }
       }
     ],
     "questions": [
@@ -333,7 +778,19 @@
         ],
         "answer": 2
       }
-    ]
+    ],
+    "descriptions": {
+      "es-419": "Goldilocks entra en una casa vacía del bosque y prueba las cosas de tres osos. Cuando vuelven, encuentran las huellas de su visita.",
+      "pt-BR": "Cachinhos Dourados entra numa casa vazia na floresta e experimenta as coisas de três ursos. Quando voltam, encontram sinais da visita.",
+      "id": "Goldilocks masuk ke rumah kosong di hutan dan mencoba barang-barang milik tiga beruang. Saat pulang, mereka menemukan jejak kunjungannya.",
+      "ar": "تدخل غولديلوكس بيتًا خاليًا في الغابة وتجرب أشياء ثلاثة دببة. وعندما تعود الدببة تجد آثار زيارتها.",
+      "vi": "Goldilocks bước vào một ngôi nhà vắng trong rừng và thử đồ dùng của ba chú gấu. Khi trở về, chúng phát hiện dấu vết cô để lại.",
+      "hi": "गोल्डीलॉक्स जंगल के एक खाली घर में घुसकर तीन भालुओं की चीज़ें आज़माती है। लौटने पर भालुओं को उसके आने के निशान मिलते हैं।",
+      "ru": "Златовласка входит в пустой дом в лесу и пробует вещи трёх медведей. Вернувшись, медведи находят следы её визита.",
+      "bn": "গোল্ডিলক্স বনের একটি খালি বাড়িতে ঢুকে তিনটি ভালুকের জিনিস ব্যবহার করে। ভালুকেরা ফিরে এসে তার আসার চিহ্ন খুঁজে পায়।",
+      "ur": "گولڈی لاکس جنگل کے ایک خالی گھر میں جا کر تین ریچھوں کی چیزیں آزماتی ہے۔ واپس آ کر ریچھوں کو اس کے آنے کے نشان ملتے ہیں۔",
+      "th": "โกลดิล็อกส์เข้าไปในบ้านว่างกลางป่าและลองใช้สิ่งของของหมีสามตัว เมื่อหมีกลับมา พวกมันพบร่องรอยที่เธอทิ้งไว้"
+    }
   },
   "words": [
     {
@@ -341,56 +798,152 @@
       "word": "bowl",
       "translation": "kâse",
       "pronunciation": "/boʊl/",
-      "example": "The porridge is in a little bowl."
+      "example": "The porridge is in a little bowl.",
+      "translations": {
+        "es-419": "tazón",
+        "pt-BR": "tigela",
+        "id": "mangkuk",
+        "ar": "وعاء",
+        "vi": "bát",
+        "hi": "कटोरा",
+        "ru": "миска",
+        "bn": "বাটি",
+        "ur": "پیالہ",
+        "th": "ชาม"
+      }
     },
     {
       "id": "porridge",
       "word": "porridge",
       "translation": "yulaf lapası",
       "pronunciation": "/ˈpɔːrɪdʒ/",
-      "example": "The porridge is too hot."
+      "example": "The porridge is too hot.",
+      "translations": {
+        "es-419": "avena cocida",
+        "pt-BR": "mingau",
+        "id": "bubur",
+        "ar": "عصيدة",
+        "vi": "cháo yến mạch",
+        "hi": "दलिया",
+        "ru": "каша",
+        "bn": "জাউ",
+        "ur": "دلیہ",
+        "th": "ข้าวโอ๊ตต้ม"
+      }
     },
     {
       "id": "chair",
       "word": "chair",
       "translation": "sandalye",
       "pronunciation": "/tʃer/",
-      "example": "She sits in the little chair."
+      "example": "She sits in the little chair.",
+      "translations": {
+        "es-419": "silla",
+        "pt-BR": "cadeira",
+        "id": "kursi",
+        "ar": "كرسي",
+        "vi": "ghế",
+        "hi": "कुर्सी",
+        "ru": "стул",
+        "bn": "চেয়ার",
+        "ur": "کرسی",
+        "th": "เก้าอี้"
+      }
     },
     {
       "id": "hard",
       "word": "hard",
       "translation": "sert",
       "pronunciation": "/hɑːrd/",
-      "example": "The large chair is too hard."
+      "example": "The large chair is too hard.",
+      "translations": {
+        "es-419": "duro",
+        "pt-BR": "duro",
+        "id": "keras",
+        "ar": "صلب",
+        "vi": "cứng",
+        "hi": "सख्त",
+        "ru": "жёсткий",
+        "bn": "শক্ত",
+        "ur": "سخت",
+        "th": "แข็ง"
+      }
     },
     {
       "id": "soft",
       "word": "soft",
       "translation": "yumuşak",
       "pronunciation": "/sɔːft/",
-      "example": "This chair is too soft."
+      "example": "This chair is too soft.",
+      "translations": {
+        "es-419": "blando",
+        "pt-BR": "macio",
+        "id": "empuk; lembut",
+        "ar": "لين",
+        "vi": "mềm",
+        "hi": "मुलायम",
+        "ru": "мягкий",
+        "bn": "নরম",
+        "ur": "نرم",
+        "th": "นุ่ม"
+      }
     },
     {
       "id": "empty",
       "word": "empty",
       "translation": "boş",
       "pronunciation": "/ˈempti/",
-      "example": "The little bowl is empty."
+      "example": "The little bowl is empty.",
+      "translations": {
+        "es-419": "vacío",
+        "pt-BR": "vazio",
+        "id": "kosong",
+        "ar": "فارغ",
+        "vi": "trống",
+        "hi": "खाली",
+        "ru": "пустой",
+        "bn": "খালি",
+        "ur": "خالی",
+        "th": "ว่างเปล่า"
+      }
     },
     {
       "id": "comfortable",
       "word": "comfortable",
       "translation": "rahat",
       "pronunciation": "/ˈkʌmftəbəl/",
-      "example": "The little bed feels comfortable."
+      "example": "The little bed feels comfortable.",
+      "translations": {
+        "es-419": "cómodo",
+        "pt-BR": "confortável",
+        "id": "nyaman",
+        "ar": "مريح",
+        "vi": "thoải mái",
+        "hi": "आरामदायक",
+        "ru": "удобный",
+        "bn": "আরামদায়ক",
+        "ur": "آرام دہ",
+        "th": "สบาย"
+      }
     },
     {
       "id": "upstairs",
       "word": "upstairs",
       "translation": "üst kata, üst katta",
       "pronunciation": "/ˌʌpˈsterz/",
-      "example": "The bears go upstairs."
+      "example": "The bears go upstairs.",
+      "translations": {
+        "es-419": "arriba; en el piso de arriba",
+        "pt-BR": "no andar de cima; para cima",
+        "id": "di lantai atas; ke lantai atas",
+        "ar": "في الطابق العلوي؛ إلى الأعلى",
+        "vi": "trên lầu; lên lầu",
+        "hi": "ऊपर की मंज़िल पर",
+        "ru": "наверху; наверх",
+        "bn": "ওপরতলায়",
+        "ur": "اوپر کی منزل پر",
+        "th": "ชั้นบน; ขึ้นชั้นบน"
+      }
     }
   ],
   "existingStudyWordIds": [
@@ -460,9 +1013,21 @@
     }
   ],
   "publicationBlockers": [
-    "Human editorial and target-level review pending.",
-    "Ten support-language translations and review pending.",
-    "Cover artwork, rights record and asset mapping pending.",
-    "Publisher revision creation, validation and publication pending."
-  ]
+    "Native-speaker language review not performed; owner approved publication as AI-assisted drafts."
+  ],
+  "ownerPublicationAuthorization": {
+    "instruction": "Tum eksikleri gider ve tamamla",
+    "date": "2026-10-23",
+    "by": "Oğuz Yürken",
+    "nativeSpeakerApproved": false
+  },
+  "publication": {
+    "status": "published",
+    "revisionId": "68e8ef8b-dad6-4856-ba67-c7bfcd915ac6",
+    "publishedAt": "2026-10-23T10:24:53.683478+00:00",
+    "project": "gtuangjukckpuerczfxd",
+    "ownerAuthorized": true,
+    "nativeSpeakerApproved": false,
+    "evidence": "native-android/docs/release-evidence/2026-10-23-completion.json"
+  }
 }

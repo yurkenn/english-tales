@@ -117,7 +117,7 @@
     ],
     "pendingLanguages": [],
     "reviewedLanguages": [],
-    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+    "reviewStatus": "AI-drafted translations; owner authorized publication on 2026-10-23; not native-speaker-approved"
   },
   "story": {
     "id": "classic-ugly-duckling",
@@ -2315,5 +2315,14 @@
     "wordsAfter": 1545,
     "sentencesBefore": 28,
     "sentencesAfter": 103
+  },
+  "publication": {
+    "status": "published",
+    "revisionId": "7b8aaccb-102c-488b-8559-6deee349283f",
+    "publishedAt": "2026-10-23T10:21:13.550842+00:00",
+    "project": "gtuangjukckpuerczfxd",
+    "ownerAuthorized": true,
+    "nativeSpeakerApproved": false,
+    "evidence": "native-android/docs/release-evidence/2026-10-23-completion.json"
   }
 }

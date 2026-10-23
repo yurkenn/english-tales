@@ -91,3 +91,39 @@ test('snapshot rejects checksum failure and catalog drift without writing a comp
       await assert.rejects(access(path.join(parent,now().toISOString().replaceAll(':','-'),'catalog.json')));
     });
 });
+
+test('a catalog with more than 20000 translation rows is not truncated',async()=>temporary(async parent=>{
+  const {snapshot}=await fixture();
+  const fake=fakeFetch(snapshot.tables,{page:(table,offset)=>table==='sentence_translations'
+    ?Array.from({length:Math.max(0,Math.min(500,20001-offset))},(_,i)=>({fixture:offset+i}))
+    :offset===0?snapshot.tables[table]:[]});
+  const {snapshot:result}=await backupPublicContent({settings,parent,now,...fake});
+  assert.equal(result.tables.sentence_translations.length,20001);
+  assert.equal(result.tables.sentence_translations.at(-1).fixture,20000);
+}));
+
+test('a transient statement timeout retries the same anonymous GET only once',async()=>temporary(async parent=>{
+  const {snapshot}=await fixture(),fake=fakeFetch(snapshot.tables);let attempts=0;
+  const fetchImpl=async(url,init)=>{
+    if(new URL(url).pathname.endsWith('/story_sentences')&&attempts++===0)return Response.json({code:'57014'},{status:500});
+    return fake.fetchImpl(url,init);
+  };
+  const {snapshot:result}=await backupPublicContent({settings,parent,now,fetchImpl});
+  assert.deepEqual(result.tables.story_sentences,snapshot.tables.story_sentences);
+  assert.equal(attempts,2);
+}));
+
+test('cursor pagination advances all composite columns without growing offsets',async()=>temporary(async parent=>{
+  const {snapshot}=await fixture(),calls=[];
+  const page=Array.from({length:500},(_,i)=>({revision_id:'revision',sentence_id:`sentence-${String(i).padStart(3,'0')}`,lang:'tr',text:'text'}));
+  const base=fakeFetch(snapshot.tables);
+  const fetchImpl=async(input,options)=>{
+    const url=new URL(input);
+    if(!url.pathname.endsWith('/sentence_translations'))return base.fetchImpl(input,options);
+    calls.push(url);assert.equal(url.searchParams.get('offset'),'0');
+    return Response.json(url.searchParams.has('or')?[{revision_id:'revision',sentence_id:'sentence-500',lang:'tr',text:'last'}]:page);
+  };
+  const {snapshot:result}=await backupPublicContent({settings,parent,now,fetchImpl,cursorPaging:true});
+  assert.equal(result.tables.sentence_translations.length,501);
+  assert.equal(calls[1].searchParams.get('or'),'(revision_id.gt."revision",and(revision_id.eq."revision",sentence_id.gt."sentence-499"),and(revision_id.eq."revision",sentence_id.eq."sentence-499",lang.gt."tr"))');
+}));

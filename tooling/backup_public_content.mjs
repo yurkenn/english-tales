@@ -12,7 +12,7 @@ const orders={story_sentences:'revision_id,id',revision_words:'revision_id,id',s
 const signature=stories=>JSON.stringify(stories.map(s=>[s.id,s.current_revision_id,s.is_archived]).sort((a,b)=>a[0].localeCompare(b[0])));
 
 /** Importing this module never reads credentials, writes files or opens a connection. */
-export async function backupPublicContent({settings,parent,fetchImpl=fetch,now=()=>new Date()}={}){
+export async function backupPublicContent({settings,parent,fetchImpl=fetch,now=()=>new Date(),cursorPaging=false}={}){
   settings??=Object.fromEntries((await readFile(path.join(root,'native-android/config/production.properties'),'utf8')).split(/\r?\n/).filter(x=>x&&!x.startsWith('#')).map(x=>{const n=x.indexOf('=');return [x.slice(0,n),x.slice(n+1)];}));
   const base=settings.SUPABASE_URL;
   if(base!=='https://gtuangjukckpuerczfxd.supabase.co'||!settings.SUPABASE_PUBLISHABLE_KEY?.startsWith('sb_publishable_'))throw Error('Production configuration required');
@@ -21,10 +21,13 @@ export async function backupPublicContent({settings,parent,fetchImpl=fetch,now=(
   const directory=path.join(parent,now().toISOString().replaceAll(':','-'));
   await mkdir(directory);await mkdir(path.join(directory,'media'));
   const headers={apikey:settings.SUPABASE_PUBLISHABLE_KEY};
-  async function get(route){
+  async function get(route,{retryTimeout=true}={}){
     const response=await fetchImpl(base+route,{headers,redirect:'error',signal:AbortSignal.timeout(30000)});
     if(!response.ok){
       let code;try{code=(await response.json()).code;}catch{}
+      // A concurrent publication can briefly exhaust the read-only statement budget.
+      // Retry this idempotent GET once; never hide permissions or other server errors.
+      if(code==='57014'&&retryTimeout)return get(route,{retryTimeout:false});
       const error=Error(`Backup read failed: ${response.status}`);
       error.missingTable=[404,400].includes(response.status)&&['PGRST205','42P01'].includes(code);
       throw error;
@@ -32,14 +35,33 @@ export async function backupPublicContent({settings,parent,fetchImpl=fetch,now=(
     return response;
   }
   async function rows(table,{optional=false}={}){
-    const result=[];
-    for(let offset=0;offset<20000;offset+=500){
+    const result=[];let last;
+    const keys=(orders[table]??"id").split(",");
+    const literal=value=>`"${String(value).replaceAll("\\","\\\\").replaceAll('"','\\"')}"`;
+    // Translation rows grow with both languages and retained published revisions.
+    for(let offset=0;offset<100000;offset+=500){
       let response;
-      try{response=await get(`/rest/v1/${table}?select=*&order=${orders[table]??'id'}&limit=500&offset=${offset}`);}
+      try{
+        let route=`/rest/v1/${table}?select=*&order=${orders[table]??'id'}&limit=500&offset=${cursorPaging?0:offset}`;
+        if(cursorPaging&&last){
+          const terms=keys.map((key,i)=>{
+            const equal=keys.slice(0,i).map(k=>`${k}.eq.${literal(last[k])}`);
+            const greater=`${key}.gt.${literal(last[key])}`;
+            return equal.length?`and(${[...equal,greater].join(',')})`:greater;
+          });
+          route+='&or='+encodeURIComponent(`(${terms.join(',')})`);
+        }
+        response=await get(route);
+      }
       catch(error){if(optional&&offset===0&&error.missingTable)return undefined;throw error;}
       const page=await response.json();
       if(!Array.isArray(page)||page.length>500)throw Error(`Invalid catalog page: ${table}`);
       result.push(...page);if(page.length<500)return result;
+      if(cursorPaging){
+        const next=page.at(-1);
+        if(keys.some(k=>typeof next[k]!=='string')||last&&keys.every(k=>last[k]===next[k]))throw Error(`Invalid pagination cursor: ${table}`);
+        last=next;
+      }
     }
     throw Error('Catalog row limit exceeded');
   }
@@ -69,6 +91,6 @@ export async function backupPublicContent({settings,parent,fetchImpl=fetch,now=(
 }
 
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
-  const {directory,snapshot:{tables,media}}=await backupPublicContent();
+  const {directory,snapshot:{tables,media}}=await backupPublicContent({cursorPaging:true});
   console.log(JSON.stringify({directory,stories:tables.stories.length,sentences:tables.story_sentences.length,questions:tables.story_questions?.length??null,verifiedMedia:media.length,scope:'Published content only'}));
 }

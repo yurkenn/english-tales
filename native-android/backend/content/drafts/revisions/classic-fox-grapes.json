@@ -57,7 +57,7 @@
     ],
     "pendingLanguages": [],
     "reviewedLanguages": [],
-    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+    "reviewStatus": "AI-drafted translations; owner authorized publication on 2026-10-23; not native-speaker-approved"
   },
   "story": {
     "id": "classic-fox-grapes",
@@ -995,5 +995,14 @@
     "wordsAfter": 197,
     "sentencesBefore": 15,
     "sentencesAfter": 30
+  },
+  "publication": {
+    "status": "published",
+    "revisionId": "8db157a4-4142-4a0d-9fbd-51ce0f920fb3",
+    "publishedAt": "2026-10-23T10:21:08.85643+00:00",
+    "project": "gtuangjukckpuerczfxd",
+    "ownerAuthorized": true,
+    "nativeSpeakerApproved": false,
+    "evidence": "native-android/docs/release-evidence/2026-10-23-completion.json"
   }
 }

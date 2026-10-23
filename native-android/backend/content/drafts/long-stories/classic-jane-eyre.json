@@ -19,8 +19,7 @@
     "adaptation": "New graded B1 retelling written by English Tales, with English Tales translations. No modern abridgement, film script or translation was used.",
     "turkeyAssessment": "Author died in 1855, more than 70 years before 2026, so the work is out of protection in Turkey and in life+70 countries.",
     "rightsGuidanceUrl": "https://telifhaklari.ktb.gov.tr/TR-332373/telif-hakki-kac-yil-sureyle-korunur.html",
-    "sourceTextSha256": null,
-    "sourceTextSha256Pending": "Gutenberg is not reachable from the cloud session; record the source text hash on the owner's Mac before publication."
+    "sourceTextSha256": "3fefc7d68b89a684c2659ba2e89188e3e4668a33e2e36eacd96a71c02458e075"
   },
   "editorialNotes": [
     "B1 target: past tense narration, sentences of at most 20 words, about 1,250 words (about 10 minutes of reading).",
@@ -2328,9 +2327,12 @@
     }
   ],
   "publicationBlockers": [
-    "Owner (oguz) approval of the English text, questions and translations required.",
-    "Native-speaker language review not done.",
-    "Source text hash pending (Gutenberg not reachable from the cloud session).",
-    "Publisher story creation, validation and publication pending."
-  ]
+    "Native-speaker language review not performed; project owner authorized AI-assisted draft publication."
+  ],
+  "publication": {
+    "status": "published",
+    "revisionId": "97b02f74-3b02-4722-b610-0045c1ebe164",
+    "publishedAt": "2026-10-23T09:53:08.387033+00:00",
+    "evidence": "native-android/docs/release-evidence/2026-10-23-new-stories-publication.json"
+  }
 }

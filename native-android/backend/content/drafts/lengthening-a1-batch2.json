@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedOn": "2026-10-22",
+  "updatedOn": "2026-10-23",
   "focus": "existing-stories-only",
   "activeRevisionStoryIds": [
     "classic-boy-cried-wolf",
@@ -10,6 +10,6 @@
     "classic-bundle-sticks"
   ],
   "reason": "Owner asked for longer stories without changing the originals: every legacy sentence stays as it is and new sentences are only inserted between them.",
-  "publicationStatus": "No live content publication.",
-  "nextStep": "Owner (oguz) reads and approves the drafts; then record reviewedBy/reviewedLanguages, take a fresh live snapshot and run story-pilot:drafts --scope with a publisher session."
+  "publicationStatus": "Published through authenticated publisher API on 2026-10-23 under explicit owner authorization. Independent anonymous catalog verification is recorded in docs/release-evidence/2026-10-23-completion.json.",
+  "nextStep": "Native-speaker review remains unclaimed; publication metadata and evidence record actual live revisions. Preserve legacy English, Turkish, and all existing translations."
 }

@@ -41,9 +41,7 @@
       "th"
     ],
     "completeLanguages": [
-      "tr"
-    ],
-    "pendingLanguages": [
+      "tr",
       "es-419",
       "pt-BR",
       "id",
@@ -54,7 +52,10 @@
       "bn",
       "ur",
       "th"
-    ]
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-assisted translation drafts; project owner authorized publication on 2026-10-23; not native-speaker-approved"
   },
   "readingSections": [
     {
@@ -88,187 +89,631 @@
       {
         "id": "cl-three-pigs-01",
         "english": "Three little pigs leave their mother’s home.",
-        "turkish": "Üç küçük domuzcuk annelerinin evinden ayrılır."
+        "turkish": "Üç küçük domuzcuk annelerinin evinden ayrılır.",
+        "translations": {
+          "es-419": "Tres cerditos se van de la casa de su madre.",
+          "pt-BR": "Três porquinhos saem da casa da mãe.",
+          "id": "Tiga anak babi meninggalkan rumah ibu mereka.",
+          "ar": "تغادر ثلاثة خنازير صغيرة بيت أمها.",
+          "vi": "Ba chú heo con rời nhà mẹ.",
+          "hi": "तीन छोटे सूअर अपनी माँ का घर छोड़ते हैं।",
+          "ru": "Три поросёнка уходят из маминого дома.",
+          "bn": "তিনটি ছোট শূকর তাদের মায়ের বাড়ি ছেড়ে যায়।",
+          "ur": "تین چھوٹے سور اپنی ماں کا گھر چھوڑتے ہیں۔",
+          "th": "ลูกหมูสามตัวออกจากบ้านแม่"
+        }
       },
       {
         "id": "cl-three-pigs-02",
         "english": "They want to build homes near the wood.",
-        "turkish": "Koruluğun yakınına evler yapmak isterler."
+        "turkish": "Koruluğun yakınına evler yapmak isterler.",
+        "translations": {
+          "es-419": "Quieren construir sus casas cerca del bosque.",
+          "pt-BR": "Eles querem construir suas casas perto da floresta.",
+          "id": "Mereka ingin membangun rumah di dekat hutan.",
+          "ar": "تريد أن تبني بيوتًا قرب الغابة.",
+          "vi": "Chúng muốn xây nhà gần khu rừng.",
+          "hi": "वे जंगल के पास घर बनाना चाहते हैं।",
+          "ru": "Они хотят построить дома рядом с лесом.",
+          "bn": "তারা বনের কাছে নিজেদের বাড়ি বানাতে চায়।",
+          "ur": "وہ جنگل کے قریب گھر بنانا چاہتے ہیں۔",
+          "th": "พวกมันอยากสร้างบ้านใกล้ป่า"
+        }
       },
       {
         "id": "cl-three-pigs-03",
         "english": "The first pig sees a man with some straw.",
-        "turkish": "İlk domuzcuk, yanında biraz saman olan bir adam görür."
+        "turkish": "İlk domuzcuk, yanında biraz saman olan bir adam görür.",
+        "translations": {
+          "es-419": "El primer cerdito ve a un hombre con un poco de paja.",
+          "pt-BR": "O primeiro porquinho vê um homem com um pouco de palha.",
+          "id": "Anak babi pertama melihat seorang lelaki membawa jerami.",
+          "ar": "يرى الخنزير الأول رجلًا يحمل بعض القش.",
+          "vi": "Chú heo thứ nhất thấy một người đàn ông mang rơm.",
+          "hi": "पहला सूअर एक आदमी को कुछ पुआल के साथ देखता है।",
+          "ru": "Первый поросёнок видит человека с соломой.",
+          "bn": "প্রথম শূকরটি এক লোককে কিছু খড় নিয়ে যেতে দেখে।",
+          "ur": "پہلا سور ایک آدمی کو کچھ بھوسے کے ساتھ دیکھتا ہے۔",
+          "th": "ลูกหมูตัวแรกเห็นชายคนหนึ่งมีฟางอยู่"
+        }
       },
       {
         "id": "cl-three-pigs-04",
         "english": "\"May I have some straw?\" the pig asks.",
-        "turkish": "Domuzcuk, \"Biraz saman alabilir miyim?\" diye sorar."
+        "turkish": "Domuzcuk, \"Biraz saman alabilir miyim?\" diye sorar.",
+        "translations": {
+          "es-419": "«¿Me da un poco de paja?», pregunta el cerdito.",
+          "pt-BR": "«Pode me dar um pouco de palha?», pergunta o porquinho.",
+          "id": "«Bolehkah aku meminta sedikit jerami?» tanya anak babi itu.",
+          "ar": "يسأله الخنزير: «هل تعطيني بعض القش؟»",
+          "vi": "«Bác cho cháu ít rơm được không?», chú heo hỏi.",
+          "hi": "सूअर पूछता है, «क्या मुझे थोड़ा पुआल मिल सकता है?»",
+          "ru": "«Можно мне немного соломы?» — спрашивает поросёнок.",
+          "bn": "শূকরটি জিজ্ঞেস করে, «আমাকে একটু খড় দেবেন?»",
+          "ur": "سور پوچھتا ہے، «کیا مجھے کچھ بھوسا مل سکتا ہے؟»",
+          "th": "«ขอฟางหน่อยได้ไหมครับ» ลูกหมูถาม"
+        }
       },
       {
         "id": "cl-three-pigs-05",
         "english": "The man gives him a big bundle.",
-        "turkish": "Adam ona büyük bir demet verir."
+        "turkish": "Adam ona büyük bir demet verir.",
+        "translations": {
+          "es-419": "El hombre le da un gran manojo.",
+          "pt-BR": "O homem lhe dá um grande feixe.",
+          "id": "Lelaki itu memberinya seikat besar jerami.",
+          "ar": "يعطيه الرجل حزمة كبيرة.",
+          "vi": "Người đàn ông cho chú một bó lớn.",
+          "hi": "आदमी उसे एक बड़ा गट्ठर देता है।",
+          "ru": "Человек даёт ему большую связку.",
+          "bn": "লোকটি তাকে একটি বড় আঁটি দেয়।",
+          "ur": "آدمی اسے ایک بڑا گٹھا دیتا ہے۔",
+          "th": "ชายคนนั้นให้ฟางมัดใหญ่แก่ลูกหมู"
+        }
       },
       {
         "id": "cl-three-pigs-06",
         "english": "The pig makes a small house with the straw.",
-        "turkish": "Domuzcuk samanla küçük bir ev yapar."
+        "turkish": "Domuzcuk samanla küçük bir ev yapar.",
+        "translations": {
+          "es-419": "El cerdito hace una casita con la paja.",
+          "pt-BR": "O porquinho faz uma casinha com a palha.",
+          "id": "Anak babi itu membuat rumah kecil dari jerami.",
+          "ar": "يبني الخنزير بيتًا صغيرًا من القش.",
+          "vi": "Chú heo làm một ngôi nhà nhỏ bằng rơm.",
+          "hi": "सूअर पुआल से एक छोटा घर बनाता है।",
+          "ru": "Поросёнок строит маленький дом из соломы.",
+          "bn": "শূকরটি খড় দিয়ে একটি ছোট বাড়ি বানায়।",
+          "ur": "سور بھوسے سے ایک چھوٹا گھر بناتا ہے۔",
+          "th": "ลูกหมูสร้างบ้านหลังเล็กด้วยฟาง"
+        }
       },
       {
         "id": "cl-three-pigs-07",
         "english": "His house is ready before lunch.",
-        "turkish": "Evi öğle yemeğinden önce hazırdır."
+        "turkish": "Evi öğle yemeğinden önce hazırdır.",
+        "translations": {
+          "es-419": "Su casa está lista antes del almuerzo.",
+          "pt-BR": "Sua casa fica pronta antes do almoço.",
+          "id": "Rumahnya selesai sebelum makan siang.",
+          "ar": "يصبح بيته جاهزًا قبل الغداء.",
+          "vi": "Nhà của chú xong trước bữa trưa.",
+          "hi": "उसका घर दोपहर के खाने से पहले तैयार हो जाता है।",
+          "ru": "Его дом готов ещё до обеда.",
+          "bn": "দুপুরের খাবারের আগেই তার বাড়ি তৈরি হয়ে যায়।",
+          "ur": "اس کا گھر دوپہر کے کھانے سے پہلے تیار ہو جاتا ہے۔",
+          "th": "บ้านของมันเสร็จก่อนอาหารกลางวัน"
+        }
       },
       {
         "id": "cl-three-pigs-08",
         "english": "Now he has time to sit in the sun.",
-        "turkish": "Artık güneşte oturmak için zamanı vardır."
+        "turkish": "Artık güneşte oturmak için zamanı vardır.",
+        "translations": {
+          "es-419": "Ahora tiene tiempo para sentarse al sol.",
+          "pt-BR": "Agora ele tem tempo para se sentar ao sol.",
+          "id": "Sekarang ia punya waktu untuk duduk di bawah sinar matahari.",
+          "ar": "الآن لديه وقت ليجلس في الشمس.",
+          "vi": "Giờ chú có thời gian ngồi sưởi nắng.",
+          "hi": "अब उसके पास धूप में बैठने का समय है।",
+          "ru": "Теперь у него есть время посидеть на солнышке.",
+          "bn": "এখন রোদে বসার সময় আছে তার।",
+          "ur": "اب اس کے پاس دھوپ میں بیٹھنے کا وقت ہے۔",
+          "th": "ตอนนี้มันมีเวลานั่งอาบแดด"
+        }
       },
       {
         "id": "cl-three-pigs-09",
         "english": "The second pig makes a house with sticks.",
-        "turkish": "İkinci domuzcuk dallardan bir ev yapar."
+        "turkish": "İkinci domuzcuk dallardan bir ev yapar.",
+        "translations": {
+          "es-419": "El segundo cerdito hace una casa de palos.",
+          "pt-BR": "O segundo porquinho faz uma casa de gravetos.",
+          "id": "Anak babi kedua membuat rumah dari ranting.",
+          "ar": "يبني الخنزير الثاني بيتًا من العصي.",
+          "vi": "Chú heo thứ hai làm nhà bằng cành cây.",
+          "hi": "दूसरा सूअर लकड़ियों का घर बनाता है।",
+          "ru": "Второй поросёнок строит дом из палок.",
+          "bn": "দ্বিতীয় শূকরটি লাঠি দিয়ে বাড়ি বানায়।",
+          "ur": "دوسرا سور لکڑیوں کا گھر بناتا ہے۔",
+          "th": "ลูกหมูตัวที่สองสร้างบ้านด้วยกิ่งไม้"
+        }
       },
       {
         "id": "cl-three-pigs-10",
         "english": "He puts the long sticks beside each other.",
-        "turkish": "Uzun dalları yan yana koyar."
+        "turkish": "Uzun dalları yan yana koyar.",
+        "translations": {
+          "es-419": "Coloca los palos largos uno junto a otro.",
+          "pt-BR": "Ele coloca os gravetos compridos lado a lado.",
+          "id": "Ia meletakkan ranting-ranting panjang berdampingan.",
+          "ar": "يضع العصي الطويلة بجانب بعضها.",
+          "vi": "Chú xếp những cành dài cạnh nhau.",
+          "hi": "वह लंबी लकड़ियाँ एक-दूसरे के पास रखता है।",
+          "ru": "Он кладёт длинные палки рядом друг с другом.",
+          "bn": "সে লম্বা লাঠিগুলো পাশাপাশি রাখে।",
+          "ur": "وہ لمبی لکڑیاں ایک دوسرے کے پاس رکھتا ہے۔",
+          "th": "มันวางกิ่งไม้ยาวไว้ข้างกัน"
+        }
       },
       {
         "id": "cl-three-pigs-11",
         "english": "\"My house is ready too!\" he calls.",
-        "turkish": "\"Benim evim de hazır!\" diye seslenir."
+        "turkish": "\"Benim evim de hazır!\" diye seslenir.",
+        "translations": {
+          "es-419": "«¡Mi casa también está lista!», grita.",
+          "pt-BR": "«Minha casa também está pronta!», grita ele.",
+          "id": "«Rumahku juga sudah selesai!» serunya.",
+          "ar": "ينادي: «بيتي جاهز أيضًا!»",
+          "vi": "«Nhà của mình cũng xong rồi!», chú gọi.",
+          "hi": "वह पुकारता है, «मेरा घर भी तैयार है!»",
+          "ru": "«Мой дом тоже готов!» — кричит он.",
+          "bn": "সে ডাকে, «আমার বাড়িও তৈরি!»",
+          "ur": "وہ پکارتا ہے، «میرا گھر بھی تیار ہے!»",
+          "th": "«บ้านของฉันก็เสร็จแล้ว!» มันร้อง"
+        }
       },
       {
         "id": "cl-three-pigs-12",
         "english": "The third pig chooses bricks for his house.",
-        "turkish": "Üçüncü domuzcuk evi için tuğla seçer."
+        "turkish": "Üçüncü domuzcuk evi için tuğla seçer.",
+        "translations": {
+          "es-419": "El tercer cerdito elige ladrillos para su casa.",
+          "pt-BR": "O terceiro porquinho escolhe tijolos para sua casa.",
+          "id": "Anak babi ketiga memilih batu bata untuk rumahnya.",
+          "ar": "يختار الخنزير الثالث الطوب لبيته.",
+          "vi": "Chú heo thứ ba chọn gạch để xây nhà.",
+          "hi": "तीसरा सूअर अपने घर के लिए ईंटें चुनता है।",
+          "ru": "Третий поросёнок выбирает для дома кирпичи.",
+          "bn": "তৃতীয় শূকরটি নিজের বাড়ির জন্য ইট বেছে নেয়।",
+          "ur": "تیسرا سور اپنے گھر کے لیے اینٹیں چنتا ہے۔",
+          "th": "ลูกหมูตัวที่สามเลือกอิฐมาสร้างบ้าน"
+        }
       },
       {
         "id": "cl-three-pigs-13",
         "english": "The bricks are heavy, and the work is slow.",
-        "turkish": "Tuğlalar ağırdır ve iş yavaş ilerler."
+        "turkish": "Tuğlalar ağırdır ve iş yavaş ilerler.",
+        "translations": {
+          "es-419": "Los ladrillos son pesados y el trabajo avanza despacio.",
+          "pt-BR": "Os tijolos são pesados e o trabalho é lento.",
+          "id": "Batu bata itu berat dan pekerjaannya lambat.",
+          "ar": "الطوب ثقيل والعمل بطيء.",
+          "vi": "Gạch nặng và công việc tiến triển chậm.",
+          "hi": "ईंटें भारी हैं और काम धीरे चलता है।",
+          "ru": "Кирпичи тяжёлые, и работа идёт медленно.",
+          "bn": "ইটগুলো ভারী এবং কাজ ধীরে এগোয়।",
+          "ur": "اینٹیں بھاری ہیں اور کام آہستہ چلتا ہے۔",
+          "th": "อิฐหนักและงานดำเนินไปช้า"
+        }
       },
       {
         "id": "cl-three-pigs-14",
         "english": "He builds the walls and adds a strong door.",
-        "turkish": "Duvarları yapar ve sağlam bir kapı ekler."
+        "turkish": "Duvarları yapar ve sağlam bir kapı ekler.",
+        "translations": {
+          "es-419": "Construye las paredes y pone una puerta fuerte.",
+          "pt-BR": "Ele constrói as paredes e coloca uma porta forte.",
+          "id": "Ia membangun dinding dan memasang pintu yang kuat.",
+          "ar": "يبني الجدران ويضع بابًا قويًا.",
+          "vi": "Chú xây tường và lắp một cánh cửa chắc chắn.",
+          "hi": "वह दीवारें बनाता है और एक मज़बूत दरवाज़ा लगाता है।",
+          "ru": "Он строит стены и ставит крепкую дверь.",
+          "bn": "সে দেয়াল বানায় এবং একটি শক্ত দরজা লাগায়।",
+          "ur": "وہ دیواریں بناتا ہے اور ایک مضبوط دروازہ لگاتا ہے۔",
+          "th": "มันสร้างกำแพงและติดประตูที่แข็งแรง"
+        }
       },
       {
         "id": "cl-three-pigs-15",
         "english": "His brothers come to watch him work.",
-        "turkish": "Kardeşleri onu çalışırken izlemeye gelir."
+        "turkish": "Kardeşleri onu çalışırken izlemeye gelir.",
+        "translations": {
+          "es-419": "Sus hermanos vienen a verlo trabajar.",
+          "pt-BR": "Seus irmãos vêm vê-lo trabalhar.",
+          "id": "Saudara-saudaranya datang melihatnya bekerja.",
+          "ar": "يأتي أخواه ليرياه يعمل.",
+          "vi": "Hai anh của chú đến xem chú làm việc.",
+          "hi": "उसके भाई उसे काम करते देखने आते हैं।",
+          "ru": "Братья приходят посмотреть, как он работает.",
+          "bn": "তার ভাইয়েরা তাকে কাজ করতে দেখতে আসে।",
+          "ur": "اس کے بھائی اسے کام کرتے دیکھنے آتے ہیں۔",
+          "th": "พี่ ๆ ของมันมาดูมันทำงาน"
+        }
       },
       {
         "id": "cl-three-pigs-16",
         "english": "\"Come and play with us,\" they say.",
-        "turkish": "\"Gel bizimle oyna,\" derler."
+        "turkish": "\"Gel bizimle oyna,\" derler.",
+        "translations": {
+          "es-419": "«Ven a jugar con nosotros», le dicen.",
+          "pt-BR": "«Venha brincar com a gente», dizem eles.",
+          "id": "«Ayo bermain bersama kami,» kata mereka.",
+          "ar": "يقولان له: «تعال والعب معنا».",
+          "vi": "«Ra chơi cùng bọn anh đi», họ nói.",
+          "hi": "वे कहते हैं, «आओ, हमारे साथ खेलो।»",
+          "ru": "«Иди играть с нами», — говорят они.",
+          "bn": "তারা বলে, «এসো, আমাদের সঙ্গে খেলো।»",
+          "ur": "وہ کہتے ہیں، «آؤ، ہمارے ساتھ کھیلو۔»",
+          "th": "«มาเล่นกับพวกเราเถอะ» พวกมันพูด"
+        }
       },
       {
         "id": "cl-three-pigs-17",
         "english": "\"First, I must finish my house,\" he says.",
-        "turkish": "\"Önce evimi bitirmeliyim,\" der."
+        "turkish": "\"Önce evimi bitirmeliyim,\" der.",
+        "translations": {
+          "es-419": "«Primero tengo que terminar mi casa», responde.",
+          "pt-BR": "«Primeiro preciso terminar minha casa», responde ele.",
+          "id": "«Aku harus menyelesaikan rumahku dulu,» katanya.",
+          "ar": "يقول: «يجب أن أنهي بيتي أولًا».",
+          "vi": "«Em phải làm xong nhà trước đã», chú nói.",
+          "hi": "वह कहता है, «पहले मुझे अपना घर पूरा करना है।»",
+          "ru": "«Сначала я должен закончить дом», — отвечает он.",
+          "bn": "সে বলে, «আগে আমার বাড়ি শেষ করতে হবে।»",
+          "ur": "وہ کہتا ہے، «پہلے مجھے اپنا گھر مکمل کرنا ہے۔»",
+          "th": "«ฉันต้องสร้างบ้านให้เสร็จก่อน» มันพูด"
+        }
       },
       {
         "id": "cl-three-pigs-18",
         "english": "That evening, a wolf comes out of the wood.",
-        "turkish": "O akşam koruluktan bir kurt çıkar."
+        "turkish": "O akşam koruluktan bir kurt çıkar.",
+        "translations": {
+          "es-419": "Esa tarde, un lobo sale del bosque.",
+          "pt-BR": "Naquela tarde, um lobo sai da floresta.",
+          "id": "Sore itu, seekor serigala keluar dari hutan.",
+          "ar": "في ذلك المساء، يخرج ذئب من الغابة.",
+          "vi": "Chiều hôm đó, một con sói đi ra khỏi rừng.",
+          "hi": "उस शाम एक भेड़िया जंगल से निकलता है।",
+          "ru": "В тот вечер из леса выходит волк.",
+          "bn": "সেই সন্ধ্যায় একটি নেকড়ে বন থেকে বের হয়।",
+          "ur": "اس شام ایک بھیڑیا جنگل سے نکلتا ہے۔",
+          "th": "เย็นวันนั้น หมาป่าตัวหนึ่งออกมาจากป่า"
+        }
       },
       {
         "id": "cl-three-pigs-19",
         "english": "He knocks on the first pig’s door.",
-        "turkish": "İlk domuzcuğun kapısını çalar."
+        "turkish": "İlk domuzcuğun kapısını çalar.",
+        "translations": {
+          "es-419": "Toca la puerta del primer cerdito.",
+          "pt-BR": "Ele bate à porta do primeiro porquinho.",
+          "id": "Ia mengetuk pintu rumah anak babi pertama.",
+          "ar": "يطرق باب الخنزير الأول.",
+          "vi": "Nó gõ cửa nhà chú heo thứ nhất.",
+          "hi": "वह पहले सूअर का दरवाज़ा खटखटाता है।",
+          "ru": "Он стучит в дверь первого поросёнка.",
+          "bn": "সে প্রথম শূকরটির দরজায় টোকা দেয়।",
+          "ur": "وہ پہلے سور کے دروازے پر دستک دیتا ہے۔",
+          "th": "มันเคาะประตูบ้านลูกหมูตัวแรก"
+        }
       },
       {
         "id": "cl-three-pigs-20",
         "english": "\"Open the door,\" he says.",
-        "turkish": "\"Kapıyı aç,\" der."
+        "turkish": "\"Kapıyı aç,\" der.",
+        "translations": {
+          "es-419": "«Abre la puerta», dice.",
+          "pt-BR": "«Abra a porta», diz ele.",
+          "id": "«Buka pintunya,» katanya.",
+          "ar": "يقول: «افتح الباب».",
+          "vi": "«Mở cửa ra», nó nói.",
+          "hi": "वह कहता है, «दरवाज़ा खोलो।»",
+          "ru": "«Открой дверь», — говорит он.",
+          "bn": "সে বলে, «দরজা খোলো।»",
+          "ur": "وہ کہتا ہے، «دروازہ کھولو۔»",
+          "th": "«เปิดประตู» มันพูด"
+        }
       },
       {
         "id": "cl-three-pigs-21",
         "english": "The pig sees the wolf and stays inside.",
-        "turkish": "Domuzcuk kurdu görür ve içeride kalır."
+        "turkish": "Domuzcuk kurdu görür ve içeride kalır.",
+        "translations": {
+          "es-419": "El cerdito ve al lobo y se queda adentro.",
+          "pt-BR": "O porquinho vê o lobo e fica lá dentro.",
+          "id": "Anak babi itu melihat serigala dan tetap di dalam.",
+          "ar": "يرى الخنزير الذئب ويبقى في الداخل.",
+          "vi": "Chú heo thấy sói và ở yên trong nhà.",
+          "hi": "सूअर भेड़िए को देखकर अंदर ही रहता है।",
+          "ru": "Поросёнок видит волка и остаётся внутри.",
+          "bn": "শূকরটি নেকড়েকে দেখে ভেতরেই থাকে।",
+          "ur": "سور بھیڑیے کو دیکھ کر اندر ہی رہتا ہے۔",
+          "th": "ลูกหมูเห็นหมาป่าและอยู่ข้างใน"
+        }
       },
       {
         "id": "cl-three-pigs-22",
         "english": "The wolf blows hard, and the straw house falls.",
-        "turkish": "Kurt kuvvetle üfler ve saman ev yıkılır."
+        "turkish": "Kurt kuvvetle üfler ve saman ev yıkılır.",
+        "translations": {
+          "es-419": "El lobo sopla fuerte y la casa de paja se cae.",
+          "pt-BR": "O lobo sopra forte e a casa de palha cai.",
+          "id": "Serigala meniup dengan kuat, dan rumah jerami itu roboh.",
+          "ar": "ينفخ الذئب بقوة، فيسقط بيت القش.",
+          "vi": "Sói thổi mạnh và ngôi nhà rơm đổ xuống.",
+          "hi": "भेड़िया ज़ोर से फूँक मारता है और पुआल का घर गिर जाता है।",
+          "ru": "Волк сильно дует, и соломенный дом падает.",
+          "bn": "নেকড়ে জোরে ফুঁ দেয়, আর খড়ের বাড়ি ভেঙে পড়ে।",
+          "ur": "بھیڑیا زور سے پھونک مارتا ہے اور بھوسے کا گھر گر جاتا ہے۔",
+          "th": "หมาป่าเป่าแรง ๆ แล้วบ้านฟางก็พังลง"
+        }
       },
       {
         "id": "cl-three-pigs-23",
         "english": "The first pig runs to his brother’s house.",
-        "turkish": "İlk domuzcuk kardeşinin evine koşar."
+        "turkish": "İlk domuzcuk kardeşinin evine koşar.",
+        "translations": {
+          "es-419": "El primer cerdito corre a la casa de su hermano.",
+          "pt-BR": "O primeiro porquinho corre para a casa do irmão.",
+          "id": "Anak babi pertama berlari ke rumah saudaranya.",
+          "ar": "يركض الخنزير الأول إلى بيت أخيه.",
+          "vi": "Chú heo thứ nhất chạy đến nhà người anh em của mình.",
+          "hi": "पहला सूअर अपने भाई के घर भागता है।",
+          "ru": "Первый поросёнок бежит к дому своего брата.",
+          "bn": "প্রথম শূকরটি তার ভাইয়ের বাড়ির দিকে দৌড়ায়।",
+          "ur": "پہلا سور اپنے بھائی کے گھر بھاگتا ہے۔",
+          "th": "ลูกหมูตัวแรกวิ่งไปบ้านของพี่น้องมัน"
+        }
       },
       {
         "id": "cl-three-pigs-24",
         "english": "But the wolf follows him to the house of sticks.",
-        "turkish": "Ama kurt onu dallardan yapılmış eve kadar takip eder."
+        "turkish": "Ama kurt onu dallardan yapılmış eve kadar takip eder.",
+        "translations": {
+          "es-419": "Pero el lobo lo sigue hasta la casa de palos.",
+          "pt-BR": "Mas o lobo o segue até a casa de gravetos.",
+          "id": "Namun, serigala mengikutinya ke rumah ranting.",
+          "ar": "لكن الذئب يتبعه إلى بيت العصي.",
+          "vi": "Nhưng sói đi theo chú đến ngôi nhà bằng cành cây.",
+          "hi": "लेकिन भेड़िया लकड़ियों के घर तक उसका पीछा करता है।",
+          "ru": "Но волк идёт за ним к дому из палок.",
+          "bn": "কিন্তু নেকড়ে লাঠির বাড়ি পর্যন্ত তাকে অনুসরণ করে।",
+          "ur": "لیکن بھیڑیا لکڑیوں کے گھر تک اس کا پیچھا کرتا ہے۔",
+          "th": "แต่หมาป่าตามมันไปถึงบ้านกิ่งไม้"
+        }
       },
       {
         "id": "cl-three-pigs-25",
         "english": "He blows again, and that house falls too.",
-        "turkish": "Yeniden üfler ve o ev de yıkılır."
+        "turkish": "Yeniden üfler ve o ev de yıkılır.",
+        "translations": {
+          "es-419": "Vuelve a soplar y esa casa también se cae.",
+          "pt-BR": "Ele sopra de novo e essa casa também cai.",
+          "id": "Ia meniup lagi, dan rumah itu juga roboh.",
+          "ar": "ينفخ مرة أخرى، فيسقط ذلك البيت أيضًا.",
+          "vi": "Nó lại thổi và ngôi nhà ấy cũng đổ.",
+          "hi": "वह फिर फूँक मारता है और वह घर भी गिर जाता है।",
+          "ru": "Он снова дует, и этот дом тоже падает.",
+          "bn": "সে আবার ফুঁ দেয়, আর সেই বাড়িও ভেঙে পড়ে।",
+          "ur": "وہ دوبارہ پھونک مارتا ہے اور وہ گھر بھی گر جاتا ہے۔",
+          "th": "มันเป่าอีกครั้ง แล้วบ้านหลังนั้นก็พังเช่นกัน"
+        }
       },
       {
         "id": "cl-three-pigs-26",
         "english": "The two pigs run to the house of bricks.",
-        "turkish": "İki domuzcuk tuğla eve koşar."
+        "turkish": "İki domuzcuk tuğla eve koşar.",
+        "translations": {
+          "es-419": "Los dos cerditos corren a la casa de ladrillos.",
+          "pt-BR": "Os dois porquinhos correm para a casa de tijolos.",
+          "id": "Kedua anak babi berlari ke rumah batu bata.",
+          "ar": "يركض الخنزيران إلى بيت الطوب.",
+          "vi": "Hai chú heo chạy đến ngôi nhà gạch.",
+          "hi": "दोनों सूअर ईंटों के घर की ओर भागते हैं।",
+          "ru": "Два поросёнка бегут к кирпичному дому.",
+          "bn": "দুটি শূকর ইটের বাড়ির দিকে দৌড়ায়।",
+          "ur": "دونوں سور اینٹوں کے گھر کی طرف بھاگتے ہیں۔",
+          "th": "ลูกหมูสองตัววิ่งไปบ้านอิฐ"
+        }
       },
       {
         "id": "cl-three-pigs-27",
         "english": "Their brother opens the door and lets them in.",
-        "turkish": "Kardeşleri kapıyı açar ve onları içeri alır."
+        "turkish": "Kardeşleri kapıyı açar ve onları içeri alır.",
+        "translations": {
+          "es-419": "Su hermano abre la puerta y los deja entrar.",
+          "pt-BR": "O irmão abre a porta e os deixa entrar.",
+          "id": "Saudara mereka membuka pintu dan membiarkan mereka masuk.",
+          "ar": "يفتح أخوهما الباب ويدخلهما.",
+          "vi": "Người em mở cửa cho họ vào.",
+          "hi": "उनका भाई दरवाज़ा खोलकर उन्हें अंदर आने देता है।",
+          "ru": "Брат открывает дверь и впускает их.",
+          "bn": "তাদের ভাই দরজা খুলে তাদের ভেতরে ঢুকতে দেয়।",
+          "ur": "ان کا بھائی دروازہ کھول کر انہیں اندر آنے دیتا ہے۔",
+          "th": "น้องของพวกมันเปิดประตูให้เข้ามา"
+        }
       },
       {
         "id": "cl-three-pigs-28",
         "english": "Then he closes it, and they wait together.",
-        "turkish": "Sonra kapıyı kapatır ve birlikte beklerler."
+        "turkish": "Sonra kapıyı kapatır ve birlikte beklerler.",
+        "translations": {
+          "es-419": "Luego la cierra y esperan juntos.",
+          "pt-BR": "Depois ele fecha a porta e eles esperam juntos.",
+          "id": "Lalu ia menutup pintu, dan mereka menunggu bersama.",
+          "ar": "ثم يغلق الباب وينتظرون معًا.",
+          "vi": "Rồi chú đóng cửa và cả ba cùng chờ.",
+          "hi": "फिर वह दरवाज़ा बंद करता है और वे साथ इंतज़ार करते हैं।",
+          "ru": "Потом закрывает дверь, и они ждут вместе.",
+          "bn": "তারপর সে দরজা বন্ধ করে, আর তারা একসঙ্গে অপেক্ষা করে।",
+          "ur": "پھر وہ دروازہ بند کرتا ہے اور وہ مل کر انتظار کرتے ہیں۔",
+          "th": "จากนั้นมันปิดประตู แล้วทั้งสามก็รออยู่ด้วยกัน"
+        }
       },
       {
         "id": "cl-three-pigs-29",
         "english": "The wolf knocks, but nobody opens the door.",
-        "turkish": "Kurt kapıyı çalar ama kimse açmaz."
+        "turkish": "Kurt kapıyı çalar ama kimse açmaz.",
+        "translations": {
+          "es-419": "El lobo toca, pero nadie abre la puerta.",
+          "pt-BR": "O lobo bate, mas ninguém abre a porta.",
+          "id": "Serigala mengetuk, tetapi tidak ada yang membuka pintu.",
+          "ar": "يطرق الذئب، لكن لا أحد يفتح الباب.",
+          "vi": "Sói gõ cửa nhưng không ai mở.",
+          "hi": "भेड़िया खटखटाता है, लेकिन कोई दरवाज़ा नहीं खोलता।",
+          "ru": "Волк стучит, но никто не открывает.",
+          "bn": "নেকড়ে টোকা দেয়, কিন্তু কেউ দরজা খোলে না।",
+          "ur": "بھیڑیا دستک دیتا ہے، لیکن کوئی دروازہ نہیں کھولتا۔",
+          "th": "หมาป่าเคาะประตู แต่ไม่มีใครเปิด"
+        }
       },
       {
         "id": "cl-three-pigs-30",
         "english": "He takes a big breath and blows very hard.",
-        "turkish": "Derin bir nefes alır ve çok kuvvetli üfler."
+        "turkish": "Derin bir nefes alır ve çok kuvvetli üfler.",
+        "translations": {
+          "es-419": "Respira hondo y sopla muy fuerte.",
+          "pt-BR": "Ele respira fundo e sopra muito forte.",
+          "id": "Ia menarik napas dalam dan meniup sangat kuat.",
+          "ar": "يأخذ نفسًا عميقًا وينفخ بقوة شديدة.",
+          "vi": "Nó hít sâu rồi thổi thật mạnh.",
+          "hi": "वह गहरी साँस लेकर बहुत ज़ोर से फूँक मारता है।",
+          "ru": "Он глубоко вдыхает и дует изо всех сил.",
+          "bn": "সে গভীর শ্বাস নিয়ে খুব জোরে ফুঁ দেয়।",
+          "ur": "وہ گہری سانس لے کر بہت زور سے پھونک مارتا ہے۔",
+          "th": "มันสูดลมหายใจลึกแล้วเป่าอย่างแรง"
+        }
       },
       {
         "id": "cl-three-pigs-31",
         "english": "The walls do not move.",
-        "turkish": "Duvarlar kıpırdamaz."
+        "turkish": "Duvarlar kıpırdamaz.",
+        "translations": {
+          "es-419": "Las paredes no se mueven.",
+          "pt-BR": "As paredes não se movem.",
+          "id": "Dinding rumah tidak bergerak.",
+          "ar": "لا تتحرك الجدران.",
+          "vi": "Những bức tường không hề lay chuyển.",
+          "hi": "दीवारें नहीं हिलतीं।",
+          "ru": "Стены не двигаются.",
+          "bn": "দেয়ালগুলো নড়ে না।",
+          "ur": "دیواریں نہیں ہلتیں۔",
+          "th": "กำแพงไม่ขยับ"
+        }
       },
       {
         "id": "cl-three-pigs-32",
         "english": "He tries once more, but the house stays strong.",
-        "turkish": "Bir kez daha dener ama ev sağlam kalır."
+        "turkish": "Bir kez daha dener ama ev sağlam kalır.",
+        "translations": {
+          "es-419": "Lo intenta una vez más, pero la casa sigue firme.",
+          "pt-BR": "Ele tenta mais uma vez, mas a casa continua firme.",
+          "id": "Ia mencoba sekali lagi, tetapi rumah itu tetap kokoh.",
+          "ar": "يحاول مرة أخرى، لكن البيت يبقى قويًا.",
+          "vi": "Nó thử thêm lần nữa nhưng ngôi nhà vẫn vững chắc.",
+          "hi": "वह एक बार और कोशिश करता है, लेकिन घर मज़बूती से खड़ा रहता है।",
+          "ru": "Он пробует ещё раз, но дом стоит крепко.",
+          "bn": "সে আরও একবার চেষ্টা করে, কিন্তু বাড়ি শক্তই থাকে।",
+          "ur": "وہ ایک بار پھر کوشش کرتا ہے، لیکن گھر مضبوط کھڑا رہتا ہے۔",
+          "th": "มันลองอีกครั้ง แต่บ้านยังแข็งแรง"
+        }
       },
       {
         "id": "cl-three-pigs-33",
         "english": "At last, the tired wolf goes away.",
-        "turkish": "Sonunda yorgun kurt uzaklaşır."
+        "turkish": "Sonunda yorgun kurt uzaklaşır.",
+        "translations": {
+          "es-419": "Al final, el lobo cansado se va.",
+          "pt-BR": "Por fim, o lobo cansado vai embora.",
+          "id": "Akhirnya, serigala yang lelah itu pergi.",
+          "ar": "في النهاية، يرحل الذئب المتعب.",
+          "vi": "Cuối cùng, con sói mệt mỏi bỏ đi.",
+          "hi": "आखिर थका हुआ भेड़िया चला जाता है।",
+          "ru": "Наконец уставший волк уходит.",
+          "bn": "শেষে ক্লান্ত নেকড়ে চলে যায়।",
+          "ur": "آخر تھکا ہوا بھیڑیا چلا جاتا ہے۔",
+          "th": "ในที่สุดหมาป่าที่เหนื่อยล้าก็จากไป"
+        }
       },
       {
         "id": "cl-three-pigs-34",
         "english": "The three pigs look out of the window.",
-        "turkish": "Üç domuzcuk pencereden dışarı bakar."
+        "turkish": "Üç domuzcuk pencereden dışarı bakar.",
+        "translations": {
+          "es-419": "Los tres cerditos miran por la ventana.",
+          "pt-BR": "Os três porquinhos olham pela janela.",
+          "id": "Ketiga anak babi melihat keluar melalui jendela.",
+          "ar": "تنظر الخنازير الثلاثة من النافذة.",
+          "vi": "Ba chú heo nhìn ra cửa sổ.",
+          "hi": "तीनों सूअर खिड़की से बाहर देखते हैं।",
+          "ru": "Три поросёнка смотрят в окно.",
+          "bn": "তিনটি শূকর জানালা দিয়ে বাইরে তাকায়।",
+          "ur": "تینوں سور کھڑکی سے باہر دیکھتے ہیں۔",
+          "th": "ลูกหมูทั้งสามมองออกไปทางหน้าต่าง"
+        }
       },
       {
         "id": "cl-three-pigs-35",
         "english": "They are safe inside the warm house.",
-        "turkish": "Sıcak evin içinde güvendedirler."
+        "turkish": "Sıcak evin içinde güvendedirler.",
+        "translations": {
+          "es-419": "Están a salvo dentro de la casa cálida.",
+          "pt-BR": "Eles estão seguros dentro da casa quentinha.",
+          "id": "Mereka aman di dalam rumah yang hangat.",
+          "ar": "إنها آمنة داخل البيت الدافئ.",
+          "vi": "Chúng được an toàn trong ngôi nhà ấm áp.",
+          "hi": "वे गर्म घर के अंदर सुरक्षित हैं।",
+          "ru": "Внутри тёплого дома они в безопасности.",
+          "bn": "তারা গরম বাড়ির ভেতরে নিরাপদে আছে।",
+          "ur": "وہ گرم گھر کے اندر محفوظ ہیں۔",
+          "th": "พวกมันปลอดภัยอยู่ในบ้านที่อบอุ่น"
+        }
       },
       {
         "id": "cl-three-pigs-36",
         "english": "\"Thank you for helping us,\" the brothers say.",
-        "turkish": "Kardeşleri, \"Bize yardım ettiğin için teşekkür ederiz,\" der."
+        "turkish": "Kardeşleri, \"Bize yardım ettiğin için teşekkür ederiz,\" der.",
+        "translations": {
+          "es-419": "«Gracias por ayudarnos», dicen los hermanos.",
+          "pt-BR": "«Obrigado por nos ajudar», dizem os irmãos.",
+          "id": "«Terima kasih sudah membantu kami,» kata kedua saudaranya.",
+          "ar": "يقول الأخوان: «شكرًا لمساعدتنا».",
+          "vi": "«Cảm ơn em đã giúp bọn anh», hai người anh nói.",
+          "hi": "भाई कहते हैं, «हमारी मदद करने के लिए धन्यवाद।»",
+          "ru": "«Спасибо, что помог нам», — говорят братья.",
+          "bn": "ভাইয়েরা বলে, «আমাদের সাহায্য করার জন্য ধন্যবাদ।»",
+          "ur": "بھائی کہتے ہیں، «ہماری مدد کرنے کا شکریہ۔»",
+          "th": "«ขอบคุณที่ช่วยพวกเรา» พี่ ๆ พูด"
+        }
       },
       {
         "id": "cl-three-pigs-37",
         "english": "\"Tomorrow, we can build together,\" says the third pig.",
-        "turkish": "Üçüncü domuzcuk, \"Yarın birlikte ev yapabiliriz,\" der."
+        "turkish": "Üçüncü domuzcuk, \"Yarın birlikte ev yapabiliriz,\" der.",
+        "translations": {
+          "es-419": "«Mañana podemos construir juntos», dice el tercer cerdito.",
+          "pt-BR": "«Amanhã podemos construir juntos», diz o terceiro porquinho.",
+          "id": "«Besok kita bisa membangun bersama,» kata anak babi ketiga.",
+          "ar": "يقول الخنزير الثالث: «غدًا نستطيع أن نبني معًا».",
+          "vi": "«Ngày mai chúng ta có thể cùng xây nhà», chú heo thứ ba nói.",
+          "hi": "तीसरा सूअर कहता है, «कल हम साथ मिलकर घर बना सकते हैं।»",
+          "ru": "«Завтра мы можем строить вместе», — говорит третий поросёнок.",
+          "bn": "তৃতীয় শূকরটি বলে, «কাল আমরা একসঙ্গে বাড়ি বানাতে পারি।»",
+          "ur": "تیسرا سور کہتا ہے، «کل ہم مل کر گھر بنا سکتے ہیں۔»",
+          "th": "«พรุ่งนี้เราสร้างบ้านด้วยกันได้» ลูกหมูตัวที่สามพูด"
+        }
       }
     ],
     "questions": [
@@ -320,7 +765,19 @@
         ],
         "answer": 3
       }
-    ]
+    ],
+    "descriptions": {
+      "es-419": "Tres cerditos construyen casas con distintos materiales. ¿Cuál los protegerá cuando llegue el lobo?",
+      "pt-BR": "Três porquinhos constroem casas com materiais diferentes. Qual delas os protegerá quando o lobo chegar?",
+      "id": "Tiga anak babi membangun rumah dari bahan yang berbeda. Rumah mana yang akan melindungi mereka saat serigala datang?",
+      "ar": "تبني ثلاثة خنازير صغيرة بيوتًا من مواد مختلفة. أي بيت سيحميها عندما يأتي الذئب؟",
+      "vi": "Ba chú heo con xây nhà bằng các vật liệu khác nhau. Ngôi nhà nào sẽ bảo vệ chúng khi sói đến?",
+      "hi": "तीन छोटे सूअर अलग-अलग चीज़ों से घर बनाते हैं। भेड़िया आने पर कौन-सा घर उनकी रक्षा करेगा?",
+      "ru": "Три поросёнка строят дома из разных материалов. Какой дом защитит их, когда придёт волк?",
+      "bn": "তিনটি ছোট শূকর আলাদা উপকরণ দিয়ে বাড়ি বানায়। নেকড়ে এলে কোন বাড়ি তাদের রক্ষা করবে?",
+      "ur": "تین چھوٹے سور مختلف چیزوں سے گھر بناتے ہیں۔ بھیڑیا آنے پر کون سا گھر ان کی حفاظت کرے گا؟",
+      "th": "ลูกหมูสามตัวสร้างบ้านจากวัสดุต่างกัน บ้านหลังไหนจะปกป้องพวกมันเมื่อหมาป่ามาถึง"
+    }
   },
   "words": [
     {
@@ -328,35 +785,95 @@
       "word": "build",
       "translation": "inşa etmek, yapmak",
       "pronunciation": "/bɪld/",
-      "example": "They want to build a strong house."
+      "example": "They want to build a strong house.",
+      "translations": {
+        "es-419": "construir",
+        "pt-BR": "construir",
+        "id": "membangun",
+        "ar": "يبني",
+        "vi": "xây dựng",
+        "hi": "बनाना",
+        "ru": "строить",
+        "bn": "নির্মাণ করা",
+        "ur": "تعمیر کرنا",
+        "th": "สร้าง"
+      }
     },
     {
       "id": "bricks",
       "word": "bricks",
       "translation": "tuğlalar",
       "pronunciation": "/brɪks/",
-      "example": "He makes a house with bricks."
+      "example": "He makes a house with bricks.",
+      "translations": {
+        "es-419": "ladrillos",
+        "pt-BR": "tijolos",
+        "id": "batu bata",
+        "ar": "طوب",
+        "vi": "gạch",
+        "hi": "ईंटें",
+        "ru": "кирпичи",
+        "bn": "ইট",
+        "ur": "اینٹیں",
+        "th": "อิฐ"
+      }
     },
     {
       "id": "door",
       "word": "door",
       "translation": "kapı",
       "pronunciation": "/dɔːr/",
-      "example": "The pig closes the door."
+      "example": "The pig closes the door.",
+      "translations": {
+        "es-419": "puerta",
+        "pt-BR": "porta",
+        "id": "pintu",
+        "ar": "باب",
+        "vi": "cửa",
+        "hi": "दरवाज़ा",
+        "ru": "дверь",
+        "bn": "দরজা",
+        "ur": "دروازہ",
+        "th": "ประตู"
+      }
     },
     {
       "id": "blows",
       "word": "blows",
       "translation": "üfler",
       "pronunciation": "/bloʊz/",
-      "example": "The wolf blows very hard."
+      "example": "The wolf blows very hard.",
+      "translations": {
+        "es-419": "sopla",
+        "pt-BR": "sopra",
+        "id": "meniup",
+        "ar": "ينفخ",
+        "vi": "thổi",
+        "hi": "फूँक मारता है",
+        "ru": "дует",
+        "bn": "ফুঁ দেয়",
+        "ur": "پھونک مارتا ہے",
+        "th": "เป่า"
+      }
     },
     {
       "id": "knocks",
       "word": "knocks",
       "translation": "kapıyı çalar",
       "pronunciation": "/nɑːks/",
-      "example": "He knocks on the door."
+      "example": "He knocks on the door.",
+      "translations": {
+        "es-419": "toca la puerta",
+        "pt-BR": "bate à porta",
+        "id": "mengetuk",
+        "ar": "يطرق",
+        "vi": "gõ cửa",
+        "hi": "दस्तक देता है",
+        "ru": "стучит",
+        "bn": "টোকা দেয়",
+        "ur": "دستک دیتا ہے",
+        "th": "เคาะประตู"
+      }
     }
   ],
   "existingStudyWordIds": [
@@ -421,9 +938,21 @@
     }
   ],
   "publicationBlockers": [
-    "Human editorial and target-level review pending.",
-    "Ten support-language translations and review pending.",
-    "Cover artwork, rights record and asset mapping pending.",
-    "Publisher revision creation, validation and publication pending."
-  ]
+    "Native-speaker language review not performed; owner approved publication as AI-assisted drafts."
+  ],
+  "ownerPublicationAuthorization": {
+    "instruction": "Tum eksikleri gider ve tamamla",
+    "date": "2026-10-23",
+    "by": "Oğuz Yürken",
+    "nativeSpeakerApproved": false
+  },
+  "publication": {
+    "status": "published",
+    "revisionId": "22ae5bc7-8827-4c1d-8c85-f91f0501c8f2",
+    "publishedAt": "2026-10-23T10:24:54.367351+00:00",
+    "project": "gtuangjukckpuerczfxd",
+    "ownerAuthorized": true,
+    "nativeSpeakerApproved": false,
+    "evidence": "native-android/docs/release-evidence/2026-10-23-completion.json"
+  }
 }

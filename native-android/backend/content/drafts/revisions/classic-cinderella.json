@@ -84,7 +84,7 @@
     ],
     "pendingLanguages": [],
     "reviewedLanguages": [],
-    "reviewStatus": "AI-drafted translations awaiting owner approval; not native-speaker-approved"
+    "reviewStatus": "AI-drafted translations; owner authorized publication on 2026-10-23; not native-speaker-approved"
   },
   "story": {
     "id": "classic-cinderella",
@@ -1719,5 +1719,14 @@
     "wordsAfter": 843,
     "sentencesBefore": 28,
     "sentencesAfter": 70
+  },
+  "publication": {
+    "status": "published",
+    "revisionId": "9a1e09fe-9232-44cb-8897-cc30369963b0",
+    "publishedAt": "2026-10-23T10:21:13.045927+00:00",
+    "project": "gtuangjukckpuerczfxd",
+    "ownerAuthorized": true,
+    "nativeSpeakerApproved": false,
+    "evidence": "native-android/docs/release-evidence/2026-10-23-completion.json"
   }
 }
