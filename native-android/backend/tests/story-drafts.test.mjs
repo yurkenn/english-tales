@@ -140,8 +140,10 @@ test('new classic retellings record historical sources and remain separate from 
     assert.equal(d.rights.sourceCopyrightStatement,'Public domain in the USA');
     assert.match(d.rights.sourceChapterSha256,/^[a-f0-9]{64}$/);
     assert.equal(d.reviewedBy,null);
-    assert.equal(d.translationReadiness.pendingLanguages.length,10);
-    assert.ok(d.publicationBlockers.some(b=>b.startsWith('Cover')));
+    assert.deepEqual(d.translationReadiness.pendingLanguages,[]);
+    assert.equal(d.translationReadiness.completeLanguages.length,11);
+    assert.equal(d.ownerPublicationAuthorization.nativeSpeakerApproved,false);
+    assert.ok(d.publicationBlockers.some(b=>b.includes('Native-speaker')));
     assert.equal(d.readingSections[0].firstSentenceId,d.story.sentences[0].id);
     assert.equal(d.readingSections.at(-1).lastSentenceId,d.story.sentences.at(-1).id);
     let next=0;

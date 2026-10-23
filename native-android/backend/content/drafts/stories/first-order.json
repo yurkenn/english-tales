@@ -1,288 +1,879 @@
 {
- "status": "draft",
- "source": "claude-draft-2026-10-17",
- "reviewedBy": null,
- "story": {
-  "id": "first-order",
-  "title": "The First Big Order",
-  "author": "English Tales",
-  "level": "B1",
-  "genre": "Günlük yaşam",
-  "description": "Şehirdeki kalabalık bir fırında işe yeni başlayan Elif, ilk büyük siparişte pahalı bir hata yapar; ama deneyimli bir iş arkadaşının yardımıyla bu hata beklenmedik bir başarıya dönüşür.",
-  "coverKey": "cover_first_order",
-  "tags": [
-   "gunluk-yasam"
+  "status": "draft",
+  "source": "claude-draft-2026-10-17",
+  "reviewedBy": null,
+  "story": {
+    "id": "first-order",
+    "title": "The First Big Order",
+    "author": "English Tales",
+    "level": "B1",
+    "genre": "Günlük yaşam",
+    "description": "Şehirdeki kalabalık bir fırında işe yeni başlayan Elif, ilk büyük siparişte pahalı bir hata yapar; ama deneyimli bir iş arkadaşının yardımıyla bu hata beklenmedik bir başarıya dönüşür.",
+    "coverKey": "cover_first_order",
+    "tags": [
+      "gunluk-yasam"
+    ],
+    "sentences": [
+      {
+        "id": "fo-1",
+        "english": "Elif started her new job at Sunrise Bakery on a cold Monday morning.",
+        "turkish": "Elif, soğuk bir pazartesi sabahı Sunrise Fırını'nda yeni işine başladı.",
+        "translations": {
+          "es-419": "Elif empezó su nuevo trabajo en la panadería Sunrise una fría mañana de lunes.",
+          "pt-BR": "Elif começou seu novo emprego na padaria Sunrise numa fria manhã de segunda-feira.",
+          "id": "Elif memulai pekerjaan barunya di Toko Roti Sunrise pada Senin pagi yang dingin.",
+          "ar": "بدأت إليف عملها الجديد في مخبز صن رايز في صباح يوم اثنين بارد.",
+          "vi": "Elif bắt đầu công việc mới ở tiệm bánh Sunrise vào một sáng thứ Hai lạnh giá.",
+          "hi": "एलिफ ने सोमवार की एक ठंडी सुबह सनराइज़ बेकरी में अपनी नई नौकरी शुरू की।",
+          "ru": "Элиф начала новую работу в пекарне «Санрайз» холодным утром понедельника.",
+          "bn": "সোমবারের এক ঠান্ডা সকালে এলিফ সানরাইজ বেকারিতে তার নতুন কাজ শুরু করল।",
+          "ur": "ایلف نے پیر کی ایک سرد صبح سن رائز بیکری میں اپنی نئی ملازمت شروع کی۔",
+          "th": "เอลิฟเริ่มงานใหม่ที่ร้านเบเกอรีซันไรส์ในเช้าวันจันทร์ที่หนาวเย็น"
+        }
+      },
+      {
+        "id": "fo-2",
+        "english": "The bakery was on the busiest street in the city, and it opened at six.",
+        "turkish": "Fırın şehrin en kalabalık caddesindeydi ve sabah altıda açılıyordu.",
+        "translations": {
+          "es-419": "La panadería estaba en la calle más concurrida de la ciudad y abría a las seis.",
+          "pt-BR": "A padaria ficava na rua mais movimentada da cidade e abria às seis.",
+          "id": "Toko roti itu berada di jalan tersibuk di kota dan buka pukul enam.",
+          "ar": "كان المخبز في أكثر شوارع المدينة ازدحامًا، وكان يفتح في السادسة.",
+          "vi": "Tiệm bánh nằm trên con phố đông đúc nhất thành phố và mở cửa lúc sáu giờ.",
+          "hi": "बेकरी शहर की सबसे व्यस्त सड़क पर थी और छह बजे खुलती थी।",
+          "ru": "Пекарня находилась на самой оживлённой улице города и открывалась в шесть.",
+          "bn": "বেকারিটি শহরের সবচেয়ে ব্যস্ত রাস্তায় ছিল এবং সকাল ছয়টায় খুলত।",
+          "ur": "بیکری شہر کی مصروف ترین سڑک پر تھی اور چھ بجے کھلتی تھی۔",
+          "th": "ร้านเบเกอรีอยู่บนถนนที่พลุกพล่านที่สุดในเมืองและเปิดตอนหกโมง"
+        }
+      },
+      {
+        "id": "fo-3",
+        "english": "She was excited, but she was also very nervous.",
+        "turkish": "Heyecanlıydı ama aynı zamanda çok gergindi.",
+        "translations": {
+          "es-419": "Estaba emocionada, pero también muy nerviosa.",
+          "pt-BR": "Ela estava animada, mas também muito nervosa.",
+          "id": "Ia bersemangat, tetapi juga sangat gugup.",
+          "ar": "كانت متحمسة، لكنها كانت متوترة جدًا أيضًا.",
+          "vi": "Cô hào hứng nhưng cũng rất lo lắng.",
+          "hi": "वह उत्साहित थी, लेकिन बहुत घबराई हुई भी थी।",
+          "ru": "Она радовалась, но при этом очень волновалась.",
+          "bn": "সে আনন্দিত ছিল, তবে খুব নার্ভাসও ছিল।",
+          "ur": "وہ پرجوش تھی، لیکن بہت گھبرائی ہوئی بھی تھی۔",
+          "th": "เธอตื่นเต้น แต่ก็กังวลมากเช่นกัน"
+        }
+      },
+      {
+        "id": "fo-4",
+        "english": "Her manager, Mr. Kaplan, gave her an apron and a long list of rules.",
+        "turkish": "Müdürü Bay Kaplan ona bir önlük ve uzun bir kural listesi verdi.",
+        "translations": {
+          "es-419": "Su jefe, el señor Kaplan, le dio un delantal y una larga lista de reglas.",
+          "pt-BR": "Seu gerente, o senhor Kaplan, lhe deu um avental e uma longa lista de regras.",
+          "id": "Manajernya, Pak Kaplan, memberinya celemek dan daftar panjang aturan.",
+          "ar": "أعطاها مديرها، السيد كابلان، مئزرًا وقائمة طويلة من القواعد.",
+          "vi": "Quản lý của cô, ông Kaplan, đưa cho cô một chiếc tạp dề và một danh sách dài các quy tắc.",
+          "hi": "उसके मैनेजर, श्री कापलान ने उसे एक एप्रन और नियमों की लंबी सूची दी।",
+          "ru": "Её управляющий, господин Каплан, выдал ей фартук и длинный список правил.",
+          "bn": "তার ম্যানেজার মি. কাপলান তাকে একটি অ্যাপ্রন ও নিয়মের দীর্ঘ তালিকা দিলেন।",
+          "ur": "اس کے منیجر، مسٹر کاپلان نے اسے ایک ایپرن اور اصولوں کی لمبی فہرست دی۔",
+          "th": "ผู้จัดการของเธอ คุณคาปลัน มอบผ้ากันเปื้อนและรายการกฎยาวเหยียดให้เธอ"
+        }
+      },
+      {
+        "id": "fo-5",
+        "english": "“Always read every order twice,” he said.",
+        "turkish": "“Her siparişi mutlaka iki kez oku,” dedi.",
+        "translations": {
+          "es-419": "«Lee siempre cada pedido dos veces», le dijo.",
+          "pt-BR": "«Sempre leia cada pedido duas vezes», disse ele.",
+          "id": "«Selalu baca setiap pesanan dua kali,» katanya.",
+          "ar": "قال لها: «اقرئي كل طلب مرتين دائمًا».",
+          "vi": "«Luôn đọc mỗi đơn hàng hai lần», ông nói.",
+          "hi": "उन्होंने कहा, «हर ऑर्डर हमेशा दो बार पढ़ना।»",
+          "ru": "«Всегда читай каждый заказ дважды», — сказал он.",
+          "bn": "তিনি বললেন, «সব সময় প্রতিটি অর্ডার দুবার পড়বে।»",
+          "ur": "انہوں نے کہا، «ہر آرڈر ہمیشہ دو بار پڑھنا۔»",
+          "th": "«อ่านคำสั่งซื้อทุกครั้งสองรอบเสมอ» เขาบอก"
+        }
+      },
+      {
+        "id": "fo-6",
+        "english": "An older woman named Nur showed her how to use the ovens.",
+        "turkish": "Nur adında yaşça büyük bir kadın ona fırınları nasıl kullanacağını gösterdi.",
+        "translations": {
+          "es-419": "Una mujer mayor llamada Nur le enseñó a usar los hornos.",
+          "pt-BR": "Uma mulher mais velha chamada Nur lhe mostrou como usar os fornos.",
+          "id": "Seorang perempuan yang lebih tua bernama Nur menunjukkan cara menggunakan oven.",
+          "ar": "أرتها امرأة أكبر سنًا اسمها نور كيف تستخدم الأفران.",
+          "vi": "Một người phụ nữ lớn tuổi hơn tên là Nur chỉ cô cách sử dụng lò nướng.",
+          "hi": "नूर नाम की एक अधिक उम्र की महिला ने उसे ओवन चलाना सिखाया।",
+          "ru": "Женщина постарше по имени Нур показала ей, как пользоваться печами.",
+          "bn": "নূর নামে এক বয়স্ক মহিলা তাকে ওভেন ব্যবহার করতে শেখালেন।",
+          "ur": "نور نام کی ایک بڑی عمر کی خاتون نے اسے اوون استعمال کرنا سکھایا۔",
+          "th": "ผู้หญิงที่อายุมากกว่าชื่อนูร์สอนเธอใช้เตาอบ"
+        }
+      },
+      {
+        "id": "fo-7",
+        "english": "Nur had worked at the bakery for twenty years, and she smiled at everyone.",
+        "turkish": "Nur yirmi yıldır bu fırında çalışıyordu ve herkese gülümserdi.",
+        "translations": {
+          "es-419": "Nur llevaba veinte años trabajando en la panadería y sonreía a todos.",
+          "pt-BR": "Nur trabalhava na padaria havia vinte anos e sorria para todos.",
+          "id": "Nur sudah bekerja di toko roti itu selama dua puluh tahun dan tersenyum kepada semua orang.",
+          "ar": "كانت نور تعمل في المخبز منذ عشرين عامًا، وكانت تبتسم للجميع.",
+          "vi": "Nur đã làm việc ở tiệm bánh hai mươi năm và luôn mỉm cười với mọi người.",
+          "hi": "नूर बीस साल से बेकरी में काम कर रही थी और सबको देखकर मुस्कुराती थी।",
+          "ru": "Нур проработала в пекарне двадцать лет и всем улыбалась.",
+          "bn": "নূর বিশ বছর ধরে বেকারিতে কাজ করছিলেন এবং সবার দিকে তাকিয়ে হাসতেন।",
+          "ur": "نور بیس سال سے بیکری میں کام کر رہی تھی اور سب کو دیکھ کر مسکراتی تھی۔",
+          "th": "นูร์ทำงานที่ร้านเบเกอรีมายี่สิบปีแล้ว และยิ้มให้ทุกคน"
+        }
+      },
+      {
+        "id": "fo-8",
+        "english": "On Thursday, a customer called and ordered cakes for a company party.",
+        "turkish": "Perşembe günü bir müşteri aradı ve bir şirket partisi için kek sipariş etti.",
+        "translations": {
+          "es-419": "El jueves, una clienta llamó y encargó pasteles para una fiesta de su empresa.",
+          "pt-BR": "Na quinta-feira, uma cliente telefonou e encomendou bolos para uma festa da empresa.",
+          "id": "Pada hari Kamis, seorang pelanggan menelepon dan memesan kue untuk pesta perusahaan.",
+          "ar": "يوم الخميس، اتصلت زبونة وطلبت كعكًا لحفل في شركتها.",
+          "vi": "Hôm thứ Năm, một khách hàng gọi điện đặt bánh cho một bữa tiệc của công ty.",
+          "hi": "गुरुवार को एक ग्राहक ने फोन करके कंपनी की पार्टी के लिए केक मँगवाए।",
+          "ru": "В четверг позвонила клиентка и заказала пирожные для праздника в компании.",
+          "bn": "বৃহস্পতিবার এক ক্রেতা ফোন করে কোম্পানির অনুষ্ঠানের জন্য কেকের অর্ডার দিলেন।",
+          "ur": "جمعرات کو ایک گاہک نے فون کرکے کمپنی کی تقریب کے لیے کیک منگوائے۔",
+          "th": "วันพฤหัสบดี ลูกค้าคนหนึ่งโทรมาสั่งเค้กสำหรับงานเลี้ยงบริษัท"
+        }
+      },
+      {
+        "id": "fo-9",
+        "english": "She wanted forty small lemon cakes for Friday at noon.",
+        "turkish": "Cuma öğlen için kırk küçük limonlu kek istiyordu.",
+        "translations": {
+          "es-419": "Quería cuarenta pastelitos de limón para el viernes al mediodía.",
+          "pt-BR": "Ela queria quarenta bolinhos de limão para sexta-feira ao meio-dia.",
+          "id": "Ia ingin empat puluh kue kecil rasa lemon untuk Jumat siang.",
+          "ar": "كانت تريد أربعين كعكة صغيرة بالليمون يوم الجمعة عند الظهر.",
+          "vi": "Bà muốn có bốn mươi chiếc bánh chanh nhỏ vào trưa thứ Sáu.",
+          "hi": "उसे शुक्रवार दोपहर तक नींबू के चालीस छोटे केक चाहिए थे।",
+          "ru": "Ей нужно было сорок маленьких лимонных пирожных к полудню пятницы.",
+          "bn": "শুক্রবার দুপুরে তাঁর লেবুর স্বাদের চল্লিশটি ছোট কেক চাই।",
+          "ur": "انہیں جمعے کی دوپہر تک لیموں کے چالیس چھوٹے کیک چاہیے تھے۔",
+          "th": "เธอต้องการเค้กเลมอนชิ้นเล็กสี่สิบชิ้นในวันศุกร์ตอนเที่ยง"
+        }
+      },
+      {
+        "id": "fo-10",
+        "english": "Elif wrote the order quickly because three people were waiting at the counter.",
+        "turkish": "Tezgâhta üç kişi beklediği için Elif siparişi aceleyle yazdı.",
+        "translations": {
+          "es-419": "Elif anotó el pedido deprisa porque tres personas esperaban en el mostrador.",
+          "pt-BR": "Elif anotou o pedido depressa porque três pessoas esperavam no balcão.",
+          "id": "Elif mencatat pesanan itu dengan cepat karena tiga orang sedang menunggu di depan konter.",
+          "ar": "كتبت إليف الطلب بسرعة لأن ثلاثة أشخاص كانوا ينتظرون عند المنضدة.",
+          "vi": "Elif ghi đơn hàng vội vàng vì có ba người đang chờ ở quầy.",
+          "hi": "एलिफ ने जल्दी से ऑर्डर लिखा क्योंकि काउंटर पर तीन लोग इंतज़ार कर रहे थे।",
+          "ru": "Элиф быстро записала заказ, потому что у прилавка ждали три человека.",
+          "bn": "কাউন্টারে তিনজন অপেক্ষা করছিল বলে এলিফ তাড়াতাড়ি অর্ডারটি লিখে নিল।",
+          "ur": "ایلف نے جلدی سے آرڈر لکھا کیونکہ کاؤنٹر پر تین لوگ انتظار کر رہے تھے۔",
+          "th": "เอลิฟจดคำสั่งซื้ออย่างรวดเร็ว เพราะมีคนสามคนรออยู่ที่เคาน์เตอร์"
+        }
+      },
+      {
+        "id": "fo-11",
+        "english": "That evening, she baked forty chocolate cakes instead of lemon ones.",
+        "turkish": "O akşam limonlu kek yerine kırk tane çikolatalı kek pişirdi.",
+        "translations": {
+          "es-419": "Esa tarde, horneó cuarenta pasteles de chocolate en lugar de limón.",
+          "pt-BR": "Naquela tarde, ela assou quarenta bolos de chocolate em vez de limão.",
+          "id": "Sore itu, ia memanggang empat puluh kue cokelat, bukan kue lemon.",
+          "ar": "في ذلك المساء، خبزت أربعين كعكة بالشوكولاتة بدلًا من الليمون.",
+          "vi": "Tối hôm đó, cô nướng bốn mươi chiếc bánh sô-cô-la thay vì bánh chanh.",
+          "hi": "उस शाम उसने नींबू के बजाय चॉकलेट के चालीस केक बनाए।",
+          "ru": "В тот вечер она испекла сорок шоколадных пирожных вместо лимонных.",
+          "bn": "সেই সন্ধ্যায় সে লেবুর বদলে চল্লিশটি চকোলেট কেক বানাল।",
+          "ur": "اس شام اس نے لیموں کے بجائے چاکلیٹ کے چالیس کیک بنا دیے۔",
+          "th": "เย็นวันนั้น เธออบเค้กช็อกโกแลตสี่สิบชิ้นแทนเค้กเลมอน"
+        }
+      },
+      {
+        "id": "fo-12",
+        "english": "She only noticed the mistake the next morning, when she read the order again.",
+        "turkish": "Hatayı ancak ertesi sabah, siparişi yeniden okuduğunda fark etti.",
+        "translations": {
+          "es-419": "Solo notó el error a la mañana siguiente, cuando volvió a leer el pedido.",
+          "pt-BR": "Só percebeu o erro na manhã seguinte, quando leu o pedido de novo.",
+          "id": "Ia baru menyadari kesalahannya keesokan pagi ketika membaca pesanan itu lagi.",
+          "ar": "لم تلاحظ الخطأ إلا في صباح اليوم التالي، حين قرأت الطلب مرة أخرى.",
+          "vi": "Mãi đến sáng hôm sau, khi đọc lại đơn hàng, cô mới nhận ra lỗi.",
+          "hi": "उसे अगली सुबह ऑर्डर दोबारा पढ़ने पर ही अपनी गलती का पता चला।",
+          "ru": "Она заметила ошибку только на следующее утро, когда снова прочитала заказ.",
+          "bn": "পরদিন সকালে অর্ডারটি আবার পড়ে তবেই সে ভুলটি বুঝতে পারল।",
+          "ur": "اسے اگلی صبح آرڈر دوبارہ پڑھنے پر ہی غلطی کا پتا چلا۔",
+          "th": "เธอเพิ่งสังเกตเห็นความผิดพลาดในเช้าวันรุ่งขึ้น เมื่ออ่านคำสั่งซื้ออีกครั้ง"
+        }
+      },
+      {
+        "id": "fo-13",
+        "english": "Her face went red, and her hands started to shake.",
+        "turkish": "Yüzü kıpkırmızı oldu ve elleri titremeye başladı.",
+        "translations": {
+          "es-419": "Se le puso la cara roja y le empezaron a temblar las manos.",
+          "pt-BR": "Seu rosto ficou vermelho e suas mãos começaram a tremer.",
+          "id": "Wajahnya memerah dan tangannya mulai gemetar.",
+          "ar": "احمر وجهها وبدأت يداها ترتجفان.",
+          "vi": "Mặt cô đỏ bừng và hai tay bắt đầu run.",
+          "hi": "उसका चेहरा लाल हो गया और हाथ काँपने लगे।",
+          "ru": "Её лицо покраснело, а руки начали дрожать.",
+          "bn": "তার মুখ লাল হয়ে গেল এবং হাত কাঁপতে লাগল।",
+          "ur": "اس کا چہرہ سرخ ہو گیا اور ہاتھ کانپنے لگے۔",
+          "th": "ใบหน้าของเธอแดงขึ้นและมือเริ่มสั่น"
+        }
+      },
+      {
+        "id": "fo-14",
+        "english": "The delivery was in four hours, and there was no time to start again.",
+        "turkish": "Teslimata dört saat vardı ve baştan başlamaya zaman yoktu.",
+        "translations": {
+          "es-419": "Faltaban cuatro horas para la entrega y no había tiempo para empezar de nuevo.",
+          "pt-BR": "A entrega seria em quatro horas e não havia tempo para recomeçar.",
+          "id": "Kue harus diantar empat jam lagi, dan tidak ada waktu untuk membuatnya dari awal.",
+          "ar": "كان موعد التوصيل بعد أربع ساعات، ولم يكن هناك وقت للبدء من جديد.",
+          "vi": "Chỉ còn bốn giờ nữa là đến lúc giao bánh, không kịp làm lại từ đầu.",
+          "hi": "चार घंटे बाद केक पहुँचाने थे और दोबारा बनाने का समय नहीं था।",
+          "ru": "До доставки оставалось четыре часа, и времени начинать заново не было.",
+          "bn": "চার ঘণ্টা পর কেক পৌঁছে দিতে হবে, আর নতুন করে বানানোর সময় ছিল না।",
+          "ur": "چار گھنٹے بعد کیک پہنچانے تھے اور دوبارہ بنانے کا وقت نہیں تھا۔",
+          "th": "อีกสี่ชั่วโมงต้องส่งเค้ก และไม่มีเวลาเริ่มทำใหม่"
+        }
+      },
+      {
+        "id": "fo-15",
+        "english": "“I've ruined everything,” she told Nur.",
+        "turkish": "“Her şeyi mahvettim,” dedi Nur'a.",
+        "translations": {
+          "es-419": "«Lo he arruinado todo», le dijo a Nur.",
+          "pt-BR": "«Estraguei tudo», disse ela a Nur.",
+          "id": "«Aku sudah merusak semuanya,» katanya kepada Nur.",
+          "ar": "قالت لنور: «لقد أفسدت كل شيء».",
+          "vi": "«Em làm hỏng hết rồi», cô nói với Nur.",
+          "hi": "उसने नूर से कहा, «मैंने सब खराब कर दिया।»",
+          "ru": "«Я всё испортила», — сказала она Нур.",
+          "bn": "সে নূরকে বলল, «আমি সব নষ্ট করে ফেলেছি।»",
+          "ur": "اس نے نور سے کہا، «میں نے سب خراب کر دیا۔»",
+          "th": "«ฉันทำทุกอย่างพังแล้ว» เธอบอกนูร์"
+        }
+      },
+      {
+        "id": "fo-16",
+        "english": "“Mr. Kaplan will be so angry with me.”",
+        "turkish": "“Bay Kaplan bana çok kızacak.”",
+        "translations": {
+          "es-419": "«El señor Kaplan se va a enojar muchísimo conmigo».",
+          "pt-BR": "«O senhor Kaplan vai ficar muito zangado comigo».",
+          "id": "«Pak Kaplan pasti akan sangat marah kepadaku.»",
+          "ar": "«سيغضب مني السيد كابلان كثيرًا».",
+          "vi": "«Ông Kaplan sẽ rất giận em.»",
+          "hi": "«श्री कापलान मुझसे बहुत नाराज़ होंगे।»",
+          "ru": "«Господин Каплан будет очень на меня сердиться».",
+          "bn": "«মি. কাপলান আমার ওপর খুব রাগ করবেন।»",
+          "ur": "«مسٹر کاپلان مجھ سے بہت ناراض ہوں گے۔»",
+          "th": "«คุณคาปลันจะต้องโกรธฉันมากแน่ ๆ»"
+        }
+      },
+      {
+        "id": "fo-17",
+        "english": "Nur looked at the cakes for a long moment and then laughed softly.",
+        "turkish": "Nur bir süre keklere baktı, sonra usulca güldü.",
+        "translations": {
+          "es-419": "Nur miró los pasteles un buen rato y luego se rio suavemente.",
+          "pt-BR": "Nur olhou os bolos por um longo momento e depois riu baixinho.",
+          "id": "Nur menatap kue-kue itu cukup lama, lalu tertawa pelan.",
+          "ar": "نظرت نور إلى الكعكات طويلًا، ثم ضحكت بهدوء.",
+          "vi": "Nur nhìn những chiếc bánh một lúc lâu rồi cười nhẹ.",
+          "hi": "नूर ने कुछ देर तक केकों को देखा, फिर धीरे से हँसी।",
+          "ru": "Нур долго смотрела на пирожные, а потом тихо рассмеялась.",
+          "bn": "নূর কিছুক্ষণ কেকগুলোর দিকে তাকিয়ে তারপর মৃদু হাসলেন।",
+          "ur": "نور کچھ دیر تک کیکوں کو دیکھتی رہی، پھر آہستہ سے ہنسی۔",
+          "th": "นูร์มองเค้กอยู่นาน ก่อนจะหัวเราะเบา ๆ"
+        }
+      },
+      {
+        "id": "fo-18",
+        "english": "“Mistakes happen to everyone,” she said.",
+        "turkish": "“Hata herkesin başına gelir,” dedi.",
+        "translations": {
+          "es-419": "«Todos cometemos errores», dijo.",
+          "pt-BR": "«Todo mundo comete erros», disse ela.",
+          "id": "«Semua orang bisa berbuat salah,» katanya.",
+          "ar": "قالت: «الجميع يخطئون».",
+          "vi": "«Ai cũng có lúc mắc lỗi», bà nói.",
+          "hi": "उसने कहा, «गलतियाँ सभी से होती हैं।»",
+          "ru": "«Все ошибаются», — сказала она.",
+          "bn": "তিনি বললেন, «সবারই ভুল হয়।»",
+          "ur": "اس نے کہا، «غلطیاں سب سے ہوتی ہیں۔»",
+          "th": "«ทุกคนทำผิดพลาดได้» เธอพูด"
+        }
+      },
+      {
+        "id": "fo-19",
+        "english": "“Let's think about this together.”",
+        "turkish": "“Gel, bunu birlikte düşünelim.”",
+        "translations": {
+          "es-419": "«Pensemos juntas cómo resolverlo».",
+          "pt-BR": "«Vamos pensar nisso juntas».",
+          "id": "«Mari kita pikirkan ini bersama.»",
+          "ar": "«لنفكر في الأمر معًا».",
+          "vi": "«Chúng ta cùng nghĩ cách nhé.»",
+          "hi": "«चलो, इस बारे में मिलकर सोचते हैं।»",
+          "ru": "«Давай подумаем вместе».",
+          "bn": "«চলো, আমরা একসঙ্গে বিষয়টা ভাবি।»",
+          "ur": "«آؤ، مل کر اس بارے میں سوچتے ہیں۔»",
+          "th": "«เรามาช่วยกันคิดเถอะ»"
+        }
+      },
+      {
+        "id": "fo-20",
+        "english": "She took some fresh lemons from the fridge and began to make a light lemon cream.",
+        "turkish": "Buzdolabından birkaç taze limon aldı ve hafif bir limon kreması yapmaya başladı.",
+        "translations": {
+          "es-419": "Sacó unos limones frescos del refrigerador y empezó a preparar una crema ligera de limón.",
+          "pt-BR": "Ela tirou alguns limões frescos da geladeira e começou a fazer um creme leve de limão.",
+          "id": "Ia mengambil beberapa lemon segar dari kulkas dan mulai membuat krim lemon yang ringan.",
+          "ar": "أخرجت بعض الليمون الطازج من الثلاجة وبدأت تحضر كريمة ليمون خفيفة.",
+          "vi": "Bà lấy vài quả chanh tươi trong tủ lạnh và bắt đầu làm một loại kem chanh nhẹ.",
+          "hi": "उसने फ्रिज से कुछ ताज़े नींबू निकाले और नींबू की हल्की क्रीम बनाने लगी।",
+          "ru": "Она достала из холодильника свежие лимоны и начала делать лёгкий лимонный крем.",
+          "bn": "তিনি ফ্রিজ থেকে কয়েকটি তাজা লেবু বের করে হালকা লেবুর ক্রিম বানাতে শুরু করলেন।",
+          "ur": "اس نے فریج سے کچھ تازہ لیموں نکالے اور ہلکی لیموں کی کریم بنانے لگی۔",
+          "th": "เธอหยิบเลมอนสดจากตู้เย็นแล้วเริ่มทำครีมเลมอนเนื้อเบา"
+        }
+      },
+      {
+        "id": "fo-21",
+        "english": "Then she showed Elif how to put a little cream on top of each cake.",
+        "turkish": "Sonra Elif'e her kekin üstüne biraz krema koymayı gösterdi.",
+        "translations": {
+          "es-419": "Luego le enseñó a Elif a poner un poco de crema encima de cada pastel.",
+          "pt-BR": "Depois mostrou a Elif como colocar um pouco de creme sobre cada bolo.",
+          "id": "Lalu ia menunjukkan kepada Elif cara menaruh sedikit krim di atas setiap kue.",
+          "ar": "ثم أرت إليف كيف تضع قليلًا من الكريمة فوق كل كعكة.",
+          "vi": "Rồi bà chỉ Elif cách phết một ít kem lên mỗi chiếc bánh.",
+          "hi": "फिर उसने एलिफ को हर केक पर थोड़ी क्रीम लगाना सिखाया।",
+          "ru": "Затем она показала Элиф, как положить немного крема на каждое пирожное.",
+          "bn": "তারপর তিনি এলিফকে প্রতিটি কেকের ওপরে একটু ক্রিম দিতে শেখালেন।",
+          "ur": "پھر اس نے ایلف کو ہر کیک کے اوپر تھوڑی سی کریم لگانا سکھایا۔",
+          "th": "จากนั้นเธอสอนเอลิฟให้ใส่ครีมเล็กน้อยบนเค้กแต่ละชิ้น"
+        }
+      },
+      {
+        "id": "fo-22",
+        "english": "They added thin pieces of lemon peel, and the cakes looked beautiful.",
+        "turkish": "Üstlerine ince limon kabuğu parçaları eklediler ve kekler harika göründü.",
+        "translations": {
+          "es-419": "Añadieron tiras finas de cáscara de limón y los pasteles quedaron preciosos.",
+          "pt-BR": "Elas acrescentaram tiras finas de casca de limão, e os bolos ficaram lindos.",
+          "id": "Mereka menambahkan irisan tipis kulit lemon, dan kue-kue itu terlihat indah.",
+          "ar": "أضافتا شرائح رفيعة من قشر الليمون، فبدت الكعكات جميلة.",
+          "vi": "Họ thêm những lát vỏ chanh mỏng và những chiếc bánh trông rất đẹp.",
+          "hi": "उन्होंने नींबू के छिलके के पतले टुकड़े डाले और केक सुंदर दिखने लगे।",
+          "ru": "Они добавили тонкие полоски лимонной цедры, и пирожные стали красивыми.",
+          "bn": "তারা লেবুর খোসার পাতলা টুকরো যোগ করল, আর কেকগুলো সুন্দর দেখাল।",
+          "ur": "انہوں نے لیموں کے چھلکے کے باریک ٹکڑے ڈالے اور کیک خوب صورت لگنے لگے۔",
+          "th": "พวกเธอเติมเปลือกเลมอนหั่นบาง ๆ และเค้กก็ดูสวยงาม"
+        }
+      },
+      {
+        "id": "fo-23",
+        "english": "Elif felt a little more confident as she worked.",
+        "turkish": "Elif çalıştıkça kendini biraz daha özgüvenli hissetti.",
+        "translations": {
+          "es-419": "Elif se sintió un poco más segura mientras trabajaba.",
+          "pt-BR": "Elif se sentiu um pouco mais confiante enquanto trabalhava.",
+          "id": "Elif merasa sedikit lebih percaya diri saat bekerja.",
+          "ar": "شعرت إليف بثقة أكبر قليلًا أثناء العمل.",
+          "vi": "Elif cảm thấy tự tin hơn một chút khi làm việc.",
+          "hi": "काम करते हुए एलिफ का आत्मविश्वास थोड़ा बढ़ा।",
+          "ru": "За работой Элиф почувствовала себя немного увереннее.",
+          "bn": "কাজ করতে করতে এলিফের আত্মবিশ্বাস একটু বাড়ল।",
+          "ur": "کام کرتے ہوئے ایلف کا اعتماد کچھ بڑھا۔",
+          "th": "เอลิฟรู้สึกมั่นใจขึ้นเล็กน้อยขณะทำงาน"
+        }
+      },
+      {
+        "id": "fo-24",
+        "english": "At eleven o'clock, she called the customer to apologise and explain what had happened.",
+        "turkish": "Saat on birde müşteriyi arayıp özür diledi ve neler olduğunu anlattı.",
+        "translations": {
+          "es-419": "A las once, llamó a la clienta para disculparse y explicar lo que había pasado.",
+          "pt-BR": "Às onze horas, ela ligou para a cliente para pedir desculpas e explicar o que tinha acontecido.",
+          "id": "Pukul sebelas, ia menelepon pelanggan untuk meminta maaf dan menjelaskan apa yang terjadi.",
+          "ar": "في الساعة الحادية عشرة، اتصلت بالزبونة لتعتذر وتشرح ما حدث.",
+          "vi": "Lúc mười một giờ, cô gọi cho khách hàng để xin lỗi và giải thích chuyện đã xảy ra.",
+          "hi": "ग्यारह बजे उसने ग्राहक को फोन करके माफ़ी माँगी और बताया कि क्या हुआ था।",
+          "ru": "В одиннадцать она позвонила клиентке, чтобы извиниться и объяснить, что произошло.",
+          "bn": "এগারোটায় সে ক্রেতাকে ফোন করে ক্ষমা চাইল এবং কী ঘটেছে তা ব্যাখ্যা করল।",
+          "ur": "گیارہ بجے اس نے گاہک کو فون کرکے معافی مانگی اور بتایا کہ کیا ہوا تھا۔",
+          "th": "ตอนสิบเอ็ดโมง เธอโทรหาลูกค้าเพื่อขอโทษและอธิบายสิ่งที่เกิดขึ้น"
+        }
+      },
+      {
+        "id": "fo-25",
+        "english": "The woman was quiet for a few seconds.",
+        "turkish": "Kadın birkaç saniye sessiz kaldı.",
+        "translations": {
+          "es-419": "La mujer guardó silencio unos segundos.",
+          "pt-BR": "A mulher ficou em silêncio por alguns segundos.",
+          "id": "Perempuan itu terdiam selama beberapa detik.",
+          "ar": "صمتت المرأة بضع ثوانٍ.",
+          "vi": "Người phụ nữ im lặng vài giây.",
+          "hi": "महिला कुछ सेकंड चुप रही।",
+          "ru": "Женщина помолчала несколько секунд.",
+          "bn": "মহিলা কয়েক সেকেন্ড চুপ করে রইলেন।",
+          "ur": "خاتون چند سیکنڈ خاموش رہی۔",
+          "th": "ผู้หญิงคนนั้นเงียบไปสองสามวินาที"
+        }
+      },
+      {
+        "id": "fo-26",
+        "english": "“Bring them, and we'll see,” she finally said.",
+        "turkish": "Sonunda “Getirin, bakalım,” dedi.",
+        "translations": {
+          "es-419": "«Tráiganlos y veremos», dijo al fin.",
+          "pt-BR": "«Tragam os bolos e veremos», disse ela por fim.",
+          "id": "«Bawa saja, nanti kita lihat,» akhirnya ia berkata.",
+          "ar": "قالت أخيرًا: «أحضروها وسنرى».",
+          "vi": "«Cứ mang đến rồi chúng tôi xem», cuối cùng bà nói.",
+          "hi": "आखिर उसने कहा, «ले आओ, फिर देखते हैं।»",
+          "ru": "«Привозите, посмотрим», — наконец сказала она.",
+          "bn": "শেষে তিনি বললেন, «নিয়ে এসো, তারপর দেখি।»",
+          "ur": "آخر اس نے کہا، «لے آؤ، پھر دیکھتے ہیں۔»",
+          "th": "«เอามาก่อน แล้วค่อยดู» ในที่สุดเธอก็พูด"
+        }
+      },
+      {
+        "id": "fo-27",
+        "english": "Elif and Nur carried the boxes to the office together.",
+        "turkish": "Elif ile Nur kutuları ofise birlikte taşıdılar.",
+        "translations": {
+          "es-419": "Elif y Nur llevaron juntas las cajas a la oficina.",
+          "pt-BR": "Elif e Nur levaram juntas as caixas para o escritório.",
+          "id": "Elif dan Nur membawa kotak-kotak itu bersama-sama ke kantor.",
+          "ar": "حملت إليف ونور الصناديق إلى المكتب معًا.",
+          "vi": "Elif và Nur cùng mang những hộp bánh đến văn phòng.",
+          "hi": "एलिफ और नूर मिलकर डिब्बे दफ़्तर ले गईं।",
+          "ru": "Элиф и Нур вместе отнесли коробки в офис.",
+          "bn": "এলিফ ও নূর একসঙ্গে বাক্সগুলো অফিসে নিয়ে গেল।",
+          "ur": "ایلف اور نور مل کر ڈبے دفتر لے گئیں۔",
+          "th": "เอลิฟกับนูร์ช่วยกันนำกล่องไปที่สำนักงาน"
+        }
+      },
+      {
+        "id": "fo-28",
+        "english": "At the party, people tried the cakes and asked for more.",
+        "turkish": "Partide insanlar kekleri tattı ve daha fazlasını istedi.",
+        "translations": {
+          "es-419": "En la fiesta, la gente probó los pasteles y pidió más.",
+          "pt-BR": "Na festa, as pessoas provaram os bolos e pediram mais.",
+          "id": "Di pesta itu, orang-orang mencicipi kue-kue tersebut dan meminta lagi.",
+          "ar": "في الحفل، تذوق الناس الكعك وطلبوا المزيد.",
+          "vi": "Ở bữa tiệc, mọi người nếm bánh rồi xin thêm.",
+          "hi": "पार्टी में लोगों ने केक चखे और और माँगे।",
+          "ru": "На празднике люди попробовали пирожные и попросили ещё.",
+          "bn": "অনুষ্ঠানে লোকেরা কেক খেয়ে আরও চাইল।",
+          "ur": "تقریب میں لوگوں نے کیک چکھے اور مزید مانگے۔",
+          "th": "ในงานเลี้ยง ผู้คนลองชิมเค้กแล้วขอเพิ่ม"
+        }
+      },
+      {
+        "id": "fo-29",
+        "english": "The next week, the same customer called again.",
+        "turkish": "Ertesi hafta aynı müşteri yeniden aradı.",
+        "translations": {
+          "es-419": "La semana siguiente, la misma clienta volvió a llamar.",
+          "pt-BR": "Na semana seguinte, a mesma cliente ligou novamente.",
+          "id": "Minggu berikutnya, pelanggan yang sama menelepon lagi.",
+          "ar": "في الأسبوع التالي، اتصلت الزبونة نفسها مرة أخرى.",
+          "vi": "Tuần sau, chính vị khách ấy lại gọi điện.",
+          "hi": "अगले हफ़्ते उसी ग्राहक ने दोबारा फोन किया।",
+          "ru": "На следующей неделе та же клиентка позвонила снова.",
+          "bn": "পরের সপ্তাহে সেই ক্রেতা আবার ফোন করলেন।",
+          "ur": "اگلے ہفتے اسی گاہک نے دوبارہ فون کیا۔",
+          "th": "สัปดาห์ถัดมา ลูกค้าคนเดิมโทรมาอีก"
+        }
+      },
+      {
+        "id": "fo-30",
+        "english": "“We'd like sixty of your chocolate lemon cakes, please,” she said.",
+        "turkish": "“Çikolatalı limonlu keklerinizden altmış tane istiyoruz, lütfen,” dedi.",
+        "translations": {
+          "es-419": "«Queremos sesenta de sus pasteles de chocolate con limón, por favor», dijo.",
+          "pt-BR": "«Gostaríamos de sessenta dos seus bolos de chocolate com limão, por favor», disse ela.",
+          "id": "«Kami ingin enam puluh kue cokelat lemon kalian, ya,» katanya.",
+          "ar": "قالت: «نريد ستين من كعكات الشوكولاتة بالليمون، من فضلكم».",
+          "vi": "«Cho chúng tôi sáu mươi chiếc bánh sô-cô-la chanh của các cô nhé», bà nói.",
+          "hi": "उसने कहा, «हमें आपके चॉकलेट-नींबू वाले साठ केक चाहिए।»",
+          "ru": "«Нам, пожалуйста, шестьдесят ваших шоколадно-лимонных пирожных», — сказала она.",
+          "bn": "তিনি বললেন, «আপনাদের চকোলেট-লেবুর কেক ষাটটি চাই, দয়া করে।»",
+          "ur": "اس نے کہا، «ہمیں آپ کے چاکلیٹ لیموں والے ساٹھ کیک چاہییں، براہ کرم۔»",
+          "th": "«ขอเค้กช็อกโกแลตเลมอนของคุณหกสิบชิ้นนะคะ» เธอพูด"
+        }
+      },
+      {
+        "id": "fo-31",
+        "english": "Mr. Kaplan was surprised and decided to add the new cake to the menu.",
+        "turkish": "Bay Kaplan çok şaşırdı ve yeni keki menüye eklemeye karar verdi.",
+        "translations": {
+          "es-419": "El señor Kaplan se sorprendió y decidió añadir el nuevo pastel al menú.",
+          "pt-BR": "O senhor Kaplan ficou surpreso e decidiu incluir o novo bolo no cardápio.",
+          "id": "Pak Kaplan terkejut dan memutuskan untuk menambahkan kue baru itu ke menu.",
+          "ar": "تفاجأ السيد كابلان وقرر إضافة الكعكة الجديدة إلى قائمة الطعام.",
+          "vi": "Ông Kaplan ngạc nhiên và quyết định thêm món bánh mới vào thực đơn.",
+          "hi": "श्री कापलान को हैरानी हुई और उन्होंने नया केक मेन्यू में जोड़ने का फैसला किया।",
+          "ru": "Господин Каплан удивился и решил добавить новое пирожное в меню.",
+          "bn": "মি. কাপলান অবাক হলেন এবং নতুন কেকটি মেনুতে যোগ করার সিদ্ধান্ত নিলেন।",
+          "ur": "مسٹر کاپلان حیران ہوئے اور انہوں نے نیا کیک مینو میں شامل کرنے کا فیصلہ کیا۔",
+          "th": "คุณคาปลันประหลาดใจและตัดสินใจเพิ่มเค้กชนิดใหม่นี้ลงในเมนู"
+        }
+      },
+      {
+        "id": "fo-32",
+        "english": "He called it “Elif's Mistake,” and it soon became a favourite with customers.",
+        "turkish": "Kekin adını “Elif'in Hatası” koydu ve kek kısa sürede müşterilerin gözdesi oldu.",
+        "translations": {
+          "es-419": "Lo llamó «El error de Elif» y pronto se convirtió en uno de los favoritos de los clientes.",
+          "pt-BR": "Ele o chamou de «O erro de Elif», e logo virou um dos favoritos dos clientes.",
+          "id": "Ia menamainya «Kesalahan Elif», dan kue itu segera menjadi favorit para pelanggan.",
+          "ar": "سماها «خطأ إليف»، وسرعان ما أصبحت من المفضلات لدى الزبائن.",
+          "vi": "Ông đặt tên nó là «Sai lầm của Elif», và nó nhanh chóng được nhiều khách yêu thích.",
+          "hi": "उन्होंने उसका नाम «एलिफ की गलती» रखा और वह जल्दी ही ग्राहकों का पसंदीदा बन गया।",
+          "ru": "Он назвал его «Ошибка Элиф», и вскоре оно стало любимым у клиентов.",
+          "bn": "তিনি এর নাম দিলেন «এলিফের ভুল», আর এটি অচিরেই ক্রেতাদের প্রিয় হয়ে উঠল।",
+          "ur": "انہوں نے اس کا نام «ایلف کی غلطی» رکھا اور جلد ہی یہ گاہکوں کا پسندیدہ بن گیا۔",
+          "th": "เขาตั้งชื่อว่า «ความผิดพลาดของเอลิฟ» และไม่นานก็กลายเป็นของโปรดของลูกค้า"
+        }
+      },
+      {
+        "id": "fo-33",
+        "english": "Elif still read every order twice.",
+        "turkish": "Elif hâlâ her siparişi iki kez okuyordu.",
+        "translations": {
+          "es-419": "Elif siguió leyendo cada pedido dos veces.",
+          "pt-BR": "Elif continuou lendo cada pedido duas vezes.",
+          "id": "Elif tetap membaca setiap pesanan dua kali.",
+          "ar": "ظلت إليف تقرأ كل طلب مرتين.",
+          "vi": "Elif vẫn đọc mỗi đơn hàng hai lần.",
+          "hi": "एलिफ अब भी हर ऑर्डर दो बार पढ़ती थी।",
+          "ru": "Элиф по-прежнему читала каждый заказ дважды.",
+          "bn": "এলিফ তখনও প্রতিটি অর্ডার দুবার পড়ত।",
+          "ur": "ایلف اب بھی ہر آرڈر دو بار پڑھتی تھی۔",
+          "th": "เอลิฟยังคงอ่านคำสั่งซื้อทุกครั้งสองรอบ"
+        }
+      },
+      {
+        "id": "fo-34",
+        "english": "But now she knew that a bad day could sometimes become a good one.",
+        "turkish": "Ama artık kötü bir günün bazen iyi bir güne dönüşebileceğini biliyordu.",
+        "translations": {
+          "es-419": "Pero ahora sabía que un mal día a veces podía convertirse en uno bueno.",
+          "pt-BR": "Mas agora sabia que um dia ruim às vezes podia se transformar num dia bom.",
+          "id": "Namun, kini ia tahu bahwa hari yang buruk terkadang bisa berubah menjadi hari yang baik.",
+          "ar": "لكنها عرفت الآن أن اليوم السيئ قد يتحول أحيانًا إلى يوم جيد.",
+          "vi": "Nhưng giờ cô biết rằng một ngày tồi tệ đôi khi có thể trở thành một ngày tốt đẹp.",
+          "hi": "लेकिन अब वह जानती थी कि बुरा दिन कभी-कभी अच्छा भी बन सकता है।",
+          "ru": "Но теперь она знала, что плохой день иногда может стать хорошим.",
+          "bn": "কিন্তু এখন সে জানত, একটি খারাপ দিন কখনও কখনও ভালো দিন হয়ে উঠতে পারে।",
+          "ur": "لیکن اب وہ جانتی تھی کہ برا دن کبھی کبھی اچھا بھی بن سکتا ہے۔",
+          "th": "แต่ตอนนี้เธอรู้แล้วว่าวันที่แย่บางครั้งก็กลายเป็นวันที่ดีได้"
+        }
+      },
+      {
+        "id": "fo-35",
+        "english": "She also knew that kind colleagues make a difficult job much easier.",
+        "turkish": "Nazik iş arkadaşlarının zor bir işi çok daha kolaylaştırdığını da biliyordu.",
+        "translations": {
+          "es-419": "También sabía que los compañeros amables hacen mucho más fácil un trabajo difícil.",
+          "pt-BR": "Também sabia que colegas gentis tornam um trabalho difícil muito mais fácil.",
+          "id": "Ia juga tahu bahwa rekan kerja yang baik membuat pekerjaan sulit menjadi jauh lebih mudah.",
+          "ar": "وعرفت أيضًا أن الزملاء اللطفاء يجعلون العمل الصعب أسهل بكثير.",
+          "vi": "Cô cũng biết những đồng nghiệp tốt bụng khiến công việc khó khăn dễ dàng hơn nhiều.",
+          "hi": "वह यह भी जानती थी कि दयालु सहकर्मी मुश्किल काम को बहुत आसान बना देते हैं।",
+          "ru": "Она также знала, что добрые коллеги делают трудную работу намного легче.",
+          "bn": "সে আরও জানত যে দয়ালু সহকর্মীরা কঠিন কাজকে অনেক সহজ করে দেন।",
+          "ur": "وہ یہ بھی جانتی تھی کہ مہربان ساتھی مشکل کام کو بہت آسان بنا دیتے ہیں۔",
+          "th": "เธอยังรู้ด้วยว่าเพื่อนร่วมงานใจดีทำให้งานที่ยากง่ายขึ้นมาก"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "first-order-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "A woman who opens her own bakery in the city",
+          "A new worker who turns a mistake into a success with a colleague's help",
+          "A customer who complains about a bakery's bad cakes",
+          "A manager who teaches his workers many rules"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "first-order-q2",
+        "kind": "detail",
+        "prompt": "What kind of cakes did the customer order?",
+        "options": [
+          "Chocolate cakes",
+          "Vanilla cakes",
+          "Lemon cakes",
+          "Apple cakes"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "first-order-q3",
+        "kind": "detail",
+        "prompt": "How long had Nur worked at the bakery?",
+        "options": [
+          "Two years",
+          "Ten years",
+          "Fifteen years",
+          "Twenty years"
+        ],
+        "answer": 3
+      },
+      {
+        "id": "first-order-q4",
+        "kind": "inference",
+        "prompt": "Why did Mr. Kaplan probably call the new cake “Elif's Mistake”?",
+        "options": [
+          "Because the cake was born from Elif's error and became a happy story",
+          "Because he wanted to punish Elif in front of customers",
+          "Because Elif asked him to use her name",
+          "Because the customers did not like the new cake"
+        ],
+        "answer": 0
+      }
+    ],
+    "descriptions": {
+      "es-419": "Elif comete un error con su primer gran pedido en una panadería, pero una compañera amable la ayuda a encontrar una solución.",
+      "pt-BR": "Elif erra seu primeiro grande pedido em uma padaria, mas uma colega gentil a ajuda a encontrar uma solução.",
+      "id": "Elif membuat kesalahan pada pesanan besar pertamanya di toko roti, tetapi seorang rekan yang baik membantunya menemukan jalan keluar.",
+      "ar": "ترتكب إليف خطأ في أول طلب كبير لها في مخبز، لكن زميلة لطيفة تساعدها على إيجاد حل.",
+      "vi": "Elif mắc lỗi trong đơn hàng lớn đầu tiên ở tiệm bánh, nhưng một đồng nghiệp tốt bụng giúp cô tìm ra cách giải quyết.",
+      "hi": "बेकरी में अपने पहले बड़े ऑर्डर में एलिफ से गलती हो जाती है, लेकिन एक दयालु सहकर्मी समाधान ढूँढ़ने में उसकी मदद करती है।",
+      "ru": "Элиф ошибается с первым большим заказом в пекарне, но добрая коллега помогает ей найти выход.",
+      "bn": "বেকারিতে নিজের প্রথম বড় অর্ডারে এলিফ ভুল করে, কিন্তু এক দয়ালু সহকর্মী তাকে সমাধান খুঁজতে সাহায্য করেন।",
+      "ur": "بیکری میں اپنے پہلے بڑے آرڈر میں ایلف سے غلطی ہو جاتی ہے، لیکن ایک مہربان ساتھی اسے حل تلاش کرنے میں مدد دیتی ہے۔",
+      "th": "เอลิฟทำผิดพลาดกับคำสั่งซื้อใหญ่ครั้งแรกที่ร้านเบเกอรี แต่เพื่อนร่วมงานใจดีช่วยเธอหาทางแก้ไข"
+    }
+  },
+  "words": [
+    {
+      "id": "nervous",
+      "word": "nervous",
+      "translation": "gergin, endişeli",
+      "pronunciation": "/ˈnɝːvəs/",
+      "example": "I always feel nervous before an exam.",
+      "translations": {
+        "es-419": "nervioso",
+        "pt-BR": "nervoso",
+        "id": "gugup",
+        "ar": "متوتر",
+        "vi": "lo lắng",
+        "hi": "घबराया हुआ",
+        "ru": "нервный",
+        "bn": "নার্ভাস",
+        "ur": "گھبرایا ہوا",
+        "th": "กังวล"
+      }
+    },
+    {
+      "id": "customer",
+      "word": "customer",
+      "translation": "müşteri",
+      "pronunciation": "/ˈkʌstəmɚ/",
+      "example": "The shop gave every customer a free coffee.",
+      "translations": {
+        "es-419": "cliente",
+        "pt-BR": "cliente",
+        "id": "pelanggan",
+        "ar": "زبون",
+        "vi": "khách hàng",
+        "hi": "ग्राहक",
+        "ru": "клиент",
+        "bn": "ক্রেতা",
+        "ur": "گاہک",
+        "th": "ลูกค้า"
+      }
+    },
+    {
+      "id": "mistake",
+      "word": "mistake",
+      "translation": "hata",
+      "pronunciation": "/mɪˈsteɪk/",
+      "example": "Don't worry, it was only a small mistake.",
+      "translations": {
+        "es-419": "error",
+        "pt-BR": "erro",
+        "id": "kesalahan",
+        "ar": "خطأ",
+        "vi": "lỗi",
+        "hi": "गलती",
+        "ru": "ошибка",
+        "bn": "ভুল",
+        "ur": "غلطی",
+        "th": "ความผิดพลาด"
+      }
+    },
+    {
+      "id": "delivery",
+      "word": "delivery",
+      "translation": "teslimat",
+      "pronunciation": "/dɪˈlɪvɚi/",
+      "example": "The delivery of my new sofa is on Tuesday.",
+      "translations": {
+        "es-419": "entrega",
+        "pt-BR": "entrega",
+        "id": "pengiriman",
+        "ar": "توصيل",
+        "vi": "việc giao hàng",
+        "hi": "पहुँचाना",
+        "ru": "доставка",
+        "bn": "সরবরাহ",
+        "ur": "ترسیل",
+        "th": "การจัดส่ง"
+      }
+    },
+    {
+      "id": "confident",
+      "word": "confident",
+      "translation": "özgüvenli, kendinden emin",
+      "pronunciation": "/ˈkɑːnfɪdənt/",
+      "example": "After a lot of practice, he felt confident on stage.",
+      "translations": {
+        "es-419": "seguro de sí mismo",
+        "pt-BR": "confiante",
+        "id": "percaya diri",
+        "ar": "واثق بنفسه",
+        "vi": "tự tin",
+        "hi": "आत्मविश्वासी",
+        "ru": "уверенный в себе",
+        "bn": "আত্মবিশ্বাসী",
+        "ur": "پراعتماد",
+        "th": "มั่นใจ"
+      }
+    },
+    {
+      "id": "apologise",
+      "word": "apologise",
+      "translation": "özür dilemek",
+      "pronunciation": "/əˈpɑːlədʒaɪz/",
+      "example": "You should apologise to your sister for shouting.",
+      "translations": {
+        "es-419": "disculparse",
+        "pt-BR": "pedir desculpas",
+        "id": "meminta maaf",
+        "ar": "يعتذر",
+        "vi": "xin lỗi",
+        "hi": "माफ़ी माँगना",
+        "ru": "извиняться",
+        "bn": "ক্ষমা চাওয়া",
+        "ur": "معافی مانگنا",
+        "th": "ขอโทษ"
+      }
+    }
   ],
-  "sentences": [
-   {
-    "id": "fo-1",
-    "english": "Elif started her new job at Sunrise Bakery on a cold Monday morning.",
-    "turkish": "Elif, soğuk bir pazartesi sabahı Sunrise Fırını'nda yeni işine başladı."
-   },
-   {
-    "id": "fo-2",
-    "english": "The bakery was on the busiest street in the city, and it opened at six.",
-    "turkish": "Fırın şehrin en kalabalık caddesindeydi ve sabah altıda açılıyordu."
-   },
-   {
-    "id": "fo-3",
-    "english": "She was excited, but she was also very nervous.",
-    "turkish": "Heyecanlıydı ama aynı zamanda çok gergindi."
-   },
-   {
-    "id": "fo-4",
-    "english": "Her manager, Mr. Kaplan, gave her an apron and a long list of rules.",
-    "turkish": "Müdürü Bay Kaplan ona bir önlük ve uzun bir kural listesi verdi."
-   },
-   {
-    "id": "fo-5",
-    "english": "“Always read every order twice,” he said.",
-    "turkish": "“Her siparişi mutlaka iki kez oku,” dedi."
-   },
-   {
-    "id": "fo-6",
-    "english": "An older woman named Nur showed her how to use the ovens.",
-    "turkish": "Nur adında yaşça büyük bir kadın ona fırınları nasıl kullanacağını gösterdi."
-   },
-   {
-    "id": "fo-7",
-    "english": "Nur had worked at the bakery for twenty years, and she smiled at everyone.",
-    "turkish": "Nur yirmi yıldır bu fırında çalışıyordu ve herkese gülümserdi."
-   },
-   {
-    "id": "fo-8",
-    "english": "On Thursday, a customer called and ordered cakes for a company party.",
-    "turkish": "Perşembe günü bir müşteri aradı ve bir şirket partisi için kek sipariş etti."
-   },
-   {
-    "id": "fo-9",
-    "english": "She wanted forty small lemon cakes for Friday at noon.",
-    "turkish": "Cuma öğlen için kırk küçük limonlu kek istiyordu."
-   },
-   {
-    "id": "fo-10",
-    "english": "Elif wrote the order quickly because three people were waiting at the counter.",
-    "turkish": "Tezgâhta üç kişi beklediği için Elif siparişi aceleyle yazdı."
-   },
-   {
-    "id": "fo-11",
-    "english": "That evening, she baked forty chocolate cakes instead of lemon ones.",
-    "turkish": "O akşam limonlu kek yerine kırk tane çikolatalı kek pişirdi."
-   },
-   {
-    "id": "fo-12",
-    "english": "She only noticed the mistake the next morning, when she read the order again.",
-    "turkish": "Hatayı ancak ertesi sabah, siparişi yeniden okuduğunda fark etti."
-   },
-   {
-    "id": "fo-13",
-    "english": "Her face went red, and her hands started to shake.",
-    "turkish": "Yüzü kıpkırmızı oldu ve elleri titremeye başladı."
-   },
-   {
-    "id": "fo-14",
-    "english": "The delivery was in four hours, and there was no time to start again.",
-    "turkish": "Teslimata dört saat vardı ve baştan başlamaya zaman yoktu."
-   },
-   {
-    "id": "fo-15",
-    "english": "“I've ruined everything,” she told Nur.",
-    "turkish": "“Her şeyi mahvettim,” dedi Nur'a."
-   },
-   {
-    "id": "fo-16",
-    "english": "“Mr. Kaplan will be so angry with me.”",
-    "turkish": "“Bay Kaplan bana çok kızacak.”"
-   },
-   {
-    "id": "fo-17",
-    "english": "Nur looked at the cakes for a long moment and then laughed softly.",
-    "turkish": "Nur bir süre keklere baktı, sonra usulca güldü."
-   },
-   {
-    "id": "fo-18",
-    "english": "“Mistakes happen to everyone,” she said.",
-    "turkish": "“Hata herkesin başına gelir,” dedi."
-   },
-   {
-    "id": "fo-19",
-    "english": "“Let's think about this together.”",
-    "turkish": "“Gel, bunu birlikte düşünelim.”"
-   },
-   {
-    "id": "fo-20",
-    "english": "She took some fresh lemons from the fridge and began to make a light lemon cream.",
-    "turkish": "Buzdolabından birkaç taze limon aldı ve hafif bir limon kreması yapmaya başladı."
-   },
-   {
-    "id": "fo-21",
-    "english": "Then she showed Elif how to put a little cream on top of each cake.",
-    "turkish": "Sonra Elif'e her kekin üstüne biraz krema koymayı gösterdi."
-   },
-   {
-    "id": "fo-22",
-    "english": "They added thin pieces of lemon peel, and the cakes looked beautiful.",
-    "turkish": "Üstlerine ince limon kabuğu parçaları eklediler ve kekler harika göründü."
-   },
-   {
-    "id": "fo-23",
-    "english": "Elif felt a little more confident as she worked.",
-    "turkish": "Elif çalıştıkça kendini biraz daha özgüvenli hissetti."
-   },
-   {
-    "id": "fo-24",
-    "english": "At eleven o'clock, she called the customer to apologise and explain what had happened.",
-    "turkish": "Saat on birde müşteriyi arayıp özür diledi ve neler olduğunu anlattı."
-   },
-   {
-    "id": "fo-25",
-    "english": "The woman was quiet for a few seconds.",
-    "turkish": "Kadın birkaç saniye sessiz kaldı."
-   },
-   {
-    "id": "fo-26",
-    "english": "“Bring them, and we'll see,” she finally said.",
-    "turkish": "Sonunda “Getirin, bakalım,” dedi."
-   },
-   {
-    "id": "fo-27",
-    "english": "Elif and Nur carried the boxes to the office together.",
-    "turkish": "Elif ile Nur kutuları ofise birlikte taşıdılar."
-   },
-   {
-    "id": "fo-28",
-    "english": "At the party, people tried the cakes and asked for more.",
-    "turkish": "Partide insanlar kekleri tattı ve daha fazlasını istedi."
-   },
-   {
-    "id": "fo-29",
-    "english": "The next week, the same customer called again.",
-    "turkish": "Ertesi hafta aynı müşteri yeniden aradı."
-   },
-   {
-    "id": "fo-30",
-    "english": "“We'd like sixty of your chocolate lemon cakes, please,” she said.",
-    "turkish": "“Çikolatalı limonlu keklerinizden altmış tane istiyoruz, lütfen,” dedi."
-   },
-   {
-    "id": "fo-31",
-    "english": "Mr. Kaplan was surprised and decided to add the new cake to the menu.",
-    "turkish": "Bay Kaplan çok şaşırdı ve yeni keki menüye eklemeye karar verdi."
-   },
-   {
-    "id": "fo-32",
-    "english": "He called it “Elif's Mistake,” and it soon became a favourite with customers.",
-    "turkish": "Kekin adını “Elif'in Hatası” koydu ve kek kısa sürede müşterilerin gözdesi oldu."
-   },
-   {
-    "id": "fo-33",
-    "english": "Elif still read every order twice.",
-    "turkish": "Elif hâlâ her siparişi iki kez okuyordu."
-   },
-   {
-    "id": "fo-34",
-    "english": "But now she knew that a bad day could sometimes become a good one.",
-    "turkish": "Ama artık kötü bir günün bazen iyi bir güne dönüşebileceğini biliyordu."
-   },
-   {
-    "id": "fo-35",
-    "english": "She also knew that kind colleagues make a difficult job much easier.",
-    "turkish": "Nazik iş arkadaşlarının zor bir işi çok daha kolaylaştırdığını da biliyordu."
-   }
+  "studyWordIds": [
+    "nervous",
+    "customer",
+    "mistake",
+    "delivery",
+    "confident",
+    "apologise",
+    "quiet",
+    "morning"
   ],
-  "questions": [
-   {
-    "id": "first-order-q1",
-    "kind": "main",
-    "prompt": "What is the story mainly about?",
-    "options": [
-     "A woman who opens her own bakery in the city",
-     "A new worker who turns a mistake into a success with a colleague's help",
-     "A customer who complains about a bakery's bad cakes",
-     "A manager who teaches his workers many rules"
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
     ],
-    "answer": 1
-   },
-   {
-    "id": "first-order-q2",
-    "kind": "detail",
-    "prompt": "What kind of cakes did the customer order?",
-    "options": [
-     "Chocolate cakes",
-     "Vanilla cakes",
-     "Lemon cakes",
-     "Apple cakes"
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
     ],
-    "answer": 2
-   },
-   {
-    "id": "first-order-q3",
-    "kind": "detail",
-    "prompt": "How long had Nur worked at the bakery?",
-    "options": [
-     "Two years",
-     "Ten years",
-     "Fifteen years",
-     "Twenty years"
-    ],
-    "answer": 3
-   },
-   {
-    "id": "first-order-q4",
-    "kind": "inference",
-    "prompt": "Why did Mr. Kaplan probably call the new cake “Elif's Mistake”?",
-    "options": [
-     "Because the cake was born from Elif's error and became a happy story",
-     "Because he wanted to punish Elif in front of customers",
-     "Because Elif asked him to use her name",
-     "Because the customers did not like the new cake"
-    ],
-    "answer": 0
-   }
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-assisted translation drafts; project owner authorized publication on 2026-10-23; not native-speaker-approved"
+  },
+  "ownerPublicationAuthorization": {
+    "instruction": "Tum eksikleri gider ve tamamla",
+    "date": "2026-10-23",
+    "by": "Oğuz Yürken",
+    "nativeSpeakerApproved": false
+  },
+  "questionEvidence": [
+    {
+      "questionId": "first-order-q1",
+      "sentenceIds": [
+        "fo-11",
+        "fo-20",
+        "fo-28",
+        "fo-30",
+        "fo-32"
+      ],
+      "rationale": "The listed source sentences support the selected answer: A new worker who turns a mistake into a success with a colleague's help"
+    },
+    {
+      "questionId": "first-order-q2",
+      "sentenceIds": [
+        "fo-9"
+      ],
+      "rationale": "The listed source sentences support the selected answer: Lemon cakes"
+    },
+    {
+      "questionId": "first-order-q3",
+      "sentenceIds": [
+        "fo-7"
+      ],
+      "rationale": "The listed source sentences support the selected answer: Twenty years"
+    },
+    {
+      "questionId": "first-order-q4",
+      "sentenceIds": [
+        "fo-11",
+        "fo-30",
+        "fo-31",
+        "fo-32"
+      ],
+      "rationale": "The listed source sentences support the selected answer: Because the cake was born from Elif's error and became a happy story"
+    }
+  ],
+  "publicationBlockers": [
+    "Native-speaker language review not performed; owner approved publication as AI-assisted drafts."
   ]
- },
- "words": [
-  {
-   "id": "nervous",
-   "word": "nervous",
-   "translation": "gergin, endişeli",
-   "pronunciation": "/ˈnɝːvəs/",
-   "example": "I always feel nervous before an exam."
-  },
-  {
-   "id": "customer",
-   "word": "customer",
-   "translation": "müşteri",
-   "pronunciation": "/ˈkʌstəmɚ/",
-   "example": "The shop gave every customer a free coffee."
-  },
-  {
-   "id": "mistake",
-   "word": "mistake",
-   "translation": "hata",
-   "pronunciation": "/mɪˈsteɪk/",
-   "example": "Don't worry, it was only a small mistake."
-  },
-  {
-   "id": "delivery",
-   "word": "delivery",
-   "translation": "teslimat",
-   "pronunciation": "/dɪˈlɪvɚi/",
-   "example": "The delivery of my new sofa is on Tuesday."
-  },
-  {
-   "id": "confident",
-   "word": "confident",
-   "translation": "özgüvenli, kendinden emin",
-   "pronunciation": "/ˈkɑːnfɪdənt/",
-   "example": "After a lot of practice, he felt confident on stage."
-  },
-  {
-   "id": "apologise",
-   "word": "apologise",
-   "translation": "özür dilemek",
-   "pronunciation": "/əˈpɑːlədʒaɪz/",
-   "example": "You should apologise to your sister for shouting."
-  }
- ]
 }

@@ -1,283 +1,860 @@
 {
- "status": "draft",
- "source": "claude-draft-2026-10-17",
- "reviewedBy": null,
- "story": {
-  "id": "night-library",
-  "title": "The Notes in the Night Library",
-  "author": "English Tales",
-  "level": "B1",
-  "genre": "Gizem",
-  "description": "Sahil kasabasında gece çalışan bir kütüphaneci, iade edilen kitaplardaki kurşun kalem notlarının izini sürerek unutulmuş bir hikâyeyi gün yüzüne çıkarır.",
-  "coverKey": "cover_night_library",
-  "tags": [
-   "gizem"
+  "status": "draft",
+  "source": "claude-draft-2026-10-17",
+  "reviewedBy": null,
+  "story": {
+    "id": "night-library",
+    "title": "The Notes in the Night Library",
+    "author": "English Tales",
+    "level": "B1",
+    "genre": "Gizem",
+    "description": "Sahil kasabasında gece çalışan bir kütüphaneci, iade edilen kitaplardaki kurşun kalem notlarının izini sürerek unutulmuş bir hikâyeyi gün yüzüne çıkarır.",
+    "coverKey": "cover_night_library",
+    "tags": [
+      "gizem"
+    ],
+    "sentences": [
+      {
+        "id": "nl-1",
+        "english": "Nora worked the night shift at the small library in Port Elm, a quiet town by the sea.",
+        "turkish": "Nora, deniz kenarındaki sakin bir kasaba olan Port Elm'deki küçük kütüphanede gece vardiyasında çalışıyordu.",
+        "translations": {
+          "es-419": "Nora trabajaba de noche en la pequeña biblioteca de Port Elm, un tranquilo pueblo junto al mar.",
+          "pt-BR": "Nora trabalhava no turno da noite na pequena biblioteca de Port Elm, uma cidade tranquila à beira-mar.",
+          "id": "Nora bekerja pada giliran malam di perpustakaan kecil di Port Elm, kota tenang di tepi laut.",
+          "ar": "كانت نورا تعمل في المناوبة الليلية في مكتبة بورت إلم الصغيرة، وهي بلدة هادئة قرب البحر.",
+          "vi": "Nora làm ca đêm tại thư viện nhỏ ở Port Elm, một thị trấn yên bình bên biển.",
+          "hi": "नोरा पोर्ट एल्म की छोटी लाइब्रेरी में रात की पाली में काम करती थी; यह समुद्र किनारे का शांत कस्बा था।",
+          "ru": "Нора работала в ночную смену в маленькой библиотеке Порт-Элма, тихого городка у моря.",
+          "bn": "নোরা সমুদ্রের ধারের শান্ত শহর পোর্ট এল্মের ছোট লাইব্রেরিতে রাতের পালায় কাজ করত।",
+          "ur": "نورا سمندر کے کنارے پُرسکون قصبے پورٹ ایلم کی چھوٹی لائبریری میں رات کی شفٹ میں کام کرتی تھی۔",
+          "th": "นอราทำงานกะกลางคืนที่ห้องสมุดเล็ก ๆ ในพอร์ตเอล์ม เมืองเงียบสงบริมทะเล"
+        }
+      },
+      {
+        "id": "nl-2",
+        "english": "Every night, she checked the books in the return box.",
+        "turkish": "Her gece iade kutusundaki kitapları kontrol ederdi.",
+        "translations": {
+          "es-419": "Cada noche revisaba los libros del buzón de devoluciones.",
+          "pt-BR": "Todas as noites, ela verificava os livros na caixa de devolução.",
+          "id": "Setiap malam, ia memeriksa buku-buku di kotak pengembalian.",
+          "ar": "كانت تفحص كل ليلة الكتب الموجودة في صندوق الإرجاع.",
+          "vi": "Mỗi đêm, cô kiểm tra sách trong hộp trả sách.",
+          "hi": "हर रात वह वापसी वाले डिब्बे में रखी किताबें जाँचती थी।",
+          "ru": "Каждую ночь она проверяла книги в ящике для возврата.",
+          "bn": "প্রতি রাতে সে বই ফেরত দেওয়ার বাক্সের বইগুলো দেখত।",
+          "ur": "وہ ہر رات واپسی کے ڈبے میں رکھی کتابیں دیکھتی تھی۔",
+          "th": "ทุกคืนเธอตรวจหนังสือในกล่องคืนหนังสือ"
+        }
+      },
+      {
+        "id": "nl-3",
+        "english": "One cold evening in November, she noticed something strange in an old book about boats.",
+        "turkish": "Kasım ayında soğuk bir akşam, teknelerle ilgili eski bir kitapta tuhaf bir şey fark etti.",
+        "translations": {
+          "es-419": "Una fría tarde de noviembre, notó algo extraño en un viejo libro sobre barcos.",
+          "pt-BR": "Numa noite fria de novembro, percebeu algo estranho num livro antigo sobre barcos.",
+          "id": "Pada suatu malam dingin di bulan November, ia melihat sesuatu yang aneh dalam buku tua tentang perahu.",
+          "ar": "في مساء بارد من نوفمبر، لاحظت شيئًا غريبًا في كتاب قديم عن القوارب.",
+          "vi": "Một buổi tối lạnh giá tháng Mười Một, cô nhận thấy điều lạ trong một cuốn sách cũ về thuyền.",
+          "hi": "नवंबर की एक ठंडी शाम उसे नावों की एक पुरानी किताब में कुछ अजीब दिखा।",
+          "ru": "Однажды холодным ноябрьским вечером она заметила кое-что странное в старой книге о лодках.",
+          "bn": "নভেম্বরের এক ঠান্ডা সন্ধ্যায় নৌকা নিয়ে লেখা পুরোনো একটি বইয়ে সে অদ্ভুত কিছু লক্ষ করল।",
+          "ur": "نومبر کی ایک سرد شام اسے کشتیوں کی ایک پرانی کتاب میں کچھ عجیب نظر آیا۔",
+          "th": "เย็นวันหนึ่งที่หนาวเย็นในเดือนพฤศจิกายน เธอสังเกตเห็นสิ่งแปลก ๆ ในหนังสือเก่าเกี่ยวกับเรือ"
+        }
+      },
+      {
+        "id": "nl-4",
+        "english": "Someone had written a short note in pencil on the last page.",
+        "turkish": "Biri son sayfaya kurşun kalemle kısa bir not yazmıştı.",
+        "translations": {
+          "es-419": "Alguien había escrito una nota corta a lápiz en la última página.",
+          "pt-BR": "Alguém havia escrito um bilhete curto a lápis na última página.",
+          "id": "Seseorang menulis catatan singkat dengan pensil di halaman terakhir.",
+          "ar": "كتب شخص ملاحظة قصيرة بقلم رصاص في الصفحة الأخيرة.",
+          "vi": "Ai đó đã viết một lời nhắn ngắn bằng bút chì ở trang cuối.",
+          "hi": "किसी ने आखिरी पन्ने पर पेंसिल से एक छोटा संदेश लिखा था।",
+          "ru": "Кто-то написал короткую записку карандашом на последней странице.",
+          "bn": "কেউ শেষ পাতায় পেন্সিল দিয়ে একটি ছোট চিরকুট লিখেছিল।",
+          "ur": "کسی نے آخری صفحے پر پنسل سے ایک مختصر پیغام لکھا تھا۔",
+          "th": "มีใครบางคนเขียนข้อความสั้น ๆ ด้วยดินสอไว้ที่หน้าสุดท้าย"
+        }
+      },
+      {
+        "id": "nl-5",
+        "english": "It said, “Look for the green door near the harbour.”",
+        "turkish": "Notta “Limanın yakınındaki yeşil kapıyı ara.” yazıyordu.",
+        "translations": {
+          "es-419": "Decía: «Busca la puerta verde cerca del puerto».",
+          "pt-BR": "Dizia: «Procure a porta verde perto do porto».",
+          "id": "Bunyinya, «Carilah pintu hijau di dekat pelabuhan.»",
+          "ar": "جاء فيها: «ابحث عن الباب الأخضر قرب الميناء».",
+          "vi": "Nó viết: «Hãy tìm cánh cửa xanh lá gần bến cảng.»",
+          "hi": "उसमें लिखा था, «बंदरगाह के पास हरा दरवाज़ा ढूँढ़ो।»",
+          "ru": "Там было сказано: «Ищи зелёную дверь у гавани».",
+          "bn": "তাতে লেখা ছিল, «বন্দরের কাছে সবুজ দরজাটি খোঁজো।»",
+          "ur": "اس میں لکھا تھا، «بندرگاہ کے قریب سبز دروازہ تلاش کرو۔»",
+          "th": "ข้อความนั้นเขียนว่า «มองหาประตูสีเขียวใกล้ท่าเรือ»"
+        }
+      },
+      {
+        "id": "nl-6",
+        "english": "Nora smiled, because she thought it was a child's game.",
+        "turkish": "Nora gülümsedi, çünkü bunun bir çocuk oyunu olduğunu düşündü.",
+        "translations": {
+          "es-419": "Nora sonrió porque pensó que era un juego de niños.",
+          "pt-BR": "Nora sorriu, pois achou que era uma brincadeira de criança.",
+          "id": "Nora tersenyum karena mengira itu permainan anak-anak.",
+          "ar": "ابتسمت نورا لأنها ظنت أنها لعبة طفل.",
+          "vi": "Nora mỉm cười vì nghĩ đó là trò chơi của một đứa trẻ.",
+          "hi": "नोरा मुस्कुराई, क्योंकि उसे लगा कि यह किसी बच्चे का खेल है।",
+          "ru": "Нора улыбнулась, решив, что это детская игра.",
+          "bn": "নোরা হাসল, কারণ তার মনে হলো এটি কোনো শিশুর খেলা।",
+          "ur": "نورا مسکرائی کیونکہ اسے لگا یہ کسی بچے کا کھیل ہے۔",
+          "th": "นอรายิ้ม เพราะคิดว่าเป็นเกมของเด็ก"
+        }
+      },
+      {
+        "id": "nl-7",
+        "english": "But the next night, another returned book had a note too.",
+        "turkish": "Ama ertesi gece, iade edilen başka bir kitapta da bir not vardı.",
+        "translations": {
+          "es-419": "Pero la noche siguiente, otro libro devuelto también tenía una nota.",
+          "pt-BR": "Mas, na noite seguinte, outro livro devolvido também tinha um bilhete.",
+          "id": "Namun, malam berikutnya, buku lain yang dikembalikan juga berisi catatan.",
+          "ar": "لكن في الليلة التالية، وجدت ملاحظة أيضًا في كتاب آخر أعيد إلى المكتبة.",
+          "vi": "Nhưng đêm hôm sau, một cuốn sách khác được trả lại cũng có lời nhắn.",
+          "hi": "लेकिन अगली रात लौटाई गई एक और किताब में भी संदेश था।",
+          "ru": "Но на следующую ночь записка нашлась и в другой возвращённой книге.",
+          "bn": "কিন্তু পরের রাতে ফেরত আসা আরেকটি বইয়েও একটি চিরকুট ছিল।",
+          "ur": "لیکن اگلی رات واپس آنے والی ایک اور کتاب میں بھی پیغام تھا۔",
+          "th": "แต่คืนถัดมา หนังสือที่มีคนนำมาคืนอีกเล่มก็มีข้อความเช่นกัน"
+        }
+      },
+      {
+        "id": "nl-8",
+        "english": "This one said, “The light keeper's daughter never left.”",
+        "turkish": "Bu seferki notta “Deniz feneri bekçisinin kızı hiç gitmedi.” yazıyordu.",
+        "translations": {
+          "es-419": "Esta decía: «La hija del farero nunca se fue».",
+          "pt-BR": "Este dizia: «A filha do faroleiro nunca foi embora».",
+          "id": "Catatan ini berbunyi, «Putri penjaga mercusuar tidak pernah pergi.»",
+          "ar": "جاء في هذه الملاحظة: «ابنة حارس المنارة لم ترحل قط».",
+          "vi": "Lần này lời nhắn viết: «Con gái người gác hải đăng chưa từng rời đi.»",
+          "hi": "इसमें लिखा था, «प्रकाशस्तंभ के रखवाले की बेटी कभी गई ही नहीं।»",
+          "ru": "В ней было написано: «Дочь смотрителя маяка никогда не уезжала».",
+          "bn": "এটিতে লেখা ছিল, «বাতিঘরের রক্ষকের মেয়ে কখনও চলে যায়নি।»",
+          "ur": "اس میں لکھا تھا، «لائٹ ہاؤس کے نگہبان کی بیٹی کبھی گئی ہی نہیں۔»",
+          "th": "ข้อความนี้เขียนว่า «ลูกสาวคนเฝ้าประภาคารไม่เคยจากไป»"
+        }
+      },
+      {
+        "id": "nl-9",
+        "english": "Nora felt a little suspicious, so she started to keep the notes in a folder.",
+        "turkish": "Nora biraz şüphelendi, bu yüzden notları bir dosyada saklamaya başladı.",
+        "translations": {
+          "es-419": "Nora empezó a sospechar algo y comenzó a guardar las notas en una carpeta.",
+          "pt-BR": "Nora ficou um pouco desconfiada e começou a guardar os bilhetes numa pasta.",
+          "id": "Nora merasa sedikit curiga, lalu mulai menyimpan catatan-catatan itu dalam sebuah map.",
+          "ar": "شعرت نورا بشيء من الشك، فبدأت تحفظ الملاحظات في ملف.",
+          "vi": "Nora hơi nghi ngờ nên bắt đầu giữ những mẩu ghi chú trong một tập hồ sơ.",
+          "hi": "नोरा को थोड़ा शक हुआ, इसलिए वह संदेशों को एक फ़ोल्डर में रखने लगी।",
+          "ru": "Нора что-то заподозрила и стала складывать записки в папку.",
+          "bn": "নোরার একটু সন্দেহ হলো, তাই সে চিরকুটগুলো একটি ফোল্ডারে জমাতে শুরু করল।",
+          "ur": "نورا کو کچھ شک ہوا، اس لیے اس نے پیغامات ایک فولڈر میں رکھنا شروع کیے۔",
+          "th": "นอราเริ่มสงสัยเล็กน้อย จึงเก็บข้อความต่าง ๆ ไว้ในแฟ้ม"
+        }
+      },
+      {
+        "id": "nl-10",
+        "english": "Over two weeks, she found seven notes in seven different books.",
+        "turkish": "İki hafta içinde yedi farklı kitapta yedi not buldu.",
+        "translations": {
+          "es-419": "En dos semanas encontró siete notas en siete libros diferentes.",
+          "pt-BR": "Em duas semanas, encontrou sete bilhetes em sete livros diferentes.",
+          "id": "Dalam dua minggu, ia menemukan tujuh catatan dalam tujuh buku yang berbeda.",
+          "ar": "خلال أسبوعين، وجدت سبع ملاحظات في سبعة كتب مختلفة.",
+          "vi": "Trong hai tuần, cô tìm thấy bảy lời nhắn trong bảy cuốn sách khác nhau.",
+          "hi": "दो हफ़्तों में उसे सात अलग-अलग किताबों में सात संदेश मिले।",
+          "ru": "За две недели она нашла семь записок в семи разных книгах.",
+          "bn": "দুই সপ্তাহে সে সাতটি আলাদা বইয়ে সাতটি চিরকুট পেল।",
+          "ur": "دو ہفتوں میں اسے سات الگ کتابوں میں سات پیغامات ملے۔",
+          "th": "ภายในสองสัปดาห์ เธอพบข้อความเจ็ดข้อความในหนังสือเจ็ดเล่มที่ต่างกัน"
+        }
+      },
+      {
+        "id": "nl-11",
+        "english": "All of them were written in the same careful handwriting.",
+        "turkish": "Hepsi aynı özenli el yazısıyla yazılmıştı.",
+        "translations": {
+          "es-419": "Todas estaban escritas con la misma letra cuidadosa.",
+          "pt-BR": "Todos tinham a mesma caligrafia caprichada.",
+          "id": "Semuanya ditulis dengan tulisan tangan rapi yang sama.",
+          "ar": "كانت كلها مكتوبة بالخط المتقن نفسه.",
+          "vi": "Tất cả đều có cùng một nét chữ cẩn thận.",
+          "hi": "सभी संदेश एक जैसी साफ-सुथरी लिखावट में थे।",
+          "ru": "Все они были написаны одним и тем же аккуратным почерком.",
+          "bn": "সবগুলো একই যত্নের হাতের লেখায় লেখা ছিল।",
+          "ur": "سب ایک ہی صاف ستھری لکھائی میں لکھے گئے تھے۔",
+          "th": "ทั้งหมดเขียนด้วยลายมือบรรจงแบบเดียวกัน"
+        }
+      },
+      {
+        "id": "nl-12",
+        "english": "She realised that the books were all about the history of Port Elm.",
+        "turkish": "Kitapların hepsinin Port Elm'in tarihiyle ilgili olduğunu fark etti.",
+        "translations": {
+          "es-419": "Se dio cuenta de que todos los libros trataban sobre la historia de Port Elm.",
+          "pt-BR": "Ela percebeu que todos os livros falavam da história de Port Elm.",
+          "id": "Ia menyadari bahwa semua buku itu membahas sejarah Port Elm.",
+          "ar": "أدركت أن الكتب كلها تتناول تاريخ بورت إلم.",
+          "vi": "Cô nhận ra những cuốn sách đều nói về lịch sử Port Elm.",
+          "hi": "उसे एहसास हुआ कि सभी किताबें पोर्ट एल्म के इतिहास के बारे में थीं।",
+          "ru": "Она поняла, что все книги посвящены истории Порт-Элма.",
+          "bn": "সে বুঝল যে সব বই পোর্ট এল্মের ইতিহাস নিয়ে লেখা।",
+          "ur": "اسے احساس ہوا کہ ساری کتابیں پورٹ ایلم کی تاریخ کے بارے میں تھیں۔",
+          "th": "เธอรู้ว่าหนังสือทุกเล่มเกี่ยวกับประวัติศาสตร์ของพอร์ตเอล์ม"
+        }
+      },
+      {
+        "id": "nl-13",
+        "english": "One morning after work, she walked down to the harbour.",
+        "turkish": "Bir sabah işten sonra limana kadar yürüdü.",
+        "translations": {
+          "es-419": "Una mañana, después del trabajo, caminó hasta el puerto.",
+          "pt-BR": "Certa manhã, depois do trabalho, ela caminhou até o porto.",
+          "id": "Suatu pagi setelah bekerja, ia berjalan ke pelabuhan.",
+          "ar": "في صباح يوم بعد العمل، مشت إلى الميناء.",
+          "vi": "Một buổi sáng sau giờ làm, cô đi bộ đến bến cảng.",
+          "hi": "एक सुबह काम के बाद वह पैदल बंदरगाह गई।",
+          "ru": "Однажды утром после работы она пошла к гавани.",
+          "bn": "এক সকালে কাজের পরে সে হেঁটে বন্দরে গেল।",
+          "ur": "ایک صبح کام کے بعد وہ پیدل بندرگاہ گئی۔",
+          "th": "เช้าวันหนึ่งหลังเลิกงาน เธอเดินไปที่ท่าเรือ"
+        }
+      },
+      {
+        "id": "nl-14",
+        "english": "Behind the fish market, she found an old building with a green door.",
+        "turkish": "Balık pazarının arkasında yeşil kapılı eski bir bina buldu.",
+        "translations": {
+          "es-419": "Detrás del mercado de pescado encontró un viejo edificio con una puerta verde.",
+          "pt-BR": "Atrás do mercado de peixe, encontrou um prédio antigo com uma porta verde.",
+          "id": "Di belakang pasar ikan, ia menemukan bangunan tua dengan pintu hijau.",
+          "ar": "خلف سوق السمك، وجدت مبنى قديمًا له باب أخضر.",
+          "vi": "Phía sau chợ cá, cô tìm thấy một tòa nhà cũ có cánh cửa xanh lá.",
+          "hi": "मछली बाज़ार के पीछे उसे हरे दरवाज़े वाली एक पुरानी इमारत मिली।",
+          "ru": "За рыбным рынком она нашла старое здание с зелёной дверью.",
+          "bn": "মাছের বাজারের পেছনে সবুজ দরজাওয়ালা একটি পুরোনো বাড়ি পেল।",
+          "ur": "مچھلی بازار کے پیچھے اسے سبز دروازے والی ایک پرانی عمارت ملی۔",
+          "th": "หลังตลาดปลา เธอพบอาคารเก่าที่มีประตูสีเขียว"
+        }
+      },
+      {
+        "id": "nl-15",
+        "english": "It was the town's first lighthouse office, closed for many years.",
+        "turkish": "Burası kasabanın ilk deniz feneri ofisiydi ve uzun yıllardır kapalıydı.",
+        "translations": {
+          "es-419": "Era la primera oficina del faro del pueblo, cerrada desde hacía muchos años.",
+          "pt-BR": "Era o primeiro escritório do farol da cidade, fechado havia muitos anos.",
+          "id": "Itu adalah kantor mercusuar pertama di kota tersebut, yang sudah bertahun-tahun ditutup.",
+          "ar": "كان أول مكتب للمنارة في البلدة، وقد أغلق منذ سنوات طويلة.",
+          "vi": "Đó là văn phòng hải đăng đầu tiên của thị trấn, đã đóng cửa nhiều năm.",
+          "hi": "यह कस्बे के पहले प्रकाशस्तंभ का दफ़्तर था, जो कई सालों से बंद था।",
+          "ru": "Это была первая контора маяка в городе, закрытая уже много лет.",
+          "bn": "এটি শহরের প্রথম বাতিঘরের দপ্তর ছিল, যা বহু বছর ধরে বন্ধ ছিল।",
+          "ur": "یہ قصبے کے پہلے لائٹ ہاؤس کا دفتر تھا جو کئی سال سے بند تھا۔",
+          "th": "มันเป็นสำนักงานประภาคารแห่งแรกของเมือง ซึ่งปิดมานานหลายปีแล้ว"
+        }
+      },
+      {
+        "id": "nl-16",
+        "english": "An old man was sitting on a bench outside it.",
+        "turkish": "Binanın önündeki bir bankta yaşlı bir adam oturuyordu.",
+        "translations": {
+          "es-419": "Un anciano estaba sentado en un banco afuera.",
+          "pt-BR": "Um senhor idoso estava sentado num banco do lado de fora.",
+          "id": "Seorang lelaki tua duduk di bangku di luarnya.",
+          "ar": "كان رجل مسن يجلس على مقعد خارجه.",
+          "vi": "Một ông lão đang ngồi trên ghế dài bên ngoài.",
+          "hi": "बाहर एक बुज़ुर्ग आदमी बेंच पर बैठा था।",
+          "ru": "На скамейке перед зданием сидел старик.",
+          "bn": "বাইরে একটি বেঞ্চে এক বৃদ্ধ বসে ছিলেন।",
+          "ur": "باہر ایک بینچ پر ایک بزرگ بیٹھے تھے۔",
+          "th": "ชายชราคนหนึ่งนั่งอยู่บนม้านั่งด้านนอก"
+        }
+      },
+      {
+        "id": "nl-17",
+        "english": "“Are you the one who reads my notes?” he asked with a smile.",
+        "turkish": "“Notlarımı okuyan kişi sen misin?” diye gülümseyerek sordu.",
+        "translations": {
+          "es-419": "«¿Eres tú quien lee mis notas?», preguntó sonriendo.",
+          "pt-BR": "«É você quem lê meus bilhetes?», perguntou ele sorrindo.",
+          "id": "«Apakah kamu yang membaca catatan-catatan saya?» tanyanya sambil tersenyum.",
+          "ar": "سألها مبتسمًا: «هل أنت من تقرأ ملاحظاتي؟»",
+          "vi": "«Cháu là người đọc những lời nhắn của ông phải không?», ông mỉm cười hỏi.",
+          "hi": "उसने मुस्कुराकर पूछा, «क्या तुम ही मेरे संदेश पढ़ती हो?»",
+          "ru": "«Это ты читаешь мои записки?» — спросил он с улыбкой.",
+          "bn": "তিনি হেসে জিজ্ঞেস করলেন, «তুমিই কি আমার চিরকুটগুলো পড়ো?»",
+          "ur": "انہوں نے مسکرا کر پوچھا، «کیا تم ہی میرے پیغامات پڑھتی ہو؟»",
+          "th": "«เธอคือคนที่อ่านข้อความของฉันใช่ไหม» เขาถามพร้อมรอยยิ้ม"
+        }
+      },
+      {
+        "id": "nl-18",
+        "english": "His name was Walter, and he was eighty-four years old.",
+        "turkish": "Adı Walter'dı ve seksen dört yaşındaydı.",
+        "translations": {
+          "es-419": "Se llamaba Walter y tenía ochenta y cuatro años.",
+          "pt-BR": "Seu nome era Walter e ele tinha oitenta e quatro anos.",
+          "id": "Namanya Walter dan usianya delapan puluh empat tahun.",
+          "ar": "كان اسمه والتر، وكان عمره أربعة وثمانين عامًا.",
+          "vi": "Ông tên Walter và đã tám mươi tư tuổi.",
+          "hi": "उसका नाम वाल्टर था और वह चौरासी साल का था।",
+          "ru": "Его звали Уолтер, ему было восемьдесят четыре года.",
+          "bn": "তাঁর নাম ওয়াল্টার এবং বয়স চুরাশি বছর।",
+          "ur": "ان کا نام والٹر تھا اور عمر چوراسی سال تھی۔",
+          "th": "เขาชื่อวอลเตอร์และมีอายุแปดสิบสี่ปี"
+        }
+      },
+      {
+        "id": "nl-19",
+        "english": "He explained that his mother had been the daughter of the last light keeper.",
+        "turkish": "Annesinin son deniz feneri bekçisinin kızı olduğunu anlattı.",
+        "translations": {
+          "es-419": "Explicó que su madre había sido la hija del último farero.",
+          "pt-BR": "Ele explicou que sua mãe era filha do último faroleiro.",
+          "id": "Ia menjelaskan bahwa ibunya adalah putri penjaga mercusuar terakhir.",
+          "ar": "أوضح أن أمه كانت ابنة آخر حارس للمنارة.",
+          "vi": "Ông kể rằng mẹ mình là con gái của người gác hải đăng cuối cùng.",
+          "hi": "उसने बताया कि उसकी माँ आखिरी प्रकाशस्तंभ रखवाले की बेटी थी।",
+          "ru": "Он объяснил, что его мать была дочерью последнего смотрителя маяка.",
+          "bn": "তিনি জানালেন যে তাঁর মা ছিলেন শেষ বাতিঘর রক্ষকের মেয়ে।",
+          "ur": "انہوں نے بتایا کہ ان کی ماں آخری لائٹ ہاؤس نگہبان کی بیٹی تھی۔",
+          "th": "เขาอธิบายว่าแม่ของเขาเป็นลูกสาวของคนเฝ้าประภาคารคนสุดท้าย"
+        }
+      },
+      {
+        "id": "nl-20",
+        "english": "People in town once spread a rumour that she ran away with a sailor.",
+        "turkish": "Bir zamanlar kasabadakiler onun bir denizciyle kaçtığına dair bir söylenti yaymıştı.",
+        "translations": {
+          "es-419": "En el pueblo se había difundido el rumor de que ella había huido con un marinero.",
+          "pt-BR": "Antigamente, as pessoas da cidade espalharam um boato de que ela havia fugido com um marinheiro.",
+          "id": "Dulu, orang-orang di kota menyebarkan desas-desus bahwa ibunya melarikan diri bersama seorang pelaut.",
+          "ar": "كان الناس في البلدة قد نشروا شائعة بأنها هربت مع بحار.",
+          "vi": "Ngày trước, người trong thị trấn đồn rằng bà đã bỏ trốn cùng một thủy thủ.",
+          "hi": "कस्बे के लोगों ने कभी अफ़वाह फैलाई थी कि वह एक नाविक के साथ भाग गई थी।",
+          "ru": "Когда-то в городе ходил слух, будто она сбежала с моряком.",
+          "bn": "শহরের লোকেরা একসময় গুজব ছড়িয়েছিল যে তিনি এক নাবিকের সঙ্গে পালিয়ে গিয়েছিলেন।",
+          "ur": "قصبے کے لوگوں نے کبھی افواہ پھیلائی تھی کہ وہ ایک ملاح کے ساتھ بھاگ گئی تھیں۔",
+          "th": "คนในเมืองเคยปล่อยข่าวลือว่าเธอหนีไปกับกะลาสีเรือ"
+        }
+      },
+      {
+        "id": "nl-21",
+        "english": "“That isn't true,” Walter said quietly.",
+        "turkish": "“Bu doğru değil,” dedi Walter sessizce.",
+        "translations": {
+          "es-419": "«Eso no es verdad», dijo Walter en voz baja.",
+          "pt-BR": "«Isso não é verdade», disse Walter baixinho.",
+          "id": "«Itu tidak benar,» kata Walter pelan.",
+          "ar": "قال والتر بهدوء: «هذا غير صحيح».",
+          "vi": "«Điều đó không đúng», Walter nói khẽ.",
+          "hi": "वाल्टर ने धीमे से कहा, «यह सच नहीं है।»",
+          "ru": "«Это неправда», — тихо сказал Уолтер.",
+          "bn": "ওয়াল্টার শান্তভাবে বললেন, «এটা সত্যি নয়।»",
+          "ur": "والٹر نے دھیرے سے کہا، «یہ سچ نہیں ہے۔»",
+          "th": "«เรื่องนั้นไม่จริง» วอลเตอร์พูดเบา ๆ"
+        }
+      },
+      {
+        "id": "nl-22",
+        "english": "“She stayed here all her life and saved many fishermen during storms.”",
+        "turkish": "“Bütün hayatı boyunca burada kaldı ve fırtınalarda pek çok balıkçının hayatını kurtardı.”",
+        "translations": {
+          "es-419": "«Se quedó aquí toda su vida y salvó a muchos pescadores durante las tormentas».",
+          "pt-BR": "«Ela passou a vida inteira aqui e salvou muitos pescadores durante as tempestades».",
+          "id": "«Ia tinggal di sini sepanjang hidupnya dan menyelamatkan banyak nelayan saat badai.»",
+          "ar": "«لقد بقيت هنا طوال حياتها وأنقذت صيادين كثيرين أثناء العواصف».",
+          "vi": "«Bà ở đây suốt đời và cứu nhiều ngư dân trong những cơn bão.»",
+          "hi": "«वह पूरी ज़िंदगी यहीं रही और तूफ़ानों में कई मछुआरों की जान बचाई।»",
+          "ru": "«Она прожила здесь всю жизнь и спасла многих рыбаков во время бурь».",
+          "bn": "«তিনি সারাজীবন এখানেই থেকেছেন এবং ঝড়ের সময় অনেক জেলের প্রাণ বাঁচিয়েছেন।»",
+          "ur": "«وہ ساری عمر یہیں رہیں اور طوفانوں میں بہت سے ماہی گیروں کی جان بچائی۔»",
+          "th": "«เธออยู่ที่นี่มาตลอดชีวิตและช่วยชีวิตชาวประมงหลายคนในช่วงพายุ»"
+        }
+      },
+      {
+        "id": "nl-23",
+        "english": "Nobody remembered her name anymore, and Walter wanted to change that.",
+        "turkish": "Artık kimse onun adını hatırlamıyordu ve Walter bunu değiştirmek istiyordu.",
+        "translations": {
+          "es-419": "Ya nadie recordaba su nombre y Walter quería cambiar eso.",
+          "pt-BR": "Ninguém mais se lembrava do nome dela, e Walter queria mudar isso.",
+          "id": "Tidak ada lagi yang mengingat namanya, dan Walter ingin mengubah hal itu.",
+          "ar": "لم يعد أحد يتذكر اسمها، وكان والتر يريد تغيير ذلك.",
+          "vi": "Không còn ai nhớ tên bà nữa và Walter muốn thay đổi điều đó.",
+          "hi": "अब किसी को उसका नाम याद नहीं था और वाल्टर यह बदलना चाहता था।",
+          "ru": "Никто уже не помнил её имени, и Уолтер хотел это изменить.",
+          "bn": "এখন আর কেউ তাঁর নাম মনে রাখে না, আর ওয়াল্টার সেটি বদলাতে চেয়েছিলেন।",
+          "ur": "اب کسی کو ان کا نام یاد نہیں تھا اور والٹر یہ بدلنا چاہتے تھے۔",
+          "th": "ไม่มีใครจำชื่อเธอได้อีกแล้ว และวอลเตอร์อยากเปลี่ยนเรื่องนั้น"
+        }
+      },
+      {
+        "id": "nl-24",
+        "english": "He could not climb the library steps, so his grandson returned the books.",
+        "turkish": "Kütüphanenin merdivenlerini çıkamıyordu, bu yüzden kitapları torunu iade etmişti.",
+        "translations": {
+          "es-419": "Él no podía subir las escaleras de la biblioteca, así que su nieto devolvía los libros.",
+          "pt-BR": "Ele não conseguia subir os degraus da biblioteca, por isso seu neto devolvia os livros.",
+          "id": "Ia tidak bisa menaiki tangga perpustakaan, jadi cucunya yang mengembalikan buku-buku itu.",
+          "ar": "لم يكن يستطيع صعود درجات المكتبة، لذلك كان حفيده يعيد الكتب.",
+          "vi": "Ông không thể leo các bậc thềm thư viện nên cháu trai ông trả sách giúp.",
+          "hi": "वह लाइब्रेरी की सीढ़ियाँ नहीं चढ़ सकता था, इसलिए उसका पोता किताबें लौटाता था।",
+          "ru": "Он не мог подняться по ступенькам библиотеки, поэтому книги возвращал его внук.",
+          "bn": "তিনি লাইব্রেরির সিঁড়ি উঠতে পারতেন না, তাই তাঁর নাতি বইগুলো ফেরত দিত।",
+          "ur": "وہ لائبریری کی سیڑھیاں نہیں چڑھ سکتے تھے، اس لیے ان کا پوتا کتابیں واپس کرتا تھا۔",
+          "th": "เขาขึ้นบันไดห้องสมุดไม่ไหว หลานชายจึงนำหนังสือไปคืนให้"
+        }
+      },
+      {
+        "id": "nl-25",
+        "english": "“I hoped a curious person would follow the notes,” he said.",
+        "turkish": "“Meraklı birinin notların peşinden gelmesini umuyordum,” dedi.",
+        "translations": {
+          "es-419": "«Esperaba que alguna persona curiosa siguiera las notas», dijo.",
+          "pt-BR": "«Eu esperava que uma pessoa curiosa seguisse os bilhetes», disse ele.",
+          "id": "«Saya berharap ada orang yang ingin tahu dan mengikuti catatan-catatan itu,» katanya.",
+          "ar": "قال: «كنت آمل أن يتبع الملاحظات شخص فضولي».",
+          "vi": "«Ông hy vọng một người tò mò sẽ lần theo những lời nhắn», ông nói.",
+          "hi": "उसने कहा, «मुझे उम्मीद थी कि कोई जिज्ञासु व्यक्ति संदेशों के पीछे आएगा।»",
+          "ru": "«Я надеялся, что любопытный человек пойдёт по следам записок», — сказал он.",
+          "bn": "তিনি বললেন, «আশা করেছিলাম কোনো কৌতূহলী মানুষ চিরকুটগুলোর সূত্র ধরে আসবে।»",
+          "ur": "انہوں نے کہا، «مجھے امید تھی کہ کوئی متجسس شخص پیغامات کے پیچھے آئے گا۔»",
+          "th": "«ฉันหวังว่าคนช่างสงสัยสักคนจะตามข้อความมา» เขาพูด"
+        }
+      },
+      {
+        "id": "nl-26",
+        "english": "Nora listened for an hour while the sea moved behind them.",
+        "turkish": "Arkalarında deniz dalgalanırken Nora bir saat boyunca onu dinledi.",
+        "translations": {
+          "es-419": "Nora lo escuchó durante una hora mientras el mar se movía detrás de ellos.",
+          "pt-BR": "Nora o ouviu por uma hora enquanto o mar se movia atrás deles.",
+          "id": "Nora mendengarkan selama satu jam sementara laut bergelombang di belakang mereka.",
+          "ar": "استمعت نورا إليه ساعة، بينما كانت أمواج البحر تتحرك خلفهما.",
+          "vi": "Nora lắng nghe suốt một giờ trong khi biển chuyển động phía sau họ.",
+          "hi": "नोरा एक घंटे तक सुनती रही और उनके पीछे समुद्र की लहरें चलती रहीं।",
+          "ru": "Нора слушала целый час, а позади них волновалось море.",
+          "bn": "নোরা এক ঘণ্টা ধরে শুনল, আর তাদের পেছনে সমুদ্রের ঢেউ চলতে থাকল।",
+          "ur": "نورا ایک گھنٹے تک سنتی رہی جبکہ ان کے پیچھے سمندر کی لہریں چلتی رہیں۔",
+          "th": "นอราฟังอยู่นานหนึ่งชั่วโมง ขณะที่ทะเลเคลื่อนไหวอยู่ด้านหลังพวกเขา"
+        }
+      },
+      {
+        "id": "nl-27",
+        "english": "Then she had an idea.",
+        "turkish": "Sonra aklına bir fikir geldi.",
+        "translations": {
+          "es-419": "Entonces tuvo una idea.",
+          "pt-BR": "Então ela teve uma ideia.",
+          "id": "Lalu ia mendapat ide.",
+          "ar": "ثم خطرت لها فكرة.",
+          "vi": "Rồi cô có một ý tưởng.",
+          "hi": "फिर उसे एक विचार आया।",
+          "ru": "Потом у неё появилась идея.",
+          "bn": "তারপর তার মাথায় একটি বুদ্ধি এল।",
+          "ur": "پھر اسے ایک خیال آیا۔",
+          "th": "แล้วเธอก็เกิดความคิดหนึ่งขึ้น"
+        }
+      },
+      {
+        "id": "nl-28",
+        "english": "That winter, she collected old photos and letters from Walter and his neighbours.",
+        "turkish": "O kış, Walter'dan ve komşularından eski fotoğraflar ve mektuplar topladı.",
+        "translations": {
+          "es-419": "Ese invierno reunió fotos antiguas y cartas de Walter y sus vecinos.",
+          "pt-BR": "Naquele inverno, ela reuniu fotos antigas e cartas de Walter e de seus vizinhos.",
+          "id": "Musim dingin itu, ia mengumpulkan foto-foto lama dan surat-surat dari Walter serta para tetangganya.",
+          "ar": "في ذلك الشتاء، جمعت صورًا ورسائل قديمة من والتر وجيرانه.",
+          "vi": "Mùa đông ấy, cô thu thập ảnh và thư cũ từ Walter và hàng xóm của ông.",
+          "hi": "उस सर्दी में उसने वाल्टर और उसके पड़ोसियों से पुरानी तस्वीरें और चिट्ठियाँ इकट्ठी कीं।",
+          "ru": "Той зимой она собрала старые фотографии и письма у Уолтера и его соседей.",
+          "bn": "সেই শীতে সে ওয়াল্টার ও তাঁর প্রতিবেশীদের কাছ থেকে পুরোনো ছবি আর চিঠি সংগ্রহ করল।",
+          "ur": "اس سردی میں اس نے والٹر اور ان کے پڑوسیوں سے پرانی تصاویر اور خطوط جمع کیے۔",
+          "th": "ฤดูหนาวนั้น เธอรวบรวมรูปเก่าและจดหมายจากวอลเตอร์กับเพื่อนบ้านของเขา"
+        }
+      },
+      {
+        "id": "nl-29",
+        "english": "In March, the library opened a small exhibition called “The Keeper's Daughter.”",
+        "turkish": "Mart ayında kütüphane “Bekçinin Kızı” adında küçük bir sergi açtı.",
+        "translations": {
+          "es-419": "En marzo, la biblioteca inauguró una pequeña exposición llamada «La hija del farero».",
+          "pt-BR": "Em março, a biblioteca inaugurou uma pequena exposição chamada «A filha do faroleiro».",
+          "id": "Pada bulan Maret, perpustakaan membuka pameran kecil berjudul «Putri Penjaga Mercusuar».",
+          "ar": "في مارس، افتتحت المكتبة معرضًا صغيرًا بعنوان «ابنة حارس المنارة».",
+          "vi": "Tháng Ba, thư viện mở một triển lãm nhỏ mang tên «Con gái người gác hải đăng».",
+          "hi": "मार्च में लाइब्रेरी ने «रखवाले की बेटी» नाम की एक छोटी प्रदर्शनी खोली।",
+          "ru": "В марте библиотека открыла небольшую выставку под названием «Дочь смотрителя».",
+          "bn": "মার্চে লাইব্রেরিতে «রক্ষকের মেয়ে» নামে একটি ছোট প্রদর্শনী শুরু হলো।",
+          "ur": "مارچ میں لائبریری نے «نگہبان کی بیٹی» نام کی ایک چھوٹی نمائش شروع کی۔",
+          "th": "ในเดือนมีนาคม ห้องสมุดเปิดนิทรรศการเล็ก ๆ ชื่อ «ลูกสาวคนเฝ้าประภาคาร»"
+        }
+      },
+      {
+        "id": "nl-30",
+        "english": "Hundreds of people came to see the pictures and read her story.",
+        "turkish": "Yüzlerce kişi fotoğrafları görmeye ve onun hikâyesini okumaya geldi.",
+        "translations": {
+          "es-419": "Cientos de personas fueron a ver las fotos y leer su historia.",
+          "pt-BR": "Centenas de pessoas foram ver as fotos e ler sua história.",
+          "id": "Ratusan orang datang untuk melihat foto-foto dan membaca kisahnya.",
+          "ar": "جاء مئات الناس لرؤية الصور وقراءة قصتها.",
+          "vi": "Hàng trăm người đến xem ảnh và đọc câu chuyện của bà.",
+          "hi": "सैकड़ों लोग तस्वीरें देखने और उसकी कहानी पढ़ने आए।",
+          "ru": "Сотни людей пришли посмотреть фотографии и прочитать её историю.",
+          "bn": "শত শত মানুষ ছবি দেখতে ও তাঁর গল্প পড়তে এল।",
+          "ur": "سینکڑوں لوگ تصاویر دیکھنے اور ان کی کہانی پڑھنے آئے۔",
+          "th": "ผู้คนหลายร้อยคนมาดูรูปและอ่านเรื่องราวของเธอ"
+        }
+      },
+      {
+        "id": "nl-31",
+        "english": "Many old fishermen shared memories of the brave woman with the lamp.",
+        "turkish": "Birçok yaşlı balıkçı, elinde fenerle dolaşan o cesur kadına dair anılarını paylaştı.",
+        "translations": {
+          "es-419": "Muchos pescadores ancianos compartieron recuerdos de la valiente mujer de la lámpara.",
+          "pt-BR": "Muitos pescadores idosos compartilharam lembranças da corajosa mulher com a lamparina.",
+          "id": "Banyak nelayan tua berbagi kenangan tentang perempuan pemberani dengan lampu itu.",
+          "ar": "شارك صيادون مسنون كثيرون ذكرياتهم عن المرأة الشجاعة التي تحمل المصباح.",
+          "vi": "Nhiều ngư dân cao tuổi chia sẻ ký ức về người phụ nữ dũng cảm cầm đèn.",
+          "hi": "कई बूढ़े मछुआरों ने उस बहादुर महिला और उसके चिराग की यादें साझा कीं।",
+          "ru": "Многие старые рыбаки поделились воспоминаниями о храброй женщине с фонарём.",
+          "bn": "অনেক বৃদ্ধ জেলে বাতি হাতে সেই সাহসী মহিলার স্মৃতি ভাগ করে নিলেন।",
+          "ur": "بہت سے بوڑھے ماہی گیروں نے چراغ والی اس بہادر خاتون کی یادیں بیان کیں۔",
+          "th": "ชาวประมงสูงวัยหลายคนเล่าความทรงจำเกี่ยวกับหญิงกล้าหาญผู้ถือตะเกียง"
+        }
+      },
+      {
+        "id": "nl-32",
+        "english": "Walter sat in the front row on the first day, holding his mother's photo.",
+        "turkish": "Walter ilk gün, elinde annesinin fotoğrafıyla ön sırada oturdu.",
+        "translations": {
+          "es-419": "El primer día, Walter se sentó en la primera fila sosteniendo la foto de su madre.",
+          "pt-BR": "No primeiro dia, Walter se sentou na primeira fila, segurando a foto da mãe.",
+          "id": "Pada hari pertama, Walter duduk di barisan depan sambil memegang foto ibunya.",
+          "ar": "جلس والتر في الصف الأول يوم الافتتاح وهو يحمل صورة أمه.",
+          "vi": "Ngày đầu tiên, Walter ngồi ở hàng ghế đầu, tay cầm ảnh mẹ.",
+          "hi": "पहले दिन वाल्टर अपनी माँ की तस्वीर लिए पहली पंक्ति में बैठा था।",
+          "ru": "В первый день Уолтер сидел в первом ряду и держал фотографию матери.",
+          "bn": "প্রথম দিন ওয়াল্টার মায়ের ছবি হাতে সামনের সারিতে বসেছিলেন।",
+          "ur": "پہلے دن والٹر اپنی ماں کی تصویر تھامے اگلی قطار میں بیٹھے۔",
+          "th": "วันแรก วอลเตอร์นั่งแถวหน้าโดยถือรูปแม่ของเขาไว้"
+        }
+      },
+      {
+        "id": "nl-33",
+        "english": "After that, Nora still worked nights and checked every returned book.",
+        "turkish": "Bundan sonra da Nora geceleri çalışmaya ve iade edilen her kitabı kontrol etmeye devam etti.",
+        "translations": {
+          "es-419": "Después de eso, Nora siguió trabajando de noche y revisando cada libro devuelto.",
+          "pt-BR": "Depois disso, Nora continuou trabalhando à noite e verificando cada livro devolvido.",
+          "id": "Setelah itu, Nora tetap bekerja pada malam hari dan memeriksa setiap buku yang dikembalikan.",
+          "ar": "بعد ذلك، واصلت نورا العمل ليلًا وفحص كل كتاب يعاد إلى المكتبة.",
+          "vi": "Sau đó, Nora vẫn làm ca đêm và kiểm tra từng cuốn sách được trả lại.",
+          "hi": "इसके बाद भी नोरा रात में काम करती और लौटाई गई हर किताब जाँचती रही।",
+          "ru": "После этого Нора по-прежнему работала по ночам и проверяла каждую возвращённую книгу.",
+          "bn": "এরপরও নোরা রাতে কাজ করত এবং ফেরত আসা প্রতিটি বই দেখত।",
+          "ur": "اس کے بعد بھی نورا رات کو کام کرتی اور واپس آنے والی ہر کتاب دیکھتی رہی۔",
+          "th": "หลังจากนั้น นอรายังคงทำงานกลางคืนและตรวจหนังสือทุกเล่มที่มีคนนำมาคืน"
+        }
+      },
+      {
+        "id": "nl-34",
+        "english": "Sometimes she found a new pencil note, but now it only said, “Thank you.”",
+        "turkish": "Bazen kurşun kalemle yazılmış yeni bir not buluyordu, ama artık notta yalnızca “Teşekkürler.” yazıyordu.",
+        "translations": {
+          "es-419": "A veces encontraba una nueva nota a lápiz, pero ahora solo decía: «Gracias».",
+          "pt-BR": "Às vezes encontrava um novo bilhete a lápis, mas agora ele dizia apenas: «Obrigado».",
+          "id": "Kadang ia menemukan catatan pensil baru, tetapi sekarang isinya hanya, «Terima kasih.»",
+          "ar": "كانت تجد أحيانًا ملاحظة جديدة بقلم رصاص، لكنها أصبحت تقول فقط: «شكرًا».",
+          "vi": "Đôi khi cô tìm thấy một lời nhắn mới bằng bút chì, nhưng giờ nó chỉ viết: «Cảm ơn.»",
+          "hi": "कभी-कभी उसे पेंसिल से लिखा नया संदेश मिलता, लेकिन अब उसमें केवल «धन्यवाद» लिखा होता।",
+          "ru": "Иногда она находила новую карандашную записку, но теперь там было только: «Спасибо».",
+          "bn": "মাঝে মাঝে সে পেন্সিলে লেখা নতুন চিরকুট পেত, তবে এখন তাতে শুধু লেখা থাকত, «ধন্যবাদ।»",
+          "ur": "کبھی اسے پنسل سے لکھا نیا پیغام ملتا، مگر اب اس میں صرف «شکریہ» لکھا ہوتا۔",
+          "th": "บางครั้งเธอพบข้อความดินสอใหม่ แต่ตอนนี้มันเขียนเพียงว่า «ขอบคุณ»"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "night-library-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "A librarian who catches a thief at night",
+          "A librarian who follows pencil notes and helps the town remember a forgotten woman",
+          "An old man who wants to sell an old lighthouse office",
+          "A fisherman who gets lost in a storm"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "night-library-q2",
+        "kind": "detail",
+        "prompt": "Where did Nora find the building with the green door?",
+        "options": [
+          "Next to the library",
+          "Inside the lighthouse",
+          "Behind the fish market",
+          "On a boat in the harbour"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "night-library-q3",
+        "kind": "detail",
+        "prompt": "Who returned the books with the notes to the library?",
+        "options": [
+          "Walter himself",
+          "A sailor",
+          "Nora's neighbour",
+          "Walter's grandson"
+        ],
+        "answer": 3
+      },
+      {
+        "id": "night-library-q4",
+        "kind": "inference",
+        "prompt": "Why did Walter use notes in books instead of simply telling someone his story?",
+        "options": [
+          "He wanted a curious person to discover the story, and he could not easily visit the library",
+          "He was afraid of Nora and the other librarians",
+          "He wanted to play a joke on the whole town",
+          "He did not know where the library was"
+        ],
+        "answer": 0
+      }
+    ],
+    "descriptions": {
+      "es-419": "Una bibliotecaria sigue unas notas a lápiz y descubre la historia olvidada de una mujer valiente de su pueblo costero.",
+      "pt-BR": "Uma bibliotecária segue bilhetes a lápis e descobre a história esquecida de uma mulher corajosa de sua cidade litorânea.",
+      "id": "Seorang pustakawati mengikuti catatan pensil dan menemukan kisah terlupakan tentang perempuan pemberani di kota pesisirnya.",
+      "ar": "تتبع أمينة مكتبة ملاحظات مكتوبة بقلم رصاص، فتكتشف قصة منسية لامرأة شجاعة في بلدتها الساحلية.",
+      "vi": "Một thủ thư lần theo những mẩu ghi chú bằng bút chì và khám phá câu chuyện bị lãng quên về một phụ nữ dũng cảm ở thị trấn ven biển.",
+      "hi": "एक पुस्तकालय कर्मचारी पेंसिल से लिखे संदेशों का पीछा करके अपने तटीय कस्बे की एक बहादुर महिला की भूली हुई कहानी खोजती है।",
+      "ru": "Библиотекарь идёт по следам карандашных записок и открывает забытую историю смелой женщины из своего приморского городка.",
+      "bn": "এক গ্রন্থাগারকর্মী পেন্সিলে লেখা চিরকুটের সূত্র ধরে তার উপকূলীয় শহরের এক সাহসী মহিলার হারিয়ে যাওয়া গল্প খুঁজে পান।",
+      "ur": "ایک لائبریرین پنسل سے لکھے پیغامات کے پیچھے چل کر اپنے ساحلی قصبے کی ایک بہادر خاتون کی بھولی ہوئی کہانی دریافت کرتی ہے۔",
+      "th": "บรรณารักษ์ตามรอยข้อความดินสอและค้นพบเรื่องราวที่ถูกลืมของหญิงกล้าหาญในเมืองชายทะเลของเธอ"
+    }
+  },
+  "words": [
+    {
+      "id": "noticed",
+      "word": "noticed",
+      "translation": "fark etti",
+      "pronunciation": "/ˈnoʊtɪst/",
+      "example": "He noticed a small cat under the car.",
+      "translations": {
+        "es-419": "notó",
+        "pt-BR": "percebeu",
+        "id": "melihat; menyadari",
+        "ar": "لاحظ",
+        "vi": "nhận thấy",
+        "hi": "ध्यान दिया",
+        "ru": "заметил",
+        "bn": "লক্ষ করল",
+        "ur": "غور کیا؛ دیکھا",
+        "th": "สังเกตเห็น"
+      }
+    },
+    {
+      "id": "harbour",
+      "word": "harbour",
+      "translation": "liman",
+      "pronunciation": "/ˈhɑːrbər/",
+      "example": "The small boats stayed in the harbour during the storm.",
+      "translations": {
+        "es-419": "puerto",
+        "pt-BR": "porto",
+        "id": "pelabuhan",
+        "ar": "ميناء",
+        "vi": "bến cảng",
+        "hi": "बंदरगाह",
+        "ru": "гавань",
+        "bn": "বন্দর",
+        "ur": "بندرگاہ",
+        "th": "ท่าเรือ"
+      }
+    },
+    {
+      "id": "suspicious",
+      "word": "suspicious",
+      "translation": "şüpheli, kuşkulu",
+      "pronunciation": "/səˈspɪʃəs/",
+      "example": "The guard became suspicious when the man ran away.",
+      "translations": {
+        "es-419": "desconfiado",
+        "pt-BR": "desconfiado",
+        "id": "curiga",
+        "ar": "مرتاب",
+        "vi": "nghi ngờ",
+        "hi": "शंकित",
+        "ru": "подозревающий; подозрительный",
+        "bn": "সন্দিহান",
+        "ur": "شک کرنے والا؛ مشکوک",
+        "th": "สงสัย"
+      }
+    },
+    {
+      "id": "realised",
+      "word": "realised",
+      "translation": "fark etti, anladı",
+      "pronunciation": "/ˈriːəlaɪzd/",
+      "example": "She realised she had left her keys at home.",
+      "translations": {
+        "es-419": "se dio cuenta",
+        "pt-BR": "percebeu",
+        "id": "menyadari",
+        "ar": "أدرك",
+        "vi": "nhận ra",
+        "hi": "समझ गया",
+        "ru": "понял",
+        "bn": "বুঝতে পারল",
+        "ur": "احساس ہوا؛ سمجھا",
+        "th": "ตระหนักได้"
+      }
+    },
+    {
+      "id": "rumour",
+      "word": "rumour",
+      "translation": "söylenti, dedikodu",
+      "pronunciation": "/ˈruːmər/",
+      "example": "There is a rumour that the café will close next month.",
+      "translations": {
+        "es-419": "rumor",
+        "pt-BR": "boato",
+        "id": "desas-desus",
+        "ar": "شائعة",
+        "vi": "tin đồn",
+        "hi": "अफ़वाह",
+        "ru": "слух",
+        "bn": "গুজব",
+        "ur": "افواہ",
+        "th": "ข่าวลือ"
+      }
+    },
+    {
+      "id": "exhibition",
+      "word": "exhibition",
+      "translation": "sergi",
+      "pronunciation": "/ˌɛksɪˈbɪʃən/",
+      "example": "We visited a photo exhibition at the museum on Sunday.",
+      "translations": {
+        "es-419": "exposición",
+        "pt-BR": "exposição",
+        "id": "pameran",
+        "ar": "معرض",
+        "vi": "triển lãm",
+        "hi": "प्रदर्शनी",
+        "ru": "выставка",
+        "bn": "প্রদর্শনী",
+        "ur": "نمائش",
+        "th": "นิทรรศการ"
+      }
+    }
   ],
-  "sentences": [
-   {
-    "id": "nl-1",
-    "english": "Nora worked the night shift at the small library in Port Elm, a quiet town by the sea.",
-    "turkish": "Nora, deniz kenarındaki sakin bir kasaba olan Port Elm'deki küçük kütüphanede gece vardiyasında çalışıyordu."
-   },
-   {
-    "id": "nl-2",
-    "english": "Every night, she checked the books in the return box.",
-    "turkish": "Her gece iade kutusundaki kitapları kontrol ederdi."
-   },
-   {
-    "id": "nl-3",
-    "english": "One cold evening in November, she noticed something strange in an old book about boats.",
-    "turkish": "Kasım ayında soğuk bir akşam, teknelerle ilgili eski bir kitapta tuhaf bir şey fark etti."
-   },
-   {
-    "id": "nl-4",
-    "english": "Someone had written a short note in pencil on the last page.",
-    "turkish": "Biri son sayfaya kurşun kalemle kısa bir not yazmıştı."
-   },
-   {
-    "id": "nl-5",
-    "english": "It said, “Look for the green door near the harbour.”",
-    "turkish": "Notta “Limanın yakınındaki yeşil kapıyı ara.” yazıyordu."
-   },
-   {
-    "id": "nl-6",
-    "english": "Nora smiled, because she thought it was a child's game.",
-    "turkish": "Nora gülümsedi, çünkü bunun bir çocuk oyunu olduğunu düşündü."
-   },
-   {
-    "id": "nl-7",
-    "english": "But the next night, another returned book had a note too.",
-    "turkish": "Ama ertesi gece, iade edilen başka bir kitapta da bir not vardı."
-   },
-   {
-    "id": "nl-8",
-    "english": "This one said, “The light keeper's daughter never left.”",
-    "turkish": "Bu seferki notta “Deniz feneri bekçisinin kızı hiç gitmedi.” yazıyordu."
-   },
-   {
-    "id": "nl-9",
-    "english": "Nora felt a little suspicious, so she started to keep the notes in a folder.",
-    "turkish": "Nora biraz şüphelendi, bu yüzden notları bir dosyada saklamaya başladı."
-   },
-   {
-    "id": "nl-10",
-    "english": "Over two weeks, she found seven notes in seven different books.",
-    "turkish": "İki hafta içinde yedi farklı kitapta yedi not buldu."
-   },
-   {
-    "id": "nl-11",
-    "english": "All of them were written in the same careful handwriting.",
-    "turkish": "Hepsi aynı özenli el yazısıyla yazılmıştı."
-   },
-   {
-    "id": "nl-12",
-    "english": "She realised that the books were all about the history of Port Elm.",
-    "turkish": "Kitapların hepsinin Port Elm'in tarihiyle ilgili olduğunu fark etti."
-   },
-   {
-    "id": "nl-13",
-    "english": "One morning after work, she walked down to the harbour.",
-    "turkish": "Bir sabah işten sonra limana kadar yürüdü."
-   },
-   {
-    "id": "nl-14",
-    "english": "Behind the fish market, she found an old building with a green door.",
-    "turkish": "Balık pazarının arkasında yeşil kapılı eski bir bina buldu."
-   },
-   {
-    "id": "nl-15",
-    "english": "It was the town's first lighthouse office, closed for many years.",
-    "turkish": "Burası kasabanın ilk deniz feneri ofisiydi ve uzun yıllardır kapalıydı."
-   },
-   {
-    "id": "nl-16",
-    "english": "An old man was sitting on a bench outside it.",
-    "turkish": "Binanın önündeki bir bankta yaşlı bir adam oturuyordu."
-   },
-   {
-    "id": "nl-17",
-    "english": "“Are you the one who reads my notes?” he asked with a smile.",
-    "turkish": "“Notlarımı okuyan kişi sen misin?” diye gülümseyerek sordu."
-   },
-   {
-    "id": "nl-18",
-    "english": "His name was Walter, and he was eighty-four years old.",
-    "turkish": "Adı Walter'dı ve seksen dört yaşındaydı."
-   },
-   {
-    "id": "nl-19",
-    "english": "He explained that his mother had been the daughter of the last light keeper.",
-    "turkish": "Annesinin son deniz feneri bekçisinin kızı olduğunu anlattı."
-   },
-   {
-    "id": "nl-20",
-    "english": "People in town once spread a rumour that she ran away with a sailor.",
-    "turkish": "Bir zamanlar kasabadakiler onun bir denizciyle kaçtığına dair bir söylenti yaymıştı."
-   },
-   {
-    "id": "nl-21",
-    "english": "“That isn't true,” Walter said quietly.",
-    "turkish": "“Bu doğru değil,” dedi Walter sessizce."
-   },
-   {
-    "id": "nl-22",
-    "english": "“She stayed here all her life and saved many fishermen during storms.”",
-    "turkish": "“Bütün hayatı boyunca burada kaldı ve fırtınalarda pek çok balıkçının hayatını kurtardı.”"
-   },
-   {
-    "id": "nl-23",
-    "english": "Nobody remembered her name anymore, and Walter wanted to change that.",
-    "turkish": "Artık kimse onun adını hatırlamıyordu ve Walter bunu değiştirmek istiyordu."
-   },
-   {
-    "id": "nl-24",
-    "english": "He could not climb the library steps, so his grandson returned the books.",
-    "turkish": "Kütüphanenin merdivenlerini çıkamıyordu, bu yüzden kitapları torunu iade etmişti."
-   },
-   {
-    "id": "nl-25",
-    "english": "“I hoped a curious person would follow the notes,” he said.",
-    "turkish": "“Meraklı birinin notların peşinden gelmesini umuyordum,” dedi."
-   },
-   {
-    "id": "nl-26",
-    "english": "Nora listened for an hour while the sea moved behind them.",
-    "turkish": "Arkalarında deniz dalgalanırken Nora bir saat boyunca onu dinledi."
-   },
-   {
-    "id": "nl-27",
-    "english": "Then she had an idea.",
-    "turkish": "Sonra aklına bir fikir geldi."
-   },
-   {
-    "id": "nl-28",
-    "english": "That winter, she collected old photos and letters from Walter and his neighbours.",
-    "turkish": "O kış, Walter'dan ve komşularından eski fotoğraflar ve mektuplar topladı."
-   },
-   {
-    "id": "nl-29",
-    "english": "In March, the library opened a small exhibition called “The Keeper's Daughter.”",
-    "turkish": "Mart ayında kütüphane “Bekçinin Kızı” adında küçük bir sergi açtı."
-   },
-   {
-    "id": "nl-30",
-    "english": "Hundreds of people came to see the pictures and read her story.",
-    "turkish": "Yüzlerce kişi fotoğrafları görmeye ve onun hikâyesini okumaya geldi."
-   },
-   {
-    "id": "nl-31",
-    "english": "Many old fishermen shared memories of the brave woman with the lamp.",
-    "turkish": "Birçok yaşlı balıkçı, elinde fenerle dolaşan o cesur kadına dair anılarını paylaştı."
-   },
-   {
-    "id": "nl-32",
-    "english": "Walter sat in the front row on the first day, holding his mother's photo.",
-    "turkish": "Walter ilk gün, elinde annesinin fotoğrafıyla ön sırada oturdu."
-   },
-   {
-    "id": "nl-33",
-    "english": "After that, Nora still worked nights and checked every returned book.",
-    "turkish": "Bundan sonra da Nora geceleri çalışmaya ve iade edilen her kitabı kontrol etmeye devam etti."
-   },
-   {
-    "id": "nl-34",
-    "english": "Sometimes she found a new pencil note, but now it only said, “Thank you.”",
-    "turkish": "Bazen kurşun kalemle yazılmış yeni bir not buluyordu, ama artık notta yalnızca “Teşekkürler.” yazıyordu."
-   }
+  "studyWordIds": [
+    "noticed",
+    "harbour",
+    "suspicious",
+    "realised",
+    "rumour",
+    "exhibition",
+    "quiet",
+    "morning"
   ],
-  "questions": [
-   {
-    "id": "night-library-q1",
-    "kind": "main",
-    "prompt": "What is the story mainly about?",
-    "options": [
-     "A librarian who catches a thief at night",
-     "A librarian who follows pencil notes and helps the town remember a forgotten woman",
-     "An old man who wants to sell an old lighthouse office",
-     "A fisherman who gets lost in a storm"
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
     ],
-    "answer": 1
-   },
-   {
-    "id": "night-library-q2",
-    "kind": "detail",
-    "prompt": "Where did Nora find the building with the green door?",
-    "options": [
-     "Next to the library",
-     "Inside the lighthouse",
-     "Behind the fish market",
-     "On a boat in the harbour"
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
     ],
-    "answer": 2
-   },
-   {
-    "id": "night-library-q3",
-    "kind": "detail",
-    "prompt": "Who returned the books with the notes to the library?",
-    "options": [
-     "Walter himself",
-     "A sailor",
-     "Nora's neighbour",
-     "Walter's grandson"
-    ],
-    "answer": 3
-   },
-   {
-    "id": "night-library-q4",
-    "kind": "inference",
-    "prompt": "Why did Walter use notes in books instead of simply telling someone his story?",
-    "options": [
-     "He wanted a curious person to discover the story, and he could not easily visit the library",
-     "He was afraid of Nora and the other librarians",
-     "He wanted to play a joke on the whole town",
-     "He did not know where the library was"
-    ],
-    "answer": 0
-   }
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-assisted translation drafts; project owner authorized publication on 2026-10-23; not native-speaker-approved"
+  },
+  "ownerPublicationAuthorization": {
+    "instruction": "Tum eksikleri gider ve tamamla",
+    "date": "2026-10-23",
+    "by": "Oğuz Yürken",
+    "nativeSpeakerApproved": false
+  },
+  "questionEvidence": [
+    {
+      "questionId": "night-library-q1",
+      "sentenceIds": [
+        "nl-4",
+        "nl-5",
+        "nl-23",
+        "nl-25",
+        "nl-29"
+      ],
+      "rationale": "The listed source sentences support the selected answer: A librarian who follows pencil notes and helps the town remember a forgotten woman"
+    },
+    {
+      "questionId": "night-library-q2",
+      "sentenceIds": [
+        "nl-14"
+      ],
+      "rationale": "The listed source sentences support the selected answer: Behind the fish market"
+    },
+    {
+      "questionId": "night-library-q3",
+      "sentenceIds": [
+        "nl-24"
+      ],
+      "rationale": "The listed source sentences support the selected answer: Walter's grandson"
+    },
+    {
+      "questionId": "night-library-q4",
+      "sentenceIds": [
+        "nl-24",
+        "nl-25"
+      ],
+      "rationale": "The listed source sentences support the selected answer: He wanted a curious person to discover the story, and he could not easily visit the library"
+    }
+  ],
+  "publicationBlockers": [
+    "Native-speaker language review not performed; owner approved publication as AI-assisted drafts."
   ]
- },
- "words": [
-  {
-   "id": "noticed",
-   "word": "noticed",
-   "translation": "fark etti",
-   "pronunciation": "/ˈnoʊtɪst/",
-   "example": "He noticed a small cat under the car."
-  },
-  {
-   "id": "harbour",
-   "word": "harbour",
-   "translation": "liman",
-   "pronunciation": "/ˈhɑːrbər/",
-   "example": "The small boats stayed in the harbour during the storm."
-  },
-  {
-   "id": "suspicious",
-   "word": "suspicious",
-   "translation": "şüpheli, kuşkulu",
-   "pronunciation": "/səˈspɪʃəs/",
-   "example": "The guard became suspicious when the man ran away."
-  },
-  {
-   "id": "realised",
-   "word": "realised",
-   "translation": "fark etti, anladı",
-   "pronunciation": "/ˈriːəlaɪzd/",
-   "example": "She realised she had left her keys at home."
-  },
-  {
-   "id": "rumour",
-   "word": "rumour",
-   "translation": "söylenti, dedikodu",
-   "pronunciation": "/ˈruːmər/",
-   "example": "There is a rumour that the café will close next month."
-  },
-  {
-   "id": "exhibition",
-   "word": "exhibition",
-   "translation": "sergi",
-   "pronunciation": "/ˌɛksɪˈbɪʃən/",
-   "example": "We visited a photo exhibition at the museum on Sunday."
-  }
- ]
 }
