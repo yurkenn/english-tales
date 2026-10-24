@@ -2,6 +2,8 @@
 
 24 Ekim 2026. Kaynak: `b6ee29180ebb854dd25e36e174c1d274383ab3a1`.
 
+**Son kontrol:** Claude'un ek incelemesiyle, geciken A eşitlemesinin B'nin sandık isteğini yutabildiği dar zamanlama cihaz testinde yeniden üretildi. 51 yalnız dahili testte tutuldu; düzeltme 52 / 2.3.1 adayıyla takip ediliyor. [52 devamı](RELEASE_52_STATUS.md).
+
 Üretim yayını henüz yapılmadı. Sahibi, hazır olduğunda yayınlama yetkisi verdi; bu yetki tamamlanmamış kabul testlerinin geçtiği anlamına gelmez. Önceki [23 Ekim denetimi](PRE_RELEASE_AUDIT_2026-10-23.md) düzeltme öncesi tarihsel kayıttır.
 
 ## Kaynak ve doğrulama

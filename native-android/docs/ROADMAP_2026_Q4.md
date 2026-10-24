@@ -1,6 +1,10 @@
 # Yurken Stories — önümüzdeki 90 gün
 
 
+## 24 Ekim son eşitleme kontrolü
+
+51 dahili test yayınından sonra bulunan hesaplar arası eşitleme devri takılması gerçek ViewModel testiyle yeniden üretildi; güncel owner'a damgalı tekrar denemeyle düzeltildi (32/32 hedefli test). 52 / 2.3.1 kaynak CI'ı 377 cihaz + 3 açılış + 3 servis testiyle hatasız/atlamasız geçti; imzalı paket Play dahili önizlemesinde, ekran kilidi nedeniyle son yayın onayı bekliyor. 51 üretime gönderilmedi. [Devam kaydı](RELEASE_52_STATUS.md).
+
 ## 24 Ekim yayın hazırlığı
 
 #174/#175 birleştirildi. Hesap/lig/sandık/indirme regresyonları ana dal CI'da geçti; 31 eski hikâyenin 119 sorusu ve eksik dil haritaları canlıda tamamlandı. 67 hikâyenin 11 dil bütünlüğü, 67 medya ve önceki yayın geçmişi anonim yedekle doğrulandı. Üretim 50; 51 / 2.3.0 dahili testte yayında; fiziksel kabul bekleniyor. Paket/canlı farkı, çalışma kelimesi hedefi, fiziksel telefon, runtime ölçüm ve ana dil örneklemi ayrı açık işlerdir. [Güncel aday ve kanıt](RELEASE_51_STATUS.md).

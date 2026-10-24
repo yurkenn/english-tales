@@ -2,3 +2,4 @@
 • New games, daily quests, a reward chest and streak freeze.
 • Optional weekly league and friend invite codes.
 • Longer stories, 17 new stories and a calmer reading screen.
+• Fixed sync getting stuck when switching accounts.

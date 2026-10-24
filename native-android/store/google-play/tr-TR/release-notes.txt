@@ -2,3 +2,4 @@
 • Yeni oyunlar, günlük görevler, ödül sandığı ve seri koruması.
 • İsteğe bağlı haftalık lig ve arkadaş davet kodu.
 • Uzatılan hikâyeler, 17 yeni hikâye ve daha rahat okuma ekranı.
+• Hesap değiştirirken eşitlemenin beklemesi düzeltildi.

@@ -2,3 +2,4 @@
 • Trò chơi mới, nhiệm vụ hằng ngày, rương phần thưởng và bảo vệ chuỗi ngày.
 • Giải đấu hằng tuần tùy chọn và mã mời bạn bè.
 • Truyện dài hơn, 17 truyện mới và màn hình đọc dễ chịu hơn.
+• Đã sửa lỗi đồng bộ bị treo khi chuyển tài khoản.
