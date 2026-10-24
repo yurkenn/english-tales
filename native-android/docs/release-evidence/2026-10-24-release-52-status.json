@@ -1,6 +1,6 @@
 {
-  "recordedAt": "2026-10-24",
-  "status": "signed-verified-uploaded-internal-draft",
+  "recordedAt": "2026-10-24T09:23:30Z",
+  "status": "production-submitted-in-review-quick-checks-running",
   "sourceCommit": "36b1015ffd8e1ffc20da161062c25568c1596c14",
   "fix": {
     "description": "Resume queued chest sync in the currently selected owner scope after an interrupted old-owner request",
@@ -106,16 +106,27 @@
     "artifactId": "4860243858850494259",
     "versionCode": 52,
     "versionName": "2.3.1",
-    "status": "uploaded-internal-preview",
+    "status": "Changes in review",
     "supportedDeviceLoss": 0,
     "supports16KB": true,
     "r8OptimizationPercent": 94,
     "mappingAttached": true,
     "nativeDebugSymbolsWarning": true,
-    "internalServingVersionCode": 51,
+    "internalServingVersionCode": 52,
     "productionServingVersionCode": 50,
     "productionRolloutPercent": 100,
-    "productionChanged": false
+    "productionChanged": true,
+    "productionSubmittedVersionCode": 52,
+    "productionTargetRolloutPercent": 100,
+    "productionServingVersionVerifiedAfterSubmission": false,
+    "managedPublishing": false,
+    "quickChecks": "running",
+    "unsubmittedChanges": false,
+    "productionWarnings": [
+      "APK download size increase",
+      "Third-party native debug symbols unavailable"
+    ],
+    "submissionEvidence": "native-android/build/release-52-readiness/play-production-52-in-review.png"
   },
   "releaseNotes": {
     "locales": 13,
@@ -127,7 +138,7 @@
     "productionPackageSubmitted": false
   },
   "pending": [
-    "unlock-Mac-to-finish-Play-UI",
+    "Google-review-and-production-availability",
     "physical-Play-update-retention",
     "two-device-sync",
     "talkback-large-text-performance",
@@ -135,5 +146,11 @@
     "bundle-live-parity",
     "curated-study-word-target",
     "native-speaker-sampling"
-  ]
+  ],
+  "releaseAuthorization": "User explicitly requested production publication after outstanding acceptance gates were disclosed; gates remain unverified.",
+  "mergedMasterCI": {
+    "run": 40046319218,
+    "headSha": "7df99393df434b1d567b65c2a12cd9f54dcf0e9a",
+    "conclusion": "success"
+  }
 }

@@ -2,7 +2,7 @@
 
 24 Ekim 2026. Uygulama kaynak commit'i: `36b1015`.
 
-Üretim hâlâ 50 / 2.2.0. [51 / 2.3.0](RELEASE_51_STATUS.md) yalnız dahili testte yayımlandı; sonraki bağımsız incelemede bulunan dar eşitleme sorunu nedeniyle üretime gönderilmedi. 52 adayı bu sorunu düzeltir. Fiziksel Play güncelleme, runtime ölçüm ve editör kabulü ayrıca açık.
+24 Ekim 2026 12:23 TRT: **52 / 2.3.1 üretim sürümü %100 dağıtım için gönderildi; Play Publishing overview üzerinde Changes in review doğrulandı.** Hızlı kontroller sürüyor. Managed publishing kapalı olduğundan onaydan sonra otomatik yayımlanacak; üretimde sunulan sürümün 52 olduğu henüz doğrulanmadı (önceki sürüm 50 / 2.2.0). 52 aynı gün 12:22 TRT itibarıyla dahili testte mevcut. Kullanıcı açık kabul eksikleri bildirildikten sonra yayına alma talimatı verdi. Fiziksel Play güncelleme, runtime ölçüm ve editör kabulü ayrıca açık.
 
 ## Sorun ve düzeltme
 
@@ -26,7 +26,9 @@ Claude Code, sınırlı salt okunur ikinci incelemede bu düzeltmenin ürettiği
 
 [Tam kaynak CI](https://github.com/yurkenn/english-tales/actions/runs/40045086635) başarılı: **377 uygulama cihaz testi + 3 açılış + 3 servis testi**, XML sonuçlarında **0 hata/atlama**. Yeni regresyon CI XML'inde ayrıca bulundu ve geçti; backend **212**, JVM **142** geçti. 52 AAB Play tarafından kabul edildi; önizlemede 16 KB desteği, %94 R8 optimizasyonu, mapping eki ve cihaz kaybı 0 doğrulandı. Tek uyarı önceki adayla aynı üçüncü taraf native sembol önerisi. 13 dilde notlar hazır.
 
-**Son UI adımı bekliyor:** Mac kilitlendiği için 52'nin dahili yayın onayı tamamlanamadı. Ekran kilidini açması kullanıcıdan istendi; kilit aşılmadı. Dahili kanalda henüz 51 sunuluyor, üretim 50. [Makine okunabilir kayıt](release-evidence/2026-10-24-release-52-status.json). 51, Play'de kullanılmış bir sürüm kodudur; farklı pakette tekrar kullanılamaz. Son paket hash'leri, kaynak ve Play kanalı doğrulandıktan sonra bu kayda eklenir.
+**Play gönderimi tamamlandı:** Dahili sürüm 52 yayımlandı ve aynı paket üretime yükseltildi. 13 dilde sürüm notları korundu; yalnız üretim sürümü gönderildi, ülke hedeflemesi değiştirilmedi. Üretim önizlemesinde engelleyici hata yok; iki uyarı APK boyut artışı ve üçüncü taraf native debug sembolleriyle ilgili. Üretim hedefi %100. Gönderim sonrası Changes in review ve 1 change sent for review doğrulandı; gönderilmemiş değişiklik bölümü yok. [Makine okunabilir kayıt](release-evidence/2026-10-24-release-52-status.json).
+
+Yerel ekran kanıtları: `native-android/build/release-52-readiness/play-internal-52-published.png` ve `play-production-52-in-review.png`. Genel yayının tamamlandığı iddia edilmez; Google incelemesi bekleniyor.
 
 ## Üretim öncesi kalan işler
 
