@@ -1,8 +1,16 @@
 # English Tales — son çalışmalar ve yayın durumu
 
-Son güncelleme: **23 Ekim 2026**.
+Son güncelleme: **24 Ekim 2026**.
 
 Gelecek işler ve öncelik sırası: [90 günlük yol haritası](native-android/docs/ROADMAP_2026_Q4.md).
+
+## 52 devamı — 24 Ekim 2026
+
+51 yalnız dahili testte yayımlandı. Claude'un son incelemesinde, geciken eski hesap eşitlemesinin yeni hesabın sandık eşitlemesini yutabildiği durum cihaz testinde doğrulandı. Güncel owner'a damgalı tekrar deneme ile düzeltildi; hesap/sandık regresyonları 32/32 geçti. 52 / 2.3.1 imzalı paket, mapping ve 142 release testi doğrulandı; tam kaynak CI'ı 377 cihaz + 3 açılış + 3 servis testiyle hatasız/atlamasız geçti. Play yüklemesi kabul edildi. Mac ekran kilidi nedeniyle son dahili yayın onayı bekliyor; dahili 51, üretim 50'de. [Sorun, kanıt ve yayın takibi](native-android/docs/RELEASE_52_STATUS.md).
+
+## 51 hazırlığı — 24 Ekim 2026
+
+Claude #174/#175 ana dalda; beş hesap/gizlilik/indirme bulgusu düzeltildi ve 13 dilde sürüm notları hazır. Son master CI: 376 cihaz + 3 açılış + 3 servis testi, 0 hata/atlama; backend 212, JVM 142 geçti. Canlıda 31 hikâyenin 119 sorusu ve eksik dil satırları tamamlandı: 67 hikâye, 2.839 cümle, 11 tam dil, 67 korunmuş medya. Üretim hâlâ 50 / 2.2.0; 51 / 2.3.0 dahili testte yayında (24 Ekim 03:13 TRT). Fiziksel Play güncelleme ve açık içerik hedefleri tamamlanmış sayılmadı. [Aday, hash'ler ve kalan kabul işleri](native-android/docs/RELEASE_51_STATUS.md).
 
 ## İçerik ve yarım kalan işler — 23 Ekim 2026
 

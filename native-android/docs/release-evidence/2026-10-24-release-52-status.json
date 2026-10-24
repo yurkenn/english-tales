@@ -1,0 +1,139 @@
+{
+  "recordedAt": "2026-10-24",
+  "status": "signed-verified-uploaded-internal-draft",
+  "sourceCommit": "36b1015ffd8e1ffc20da161062c25568c1596c14",
+  "fix": {
+    "description": "Resume queued chest sync in the currently selected owner scope after an interrupted old-owner request",
+    "regressionTest": "newAccountChestSyncSurvivesThePreviousAccountsSlowRun",
+    "before": {
+      "tests": 1,
+      "failures": 1,
+      "expectedFailure": "B's queued chest sync was swallowed by A's interrupted run"
+    },
+    "after": {
+      "tests": 32,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "claudeStaticRecheck": "No introduced P1/P2 found; static only",
+    "claudeReviewSHA256": "8a55b5dff7c1b68344cbf19c34edf4d17aa177ba30077dd270b15e38fce3eefe"
+  },
+  "release": {
+    "sourceCommit": "36b1015ffd8e1ffc20da161062c25568c1596c14",
+    "package": {
+      "versionCode": 52,
+      "versionName": "2.3.1",
+      "baselineProfilePackagingVerified": true,
+      "baselineProfiles": {
+        "baseline-prof.txt": {
+          "rules": 20988,
+          "applicationRules": 1122
+        },
+        "startup-prof.txt": {
+          "rules": 17787,
+          "applicationRules": 855
+        },
+        "apk": {
+          "baseline.prof": {
+            "bytes": 9162,
+            "sha256": "dab3ba56b3b96a5081886a6df593df9b3482ca3d43671e4c4d472844e6017450"
+          },
+          "baseline.profm": {
+            "bytes": 523,
+            "sha256": "3d59990f1c1d8403aac2efef64250b4deb45c8d5eb4841fc07e3c5bca20f7634"
+          }
+        },
+        "aab": {
+          "baseline.prof": {
+            "bytes": 9162,
+            "sha256": "dab3ba56b3b96a5081886a6df593df9b3482ca3d43671e4c4d472844e6017450"
+          },
+          "baseline.profm": {
+            "bytes": 523,
+            "sha256": "3d59990f1c1d8403aac2efef64250b4deb45c8d5eb4841fc07e3c5bca20f7634"
+          }
+        }
+      },
+      "productionServiceVerified": true,
+      "apkSignerMatchesPlay": true,
+      "aabSignatureVerified": true,
+      "apkZipAlignment16KB": true,
+      "adIdPermission": true,
+      "nativeDebugSymbols": [],
+      "elf64Libraries": [
+        "lib/arm64-v8a/libandroidx.graphics.path.so",
+        "lib/x86_64/libandroidx.graphics.path.so"
+      ],
+      "elf64AlignmentPassed": true,
+      "alignmentErrors": [],
+      "apkBytes": 14040073,
+      "aabBytes": 17958509,
+      "apkSHA256": "b54ea619a2c9719e14084beff2f695760f7a4c66d45fc290035a01b260749d32",
+      "aabSHA256": "22d9a9e5940f3095a7f17e489065a444b88e678735a2c838e4c8ae183af9d8ec",
+      "limitation": "Static package inspection only; Play-generated split APKs and real 16KB devices still need testing."
+    },
+    "releaseUnitTests": {
+      "tests": 142,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "lint": {
+      "Error": 0,
+      "Warning": 105
+    },
+    "mappingFileId": "b8d9f301d9174a34afa522fd07f9e4d7",
+    "mappingMatchesAab": true,
+    "mappingUploaded": true,
+    "mappingSHA256": "cffc84cc3ce2109bf169112b4073c475758e594e7e31ce494c3819524160a4ad"
+  },
+  "sourceCI": {
+    "run": 40045086635,
+    "status": "completed",
+    "conclusion": "success",
+    "applicationDeviceTests": 377,
+    "startupTests": 3,
+    "serviceTests": 3,
+    "backendTests": 212,
+    "jvmTests": 142,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "newRegressionPresentAndPassed": true
+  },
+  "play": {
+    "artifactId": "4860243858850494259",
+    "versionCode": 52,
+    "versionName": "2.3.1",
+    "status": "uploaded-internal-preview",
+    "supportedDeviceLoss": 0,
+    "supports16KB": true,
+    "r8OptimizationPercent": 94,
+    "mappingAttached": true,
+    "nativeDebugSymbolsWarning": true,
+    "internalServingVersionCode": 51,
+    "productionServingVersionCode": 50,
+    "productionRolloutPercent": 100,
+    "productionChanged": false
+  },
+  "releaseNotes": {
+    "locales": 13,
+    "maxChars": 363
+  },
+  "dataSafety": {
+    "status": "Changes in review",
+    "quickChecks": "complete",
+    "productionPackageSubmitted": false
+  },
+  "pending": [
+    "unlock-Mac-to-finish-Play-UI",
+    "physical-Play-update-retention",
+    "two-device-sync",
+    "talkback-large-text-performance",
+    "runtime-crashlytics-and-opt-in-analytics",
+    "bundle-live-parity",
+    "curated-study-word-target",
+    "native-speaker-sampling"
+  ]
+}

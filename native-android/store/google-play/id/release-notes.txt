@@ -2,3 +2,4 @@
 • Game baru, misi harian, peti hadiah, dan pelindung streak.
 • Liga mingguan opsional dan kode undangan teman.
 • Cerita lebih panjang, 17 cerita baru, dan layar baca yang lebih nyaman.
+• Memperbaiki sinkronisasi yang macet saat berganti akun.

@@ -82,8 +82,8 @@ android {
         // Play Console checked 2026-10-19: production 48, internal 49.
         // Recheck before upload if another release is produced in parallel.
         // The release workflow passes -PreleaseVersionCode/-PreleaseVersionName.
-        versionCode = providers.gradleProperty("releaseVersionCode").orNull?.toInt() ?: 51
-        versionName = providers.gradleProperty("releaseVersionName").orNull ?: "2.3.0"
+        versionCode = providers.gradleProperty("releaseVersionCode").orNull?.toInt() ?: 52
+        versionName = providers.gradleProperty("releaseVersionName").orNull ?: "2.3.1"
         buildConfigField("String", "SUPABASE_URL", "\"${debugServiceSetting("SUPABASE_URL")}\"")
         buildConfigField("String", "SUPABASE_PUBLISHABLE_KEY", "\"${debugServiceSetting("SUPABASE_PUBLISHABLE_KEY")}\"")
         buildConfigField("String", "GOOGLE_WEB_CLIENT_ID", "\"${contentSetting("GOOGLE_WEB_CLIENT_ID")}\"")

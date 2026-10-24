@@ -276,10 +276,12 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                             sync=if(syncing.get()) mutableAccount.value.sync else mutableAccount.value.sync.copy(running=false))
                         scheduleSync(if(again) 2_000 else 60_000)
                     }
-                }) else if(again && !disposed && scope==expectedScope) mutations.trySend(Mutation(expectedScope) {
-                    // An interrupted run must not swallow a newer request made for the same owner/epoch transition.
-                    if(mutableAccount.value.userId==user) scheduleSync(0)
-                })
+                }) else if(again && !disposed) {
+                    // The queued request may belong to a newly selected account. Stamp
+                    // the retry with that current scope; never reuse the old owner's store.
+                    val retryScope=scope
+                    mutations.trySend(Mutation(retryScope) {scheduleSync(0)})
+                }
             }
         }
         return request

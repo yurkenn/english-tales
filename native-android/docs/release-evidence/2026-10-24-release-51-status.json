@@ -1,0 +1,274 @@
+{
+  "checkedAt": "2026-10-24",
+  "sourceCommit": "b6ee29180ebb854dd25e36e174c1d274383ab3a1",
+  "status": "internal-published-production-acceptance-pending",
+  "mergedPRs": [
+    174,
+    175
+  ],
+  "mainCI": {
+    "run": 40022721392,
+    "applicationDeviceTests": 376,
+    "startupTests": 3,
+    "serviceTests": 3,
+    "backendTests": 212,
+    "jvmTests": 142,
+    "failures": 0,
+    "skipped": 0
+  },
+  "releaseCI": {
+    "run": 40043274160,
+    "conclusion": "success",
+    "playUpload": "skipped",
+    "package": {
+      "versionCode": 51,
+      "versionName": "2.3.0",
+      "baselineProfilePackagingVerified": true,
+      "baselineProfiles": {
+        "baseline-prof.txt": {
+          "rules": 20988,
+          "applicationRules": 1122
+        },
+        "startup-prof.txt": {
+          "rules": 17787,
+          "applicationRules": 855
+        },
+        "apk": {
+          "baseline.prof": {
+            "bytes": 9149,
+            "sha256": "4a36b44a62142625fe93686ed428e13c66ebd9377752ec12b4eca6fcef832117"
+          },
+          "baseline.profm": {
+            "bytes": 523,
+            "sha256": "3d59990f1c1d8403aac2efef64250b4deb45c8d5eb4841fc07e3c5bca20f7634"
+          }
+        },
+        "aab": {
+          "baseline.prof": {
+            "bytes": 9149,
+            "sha256": "4a36b44a62142625fe93686ed428e13c66ebd9377752ec12b4eca6fcef832117"
+          },
+          "baseline.profm": {
+            "bytes": 523,
+            "sha256": "3d59990f1c1d8403aac2efef64250b4deb45c8d5eb4841fc07e3c5bca20f7634"
+          }
+        }
+      },
+      "productionServiceVerified": true,
+      "apkSignerMatchesPlay": true,
+      "aabSignatureVerified": true,
+      "apkZipAlignment16KB": true,
+      "adIdPermission": true,
+      "nativeDebugSymbols": [],
+      "elf64Libraries": [
+        "lib/arm64-v8a/libandroidx.graphics.path.so",
+        "lib/x86_64/libandroidx.graphics.path.so"
+      ],
+      "elf64AlignmentPassed": true,
+      "alignmentErrors": [],
+      "apkBytes": 14040073,
+      "aabBytes": 17958524,
+      "apkSHA256": "07c91b59278e530976ef4858059ac88ea5b759c8b516e5c45e7fc91764dbad5e",
+      "aabSHA256": "f422e5555fbe275cb9b13a0be383817ede997d9fc39a46c839b06d37ef6757fb",
+      "limitation": "Static package inspection only; Play-generated split APKs and real 16KB devices still need testing."
+    }
+  },
+  "uploadedPackage": {
+    "versionCode": 51,
+    "versionName": "2.3.0",
+    "baselineProfilePackagingVerified": true,
+    "baselineProfiles": {
+      "baseline-prof.txt": {
+        "rules": 20988,
+        "applicationRules": 1122
+      },
+      "startup-prof.txt": {
+        "rules": 17787,
+        "applicationRules": 855
+      },
+      "apk": {
+        "baseline.prof": {
+          "bytes": 9162,
+          "sha256": "feba7daa3b8b7fbb1a78a6738b1362fd2f1f92000d0f7ff9740f77e44662e92b"
+        },
+        "baseline.profm": {
+          "bytes": 523,
+          "sha256": "3d59990f1c1d8403aac2efef64250b4deb45c8d5eb4841fc07e3c5bca20f7634"
+        }
+      },
+      "aab": {
+        "baseline.prof": {
+          "bytes": 9162,
+          "sha256": "feba7daa3b8b7fbb1a78a6738b1362fd2f1f92000d0f7ff9740f77e44662e92b"
+        },
+        "baseline.profm": {
+          "bytes": 523,
+          "sha256": "3d59990f1c1d8403aac2efef64250b4deb45c8d5eb4841fc07e3c5bca20f7634"
+        }
+      }
+    },
+    "productionServiceVerified": true,
+    "apkSignerMatchesPlay": true,
+    "aabSignatureVerified": true,
+    "apkZipAlignment16KB": true,
+    "adIdPermission": true,
+    "nativeDebugSymbols": [],
+    "elf64Libraries": [
+      "lib/arm64-v8a/libandroidx.graphics.path.so",
+      "lib/x86_64/libandroidx.graphics.path.so"
+    ],
+    "elf64AlignmentPassed": true,
+    "alignmentErrors": [],
+    "apkBytes": 14040073,
+    "aabBytes": 17958711,
+    "apkSHA256": "9ab59574075d4dfd21a3120174482b7c7929aeb0a2ea3611f0e044730f221a7b",
+    "aabSHA256": "335911b3814b7189ea79d99bfbd07310647af5497ccd82a8ac3319ae6f3fa3ff",
+    "limitation": "Static package inspection only; Play-generated split APKs and real 16KB devices still need testing."
+  },
+  "playArtifact": {
+    "versionCode": 51,
+    "versionName": "2.3.0",
+    "sourceCommit": "b6ee29180ebb854dd25e36e174c1d274383ab3a1",
+    "playArtifactId": "4860243852774894175",
+    "aabSHA256": "335911b3814b7189ea79d99bfbd07310647af5497ccd82a8ac3319ae6f3fa3ff",
+    "aabMatchesUploaded": true,
+    "playSignedApkSHA256": "dce1304351c1d6a90aee7547c75b4645973b39175a0374ad6ec99acb07bd9ad2",
+    "playSigningCertificateSHA256": "13ef5910fd56b0a43f5d6578d2cc90271fe087c2a0baa6cc06a0b5f1056a3ba8",
+    "playSupports16KB": true,
+    "playR8OptimizationPercent": 94,
+    "supportedDeviceLoss": 0
+  },
+  "internal": {
+    "versionCode": 51,
+    "versionName": "2.3.0",
+    "releaseId": "6",
+    "status": "Available to internal testers",
+    "publishedAtLocal": "2026-10-24 03:13 Europe/Istanbul",
+    "testUrl": "https://play.google.com/apps/internaltest/4701713728242169635"
+  },
+  "production": {
+    "versionCode": 50,
+    "versionName": "2.2.0",
+    "rolloutPercent": 100,
+    "changed": false
+  },
+  "content": {
+    "at": "2026-10-24T00:06:38.748Z",
+    "stories": 67,
+    "sentences": 2839,
+    "repairedStories": 31,
+    "restoredQuestions": 119,
+    "untouchedStories": 36,
+    "verifiedMedia": 67,
+    "allHistoryPreserved": true,
+    "translations": {
+      "ar": {
+        "missingSentences": 0,
+        "missingWords": 0,
+        "missingDescriptions": 0,
+        "complete": true
+      },
+      "bn": {
+        "missingSentences": 0,
+        "missingWords": 0,
+        "missingDescriptions": 0,
+        "complete": true
+      },
+      "es-419": {
+        "missingSentences": 0,
+        "missingWords": 0,
+        "missingDescriptions": 0,
+        "complete": true
+      },
+      "hi": {
+        "missingSentences": 0,
+        "missingWords": 0,
+        "missingDescriptions": 0,
+        "complete": true
+      },
+      "id": {
+        "missingSentences": 0,
+        "missingWords": 0,
+        "missingDescriptions": 0,
+        "complete": true
+      },
+      "pt-BR": {
+        "missingSentences": 0,
+        "missingWords": 0,
+        "missingDescriptions": 0,
+        "complete": true
+      },
+      "ru": {
+        "missingSentences": 0,
+        "missingWords": 0,
+        "missingDescriptions": 0,
+        "complete": true
+      },
+      "th": {
+        "missingSentences": 0,
+        "missingWords": 0,
+        "missingDescriptions": 0,
+        "complete": true
+      },
+      "tr": {
+        "missingSentences": 0,
+        "missingWords": 0,
+        "missingDescriptions": 0,
+        "complete": true
+      },
+      "ur": {
+        "missingSentences": 0,
+        "missingWords": 0,
+        "missingDescriptions": 0,
+        "complete": true
+      },
+      "vi": {
+        "missingSentences": 0,
+        "missingWords": 0,
+        "missingDescriptions": 0,
+        "complete": true
+      }
+    },
+    "allStoriesHaveThreeQuestions": true
+  },
+  "privacy": {
+    "leagueConsentMigration": "20261023190101",
+    "liveApplied": true,
+    "policyUrl": "https://englishtales-app.web.app/privacy",
+    "policySHA256": "44feb0dce4ad914eeb4d181e46c2b557ce8a18ab86dafb094e46557dba2c3565"
+  },
+  "pending": [
+    "physical-play-update-and-retention",
+    "two-device-sync",
+    "talkback-large-text-performance",
+    "runtime-crashlytics-and-opt-in-analytics",
+    "bundle-live-parity",
+    "curated-study-word-coverage-target",
+    "native-speaker-sampling"
+  ],
+  "uploadedPackageCrashlyticsMapping": {
+    "uploaded": true,
+    "mappingFileId": "81c993fb7ea94fa6b9cd19a88971ecd9",
+    "mappingSHA256": "1e10fde37ea36445b3f60ceeb57801b6cbfa5fb9058c48d4892783b1f90d6e3e",
+    "mappingMatchesUploadedAab": true,
+    "task": "uploadCrashlyticsMappingFileRelease, immutable candidate inputs",
+    "result": "BUILD SUCCESSFUL in 5s"
+  },
+  "dataSafety": {
+    "status": "Changes in review",
+    "optionalCollection": [
+      "name",
+      "email",
+      "user-ids",
+      "other-user-generated-content"
+    ],
+    "addedPurpose": {
+      "app-interactions": "app-functionality"
+    },
+    "changedResponses": 9,
+    "otherResponsesPreserved": true,
+    "basis": "Guest mode verified in production 50 and internal 51; https://support.google.com/googleplay/android-developer/answer/10787469?hl=en",
+    "unsubmittedChanges": 0,
+    "productionPackageSubmitted": false
+  }
+}

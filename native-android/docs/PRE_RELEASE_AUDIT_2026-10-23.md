@@ -1,5 +1,7 @@
 # 23 Ekim 2026 — yeni Android sürümü öncesi denetim
 
+> 24 Ekim devamı: R51-01–05 kaynak düzeltmeleri #174 ile, sürüm notları #175 ile birleşti; 31 eski hikâyenin eksikleri canlıda tamamlandı. 51 / 2.3.0 dahili testte yayımlandı. [Güncel sonuç ve açık kabul işleri](RELEASE_51_STATUS.md). Aşağıdaki denetim düzeltme öncesi tarihsel kayıttır.
+
 **Karar: üretim yayınını beklet.** Aday kaynak `336496453bd96cd65d26c00643eb2c039f5d9bb0`. İki P1 ve üç P2 bulgu var. Dört işlevsel sorun izole Android testleriyle yeniden üretildi; lig gizliliği bulgusu canlı şema/fonksiyonlar ve yayımlanmış gizlilik metniyle doğrulandı. Üretim kodu ve canlı öğrenme verisi değiştirilmedi; mağazaya paket yüklenmedi.
 
 Bu rapor hazırlanan bir yayını onaylamaz. Claude Code, yalnız Read/Grep/Glob araçlarıyla bağımsız inceleme yaptı; bulguları Codex tarafından ayrıca incelendi ve gerektiğinde yeniden sınıflandırıldı. Claude'un misafir sandığı aktarımı önerisi kesin hata sayılmadı; ürün kararı olarak aşağıda ayrıldı.
