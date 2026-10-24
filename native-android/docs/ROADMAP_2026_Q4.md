@@ -1,6 +1,10 @@
 # Yurken Stories — önümüzdeki 90 gün
 
 
+## 24 Ekim yayın hazırlığı
+
+#174/#175 birleştirildi. Hesap/lig/sandık/indirme regresyonları ana dal CI'da geçti; 31 eski hikâyenin 119 sorusu ve eksik dil haritaları canlıda tamamlandı. 67 hikâyenin 11 dil bütünlüğü, 67 medya ve önceki yayın geçmişi anonim yedekle doğrulandı. Üretim 50; 51 / 2.3.0 dahili testte yayında; fiziksel kabul bekleniyor. Paket/canlı farkı, çalışma kelimesi hedefi, fiziksel telefon, runtime ölçüm ve ana dil örneklemi ayrı açık işlerdir. [Güncel aday ve kanıt](RELEASE_51_STATUS.md).
+
 ## 23 Ekim tamamlama kaydı
 
 #172 ana dala alındı. Önceki 13 yeni uzun hikâyenin ardından ertelenen 14 uzatma, Goldilocks/Three Little Pigs ve iki özgün kısa taslak da 11 dilde yayınlandı; canlı katalog 67 hikâye. Görev sandığının mevcut hesapla izinli canlı kabulü ve yayın yedeğinin büyük katalog sayfalaması tamamlandı. Backend 201/201 ve hedefli cihaz 4/4 geçti. [Kanıt, PR #173 ve kabul sınırları](COMPLETION_2026-10-23.md). Aşağıdaki 21 Ekim temel durumu tarihsel kayıttır; “iki klasik ertelendi” ve “yayın yapılmadı” ifadeleri bu tamamlama kaydıyla güncellenmiştir.
