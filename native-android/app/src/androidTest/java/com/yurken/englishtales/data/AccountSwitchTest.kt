@@ -242,6 +242,40 @@ class AccountSwitchTest {
             assertFalse(rpcs.toString(),"save_learning_preferences" in rpcs)
         }
     }
+    @Test fun newAccountChestSyncSurvivesThePreviousAccountsSlowRun() {
+        val holdA=java.util.concurrent.atomic.AtomicBoolean(false)
+        val enteredA=CountDownLatch(1);val releaseA=CountDownLatch(1)
+        val enteredB=CountDownLatch(1)
+        try {
+            exercise({http -> LearningAccountSync(LearningSyncTransport {rpc,_,token ->
+                if(rpc=="get_learning_snapshot") {
+                    if(token=="token-${http.a}" && holdA.compareAndSet(true,false)) {
+                        enteredA.countDown();check(releaseA.await(30,TimeUnit.SECONDS))
+                    }
+                    if(token=="token-${http.b}") enteredB.countDown()
+                    remote(token.removePrefix("token-"))
+                } else JSONObject().put("applied",true)
+            },"https://fixture.supabase.co")}) {vm,http ->
+                vm.signIn("a@example.invalid","fixture-password")
+                await(20) {vm.account.value.syncCompleted>0 && !vm.account.value.sync.running}
+                holdA.set(true);vm.syncNow();assertTrue(enteredA.await(5,TimeUnit.SECONDS))
+                vm.signOut();await {vm.state.value.ownerId=="guest" && !vm.account.value.busy}
+                vm.signIn("b@example.invalid","fixture-password")
+                await {vm.state.value.ownerId==http.b && !vm.account.value.busy}
+                val ticket=checkNotNull(vm.syncForChest())
+                // Let B's normal two-second timer queue behind A as well. It must not
+                // accidentally rescue a lost request by firing only after A finishes.
+                Thread.sleep(2_500)
+                assertEquals(1L,enteredB.count)
+                releaseA.countDown()
+                assertTrue("B's queued chest sync was swallowed by A's interrupted run",enteredB.await(5,TimeUnit.SECONDS))
+                await(20) {vm.account.value.syncCompleted>=ticket && !vm.account.value.sync.running}
+                assertEquals(http.b,vm.state.value.ownerId)
+                assertEquals(http.b,vm.account.value.userId)
+            }
+        } finally {releaseA.countDown()}
+    }
+
     @Test fun queuedChestSyncReturnsATicketForTheRerunRatherThanTheOlderRun() {
         val hold=java.util.concurrent.atomic.AtomicBoolean(false)
         val requests=java.util.concurrent.atomic.AtomicInteger()
