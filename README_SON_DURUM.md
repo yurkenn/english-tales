@@ -1,3 +1,7 @@
+# 24 Ekim 2026 — 52 üretim gönderimi
+
+52 / 2.3.1 dahili testte yayımlandı; aynı paket %100 üretim dağıtımı için Google incelemesine gönderildi. Play: **Changes in review**, hızlı kontroller sürüyor, gönderilmemiş değişiklik yok. Onaydan sonra otomatik yayım (managed publishing kapalı). Fiziksel cihaz/runtime/editör kabul eksikleri kapanmış sayılmaz. [Güncel yayın kaydı](native-android/docs/RELEASE_52_STATUS.md). Aşağıdaki eski durum kayıtları tarihsel kanıttır.
+
 # English Tales — son çalışmalar ve yayın durumu
 
 Son güncelleme: **24 Ekim 2026**.
