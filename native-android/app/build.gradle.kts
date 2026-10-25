@@ -52,6 +52,18 @@ if(adsEnabled) {
     require(adsUnitId.matches(Regex("ca-app-pub-6012481599277383/[0-9]{10}")) && adsUnitId!="ca-app-pub-6012481599277383/6069329647") {"Configure a verified interstitial unit, not the old rewarded unit"}
     require(adsSettings.getProperty("PUBLICATION_READY")=="true") {"Verify AdMob consent, publisher site and Play privacy declarations before enabling production ads"}
 }
+val monetizationSettings=Properties().apply {rootProject.file("config/monetization.properties").inputStream().use {load(it)}}
+val legacyCutoff=monetizationSettings.getProperty("LEGACY_CUTOFF_EPOCH_MILLIS","0").toLong()
+val monetizationEnabled=monetizationSettings.getProperty("ENABLED","false")=="true"
+val monetizationPreview=providers.gradleProperty("monetizationPreview").orNull=="true"
+val revenueCatKey=monetizationSettings.getProperty("REVENUECAT_ANDROID_PUBLIC_KEY","")
+val rewardedUnit=monetizationSettings.getProperty("REWARDED_UNIT_ID","")
+require(revenueCatKey.isEmpty() || revenueCatKey.matches(Regex("(goog|test)_[A-Za-z0-9]+"))) {"Only a RevenueCat public Android SDK key is allowed"}
+if(monetizationEnabled) {
+    require(revenueCatKey.startsWith("goog_") && rewardedUnit.matches(Regex("ca-app-pub-[0-9]{16}/[0-9]{10}"))) {"Configure RevenueCat Android and a rewarded ad unit"}
+    require(legacyCutoff>0) {"Set the legacy progress cutoff before activation"}
+    require(adsEnabled && monetizationSettings.getProperty("PUBLICATION_READY")=="true") {"Monetization needs verified consent, SSV, Play products and sandbox acceptance"}
+}
 if(releaseRequested) {
     require(listOf("storeFile","storePassword","keyAlias","keyPassword").all {releaseSigning.getProperty(it).orEmpty().isNotBlank()}) {
         "Release signing is missing. Configure the private signing.properties file; debug signing is never used for release."
@@ -87,6 +99,10 @@ android {
         buildConfigField("String", "SUPABASE_URL", "\"${debugServiceSetting("SUPABASE_URL")}\"")
         buildConfigField("String", "SUPABASE_PUBLISHABLE_KEY", "\"${debugServiceSetting("SUPABASE_PUBLISHABLE_KEY")}\"")
         buildConfigField("String", "GOOGLE_WEB_CLIENT_ID", "\"${contentSetting("GOOGLE_WEB_CLIENT_ID")}\"")
+        buildConfigField("long","MONETIZATION_LEGACY_CUTOFF_MS","${legacyCutoff}L")
+        buildConfigField("boolean","MONETIZATION_ENABLED",monetizationPreview.toString())
+        buildConfigField("String","REVENUECAT_PUBLIC_KEY","\"${if(monetizationPreview) revenueCatKey else ""}\"")
+        buildConfigField("String","ADMOB_REWARDED_ID","\"ca-app-pub-3940256099942544/5224354917\"")
         buildConfigField("boolean","ADS_ENABLED","true")
         buildConfigField("String","ADMOB_APP_ID","\"ca-app-pub-3940256099942544~3347511713\"")
         buildConfigField("String","ADMOB_INTERSTITIAL_ID","\"ca-app-pub-3940256099942544/1033173712\"")
@@ -107,6 +123,9 @@ android {
     }
     buildTypes {
         release {
+            buildConfigField("boolean","MONETIZATION_ENABLED",monetizationEnabled.toString())
+            buildConfigField("String","REVENUECAT_PUBLIC_KEY","\"$revenueCatKey\"")
+            buildConfigField("String","ADMOB_REWARDED_ID","\"$rewardedUnit\"")
             buildConfigField("boolean","ADS_ENABLED",adsEnabled.toString())
             buildConfigField("String","ADMOB_APP_ID","\"$adsAppId\"")
             buildConfigField("String","ADMOB_INTERSTITIAL_ID","\"$adsUnitId\"")
@@ -136,6 +155,8 @@ android {
         matchingFallbacks += listOf("release")
         isDebuggable = false
         // Release optimization, isolated data, no production content traffic or telemetry.
+        buildConfigField("boolean", "MONETIZATION_ENABLED", "false")
+        buildConfigField("String", "REVENUECAT_PUBLIC_KEY", "\"\"")
         buildConfigField("boolean", "ADS_ENABLED", "false")
         buildConfigField("boolean", "PRODUCT_ANALYTICS_AVAILABLE", "false")
         listOf("SUPABASE_URL", "SUPABASE_PUBLISHABLE_KEY", "GOOGLE_WEB_CLIENT_ID").forEach {
@@ -175,6 +196,7 @@ room { schemaDirectory("$projectDir/schemas") }
 
 dependencies {
     add(configurations.maybeCreate("performanceBaselineProfile").name, project(":macrobenchmark"))
+    implementation("com.revenuecat.purchases:purchases:10.15.1")
     implementation("androidx.profileinstaller:profileinstaller:1.4.1")
     implementation("com.google.android.libraries.ads.mobile.sdk:ads-mobile-sdk:1.5.0")
     implementation("com.google.android.ump:user-messaging-platform:4.0.0")

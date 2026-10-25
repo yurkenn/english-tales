@@ -12,6 +12,7 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.*
 import androidx.navigation.navArgument
 import com.yurken.englishtales.data.*
+import com.yurken.englishtales.monetization.MonetizationViewModel
 import com.yurken.englishtales.BuildConfig
 import kotlinx.coroutines.launch
 import androidx.compose.ui.res.stringResource
@@ -58,6 +59,11 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
     var selectedTab by rememberSaveable { mutableIntStateOf(0) }
     var launchId by rememberSaveable {mutableStateOf<String?>(null)}
     var launchWords by rememberSaveable {mutableStateOf(emptyList<String>())}
+    val monetization: MonetizationViewModel = viewModel()
+    val monetizationUi by monetization.state.collectAsState()
+    LaunchedEffect(account.scope, snapshot.ownerId) {
+        monetization.bind(snapshot.ownerId, account.scope, com.yurken.englishtales.monetization.EnergyPolicy.legacy(snapshot.storyUpdatedAt,BuildConfig.MONETIZATION_LEGACY_CUTOFF_MS))
+    }
     val lifecycle=androidx.lifecycle.compose.LocalLifecycleOwner.current.lifecycle
     val context=androidx.compose.ui.platform.LocalContext.current
     val uiScope=rememberCoroutineScope()
@@ -75,7 +81,7 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
         val observer=androidx.lifecycle.LifecycleEventObserver {_,event -> when(event) {
             androidx.lifecycle.Lifecycle.Event.ON_START -> viewModel.setForeground(true)
             androidx.lifecycle.Lifecycle.Event.ON_STOP -> viewModel.setForeground(false)
-            androidx.lifecycle.Lifecycle.Event.ON_RESUME -> {viewModel.refresh();leagues.refresh(viewModel.account.value.userId);viewModel.verifyAccount(5*60_000);LearningReminders.schedule(context);if(content.ready.value) content.refreshIfStale()}
+            androidx.lifecycle.Lifecycle.Event.ON_RESUME -> {monetization.refresh();viewModel.refresh();leagues.refresh(viewModel.account.value.userId);viewModel.verifyAccount(5*60_000);LearningReminders.schedule(context);if(content.ready.value) content.refreshIfStale()}
             else -> {}
         }}
         lifecycle.addObserver(observer)
@@ -89,6 +95,7 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
         val entry=nav.currentBackStackEntry?.id
         if(!active() || viewModel.account.value.scope!=expected) return
         if(id !in viewModel.completedSessions.value || viewModel.writeError.value!=null) next()
+        else if(BuildConfig.MONETIZATION_ENABLED) next()
         else ads.afterCompletion(id,{active() && viewModel.account.value.scope==expected && viewModel.writeError.value==null && nav.currentBackStackEntry?.id==entry},next)
     }
     fun dailyPlan() {selectedTab=0;nav.popBackStack("main",false)}
@@ -181,6 +188,7 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
                 val contentStatus by content.status.collectAsState()
                 val library=LibraryActions(refreshing=contentStatus.busy && contentStatus.downloading==null,onRefresh={content.refresh(userInitiated=true)},onDownloads={nav.navigate("downloads")})
                 Column(Modifier.fillMaxSize().statusBarsPadding()) {
+                    if(BuildConfig.MONETIZATION_ENABLED && selectedTab!=2) EnergyStatusButton(monetization) {nav.navigate("energy")}
                     if(selectedTab==1) ContentConnectionBar(content)
                     Box(Modifier.weight(1f)) {
                         MainTabs(snapshot,selectedTab,{selectedTab=it},onOpenStory={nav.navigate("story/$it")},onOpenWords={nav.navigate("words")},onLessonComplete=viewModel::completeLesson,onWordReviewed={id,correct -> viewModel.reviewWord(id,correct)},onRead={id -> val revision=snapshot.resumeRevision(id); nav.navigate("reader/$id"+(revision?.let {"?revision=$it"}?:""))},onPractice=::practice,onSettings={nav.navigate("settings")},onAccount={nav.navigate("account")},launchId=launchId,launchWords=launchWords,onLaunchConsumed={launchId=null},onDailyPlan=::dailyPlan,onSessionStart={id,kind,count ->viewModel.beginSession(id,kind,count,null)},onCheckpoint=viewModel::checkpointSession,onSessionAbandoned=viewModel::abandonSession,onCompletedExit=::completedExit,library=library,
@@ -201,6 +209,9 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
             }
             composable("reader/{storyId}?listen={listen}&revision={revision}",arguments=listOf(navArgument("storyId") {type=NavType.StringType},navArgument("listen") {type=NavType.BoolType;defaultValue=false},navArgument("revision") {type=NavType.StringType;defaultValue=""})) { entry ->
                 val storyId = entry.arguments?.getString("storyId")
+                ReaderEnergyAccess(monetization,storyId.orEmpty(),account.userId==null,
+                    onAccount={nav.navigate("account")},onBack={nav.popBackStack()}) {
+
                 val retainedRevision = entry.savedStateHandle.get<String>("reader_revision") ?: entry.arguments?.getString("revision")?.takeIf {it.isNotBlank()}
                 val initial = retainedRevision?.let(LearningContent::revision) ?: LearningContent.storyById[storyId]
                 var selectedStory by remember(entry) { mutableStateOf(initial?.takeIf { it.sentences.isNotEmpty() }) }
@@ -218,6 +229,8 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
                     ReaderScreen(story,snapshot,onBack={exit()},onSaveWord=viewModel::toggleWord,onProgress={percent,sentence ->viewModel.updateProgress(story.id,percent,sentence)},autoListen=entry.arguments?.getBoolean("listen")==true && entry.savedStateHandle.get<Boolean>("reader_listen_handled")!=true,onComplete={millis ->viewModel.completeReading(story.id,sessionId,millis);nav.navigate("reading-result/${story.id}?revision=${story.revisionId}&session=$sessionId") {popUpTo(entry.destination.id) {inclusive=true}}},onHintDismiss={viewModel.dismissReaderHint()},sessionId=sessionId,onCheckpoint=viewModel::checkpointSession,onOpenWords={entry.savedStateHandle["reader_listen_handled"]=true;nav.navigate("words")},onSaveGlossaryWord=viewModel::toggleGlossaryWord,onLookup=viewModel::recordLookup)
                 }
             }
+            }
+            composable("energy") {EnergyScreen(monetization,account.userId==null,onAccount={nav.navigate("account")},onBack={nav.popBackStack()})}
             composable("reading-result/{storyId}?revision={revision}&session={session}",arguments=listOf(navArgument("session") {type=NavType.StringType;defaultValue=""},navArgument("storyId") {type=NavType.StringType},navArgument("revision") {type=NavType.StringType;defaultValue=""})) {entry ->
                 androidx.activity.compose.BackHandler {dailyPlan()}
                 val play=com.yurken.englishtales.play.LocalPlayStoreFeatures.current

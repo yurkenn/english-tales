@@ -1,8 +1,14 @@
 # English Tales — son çalışmalar ve yayın durumu
 
-Son güncelleme: **23 Ekim 2026**.
+Son güncelleme: **24 Ekim 2026**.
 
 Gelecek işler ve öncelik sırası: [90 günlük yol haritası](native-android/docs/ROADMAP_2026_Q4.md).
+
+## Enerji ve Premium — 24 Ekim 2026
+
+Claude ile ortak plan ve uygulama `codex/energy-premium` dalında hazırlandı: günlük 3 hikâye hakkı, SSV doğrulamalı ödüllü reklam ve RevenueCat aylık/yıllık Premium. Özellik varsayılan kapalıdır. Supabase **test** ortamına migration ve üç fonksiyon uygulandı; üretim backend'i değiştirilmedi. RevenueCat yeni offering'i iki abonelikle hazır, eski offering geri alınabilir biçimde pasif. Türkiye hedef fiyatları aylık 99,99 TL / yıllık 699,99 TL; Play kaydı ayrıca doğrulanacak. 229 backend, 148 JVM ve hedefli 6 API36 cihaz testi geçti. [Plan, kanıtlar ve açık kabul kapıları](native-android/docs/MONETIZATION_SETUP_2026-10-24.md).
+
+Canlı Play Console kontrolünde **52 / 2.3.1 üretimde erişilebilir ve %100 dağıtımda** (24 Ekim). Önceki sürüm kayıtları aşağıda tarihçedir. Yeni 53 / 2.4.0 imzalı paket yalnız dahili test taslağı için hazırlandı; yeni özelliğin canlıya açıldığı anlamına gelmez.
 
 ## İçerik ve yarım kalan işler — 23 Ekim 2026
 

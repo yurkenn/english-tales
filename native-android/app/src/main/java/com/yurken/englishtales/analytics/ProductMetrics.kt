@@ -1,11 +1,20 @@
 package com.yurken.englishtales.analytics
 
-/** Only these seven names and four mode values can reach the analytics adapter. */
+/** Only these fixed event names and four practice modes can reach the analytics adapter. */
 internal enum class ProductEvent(val wireName: String) {
     VISIT("learning_visit"), NEXT_DAY_RETURN("next_day_return"),
     ONBOARDING_COMPLETED("learning_onboarding_completed"), STORY_STARTED("story_started"),
     STORY_COMPLETED("story_completed"), FIRST_STORY_COMPLETED("first_story_completed"),
-    PRACTICE_COMPLETED("practice_completed")
+    PRACTICE_COMPLETED("practice_completed"),
+    ENERGY_LIMIT("energy_limit"), PAYWALL_VIEW("premium_view"),
+    REWARD_STARTED("energy_ad_started"), REWARD_COMPLETED("energy_ad_completed"), REWARD_VERIFIED("energy_ad_verified"),
+    PURCHASE_VERIFIED("premium_verified"), RESTORE_VERIFIED("premium_restored")
+}
+
+internal enum class MonetizationEvent(val event: ProductEvent) {
+    LIMIT(ProductEvent.ENERGY_LIMIT), PAYWALL(ProductEvent.PAYWALL_VIEW),
+    REWARD_START(ProductEvent.REWARD_STARTED), REWARD_COMPLETE(ProductEvent.REWARD_COMPLETED), REWARD_VERIFY(ProductEvent.REWARD_VERIFIED),
+    PURCHASE(ProductEvent.PURCHASE_VERIFIED), RESTORE(ProductEvent.RESTORE_VERIFIED)
 }
 
 internal enum class PracticeMode(val wireName: String) {
@@ -89,6 +98,10 @@ internal class ProductMetrics(
                     emit(ProductEvent.FIRST_STORY_COMPLETED)
             }
         }
+    }
+
+    @Synchronized fun monetization(event: MonetizationEvent) {
+        if(state.enabled) emit(event.event)
     }
 
     private fun save(next: MetricsState): Boolean {

@@ -126,6 +126,6 @@ fun AccountScreen(state: AccountState,onBack: ()->Unit,onSignIn: (String,String)
         stringResource(R.string.cikis_yap),onConfirm={confirmExit=false;onSignOut()},onDismissRequest={confirmExit=false},dismissLabel=stringResource(R.string.vazgec))
     if(confirmTransfer) TaleDialog(stringResource(R.string.misafir_ilerlemen_tasinsin_mi),stringResource(R.string.misafir_kelimelerin_okuma_ilerlemen_ve),
         stringResource(R.string.bu_hesaba_aktar),onConfirm={confirmTransfer=false;onTransfer()},onDismissRequest={confirmTransfer=false},dismissLabel=stringResource(R.string.vazgec),mood=MascotMood.Welcome)
-    if(confirmDelete) TaleDialog(stringResource(R.string.hesabin_kalici_olarak_silinsin_mi),stringResource(R.string.n_nhesabin_sunucudaki_ogrenme_gecmisin, state.email),
+    if(confirmDelete) TaleDialog(stringResource(R.string.hesabin_kalici_olarak_silinsin_mi),stringResource(R.string.n_nhesabin_sunucudaki_ogrenme_gecmisin, state.email)+"\n\n"+stringResource(R.string.energy_delete_warning),
         stringResource(R.string.hesabimi_kalici_olarak_sil),onConfirm={confirmDelete=false;onDeleteAccount()},onDismissRequest={confirmDelete=false},dismissLabel=stringResource(R.string.vazgec),destructive=true)
 }

@@ -20,6 +20,7 @@ internal object DeletedAccountCleanup {
             LearningDatabase.detach(context,owner)
             val path=context.getDatabasePath(owner.databaseName)
             check(!path.exists() || context.deleteDatabase(owner.databaseName))
+            com.yurken.englishtales.monetization.EnergyDisk(context,user).delete()
             complete(context,user)
         }
     }

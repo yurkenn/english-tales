@@ -38,7 +38,8 @@ data class LearningSnapshot(
     /** Streak freezes banked for a missed day ([StreakFreeze]). */
     val streakFreezes: Int = 0,
     /** Recent missed days that a freeze covered, as day keys. */
-    val frozenDays: Set<String> = emptySet()
+    val frozenDays: Set<String> = emptySet(),
+    val storyUpdatedAt: Map<String,Long> = emptyMap()
 ) {
     val dailyGoalReached get() = todaySessions>=dailyGoal
     val knownWordCount get() = wordStages.count {it.value==WordStage.KNOWN}
@@ -93,9 +94,9 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
                 weeklyWords+=storyWordCounts.getOrPut(story.revisionId) {story.sentences.sumOf {s -> PhraseMatcher.tokens(s.english).count {t -> t.any(Char::isLetter)}}}
             }
         }
-        val progress=mutableMapOf<String,Int>();val positions=mutableMapOf<String,ReadingPosition>()
-        db.rawQuery("SELECT story_id,percent,revision_id,sentence_id FROM story_progress",null).use { c -> while(c.moveToNext()) {
-            progress[c.getString(0)]=c.getInt(1)
+        val progress=mutableMapOf<String,Int>();val progressTimes=mutableMapOf<String,Long>();val positions=mutableMapOf<String,ReadingPosition>()
+        db.rawQuery("SELECT story_id,percent,revision_id,sentence_id,updated_at FROM story_progress",null).use { c -> while(c.moveToNext()) {
+            progress[c.getString(0)]=c.getInt(1);progressTimes[c.getString(0)]=c.getLong(4)
             if(!c.isNull(2) && !c.isNull(3)) positions[c.getString(0)]=ReadingPosition(c.getString(2),c.getString(3))
         } }
         var points=0;var streak=0;var lessons=0
@@ -121,7 +122,7 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         val p=profile()
         return LearningSnapshot(saved,states,progress,points,streak,lessons,p.onboarding,p.level,p.genre,
             p.goal,days[today]?.first?:0,days[today]?.second?:0,due,nextDue,week,badges,p.lastStory,p.hintSeen,p.name,
-            positions,dao.activeSessions().associate {it.id to it.activeMillis},owner.id,weak,favorites,personal,stages,weeklyWords,stability,freeze.freezes,freeze.frozenDays)
+            positions,dao.activeSessions().associate {it.id to it.activeMillis},owner.id,weak,favorites,personal,stages,weeklyWords,stability,freeze.freezes,freeze.frozenDays,progressTimes)
     }
     fun completeOnboarding(level: String, genre: String, goal: Int) {
         var newlyCompleted=false
