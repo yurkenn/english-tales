@@ -2,10 +2,12 @@
 
 Durum: Henüz uygulanmadı. Bu belge sonuç kaydı değildir.
 
+Telefon zorunlu değildir: Play Store ve Google Play Services bulunan `English_Tales_Energy_36` emülatörü kullanılabilir. 25 Ekim emülatör başlatıldı, `com.android.vending` kurulumu doğrulandı; hesap girişi ve satın alma kabulü henüz yapılmadı. [RevenueCat emülatör açıklaması](https://www.revenuecat.com/docs/test-and-launch/sandbox/google-play-store).
+
 1. Play Store’da kayıtlı lisans test hesabını kullanarak [dahili test bağlantısından](https://play.google.com/apps/internaltest/4701713728242169635) 56 / 2.4.0-sandbox sürümünü yükle. Üstte kalıcı test bildirimi bulunmalı. Bu sürüm test sunucusunu kullanır; üretim hesabındaki içerik/oturum otomatik taşınmaz.
 2. Uygulamada giriş yap; gerekirse test ortamında yeni hesap oluştur. Ana ekrandaki enerji düğmesinden Premium ekranını aç. Aylık/yıllık paketlerin mağazadan gelen fiyatlarını kaydet. Türkiye Play hesabında beklenen tutarlar 99,99 TL / 699,99 TL; uygulama dilini değiştirmek Play ülkesini değiştirmemeli.
 3. Önce aylık paketi açıp ödeme penceresini iptal et. Premium etkinleşmemeli. Sonra tekrar aç. Google penceresinde lisans testi ve test ödeme yöntemi görünmeden satın almayı tamamlama. Gerçek karttan ücret isteyen ekran test yapılandırmasının henüz doğru olmadığını gösterir.
-4. Lisans testi satın almasını cihaz sahibi tamamlar. Uygulamada Premium, RevenueCat sandbox kaydı, staging premium_entitlements süresi ve webhook HTTP 200 birlikte kontrol edilir. UI tek başına kabul kanıtı değildir.
+4. Lisans testi satın almasını hesap sahibi emülatörde de tamamlayabilir. Uygulamada Premium, RevenueCat sandbox kaydı, staging premium_entitlements süresi ve webhook HTTP 200 birlikte kontrol edilir. UI tek başına kabul kanıtı değildir.
 5. Uygulamayı kapat/aç; ardından satın alımları geri yükle. Aynı uygulama hesabında Premium korunmalı. Başka uygulama hesabına geçiş önceki hesabın önbelleğinden Premium taşımamalı. Play/RevenueCat transfer politikasının sonucu da kaydedilir.
 6. Mevcut lisans test ödeme yöntemleriyle bekleyen ve reddedilen işlem, otomatik yenileme, iptal sonrası süre sonu ve test iadesi doğrulanır. Her sonuçta hem mağaza hem sunucu durumu kaydedilir; iptal butonu tek başına anında hak kaybı demek değildir.
 7. Reklam ayrı kabul adımıdır: 56 Google örnek reklam birimi kullanır. Console SSV testi başarılı olsa da bu sürümde reklam izleme sonucu sunucu kredisi kabul edilmiş sayılmaz. Gerçek rewarded birimi, kayıtlı test cihazı/test modu ve o birimin SSV adresiyle uçtan uca test hazırlanır; canlı reklama otomatik tıklanmaz.
