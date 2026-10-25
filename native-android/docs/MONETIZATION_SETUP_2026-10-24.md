@@ -9,7 +9,7 @@ Implementation is in [draft PR #179](https://github.com/yurkenn/english-tales/pu
 - Staging energy switch is enabled. Migration and three Edge Functions are deployed. RLS blocks direct client writes to all four new tables. Seven service settings were supplied through authenticated CLI. Credentials stay in ignored local files.
 - Existing single-owner internal tester list is selected; the old 26-person list remains unselected. That same owner list was selected for Google Play license testing and saved. Google applies license tester configuration developer-wide; no new email addresses were added.
 - Test ads only, telemetry disabled, Firebase initialization removed from this QA variant, and a persistent test notice is visible. Account sessions already namespace tokens by service URL. Reauthentication against the test project may be needed. The sandbox bundle must never be promoted to production.
-- Production Play 52 / 2.3.1 and production backend were not changed. The production release flag remains off pending actual purchase/SSV acceptance and store setup.
+- Production binary 52 / 2.3.1 and production backend were not changed. Play subscription prices were updated store-wide for new subscribers in the approved 19 countries. The production release flag remains off pending actual purchase/SSV acceptance and store setup.
 
 ## Validation
 
@@ -23,15 +23,22 @@ Implementation is in [draft PR #179](https://github.com/yurkenn/english-tales/pu
 - Existing RevenueCat project `3344db47`, Play app `app894ba988f6`; `premium` entitlement has only Play monthly/yearly. Default `energy_premium_v1` offering has monthly and annual packages. Old default offering is reversibly inactive; historical products, entitlements and purchases were preserved.
 - Sandbox-only webhook `whintgr450a31118f` targets staging and the existing Play app. Owner explicitly approved the shared authorization configuration. RevenueCat Send Test Event returned **HTTP 200 / ignored**. This proves authenticated delivery, not a purchase lifecycle.
 - Publishing the enabled Billing-capable internal build unlocked the Play catalog. Existing `monthly:monthly-base` and `yearly:yearly-base` each have one active base plan. No replacement products are needed.
-- [Approved 19-country price plan](REGIONAL_PRICING_2026-10-25.md). Monthly edits are being prepared in Play but have **not yet been committed with Save changes**. Annual edits have not started. Do not report the target prices as live until saved and re-read. Existing subscribers' legacy price cohorts must not be migrated as part of this change.
+- [Approved 19-country price plan](REGIONAL_PRICING_2026-10-25.md): **38/38 monthly/annual prices saved and re-read after page reload**. Existing subscribers retain their legacy price; no cohort migration was started. Country availability and other-country prices were preserved.
+- Privacy, deletion and subscription terms deployed to the existing `englishtales-app` Hosting site. All three public endpoints returned **HTTP 200 and exact source bytes**. [Hosting evidence](release-evidence/2026-10-24-monetization/hosting-verified.json). Firebase reauthentication completed without printing credentials.
+
+
+## AdMob verification
+
+Existing rewarded unit `ca-app-pub-6012481599277383/6069329647` now has reward `1 energy` and the staging SSV callback. Both settings were saved and re-read after reload. Google console verification succeeded: its signed test callback credited exactly one energy; replay returned `reward_acknowledged` and the wallet remained at one credit. A synthetic staging-only fixture was removed after verification; no real account was used. [SSV evidence](release-evidence/2026-10-24-monetization/admob-ssv-verified.json).
+
+The console always uses numeric test unit `1234567890`; staging explicitly permits that unit alongside the real rewarded unit and Google sample unit. These test IDs must not enter production configuration. Sandbox 56 still uses sample ads; a watched-ad SDK flow is not yet accepted.
 
 ## Remaining work
 
-1. Save and re-read both base plans' approved 19-country prices. Chrome native control currently needs a short pause in human browser activity; the pause request is pending. Existing old prices remain effective until the plan is saved.
-2. Configure a real AdMob rewarded unit and SSV endpoint. Sandbox currently permits the Google sample unit only; test callback acceptance is still open.
-3. Through the registered Play license test account verify buy, cancel, pending, restore, expiry/refund, account switching and server-verified entitlement. Verify an actual signed Google callback grants exactly one reward.
-4. Hosting source/build for updated privacy, deletion and subscription terms is ready; subscription terms currently return 404 publicly. Firebase CLI authentication requires local reauthentication before deployment.
-5. Native-language/RTL acceptance, Play privacy disclosures, production backend deployment/config, legacy cutoff/backfill and staged production release remain separate gates. Owner has authorized completing the setup; these are not routine approval stops.
+1. Verify a watched rewarded ad on a registered test device using the real unit. The unit/SSV configuration and Google console signed callback are accepted; sandbox 56 still uses Google sample ads.
+2. Follow the [device acceptance steps](MONETIZATION_DEVICE_ACCEPTANCE_2026-10-25.md). Through the registered Play license test account verify buy, cancel, pending, restore, expiry/refund, account switching and server-verified entitlement. Verify the watched-ad callback grants exactly one reward; the console signed-callback and replay checks already passed.
+3. Native-language/RTL acceptance, Play privacy disclosures, production backend deployment/config, legacy cutoff/backfill and staged production binary release remain separate gates. Owner has authorized completing setup; routine implementation does not require another approval.
+
 
 ## Limits and rollback
 

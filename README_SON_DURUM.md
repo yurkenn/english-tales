@@ -1,3 +1,7 @@
+# 25 Ekim 2026 — Açık Premium testi ve bölgesel fiyatlar
+
+56 / 2.4.0-sandbox mevcut tek kişilik dahili grupta **Available to internal testers**. Enerji/Premium test ortamında açık; test reklamları ve lisans testi kullanılır. 19 ülkenin **38/38 aylık/yıllık fiyatı** Play'de kaydedildi, yeniden okundu; mevcut aboneler taşınmadı. Gizlilik/hesap silme/abonelik koşulları Hosting'de HTTP 200 ve kaynakla aynı. Kaynak CI: **383 cihaz + 3 açılış + 3 servis**, hata/atlama yok; 148 JVM ve 240 backend başarılı. AdMob ödülü 1 enerji ve staging SSV kaydedildi; Google imzalı Console testi tam 1 kredi verdi, tekrar aynı istekte ikinci ödül çıkmadı. Telefonda reklam izleme, gerçek Play lisans testi satın alması ve üretim binary açılışı henüz tamamlanmadı. [PR #179](https://github.com/yurkenn/english-tales/pull/179) · [Güncel durum](native-android/docs/MONETIZATION_SETUP_2026-10-24.md). Aşağıdaki kayıtlar tarihçedir.
+
 # 25 Ekim 2026 — Enerji ve Premium hazırlığı
 
 Özellik üretimde kapalıdır. 24 Ekim canlı Console kontrolü: 52 / 2.3.1 üretimde erişilebilir, %100 dağıtım. Aşağıdaki gönderim kayıtları tarihçedir. [Güncel monetization durumu](native-android/docs/MONETIZATION_SETUP_2026-10-24.md).

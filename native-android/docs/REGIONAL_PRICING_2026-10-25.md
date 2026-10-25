@@ -1,6 +1,7 @@
 # Bölgesel abonelik fiyat önerisi — 25 Ekim 2026
 
-Durum: 19 ülkelik tablo 25 Ekim kullanıcı onayıyla uygulama hazırlığına alındı; Play kayıtları henüz yapılmadı. Bu belge veya fiyatlar uygulama runtime yapılandırması değildir. Bu turda Play fiyatı değiştirilmedi. Mevcut Console abonelik ekranı “Your app does not have any subscriptions yet / Upload a new APK” gösterdi; RevenueCat eski ürün kimliklerinin Play'deki güncel varlığı/fiyatı henüz doğrulanamadı. Dahili 53 paketinin yüklenmesi tek başına bu engeli kaldırmamış görünüyor; yayınlanmış Billing destekli test paketi ve doğru ürün kataloğu ayrıca doğrulanmalı.
+Durum: **19 ülkede aylık ve yıllık fiyatlar mevcut Play base planlarına kaydedildi ve sayfa yenilenerek 38/38 tutar doğrulandı.** Değişiklikler yeni aboneler içindir; mevcut abonelerin eski fiyat grupları taşınmadı. Diğer ülke fiyatları ve satışa açık ülke listesi değiştirilmedi. Uygulama fiyatları mağazadan getirir; bu belge runtime fiyat tablosu değildir. [Aylık kayıtlar](release-evidence/2026-10-24-monetization/monthly-prices-saved.json) · [Yıllık kayıtlar](release-evidence/2026-10-24-monetization/yearly-prices-saved.json). Ödeme ekranındaki gerçek lisans testi ayrıca açık.
+
 
 ## Kapsam ve gerekçe
 
@@ -14,25 +15,25 @@ Hedefler kullanıcıya gösterilecek toplam fiyat içindir. Play düzenleyicide 
 
 | Ülke kodu | Ülke | Dil örneği (fiyat anahtarı değil) | Para birimi | Aylık | Yıllık | Yıllık tasarruf | Durum |
 |---|---|---|---|---:|---:|---:|---|
-| TR | Türkiye | Türkçe | TRY | 99.99 | 699.99 | %41.7 | Onaylı |
-| US | ABD | İngilizce veya seçilen dil | USD | 3.99 | 24.99 | %47.8 | Uygulama onaylı |
-| GB | Birleşik Krallık | İngilizce veya seçilen dil | GBP | 2.99 | 19.99 | %44.3 | Uygulama onaylı |
-| CA | Kanada | İngilizce veya seçilen dil | CAD | 4.99 | 29.99 | %49.9 | Uygulama onaylı |
-| AU | Avustralya | İngilizce veya seçilen dil | AUD | 5.99 | 34.99 | %51.3 | Uygulama onaylı |
-| DE | Almanya | İngilizce yedek veya seçilen destekli dil | EUR | 3.99 | 24.99 | %47.8 | Uygulama onaylı |
-| ES | İspanya | İspanyolca (mevcut es-419) | EUR | 3.99 | 24.99 | %47.8 | Uygulama onaylı |
-| PT | Portekiz | Portekizce (mevcut pt-BR) | EUR | 2.99 | 19.99 | %44.3 | Uygulama onaylı |
-| MX | Meksika | İspanyolca | MXN | 39.00 | 249.00 | %46.8 | Uygulama onaylı |
-| BR | Brezilya | Portekizce | BRL | 9.99 | 59.99 | %50.0 | Uygulama onaylı |
-| IN | Hindistan | Hintçe / Bengalce / İngilizce | INR | 149.00 | 899.00 | %49.7 | Uygulama onaylı |
-| BD | Bangladeş | Bengalce | BDT | 149.00 | 899.00 | %49.7 | Uygulama onaylı |
-| PK | Pakistan | Urduca | PKR | 399.00 | 2499.00 | %47.8 | Uygulama onaylı |
-| ID | Endonezya | Endonezce | IDR | 19900.00 | 119900.00 | %49.8 | Uygulama onaylı |
-| VN | Vietnam | Vietnamca | VND | 39000.00 | 249000.00 | %46.8 | Uygulama onaylı |
-| TH | Tayland | Tayca | THB | 59.00 | 349.00 | %50.7 | Uygulama onaylı |
-| EG | Mısır | Arapça | EGP | 49.99 | 299.99 | %50.0 | Uygulama onaylı |
-| SA | Suudi Arabistan | Arapça | SAR | 9.99 | 59.99 | %50.0 | Uygulama onaylı |
-| AE | BAE | Arapça / İngilizce | AED | 9.99 | 59.99 | %50.0 | Uygulama onaylı |
+| TR | Türkiye | Türkçe | TRY | 99.99 | 699.99 | %41.7 | Play kaydı doğrulandı |
+| US | ABD | İngilizce veya seçilen dil | USD | 3.99 | 24.99 | %47.8 | Play kaydı doğrulandı |
+| GB | Birleşik Krallık | İngilizce veya seçilen dil | GBP | 2.99 | 19.99 | %44.3 | Play kaydı doğrulandı |
+| CA | Kanada | İngilizce veya seçilen dil | CAD | 4.99 | 29.99 | %49.9 | Play kaydı doğrulandı |
+| AU | Avustralya | İngilizce veya seçilen dil | AUD | 5.99 | 34.99 | %51.3 | Play kaydı doğrulandı |
+| DE | Almanya | İngilizce yedek veya seçilen destekli dil | EUR | 3.99 | 24.99 | %47.8 | Play kaydı doğrulandı |
+| ES | İspanya | İspanyolca (mevcut es-419) | EUR | 3.99 | 24.99 | %47.8 | Play kaydı doğrulandı |
+| PT | Portekiz | Portekizce (mevcut pt-BR) | EUR | 2.99 | 19.99 | %44.3 | Play kaydı doğrulandı |
+| MX | Meksika | İspanyolca | MXN | 39.00 | 249.00 | %46.8 | Play kaydı doğrulandı |
+| BR | Brezilya | Portekizce | BRL | 9.99 | 59.99 | %50.0 | Play kaydı doğrulandı |
+| IN | Hindistan | Hintçe / Bengalce / İngilizce | INR | 149.00 | 899.00 | %49.7 | Play kaydı doğrulandı |
+| BD | Bangladeş | Bengalce | BDT | 149.00 | 899.00 | %49.7 | Play kaydı doğrulandı |
+| PK | Pakistan | Urduca | PKR | 399.00 | 2499.00 | %47.8 | Play kaydı doğrulandı |
+| ID | Endonezya | Endonezce | IDR | 19900.00 | 119900.00 | %49.8 | Play kaydı doğrulandı |
+| VN | Vietnam | Vietnamca | VND | 39000.00 | 249000.00 | %46.8 | Play kaydı doğrulandı |
+| TH | Tayland | Tayca | THB | 59.00 | 349.00 | %50.7 | Play kaydı doğrulandı |
+| EG | Mısır | Arapça | EGP | 49.99 | 299.99 | %50.0 | Play kaydı doğrulandı |
+| SA | Suudi Arabistan | Arapça | SAR | 9.99 | 59.99 | %50.0 | Play kaydı doğrulandı |
+| AE | BAE | Arapça / İngilizce | AED | 9.99 | 59.99 | %50.0 | Play kaydı doğrulandı |
 
 ## Diğer pazarlar ve Rusça
 
@@ -59,4 +60,4 @@ Rusça arayüz desteği devam eder. Rusya Google Play faturalandırma kısıtı 
 
 ## Play kataloğu engeli çözüldü
 
-25 Ekim 56 açık sandbox paketi dahili kanala yayınlandıktan sonra Play mevcut `monthly` ve `yearly` ürünlerini göstermeye başladı. İkisinde de bir aktif base plan mevcut; son eski değişiklik tarihi 30 Aralık 2025. Bölgesel fiyat düzenlemesi bu mevcut ürünlerde sürdürülüyor.
+25 Ekim 56 açık sandbox paketi dahili kanala yayınlandıktan sonra Play mevcut `monthly` ve `yearly` ürünlerini göstermeye başladı. İkisinde de bir aktif base plan mevcut; son eski değişiklik tarihi 30 Aralık 2025. 19 ülkenin 38 aylık/yıllık fiyatı bu mevcut ürünlerde kaydedildi; yeni ürün oluşturulmadı.

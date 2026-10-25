@@ -1,8 +1,8 @@
 {
-  "status": "Unsaved base-plan edits; not live",
+  "status": "Historical unsaved snapshot; resolved by monthly-prices-saved.json",
   "changes": [
     {
-      "country": "Türkiye",
+      "country": "T\u00fcrkiye",
       "currency": "TRY",
       "before": "82.99",
       "after": "99.99"

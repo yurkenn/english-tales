@@ -20,5 +20,6 @@
   "productionChanged": false,
   "firebaseInitialization": false,
   "licenseTesting": "existing 1-person owner email list selected and saved; developer-wide setting",
-  "standaloneLaunch": "verified actual banner screenshot, no instrumentation"
+  "standaloneLaunch": "verified actual banner screenshot, no instrumentation",
+  "productionChangedScope": "binary and backend at sandbox publication time; subsequent store-wide new-subscriber prices are recorded separately"
 }
