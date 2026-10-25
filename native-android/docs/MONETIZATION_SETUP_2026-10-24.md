@@ -1,13 +1,13 @@
 # Monetization implementation and acceptance status
 
-Updated 25 October 2026. Source branch: `codex/energy-premium` in the attached energy-premium worktree. No source commit or PR has been created yet.
+Updated 25 October 2026. Source branch: `codex/energy-premium` in the attached energy-premium worktree. Source checkpoint committed and merged with current master e89d75f; a draft PR is being prepared.
 
 ## Implemented and verified
 
 - Product contract: [detailed plan](MONETIZATION_PLAN_2026-10-24.md). Daily 3 energy, new story costs 1, permanent energy unlocks, free translation/review, opt-in rewarded +1 up to 3/day, monthly/annual unlimited Premium. No energy packs.
 - Actual Claude CLI architecture review, backend implementation, and final independent review are preserved in the three CLAUDE_MONETIZATION reports. Findings around pending purchases, midnight reservations, account isolation and legacy cutoff were addressed.
-- Backend: 229 tests passed, including PostgreSQL-compatible PGlite migration/RPC tests and cryptographically signed SSV fixtures. Android: 148 JVM tests, 6 targeted API36 device tests, debug builds and lint passed with zero failures/errors/skips. These are targeted device checks, not a new full regression-suite acceptance.
-- Signed release candidate 53 / 2.4.0 built successfully with monetization disabled. Hash/counts: [verification.json](release-evidence/2026-10-24-monetization/verification.json). Uploaded to Play internal draft preparation; the Save as draft action was taken, but the resulting persisted draft has not yet been rechecked. Not released to testers or production.
+- Backend: 229 tests passed before master integration; 240 passed after integration, including PostgreSQL-compatible PGlite migration/RPC tests and cryptographically signed SSV fixtures. Android: 148 JVM tests, 6 targeted API36 device tests, debug builds and lint passed with zero failures/errors/skips. These are targeted device checks, not a new full regression-suite acceptance.
+- Signed release candidate 53 / 2.4.0 built successfully with monetization disabled. Hash/counts: [verification.json](release-evidence/2026-10-24-monetization/verification.json). Uploaded to Play internal draft preparation; the Save as draft action was taken, but the persisted draft was rechecked 25 October. Not released to testers or production.
 - Hosting build succeeded; privacy, account deletion and subscription terms source prepared. Hosting deployment remains open.
 
 ## External service state
@@ -37,3 +37,7 @@ Supabase advisor reports include intentional SECURITY DEFINER RPC and deny-all t
 ## Bölgesel fiyat hazırlığı — 25 Ekim
 
 12 arayüz dili kaynak üzerinden doğrulandı. [19 ülkelik öneri ve uygulama sınırları](REGIONAL_PRICING_2026-10-25.md) hazır. Türkiye dışındaki fiyatlar öneri; bu turda mağazada fiyat değiştirilmedi. Canlı abonelik ekranında APK yükleme yönlendirmesi hâlâ mevcut; kataloğun açılması ayrıca çözülmeli.
+
+## 25 October integration and localization
+
+Current master was merged, preserving release 52 account/chest handoff and league consent changes. Candidate 53 predates those changes and must not be distributed. A new signed candidate 54 / 2.4.0 is being built with monetization off; build acceptance is recorded separately when it completes. All 29 strings are now present in the ten additional locale folders plus explicit Turkish mirror. `verify_localization.py` passes all existing localization checks. Native-speaker review and Arabic/Urdu visual acceptance remain open. The instrumentation test now checks disabled-gate bypass on default builds instead of skipping, and exhausted-gate choices on enabled preview builds.

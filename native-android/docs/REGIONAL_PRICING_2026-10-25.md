@@ -1,6 +1,6 @@
 # Bölgesel abonelik fiyat önerisi — 25 Ekim 2026
 
-Durum: Türkiye tutarları kullanıcı tarafından onaylı; diğer tutarlar değerlendirmeye hazır öneridir. Bu belge veya fiyatlar uygulama runtime yapılandırması değildir. Bu turda Play fiyatı değiştirilmedi. Mevcut Console abonelik ekranı “Your app does not have any subscriptions yet / Upload a new APK” gösterdi; RevenueCat eski ürün kimliklerinin Play'deki güncel varlığı/fiyatı henüz doğrulanamadı. Dahili 53 paketinin yüklenmesi tek başına bu engeli kaldırmamış görünüyor; yayınlanmış Billing destekli test paketi ve doğru ürün kataloğu ayrıca doğrulanmalı.
+Durum: 19 ülkelik tablo 25 Ekim kullanıcı onayıyla uygulama hazırlığına alındı; Play kayıtları henüz yapılmadı. Bu belge veya fiyatlar uygulama runtime yapılandırması değildir. Bu turda Play fiyatı değiştirilmedi. Mevcut Console abonelik ekranı “Your app does not have any subscriptions yet / Upload a new APK” gösterdi; RevenueCat eski ürün kimliklerinin Play'deki güncel varlığı/fiyatı henüz doğrulanamadı. Dahili 53 paketinin yüklenmesi tek başına bu engeli kaldırmamış görünüyor; yayınlanmış Billing destekli test paketi ve doğru ürün kataloğu ayrıca doğrulanmalı.
 
 ## Kapsam ve gerekçe
 
@@ -15,24 +15,24 @@ Hedefler kullanıcıya gösterilecek toplam fiyat içindir. Play düzenleyicide 
 | Ülke kodu | Ülke | Dil örneği (fiyat anahtarı değil) | Para birimi | Aylık | Yıllık | Yıllık tasarruf | Durum |
 |---|---|---|---|---:|---:|---:|---|
 | TR | Türkiye | Türkçe | TRY | 99.99 | 699.99 | %41.7 | Onaylı |
-| US | ABD | İngilizce veya seçilen dil | USD | 3.99 | 24.99 | %47.8 | Öneri |
-| GB | Birleşik Krallık | İngilizce veya seçilen dil | GBP | 2.99 | 19.99 | %44.3 | Öneri |
-| CA | Kanada | İngilizce veya seçilen dil | CAD | 4.99 | 29.99 | %49.9 | Öneri |
-| AU | Avustralya | İngilizce veya seçilen dil | AUD | 5.99 | 34.99 | %51.3 | Öneri |
-| DE | Almanya | İngilizce yedek veya seçilen destekli dil | EUR | 3.99 | 24.99 | %47.8 | Öneri |
-| ES | İspanya | İspanyolca (mevcut es-419) | EUR | 3.99 | 24.99 | %47.8 | Öneri |
-| PT | Portekiz | Portekizce (mevcut pt-BR) | EUR | 2.99 | 19.99 | %44.3 | Öneri |
-| MX | Meksika | İspanyolca | MXN | 39.00 | 249.00 | %46.8 | Öneri |
-| BR | Brezilya | Portekizce | BRL | 9.99 | 59.99 | %50.0 | Öneri |
-| IN | Hindistan | Hintçe / Bengalce / İngilizce | INR | 149.00 | 899.00 | %49.7 | Öneri |
-| BD | Bangladeş | Bengalce | BDT | 149.00 | 899.00 | %49.7 | Öneri |
-| PK | Pakistan | Urduca | PKR | 399.00 | 2499.00 | %47.8 | Öneri |
-| ID | Endonezya | Endonezce | IDR | 19900.00 | 119900.00 | %49.8 | Öneri |
-| VN | Vietnam | Vietnamca | VND | 39000.00 | 249000.00 | %46.8 | Öneri |
-| TH | Tayland | Tayca | THB | 59.00 | 349.00 | %50.7 | Öneri |
-| EG | Mısır | Arapça | EGP | 49.99 | 299.99 | %50.0 | Öneri |
-| SA | Suudi Arabistan | Arapça | SAR | 9.99 | 59.99 | %50.0 | Öneri |
-| AE | BAE | Arapça / İngilizce | AED | 9.99 | 59.99 | %50.0 | Öneri |
+| US | ABD | İngilizce veya seçilen dil | USD | 3.99 | 24.99 | %47.8 | Uygulama onaylı |
+| GB | Birleşik Krallık | İngilizce veya seçilen dil | GBP | 2.99 | 19.99 | %44.3 | Uygulama onaylı |
+| CA | Kanada | İngilizce veya seçilen dil | CAD | 4.99 | 29.99 | %49.9 | Uygulama onaylı |
+| AU | Avustralya | İngilizce veya seçilen dil | AUD | 5.99 | 34.99 | %51.3 | Uygulama onaylı |
+| DE | Almanya | İngilizce yedek veya seçilen destekli dil | EUR | 3.99 | 24.99 | %47.8 | Uygulama onaylı |
+| ES | İspanya | İspanyolca (mevcut es-419) | EUR | 3.99 | 24.99 | %47.8 | Uygulama onaylı |
+| PT | Portekiz | Portekizce (mevcut pt-BR) | EUR | 2.99 | 19.99 | %44.3 | Uygulama onaylı |
+| MX | Meksika | İspanyolca | MXN | 39.00 | 249.00 | %46.8 | Uygulama onaylı |
+| BR | Brezilya | Portekizce | BRL | 9.99 | 59.99 | %50.0 | Uygulama onaylı |
+| IN | Hindistan | Hintçe / Bengalce / İngilizce | INR | 149.00 | 899.00 | %49.7 | Uygulama onaylı |
+| BD | Bangladeş | Bengalce | BDT | 149.00 | 899.00 | %49.7 | Uygulama onaylı |
+| PK | Pakistan | Urduca | PKR | 399.00 | 2499.00 | %47.8 | Uygulama onaylı |
+| ID | Endonezya | Endonezce | IDR | 19900.00 | 119900.00 | %49.8 | Uygulama onaylı |
+| VN | Vietnam | Vietnamca | VND | 39000.00 | 249000.00 | %46.8 | Uygulama onaylı |
+| TH | Tayland | Tayca | THB | 59.00 | 349.00 | %50.7 | Uygulama onaylı |
+| EG | Mısır | Arapça | EGP | 49.99 | 299.99 | %50.0 | Uygulama onaylı |
+| SA | Suudi Arabistan | Arapça | SAR | 9.99 | 59.99 | %50.0 | Uygulama onaylı |
+| AE | BAE | Arapça / İngilizce | AED | 9.99 | 59.99 | %50.0 | Uygulama onaylı |
 
 ## Diğer pazarlar ve Rusça
 
@@ -44,7 +44,7 @@ Rusça arayüz desteği devam eder. Rusya Google Play faturalandırma kısıtı 
 
 1. Aynı aylık/yıllık ürünleri ve `premium` entitlement'ını koru; her dil için yeni ürün oluşturma. Play base plan ülke fiyatlarını yönetir, RevenueCat eşler.
 2. Play'de ürün kataloğunu açıp mevcut fiyat/aboneleri dışarıdan doğrula; eski abonelerin fiyat cohort migration'ını yeni fiyat girişine dahil etme.
-3. Yeni monetization.xml şu an yalnız varsayılan Türkçe ve values-en İngilizce. Diğer on dil için Premium/yenileme/restore/iptal/hata metinleri çevrilmeden yerelleştirme tamamlandı denmez. RTL Arapça/Urduca ve uzun metin QA yapılmalı.
+3. 29 Premium/enerji metni, Türkçe ve İngilizceye ek 10 dilde Claude taslaklarından eklendi; Türkçe mirror dahil tüm kaynak/format kontrolleri geçti. Ana dil incelemesi, RTL Arapça/Urduca ve uzun metin görsel QA açık.
 4. RevenueCat mağazadan biçimlendirilmiş fiyatı gösterir; dil veya IP'den fiyat hesaplama. Yıllık toplam tek seferde tahsil edilir; aylık eşdeğer varsa ikincil gösterim ve açık açıklama kullan.
 5. Her öncelikli pazarda lisans test hesabıyla görünen fiyat = Play ödeme ekranı toplamı kontrolü. Dil değiştirmek mağaza ülke fiyatını değiştirmemeli. Gerçek para harcamadan test yöntemi doğrulanmalı.
 6. Teklif/Premium görüntülenmesi → satın alma dönüşümü, ücretli aktiflik, yenileme, iade ve D7 okumayı ülke bazında yeterli örneklemle değerlendir. Küçük örneklemlerle fiyat kazananı ilan etme. Gelir hesabında vergi, mağaza komisyonu, iade ve servis giderlerini ayrıca çıkar.

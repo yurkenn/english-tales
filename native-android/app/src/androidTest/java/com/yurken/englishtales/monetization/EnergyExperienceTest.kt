@@ -19,10 +19,23 @@ import java.io.File
 /** Real rendered screens, isolated from production accounts and ad traffic. */
 class EnergyExperienceTest {
     @get:Rule val compose=createEmptyComposeRule()
-    @Test fun exhaustedReaderShowsChoicesAndNeverStartsTheStory() {
-        org.junit.Assume.assumeTrue(com.yurken.englishtales.BuildConfig.MONETIZATION_ENABLED)
+    @Test fun readerRespectsConfiguredEnergyPolicy() {
         val instrumentation=InstrumentationRegistry.getInstrumentation()
         val context=instrumentation.targetContext
+        if(!com.yurken.englishtales.BuildConfig.MONETIZATION_ENABLED) {
+            val disabledScenario=ActivityScenario.launch(MainActivity::class.java)
+            var opened=false
+            try {
+                disabledScenario.onActivity { activity ->
+                    val model=MonetizationViewModel(context.applicationContext as Application)
+                    activity.setContent {EnglishTalesTheme {ReaderEnergyAccess(model,"fixture-new",true,{}, {}) {opened=true}}}
+                }
+                compose.waitForIdle()
+                assertTrue(opened)
+                compose.onNodeWithText(context.getString(R.string.energy_empty)).assertDoesNotExist()
+            } finally {disabledScenario.close()}
+            return
+        }
         val file=File(context.filesDir,"energy-guest.json")
         val previous=if(file.exists()) file.readBytes() else null
         val now=System.currentTimeMillis()

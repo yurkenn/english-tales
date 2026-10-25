@@ -1,0 +1,31 @@
+<resources>
+    <string name="energy_title">Lượt đọc của bạn</string>
+    <string name="energy_balance">Còn %1$d lượt đọc</string>
+    <string name="energy_description">Mở 3 truyện mới mỗi ngày. Mở lại truyện đã mở khóa, bản dịch và ôn từ vựng vẫn miễn phí.</string>
+    <string name="energy_reset">Lượt miễn phí của bạn được nạp lại thành 3 vào %1$s.</string>
+    <string name="energy_empty">Bạn đã dùng hết lượt đọc hôm nay</string>
+    <string name="energy_gate_description">Quay lại các truyện đã mở khóa, chờ lượt miễn phí được nạp lại, hoặc chọn cách khác để tiếp tục đọc.</string>
+    <string name="energy_watch">Xem quảng cáo · +1 lượt đọc</string>
+    <string name="energy_reward_limit">Bạn đã dùng hết 3 phần thưởng quảng cáo trong ngày.</string>
+    <string name="energy_sign_in">Đăng nhập để nhận thêm lượt hoặc Premium</string>
+    <string name="energy_guest_note">Lượt của khách được lưu trên thiết bị này. Đăng nhập để nhận thưởng từ quảng cáo hoặc mua hàng.</string>
+    <string name="energy_premium">Đọc không giới hạn với Premium</string>
+    <string name="energy_premium_active">Premium · Đọc không giới hạn</string>
+    <string name="energy_premium_description">Truyện không giới hạn và học không quảng cáo.</string>
+    <string name="energy_premium_end">Quyền truy cập Premium đến: %1$s</string>
+    <string name="energy_unavailable">Không thể hoàn tất thao tác này. Các truyện đã mở khóa của bạn vẫn an toàn. Hãy kiểm tra kết nối và thử lại.</string>
+    <string name="energy_pending">Đang chờ xác minh. Làm mới tài khoản để kiểm tra lại.</string>
+    <string name="energy_refresh">Kiểm tra lại</string>
+    <string name="energy_restore">Khôi phục giao dịch mua</string>
+    <string name="energy_monthly">%1$s / tháng</string>
+    <string name="energy_annual">%1$s / năm</string>
+    <string name="energy_renewal">Gói đăng ký của bạn tự động gia hạn theo chu kỳ đã chọn với mức giá cửa hàng hiển thị cho đến khi bị hủy. Việc hủy sẽ dừng lần gia hạn tiếp theo; quyền truy cập hiện tại của bạn vẫn tiếp tục.</string>
+    <string name="energy_manage">Quản lý gói đăng ký</string>
+    <string name="energy_close">Quay lại</string>
+    <string name="energy_offer_unavailable">Các tùy chọn Premium hiện không khả dụng. Bạn có thể tiếp tục đọc miễn phí.</string>
+    <string name="energy_retry_read">Thử mở lại truyện</string>
+    <string name="energy_terms">Điều khoản đăng ký</string>
+    <string name="energy_privacy">Quyền riêng tư</string>
+    <string name="energy_delete_warning">Xóa tài khoản không hủy gói đăng ký Google Play. Hãy quản lý các gói đăng ký Google Play trước để ngừng các khoản thanh toán trong tương lai.</string>
+    <string name="energy_checking">Đang kiểm tra lượt đọc của bạn…</string>
+</resources>

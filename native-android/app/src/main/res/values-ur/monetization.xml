@@ -1,0 +1,31 @@
+<resources>
+    <string name="energy_title">آپ کے ریڈنگ پاس</string>
+    <string name="energy_balance">باقی ریڈنگ پاس: %1$d</string>
+    <string name="energy_description">ہر روز 3 نئی کہانیاں کھولیں۔ ان لاک کی گئی کہانیاں دوبارہ کھولنا، ترجمے اور الفاظ کی دہرائی مفت رہتے ہیں۔</string>
+    <string name="energy_reset">آپ کے مفت پاس %1$s کو دوبارہ 3 ہو جائیں گے۔</string>
+    <string name="energy_empty">آپ آج کے ریڈنگ پاس استعمال کر چکے ہیں</string>
+    <string name="energy_gate_description">ان لاک کی گئی کہانیوں پر واپس جائیں، مفت ری فل کا انتظار کریں، یا پڑھنا جاری رکھنے کا کوئی طریقہ منتخب کریں۔</string>
+    <string name="energy_watch">اشتہار دیکھیں · +1 ریڈنگ پاس</string>
+    <string name="energy_reward_limit">آپ روزانہ کے تمام 3 اشتہاری انعامات استعمال کر چکے ہیں۔</string>
+    <string name="energy_sign_in">اضافی پاس یا Premium کے لیے سائن ان کریں</string>
+    <string name="energy_guest_note">مہمان پاس اسی ڈیوائس پر محفوظ رہتے ہیں۔ اشتہاری انعامات حاصل کرنے یا خریداری کرنے کے لیے سائن ان کریں۔</string>
+    <string name="energy_premium">Premium کے ساتھ بغیر حد کے پڑھیں</string>
+    <string name="energy_premium_active">Premium · لامحدود مطالعہ</string>
+    <string name="energy_premium_description">لامحدود کہانیاں اور اشتہارات کے بغیر سیکھنا۔</string>
+    <string name="energy_premium_end">Premium رسائی اس تاریخ تک: %1$s</string>
+    <string name="energy_unavailable">یہ کارروائی مکمل نہیں ہو سکی۔ آپ کی ان لاک کی گئی کہانیاں محفوظ ہیں۔ اپنا کنکشن چیک کریں اور دوبارہ کوشش کریں۔</string>
+    <string name="energy_pending">تصدیق ابھی زیرِ التوا ہے۔ دوبارہ چیک کرنے کے لیے اپنا اکاؤنٹ ریفریش کریں۔</string>
+    <string name="energy_refresh">دوبارہ چیک کریں</string>
+    <string name="energy_restore">خریداریاں بحال کریں</string>
+    <string name="energy_monthly">%1$s / ماہ</string>
+    <string name="energy_annual">%1$s / سال</string>
+    <string name="energy_renewal">آپ کی سبسکرپشن منسوخ کیے جانے تک منتخب مدت کے لیے اسٹور میں دکھائی گئی قیمت پر خودبخود تجدید ہوتی رہتی ہے۔ منسوخ کرنے سے اگلی تجدید رک جاتی ہے؛ آپ کی موجودہ رسائی جاری رہتی ہے۔</string>
+    <string name="energy_manage">سبسکرپشن کا نظم کریں</string>
+    <string name="energy_close">واپس جائیں</string>
+    <string name="energy_offer_unavailable">Premium کے اختیارات فی الحال دستیاب نہیں ہیں۔ آپ مفت پڑھنا جاری رکھ سکتے ہیں۔</string>
+    <string name="energy_retry_read">کہانی دوبارہ کھولنے کی کوشش کریں</string>
+    <string name="energy_terms">سبسکرپشن کی شرائط</string>
+    <string name="energy_privacy">رازداری</string>
+    <string name="energy_delete_warning">اکاؤنٹ ڈیلیٹ کرنے سے Google Play سبسکرپشن منسوخ نہیں ہوتی۔ آئندہ ادائیگیاں روکنے کے لیے پہلے اپنی Google Play سبسکرپشنز کا نظم کریں۔</string>
+    <string name="energy_checking">آپ کا ریڈنگ پاس چیک کیا جا رہا ہے…</string>
+</resources>
