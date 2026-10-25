@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="content_message_language_incomplete">এই ভাষার কিছু অনুবাদ এখনো ডাউনলোড হয়নি। আপনি ইংরেজিতে গল্পটি পড়তে পারেন এবং সংযোগ পেলে আবার চেষ্টা করতে পারেন।</string>
+    <string name="guest_chest_transfer_note">অতিথির মিশন চেস্টের বোনাস অতিথি এলাকায় থাকে; আপনার অ্যাকাউন্ট বা লিগের XP-তে স্থানান্তরিত হয় না।</string>
+</resources>

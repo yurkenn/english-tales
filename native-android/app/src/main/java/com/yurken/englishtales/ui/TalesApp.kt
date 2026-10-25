@@ -70,9 +70,14 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
     fun google() {uiScope.launch {viewModel.signInGoogle {GoogleSignIn.acquire(context,BuildConfig.GOOGLE_WEB_CLIENT_ID)}}}
     // Weekly league: refreshed on account change, on return to the app and when an upload finishes, since XP is counted on the server.
     val leagues: LeagueViewModel=viewModel()
+    val leagueUser=account.userId.takeUnless {account.busy || account.needsSignIn}
     val leagueState by leagues.state.collectAsState()
     val friendState by leagues.friends.collectAsState()
-    LaunchedEffect(account.userId,account.sync.running) {if(!account.sync.running) {leagues.refresh(account.userId);leagues.refreshChests(account.userId);leagues.retryChest(snapshot.ownerId,account.userId)}}
+    LaunchedEffect(account.userId,account.sync.running,account.busy,account.needsSignIn,account.syncCompleted) {leagues.accountChanged(leagueUser);if(!account.sync.running && !account.busy) {leagues.refresh(leagueUser);leagues.refreshChests(leagueUser)}}
+    LaunchedEffect(account.userId,account.busy,account.syncCompleted) {
+        val current=viewModel.account.value
+        if(!current.busy) leagues.retryChest(viewModel.state.value.ownerId,current.userId,current.syncCompleted)
+    }
     // Chest points are added to the snapshot's points, so a newly opened or mirrored chest re-reads it.
     val chestState by leagues.chest.collectAsState()
     val chestVersion by leagues.chestVersion.collectAsState()
@@ -81,7 +86,7 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
         val observer=androidx.lifecycle.LifecycleEventObserver {_,event -> when(event) {
             androidx.lifecycle.Lifecycle.Event.ON_START -> viewModel.setForeground(true)
             androidx.lifecycle.Lifecycle.Event.ON_STOP -> viewModel.setForeground(false)
-            androidx.lifecycle.Lifecycle.Event.ON_RESUME -> {monetization.refresh();viewModel.refresh();leagues.refresh(viewModel.account.value.userId);viewModel.verifyAccount(5*60_000);LearningReminders.schedule(context);if(content.ready.value) content.refreshIfStale()}
+            androidx.lifecycle.Lifecycle.Event.ON_RESUME -> {monetization.refresh();viewModel.refresh();if(!viewModel.account.value.busy && !viewModel.account.value.needsSignIn) leagues.refresh(viewModel.account.value.userId);viewModel.verifyAccount(5*60_000);LearningReminders.schedule(context);if(content.ready.value) content.refreshIfStale()}
             else -> {}
         }}
         lifecycle.addObserver(observer)
@@ -158,9 +163,9 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
     // League changes since the last read: a climb or new XP gets a toast, and a finished week gets its result once.
     var leagueResult by rememberSaveable {mutableStateOf<Pair<Int,Int>?>(null)}
     var leagueOutcome by rememberSaveable {mutableStateOf("")}
-    LaunchedEffect(leagueState,account.userId) {
+    LaunchedEffect(leagueState,leagueUser) {
         val ready=leagueState as? LeagueUi.Ready ?: return@LaunchedEffect
-        val user=account.userId ?: return@LaunchedEffect
+        val user=leagueUser ?: return@LaunchedEffect
         if(ready.busy) return@LaunchedEffect
         val standing=ready.standing
         val previous=LeagueMemory.remember(rewardContext,user,standing)
@@ -193,9 +198,13 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
                     Box(Modifier.weight(1f)) {
                         MainTabs(snapshot,selectedTab,{selectedTab=it},onOpenStory={nav.navigate("story/$it")},onOpenWords={nav.navigate("words")},onLessonComplete=viewModel::completeLesson,onWordReviewed={id,correct -> viewModel.reviewWord(id,correct)},onRead={id -> val revision=snapshot.resumeRevision(id); nav.navigate("reader/$id"+(revision?.let {"?revision=$it"}?:""))},onPractice=::practice,onSettings={nav.navigate("settings")},onAccount={nav.navigate("account")},launchId=launchId,launchWords=launchWords,onLaunchConsumed={launchId=null},onDailyPlan=::dailyPlan,onSessionStart={id,kind,count ->viewModel.beginSession(id,kind,count,null)},onCheckpoint=viewModel::checkpointSession,onSessionAbandoned=viewModel::abandonSession,onCompletedExit=::completedExit,library=library,
                             league={modifier -> LeagueCard(leagueState,onOpen={nav.navigate("league")},onAccount={nav.navigate("account")},modifier=modifier)},
-                            quests={modifier -> DailyQuestsCard(snapshot,chestState,onOpenChest={leagues.openChest(snapshot.ownerId,account.userId,LearningPolicy.dayKey(System.currentTimeMillis())) {
-                                    // A sync that cannot start now is never awaited: retry at once, and a still-missing quest then shows the failure.
-                                    viewModel.syncNow();if(!viewModel.account.value.sync.running) leagues.retryChest(snapshot.ownerId,account.userId)}},
+                            quests={modifier -> DailyQuestsCard(snapshot,chestState,onOpenChest={leagues.openChest(snapshot.ownerId,leagueUser,LearningPolicy.dayKey(System.currentTimeMillis())) {
+                                    // A queued rerun completes before retrying; a sync that cannot be requested gives a timely failure.
+                                    val ticket=viewModel.syncForChest()
+                                    if(ticket==null) leagues.failChestSync() else {
+                                        leagues.waitForChestSync(ticket-1)
+                                        leagues.retryChest(snapshot.ownerId,leagueUser,viewModel.account.value.syncCompleted)
+                                    }}},
                                 onDismissChest=leagues::dismissChest,modifier=modifier)})
                     }
                 }
@@ -215,7 +224,7 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
                 val retainedRevision = entry.savedStateHandle.get<String>("reader_revision") ?: entry.arguments?.getString("revision")?.takeIf {it.isNotBlank()}
                 val initial = retainedRevision?.let(LearningContent::revision) ?: LearningContent.storyById[storyId]
                 var selectedStory by remember(entry) { mutableStateOf(initial?.takeIf { it.sentences.isNotEmpty() }) }
-                LaunchedEffect(entry) { if (selectedStory == null && initial != null) content.download(initial) { selectedStory = it } }
+                LaunchedEffect(entry) { if (initial != null && (selectedStory == null || content.repository.needsLanguageRepair(initial))) content.download(initial) { selectedStory = it } }
                 if (selectedStory == null) {
                     ContentDownloadScreen(content,initial,onBack={nav.popBackStack()},onReady={selectedStory=it})
                 }
@@ -240,14 +249,14 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
             }
             composable("settings") {LearningSettingsScreen(snapshot,onBack={nav.popBackStack()},onSave={level,genre,goal,name ->viewModel.updatePreferences(level,genre,goal,name);nav.popBackStack()})}
             composable("downloads") {ContentDownloadsScreen(content,onBack={nav.popBackStack()})}
-            composable("account") {AccountScreen(account,onBack={nav.popBackStack()},onSignIn=viewModel::signIn,onSignOut=viewModel::signOut,onGoogle=::google,onTransfer=viewModel::transferGuestProgress,onSync=viewModel::syncNow,onResolvePreferences=viewModel::resolvePreferences,onSignUp=viewModel::signUp,onRecovery=viewModel::requestRecovery,onCompleteCode=viewModel::completeEmailCode,onResendCode=viewModel::resendEmailCode,onCancelCode=viewModel::cancelEmailCode,onDeleteAccount=viewModel::deleteAccount,onGuest={
+            composable("account") {AccountScreen(account,onBack={nav.popBackStack()},onSignIn=viewModel::signIn,onSignOut=viewModel::signOut,onGoogle=::google,onTransfer=viewModel::transferGuestProgress,onSync=viewModel::syncNow,onResolvePreferences=viewModel::resolvePreferences,onSignUp=viewModel::signUp,onRecovery=viewModel::requestRecovery,onCompleteCode=viewModel::completeEmailCode,onResendCode=viewModel::resendEmailCode,onCancelCode=viewModel::cancelEmailCode,onDeleteAccount={if(!account.busy && !account.needsSignIn && account.userId!=null) {leagues.accountChanged(null);viewModel.deleteAccount()}},onGuest={
                 if(snapshot.onboardingDone) nav.popBackStack() else nav.navigate("onboarding") {popUpTo("welcome") {inclusive=true}}
             })}
-            composable("league") {LeagueScreen(leagueState,snapshot.displayName,onBack={nav.popBackStack()},onRefresh={leagues.refresh(account.userId)},
-                onOptOut={leagues.setOptedOut(account.userId,it)},onSettings={nav.navigate("settings")},
+            composable("league") {LeagueScreen(leagueState,snapshot.displayName,onBack={nav.popBackStack()},onRefresh={leagues.refresh(leagueUser)},
+                onOptOut={leagues.setOptedOut(leagueUser,it)},onSettings={nav.navigate("settings")},
                 onSaveName={name -> viewModel.updatePreferences(snapshot.level,snapshot.preferredGenre,snapshot.dailyGoal,name)},
-                friends=friendState,friendActions=FriendActions({leagues.refreshFriends(account.userId)},{leagues.createCode(account.userId)},
-                    {leagues.addFriend(account.userId,it)},{leagues.removeFriend(account.userId,it)},{leagues.reportName(account.userId,it)}))}
+                friends=friendState,friendActions=FriendActions({leagues.refreshFriends(leagueUser)},{leagues.createCode(leagueUser)},
+                    {leagues.addFriend(leagueUser,it)},{leagues.removeFriend(leagueUser,it)},{leagues.reportName(leagueUser,it)}))}
             composable("words") { SavedWordsScreen(snapshot,onBack={nav.popBackStack()},onRemoveWord=viewModel::removeWord,onBrowse={selectedTab=1;nav.popBackStack("main",false)}) }
         }
     }

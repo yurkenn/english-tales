@@ -1,3 +1,11 @@
+# 25 Ekim 2026 — Enerji ve Premium hazırlığı
+
+Özellik üretimde kapalıdır. 24 Ekim canlı Console kontrolü: 52 / 2.3.1 üretimde erişilebilir, %100 dağıtım. Aşağıdaki gönderim kayıtları tarihçedir. [Güncel monetization durumu](native-android/docs/MONETIZATION_SETUP_2026-10-24.md).
+
+# 24 Ekim 2026 — 52 üretim gönderimi
+
+52 / 2.3.1 dahili testte yayımlandı; aynı paket %100 üretim dağıtımı için Google incelemesine gönderildi. Play: **Changes in review**, hızlı kontroller sürüyor, gönderilmemiş değişiklik yok. Onaydan sonra otomatik yayım (managed publishing kapalı). Fiziksel cihaz/runtime/editör kabul eksikleri kapanmış sayılmaz. [Güncel yayın kaydı](native-android/docs/RELEASE_52_STATUS.md). Aşağıdaki eski durum kayıtları tarihsel kanıttır.
+
 # English Tales — son çalışmalar ve yayın durumu
 
 Son güncelleme: **24 Ekim 2026**.
@@ -9,6 +17,13 @@ Gelecek işler ve öncelik sırası: [90 günlük yol haritası](native-android/
 Claude ile ortak plan ve uygulama `codex/energy-premium` dalında hazırlandı: günlük 3 hikâye hakkı, SSV doğrulamalı ödüllü reklam ve RevenueCat aylık/yıllık Premium. Özellik varsayılan kapalıdır. Supabase **test** ortamına migration ve üç fonksiyon uygulandı; üretim backend'i değiştirilmedi. RevenueCat yeni offering'i iki abonelikle hazır, eski offering geri alınabilir biçimde pasif. Türkiye hedef fiyatları aylık 99,99 TL / yıllık 699,99 TL; Play kaydı ayrıca doğrulanacak. 229 backend, 148 JVM ve hedefli 6 API36 cihaz testi geçti. [Plan, kanıtlar ve açık kabul kapıları](native-android/docs/MONETIZATION_SETUP_2026-10-24.md).
 
 Canlı Play Console kontrolünde **52 / 2.3.1 üretimde erişilebilir ve %100 dağıtımda** (24 Ekim). Önceki sürüm kayıtları aşağıda tarihçedir. Yeni 53 / 2.4.0 imzalı paket yalnız dahili test taslağı için hazırlandı; yeni özelliğin canlıya açıldığı anlamına gelmez.
+## 52 devamı — 24 Ekim 2026
+
+51 yalnız dahili testte yayımlandı. Claude'un son incelemesinde, geciken eski hesap eşitlemesinin yeni hesabın sandık eşitlemesini yutabildiği durum cihaz testinde doğrulandı. Güncel owner'a damgalı tekrar deneme ile düzeltildi; hesap/sandık regresyonları 32/32 geçti. 52 / 2.3.1 imzalı paket, mapping ve 142 release testi doğrulandı; tam kaynak CI'ı 377 cihaz + 3 açılış + 3 servis testiyle hatasız/atlamasız geçti. Play yüklemesi kabul edildi. Mac ekran kilidi nedeniyle son dahili yayın onayı bekliyor; dahili 51, üretim 50'de. [Sorun, kanıt ve yayın takibi](native-android/docs/RELEASE_52_STATUS.md).
+
+## 51 hazırlığı — 24 Ekim 2026
+
+Claude #174/#175 ana dalda; beş hesap/gizlilik/indirme bulgusu düzeltildi ve 13 dilde sürüm notları hazır. Son master CI: 376 cihaz + 3 açılış + 3 servis testi, 0 hata/atlama; backend 212, JVM 142 geçti. Canlıda 31 hikâyenin 119 sorusu ve eksik dil satırları tamamlandı: 67 hikâye, 2.839 cümle, 11 tam dil, 67 korunmuş medya. Üretim hâlâ 50 / 2.2.0; 51 / 2.3.0 dahili testte yayında (24 Ekim 03:13 TRT). Fiziksel Play güncelleme ve açık içerik hedefleri tamamlanmış sayılmadı. [Aday, hash'ler ve kalan kabul işleri](native-android/docs/RELEASE_51_STATUS.md).
 
 ## İçerik ve yarım kalan işler — 23 Ekim 2026
 

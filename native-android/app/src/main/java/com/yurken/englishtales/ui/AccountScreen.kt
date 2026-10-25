@@ -124,7 +124,7 @@ fun AccountScreen(state: AccountState,onBack: ()->Unit,onSignIn: (String,String)
     }
     if(confirmExit) TaleDialog(stringResource(R.string.cikis_yapilsin_mi),stringResource(R.string.bu_hesabin_cihazdaki_kayitlari_korunur),
         stringResource(R.string.cikis_yap),onConfirm={confirmExit=false;onSignOut()},onDismissRequest={confirmExit=false},dismissLabel=stringResource(R.string.vazgec))
-    if(confirmTransfer) TaleDialog(stringResource(R.string.misafir_ilerlemen_tasinsin_mi),stringResource(R.string.misafir_kelimelerin_okuma_ilerlemen_ve),
+    if(confirmTransfer) TaleDialog(stringResource(R.string.misafir_ilerlemen_tasinsin_mi),stringResource(R.string.misafir_kelimelerin_okuma_ilerlemen_ve)+"\n\n"+stringResource(R.string.guest_chest_transfer_note),
         stringResource(R.string.bu_hesaba_aktar),onConfirm={confirmTransfer=false;onTransfer()},onDismissRequest={confirmTransfer=false},dismissLabel=stringResource(R.string.vazgec),mood=MascotMood.Welcome)
     if(confirmDelete) TaleDialog(stringResource(R.string.hesabin_kalici_olarak_silinsin_mi),stringResource(R.string.n_nhesabin_sunucudaki_ogrenme_gecmisin, state.email)+"\n\n"+stringResource(R.string.energy_delete_warning),
         stringResource(R.string.hesabimi_kalici_olarak_sil),onConfirm={confirmDelete=false;onDeleteAccount()},onDismissRequest={confirmDelete=false},dismissLabel=stringResource(R.string.vazgec),destructive=true)

@@ -13,7 +13,7 @@
     <string name="league_failed_short">Couldn\'t load the league.</string>
     <string name="league_retry">Try again</string>
     <string name="league_opted_out">You\'re not in the league. Tap to join.</string>
-    <string name="league_opted_out_screen">You\'re not in the league. You can rejoin below.</string>
+    <string name="league_opted_out_screen">You\'re not in the league. To join, turn on \"Show me in the league\" below.</string>
     <string name="league_join_hint">Finish a game or a story this week to join the league.</string>
     <string name="league_rank">You\'re #%1$d · %2$d XP</string>
     <string name="league_to_next">%1$d XP to move up a place</string>
@@ -35,7 +35,7 @@
     <string name="league_name_hint">Your name in the league is \"%1$s\". Your email is never shown to anyone.</string>
     <string name="league_change_name">Change your name</string>
     <string name="league_show_me">Show me in the league</string>
-    <string name="league_show_me_text">Turn this off to leave this week\'s group and hide your name from everyone.</string>
+    <string name="league_show_me_text">Off until you turn it on. While on, your display name and this week\'s XP are shown to learners in your league group and to your friends. Turn it off at any time to hide them.</string>
     <string name="league_rank_up">You moved up to #%1$d in your league!</string>
     <string name="league_xp_gain">+%1$d XP · You\'re #%2$d in your league</string>
     <string name="league_reminder_gap">You\'re #%1$d in your league, %2$d XP to move up a place.</string>
@@ -54,7 +54,7 @@
     <string name="friends_tab">Friends</string>
     <string name="friends_failed">Couldn\'t load your friends.</string>
     <string name="friends_code_title">Your invite code</string>
-    <string name="friends_code_text">Share your code; once a friend adds it, you compete on this week\'s XP together.</string>
+    <string name="friends_code_text">Share your code; once a friend adds it, you compete on this week\'s XP together. Friends see your name and XP only while you\'re in the league.</string>
     <string name="friends_code_create">Create invite code</string>
     <string name="friends_share">Share</string>
     <string name="friends_share_text">Race me on English Tales! Get the app and enter code %1$s in the Friends tab: %2$s</string>

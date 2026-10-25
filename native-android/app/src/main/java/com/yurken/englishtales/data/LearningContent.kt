@@ -200,6 +200,12 @@ object LearningContent {
     @Volatile private var bundled: List<Story>? = null
     val bundledStories: List<Story> get() = checkNotNull(bundled) { "LearningContent.initialize must run before UI" }
 
+    /** Legacy published rows omitted questions. Reuse shipped questions only for exactly the same English source. */
+    internal fun questionsForUnchangedSource(id: String, sentences: List<StorySentence>): List<StoryQuestion> =
+        bundled?.firstOrNull { it.id == id }
+            ?.takeIf { story -> story.sentences.map { it.id to it.english } == sentences.map { it.id to it.english } }
+            ?.questions.orEmpty()
+
     /** Bundled tag vocabulary order; tags only known from the server sort after these. */
     @Volatile var tagOrder: List<String> = emptyList()
         private set

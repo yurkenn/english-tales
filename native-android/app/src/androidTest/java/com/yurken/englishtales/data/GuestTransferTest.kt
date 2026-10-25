@@ -39,6 +39,7 @@ class GuestTransferTest {
         val base=InstrumentationRegistry.getInstrumentation().targetContext
         names.forEach {base.deleteDatabase(it)}
         context.getSharedPreferences("learning_preferences",0).edit().clear().commit()
+        context.getSharedPreferences("quest_chests",0).edit().clear().commit()
     }
     private fun count(store: LearningStore,table: String): Int=store.readableDatabase.query("SELECT COUNT(*) FROM $table").use {it.moveToFirst();it.getInt(0)}
     private fun seed() {
@@ -46,6 +47,15 @@ class GuestTransferTest {
         guest.saveWords(listOf("quiet","morning"))
         guest.updateProgress("quiet-morning",88)
         guest.completeLesson(4,UUID.randomUUID().toString())
+    }
+    @Test fun unverifiedGuestChestBonusStaysWithGuestAndNeverBecomesAccountReward() {
+        seed()
+        assertEquals(50,QuestChests.openLocally(context,"guest","2026-10-23",0.99))
+        assertTrue(GuestTransfer.transfer(guest,target))
+        assertEquals(20,target.snapshot().points)
+        assertEquals(0,QuestChests.total(context,user))
+        assertEquals(50,QuestChests.total(context,"guest"))
+        assertFalse(target.queuedOperations().any {it.rpc=="open_quest_chest"})
     }
     @Test fun savedGlossaryWordsMoveWithTheirMeaning() {
         seed();guest.savePersonalWord(WordInfo("glossary:walk","walk","yürümek","",""))

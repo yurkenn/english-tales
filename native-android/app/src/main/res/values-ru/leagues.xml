@@ -13,7 +13,7 @@
     <string name="league_failed_short">Не удалось загрузить лигу.</string>
     <string name="league_retry">Повторить</string>
     <string name="league_opted_out">Вы не участвуете в лиге. Нажмите, чтобы вступить.</string>
-    <string name="league_opted_out_screen">Вы не участвуете в лиге. Вернуться можно ниже.</string>
+    <string name="league_opted_out_screen">Вы не участвуете в лиге. Чтобы присоединиться, включите «Показывать меня в лиге» ниже.</string>
     <string name="league_join_hint">Завершите игру или историю на этой неделе, чтобы вступить в лигу.</string>
     <string name="league_rank">Ваше место: %1$d · %2$d XP</string>
     <string name="league_to_next">До следующего места: %1$d XP</string>
@@ -35,7 +35,7 @@
     <string name="league_name_hint">В лиге вы отображаетесь как «%1$s». Ваш e-mail никому не показывается.</string>
     <string name="league_change_name">Изменить имя</string>
     <string name="league_show_me">Показывать меня в лиге</string>
-    <string name="league_show_me_text">Если выключить, вы покинете группу этой недели и ваше имя никто не увидит.</string>
+    <string name="league_show_me_text">Выключено, пока вы сами не включите. Пока включено, ваше отображаемое имя и XP за эту неделю видят участники вашей группы в лиге и ваши друзья. Выключите в любой момент, чтобы скрыть их.</string>
     <string name="league_rank_up">Вы поднялись на %1$d-е место в лиге!</string>
     <string name="league_xp_gain">+%1$d XP · Ваше место в лиге: %2$d</string>
     <string name="league_reminder_gap">Ваше место в лиге: %1$d. До следующего места %2$d XP.</string>
@@ -54,7 +54,7 @@
     <string name="friends_tab">Друзья</string>
     <string name="friends_failed">Не удалось загрузить друзей.</string>
     <string name="friends_code_title">Ваш код приглашения</string>
-    <string name="friends_code_text">Поделитесь кодом: когда друг его добавит, вы будете соревноваться по XP этой недели.</string>
+    <string name="friends_code_text">Поделитесь кодом: когда друг его добавит, вы будете соревноваться по XP этой недели. Друзья видят ваше имя и XP, только пока вы в лиге.</string>
     <string name="friends_code_create">Создать код</string>
     <string name="friends_share">Поделиться</string>
     <string name="friends_share_text">Соревнуйся со мной в English Tales! Установи приложение и введи код %1$s во вкладке «Друзья»: %2$s</string>

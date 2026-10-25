@@ -383,6 +383,7 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
     /** Call only after the service has confirmed deletion for this exact owner. */
     fun eraseDeletedAccount() {
         check(owner is LearningOwner.Account)
+        DeletedAccountPreferences.erase(context,owner)
         database.clearAllTables()
         LearningDatabase.detach(context,owner);close()
         check(context.deleteDatabase(owner.databaseName) || !context.getDatabasePath(owner.databaseName).exists()) {

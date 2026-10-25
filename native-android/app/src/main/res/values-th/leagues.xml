@@ -13,7 +13,7 @@
     <string name="league_failed_short">โหลดลีกไม่ได้</string>
     <string name="league_retry">ลองอีกครั้ง</string>
     <string name="league_opted_out">คุณไม่ได้อยู่ในลีก แตะเพื่อเข้าร่วม</string>
-    <string name="league_opted_out_screen">คุณไม่ได้อยู่ในลีก เข้าร่วมใหม่ได้ด้านล่าง</string>
+    <string name="league_opted_out_screen">คุณไม่ได้อยู่ในลีก หากต้องการเข้าร่วม ให้เปิด \"แสดงฉันในลีก\" ด้านล่าง</string>
     <string name="league_join_hint">เล่นเกมหรืออ่านเรื่องให้จบสักเรื่องในสัปดาห์นี้เพื่อเข้าลีก</string>
     <string name="league_rank">อันดับ %1$d · %2$d XP</string>
     <string name="league_to_next">อีก %1$d XP จะขึ้นหนึ่งอันดับ</string>
@@ -35,7 +35,7 @@
     <string name="league_name_hint">ชื่อของคุณในลีกคือ \"%1$s\" อีเมลของคุณจะไม่แสดงให้ใครเห็น</string>
     <string name="league_change_name">เปลี่ยนชื่อ</string>
     <string name="league_show_me">แสดงฉันในลีก</string>
-    <string name="league_show_me_text">ถ้าปิด คุณจะออกจากกลุ่มของสัปดาห์นี้และไม่มีใครเห็นชื่อคุณ</string>
+    <string name="league_show_me_text">ปิดอยู่จนกว่าคุณจะเปิดเอง ระหว่างที่เปิด ชื่อที่แสดงและ XP สัปดาห์นี้ของคุณจะปรากฏต่อผู้เรียนในกลุ่มลีกของคุณและเพื่อนของคุณ ปิดได้ทุกเมื่อเพื่อซ่อน</string>
     <string name="league_rank_up">คุณขึ้นมาอันดับ %1$d ในลีกแล้ว!</string>
     <string name="league_xp_gain">+%1$d XP · อันดับ %2$d ในลีก</string>
     <string name="league_reminder_gap">คุณอยู่อันดับ %1$d อีก %2$d XP จะขึ้นหนึ่งอันดับ</string>
@@ -54,7 +54,7 @@
     <string name="friends_tab">เพื่อน</string>
     <string name="friends_failed">โหลดรายชื่อเพื่อนไม่ได้</string>
     <string name="friends_code_title">รหัสเชิญของคุณ</string>
-    <string name="friends_code_text">แชร์รหัสของคุณ เมื่อเพื่อนเพิ่มแล้ว จะได้แข่ง XP สัปดาห์นี้ด้วยกัน</string>
+    <string name="friends_code_text">แชร์รหัสของคุณ เมื่อเพื่อนเพิ่มแล้ว จะได้แข่ง XP สัปดาห์นี้ด้วยกัน เพื่อนจะเห็นชื่อและ XP ของคุณเฉพาะตอนที่คุณอยู่ในลีก</string>
     <string name="friends_code_create">สร้างรหัสเชิญ</string>
     <string name="friends_share">แชร์</string>
     <string name="friends_share_text">มาแข่งกับฉันใน English Tales! ดาวน์โหลดแอปแล้วใส่รหัส %1$s ในแท็บเพื่อน: %2$s</string>

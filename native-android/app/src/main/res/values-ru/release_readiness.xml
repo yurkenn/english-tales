@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="content_message_language_incomplete">Некоторые переводы на этот язык ещё не скачаны. Можно читать рассказ на английском и повторить попытку при подключении.</string>
+    <string name="guest_chest_transfer_note">Бонусы из сундуков гостевых заданий остаются в гостевом разделе и не переносятся в аккаунт или опыт лиги.</string>
+</resources>

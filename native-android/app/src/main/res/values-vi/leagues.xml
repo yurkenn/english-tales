@@ -13,7 +13,7 @@
     <string name="league_failed_short">Không tải được giải đấu.</string>
     <string name="league_retry">Thử lại</string>
     <string name="league_opted_out">Bạn không tham gia giải đấu. Chạm để tham gia.</string>
-    <string name="league_opted_out_screen">Bạn không tham gia giải đấu. Bạn có thể tham gia lại bên dưới.</string>
+    <string name="league_opted_out_screen">Bạn không tham gia giải đấu. Để tham gia, hãy bật \"Hiện tôi trong giải đấu\" bên dưới.</string>
     <string name="league_join_hint">Hoàn thành một trò chơi hoặc một truyện trong tuần này để vào giải.</string>
     <string name="league_rank">Hạng %1$d · %2$d XP</string>
     <string name="league_to_next">Còn %1$d XP để lên một hạng</string>
@@ -35,7 +35,7 @@
     <string name="league_name_hint">Tên của bạn trong giải là \"%1$s\". Email của bạn không bao giờ hiển thị.</string>
     <string name="league_change_name">Đổi tên</string>
     <string name="league_show_me">Hiện tôi trong giải đấu</string>
-    <string name="league_show_me_text">Nếu tắt, bạn rời nhóm tuần này và không ai thấy tên bạn.</string>
+    <string name="league_show_me_text">Tắt cho đến khi bạn tự bật. Khi đang bật, tên hiển thị và XP tuần này của bạn sẽ hiện với người học trong nhóm giải đấu và bạn bè của bạn. Tắt bất cứ lúc nào để ẩn.</string>
     <string name="league_rank_up">Bạn đã lên hạng %1$d trong giải!</string>
     <string name="league_xp_gain">+%1$d XP · Bạn đang hạng %2$d</string>
     <string name="league_reminder_gap">Bạn đang hạng %1$d, còn %2$d XP để lên một hạng.</string>
@@ -54,7 +54,7 @@
     <string name="friends_tab">Bạn bè</string>
     <string name="friends_failed">Không tải được danh sách bạn bè.</string>
     <string name="friends_code_title">Mã mời của bạn</string>
-    <string name="friends_code_text">Chia sẻ mã; khi bạn bè thêm mã, hai bạn cùng đua XP tuần này.</string>
+    <string name="friends_code_text">Chia sẻ mã; khi bạn bè thêm mã, hai bạn cùng đua XP tuần này. Bạn bè chỉ thấy tên và XP của bạn khi bạn ở trong giải đấu.</string>
     <string name="friends_code_create">Tạo mã mời</string>
     <string name="friends_share">Chia sẻ</string>
     <string name="friends_share_text">Thi đấu với mình trên English Tales nhé! Tải ứng dụng và nhập mã %1$s ở thẻ Bạn bè: %2$s</string>

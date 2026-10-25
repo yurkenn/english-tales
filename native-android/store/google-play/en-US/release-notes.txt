@@ -1,4 +1,5 @@
-• English Tales is now Yurken Stories.
-• Choose your app language on first launch.
-• Read English stories with translations in 11 support languages.
-• Improved vocabulary review and learning progress sync.
+• Tap any word in a story to see its meaning instantly.
+• New games, daily quests, a reward chest and streak freeze.
+• Optional weekly league and friend invite codes.
+• Longer stories, 17 new stories and a calmer reading screen.
+• Fixed sync getting stuck when switching accounts.

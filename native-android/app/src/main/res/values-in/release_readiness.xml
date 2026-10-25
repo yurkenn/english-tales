@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="content_message_language_incomplete">Beberapa terjemahan dalam bahasa ini belum diunduh. Kamu bisa membaca cerita dalam bahasa Inggris dan mencoba lagi saat terhubung.</string>
+    <string name="guest_chest_transfer_note">Bonus peti misi tamu tetap di area tamu; tidak dipindahkan ke akun atau XP ligamu.</string>
+</resources>
