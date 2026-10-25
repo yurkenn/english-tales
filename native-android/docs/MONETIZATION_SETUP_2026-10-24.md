@@ -1,55 +1,40 @@
-# Monetization implementation and acceptance status
+# Monetization status — 25 October 2026
 
-Updated 25 October 2026. Source branch: `codex/energy-premium` in the attached energy-premium worktree. Source checkpoint committed and merged with current master e89d75f; a draft PR is being prepared.
+Implementation is in [draft PR #179](https://github.com/yurkenn/english-tales/pull/179), branch `codex/energy-premium`, integrated with master e89d75f. The original checkout and parallel work were preserved. This is the current status; older candidate evidence remains in the evidence directory as history.
 
-## Implemented and verified
+## Available now
 
-- Product contract: [detailed plan](MONETIZATION_PLAN_2026-10-24.md). Daily 3 energy, new story costs 1, permanent energy unlocks, free translation/review, opt-in rewarded +1 up to 3/day, monthly/annual unlimited Premium. No energy packs.
-- Actual Claude CLI architecture review, backend implementation, and final independent review are preserved in the three CLAUDE_MONETIZATION reports. Findings around pending purchases, midnight reservations, account isolation and legacy cutoff were addressed.
-- Backend: 229 tests passed before master integration; 240 passed after integration, including PostgreSQL-compatible PGlite migration/RPC tests and cryptographically signed SSV fixtures. Android: 148 JVM tests, 6 targeted API36 device tests, debug builds and lint passed with zero failures/errors/skips. These are targeted device checks, not a new full regression-suite acceptance.
-- Signed release candidate 53 / 2.4.0 built successfully with monetization disabled. Hash/counts: [verification.json](release-evidence/2026-10-24-monetization/verification.json). Uploaded to Play internal draft preparation; the Save as draft action was taken, but the persisted draft was rechecked 25 October. Not released to testers or production.
-- Hosting build succeeded; privacy, account deletion and subscription terms source prepared. Hosting deployment remains open.
+- **56 / 2.4.0-sandbox is available to internal testers**, verified in Play Console on 25 October at 12:22 TRT. [Install through Google Play](https://play.google.com/apps/internaltest/4701713728242169635).
+- Energy and Premium screens are **enabled** in this signed sandbox build; service is staging `jukyylozahikjhtokayw`. Three daily new-story passes, permanent energy unlocks, free translation/review and server-authoritative rewards/subscriptions are implemented. No energy packs.
+- Staging energy switch is enabled. Migration and three Edge Functions are deployed. RLS blocks direct client writes to all four new tables. Seven service settings were supplied through authenticated CLI. Credentials stay in ignored local files.
+- Existing single-owner internal tester list is selected; the old 26-person list remains unselected. That same owner list was selected for Google Play license testing and saved. Google applies license tester configuration developer-wide; no new email addresses were added.
+- Test ads only, telemetry disabled, Firebase initialization removed from this QA variant, and a persistent test notice is visible. Account sessions already namespace tokens by service URL. Reauthentication against the test project may be needed. The sandbox bundle must never be promoted to production.
+- Production Play 52 / 2.3.1 and production backend were not changed. The production release flag remains off pending actual purchase/SSV acceptance and store setup.
 
-## External service state
+## Validation
 
-- Supabase staging `jukyylozahikjhtokayw`: migration applied, four new public tables protected with RLS and no direct client grants; three Edge Functions ACTIVE (`premium-sync`, `admob-ssv`, `revenuecat-webhook`). Seven environment settings applied through authenticated CLI. Secrets are local ignored files and must never be committed or printed.
-- Staging energy policy is disabled. Unauthenticated sync/webhook and invalid SSV requests reject as expected; authenticated TEST responds 200/ignored. [HTTP evidence](release-evidence/2026-10-24-monetization/staging-http.json).
-- RevenueCat existing project `3344db47`, Play app `app894ba988f6`: new `premium` entitlement associated only with Play monthly/yearly. `energy_premium_v1` offering has monthly and annual packages and is default. Old default offering made inactive reversibly; historical products, entitlements and purchases preserved.
-- Owner-approved sandbox webhook created 25 October: `whintgr450a31118f`, only the existing Play app and Sandbox environment. Destination is staging `revenuecat-webhook`; shared Authorization configured after explicit owner approval. RevenueCat Send Test Event returned HTTP 200 and `{code: ignored}`. This proves authenticated delivery, not a real purchase lifecycle.
-- Turkey target prices approved by owner: monthly TRY 99.99, annual TRY 699.99. Prices are **not yet verified/saved in Google Play**. Other country pricing was not changed.
-- Last live Console observation 24 October: production 52 / 2.3.1 available at 100%. This report does not infer a newer live release.
+- Local final enabled sandbox: signed APK/AAB build and sandbox lint passed. **6 API36 device tests, zero failures/errors/skips**; actual standalone launch screenshot also verified. [Candidate evidence](release-evidence/2026-10-24-monetization/sandbox-56.json).
+- Current source 0bfa294: all checks green on CI 40180493316. Downloaded reports: **383 app-device + 3 startup + 3 service checks, zero failures/errors/skips**. JVM HTML and lint counts are in [CI evidence](release-evidence/2026-10-24-monetization/ci-40180493316.json). Local 148 JVM and 240 backend tests passed after master integration.
+- Actual Claude CLI architecture review, backend implementation, independent final review and ten-language localization drafts are preserved in CLAUDE_MONETIZATION reports. All 29 strings are present across 12 UI languages; localization key/format checks passed. Native-speaker and RTL visual acceptance remain open.
+- Non-debug instrumented tests needed a direct clock API bootstrap to retain the target's desugared clock surface in the test APK. Final tests passed; this test-runtime fix does not alter quota behavior.
 
-## Open acceptance gates
+## RevenueCat and Google Play
 
-1. Recheck persisted Play internal draft 53 and billing-enabled product catalog; configure/verify the approved Turkey prices without changing other countries unintentionally.
-2. Configure a real AdMob rewarded unit and SSV endpoint. Staging currently allows the Google sample test unit only.
-3. Prepare a correctly targeted internal QA build; current 53 candidate has monetization disabled and is not an enabled sandbox acceptance build.
-4. Through a license test account verify buy, cancel, pending, restore, expiry/refund, account switching and server-authoritative entitlement; verify actual signed Google SSV grants exactly one reward.
-5. Complete source commit, draft PR and full CI. Publish terms/privacy and confirm Play Data Safety/ad disclosures before activation.
-6. Deploy production backend/config only after sandbox acceptance, set explicit legacy cutoff/backfill, then approve a staged release and monitor reading retention plus revenue.
+- Existing RevenueCat project `3344db47`, Play app `app894ba988f6`; `premium` entitlement has only Play monthly/yearly. Default `energy_premium_v1` offering has monthly and annual packages. Old default offering is reversibly inactive; historical products, entitlements and purchases were preserved.
+- Sandbox-only webhook `whintgr450a31118f` targets staging and the existing Play app. Owner explicitly approved the shared authorization configuration. RevenueCat Send Test Event returned **HTTP 200 / ignored**. This proves authenticated delivery, not a purchase lifecycle.
+- Publishing the enabled Billing-capable internal build unlocked the Play catalog. Existing `monthly:monthly-base` and `yearly:yearly-base` each have one active base plan. No replacement products are needed.
+- [Approved 19-country price plan](REGIONAL_PRICING_2026-10-25.md). Monthly edits are being prepared in Play but have **not yet been committed with Save changes**. Annual edits have not started. Do not report the target prices as live until saved and re-read. Existing subscribers' legacy price cohorts must not be migrated as part of this change.
+
+## Remaining work
+
+1. Save and re-read both base plans' approved 19-country prices. Chrome native control currently needs a short pause in human browser activity; the pause request is pending. Existing old prices remain effective until the plan is saved.
+2. Configure a real AdMob rewarded unit and SSV endpoint. Sandbox currently permits the Google sample unit only; test callback acceptance is still open.
+3. Through the registered Play license test account verify buy, cancel, pending, restore, expiry/refund, account switching and server-verified entitlement. Verify an actual signed Google callback grants exactly one reward.
+4. Hosting source/build for updated privacy, deletion and subscription terms is ready; subscription terms currently return 404 publicly. Firebase CLI authentication requires local reauthentication before deployment.
+5. Native-language/RTL acceptance, Play privacy disclosures, production backend deployment/config, legacy cutoff/backfill and staged production release remain separate gates. Owner has authorized completing the setup; these are not routine approval stops.
 
 ## Limits and rollback
 
-Public story content remains publicly readable; this is an app-enforced access model, not a server-enforced content paywall. Guests keep durable device quota, which can reset on reinstall. When the global policy has never been fetched and no cache exists, policy lookup falls back to disabled; existing content remains readable. Account-scoped cached unlocks and non-expired premium reads work offline; uncached server operations require connection.
+Public story APIs remain public: this is an app-enforced access model. Guest quota is durable on the device but can reset on reinstall. A release with no cached policy and an unavailable policy endpoint defaults to disabled. Existing account unlocks and unexpired cached premium reads work offline; uncached server operations require connection. Premium-created progress does not become a permanent free unlock.
 
-Supabase advisor reports include intentional SECURITY DEFINER RPC and deny-all table policy observations, plus a pre-existing leaked-password-protection warning. No claim of zero security advisories is made. No production backend migration/config activation was performed. Feature and server kill switch remain off. Historical purchases and story unlock records are preserved on rollback.
-
-## Bölgesel fiyat hazırlığı — 25 Ekim
-
-12 arayüz dili kaynak üzerinden doğrulandı. [19 ülkelik öneri ve uygulama sınırları](REGIONAL_PRICING_2026-10-25.md) hazır. Türkiye dışındaki fiyatlar öneri; bu turda mağazada fiyat değiştirilmedi. Canlı abonelik ekranında APK yükleme yönlendirmesi hâlâ mevcut; kataloğun açılması ayrıca çözülmeli.
-
-## 25 October integration and localization
-
-Current master was merged, preserving release 52 account/chest handoff and league consent changes. Candidate 53 predates those changes and must not be distributed. A new signed candidate 54 / 2.4.0 is being built with monetization off; build acceptance is recorded separately when it completes. All 29 strings are now present in the ten additional locale folders plus explicit Turkish mirror. `verify_localization.py` passes all existing localization checks. Native-speaker review and Arabic/Urdu visual acceptance remain open. The instrumentation test now checks disabled-gate bypass on default builds instead of skipping, and exhausted-gate choices on enabled preview builds.
-
-## User steering: enable the internal test build
-
-25 October: owner requested the feature to be open. Cancelled the disabled 54 release build (not uploaded or published). Added an explicit upload-signed `sandbox` build type with energy/Premium enabled, staging service settings, sample rewarded ads, telemetry disabled and an always-visible test notice. Production release guards remain in place. Staging energy switch is now enabled; production was not changed. Encrypted session storage already namespaces tokens by service URL. Candidate 55 / 2.4.0-sandbox is being built for internal testing; build/device/Play availability still requires verification. Use Google Play license testers for purchases.
-
-### Verified enabled internal package: 56
-
-55 failed before instrumentation tests because Firebase initialization used an incompletely shared desugared test runtime. Sandbox now removes FirebaseInitProvider, consistent with its no-telemetry contract. Instrumented non-debug builds also required directly retaining the target clock surface in the test APK; the bootstrap verifies the UTC clock API and keeps L8 from trimming it. Final sandbox checks: **6 tests, 0 failures/errors/skips** on API36. Signed bundle/APK, sandbox lint and actual standalone launch passed. Source production release remains disabled.
-
-56 / 2.4.0-sandbox was uploaded and published only to the existing single-owner internal group. Console showed **Available to internal testers**, 25 October 12:22 TRT. Owner email list was also selected for Google Play license testing and saved (this Google setting applies developer-wide). No new email accounts were added. Existing 26-person test list remains unselected. Three nonblocking Play warnings: larger unminified test APK, no R8 mapping because unminified, and stripped native-library symbols unavailable. Not a production candidate; never promote this sandbox bundle to production.
-
-[Internal testing link](https://play.google.com/apps/internaltest/4701713728242169635). Existing production 52 was not changed. Actual sandbox purchase/reward callback acceptance and country-price editing remain separate open gates.
+Supabase advisor output includes intentional SECURITY DEFINER RPC and deny-all table observations plus a pre-existing leaked-password-protection warning. There is no zero-advisory claim. Server kill switch can disable new restrictions while retaining purchase/unlock history. Candidates 53 (disabled, predates current fixes), cancelled 54 and failed 55 are historical; only 56 was published to internal testers.
