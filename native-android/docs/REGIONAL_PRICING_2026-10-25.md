@@ -56,3 +56,7 @@ Rusça arayüz desteği devam eder. Rusya Google Play faturalandırma kısıtı 
 - [RevenueCat mağazadan yerelleştirilmiş fiyat gösterimi](https://revenuecat.github.io/codelabs/guides/get-products-and-prices.html)
 - [Beelinguapp ABD App Store satın alma listesi](https://apps.apple.com/us/app/beelinguapp-language-learning/id1225056371)
 - [Google Play Rusya faturalandırma durumu](https://support.google.com/googleplay/android-developer/answer/11950272?hl=en)
+
+## Play kataloğu engeli çözüldü
+
+25 Ekim 56 açık sandbox paketi dahili kanala yayınlandıktan sonra Play mevcut `monthly` ve `yearly` ürünlerini göstermeye başladı. İkisinde de bir aktif base plan mevcut; son eski değişiklik tarihi 30 Aralık 2025. Bölgesel fiyat düzenlemesi bu mevcut ürünlerde sürdürülüyor.

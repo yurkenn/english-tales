@@ -1,0 +1,15 @@
+{
+  "versionCode": 55,
+  "versionName": "2.4.0-sandbox",
+  "monetizationEnabled": true,
+  "stagingEnergyEnabled": true,
+  "service": "jukyylozahikjhtokayw",
+  "testAds": true,
+  "telemetry": false,
+  "sha256": "9c4872f488fa8a88be8cd211b2c49fe3f142634a4d25c956fdd49d2a1d991218",
+  "bytes": 28182687,
+  "build": "bundleSandbox assembleSandbox assembleSandboxAndroidTest lintSandbox passed",
+  "deviceAcceptance": "failed before tests: Firebase initialization and shared desugared test library",
+  "playInternal": "not published",
+  "productionChanged": false
+}

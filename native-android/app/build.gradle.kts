@@ -30,6 +30,8 @@ val releaseSigning = Properties().apply {
     rootProject.file("signing.properties").takeIf {it.exists()}?.inputStream()?.use {load(it)}
 }
 val releaseRequested=gradle.startParameter.taskNames.any {it.contains("Release",ignoreCase=true)}
+val sandboxRequested=gradle.startParameter.taskNames.any {it.contains("Sandbox",ignoreCase=true)}
+val sandboxDeviceProbe=providers.gradleProperty("sandboxDeviceTest").orNull == "true"
 val releaseDeviceProbe=providers.gradleProperty("releaseDeviceTest").orNull == "true"
 val adDeviceProbe=providers.gradleProperty("adDeviceTest").orNull=="true"
 // Explicit, anonymous service checks use only the already-public mobile settings.
@@ -64,7 +66,7 @@ if(monetizationEnabled) {
     require(legacyCutoff>0) {"Set the legacy progress cutoff before activation"}
     require(adsEnabled && monetizationSettings.getProperty("PUBLICATION_READY")=="true") {"Monetization needs verified consent, SSV, Play products and sandbox acceptance"}
 }
-if(releaseRequested) {
+if(releaseRequested || sandboxRequested) {
     require(listOf("storeFile","storePassword","keyAlias","keyPassword").all {releaseSigning.getProperty(it).orEmpty().isNotBlank()}) {
         "Release signing is missing. Configure the private signing.properties file; debug signing is never used for release."
     }
@@ -76,7 +78,8 @@ if(releaseRequested) {
 }
 
 android {
-    testBuildType = if (releaseDeviceProbe) "release" else "debug"
+    require(!sandboxDeviceProbe || !releaseDeviceProbe) {"Run sandbox and release probes separately"}
+    testBuildType = if(sandboxDeviceProbe) "sandbox" else if (releaseDeviceProbe) "release" else "debug"
     if (releaseDeviceProbe) sourceSets.getByName("androidTest").java.setSrcDirs(listOf("src/releaseProbe/java"))
     if (serviceDeviceProbe) sourceSets.getByName("androidTest").java.setSrcDirs(listOf("src/serviceProbe/java"))
     if(adDeviceProbe) sourceSets.getByName("androidTest").java.srcDir("src/adProbe/java")
@@ -101,6 +104,7 @@ android {
         buildConfigField("String", "GOOGLE_WEB_CLIENT_ID", "\"${contentSetting("GOOGLE_WEB_CLIENT_ID")}\"")
         buildConfigField("long","MONETIZATION_LEGACY_CUTOFF_MS","${legacyCutoff}L")
         buildConfigField("boolean","MONETIZATION_ENABLED",monetizationPreview.toString())
+        buildConfigField("boolean","MONETIZATION_SANDBOX","false")
         buildConfigField("String","REVENUECAT_PUBLIC_KEY","\"${if(monetizationPreview) revenueCatKey else ""}\"")
         buildConfigField("String","ADMOB_REWARDED_ID","\"ca-app-pub-3940256099942544/5224354917\"")
         buildConfigField("boolean","ADS_ENABLED","true")
@@ -145,6 +149,30 @@ android {
             ndk { debugSymbolLevel = "SYMBOL_TABLE" }
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
+    }
+
+    // Explicit signed internal QA variant. Production release guards remain unchanged.
+    buildTypes.create("sandbox") {
+        initWith(buildTypes.getByName("release"))
+        matchingFallbacks += listOf("release")
+        isMinifyEnabled = false
+        isShrinkResources = false
+        isDebuggable = false
+        versionNameSuffix = "-sandbox"
+        buildConfigField("boolean", "MONETIZATION_ENABLED", "true")
+        buildConfigField("boolean", "MONETIZATION_SANDBOX", "true")
+        buildConfigField("long", "MONETIZATION_LEGACY_CUTOFF_MS", "0L")
+        buildConfigField("String", "SUPABASE_URL", "\"https://jukyylozahikjhtokayw.supabase.co\"")
+        buildConfigField("String", "SUPABASE_PUBLISHABLE_KEY", "\"sb_publishable_adEuVGN_gzyL78UpD76DyQ_Tw2e7snm\"")
+        buildConfigField("String", "GOOGLE_WEB_CLIENT_ID", "\"${productionSetting("GOOGLE_WEB_CLIENT_ID")}\"")
+        buildConfigField("String", "ADMOB_REWARDED_ID", "\"ca-app-pub-3940256099942544/5224354917\"")
+        buildConfigField("String", "ADMOB_INTERSTITIAL_ID", "\"ca-app-pub-3940256099942544/1033173712\"")
+        buildConfigField("String", "ADMOB_APP_ID", "\"ca-app-pub-3940256099942544~3347511713\"")
+        buildConfigField("boolean", "ADS_ENABLED", "true")
+        buildConfigField("boolean", "PRODUCT_ANALYTICS_AVAILABLE", "false")
+        manifestPlaceholders["admobAppId"] = "ca-app-pub-3940256099942544~3347511713"
+        manifestPlaceholders["crashReportsEnabled"] = "false"
+        manifestPlaceholders["analyticsDeactivated"] = "true"
     }
 
     buildTypes.create("performance") {

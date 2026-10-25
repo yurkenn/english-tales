@@ -41,3 +41,15 @@ Supabase advisor reports include intentional SECURITY DEFINER RPC and deny-all t
 ## 25 October integration and localization
 
 Current master was merged, preserving release 52 account/chest handoff and league consent changes. Candidate 53 predates those changes and must not be distributed. A new signed candidate 54 / 2.4.0 is being built with monetization off; build acceptance is recorded separately when it completes. All 29 strings are now present in the ten additional locale folders plus explicit Turkish mirror. `verify_localization.py` passes all existing localization checks. Native-speaker review and Arabic/Urdu visual acceptance remain open. The instrumentation test now checks disabled-gate bypass on default builds instead of skipping, and exhausted-gate choices on enabled preview builds.
+
+## User steering: enable the internal test build
+
+25 October: owner requested the feature to be open. Cancelled the disabled 54 release build (not uploaded or published). Added an explicit upload-signed `sandbox` build type with energy/Premium enabled, staging service settings, sample rewarded ads, telemetry disabled and an always-visible test notice. Production release guards remain in place. Staging energy switch is now enabled; production was not changed. Encrypted session storage already namespaces tokens by service URL. Candidate 55 / 2.4.0-sandbox is being built for internal testing; build/device/Play availability still requires verification. Use Google Play license testers for purchases.
+
+### Verified enabled internal package: 56
+
+55 failed before instrumentation tests because Firebase initialization used an incompletely shared desugared test runtime. Sandbox now removes FirebaseInitProvider, consistent with its no-telemetry contract. Instrumented non-debug builds also required directly retaining the target clock surface in the test APK; the bootstrap verifies the UTC clock API and keeps L8 from trimming it. Final sandbox checks: **6 tests, 0 failures/errors/skips** on API36. Signed bundle/APK, sandbox lint and actual standalone launch passed. Source production release remains disabled.
+
+56 / 2.4.0-sandbox was uploaded and published only to the existing single-owner internal group. Console showed **Available to internal testers**, 25 October 12:22 TRT. Owner email list was also selected for Google Play license testing and saved (this Google setting applies developer-wide). No new email accounts were added. Existing 26-person test list remains unselected. Three nonblocking Play warnings: larger unminified test APK, no R8 mapping because unminified, and stripped native-library symbols unavailable. Not a production candidate; never promote this sandbox bundle to production.
+
+[Internal testing link](https://play.google.com/apps/internaltest/4701713728242169635). Existing production 52 was not changed. Actual sandbox purchase/reward callback acceptance and country-price editing remain separate open gates.

@@ -28,4 +28,5 @@
     <string name="energy_privacy">Gizlilik</string>
     <string name="energy_delete_warning">Hesabını silmek Google Play aboneliğini iptal etmez. Gelecek ödemeleri durdurmak için önce Google Play aboneliklerini yönet.</string>
     <string name="energy_checking">Okuma hakkın kontrol ediliyor…</string>
+    <string name="sandbox_notice" translatable="false">TEST · Energy and Premium enabled · Use a Play license test account</string>
 </resources>

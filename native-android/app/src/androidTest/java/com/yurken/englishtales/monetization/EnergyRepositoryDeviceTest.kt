@@ -7,11 +7,22 @@ import org.json.JSONArray
 import org.json.JSONObject
 import org.junit.Assert.*
 import org.junit.Test
+import org.junit.BeforeClass
+import java.time.ZoneOffset
 import java.io.File
 import java.time.Instant
 import java.util.UUID
 
 class EnergyRepositoryDeviceTest {
+    companion object {
+        // Non-debug test APKs share desugared classes with the target. Reference the
+        // target clock surface directly so L8 does not trim it from the test APK.
+        @BeforeClass @JvmStatic fun sharedClockApiIsAvailable() {
+            val next=Instant.ofEpochMilli(0).atZone(ZoneOffset.UTC).toLocalDate().plusDays(1)
+                .atStartOfDay(ZoneOffset.UTC).toInstant().toEpochMilli()
+            assertEquals(86_400_000L,next)
+        }
+    }
     private fun fixture(test: (android.content.Context,AccountService)->Unit) {
         val target=InstrumentationRegistry.getInstrumentation().targetContext
         val directory=File(target.cacheDir,"energy-test-${UUID.randomUUID()}").apply {mkdirs()}
