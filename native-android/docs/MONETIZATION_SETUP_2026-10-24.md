@@ -11,6 +11,14 @@ Implementation is in [draft PR #179](https://github.com/yurkenn/english-tales/pu
 - Test ads only, telemetry disabled, Firebase initialization removed from this QA variant, and a persistent test notice is visible. Account sessions already namespace tokens by service URL. Reauthentication against the test project may be needed. The sandbox bundle must never be promoted to production.
 - Production binary 52 / 2.3.1 and production backend were not changed. Play subscription prices were updated store-wide for new subscribers in the approved 19 countries. The production release flag remains off pending actual purchase/SSV acceptance and store setup.
 
+## 26 October sandbox purchase acceptance
+
+Root cause of missing Premium was RevenueCat **Sandbox testing access = Allowed App User IDs only with an empty list**. Purchases were correctly recorded but did not grant sandbox entitlements. Added only the current test account's app-user ID, keeping restricted access. The saved list has one item after reload. [RevenueCat policy](https://www.revenuecat.com/docs/projects/sandbox-access).
+
+Verified Play sandbox annual purchase at TRY 699.99, six accelerated renewals and expiry; all nine annual lifecycle webhook requests returned HTTP 200. Then verified a monthly sandbox purchase at TRY 99.99. After the access-list fix, RevenueCat returned `premium` for `monthly:monthly-base`, the normal v5 webhook returned HTTP 200, staging stored an active expiry, and a cold app launch visibly showed **Premium · Sınırsız okuma**. [Purchase evidence](release-evidence/2026-10-24-monetization/play-yearly-sandbox-2026-10-26.json). Restore, account-switch, pending/refund and watched-ad SSV acceptance remain separate checks.
+
+A proposed product-mapping reconciliation was briefly deployed to staging v4 while investigating, then fully reverted before fixing the actual configuration. Both v5 functions use the original entitlement-only logic. No fallback remains in source or deployment. Claude's independent review identified the cross-app/API-contract risks of that proposal, reinforcing the decision to preserve provider authorization. [Review outcome](CLAUDE_MONETIZATION_SANDBOX_REVIEW_2026-10-26.md). Production binary/backend were not changed.
+
 ## Validation
 
 - Local final enabled sandbox: signed APK/AAB build and sandbox lint passed. **6 API36 device tests, zero failures/errors/skips**; actual standalone launch screenshot also verified. [Candidate evidence](release-evidence/2026-10-24-monetization/sandbox-56.json).
