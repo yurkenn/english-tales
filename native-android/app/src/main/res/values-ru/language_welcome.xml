@@ -1,7 +1,7 @@
 <resources>
     <string name="first_language_title">На каком языке начнём?</string>
-    <string name="first_language_description">Выберите язык меню и переводов. Сами истории останутся на английском.</string>
-    <string name="first_language_english_note">Меню будет на английском. Переводы историй пока доступны на турецком.</string>
+    <string name="first_language_description">Выберите язык меню. Истории останутся на английском; язык перевода можно выбрать отдельно в настройках.</string>
+    <string name="first_language_english_note">Меню будет на английском. Язык перевода историй можно выбрать в настройках.</string>
     <string name="first_language_continue">Продолжить на языке: %1$s</string>
     <string name="first_language_later">Позже язык можно изменить в настройках.</string>
     <string name="first_language_suggested">Язык вашего устройства</string>

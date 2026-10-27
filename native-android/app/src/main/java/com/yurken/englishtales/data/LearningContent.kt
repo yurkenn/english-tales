@@ -24,8 +24,7 @@ object SupportLanguage {
         private set
 
     internal fun configure(context: Context) {
-        // Use the same selected locale as the UI, including Android's per-app setting.
-        code = resolve(listOf(com.yurken.englishtales.AppLanguage.locale(context)))
+        code = TranslationLanguage.effective(context)
     }
 
     /**

@@ -2,7 +2,7 @@
 <resources>
     <string name="content_untranslated_description">इस अंग्रेजी कहानी को पढ़ें और इसकी शब्दावली का अभ्यास करें।</string>
     <string name="app_language_title">ऐप भाषा</string>
-    <string name="app_language_description">इंटरफ़ेस और कहानी अनुवाद भाषा चुनें। भाषा बदलने पर ऐप पुनः आरंभ होता है; आपकी सहेजी गई प्रगति रखी जाती है.</string>
+    <string name="app_language_description">मेन्यू की भाषा चुनें। कहानियाँ अंग्रेज़ी में रहेंगी; सेटिंग में अनुवाद की भाषा अलग से चुन सकते हैं।</string>
     <string name="app_language_system">सिस्टम भाषा</string>
     <string name="app_language_current">ऐप भाषा: %1$s</string>
     <string name="henuz_indirilen_hikaye_yok">अभी तक कोई डाउनलोड की गई कहानियाँ नहीं।</string>

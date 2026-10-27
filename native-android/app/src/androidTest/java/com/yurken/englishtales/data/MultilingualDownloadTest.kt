@@ -22,19 +22,27 @@ class MultilingualDownloadTest {
     private val target get() = InstrumentationRegistry.getInstrumentation().targetContext
     private val directory by lazy { File(target.cacheDir, "language-downloads-${UUID.randomUUID()}").apply { mkdirs() } }
     private val saved get() = File(directory, "published-content")
-    private fun context(tag: String): Context {
+    private fun context(tag: String, translation: String? = null): Context {
         val localized = target.createConfigurationContext(Configuration(target.resources.configuration).apply { setLocales(LocaleList.forLanguageTags(tag)) })
-        return object : ContextWrapper(localized) { override fun getFilesDir() = directory }
+        return object : ContextWrapper(localized) {
+            override fun getFilesDir() = directory
+            override fun getSharedPreferences(name: String, mode: Int) =
+                if (translation == null) super.getSharedPreferences(name, mode)
+                else target.getSharedPreferences("${directory.name}-$name", mode)
+        }.also { if (translation != null) check(TranslationLanguage.select(it, translation)) }
     }
     /** Initializes the bundled content in [tag] first, as the app does, so the repository reads that language. */
-    private fun repository(tag: String, http: ContentHttp?): ContentRepository {
-        val localized = context(tag)
+    private fun repository(tag: String, http: ContentHttp?, translation: String? = null): ContentRepository {
+        val localized = context(tag, translation)
         LearningContent.initialize(localized)
-        assertEquals(tag, SupportLanguage.code)
+        assertEquals(translation ?: tag, SupportLanguage.code)
         return ContentRepository(localized, http)
     }
     @Before fun useBundledFixture() { LearningContent.resetForTest(); LearningContent.initialize(target) }
-    @After fun restoreLanguage() { LearningContent.resetForTest(); LearningContent.initialize(target); directory.deleteRecursively() }
+    @After fun restoreLanguage() {
+        target.getSharedPreferences("${directory.name}-app_language", Context.MODE_PRIVATE).edit().clear().commit()
+        LearningContent.resetForTest(); LearningContent.initialize(target); directory.deleteRecursively()
+    }
 
     private class Server : ContentHttp("https://example.invalid", "sb_publishable_test") {
         val cover = java.io.ByteArrayOutputStream().also { Bitmap.createBitmap(4, 4, Bitmap.Config.ARGB_8888).compress(Bitmap.CompressFormat.PNG, 100, it) }.toByteArray()
@@ -81,6 +89,19 @@ class MultilingualDownloadTest {
         assertEquals(sentence(lang, 2), story.sentences[1].translation)
         assertEquals(description(lang), story.description)
         assertEquals(word(lang), story.vocabulary!!.single().translation)
+    }
+
+    @Test fun englishUiUsesExplicitSpanishThenArabicFromTheSameOfflineDownload() = runBlocking {
+        val server = Server()
+        val spanish = repository("en", server, "es-419")
+        spanish.restore(); spanish.refresh()
+        assertLanguage("es-419", spanish.download(LearningContent.storyById.getValue(STORY)))
+        server.fail = true
+        LearningContent.resetForTest()
+        val arabic = repository("en", null, "ar")
+        arabic.restore()
+        assertLanguage("ar", arabic.downloads().single { it.id == STORY })
+        assertEquals("en", com.yurken.englishtales.AppLanguage.locale(context("en", "ar")).language)
     }
 
     @Test fun turkishDownloadOpensInSpanishAndArabicOfflineAfterRestarts() = runBlocking {

@@ -1,0 +1,7 @@
+<resources>
+    <string name="translation_language_title">ترجمے کی زبان</string>
+    <string name="translation_language_current">ترجمے کی زبان: %1$s</string>
+    <string name="translation_language_follow">ایپ کی زبان استعمال کریں (%1$s)</string>
+    <string name="translation_language_description">کہانیوں کے ترجمے اور لغت کی زبان منتخب کریں۔ مینو نہیں بدلیں گے۔ زبان لاگو کرنے پر اسکرین دوبارہ لوڈ ہوگی؛ آپ کی پیش رفت محفوظ رہے گی۔</string>
+    <string name="translation_language_save_failed">زبان محفوظ نہیں ہو سکی۔ دوبارہ کوشش کریں۔</string>
+</resources>
