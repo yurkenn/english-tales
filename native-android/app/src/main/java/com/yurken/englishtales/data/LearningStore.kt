@@ -150,45 +150,59 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
     }
     fun dismissReaderHint() { writableDatabase.execSQL("UPDATE local_profile SET reader_hint_seen=1 WHERE id=1") }
     fun saveWords(ids: List<String>) {
+        var added = 0
         transaction {db ->
             ids.forEach {id ->
                 require(id in LearningContent.wordById)
                 if(db.insertWithOnConflict("saved_words",null,ContentValues().apply {put("word_id",id)},SQLiteDatabase.CONFLICT_IGNORE)!=-1L) {
                     recordEvent(db,"save:$id:${LearningPolicy.dayKey(clock())}","word_saved",clock())
                     enqueueWord(id,"save",null,clock())
+                    added++
                 }
             }
             unlockBadges(db,clock())
         }
+        repeat(added) { productSignal(LearningSignal.WordSaved) }
     }
     fun toggleWord(wordId: String) {
-        transaction {db -> setWordSaved(db,wordId,scalar(db,"SELECT COUNT(*) FROM saved_words WHERE word_id=?",arrayOf(wordId))==0)}
+        var added = false
+        transaction {db -> added = setWordSaved(db,wordId,scalar(db,"SELECT COUNT(*) FROM saved_words WHERE word_id=?",arrayOf(wordId))==0)}
+        if (added) productSignal(LearningSignal.WordSaved)
     }
     fun isWordSaved(wordId: String) = scalar(readableDatabase,"SELECT EXISTS(SELECT 1 FROM saved_words WHERE word_id=?)",arrayOf(wordId))==1
     fun isFavorite(storyId: String) = scalar(readableDatabase,"SELECT EXISTS(SELECT 1 FROM favorite_stories WHERE story_id=?)",arrayOf(storyId))==1
-    fun setWordSaved(wordId: String,saved: Boolean) = transaction {db ->setWordSaved(db,wordId,saved)}
-    /** Saves a glossary word with its meaning, so it can be practised like a learning word (Q4.3a). */
-    fun savePersonalWord(word: WordInfo) = transaction {db ->
-        require(Glossary.isLookupOnly(word) && word.word.isNotBlank() && word.translation.isNotBlank())
-        db.insert("personal_words",SQLiteDatabase.CONFLICT_IGNORE,ContentValues().apply {
-            put("word_id",word.id);put("word",word.word.take(100));put("gloss",word.translation.take(1000));put("added_at",clock())
-        })
-        setWordSaved(db,word.id,true)
+    fun setWordSaved(wordId: String,saved: Boolean) {
+        var added = false
+        transaction {db -> added = setWordSaved(db,wordId,saved)}
+        if (added) productSignal(LearningSignal.WordSaved)
     }
-    private fun setWordSaved(db: SupportSQLiteDatabase,wordId: String,saved: Boolean) {
+    /** Saves a glossary word with its meaning, so it can be practised like a learning word (Q4.3a). */
+    fun savePersonalWord(word: WordInfo) {
+        var added = false
+        transaction {db ->
+            require(Glossary.isLookupOnly(word) && word.word.isNotBlank() && word.translation.isNotBlank())
+            db.insert("personal_words",SQLiteDatabase.CONFLICT_IGNORE,ContentValues().apply {
+                put("word_id",word.id);put("word",word.word.take(100));put("gloss",word.translation.take(1000));put("added_at",clock())
+            })
+            added = setWordSaved(db,word.id,true)
+        }
+        if (added) productSignal(LearningSignal.WordSaved)
+    }
+    private fun setWordSaved(db: SupportSQLiteDatabase,wordId: String,saved: Boolean): Boolean {
         val personal=Glossary.isLookupOnly(wordId)
         require(if(personal) scalar(db,"SELECT COUNT(*) FROM personal_words WHERE word_id=?",arrayOf(wordId))>0 else wordId in LearningContent.wordById)
         if(saved) {
-            if(scalar(db,"SELECT COUNT(*) FROM saved_words WHERE word_id=?",arrayOf(wordId))>0) return
+            if(scalar(db,"SELECT COUNT(*) FROM saved_words WHERE word_id=?",arrayOf(wordId))>0) return false
             db.insert("saved_words",SQLiteDatabase.CONFLICT_ABORT,ContentValues().apply {put("word_id",wordId)})
             recordEvent(db,"save:$wordId:${LearningPolicy.dayKey(clock())}","word_saved",clock())
             enqueueWord(wordId,"save",null,clock())
         } else {
             if(personal) db.delete("personal_words","word_id=?",arrayOf(wordId))
-            if(db.delete("saved_words","word_id=?",arrayOf(wordId))==0) return
+            if(db.delete("saved_words","word_id=?",arrayOf(wordId))==0) return false
             enqueueWord(wordId,"remove",null,clock())
         }
         unlockBadges(db,clock())
+        return saved
     }
     /** Q5.5: the learner opened a word while reading; a single-word lookup keeps it out of "known" for now. */
     fun recordLookup(word: WordInfo) {

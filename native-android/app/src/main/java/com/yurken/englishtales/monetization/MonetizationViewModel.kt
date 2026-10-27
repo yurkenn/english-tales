@@ -106,9 +106,11 @@ class MonetizationViewModel(application: Application): AndroidViewModel(applicat
                     PremiumBilling.restore(activity,user) {request==generation};PurchaseOutcome.Completed
                 } else PremiumBilling.purchase(activity,user,selected) {request==generation}
                 if(request!=generation || outcome==PurchaseOutcome.Cancelled) return@runCatching
-                val pending=selected!=null
-                withContext(Dispatchers.IO) {repository.purchasePending(user,pending)}
-                mutable.value=mutable.value.copy(purchasePending=pending)
+                // Restore cannot clear a pending Play payment before server verification succeeds.
+                if(selected!=null) {
+                    withContext(Dispatchers.IO) {repository.purchasePending(user,true)}
+                    mutable.value=mutable.value.copy(purchasePending=true)
+                }
                 if(outcome==PurchaseOutcome.Pending) return@runCatching
                 val value=serial.withLock {withContext(Dispatchers.IO) {repository.syncPremium(user,old)}}
                 if(request!=generation) return@runCatching
@@ -177,7 +179,7 @@ class MonetizationViewModel(application: Application): AndroidViewModel(applicat
                 if(request!=generation) return@launch
                 result.onSuccess {applyEnergy(it)}
                 val value=result.getOrNull() ?: continue
-                if(value.adCredits>(before?.adCredits ?: 0) || value.balance>(before?.balance ?: 0)) {
+                if(value.hasNewAdCreditSince(before)) {
                     signal(MonetizationEvent.REWARD_VERIFY);return@launch
                 }
                 if(value.pendingAdRewards==0) return@launch

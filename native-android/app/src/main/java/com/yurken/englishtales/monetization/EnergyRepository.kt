@@ -14,6 +14,9 @@ import java.util.UUID
 data class EnergyState(val balance: Int, val adCredits: Int, val resetsAt: Long,
     val premiumUntil: Long = 0, val unlocked: Set<String> = emptySet(), val checkedAt: Long = 0, val enabled: Boolean = true, val pendingAdRewards: Int = 0) {
     fun premium(now: Long) = now >= checkedAt && now < premiumUntil
+    /** Balance can also increase at midnight; expired/cancelled tickets are not verified rewards. */
+    internal fun hasNewAdCreditSince(previous: EnergyState?): Boolean =
+        previous != null && adCredits > previous.adCredits
     companion object {
         fun parse(json: JSONObject, now: Long): EnergyState {
             val balance = json.getInt("balance").also { require(it in 0..6) }

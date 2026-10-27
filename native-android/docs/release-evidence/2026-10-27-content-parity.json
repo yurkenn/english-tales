@@ -1,0 +1,192 @@
+{
+  "checkedAt": "2026-10-27T18:22:21.908Z",
+  "sourceCommit": "e89f038ac8e27cd81dd23c3f824eb4621a33e6eb",
+  "scope": "Anonymous current published content; no Auth or learner records",
+  "bundle": {
+    "stories": 50,
+    "sentences": 1002
+  },
+  "live": {
+    "stories": 67,
+    "activeSentences": 2839,
+    "snapshotSentencesIncludingRetainedRevisions": 3841,
+    "verifiedMedia": 67
+  },
+  "comparison": {
+    "equal": false,
+    "extraStoryIds": [
+      "classic-dorian-gray",
+      "classic-financier",
+      "classic-goldilocks-three-bears",
+      "classic-great-gatsby",
+      "classic-hound-baskervilles",
+      "classic-invisible-man",
+      "classic-jane-eyre",
+      "classic-little-women",
+      "classic-moby-dick",
+      "classic-phantom-opera",
+      "classic-pride-prejudice",
+      "classic-romeo-juliet",
+      "classic-scandal-bohemia",
+      "classic-three-little-pigs",
+      "classic-woman-in-white",
+      "first-order",
+      "night-library"
+    ],
+    "missingStoryIds": [],
+    "summary": {
+      "comparedStories": 50,
+      "comparedCovers": 50,
+      "metadataFieldDifferences": 1,
+      "sentenceDifferences": 698,
+      "missingRevisionWords": 117,
+      "extraRevisionWords": 16,
+      "modifiedRevisionWords": 0,
+      "questionDifferences": 19,
+      "tagDifferences": 0,
+      "translationChanges": 36,
+      "missingLinks": 152,
+      "extraLinks": 224,
+      "coverMismatches": 0
+    },
+    "missingVocabularyIds": [
+      "catches",
+      "please",
+      "roars",
+      "slow",
+      "step",
+      "unkind",
+      "wakes-up"
+    ]
+  },
+  "differingStoryIds": [
+    "quiet-morning",
+    "paper-boat",
+    "last-train",
+    "classic-tortoise-hare",
+    "classic-lion-mouse",
+    "classic-fox-grapes",
+    "classic-ants-grasshopper",
+    "classic-red-riding-hood",
+    "classic-cinderella",
+    "classic-bremen-musicians",
+    "classic-hansel-gretel",
+    "classic-happy-prince",
+    "classic-selfish-giant",
+    "classic-crow-pitcher",
+    "classic-boy-cried-wolf",
+    "classic-town-country-mouse",
+    "classic-north-wind-sun",
+    "classic-golden-eggs",
+    "classic-dog-shadow",
+    "classic-fox-crow",
+    "classic-ant-dove",
+    "classic-bundle-sticks",
+    "classic-milkmaid-pail",
+    "classic-dog-manger",
+    "classic-ass-lion-skin",
+    "classic-snow-white",
+    "classic-rapunzel",
+    "classic-frog-prince",
+    "classic-rumpelstiltskin",
+    "classic-golden-goose",
+    "classic-elves-shoemaker",
+    "classic-tom-thumb",
+    "classic-wolf-seven-kids",
+    "classic-twelve-dancing-princesses",
+    "classic-brave-little-tailor",
+    "classic-goose-girl",
+    "classic-ugly-duckling",
+    "classic-emperors-clothes",
+    "classic-thumbelina",
+    "classic-little-mermaid",
+    "classic-snow-queen",
+    "classic-little-match-girl",
+    "classic-steadfast-tin-soldier",
+    "classic-wild-swans"
+  ],
+  "languages": {
+    "ar": {
+      "missingSentences": 0,
+      "missingWords": 0,
+      "missingDescriptions": 0,
+      "complete": true
+    },
+    "bn": {
+      "missingSentences": 0,
+      "missingWords": 0,
+      "missingDescriptions": 0,
+      "complete": true
+    },
+    "es-419": {
+      "missingSentences": 0,
+      "missingWords": 0,
+      "missingDescriptions": 0,
+      "complete": true
+    },
+    "hi": {
+      "missingSentences": 0,
+      "missingWords": 0,
+      "missingDescriptions": 0,
+      "complete": true
+    },
+    "id": {
+      "missingSentences": 0,
+      "missingWords": 0,
+      "missingDescriptions": 0,
+      "complete": true
+    },
+    "pt-BR": {
+      "missingSentences": 0,
+      "missingWords": 0,
+      "missingDescriptions": 0,
+      "complete": true
+    },
+    "ru": {
+      "missingSentences": 0,
+      "missingWords": 0,
+      "missingDescriptions": 0,
+      "complete": true
+    },
+    "th": {
+      "missingSentences": 0,
+      "missingWords": 0,
+      "missingDescriptions": 0,
+      "complete": true
+    },
+    "tr": {
+      "missingSentences": 0,
+      "missingWords": 0,
+      "missingDescriptions": 0,
+      "complete": true
+    },
+    "ur": {
+      "missingSentences": 0,
+      "missingWords": 0,
+      "missingDescriptions": 0,
+      "complete": true
+    },
+    "vi": {
+      "missingSentences": 0,
+      "missingWords": 0,
+      "missingDescriptions": 0,
+      "complete": true
+    }
+  },
+  "acceptance": {
+    "passed": true,
+    "failures": []
+  },
+  "limits": [
+    "Semantic/native-language approval not established",
+    "Parity is false; audit acceptance is structural only",
+    "Bundle mapping is dictionary-derived; live links are editorial"
+  ],
+  "parityGate": {
+    "passed": false,
+    "failures": [
+      "bundle_live_parity"
+    ],
+    "command": "node native-android/backend/tools/audit-content.mjs --snapshot <anonymous-snapshot>/catalog.json --require-parity --min-questions 3"
+  }
+}
