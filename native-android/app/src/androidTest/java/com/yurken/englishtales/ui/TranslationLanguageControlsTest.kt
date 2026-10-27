@@ -24,7 +24,7 @@ class TranslationLanguageControlsTest {
     private val prefix = "translation-ui-${UUID.randomUUID()}"
     private val context by lazy {
         val base = target.createConfigurationContext(Configuration(target.resources.configuration).apply {
-            setLocales(LocaleList.forLanguageTags("en"))
+            setLocales(LocaleList.forLanguageTags("tr"))
         })
         object : ContextWrapper(base) {
             override fun getSharedPreferences(name: String, mode: Int) = target.getSharedPreferences("$prefix-$name", mode)
@@ -32,7 +32,7 @@ class TranslationLanguageControlsTest {
     }
     @After fun cleanup() { context.getSharedPreferences("app_language", Context.MODE_PRIVATE).edit().clear().commit() }
 
-    @Test fun selectionOnlyAppliesOnSaveAndDoesNotChangeEnglishUi() {
+    @Test fun selectionOnlyAppliesOnSaveAndCancelPreservesSavedChoice() {
         var reloads = 0
         compose.setContent { CompositionLocalProvider(LocalContext provides context,
             LocalConfiguration provides context.resources.configuration) {
@@ -49,12 +49,12 @@ class TranslationLanguageControlsTest {
         compose.waitUntil(5_000) { reloads == 1 }
         compose.runOnIdle {
             assertEquals("es-419", TranslationLanguage.selection(context))
-            assertEquals("en", AppLanguage.locale(context).language)
+            assertEquals("tr", AppLanguage.locale(context).language)
         }
         compose.onNodeWithTag("translation_language").performClick()
         compose.onNodeWithTag("translation_option_es-419").assertIsSelected()
         compose.onNodeWithTag("translation_option_ar").performScrollTo().performClick()
-        compose.onNodeWithText(context.getString(com.yurken.englishtales.R.string.kapat)).performClick()
+        compose.onNodeWithTag("translation_language_close").performClick()
         compose.runOnIdle { assertEquals("es-419", TranslationLanguage.selection(context)); assertEquals(1, reloads) }
         compose.onNodeWithTag("translation_language").performClick()
         compose.onNodeWithTag("translation_option_auto").performScrollTo().performClick()

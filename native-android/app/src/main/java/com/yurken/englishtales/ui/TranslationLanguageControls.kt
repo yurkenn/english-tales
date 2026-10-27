@@ -80,7 +80,8 @@ internal fun TranslationLanguageControls(onChanged: (() -> Unit)? = null) {
                 }
             }) { Text(stringResource(R.string.degisiklikleri_kaydet)) }
         },
-        dismissButton = { TextButton(enabled = !saving, onClick = { choosing = false }) { Text(stringResource(R.string.kapat)) } }
+        dismissButton = { TextButton(enabled = !saving, modifier = Modifier.testTag("translation_language_close"),
+            onClick = { choosing = false }) { Text(stringResource(R.string.kapat)) } }
     )
 }
 
