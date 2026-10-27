@@ -206,6 +206,7 @@ fun LearningSettingsScreen(snapshot: LearningSnapshot,onBack: ()->Unit,onSave: (
             com.yurken.englishtales.ads.AdPrivacyControls()
             com.yurken.englishtales.analytics.AnalyticsControls()
             LanguageControls()
+            TranslationLanguageControls()
             ThemeControls()
             val alerts=LocalTaleAlerts.current
             val savedText=stringResource(R.string.alert_settings_saved)

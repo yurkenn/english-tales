@@ -1,7 +1,7 @@
 <resources>
     <string name="content_untranslated_description">Bu İngilizce hikâyeyi oku ve kelimelerini çalış.</string>
     <string name="app_language_title">Uygulama dili</string>
-    <string name="app_language_description">Arayüz ve hikâye çevirilerinin dilini seç. Dil değişince uygulama yeniden açılır; kaydedilmiş ilerlemen korunur.</string>
+    <string name="app_language_description">Menü dilini seç. Hikâyeler İngilizce kalır; çeviri dilini Ayarlar’dan ayrıca seçebilirsin.</string>
     <string name="app_language_system">Sistem dili</string>
     <string name="app_language_current">Uygulama dili: %1$s</string>
 </resources>

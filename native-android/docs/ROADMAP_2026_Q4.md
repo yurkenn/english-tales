@@ -1,5 +1,15 @@
 # Yurken Stories — önümüzdeki 90 gün
 
+## 27 Ekim bağımsız çeviri dili
+
+Ayarlar'daki çeviri dili seçimi `codex/translation-language` dalında uygulandı; arayüzden bağımsız 11 dil ve otomatik geri dönüş mevcut. Yerel 151 birim testi geçti; cihaz CI ve görsel kabul ayrı takip edilir. [İlerleme ve ürün öncelikleri](PRODUCT_GAPS_2026-10-26.md).
+
+## 26 Ekim ürün eksikleri denetimi
+
+[Kaynak ve CI üzerinden güncel öncelikler](PRODUCT_GAPS_2026-10-26.md): bağımsız çeviri dili, ilk öğrenme döngüsünün ölçümü, çalışma kelimeleri, paket/canlı karşılaştırması ve küçük kullanıcı pilotu. 52'nin son doğrulanmış durumu aşağıdaki eski “son yayın onayı bekliyor” ifadesinden ileridir: 24 Ekim'de Google incelemesine gönderildi; canlı sunum bu turda kontrol edilmedi. Enerji/Premium #179 test dalında; aktif geri yükleme ve izlenmiş reklam kabulü hâlâ açık.
+
+### Önceki tarihli ilerleme kayıtları
+
 
 ## 24 Ekim son eşitleme kontrolü
 

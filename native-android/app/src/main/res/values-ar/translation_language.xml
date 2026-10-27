@@ -1,0 +1,7 @@
+<resources>
+    <string name="translation_language_title">لغة الترجمة</string>
+    <string name="translation_language_current">لغة الترجمة: %1$s</string>
+    <string name="translation_language_follow">اتباع لغة التطبيق (%1$s)</string>
+    <string name="translation_language_description">اختر لغة لترجمات القصص والقاموس. لن تتغير لغة القوائم. تُعاد تهيئة الشاشة عند تطبيق اللغة مع الاحتفاظ بتقدمك.</string>
+    <string name="translation_language_save_failed">تعذر حفظ اللغة. حاول مرة أخرى.</string>
+</resources>

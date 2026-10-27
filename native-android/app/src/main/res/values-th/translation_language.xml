@@ -1,0 +1,7 @@
+<resources>
+    <string name="translation_language_title">ภาษาแปล</string>
+    <string name="translation_language_current">ภาษาแปล: %1$s</string>
+    <string name="translation_language_follow">ตามภาษาของแอป (%1$s)</string>
+    <string name="translation_language_description">เลือกภาษาสำหรับคำแปลเรื่องราวและพจนานุกรม เมนูจะไม่เปลี่ยน หน้าจอจะโหลดใหม่เมื่อใช้ภาษา โดยเก็บความคืบหน้าไว้</string>
+    <string name="translation_language_save_failed">บันทึกภาษาไม่ได้ โปรดลองอีกครั้ง</string>
+</resources>
