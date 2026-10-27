@@ -82,6 +82,9 @@ android {
     testBuildType = if(sandboxDeviceProbe) "sandbox" else if (releaseDeviceProbe) "release" else "debug"
     if (releaseDeviceProbe) sourceSets.getByName("androidTest").java.setSrcDirs(listOf("src/releaseProbe/java"))
     if (serviceDeviceProbe) sourceSets.getByName("androidTest").java.setSrcDirs(listOf("src/serviceProbe/java"))
+    if (!sandboxDeviceProbe && !releaseDeviceProbe && !serviceDeviceProbe) {
+        sourceSets.getByName("androidTest").java.srcDir("src/visualProbe/java")
+    }
     if(adDeviceProbe) sourceSets.getByName("androidTest").java.srcDir("src/adProbe/java")
     namespace = "com.yurken.englishtales"
     compileSdk = 36
@@ -263,5 +266,10 @@ dependencies {
         androidTestImplementation(composeBom)
         androidTestImplementation("androidx.compose.ui:ui-test-junit4")
         debugImplementation("androidx.compose.ui:ui-test-manifest")
+        // The operator SSV probe needs a host Activity in its signed target APK too.
+        // Ordinary sandbox/store builds do not include this opt-in test host.
+        if (sandboxDeviceProbe && adDeviceProbe) {
+            add("sandboxImplementation", "androidx.compose.ui:ui-test-manifest")
+        }
     }
 }
