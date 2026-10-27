@@ -6,6 +6,7 @@ import android.content.res.Configuration
 import android.os.LocaleList
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.test.platform.app.InstrumentationRegistry
@@ -33,10 +34,12 @@ class TranslationLanguageControlsTest {
 
     @Test fun selectionOnlyAppliesOnSaveAndDoesNotChangeEnglishUi() {
         var reloads = 0
-        compose.setContent { CompositionLocalProvider(LocalContext provides context) {
+        compose.setContent { CompositionLocalProvider(LocalContext provides context,
+            LocalConfiguration provides context.resources.configuration) {
             EnglishTalesTheme { TranslationLanguageControls { reloads++ } }
         } }
         compose.onNodeWithTag("translation_language").performClick()
+        compose.onNodeWithText(context.getString(com.yurken.englishtales.R.string.translation_language_title)).assertIsDisplayed()
         compose.onNodeWithTag("translation_option_es-419").performScrollTo().performClick()
         compose.runOnIdle {
             assertEquals("", TranslationLanguage.selection(context))
