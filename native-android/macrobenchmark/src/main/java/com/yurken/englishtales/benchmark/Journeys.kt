@@ -24,7 +24,8 @@ internal fun UiDevice.requireText(text: String) =
 private fun UiDevice.deviceIdle() = waitForIdle(2_000)
 
 private fun UiDevice.choose(text: String) {
-    val selector = textSelector(text).clickable(true)
+    // Chunky buttons and answer cards keep their label in a child of the clickable block, so match the label itself.
+    val selector = textSelector(text)
     repeat(12) {
         deviceIdle()
         val item = wait(Until.findObject(selector), 700)
@@ -32,7 +33,7 @@ private fun UiDevice.choose(text: String) {
         if (item != null && bounds != null && bounds.height() > 0 &&
             bounds.centerY() in (displayHeight / 20)..(displayHeight * 39 / 40)) {
             item.click()
-            // Reply bubbles retain the same text; require the actionable choice to disappear.
+            // Each question has its own screen, so the picked answer disappears once the next one shows.
             if (wait(Until.gone(selector), 2_000)) return
         } else {
             swipe(displayWidth / 2, displayHeight * 3 / 4, displayWidth / 2, displayHeight / 3, 20)
