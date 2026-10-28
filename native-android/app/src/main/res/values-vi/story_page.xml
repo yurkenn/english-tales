@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The story page's second button and the captions under its three numbers. -->
+    <string name="story_listen_read">Vừa nghe vừa đọc</string>
+    <string name="story_stat_minutes">phút</string>
+    <string name="story_stat_sentences">câu</string>
+    <string name="story_stat_new_words">từ mới</string>
+</resources>

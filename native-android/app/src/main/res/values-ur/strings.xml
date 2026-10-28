@@ -91,9 +91,6 @@
     <string name="tumunu_gor">سب دیکھیں</string>
     <string name="hikayeyi_oku">کہانی پڑھیں</string>
     <string name="hikayeyi_paylas">کہانی شیئر کریں</string>
-    <string name="devam">جاری رکھیں</string>
-    <string name="oku">پڑھیں</string>
-    <string name="dinle">سنو</string>
     <string name="seviyesinde_hikayesi_cumleleri_cevirerek_oku">%1$s سطح پر ایک %2$s کہانی۔ جملے کے ترجمے کے ساتھ پڑھیں، نئے الفاظ محفوظ کریں اور سن کر ان کا جائزہ لیں۔</string>
     <string name="profilim">میرا پروفائل</string>
     <string name="ayarlar">ترتیبات</string>
@@ -105,8 +102,6 @@
     <string name="seri">مسلسل دن</string>
     <string name="puan">پوائنٹس</string>
     <string name="kelimeler">الفاظ</string>
-    <string name="kelimelerim_2">میرے الفاظ</string>
-    <string name="ogren">%1$s سیکھیں</string>
     <string name="hikayeler">کہانیاں</string>
     <string name="tamamlandi">مکمل</string>
     <string name="alistirmalar">پریکٹس</string>

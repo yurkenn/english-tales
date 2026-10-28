@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- What each starting level means, under its answer on the first-launch level question. -->
+    <string name="onboarding_level_a1">ছোট বাক্য, মৌলিক শব্দ</string>
+    <string name="onboarding_level_a2">দৈনন্দিন বিষয়, সহজ গল্প</string>
+    <string name="onboarding_level_b1">লম্বা গল্প, ক্লাসিক</string>
+</resources>

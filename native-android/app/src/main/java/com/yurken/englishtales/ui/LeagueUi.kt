@@ -14,6 +14,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.compositeOver
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.semantics
@@ -171,17 +172,24 @@ internal fun LeagueScreen(state: LeagueUi, displayName: String, onBack: () -> Un
 
 @Composable
 private fun LeagueHeader(standing: LeagueStanding) {
-    Column(Modifier.fillMaxWidth().padding(bottom = 8.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(6.dp)) {
-        Row(horizontalArrangement = Arrangement.spacedBy(10.dp), verticalAlignment = Alignment.CenterVertically) {
-            for (tier in 1..LeagueStanding.TIERS) LeagueBadge(tier, if (tier == standing.tier) 64.dp else 34.dp, Modifier.appearIn(tier - 1), faded = tier > standing.tier)
+    // The design's purple league card: this week's crest beside its name, the time left and the move-up rule.
+    ChunkyBox(TalePurple, Modifier.fillMaxWidth().padding(bottom = 8.dp).appearIn(0), RoundedCornerShape(22.dp), depth = 5.dp) {
+        Row(Modifier.fillMaxWidth().padding(14.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+            LeagueBadge(standing.tier, 64.dp)
+            Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(2.dp)) {
+                Text(leagueName(standing.tier), fontFamily = TaleDisplay, fontSize = 22.sp, lineHeight = 26.sp, fontWeight = FontWeight.ExtraBold, color = TaleOnPurple)
+                if (standing.joined) Text(timeLeft(standing.endsAt), fontSize = 13.sp, fontWeight = FontWeight.Bold, color = TaleOnPurple)
+                val rules = buildList {
+                    if (standing.promote > 0) add(stringResource(R.string.league_rule_up, standing.promote))
+                    if (standing.relegate > 0) add(stringResource(R.string.league_rule_down, standing.relegate))
+                }
+                if (rules.isNotEmpty()) Text(rules.joinToString(" · "), fontSize = 12.sp, lineHeight = 16.sp, fontWeight = FontWeight.SemiBold, color = TaleOnPurple)
+            }
         }
-        Text(leagueName(standing.tier), style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.ExtraBold, color = TaleInk)
-        if (standing.joined) Text(timeLeft(standing.endsAt), color = TaleMuted)
-        val rules = buildList {
-            if (standing.promote > 0) add(stringResource(R.string.league_rule_up, standing.promote))
-            if (standing.relegate > 0) add(stringResource(R.string.league_rule_down, standing.relegate))
-        }
-        if (rules.isNotEmpty()) Text(rules.joinToString(" · "), color = TaleMuted, style = MaterialTheme.typography.bodySmall)
+    }
+    // The other leagues stay as a small ladder under the card, so the next step up is in sight.
+    Row(Modifier.fillMaxWidth().padding(bottom = 4.dp), horizontalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterHorizontally), verticalAlignment = Alignment.CenterVertically) {
+        for (tier in 1..LeagueStanding.TIERS) LeagueBadge(tier, if (tier == standing.tier) 40.dp else 30.dp, Modifier.appearIn(tier), faded = tier > standing.tier)
     }
 }
 
@@ -214,7 +222,8 @@ private fun MemberRow(rank: Int, name: String, xp: Int, me: Boolean, zone: Leagu
     Row(modifier.fillMaxWidth().then(if (onClick != null) Modifier.clickable(onClick = onClick) else Modifier)
         // Each row sits on a lip; yours is outlined and lipped in blue.
         .background(edge, RoundedCornerShape(16.dp)).padding(bottom = 3.dp)
-        .background(if (me) LocalTaleColors.current.tileBlue else TaleSurface, RoundedCornerShape(16.dp))
+        // Rows in the drop zone are tinted red, as in the design.
+        .background(if (me) LocalTaleColors.current.tileBlue else if (zone == LeagueZone.Relegation) TaleError.copy(alpha = 0.1f).compositeOver(TaleSurface) else TaleSurface, RoundedCornerShape(16.dp))
         .border(2.dp, edge, RoundedCornerShape(16.dp)).padding(horizontal = 12.dp, vertical = 10.dp)
         .semantics(mergeDescendants = true) {},
         verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {

@@ -7,6 +7,7 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
@@ -38,23 +39,36 @@ fun GoogleSignInButton(enabled: Boolean,onClick: ()->Unit) {
 @Composable
 fun WelcomeScreen(state: AccountState,onGuest: ()->Unit,onEmail: ()->Unit,onGoogle: ()->Unit) {
     androidx.activity.compose.BackHandler(enabled=state.busy) {}
-    Column(Modifier.fillMaxSize().statusBarsPadding().navigationBarsPadding().verticalScroll(rememberScrollState()).padding(horizontal=24.dp,vertical=24.dp),
-        horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(16.dp)) {
-        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-            Text(stringResource(R.string.english_tales),color=TaleBlue,fontSize=15.sp,fontWeight=FontWeight.Bold,letterSpacing=2.sp,modifier=Modifier.weight(1f))
-            if (!state.busy) LanguageControls(compact = true)
+    Column(Modifier.fillMaxSize().background(TaleSurface).verticalScroll(rememberScrollState())) {
+        // A blue stage with the brand, the promise and the mascot standing on its bottom edge.
+        Box(Modifier.fillMaxWidth().heightIn(min=400.dp).clip(RoundedCornerShape(bottomStart=36.dp,bottomEnd=36.dp)).background(TaleBlue)) {
+            Box(Modifier.align(Alignment.BottomCenter).padding(bottom=60.dp).size(300.dp).background(Color.White.copy(alpha=0.10f),CircleShape))
+            Column(Modifier.fillMaxWidth().statusBarsPadding().padding(start=24.dp,end=24.dp,top=12.dp),horizontalAlignment=Alignment.CenterHorizontally) {
+                Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.CenterVertically) {
+                    Text(stringResource(R.string.english_tales),fontFamily=TaleDisplay,fontSize=18.sp,fontWeight=FontWeight.ExtraBold,color=TaleOnBlue,modifier=Modifier.weight(1f))
+                    if(!state.busy) Box(Modifier.background(TaleSurface,RoundedCornerShape(14.dp))) {LanguageControls(compact=true)}
+                }
+                Spacer(Modifier.height(18.dp))
+                Text(stringResource(R.string.her_hikayede_nbiraz_daha_ingilizce),fontFamily=TaleDisplay,fontSize=32.sp,lineHeight=36.sp,
+                    fontWeight=FontWeight.ExtraBold,color=TaleOnBlue,textAlign=TextAlign.Center,modifier=Modifier.fillMaxWidth())
+                Spacer(Modifier.height(8.dp))
+                TalesMascot(MascotMood.Welcome,Modifier.size(200.dp,230.dp).offset(y=10.dp),animate=true)
+            }
         }
-        ChunkyBox(TaleYellow,Modifier.fillMaxWidth().height(220.dp),RoundedCornerShape(28.dp),depth=6.dp,contentAlignment=Alignment.BottomCenter) {
-            TalesMascot(MascotMood.Welcome,Modifier.fillMaxHeight(),animate=true)
+        Column(Modifier.fillMaxWidth().navigationBarsPadding().padding(horizontal=22.dp,vertical=24.dp),
+            horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(14.dp)) {
+            Text(stringResource(R.string.kisa_hikayeler_oku_yeni_kelimeler),fontSize=16.sp,lineHeight=23.sp,fontWeight=FontWeight.Bold,
+                color=TaleInk,textAlign=TextAlign.Center,modifier=Modifier.fillMaxWidth())
+            Spacer(Modifier.height(6.dp))
+            ChunkyButton(stringResource(R.string.misafir_olarak_basla),onGuest,Modifier.fillMaxWidth(),enabled=!state.busy)
+            GoogleSignInButton(!state.busy,onGoogle)
+            TextButton(onClick=onEmail,enabled=!state.busy,modifier=Modifier.heightIn(min=48.dp)) {
+                Text(stringResource(R.string.e_posta_ile_giris_yap),fontSize=15.sp,fontWeight=FontWeight.ExtraBold,color=TaleBlue)
+            }
+            Text(stringResource(R.string.hesap_acmadan_baslayabilirsin_misafir_ilerlemen),fontSize=12.sp,lineHeight=17.sp,fontWeight=FontWeight.SemiBold,
+                color=TaleMuted,textAlign=TextAlign.Center,modifier=Modifier.fillMaxWidth())
+            if(state.busy) LinearProgressIndicator(Modifier.fillMaxWidth(),color=TaleGreen,trackColor=TaleLine)
+            AccountMessage(state)
         }
-        Text(stringResource(R.string.her_hikayede_nbiraz_daha_ingilizce),style=MaterialTheme.typography.headlineMedium,fontFamily=TaleDisplay,fontWeight=FontWeight.ExtraBold,textAlign=TextAlign.Center,modifier=Modifier.fillMaxWidth())
-        Text(stringResource(R.string.kisa_hikayeler_oku_yeni_kelimeler),style=MaterialTheme.typography.bodyLarge,textAlign=TextAlign.Center,color=TaleMuted)
-        Spacer(Modifier.height(8.dp))
-        GoogleSignInButton(!state.busy,onGoogle)
-        ChunkyButton(stringResource(R.string.e_posta_ile_giris_yap),onEmail,Modifier.fillMaxWidth(),color=TaleSurface,onColor=TaleInk,enabled=!state.busy,border=TaleLine)
-        ChunkyButton(stringResource(R.string.misafir_olarak_basla),onGuest,Modifier.fillMaxWidth(),enabled=!state.busy)
-        Text(stringResource(R.string.hesap_acmadan_baslayabilirsin_misafir_ilerlemen),style=MaterialTheme.typography.bodySmall,color=TaleMuted,textAlign=TextAlign.Center)
-        if(state.busy) LinearProgressIndicator(Modifier.fillMaxWidth())
-        AccountMessage(state)
     }
 }

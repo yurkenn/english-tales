@@ -67,8 +67,9 @@ class DesignGalleryTest {
         val members=names.mapIndexed {i,(name,xp) -> LeagueMember(i+1,name,xp,name=="Sen","m$i")}
         LeagueScreen(LeagueUi.Ready(LeagueStanding(2,"2026-10-26",System.currentTimeMillis()+3*86_400_000L,true,false,5,2,members,null)),"Oğuz",{},{},{},{})
     }
-    @Test fun g17_chest() = shot("17-sandik") {Column {DailyQuestsCard(snapshot,ChestUi.Opened(30,true),{},{})}}
-    @Test fun g18_streak() = shot("18-seri-kutlama") {StreakMilestoneDialog(7,snapshot.weeklyActivity,emptySet()) {}}
+    @Test fun g17_chest() = shot("17-sandik") {RewardSpotlightPage(context.getString(R.string.quests_reward_title),
+        context.getString(R.string.quests_reward_bonus,30)+"\n"+context.getString(R.string.quests_reward_league),context.getString(R.string.anladim),TaleYellow,{},dark=true) {ChestRewardHero(30)}}
+    @Test fun g18_streak() = shot("18-seri-kutlama") {StreakMilestoneDialog(7,snapshot.weeklyActivity,emptySet(),inWindow=false) {}}
     @Test fun g19_settings() = shot("19-ayarlar") {LearningSettingsScreen(snapshot,{},{_,_,_,_->})}
     @Test fun g20_account() = shot("20-hesap") {AccountScreen(AccountState(),{},{_,_->},{})}
     @Test fun g21_empty() = shot("21-bos-durum") {SavedWordsScreen(LearningSnapshot(),{},{},onBrowse={})}

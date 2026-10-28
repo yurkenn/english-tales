@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The story page's second button and the captions under its three numbers. -->
+    <string name="story_listen_read">Читать со звуком</string>
+    <string name="story_stat_minutes">минут</string>
+    <string name="story_stat_sentences">предложений</string>
+    <string name="story_stat_new_words">новых слов</string>
+</resources>

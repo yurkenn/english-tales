@@ -92,8 +92,8 @@ fun TalesBottomBar(selected: Int, onSelect: (Int) -> Unit) {
     // A light tick confirms a tab change; tapping the open tab again stays silent.
     val haptics=androidx.compose.ui.platform.LocalHapticFeedback.current
     Column(Modifier.fillMaxWidth().background(TaleSurface).navigationBarsPadding()) {
-    Box(Modifier.fillMaxWidth().height(1.dp).background(TaleLine))
-    Row(Modifier.fillMaxWidth().heightIn(min=56.dp).height(IntrinsicSize.Min)) {
+    Box(Modifier.fillMaxWidth().height(2.dp).background(TaleLine))
+    Row(Modifier.fillMaxWidth().heightIn(min=64.dp).height(IntrinsicSize.Min)) {
         tabs.forEachIndexed { index,(label,kind) ->
             val active=selected==index
             // The chosen tab's colour glides over and a soft pill grows behind its icon, so the switch reads as motion.
@@ -101,12 +101,17 @@ fun TalesBottomBar(selected: Int, onSelect: (Int) -> Unit) {
             val pill by androidx.compose.animation.core.animateFloatAsState(if(active) 1f else 0f,TaleMotion.spring,label="pill")
             var pops by remember { androidx.compose.runtime.mutableIntStateOf(0) }
             androidx.compose.runtime.LaunchedEffect(active) { if(active) pops++ }
-            val pillColor=LocalTaleColors.current.tileBlue
+            val pillColor=TaleMint
+            val pillEdge=TaleBlue
             Column(Modifier.weight(1f).fillMaxHeight().semantics { this.selected=active }.clickable(role=Role.Tab) { if(!active) haptics.performHapticFeedback(androidx.compose.ui.hapticfeedback.HapticFeedbackType.SegmentTick); onSelect(index) }.padding(top=6.dp,bottom=6.dp),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(2.dp)) {
-                Box(Modifier.size(52.dp,28.dp).drawBehind {
+                // The open tab sits in a mint tile outlined in blue, like a picked answer.
+                Box(Modifier.size(50.dp,34.dp).drawBehind {
                     if(pill>0f) {
-                        val w=size.width*(0.5f+0.5f*pill)
-                        drawRoundRect(pillColor.copy(alpha=pill.coerceIn(0f,1f)),Offset((size.width-w)/2f,0f),Size(w,size.height),CornerRadius(size.height/2f))
+                        val w=size.width*(0.6f+0.4f*pill)
+                        val a=pill.coerceIn(0f,1f)
+                        drawRoundRect(pillColor.copy(alpha=a),Offset((size.width-w)/2f,0f),Size(w,size.height),CornerRadius(12.dp.toPx()))
+                        drawRoundRect(pillEdge.copy(alpha=a),Offset((size.width-w)/2f+1.dp.toPx(),1.dp.toPx()),Size(w-2.dp.toPx(),size.height-2.dp.toPx()),
+                            CornerRadius(11.dp.toPx()),style=androidx.compose.ui.graphics.drawscope.Stroke(2.dp.toPx()))
                     }
                 }.popOn(pops),contentAlignment=Alignment.Center) {
                     ReferenceIcon(kind,tint,Modifier.size(22.dp),filled=active)

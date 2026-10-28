@@ -248,16 +248,10 @@ internal fun DailyQuestsCard(snapshot: LearningSnapshot, chest: ChestUi, onOpenC
     (chest as? ChestUi.Opened)?.let { reward ->
         val text = stringResource(R.string.quests_reward_bonus, reward.points) + "\n" +
             stringResource(if (reward.league) R.string.quests_reward_league else R.string.quests_reward_guest)
-        TaleDialog(stringResource(R.string.quests_reward_title), text, stringResource(R.string.anladim),
-            onConfirm = onDismissChest, onDismissRequest = onDismissChest) {
-            Box(Modifier.fillMaxWidth().height(190.dp), contentAlignment = Alignment.Center) {
-                Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                    QuestChest(ready = false, open = true, modifier = Modifier.size(120.dp).appearIn(0))
-                    AnimatedCounter(reward.points, style = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.ExtraBold),
-                        color = LocalTaleColors.current.purple, prefix = "+")
-                }
-                ConfettiBurst(Modifier.matchParentSize(), "chest${reward.points}", pieces = if (reward.points >= 50) 120 else 70)
-            }
+        // The design's chest moment: a full night-blue stage, the open chest in yellow light and the bonus in big yellow digits.
+        RewardSpotlight(stringResource(R.string.quests_reward_title), text, stringResource(R.string.anladim), glow = TaleYellow,
+            onDismiss = onDismissChest, confettiKey = "chest${reward.points}", dark = true) {
+            ChestRewardHero(reward.points)
         }
     }
 }
@@ -307,9 +301,9 @@ private fun QuestChest(ready: Boolean, open: Boolean, modifier: Modifier = Modif
 
 /** Full-screen celebration for streak milestones (3, 7, 14, 30 …): a big flickering flame over turning rays, the count rising and the week lighting up. */
 @Composable
-internal fun StreakMilestoneDialog(days: Int, week: List<com.yurken.englishtales.data.DailyActivity>, frozenDays: Set<String>, onDismiss: () -> Unit) {
+internal fun StreakMilestoneDialog(days: Int, week: List<com.yurken.englishtales.data.DailyActivity>, frozenDays: Set<String>, inWindow: Boolean = true, onDismiss: () -> Unit) {
     RewardSpotlight(stringResource(R.string.streak_milestone_title, days), stringResource(R.string.streak_milestone_text), stringResource(R.string.reward_continue),
-        glow = TaleWarm, onDismiss = onDismiss, confettiKey = "streak$days",
+        glow = TaleWarm, onDismiss = onDismiss, confettiKey = "streak$days", inWindow = inWindow,
         extra = { if (week.isNotEmpty()) WeekFlames(week, frozenDays) }) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             ReferenceIcon("flame", TaleWarm, Modifier.size(120.dp).flicker(true))
@@ -324,5 +318,15 @@ internal fun FreezeGiftDialog(onDismiss: () -> Unit) {
     RewardSpotlight(stringResource(R.string.freeze_gift_title), stringResource(R.string.freeze_gift_text), stringResource(R.string.freeze_gift_claim),
         glow = Color(0xFF3FD0EE), onDismiss = onDismiss) {
         FreezeShield(Modifier.fillMaxSize())
+    }
+}
+
+/** The open chest over its bonus, as the chest moment's hero. */
+@Composable
+internal fun ChestRewardHero(points: Int) {
+    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        QuestChest(ready = false, open = true, modifier = Modifier.size(124.dp))
+        AnimatedCounter(points, style = MaterialTheme.typography.headlineMedium.copy(fontFamily = TaleDisplay, fontSize = 48.sp, lineHeight = 50.sp, fontWeight = FontWeight.ExtraBold),
+            color = TaleYellow, prefix = "+")
     }
 }

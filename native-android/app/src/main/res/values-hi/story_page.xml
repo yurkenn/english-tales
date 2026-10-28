@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The story page's second button and the captions under its three numbers. -->
+    <string name="story_listen_read">सुनते हुए पढ़ें</string>
+    <string name="story_stat_minutes">मिनट</string>
+    <string name="story_stat_sentences">वाक्य</string>
+    <string name="story_stat_new_words">नए शब्द</string>
+</resources>

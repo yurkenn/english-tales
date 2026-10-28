@@ -80,11 +80,11 @@ class PlacementScreenTest {
         var cancelled = false
         var applied = false
         compose.setContent { EnglishTalesTheme { PlacementScreen({ applied=true }, { cancelled=true }) } }
-        click("Teste başla"); click("Bilmiyorum"); click("Sonraki soru"); click("Testten çık")
+        click("Teste başla"); click("Bilmiyorum"); click("Sonraki soru"); compose.onNodeWithContentDescription("Testten çık").performClick()
         compose.onNodeWithText("Testten çıkılsın mı?").assertExists()
         compose.onNodeWithText("Teste dön").performClick()
         compose.onNodeWithText("Soru 2 / 9").assertExists()
-        click("Testten çık")
+        compose.onNodeWithContentDescription("Testten çık").performClick()
         compose.onAllNodesWithText("Testten çık", useUnmergedTree=true).filterToOne(hasAnyAncestor(isDialog())).performClick()
         compose.runOnIdle { assertTrue(cancelled); assertFalse(applied) }
     }

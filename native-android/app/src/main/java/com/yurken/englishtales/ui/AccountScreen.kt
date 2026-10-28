@@ -17,6 +17,9 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.yurken.englishtales.data.AccountState
+import androidx.compose.foundation.background
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.ui.Alignment
 
 @Composable
 fun AccountScreen(state: AccountState,onBack: ()->Unit,onSignIn: (String,String)->Unit,onSignOut: ()->Unit,onGoogle: ()->Unit={},onGuest: ()->Unit=onBack,onTransfer: ()->Unit={},onSync: ()->Unit={},onResolvePreferences: (Boolean)->Unit={},onSignUp: (String,String)->Unit={_,_->},onRecovery: (String)->Unit={},onCompleteCode: (String,String)->Unit={_,_->},onResendCode: ()->Unit={},onCancelCode: ()->Unit={},onDeleteAccount: ()->Unit={}) {
@@ -31,10 +34,19 @@ fun AccountScreen(state: AccountState,onBack: ()->Unit,onSignIn: (String,String)
     var confirmDelete by remember {mutableStateOf(false)}
     var confirmTransfer by remember {mutableStateOf(false)}
     androidx.activity.compose.BackHandler(enabled=state.busy) {}
-    Column(Modifier.fillMaxSize().statusBarsPadding().navigationBarsPadding()) {
+    Column(Modifier.fillMaxSize().background(TaleBackground).statusBarsPadding().navigationBarsPadding()) {
         SimpleTopBar(stringResource(R.string.hesabin)) {if(!state.busy) onBack()}
         Column(Modifier.weight(1f).verticalScroll(rememberScrollState()).imePadding().padding(24.dp),verticalArrangement=Arrangement.spacedBy(16.dp)) {
-            Text(if(state.userId==null) stringResource(R.string.ogrenmeye_kendi_hesabinla_devam_et) else stringResource(R.string.hesap_acik),fontFamily=TaleDisplay,fontSize=24.sp,lineHeight=28.sp,fontWeight=FontWeight.ExtraBold)
+            // A guest sees the design's yellow card: why an account keeps the progress, beside the mascot.
+            if(state.userId==null) ChunkyBox(TaleYellow,Modifier.fillMaxWidth(),RoundedCornerShape(22.dp),depth=5.dp) {
+                Row(Modifier.padding(14.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
+                    TalesMascot(MascotMood.Support,Modifier.size(64.dp))
+                    Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(4.dp)) {
+                        Text(stringResource(R.string.ogrenmeye_kendi_hesabinla_devam_et),fontFamily=TaleDisplay,fontSize=21.sp,lineHeight=24.sp,fontWeight=FontWeight.ExtraBold,color=TaleOnYellow)
+                        Text(stringResource(R.string.google_ile_devam_edebilir_veya),fontSize=13.sp,lineHeight=18.sp,fontWeight=FontWeight.Bold,color=TaleOnYellow)
+                    }
+                }
+            } else Text(stringResource(R.string.hesap_acik),fontFamily=TaleDisplay,fontSize=24.sp,lineHeight=28.sp,fontWeight=FontWeight.ExtraBold)
             if(state.userId!=null) {
                 Text(state.email,fontSize=16.sp,color=TaleBlue)
                 Text(stringResource(R.string.ogrenme_kayitlarin_hesabin_uzerinden_esitlenir),fontSize=14.sp,color=TaleMuted)
@@ -74,8 +86,6 @@ fun AccountScreen(state: AccountState,onBack: ()->Unit,onSignIn: (String,String)
                     Text(stringResource(R.string.google_hesabinla_da_giris_yapabilirsin),fontSize=13.sp,color=TaleMuted)
                 }
                 if(state.needsSignIn) Text(stringResource(R.string.kayitlarina_erisimi_dogrulamak_icin_tekrar),color=TaleMuted)
-            } else {
-                Text(stringResource(R.string.google_ile_devam_edebilir_veya),fontSize=14.sp,color=TaleMuted)
             }
             if(state.userId==null || state.needsSignIn) {
                 if(state.emailAction.isNotEmpty()) {

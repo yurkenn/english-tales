@@ -6,6 +6,8 @@ import androidx.compose.foundation.*
 import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
@@ -34,23 +36,21 @@ fun DailyPlan(snapshot: LearningSnapshot,onRead: (String)->Unit,onPractice: (Lis
         GoalHeroCard(snapshot)
         if(next!=null) {
             val progress=snapshot.progressFor(next)
+            // The design's continue card: the cover on the left, and title, progress and the green button stacked beside it.
             ChunkyBox(TaleSurface,Modifier.fillMaxWidth().appearIn(1),RoundedCornerShape(24.dp),border=TaleLine) {
-                Column(Modifier.padding(14.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
-                    Row(horizontalArrangement=Arrangement.spacedBy(14.dp),verticalAlignment=Alignment.CenterVertically) {
-                        BookCover(next,Modifier.size(74.dp,106.dp))
-                        Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(6.dp)) {
-                            Text(if(resume!=null) stringResource(R.string.kaldigin_hikaye) else if(progress==100) stringResource(R.string.yeniden_kesfet) else stringResource(R.string.siradaki_hikayen),
-                                style=MaterialTheme.typography.labelMedium,color=TaleBlue)
-                            Text(next.title,style=MaterialTheme.typography.titleLarge)
-                            Text("${next.level} · ${genreLabel(next.genre)}",style=MaterialTheme.typography.bodyMedium,color=TaleMuted)
-                            if(resume!=null) {
-                                ReferenceProgress(progress/100f,Modifier.fillMaxWidth(),TaleGreen)
-                                Text(stringResource(R.string.tamamlandi_2, progress),style=MaterialTheme.typography.labelMedium,color=TaleMuted)
-                            }
-                        }
+                Row(Modifier.padding(14.dp),horizontalArrangement=Arrangement.spacedBy(14.dp),verticalAlignment=Alignment.CenterVertically) {
+                    BookCover(next,Modifier.size(78.dp,112.dp))
+                    Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(6.dp)) {
+                        Text((if(resume!=null) stringResource(R.string.kaldigin_hikaye) else if(progress==100) stringResource(R.string.yeniden_kesfet) else stringResource(R.string.siradaki_hikayen)),
+                            fontSize=13.sp,fontWeight=FontWeight.ExtraBold,color=TaleBlue)
+                        Text(next.title,style=MaterialTheme.typography.titleLarge,lineHeight=23.sp)
+                        if(resume!=null) Row(verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(8.dp)) {
+                            ReferenceProgress(progress/100f,Modifier.weight(1f),TaleGreen)
+                            Text(stringResource(R.string.tamamlandi_2, progress),fontSize=13.sp,fontWeight=FontWeight.ExtraBold,color=TaleMuted)
+                        } else Text("${next.level} · ${genreLabel(next.genre)}",style=MaterialTheme.typography.bodyMedium,color=TaleMuted)
+                        ChunkyButton(if(resume!=null) stringResource(R.string.okumaya_devam_et) else if(progress==100) stringResource(R.string.yeniden_oku) else stringResource(R.string.hikayeye_basla),
+                            onClick={onRead(next.id)},modifier=Modifier.fillMaxWidth().padding(top=4.dp),color=TaleGreen,onColor=TaleOnGreen)
                     }
-                    ChunkyButton(if(resume!=null) stringResource(R.string.okumaya_devam_et) else if(progress==100) stringResource(R.string.yeniden_oku) else stringResource(R.string.hikayeye_basla),
-                        onClick={onRead(next.id)},modifier=Modifier.fillMaxWidth())
                 }
             }
         } else Text(stringResource(R.string.yeni_hikayeler_hazirlandiginda_burada_gorunecek),color=TaleMuted)
@@ -72,6 +72,17 @@ fun DailyPlan(snapshot: LearningSnapshot,onRead: (String)->Unit,onPractice: (Lis
             Text(stringResource(R.string.tekrarlarin_guncel),color=TaleMuted)
             snapshot.nextReviewAt?.let {at -> Text(stringResource(R.string.sonraki_tekrar, SimpleDateFormat("d MMM, HH:mm",AppLanguage.locale(LocalContext.current)).format(Date(at))),
                 style=MaterialTheme.typography.bodyMedium,color=TaleMuted)}
+        }
+    }
+}
+
+/** One bright number of the reading result with what it counts under it. */
+@Composable
+private fun ResultStat(value: String,caption: String,face: Color,ink: Color,modifier: Modifier) {
+    ChunkyBox(face,modifier,RoundedCornerShape(16.dp),depth=4.dp) {
+        Column(Modifier.fillMaxWidth().padding(10.dp),horizontalAlignment=Alignment.CenterHorizontally) {
+            Text(value,fontFamily=TaleDisplay,fontSize=22.sp,lineHeight=26.sp,fontWeight=FontWeight.ExtraBold,color=ink,textAlign=TextAlign.Center,modifier=Modifier.fillMaxWidth())
+            Text(caption,fontSize=12.sp,fontWeight=FontWeight.ExtraBold,color=ink,textAlign=TextAlign.Center,modifier=Modifier.fillMaxWidth())
         }
     }
 }
@@ -181,18 +192,26 @@ fun EarnedBadges(snapshot: LearningSnapshot) {
 @Composable
 fun ReadingResultScreen(story: Story,snapshot: LearningSnapshot,onPractice: (List<String>)->Unit,onDailyPlan: ()->Unit,onBack: ()->Unit=onDailyPlan) {
     val words=remember(story.id) {LearningContent.wordsForStory(story).take(5)}
+    val goalDone=stringResource(R.string.gunluk_hedef_tamamlandi)
+    val goalText=stringResource(R.string.gunluk_hedef_adim, snapshot.todaySessions, snapshot.dailyGoal)
     Box(Modifier.fillMaxSize()) {
     Column(Modifier.fillMaxSize().background(TaleBackground).statusBarsPadding().navigationBarsPadding().verticalScroll(rememberScrollState())) {
         SimpleTopBar(stringResource(R.string.okuma_tamamlandi),onBack)
-        Column(Modifier.padding(24.dp),verticalArrangement=Arrangement.spacedBy(18.dp),horizontalAlignment=Alignment.CenterHorizontally) {
+        Column(Modifier.padding(horizontal=20.dp,vertical=8.dp),verticalArrangement=Arrangement.spacedBy(16.dp),horizontalAlignment=Alignment.CenterHorizontally) {
             Row(Modifier.appearIn(0),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(16.dp)) {
                 TalesMascot(MascotMood.Celebrate,Modifier.size(144.dp),animate=true)
                 BookCover(story,Modifier.size(64.dp,94.dp).popOn(1))
             }
             Text(stringResource(R.string.bir_hikaye_tamamladin),fontFamily=TaleDisplay,fontSize=24.sp,lineHeight=28.sp,fontWeight=FontWeight.ExtraBold,textAlign=TextAlign.Center,modifier=Modifier.fillMaxWidth().appearIn(1))
             Text(story.title,fontSize=15.sp,fontWeight=FontWeight.Bold,color=TaleMuted,textAlign=TextAlign.Center,modifier=Modifier.fillMaxWidth().appearIn(2))
-            Text(if(snapshot.dailyGoalReached) stringResource(R.string.gunluk_hedef_tamamlandi) else stringResource(R.string.gunluk_hedef_adim, snapshot.todaySessions, snapshot.dailyGoal),color=TaleOnYellow,fontWeight=FontWeight.ExtraBold,
-                modifier=Modifier.appearIn(3).background(TaleYellow,RoundedCornerShape(20.dp)).padding(horizontal=16.dp,vertical=8.dp))
+            // The design's three bright numbers: sentences read, minutes spent and today's goal.
+            FlowRow(Modifier.fillMaxWidth().appearIn(3).semantics(mergeDescendants=true) {
+                contentDescription=if(snapshot.dailyGoalReached) goalDone else goalText
+            },horizontalArrangement=Arrangement.spacedBy(10.dp),verticalArrangement=Arrangement.spacedBy(10.dp),maxItemsInEachRow=sideBySide(3)) {
+                ResultStat("${story.sentences.size}",stringResource(R.string.story_stat_sentences),TalePurple,TaleOnPurple,Modifier.weight(1f))
+                ResultStat(ReadingTime.minutes(story)?.let {"$it"} ?: "–",stringResource(R.string.story_stat_minutes),TaleBlue,TaleOnBlue,Modifier.weight(1f))
+                ResultStat("${snapshot.todaySessions.coerceAtMost(snapshot.dailyGoal)}/${snapshot.dailyGoal}",stringResource(R.string.bugunku_planin),TaleYellow,TaleOnYellow,Modifier.weight(1f))
+            }
             ComprehensionQuiz(story.id,story.questions)
             Text(stringResource(R.string.okudugun_kelimeleri_simdi_hatirlamayi_deneyelim),fontSize=14.sp,fontWeight=FontWeight.Bold,color=TaleMuted)
             // The story's words as one card of rows, each word beside its meaning.
@@ -229,22 +248,37 @@ fun LearningSettingsScreen(snapshot: LearningSnapshot,onBack: ()->Unit,onSave: (
     }
     Column(Modifier.fillMaxSize().background(TaleBackground).statusBarsPadding().navigationBarsPadding().verticalScroll(rememberScrollState())) {
         SimpleTopBar(stringResource(R.string.ayarlar),onBack)
-        Column(Modifier.padding(16.dp),verticalArrangement=Arrangement.spacedBy(14.dp)) {
-            OutlinedTextField(value=name,onValueChange={name=it.take(30)},label={Text(stringResource(R.string.adin))},singleLine=true,modifier=Modifier.fillMaxWidth())
-            Text(stringResource(R.string.ingilizce_seviyen),fontFamily=TaleDisplay,fontSize=18.sp,fontWeight=FontWeight.ExtraBold)
-            PreferenceChoices(listOf("A1","A2","B1"),level) {level=it}
-            ChunkyButton(stringResource(R.string.placement_entry),{placement=true},Modifier.fillMaxWidth(),color=TaleSurface,onColor=TaleInk,border=TaleLine)
-            Text(stringResource(R.string.sevdigin_hikayeler),fontFamily=TaleDisplay,fontSize=18.sp,fontWeight=FontWeight.ExtraBold)
-            PreferenceChoices(listOf("Günlük yaşam","Macera","Gizem"),genre,label={genreLabel(it)}) {genre=it}
-            Text(stringResource(R.string.gunluk_hedefin),fontFamily=TaleDisplay,fontSize=18.sp,fontWeight=FontWeight.ExtraBold)
-            val goalOptions=listOf(stringResource(R.string.adim_secenek_1),stringResource(R.string.adim_secenek_2),stringResource(R.string.adim_secenek_3))
-            PreferenceChoices(goalOptions,goalOptions[goal.coerceIn(1,3)-1]) {goal=goalOptions.indexOf(it)+1}
-            Text(stringResource(R.string.bir_adim_tamamlanan_bir_hikaye),fontSize=12.sp,color=TaleMuted)
-            ReminderControls()
-            com.yurken.englishtales.ads.AdPrivacyControls()
-            com.yurken.englishtales.analytics.AnalyticsControls()
-            LanguageControls()
-            ThemeControls()
+        // The design's grouped settings: a colored icon tile names each group, and its rows sit together on one white card.
+        Column(Modifier.padding(horizontal=18.dp,vertical=8.dp),verticalArrangement=Arrangement.spacedBy(18.dp)) {
+            SettingsCard {
+                OutlinedTextField(value=name,onValueChange={name=it.take(30)},label={Text(stringResource(R.string.adin))},singleLine=true,modifier=Modifier.fillMaxWidth().padding(12.dp))
+            }
+            SettingsGroup(stringResource(R.string.ingilizce_seviyen),"study",TaleGreen,TaleOnGreen) {
+                PreferenceChoices(listOf("A1","A2","B1"),level) {level=it}
+                SettingsDivider()
+                Row(Modifier.fillMaxWidth().heightIn(min=56.dp).clip(RoundedCornerShape(14.dp)).clickable(role=Role.Button) {placement=true}.padding(horizontal=12.dp),
+                    verticalAlignment=Alignment.CenterVertically) {
+                    Text(stringResource(R.string.placement_entry),fontSize=15.sp,fontWeight=FontWeight.ExtraBold,color=TaleBlue,modifier=Modifier.weight(1f))
+                    ReferenceIcon("next",TaleBlue,Modifier.size(18.dp))
+                }
+            }
+            SettingsGroup(stringResource(R.string.sevdigin_hikayeler),"read",TalePurple,TaleOnPurple) {
+                PreferenceChoices(listOf("Günlük yaşam","Macera","Gizem"),genre,label={genreLabel(it)}) {genre=it}
+            }
+            SettingsGroup(stringResource(R.string.gunluk_hedefin),"streak",TaleOrange,TaleOnOrange) {
+                val goalOptions=listOf(stringResource(R.string.adim_secenek_1),stringResource(R.string.adim_secenek_2),stringResource(R.string.adim_secenek_3))
+                PreferenceChoices(goalOptions,goalOptions[goal.coerceIn(1,3)-1]) {goal=goalOptions.indexOf(it)+1}
+                Text(stringResource(R.string.bir_adim_tamamlanan_bir_hikaye),fontSize=12.sp,color=TaleMuted,modifier=Modifier.padding(horizontal=12.dp,vertical=8.dp))
+            }
+            SettingsCard { Column(Modifier.padding(12.dp)) { ReminderControls() } }
+            SettingsCard { Column(Modifier.padding(12.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
+                com.yurken.englishtales.ads.AdPrivacyControls()
+                com.yurken.englishtales.analytics.AnalyticsControls()
+            } }
+            SettingsCard { Column(Modifier.padding(12.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
+                LanguageControls()
+                ThemeControls()
+            } }
             val alerts=LocalTaleAlerts.current
             val savedText=stringResource(R.string.alert_settings_saved)
             ChunkyButton(stringResource(R.string.degisiklikleri_kaydet),{onSave(level,genre,goal,name);alerts.success(savedText)},Modifier.fillMaxWidth())
@@ -256,12 +290,37 @@ fun LearningSettingsScreen(snapshot: LearningSnapshot,onBack: ()->Unit,onSave: (
 
 @Composable
 private fun PreferenceChoices(options: List<String>,selected: String,label: @Composable (String)->String = {it},onSelect: (String)->Unit) {
-    // Chunky rows: the picked one sits on a green lip.
-    Column(Modifier.selectableGroup(),verticalArrangement=Arrangement.spacedBy(8.dp)) {options.forEach {value ->
-        val on=value==selected; val shape=RoundedCornerShape(16.dp)
-        Row(Modifier.fillMaxWidth().background(if(on) chunkEdge(TaleGreen) else TaleLine,shape).padding(bottom=4.dp).background(if(on) TaleMint else TaleSurface,shape)
-            .border(2.dp,if(on) TaleGreen else TaleLine,shape).clip(shape).selectable(selected=on,role=Role.RadioButton) {onSelect(value)}.padding(14.dp),verticalAlignment=Alignment.CenterVertically) {
-            Text(label(value),fontSize=15.sp,fontWeight=if(on) FontWeight.ExtraBold else FontWeight.Bold,modifier=Modifier.weight(1f));if(on) Text("✓",color=TaleGreen,fontWeight=FontWeight.ExtraBold)
+    // Rows of one group card: the picked one turns mint with a filled green check, the others show an empty ring.
+    Column(Modifier.selectableGroup()) {options.forEachIndexed {i,value ->
+        val on=value==selected; val shape=RoundedCornerShape(14.dp)
+        if(i>0) SettingsDivider()
+        Row(Modifier.fillMaxWidth().clip(shape).background(if(on) TaleMint else Color.Transparent,shape).selectable(selected=on,role=Role.RadioButton) {onSelect(value)}
+            .heightIn(min=56.dp).padding(horizontal=12.dp,vertical=10.dp),verticalAlignment=Alignment.CenterVertically) {
+            Text(label(value),fontSize=15.sp,fontWeight=FontWeight.ExtraBold,color=TaleInk,modifier=Modifier.weight(1f))
+            Box(Modifier.size(26.dp).background(if(on) TaleGreen else Color.Transparent,androidx.compose.foundation.shape.CircleShape)
+                .border(2.dp,if(on) TaleGreen else TaleLine,androidx.compose.foundation.shape.CircleShape),contentAlignment=Alignment.Center) {
+                if(on) Text("✓",color=TaleOnGreen,fontSize=14.sp,fontWeight=FontWeight.ExtraBold)
+            }
         }
     } }
 }
+
+/** A settings group: its colored icon tile and title, then its rows on one white card. */
+@Composable
+private fun SettingsGroup(title: String,icon: String,color: Color,onColor: Color,content: @Composable ColumnScope.()->Unit) {
+    Column(verticalArrangement=Arrangement.spacedBy(8.dp)) {
+        Row(verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(10.dp)) {
+            Box(Modifier.size(32.dp).background(color,RoundedCornerShape(10.dp)),contentAlignment=Alignment.Center) { ReferenceIcon(icon,onColor,Modifier.size(18.dp)) }
+            Text(title,fontFamily=TaleDisplay,fontSize=18.sp,lineHeight=22.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.weight(1f))
+        }
+        SettingsCard { Column(Modifier.padding(6.dp),content=content) }
+    }
+}
+
+@Composable
+private fun SettingsCard(content: @Composable ()->Unit) {
+    ChunkyBox(TaleSurface,Modifier.fillMaxWidth(),RoundedCornerShape(22.dp),depth=5.dp,border=TaleLine) { content() }
+}
+
+@Composable
+private fun SettingsDivider() = Box(Modifier.padding(horizontal=12.dp).fillMaxWidth().height(1.dp).background(TaleLine))

@@ -90,9 +90,6 @@
     <string name="tumunu_gor">See all</string>
     <string name="hikayeyi_oku">Read the story</string>
     <string name="hikayeyi_paylas">Share the story</string>
-    <string name="devam">CONTINUE</string>
-    <string name="oku">READ</string>
-    <string name="dinle">LISTEN</string>
     <string name="seviyesinde_hikayesi_cumleleri_cevirerek_oku">A %2$s story at level %1$s. Read with sentence translations, save new words and review them by listening.</string>
     <string name="profilim">My profile</string>
     <string name="ayarlar">Settings</string>
@@ -104,8 +101,6 @@
     <string name="seri">STREAK</string>
     <string name="puan">POINTS</string>
     <string name="kelimeler">WORDS</string>
-    <string name="kelimelerim_2">MY WORDS</string>
-    <string name="ogren">Learn   %1$s</string>
     <string name="hikayeler">STORIES</string>
     <string name="tamamlandi">completed</string>
     <string name="alistirmalar">PRACTICE</string>

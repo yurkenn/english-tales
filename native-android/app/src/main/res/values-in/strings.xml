@@ -91,9 +91,6 @@
     <string name="tumunu_gor">Lihat semuanya</string>
     <string name="hikayeyi_oku">Baca ceritanya</string>
     <string name="hikayeyi_paylas">Bagikan ceritanya</string>
-    <string name="devam">LANJUTKAN</string>
-    <string name="oku">MEMBACA</string>
-    <string name="dinle">MENDENGARKAN</string>
     <string name="seviyesinde_hikayesi_cumleleri_cevirerek_oku">Cerita %2$s di level %1$s. Membaca dengan terjemahan kalimat, menyimpan kata-kata baru dan meninjaunya dengan mendengarkan.</string>
     <string name="profilim">Profil saya</string>
     <string name="ayarlar">Pengaturan</string>
@@ -105,8 +102,6 @@
     <string name="seri">GARIS</string>
     <string name="puan">POIN</string>
     <string name="kelimeler">KATA-KATA</string>
-    <string name="kelimelerim_2">KATA SAYA</string>
-    <string name="ogren">Pelajari %1$s</string>
     <string name="hikayeler">CERITA</string>
     <string name="tamamlandi">selesai</string>
     <string name="alistirmalar">PRAKTIK</string>

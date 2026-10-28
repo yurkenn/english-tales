@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- What each starting level means, under its answer on the first-launch level question. -->
+    <string name="onboarding_level_a1">ประโยคสั้น คำพื้นฐาน</string>
+    <string name="onboarding_level_a2">เรื่องในชีวิตประจำวัน นิทานง่าย ๆ</string>
+    <string name="onboarding_level_b1">เรื่องยาว วรรณกรรมคลาสสิก</string>
+</resources>

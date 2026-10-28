@@ -18,6 +18,7 @@ import com.yurken.englishtales.data.LearningSnapshot
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.compositeOver
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -38,6 +39,8 @@ fun MatchingGame(liveWords: List<WordInfo>,sessionId: Int,savedIds: Set<String>,
     // The last wrong pair shakes; each mistake bumps the tick so the same pair can shake again.
     var wrongPair by remember(sessionId) {mutableStateOf<Pair<String,String>?>(null)}
     var wrongTick by remember(sessionId) {mutableIntStateOf(0)}
+    // A wrong pair stays red for a moment, then both cards turn back.
+    LaunchedEffect(wrongTick) {if(wrongTick>0) {delay(700);wrongPair=null}}
     val combo=LocalCombo.current
     val context=LocalContext.current
     // Quizlet-style race against the clock: the board's time is kept per board size, and a faster finish is a new record.
@@ -66,21 +69,25 @@ fun MatchingGame(liveWords: List<WordInfo>,sessionId: Int,savedIds: Set<String>,
     val done=words.all {it.id in matched}
     if(done) {LaunchedEffect(sessionId) {if(!finished) finish()};return}
     GameViewport(padding) {
-        GameHeader(words.count {it.id in matched}.toFloat()/words.size,onExit)
-        Row(Modifier.fillMaxWidth().padding(vertical=12.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(8.dp)) {
-            Text(stringResource(R.string.kelimeleri_eslestirin),fontSize=16.sp,fontWeight=FontWeight.Bold,modifier=Modifier.weight(1f))
-            ComboBadge()
-            Row(Modifier.background(TalePanel,RoundedCornerShape(20.dp)).padding(horizontal=10.dp,vertical=5.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(4.dp)) {
+        // The design's race header: leave, the board's progress in green and the running clock.
+        Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(10.dp)) {
+            Box(Modifier.size(48.dp).clickable(role=Role.Button,onClick=onExit).contentLabel(stringResource(R.string.alistirmadan_cik)),contentAlignment=Alignment.Center) { Text("×",fontSize=25.sp,color=TaleMuted) }
+            ReferenceProgress(words.count {it.id in matched}.toFloat()/words.size,Modifier.weight(1f),TaleGreen,height=14.dp)
+            Row(verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(4.dp)) {
                 ReferenceIcon("bolt",TaleBlue,Modifier.size(16.dp))
-                Text(formatMatchTime(elapsed),fontSize=14.sp,fontWeight=FontWeight.Bold,color=TaleInk,fontFamily=androidx.compose.ui.text.font.FontFamily.Monospace)
+                Text(formatMatchTime(elapsed),fontSize=15.sp,fontWeight=FontWeight.ExtraBold,color=TaleInk,fontFamily=androidx.compose.ui.text.font.FontFamily.Monospace)
             }
+        }
+        Row(Modifier.fillMaxWidth().padding(vertical=10.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(8.dp)) {
+            Text(stringResource(R.string.kelimeleri_eslestirin),fontFamily=TaleDisplay,fontSize=24.sp,lineHeight=28.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.weight(1f))
+            ComboBadge()
         }
         Row(Modifier.fillMaxWidth().weight(1f),horizontalArrangement=Arrangement.spacedBy(10.dp)) {
             Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(10.dp)) {
-                words.forEachIndexed { i,word -> MatchCard(word.word,selected==word.id,word.id in matched,if(wrongPair?.first==word.id) wrongTick else 0,Modifier.fillMaxWidth().weight(1f).appearIn(i)) { if(word.id !in matched) selected=word.id } }
+                words.forEachIndexed { i,word -> MatchCard(word.word,selected==word.id,word.id in matched,if(wrongPair?.first==word.id) wrongTick else 0,wrongPair?.first==word.id,Modifier.fillMaxWidth().weight(1f).appearIn(i)) { if(word.id !in matched) selected=word.id } }
             }
             Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(10.dp)) {
-                translations.forEachIndexed { i,word -> MatchCard(word.translation,false,word.id in matched,if(wrongPair?.second==word.id) wrongTick else 0,Modifier.fillMaxWidth().weight(1f).appearIn(i+1)) {
+                translations.forEachIndexed { i,word -> MatchCard(word.translation,false,word.id in matched,if(wrongPair?.second==word.id) wrongTick else 0,wrongPair?.second==word.id,Modifier.fillMaxWidth().weight(1f).appearIn(i+1)) {
                     val current=selected
                     if(current!=null && word.id !in matched) {
                         if(current==word.id) {
@@ -99,17 +106,18 @@ fun MatchingGame(liveWords: List<WordInfo>,sessionId: Int,savedIds: Set<String>,
 }
 
 @Composable
-private fun MatchCard(label: String,selected: Boolean,matched: Boolean,shakeTick: Int,modifier: Modifier,onClick: ()->Unit) {
+private fun MatchCard(label: String,selected: Boolean,matched: Boolean,shakeTick: Int,wrong: Boolean,modifier: Modifier,onClick: ()->Unit) {
     val c=LocalTaleColors.current
-    val color by animateColorAsState(when {matched->c.success;selected->c.blue;else->c.line},label="matchBorder")
-    val fill by animateColorAsState(when {matched->c.tileGreen;selected->c.mint;else->c.surface},label="matchFill")
-    val fade by animateFloatAsState(if(matched) 0.55f else 1f,tween(TaleMotion.emphasized),label="matchFade")
+    // The design's card states: blue when picked, red for a wrong pair, flat gray once matched.
+    val color by animateColorAsState(when {matched->c.line;wrong->c.error;selected->c.blue;else->c.line},label="matchBorder")
+    val fill by animateColorAsState(when {matched->c.line;wrong->c.error.copy(alpha=0.1f).compositeOver(c.surface);selected->c.mint;else->c.surface},label="matchFill")
+    val ink=when {matched->c.muted;wrong->c.error;selected->c.blue;else->c.ink}
     var pops by remember {mutableIntStateOf(0)}
     LaunchedEffect(matched) {if(matched) pops++}
-    Box(modifier.shakeOn(shakeTick).popOn(pops).graphicsLayer {alpha=fade}.selectable(selected=selected||matched,enabled=!matched,role=Role.Button,onClick=onClick)
+    Box(modifier.shakeOn(shakeTick).popOn(pops).selectable(selected=selected||matched,enabled=!matched,role=Role.Button,onClick=onClick)
         // A card on a lip in its border color; a matched pair loses the lip and lies flat.
         .background(color,RoundedCornerShape(16.dp)).padding(bottom=if(matched) 0.dp else 4.dp)
         .background(fill,RoundedCornerShape(16.dp)).border(2.dp,color,RoundedCornerShape(16.dp)).padding(8.dp),contentAlignment=Alignment.Center) {
-        Text(label,fontSize=16.sp,fontWeight=if(selected||matched) FontWeight.ExtraBold else FontWeight.Bold,textAlign=androidx.compose.ui.text.style.TextAlign.Center)
+        Text(label,fontSize=17.sp,fontWeight=FontWeight.ExtraBold,color=ink,textAlign=androidx.compose.ui.text.style.TextAlign.Center)
     }
 }

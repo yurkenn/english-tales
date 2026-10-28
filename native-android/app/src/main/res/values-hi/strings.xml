@@ -91,9 +91,6 @@
     <string name="tumunu_gor">सभी देखें</string>
     <string name="hikayeyi_oku">कहानी पढ़ों</string>
     <string name="hikayeyi_paylas">कहानी साझा करें</string>
-    <string name="devam">जारी रखें</string>
-    <string name="oku">पढ़ना</string>
-    <string name="dinle">सुनना</string>
     <string name="seviyesinde_hikayesi_cumleleri_cevirerek_oku">%1$s स्तर पर एक %2$s कहानी। वाक्य अनुवाद के साथ पढ़ें, नए शब्द सहेजें और सुनकर उनकी समीक्षा करें।</string>
     <string name="profilim">मेरी प्रोफाइल</string>
     <string name="ayarlar">सेटिंग्स</string>
@@ -105,8 +102,6 @@
     <string name="seri">धारी</string>
     <string name="puan">अंक</string>
     <string name="kelimeler">शब्द</string>
-    <string name="kelimelerim_2">मेरी शब्द</string>
-    <string name="ogren">%1$s सीखें</string>
     <string name="hikayeler">कहानियां</string>
     <string name="tamamlandi">पुरा होना</string>
     <string name="alistirmalar">अभ्यास</string>

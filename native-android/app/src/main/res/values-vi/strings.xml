@@ -91,9 +91,6 @@
     <string name="tumunu_gor">Xem tất cả</string>
     <string name="hikayeyi_oku">Đọc câu chuyện</string>
     <string name="hikayeyi_paylas">Chia sẻ câu chuyện</string>
-    <string name="devam">TIẾP TỤC</string>
-    <string name="oku">ĐỌC</string>
-    <string name="dinle">NGHE</string>
     <string name="seviyesinde_hikayesi_cumleleri_cevirerek_oku">Câu chuyện %2$s ở cấp độ %1$s. Đọc với bản dịch câu, lưu từ mới và xem lại bằng cách nghe.</string>
     <string name="profilim">Hồ sơ của tôi</string>
     <string name="ayarlar">Cài đặt</string>
@@ -105,8 +102,6 @@
     <string name="seri">VÒI</string>
     <string name="puan">ĐIỂM</string>
     <string name="kelimeler">TỪ</string>
-    <string name="kelimelerim_2">LỜI CỦA TÔI</string>
-    <string name="ogren">Tìm hiểu %1$s</string>
     <string name="hikayeler">CÂU CHUYỆN</string>
     <string name="tamamlandi">hoàn thành</string>
     <string name="alistirmalar">LUYỆN TẬP</string>

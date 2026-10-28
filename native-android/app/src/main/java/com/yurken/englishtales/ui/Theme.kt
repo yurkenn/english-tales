@@ -34,11 +34,12 @@ data class TaleColors(
 )
 
 val LightTaleColors = TaleColors(
-    blue = Color(0xFF006CA8), onBlue = Color.White, ink = Color(0xFF17181B), muted = Color(0xFF596777),
-    background = Color.White, surface = Color.White, line = Color(0xFFE8EDF3), mint = Color(0xFFE0F5FF),
-    purple = Color(0xFF7846BD), onPurple = Color.White, success = Color(0xFF2E7D32), error = Color(0xFFB3261E),
-    warm = Color(0xFFC2410C), gold = Color(0xFF8A6400), tileBlue = Color(0xFFE3F6FF), tileYellow = Color(0xFFFFF6D5),
-    tilePurple = Color(0xFFF0E5FF), tileGreen = Color(0xFFE9F7E2), panel = Color(0xFFF8F8F8), dark = false,
+    // The playful look: white cards on a pale blue ground, outlined in a cool gray that also forms their lip.
+    blue = Color(0xFF006CA8), onBlue = Color.White, ink = Color(0xFF17212B), muted = Color(0xFF4A5A6A),
+    background = Color(0xFFF1F7FB), surface = Color.White, line = Color(0xFFDCE8F0), mint = Color(0xFFDDF0FA),
+    purple = Color(0xFF8B3FD9), onPurple = Color.White, success = Color(0xFF2E7D32), error = Color(0xFFB3261E),
+    warm = Color(0xFFC2410C), gold = Color(0xFF8A6400), tileBlue = Color(0xFFDDF0FA), tileYellow = Color(0xFFFFF6CC),
+    tilePurple = Color(0xFFF0E5FF), tileGreen = Color(0xFFE3F7EC), panel = Color(0xFFF1F7FB), dark = false,
 )
 
 val DarkTaleColors = TaleColors(
@@ -72,6 +73,10 @@ val TaleOnGreen: Color @Composable @ReadOnlyComposable get() = LocalTaleColors.c
 // Brand yellow reads the same in both themes; only [TaleOnYellow] text sits on it.
 val TaleYellow = Color(0xFFFFCE00)
 val TaleOnYellow = Color(0xFF3A2A00)
+// Streak orange and the wrong-answer red of the playful look, the same in both themes.
+val TaleOrange = Color(0xFFFF8A00)
+val TaleOnOrange = Color(0xFF2B1500)
+val TaleRed = Color(0xFFD93A40)
 
 /** Rounded display face of the playful look: screen titles, card titles and big numbers. */
 val TaleDisplay = FontFamily(Font(R.font.baloo2_semibold, FontWeight.SemiBold), Font(R.font.baloo2_bold, FontWeight.Bold),

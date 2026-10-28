@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- What each starting level means, under its answer on the first-launch level question. -->
+    <string name="onboarding_level_a1">Câu ngắn, từ cơ bản</string>
+    <string name="onboarding_level_a2">Chủ đề hằng ngày, truyện đơn giản</string>
+    <string name="onboarding_level_b1">Truyện dài, tác phẩm kinh điển</string>
+</resources>

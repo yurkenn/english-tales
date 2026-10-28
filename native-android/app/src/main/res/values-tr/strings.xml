@@ -92,9 +92,6 @@
     <string name="tumunu_gor">Tümünü gör</string>
     <string name="hikayeyi_oku">Hikâyeyi oku</string>
     <string name="hikayeyi_paylas">Hikâyeyi paylaş</string>
-    <string name="devam">DEVAM</string>
-    <string name="oku">OKU</string>
-    <string name="dinle">DİNLE</string>
     <string name="seviyesinde_hikayesi_cumleleri_cevirerek_oku">%1$s seviyesinde %2$s hikâyesi. Cümleleri çevirerek oku, yeni kelimeleri kaydet ve dinleyerek tekrar et.</string>
     <string name="profilim">Profilim</string>
     <string name="ayarlar">Ayarlar</string>
@@ -106,8 +103,6 @@
     <string name="seri">SERİ</string>
     <string name="puan">PUAN</string>
     <string name="kelimeler">KELİMELER</string>
-    <string name="kelimelerim_2">KELİMELERİM</string>
-    <string name="ogren">Öğren   %1$s</string>
     <string name="hikayeler">HİKÂYELER</string>
     <string name="tamamlandi">tamamlandı</string>
     <string name="alistirmalar">ALIŞTIRMALAR</string>

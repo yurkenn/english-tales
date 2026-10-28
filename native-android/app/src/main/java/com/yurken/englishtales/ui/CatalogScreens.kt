@@ -20,6 +20,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.layout.ContentScale
@@ -288,55 +289,80 @@ fun StoryDetailScreen(story: Story, progress: Int, onBack: () -> Unit, onRead: (
     val context=LocalContext.current
     Column(Modifier.fillMaxSize().background(TaleBackground).statusBarsPadding()) {
         Column(Modifier.weight(1f).verticalScroll(rememberScrollState()).centeredWidth(ContentWidth)) {
-            SimpleTopBar("",onBack)
-            FlowRow(Modifier.fillMaxWidth().padding(start=24.dp,end=24.dp,top=32.dp,bottom=24.dp),horizontalArrangement=Arrangement.spacedBy(24.dp),verticalArrangement=Arrangement.spacedBy(16.dp),maxItemsInEachRow=sideBySide(2)) {
-                Box(Modifier.appearIn(0)) { ChunkyBox(TaleSurface,Modifier.size(140.dp,206.dp),RoundedCornerShape(18.dp),depth=6.dp,border=TaleLine) { BookCover(story,Modifier.fillMaxSize()) }; if(progress>0) ReferenceProgress(progress/100f,Modifier.align(Alignment.BottomCenter).width(106.dp).padding(bottom=7.dp)) }
-                Column(Modifier.weight(1f).heightIn(min=200.dp),verticalArrangement=Arrangement.SpaceBetween) {
-                    Text(story.author,color=TaleMuted,fontSize=13.sp)
-                    Spacer(Modifier.height(8.dp)); Text(story.title,fontFamily=TaleDisplay,fontSize=24.sp,lineHeight=28.sp,fontWeight=FontWeight.ExtraBold)
-                    Spacer(Modifier.height(16.dp))
-                    val (levelFace,levelInk)=when(story.level){"A1"->TaleGreen to TaleOnGreen;"A2"->TaleBlue to TaleOnBlue;else->TalePurple to TaleOnPurple}
-                    Row(verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(8.dp)) {
-                        Text(story.level,color=levelInk,fontFamily=TaleDisplay,fontSize=15.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.background(levelFace,RoundedCornerShape(10.dp)).padding(horizontal=10.dp,vertical=2.dp))
-                        Text(stringResource(when(story.level){"A1"->R.string.zorluk_kolay;"A2"->R.string.zorluk_orta;else->R.string.zorluk_zor}),color=TaleMuted,fontSize=14.sp,fontWeight=FontWeight.Bold)
-                    }
-                    ReadingMinutes(story,Modifier.padding(top=4.dp))
-                    // Q5.6: shown once the learner has known words, so a new learner is not told "120 new words".
-                    newWords?.let { Text(pluralStringResource(R.plurals.story_new_words,it,it),color=TaleMuted,fontSize=11.sp,modifier=Modifier.padding(top=4.dp)) }
-                    Spacer(Modifier.height(16.dp))
-                    Row(horizontalArrangement=Arrangement.spacedBy(4.dp)) {
-                        ReferenceIconButton("read",stringResource(R.string.hikayeyi_oku),onRead)
-                        onToggleFavorite?.let { toggle ->
-                            val alerts=LocalTaleAlerts.current
-                            val added=stringResource(R.string.alert_favorite_added); val removed=stringResource(R.string.alert_favorite_removed)
-                            ReferenceIconButton("bookmark",stringResource(if(favorite) R.string.favorite_remove else R.string.favorite_add),{
-                                toggle(); if(favorite) alerts.show(removed,TaleAlertKind.Info) else alerts.success(added)
-                            },if(favorite) TaleWarm else TaleBlue)
-                        }
-                        ReferenceIconButton("share",stringResource(R.string.hikayeyi_paylas),onClick={
-                            val intent=android.content.Intent(android.content.Intent.ACTION_SEND).apply { type="text/plain"; putExtra(android.content.Intent.EXTRA_TEXT,"${story.title} — ${story.description}\nYurken Stories\n${StoryLinks.url(story.id)}") }
-                            SafeIntents.startFirst(context,android.content.Intent.createChooser(intent,context.getString(R.string.hikayeyi_paylas)))
-                        })
+            // Back on the left, favorite and share on the right, as in the design.
+            Row(Modifier.fillMaxWidth().padding(horizontal=4.dp,vertical=4.dp),verticalAlignment=Alignment.CenterVertically) {
+                ReferenceIconButton("back",stringResource(R.string.geri),onBack,TaleInk)
+                Spacer(Modifier.weight(1f))
+                onToggleFavorite?.let { toggle ->
+                    val alerts=LocalTaleAlerts.current
+                    val added=stringResource(R.string.alert_favorite_added); val removed=stringResource(R.string.alert_favorite_removed)
+                    ReferenceIconButton("bookmark",stringResource(if(favorite) R.string.favorite_remove else R.string.favorite_add),{
+                        toggle(); if(favorite) alerts.show(removed,TaleAlertKind.Info) else alerts.success(added)
+                    },if(favorite) TaleWarm else TaleInk)
+                }
+                ReferenceIconButton("share",stringResource(R.string.hikayeyi_paylas),onClick={
+                    val intent=android.content.Intent(android.content.Intent.ACTION_SEND).apply { type="text/plain"; putExtra(android.content.Intent.EXTRA_TEXT,"${story.title} — ${story.description}\nYurken Stories\n${StoryLinks.url(story.id)}") }
+                    SafeIntents.startFirst(context,android.content.Intent.createChooser(intent,context.getString(R.string.hikayeyi_paylas)))
+                },TaleInk)
+            }
+            Column(Modifier.padding(horizontal=20.dp),verticalArrangement=Arrangement.spacedBy(16.dp)) {
+                val cover: @Composable () -> Unit = {
+                    Box(Modifier.appearIn(0)) {
+                        ChunkyBox(TaleSurface,Modifier.size(140.dp,206.dp),RoundedCornerShape(18.dp),depth=6.dp,border=TaleLine) { BookCover(story,Modifier.fillMaxSize()) }
+                        if(progress>0) ReferenceProgress(progress/100f,Modifier.align(Alignment.BottomCenter).width(96.dp).padding(bottom=9.dp))
                     }
                 }
+                val info: @Composable (Modifier) -> Unit = { m ->
+                    Column(m,verticalArrangement=Arrangement.spacedBy(8.dp)) {
+                        FlowRow(horizontalArrangement=Arrangement.spacedBy(6.dp),verticalArrangement=Arrangement.spacedBy(6.dp)) {
+                            Text(story.level,color=TaleOnYellow,fontSize=12.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.background(TaleYellow,RoundedCornerShape(10.dp)).padding(horizontal=10.dp,vertical=4.dp))
+                            Text(genreLabel(story.genre),color=TaleInk,fontSize=12.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.background(LocalTaleColors.current.tilePurple,RoundedCornerShape(10.dp)).padding(horizontal=10.dp,vertical=4.dp))
+                            Text(stringResource(when(story.level){"A1"->R.string.zorluk_kolay;"A2"->R.string.zorluk_orta;else->R.string.zorluk_zor}),color=TaleMuted,fontSize=12.sp,fontWeight=FontWeight.Bold,
+                                modifier=Modifier.padding(vertical=4.dp))
+                        }
+                        Text(story.title,fontFamily=TaleDisplay,fontSize=28.sp,lineHeight=30.sp,fontWeight=FontWeight.ExtraBold)
+                        Text(story.author,color=TaleMuted,fontSize=13.sp,fontWeight=FontWeight.Bold)
+                    }
+                }
+                // Large text stacks the cover above the title so the title keeps the full width.
+                if(sideBySide(2)==1) Column(verticalArrangement=Arrangement.spacedBy(12.dp)) { cover(); info(Modifier.fillMaxWidth()) }
+                else Row(horizontalArrangement=Arrangement.spacedBy(16.dp),verticalAlignment=Alignment.Bottom) { cover(); info(Modifier.weight(1f).padding(bottom=6.dp)) }
+                // Three quick numbers: how long it takes, how many sentences, and the new words once they are known.
+                FlowRow(Modifier.fillMaxWidth().appearIn(1),horizontalArrangement=Arrangement.spacedBy(10.dp),verticalArrangement=Arrangement.spacedBy(10.dp),maxItemsInEachRow=sideBySide(3)) {
+                    StoryStat(ReadingTime.minutes(story)?.let {"$it"} ?: "–",stringResource(R.string.story_stat_minutes),TaleBlue,Modifier.weight(1f))
+                    StoryStat("${story.sentences.size}",stringResource(R.string.story_stat_sentences),TaleSuccess,Modifier.weight(1f))
+                    if(newWords!=null) StoryStat("$newWords",stringResource(R.string.story_stat_new_words),TalePurple,Modifier.weight(1f))
+                    else StoryStat("%$progress",stringResource(R.string.tamamlandi),TalePurple,Modifier.weight(1f))
+                }
+                Text(story.description,fontSize=15.sp,lineHeight=22.sp,fontWeight=FontWeight.SemiBold,color=TaleInk)
+                Text(stringResource(R.string.seviyesinde_hikayesi_cumleleri_cevirerek_oku, story.level, genreLabel(story.genre)),fontSize=14.sp,lineHeight=21.sp,color=TaleMuted)
             }
-            FlowRow(Modifier.padding(horizontal=24.dp).fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(12.dp),verticalArrangement=Arrangement.spacedBy(12.dp),maxItemsInEachRow=sideBySide(2)) {
-                DetailAction("read",if(progress in 1..99) stringResource(R.string.devam) else stringResource(R.string.oku),TaleGreen,TaleOnGreen,onRead,Modifier.weight(1f))
-                DetailAction("headphones",stringResource(R.string.dinle),TaleBlue,TaleOnBlue,onListen,Modifier.weight(1f))
-            }
-            Text(story.description,modifier=Modifier.padding(horizontal=24.dp,vertical=26.dp),fontSize=14.sp,lineHeight=22.sp,color=TaleMuted)
             content?.let { ContentDownloadAction(it,story) }
-            Text(stringResource(R.string.seviyesinde_hikayesi_cumleleri_cevirerek_oku, story.level, genreLabel(story.genre)),modifier=Modifier.padding(horizontal=24.dp),fontSize=14.sp,lineHeight=22.sp,color=TaleMuted)
             StoryWordsPreview(story)
+            Spacer(Modifier.height(8.dp))
+        }
+        // The design's two big actions stay at hand above the tab bar.
+        Column(Modifier.fillMaxWidth().centeredWidth(ContentWidth).padding(horizontal=20.dp,vertical=10.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
+            ChunkyButton(if(progress in 1..99) stringResource(R.string.okumaya_devam_et) else stringResource(R.string.okumaya_basla),onRead,Modifier.fillMaxWidth())
+            DetailAction("headphones",stringResource(R.string.story_listen_read),TaleSurface,TaleInk,onListen,Modifier.fillMaxWidth(),border=TaleLine)
         }
         TalesBottomBar(1,onTabSelected)
     }
 }
 
+/** One of the story page's numbers on a white tile, with what it counts under it. */
+@Composable
+private fun StoryStat(value: String, caption: String, color: Color, modifier: Modifier) {
+    Column(modifier.background(TaleSurface,RoundedCornerShape(16.dp)).border(2.dp,TaleLine,RoundedCornerShape(16.dp)).padding(10.dp),horizontalAlignment=Alignment.CenterHorizontally) {
+        Text(value,fontFamily=TaleDisplay,fontSize=22.sp,lineHeight=26.sp,fontWeight=FontWeight.ExtraBold,color=color,textAlign=androidx.compose.ui.text.style.TextAlign.Center,modifier=Modifier.fillMaxWidth())
+        Text(caption,fontSize=12.sp,fontWeight=FontWeight.Bold,color=TaleMuted,textAlign=androidx.compose.ui.text.style.TextAlign.Center,modifier=Modifier.fillMaxWidth())
+    }
+}
+
 /** A chunky story-page button: an icon and its label on a colored face. */
 @Composable
-private fun DetailAction(icon: String, label: String, face: Color, ink: Color, onClick: () -> Unit, modifier: Modifier = Modifier) {
-    ChunkyBox(face,modifier.heightIn(min=52.dp),RoundedCornerShape(16.dp),depth=4.dp,contentAlignment=Alignment.Center,onClick=onClick) {
+private fun DetailAction(icon: String, label: String, face: Color, ink: Color, onClick: () -> Unit, modifier: Modifier = Modifier, border: Color? = null) {
+    ChunkyBox(face,modifier.heightIn(min=52.dp),RoundedCornerShape(16.dp),depth=4.dp,border=border,contentAlignment=Alignment.Center,onClick=onClick) {
         Row(Modifier.padding(horizontal=12.dp,vertical=12.dp),horizontalArrangement=Arrangement.Center,verticalAlignment=Alignment.CenterVertically) {
             ReferenceIcon(icon,ink,Modifier.size(21.dp)); Spacer(Modifier.width(10.dp)); Text(label,color=ink,fontSize=16.sp,fontWeight=FontWeight.ExtraBold)
         }
@@ -345,34 +371,53 @@ private fun DetailAction(icon: String, label: String, face: Color, ink: Color, o
 
 @Composable
 fun ProfileScreen(snapshot: LearningSnapshot, onOpenWords: () -> Unit, padding: PaddingValues, onSettings: ()->Unit,onAccount: ()->Unit={}) {
-    Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState()).centeredWidth(ContentWidth).padding(16.dp),verticalArrangement=Arrangement.spacedBy(16.dp)) {
-        Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.SpaceBetween,verticalAlignment=Alignment.CenterVertically) {
-            Text(stringResource(R.string.profilim),fontFamily=TaleDisplay,fontSize=24.sp,lineHeight=28.sp,fontWeight=FontWeight.ExtraBold)
-            ReferenceIconButton("settings",stringResource(R.string.ayarlar),onSettings)
-        }
-        Column(Modifier.fillMaxWidth(),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(7.dp)) {
-            // The picked mascot avatar, or the plain profile icon until one is chosen; tapping opens the picker.
-            val context=LocalContext.current
-            var avatar by remember(snapshot.ownerId) { mutableStateOf(AvatarChoice.get(context,snapshot.ownerId)) }
-            var picking by rememberSaveable { mutableStateOf(false) }
-            Box(Modifier.size(92.dp).appearIn(0).background(TaleMint,CircleShape).border(4.dp,TaleYellow,CircleShape).clip(CircleShape)
-                .pressScale { picking=true }.contentLabel(stringResource(R.string.avatar_change)),contentAlignment=Alignment.Center) {
-                avatar?.let { TaleArt(AvatarChoice.all[it],Modifier.fillMaxSize().padding(14.dp)) } ?: ReferenceIcon("profile",TaleBlue,Modifier.size(42.dp))
+    val colors=LocalTaleColors.current
+    // The design's blue header runs up under the status bar, so only the bottom inset pads the page.
+    val headerFace=if(colors.dark) colors.tileBlue else colors.blue
+    val headerInk=if(colors.dark) colors.ink else colors.onBlue
+    Column(Modifier.fillMaxSize().padding(bottom=padding.calculateBottomPadding()).verticalScroll(rememberScrollState())) {
+        Column(Modifier.fillMaxWidth().background(headerFace,RoundedCornerShape(bottomStart=32.dp,bottomEnd=32.dp))
+            .padding(top=padding.calculateTopPadding()).centeredWidth(ContentWidth).padding(start=18.dp,end=18.dp,top=8.dp,bottom=20.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
+            Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.CenterVertically) {
+                Text(stringResource(R.string.profilim),fontFamily=TaleDisplay,fontSize=20.sp,fontWeight=FontWeight.ExtraBold,color=headerInk,modifier=Modifier.weight(1f))
+                Box(Modifier.size(48.dp).background(headerInk.copy(alpha=0.16f),RoundedCornerShape(14.dp)).clip(RoundedCornerShape(14.dp))
+                    .clickable(role=Role.Button,onClick=onSettings).contentLabel(stringResource(R.string.ayarlar)),contentAlignment=Alignment.Center) {
+                    ReferenceIcon("settings",headerInk,Modifier.size(24.dp))
+                }
             }
-            if(picking) TaleDialog(stringResource(R.string.avatar_choose),null,stringResource(R.string.reward_continue),onConfirm={picking=false},onDismissRequest={picking=false}) {
-                FlowRow(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(10.dp,Alignment.CenterHorizontally),verticalArrangement=Arrangement.spacedBy(10.dp),maxItemsInEachRow=4) {
-                    AvatarChoice.all.forEachIndexed {i,art ->
-                        val chosen=avatar==i
-                        Box(Modifier.size(64.dp).appearIn(i).background(if(chosen) LocalTaleColors.current.tileBlue else TaleBackground,CircleShape)
-                            .border(if(chosen) 3.dp else 1.dp,if(chosen) TaleBlue else TaleLine,CircleShape).clip(CircleShape)
-                            .selectable(chosen,role=androidx.compose.ui.semantics.Role.RadioButton) {avatar=i;AvatarChoice.set(context,snapshot.ownerId,i)},contentAlignment=Alignment.Center) {
-                            TaleArt(art,Modifier.fillMaxSize().padding(10.dp).then(if(chosen) Modifier.popOn(i+1) else Modifier))
+            Row(verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(14.dp)) {
+                // The picked mascot avatar, or the plain profile icon until one is chosen; tapping opens the picker.
+                val context=LocalContext.current
+                var avatar by remember(snapshot.ownerId) { mutableStateOf(AvatarChoice.get(context,snapshot.ownerId)) }
+                var picking by rememberSaveable { mutableStateOf(false) }
+                Box(Modifier.size(76.dp).appearIn(0).background(TaleMint,CircleShape).border(4.dp,TaleYellow,CircleShape).clip(CircleShape)
+                    .pressScale { picking=true }.contentLabel(stringResource(R.string.avatar_change)),contentAlignment=Alignment.Center) {
+                    avatar?.let { TaleArt(AvatarChoice.all[it],Modifier.fillMaxSize().padding(12.dp)) } ?: ReferenceIcon("profile",TaleBlue,Modifier.size(36.dp))
+                }
+                if(picking) TaleDialog(stringResource(R.string.avatar_choose),null,stringResource(R.string.reward_continue),onConfirm={picking=false},onDismissRequest={picking=false}) {
+                    FlowRow(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(10.dp,Alignment.CenterHorizontally),verticalArrangement=Arrangement.spacedBy(10.dp),maxItemsInEachRow=4) {
+                        AvatarChoice.all.forEachIndexed {i,art ->
+                            val chosen=avatar==i
+                            Box(Modifier.size(64.dp).appearIn(i).background(if(chosen) LocalTaleColors.current.tileBlue else TaleBackground,CircleShape)
+                                .border(if(chosen) 3.dp else 1.dp,if(chosen) TaleBlue else TaleLine,CircleShape).clip(CircleShape)
+                                .selectable(chosen,role=androidx.compose.ui.semantics.Role.RadioButton) {avatar=i;AvatarChoice.set(context,snapshot.ownerId,i)},contentAlignment=Alignment.Center) {
+                                TaleArt(art,Modifier.fillMaxSize().padding(10.dp).then(if(chosen) Modifier.popOn(i+1) else Modifier))
+                            }
                         }
                     }
                 }
+                Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(2.dp)) {
+                    Text(snapshot.displayName,fontFamily=TaleDisplay,fontWeight=FontWeight.ExtraBold,fontSize=26.sp,lineHeight=29.sp,color=headerInk)
+                    Text(stringResource(R.string.seviyesi, snapshot.level, genreLabel(snapshot.preferredGenre)),color=headerInk,fontSize=14.sp,fontWeight=FontWeight.Bold)
+                }
             }
-            Text(snapshot.displayName,fontFamily=TaleDisplay,fontWeight=FontWeight.ExtraBold,fontSize=22.sp,lineHeight=26.sp)
-            Text(stringResource(R.string.seviyesi, snapshot.level, snapshot.preferredGenre),color=TaleBlue,fontSize=13.sp,fontWeight=FontWeight.Bold)
+        }
+    Column(Modifier.fillMaxWidth().centeredWidth(ContentWidth).padding(16.dp),verticalArrangement=Arrangement.spacedBy(16.dp)) {
+        // Streak, points and known words as the design's three bright tiles; each explains itself on a tap.
+        FlowRow(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(10.dp),verticalArrangement=Arrangement.spacedBy(10.dp),maxItemsInEachRow=sideBySide(3)) {
+            ProfileStatTile(stringResource(R.string.seri),"${snapshot.streak}",TaleOrange,TaleOnOrange,stringResource(R.string.calisma_serin),streakExplanation(snapshot),Modifier.weight(1f).appearIn(1))
+            ProfileStatTile(stringResource(R.string.puan),"${snapshot.points}",TaleYellow,TaleOnYellow,stringResource(R.string.puanlarin),pointsExplanation(snapshot),Modifier.weight(1f).appearIn(1))
+            ProfileStatTile(stringResource(R.string.kelimeler),"${snapshot.knownWordCount}",TaleGreen,TaleOnGreen,stringResource(R.string.known_words_title),stringResource(R.string.known_words_explanation),Modifier.weight(1f).appearIn(1))
         }
         DetailAction("study",stringResource(R.string.kelimelerim),TaleBlue,TaleOnBlue,onOpenWords,Modifier.fillMaxWidth().appearIn(1))
         ChunkyBox(TaleSurface,Modifier.fillMaxWidth().heightIn(min=52.dp),RoundedCornerShape(16.dp),depth=4.dp,border=TaleLine,contentAlignment=Alignment.Center,onClick=onAccount) {
@@ -380,18 +425,10 @@ fun ProfileScreen(snapshot: LearningSnapshot, onOpenWords: () -> Unit, padding: 
                 fontSize=16.sp,fontWeight=FontWeight.ExtraBold,textAlign=androidx.compose.ui.text.style.TextAlign.Center)
         }
         ProfilePanel(index=2){
-            Text(stringResource(R.string.rutbe),fontSize=12.sp,letterSpacing=1.sp,fontWeight=FontWeight.Bold)
-            Column(Modifier.fillMaxWidth().padding(top=16.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
+            Text(stringResource(R.string.rutbe),fontFamily=TaleDisplay,fontSize=19.sp,fontWeight=FontWeight.ExtraBold)
+            Column(Modifier.fillMaxWidth().padding(top=10.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
                 RankProgress(snapshot.points)
             }
-        }
-        FlowRow(horizontalArrangement=Arrangement.spacedBy(16.dp),verticalArrangement=Arrangement.spacedBy(16.dp),maxItemsInEachRow=sideBySide(2)) {
-            ProfilePanel(Modifier.weight(1f)) { Text(stringResource(R.string.seri),fontSize=12.sp,letterSpacing=1.sp,fontWeight=FontWeight.Bold); LearningInfoButton("streak","${snapshot.streak}",stringResource(R.string.calisma_serin),streakExplanation(snapshot)) }
-            ProfilePanel(Modifier.weight(1f)) { Text(stringResource(R.string.puan),fontSize=12.sp,letterSpacing=1.sp,fontWeight=FontWeight.Bold); LearningInfoButton("points","${snapshot.points}",stringResource(R.string.puanlarin),pointsExplanation(snapshot)) }
-        }
-        ProfilePanel(index=3){
-            FlowRow(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.SpaceBetween,verticalArrangement=Arrangement.spacedBy(8.dp)) { Text(stringResource(R.string.kelimeler),fontSize=12.sp,letterSpacing=1.sp,fontWeight=FontWeight.Bold); Text(stringResource(R.string.kelimelerim_2),color=TaleBlue,fontSize=12.sp,modifier=Modifier.clickable(role=Role.Button,onClick=onOpenWords)) }
-            ChunkyButton(stringResource(R.string.ogren, snapshot.savedWordIds.size),onOpenWords,Modifier.fillMaxWidth().padding(top=18.dp),TalePurple,TaleOnPurple)
         }
         // Q5.5: how many words the learner knows, from practice and from reading.
         ProfilePanel(index=4){
@@ -408,7 +445,22 @@ fun ProfileScreen(snapshot: LearningSnapshot, onOpenWords: () -> Unit, padding: 
         WeeklyActivity(snapshot)
         EarnedBadges(snapshot)
     }
+    }
 
+}
+
+/** A bright profile number with its caption over it; a tap explains where the number comes from. */
+@Composable
+private fun ProfileStatTile(caption: String, value: String, color: Color, onColor: Color, title: String, explanation: String, modifier: Modifier) {
+    var open by remember { mutableStateOf(false) }
+    ChunkyBox(color,modifier.heightIn(min=76.dp).contentLabel(stringResource(R.string.bilgi, title, value)),RoundedCornerShape(22.dp),depth=5.dp,
+        contentAlignment=Alignment.Center,onClick={ open=true }) {
+        Column(Modifier.fillMaxWidth().padding(horizontal=6.dp,vertical=10.dp),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(2.dp)) {
+            Text(caption,fontSize=11.sp,fontWeight=FontWeight.Black,letterSpacing=0.5.sp,color=onColor,textAlign=androidx.compose.ui.text.style.TextAlign.Center,modifier=Modifier.fillMaxWidth())
+            Text(value,fontFamily=TaleDisplay,fontSize=24.sp,lineHeight=28.sp,fontWeight=FontWeight.ExtraBold,color=onColor,textAlign=androidx.compose.ui.text.style.TextAlign.Center,modifier=Modifier.fillMaxWidth())
+        }
+    }
+    if(open) TaleDialog(title,explanation,stringResource(R.string.anladim),onConfirm={ open=false },onDismissRequest={ open=false },mood=MascotMood.Welcome)
 }
 
 @Composable
@@ -428,41 +480,34 @@ fun SavedWordsScreen(snapshot: LearningSnapshot, onBack: () -> Unit, onRemoveWor
     // The background spans the screen; the word list keeps a readable width on tablets.
     Column(Modifier.fillMaxSize().background(TaleBackground).statusBarsPadding().navigationBarsPadding().centeredWidth(ContentWidth)) {
         SimpleTopBar(stringResource(R.string.kelimelerim),onBack)
-        if(LocalDensity.current.fontScale>1.4f) {
-            Column(Modifier.padding(horizontal=12.dp,vertical=12.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
-                stages.forEach { (stage,label,color) ->
-                    val selected=stage==selectedStage
-                    StageTile(selected,color,Modifier.fillMaxWidth(),{selectedStage=stage}) {
-                        Row(Modifier.fillMaxWidth().heightIn(min=64.dp).padding(12.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
-                            ReferenceIcon(if(stage=="learning") "study" else if(stage=="reviewing") "review" else "check",stageInk(selected,color),Modifier.size(26.dp))
-                            Text(label,fontSize=14.sp,fontWeight=FontWeight.ExtraBold,color=stageInk(selected,TaleInk,color),modifier=Modifier.weight(1f))
-                            Text("${snapshot.savedWordIds.count { (snapshot.wordStates[it]?:"learning")==stage }}",fontFamily=TaleDisplay,fontSize=24.sp,fontWeight=FontWeight.ExtraBold,color=stageInk(selected,TaleInk,color))
-                        }
-                    }
-                }
-            }
-        } else Row(Modifier.padding(horizontal=12.dp,vertical=12.dp).height(IntrinsicSize.Min),horizontalArrangement=Arrangement.spacedBy(8.dp)) {
-            stages.forEach { (stage,label,color) ->
-                val selected=stage==selectedStage
-                StageTile(selected,color,Modifier.weight(1f).fillMaxHeight(),{selectedStage=stage}) {
-                    Column(Modifier.fillMaxWidth().heightIn(min=118.dp).padding(11.dp),verticalArrangement=Arrangement.spacedBy(6.dp)) {
-                        Box(Modifier.height(30.dp),contentAlignment=Alignment.CenterStart) {
-                            ReferenceIcon(if(stage=="learning") "study" else if(stage=="reviewing") "review" else "check",stageInk(selected,color),Modifier.size(23.dp))
-                        }
-                        Text(label,fontSize=11.sp,fontWeight=FontWeight.ExtraBold,color=stageInk(selected,TaleInk,color))
-                        Text("${snapshot.savedWordIds.count { (snapshot.wordStates[it]?:"learning")==stage }}",fontFamily=TaleDisplay,fontSize=29.sp,fontWeight=FontWeight.ExtraBold,color=stageInk(selected,TaleInk,color))
-                    }
-                }
+        // The design's segmented stages on a pale track; they stack once text is large.
+        val large=LocalDensity.current.fontScale>1.4f
+        val track=Modifier.padding(horizontal=14.dp,vertical=10.dp).fillMaxWidth().background(TaleLine.copy(alpha=0.7f),RoundedCornerShape(16.dp)).padding(4.dp).selectableGroup()
+        @Composable fun stage(stage: String,label: String,color: Color,modifier: Modifier) {
+            val selected=stage==selectedStage
+            val count=snapshot.savedWordIds.count { (snapshot.wordStates[it]?:"learning")==stage }
+            val ink=if(!selected) TaleMuted else if(color==TaleGreen) TaleSuccess else color
+            // The count sits over its label so a long stage name never breaks the number onto its own line.
+            Column(modifier.heightIn(min=48.dp).clip(RoundedCornerShape(12.dp)).background(if(selected) TaleSurface else Color.Transparent,RoundedCornerShape(12.dp))
+                .selectable(selected=selected,role=Role.Tab) {selectedStage=stage}.semantics(mergeDescendants=true) {}.padding(horizontal=6.dp,vertical=6.dp),
+                horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.Center) {
+                Text("$count",fontFamily=TaleDisplay,fontSize=18.sp,fontWeight=FontWeight.ExtraBold,color=ink)
+                Text(label,fontSize=12.sp,lineHeight=15.sp,fontWeight=FontWeight.ExtraBold,color=ink,textAlign=androidx.compose.ui.text.style.TextAlign.Center)
             }
         }
+        if(large) Column(track,verticalArrangement=Arrangement.spacedBy(4.dp)) { stages.forEach { (stage,label,color) -> stage(stage,label,color,Modifier.fillMaxWidth()) } }
+        else Row(track.height(IntrinsicSize.Min),horizontalArrangement=Arrangement.spacedBy(4.dp)) { stages.forEach { (stage,label,color) -> stage(stage,label,color,Modifier.weight(1f).fillMaxHeight()) } }
         narrator.error?.let { Text(it,color=TaleMuted,fontSize=12.sp,modifier=Modifier.padding(horizontal=14.dp)) }
         Text(stringResource(R.string.kelime, words.size),fontFamily=TaleDisplay,fontSize=20.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.padding(horizontal=14.dp,vertical=6.dp))
         LazyColumn(contentPadding=PaddingValues(12.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
             items(words,key={it.id}) { word ->
                 ChunkyBox(TaleSurface,Modifier.fillMaxWidth().animateItem(),RoundedCornerShape(18.dp),depth=4.dp,border=TaleLine) {
-                Row(Modifier.fillMaxWidth().padding(start=16.dp,end=8.dp,top=12.dp,bottom=12.dp),verticalAlignment=Alignment.CenterVertically) {
+                Row(Modifier.fillMaxWidth().padding(start=10.dp,end=8.dp,top=10.dp,bottom=10.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
+                    // The design's big blue speaker leads each row.
+                    ChunkyBox(TaleBlue,Modifier.size(48.dp).contentLabel(stringResource(R.string.kelimesini_dinle, word.word)),RoundedCornerShape(14.dp),depth=3.dp,contentAlignment=Alignment.Center,onClick={narrator.speak(word.word)}) {
+                        ReferenceIcon("volume",TaleOnBlue,Modifier.size(22.dp))
+                    }
                     Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(3.dp)) { Text(word.word,fontFamily=TaleDisplay,fontSize=19.sp,fontWeight=FontWeight.ExtraBold); Text(word.translation,fontSize=14.sp,fontWeight=FontWeight.Bold,color=TaleMuted) }
-                    ReferenceIconButton("volume",stringResource(R.string.kelimesini_dinle, word.word),{narrator.speak(word.word)})
                     TextButton(onClick={onRemoveWord(word.id);alerts.show(context.getString(R.string.alert_word_removed,word.word),TaleAlertKind.Info)},contentPadding=PaddingValues(4.dp)) { Text(stringResource(R.string.kaldir),fontSize=12.sp,fontWeight=FontWeight.Bold,color=TaleMuted) }
                 }
                 }
@@ -477,18 +522,6 @@ fun SavedWordsScreen(snapshot: LearningSnapshot, onBack: () -> Unit, onRemoveWor
 }
 
 /** A Kelimelerim stage tab: filled in its color when chosen, white on a lip otherwise. */
-@Composable
-private fun StageTile(selected: Boolean, color: Color, modifier: Modifier, onSelect: () -> Unit, content: @Composable BoxScope.() -> Unit) {
-    ChunkyBox(if(selected) color else TaleSurface,modifier.selectable(selected=selected,role=Role.Tab,onClick=onSelect),RoundedCornerShape(18.dp),depth=4.dp,
-        border=if(selected) null else TaleLine,content=content)
-}
-
-/** Text on a stage tile: the tile color's own text color when chosen, else the given color. */
-@Composable
-private fun stageInk(selected: Boolean, otherwise: Color, face: Color=otherwise)=if(!selected) otherwise else when(face) {
-    TaleGreen -> TaleOnGreen; TalePurple -> TaleOnPurple; else -> TaleOnBlue
-}
-
 @Composable
 private fun StoryCard(story: Story, progress: Int, onClick: () -> Unit) {
     Row(Modifier.fillMaxWidth().appearIn().pressScale(onClick=onClick),horizontalArrangement=Arrangement.spacedBy(12.dp)) {
