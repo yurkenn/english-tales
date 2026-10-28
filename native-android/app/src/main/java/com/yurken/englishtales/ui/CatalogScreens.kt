@@ -486,10 +486,13 @@ fun SavedWordsScreen(snapshot: LearningSnapshot, onBack: () -> Unit, onRemoveWor
         @Composable fun stage(stage: String,label: String,color: Color,modifier: Modifier) {
             val selected=stage==selectedStage
             val count=snapshot.savedWordIds.count { (snapshot.wordStates[it]?:"learning")==stage }
-            Row(modifier.heightIn(min=48.dp).clip(RoundedCornerShape(12.dp)).background(if(selected) TaleSurface else Color.Transparent,RoundedCornerShape(12.dp))
-                .selectable(selected=selected,role=Role.Tab) {selectedStage=stage}.padding(horizontal=8.dp,vertical=6.dp),
-                verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.Center) {
-                Text("$label · $count",fontSize=13.sp,fontWeight=FontWeight.ExtraBold,color=if(!selected) TaleMuted else if(color==TaleGreen) TaleSuccess else color,textAlign=androidx.compose.ui.text.style.TextAlign.Center,modifier=Modifier.fillMaxWidth())
+            val ink=if(!selected) TaleMuted else if(color==TaleGreen) TaleSuccess else color
+            // The count sits over its label so a long stage name never breaks the number onto its own line.
+            Column(modifier.heightIn(min=48.dp).clip(RoundedCornerShape(12.dp)).background(if(selected) TaleSurface else Color.Transparent,RoundedCornerShape(12.dp))
+                .selectable(selected=selected,role=Role.Tab) {selectedStage=stage}.semantics(mergeDescendants=true) {}.padding(horizontal=6.dp,vertical=6.dp),
+                horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.Center) {
+                Text("$count",fontFamily=TaleDisplay,fontSize=18.sp,fontWeight=FontWeight.ExtraBold,color=ink)
+                Text(label,fontSize=12.sp,lineHeight=15.sp,fontWeight=FontWeight.ExtraBold,color=ink,textAlign=androidx.compose.ui.text.style.TextAlign.Center)
             }
         }
         if(large) Column(track,verticalArrangement=Arrangement.spacedBy(4.dp)) { stages.forEach { (stage,label,color) -> stage(stage,label,color,Modifier.fillMaxWidth()) } }
