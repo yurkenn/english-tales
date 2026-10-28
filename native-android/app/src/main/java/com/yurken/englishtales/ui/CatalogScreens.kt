@@ -416,7 +416,7 @@ private fun ProfilePanel(modifier: Modifier = Modifier, index: Int = 0, content:
 @Composable
 fun SavedWordsScreen(snapshot: LearningSnapshot, onBack: () -> Unit, onRemoveWord: (String) -> Unit, onBrowse: (() -> Unit)? = null) {
     var selectedStage by rememberSaveable { mutableStateOf("learning") }
-    val stages=listOf(Triple("learning",stringResource(R.string.ogreniyorum),TaleBlue),Triple("reviewing",stringResource(R.string.tekrar_ediyorum),Color(0xFF7BCC3A)),Triple("known",stringResource(R.string.biliyorum),TalePurple))
+    val stages=listOf(Triple("learning",stringResource(R.string.ogreniyorum),TaleBlue),Triple("reviewing",stringResource(R.string.tekrar_ediyorum),TaleGreen),Triple("known",stringResource(R.string.biliyorum),TalePurple))
     val words=snapshot.savedWordList().filter { (snapshot.wordStates[it.id]?:"learning")==selectedStage }
     val narrator=rememberNarrator()
     val alerts=LocalTaleAlerts.current
@@ -425,35 +425,42 @@ fun SavedWordsScreen(snapshot: LearningSnapshot, onBack: () -> Unit, onRemoveWor
     Column(Modifier.fillMaxSize().background(TaleBackground).statusBarsPadding().navigationBarsPadding().centeredWidth(ContentWidth)) {
         SimpleTopBar(stringResource(R.string.kelimelerim),onBack)
         if(LocalDensity.current.fontScale>1.4f) {
-            Column(Modifier.padding(horizontal=12.dp,vertical=12.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
+            Column(Modifier.padding(horizontal=12.dp,vertical=12.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
                 stages.forEach { (stage,label,color) ->
-                    Row(Modifier.fillMaxWidth().heightIn(min=64.dp).border(if(stage==selectedStage) 3.dp else 2.dp,color.copy(alpha=0.25f),RoundedCornerShape(12.dp)).selectable(selected=stage==selectedStage,role=Role.Tab) {selectedStage=stage}.padding(12.dp),
-                        verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
-                        ReferenceIcon(if(stage=="learning") "study" else if(stage=="reviewing") "review" else "check",color,Modifier.size(26.dp))
-                        Text(label,fontSize=13.sp,fontWeight=FontWeight.Bold,modifier=Modifier.weight(1f))
-                        Text("${snapshot.savedWordIds.count { (snapshot.wordStates[it]?:"learning")==stage }}",fontSize=24.sp,fontWeight=FontWeight.Bold)
+                    val selected=stage==selectedStage
+                    StageTile(selected,color,Modifier.fillMaxWidth(),{selectedStage=stage}) {
+                        Row(Modifier.fillMaxWidth().heightIn(min=64.dp).padding(12.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
+                            ReferenceIcon(if(stage=="learning") "study" else if(stage=="reviewing") "review" else "check",stageInk(selected,color),Modifier.size(26.dp))
+                            Text(label,fontSize=14.sp,fontWeight=FontWeight.ExtraBold,color=stageInk(selected,TaleInk,color),modifier=Modifier.weight(1f))
+                            Text("${snapshot.savedWordIds.count { (snapshot.wordStates[it]?:"learning")==stage }}",fontFamily=TaleDisplay,fontSize=24.sp,fontWeight=FontWeight.ExtraBold,color=stageInk(selected,TaleInk,color))
+                        }
                     }
                 }
             }
-        } else Row(Modifier.padding(horizontal=12.dp,vertical=12.dp).height(IntrinsicSize.Min),horizontalArrangement=Arrangement.spacedBy(5.dp)) {
+        } else Row(Modifier.padding(horizontal=12.dp,vertical=12.dp).height(IntrinsicSize.Min),horizontalArrangement=Arrangement.spacedBy(8.dp)) {
             stages.forEach { (stage,label,color) ->
-                Column(Modifier.weight(1f).fillMaxHeight().heightIn(min=118.dp).border(if(stage==selectedStage) 3.dp else 2.dp,color.copy(alpha=0.18f),RoundedCornerShape(16.dp)).selectable(selected=stage==selectedStage,role=Role.Tab) { selectedStage=stage }.padding(11.dp),verticalArrangement=Arrangement.spacedBy(6.dp)) {
-                    Box(Modifier.height(30.dp),contentAlignment=Alignment.CenterStart) {
-                        ReferenceIcon(if(stage=="learning") "study" else if(stage=="reviewing") "review" else "check",color,Modifier.size(23.dp))
+                val selected=stage==selectedStage
+                StageTile(selected,color,Modifier.weight(1f).fillMaxHeight(),{selectedStage=stage}) {
+                    Column(Modifier.fillMaxWidth().heightIn(min=118.dp).padding(11.dp),verticalArrangement=Arrangement.spacedBy(6.dp)) {
+                        Box(Modifier.height(30.dp),contentAlignment=Alignment.CenterStart) {
+                            ReferenceIcon(if(stage=="learning") "study" else if(stage=="reviewing") "review" else "check",stageInk(selected,color),Modifier.size(23.dp))
+                        }
+                        Text(label,fontSize=12.sp,fontWeight=FontWeight.ExtraBold,color=stageInk(selected,TaleInk,color))
+                        Text("${snapshot.savedWordIds.count { (snapshot.wordStates[it]?:"learning")==stage }}",fontFamily=TaleDisplay,fontSize=29.sp,fontWeight=FontWeight.ExtraBold,color=stageInk(selected,TaleInk,color))
                     }
-                    Text(label,fontSize=11.sp,fontWeight=FontWeight.Bold)
-                    Text("${snapshot.savedWordIds.count { (snapshot.wordStates[it]?:"learning")==stage }}",fontSize=29.sp,fontWeight=FontWeight.Bold)
                 }
             }
         }
         narrator.error?.let { Text(it,color=TaleMuted,fontSize=12.sp,modifier=Modifier.padding(horizontal=14.dp)) }
-        Text(stringResource(R.string.kelime, words.size),color=TaleMuted,fontSize=19.sp,modifier=Modifier.padding(14.dp))
+        Text(stringResource(R.string.kelime, words.size),fontFamily=TaleDisplay,fontSize=20.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.padding(horizontal=14.dp,vertical=6.dp))
         LazyColumn(contentPadding=PaddingValues(12.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
             items(words,key={it.id}) { word ->
-                Row(Modifier.fillMaxWidth().animateItem().background(TaleSurface,RoundedCornerShape(14.dp)).border(1.5.dp,TaleLine,RoundedCornerShape(14.dp)).padding(16.dp),verticalAlignment=Alignment.CenterVertically) {
-                    Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(5.dp)) { Text(word.word,fontSize=17.sp,fontWeight=FontWeight.Bold); Text(word.translation,fontSize=14.sp,color=TaleMuted) }
+                ChunkyBox(TaleSurface,Modifier.fillMaxWidth().animateItem(),RoundedCornerShape(18.dp),depth=4.dp,border=TaleLine) {
+                Row(Modifier.fillMaxWidth().padding(start=16.dp,end=8.dp,top=12.dp,bottom=12.dp),verticalAlignment=Alignment.CenterVertically) {
+                    Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(3.dp)) { Text(word.word,fontFamily=TaleDisplay,fontSize=19.sp,fontWeight=FontWeight.ExtraBold); Text(word.translation,fontSize=14.sp,fontWeight=FontWeight.Bold,color=TaleMuted) }
                     ReferenceIconButton("volume",stringResource(R.string.kelimesini_dinle, word.word),{narrator.speak(word.word)})
-                    TextButton(onClick={onRemoveWord(word.id);alerts.show(context.getString(R.string.alert_word_removed,word.word),TaleAlertKind.Info)},contentPadding=PaddingValues(4.dp)) { Text(stringResource(R.string.kaldir),fontSize=10.sp,color=TaleMuted) }
+                    TextButton(onClick={onRemoveWord(word.id);alerts.show(context.getString(R.string.alert_word_removed,word.word),TaleAlertKind.Info)},contentPadding=PaddingValues(4.dp)) { Text(stringResource(R.string.kaldir),fontSize=12.sp,fontWeight=FontWeight.Bold,color=TaleMuted) }
+                }
                 }
             }
             if(words.isEmpty()) item {
@@ -463,6 +470,19 @@ fun SavedWordsScreen(snapshot: LearningSnapshot, onBack: () -> Unit, onRemoveWor
             }
         }
     }
+}
+
+/** A Kelimelerim stage tab: filled in its color when chosen, white on a lip otherwise. */
+@Composable
+private fun StageTile(selected: Boolean, color: Color, modifier: Modifier, onSelect: () -> Unit, content: @Composable BoxScope.() -> Unit) {
+    ChunkyBox(if(selected) color else TaleSurface,modifier.selectable(selected=selected,role=Role.Tab,onClick=onSelect),RoundedCornerShape(18.dp),depth=4.dp,
+        border=if(selected) null else TaleLine,content=content)
+}
+
+/** Text on a stage tile: the tile color's own text color when chosen, else the given color. */
+@Composable
+private fun stageInk(selected: Boolean, otherwise: Color, face: Color=otherwise)=if(!selected) otherwise else when(face) {
+    TaleGreen -> TaleOnGreen; TalePurple -> TaleOnPurple; else -> TaleOnBlue
 }
 
 @Composable

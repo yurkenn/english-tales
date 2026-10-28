@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.yurken.englishtales.data.*
@@ -187,15 +188,26 @@ fun ReadingResultScreen(story: Story,snapshot: LearningSnapshot,onPractice: (Lis
                 TalesMascot(MascotMood.Celebrate,Modifier.size(144.dp),animate=true)
                 BookCover(story,Modifier.size(64.dp,94.dp).popOn(1))
             }
-            Text(stringResource(R.string.bir_hikaye_tamamladin),fontSize=22.sp,fontWeight=FontWeight.Bold,modifier=Modifier.appearIn(1))
-            Text(story.title,fontSize=15.sp,color=TaleMuted,modifier=Modifier.appearIn(2))
-            Text(if(snapshot.dailyGoalReached) stringResource(R.string.gunluk_hedef_tamamlandi) else stringResource(R.string.gunluk_hedef_adim, snapshot.todaySessions, snapshot.dailyGoal),color=TaleBlue,fontWeight=FontWeight.Bold,
-                modifier=Modifier.appearIn(3).background(LocalTaleColors.current.tileBlue,RoundedCornerShape(20.dp)).padding(horizontal=14.dp,vertical=6.dp))
+            Text(stringResource(R.string.bir_hikaye_tamamladin),fontFamily=TaleDisplay,fontSize=28.sp,lineHeight=32.sp,fontWeight=FontWeight.ExtraBold,textAlign=TextAlign.Center,modifier=Modifier.appearIn(1))
+            Text(story.title,fontSize=15.sp,fontWeight=FontWeight.Bold,color=TaleMuted,textAlign=TextAlign.Center,modifier=Modifier.appearIn(2))
+            Text(if(snapshot.dailyGoalReached) stringResource(R.string.gunluk_hedef_tamamlandi) else stringResource(R.string.gunluk_hedef_adim, snapshot.todaySessions, snapshot.dailyGoal),color=TaleOnYellow,fontWeight=FontWeight.ExtraBold,
+                modifier=Modifier.appearIn(3).background(TaleYellow,RoundedCornerShape(20.dp)).padding(horizontal=16.dp,vertical=8.dp))
             ComprehensionQuiz(story.id,story.questions)
-            Text(stringResource(R.string.okudugun_kelimeleri_simdi_hatirlamayi_deneyelim),fontSize=14.sp,color=TaleMuted)
-            words.forEach {word -> FlowRow(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(8.dp),maxItemsInEachRow=sideBySide(2)) {Text(word.word,fontWeight=FontWeight.Bold,modifier=Modifier.weight(1f));Text(word.translation,color=TaleMuted,modifier=Modifier.weight(1f))} }
-            if(words.isNotEmpty()) Button(onClick={onPractice(words.map {it.id})},modifier=Modifier.fillMaxWidth().heightIn(min=50.dp),shape=RoundedCornerShape(14.dp)) {Text(stringResource(R.string.kelimeyi_kaydet_ve_calis, words.size))}
-            TextButton(onClick=onDailyPlan) {Text(stringResource(R.string.gunluk_planima_don))}
+            Text(stringResource(R.string.okudugun_kelimeleri_simdi_hatirlamayi_deneyelim),fontSize=14.sp,fontWeight=FontWeight.Bold,color=TaleMuted)
+            // The story's words as one card of rows, each word beside its meaning.
+            if(words.isNotEmpty()) ChunkyBox(TaleSurface,Modifier.fillMaxWidth(),depth=5.dp,border=TaleLine) {
+                Column(Modifier.padding(horizontal=16.dp,vertical=6.dp)) {
+                    words.forEachIndexed {i,word ->
+                        if(i>0) HorizontalDivider(color=TaleLine,thickness=2.dp)
+                        FlowRow(Modifier.fillMaxWidth().padding(vertical=10.dp),horizontalArrangement=Arrangement.spacedBy(8.dp),maxItemsInEachRow=sideBySide(2)) {
+                            Text(word.word,fontFamily=TaleDisplay,fontSize=18.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.weight(1f))
+                            Text(word.translation,color=TaleMuted,fontWeight=FontWeight.Bold,modifier=Modifier.weight(1f))
+                        }
+                    }
+                }
+            }
+            if(words.isNotEmpty()) ChunkyButton(stringResource(R.string.kelimeyi_kaydet_ve_calis, words.size),{onPractice(words.map {it.id})},Modifier.fillMaxWidth())
+            TextButton(onClick=onDailyPlan,modifier=Modifier.heightIn(min=48.dp)) {Text(stringResource(R.string.gunluk_planima_don),fontWeight=FontWeight.ExtraBold)}
             if(snapshot.todayReadings==1) ReminderControls()
         }
     }
