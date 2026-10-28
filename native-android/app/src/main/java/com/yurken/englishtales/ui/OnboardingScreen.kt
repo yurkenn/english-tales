@@ -21,7 +21,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.yurken.englishtales.R
-import kotlinx.coroutines.delay
 
 /** First launch as one question per screen: a progress bar, the mascot asking, and big chunky answers. */
 @Composable
@@ -31,9 +30,7 @@ fun OnboardingScreen(analyticsControls: @Composable () -> Unit = { com.yurken.en
     var genre by rememberSaveable { mutableStateOf("") }
     var goal by rememberSaveable { mutableIntStateOf(1) }
     var placement by rememberSaveable { mutableStateOf(false) }
-    // A tapped answer lights up for a moment before the next question slides in.
-    var picked by remember(step) { mutableStateOf<String?>(null) }
-    LaunchedEffect(picked) { if (picked != null) { delay(280); step++ } }
+    // A tapped answer moves straight on; going back shows the earlier answer still picked.
     if (placement) {
         PlacementScreen(onUseLevel = { level=it; step=2; placement=false }, onCancel = { placement=false })
         return
@@ -60,7 +57,7 @@ fun OnboardingScreen(analyticsControls: @Composable () -> Unit = { com.yurken.en
                         Column(Modifier.selectableGroup(),verticalArrangement=Arrangement.spacedBy(12.dp)) {
                             listOf(Triple("A1",R.string.yeni_basliyorum,R.string.onboarding_level_a1),Triple("A2",R.string.biraz_okuyabiliyorum,R.string.onboarding_level_a2),
                                 Triple("B1",R.string.rahatca_okuyorum,R.string.onboarding_level_b1)).forEachIndexed { i,(value,title,detail) ->
-                                AnswerCard(stringResource(title),picked==value || (picked==null && level==value),Modifier.appearIn(i+1),badge=value,detail=stringResource(detail)) {level=value;picked=value}
+                                AnswerCard(stringResource(title),level==value,Modifier.appearIn(i+1),badge=value,detail=stringResource(detail)) {level=value;step++}
                             }
                         }
                         TextButton(onClick={placement=true},modifier=Modifier.fillMaxWidth().heightIn(min=48.dp)) {
@@ -71,7 +68,7 @@ fun OnboardingScreen(analyticsControls: @Composable () -> Unit = { com.yurken.en
                         GuideBubble(stringResource(R.string.okumayi_sever_misin_hangi_tur),large=true)
                         Column(Modifier.selectableGroup(),verticalArrangement=Arrangement.spacedBy(12.dp)) {
                             listOf("Günlük yaşam","Macera","Gizem").forEachIndexed { i,choice ->
-                                AnswerCard(genreLabel(choice),picked==choice || (picked==null && genre==choice),Modifier.appearIn(i+1)) {genre=choice;picked=choice}
+                                AnswerCard(genreLabel(choice),genre==choice,Modifier.appearIn(i+1)) {genre=choice;step++}
                             }
                         }
                     }
@@ -82,7 +79,7 @@ fun OnboardingScreen(analyticsControls: @Composable () -> Unit = { com.yurken.en
                         }
                         Column(Modifier.selectableGroup(),verticalArrangement=Arrangement.spacedBy(12.dp)) {
                             listOf(1 to stringResource(R.string.gunde_1_adim_rahat_baslangic),2 to stringResource(R.string.gunde_2_adim_duzenli_calisma),3 to stringResource(R.string.gunde_3_adim_yogun_calisma)).forEachIndexed { i,(value,label) ->
-                                AnswerCard(label,picked=="$value",Modifier.appearIn(i+2)) {goal=value;picked="$value"}
+                                AnswerCard(label,goal==value,Modifier.appearIn(i+2)) {goal=value;step++}
                             }
                         }
                     }
