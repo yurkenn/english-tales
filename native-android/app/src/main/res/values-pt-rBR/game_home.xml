@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="greeting_morning">Bom dia!</string>
+    <string name="greeting_afternoon">Boa tarde!</string>
+    <string name="greeting_evening">Boa noite!</string>
+    <string name="quick_game">Jogo rápido</string>
+</resources>

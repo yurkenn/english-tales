@@ -24,50 +24,49 @@ import java.text.SimpleDateFormat
 import java.util.Date
 
 @Composable
-fun DailyPlan(snapshot: LearningSnapshot,onRead: (String)->Unit,onPractice: (List<String>)->Unit) {
+fun DailyPlan(snapshot: LearningSnapshot,onRead: (String)->Unit,onPractice: (List<String>)->Unit,onPlay: (()->Unit)?=null) {
     val position=snapshot.readingPositions[snapshot.lastStoryId]
     val resume=(position?.let {p -> LearningContent.storyById[snapshot.lastStoryId]?.takeIf {p.carriesTo(it)} ?: LearningContent.revision(p.revisionId)} ?: LearningContent.storyById[snapshot.lastStoryId])?.takeIf {snapshot.progressFor(it)<100}
     val next=resume?:LearningContent.recommendedStory(snapshot.level,snapshot.preferredGenre,LearningContent.stories.associate {it.id to snapshot.progressFor(it)})
-    Column(Modifier.padding(horizontal=16.dp).fillMaxWidth(),verticalArrangement=Arrangement.spacedBy(16.dp)) {
-        Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.CenterVertically) {
-            Text(stringResource(R.string.bugunku_planin),style=MaterialTheme.typography.titleLarge,modifier=Modifier.weight(1f))
-            Text(stringResource(R.string.adim, snapshot.todaySessions, snapshot.dailyGoal),color=TaleMuted,style=MaterialTheme.typography.labelLarge)
-        }
-        ReferenceProgress((snapshot.todaySessions.toFloat()/snapshot.dailyGoal).coerceAtMost(1f),Modifier.fillMaxWidth(),TaleBlue)
-        Text(if(snapshot.dailyGoalReached) stringResource(R.string.hedef_tamamlandi_istersen_okumaya_devam)
-            else stringResource(R.string.bir_hikaye_veya_kisa_bir),style=MaterialTheme.typography.bodyMedium,color=TaleMuted)
+    Column(Modifier.padding(horizontal=16.dp).fillMaxWidth(),verticalArrangement=Arrangement.spacedBy(14.dp)) {
+        GoalHeroCard(snapshot)
         if(next!=null) {
             val progress=snapshot.progressFor(next)
-            Surface(shape=MaterialTheme.shapes.large,color=MaterialTheme.colorScheme.surface,
-                border=BorderStroke(1.dp,TaleLine),shadowElevation=2.dp,modifier=Modifier.fillMaxWidth().appearIn(1)) {
-                Column(Modifier.padding(20.dp),verticalArrangement=Arrangement.spacedBy(16.dp)) {
-                    Text(if(resume!=null) stringResource(R.string.kaldigin_hikaye) else if(progress==100) stringResource(R.string.yeniden_kesfet) else stringResource(R.string.siradaki_hikayen),
-                        style=MaterialTheme.typography.labelLarge,color=TaleBlue)
-                    Row(horizontalArrangement=Arrangement.spacedBy(16.dp),verticalAlignment=Alignment.CenterVertically) {
-                        BookCover(next,Modifier.size(68.dp,100.dp))
-                        Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(8.dp)) {
+            ChunkyBox(TaleSurface,Modifier.fillMaxWidth().appearIn(1),RoundedCornerShape(24.dp),border=TaleLine) {
+                Column(Modifier.padding(14.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
+                    Row(horizontalArrangement=Arrangement.spacedBy(14.dp),verticalAlignment=Alignment.CenterVertically) {
+                        BookCover(next,Modifier.size(74.dp,106.dp))
+                        Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(6.dp)) {
+                            Text(if(resume!=null) stringResource(R.string.kaldigin_hikaye) else if(progress==100) stringResource(R.string.yeniden_kesfet) else stringResource(R.string.siradaki_hikayen),
+                                style=MaterialTheme.typography.labelMedium,color=TaleBlue)
                             Text(next.title,style=MaterialTheme.typography.titleLarge)
                             Text("${next.level} · ${genreLabel(next.genre)}",style=MaterialTheme.typography.bodyMedium,color=TaleMuted)
-                            if(resume!=null) Text(stringResource(R.string.tamamlandi_2, progress),style=MaterialTheme.typography.bodyMedium,color=TaleMuted)
+                            if(resume!=null) {
+                                ReferenceProgress(progress/100f,Modifier.fillMaxWidth(),TaleGreen)
+                                Text(stringResource(R.string.tamamlandi_2, progress),style=MaterialTheme.typography.labelMedium,color=TaleMuted)
+                            }
                         }
                     }
-                    if(resume!=null) ReferenceProgress(progress/100f,Modifier.fillMaxWidth(),TaleBlue)
-                    Button(onClick={onRead(next.id)},modifier=Modifier.fillMaxWidth().heightIn(min=50.dp),shape=RoundedCornerShape(14.dp)) {
-                        Text(if(resume!=null) stringResource(R.string.okumaya_devam_et) else if(progress==100) stringResource(R.string.yeniden_oku) else stringResource(R.string.hikayeye_basla))
-                    }
+                    ChunkyButton(if(resume!=null) stringResource(R.string.okumaya_devam_et) else if(progress==100) stringResource(R.string.yeniden_oku) else stringResource(R.string.hikayeye_basla),
+                        onClick={onRead(next.id)},modifier=Modifier.fillMaxWidth())
                 }
             }
         } else Text(stringResource(R.string.yeni_hikayeler_hazirlandiginda_burada_gorunecek),color=TaleMuted)
-        if(snapshot.dueWordIds.isNotEmpty()) {
-            val batch=ReviewFocus.order(emptyList(),snapshot.weakWordIds.filter {it in snapshot.dueWordIds},snapshot.dueWordIds,emptyList()).take(5)
-            PlanActionRow("review",LocalTaleColors.current.tilePurple,stringResource(R.string.kelimeyi_hatirla, batch.size),
-                stringResource(R.string.kelimenin_tekrar_zamani_geldi, snapshot.dueWordIds.size)) {onPractice(batch)}
-        } else if(snapshot.weakWordIds.isNotEmpty()) {
+        // Two bright shortcuts: the words due for review and a quick game; they stack once text is large.
+        val review=when {
+            snapshot.dueWordIds.isNotEmpty() -> {
+                val batch=ReviewFocus.order(emptyList(),snapshot.weakWordIds.filter {it in snapshot.dueWordIds},snapshot.dueWordIds,emptyList()).take(5)
+                Triple(batch,stringResource(R.string.kelimeyi_hatirla, batch.size),stringResource(R.string.kelimenin_tekrar_zamani_geldi, snapshot.dueWordIds.size))
+            }
             // Early practice: LearningPolicy ignores correct answers before the due time, so mastery is not inflated.
-            val batch=snapshot.weakWordIds.take(5)
-            PlanActionRow("review",LocalTaleColors.current.tileYellow,stringResource(R.string.weak_words_practice, batch.size),
-                stringResource(R.string.weak_words_summary)) {onPractice(batch)}
-        } else if(snapshot.savedWordIds.isNotEmpty()) {
+            snapshot.weakWordIds.isNotEmpty() -> snapshot.weakWordIds.take(5).let {Triple(it,stringResource(R.string.weak_words_practice, it.size),stringResource(R.string.weak_words_summary))}
+            else -> null
+        }
+        if(review!=null || onPlay!=null) FlowRow(Modifier.fillMaxWidth().appearIn(2),horizontalArrangement=Arrangement.spacedBy(12.dp),verticalArrangement=Arrangement.spacedBy(12.dp),maxItemsInEachRow=sideBySide(2)) {
+            review?.let {(batch,title,subtitle) -> ShortcutTile(TalePurple,TaleOnPurple,title,subtitle,{ReferenceIcon("review",TaleOnPurple,Modifier.size(28.dp))},Modifier.weight(1f)) {onPractice(batch)}}
+            onPlay?.let {play -> ShortcutTile(TaleYellow,TaleOnYellow,stringResource(R.string.kelimeleri_eslestir),stringResource(R.string.quick_game),{TaleArt(R.drawable.game_match,Modifier.size(34.dp))},Modifier.weight(1f),play)}
+        }
+        if(review==null && snapshot.savedWordIds.isNotEmpty()) {
             Text(stringResource(R.string.tekrarlarin_guncel),color=TaleMuted)
             snapshot.nextReviewAt?.let {at -> Text(stringResource(R.string.sonraki_tekrar, SimpleDateFormat("d MMM, HH:mm",AppLanguage.locale(LocalContext.current)).format(Date(at))),
                 style=MaterialTheme.typography.bodyMedium,color=TaleMuted)}
@@ -75,26 +74,48 @@ fun DailyPlan(snapshot: LearningSnapshot,onRead: (String)->Unit,onPractice: (Lis
     }
 }
 
-/** A tappable plan step: tinted icon, title and reason, with a chevron; sinks a little while pressed. */
+/** The blue welcome card: a greeting for the time of day, what counts as a step, and today's goal filling up beside the mascot. */
 @Composable
-private fun PlanActionRow(icon: String,tint: Color,title: String,subtitle: String,onClick: ()->Unit) {
-    Row(Modifier.fillMaxWidth().appearIn(2).heightIn(min=64.dp).background(TaleSurface,RoundedCornerShape(16.dp)).border(1.dp,TaleLine,RoundedCornerShape(16.dp))
-        .pressScale(onClick=onClick).padding(horizontal=14.dp,vertical=12.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
-        Box(Modifier.size(40.dp).background(tint,RoundedCornerShape(12.dp)),contentAlignment=Alignment.Center) { ReferenceIcon(icon,TaleBlue,Modifier.size(22.dp)) }
-        Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(2.dp)) {
-            Text(title,style=MaterialTheme.typography.titleMedium,color=TaleBlue)
-            Text(subtitle,style=MaterialTheme.typography.bodyMedium,color=TaleMuted)
+private fun GoalHeroCard(snapshot: LearningSnapshot) {
+    val hour=remember {java.util.Calendar.getInstance().get(java.util.Calendar.HOUR_OF_DAY)}
+    val greeting=stringResource(when(hour) {in 5..11 -> R.string.greeting_morning; in 12..17 -> R.string.greeting_afternoon; else -> R.string.greeting_evening})
+    ChunkyBox(TaleBlue,Modifier.fillMaxWidth().appearIn(0),RoundedCornerShape(26.dp)) {
+        Box(Modifier.fillMaxWidth().heightIn(min=150.dp)) {
+            TalesMascot(if(snapshot.dailyGoalReached) MascotMood.Celebrate else MascotMood.Welcome,
+                Modifier.align(Alignment.BottomEnd).offset(x=6.dp,y=8.dp).size(116.dp,140.dp),animate=true)
+            Column(Modifier.fillMaxWidth(0.64f).padding(start=18.dp,top=16.dp,bottom=18.dp),verticalArrangement=Arrangement.spacedBy(6.dp)) {
+                Text(greeting,style=MaterialTheme.typography.headlineSmall,color=TaleOnBlue)
+                Text(if(snapshot.dailyGoalReached) stringResource(R.string.hedef_tamamlandi_istersen_okumaya_devam) else stringResource(R.string.bir_hikaye_veya_kisa_bir),
+                    style=MaterialTheme.typography.bodyMedium,fontWeight=FontWeight.SemiBold,color=TaleOnBlue)
+                Spacer(Modifier.height(2.dp))
+                Text(stringResource(R.string.bugunku_planin),style=MaterialTheme.typography.labelMedium,color=TaleOnBlue)
+                ReferenceProgress((snapshot.todaySessions.toFloat()/snapshot.dailyGoal).coerceAtMost(1f),Modifier.fillMaxWidth(),TaleYellow,TaleOnBlue.copy(alpha=0.25f),10.dp)
+                Text(stringResource(R.string.adim, snapshot.todaySessions, snapshot.dailyGoal),style=MaterialTheme.typography.labelLarge,fontWeight=FontWeight.ExtraBold,color=TaleOnBlue)
+            }
         }
-        ReferenceIcon("next",TaleMuted,Modifier.size(18.dp))
+    }
+}
+
+/** A bright square shortcut with an icon, a bold title and one line of reason. */
+@Composable
+private fun ShortcutTile(color: Color,onColor: Color,title: String,subtitle: String,icon: @Composable ()->Unit,modifier: Modifier,onClick: ()->Unit) {
+    ChunkyBox(color,modifier.heightIn(min=118.dp),RoundedCornerShape(22.dp),onClick=onClick) {
+        Column(Modifier.padding(14.dp),verticalArrangement=Arrangement.spacedBy(4.dp)) {
+            icon()
+            Spacer(Modifier.height(2.dp))
+            Text(title,style=MaterialTheme.typography.titleLarge,fontWeight=FontWeight.ExtraBold,color=onColor)
+            Text(subtitle,style=MaterialTheme.typography.bodySmall,fontWeight=FontWeight.Bold,color=onColor)
+        }
     }
 }
 
 @Composable
 fun WeeklyActivity(snapshot: LearningSnapshot) {
-    Column(Modifier.fillMaxWidth().padding(16.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
+    Column(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=12.dp).background(TaleSurface,RoundedCornerShape(22.dp)).border(2.dp,TaleLine,RoundedCornerShape(22.dp))
+        .padding(14.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
         // The streak sits next to the week it comes from, and one line says what today still needs.
         Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.CenterVertically) {
-            Text(stringResource(R.string.son_7_gun),fontSize=17.sp,fontWeight=FontWeight.Bold,modifier=Modifier.weight(1f))
+            Text(stringResource(R.string.son_7_gun),style=MaterialTheme.typography.titleLarge,modifier=Modifier.weight(1f))
             if(snapshot.streak>0) Row(Modifier.background(LocalTaleColors.current.tileYellow,RoundedCornerShape(20.dp)).padding(horizontal=10.dp,vertical=4.dp),
                 verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(4.dp)) {
                 ReferenceIcon("streak",TaleWarm,Modifier.size(16.dp))
@@ -121,10 +142,14 @@ fun WeeklyActivity(snapshot: LearningSnapshot) {
                 val frozen=day.day in snapshot.frozenDays
                 val frozenLabel=stringResource(R.string.streak_freeze_day)
                 Column(Modifier.weight(1f).appearIn(i),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(8.dp)) {
-                    Box(Modifier.fillMaxWidth().height(40.dp).background(if(active) TaleBlue else if(frozen) LocalTaleColors.current.tileBlue else TaleLine.copy(alpha=0.6f),RoundedCornerShape(12.dp))
+                    // A day with practice burns like the streak it builds, with its step count beside the flame.
+                    Box(Modifier.fillMaxWidth().heightIn(min=40.dp).background(if(active) LocalTaleColors.current.tileYellow else if(frozen) LocalTaleColors.current.tileBlue else TaleLine.copy(alpha=0.6f),RoundedCornerShape(12.dp))
                         .then(if(frozen) Modifier.border(1.5.dp,TaleBlue.copy(alpha=0.5f),RoundedCornerShape(12.dp)).contentLabel(frozenLabel) else Modifier)
-                        .then(if(today) Modifier.border(2.dp,if(active) TaleInk.copy(alpha=0.25f) else TaleBlue,RoundedCornerShape(12.dp)) else Modifier),contentAlignment=Alignment.Center) {
-                        if(active) Text("${day.sessions}",fontSize=14.sp,fontWeight=FontWeight.Bold,color=TaleOnBlue)
+                        .then(if(today) Modifier.border(2.dp,if(active) TaleWarm.copy(alpha=0.6f) else TaleBlue,RoundedCornerShape(12.dp)) else Modifier),contentAlignment=Alignment.Center) {
+                        if(active) Column(Modifier.padding(vertical=3.dp),horizontalAlignment=Alignment.CenterHorizontally) {
+                            ReferenceIcon("streak",TaleWarm,Modifier.size(15.dp))
+                            Text("${day.sessions}",fontSize=11.sp,lineHeight=13.sp,fontWeight=FontWeight.ExtraBold,color=TaleInk)
+                        }
                         else if(frozen) Text("❄",fontSize=16.sp,color=TaleBlue)
                     }
                     Text(if(today) stringResource(R.string.weekly_today) else day.label,fontSize=10.sp,fontWeight=if(today) FontWeight.Bold else FontWeight.Normal,color=if(today) TaleBlue else TaleMuted,maxLines=1)

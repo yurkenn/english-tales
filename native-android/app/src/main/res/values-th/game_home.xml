@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="greeting_morning">อรุณสวัสดิ์!</string>
+    <string name="greeting_afternoon">สวัสดีตอนบ่าย!</string>
+    <string name="greeting_evening">สวัสดีตอนเย็น!</string>
+    <string name="quick_game">เกมด่วน</string>
+</resources>

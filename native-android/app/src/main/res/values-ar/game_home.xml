@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="greeting_morning">صباح الخير!</string>
+    <string name="greeting_afternoon">طاب يومك!</string>
+    <string name="greeting_evening">مساء الخير!</string>
+    <string name="quick_game">لعبة سريعة</string>
+</resources>

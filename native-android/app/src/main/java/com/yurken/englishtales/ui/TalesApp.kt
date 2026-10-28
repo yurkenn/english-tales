@@ -258,7 +258,7 @@ internal fun MainTabs(snapshot: LearningSnapshot, selectedTab: Int, onTabSelecte
     Scaffold(containerColor=TaleBackground,bottomBar={ if(!practicing) TalesBottomBar(selectedTab,onTabSelected) }) { padding ->
         // Tabs cross-fade instead of cutting; the practice tab keeps its running session state.
         TaleSwitch(selectedTab) { tab -> tabs.SaveableStateProvider(tab) { when(tab) {
-            0 -> StudyScreen(snapshot,onOpenStory,onOpenWords,padding,onRead,onPractice,league,quests)
+            0 -> StudyScreen(snapshot,onOpenStory,onOpenWords,padding,onRead,onPractice,league,quests,onPlay={onTabSelected(2)})
             1 -> CatalogScreen(snapshot,onOpenStory,padding,library)
             2 -> PracticeScreen(snapshot,onLessonComplete,onWordReviewed,padding,onSessionStart,onCheckpoint,onSessionAbandoned,onSessionActive={practicing=it},launchId=launchId,launchWordIds=launchWords,onLaunchConsumed=onLaunchConsumed,onDailyPlan=onDailyPlan,onCompletedExit=onCompletedExit)
             else -> ProfileScreen(snapshot,onOpenWords,padding,onSettings,onAccount)

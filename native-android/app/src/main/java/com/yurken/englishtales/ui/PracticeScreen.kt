@@ -316,9 +316,11 @@ private fun ModeCard(title: String,subtitle: String,art: Int,tint: GameTint,enab
         .pressScale(enabled=enabled,onClick=onClick).graphicsLayer {alpha=if(enabled) 1f else 0.5f}) {
         // A soft light circle behind the art gives the drawing a stage.
         Box(Modifier.align(Alignment.CenterEnd).offset(x=28.dp).size(170.dp).background(Color.White.copy(alpha=0.16f),CircleShape))
-        Image(painterResource(art),null,Modifier.align(Alignment.BottomEnd).padding(end=8.dp,bottom=10.dp).size(132.dp)
+        // Large text takes the card's full width with smaller art behind it, so a long word like "eşleştir" is never broken.
+        val large=androidx.compose.ui.platform.LocalDensity.current.fontScale>=1.5f
+        Image(painterResource(art),null,Modifier.align(Alignment.BottomEnd).padding(end=8.dp,bottom=10.dp).size(if(large) 96.dp else 132.dp)
             .graphicsLayer {translationY=bob.value*5f*density;rotationZ=bob.value*2f},contentScale=ContentScale.Fit)
-        Column(Modifier.fillMaxWidth(0.62f).padding(start=18.dp,top=18.dp,bottom=16.dp),verticalArrangement=Arrangement.spacedBy(6.dp)) {
+        Column(Modifier.fillMaxWidth(if(large) 1f else 0.62f).padding(start=18.dp,end=if(large) 18.dp else 0.dp,top=18.dp,bottom=16.dp),verticalArrangement=Arrangement.spacedBy(6.dp)) {
             Text(title,fontSize=21.sp,lineHeight=25.sp,fontWeight=FontWeight.ExtraBold,color=Color.White)
             Text(subtitle,fontSize=13.sp,lineHeight=17.sp,color=Color.White.copy(alpha=0.9f))
             Spacer(Modifier.height(6.dp))

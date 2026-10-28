@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Playful home: the hero card greeting by time of day and the quick-game tile. -->
+    <string name="greeting_morning">Günaydın!</string>
+    <string name="greeting_afternoon">İyi günler!</string>
+    <string name="greeting_evening">İyi akşamlar!</string>
+    <string name="quick_game">Hızlı oyun</string>
+</resources>

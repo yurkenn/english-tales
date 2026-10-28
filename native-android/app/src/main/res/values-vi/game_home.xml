@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="greeting_morning">Chào buổi sáng!</string>
+    <string name="greeting_afternoon">Chào buổi chiều!</string>
+    <string name="greeting_evening">Chào buổi tối!</string>
+    <string name="quick_game">Trò chơi nhanh</string>
+</resources>
