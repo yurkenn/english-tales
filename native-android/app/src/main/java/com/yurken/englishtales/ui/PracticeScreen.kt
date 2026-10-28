@@ -159,9 +159,9 @@ private fun PracticeSession(snapshot: LearningSnapshot,onLessonComplete: (Int,St
     LaunchedEffect(sessionKey) {if(sessionKey.isNotEmpty() && mode.isNotEmpty() && !finished) onSessionStart(sessionKey,kindOf(mode),sessionCount)}
     if(mode.isEmpty()) {
         Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState())) {
-            StatsHeader(snapshot)
-            Text(stringResource(R.string.kelimelerle_oyna),fontSize=24.sp,fontWeight=FontWeight.Bold,modifier=Modifier.padding(horizontal=16.dp,vertical=20.dp))
-            Text(if(saved.isEmpty()) stringResource(R.string.baslamak_icin_ornek_kelimeler_hazir) else stringResource(R.string.kelimenin_tekrar_zamani_geldi_2, snapshot.dueWordIds.size),fontSize=14.sp,color=TaleMuted,modifier=Modifier.padding(horizontal=16.dp))
+            GameStatsBar(snapshot)
+            Text(stringResource(R.string.kelimelerle_oyna),fontFamily=TaleDisplay,fontSize=28.sp,lineHeight=32.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.padding(start=16.dp,end=16.dp,top=14.dp,bottom=4.dp))
+            Text(if(saved.isEmpty()) stringResource(R.string.baslamak_icin_ornek_kelimeler_hazir) else stringResource(R.string.kelimenin_tekrar_zamani_geldi_2, snapshot.dueWordIds.size),fontSize=14.sp,fontWeight=FontWeight.Bold,color=TaleMuted,modifier=Modifier.padding(horizontal=16.dp))
             if(snapshot.weakWordIds.isNotEmpty()) Text(stringResource(R.string.weak_words_count, snapshot.weakWordIds.size),fontSize=14.sp,color=TaleMuted,modifier=Modifier.padding(horizontal=16.dp,vertical=4.dp))
             Spacer(Modifier.height(20.dp))
             ModeCard(stringResource(R.string.ladder_mode),stringResource(R.string.ladder_subtitle),R.drawable.game_ladder,GameTint.Purple,index=1) {start("ladder")}
@@ -311,9 +311,10 @@ private fun ModeCard(title: String,subtitle: String,art: Int,tint: GameTint,enab
     // Each card's mascot bobs on its own beat, so the list feels alive without moving in lockstep.
     val bob=if(still || !enabled) rememberUpdatedState(0f) else rememberInfiniteTransition(label="gameArt")
         .animateFloat(-1f,1f,infiniteRepeatable(tween(1_500+index*170,easing=FastOutSlowInEasing),RepeatMode.Reverse),label="gameArtBob")
-    Box(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=8.dp).appearIn(index).heightIn(min=156.dp)
-        .clip(RoundedCornerShape(24.dp)).background(Brush.linearGradient(listOf(tint.start,tint.end)))
-        .pressScale(enabled=enabled,onClick=onClick).graphicsLayer {alpha=if(enabled) 1f else 0.5f}) {
+    // A chunky card: the gradient face sits on a darker lip and sinks onto it when pressed.
+    ChunkyBox(tint.start,Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=8.dp).appearIn(index).heightIn(min=162.dp)
+        .graphicsLayer {alpha=if(enabled) 1f else 0.5f},RoundedCornerShape(24.dp),depth=6.dp,onClick=onClick,enabled=enabled) {
+    Box(Modifier.fillMaxSize().background(Brush.linearGradient(listOf(tint.start,tint.end)))) {
         // A soft light circle behind the art gives the drawing a stage.
         Box(Modifier.align(Alignment.CenterEnd).offset(x=28.dp).size(170.dp).background(Color.White.copy(alpha=0.16f),CircleShape))
         // Large text takes the card's full width with smaller art behind it, so a long word like "eşleştir" is never broken.
@@ -321,12 +322,13 @@ private fun ModeCard(title: String,subtitle: String,art: Int,tint: GameTint,enab
         Image(painterResource(art),null,Modifier.align(Alignment.BottomEnd).padding(end=8.dp,bottom=10.dp).size(if(large) 96.dp else 132.dp)
             .graphicsLayer {translationY=bob.value*5f*density;rotationZ=bob.value*2f},contentScale=ContentScale.Fit)
         Column(Modifier.fillMaxWidth(if(large) 1f else 0.62f).padding(start=18.dp,end=if(large) 18.dp else 0.dp,top=18.dp,bottom=16.dp),verticalArrangement=Arrangement.spacedBy(6.dp)) {
-            Text(title,fontSize=21.sp,lineHeight=25.sp,fontWeight=FontWeight.ExtraBold,color=Color.White)
+            Text(title,fontFamily=TaleDisplay,fontSize=22.sp,lineHeight=26.sp,fontWeight=FontWeight.ExtraBold,color=Color.White)
             Text(subtitle,fontSize=13.sp,lineHeight=17.sp,color=Color.White.copy(alpha=0.9f))
             Spacer(Modifier.height(6.dp))
-            Text(stringResource(R.string.game_play),fontSize=15.sp,fontWeight=FontWeight.Bold,color=tint.start,
-                modifier=Modifier.background(Color.White,RoundedCornerShape(50)).padding(horizontal=22.dp,vertical=8.dp))
+            Text(stringResource(R.string.game_play),fontSize=15.sp,fontWeight=FontWeight.ExtraBold,color=tint.start,
+                modifier=Modifier.background(Color.White,RoundedCornerShape(14.dp)).padding(horizontal=22.dp,vertical=8.dp))
         }
+    }
     }
 }
 
