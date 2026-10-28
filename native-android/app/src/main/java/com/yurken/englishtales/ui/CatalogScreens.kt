@@ -306,12 +306,14 @@ fun StoryDetailScreen(story: Story, progress: Int, onBack: () -> Unit, onRead: (
                 },TaleInk)
             }
             Column(Modifier.padding(horizontal=20.dp),verticalArrangement=Arrangement.spacedBy(16.dp)) {
-                FlowRow(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(16.dp),verticalArrangement=Arrangement.spacedBy(12.dp),maxItemsInEachRow=sideBySide(2)) {
+                val cover: @Composable () -> Unit = {
                     Box(Modifier.appearIn(0)) {
-                        ChunkyBox(TaleSurface,Modifier.size(124.dp,182.dp),RoundedCornerShape(18.dp),depth=6.dp,border=TaleLine) { BookCover(story,Modifier.fillMaxSize()) }
+                        ChunkyBox(TaleSurface,Modifier.size(140.dp,206.dp),RoundedCornerShape(18.dp),depth=6.dp,border=TaleLine) { BookCover(story,Modifier.fillMaxSize()) }
                         if(progress>0) ReferenceProgress(progress/100f,Modifier.align(Alignment.BottomCenter).width(96.dp).padding(bottom=9.dp))
                     }
-                    Column(Modifier.weight(1f).align(Alignment.Bottom).padding(bottom=6.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
+                }
+                val info: @Composable (Modifier) -> Unit = { m ->
+                    Column(m,verticalArrangement=Arrangement.spacedBy(8.dp)) {
                         FlowRow(horizontalArrangement=Arrangement.spacedBy(6.dp),verticalArrangement=Arrangement.spacedBy(6.dp)) {
                             Text(story.level,color=TaleOnYellow,fontSize=12.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.background(TaleYellow,RoundedCornerShape(10.dp)).padding(horizontal=10.dp,vertical=4.dp))
                             Text(genreLabel(story.genre),color=TaleInk,fontSize=12.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.background(LocalTaleColors.current.tilePurple,RoundedCornerShape(10.dp)).padding(horizontal=10.dp,vertical=4.dp))
@@ -322,6 +324,9 @@ fun StoryDetailScreen(story: Story, progress: Int, onBack: () -> Unit, onRead: (
                         Text(story.author,color=TaleMuted,fontSize=13.sp,fontWeight=FontWeight.Bold)
                     }
                 }
+                // Large text stacks the cover above the title so the title keeps the full width.
+                if(sideBySide(2)==1) Column(verticalArrangement=Arrangement.spacedBy(12.dp)) { cover(); info(Modifier.fillMaxWidth()) }
+                else Row(horizontalArrangement=Arrangement.spacedBy(16.dp),verticalAlignment=Alignment.Bottom) { cover(); info(Modifier.weight(1f).padding(bottom=6.dp)) }
                 // Three quick numbers: how long it takes, how many sentences, and the new words once they are known.
                 FlowRow(Modifier.fillMaxWidth().appearIn(1),horizontalArrangement=Arrangement.spacedBy(10.dp),verticalArrangement=Arrangement.spacedBy(10.dp),maxItemsInEachRow=sideBySide(3)) {
                     StoryStat(ReadingTime.minutes(story)?.let {"$it"} ?: "–",stringResource(R.string.story_stat_minutes),TaleBlue,Modifier.weight(1f))

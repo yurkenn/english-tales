@@ -116,7 +116,7 @@ fun TalesBottomBar(selected: Int, onSelect: (Int) -> Unit) {
                 }.popOn(pops),contentAlignment=Alignment.Center) {
                     ReferenceIcon(kind,tint,Modifier.size(22.dp),filled=active)
                 }
-                Text(label,color=tint,fontSize=12.sp,fontWeight=if(active) FontWeight.ExtraBold else FontWeight.Bold)
+                Text(label,color=tint,fontSize=11.sp,fontWeight=if(active) FontWeight.SemiBold else FontWeight.Normal)
             }
         }
     }

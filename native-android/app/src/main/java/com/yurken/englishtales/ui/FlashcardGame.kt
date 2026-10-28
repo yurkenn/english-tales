@@ -65,8 +65,9 @@ fun FlashcardGame(liveWords: List<WordInfo>,sessionId: Int,savedIds: Set<String>
             ReferenceIconButton("back",stringResource(R.string.alistirmadan_cik),onExit,TaleMuted)
             ReferenceProgress((index+1f)/words.size,Modifier.weight(1f),TaleBlue,height=14.dp)
             Text("${index+1}/${words.size}",fontSize=14.sp,fontWeight=FontWeight.ExtraBold,color=TaleMuted)
+            // In the header row: an extra row would push the answer buttons out of the game's fixed-height column.
+            ComboBadge()
         }
-        Box(Modifier.fillMaxWidth(),contentAlignment=Alignment.CenterEnd) { ComboBadge() }
         Spacer(Modifier.weight(1f))
         // The card turns over to show the meaning; each new card slides in.
         val turn by animateFloatAsState(if(revealed) 180f else 0f,tween(TaleMotion.emphasized,easing=FastOutSlowInEasing),label="flip")

@@ -94,13 +94,11 @@ fun OnboardingScreen(analyticsControls: @Composable () -> Unit = { com.yurken.en
                         analyticsControls()
                     }
                 }
+                // The forward button ends the intro and the last step; answers move on by themselves.
+                if(step==0) ChunkyButton(stringResource(R.string.baslayalim),{step=1},Modifier.fillMaxWidth().padding(top=6.dp))
+                else if(step>=4) ChunkyButton(stringResource(R.string.ilk_hikayeme_basla),{onContinue(level,genre,goal)},Modifier.fillMaxWidth().padding(top=6.dp))
                 Spacer(Modifier.height(8.dp))
             }
-        }
-        // The forward button lives at the bottom of the intro and the last step; answers move on by themselves.
-        if(step==0 || step>=4) Box(Modifier.fillMaxWidth().padding(horizontal=20.dp,vertical=14.dp)) {
-            if(step==0) ChunkyButton(stringResource(R.string.baslayalim),{step=1},Modifier.fillMaxWidth())
-            else ChunkyButton(stringResource(R.string.ilk_hikayeme_basla),{onContinue(level,genre,goal)},Modifier.fillMaxWidth())
         }
     }
 }
