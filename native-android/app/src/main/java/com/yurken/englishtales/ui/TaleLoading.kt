@@ -20,7 +20,7 @@ import com.yurken.englishtales.R
 internal fun TaleLoading(modifier: Modifier = Modifier, mascotSize: Int = 120) {
     Column(modifier, horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(20.dp)) {
         TalesMascot(MascotMood.Thinking, Modifier.size(mascotSize.dp).pulseWhile(true), description = stringResource(R.string.yukleniyor))
-        LinearProgressIndicator(Modifier.width(140.dp).height(10.dp).clip(RoundedCornerShape(5.dp)), color = TaleGreen, trackColor = TaleLine, gapSize = 0.dp, drawStopIndicator = {})
+        LinearProgressIndicator(Modifier.width(140.dp).height(10.dp).clip(RoundedCornerShape(5.dp)), color = TaleGreen, trackColor = TaleLine)
     }
 }
 
