@@ -1,6 +1,6 @@
 # Rewarded SSV device probe — 26 October 2026
 
-Status: **compiled, not executed**. This is operator-assisted SDK-to-staging verification, distinct from the ordinary app reward screen and consent acceptance. Production code/configuration and Play internal build 56 are unchanged.
+Status: **SDK-to-staging watched-ad verification passed on 28 October 2026**. [Sanitized result](release-evidence/2026-10-28-rewarded-ssv.json), [test-ad capture](release-evidence/2026-10-28-rewarded-test-ad.png), [instrumentation result](release-evidence/2026-10-28-rewarded-instrumentation.txt). Exactly one signed transaction credited one energy; a second read remained at one. The synthetic fixture user, wallet and tickets were removed and zero rows confirmed. Fresh callback replay was not repeated; console replay evidence is separate. This is operator-assisted SDK-to-staging verification, distinct from the ordinary app reward screen and consent acceptance. Production code/configuration and Play internal build 56 are unchanged.
 
 The opt-in `GoogleRewardedSsvProbe` uses the existing real rewarded unit configured for **1 energy**, with the existing staging SSV URL. It refuses physical hardware and any non-sandbox/non-staging variant before requesting an ad. Google automatically treats Android emulators as test devices ([official guidance](https://developers.google.com/admob/android/next-gen/test-ads)). The operator must see a labeled test creative; do not proceed with an unlabeled ad or click an advertiser link.
 
@@ -14,13 +14,13 @@ The opt-in `GoogleRewardedSsvProbe` uses the existing real rewarded unit configu
 ```sh
 JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home \
 ANDROID_HOME=/Users/oguzyurken/Library/Android/sdk \
-./gradlew :app:assembleSandboxAndroidTest -PsandboxDeviceTest=true -PadDeviceTest=true \
+./gradlew :app:assembleSandbox :app:assembleSandboxAndroidTest -PsandboxDeviceTest=true -PadDeviceTest=true \
   -PreleaseVersionCode=56 -PreleaseVersionName=2.4.0
 ```
 
 ## Run and verify
 
-Install only the sandbox **androidTest APK**, preserving the existing signed target app. Run this one class with instrumentation arguments `ssvFixtureUser` and `ssvTicketNonce`; neither is an access token. The test initializes the SDK in a fresh instrumentation process, shows the rewarded creative and waits for the operator to watch and close it. No automatic advertiser clicks or close-button guessing are used.
+Use a separate disposable emulator. Install both the locally built opt-in **sandbox target APK and androidTest APK** there. The target needs the optional Compose test host; the Play internal target does not contain it. Never install this probe over the owner’s purchase-test device. The host dependency is enabled only with both sandboxDeviceTest and adDeviceTest; ordinary store builds exclude it. Run this one class with instrumentation arguments `ssvFixtureUser` and `ssvTicketNonce`; neither is an access token. The test initializes the SDK in a fresh instrumentation process, shows the rewarded creative and waits for the operator to watch and close it. No automatic advertiser clicks or close-button guessing are used.
 
 After the SDK reward callback, independently query staging: exactly one ticket must be credited, `ad_credits` must rise by one and the callback must come from Google's signed request to `admob-ssv`. Replaying that same signed callback must leave one credit and acknowledge the transaction. A successful SDK callback alone is not server-credit acceptance.
 

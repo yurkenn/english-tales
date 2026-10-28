@@ -1,5 +1,7 @@
 # 26 Ekim — ödeme kabulünden bağımsız ürün işleri
 
+27 Ekim canlı güncelleme: [tamamlama planı](COMPLETION_PLAN_2026-10-27.md), [güncel içerik farkı](release-evidence/2026-10-27-content-parity.json) ve [52 üretim doğrulaması](release-evidence/2026-10-27-play-production.json) önceki belirsizlikleri günceller. #180'in iki son CI koşusu başarılıdır. `word_saved` ve kesin UTC D7 olayı ayrı tamamlama dalında eklenmektedir; Firebase panel alımı henüz doğrulanmadı.
+
 Kaynak: `b061b680a997914b0cfcff577bcff0e043efb5e2`, PR #179 çalışma ağacı. Bu kayıt kaynak ve CI denetimidir; yeni ekran görüntüsü, güncel üretim Console kontrolü veya kullanıcı araştırması değildir. Bilgisayar kilitliyken aktif satın alma geri yükleme ve izlenmiş reklam kabulü açık kalır.
 
 27 Ekim uygulama ilerlemesi: 1 numara `codex/translation-language` dalında uygulandı. Ayarlar'da 11 destek dili veya mevcut davranışı koruyan otomatik seçim var. Açık tercih arayüz dilinden bağımsız saklanır; Activity yeniden oluşturularak mevcut dil yükleme yolu kullanılır. Hesap/öğrenme kayıtları değiştirilmez. Yerel 151 birim testi geçti, cihaz test paketi derlendi; cihaz CI ve lint sonucu ayrıca kaydedilecek. Bu ilerleme aşağıdaki ilk denetimin tarihsel bulgusunu silmez; görsel/gerçek cihaz kabulü ve mağaza yayını anlamına gelmez.

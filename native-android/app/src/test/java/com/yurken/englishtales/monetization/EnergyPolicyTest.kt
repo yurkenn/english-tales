@@ -38,4 +38,11 @@ class EnergyPolicyTest {
         assertTrue(value.premium(now));assertFalse(value.premium(now+5000));assertFalse(value.premium(now-1))
         assertTrue(value.unlocked.isEmpty())
     }
+    @Test fun `daily refill and expired ticket never count as a verified ad reward`() {
+        val pending=EnergyState(0,0,now+1000,pendingAdRewards=1)
+        assertFalse(pending.copy(balance=3,resetsAt=now+86401000,pendingAdRewards=0).hasNewAdCreditSince(pending))
+        assertFalse(pending.copy(pendingAdRewards=0).hasNewAdCreditSince(pending))
+        assertTrue(pending.copy(balance=1,adCredits=1,pendingAdRewards=0).hasNewAdCreditSince(pending))
+        assertFalse(pending.copy(balance=1,adCredits=1).hasNewAdCreditSince(null))
+    }
 }
