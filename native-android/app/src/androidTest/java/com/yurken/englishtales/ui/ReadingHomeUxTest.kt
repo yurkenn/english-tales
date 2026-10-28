@@ -48,6 +48,12 @@ class ReadingHomeUxTest {
             assertEquals(ReadingTheme.DARK,ReadingPreferencesStore(context,name).read().theme)
             ReadingPreferencesStore(context,name).update {it.copy(theme=ReadingTheme.SEPIA)}
             assertEquals(ReadingTheme.SEPIA,ReadingPreferencesStore(context,name).read().theme)
+            // The rounded game font is the default; a reader who picks the book serif keeps it, and an unknown value falls back.
+            assertEquals(ReadingFont.ROUNDED,ReadingPreferencesStore(context,name).read().font)
+            ReadingPreferencesStore(context,name).update {it.copy(font=ReadingFont.BOOK)}
+            assertEquals(ReadingFont.BOOK,ReadingPreferencesStore(context,name).read().font)
+            context.getSharedPreferences(name,0).edit().putString("font","unknown").commit()
+            assertEquals(ReadingFont.ROUNDED,ReadingPreferencesStore(context,name).read().font)
         } finally {context.getSharedPreferences(name,0).edit().clear().commit()}
     }
 
