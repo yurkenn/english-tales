@@ -20,6 +20,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.layout.ContentScale
@@ -474,41 +475,31 @@ fun SavedWordsScreen(snapshot: LearningSnapshot, onBack: () -> Unit, onRemoveWor
     // The background spans the screen; the word list keeps a readable width on tablets.
     Column(Modifier.fillMaxSize().background(TaleBackground).statusBarsPadding().navigationBarsPadding().centeredWidth(ContentWidth)) {
         SimpleTopBar(stringResource(R.string.kelimelerim),onBack)
-        if(LocalDensity.current.fontScale>1.4f) {
-            Column(Modifier.padding(horizontal=12.dp,vertical=12.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
-                stages.forEach { (stage,label,color) ->
-                    val selected=stage==selectedStage
-                    StageTile(selected,color,Modifier.fillMaxWidth(),{selectedStage=stage}) {
-                        Row(Modifier.fillMaxWidth().heightIn(min=64.dp).padding(12.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
-                            ReferenceIcon(if(stage=="learning") "study" else if(stage=="reviewing") "review" else "check",stageInk(selected,color),Modifier.size(26.dp))
-                            Text(label,fontSize=14.sp,fontWeight=FontWeight.ExtraBold,color=stageInk(selected,TaleInk,color),modifier=Modifier.weight(1f))
-                            Text("${snapshot.savedWordIds.count { (snapshot.wordStates[it]?:"learning")==stage }}",fontFamily=TaleDisplay,fontSize=24.sp,fontWeight=FontWeight.ExtraBold,color=stageInk(selected,TaleInk,color))
-                        }
-                    }
-                }
-            }
-        } else Row(Modifier.padding(horizontal=12.dp,vertical=12.dp).height(IntrinsicSize.Min),horizontalArrangement=Arrangement.spacedBy(8.dp)) {
-            stages.forEach { (stage,label,color) ->
-                val selected=stage==selectedStage
-                StageTile(selected,color,Modifier.weight(1f).fillMaxHeight(),{selectedStage=stage}) {
-                    Column(Modifier.fillMaxWidth().heightIn(min=118.dp).padding(11.dp),verticalArrangement=Arrangement.spacedBy(6.dp)) {
-                        Box(Modifier.height(30.dp),contentAlignment=Alignment.CenterStart) {
-                            ReferenceIcon(if(stage=="learning") "study" else if(stage=="reviewing") "review" else "check",stageInk(selected,color),Modifier.size(23.dp))
-                        }
-                        Text(label,fontSize=11.sp,fontWeight=FontWeight.ExtraBold,color=stageInk(selected,TaleInk,color))
-                        Text("${snapshot.savedWordIds.count { (snapshot.wordStates[it]?:"learning")==stage }}",fontFamily=TaleDisplay,fontSize=29.sp,fontWeight=FontWeight.ExtraBold,color=stageInk(selected,TaleInk,color))
-                    }
-                }
+        // The design's segmented stages on a pale track; they stack once text is large.
+        val large=LocalDensity.current.fontScale>1.4f
+        val track=Modifier.padding(horizontal=14.dp,vertical=10.dp).fillMaxWidth().background(TaleLine.copy(alpha=0.7f),RoundedCornerShape(16.dp)).padding(4.dp).selectableGroup()
+        @Composable fun stage(stage: String,label: String,color: Color,modifier: Modifier) {
+            val selected=stage==selectedStage
+            val count=snapshot.savedWordIds.count { (snapshot.wordStates[it]?:"learning")==stage }
+            Row(modifier.heightIn(min=48.dp).clip(RoundedCornerShape(12.dp)).background(if(selected) TaleSurface else Color.Transparent,RoundedCornerShape(12.dp))
+                .selectable(selected=selected,role=Role.Tab) {selectedStage=stage}.padding(horizontal=8.dp,vertical=6.dp),
+                verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.Center) {
+                Text("$label · $count",fontSize=13.sp,fontWeight=FontWeight.ExtraBold,color=if(!selected) TaleMuted else if(color==TaleGreen) TaleSuccess else color,textAlign=androidx.compose.ui.text.style.TextAlign.Center,modifier=Modifier.fillMaxWidth())
             }
         }
+        if(large) Column(track,verticalArrangement=Arrangement.spacedBy(4.dp)) { stages.forEach { (stage,label,color) -> stage(stage,label,color,Modifier.fillMaxWidth()) } }
+        else Row(track.height(IntrinsicSize.Min),horizontalArrangement=Arrangement.spacedBy(4.dp)) { stages.forEach { (stage,label,color) -> stage(stage,label,color,Modifier.weight(1f).fillMaxHeight()) } }
         narrator.error?.let { Text(it,color=TaleMuted,fontSize=12.sp,modifier=Modifier.padding(horizontal=14.dp)) }
         Text(stringResource(R.string.kelime, words.size),fontFamily=TaleDisplay,fontSize=20.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.padding(horizontal=14.dp,vertical=6.dp))
         LazyColumn(contentPadding=PaddingValues(12.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
             items(words,key={it.id}) { word ->
                 ChunkyBox(TaleSurface,Modifier.fillMaxWidth().animateItem(),RoundedCornerShape(18.dp),depth=4.dp,border=TaleLine) {
-                Row(Modifier.fillMaxWidth().padding(start=16.dp,end=8.dp,top=12.dp,bottom=12.dp),verticalAlignment=Alignment.CenterVertically) {
+                Row(Modifier.fillMaxWidth().padding(start=10.dp,end=8.dp,top=10.dp,bottom=10.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
+                    // The design's big blue speaker leads each row.
+                    ChunkyBox(TaleBlue,Modifier.size(48.dp).contentLabel(stringResource(R.string.kelimesini_dinle, word.word)),RoundedCornerShape(14.dp),depth=3.dp,contentAlignment=Alignment.Center,onClick={narrator.speak(word.word)}) {
+                        ReferenceIcon("volume",TaleOnBlue,Modifier.size(22.dp))
+                    }
                     Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(3.dp)) { Text(word.word,fontFamily=TaleDisplay,fontSize=19.sp,fontWeight=FontWeight.ExtraBold); Text(word.translation,fontSize=14.sp,fontWeight=FontWeight.Bold,color=TaleMuted) }
-                    ReferenceIconButton("volume",stringResource(R.string.kelimesini_dinle, word.word),{narrator.speak(word.word)})
                     TextButton(onClick={onRemoveWord(word.id);alerts.show(context.getString(R.string.alert_word_removed,word.word),TaleAlertKind.Info)},contentPadding=PaddingValues(4.dp)) { Text(stringResource(R.string.kaldir),fontSize=12.sp,fontWeight=FontWeight.Bold,color=TaleMuted) }
                 }
                 }
@@ -523,18 +514,6 @@ fun SavedWordsScreen(snapshot: LearningSnapshot, onBack: () -> Unit, onRemoveWor
 }
 
 /** A Kelimelerim stage tab: filled in its color when chosen, white on a lip otherwise. */
-@Composable
-private fun StageTile(selected: Boolean, color: Color, modifier: Modifier, onSelect: () -> Unit, content: @Composable BoxScope.() -> Unit) {
-    ChunkyBox(if(selected) color else TaleSurface,modifier.selectable(selected=selected,role=Role.Tab,onClick=onSelect),RoundedCornerShape(18.dp),depth=4.dp,
-        border=if(selected) null else TaleLine,content=content)
-}
-
-/** Text on a stage tile: the tile color's own text color when chosen, else the given color. */
-@Composable
-private fun stageInk(selected: Boolean, otherwise: Color, face: Color=otherwise)=if(!selected) otherwise else when(face) {
-    TaleGreen -> TaleOnGreen; TalePurple -> TaleOnPurple; else -> TaleOnBlue
-}
-
 @Composable
 private fun StoryCard(story: Story, progress: Int, onClick: () -> Unit) {
     Row(Modifier.fillMaxWidth().appearIn().pressScale(onClick=onClick),horizontalArrangement=Arrangement.spacedBy(12.dp)) {
