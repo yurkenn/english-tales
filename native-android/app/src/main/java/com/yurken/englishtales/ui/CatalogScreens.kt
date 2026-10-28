@@ -445,7 +445,7 @@ fun SavedWordsScreen(snapshot: LearningSnapshot, onBack: () -> Unit, onRemoveWor
                         Box(Modifier.height(30.dp),contentAlignment=Alignment.CenterStart) {
                             ReferenceIcon(if(stage=="learning") "study" else if(stage=="reviewing") "review" else "check",stageInk(selected,color),Modifier.size(23.dp))
                         }
-                        Text(label,fontSize=12.sp,fontWeight=FontWeight.ExtraBold,color=stageInk(selected,TaleInk,color))
+                        Text(label,fontSize=11.sp,fontWeight=FontWeight.ExtraBold,color=stageInk(selected,TaleInk,color))
                         Text("${snapshot.savedWordIds.count { (snapshot.wordStates[it]?:"learning")==stage }}",fontFamily=TaleDisplay,fontSize=29.sp,fontWeight=FontWeight.ExtraBold,color=stageInk(selected,TaleInk,color))
                     }
                 }
