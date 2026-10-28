@@ -13,6 +13,7 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -230,12 +231,12 @@ fun LearningSettingsScreen(snapshot: LearningSnapshot,onBack: ()->Unit,onSave: (
         SimpleTopBar(stringResource(R.string.ayarlar),onBack)
         Column(Modifier.padding(16.dp),verticalArrangement=Arrangement.spacedBy(14.dp)) {
             OutlinedTextField(value=name,onValueChange={name=it.take(30)},label={Text(stringResource(R.string.adin))},singleLine=true,modifier=Modifier.fillMaxWidth())
-            Text(stringResource(R.string.ingilizce_seviyen),fontWeight=FontWeight.Bold)
+            Text(stringResource(R.string.ingilizce_seviyen),fontFamily=TaleDisplay,fontSize=18.sp,fontWeight=FontWeight.ExtraBold)
             PreferenceChoices(listOf("A1","A2","B1"),level) {level=it}
-            OutlinedButton(onClick={placement=true},modifier=Modifier.fillMaxWidth()) {Text(stringResource(R.string.placement_entry))}
-            Text(stringResource(R.string.sevdigin_hikayeler),fontWeight=FontWeight.Bold)
+            ChunkyButton(stringResource(R.string.placement_entry),{placement=true},Modifier.fillMaxWidth(),color=TaleSurface,onColor=TaleInk,border=TaleLine)
+            Text(stringResource(R.string.sevdigin_hikayeler),fontFamily=TaleDisplay,fontSize=18.sp,fontWeight=FontWeight.ExtraBold)
             PreferenceChoices(listOf("Günlük yaşam","Macera","Gizem"),genre,label={genreLabel(it)}) {genre=it}
-            Text(stringResource(R.string.gunluk_hedefin),fontWeight=FontWeight.Bold)
+            Text(stringResource(R.string.gunluk_hedefin),fontFamily=TaleDisplay,fontSize=18.sp,fontWeight=FontWeight.ExtraBold)
             val goalOptions=listOf(stringResource(R.string.adim_secenek_1),stringResource(R.string.adim_secenek_2),stringResource(R.string.adim_secenek_3))
             PreferenceChoices(goalOptions,goalOptions[goal.coerceIn(1,3)-1]) {goal=goalOptions.indexOf(it)+1}
             Text(stringResource(R.string.bir_adim_tamamlanan_bir_hikaye),fontSize=12.sp,color=TaleMuted)
@@ -246,7 +247,7 @@ fun LearningSettingsScreen(snapshot: LearningSnapshot,onBack: ()->Unit,onSave: (
             ThemeControls()
             val alerts=LocalTaleAlerts.current
             val savedText=stringResource(R.string.alert_settings_saved)
-            Button(onClick={onSave(level,genre,goal,name);alerts.success(savedText)},modifier=Modifier.fillMaxWidth().heightIn(min=50.dp),shape=RoundedCornerShape(14.dp)) {Text(stringResource(R.string.degisiklikleri_kaydet))}
+            ChunkyButton(stringResource(R.string.degisiklikleri_kaydet),{onSave(level,genre,goal,name);alerts.success(savedText)},Modifier.fillMaxWidth())
             Text(stringResource(R.string.ilerlemen_bu_cihazda_saklanir_uygulama),fontSize=12.sp,color=TaleMuted)
             SupportLinks()
         }
@@ -255,9 +256,12 @@ fun LearningSettingsScreen(snapshot: LearningSnapshot,onBack: ()->Unit,onSave: (
 
 @Composable
 private fun PreferenceChoices(options: List<String>,selected: String,label: @Composable (String)->String = {it},onSelect: (String)->Unit) {
-    Column(Modifier.selectableGroup(),verticalArrangement=Arrangement.spacedBy(6.dp)) {options.forEach {value ->
-        Row(Modifier.fillMaxWidth().border(1.dp,if(value==selected) TaleBlue else TaleLine,RoundedCornerShape(10.dp)).selectable(selected=value==selected,role=Role.RadioButton) {onSelect(value)}.padding(12.dp),verticalAlignment=Alignment.CenterVertically) {
-            Text(label(value),fontSize=14.sp,modifier=Modifier.weight(1f));if(value==selected) Text("✓",color=TaleBlue)
+    // Chunky rows: the picked one sits on a green lip.
+    Column(Modifier.selectableGroup(),verticalArrangement=Arrangement.spacedBy(8.dp)) {options.forEach {value ->
+        val on=value==selected; val shape=RoundedCornerShape(16.dp)
+        Row(Modifier.fillMaxWidth().background(if(on) chunkEdge(TaleGreen) else TaleLine,shape).padding(bottom=4.dp).background(if(on) TaleMint else TaleSurface,shape)
+            .border(2.dp,if(on) TaleGreen else TaleLine,shape).clip(shape).selectable(selected=on,role=Role.RadioButton) {onSelect(value)}.padding(14.dp),verticalAlignment=Alignment.CenterVertically) {
+            Text(label(value),fontSize=15.sp,fontWeight=if(on) FontWeight.ExtraBold else FontWeight.Bold,modifier=Modifier.weight(1f));if(on) Text("✓",color=TaleGreen,fontWeight=FontWeight.ExtraBold)
         }
     } }
 }

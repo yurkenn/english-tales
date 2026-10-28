@@ -106,7 +106,10 @@ private fun MatchCard(label: String,selected: Boolean,matched: Boolean,shakeTick
     val fade by animateFloatAsState(if(matched) 0.55f else 1f,tween(TaleMotion.emphasized),label="matchFade")
     var pops by remember {mutableIntStateOf(0)}
     LaunchedEffect(matched) {if(matched) pops++}
-    Box(modifier.shakeOn(shakeTick).popOn(pops).graphicsLayer {alpha=fade}.background(fill,RoundedCornerShape(14.dp)).border(if(selected||matched) 2.dp else 1.5.dp,color,RoundedCornerShape(14.dp)).selectable(selected=selected||matched,enabled=!matched,role=Role.Button,onClick=onClick).padding(8.dp),contentAlignment=Alignment.Center) {
-        Text(label,fontSize=15.sp,fontWeight=if(selected||matched) FontWeight.Bold else FontWeight.Medium,textAlign=androidx.compose.ui.text.style.TextAlign.Center)
+    Box(modifier.shakeOn(shakeTick).popOn(pops).graphicsLayer {alpha=fade}.selectable(selected=selected||matched,enabled=!matched,role=Role.Button,onClick=onClick)
+        // A card on a lip in its border color; a matched pair loses the lip and lies flat.
+        .background(color,RoundedCornerShape(16.dp)).padding(bottom=if(matched) 0.dp else 4.dp)
+        .background(fill,RoundedCornerShape(16.dp)).border(2.dp,color,RoundedCornerShape(16.dp)).padding(8.dp),contentAlignment=Alignment.Center) {
+        Text(label,fontSize=16.sp,fontWeight=if(selected||matched) FontWeight.ExtraBold else FontWeight.Bold,textAlign=androidx.compose.ui.text.style.TextAlign.Center)
     }
 }

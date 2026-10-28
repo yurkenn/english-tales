@@ -338,7 +338,7 @@ fun GameResult(subtitle: String,points: Int,padding: PaddingValues,onExit: ()->U
     val stars=if(correct!=null && total!=null) GameRewards.stars(correct,total) else null
     Box(Modifier.fillMaxSize()) {
     Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState()).padding(16.dp),horizontalAlignment=Alignment.CenterHorizontally) {
-        Text(stringResource(R.string.harika_puan_kazandin, points),color=TaleOnPurple,fontSize=14.sp,fontWeight=FontWeight.SemiBold,modifier=Modifier.fillMaxWidth().appearIn(0).background(TalePurple,RoundedCornerShape(14.dp)).padding(14.dp))
+        Text(stringResource(R.string.harika_puan_kazandin, points),color=TaleOnPurple,fontSize=15.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.fillMaxWidth().appearIn(0).background(chunkEdge(TalePurple),RoundedCornerShape(16.dp)).padding(bottom=4.dp).background(TalePurple,RoundedCornerShape(16.dp)).padding(14.dp))
         Spacer(Modifier.height(20.dp))
         // A flawless session earns the trophy pose.
         TalesMascot(if(stars==3) MascotMood.Proud else MascotMood.Celebrate,Modifier.size(112.dp).appearIn(1),animate=true)
@@ -351,7 +351,7 @@ fun GameResult(subtitle: String,points: Int,padding: PaddingValues,onExit: ()->U
         Spacer(Modifier.height(8.dp))
         // The points count up like a scoreboard; the earned amount is the final value.
         AnimatedCounter(points,Modifier.appearIn(2),style=MaterialTheme.typography.displaySmall.copy(fontWeight=FontWeight.Bold),color=TalePurple,prefix="+")
-        Text(stringResource(R.string.calisma_tamamlandi),fontSize=25.sp,fontWeight=FontWeight.SemiBold,modifier=Modifier.appearIn(3))
+        Text(stringResource(R.string.calisma_tamamlandi),fontFamily=TaleDisplay,fontSize=24.sp,lineHeight=28.sp,fontWeight=FontWeight.ExtraBold,textAlign=androidx.compose.ui.text.style.TextAlign.Center,modifier=Modifier.fillMaxWidth().appearIn(3))
         Text(subtitle,fontSize=14.sp,color=TaleMuted,modifier=Modifier.padding(horizontal=12.dp,vertical=6.dp).appearIn(4))
         highlight?.let {Text(it,fontSize=15.sp,fontWeight=FontWeight.Bold,color=TaleBlue,modifier=Modifier.padding(bottom=6.dp).appearIn(4).popOn(1))}
         Row(Modifier.fillMaxWidth().padding(vertical=8.dp).appearIn(5),horizontalArrangement=Arrangement.spacedBy(8.dp)) {
@@ -363,8 +363,8 @@ fun GameResult(subtitle: String,points: Int,padding: PaddingValues,onExit: ()->U
             Text(if(it.dailyGoalReached) stringResource(R.string.gunluk_hedefin_tamamlandi) else stringResource(R.string.bugunku_hedef_adim, it.todaySessions, it.dailyGoal),color=TaleBlue,fontSize=14.sp,modifier=Modifier.padding(12.dp))
             if(it.completedLessons==1 && !LearningReminders.enabled(androidx.compose.ui.platform.LocalContext.current)) ReminderControls()
         }
-        Button(onClick=onExit,shape=RoundedCornerShape(14.dp),modifier=Modifier.fillMaxWidth().heightIn(min=50.dp).appearIn(6)) {Text(stringResource(R.string.gunluk_planima_don))}
-        TextButton(onClick=onRestart) {Text(stringResource(R.string.yeniden_calis),fontSize=13.sp)}
+        ChunkyButton(stringResource(R.string.gunluk_planima_don),onExit,Modifier.fillMaxWidth().appearIn(6))
+        TextButton(onClick=onRestart,modifier=Modifier.heightIn(min=48.dp)) {Text(stringResource(R.string.yeniden_calis),fontSize=15.sp,fontWeight=FontWeight.ExtraBold)}
     }
     ConfettiBurst(Modifier.fillMaxSize(),subtitle,pieces=if(stars==3) 120 else 70)
     }

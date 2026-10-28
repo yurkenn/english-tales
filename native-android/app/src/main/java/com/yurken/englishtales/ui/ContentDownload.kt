@@ -1,7 +1,11 @@
 package com.yurken.englishtales.ui
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.ui.text.font.FontWeight
 import com.yurken.englishtales.R
 import androidx.compose.ui.res.stringResource
 import androidx.compose.material3.*
@@ -39,8 +43,10 @@ fun ContentDownloadsScreen(content: ContentViewModel,onBack: ()->Unit) {
             if(downloads.isEmpty()) item {TaleEmptyState(stringResource(R.string.henuz_indirilen_hikaye_yok),actionLabel=stringResource(R.string.empty_browse_stories),onAction=onBack)}
             items(downloads.size) {index ->
                 val story=downloads[index]
-                Row(Modifier.fillMaxWidth().appearIn(index).padding(horizontal=16.dp,vertical=8.dp),verticalAlignment=Alignment.CenterVertically) {
-                    Text(story.title,modifier=Modifier.weight(1f))
+                val shape=RoundedCornerShape(18.dp)
+                Row(Modifier.fillMaxWidth().appearIn(index).padding(horizontal=16.dp,vertical=5.dp).background(TaleLine,shape).padding(bottom=4.dp)
+                    .background(TaleSurface,shape).border(2.dp,TaleLine,shape).padding(start=16.dp,end=4.dp,top=4.dp,bottom=4.dp),verticalAlignment=Alignment.CenterVertically) {
+                    Text(story.title,fontWeight=FontWeight.ExtraBold,modifier=Modifier.weight(1f))
                     TextButton(onClick={content.removeDownload(story)},enabled=!status.busy) {Text(stringResource(R.string.kaldir))}
                 }
             }

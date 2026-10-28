@@ -9,8 +9,6 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
@@ -55,14 +53,16 @@ internal fun AnswerOption(label: String, selected: Boolean, state: OptionState, 
     var pops by remember { mutableIntStateOf(0) }
     var shakes by remember { mutableIntStateOf(0) }
     LaunchedEffect(state) { if (state == OptionState.Correct) pops++; if (state == OptionState.Wrong) shakes++ }
-    val shape = RoundedCornerShape(14.dp)
-    Row(modifier.fillMaxWidth().popOn(pops).shakeOn(shakes).heightIn(min = 52.dp)
-        .background(fill, shape).border(if (state == OptionState.Idle) 1.5.dp else 2.dp, border, shape)
+    val shape = RoundedCornerShape(16.dp)
+    // The playful look: the option sits on a lip in its border color, like a key to press.
+    Row(modifier.fillMaxWidth().popOn(pops).shakeOn(shakes).heightIn(min = 56.dp)
         .selectable(selected = selected, enabled = enabled, role = role, onClick = onClick)
+        .background(border, shape).padding(bottom = 4.dp)
+        .background(fill, shape).border(2.dp, border, shape)
         .padding(horizontal = 14.dp, vertical = 10.dp),
         verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
         OptionBadge(state, border)
-        Text(label, Modifier.weight(1f), style = MaterialTheme.typography.bodyLarge, fontWeight = if (state == OptionState.Idle) FontWeight.Normal else FontWeight.SemiBold, color = TaleInk)
+        Text(label, Modifier.weight(1f), style = MaterialTheme.typography.bodyLarge, fontWeight = if (state == OptionState.Idle) FontWeight.SemiBold else FontWeight.ExtraBold, color = TaleInk)
     }
 }
 
@@ -126,8 +126,8 @@ internal fun AnswerFeedback(visible: Boolean, correct: Boolean, message: String,
 @Composable
 internal fun QuizProgress(fraction: Float, modifier: Modifier = Modifier) {
     val value by animateFloatAsState(fraction.coerceIn(0f, 1f), tween(TaleMotion.emphasized, easing = FastOutSlowInEasing), label = "quiz")
-    androidx.compose.material3.LinearProgressIndicator(progress = { value }, modifier = modifier.fillMaxWidth().height(10.dp),
-        color = TaleBlue, trackColor = TaleLine, strokeCap = androidx.compose.ui.graphics.StrokeCap.Round, gapSize = 0.dp, drawStopIndicator = {})
+    androidx.compose.material3.LinearProgressIndicator(progress = { value }, modifier = modifier.fillMaxWidth().height(14.dp),
+        color = TaleGreen, trackColor = TaleLine, strokeCap = androidx.compose.ui.graphics.StrokeCap.Round, gapSize = 0.dp, drawStopIndicator = {})
 }
 
 /** The top of a quiz game: exit button, "question n / total" and the combo badge, with the progress bar below. */
@@ -135,7 +135,7 @@ internal fun QuizProgress(fraction: Float, modifier: Modifier = Modifier) {
 internal fun QuizHeader(index: Int, total: Int, exitLabel: String, onExit: () -> Unit, progressLabel: Int = R.string.gap_progress) {
     Row(verticalAlignment = Alignment.CenterVertically) {
         ReferenceIconButton("back", exitLabel, onExit)
-        Text(stringResource(progressLabel, index + 1, total), modifier = Modifier.weight(1f), style = MaterialTheme.typography.titleMedium)
+        Text(stringResource(progressLabel, index + 1, total), modifier = Modifier.weight(1f), style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.ExtraBold)
         ComboBadge()
     }
     QuizProgress(index.toFloat() / total)
@@ -149,9 +149,13 @@ internal val GapButtonLabels = QuizButtonLabels(R.string.gap_check, R.string.gap
 /** The "check, then next" button of a quiz game; it turns green once a correct answer is checked. */
 @Composable
 internal fun QuizCheckButton(enabled: Boolean, checked: Boolean, correct: Boolean, last: Boolean, onClick: () -> Unit, labels: QuizButtonLabels = GapButtonLabels) {
-    Button(enabled = enabled, modifier = Modifier.fillMaxWidth().heightIn(min = 50.dp), shape = RoundedCornerShape(14.dp),
-        colors = if (checked && correct) ButtonDefaults.buttonColors(containerColor = TaleSuccess, contentColor = TaleSurface) else ButtonDefaults.buttonColors(),
-        onClick = onClick) { Text(stringResource(if (!checked) labels.check else if (last) labels.finish else labels.next)) }
+    // A chunky go button: green to check and continue, the success color after a right answer, grey until there is an answer.
+    val face = if (!enabled) TaleLine else if (checked && correct) TaleSuccess else TaleGreen
+    val ink = if (!enabled) TaleMuted else if (checked && correct) TaleSurface else TaleOnGreen
+    ChunkyBox(face, Modifier.fillMaxWidth().heightIn(min = 52.dp), RoundedCornerShape(16.dp), depth = 4.dp, contentAlignment = Alignment.Center, onClick = onClick, enabled = enabled) {
+        Text(stringResource(if (!checked) labels.check else if (last) labels.finish else labels.next), Modifier.padding(horizontal = 16.dp, vertical = 12.dp),
+            color = ink, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.ExtraBold, textAlign = androidx.compose.ui.text.style.TextAlign.Center)
+    }
 }
 
 /** The large round play/stop button of the listening games, with the narrator's preparing and error notes below it. */

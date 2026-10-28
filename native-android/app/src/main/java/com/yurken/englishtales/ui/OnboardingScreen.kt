@@ -42,7 +42,7 @@ fun OnboardingScreen(analyticsControls: @Composable () -> Unit = { com.yurken.en
             GuideBubble(stringResource(R.string.merhaba_ben_senin_okuma_arkadasinim))
             Row(Modifier.fillMaxWidth()) {
                 Spacer(Modifier.width(40.dp))
-                Box(Modifier.width(250.dp).height(170.dp).clip(RoundedCornerShape(10.dp)).background(LocalTaleColors.current.tileBlue),contentAlignment=Alignment.BottomCenter) {
+                ChunkyBox(LocalTaleColors.current.tileBlue,Modifier.width(250.dp).height(170.dp),RoundedCornerShape(22.dp),contentAlignment=Alignment.BottomCenter) {
                     TalesMascot(MascotMood.Welcome,Modifier.fillMaxHeight(),description=stringResource(R.string.okuma_rehberi),animate=true)
                 }
             }
@@ -67,7 +67,7 @@ fun OnboardingScreen(analyticsControls: @Composable () -> Unit = { com.yurken.en
                 GuideBubble(stringResource(R.string.her_gun_ne_kadar_calismak))
                 Row(Modifier.fillMaxWidth().appearIn(1)) {
                     Spacer(Modifier.width(40.dp))
-                    Box(Modifier.width(250.dp).height(150.dp).clip(RoundedCornerShape(10.dp)).background(LocalTaleColors.current.tileYellow),contentAlignment=Alignment.BottomCenter) {
+                    ChunkyBox(LocalTaleColors.current.tileYellow,Modifier.width(250.dp).height(150.dp),RoundedCornerShape(22.dp),contentAlignment=Alignment.BottomCenter) {
                         TaleArt(R.drawable.mascot_goal,Modifier.fillMaxHeight().padding(top=8.dp))
                     }
                 }
@@ -92,16 +92,21 @@ private fun GuideBubble(message: String) {
     // New messages fade up into the chat, like a conversation.
     Row(Modifier.fillMaxWidth().appearIn(),horizontalArrangement=Arrangement.spacedBy(9.dp),verticalAlignment=Alignment.Top) {
         Image(painterResource(R.drawable.mascot_avatar),null,Modifier.size(29.dp).clip(CircleShape).background(TaleMint),contentScale=ContentScale.Crop,alignment=Alignment.TopCenter)
-        Text(message,fontSize=14.sp,lineHeight=19.sp,color=TaleInk,modifier=Modifier.widthIn(max=285.dp).background(TaleLine,RoundedCornerShape(topStart=4.dp,topEnd=14.dp,bottomStart=14.dp,bottomEnd=14.dp)).padding(horizontal=13.dp,vertical=10.dp))
+        val shape=RoundedCornerShape(topStart=4.dp,topEnd=16.dp,bottomStart=16.dp,bottomEnd=16.dp)
+        Text(message,fontSize=14.sp,lineHeight=19.sp,color=TaleInk,fontWeight=FontWeight.SemiBold,modifier=Modifier.widthIn(max=285.dp)
+            .background(TaleLine,shape).padding(bottom=3.dp).background(TaleSurface,shape).border(2.dp,TaleLine,shape).padding(horizontal=13.dp,vertical=10.dp))
     }
 }
 
 @Composable
-private fun ReplyBubble(message: String) { Box(Modifier.fillMaxWidth().appearIn(),contentAlignment=Alignment.CenterEnd) { Text(message,fontSize=14.sp,color=TaleOnBlue,modifier=Modifier.background(TaleBlue,RoundedCornerShape(topStart=14.dp,topEnd=4.dp,bottomStart=14.dp,bottomEnd=14.dp)).padding(horizontal=13.dp,vertical=10.dp)) } }
+private fun ReplyBubble(message: String) { Box(Modifier.fillMaxWidth().appearIn(),contentAlignment=Alignment.CenterEnd) { Text(message,fontSize=14.sp,color=TaleOnGreen,fontWeight=FontWeight.Bold,modifier=Modifier.background(TaleGreen,RoundedCornerShape(topStart=16.dp,topEnd=4.dp,bottomStart=16.dp,bottomEnd=16.dp)).padding(horizontal=13.dp,vertical=10.dp)) } }
 
 @Composable
 private fun ReplyChoice(label: String,onClick: ()->Unit) {
     Box(Modifier.fillMaxWidth().appearIn(1),contentAlignment=Alignment.CenterEnd) {
-        Text(label,fontSize=14.sp,color=TaleOnBlue,fontWeight=FontWeight.SemiBold,modifier=Modifier.pressScale(onClick=onClick).background(TaleBlue,RoundedCornerShape(14.dp)).padding(horizontal=16.dp,vertical=12.dp))
+        // An answer to pick is a chunky white key; the picked one turns into a green reply bubble.
+        val shape=RoundedCornerShape(16.dp)
+        Text(label,fontSize=14.sp,color=TaleInk,fontWeight=FontWeight.ExtraBold,modifier=Modifier.pressScale(onClick=onClick)
+            .background(chunkEdge(TaleGreen),shape).padding(bottom=4.dp).background(TaleSurface,shape).border(2.dp,TaleGreen,shape).padding(horizontal=16.dp,vertical=12.dp))
     }
 }

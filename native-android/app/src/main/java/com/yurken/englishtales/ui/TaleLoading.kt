@@ -2,7 +2,7 @@ package com.yurken.englishtales.ui
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -20,7 +20,7 @@ import com.yurken.englishtales.R
 internal fun TaleLoading(modifier: Modifier = Modifier, mascotSize: Int = 120) {
     Column(modifier, horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(20.dp)) {
         TalesMascot(MascotMood.Thinking, Modifier.size(mascotSize.dp).pulseWhile(true), description = stringResource(R.string.yukleniyor))
-        LinearProgressIndicator(Modifier.width(120.dp).height(4.dp).clip(RoundedCornerShape(2.dp)), color = TaleBlue, trackColor = TaleLine)
+        LinearProgressIndicator(Modifier.width(140.dp).height(10.dp).clip(RoundedCornerShape(5.dp)), color = TaleGreen, trackColor = TaleLine)
     }
 }
 
@@ -29,8 +29,8 @@ internal fun TaleLoading(modifier: Modifier = Modifier, mascotSize: Int = 120) {
 internal fun TaleEmptyState(text: String, modifier: Modifier = Modifier, mascotSize: Int = 140, mood: MascotMood = MascotMood.Reading, actionLabel: String? = null, onAction: (() -> Unit)? = null) {
     Column(modifier.fillMaxWidth().padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(12.dp)) {
         TalesMascot(mood, Modifier.size(mascotSize.dp).appearIn(), animate = true)
-        Text(text, Modifier.appearIn(1), style = MaterialTheme.typography.bodyMedium, color = TaleMuted, textAlign = TextAlign.Center)
+        Text(text, Modifier.appearIn(1), style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.Bold, color = TaleMuted, textAlign = TextAlign.Center)
         // An empty screen says what to do next instead of ending the visit.
-        if (actionLabel != null && onAction != null) Button(onClick = onAction, modifier = Modifier.appearIn(2).heightIn(min = 48.dp)) { Text(actionLabel) }
+        if (actionLabel != null && onAction != null) ChunkyButton(actionLabel, onAction, Modifier.appearIn(2))
     }
 }

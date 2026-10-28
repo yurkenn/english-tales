@@ -6,7 +6,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
@@ -65,15 +64,13 @@ internal fun RewardSpotlight(
                     confettiKey?.let { ConfettiBurst(Modifier.matchParentSize(), it, pieces = 90) }
                 }
                 Spacer(Modifier.height(12.dp))
-                Text(title, style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.ExtraBold, color = TaleInk, textAlign = TextAlign.Center,
+                Text(title, style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.ExtraBold, color = TaleInk, textAlign = TextAlign.Center,
                     modifier = Modifier.fillMaxWidth().appearIn(1))
                 Spacer(Modifier.height(10.dp))
                 Text(text, style = MaterialTheme.typography.bodyLarge, color = TaleMuted, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth().appearIn(2))
                 extra?.let { Spacer(Modifier.height(20.dp)); Column(Modifier.widthIn(max = 420.dp).fillMaxWidth().appearIn(3), content = it) }
                 Spacer(Modifier.weight(1f))
-                Button(onClick = onDismiss, modifier = Modifier.widthIn(max = 420.dp).fillMaxWidth().heightIn(min = 54.dp), shape = RoundedCornerShape(16.dp)) {
-                    Text(buttonLabel, fontWeight = FontWeight.Bold, fontSize = 17.sp)
-                }
+                ChunkyButton(buttonLabel, onDismiss, Modifier.widthIn(max = 420.dp).fillMaxWidth())
             }
         }
     }
