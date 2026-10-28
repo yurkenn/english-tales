@@ -82,17 +82,14 @@ fun GameStatsBar(snapshot: LearningSnapshot) {
 
 @Composable
 private fun ChallengeBanner(onClick: () -> Unit) {
-    Column(Modifier.padding(horizontal=16.dp)) {
-        Text(stringResource(R.string.okuma_aliskanligin_burada_baslar),fontSize=10.sp,fontWeight=FontWeight.Bold,color=Color(0xFF6C294F),
-            modifier=Modifier.background(Color(0xFFFFE85A),RoundedCornerShape(topStart=9.dp,topEnd=9.dp)).padding(horizontal=9.dp,vertical=6.dp))
-        Box(Modifier.fillMaxWidth().heightIn(min=126.dp).pressScale(onClick=onClick).clip(RoundedCornerShape(topEnd=16.dp,bottomStart=16.dp,bottomEnd=16.dp)).background(Color(0xFFFFF58B))) {
-            TalesMascot(MascotMood.Welcome,Modifier.align(Alignment.BottomEnd).width(104.dp).height(126.dp),animate=true)
-            Column(Modifier.fillMaxWidth(0.72f).padding(start=16.dp,top=14.dp,bottom=14.dp),verticalArrangement=Arrangement.spacedBy(4.dp)) {
-                Text(stringResource(R.string.bir_hikaye_nyeni_kelimeler),fontSize=19.sp,lineHeight=22.sp,fontWeight=FontWeight.Bold,color=Color(0xFF6C294F))
-                Text(stringResource(R.string.oku_dinle_ve_ogren),fontSize=12.sp,lineHeight=17.sp,color=Color(0xFF6C294F))
-                Text(stringResource(R.string.okumaya_basla),fontSize=11.sp,lineHeight=14.sp,color=LightTaleColors.onPurple,fontWeight=FontWeight.Bold,
-                    modifier=Modifier.background(LightTaleColors.purple,RoundedCornerShape(20.dp)).padding(horizontal=12.dp,vertical=5.dp))
-            }
+    ChunkyBox(TaleYellow,Modifier.padding(horizontal=16.dp).fillMaxWidth().heightIn(min=132.dp),onClick=onClick) {
+        TalesMascot(MascotMood.Reading,Modifier.align(Alignment.BottomEnd).width(108.dp).height(128.dp),animate=true)
+        Column(Modifier.fillMaxWidth(if(LocalDensity.current.fontScale>=1.5f) 1f else 0.68f).padding(16.dp),verticalArrangement=Arrangement.spacedBy(6.dp)) {
+            Text(stringResource(R.string.okuma_aliskanligin_burada_baslar),fontSize=12.sp,fontWeight=FontWeight.ExtraBold,letterSpacing=0.6.sp,color=TaleOnYellow)
+            Text(stringResource(R.string.bir_hikaye_nyeni_kelimeler),fontFamily=TaleDisplay,fontSize=22.sp,lineHeight=25.sp,fontWeight=FontWeight.ExtraBold,color=TaleOnYellow)
+            Text(stringResource(R.string.oku_dinle_ve_ogren),fontSize=13.sp,lineHeight=18.sp,fontWeight=FontWeight.Bold,color=TaleOnYellow)
+            Text(stringResource(R.string.okumaya_basla),fontSize=13.sp,lineHeight=16.sp,color=TaleOnGreen,fontWeight=FontWeight.ExtraBold,
+                modifier=Modifier.padding(top=4.dp).background(TaleGreen,RoundedCornerShape(14.dp)).padding(horizontal=14.dp,vertical=7.dp))
         }
     }
 }
@@ -174,11 +171,13 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
     } }
     Column(Modifier.fillMaxSize().padding(padding)) {
         if(listMode.isBlank()) {
-            StatsHeader(snapshot)
+            GameStatsBar(snapshot)
             FlowRow(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=10.dp),horizontalArrangement=Arrangement.spacedBy(16.dp),verticalArrangement=Arrangement.spacedBy(10.dp),maxItemsInEachRow=sideBySide(2)) {
                 listOf(stringResource(R.string.arama) to "search",stringResource(R.string.kitaplarim) to "read").forEachIndexed { i,(label,icon) ->
-                    Row(Modifier.weight(1f).heightIn(min=48.dp).pressScale { listMode=if(i==0) "search" else "books" }.background(TaleLine,RoundedCornerShape(12.dp)),horizontalArrangement=Arrangement.Center,verticalAlignment=Alignment.CenterVertically) {
-                        ReferenceIcon(icon,TaleInk,Modifier.size(18.dp)); Spacer(Modifier.width(8.dp)); Text(label,fontSize=14.sp,fontWeight=FontWeight.Medium)
+                    ChunkyBox(TaleSurface,Modifier.weight(1f).heightIn(min=52.dp),RoundedCornerShape(16.dp),depth=4.dp,border=TaleLine,contentAlignment=Alignment.Center,onClick={ listMode=if(i==0) "search" else "books" }) {
+                        Row(Modifier.padding(horizontal=12.dp,vertical=10.dp),horizontalArrangement=Arrangement.Center,verticalAlignment=Alignment.CenterVertically) {
+                            ReferenceIcon(icon,TaleBlue,Modifier.size(20.dp)); Spacer(Modifier.width(8.dp)); Text(label,fontSize=15.sp,fontWeight=FontWeight.ExtraBold)
+                        }
                     }
                 }
             }
@@ -207,7 +206,7 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
         } else {
             SimpleTopBar(if(listMode=="books") stringResource(R.string.kitaplarim) else if(listMode=="search") stringResource(R.string.arama) else if(listMode=="new") stringResource(R.string.yeni_hikayeler) else if(listMode=="level") stringResource(R.string.kitaplari, snapshot.level) else if(listMode=="adventure") stringResource(R.string.macera_ve_gizem) else if(listMode=="all") stringResource(R.string.kitaplar) else if(listMode==FAVORITES) stringResource(R.string.favorites_title,filtered.size) else categories.firstOrNull { TAG_LIST+it.id==listMode }?.name ?: stringResource(R.string.kitaplar)) { leaveList() }
             if(listMode!="books") {
-                BasicTextField(value=search,onValueChange={search=it},singleLine=true,textStyle=MaterialTheme.typography.bodyMedium.copy(color=TaleInk),cursorBrush=SolidColor(TaleBlue),modifier=Modifier.fillMaxWidth().padding(horizontal=16.dp).background(TaleLine,RoundedCornerShape(6.dp)).padding(12.dp),decorationBox={ inner ->
+                BasicTextField(value=search,onValueChange={search=it},singleLine=true,textStyle=MaterialTheme.typography.bodyMedium.copy(color=TaleInk),cursorBrush=SolidColor(TaleBlue),modifier=Modifier.fillMaxWidth().padding(horizontal=16.dp).background(TaleSurface,RoundedCornerShape(16.dp)).border(2.dp,TaleLine,RoundedCornerShape(16.dp)).padding(horizontal=14.dp,vertical=14.dp),decorationBox={ inner ->
                     Box { if(search.isEmpty()) Text(stringResource(R.string.kitap_ara),color=TaleMuted,fontSize=14.sp); inner() }
                 })
             }
@@ -260,19 +259,21 @@ private fun LibraryFilters(filters: StoryFilters, showLevels: Boolean, onLevel: 
     }
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun BookShelf(title: String, stories: List<Story>, onOpenStory: (String) -> Unit, onAll: () -> Unit) {
-    Row(Modifier.fillMaxWidth().padding(horizontal=16.dp),verticalAlignment=Alignment.CenterVertically) {
-        Text(title,fontSize=20.sp,modifier=Modifier.weight(1f).padding(end=8.dp))
-        Text(stringResource(R.string.tumunu_gor),color=TaleBlue,fontSize=11.sp,fontWeight=FontWeight.Bold,modifier=Modifier.pressScale(onClick=onAll).minimumInteractiveComponentSize().background(TaleLine,RoundedCornerShape(20.dp)).padding(horizontal=9.dp,vertical=6.dp))
+    // Large text gives the Baloo title its own line, so a word like "hikâyeler" is never broken beside the link.
+    FlowRow(Modifier.fillMaxWidth().padding(horizontal=16.dp),verticalArrangement=Arrangement.Center,maxItemsInEachRow=if(LocalDensity.current.fontScale>=1.5f) 1 else 2) {
+        Text(title,fontFamily=TaleDisplay,fontSize=21.sp,lineHeight=25.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.weight(1f).align(Alignment.CenterVertically).padding(end=8.dp))
+        Text(stringResource(R.string.tumunu_gor),color=TaleBlue,fontSize=13.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.align(Alignment.CenterVertically).pressScale(onClick=onAll).minimumInteractiveComponentSize().padding(horizontal=6.dp,vertical=6.dp))
     }
-    Spacer(Modifier.height(22.dp))
-    LazyRow(contentPadding=PaddingValues(horizontal=16.dp),horizontalArrangement=Arrangement.spacedBy(16.dp)) {
+    Spacer(Modifier.height(14.dp))
+    LazyRow(contentPadding=PaddingValues(horizontal=16.dp),horizontalArrangement=Arrangement.spacedBy(14.dp)) {
         itemsIndexed(stories,key={_,it -> it.id}) { i,story ->
             Column(Modifier.width(130.dp).appearIn(i).pressScale { onOpenStory(story.id) }) {
-                BookCover(story,Modifier.size(130.dp,190.dp).shadow(6.dp,RoundedCornerShape(10.dp)))
+                ChunkyBox(TaleSurface,Modifier.size(130.dp,195.dp),RoundedCornerShape(16.dp),depth=5.dp,border=TaleLine) { BookCover(story,Modifier.fillMaxSize()) }
                 Spacer(Modifier.height(9.dp))
-                Text(story.title,fontSize=14.sp,lineHeight=20.sp,fontWeight=FontWeight.Medium,maxLines=2,overflow=TextOverflow.Ellipsis)
+                Text(story.title,fontSize=14.sp,lineHeight=19.sp,fontWeight=FontWeight.ExtraBold,maxLines=2,overflow=TextOverflow.Ellipsis)
                 Spacer(Modifier.height(2.dp))
                 Text(story.author,color=TaleMuted,fontSize=11.sp,maxLines=1,overflow=TextOverflow.Ellipsis)
                 ReadingMinutes(story)
@@ -289,12 +290,16 @@ fun StoryDetailScreen(story: Story, progress: Int, onBack: () -> Unit, onRead: (
         Column(Modifier.weight(1f).verticalScroll(rememberScrollState()).centeredWidth(ContentWidth)) {
             SimpleTopBar("",onBack)
             FlowRow(Modifier.fillMaxWidth().padding(start=24.dp,end=24.dp,top=32.dp,bottom=24.dp),horizontalArrangement=Arrangement.spacedBy(24.dp),verticalArrangement=Arrangement.spacedBy(16.dp),maxItemsInEachRow=sideBySide(2)) {
-                Box(Modifier.appearIn(0)) { BookCover(story,Modifier.size(140.dp,200.dp).shadow(10.dp,RoundedCornerShape(10.dp))); if(progress>0) ReferenceProgress(progress/100f,Modifier.align(Alignment.BottomCenter).width(106.dp).padding(bottom=7.dp)) }
+                Box(Modifier.appearIn(0)) { ChunkyBox(TaleSurface,Modifier.size(140.dp,206.dp),RoundedCornerShape(18.dp),depth=6.dp,border=TaleLine) { BookCover(story,Modifier.fillMaxSize()) }; if(progress>0) ReferenceProgress(progress/100f,Modifier.align(Alignment.BottomCenter).width(106.dp).padding(bottom=7.dp)) }
                 Column(Modifier.weight(1f).heightIn(min=200.dp),verticalArrangement=Arrangement.SpaceBetween) {
                     Text(story.author,color=TaleMuted,fontSize=13.sp)
-                    Spacer(Modifier.height(8.dp)); Text(story.title,fontSize=20.sp,lineHeight=24.sp,fontWeight=FontWeight.Bold)
+                    Spacer(Modifier.height(8.dp)); Text(story.title,fontFamily=TaleDisplay,fontSize=24.sp,lineHeight=28.sp,fontWeight=FontWeight.ExtraBold)
                     Spacer(Modifier.height(16.dp))
-                    Text("▮▮▮  "+stringResource(when(story.level){"A1"->R.string.zorluk_kolay;"A2"->R.string.zorluk_orta;else->R.string.zorluk_zor}),color=if(story.level=="A1") TaleBlue else TaleWarm,fontSize=14.sp)
+                    val (levelFace,levelInk)=when(story.level){"A1"->TaleGreen to TaleOnGreen;"A2"->TaleBlue to TaleOnBlue;else->TalePurple to TaleOnPurple}
+                    Row(verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(8.dp)) {
+                        Text(story.level,color=levelInk,fontFamily=TaleDisplay,fontSize=15.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.background(levelFace,RoundedCornerShape(10.dp)).padding(horizontal=10.dp,vertical=2.dp))
+                        Text(stringResource(when(story.level){"A1"->R.string.zorluk_kolay;"A2"->R.string.zorluk_orta;else->R.string.zorluk_zor}),color=TaleMuted,fontSize=14.sp,fontWeight=FontWeight.Bold)
+                    }
                     ReadingMinutes(story,Modifier.padding(top=4.dp))
                     // Q5.6: shown once the learner has known words, so a new learner is not told "120 new words".
                     newWords?.let { Text(pluralStringResource(R.plurals.story_new_words,it,it),color=TaleMuted,fontSize=11.sp,modifier=Modifier.padding(top=4.dp)) }
@@ -316,8 +321,8 @@ fun StoryDetailScreen(story: Story, progress: Int, onBack: () -> Unit, onRead: (
                 }
             }
             FlowRow(Modifier.padding(horizontal=24.dp).fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(12.dp),verticalArrangement=Arrangement.spacedBy(12.dp),maxItemsInEachRow=sideBySide(2)) {
-                Button(onClick=onRead,shape=RoundedCornerShape(14.dp),contentPadding=PaddingValues(horizontal=8.dp,vertical=12.dp),modifier=Modifier.weight(1f).heightIn(min=48.dp)) { ReferenceIcon("read",TaleOnBlue,Modifier.size(21.dp)); Spacer(Modifier.width(10.dp)); Text(if(progress in 1..99) stringResource(R.string.devam) else stringResource(R.string.oku),letterSpacing=1.sp) }
-                Button(onClick=onListen,shape=RoundedCornerShape(14.dp),contentPadding=PaddingValues(horizontal=8.dp,vertical=12.dp),modifier=Modifier.weight(1f).heightIn(min=48.dp)) { ReferenceIcon("headphones",TaleOnBlue,Modifier.size(21.dp)); Spacer(Modifier.width(10.dp)); Text(stringResource(R.string.dinle),letterSpacing=1.sp) }
+                DetailAction("read",if(progress in 1..99) stringResource(R.string.devam) else stringResource(R.string.oku),TaleGreen,TaleOnGreen,onRead,Modifier.weight(1f))
+                DetailAction("headphones",stringResource(R.string.dinle),TaleBlue,TaleOnBlue,onListen,Modifier.weight(1f))
             }
             Text(story.description,modifier=Modifier.padding(horizontal=24.dp,vertical=26.dp),fontSize=14.sp,lineHeight=22.sp,color=TaleMuted)
             content?.let { ContentDownloadAction(it,story) }
@@ -325,6 +330,16 @@ fun StoryDetailScreen(story: Story, progress: Int, onBack: () -> Unit, onRead: (
             StoryWordsPreview(story)
         }
         TalesBottomBar(1,onTabSelected)
+    }
+}
+
+/** A chunky story-page button: an icon and its label on a colored face. */
+@Composable
+private fun DetailAction(icon: String, label: String, face: Color, ink: Color, onClick: () -> Unit, modifier: Modifier = Modifier) {
+    ChunkyBox(face,modifier.heightIn(min=52.dp),RoundedCornerShape(16.dp),depth=4.dp,contentAlignment=Alignment.Center,onClick=onClick) {
+        Row(Modifier.padding(horizontal=12.dp,vertical=12.dp),horizontalArrangement=Arrangement.Center,verticalAlignment=Alignment.CenterVertically) {
+            ReferenceIcon(icon,ink,Modifier.size(21.dp)); Spacer(Modifier.width(10.dp)); Text(label,color=ink,fontSize=16.sp,fontWeight=FontWeight.ExtraBold)
+        }
     }
 }
 
