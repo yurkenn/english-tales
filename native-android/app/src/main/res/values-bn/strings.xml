@@ -91,9 +91,6 @@
     <string name="tumunu_gor">সব দেখুন</string>
     <string name="hikayeyi_oku">গল্প পড়ুন</string>
     <string name="hikayeyi_paylas">গল্প শেয়ার করুন</string>
-    <string name="devam">চালিয়ে যাও</string>
-    <string name="oku">পড়ুন</string>
-    <string name="dinle">শুনুন</string>
     <string name="seviyesinde_hikayesi_cumleleri_cevirerek_oku">%1$s স্তরে একটি %2$s গল্প। বাক্য অনুবাদ সহ পড়ুন, নতুন শব্দ সংরক্ষণ করুন এবং শুনার মাধ্যমে পর্যালোচনা করুন।</string>
     <string name="profilim">আমার প্রোফাইল</string>
     <string name="ayarlar">সেটিংস</string>

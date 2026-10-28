@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The story page's second button and the captions under its three numbers. -->
+    <string name="story_listen_read">Read and listen</string>
+    <string name="story_stat_minutes">minutes</string>
+    <string name="story_stat_sentences">sentences</string>
+    <string name="story_stat_new_words">new words</string>
+</resources>

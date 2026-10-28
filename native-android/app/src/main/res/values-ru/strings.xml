@@ -91,9 +91,6 @@
     <string name="tumunu_gor">Посмотреть все</string>
     <string name="hikayeyi_oku">Прочитать историю</string>
     <string name="hikayeyi_paylas">Поделитесь историей</string>
-    <string name="devam">ПРОДОЛЖИТЬ</string>
-    <string name="oku">ЧИТАТЬ</string>
-    <string name="dinle">СЛУШАТЬ</string>
     <string name="seviyesinde_hikayesi_cumleleri_cevirerek_oku">История %2$s на уровне %1$s. Читайте с переводом предложений, сохраняйте новые слова и просматривайте их, слушая.</string>
     <string name="profilim">Мой профиль</string>
     <string name="ayarlar">Настройки</string>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The story page's second button and the captions under its three numbers. -->
+    <string name="story_listen_read">اقرأ واستمع</string>
+    <string name="story_stat_minutes">دقائق</string>
+    <string name="story_stat_sentences">جمل</string>
+    <string name="story_stat_new_words">كلمات جديدة</string>
+</resources>

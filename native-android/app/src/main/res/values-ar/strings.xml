@@ -91,9 +91,6 @@
     <string name="tumunu_gor">شاهد الكل</string>
     <string name="hikayeyi_oku">اقرأ القصة</string>
     <string name="hikayeyi_paylas">شارك القصة</string>
-    <string name="devam">متابعة</string>
-    <string name="oku">يقرأ</string>
-    <string name="dinle">يستمع</string>
     <string name="seviyesinde_hikayesi_cumleleri_cevirerek_oku">قصة %2$s على المستوى %1$s. اقرأ مع ترجمة الجملة، واحفظ الكلمات الجديدة وراجعها من خلال الاستماع.</string>
     <string name="profilim">ملفي الشخصي</string>
     <string name="ayarlar">إعدادات</string>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The story page's second button and the captions under its three numbers. -->
+    <string name="story_listen_read">Dinleyerek oku</string>
+    <string name="story_stat_minutes">dakika</string>
+    <string name="story_stat_sentences">cümle</string>
+    <string name="story_stat_new_words">yeni kelime</string>
+</resources>

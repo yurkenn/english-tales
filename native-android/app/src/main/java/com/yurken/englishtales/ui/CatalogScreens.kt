@@ -288,55 +288,75 @@ fun StoryDetailScreen(story: Story, progress: Int, onBack: () -> Unit, onRead: (
     val context=LocalContext.current
     Column(Modifier.fillMaxSize().background(TaleBackground).statusBarsPadding()) {
         Column(Modifier.weight(1f).verticalScroll(rememberScrollState()).centeredWidth(ContentWidth)) {
-            SimpleTopBar("",onBack)
-            FlowRow(Modifier.fillMaxWidth().padding(start=24.dp,end=24.dp,top=32.dp,bottom=24.dp),horizontalArrangement=Arrangement.spacedBy(24.dp),verticalArrangement=Arrangement.spacedBy(16.dp),maxItemsInEachRow=sideBySide(2)) {
-                Box(Modifier.appearIn(0)) { ChunkyBox(TaleSurface,Modifier.size(140.dp,206.dp),RoundedCornerShape(18.dp),depth=6.dp,border=TaleLine) { BookCover(story,Modifier.fillMaxSize()) }; if(progress>0) ReferenceProgress(progress/100f,Modifier.align(Alignment.BottomCenter).width(106.dp).padding(bottom=7.dp)) }
-                Column(Modifier.weight(1f).heightIn(min=200.dp),verticalArrangement=Arrangement.SpaceBetween) {
-                    Text(story.author,color=TaleMuted,fontSize=13.sp)
-                    Spacer(Modifier.height(8.dp)); Text(story.title,fontFamily=TaleDisplay,fontSize=24.sp,lineHeight=28.sp,fontWeight=FontWeight.ExtraBold)
-                    Spacer(Modifier.height(16.dp))
-                    val (levelFace,levelInk)=when(story.level){"A1"->TaleGreen to TaleOnGreen;"A2"->TaleBlue to TaleOnBlue;else->TalePurple to TaleOnPurple}
-                    Row(verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(8.dp)) {
-                        Text(story.level,color=levelInk,fontFamily=TaleDisplay,fontSize=15.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.background(levelFace,RoundedCornerShape(10.dp)).padding(horizontal=10.dp,vertical=2.dp))
-                        Text(stringResource(when(story.level){"A1"->R.string.zorluk_kolay;"A2"->R.string.zorluk_orta;else->R.string.zorluk_zor}),color=TaleMuted,fontSize=14.sp,fontWeight=FontWeight.Bold)
+            // Back on the left, favorite and share on the right, as in the design.
+            Row(Modifier.fillMaxWidth().padding(horizontal=4.dp,vertical=4.dp),verticalAlignment=Alignment.CenterVertically) {
+                ReferenceIconButton("back",stringResource(R.string.geri),onBack,TaleInk)
+                Spacer(Modifier.weight(1f))
+                onToggleFavorite?.let { toggle ->
+                    val alerts=LocalTaleAlerts.current
+                    val added=stringResource(R.string.alert_favorite_added); val removed=stringResource(R.string.alert_favorite_removed)
+                    ReferenceIconButton("bookmark",stringResource(if(favorite) R.string.favorite_remove else R.string.favorite_add),{
+                        toggle(); if(favorite) alerts.show(removed,TaleAlertKind.Info) else alerts.success(added)
+                    },if(favorite) TaleWarm else TaleInk)
+                }
+                ReferenceIconButton("share",stringResource(R.string.hikayeyi_paylas),onClick={
+                    val intent=android.content.Intent(android.content.Intent.ACTION_SEND).apply { type="text/plain"; putExtra(android.content.Intent.EXTRA_TEXT,"${story.title} — ${story.description}\nYurken Stories\n${StoryLinks.url(story.id)}") }
+                    SafeIntents.startFirst(context,android.content.Intent.createChooser(intent,context.getString(R.string.hikayeyi_paylas)))
+                },TaleInk)
+            }
+            Column(Modifier.padding(horizontal=20.dp),verticalArrangement=Arrangement.spacedBy(16.dp)) {
+                FlowRow(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(16.dp),verticalArrangement=Arrangement.spacedBy(12.dp),itemVerticalAlignment=Alignment.Bottom,maxItemsInEachRow=sideBySide(2)) {
+                    Box(Modifier.appearIn(0)) {
+                        ChunkyBox(TaleSurface,Modifier.size(124.dp,182.dp),RoundedCornerShape(18.dp),depth=6.dp,border=TaleLine) { BookCover(story,Modifier.fillMaxSize()) }
+                        if(progress>0) ReferenceProgress(progress/100f,Modifier.align(Alignment.BottomCenter).width(96.dp).padding(bottom=9.dp))
                     }
-                    ReadingMinutes(story,Modifier.padding(top=4.dp))
-                    // Q5.6: shown once the learner has known words, so a new learner is not told "120 new words".
-                    newWords?.let { Text(pluralStringResource(R.plurals.story_new_words,it,it),color=TaleMuted,fontSize=11.sp,modifier=Modifier.padding(top=4.dp)) }
-                    Spacer(Modifier.height(16.dp))
-                    Row(horizontalArrangement=Arrangement.spacedBy(4.dp)) {
-                        ReferenceIconButton("read",stringResource(R.string.hikayeyi_oku),onRead)
-                        onToggleFavorite?.let { toggle ->
-                            val alerts=LocalTaleAlerts.current
-                            val added=stringResource(R.string.alert_favorite_added); val removed=stringResource(R.string.alert_favorite_removed)
-                            ReferenceIconButton("bookmark",stringResource(if(favorite) R.string.favorite_remove else R.string.favorite_add),{
-                                toggle(); if(favorite) alerts.show(removed,TaleAlertKind.Info) else alerts.success(added)
-                            },if(favorite) TaleWarm else TaleBlue)
+                    Column(Modifier.weight(1f).padding(bottom=6.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
+                        FlowRow(horizontalArrangement=Arrangement.spacedBy(6.dp),verticalArrangement=Arrangement.spacedBy(6.dp)) {
+                            Text(story.level,color=TaleOnYellow,fontSize=12.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.background(TaleYellow,RoundedCornerShape(10.dp)).padding(horizontal=10.dp,vertical=4.dp))
+                            Text(genreLabel(story.genre),color=TaleInk,fontSize=12.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.background(LocalTaleColors.current.tilePurple,RoundedCornerShape(10.dp)).padding(horizontal=10.dp,vertical=4.dp))
+                            Text(stringResource(when(story.level){"A1"->R.string.zorluk_kolay;"A2"->R.string.zorluk_orta;else->R.string.zorluk_zor}),color=TaleMuted,fontSize=12.sp,fontWeight=FontWeight.Bold,
+                                modifier=Modifier.padding(vertical=4.dp))
                         }
-                        ReferenceIconButton("share",stringResource(R.string.hikayeyi_paylas),onClick={
-                            val intent=android.content.Intent(android.content.Intent.ACTION_SEND).apply { type="text/plain"; putExtra(android.content.Intent.EXTRA_TEXT,"${story.title} — ${story.description}\nYurken Stories\n${StoryLinks.url(story.id)}") }
-                            SafeIntents.startFirst(context,android.content.Intent.createChooser(intent,context.getString(R.string.hikayeyi_paylas)))
-                        })
+                        Text(story.title,fontFamily=TaleDisplay,fontSize=28.sp,lineHeight=30.sp,fontWeight=FontWeight.ExtraBold)
+                        Text(story.author,color=TaleMuted,fontSize=13.sp,fontWeight=FontWeight.Bold)
                     }
                 }
+                // Three quick numbers: how long it takes, how many sentences, and the new words once they are known.
+                FlowRow(Modifier.fillMaxWidth().appearIn(1),horizontalArrangement=Arrangement.spacedBy(10.dp),verticalArrangement=Arrangement.spacedBy(10.dp),maxItemsInEachRow=sideBySide(3)) {
+                    StoryStat(ReadingTime.minutes(story)?.let {"$it"} ?: "–",stringResource(R.string.story_stat_minutes),TaleBlue,Modifier.weight(1f))
+                    StoryStat("${story.sentences.size}",stringResource(R.string.story_stat_sentences),TaleSuccess,Modifier.weight(1f))
+                    if(newWords!=null) StoryStat("$newWords",stringResource(R.string.story_stat_new_words),TalePurple,Modifier.weight(1f))
+                    else StoryStat("%$progress",stringResource(R.string.tamamlandi),TalePurple,Modifier.weight(1f))
+                }
+                Text(story.description,fontSize=15.sp,lineHeight=22.sp,fontWeight=FontWeight.SemiBold,color=TaleInk)
+                Text(stringResource(R.string.seviyesinde_hikayesi_cumleleri_cevirerek_oku, story.level, genreLabel(story.genre)),fontSize=14.sp,lineHeight=21.sp,color=TaleMuted)
             }
-            FlowRow(Modifier.padding(horizontal=24.dp).fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(12.dp),verticalArrangement=Arrangement.spacedBy(12.dp),maxItemsInEachRow=sideBySide(2)) {
-                DetailAction("read",if(progress in 1..99) stringResource(R.string.devam) else stringResource(R.string.oku),TaleGreen,TaleOnGreen,onRead,Modifier.weight(1f))
-                DetailAction("headphones",stringResource(R.string.dinle),TaleBlue,TaleOnBlue,onListen,Modifier.weight(1f))
-            }
-            Text(story.description,modifier=Modifier.padding(horizontal=24.dp,vertical=26.dp),fontSize=14.sp,lineHeight=22.sp,color=TaleMuted)
             content?.let { ContentDownloadAction(it,story) }
-            Text(stringResource(R.string.seviyesinde_hikayesi_cumleleri_cevirerek_oku, story.level, genreLabel(story.genre)),modifier=Modifier.padding(horizontal=24.dp),fontSize=14.sp,lineHeight=22.sp,color=TaleMuted)
             StoryWordsPreview(story)
+            Spacer(Modifier.height(8.dp))
+        }
+        // The design's two big actions stay at hand above the tab bar.
+        Column(Modifier.fillMaxWidth().centeredWidth(ContentWidth).padding(horizontal=20.dp,vertical=10.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
+            ChunkyButton(if(progress in 1..99) stringResource(R.string.okumaya_devam_et) else stringResource(R.string.okumaya_basla),onRead,Modifier.fillMaxWidth())
+            DetailAction("headphones",stringResource(R.string.story_listen_read),TaleSurface,TaleInk,onListen,Modifier.fillMaxWidth(),border=TaleLine)
         }
         TalesBottomBar(1,onTabSelected)
     }
 }
 
+/** One of the story page's numbers on a white tile, with what it counts under it. */
+@Composable
+private fun StoryStat(value: String, caption: String, color: Color, modifier: Modifier) {
+    Column(modifier.background(TaleSurface,RoundedCornerShape(16.dp)).border(2.dp,TaleLine,RoundedCornerShape(16.dp)).padding(10.dp),horizontalAlignment=Alignment.CenterHorizontally) {
+        Text(value,fontFamily=TaleDisplay,fontSize=22.sp,lineHeight=26.sp,fontWeight=FontWeight.ExtraBold,color=color,textAlign=androidx.compose.ui.text.style.TextAlign.Center,modifier=Modifier.fillMaxWidth())
+        Text(caption,fontSize=12.sp,fontWeight=FontWeight.Bold,color=TaleMuted,textAlign=androidx.compose.ui.text.style.TextAlign.Center,modifier=Modifier.fillMaxWidth())
+    }
+}
+
 /** A chunky story-page button: an icon and its label on a colored face. */
 @Composable
-private fun DetailAction(icon: String, label: String, face: Color, ink: Color, onClick: () -> Unit, modifier: Modifier = Modifier) {
-    ChunkyBox(face,modifier.heightIn(min=52.dp),RoundedCornerShape(16.dp),depth=4.dp,contentAlignment=Alignment.Center,onClick=onClick) {
+private fun DetailAction(icon: String, label: String, face: Color, ink: Color, onClick: () -> Unit, modifier: Modifier = Modifier, border: Color? = null) {
+    ChunkyBox(face,modifier.heightIn(min=52.dp),RoundedCornerShape(16.dp),depth=4.dp,border=border,contentAlignment=Alignment.Center,onClick=onClick) {
         Row(Modifier.padding(horizontal=12.dp,vertical=12.dp),horizontalArrangement=Arrangement.Center,verticalAlignment=Alignment.CenterVertically) {
             ReferenceIcon(icon,ink,Modifier.size(21.dp)); Spacer(Modifier.width(10.dp)); Text(label,color=ink,fontSize=16.sp,fontWeight=FontWeight.ExtraBold)
         }

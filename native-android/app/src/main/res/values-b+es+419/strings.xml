@@ -91,9 +91,6 @@
     <string name="tumunu_gor">Ver todo</string>
     <string name="hikayeyi_oku">Lee la historia</string>
     <string name="hikayeyi_paylas">Comparte la historia</string>
-    <string name="devam">CONTINUAR</string>
-    <string name="oku">LEER</string>
-    <string name="dinle">ESCUCHAR</string>
     <string name="seviyesinde_hikayesi_cumleleri_cevirerek_oku">Una historia %2$s en el nivel %1$s. Lea con traducciones de oraciones, guarde palabras nuevas y revíselas escuchando.</string>
     <string name="profilim">mi perfil</string>
     <string name="ayarlar">Ajustes</string>
