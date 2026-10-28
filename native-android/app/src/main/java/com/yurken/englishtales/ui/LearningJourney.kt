@@ -227,22 +227,37 @@ fun LearningSettingsScreen(snapshot: LearningSnapshot,onBack: ()->Unit,onSave: (
     }
     Column(Modifier.fillMaxSize().background(TaleBackground).statusBarsPadding().navigationBarsPadding().verticalScroll(rememberScrollState())) {
         SimpleTopBar(stringResource(R.string.ayarlar),onBack)
-        Column(Modifier.padding(16.dp),verticalArrangement=Arrangement.spacedBy(14.dp)) {
-            OutlinedTextField(value=name,onValueChange={name=it.take(30)},label={Text(stringResource(R.string.adin))},singleLine=true,modifier=Modifier.fillMaxWidth())
-            Text(stringResource(R.string.ingilizce_seviyen),fontFamily=TaleDisplay,fontSize=18.sp,fontWeight=FontWeight.ExtraBold)
-            PreferenceChoices(listOf("A1","A2","B1"),level) {level=it}
-            ChunkyButton(stringResource(R.string.placement_entry),{placement=true},Modifier.fillMaxWidth(),color=TaleSurface,onColor=TaleInk,border=TaleLine)
-            Text(stringResource(R.string.sevdigin_hikayeler),fontFamily=TaleDisplay,fontSize=18.sp,fontWeight=FontWeight.ExtraBold)
-            PreferenceChoices(listOf("Günlük yaşam","Macera","Gizem"),genre,label={genreLabel(it)}) {genre=it}
-            Text(stringResource(R.string.gunluk_hedefin),fontFamily=TaleDisplay,fontSize=18.sp,fontWeight=FontWeight.ExtraBold)
-            val goalOptions=listOf(stringResource(R.string.adim_secenek_1),stringResource(R.string.adim_secenek_2),stringResource(R.string.adim_secenek_3))
-            PreferenceChoices(goalOptions,goalOptions[goal.coerceIn(1,3)-1]) {goal=goalOptions.indexOf(it)+1}
-            Text(stringResource(R.string.bir_adim_tamamlanan_bir_hikaye),fontSize=12.sp,color=TaleMuted)
-            ReminderControls()
-            com.yurken.englishtales.ads.AdPrivacyControls()
-            com.yurken.englishtales.analytics.AnalyticsControls()
-            LanguageControls()
-            ThemeControls()
+        // The design's grouped settings: a colored icon tile names each group, and its rows sit together on one white card.
+        Column(Modifier.padding(horizontal=18.dp,vertical=8.dp),verticalArrangement=Arrangement.spacedBy(18.dp)) {
+            SettingsCard {
+                OutlinedTextField(value=name,onValueChange={name=it.take(30)},label={Text(stringResource(R.string.adin))},singleLine=true,modifier=Modifier.fillMaxWidth().padding(12.dp))
+            }
+            SettingsGroup(stringResource(R.string.ingilizce_seviyen),"study",TaleGreen,TaleOnGreen) {
+                PreferenceChoices(listOf("A1","A2","B1"),level) {level=it}
+                SettingsDivider()
+                Row(Modifier.fillMaxWidth().heightIn(min=56.dp).clip(RoundedCornerShape(14.dp)).clickable(role=Role.Button) {placement=true}.padding(horizontal=12.dp),
+                    verticalAlignment=Alignment.CenterVertically) {
+                    Text(stringResource(R.string.placement_entry),fontSize=15.sp,fontWeight=FontWeight.ExtraBold,color=TaleBlue,modifier=Modifier.weight(1f))
+                    ReferenceIcon("next",TaleBlue,Modifier.size(18.dp))
+                }
+            }
+            SettingsGroup(stringResource(R.string.sevdigin_hikayeler),"read",TalePurple,TaleOnPurple) {
+                PreferenceChoices(listOf("Günlük yaşam","Macera","Gizem"),genre,label={genreLabel(it)}) {genre=it}
+            }
+            SettingsGroup(stringResource(R.string.gunluk_hedefin),"streak",TaleOrange,TaleOnOrange) {
+                val goalOptions=listOf(stringResource(R.string.adim_secenek_1),stringResource(R.string.adim_secenek_2),stringResource(R.string.adim_secenek_3))
+                PreferenceChoices(goalOptions,goalOptions[goal.coerceIn(1,3)-1]) {goal=goalOptions.indexOf(it)+1}
+                Text(stringResource(R.string.bir_adim_tamamlanan_bir_hikaye),fontSize=12.sp,color=TaleMuted,modifier=Modifier.padding(horizontal=12.dp,vertical=8.dp))
+            }
+            SettingsCard { Column(Modifier.padding(12.dp)) { ReminderControls() } }
+            SettingsCard { Column(Modifier.padding(12.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
+                com.yurken.englishtales.ads.AdPrivacyControls()
+                com.yurken.englishtales.analytics.AnalyticsControls()
+            } }
+            SettingsCard { Column(Modifier.padding(12.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
+                LanguageControls()
+                ThemeControls()
+            } }
             val alerts=LocalTaleAlerts.current
             val savedText=stringResource(R.string.alert_settings_saved)
             ChunkyButton(stringResource(R.string.degisiklikleri_kaydet),{onSave(level,genre,goal,name);alerts.success(savedText)},Modifier.fillMaxWidth())
@@ -254,12 +269,37 @@ fun LearningSettingsScreen(snapshot: LearningSnapshot,onBack: ()->Unit,onSave: (
 
 @Composable
 private fun PreferenceChoices(options: List<String>,selected: String,label: @Composable (String)->String = {it},onSelect: (String)->Unit) {
-    // Chunky rows: the picked one sits on a green lip.
-    Column(Modifier.selectableGroup(),verticalArrangement=Arrangement.spacedBy(8.dp)) {options.forEach {value ->
-        val on=value==selected; val shape=RoundedCornerShape(16.dp)
-        Row(Modifier.fillMaxWidth().background(if(on) chunkEdge(TaleGreen) else TaleLine,shape).padding(bottom=4.dp).background(if(on) TaleMint else TaleSurface,shape)
-            .border(2.dp,if(on) TaleGreen else TaleLine,shape).clip(shape).selectable(selected=on,role=Role.RadioButton) {onSelect(value)}.padding(14.dp),verticalAlignment=Alignment.CenterVertically) {
-            Text(label(value),fontSize=15.sp,fontWeight=if(on) FontWeight.ExtraBold else FontWeight.Bold,modifier=Modifier.weight(1f));if(on) Text("✓",color=TaleGreen,fontWeight=FontWeight.ExtraBold)
+    // Rows of one group card: the picked one turns mint with a filled green check, the others show an empty ring.
+    Column(Modifier.selectableGroup()) {options.forEachIndexed {i,value ->
+        val on=value==selected; val shape=RoundedCornerShape(14.dp)
+        if(i>0) SettingsDivider()
+        Row(Modifier.fillMaxWidth().clip(shape).background(if(on) TaleMint else Color.Transparent,shape).selectable(selected=on,role=Role.RadioButton) {onSelect(value)}
+            .heightIn(min=56.dp).padding(horizontal=12.dp,vertical=10.dp),verticalAlignment=Alignment.CenterVertically) {
+            Text(label(value),fontSize=15.sp,fontWeight=FontWeight.ExtraBold,color=TaleInk,modifier=Modifier.weight(1f))
+            Box(Modifier.size(26.dp).background(if(on) TaleGreen else Color.Transparent,androidx.compose.foundation.shape.CircleShape)
+                .border(2.dp,if(on) TaleGreen else TaleLine,androidx.compose.foundation.shape.CircleShape),contentAlignment=Alignment.Center) {
+                if(on) Text("✓",color=TaleOnGreen,fontSize=14.sp,fontWeight=FontWeight.ExtraBold)
+            }
         }
     } }
 }
+
+/** A settings group: its colored icon tile and title, then its rows on one white card. */
+@Composable
+private fun SettingsGroup(title: String,icon: String,color: Color,onColor: Color,content: @Composable ColumnScope.()->Unit) {
+    Column(verticalArrangement=Arrangement.spacedBy(8.dp)) {
+        Row(verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(10.dp)) {
+            Box(Modifier.size(32.dp).background(color,RoundedCornerShape(10.dp)),contentAlignment=Alignment.Center) { ReferenceIcon(icon,onColor,Modifier.size(18.dp)) }
+            Text(title,fontFamily=TaleDisplay,fontSize=18.sp,lineHeight=22.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.weight(1f))
+        }
+        SettingsCard { Column(Modifier.padding(6.dp),content=content) }
+    }
+}
+
+@Composable
+private fun SettingsCard(content: @Composable ()->Unit) {
+    ChunkyBox(TaleSurface,Modifier.fillMaxWidth(),RoundedCornerShape(22.dp),depth=5.dp,border=TaleLine) { content() }
+}
+
+@Composable
+private fun SettingsDivider() = Box(Modifier.padding(horizontal=12.dp).fillMaxWidth().height(1.dp).background(TaleLine))
