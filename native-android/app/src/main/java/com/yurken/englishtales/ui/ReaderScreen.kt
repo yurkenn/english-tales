@@ -97,8 +97,8 @@ private val SentenceButtonSize=48.dp
 private val SentenceButtonGap=10.dp
 
 /** The page text's style, shared by the page and the measuring that decides how much of it fits. */
-private fun readerTextStyle(fontSize: Int,lineSpacing: Float,color: Color=Color.Unspecified)=TextStyle(fontSize=fontSize.sp,lineHeight=(fontSize*lineSpacing).sp,
-    fontFamily=FontFamily.Serif,color=color,textDirection=androidx.compose.ui.text.style.TextDirection.Ltr,textAlign=TextAlign.Left)
+private fun readerTextStyle(fontSize: Int,lineSpacing: Float,font: ReadingFont,color: Color=Color.Unspecified)=TextStyle(fontSize=fontSize.sp,lineHeight=(fontSize*lineSpacing).sp,
+    fontFamily=font.body,color=color,textDirection=androidx.compose.ui.text.style.TextDirection.Ltr,textAlign=TextAlign.Left)
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -151,9 +151,9 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
     var viewport by remember { mutableStateOf(androidx.compose.ui.unit.IntSize.Zero) }
     val measurer=androidx.compose.ui.text.rememberTextMeasurer()
     val density=androidx.compose.ui.platform.LocalDensity.current
-    val titleStyle=LocalTextStyle.current.merge(TextStyle(fontSize=13.sp,fontFamily=FontFamily.Serif,letterSpacing=0.6.sp,textAlign=TextAlign.Center))
+    val titleStyle=LocalTextStyle.current.merge(TextStyle(fontSize=13.sp,fontFamily=appearance.font.body,letterSpacing=0.6.sp,textAlign=TextAlign.Center))
     // The first page opens under the story's title set large, as a book's chapter opens; later pages carry it as a quiet running head.
-    val headingStyle=TextStyle(fontSize=(fontSize+9).sp,lineHeight=((fontSize+9)*1.25f).sp,fontFamily=FontFamily.Serif,fontWeight=FontWeight.Bold,textAlign=TextAlign.Center)
+    val headingStyle=TextStyle(fontSize=(fontSize+9).sp,lineHeight=((fontSize+9)*1.25f).sp,fontFamily=appearance.font.heading,fontWeight=FontWeight.Bold,textAlign=TextAlign.Center)
     val pageStarts=remember(story.revisionId,viewport,fontSize,appearance.spacing,density,titleStyle,headingStyle,pageFits) {
         if(viewport.height==0) return@remember null
         // Tests can fix how many sentences a page holds; the app measures it.
@@ -166,7 +166,7 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
             val page=viewport.height-12.dp.roundToPx()-24.dp.roundToPx()-gap
             val firstRoom=page-height(story.title,headingStyle)
             val room=page-height(story.title,titleStyle)
-            val style=readerTextStyle(fontSize,appearance.spacing.multiplier)
+            val style=readerTextStyle(fontSize,appearance.spacing.multiplier,appearance.font)
             // A sentence's line is as tall as its text, and never shorter than its translate button.
             val textWidth=width-(SentenceButtonSize+SentenceButtonGap).roundToPx()
             val button=SentenceButtonSize.roundToPx()
@@ -256,7 +256,7 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
                             Row(verticalAlignment=Alignment.CenterVertically) {
                                 TappableParagraph(listOf(sentence),{if(curated) PhraseMatcher.Index(LearningContent.wordsForSentence(story,it)) else LearningContent.phraseIndex},
                                     fontSize,foreground,Modifier.weight(1f).semantics {customActions=listOf(CustomAccessibilityAction(listenLabel) { listen(index); true })},
-                                    LearningContent.glossary,lineSpacing=appearance.spacing.multiplier,
+                                    LearningContent.glossary,lineSpacing=appearance.spacing.multiplier,font=appearance.font,
                                     saved=snapshot.savedWordIds,underlineStudyWords=curated,savedTint=accent.copy(alpha=0.14f),
                                     reading=reading,readingTint=accent.copy(alpha=0.18f),selected=selectedLink.takeIf {selectedWord!=null},selectedTint=accent.copy(alpha=0.28f),
                                     // Long press translates the sentence; while the page is being read aloud it moves the reading there instead.
@@ -334,7 +334,7 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
                             Text(it,fontSize=14.sp,lineHeight=20.sp,color=foreground,modifier=Modifier.fillMaxWidth().background(accent.copy(alpha=0.08f),RoundedCornerShape(14.dp)).padding(horizontal=12.dp,vertical=10.dp))
                         }
                         if(word.pronunciation.isNotBlank() || word.example.isNotBlank()) TextButton(onClick={more=!more},colors=ButtonDefaults.textButtonColors(contentColor=accent)) { Text(if(more) word.pronunciation else stringResource(R.string.daha_fazla_goster)) }
-                        if(more) Text(word.example,color=muted,fontSize=13.sp,fontFamily=FontFamily.Serif)
+                        if(more) Text(word.example,color=muted,fontSize=13.sp,fontFamily=appearance.font.body)
                         Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(12.dp)) {
                             ChunkyBox(palette.surface,Modifier.weight(1f).heightIn(min=52.dp),RoundedCornerShape(16.dp),depth=4.dp,border=palette.line,contentAlignment=Alignment.Center,onClick={selectedWord=null}) {
                                 Text(stringResource(R.string.kapat),Modifier.padding(12.dp),fontSize=15.sp,fontWeight=FontWeight.ExtraBold,color=foreground)
@@ -360,7 +360,7 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
  */
 @Composable
 private fun TappableParagraph(sentences: List<StorySentence>,phrasesFor: (StorySentence)->PhraseMatcher.Index,fontSize: Int,color: Color,modifier: Modifier=Modifier,
-    glossary: Glossary?=null,lineSpacing: Float=1.65f,saved: Set<String> = emptySet(),underlineStudyWords: Boolean=true,savedTint: Color=Color.Transparent,
+    glossary: Glossary?=null,lineSpacing: Float=1.65f,font: ReadingFont=ReadingFont.ROUNDED,saved: Set<String> = emptySet(),underlineStudyWords: Boolean=true,savedTint: Color=Color.Transparent,
     reading: String?=null,readingTint: Color=Color.Transparent,selected: String?=null,selectedTint: Color=Color.Transparent,
     onPress: (Float)->Unit={},onLongPress: (StorySentence)->Unit,onWord: (WordInfo,String)->Unit) {
     // Where each sentence starts in the paragraph, and its links with paragraph-wide offsets.
@@ -419,6 +419,6 @@ private fun TappableParagraph(sentences: List<StorySentence>,phrasesFor: (StoryS
             do { val event=awaitPointerEvent(PointerEventPass.Initial); event.changes.forEach {it.consume()} } while(event.changes.any {it.pressed})
         }
     } }) {
-        Text(text=annotated,onTextLayout={textLayout=it},style=readerTextStyle(fontSize,lineSpacing,color))
+        Text(text=annotated,onTextLayout={textLayout=it},style=readerTextStyle(fontSize,lineSpacing,font,color))
     }
 }

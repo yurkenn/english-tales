@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Reader font choice: the rounded game font by default, or a classic book serif. -->
+    <string name="reader_font">फ़ॉन्ट</string>
+    <string name="reader_font_rounded">गोल</string>
+    <string name="reader_font_book">किताब</string>
+</resources>

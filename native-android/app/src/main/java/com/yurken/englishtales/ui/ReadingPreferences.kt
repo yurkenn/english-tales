@@ -4,6 +4,7 @@ import android.content.Context
 import com.yurken.englishtales.R
 import androidx.annotation.StringRes
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontFamily
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
@@ -16,11 +17,16 @@ enum class ReadingSpacing(@StringRes val label: Int,val multiplier: Float) {
 /** The reader's page colours, like a book app's themes: white paper, warm sepia paper, or a soft dark page. */
 enum class ReadingTheme(@StringRes val label: Int) { LIGHT(R.string.acik), SEPIA(R.string.reader_theme_sepia), DARK(R.string.koyu) }
 
+/** The page text's typeface: the app's rounded game font by default, or a classic book serif. */
+enum class ReadingFont(@StringRes val label: Int,val body: FontFamily,val heading: FontFamily) {
+    ROUNDED(R.string.reader_font_rounded,TaleBody,TaleDisplay),BOOK(R.string.reader_font_book,FontFamily.Serif,FontFamily.Serif)
+}
+
 /** Large enough that a page of short sentences reads like a book page, not a list squeezed into its top half. */
 const val DEFAULT_READING_FONT_SIZE=20
 
 data class ReadingPreferences(val theme: ReadingTheme=ReadingTheme.LIGHT,val fontSize: Int=DEFAULT_READING_FONT_SIZE,
-    val spacing: ReadingSpacing=ReadingSpacing.COMFORTABLE) {
+    val spacing: ReadingSpacing=ReadingSpacing.COMFORTABLE,val font: ReadingFont=ReadingFont.ROUNDED) {
     val dark get()=theme==ReadingTheme.DARK
 }
 
@@ -32,13 +38,14 @@ class ReadingPreferencesStore(context: Context,name: String="reading_appearance"
         runCatching {ReadingTheme.valueOf(prefs.getString("theme",null).orEmpty())}.getOrNull()
             ?: if(runCatching {prefs.getBoolean("dark",false)}.getOrDefault(false)) ReadingTheme.DARK else ReadingTheme.LIGHT,
         runCatching {prefs.getInt("fontSize",DEFAULT_READING_FONT_SIZE).coerceIn(14,28)}.getOrDefault(DEFAULT_READING_FONT_SIZE),
-        runCatching {ReadingSpacing.valueOf(prefs.getString("spacing",null).orEmpty())}.getOrDefault(ReadingSpacing.COMFORTABLE))
+        runCatching {ReadingSpacing.valueOf(prefs.getString("spacing",null).orEmpty())}.getOrDefault(ReadingSpacing.COMFORTABLE),
+        runCatching {ReadingFont.valueOf(prefs.getString("font",null).orEmpty())}.getOrDefault(ReadingFont.ROUNDED))
 
     suspend fun update(change: (ReadingPreferences)->ReadingPreferences): ReadingPreferences = lock.withLock {
         withContext(Dispatchers.IO) {
             val next=change(read()).let {it.copy(fontSize=it.fontSize.coerceIn(14,28))}
             check(prefs.edit().putString("theme",next.theme.name).putBoolean("dark",next.dark).putInt("fontSize",next.fontSize)
-                .putString("spacing",next.spacing.name).commit()) {"Okuma ayarı kaydedilemedi"}
+                .putString("spacing",next.spacing.name).putString("font",next.font.name).commit()) {"Okuma ayarı kaydedilemedi"}
             next
         }
     }

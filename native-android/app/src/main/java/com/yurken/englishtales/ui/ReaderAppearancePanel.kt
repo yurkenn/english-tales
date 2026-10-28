@@ -14,7 +14,6 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -37,6 +36,11 @@ internal fun ReaderAppearancePanel(settings: ReadingPreferences,error: String?,o
                     OutlinedButton(enabled=settings.fontSize<28,onClick={onChange {it.copy(fontSize=it.fontSize+1)}},
                         modifier=Modifier.contentLabel(stringResource(R.string.yaziyi_buyut))) {Text("A+")}
                 }
+                Text(stringResource(R.string.reader_font),style=MaterialTheme.typography.titleMedium)
+                FlowRow(horizontalArrangement=Arrangement.spacedBy(8.dp),verticalArrangement=Arrangement.spacedBy(4.dp)) {
+                    ReadingFont.entries.forEach {value -> FilterChip(selected=settings.font==value,
+                        onClick={onChange {it.copy(font=value)}},label={Text(stringResource(value.label),fontFamily=value.body)},leadingIcon={if(settings.font==value) Text("✓")})}
+                }
                 Text(stringResource(R.string.satir_araligi),style=MaterialTheme.typography.titleMedium)
                 FlowRow(horizontalArrangement=Arrangement.spacedBy(8.dp),verticalArrangement=Arrangement.spacedBy(4.dp)) {
                     ReadingSpacing.entries.forEach {value -> FilterChip(selected=settings.spacing==value,
@@ -48,7 +52,7 @@ internal fun ReaderAppearancePanel(settings: ReadingPreferences,error: String?,o
                         onClick={onChange {it.copy(theme=value)}},label={Text(stringResource(value.label))},leadingIcon={if(settings.theme==value) Text("✓")})}
                 }
                 val palette=readerPalette(settings.theme)
-                Text(stringResource(R.string.a_little_reading_every_day),fontFamily=FontFamily.Serif,fontSize=settings.fontSize.sp,
+                Text(stringResource(R.string.a_little_reading_every_day),fontFamily=settings.font.body,fontSize=settings.fontSize.sp,
                     lineHeight=(settings.fontSize*settings.spacing.multiplier).sp,color=palette.foreground,
                     modifier=Modifier.fillMaxWidth().background(palette.background,MaterialTheme.shapes.medium)
                         .border(1.dp,palette.line,MaterialTheme.shapes.medium).padding(20.dp))

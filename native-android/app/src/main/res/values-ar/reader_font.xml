@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Reader font choice: the rounded game font by default, or a classic book serif. -->
+    <string name="reader_font">الخط</string>
+    <string name="reader_font_rounded">دائري</string>
+    <string name="reader_font_book">كتاب</string>
+</resources>
