@@ -11,9 +11,11 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.selection.selectableGroup
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowForward
+import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -92,31 +94,29 @@ internal fun LanguageWelcomeScreen(
                 LazyColumn(Modifier.weight(1f).fillMaxWidth().selectableGroup(), contentPadding = PaddingValues(24.dp),
                     verticalArrangement = Arrangement.spacedBy(6.dp)) {
                     item {
-                        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-                            Box(Modifier.size(52.dp).background(TaleMint, RoundedCornerShape(16.dp)), contentAlignment = Alignment.Center) {
-                                TalesMascot(MascotMood.Welcome, Modifier.size(48.dp), animate = false)
-                            }
-                            Spacer(Modifier.width(12.dp))
-                            Text(stringResource(R.string.english_tales), color = TaleBlue, fontSize = 13.sp,
-                                fontWeight = FontWeight.Bold, letterSpacing = 1.5.sp, modifier = Modifier.weight(1f))
-                            if (onDismiss != null) IconButton(onClick = onDismiss) {
-                                Icon(Icons.Default.Close, stringResource(R.string.kapat))
-                            }
+                        if (onDismiss != null) Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.CenterEnd) {
+                            IconButton(onClick = onDismiss) { Icon(Icons.Default.Close, stringResource(R.string.kapat)) }
                         }
-                        Spacer(Modifier.height(24.dp))
-                        Text(stringResource(R.string.first_language_title), style = MaterialTheme.typography.headlineMedium,
-                            fontFamily = TaleDisplay, fontWeight = FontWeight.ExtraBold, color = TaleInk, modifier = Modifier.semantics { heading() })
-                        Spacer(Modifier.height(10.dp))
-                        Text(stringResource(if (AppLanguage.languageCode(locale) == "en") R.string.first_language_english_note else R.string.first_language_description),
-                            style = MaterialTheme.typography.bodyMedium, color = TaleMuted)
-                        Spacer(Modifier.height(20.dp))
+                        // The mascot asks the question in a speech bubble, like the rest of the first launch.
+                        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.Bottom, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                            TalesMascot(MascotMood.Welcome, Modifier.size(92.dp, 108.dp), animate = false)
+                            val bubble = RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp, bottomEnd = 20.dp, bottomStart = 6.dp)
+                            Text(stringResource(if (AppLanguage.languageCode(locale) == "en") R.string.first_language_english_note else R.string.first_language_description),
+                                fontSize = 14.sp, lineHeight = 20.sp, fontWeight = FontWeight.Bold, color = TaleInk,
+                                modifier = Modifier.weight(1f).padding(bottom = 18.dp).background(TaleSurface, bubble).border(2.dp, TaleLine, bubble)
+                                    .padding(horizontal = 14.dp, vertical = 12.dp))
+                        }
+                        Spacer(Modifier.height(16.dp))
+                        Text(stringResource(R.string.first_language_title), fontFamily = TaleDisplay, fontSize = 28.sp, lineHeight = 32.sp,
+                            fontWeight = FontWeight.ExtraBold, color = TaleInk, modifier = Modifier.semantics { heading() })
+                        Spacer(Modifier.height(16.dp))
                     }
                     items(choices, key = { it.first }) { (tag, nativeName) ->
                         val active = tag == selected
-                        // A picked language sits on a green lip; the rest are outlined chunky rows.
+                        // A picked language sits on a blue lip with a filled check; the rest are outlined chunky rows.
                         val shape = RoundedCornerShape(18.dp)
-                        Box(Modifier.background(if (active) chunkEdge(TaleGreen) else TaleLine, shape).padding(bottom = 4.dp)
-                            .background(if (active) TaleMint else TaleSurface, shape).border(2.dp, if (active) TaleGreen else TaleLine, shape)) {
+                        Box(Modifier.background(if (active) TaleBlue else TaleLine, shape).padding(bottom = 4.dp)
+                            .background(if (active) TaleMint else TaleSurface, shape).border(2.dp, if (active) TaleBlue else TaleLine, shape)) {
                             Row(Modifier.fillMaxWidth().clip(shape).testTag("language_option_$tag")
                                 .selectable(active, role = Role.RadioButton, onClick = { selected = tag })
                                 .padding(horizontal = 16.dp, vertical = 12.dp), verticalAlignment = Alignment.CenterVertically) {
@@ -125,10 +125,13 @@ internal fun LanguageWelcomeScreen(
                                     Text(if (tag.isEmpty()) languageChoiceTag(locale).let { code -> appLanguages.first { it.first == code }.second }
                                         else Locale.forLanguageTag(tag).getDisplayName(Locale.ENGLISH),
                                         fontSize = 12.sp, color = TaleMuted)
-                                    if (tag == recommended) Text(stringResource(R.string.first_language_suggested), color = TaleGreen, fontSize = 11.sp, fontWeight = FontWeight.ExtraBold)
+                                    if (tag == recommended) Text(stringResource(R.string.first_language_suggested), color = TaleBlue, fontSize = 11.sp, fontWeight = FontWeight.ExtraBold)
                                 }
                                 Spacer(Modifier.width(12.dp))
-                                RadioButton(selected = active, onClick = null)
+                                Box(Modifier.size(28.dp).then(if (active) Modifier.background(TaleBlue, CircleShape) else Modifier.border(2.dp, TaleLine, CircleShape)),
+                                    contentAlignment = Alignment.Center) {
+                                    if (active) Icon(Icons.Default.Check, null, Modifier.size(18.dp), tint = TaleOnBlue)
+                                }
                             }
                         }
                     }

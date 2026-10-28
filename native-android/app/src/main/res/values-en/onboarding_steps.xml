@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- What each starting level means, under its answer on the first-launch level question. -->
+    <string name="onboarding_level_a1">Short sentences, basic words</string>
+    <string name="onboarding_level_a2">Everyday topics, simple stories</string>
+    <string name="onboarding_level_b1">Longer stories, classics</string>
+</resources>

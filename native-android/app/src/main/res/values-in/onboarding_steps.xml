@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- What each starting level means, under its answer on the first-launch level question. -->
+    <string name="onboarding_level_a1">Kalimat pendek, kata dasar</string>
+    <string name="onboarding_level_a2">Topik sehari-hari, cerita sederhana</string>
+    <string name="onboarding_level_b1">Cerita panjang, klasik</string>
+</resources>

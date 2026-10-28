@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- What each starting level means, under its answer on the first-launch level question. -->
+    <string name="onboarding_level_a1">Kısa cümleler, temel kelimeler</string>
+    <string name="onboarding_level_a2">Günlük konular, basit hikâyeler</string>
+    <string name="onboarding_level_b1">Uzun hikâyeler, klasikler</string>
+</resources>
