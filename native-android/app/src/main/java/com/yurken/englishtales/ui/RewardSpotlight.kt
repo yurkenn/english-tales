@@ -47,34 +47,70 @@ internal fun RewardSpotlight(
     glow: Color,
     onDismiss: () -> Unit,
     confettiKey: Any? = null,
+    dark: Boolean = false,
+    kicker: String? = null,
+    inWindow: Boolean = true,
     extra: (@Composable ColumnScope.() -> Unit)? = null,
     hero: @Composable BoxScope.() -> Unit,
 ) {
-    Dialog(onDismiss, DialogProperties(usePlatformDefaultWidth = false, decorFitsSystemWindows = false)) {
-        val still = reduceMotion()
-        val entrance = remember { Animatable(if (still) 1f else 0f) }
-        LaunchedEffect(Unit) { entrance.animateTo(1f, spring(dampingRatio = 0.55f, stiffness = Spring.StiffnessLow)) }
-        Box(Modifier.fillMaxSize().background(TaleBackground).semantics { paneTitle = title }) {
-            Column(Modifier.fillMaxSize().systemBarsPadding().padding(horizontal = 24.dp, vertical = 20.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-                Spacer(Modifier.weight(0.6f))
-                Box(Modifier.widthIn(max = 300.dp).fillMaxWidth().aspectRatio(1f), contentAlignment = Alignment.Center) {
-                    SpotlightRays(glow, Modifier.matchParentSize())
-                    Box(Modifier.fillMaxSize(0.62f).graphicsLayer { scaleX = entrance.value; scaleY = entrance.value; alpha = entrance.value.coerceIn(0f, 1f) },
-                        contentAlignment = Alignment.Center, content = hero)
-                    confettiKey?.let { ConfettiBurst(Modifier.matchParentSize(), it, pieces = 90) }
-                }
-                Spacer(Modifier.height(12.dp))
-                Text(title, style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.ExtraBold, color = TaleInk, textAlign = TextAlign.Center,
-                    modifier = Modifier.fillMaxWidth().appearIn(1))
-                Spacer(Modifier.height(10.dp))
-                Text(text, style = MaterialTheme.typography.bodyLarge, color = TaleMuted, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth().appearIn(2))
-                extra?.let { Spacer(Modifier.height(20.dp)); Column(Modifier.widthIn(max = 420.dp).fillMaxWidth().appearIn(3), content = it) }
-                Spacer(Modifier.weight(1f))
-                ChunkyButton(buttonLabel, onDismiss, Modifier.widthIn(max = 420.dp).fillMaxWidth())
+    if (inWindow) Dialog(onDismiss, DialogProperties(usePlatformDefaultWidth = false, decorFitsSystemWindows = false)) {
+        RewardSpotlightPage(title, text, buttonLabel, glow, onDismiss, confettiKey, dark, kicker, extra, hero)
+    } else RewardSpotlightPage(title, text, buttonLabel, glow, onDismiss, confettiKey, dark, kicker, extra, hero)
+}
+
+/** The spotlight's page without its window, so the design gallery can picture it. [dark] is the chest's night-blue stage. */
+@Composable
+internal fun RewardSpotlightPage(
+    title: String,
+    text: String,
+    buttonLabel: String,
+    glow: Color,
+    onDismiss: () -> Unit,
+    confettiKey: Any? = null,
+    dark: Boolean = false,
+    kicker: String? = null,
+    extra: (@Composable ColumnScope.() -> Unit)? = null,
+    hero: @Composable BoxScope.() -> Unit,
+) {
+    val still = reduceMotion()
+    val entrance = remember { Animatable(if (still) 1f else 0f) }
+    LaunchedEffect(Unit) { entrance.animateTo(1f, spring(dampingRatio = 0.55f, stiffness = Spring.StiffnessLow)) }
+    val ink = if (dark) Color.White else TaleInk
+    Box(Modifier.fillMaxSize().background(if (dark) SpotlightNight else TaleSurface).semantics { paneTitle = title }) {
+        Column(Modifier.fillMaxSize().systemBarsPadding().padding(horizontal = 24.dp, vertical = 20.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+            Spacer(Modifier.weight(0.4f))
+            kicker?.let {
+                Text(it, fontSize = 13.sp, fontWeight = FontWeight.Black, letterSpacing = 1.sp, color = ink, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth().appearIn(0))
+                Spacer(Modifier.height(6.dp))
             }
+            if (dark) {
+                Text(title, fontFamily = TaleDisplay, fontSize = 34.sp, lineHeight = 38.sp, fontWeight = FontWeight.ExtraBold, color = ink, textAlign = TextAlign.Center,
+                    modifier = Modifier.fillMaxWidth().appearIn(1))
+            }
+            Box(Modifier.widthIn(max = 300.dp).fillMaxWidth().aspectRatio(1f), contentAlignment = Alignment.Center) {
+                SpotlightRays(glow, Modifier.matchParentSize())
+                Box(Modifier.fillMaxSize(0.62f).graphicsLayer { scaleX = entrance.value; scaleY = entrance.value; alpha = entrance.value.coerceIn(0f, 1f) },
+                    contentAlignment = Alignment.Center, content = hero)
+                confettiKey?.let { ConfettiBurst(Modifier.matchParentSize(), it, pieces = 90) }
+            }
+            if (!dark) {
+                Spacer(Modifier.height(12.dp))
+                Text(title, fontFamily = TaleDisplay, fontSize = 32.sp, lineHeight = 36.sp, fontWeight = FontWeight.ExtraBold, color = ink, textAlign = TextAlign.Center,
+                    modifier = Modifier.fillMaxWidth().appearIn(1))
+            }
+            Spacer(Modifier.height(10.dp))
+            Text(text, fontSize = 16.sp, lineHeight = 22.sp, fontWeight = FontWeight.Bold, color = if (dark) Color.White else TaleMuted, textAlign = TextAlign.Center,
+                modifier = Modifier.fillMaxWidth().appearIn(2))
+            extra?.let { Spacer(Modifier.height(20.dp)); Column(Modifier.widthIn(max = 420.dp).fillMaxWidth().appearIn(3), content = it) }
+            Spacer(Modifier.weight(1f))
+            if (dark) ChunkyButton(buttonLabel, onDismiss, Modifier.widthIn(max = 420.dp).fillMaxWidth(), color = TaleYellow, onColor = TaleOnYellow)
+            else ChunkyButton(buttonLabel, onDismiss, Modifier.widthIn(max = 420.dp).fillMaxWidth(), color = TaleGreen, onColor = TaleOnGreen)
         }
     }
 }
+
+/** The chest's night-blue stage; white and yellow text both read on it in either theme. */
+internal val SpotlightNight = Color(0xFF0B3D5C)
 
 /** Soft rays fanning out from the centre, turning slowly, with a few sparkles that twinkle in and out. */
 @Composable
