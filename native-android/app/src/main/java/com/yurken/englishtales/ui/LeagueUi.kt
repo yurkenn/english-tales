@@ -65,14 +65,15 @@ internal fun LeagueCard(state: LeagueUi, onOpen: () -> Unit, onAccount: () -> Un
     if (state == LeagueUi.Unavailable) return
     val standing = (state as? LeagueUi.Ready)?.standing
     val tier = standing?.tier ?: 1
-    Row(modifier.fillMaxWidth().background(TaleSurface, RoundedCornerShape(18.dp)).border(1.dp, TaleLine, RoundedCornerShape(18.dp))
-        .pressScale(onClick = if (state == LeagueUi.Guest) onAccount else onOpen).padding(16.dp),
+    Row(modifier.fillMaxWidth().pressScale(onClick = if (state == LeagueUi.Guest) onAccount else onOpen)
+        .background(TaleLine, RoundedCornerShape(20.dp)).padding(bottom = 5.dp)
+        .background(TaleSurface, RoundedCornerShape(20.dp)).border(2.dp, TaleLine, RoundedCornerShape(20.dp)).padding(16.dp),
         verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(14.dp)) {
         LeagueBadge(tier, 48.dp)
         Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(3.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
-                Text(if (standing != null) leagueName(tier) else stringResource(R.string.league_title), style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.Bold, modifier = Modifier.weight(1f), maxLines = 1, overflow = TextOverflow.Ellipsis)
+                Text(if (standing != null) leagueName(tier) else stringResource(R.string.league_title), fontFamily = TaleDisplay, fontSize = 19.sp, lineHeight = 23.sp,
+                    fontWeight = FontWeight.ExtraBold, modifier = Modifier.weight(1f), maxLines = 1, overflow = TextOverflow.Ellipsis)
                 if (standing?.joined == true) Text(timeLeft(standing.endsAt), color = TaleMuted, style = MaterialTheme.typography.labelMedium)
             }
             val me = standing?.me
@@ -174,7 +175,7 @@ private fun LeagueHeader(standing: LeagueStanding) {
         Row(horizontalArrangement = Arrangement.spacedBy(10.dp), verticalAlignment = Alignment.CenterVertically) {
             for (tier in 1..LeagueStanding.TIERS) LeagueBadge(tier, if (tier == standing.tier) 64.dp else 34.dp, Modifier.appearIn(tier - 1), faded = tier > standing.tier)
         }
-        Text(leagueName(standing.tier), style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold, color = TaleInk)
+        Text(leagueName(standing.tier), style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.ExtraBold, color = TaleInk)
         if (standing.joined) Text(timeLeft(standing.endsAt), color = TaleMuted)
         val rules = buildList {
             if (standing.promote > 0) add(stringResource(R.string.league_rule_up, standing.promote))
@@ -199,7 +200,7 @@ private fun LastWeekBanner(outcome: String, rank: Int, tier: Int) {
 private fun ZoneDivider(label: String, color: Color) {
     Row(Modifier.fillMaxWidth().padding(vertical = 4.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
         HorizontalDivider(Modifier.weight(1f), color = color.copy(alpha = 0.5f))
-        Text(label, color = color, style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.Bold)
+        Text(label, color = color, style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.ExtraBold)
         HorizontalDivider(Modifier.weight(1f), color = color.copy(alpha = 0.5f))
     }
 }
@@ -209,18 +210,25 @@ private fun MemberRow(rank: Int, name: String, xp: Int, me: Boolean, zone: Leagu
     val accent = when (zone) { LeagueZone.Promotion -> TaleSuccess; LeagueZone.Relegation -> TaleError; else -> TaleMuted }
     val you = stringResource(R.string.league_you)
     val xpText = stringResource(R.string.league_xp, xp)
-    Row(modifier.fillMaxWidth().background(if (me) LocalTaleColors.current.tileBlue else TaleSurface, RoundedCornerShape(14.dp))
-        .border(if (me) 2.dp else 1.dp, if (me) TaleBlue else TaleLine, RoundedCornerShape(14.dp))
-        .then(if (onClick != null) Modifier.clickable(onClick = onClick) else Modifier).padding(horizontal = 12.dp, vertical = 10.dp)
+    val edge = if (me) TaleBlue else TaleLine
+    Row(modifier.fillMaxWidth().then(if (onClick != null) Modifier.clickable(onClick = onClick) else Modifier)
+        // Each row sits on a lip; yours is outlined and lipped in blue.
+        .background(edge, RoundedCornerShape(16.dp)).padding(bottom = 3.dp)
+        .background(if (me) LocalTaleColors.current.tileBlue else TaleSurface, RoundedCornerShape(16.dp))
+        .border(2.dp, edge, RoundedCornerShape(16.dp)).padding(horizontal = 12.dp, vertical = 10.dp)
         .semantics(mergeDescendants = true) {},
         verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-        Text("$rank", color = accent, fontWeight = FontWeight.Bold, modifier = Modifier.widthIn(min = 24.dp))
+        // The top three wear gold, silver and bronze.
+        val medal = when (rank) { 1 -> TaleYellow; 2 -> Color(0xFFC7D6E2); 3 -> Color(0xFFE8A86B); else -> null }
+        if (medal != null) Box(Modifier.size(30.dp).background(medal, CircleShape), contentAlignment = Alignment.Center) {
+            Text("$rank", color = LightTaleColors.ink, fontFamily = TaleDisplay, fontWeight = FontWeight.ExtraBold, fontSize = 15.sp)
+        } else Text("$rank", color = accent, fontWeight = FontWeight.ExtraBold, textAlign = androidx.compose.ui.text.style.TextAlign.Center, modifier = Modifier.widthIn(min = 30.dp))
         Box(Modifier.size(36.dp).background(leagueColor((name.firstOrNull()?.code ?: 0) % 5 + 1).copy(alpha = 0.2f), CircleShape), contentAlignment = Alignment.Center) {
             Text(name.firstOrNull()?.uppercase() ?: "?", fontWeight = FontWeight.Bold, color = TaleInk)
         }
         Text(if (me) "$name $you" else name, Modifier.weight(1f), fontWeight = if (me) FontWeight.Bold else FontWeight.Normal,
             maxLines = 1, overflow = TextOverflow.Ellipsis, color = TaleInk)
-        Text(xpText, fontWeight = FontWeight.SemiBold, fontSize = 15.sp, color = TaleInk)
+        Text(xpText, fontWeight = FontWeight.ExtraBold, fontSize = 15.sp, color = TaleInk)
     }
 }
 

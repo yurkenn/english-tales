@@ -347,7 +347,7 @@ private fun DetailAction(icon: String, label: String, face: Color, ink: Color, o
 fun ProfileScreen(snapshot: LearningSnapshot, onOpenWords: () -> Unit, padding: PaddingValues, onSettings: ()->Unit,onAccount: ()->Unit={}) {
     Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState()).centeredWidth(ContentWidth).padding(16.dp),verticalArrangement=Arrangement.spacedBy(16.dp)) {
         Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.SpaceBetween,verticalAlignment=Alignment.CenterVertically) {
-            Text(stringResource(R.string.profilim),fontSize=20.sp,fontWeight=FontWeight.Bold)
+            Text(stringResource(R.string.profilim),fontFamily=TaleDisplay,fontSize=24.sp,lineHeight=28.sp,fontWeight=FontWeight.ExtraBold)
             ReferenceIconButton("settings",stringResource(R.string.ayarlar),onSettings)
         }
         Column(Modifier.fillMaxWidth(),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(7.dp)) {
@@ -355,7 +355,7 @@ fun ProfileScreen(snapshot: LearningSnapshot, onOpenWords: () -> Unit, padding: 
             val context=LocalContext.current
             var avatar by remember(snapshot.ownerId) { mutableStateOf(AvatarChoice.get(context,snapshot.ownerId)) }
             var picking by rememberSaveable { mutableStateOf(false) }
-            Box(Modifier.size(88.dp).appearIn(0).background(TaleMint,CircleShape).border(3.dp,TaleSurface,CircleShape).clip(CircleShape)
+            Box(Modifier.size(92.dp).appearIn(0).background(TaleMint,CircleShape).border(4.dp,TaleYellow,CircleShape).clip(CircleShape)
                 .pressScale { picking=true }.contentLabel(stringResource(R.string.avatar_change)),contentAlignment=Alignment.Center) {
                 avatar?.let { TaleArt(AvatarChoice.all[it],Modifier.fillMaxSize().padding(14.dp)) } ?: ReferenceIcon("profile",TaleBlue,Modifier.size(42.dp))
             }
@@ -371,11 +371,14 @@ fun ProfileScreen(snapshot: LearningSnapshot, onOpenWords: () -> Unit, padding: 
                     }
                 }
             }
-            Text(snapshot.displayName,fontWeight=FontWeight.Bold,fontSize=16.sp)
-            Text(stringResource(R.string.seviyesi, snapshot.level, snapshot.preferredGenre),color=TaleBlue,fontSize=12.sp)
+            Text(snapshot.displayName,fontFamily=TaleDisplay,fontWeight=FontWeight.ExtraBold,fontSize=22.sp,lineHeight=26.sp)
+            Text(stringResource(R.string.seviyesi, snapshot.level, snapshot.preferredGenre),color=TaleBlue,fontSize=13.sp,fontWeight=FontWeight.Bold)
         }
-        Button(onClick=onOpenWords,modifier=Modifier.fillMaxWidth().heightIn(min=50.dp).appearIn(1),shape=RoundedCornerShape(14.dp)) { ReferenceIcon("study",TaleOnBlue); Spacer(Modifier.width(12.dp)); Text(stringResource(R.string.kelimelerim),fontSize=16.sp) }
-        OutlinedButton(onClick=onAccount,modifier=Modifier.fillMaxWidth().heightIn(min=48.dp)) {Text(if(snapshot.ownerId=="guest") stringResource(R.string.hesabina_giris_yap) else stringResource(R.string.hesabini_yonet))}
+        DetailAction("study",stringResource(R.string.kelimelerim),TaleBlue,TaleOnBlue,onOpenWords,Modifier.fillMaxWidth().appearIn(1))
+        ChunkyBox(TaleSurface,Modifier.fillMaxWidth().heightIn(min=52.dp),RoundedCornerShape(16.dp),depth=4.dp,border=TaleLine,contentAlignment=Alignment.Center,onClick=onAccount) {
+            Text(if(snapshot.ownerId=="guest") stringResource(R.string.hesabina_giris_yap) else stringResource(R.string.hesabini_yonet),Modifier.padding(horizontal=16.dp,vertical=12.dp),
+                fontSize=16.sp,fontWeight=FontWeight.ExtraBold,textAlign=androidx.compose.ui.text.style.TextAlign.Center)
+        }
         ProfilePanel(index=2){
             Text(stringResource(R.string.rutbe),fontSize=12.sp,letterSpacing=1.sp,fontWeight=FontWeight.Bold)
             Column(Modifier.fillMaxWidth().padding(top=16.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
@@ -388,7 +391,7 @@ fun ProfileScreen(snapshot: LearningSnapshot, onOpenWords: () -> Unit, padding: 
         }
         ProfilePanel(index=3){
             FlowRow(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.SpaceBetween,verticalArrangement=Arrangement.spacedBy(8.dp)) { Text(stringResource(R.string.kelimeler),fontSize=12.sp,letterSpacing=1.sp,fontWeight=FontWeight.Bold); Text(stringResource(R.string.kelimelerim_2),color=TaleBlue,fontSize=12.sp,modifier=Modifier.clickable(role=Role.Button,onClick=onOpenWords)) }
-            Button(onClick=onOpenWords,modifier=Modifier.fillMaxWidth().padding(top=18.dp),shape=RoundedCornerShape(24.dp)) { Text(stringResource(R.string.ogren, snapshot.savedWordIds.size)) }
+            ChunkyButton(stringResource(R.string.ogren, snapshot.savedWordIds.size),onOpenWords,Modifier.fillMaxWidth().padding(top=18.dp),TalePurple,TaleOnPurple)
         }
         // Q5.5: how many words the learner knows, from practice and from reading.
         ProfilePanel(index=4){
@@ -410,7 +413,8 @@ fun ProfileScreen(snapshot: LearningSnapshot, onOpenWords: () -> Unit, padding: 
 
 @Composable
 private fun ProfilePanel(modifier: Modifier = Modifier, index: Int = 0, content: @Composable ColumnScope.() -> Unit) {
-    Card(modifier=modifier.fillMaxWidth().appearIn(index),shape=RoundedCornerShape(16.dp),colors=CardDefaults.cardColors(containerColor=TaleSurface),border=BorderStroke(1.dp,TaleLine),elevation=CardDefaults.cardElevation(defaultElevation=0.dp)) { Column(Modifier.padding(16.dp),content=content) }
+    // A white card on a lip, as in the playful look.
+    ChunkyBox(TaleSurface,modifier.fillMaxWidth().appearIn(index),RoundedCornerShape(20.dp),depth=5.dp,border=TaleLine) { Column(Modifier.fillMaxWidth().padding(16.dp),content=content) }
 }
 
 @Composable
