@@ -6,6 +6,8 @@ import androidx.compose.foundation.*
 import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
@@ -70,6 +72,17 @@ fun DailyPlan(snapshot: LearningSnapshot,onRead: (String)->Unit,onPractice: (Lis
             Text(stringResource(R.string.tekrarlarin_guncel),color=TaleMuted)
             snapshot.nextReviewAt?.let {at -> Text(stringResource(R.string.sonraki_tekrar, SimpleDateFormat("d MMM, HH:mm",AppLanguage.locale(LocalContext.current)).format(Date(at))),
                 style=MaterialTheme.typography.bodyMedium,color=TaleMuted)}
+        }
+    }
+}
+
+/** One bright number of the reading result with what it counts under it. */
+@Composable
+private fun ResultStat(value: String,caption: String,face: Color,ink: Color,modifier: Modifier) {
+    ChunkyBox(face,modifier,RoundedCornerShape(16.dp),depth=4.dp) {
+        Column(Modifier.fillMaxWidth().padding(10.dp),horizontalAlignment=Alignment.CenterHorizontally) {
+            Text(value,fontFamily=TaleDisplay,fontSize=22.sp,lineHeight=26.sp,fontWeight=FontWeight.ExtraBold,color=ink,textAlign=TextAlign.Center,modifier=Modifier.fillMaxWidth())
+            Text(caption,fontSize=12.sp,fontWeight=FontWeight.ExtraBold,color=ink,textAlign=TextAlign.Center,modifier=Modifier.fillMaxWidth())
         }
     }
 }
@@ -179,18 +192,26 @@ fun EarnedBadges(snapshot: LearningSnapshot) {
 @Composable
 fun ReadingResultScreen(story: Story,snapshot: LearningSnapshot,onPractice: (List<String>)->Unit,onDailyPlan: ()->Unit,onBack: ()->Unit=onDailyPlan) {
     val words=remember(story.id) {LearningContent.wordsForStory(story).take(5)}
+    val goalDone=stringResource(R.string.gunluk_hedef_tamamlandi)
+    val goalText=stringResource(R.string.gunluk_hedef_adim, snapshot.todaySessions, snapshot.dailyGoal)
     Box(Modifier.fillMaxSize()) {
     Column(Modifier.fillMaxSize().background(TaleBackground).statusBarsPadding().navigationBarsPadding().verticalScroll(rememberScrollState())) {
         SimpleTopBar(stringResource(R.string.okuma_tamamlandi),onBack)
-        Column(Modifier.padding(24.dp),verticalArrangement=Arrangement.spacedBy(18.dp),horizontalAlignment=Alignment.CenterHorizontally) {
+        Column(Modifier.padding(horizontal=20.dp,vertical=8.dp),verticalArrangement=Arrangement.spacedBy(16.dp),horizontalAlignment=Alignment.CenterHorizontally) {
             Row(Modifier.appearIn(0),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(16.dp)) {
                 TalesMascot(MascotMood.Celebrate,Modifier.size(144.dp),animate=true)
                 BookCover(story,Modifier.size(64.dp,94.dp).popOn(1))
             }
             Text(stringResource(R.string.bir_hikaye_tamamladin),fontFamily=TaleDisplay,fontSize=24.sp,lineHeight=28.sp,fontWeight=FontWeight.ExtraBold,textAlign=TextAlign.Center,modifier=Modifier.fillMaxWidth().appearIn(1))
             Text(story.title,fontSize=15.sp,fontWeight=FontWeight.Bold,color=TaleMuted,textAlign=TextAlign.Center,modifier=Modifier.fillMaxWidth().appearIn(2))
-            Text(if(snapshot.dailyGoalReached) stringResource(R.string.gunluk_hedef_tamamlandi) else stringResource(R.string.gunluk_hedef_adim, snapshot.todaySessions, snapshot.dailyGoal),color=TaleOnYellow,fontWeight=FontWeight.ExtraBold,
-                modifier=Modifier.appearIn(3).background(TaleYellow,RoundedCornerShape(20.dp)).padding(horizontal=16.dp,vertical=8.dp))
+            // The design's three bright numbers: sentences read, minutes spent and today's goal.
+            FlowRow(Modifier.fillMaxWidth().appearIn(3).semantics(mergeDescendants=true) {
+                contentDescription=if(snapshot.dailyGoalReached) goalDone else goalText
+            },horizontalArrangement=Arrangement.spacedBy(10.dp),verticalArrangement=Arrangement.spacedBy(10.dp),maxItemsInEachRow=sideBySide(3)) {
+                ResultStat("${story.sentences.size}",stringResource(R.string.story_stat_sentences),TalePurple,TaleOnPurple,Modifier.weight(1f))
+                ResultStat(ReadingTime.minutes(story)?.let {"$it"} ?: "–",stringResource(R.string.story_stat_minutes),TaleBlue,TaleOnBlue,Modifier.weight(1f))
+                ResultStat("${snapshot.todaySessions.coerceAtMost(snapshot.dailyGoal)}/${snapshot.dailyGoal}",stringResource(R.string.bugunku_planin),TaleYellow,TaleOnYellow,Modifier.weight(1f))
+            }
             ComprehensionQuiz(story.id,story.questions)
             Text(stringResource(R.string.okudugun_kelimeleri_simdi_hatirlamayi_deneyelim),fontSize=14.sp,fontWeight=FontWeight.Bold,color=TaleMuted)
             // The story's words as one card of rows, each word beside its meaning.
