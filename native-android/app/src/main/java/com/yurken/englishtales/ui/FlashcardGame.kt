@@ -60,11 +60,13 @@ fun FlashcardGame(liveWords: List<WordInfo>,sessionId: Int,savedIds: Set<String>
         if(index==words.lastIndex) {finished=true;onLessonComplete(remembered)} else {index++;revealed=false}
     }
     GameViewport(padding,550.dp) {
-        Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.CenterVertically) {
-            ReferenceIconButton("back",stringResource(R.string.alistirmadan_cik),onExit)
-            Spacer(Modifier.weight(1f))
-            ComboBadge()
+        // The design's game header: leave, the deck's progress in blue and the card count.
+        Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(10.dp)) {
+            ReferenceIconButton("back",stringResource(R.string.alistirmadan_cik),onExit,TaleMuted)
+            ReferenceProgress((index+1f)/words.size,Modifier.weight(1f),TaleBlue,height=14.dp)
+            Text("${index+1}/${words.size}",fontSize=14.sp,fontWeight=FontWeight.ExtraBold,color=TaleMuted)
         }
+        Box(Modifier.fillMaxWidth(),contentAlignment=Alignment.CenterEnd) { ComboBadge() }
         Spacer(Modifier.weight(1f))
         // The card turns over to show the meaning; each new card slides in.
         val turn by animateFloatAsState(if(revealed) 180f else 0f,tween(TaleMotion.emphasized,easing=FastOutSlowInEasing),label="flip")
@@ -83,13 +85,17 @@ fun FlashcardGame(liveWords: List<WordInfo>,sessionId: Int,savedIds: Set<String>
                     }},
                     onDragCancel={scope.launch {drag.animateTo(0f,spring(dampingRatio=0.6f))}}) {change,amount -> change.consume();scope.launch {drag.snapTo(drag.value+amount)}}
             }) {
+        // A second card peeks out behind, tilted, so the deck reads as a pile.
+        Box(Modifier.matchParentSize().padding(start=18.dp,end=18.dp,top=22.dp).graphicsLayer {rotationZ=4f}.background(TaleSurface,RoundedCornerShape(28.dp)).border(2.dp,TaleLine,RoundedCornerShape(28.dp)))
         Column(Modifier.fillMaxSize().appearIn().graphicsLayer {rotationY=turn;cameraDistance=14f*density}
-            .background(if(back) LocalTaleColors.current.tileBlue else TaleSurface,RoundedCornerShape(20.dp)).border(2.dp,if(back) TaleBlue.copy(alpha=0.4f) else TaleMint,RoundedCornerShape(20.dp))
+            .background(TaleLine,RoundedCornerShape(28.dp)).padding(bottom=6.dp)
+            .background(if(back) LocalTaleColors.current.tileBlue else TaleSurface,RoundedCornerShape(28.dp)).border(2.dp,if(back) TaleBlue.copy(alpha=0.4f) else TaleLine,RoundedCornerShape(28.dp))
             .clickable(role=Role.Button) {revealed=true}.graphicsLayer {rotationY=if(back) 180f else 0f}.padding(24.dp),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.Center) {
-            Text(word.word,fontSize=if(back) 18.sp else 26.sp,fontWeight=FontWeight.Bold,color=if(back) TaleMuted else TaleInk)
+            Text(word.word,fontFamily=TaleDisplay,fontSize=if(back) 20.sp else 40.sp,lineHeight=if(back) 24.sp else 44.sp,fontWeight=FontWeight.ExtraBold,color=if(back) TaleMuted else TaleInk,
+                textAlign=androidx.compose.ui.text.style.TextAlign.Center)
             Text(word.pronunciation,fontSize=13.sp,color=TaleMuted,modifier=Modifier.padding(vertical=10.dp))
             Text(if(revealed) word.translation else stringResource(R.string.anlami_gormek_icin_dokun),fontSize=if(revealed) 24.sp else 13.sp,fontWeight=if(revealed) FontWeight.Bold else FontWeight.Normal,color=if(revealed) TaleInk else TaleMuted)
-            Box(Modifier.padding(top=20.dp).size(48.dp).pulseWhile(narrator.speaking).contentLabel(if(narrator.speaking || narrator.preparing) stringResource(R.string.seslendirmeyi_durdur) else stringResource(R.string.kelimesini_dinle, word.word)).background(TaleBlue,CircleShape).clickable(role=Role.Button) {if(narrator.speaking || narrator.preparing) narrator.stop() else narrator.speak(word.word)},contentAlignment=Alignment.Center) {if(narrator.speaking || narrator.preparing) Text("Ⅱ",color=TaleOnBlue) else ReferenceIcon("volume",TaleOnBlue,Modifier.size(21.dp))}
+            Box(Modifier.padding(top=20.dp).size(56.dp).pulseWhile(narrator.speaking).contentLabel(if(narrator.speaking || narrator.preparing) stringResource(R.string.seslendirmeyi_durdur) else stringResource(R.string.kelimesini_dinle, word.word)).background(chunkEdge(TaleBlue),RoundedCornerShape(18.dp)).padding(bottom=4.dp).background(TaleBlue,RoundedCornerShape(18.dp)).clickable(role=Role.Button) {if(narrator.speaking || narrator.preparing) narrator.stop() else narrator.speak(word.word)},contentAlignment=Alignment.Center) {if(narrator.speaking || narrator.preparing) Text("Ⅱ",color=TaleOnBlue) else ReferenceIcon("volume",TaleOnBlue,Modifier.size(21.dp))}
         }
         SwipeStamp(drag.value/cardWidth)
         }
@@ -98,17 +104,14 @@ fun FlashcardGame(liveWords: List<WordInfo>,sessionId: Int,savedIds: Set<String>
         if(narrator.preparing) Text(stringResource(R.string.ses_hazirlaniyor),color=TaleMuted,fontSize=12.sp)
         narrator.error?.let {Text(it,color=TaleMuted,fontSize=12.sp)}
         Spacer(Modifier.weight(1f))
-        Row(horizontalArrangement=Arrangement.spacedBy(7.dp)) {words.forEachIndexed { i,_ ->
-            val width by animateDpAsState(if(i==index) 18.dp else 6.dp,label="dot")
-            Box(Modifier.size(width,6.dp).background(if(i<=index) TaleBlue else TaleLine,CircleShape))
-        }}
         Spacer(Modifier.height(24.dp))
+        // The design's answer pair: red to see it again, green when it is known.
         if(revealed) {
-            Row(horizontalArrangement=Arrangement.spacedBy(10.dp)) {
-                OutlinedButton(onClick={next(false)},modifier=Modifier.weight(1f)) {Text(stringResource(R.string.tekrar_et))}
-                Button(onClick={next(true)},modifier=Modifier.weight(1f)) {Text(stringResource(R.string.hatirladim))}
+            FlowRow(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(12.dp),verticalArrangement=Arrangement.spacedBy(12.dp),maxItemsInEachRow=sideBySide(2)) {
+                ChunkyButton(stringResource(R.string.tekrar_et),{next(false)},Modifier.weight(1f),color=TaleRed,onColor=Color.White)
+                ChunkyButton(stringResource(R.string.hatirladim),{next(true)},Modifier.weight(1f))
             }
-        } else Button(onClick={revealed=true},modifier=Modifier.fillMaxWidth()) {Text(stringResource(R.string.ogren_2))}
+        } else ChunkyButton(stringResource(R.string.ogren_2),{revealed=true},Modifier.fillMaxWidth(),color=TaleBlue,onColor=TaleOnBlue)
     }
 }
 
