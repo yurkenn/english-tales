@@ -104,6 +104,9 @@ data class StoryQuestion(val id: String, val kind: String, val prompt: String, v
         options.all { it.isNotBlank() } && options.map { it.trim().lowercase() }.distinct().size == options.size && answer in options.indices
 }
 
+private fun canonicalWordText(words: List<WordInfo>) = words.distinctBy {it.word.lowercase(java.util.Locale.ROOT)}
+    .associateBy {it.word.lowercase(java.util.Locale.ROOT)}
+
 private data class Catalog(
     val words: List<WordInfo>,
     val wordById: Map<String, WordInfo>,
@@ -235,7 +238,7 @@ object LearningContent {
     /** Installs a catalog without the bundled assets, for JVM tests that have no [Context]. */
     @androidx.annotation.VisibleForTesting
     internal fun initializeForTest(words: List<WordInfo>, stories: List<Story>) = synchronized(loadLock) {
-        Catalog(words, words.associateBy { it.id }, words.associateBy { it.word.lowercase(java.util.Locale.ROOT) }, stories, stories.associateBy { it.id })
+        Catalog(words, words.associateBy { it.id }, canonicalWordText(words), stories, stories.associateBy { it.id })
             .let { catalog = it; bundled = it.stories; prewarm(it) }
     }
 
@@ -289,7 +292,7 @@ object LearningContent {
         require(parsedStories.map { it.id }.distinct().size == parsedStories.size) { "Duplicate story ID" }
 
         return Catalog(
-            parsedWords, parsedWords.associateBy { it.id }, parsedWords.associateBy { it.word.lowercase() },
+            parsedWords, parsedWords.associateBy { it.id }, canonicalWordText(parsedWords),
             parsedStories, parsedStories.associateBy { it.id }
         )
     }
@@ -350,7 +353,7 @@ object LearningContent {
     /** Publish on the main thread; keep learned vocabulary from previous content revisions. */
     fun install(stories: List<Story>, historicalWords: List<WordInfo> = emptyList()) {
         val words = (current().words + historicalWords + stories.flatMap { it.vocabulary.orEmpty() }).associateBy { it.id }.values.toList()
-        Catalog(words, words.associateBy { it.id }, words.associateBy { it.word.lowercase(java.util.Locale.ROOT) }, stories, stories.associateBy { it.id })
+        Catalog(words, words.associateBy { it.id }, canonicalWordText(words), stories, stories.associateBy { it.id })
             .let { catalog = it; prewarm(it) }
     }
 

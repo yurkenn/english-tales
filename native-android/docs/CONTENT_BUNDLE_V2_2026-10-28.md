@@ -34,4 +34,6 @@ Denetim varsayılan V2'yi kullanır; tarihsel fixture için `--bundle .../v1.jso
 
 ## Yerel doğrulama
 
-244 backend testi, 156 JVM testi ve 48 hedefli API36 cihaz testi hatasız/atlamasız geçti. Cihaz testleri altı V2 geçiş senaryosunu, 11 dilde çevrimdışı sözlüğü, eski indirmeleri, eski metadata’yı, editör bağlantılarını ve tamamlanmış ilerlemenin revizyon geçişinde korunmasını içerir. Lint: 0 hata / 106 mevcut uyarı. Derlenmiş debug APK’da iki katalog dosyası ve 67 kapak ayrıca doğrulandı. [Test kanıtı](release-evidence/2026-10-28-published-catalog-validation.json). Tam CI sonucu PR üzerinde ayrı izlenir.
+244 backend testi, 157 JVM testi ve ilk turdaki 48 hedefli API36 cihaz testi hatasız/atlamasız geçti. Cihaz testleri altı V2 geçiş senaryosunu, 11 dilde çevrimdışı sözlüğü, eski indirmeleri, eski metadata’yı, editör bağlantılarını ve tamamlanmış ilerlemenin revizyon geçişinde korunmasını içerir. Lint: 0 hata / 106 mevcut uyarı. Derlenmiş debug APK’da iki katalog dosyası ve 67 kapak ayrıca doğrulandı. [Test kanıtı](release-evidence/2026-10-28-published-catalog-validation.json). Tam CI sonucu PR üzerinde ayrı izlenir.
+
+İlk tam CI’de 398 uygulama testinden 6’sı başarısızdı. Genel sözlükte eş adlı kelime önceliği düzeltildi; V1’e bağlı eski test beklentileri güncellendi. Sonraki 42 hedefli API36 testi altı hatanın tamamını kapsadı ve hatasız geçti. Yeni tam CI sonucu PR üzerinde ayrı izlenir.

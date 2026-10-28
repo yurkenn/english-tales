@@ -82,7 +82,8 @@ class ReadingHomeUxTest {
         LearningContent.initialize(context)
         compose.setContent {EnglishTalesTheme {
             DailyPlan(LearningSnapshot(lastStoryId=LearningContent.stories.first().id,
-                storyProgress=LearningContent.stories.associate {it.id to 100}),{},{})
+                storyProgress=LearningContent.stories.associate {it.id to 100},
+                readingPositions=LearningContent.stories.associate {it.id to ReadingPosition(it.revisionId,it.sentences.last().id)}),{},{})
         }}
         compose.onNodeWithText("Okumaya devam et").assertDoesNotExist()
         compose.onNodeWithText("Yeniden oku").assertIsDisplayed()

@@ -16,3 +16,9 @@ Claude CLI ile gerçek, salt okunur kod incelemesi yapıldı. Claude dosyaları 
 | Ağ kurulumu sonrası global sözlükte anlam değişebilmesi | Mevcut `install` davranışı ayrı konudur. Bu snapshot'taki paylaşılan eski kelime kimliklerinin Türkçe anlamı değişmiyor; kaynak karşılaştırmasında böyle bir fark yok. Hikâyeye özel sözlük desteği artık paket tarafında da var. Kimlikler silinmez. |
 
 Ajan ek kontrolünde aynı İngilizce + Türkçe kaynağa farklı destek çevirileri atanmış bir eski/yeni cümle çifti bulundu. Haritasız eski önbellekte bu belirsiz eşleşme artık kullanılmaz; açık sunucu dil haritası öncelikli kalır. Tam içerik ve dil doğruluğunun insan kabulü bu incelemeyle kapatılmaz.
+
+## Tam CI ile bulunan ek sınırlar
+
+İlk tam API34 çalışması 398 testi çalıştırdı; 6 başarısızlık vardı. V1’e bağlı 44 klasik / sabit iki sayfa / revision-1 kuyruk kimliği beklentileri V2 verisine göre güncellendi. Uyumlu revizyon geçişinde yüzdeyi 20’ye düşürmeyi bekleyen eski test artık 100’ü korumayı doğrular. Tüm hikâyeleri tamamlanmış sayan ana ekran fixture’ı yeni 17 hikâye için gerçek revizyon/konum bilgisini de taşır. Bu testlere atlama eklenmedi.
+
+Gerçek bir sözlük çakışması da bulundu: eski `smile` fiili ile yeni isim kimliği aynı İngilizce yüzeye sahip. Genel lookup ve `wordByText` artık ilk kanonik sözlük girdisini korur; hikâyeye özel isim anlamı kendi vocabulary kaydında kalır. Böylece yeni eş adlı kelime önceki kayıtların genel lookup anlamını ezmez. Ayrı JVM regresyonu eklendi.
