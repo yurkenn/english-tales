@@ -51,6 +51,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     }
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun PracticeSession(snapshot: LearningSnapshot,onLessonComplete: (Int,String,String,Int,Long)->Unit,onWordReviewed: (String,Boolean)->Unit,padding: PaddingValues,onSessionStart: (String,String,Int)->Unit,onCheckpoint: (String,Long)->Unit,onSessionAbandoned: (String)->Unit,onSessionActive: (Boolean)->Unit, launchId: String?, launchWordIds: List<String>, onLaunchConsumed: ()->Unit, onDailyPlan: ()->Unit,onCompletedExit: (String,()->Boolean,()->Unit)->Unit) {
     val combo=LocalCombo.current
@@ -163,24 +164,28 @@ private fun PracticeSession(snapshot: LearningSnapshot,onLessonComplete: (Int,St
             Text(stringResource(R.string.kelimelerle_oyna),fontFamily=TaleDisplay,fontSize=24.sp,lineHeight=28.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.padding(start=16.dp,end=16.dp,top=14.dp,bottom=4.dp))
             Text(if(saved.isEmpty()) stringResource(R.string.baslamak_icin_ornek_kelimeler_hazir) else stringResource(R.string.kelimenin_tekrar_zamani_geldi_2, snapshot.dueWordIds.size),fontSize=14.sp,fontWeight=FontWeight.Bold,color=TaleMuted,modifier=Modifier.padding(horizontal=16.dp))
             if(snapshot.weakWordIds.isNotEmpty()) Text(stringResource(R.string.weak_words_count, snapshot.weakWordIds.size),fontSize=14.sp,color=TaleMuted,modifier=Modifier.padding(horizontal=16.dp,vertical=4.dp))
-            Spacer(Modifier.height(20.dp))
-            ModeCard(stringResource(R.string.ladder_mode),stringResource(R.string.ladder_subtitle),R.drawable.game_ladder,GameTint.Purple,index=1) {start("ladder")}
-            ModeCard(stringResource(R.string.kelime_kartlari),stringResource(R.string.kelimeleri_tani_ve_dinle),R.drawable.game_cards,GameTint.Blue,index=2) {start("card")}
-            ModeCard(stringResource(R.string.bir_ceviri_sec),stringResource(R.string.dogru_anlami_bul),R.drawable.game_choice,GameTint.Orange,index=3) {start("choice")}
-            ModeCard(stringResource(R.string.gap_mode),stringResource(R.string.gap_subtitle),R.drawable.game_gap,GameTint.Teal,enabled=gapPrompts?.isNotEmpty()==true,index=4) {start("cloze")}
-            if(gapPrompts==null || gapPrompts?.isEmpty()==true || gapUnavailable) Text(stringResource(if(gapPrompts==null) R.string.gap_preparing else R.string.gap_unavailable),
-                modifier=Modifier.padding(horizontal=16.dp,vertical=8.dp),style=MaterialTheme.typography.bodySmall,color=TaleMuted)
-            // Probes the device voice; the mode is offered only when English speech works.
+            Spacer(Modifier.height(16.dp))
+            // Probes the device voice; listening games are offered only when English speech works.
             val voice=rememberNarrator()
             LaunchedEffect(voice.available) {voiceReady=voice.available==true;if(voice.available!=null) voiceProbed=true}
-            if(voice.available!=false) ModeCard(stringResource(R.string.listen_mode),stringResource(R.string.listen_subtitle),R.drawable.game_listen,GameTint.Pink,enabled=voice.available==true,index=5) {start("listen")}
-            // Dictation needs a voice too; it appears only once English speech is known to work.
-            if(voice.available==true && orderCandidates?.isEmpty()!=true) ModeCard(stringResource(R.string.dictation_mode),stringResource(R.string.dictation_subtitle),R.drawable.game_dictation,GameTint.Indigo,enabled=orderCandidates!=null,index=4) {start("dictation")}
+            // The design's two-column game board: bright tiles first, quieter white ones after.
+            FlowRow(Modifier.fillMaxWidth().padding(horizontal=16.dp),horizontalArrangement=Arrangement.spacedBy(12.dp),verticalArrangement=Arrangement.spacedBy(12.dp),maxItemsInEachRow=sideBySide(2)) {
+                ModeCard(stringResource(R.string.kelimeleri_eslestir),stringResource(R.string.ingilizce_ve_turkce_ciftleri_bul),R.drawable.game_match,GameTint.Coral,index=1) {start("match")}
+                ModeCard(stringResource(R.string.kelime_kartlari),stringResource(R.string.kelimeleri_tani_ve_dinle),R.drawable.game_cards,GameTint.Blue,index=1) {start("card")}
+                ModeCard(stringResource(R.string.ladder_mode),stringResource(R.string.ladder_subtitle),R.drawable.game_ladder,GameTint.Purple,index=2) {start("ladder")}
+                ModeCard(stringResource(R.string.bir_ceviri_sec),stringResource(R.string.dogru_anlami_bul),R.drawable.game_choice,GameTint.Orange,index=2) {start("choice")}
+                if(orderCandidates?.isEmpty()!=true) ModeCard(stringResource(R.string.order_mode),stringResource(R.string.order_subtitle),R.drawable.game_order,GameTint.Green,enabled=orderCandidates!=null,index=3) {start("order")}
+                ModeCard(stringResource(R.string.gap_mode),stringResource(R.string.gap_subtitle),R.drawable.game_gap,GameTint.Teal,enabled=gapPrompts?.isNotEmpty()==true,index=3) {start("cloze")}
+                if(voice.available!=false) ModeCard(stringResource(R.string.listen_mode),stringResource(R.string.listen_subtitle),R.drawable.game_listen,GameTint.Pink,enabled=voice.available==true,index=4) {start("listen")}
+                // Dictation needs a voice too; it appears only once English speech is known to work.
+                if(voice.available==true && orderCandidates?.isEmpty()!=true) ModeCard(stringResource(R.string.dictation_mode),stringResource(R.string.dictation_subtitle),R.drawable.game_dictation,GameTint.Indigo,enabled=orderCandidates!=null,index=4) {start("dictation")}
+                ModeCard(stringResource(R.string.kelimeyi_olustur),stringResource(R.string.harfleri_dogru_siraya_koy),R.drawable.game_spell,GameTint.Amber,index=5) {start("spell")}
+            }
+            if(gapPrompts==null || gapPrompts?.isEmpty()==true || gapUnavailable) Text(stringResource(if(gapPrompts==null) R.string.gap_preparing else R.string.gap_unavailable),
+                modifier=Modifier.padding(horizontal=16.dp,vertical=8.dp),style=MaterialTheme.typography.bodySmall,color=TaleMuted)
             if(voice.available!=true) Text(stringResource(if(voice.available==null) R.string.listen_preparing else R.string.listen_unavailable),
                 modifier=Modifier.padding(horizontal=16.dp,vertical=8.dp),style=MaterialTheme.typography.bodySmall,color=TaleMuted)
-            if(orderCandidates?.isEmpty()!=true) ModeCard(stringResource(R.string.order_mode),stringResource(R.string.order_subtitle),R.drawable.game_order,GameTint.Green,enabled=orderCandidates!=null,index=5) {start("order")}
-            ModeCard(stringResource(R.string.kelimeleri_eslestir),stringResource(R.string.ingilizce_ve_turkce_ciftleri_bul),R.drawable.game_match,GameTint.Coral,index=6) {start("match")}
-            ModeCard(stringResource(R.string.kelimeyi_olustur),stringResource(R.string.harfleri_dogru_siraya_koy),R.drawable.game_spell,GameTint.Amber,index=7) {start("spell")}
+            Spacer(Modifier.height(16.dp))
         }
         return
     }
@@ -292,43 +297,36 @@ private fun PracticeSession(snapshot: LearningSnapshot,onLessonComplete: (Int,St
 }
 
 /** Two-stop card gradients, dark enough at the top-left for white text in both themes. */
-private enum class GameTint(val start: Color, val end: Color) {
-    Purple(Color(0xFF6A3FD9), Color(0xFFB07CF2)),
-    Blue(Color(0xFF1769D6), Color(0xFF5DB2F5)),
-    Orange(Color(0xFFD9530F), Color(0xFFFFAE5C)),
-    Teal(Color(0xFF00838F), Color(0xFF4DD0C9)),
-    Pink(Color(0xFFC2185B), Color(0xFFF48FB1)),
-    Green(Color(0xFF2E7D32), Color(0xFF8BC34A)),
-    Indigo(Color(0xFF283593), Color(0xFF7986CB)),
-    Coral(Color(0xFFC62828), Color(0xFFFF8A65)),
-    Amber(Color(0xFFB45309), Color(0xFFFBBF24))
+/** Tile colors of the game board; a null face is a white tile with an outline. */
+private enum class GameTint(val face: Color?, val ink: Color?) {
+    Purple(Color(0xFF8B3FD9), Color.White),
+    Blue(Color(0xFF006CA8), Color.White),
+    Orange(TaleOrange, TaleOnOrange),
+    Teal(null, null),
+    Pink(null, null),
+    Green(Color(0xFF2BB673), Color(0xFF0B2E1D)),
+    Indigo(null, null),
+    Coral(TaleYellow, TaleOnYellow),
+    Amber(null, null)
 }
 
-/** A big illustrated game card: title and line on the gradient, the mascot doing the game on the right, and a "Play" pill. */
+/** A game tile of the board: its art in the top corner, then the game's name and a short line, on a chunky colored face. */
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
-private fun ModeCard(title: String,subtitle: String,art: Int,tint: GameTint,enabled: Boolean=true,index: Int=0,onClick: ()->Unit) {
+private fun FlowRowScope.ModeCard(title: String,subtitle: String,art: Int,tint: GameTint,enabled: Boolean=true,index: Int=0,onClick: ()->Unit) {
     val still=reduceMotion()
-    // Each card's mascot bobs on its own beat, so the list feels alive without moving in lockstep.
+    // Each tile's art bobs on its own beat, so the board feels alive without moving in lockstep.
     val bob=if(still || !enabled) rememberUpdatedState(0f) else rememberInfiniteTransition(label="gameArt")
         .animateFloat(-1f,1f,infiniteRepeatable(tween(1_500+index*170,easing=FastOutSlowInEasing),RepeatMode.Reverse),label="gameArtBob")
-    // A chunky card: the gradient face sits on a darker lip and sinks onto it when pressed.
-    ChunkyBox(tint.start,Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=8.dp).appearIn(index).heightIn(min=162.dp)
-        .graphicsLayer {alpha=if(enabled) 1f else 0.5f},RoundedCornerShape(24.dp),depth=6.dp,onClick=onClick,enabled=enabled) {
-    Box(Modifier.fillMaxSize().background(Brush.linearGradient(listOf(tint.start,tint.end)))) {
-        // A soft light circle behind the art gives the drawing a stage.
-        Box(Modifier.align(Alignment.CenterEnd).offset(x=28.dp).size(170.dp).background(Color.White.copy(alpha=0.16f),CircleShape))
-        // Large text takes the card's full width with smaller art behind it, so a long word like "eşleştir" is never broken.
-        val large=androidx.compose.ui.platform.LocalDensity.current.fontScale>=1.5f
-        Image(painterResource(art),null,Modifier.align(Alignment.BottomEnd).padding(end=8.dp,bottom=10.dp).size(if(large) 96.dp else 132.dp)
-            .graphicsLayer {translationY=bob.value*5f*density;rotationZ=bob.value*2f},contentScale=ContentScale.Fit)
-        Column(Modifier.fillMaxWidth(if(large) 1f else 0.62f).padding(start=18.dp,end=if(large) 18.dp else 0.dp,top=18.dp,bottom=16.dp),verticalArrangement=Arrangement.spacedBy(6.dp)) {
-            Text(title,fontFamily=TaleDisplay,fontSize=22.sp,lineHeight=26.sp,fontWeight=FontWeight.ExtraBold,color=Color.White)
-            Text(subtitle,fontSize=13.sp,lineHeight=17.sp,color=Color.White.copy(alpha=0.9f))
-            Spacer(Modifier.height(6.dp))
-            Text(stringResource(R.string.game_play),fontSize=15.sp,fontWeight=FontWeight.ExtraBold,color=tint.start,
-                modifier=Modifier.background(Color.White,RoundedCornerShape(14.dp)).padding(horizontal=22.dp,vertical=8.dp))
+    val face=tint.face ?: TaleSurface
+    val ink=tint.ink ?: TaleInk
+    ChunkyBox(face,Modifier.weight(1f).appearIn(index).heightIn(min=136.dp).graphicsLayer {alpha=if(enabled) 1f else 0.5f},RoundedCornerShape(20.dp),depth=5.dp,
+        border=if(tint.face==null) TaleLine else null,onClick=onClick,enabled=enabled) {
+        Column(Modifier.fillMaxWidth().padding(horizontal=12.dp,vertical=10.dp),verticalArrangement=Arrangement.spacedBy(2.dp)) {
+            Image(painterResource(art),null,Modifier.align(Alignment.End).size(64.dp).graphicsLayer {translationY=bob.value*4f*density;rotationZ=bob.value*2f},contentScale=ContentScale.Fit)
+            Text(title,fontFamily=TaleDisplay,fontSize=18.sp,lineHeight=21.sp,fontWeight=FontWeight.ExtraBold,color=ink)
+            Text(subtitle,fontSize=12.sp,lineHeight=16.sp,fontWeight=FontWeight.Bold,color=ink)
         }
-    }
     }
 }
 
