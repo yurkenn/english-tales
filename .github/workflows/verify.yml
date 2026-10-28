@@ -125,11 +125,19 @@ jobs:
           script: |
             python3 ../tooling/run_android_device_tests.py
             bash gradlew :macrobenchmark:connectedPerformanceAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=com.yurken.englishtales.benchmark.StartupBenchmark -Pandroid.testInstrumentationRunnerArguments.performanceIterations=1 -Pandroid.testInstrumentationRunnerArguments.androidx.benchmark.suppressErrors=EMULATOR
+      - name: Print design gallery
+        # DesignGalleryTest pictures of every screen, for comparing the app with the design canvas.
+        if: always()
+        run: |
+          for f in $(find app/build/outputs/connected_android_test_additional_output -path '*gallery/*.jpg' 2>/dev/null | sort); do
+            echo "GALLERY-BEGIN $(basename "$f")"; base64 -w 0 "$f"; echo; echo "GALLERY-END"
+          done
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         if: always()
         with:
           name: android-device-tests
           path: |
+            native-android/app/build/outputs/connected_android_test_additional_output/
             native-android/app/build/reports/androidTests/
             native-android/app/build/outputs/androidTest-results/
             native-android/build/device-watchdog/
