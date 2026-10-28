@@ -23,7 +23,7 @@ class ClassicLibraryTest {
     @Test fun turkishClassicSearchFindsAndOpensTheCorrectStory() {
         LearningContent.initialize(context)
         val classics=LearningContent.stories.filter {it.id.startsWith("classic-")}
-        assertEquals(44,classics.size)
+        assertEquals(59,classics.size)
         classics.forEach {assertTrue("Missing study words: ${it.id}",LearningContent.wordsForStory(it).size>=6)}
         var opened=""
         compose.setContent {EnglishTalesTheme {CatalogScreen(LearningSnapshot(),{opened=it},PaddingValues())}}
@@ -71,10 +71,12 @@ class ClassicLibraryTest {
         compose.onNodeWithText("Öğren").performClick()
         assertEquals("hare",saved)
         compose.onNodeWithText("Sonraki ›").performClick()
-        assertEquals(story.sentences[8].id,position);assertEquals(50,percent)
+        assertEquals(story.sentences[8].id,position);assertEquals(8*100/story.sentences.size,percent)
         compose.runOnIdle {mount++}
-        compose.onNodeWithText("2 / 2").assertIsDisplayed()
+        val pages=(story.sentences.size+7)/8
+        compose.onNodeWithText("2 / $pages").assertIsDisplayed()
         screenshot("reader")
+        repeat(pages-2) {compose.onNodeWithText("Sonraki ›").performClick()}
         compose.onNodeWithText("Bitir ✓").performClick()
         assertEquals(1,complete)
     }

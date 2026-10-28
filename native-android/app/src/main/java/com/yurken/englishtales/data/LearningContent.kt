@@ -104,6 +104,9 @@ data class StoryQuestion(val id: String, val kind: String, val prompt: String, v
         options.all { it.isNotBlank() } && options.map { it.trim().lowercase() }.distinct().size == options.size && answer in options.indices
 }
 
+private fun canonicalWordText(words: List<WordInfo>) = words.distinctBy {it.word.lowercase(java.util.Locale.ROOT)}
+    .associateBy {it.word.lowercase(java.util.Locale.ROOT)}
+
 private data class Catalog(
     val words: List<WordInfo>,
     val wordById: Map<String, WordInfo>,
@@ -148,7 +151,7 @@ fun LearningSnapshot.resumeRevision(storyId: String): String? {
 fun LearningSnapshot.progressFor(story: Story): Int {
     val position=readingPositions[story.id]
     if(position!=null && !position.carriesTo(story)) return 0
-    if(position==null && story.revisionId!=ContentRevisionIds.bundled(story.id)) return 0
+    if(position==null && story.revisionId!=ContentRevisionIds.bundled(story.id) && !LearningContent.legacyProgressCarriesTo(story)) return 0
     return storyProgress[story.id]?:0
 }
 
@@ -198,6 +201,9 @@ object LearningContent {
     /** The packaged stories, unchanged after a remote catalog is installed. */
     @Volatile private var bundled: List<Story>? = null
     val bundledStories: List<Story> get() = checkNotNull(bundled) { "LearningContent.initialize must run before UI" }
+    internal val bundledRevisions: List<Story> get() = bundledStories + legacyBundled
+    internal fun legacyProgressCarriesTo(story: Story) = legacyBundled.firstOrNull {it.id == story.id}
+        ?.sentences?.all {old -> story.sentences.any {it.id == old.id}} == true
 
     /** Legacy published rows omitted questions. Reuse shipped questions only for exactly the same English source. */
     internal fun questionsForUnchangedSource(id: String, sentences: List<StorySentence>): List<StoryQuestion> =
@@ -225,14 +231,14 @@ object LearningContent {
             SupportLanguage.configure(context)
             if (catalog != null && loadedLanguage == SupportLanguage.code) return
             pinned.clear(); historical.clear(); wordSources.clear()
-            parse(context).let { catalog = it; bundled = it.stories; loadedLanguage = SupportLanguage.code; prewarm(it) }
+            parse(context).let { catalog = it; bundled = it.stories; loadedLanguage = SupportLanguage.code; prewarm(it); legacyBundled.forEach(::retain) }
         }
     }
 
     /** Installs a catalog without the bundled assets, for JVM tests that have no [Context]. */
     @androidx.annotation.VisibleForTesting
     internal fun initializeForTest(words: List<WordInfo>, stories: List<Story>) = synchronized(loadLock) {
-        Catalog(words, words.associateBy { it.id }, words.associateBy { it.word.lowercase(java.util.Locale.ROOT) }, stories, stories.associateBy { it.id })
+        Catalog(words, words.associateBy { it.id }, canonicalWordText(words), stories, stories.associateBy { it.id })
             .let { catalog = it; bundled = it.stories; prewarm(it) }
     }
 
@@ -241,12 +247,14 @@ object LearningContent {
     internal fun phraseIndexBuiltOn(): Thread? = current().phrasesBuiltOn
 
     @androidx.annotation.VisibleForTesting
-    internal fun resetForTest() = synchronized(loadLock) { catalog = null; bundled = null; loadedLanguage = null; pinned.clear(); historical.clear(); wordSources.clear() }
+    internal fun resetForTest() = synchronized(loadLock) { catalog = null; bundled = null; loadedLanguage = null; legacyBundled = emptyList(); pinned.clear(); historical.clear(); wordSources.clear() }
+
+    private var legacyBundled: List<Story> = emptyList()
 
     private fun parse(context: Context): Catalog {
-        val json = context.assets.open("catalog/v1.json").bufferedReader(Charsets.UTF_8).use { it.readText() }
+        val json = context.assets.open("catalog/v2.json").bufferedReader(Charsets.UTF_8).use { it.readText() }
         val root = JSONObject(json)
-        require(root.getInt("schemaVersion") == 1) { "Unsupported catalog schema" }
+        require(root.getInt("schemaVersion") in 1..2) { "Unsupported catalog schema" }
         ContentTranslations.install(root, SupportLanguage.code, com.yurken.englishtales.AppLanguage.wrap(context).getString(com.yurken.englishtales.R.string.content_untranslated_description))
         glossarySource = try {
             Glossary.parse(context.assets.open("glossary/${SupportLanguage.code}.json").bufferedReader(Charsets.UTF_8).use { it.readText() })
@@ -266,35 +274,64 @@ object LearningContent {
         } }
         tagOrder = tagNames.keys.toList()
         val storyArray = root.getJSONArray("stories")
-        val parsedStories = (0 until storyArray.length()).map { index ->
-            val item = storyArray.getJSONObject(index)
-            val sentenceArray = item.getJSONArray("sentences")
-            val sentences = (0 until sentenceArray.length()).map { sentenceIndex ->
-                val sentence = sentenceArray.getJSONObject(sentenceIndex)
-                StorySentence(sentence.getString("id"), sentence.getString("english"), SupportLanguage.pick(sentence, "translations", "turkish"))
-            }
-            require(sentences.isNotEmpty()) { "Story has no sentences" }
-            require(sentences.map { it.id }.distinct().size == sentences.size) { "Duplicate sentence ID" }
-            Story(
-                item.getString("id"), item.getString("title"), item.getString("author"),
-                item.getString("level"), item.getString("genre"), SupportLanguage.pick(item, "descriptions", "description"),
-                item.getString("coverKey"), sentences, questions = StoryQuestion.parse(item.optJSONArray("questions")),
-                tags = StoryTag.parse(item.optJSONArray("tags"), tagNames)
-            )
+        val parsedStories = (0 until storyArray.length()).map { index -> parseBundledStory(storyArray.getJSONObject(index), tagNames) }
+        val legacyCatalog = root.optJSONObject("legacyCatalog")
+        val legacy = legacyCatalog?.optJSONArray("stories")
+        val legacyWordRows = legacyCatalog?.optJSONArray("words")
+        val legacyWords = (0 until (legacyWordRows?.length() ?: 0)).map { i -> legacyWordRows!!.getJSONObject(i).let {
+            WordInfo(it.getString("id"), it.getString("word"), SupportLanguage.pick(it, "translations", "translation"), it.getString("pronunciation"), it.getString("example"))
+        } }
+        val legacyPhrases = PhraseMatcher.Index(legacyWords)
+        legacyBundled = (0 until (legacy?.length() ?: 0)).map { i ->
+            val story = parseBundledStory(legacy!!.getJSONObject(i), tagNames)
+            // Freeze revision-1 links against its original dictionary, not the expanded current dictionary.
+            val matches = story.sentences.associate { sentence -> sentence.id to PhraseMatcher.find(sentence.english, legacyPhrases).map {it.word}.distinctBy {it.id} }
+            story.copy(vocabulary=matches.values.flatten().distinctBy {it.id}, sentenceWordIds=matches.mapValues {(_, words) -> words.map {it.id}})
         }
         require(parsedStories.isNotEmpty()) { "Catalog has no stories" }
         require(parsedStories.map { it.id }.distinct().size == parsedStories.size) { "Duplicate story ID" }
 
         return Catalog(
-            parsedWords, parsedWords.associateBy { it.id }, parsedWords.associateBy { it.word.lowercase() },
+            parsedWords, parsedWords.associateBy { it.id }, canonicalWordText(parsedWords),
             parsedStories, parsedStories.associateBy { it.id }
         )
     }
 
-    /** Published stories use their editor links; bundled stories match the shared dictionary. */
-    fun wordsForSentence(story: Story, sentence: StorySentence): List<WordInfo> = sentenceWords(story, sentence, phraseIndex)
+    /** Schema 1 keeps dictionary matching; schema 2 carries immutable editorial revisions and links. */
+    internal fun parseBundledStory(item: JSONObject, tagNames: Map<String, String> = emptyMap()): Story {
+        val sentenceArray = item.getJSONArray("sentences")
+        val sentences = (0 until sentenceArray.length()).map { i -> sentenceArray.getJSONObject(i).let {
+            StorySentence(it.getString("id"), it.getString("english"), SupportLanguage.pick(it, "translations", "turkish"))
+        } }
+        require(sentences.isNotEmpty() && sentences.map {it.id}.distinct().size == sentences.size)
+        val vocabulary = item.optJSONArray("vocabulary")?.let { words -> (0 until words.length()).map { i -> words.getJSONObject(i).let {
+            WordInfo(it.getString("id"), it.getString("word"), SupportLanguage.pick(it, "translations", "translation"), it.getString("pronunciation"), it.getString("example"))
+        } } }
+        val mapping = vocabulary?.let { words ->
+            require(words.map {it.id}.distinct().size == words.size)
+            val links = item.getJSONObject("sentenceWordIds")
+            links.keys().asSequence().associateWith { sentence ->
+                require(sentences.any {it.id == sentence})
+                val ids = links.getJSONArray(sentence).let { rows -> (0 until rows.length()).map {rows.getString(it)} }
+                require(ids.distinct().size == ids.size && ids.all {id -> words.any {it.id == id}})
+                ids
+            }
+        }
+        val id = item.getString("id")
+        return Story(id, item.getString("title"), item.getString("author"), item.getString("level"), item.getString("genre"),
+            SupportLanguage.pick(item, "descriptions", "description"), item.getString("coverKey"), sentences,
+            revisionId = item.optString("revisionId").takeIf {it.isNotBlank()}?.let {java.util.UUID.fromString(it).toString()} ?: ContentRevisionIds.bundled(id),
+            vocabulary = vocabulary, sentenceWordIds = mapping,
+            addedAt = item.optString("addedAt").takeIf {it.isNotBlank()}?.let {java.time.OffsetDateTime.parse(it).toInstant()},
+            questions = StoryQuestion.parse(item.optJSONArray("questions")), tags = StoryTag.parse(item.optJSONArray("tags"), tagNames))
+    }
 
-    fun wordsForStory(story: Story): List<WordInfo> = storyWords(story, phraseIndex)
+    /** Published stories use their editor links; bundled stories match the shared dictionary. */
+    fun wordsForSentence(story: Story, sentence: StorySentence): List<WordInfo> =
+        story.vocabulary?.filter {it.id in story.sentenceWordIds.orEmpty()[sentence.id].orEmpty()} ?: sentenceWords(story, sentence, phraseIndex)
+
+    fun wordsForStory(story: Story): List<WordInfo> = if(story.vocabulary != null)
+        story.sentences.flatMap {wordsForSentence(story,it)}.distinctBy {it.id} else storyWords(story, phraseIndex)
 
     /** Pinned revisions win, then the first catalog story that teaches the word, then a retained older revision. */
     fun revisionForWord(wordId: String): String? = pinned.values.firstOrNull { story -> wordsForStory(story).any {it.id==wordId} }?.revisionId
@@ -316,7 +353,7 @@ object LearningContent {
     /** Publish on the main thread; keep learned vocabulary from previous content revisions. */
     fun install(stories: List<Story>, historicalWords: List<WordInfo> = emptyList()) {
         val words = (current().words + historicalWords + stories.flatMap { it.vocabulary.orEmpty() }).associateBy { it.id }.values.toList()
-        Catalog(words, words.associateBy { it.id }, words.associateBy { it.word.lowercase(java.util.Locale.ROOT) }, stories, stories.associateBy { it.id })
+        Catalog(words, words.associateBy { it.id }, canonicalWordText(words), stories, stories.associateBy { it.id })
             .let { catalog = it; prewarm(it) }
     }
 
