@@ -351,7 +351,7 @@ fun GameResult(subtitle: String,points: Int,padding: PaddingValues,onExit: ()->U
         Spacer(Modifier.height(8.dp))
         // The points count up like a scoreboard; the earned amount is the final value.
         AnimatedCounter(points,Modifier.appearIn(2),style=MaterialTheme.typography.displaySmall.copy(fontWeight=FontWeight.Bold),color=TalePurple,prefix="+")
-        Text(stringResource(R.string.calisma_tamamlandi),fontFamily=TaleDisplay,fontSize=24.sp,lineHeight=28.sp,fontWeight=FontWeight.ExtraBold,textAlign=androidx.compose.ui.text.style.TextAlign.Center,modifier=Modifier.appearIn(3))
+        Text(stringResource(R.string.calisma_tamamlandi),fontFamily=TaleDisplay,fontSize=24.sp,lineHeight=28.sp,fontWeight=FontWeight.ExtraBold,textAlign=androidx.compose.ui.text.style.TextAlign.Center,modifier=Modifier.fillMaxWidth().appearIn(3))
         Text(subtitle,fontSize=14.sp,color=TaleMuted,modifier=Modifier.padding(horizontal=12.dp,vertical=6.dp).appearIn(4))
         highlight?.let {Text(it,fontSize=15.sp,fontWeight=FontWeight.Bold,color=TaleBlue,modifier=Modifier.padding(bottom=6.dp).appearIn(4).popOn(1))}
         Row(Modifier.fillMaxWidth().padding(vertical=8.dp).appearIn(5),horizontalArrangement=Arrangement.spacedBy(8.dp)) {
