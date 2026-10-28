@@ -216,10 +216,12 @@ internal fun DailyQuestsCard(snapshot: LearningSnapshot, chest: ChestUi, onOpenC
     val quests = GameRewards.quests(snapshot.todaySessions, snapshot.dailyGoal, snapshot.todayReadings, combo)
     val allDone = quests.all { it.done }
     val ready = allDone && opened == null && chest != ChestUi.Opening && chest != ChestUi.Syncing
-    Column(modifier.fillMaxWidth().background(TaleSurface, RoundedCornerShape(18.dp)).border(1.dp, TaleLine, RoundedCornerShape(18.dp)).padding(16.dp),
+    // A white card on a lip, as in the playful look.
+    Column(modifier.fillMaxWidth().background(TaleLine, RoundedCornerShape(22.dp)).padding(bottom = 5.dp)
+        .background(TaleSurface, RoundedCornerShape(22.dp)).border(2.dp, TaleLine, RoundedCornerShape(22.dp)).padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Text(stringResource(R.string.quests_title), style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold, modifier = Modifier.weight(1f))
+            Text(stringResource(R.string.quests_title), fontFamily = TaleDisplay, fontSize = 19.sp, lineHeight = 23.sp, fontWeight = FontWeight.ExtraBold, modifier = Modifier.weight(1f))
             Text(stringResource(R.string.quest_progress, quests.count { it.done }, quests.size), color = TaleMuted, style = MaterialTheme.typography.labelLarge)
         }
         quests.forEachIndexed { i, quest -> QuestRow(quest, Modifier.appearIn(i)) }
@@ -231,14 +233,16 @@ internal fun DailyQuestsCard(snapshot: LearningSnapshot, chest: ChestUi, onOpenC
             allDone -> stringResource(R.string.quests_chest_ready)
             else -> stringResource(R.string.quests_chest_locked)
         }
-        Row(Modifier.fillMaxWidth().background(if (ready) LocalTaleColors.current.tileYellow else TaleBackground, RoundedCornerShape(14.dp))
-            .then(if (ready) Modifier.pressScale(onClick = onOpenChest) else Modifier)
+        // A waiting chest is a yellow key on a lip; a locked or opened one lies flat.
+        Row(Modifier.fillMaxWidth().then(if (ready) Modifier.pressScale(onClick = onOpenChest) else Modifier)
+            .then(if (ready) Modifier.background(chunkEdge(TaleYellow), RoundedCornerShape(16.dp)).padding(bottom = 4.dp) else Modifier)
+            .background(if (ready) TaleYellow else TaleBackground, RoundedCornerShape(16.dp))
             .padding(horizontal = 12.dp, vertical = 8.dp)
             .semantics(mergeDescendants = true) { liveRegion = LiveRegionMode.Polite },
             verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
             QuestChest(ready = ready, open = opened != null, modifier = Modifier.size(48.dp))
             Text(chestLabel, style = MaterialTheme.typography.bodyMedium, fontWeight = if (ready) FontWeight.SemiBold else FontWeight.Normal,
-                color = if (allDone || opened != null) TaleInk else TaleMuted, modifier = Modifier.weight(1f))
+                color = if (ready) TaleOnYellow else if (allDone || opened != null) TaleInk else TaleMuted, modifier = Modifier.weight(1f))
         }
     }
     (chest as? ChestUi.Opened)?.let { reward ->
@@ -277,10 +281,10 @@ private fun QuestRow(quest: DailyQuest, modifier: Modifier = Modifier) {
         }
         Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(5.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
-                Text(title, style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.SemiBold, color = TaleInk, modifier = Modifier.weight(1f))
+                Text(title, style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.ExtraBold, color = TaleInk, modifier = Modifier.weight(1f))
                 Text(stringResource(R.string.quest_progress, quest.progress, quest.target), style = MaterialTheme.typography.labelMedium, color = TaleMuted)
             }
-            ReferenceProgress(progress, Modifier.fillMaxWidth(), if (quest.done) c.success else TaleBlue)
+            ReferenceProgress(progress, Modifier.fillMaxWidth(), if (quest.done) TaleGreen else TaleYellow, height = 10.dp)
         }
     }
 }
