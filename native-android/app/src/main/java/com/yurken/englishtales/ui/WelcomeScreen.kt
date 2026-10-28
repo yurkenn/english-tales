@@ -44,15 +44,15 @@ fun WelcomeScreen(state: AccountState,onGuest: ()->Unit,onEmail: ()->Unit,onGoog
             Text(stringResource(R.string.english_tales),color=TaleBlue,fontSize=15.sp,fontWeight=FontWeight.Bold,letterSpacing=2.sp,modifier=Modifier.weight(1f))
             if (!state.busy) LanguageControls(compact = true)
         }
-        Box(Modifier.fillMaxWidth().height(220.dp).clip(RoundedCornerShape(28.dp)).background(TaleMint),contentAlignment=Alignment.BottomCenter) {
+        ChunkyBox(TaleYellow,Modifier.fillMaxWidth().height(220.dp),RoundedCornerShape(28.dp),depth=6.dp,contentAlignment=Alignment.BottomCenter) {
             TalesMascot(MascotMood.Welcome,Modifier.fillMaxHeight(),animate=true)
         }
-        Text(stringResource(R.string.her_hikayede_nbiraz_daha_ingilizce),style=MaterialTheme.typography.headlineMedium,textAlign=TextAlign.Center)
+        Text(stringResource(R.string.her_hikayede_nbiraz_daha_ingilizce),style=MaterialTheme.typography.headlineMedium,fontFamily=TaleDisplay,fontWeight=FontWeight.ExtraBold,textAlign=TextAlign.Center,modifier=Modifier.fillMaxWidth())
         Text(stringResource(R.string.kisa_hikayeler_oku_yeni_kelimeler),style=MaterialTheme.typography.bodyLarge,textAlign=TextAlign.Center,color=TaleMuted)
         Spacer(Modifier.height(8.dp))
         GoogleSignInButton(!state.busy,onGoogle)
-        OutlinedButton(onClick=onEmail,enabled=!state.busy,modifier=Modifier.fillMaxWidth().heightIn(min=52.dp),shape=RoundedCornerShape(14.dp)) {Text(stringResource(R.string.e_posta_ile_giris_yap))}
-        Button(onClick=onGuest,enabled=!state.busy,modifier=Modifier.fillMaxWidth().heightIn(min=52.dp),shape=RoundedCornerShape(14.dp)) {Text(stringResource(R.string.misafir_olarak_basla))}
+        ChunkyButton(stringResource(R.string.e_posta_ile_giris_yap),onEmail,Modifier.fillMaxWidth(),color=TaleSurface,onColor=TaleInk,enabled=!state.busy,border=TaleLine)
+        ChunkyButton(stringResource(R.string.misafir_olarak_basla),onGuest,Modifier.fillMaxWidth(),enabled=!state.busy)
         Text(stringResource(R.string.hesap_acmadan_baslayabilirsin_misafir_ilerlemen),style=MaterialTheme.typography.bodySmall,color=TaleMuted,textAlign=TextAlign.Center)
         if(state.busy) LinearProgressIndicator(Modifier.fillMaxWidth())
         AccountMessage(state)

@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.res.Configuration
 import android.content.res.Resources
 import android.os.LocaleList
-import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.border
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -20,6 +20,7 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.*
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.heading
@@ -104,7 +105,7 @@ internal fun LanguageWelcomeScreen(
                         }
                         Spacer(Modifier.height(24.dp))
                         Text(stringResource(R.string.first_language_title), style = MaterialTheme.typography.headlineMedium,
-                            color = TaleInk, modifier = Modifier.semantics { heading() })
+                            fontFamily = TaleDisplay, fontWeight = FontWeight.ExtraBold, color = TaleInk, modifier = Modifier.semantics { heading() })
                         Spacer(Modifier.height(10.dp))
                         Text(stringResource(if (AppLanguage.languageCode(locale) == "en") R.string.first_language_english_note else R.string.first_language_description),
                             style = MaterialTheme.typography.bodyMedium, color = TaleMuted)
@@ -112,17 +113,19 @@ internal fun LanguageWelcomeScreen(
                     }
                     items(choices, key = { it.first }) { (tag, nativeName) ->
                         val active = tag == selected
-                        Surface(shape = RoundedCornerShape(16.dp), color = if (active) TaleMint else TaleSurface,
-                            border = BorderStroke(if (active) 1.5.dp else 1.dp, if (active) TaleBlue else TaleLine)) {
-                            Row(Modifier.fillMaxWidth().testTag("language_option_$tag")
+                        // A picked language sits on a green lip; the rest are outlined chunky rows.
+                        val shape = RoundedCornerShape(18.dp)
+                        Box(Modifier.background(if (active) chunkEdge(TaleGreen) else TaleLine, shape).padding(bottom = 4.dp)
+                            .background(if (active) TaleMint else TaleSurface, shape).border(2.dp, if (active) TaleGreen else TaleLine, shape)) {
+                            Row(Modifier.fillMaxWidth().clip(shape).testTag("language_option_$tag")
                                 .selectable(active, role = Role.RadioButton, onClick = { selected = tag })
                                 .padding(horizontal = 16.dp, vertical = 12.dp), verticalAlignment = Alignment.CenterVertically) {
                                 Column(Modifier.weight(1f)) {
-                                    Text(nativeName, fontSize = 17.sp, fontWeight = if (active) FontWeight.SemiBold else FontWeight.Medium, color = TaleInk)
+                                    Text(nativeName, fontSize = 17.sp, fontWeight = if (active) FontWeight.ExtraBold else FontWeight.Bold, color = TaleInk)
                                     Text(if (tag.isEmpty()) languageChoiceTag(locale).let { code -> appLanguages.first { it.first == code }.second }
                                         else Locale.forLanguageTag(tag).getDisplayName(Locale.ENGLISH),
                                         fontSize = 12.sp, color = TaleMuted)
-                                    if (tag == recommended) Text(stringResource(R.string.first_language_suggested), color = TaleBlue, fontSize = 11.sp)
+                                    if (tag == recommended) Text(stringResource(R.string.first_language_suggested), color = TaleGreen, fontSize = 11.sp, fontWeight = FontWeight.ExtraBold)
                                 }
                                 Spacer(Modifier.width(12.dp))
                                 RadioButton(selected = active, onClick = null)
@@ -133,12 +136,14 @@ internal fun LanguageWelcomeScreen(
                 HorizontalDivider(color = TaleLine)
                 Column(Modifier.fillMaxWidth().padding(horizontal = 24.dp, vertical = 16.dp),
                     horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    Button(onClick = { onContinue(selected) }, shape = RoundedCornerShape(16.dp),
-                        modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp).testTag("language_continue")) {
-                        Text(stringResource(R.string.first_language_continue, androidx.core.text.BidiFormatter.getInstance(previewConfiguration.layoutDirection == 1).unicodeWrap(name)),
-                            modifier = Modifier.weight(1f), fontWeight = FontWeight.SemiBold)
-                        Spacer(Modifier.width(8.dp))
-                        Icon(Icons.AutoMirrored.Filled.ArrowForward, null, Modifier.size(20.dp))
+                    ChunkyBox(TaleGreen, Modifier.fillMaxWidth().heightIn(min = 56.dp).testTag("language_continue"), RoundedCornerShape(16.dp),
+                        depth = 4.dp, contentAlignment = Alignment.Center, onClick = { onContinue(selected) }) {
+                        Row(Modifier.padding(horizontal = 20.dp, vertical = 12.dp), verticalAlignment = Alignment.CenterVertically) {
+                            Text(stringResource(R.string.first_language_continue, androidx.core.text.BidiFormatter.getInstance(previewConfiguration.layoutDirection == 1).unicodeWrap(name)),
+                                modifier = Modifier.weight(1f), color = TaleOnGreen, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.ExtraBold)
+                            Spacer(Modifier.width(8.dp))
+                            Icon(Icons.AutoMirrored.Filled.ArrowForward, null, Modifier.size(20.dp), tint = TaleOnGreen)
+                        }
                     }
                     Text(stringResource(R.string.first_language_later), style = MaterialTheme.typography.bodySmall, color = TaleMuted)
                 }

@@ -57,8 +57,10 @@ internal fun ChunkyBox(color: Color, modifier: Modifier = Modifier, shape: Shape
 
 /** A full-width "go" button of the playful look. */
 @Composable
-internal fun ChunkyButton(label: String, onClick: () -> Unit, modifier: Modifier = Modifier, color: Color = TaleGreen, onColor: Color = TaleOnGreen) {
-    ChunkyBox(color, modifier.heightIn(min = 52.dp), RoundedCornerShape(16.dp), depth = 4.dp, contentAlignment = Alignment.Center, onClick = onClick) {
+internal fun ChunkyButton(label: String, onClick: () -> Unit, modifier: Modifier = Modifier, color: Color = TaleGreen, onColor: Color = TaleOnGreen,
+    enabled: Boolean = true, border: Color? = null) {
+    ChunkyBox(color, modifier.heightIn(min = 52.dp), RoundedCornerShape(16.dp), depth = 4.dp, border = border, contentAlignment = Alignment.Center,
+        onClick = onClick, enabled = enabled) {
         Text(label, Modifier.padding(horizontal = 16.dp, vertical = 12.dp), color = onColor, style = MaterialTheme.typography.titleMedium,
             fontWeight = FontWeight.ExtraBold, textAlign = TextAlign.Center)
     }
