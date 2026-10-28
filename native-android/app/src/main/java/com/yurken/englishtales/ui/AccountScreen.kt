@@ -12,6 +12,7 @@ import com.yurken.englishtales.AppLanguage
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -33,11 +34,11 @@ fun AccountScreen(state: AccountState,onBack: ()->Unit,onSignIn: (String,String)
     Column(Modifier.fillMaxSize().statusBarsPadding().navigationBarsPadding()) {
         SimpleTopBar(stringResource(R.string.hesabin)) {if(!state.busy) onBack()}
         Column(Modifier.weight(1f).verticalScroll(rememberScrollState()).imePadding().padding(24.dp),verticalArrangement=Arrangement.spacedBy(16.dp)) {
-            Text(if(state.userId==null) stringResource(R.string.ogrenmeye_kendi_hesabinla_devam_et) else stringResource(R.string.hesap_acik),fontSize=24.sp)
+            Text(if(state.userId==null) stringResource(R.string.ogrenmeye_kendi_hesabinla_devam_et) else stringResource(R.string.hesap_acik),fontFamily=TaleDisplay,fontSize=24.sp,lineHeight=28.sp,fontWeight=FontWeight.ExtraBold)
             if(state.userId!=null) {
                 Text(state.email,fontSize=16.sp,color=TaleBlue)
                 Text(stringResource(R.string.ogrenme_kayitlarin_hesabin_uzerinden_esitlenir),fontSize=14.sp,color=TaleMuted)
-                Card(Modifier.fillMaxWidth()) {
+                ChunkyBox(TaleSurface,Modifier.fillMaxWidth(),depth=4.dp,border=TaleLine) {
                     Column(Modifier.padding(16.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
                         Text(stringResource(R.string.hesap_esitlemesi),style=MaterialTheme.typography.titleMedium)
                         TaleNotice(state.sync.message.ifEmpty { stringResource(R.string.sync_message_not_started) },if(state.sync.running) TaleAlertKind.Info else state.sync.tone.alertKind)
@@ -55,7 +56,7 @@ fun AccountScreen(state: AccountState,onBack: ()->Unit,onSignIn: (String,String)
                     }
                 }
                 state.guestTransfer?.let {guest ->
-                    Card(Modifier.fillMaxWidth()) {
+                    ChunkyBox(TaleSurface,Modifier.fillMaxWidth(),depth=4.dp,border=TaleLine) {
                         Column(Modifier.padding(16.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
                             Text(stringResource(R.string.misafir_ilerlemen),style=MaterialTheme.typography.titleMedium)
                             Text(stringResource(R.string.kelime_puan_hikaye, guest.words, guest.points, guest.stories),fontSize=14.sp)
