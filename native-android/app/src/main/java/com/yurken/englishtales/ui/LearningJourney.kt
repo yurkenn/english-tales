@@ -188,7 +188,7 @@ fun ReadingResultScreen(story: Story,snapshot: LearningSnapshot,onPractice: (Lis
                 TalesMascot(MascotMood.Celebrate,Modifier.size(144.dp),animate=true)
                 BookCover(story,Modifier.size(64.dp,94.dp).popOn(1))
             }
-            Text(stringResource(R.string.bir_hikaye_tamamladin),fontFamily=TaleDisplay,fontSize=26.sp,lineHeight=30.sp,fontWeight=FontWeight.ExtraBold,textAlign=TextAlign.Center,modifier=Modifier.appearIn(1))
+            Text(stringResource(R.string.bir_hikaye_tamamladin),fontFamily=TaleDisplay,fontSize=24.sp,lineHeight=28.sp,fontWeight=FontWeight.ExtraBold,textAlign=TextAlign.Center,modifier=Modifier.appearIn(1))
             Text(story.title,fontSize=15.sp,fontWeight=FontWeight.Bold,color=TaleMuted,textAlign=TextAlign.Center,modifier=Modifier.appearIn(2))
             Text(if(snapshot.dailyGoalReached) stringResource(R.string.gunluk_hedef_tamamlandi) else stringResource(R.string.gunluk_hedef_adim, snapshot.todaySessions, snapshot.dailyGoal),color=TaleOnYellow,fontWeight=FontWeight.ExtraBold,
                 modifier=Modifier.appearIn(3).background(TaleYellow,RoundedCornerShape(20.dp)).padding(horizontal=16.dp,vertical=8.dp))

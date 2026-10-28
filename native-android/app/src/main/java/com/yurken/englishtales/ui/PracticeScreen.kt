@@ -160,7 +160,7 @@ private fun PracticeSession(snapshot: LearningSnapshot,onLessonComplete: (Int,St
     if(mode.isEmpty()) {
         Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState())) {
             GameStatsBar(snapshot)
-            Text(stringResource(R.string.kelimelerle_oyna),fontFamily=TaleDisplay,fontSize=28.sp,lineHeight=32.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.padding(start=16.dp,end=16.dp,top=14.dp,bottom=4.dp))
+            Text(stringResource(R.string.kelimelerle_oyna),fontFamily=TaleDisplay,fontSize=24.sp,lineHeight=28.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.padding(start=16.dp,end=16.dp,top=14.dp,bottom=4.dp))
             Text(if(saved.isEmpty()) stringResource(R.string.baslamak_icin_ornek_kelimeler_hazir) else stringResource(R.string.kelimenin_tekrar_zamani_geldi_2, snapshot.dueWordIds.size),fontSize=14.sp,fontWeight=FontWeight.Bold,color=TaleMuted,modifier=Modifier.padding(horizontal=16.dp))
             if(snapshot.weakWordIds.isNotEmpty()) Text(stringResource(R.string.weak_words_count, snapshot.weakWordIds.size),fontSize=14.sp,color=TaleMuted,modifier=Modifier.padding(horizontal=16.dp,vertical=4.dp))
             Spacer(Modifier.height(20.dp))
