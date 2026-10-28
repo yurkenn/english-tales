@@ -60,3 +60,7 @@ Gerçek API36 ekranlarından 6 özgün PNG incelendi: İngilizce, Arapça RTL ve
 ## 28 Ekim reklam kabul sonucu
 
 Ayrı API36 emülatöründe yerel opt-in sandbox ile test etiketli gerçek rewarded birimi izlendi; SDK probe 1/1 geçti. İmzalı callback staging’de tek işlem ve tam 1 enerji oluşturdu; ikinci sorguda kredi 1 kaldı. Sentetik fixture kullanıcı/cüzdan/biletleri temizlendi ve sıfır kayıt doğrulandı. [Kanıt](release-evidence/2026-10-28-rewarded-ssv.json). Bu callback için yeni replay yapılmadı; önceki Console replay kanıtı ayrı. Normal reklam ekranı/UMP, pending/iade/hesap geçişi, içerik paketi eşitleme ve insan kabul adımları açık.
+
+## 28 Ekim çevrimdışı paket yenilemesi
+
+[İçerik paketi V2](CONTENT_BUNDLE_V2_2026-10-28.md), güncel anonim snapshot ile 67 hikâye / 2.839 cümle / 11 dil / 67 kapak eşitliğini sağladı. Eski 359 kelime kimliği ve 50 revizyon arşivi korunur. Eski editör araçlarının V1 kaynağı değişmez. 48 hedefli API36 testi geçti; yeni geçiş testleri; eski yüzde/kayıtlar, yeni revizyon, çevrimdışı eski metadata ve editör bağlantılarını kapsar. [Snapshot ve APK kanıtı](release-evidence/2026-10-28-published-catalog-parity.json). [Claude incelemesi ve kararlar](CLAUDE_CONTENT_BUNDLE_REVIEW_2026-10-28.md). Kelime kapsamı hedefi, dil/editör kabulü, pending/iade/hesap geçişi ve normal reklam/UMP akışı açık kalır.

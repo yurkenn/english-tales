@@ -241,8 +241,9 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         val story=source?:checkNotNull(LearningContent.storyById[storyId])
         require(sentenceId==null || story.sentences.any {it.id==sentenceId})
         var previous=scalar(db,"SELECT percent FROM story_progress WHERE story_id=?",arrayOf(storyId))
-        db.rawQuery("SELECT revision_id FROM story_progress WHERE story_id=?",arrayOf(storyId)).use { c ->
-            if(c.moveToFirst() && !c.isNull(0) && c.getString(0)!=story.revisionId) previous=0
+        db.rawQuery("SELECT revision_id,sentence_id FROM story_progress WHERE story_id=?",arrayOf(storyId)).use { c ->
+            if(c.moveToFirst() && !c.isNull(0) && c.getString(0)!=story.revisionId &&
+                (c.isNull(1) || !ReadingPosition(c.getString(0),c.getString(1)).carriesTo(story))) previous=0
         }
         if(sentenceId!=null) {
             db.rawQuery("SELECT revision_id,sentence_id,percent FROM story_progress WHERE story_id=?",arrayOf(storyId)).use {c ->
@@ -254,7 +255,7 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
             put("percent",maxOf(previous,percent.coerceIn(0,100)))
             if(sentenceId!=null) {put("revision_id",story.revisionId);put("sentence_id",sentenceId);put("updated_at",clock())}
         },"story_id=?",arrayOf(storyId))
-        if(sentenceId!=null) {val id=UUID.randomUUID().toString();enqueue(id,"apply_progress_event",operations.progress(id,story,sentenceId,percent.coerceIn(0,100),clock()))}
+        if(sentenceId!=null) {val id=UUID.randomUUID().toString();enqueue(id,"apply_progress_event",operations.progress(id,story,sentenceId,maxOf(previous,percent.coerceIn(0,100)),clock()))}
     }
     fun completeReading(storyId: String,sessionId: String=UUID.randomUUID().toString(),activeMillis: Long=0,source: Story?=null) {
         val now=clock();val today=LearningPolicy.dayKey(now)
