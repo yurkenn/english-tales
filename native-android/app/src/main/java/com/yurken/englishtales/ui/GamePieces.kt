@@ -40,13 +40,13 @@ internal fun chunkEdge(face: Color) = lerp(face, Color.Black, 0.22f)
 @Composable
 internal fun ChunkyBox(color: Color, modifier: Modifier = Modifier, shape: Shape = RoundedCornerShape(22.dp), depth: Dp = 5.dp,
     border: Color? = null, edge: Color = border ?: chunkEdge(color), contentAlignment: Alignment = Alignment.TopStart,
-    onClick: (() -> Unit)? = null, content: @Composable BoxScope.() -> Unit) {
+    onClick: (() -> Unit)? = null, enabled: Boolean = true, content: @Composable BoxScope.() -> Unit) {
     val source = remember { MutableInteractionSource() }
     val pressed by source.collectIsPressedAsState()
     val still = reduceMotion()
-    val sink by animateDpAsState(if (pressed && onClick != null) depth * 0.8f else 0.dp,
+    val sink by animateDpAsState(if (pressed && onClick != null && enabled) depth * 0.8f else 0.dp,
         if (still) spring(stiffness = Spring.StiffnessHigh) else spring(dampingRatio = 0.6f, stiffness = Spring.StiffnessMedium), label = "sink")
-    val clickable = onClick?.let { Modifier.clickable(interactionSource = source, indication = LocalIndication.current, role = Role.Button, onClick = it) } ?: Modifier
+    val clickable = onClick?.let { Modifier.clickable(interactionSource = source, indication = LocalIndication.current, enabled = enabled, role = Role.Button, onClick = it) } ?: Modifier
     Box(modifier.then(clickable), propagateMinConstraints = true) {
         Box(Modifier.matchParentSize().padding(top = depth).background(edge, shape))
         Box(Modifier.padding(top = sink, bottom = depth - sink).clip(shape).background(color, shape)
