@@ -259,11 +259,13 @@ private fun LibraryFilters(filters: StoryFilters, showLevels: Boolean, onLevel: 
     }
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun BookShelf(title: String, stories: List<Story>, onOpenStory: (String) -> Unit, onAll: () -> Unit) {
-    Row(Modifier.fillMaxWidth().padding(horizontal=16.dp),verticalAlignment=Alignment.CenterVertically) {
-        Text(title,fontFamily=TaleDisplay,fontSize=21.sp,lineHeight=25.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.weight(1f).padding(end=8.dp))
-        Text(stringResource(R.string.tumunu_gor),color=TaleBlue,fontSize=13.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.pressScale(onClick=onAll).minimumInteractiveComponentSize().padding(horizontal=6.dp,vertical=6.dp))
+    // Large text gives the Baloo title its own line, so a word like "hikâyeler" is never broken beside the link.
+    FlowRow(Modifier.fillMaxWidth().padding(horizontal=16.dp),verticalArrangement=Arrangement.Center,maxItemsInEachRow=if(LocalDensity.current.fontScale>=1.5f) 1 else 2) {
+        Text(title,fontFamily=TaleDisplay,fontSize=21.sp,lineHeight=25.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.weight(1f).align(Alignment.CenterVertically).padding(end=8.dp))
+        Text(stringResource(R.string.tumunu_gor),color=TaleBlue,fontSize=13.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.align(Alignment.CenterVertically).pressScale(onClick=onAll).minimumInteractiveComponentSize().padding(horizontal=6.dp,vertical=6.dp))
     }
     Spacer(Modifier.height(14.dp))
     LazyRow(contentPadding=PaddingValues(horizontal=16.dp),horizontalArrangement=Arrangement.spacedBy(14.dp)) {
