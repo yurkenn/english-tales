@@ -25,6 +25,7 @@ class TaleColorsContrastTest {
         add(Triple("blue/mint", c.blue, c.mint)); add(Triple("blue/line", c.blue, c.line))
         add(Triple("onBlue/blue", c.onBlue, c.blue)); add(Triple("onPurple/purple", c.onPurple, c.purple))
         add(Triple("gold/tileYellow", c.gold, c.tileYellow))
+        add(Triple("onGreen/green", c.onGreen, c.green)); add(Triple("onYellow/yellow", TaleOnYellow, TaleYellow))
     }
 
     @Test fun lightAndDarkTextMeetsAA() {

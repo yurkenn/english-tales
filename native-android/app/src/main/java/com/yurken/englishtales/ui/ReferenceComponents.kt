@@ -75,13 +75,13 @@ fun ReferenceIcon(kind: String, tint: Color = TaleBlue, modifier: Modifier = Mod
 }
 
 @Composable
-fun ReferenceProgress(progress: Float, modifier: Modifier = Modifier, color: Color = TaleYellow) {
+fun ReferenceProgress(progress: Float, modifier: Modifier = Modifier, color: Color = TaleYellow, track: Color = TaleLine, height: Dp = 6.dp) {
     // Fills smoothly from empty on first show and glides on every change.
     val target=progress.coerceIn(0f,1f)
     val shown=remember {androidx.compose.animation.core.Animatable(0f)}
     androidx.compose.runtime.LaunchedEffect(target) {shown.animateTo(target,androidx.compose.animation.core.tween(TaleMotion.emphasized*2,easing=androidx.compose.animation.core.FastOutSlowInEasing))}
-    Box(modifier.semantics {progressBarRangeInfo=ProgressBarRangeInfo(target,0f..1f)}.height(6.dp).background(TaleLine,RoundedCornerShape(4.dp))) {
-        if(shown.value>0f) Box(Modifier.fillMaxWidth(shown.value).height(6.dp).background(color,RoundedCornerShape(4.dp)))
+    Box(modifier.semantics {progressBarRangeInfo=ProgressBarRangeInfo(target,0f..1f)}.height(height).background(track,RoundedCornerShape(height/2))) {
+        if(shown.value>0f) Box(Modifier.fillMaxWidth(shown.value).height(height).background(color,RoundedCornerShape(height/2)))
     }
 }
 

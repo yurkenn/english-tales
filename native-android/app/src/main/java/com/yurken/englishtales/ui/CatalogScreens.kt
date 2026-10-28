@@ -68,6 +68,18 @@ fun StatsHeader(snapshot: LearningSnapshot) {
     }
 }
 
+/** The playful home header: level, streak and points as tappable pills. */
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+fun GameStatsBar(snapshot: LearningSnapshot) {
+    FlowRow(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=8.dp),horizontalArrangement=Arrangement.spacedBy(8.dp),verticalArrangement=Arrangement.spacedBy(4.dp)) {
+        StatPill(snapshot.level,stringResource(R.string.ingilizce_seviyen),stringResource(R.string.sectigin_seviye_hikaye_onerileri_buna, snapshot.level),stringResource(R.string.stat_level)) {ReferenceIcon("study",TaleBlue,Modifier.size(20.dp))}
+        Spacer(Modifier.weight(1f))
+        StatPill("${snapshot.streak}",stringResource(R.string.calisma_serin),streakExplanation(snapshot),stringResource(R.string.stat_streak)) {ReferenceIcon("streak",TaleWarm,Modifier.size(20.dp))}
+        StatPill("${snapshot.points}",stringResource(R.string.puanlarin),pointsExplanation(snapshot),stringResource(R.string.stat_points)) {ReferenceIcon("points",TalePurple,Modifier.size(20.dp))}
+    }
+}
+
 @Composable
 private fun ChallengeBanner(onClick: () -> Unit) {
     Column(Modifier.padding(horizontal=16.dp)) {
@@ -86,7 +98,7 @@ private fun ChallengeBanner(onClick: () -> Unit) {
 }
 
 @Composable
-fun StudyScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, onOpenWords: () -> Unit, padding: PaddingValues, onRead: (String)->Unit, onPractice: (List<String>)->Unit, league: (@Composable (Modifier)->Unit)?=null, quests: (@Composable (Modifier)->Unit)?=null) {
+fun StudyScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, onOpenWords: () -> Unit, padding: PaddingValues, onRead: (String)->Unit, onPractice: (List<String>)->Unit, league: (@Composable (Modifier)->Unit)?=null, quests: (@Composable (Modifier)->Unit)?=null, onPlay: (()->Unit)?=null) {
     // Q5.6: unfinished stories at the learner's level that they can read most comfortably come first.
     val catalog=LearningContent.stories
     // Ranking tokenizes stories on first use and reruns on every snapshot change, so it runs on Default; the last order stays until the next is ready.
@@ -101,9 +113,9 @@ fun StudyScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, onOpe
         return
     }
     Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState())) {
-        StatsHeader(snapshot)
-        Spacer(Modifier.height(15.dp))
-        DailyPlan(snapshot,onRead,onPractice)
+        GameStatsBar(snapshot)
+        Spacer(Modifier.height(8.dp))
+        DailyPlan(snapshot,onRead,onPractice,onPlay)
         Spacer(Modifier.height(16.dp))
         // The chest needs the league service to open on an account, so the app supplies the card; previews show it closed.
         val questsModifier=Modifier.padding(horizontal=16.dp).appearIn(2)

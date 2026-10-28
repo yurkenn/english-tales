@@ -17,6 +17,8 @@ import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.Font
+import com.yurken.englishtales.R
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
@@ -27,6 +29,8 @@ data class TaleColors(
     val line: Color, val mint: Color, val purple: Color, val onPurple: Color, val success: Color, val error: Color,
     val warm: Color, val gold: Color, val tileBlue: Color, val tileYellow: Color, val tilePurple: Color,
     val tileGreen: Color, val panel: Color, val dark: Boolean,
+    // The game green of the "go" buttons and progress fills, with the text that sits on it.
+    val green: Color = Color(0xFF2BB673), val onGreen: Color = Color(0xFF0B2E1D),
 )
 
 val LightTaleColors = TaleColors(
@@ -43,6 +47,7 @@ val DarkTaleColors = TaleColors(
     purple = Color(0xFFC4A3F2), onPurple = Color(0xFF2A1450), success = Color(0xFF9AD77A), error = Color(0xFFFF9A8A),
     warm = Color(0xFFFF9466), gold = Color(0xFFFFCE4A), tileBlue = Color(0xFF15303F), tileYellow = Color(0xFF3A3218),
     tilePurple = Color(0xFF2E2440), tileGreen = Color(0xFF1E3320), panel = Color(0xFF1D2025), dark = true,
+    green = Color(0xFF5FD39A), onGreen = Color(0xFF062014),
 )
 
 val LocalTaleColors = staticCompositionLocalOf { LightTaleColors }
@@ -62,8 +67,18 @@ val TaleError: Color @Composable @ReadOnlyComposable get() = LocalTaleColors.cur
 val TaleWarm: Color @Composable @ReadOnlyComposable get() = LocalTaleColors.current.warm
 val TaleGold: Color @Composable @ReadOnlyComposable get() = LocalTaleColors.current.gold
 val TalePanel: Color @Composable @ReadOnlyComposable get() = LocalTaleColors.current.panel
-// Brand yellow reads the same in both themes; it never carries text.
+val TaleGreen: Color @Composable @ReadOnlyComposable get() = LocalTaleColors.current.green
+val TaleOnGreen: Color @Composable @ReadOnlyComposable get() = LocalTaleColors.current.onGreen
+// Brand yellow reads the same in both themes; only [TaleOnYellow] text sits on it.
 val TaleYellow = Color(0xFFFFCE00)
+val TaleOnYellow = Color(0xFF3A2A00)
+
+/** Rounded display face of the playful look: screen titles, card titles and big numbers. */
+val TaleDisplay = FontFamily(Font(R.font.baloo2_semibold, FontWeight.SemiBold), Font(R.font.baloo2_bold, FontWeight.Bold),
+    Font(R.font.baloo2_extrabold, FontWeight.ExtraBold))
+/** Body face; scripts it lacks (Arabic, Thai, Bengali, Devanagari) fall back to the system font per glyph. */
+val TaleBody = FontFamily(Font(R.font.nunito_regular, FontWeight.Normal), Font(R.font.nunito_semibold, FontWeight.SemiBold),
+    Font(R.font.nunito_bold, FontWeight.Bold), Font(R.font.nunito_extrabold, FontWeight.ExtraBold))
 
 private fun colorScheme(c: TaleColors) = if(c.dark) darkColorScheme(
     primary = c.blue, onPrimary = c.onBlue, primaryContainer = c.mint, onPrimaryContainer = c.ink,
@@ -80,14 +95,17 @@ private fun colorScheme(c: TaleColors) = if(c.dark) darkColorScheme(
 )
 
 private val taleTypography = Typography(
-    headlineMedium = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 27.sp, lineHeight = 32.sp, fontWeight = FontWeight.Bold),
-    headlineSmall = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 23.sp, lineHeight = 28.sp, fontWeight = FontWeight.Bold),
-    titleLarge = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 20.sp, lineHeight = 25.sp, fontWeight = FontWeight.Medium),
-    titleMedium = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 16.sp, lineHeight = 21.sp, fontWeight = FontWeight.SemiBold),
-    bodyLarge = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 16.sp, lineHeight = 24.sp),
-    bodyMedium = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 14.sp, lineHeight = 21.sp),
-    bodySmall = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 12.sp, lineHeight = 18.sp),
-    labelMedium = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 12.sp, lineHeight = 16.sp, fontWeight = FontWeight.SemiBold)
+    headlineMedium = TextStyle(fontFamily = TaleDisplay, fontSize = 28.sp, lineHeight = 32.sp, fontWeight = FontWeight.ExtraBold),
+    headlineSmall = TextStyle(fontFamily = TaleDisplay, fontSize = 24.sp, lineHeight = 28.sp, fontWeight = FontWeight.ExtraBold),
+    titleLarge = TextStyle(fontFamily = TaleDisplay, fontSize = 21.sp, lineHeight = 25.sp, fontWeight = FontWeight.Bold),
+    titleMedium = TextStyle(fontFamily = TaleBody, fontSize = 16.sp, lineHeight = 21.sp, fontWeight = FontWeight.Bold),
+    titleSmall = TextStyle(fontFamily = TaleBody, fontSize = 14.sp, lineHeight = 20.sp, fontWeight = FontWeight.Bold),
+    bodyLarge = TextStyle(fontFamily = TaleBody, fontSize = 16.sp, lineHeight = 24.sp),
+    bodyMedium = TextStyle(fontFamily = TaleBody, fontSize = 14.sp, lineHeight = 21.sp),
+    bodySmall = TextStyle(fontFamily = TaleBody, fontSize = 12.sp, lineHeight = 18.sp),
+    labelLarge = TextStyle(fontFamily = TaleBody, fontSize = 14.sp, lineHeight = 20.sp, fontWeight = FontWeight.Bold),
+    labelMedium = TextStyle(fontFamily = TaleBody, fontSize = 12.sp, lineHeight = 16.sp, fontWeight = FontWeight.Bold),
+    labelSmall = TextStyle(fontFamily = TaleBody, fontSize = 11.sp, lineHeight = 16.sp, fontWeight = FontWeight.Bold),
 )
 
 @Composable
