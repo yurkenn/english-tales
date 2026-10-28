@@ -61,7 +61,8 @@ internal fun ChunkyButton(label: String, onClick: () -> Unit, modifier: Modifier
     enabled: Boolean = true, border: Color? = null) {
     ChunkyBox(color, modifier.heightIn(min = 52.dp), RoundedCornerShape(16.dp), depth = 4.dp, border = border, contentAlignment = Alignment.Center,
         onClick = onClick, enabled = enabled) {
-        Text(label, Modifier.padding(horizontal = 16.dp, vertical = 12.dp), color = onColor, style = MaterialTheme.typography.titleMedium,
+        // Full width: a short centered label sized to its own glyphs can draw a pixel past its box at large text.
+        Text(label, Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 12.dp), color = onColor, style = MaterialTheme.typography.titleMedium,
             fontWeight = FontWeight.ExtraBold, textAlign = TextAlign.Center)
     }
 }

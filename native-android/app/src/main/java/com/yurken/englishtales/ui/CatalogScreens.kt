@@ -376,7 +376,7 @@ fun ProfileScreen(snapshot: LearningSnapshot, onOpenWords: () -> Unit, padding: 
         }
         DetailAction("study",stringResource(R.string.kelimelerim),TaleBlue,TaleOnBlue,onOpenWords,Modifier.fillMaxWidth().appearIn(1))
         ChunkyBox(TaleSurface,Modifier.fillMaxWidth().heightIn(min=52.dp),RoundedCornerShape(16.dp),depth=4.dp,border=TaleLine,contentAlignment=Alignment.Center,onClick=onAccount) {
-            Text(if(snapshot.ownerId=="guest") stringResource(R.string.hesabina_giris_yap) else stringResource(R.string.hesabini_yonet),Modifier.padding(horizontal=16.dp,vertical=12.dp),
+            Text(if(snapshot.ownerId=="guest") stringResource(R.string.hesabina_giris_yap) else stringResource(R.string.hesabini_yonet),Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=12.dp),
                 fontSize=16.sp,fontWeight=FontWeight.ExtraBold,textAlign=androidx.compose.ui.text.style.TextAlign.Center)
         }
         ProfilePanel(index=2){
