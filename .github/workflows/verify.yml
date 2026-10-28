@@ -129,7 +129,8 @@ jobs:
         # DesignGalleryTest pictures of every screen, for comparing the app with the design canvas.
         if: always()
         run: |
-          for f in $(find app/build/outputs/connected_android_test_additional_output -path '*gallery/*.jpg' 2>/dev/null | sort); do
+          # The device folder name has spaces ("emulator-5554 - 14"), so read paths line by line.
+          find app/build/outputs/connected_android_test_additional_output -path '*gallery/*.jpg' 2>/dev/null | sort | while IFS= read -r f; do
             echo "GALLERY-BEGIN $(basename "$f")"; base64 -w 0 "$f"; echo; echo "GALLERY-END"
           done
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
