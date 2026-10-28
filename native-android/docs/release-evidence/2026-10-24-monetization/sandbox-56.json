@@ -1,0 +1,25 @@
+{
+  "versionCode": 56,
+  "versionName": "2.4.0-sandbox",
+  "monetizationEnabled": true,
+  "stagingEnergyEnabled": true,
+  "service": "jukyylozahikjhtokayw",
+  "testAds": true,
+  "telemetry": false,
+  "sha256": "9a1cad35033034b6a36fa58c9d488090f9c0aa6b118b77e331209e2d14a29e86",
+  "bytes": 28182762,
+  "build": "bundleSandbox assembleSandbox assembleSandboxAndroidTest lintSandbox passed",
+  "deviceAcceptance": {
+    "tests": 6,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "api": 36
+  },
+  "playInternal": "Available to internal testers; verified 25 October 2026 12:22 Europe/Istanbul",
+  "productionChanged": false,
+  "firebaseInitialization": false,
+  "licenseTesting": "existing 1-person owner email list selected and saved; developer-wide setting",
+  "standaloneLaunch": "verified actual banner screenshot, no instrumentation",
+  "productionChangedScope": "binary and backend at sandbox publication time; subsequent store-wide new-subscriber prices are recorded separately"
+}

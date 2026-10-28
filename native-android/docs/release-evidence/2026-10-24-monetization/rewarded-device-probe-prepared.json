@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-26",
+  "probe": "GoogleRewardedSsvProbe",
+  "status": "compiled only; not executed",
+  "targetVariant": "sandbox",
+  "targetVersionCode": 56,
+  "targetVersionName": "2.4.0-sandbox",
+  "requiredFlags": [
+    "sandboxDeviceTest=true",
+    "adDeviceTest=true"
+  ],
+  "physicalDevicesRefused": true,
+  "stagingOnly": true,
+  "operatorMustWatchLabeledTestAd": true,
+  "ssvGrantNotYetAccepted": true,
+  "testApkSha256": "70c761d02a68f411ad512558a5c50a60615318a63e29a11a6bafc0979a65463a"
+}

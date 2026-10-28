@@ -1,0 +1,31 @@
+<resources>
+    <string name="energy_title">Your reading passes</string>
+    <string name="energy_balance">%1$d reading passes left</string>
+    <string name="energy_description">Open 3 new stories each day. Reopening unlocked stories, translations and vocabulary review stay free.</string>
+    <string name="energy_reset">Your free passes refill to 3 on %1$s.</string>
+    <string name="energy_empty">You have used today’s reading passes</string>
+    <string name="energy_gate_description">Return to unlocked stories, wait for your free refill, or choose a way to keep reading.</string>
+    <string name="energy_watch">Watch an ad · +1 reading pass</string>
+    <string name="energy_reward_limit">You have used all 3 daily ad rewards.</string>
+    <string name="energy_sign_in">Sign in for extra passes or Premium</string>
+    <string name="energy_guest_note">Guest passes are stored on this device. Sign in to earn ad rewards or make a purchase.</string>
+    <string name="energy_premium">Read without limits with Premium</string>
+    <string name="energy_premium_active">Premium · Unlimited reading</string>
+    <string name="energy_premium_description">Unlimited stories and ad-free learning.</string>
+    <string name="energy_premium_end">Premium access until: %1$s</string>
+    <string name="energy_unavailable">We could not complete this action. Your unlocked stories are safe. Check your connection and try again.</string>
+    <string name="energy_pending">Verification is pending. Refresh your account to check again.</string>
+    <string name="energy_refresh">Check again</string>
+    <string name="energy_restore">Restore purchases</string>
+    <string name="energy_monthly">%1$s / month</string>
+    <string name="energy_annual">%1$s / year</string>
+    <string name="energy_renewal">Your subscription renews automatically for the selected period at the price shown by the store until cancelled. Cancellation stops the next renewal; your current access continues.</string>
+    <string name="energy_manage">Manage subscription</string>
+    <string name="energy_close">Go back</string>
+    <string name="energy_offer_unavailable">Premium options are currently unavailable. You can continue reading for free.</string>
+    <string name="energy_retry_read">Try opening the story again</string>
+    <string name="energy_terms">Subscription terms</string>
+    <string name="energy_privacy">Privacy</string>
+    <string name="energy_delete_warning">Deleting your account does not cancel a Google Play subscription. Manage your Google Play subscriptions first to stop future payments.</string>
+    <string name="energy_checking">Checking your reading pass…</string>
+</resources>

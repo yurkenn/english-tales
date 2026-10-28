@@ -1,0 +1,31 @@
+<resources>
+    <string name="energy_title">Ваши пропуска для чтения</string>
+    <string name="energy_balance">Осталось пропусков: %1$d</string>
+    <string name="energy_description">Открывайте 3 новые истории каждый день. Повторное открытие разблокированных историй, переводы и повторение слов остаются бесплатными.</string>
+    <string name="energy_reset">Бесплатные пропуска пополнятся до 3: %1$s.</string>
+    <string name="energy_empty">Вы использовали все пропуска на сегодня</string>
+    <string name="energy_gate_description">Вернитесь к разблокированным историям, дождитесь бесплатного пополнения или выберите способ продолжить чтение.</string>
+    <string name="energy_watch">Посмотреть рекламу · +1 пропуск</string>
+    <string name="energy_reward_limit">Вы использовали все 3 ежедневные награды за рекламу.</string>
+    <string name="energy_sign_in">Войдите, чтобы получить дополнительные пропуска или Premium</string>
+    <string name="energy_guest_note">Гостевые пропуска хранятся на этом устройстве. Войдите, чтобы получать награды за рекламу или совершать покупки.</string>
+    <string name="energy_premium">Читайте без ограничений с Premium</string>
+    <string name="energy_premium_active">Premium · Чтение без ограничений</string>
+    <string name="energy_premium_description">Неограниченные истории и обучение без рекламы.</string>
+    <string name="energy_premium_end">Доступ к Premium до: %1$s</string>
+    <string name="energy_unavailable">Не удалось выполнить действие. Ваши разблокированные истории сохранены. Проверьте подключение и повторите попытку.</string>
+    <string name="energy_pending">Проверка ещё не завершена. Обновите данные учетной записи, чтобы проверить снова.</string>
+    <string name="energy_refresh">Проверить снова</string>
+    <string name="energy_restore">Восстановить покупки</string>
+    <string name="energy_monthly">%1$s / месяц</string>
+    <string name="energy_annual">%1$s / год</string>
+    <string name="energy_renewal">Подписка автоматически продлевается на выбранный период по цене, указанной в магазине, пока вы её не отмените. Отмена останавливает следующее продление; текущий доступ сохраняется.</string>
+    <string name="energy_manage">Управлять подпиской</string>
+    <string name="energy_close">Назад</string>
+    <string name="energy_offer_unavailable">Варианты Premium сейчас недоступны. Вы можете продолжить читать бесплатно.</string>
+    <string name="energy_retry_read">Попробовать открыть историю снова</string>
+    <string name="energy_terms">Условия подписки</string>
+    <string name="energy_privacy">Конфиденциальность</string>
+    <string name="energy_delete_warning">Удаление учетной записи не отменяет подписку Google Play. Чтобы остановить будущие платежи, сначала перейдите к управлению подписками Google Play.</string>
+    <string name="energy_checking">Проверяем ваш пропуск для чтения…</string>
+</resources>

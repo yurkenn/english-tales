@@ -1,0 +1,66 @@
+{
+  "reviewDate": "2026-10-26",
+  "store": "play_store",
+  "environment": "SANDBOX",
+  "product": "yearly:yearly-base",
+  "offering": "energy_premium_v1",
+  "priceInPurchasedCurrency": 699.99,
+  "currency": "TRY",
+  "initialPurchaseUtc": "2026-10-25T16:42:23Z",
+  "renewalsObserved": 6,
+  "latestRenewalUtc": "2026-10-25T19:42:23Z",
+  "expiredUtc": "2026-10-25T20:12:23Z",
+  "initialPurchaseEntitlementIds": null,
+  "currentSubscriberEntitlements": {},
+  "currentStagingPremium": false,
+  "productMappingApiIncludesPremium": true,
+  "dashboardProductAssociatedToPremium": true,
+  "annualPremiumAssociationReSavedOnReview": true,
+  "status": "Monthly purchase-to-Premium, automatic webhook renewal, server state and cold app launch accepted after sandbox access fix. Annual purchase, six renewals and expiry recorded. Restore and other remaining gates are separate.",
+  "privacy": "Customer ID, account email, order IDs and raw event bodies intentionally omitted.",
+  "webhookWindowUtc": [
+    "2026-10-25T16:40:00Z",
+    "2026-10-25T20:15:00Z"
+  ],
+  "webhookResponses": {
+    "200": 9
+  },
+  "rootCause": "RevenueCat sandbox testing access restricted to an empty app-user allowlist; recorded purchases intentionally did not grant entitlements.",
+  "resolution": "Added only the intended test app-user ID; restricted list saved and reloaded with one entry.",
+  "temporaryMappingReconciliation": "Staging v4 reverted to original entitlement-only code in v5; no fallback retained.",
+  "monthly": {
+    "product": "monthly:monthly-base",
+    "currency": "TRY",
+    "price": 99.99,
+    "sandbox": true,
+    "purchaseUtc": "2026-10-25T21:21:02Z",
+    "postFixRenewalUtc": "2026-10-25T21:31:02Z",
+    "premiumExpiresUtc": "2026-10-25T21:36:02Z",
+    "serverCheckedUtc": "2026-10-25T21:31:14.395Z",
+    "serverPremiumActiveAtCheck": true,
+    "webhookVersion": 5,
+    "webhookStatus": 200,
+    "coldLaunchUi": "Premium · Sınırsız okuma"
+  },
+  "rootFixVerifiedAfterReload": {
+    "mode": "Allowed App User IDs only",
+    "items": 1
+  },
+  "deployedSourceVerification": {
+    "premium-sync": {
+      "version": 5,
+      "temporaryReconciliationPresent": false,
+      "originalEntitlementLookupPresent": true
+    },
+    "revenuecat-webhook": {
+      "version": 5,
+      "temporaryReconciliationPresent": false,
+      "originalEntitlementLookupPresent": true
+    }
+  },
+  "retainedSourceHandlerTests": {
+    "tests": 12,
+    "failures": 0,
+    "skipped": 0
+  }
+}

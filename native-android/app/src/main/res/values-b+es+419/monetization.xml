@@ -1,0 +1,31 @@
+<resources>
+    <string name="energy_title">Tus pases de lectura</string>
+    <string name="energy_balance">Te quedan %1$d pases de lectura</string>
+    <string name="energy_description">Abre 3 historias nuevas cada día. Volver a abrir historias desbloqueadas, las traducciones y el repaso de vocabulario siguen siendo gratis.</string>
+    <string name="energy_reset">Tus pases gratis se recargan a 3 el %1$s.</string>
+    <string name="energy_empty">Ya usaste los pases de lectura de hoy</string>
+    <string name="energy_gate_description">Vuelve a tus historias desbloqueadas, espera la recarga gratis o elige otra forma de seguir leyendo.</string>
+    <string name="energy_watch">Mira un anuncio · +1 pase de lectura</string>
+    <string name="energy_reward_limit">Ya usaste las 3 recompensas diarias por anuncios.</string>
+    <string name="energy_sign_in">Inicia sesión para obtener pases extra o Premium</string>
+    <string name="energy_guest_note">Los pases de invitado se guardan en este dispositivo. Inicia sesión para ganar recompensas por anuncios o hacer una compra.</string>
+    <string name="energy_premium">Lee sin límites con Premium</string>
+    <string name="energy_premium_active">Premium · Lectura ilimitada</string>
+    <string name="energy_premium_description">Historias ilimitadas y aprendizaje sin anuncios.</string>
+    <string name="energy_premium_end">Acceso Premium hasta: %1$s</string>
+    <string name="energy_unavailable">No pudimos completar esta acción. Tus historias desbloqueadas están a salvo. Revisa tu conexión e inténtalo de nuevo.</string>
+    <string name="energy_pending">La verificación está pendiente. Actualiza tu cuenta para volver a comprobar.</string>
+    <string name="energy_refresh">Volver a comprobar</string>
+    <string name="energy_restore">Restaurar compras</string>
+    <string name="energy_monthly">%1$s / mes</string>
+    <string name="energy_annual">%1$s / año</string>
+    <string name="energy_renewal">Tu suscripción se renueva automáticamente por el período seleccionado al precio que muestra la tienda hasta que la canceles. Cancelar detiene la próxima renovación; tu acceso actual continúa.</string>
+    <string name="energy_manage">Administrar suscripción</string>
+    <string name="energy_close">Volver</string>
+    <string name="energy_offer_unavailable">Las opciones Premium no están disponibles en este momento. Puedes seguir leyendo gratis.</string>
+    <string name="energy_retry_read">Intenta abrir la historia de nuevo</string>
+    <string name="energy_terms">Términos de la suscripción</string>
+    <string name="energy_privacy">Privacidad</string>
+    <string name="energy_delete_warning">Eliminar tu cuenta no cancela una suscripción de Google Play. Primero administra tus suscripciones de Google Play para detener los pagos futuros.</string>
+    <string name="energy_checking">Verificando tu pase de lectura…</string>
+</resources>

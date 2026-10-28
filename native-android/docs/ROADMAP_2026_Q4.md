@@ -111,7 +111,7 @@
 - iOS: 90. gün değerlendirmesinde kullanıcı talebi, ortak API/veri kabulü ve bakım kapasitesiyle ayrı Swift/SwiftUI kapsamı.
 - AI sohbet, konuşma puanlama ve sosyal topluluk: ana okuma/tekrar döngüsünde çözülmemiş ihtiyaç olduğuna dair kanıttan sonra.
 - Kayıtlı/üretilmiş ses: mevcut TTS kararı sürer; cihaz sesiyle çözülemeyen ihtiyaç ölçülürse yeniden değerlendirilir.
-- Abonelik/premium, agresif reklam ve ücretli büyüme: mevcut ürün/gelir kararını değiştireceği için ayrı ürün kararı.
+- **24 Ekim sahibi kararı:** enerji + ödüllü reklam + RevenueCat premium geliştirmesi onaylandı; [uygulama planı](MONETIZATION_PLAN_2026-10-24.md). Fiyatlar, gerçek mağaza ürünleri, satın alma/SSV kabulü ve üretim açılışı ayrı doğrulanır. Ücretli kullanıcı kazanımı için kampanya açılmadı.
 
 ## İlk başlanacak somut paket
 

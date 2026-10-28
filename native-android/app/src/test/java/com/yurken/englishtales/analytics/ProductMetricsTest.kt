@@ -38,7 +38,9 @@ class ProductMetricsTest {
         metrics.record(LearningSignal.StoryCompleted(true))
         metrics.record(LearningSignal.PracticeCompleted(PracticeMode.CHOICE))
         now += ProductMetrics.DAY_MS; metrics.onForeground()
-        assertEquals(ProductEvent.entries.toSet(), sink.events.map { it.first }.toSet())
+        assertEquals(setOf(ProductEvent.VISIT,ProductEvent.NEXT_DAY_RETURN,ProductEvent.ONBOARDING_COMPLETED,
+            ProductEvent.STORY_STARTED,ProductEvent.STORY_COMPLETED,ProductEvent.FIRST_STORY_COMPLETED,
+            ProductEvent.PRACTICE_COMPLETED), sink.events.map { it.first }.toSet())
         assertEquals(listOf(PracticeMode.CHOICE), sink.events.mapNotNull { it.second })
         assertTrue(sink.events.filter { it.first != ProductEvent.PRACTICE_COMPLETED }.all { it.second == null })
     }

@@ -1,0 +1,36 @@
+{
+  "jvm": {
+    "tests": 148,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "targetedDevice": {
+    "tests": 6,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "backend": {
+    "tests": 229,
+    "failures": 0,
+    "skipped": 0
+  },
+  "candidate": {
+    "versionCode": 53,
+    "versionName": "2.4.0",
+    "monetizationEnabled": false,
+    "bytes": 19896479,
+    "sha256": "abaffe61e170619558fc1bf9c45b1ced1e8b3cf00b50efe24b0f396882dc4206"
+  },
+  "staging": {
+    "project": "jukyylozahikjhtokayw",
+    "energyEnabled": false,
+    "edgeFunctions": [
+      "premium-sync",
+      "admob-ssv",
+      "revenuecat-webhook"
+    ]
+  },
+  "productionChanged": false
+}
