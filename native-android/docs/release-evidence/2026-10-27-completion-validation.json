@@ -34,8 +34,8 @@
   "limits": [
     "No production rollout by this change",
     "Firebase panel delivery not verified",
-    "No active entitlement available for active restore",
-    "Watched-ad SSV still requires operator/provider evidence"
+    "Active sandbox restore accepted separately: owner-reported UI plus direct provider and same-account staging timestamp evidence",
+    "Watched-ad SSV requires separate result"
   ],
   "initialDeviceRun": "7 learning signal tests passed, then test screenshot host crashed from late applyOverrideConfiguration; repaired by configuring base context before Activity/dialog resource access",
   "visualInspection": {
@@ -55,5 +55,18 @@
       "TalkBack focus/announcements not accepted",
       "Full settings-to-reader journey not visually captured"
     ]
+  },
+  "ci": {
+    "source": "3408f0843b1042172824d56bf0533eec7d7b0021",
+    "run": "https://github.com/yurkenn/english-tales/actions/runs/40564259744",
+    "conclusion": "success",
+    "jvm": 156,
+    "app": 392,
+    "startup": 3,
+    "service": 3,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "evidence": "Downloaded CI Android XML and JVM HTML reports; all five jobs success"
   }
 }

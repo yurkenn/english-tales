@@ -32,7 +32,8 @@ Bu dal #180 → #179 üzerine kuruludur. Ana çalışma ağacındaki kayıt dı�
 - **Ölçüm uygulandı:** parametresiz `word_saved`, yeni kaydedilen kelime başına commit sonrasında; `seventh_day_return`, izin verilen ilk UTC gününden tam 7 gün sonra ve dönem başına bir kez. Yeni tercih alanı varsayılan false; mevcut kohort günü korunur. Firebase panel kabulü açık.
 - **Yerel teknik kontroller:** 156 JVM testi, 0 hata/atlama; debug lint 0 hata, 106 uyarı; debug APK ve cihaz test APK derlendi. Depo ve yerelleştirme kontrolleri geçti. 18 hedefli API36 cihaz testi hatasız geçti. [Yerel doğrulama](release-evidence/2026-10-27-completion-validation.json).
 - **İçerik denetimi yapıldı, eşitlik kapanmadı:** [anonim kanıt](release-evidence/2026-10-27-content-parity.json). 17 yalnız-canlı hikâye, 44 farklı ortak hikâye. `--require-parity` beklenen şekilde `bundle_live_parity` ile başarısız; yapısal kontroller ve 67 medya hash'i geçti.
-- **Aktif restore önkoşulu:** 27 Ekim staging salt-okunur toplu sorgusunda 0 aktif, 1 pasif entitlement. Yeni lisans testi satın alması kullanıcıdan istendi. Eski süresi dolmuş kaydı aktif restore kanıtı olarak kullanmayız.
+- **Aktif sandbox restore doğrulandı:** kullanıcı geri yükleme sonrasında Premium gördüğünü bildirdi. Aynı hesapta staging kontrol zamanı 19:03:01 UTC olarak yenilendi; RevenueCat öncesi/sonrası sorguları süresi dolmamış Play sandbox aylık Premium gösterdi. UI kullanıcı beyanıdır; ajan ekran görüntüsü değildir. [Kanıt](release-evidence/2026-10-27-active-restore-provider.json). Pending/iade/hesap geçişi ayrı açık testlerdir.
+- **CI tamamlandı:** kaynak `3408f084`, [40564259744](https://github.com/yurkenn/english-tales/actions/runs/40564259744): 156 JVM, 392 uygulama, 3 açılış, 3 servis testi; hata/atlama yok. Tüm beş iş başarılı.
 
 ## İçerik paketini eşitlemenin somut kapsamı
 
@@ -55,3 +56,7 @@ Gerçek API36 ekranlarından 6 özgün PNG incelendi: İngilizce, Arapça RTL ve
 - [İngilizce](release-evidence/2026-10-27-translation-visual/english.png), [son seçenek](release-evidence/2026-10-27-translation-visual/english-scrolled.png).
 - [Arapça RTL](release-evidence/2026-10-27-translation-visual/arabic.png), [son seçenek](release-evidence/2026-10-27-translation-visual/arabic-scrolled.png).
 - [Büyük yazı](release-evidence/2026-10-27-translation-visual/english-large.png), [son seçenek](release-evidence/2026-10-27-translation-visual/english-large-scrolled.png).
+
+## 28 Ekim reklam kabul sonucu
+
+Ayrı API36 emülatöründe yerel opt-in sandbox ile test etiketli gerçek rewarded birimi izlendi; SDK probe 1/1 geçti. İmzalı callback staging’de tek işlem ve tam 1 enerji oluşturdu; ikinci sorguda kredi 1 kaldı. Sentetik fixture kullanıcı/cüzdan/biletleri temizlendi ve sıfır kayıt doğrulandı. [Kanıt](release-evidence/2026-10-28-rewarded-ssv.json). Bu callback için yeni replay yapılmadı; önceki Console replay kanıtı ayrı. Normal reklam ekranı/UMP, pending/iade/hesap geçişi, içerik paketi eşitleme ve insan kabul adımları açık.

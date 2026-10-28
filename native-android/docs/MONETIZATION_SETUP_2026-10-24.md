@@ -43,8 +43,8 @@ The console always uses numeric test unit `1234567890`; staging explicitly permi
 
 ## Remaining work
 
-1. Verify a watched rewarded ad on a registered test device using the real unit. An emulator-only, signed-sandbox operator probe is prepared and compiled; [runbook](REWARDED_SSV_DEVICE_PROBE_2026-10-26.md). It has not been executed. The unit/SSV configuration and Google console signed callback are accepted; sandbox 56 still uses Google sample ads.
-2. Follow the [device acceptance steps](MONETIZATION_DEVICE_ACCEPTANCE_2026-10-25.md). Through the registered Play license test account verify buy, cancel, pending, restore, expiry/refund, account switching and server-verified entitlement. Verify the watched-ad callback grants exactly one reward; the console signed-callback and replay checks already passed.
+1. Verify normal application entry, consent and ViewModel reward polling. The isolated emulator-only real-unit probe passed on 28 October with exactly one staging credit and fixture cleanup; [runbook](REWARDED_SSV_DEVICE_PROBE_2026-10-26.md). The unit/SSV configuration and Google console signed callback are accepted; Play internal sandbox 56 still uses Google sample ads.
+2. Follow the [device acceptance steps](MONETIZATION_DEVICE_ACCEPTANCE_2026-10-25.md). Through the registered Play license test account verify remaining pending, refund and account-switching cases. Buy, expiry and active sandbox restore have separate recorded evidence; [active restore](release-evidence/2026-10-27-active-restore-provider.json). The isolated watched-ad callback granted exactly one reward; console replay checks already passed separately.
 3. Native-language/RTL acceptance, Play privacy disclosures, production backend deployment/config, legacy cutoff/backfill and staged production binary release remain separate gates. Owner has authorized completing setup; routine implementation does not require another approval.
 
 
