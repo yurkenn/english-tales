@@ -194,10 +194,11 @@ private fun starPath(side: Float) = androidx.compose.ui.graphics.Path().apply {
 /** A labelled number on the result screen. */
 @Composable
 internal fun ResultStat(value: String, label: String, modifier: Modifier = Modifier) {
-    Column(modifier.background(TaleSurface, RoundedCornerShape(14.dp)).border(1.dp, TaleLine, RoundedCornerShape(14.dp)).padding(vertical = 10.dp, horizontal = 6.dp),
+    Column(modifier.background(TaleLine, RoundedCornerShape(16.dp)).padding(bottom = 4.dp).background(TaleSurface, RoundedCornerShape(16.dp))
+        .border(2.dp, TaleLine, RoundedCornerShape(16.dp)).padding(vertical = 10.dp, horizontal = 6.dp),
         horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(2.dp)) {
-        Text(value, fontSize = 20.sp, fontWeight = FontWeight.Bold, color = TaleInk, maxLines = 1)
-        Text(label, fontSize = 11.sp, color = TaleMuted, maxLines = 2, textAlign = androidx.compose.ui.text.style.TextAlign.Center)
+        Text(value, fontFamily = TaleDisplay, fontSize = 22.sp, fontWeight = FontWeight.ExtraBold, color = TaleInk, maxLines = 1)
+        Text(label, fontSize = 11.sp, fontWeight = FontWeight.Bold, color = TaleMuted, maxLines = 2, textAlign = androidx.compose.ui.text.style.TextAlign.Center)
     }
 }
 
