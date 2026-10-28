@@ -34,23 +34,21 @@ fun DailyPlan(snapshot: LearningSnapshot,onRead: (String)->Unit,onPractice: (Lis
         GoalHeroCard(snapshot)
         if(next!=null) {
             val progress=snapshot.progressFor(next)
+            // The design's continue card: the cover on the left, and title, progress and the green button stacked beside it.
             ChunkyBox(TaleSurface,Modifier.fillMaxWidth().appearIn(1),RoundedCornerShape(24.dp),border=TaleLine) {
-                Column(Modifier.padding(14.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
-                    Row(horizontalArrangement=Arrangement.spacedBy(14.dp),verticalAlignment=Alignment.CenterVertically) {
-                        BookCover(next,Modifier.size(74.dp,106.dp))
-                        Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(6.dp)) {
-                            Text(if(resume!=null) stringResource(R.string.kaldigin_hikaye) else if(progress==100) stringResource(R.string.yeniden_kesfet) else stringResource(R.string.siradaki_hikayen),
-                                style=MaterialTheme.typography.labelMedium,color=TaleBlue)
-                            Text(next.title,style=MaterialTheme.typography.titleLarge)
-                            Text("${next.level} · ${genreLabel(next.genre)}",style=MaterialTheme.typography.bodyMedium,color=TaleMuted)
-                            if(resume!=null) {
-                                ReferenceProgress(progress/100f,Modifier.fillMaxWidth(),TaleGreen)
-                                Text(stringResource(R.string.tamamlandi_2, progress),style=MaterialTheme.typography.labelMedium,color=TaleMuted)
-                            }
-                        }
+                Row(Modifier.padding(14.dp),horizontalArrangement=Arrangement.spacedBy(14.dp),verticalAlignment=Alignment.CenterVertically) {
+                    BookCover(next,Modifier.size(78.dp,112.dp))
+                    Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(6.dp)) {
+                        Text((if(resume!=null) stringResource(R.string.kaldigin_hikaye) else if(progress==100) stringResource(R.string.yeniden_kesfet) else stringResource(R.string.siradaki_hikayen)),
+                            fontSize=13.sp,fontWeight=FontWeight.ExtraBold,color=TaleBlue)
+                        Text(next.title,style=MaterialTheme.typography.titleLarge,lineHeight=23.sp)
+                        if(resume!=null) Row(verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(8.dp)) {
+                            ReferenceProgress(progress/100f,Modifier.weight(1f),TaleGreen)
+                            Text(stringResource(R.string.tamamlandi_2, progress),fontSize=13.sp,fontWeight=FontWeight.ExtraBold,color=TaleMuted)
+                        } else Text("${next.level} · ${genreLabel(next.genre)}",style=MaterialTheme.typography.bodyMedium,color=TaleMuted)
+                        ChunkyButton(if(resume!=null) stringResource(R.string.okumaya_devam_et) else if(progress==100) stringResource(R.string.yeniden_oku) else stringResource(R.string.hikayeye_basla),
+                            onClick={onRead(next.id)},modifier=Modifier.fillMaxWidth().padding(top=4.dp),color=TaleGreen,onColor=TaleOnGreen)
                     }
-                    ChunkyButton(if(resume!=null) stringResource(R.string.okumaya_devam_et) else if(progress==100) stringResource(R.string.yeniden_oku) else stringResource(R.string.hikayeye_basla),
-                        onClick={onRead(next.id)},modifier=Modifier.fillMaxWidth())
                 }
             }
         } else Text(stringResource(R.string.yeni_hikayeler_hazirlandiginda_burada_gorunecek),color=TaleMuted)
