@@ -108,7 +108,12 @@ fun FlashcardGame(liveWords: List<WordInfo>,sessionId: Int,savedIds: Set<String>
         Spacer(Modifier.height(24.dp))
         // The design's answer pair: red to see it again, green when it is known.
         if(revealed) {
-            FlowRow(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(12.dp),verticalArrangement=Arrangement.spacedBy(12.dp),maxItemsInEachRow=sideBySide(2)) {
+            // An explicit column reports both answer heights to the content-sized viewport.
+            // FlowRow's weighted intrinsic height could leave the second answer beyond its scroll range.
+            if(sideBySide(2)==1) Column(Modifier.fillMaxWidth(),verticalArrangement=Arrangement.spacedBy(12.dp)) {
+                ChunkyButton(stringResource(R.string.tekrar_et),{next(false)},Modifier.fillMaxWidth(),color=TaleRed,onColor=Color.White)
+                ChunkyButton(stringResource(R.string.hatirladim),{next(true)},Modifier.fillMaxWidth())
+            } else Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(12.dp)) {
                 ChunkyButton(stringResource(R.string.tekrar_et),{next(false)},Modifier.weight(1f),color=TaleRed,onColor=Color.White)
                 ChunkyButton(stringResource(R.string.hatirladim),{next(true)},Modifier.weight(1f))
             }

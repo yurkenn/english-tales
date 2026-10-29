@@ -200,7 +200,7 @@ internal fun WeekFlames(week: List<DailyActivity>, frozenDays: Set<String>, modi
                 Box(Modifier.size(32.dp).graphicsLayer { scaleX = pop.value; scaleY = pop.value }
                     .background(if (lit) TaleOrange else if (frozen) Color(0xFFD6F4FB) else Color.Transparent, CircleShape)
                     .then(if (!lit && !frozen) Modifier.border(2.dp, TaleLine, CircleShape) else Modifier), contentAlignment = Alignment.Center) {
-                    if (lit) Text("✓", fontSize = 16.sp, fontWeight = FontWeight.ExtraBold, color = TaleOnOrange)
+                    if (lit) ReferenceIcon("check", TaleOnOrange, Modifier.size(18.dp))
                     else if (frozen) Text("❄", fontSize = 16.sp, color = Color(0xFF1E8FA8))
                 }
                 Text(if (today) stringResource(R.string.weekly_today) else day.label, fontSize = 11.sp, maxLines = 1,

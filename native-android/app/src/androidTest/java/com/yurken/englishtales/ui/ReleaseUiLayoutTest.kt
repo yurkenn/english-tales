@@ -5,6 +5,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.asAndroidBitmap
 import androidx.compose.ui.semantics.SemanticsActions
@@ -44,8 +46,13 @@ class ReleaseUiLayoutTest {
         // The home owns scrolling; the weekly component itself is intentionally not scrollable.
         Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState())) { WeeklyActivity(snapshot) }
     }
-    @Test fun streakWeek() = check("streak-week") { WeekFlames(snapshot.weeklyActivity, emptySet()) }
-    @Test fun matching() = check("matching") {
+    @Test fun streakWeek() = check("streak-week") {
+        Column(Modifier.fillMaxSize()) { WeekFlames(snapshot.weeklyActivity, emptySet()) }
+    }
+    @Test fun matching() = check("matching",after={
+        compose.onNodeWithText(words.last().word).performScrollTo().assertIsDisplayed()
+        compose.onNodeWithText(words.last().translation).performScrollTo().assertIsDisplayed()
+    }) {
         MatchingGame(words, 1, snapshot.savedWordIds, PaddingValues(), {_,_->}, {}, {}, {}, snapshot)
     }
     @Test fun flashcardFront() = check("flashcard-front") {
@@ -63,8 +70,10 @@ class ReleaseUiLayoutTest {
     @Test fun welcome() = check("welcome") { WelcomeScreen(AccountState(), {}, {}, {}) }
     @Test fun account() = check("account") { AccountScreen(AccountState(), {}, {_,_->}, {}) }
     @Test fun joinedLeagueCard() = check("league-card") {
-        LeagueCard(LeagueUi.Ready(LeagueStanding(2, "2026-10-26", System.currentTimeMillis()+3*86_400_000L,
-            true, false, 5, 2, listOf(LeagueMember(4, "Sen", 480, true, "me")), null)), {}, {})
+        Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState())) {
+            LeagueCard(LeagueUi.Ready(LeagueStanding(2, "2026-10-26", System.currentTimeMillis()+3*86_400_000L,
+                true, false, 5, 2, listOf(LeagueMember(4, "Sen", 480, true, "me")), null)), {}, {})
+        }
     }
 
     private fun longCard(reveal: Boolean) {
@@ -80,23 +89,21 @@ class ReleaseUiLayoutTest {
         }
     }
 
-    private fun check(name: String, tap: Int? = null, after: () -> Unit = {}, screen: @Composable () -> Unit) {
+    private fun check(name: String, tap: Int? = null, after: (() -> Unit)? = null, screen: @Composable () -> Unit) {
         compose.setContent {
             DeviceConfigurationOverride(DeviceConfigurationOverride.FontScale(2f) then
                 DeviceConfigurationOverride.ForcedSize(DpSize(320.dp, 640.dp))) {
-                EnglishTalesTheme(dark=false) { screen() }
+                // Exercise a visible combo badge without inheriting another test's default combo.
+                CompositionLocalProvider(LocalCombo provides remember { ComboState(current=3,best=5) }) {
+                    EnglishTalesTheme(dark=false) { screen() }
+                }
             }
         }
         compose.waitForIdle()
         tap?.let { compose.onNodeWithText(context.getString(it)).performScrollTo().performClick() }
         compose.mainClock.advanceTimeBy(2_000)
         compose.waitForIdle()
-        val root = compose.onAllNodes(isRoot()).onLast()
-        val dir = InstrumentationRegistry.getArguments().getString("additionalTestOutputDir")?.let(::File)
-            ?: File(context.getExternalFilesDir(null), "release-ui")
-        File(dir, "release-ui").apply { mkdirs() }.resolve("$name.png").outputStream().use {
-            root.captureToImage().asAndroidBitmap().compress(Bitmap.CompressFormat.PNG, 100, it)
-        }
+        capture(name)
         val problems = compose.onAllNodes(hasText("", substring=true),useUnmergedTree=true).fetchSemanticsNodes().flatMap { node ->
             val layouts = mutableListOf<TextLayoutResult>()
             node.config.getOrNull(SemanticsActions.GetTextLayoutResult)?.action?.invoke(layouts)
@@ -105,6 +112,20 @@ class ReleaseUiLayoutTest {
             } }.map { "cut: ${it.layoutInput.text}" }
         }
         assertEquals("$name loses text at 200% on a 320dp phone", emptyList<String>(), problems)
-        after()
+        after?.let {
+            try { it() }
+            catch(failure: AssertionError) { throw AssertionError("${failure.message}\n${compose.onRoot().printToString()}",failure) }
+            finally { capture("$name-actions") }
+        }
+    }
+
+    private fun capture(name: String) {
+        compose.waitForIdle()
+        val root=compose.onAllNodes(isRoot()).onLast()
+        val dir=InstrumentationRegistry.getArguments().getString("additionalTestOutputDir")?.let(::File)
+            ?: File(context.getExternalFilesDir(null),"release-ui")
+        File(dir,"release-ui").apply {mkdirs()}.resolve("$name.png").outputStream().use {
+            root.captureToImage().asAndroidBitmap().compress(Bitmap.CompressFormat.PNG,100,it)
+        }
     }
 }

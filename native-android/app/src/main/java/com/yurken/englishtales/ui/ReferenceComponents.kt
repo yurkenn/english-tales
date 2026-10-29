@@ -44,6 +44,7 @@ import androidx.compose.ui.unit.sp
 
 /** App kind -> icon drawn from the B · Oyunlu canvas: round 2-2.6 strokes on a 24 grid, with the flame, star and media marks solid. */
 private val icons = mapOf(
+    "check" to R.drawable.ic_dc_check,
     "study" to R.drawable.ic_dc_study, "read" to R.drawable.ic_dc_read, "play" to R.drawable.ic_dc_gamepad, "gamepad" to R.drawable.ic_dc_gamepad,
     "profile" to R.drawable.ic_dc_profile, "letters" to R.drawable.ic_dc_letters, "review" to R.drawable.ic_dc_review, "refresh" to R.drawable.ic_dc_review,
     "headphones" to R.drawable.ic_dc_headphones, "volume" to R.drawable.ic_dc_volume, "translate" to R.drawable.ic_dc_translate,
