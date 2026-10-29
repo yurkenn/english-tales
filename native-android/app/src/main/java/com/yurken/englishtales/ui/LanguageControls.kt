@@ -21,7 +21,7 @@ internal val appLanguages = listOf("tr" to "Türkçe", "en" to "English", "es-41
     "hi" to "हिन्दी", "ru" to "Русский", "bn" to "বাংলা", "ur" to "اردو", "th" to "ไทย")
 
 @Composable
-internal fun LanguageControls(compact: Boolean = false) {
+internal fun LanguageControls(compact: Boolean = false, row: Boolean = false) {
     val context = LocalContext.current
     var choosing by remember { mutableStateOf(false) }
     val system = stringResource(R.string.app_language_system)
@@ -31,7 +31,10 @@ internal fun LanguageControls(compact: Boolean = false) {
     }?.first.orEmpty()
     val current = appLanguages.firstOrNull { it.first == selection }?.second ?: system
     val label = stringResource(R.string.app_language_current, current)
-    OutlinedButton(onClick = { choosing = true }, modifier = (if (compact) Modifier else Modifier.fillMaxWidth())
+    // In settings the language is one more row of the card, with its globe tile, as on the canvas.
+    if (row) SettingsRow(stringResource(R.string.app_language_title), current, "language", TaleBlue, TaleOnBlue, expanded = false,
+        modifier = Modifier.semantics { contentDescription = label }) { choosing = true }
+    else OutlinedButton(onClick = { choosing = true }, modifier = (if (compact) Modifier else Modifier.fillMaxWidth())
         .heightIn(min = 48.dp).semantics { contentDescription = label }) {
         Text(if (compact) current else label, fontSize = if (compact) 13.sp else 14.sp)
     }

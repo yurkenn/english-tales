@@ -24,8 +24,9 @@ class AppPolishTest {
     @Test fun libraryHeaderNamesEachNumberAndOffersDownloads() {
         var downloads=0
         compose.setContent {EnglishTalesTheme {CatalogScreen(LearningSnapshot(streak=2,points=40),{},PaddingValues(),LibraryActions(false,{}) {downloads++})}}
-        // The playful header shows level, streak and points as pills, each with its caption.
-        for(caption in listOf("Seviye","Seri","Puan")) compose.onNodeWithText(caption).assertIsDisplayed()
+        // The playful header shows level, streak and points as pills; each pill names its number for screen readers.
+        compose.onNodeWithText("Seviye").assertIsDisplayed()
+        for(value in listOf("2","40")) compose.onAllNodesWithText(value).onFirst().assertIsDisplayed()
         compose.onNodeWithText("İndirilenler").performScrollTo().performClick()
         assertEquals(1,downloads)
     }

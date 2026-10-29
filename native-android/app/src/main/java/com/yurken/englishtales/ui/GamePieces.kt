@@ -67,19 +67,18 @@ internal fun ChunkyButton(label: String, onClick: () -> Unit, modifier: Modifier
     }
 }
 
-/** A rounded stat in the home header; a tap explains it like the other learning indicators. */
+/** A white stat pill in the home header, as on the canvas: a solid mark and one bold label; a tap explains it like the other learning indicators. */
 @Composable
-internal fun StatPill(value: String, title: String, explanation: String, caption: String, icon: @Composable () -> Unit) {
+internal fun StatPill(value: String, title: String, explanation: String, label: String, icon: @Composable () -> Unit) {
     var open by remember { mutableStateOf(false) }
     var last by remember { mutableStateOf(value) }
     var bumps by remember { mutableIntStateOf(0) }
     LaunchedEffect(value) { if (value != last) { bumps++; last = value } }
-    Row(Modifier.minimumInteractiveComponentSize().contentLabel(stringResource(R.string.bilgi, title, value)).clip(RoundedCornerShape(22.dp))
-        .clickable(role = Role.Button) { open = true }.background(TaleSurface, RoundedCornerShape(22.dp)).border(2.dp, TaleLine, RoundedCornerShape(22.dp))
+    Row(Modifier.minimumInteractiveComponentSize().contentLabel(stringResource(R.string.bilgi, title, value)).clip(RoundedCornerShape(19.dp))
+        .clickable(role = Role.Button) { open = true }.background(TaleSurface, RoundedCornerShape(19.dp)).heightIn(min = 38.dp)
         .padding(horizontal = 12.dp, vertical = 6.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(6.dp)) {
         Box(Modifier.popOn(bumps)) { icon() }
-        Text(value, fontFamily = TaleDisplay, fontWeight = FontWeight.ExtraBold, fontSize = 17.sp, color = TaleInk, modifier = Modifier.popOn(bumps))
-        Text(caption, fontSize = 12.sp, fontWeight = FontWeight.Bold, color = TaleMuted, maxLines = 1)
+        Text(label, fontWeight = FontWeight.ExtraBold, fontSize = 15.sp, color = TaleInk, maxLines = 1, modifier = Modifier.popOn(bumps))
     }
     if (open) TaleDialog(title, explanation, stringResource(R.string.anladim), onConfirm = { open = false }, onDismissRequest = { open = false }, mood = MascotMood.Welcome)
 }

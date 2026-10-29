@@ -71,15 +71,19 @@ fun StatsHeader(snapshot: LearningSnapshot) {
     }
 }
 
-/** The playful home header: level, streak and points as tappable pills. */
+/** The playful home header: a level badge on the left, streak and points on the right, each a tappable pill; large text wraps them onto two lines. */
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun GameStatsBar(snapshot: LearningSnapshot) {
     FlowRow(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=8.dp),horizontalArrangement=Arrangement.spacedBy(8.dp),verticalArrangement=Arrangement.spacedBy(4.dp)) {
-        StatPill(snapshot.level,stringResource(R.string.ingilizce_seviyen),stringResource(R.string.sectigin_seviye_hikaye_onerileri_buna, snapshot.level),stringResource(R.string.stat_level)) {ReferenceIcon("study",TaleBlue,Modifier.size(20.dp))}
+        StatPill(snapshot.level,stringResource(R.string.ingilizce_seviyen),stringResource(R.string.sectigin_seviye_hikaye_onerileri_buna, snapshot.level),stringResource(R.string.stat_level)) {
+            Box(Modifier.heightIn(min=22.dp).widthIn(min=22.dp).background(TaleBlue,RoundedCornerShape(6.dp)).padding(horizontal=3.dp),contentAlignment=Alignment.Center) {
+                Text(snapshot.level,color=TaleOnBlue,fontSize=11.sp,lineHeight=13.sp,fontWeight=FontWeight.ExtraBold,maxLines=1)
+            }
+        }
         Spacer(Modifier.weight(1f))
-        StatPill("${snapshot.streak}",stringResource(R.string.calisma_serin),streakExplanation(snapshot),stringResource(R.string.stat_streak)) {ReferenceIcon("streak",TaleWarm,Modifier.size(20.dp))}
-        StatPill("${snapshot.points}",stringResource(R.string.puanlarin),pointsExplanation(snapshot),stringResource(R.string.stat_points)) {ReferenceIcon("points",TalePurple,Modifier.size(20.dp))}
+        StatPill("${snapshot.streak}",stringResource(R.string.calisma_serin),streakExplanation(snapshot),"${snapshot.streak}") {ReferenceIcon("streak",TaleOrange,Modifier.size(18.dp))}
+        StatPill("${snapshot.points}",stringResource(R.string.puanlarin),pointsExplanation(snapshot),"${snapshot.points}") {ReferenceIcon("points",TalePurple,Modifier.size(18.dp))}
     }
 }
 
@@ -126,12 +130,13 @@ fun StudyScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, onOpe
         Spacer(Modifier.height(16.dp))
         // The weekly league sits right under the quests: its rank and gap are the daily reason to come back.
         league?.let {it(Modifier.padding(horizontal=16.dp).appearIn(2));Spacer(Modifier.height(16.dp))}
-        // A card-like row instead of a bare outlined button, with the count as a badge.
-        Row(Modifier.padding(horizontal=16.dp).fillMaxWidth().appearIn(2).heightIn(min=56.dp).background(TaleSurface,RoundedCornerShape(16.dp)).border(1.dp,TaleLine,RoundedCornerShape(16.dp))
-            .pressScale(onClick=onOpenWords).padding(horizontal=14.dp,vertical=10.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
-            Box(Modifier.size(36.dp).background(LocalTaleColors.current.tileBlue,RoundedCornerShape(10.dp)),contentAlignment=Alignment.Center) { ReferenceIcon("cards",TaleBlue,Modifier.size(20.dp)) }
-            Text(stringResource(R.string.kelimelerim_kayitli_kelime, snapshot.savedWordIds.size),Modifier.weight(1f),fontWeight=FontWeight.SemiBold,color=TaleInk)
-            ReferenceIcon("next",TaleMuted,Modifier.size(18.dp))
+        // A chunky white row like the canvas's cards, with the words tile on the left.
+        ChunkyBox(TaleSurface,Modifier.padding(horizontal=16.dp).fillMaxWidth().appearIn(2).heightIn(min=60.dp),RoundedCornerShape(20.dp),depth=4.dp,border=TaleLine,onClick=onOpenWords) {
+            Row(Modifier.fillMaxWidth().padding(horizontal=14.dp,vertical=10.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
+                Box(Modifier.size(38.dp).background(TalePurple,RoundedCornerShape(12.dp)),contentAlignment=Alignment.Center) { ReferenceIcon("cards",TaleOnPurple,Modifier.size(22.dp)) }
+                Text(stringResource(R.string.kelimelerim_kayitli_kelime, snapshot.savedWordIds.size),Modifier.weight(1f),fontWeight=FontWeight.ExtraBold,fontSize=15.sp,color=TaleInk)
+                ReferenceIcon("next",TaleMuted,Modifier.size(18.dp))
+            }
         }
         Box(Modifier.appearIn(3)) { WeeklyActivity(snapshot) }
         Spacer(Modifier.height(16.dp))
@@ -208,11 +213,21 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
                 BookShelf(stringResource(R.string.seviyene_uygun),stories.filter { it.level==snapshot.level },onOpenStory) { listMode="level" }
                 Spacer(Modifier.height(22.dp))
                 val favoriteCount=stories.count { it.id in snapshot.favoriteStoryIds }
-                (listOf(stringResource(R.string.kategoriler) to "all")+(if(favoriteCount>0) listOf(stringResource(R.string.favorites_title,favoriteCount) to FAVORITES) else emptyList())+categories.map { it.name to TAG_LIST+it.id }).forEach { (label,key) ->
-                    Row(Modifier.fillMaxWidth().clickable(role=Role.Button) { listMode=key }.padding(horizontal=18.dp,vertical=14.dp),horizontalArrangement=Arrangement.SpaceBetween,verticalAlignment=Alignment.CenterVertically) { Text(label,fontSize=14.sp); ReferenceIcon("next",TaleMuted,Modifier.size(16.dp)) }
-                }
-                actions?.let { library ->
-                    Row(Modifier.fillMaxWidth().clickable(role=Role.Button,onClick=library.onDownloads).padding(horizontal=18.dp,vertical=14.dp),horizontalArrangement=Arrangement.SpaceBetween,verticalAlignment=Alignment.CenterVertically) { Text(stringResource(R.string.indirilenler),fontSize=14.sp); ReferenceIcon("next",TaleMuted,Modifier.size(16.dp)) }
+                // The lists sit in one white card under a shelf-style title, a row each, like the settings groups.
+                BookShelfTitle(stringResource(R.string.kategoriler),openTitle=true) { listMode="all" }
+                Spacer(Modifier.height(12.dp))
+                val rows=(if(favoriteCount>0) listOf(stringResource(R.string.favorites_title,favoriteCount) to FAVORITES) else emptyList())+categories.map { it.name to TAG_LIST+it.id }
+                ChunkyBox(TaleSurface,Modifier.padding(horizontal=16.dp).fillMaxWidth(),RoundedCornerShape(22.dp),depth=5.dp,border=TaleLine) {
+                    Column(Modifier.fillMaxWidth().padding(vertical=4.dp)) {
+                        rows.forEachIndexed { i,(label,key) ->
+                            if(i>0) Box(Modifier.padding(horizontal=16.dp).fillMaxWidth().height(1.dp).background(TaleLine))
+                            LibraryRow(label) { listMode=key }
+                        }
+                        actions?.let { library ->
+                            if(rows.isNotEmpty()) Box(Modifier.padding(horizontal=16.dp).fillMaxWidth().height(1.dp).background(TaleLine))
+                            LibraryRow(stringResource(R.string.indirilenler),"download",library.onDownloads)
+                        }
+                    }
                 }
                 Spacer(Modifier.height(16.dp))
             }
@@ -275,12 +290,30 @@ private fun LibraryFilters(filters: StoryFilters, showLevels: Boolean, onLevel: 
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-private fun BookShelf(title: String, stories: List<Story>, onOpenStory: (String) -> Unit, onAll: () -> Unit) {
+private fun BookShelfTitle(title: String, openTitle: Boolean = false, onAll: () -> Unit) {
     // Large text gives the Baloo title its own line, so a word like "hikâyeler" is never broken beside the link.
     FlowRow(Modifier.fillMaxWidth().padding(horizontal=16.dp),verticalArrangement=Arrangement.Center,maxItemsInEachRow=if(LocalDensity.current.fontScale>=1.5f) 1 else 2) {
-        Text(title,fontFamily=TaleDisplay,fontSize=21.sp,lineHeight=25.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.weight(1f).align(Alignment.CenterVertically).padding(end=8.dp))
+        // The categories title opens the full list itself too, as its old row did.
+        Text(title,fontFamily=TaleDisplay,fontSize=21.sp,lineHeight=25.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.weight(1f).align(Alignment.CenterVertically)
+            .then(if(openTitle) Modifier.minimumInteractiveComponentSize().clickable(role=Role.Button,onClick=onAll) else Modifier).padding(end=8.dp))
         Text(stringResource(R.string.tumunu_gor),color=TaleBlue,fontSize=13.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.align(Alignment.CenterVertically).pressScale(onClick=onAll).minimumInteractiveComponentSize().padding(horizontal=6.dp,vertical=6.dp))
     }
+}
+
+@Composable
+private fun LibraryRow(label: String, icon: String? = null, onClick: () -> Unit) {
+    Row(Modifier.fillMaxWidth().heightIn(min=52.dp).clickable(role=Role.Button,onClick=onClick).padding(horizontal=16.dp,vertical=12.dp),
+        horizontalArrangement=Arrangement.spacedBy(10.dp),verticalAlignment=Alignment.CenterVertically) {
+        icon?.let { ReferenceIcon(it,TaleBlue,Modifier.size(20.dp)) }
+        Text(label,fontSize=15.sp,fontWeight=FontWeight.Bold,color=TaleInk,modifier=Modifier.weight(1f))
+        ReferenceIcon("next",TaleMuted,Modifier.size(16.dp))
+    }
+}
+
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+private fun BookShelf(title: String, stories: List<Story>, onOpenStory: (String) -> Unit, onAll: () -> Unit) {
+    BookShelfTitle(title,onAll=onAll)
     Spacer(Modifier.height(14.dp))
     LazyRow(contentPadding=PaddingValues(horizontal=16.dp),horizontalArrangement=Arrangement.spacedBy(14.dp)) {
         itemsIndexed(stories,key={_,it -> it.id}) { i,story ->
@@ -448,17 +481,18 @@ fun ProfileScreen(snapshot: LearningSnapshot, onOpenWords: () -> Unit, padding: 
         }
         // Q5.5: how many words the learner knows, from practice and from reading.
         ProfilePanel(index=4){
-            Text(stringResource(R.string.known_words_title),fontSize=12.sp,letterSpacing=1.sp,fontWeight=FontWeight.Bold)
-            AnimatedCounter(snapshot.knownWordCount,Modifier.padding(top=10.dp),style=LocalTextStyle.current.copy(fontSize=30.sp,fontWeight=FontWeight.Bold),color=TaleBlue)
+            Text(stringResource(R.string.known_words_title),fontFamily=TaleDisplay,fontSize=19.sp,fontWeight=FontWeight.ExtraBold)
+            AnimatedCounter(snapshot.knownWordCount,Modifier.padding(top=10.dp),style=LocalTextStyle.current.copy(fontFamily=TaleDisplay,fontSize=32.sp,fontWeight=FontWeight.ExtraBold),color=TaleBlue)
             Text(stringResource(R.string.known_words_detail,snapshot.wordStages.count {it.value==WordStage.SEEN || it.value==WordStage.LOOKED_UP},
                 snapshot.wordStages.count {it.value==WordStage.SAVED || it.value==WordStage.REVIEWING}),fontSize=12.sp,color=TaleMuted)
             Text(stringResource(R.string.known_words_explanation),fontSize=12.sp,color=TaleMuted,modifier=Modifier.padding(top=6.dp))
         }
         FlowRow(horizontalArrangement=Arrangement.spacedBy(16.dp),verticalArrangement=Arrangement.spacedBy(16.dp),maxItemsInEachRow=sideBySide(2)) {
-            ProfilePanel(Modifier.weight(1f)) { Text(stringResource(R.string.hikayeler),fontSize=12.sp,fontWeight=FontWeight.Bold); AnimatedCounter(snapshot.storyProgress.count {it.value==100},Modifier.padding(top=14.dp),style=LocalTextStyle.current.copy(fontSize=30.sp,fontWeight=FontWeight.Bold),color=TaleBlue); Text(stringResource(R.string.tamamlandi),fontSize=12.sp,color=TaleMuted) }
-            ProfilePanel(Modifier.weight(1f)) { Text(stringResource(R.string.alistirmalar),fontSize=12.sp,fontWeight=FontWeight.Bold); AnimatedCounter(snapshot.completedLessons,Modifier.padding(top=14.dp),style=LocalTextStyle.current.copy(fontSize=30.sp,fontWeight=FontWeight.Bold),color=TalePurple); Text(stringResource(R.string.tamamlandi),fontSize=12.sp,color=TaleMuted) }
+            ProfilePanel(Modifier.weight(1f),color=LocalTaleColors.current.tileBlue) { Text(stringResource(R.string.hikayeler).uppercase(AppLanguage.locale(LocalContext.current)),fontSize=12.sp,letterSpacing=0.8.sp,fontWeight=FontWeight.ExtraBold,color=TaleMuted); AnimatedCounter(snapshot.storyProgress.count {it.value==100},Modifier.padding(top=14.dp),style=LocalTextStyle.current.copy(fontFamily=TaleDisplay,fontSize=32.sp,fontWeight=FontWeight.ExtraBold),color=TaleBlue); Text(stringResource(R.string.tamamlandi),fontSize=12.sp,color=TaleMuted) }
+            ProfilePanel(Modifier.weight(1f),color=LocalTaleColors.current.tilePurple) { Text(stringResource(R.string.alistirmalar).uppercase(AppLanguage.locale(LocalContext.current)),fontSize=12.sp,letterSpacing=0.8.sp,fontWeight=FontWeight.ExtraBold,color=TaleMuted); AnimatedCounter(snapshot.completedLessons,Modifier.padding(top=14.dp),style=LocalTextStyle.current.copy(fontFamily=TaleDisplay,fontSize=32.sp,fontWeight=FontWeight.ExtraBold),color=TalePurple); Text(stringResource(R.string.tamamlandi),fontSize=12.sp,color=TaleMuted) }
         }
-        WeeklyActivity(snapshot)
+        // The page already has its side margin, so the week card takes the full column.
+        WeeklyActivity(snapshot,Modifier)
     }
     }
 
@@ -479,9 +513,9 @@ private fun ProfileStatTile(caption: String, value: String, color: Color, onColo
 }
 
 @Composable
-private fun ProfilePanel(modifier: Modifier = Modifier, index: Int = 0, content: @Composable ColumnScope.() -> Unit) {
-    // A white card on a lip, as in the playful look.
-    ChunkyBox(TaleSurface,modifier.fillMaxWidth().appearIn(index),RoundedCornerShape(20.dp),depth=5.dp,border=TaleLine) { Column(Modifier.fillMaxWidth().padding(16.dp),content=content) }
+private fun ProfilePanel(modifier: Modifier = Modifier, index: Int = 0, color: Color = TaleSurface, content: @Composable ColumnScope.() -> Unit) {
+    // A white (or tinted) card on a lip, as in the playful look.
+    ChunkyBox(color,modifier.fillMaxWidth().appearIn(index),RoundedCornerShape(20.dp),depth=5.dp,border=TaleLine) { Column(Modifier.fillMaxWidth().padding(16.dp),content=content) }
 }
 
 @Composable

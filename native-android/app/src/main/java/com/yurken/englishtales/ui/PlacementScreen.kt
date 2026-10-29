@@ -4,8 +4,6 @@ import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Close
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
@@ -45,7 +43,7 @@ fun PlacementScreen(onUseLevel: (String) -> Unit, onCancel: () -> Unit, fromSett
         // During the test the top bar is the game header: close, progress and the question count.
         if (started && !complete) Row(Modifier.fillMaxWidth().height(56.dp).padding(horizontal = 8.dp), verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-            IconButton(onClick = ::exit) { Icon(Icons.Default.Close, stringResource(R.string.placement_cancel_confirm), tint = TaleMuted) }
+            IconButton(onClick = ::exit) { ReferenceIcon("close", TaleMuted, Modifier.size(22.dp).contentLabel(stringResource(R.string.placement_cancel_confirm))) }
             QuizProgress(answers.size.toFloat() / ReadingPlacement.questions.size, Modifier.weight(1f))
             Text("${answers.size + 1}/${ReadingPlacement.questions.size}", fontWeight = FontWeight.ExtraBold, color = TaleMuted, modifier = Modifier.padding(end = 12.dp))
         } else SimpleTopBar(stringResource(R.string.placement_title), ::exit)

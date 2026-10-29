@@ -7,6 +7,12 @@ import androidx.compose.foundation.*
 import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.geometry.CornerRadius
+import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.graphics.PathEffect
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.heading
@@ -128,16 +134,16 @@ private fun ShortcutTile(color: Color,onColor: Color,title: String,subtitle: Str
 }
 
 @Composable
-fun WeeklyActivity(snapshot: LearningSnapshot) {
-    Column(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=12.dp).background(TaleSurface,RoundedCornerShape(22.dp)).border(2.dp,TaleLine,RoundedCornerShape(22.dp))
-        .padding(14.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
+fun WeeklyActivity(snapshot: LearningSnapshot, modifier: Modifier = Modifier.padding(horizontal=16.dp,vertical=12.dp)) {
+    // The canvas's streak week: a white card, a square tile per day, a solid flame on the days practised and a dashed tile for today.
+    Column(modifier.fillMaxWidth().background(TaleSurface,RoundedCornerShape(22.dp))
+        .padding(horizontal=14.dp,vertical=12.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
         // The streak sits next to the week it comes from, and one line says what today still needs.
         Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.CenterVertically) {
-            Text(stringResource(R.string.son_7_gun),style=MaterialTheme.typography.titleLarge,modifier=Modifier.weight(1f))
-            if(snapshot.streak>0) Row(Modifier.background(LocalTaleColors.current.tileYellow,RoundedCornerShape(20.dp)).padding(horizontal=10.dp,vertical=4.dp),
-                verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(4.dp)) {
-                ReferenceIcon("streak",TaleWarm,Modifier.size(16.dp))
-                Text("${snapshot.streak} · ${stringResource(R.string.stat_streak)}",fontSize=12.sp,fontWeight=FontWeight.Bold,color=TaleInk)
+            Text(stringResource(R.string.son_7_gun),fontSize=15.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.weight(1f))
+            if(snapshot.streak>0) Row(verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(4.dp)) {
+                ReferenceIcon("streak",TaleOrange,Modifier.size(16.dp))
+                Text("${snapshot.streak} · ${stringResource(R.string.stat_streak)}",fontSize=14.sp,fontWeight=FontWeight.ExtraBold,color=TaleWarm)
             }
             // Banked freezes sit next to the streak they protect.
             if(snapshot.streakFreezes>0) Row(Modifier.padding(start=6.dp).background(LocalTaleColors.current.tileBlue,RoundedCornerShape(20.dp)).padding(horizontal=10.dp,vertical=4.dp)
@@ -152,25 +158,25 @@ fun WeeklyActivity(snapshot: LearningSnapshot) {
             else -> stringResource(R.string.weekly_today_pending)
         }
         Text(todayText,fontSize=13.sp,color=if(snapshot.dailyGoalReached) TaleBlue else TaleMuted,fontWeight=if(snapshot.dailyGoalReached) FontWeight.SemiBold else FontWeight.Normal)
-        Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(6.dp)) {
+        Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(4.dp)) {
             snapshot.weeklyActivity.forEachIndexed {i,day ->
-                // Today is outlined so the learner sees where the week stands; empty days stay quiet instead of showing a dot.
                 val today=i==snapshot.weeklyActivity.lastIndex
                 val active=day.sessions>0
                 val frozen=day.day in snapshot.frozenDays
                 val frozenLabel=stringResource(R.string.streak_freeze_day)
-                Column(Modifier.weight(1f).appearIn(i),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(8.dp)) {
-                    // A day with practice burns like the streak it builds, with its step count beside the flame.
-                    Box(Modifier.fillMaxWidth().heightIn(min=40.dp).background(if(active) LocalTaleColors.current.tileYellow else if(frozen) LocalTaleColors.current.tileBlue else TaleLine.copy(alpha=0.6f),RoundedCornerShape(12.dp))
-                        .then(if(frozen) Modifier.border(1.5.dp,TaleBlue.copy(alpha=0.5f),RoundedCornerShape(12.dp)).contentLabel(frozenLabel) else Modifier)
-                        .then(if(today) Modifier.border(2.dp,if(active) TaleWarm.copy(alpha=0.6f) else TaleBlue,RoundedCornerShape(12.dp)) else Modifier),contentAlignment=Alignment.Center) {
-                        if(active) Column(Modifier.padding(vertical=3.dp),horizontalAlignment=Alignment.CenterHorizontally) {
-                            ReferenceIcon("streak",TaleWarm,Modifier.size(15.dp))
-                            Text("${day.sessions}",fontSize=11.sp,lineHeight=13.sp,fontWeight=FontWeight.ExtraBold,color=TaleInk)
-                        }
-                        else if(frozen) Text("❄",fontSize=16.sp,color=TaleBlue)
+                val dash=TaleBlue
+                Column(Modifier.weight(1f).appearIn(i),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(4.dp)) {
+                    Box(Modifier.size(32.dp).background(if(active) TaleOrange.copy(alpha=0.22f) else if(frozen) LocalTaleColors.current.tileBlue else TaleLine.copy(alpha=0.6f),RoundedCornerShape(10.dp))
+                        .then(if(frozen) Modifier.contentLabel(frozenLabel) else Modifier)
+                        .then(if(today && !active) Modifier.drawBehind {
+                            val w=2.5.dp.toPx()
+                            drawRoundRect(dash,Offset(w/2,w/2),Size(size.width-w,size.height-w),CornerRadius(10.dp.toPx()-w/2),
+                                style=Stroke(w,pathEffect=PathEffect.dashPathEffect(floatArrayOf(4.dp.toPx(),3.dp.toPx()))))
+                        } else Modifier),contentAlignment=Alignment.Center) {
+                        if(active) ReferenceIcon("streak",TaleOrange,Modifier.size(17.dp))
+                        else if(frozen) Text("❄",fontSize=15.sp,color=TaleBlue)
                     }
-                    Text(if(today) stringResource(R.string.weekly_today) else day.label,fontSize=10.sp,fontWeight=if(today) FontWeight.Bold else FontWeight.Normal,color=if(today) TaleBlue else TaleMuted,maxLines=1)
+                    Text(if(today) stringResource(R.string.weekly_today) else day.label,fontSize=11.sp,fontWeight=FontWeight.ExtraBold,color=if(today) TaleBlue else TaleMuted,maxLines=1)
                 }
             }
         }
@@ -296,12 +302,14 @@ fun LearningSettingsScreen(snapshot: LearningSnapshot,onBack: ()->Unit,onSave: (
             SettingsCard { Column(Modifier.padding(12.dp)) { ReminderControls() } }
             SettingsCard { Column(Modifier.padding(12.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
                 com.yurken.englishtales.ads.AdPrivacyControls()
+                Box(Modifier.fillMaxWidth().height(1.dp).background(TaleLine))
                 com.yurken.englishtales.analytics.AnalyticsControls()
             } }
             SettingsSection(stringResource(R.string.settings_section_app))
-            SettingsCard { Column(Modifier.padding(12.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
-                LanguageControls()
-                ThemeControls()
+            SettingsCard { Column(Modifier.padding(8.dp)) {
+                LanguageControls(row=true)
+                SettingsDivider()
+                Box(Modifier.padding(horizontal=10.dp,vertical=8.dp)) { ThemeControls() }
             } }
             val alerts=LocalTaleAlerts.current
             val savedText=stringResource(R.string.alert_settings_saved)
@@ -338,9 +346,9 @@ private fun SettingsSection(title: String) {
 
 /** One settings row: a colored icon tile, the setting, its current value and a chevron that turns when the choices are open. */
 @Composable
-private fun SettingsRow(title: String,value: String,icon: String,color: Color,onColor: Color,expanded: Boolean,onClick: ()->Unit) {
+internal fun SettingsRow(title: String,value: String,icon: String,color: Color,onColor: Color,expanded: Boolean,modifier: Modifier=Modifier,onClick: ()->Unit) {
     val turn by animateFloatAsState(if(expanded) 90f else 0f,label="chevron")
-    Row(Modifier.fillMaxWidth().heightIn(min=60.dp).clip(RoundedCornerShape(14.dp)).clickable(role=Role.Button,onClick=onClick)
+    Row(modifier.fillMaxWidth().heightIn(min=60.dp).clip(RoundedCornerShape(14.dp)).clickable(role=Role.Button,onClick=onClick)
         .semantics {stateDescription=value}.padding(horizontal=10.dp,vertical=8.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
         Box(Modifier.size(36.dp).background(color,RoundedCornerShape(11.dp)),contentAlignment=Alignment.Center) { ReferenceIcon(icon,onColor,Modifier.size(20.dp)) }
         // The value hides while its choices are open, so it is never shown twice; large text moves it under the title.

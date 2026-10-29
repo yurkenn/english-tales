@@ -19,6 +19,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.compose.ui.Alignment
+import androidx.compose.foundation.background
+import androidx.compose.foundation.shape.RoundedCornerShape
 import com.yurken.englishtales.R
 
 /** The whole app's light/dark choice; the reader keeps its own setting in [ReadingPreferences]. */
@@ -67,7 +71,11 @@ object AppTheme {
 internal fun ThemeControls() {
     val context = LocalContext.current
     Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-        Text(stringResource(R.string.tema), fontWeight = FontWeight.Bold)
+        // The theme sits under its moon tile like the other settings rows; the choices stay in view.
+        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+            Box(Modifier.size(36.dp).background(TalePurple, RoundedCornerShape(11.dp)), contentAlignment = Alignment.Center) { ReferenceIcon("theme", TaleOnPurple, Modifier.size(20.dp)) }
+            Text(stringResource(R.string.tema), fontSize = 15.sp, fontWeight = FontWeight.ExtraBold, color = TaleInk)
+        }
         // Wraps onto a second line at large text sizes instead of clipping the last chip.
         FlowRow(Modifier.selectableGroup(), horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
             AppThemeMode.entries.forEach { option ->
