@@ -79,10 +79,10 @@ android {
         else "com.yurken.englishtales.TalesTestRunner"
         minSdk = 24
         targetSdk = 36
-        // Candidate after 52 / 2.3.1. Recheck every Play track before uploading;
-        // a local candidate does not reserve a version code in Play Console.
+        // Play Console checked 2026-10-29: production 52, highest uploaded code 56 (internal sandbox).
+        // Recheck before upload; a local candidate does not reserve a version code in Play Console.
         // The release workflow passes -PreleaseVersionCode/-PreleaseVersionName.
-        versionCode = providers.gradleProperty("releaseVersionCode").orNull?.toInt() ?: 53
+        versionCode = providers.gradleProperty("releaseVersionCode").orNull?.toInt() ?: 57
         versionName = providers.gradleProperty("releaseVersionName").orNull ?: "2.4.0"
         buildConfigField("String", "SUPABASE_URL", "\"${debugServiceSetting("SUPABASE_URL")}\"")
         buildConfigField("String", "SUPABASE_PUBLISHABLE_KEY", "\"${debugServiceSetting("SUPABASE_PUBLISHABLE_KEY")}\"")
