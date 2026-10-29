@@ -64,9 +64,6 @@
     <string name="sectigin_seviye_hikaye_onerileri_buna">आपका चयनित स्तर %1$s है। कहानी के सुझाव इसी पर आधारित हैं। आप माई प्रोफाइल → सेटिंग्स में अपना स्तर बदल सकते हैं।</string>
     <string name="calisma_serin">आपकी अध्ययन शृंखला</string>
     <string name="puanlarin">आपके अंक</string>
-    <string name="okuma_aliskanligin_burada_baslar">आपकी पढ़ने की आदत यहीं से शुरू होती है</string>
-    <string name="bir_hikaye_nyeni_kelimeler">एक कहानी,\nनये शब्द</string>
-    <string name="oku_dinle_ve_ogren">पढ़ें, सुनें और सीखें</string>
     <string name="okumaya_basla">पढ़ना शुरू करें</string>
     <string name="senin_icin">आपके लिए</string>
     <string name="kelimelerim_kayitli_kelime">मेरे शब्द · %1$s सहेजे गए शब्द</string>
@@ -228,7 +225,6 @@
     <string name="temizle">स्पष्ट</string>
     <string name="her_denemede_ogreniyoruz">हर कोशिश हमें कुछ न कुछ सिखाती है।</string>
     <string name="anladim_devam_et">समझ गया, जारी रखें</string>
-    <string name="harika_puan_kazandin">⭐ बढ़िया! आपने %1$s अंक अर्जित किये!</string>
     <string name="calisma_tamamlandi">अभ्यास पूरा करें</string>
     <string name="gunluk_hedefin_tamamlandi">आपका दैनिक लक्ष्य पूरा हो गया है ✓</string>
     <string name="bugunku_hedef_adim">आज का लक्ष्य: %1$s / %2$s चरण</string>

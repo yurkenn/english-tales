@@ -1,6 +1,7 @@
 package com.yurken.englishtales.ui
 
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalDensity
 import com.yurken.englishtales.AppLanguage
 import androidx.compose.foundation.*
 import androidx.compose.foundation.selection.selectableGroup
@@ -8,6 +9,10 @@ import androidx.compose.foundation.selection.selectable
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.stateDescription
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
@@ -179,13 +184,23 @@ fun WeeklyActivity(snapshot: LearningSnapshot) {
 @Composable
 fun EarnedBadges(snapshot: LearningSnapshot) {
     val labels=linkedMapOf("first_story" to stringResource(R.string.ilk_hikaye), "first_practice" to stringResource(R.string.ilk_calisma), "five_words" to stringResource(R.string.kelime_5), "three_day_streak" to stringResource(R.string.gunluk_seri_3), "seven_day_streak" to stringResource(R.string.gunluk_seri_7))
-    Column(Modifier.fillMaxWidth().padding(vertical=8.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
-        Text(stringResource(R.string.basarilarin),fontSize=17.sp,fontWeight=FontWeight.Bold)
-        labels.entries.forEachIndexed {i,(id,label) -> Row(Modifier.fillMaxWidth().appearIn(i).background(if(id in snapshot.badges) LocalTaleColors.current.tileYellow else TaleLine.copy(alpha=0.6f),RoundedCornerShape(14.dp)).padding(12.dp),verticalAlignment=Alignment.CenterVertically) {
-            TaleArt(badgeArt(id),Modifier.size(52.dp).then(if(id in snapshot.badges) Modifier.popOn(1) else Modifier),locked=id !in snapshot.badges)
-            Text(label,fontSize=14.sp,modifier=Modifier.weight(1f).padding(start=12.dp))
-            Text(if(id in snapshot.badges) stringResource(R.string.kazanildi) else stringResource(R.string.sirada),color=TaleMuted,fontSize=11.sp)
-        } }
+    // The design's badge card: medals in a grid of three, earned ones in color with their name under them.
+    ChunkyBox(TaleSurface,Modifier.fillMaxWidth(),RoundedCornerShape(22.dp),depth=5.dp,border=TaleLine) {
+        Column(Modifier.padding(16.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
+            Text(stringResource(R.string.basarilarin),fontFamily=TaleDisplay,fontSize=19.sp,fontWeight=FontWeight.ExtraBold)
+            FlowRow(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(10.dp),verticalArrangement=Arrangement.spacedBy(12.dp),maxItemsInEachRow=if(sideBySide(2)==1) 2 else 3) {
+                labels.entries.forEachIndexed {i,(id,label) ->
+                    val earned=id in snapshot.badges
+                    val status=if(earned) stringResource(R.string.kazanildi) else stringResource(R.string.sirada)
+                    Column(Modifier.weight(1f).appearIn(i).semantics(mergeDescendants=true) {contentDescription="$label, $status"},horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(6.dp)) {
+                        Box(Modifier.size(72.dp).background(if(earned) LocalTaleColors.current.tileYellow else TaleLine.copy(alpha=0.6f),RoundedCornerShape(18.dp)),contentAlignment=Alignment.Center) {
+                            TaleArt(badgeArt(id),Modifier.size(56.dp).then(if(earned) Modifier.popOn(1) else Modifier),locked=!earned)
+                        }
+                        Text(label,fontSize=12.sp,lineHeight=15.sp,fontWeight=FontWeight.ExtraBold,color=if(earned) TaleInk else TaleMuted,textAlign=TextAlign.Center,modifier=Modifier.fillMaxWidth())
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -253,28 +268,37 @@ fun LearningSettingsScreen(snapshot: LearningSnapshot,onBack: ()->Unit,onSave: (
             SettingsCard {
                 OutlinedTextField(value=name,onValueChange={name=it.take(30)},label={Text(stringResource(R.string.adin))},singleLine=true,modifier=Modifier.fillMaxWidth().padding(12.dp))
             }
-            SettingsGroup(stringResource(R.string.ingilizce_seviyen),"study",TaleGreen,TaleOnGreen) {
-                PreferenceChoices(listOf("A1","A2","B1"),level) {level=it}
+            // The design's short rows: each shows its current value and opens its choices in place.
+            var open by rememberSaveable {mutableStateOf("")}
+            fun toggle(key: String) { open=if(open==key) "" else key }
+            val goalOptions=listOf(stringResource(R.string.adim_secenek_1),stringResource(R.string.adim_secenek_2),stringResource(R.string.adim_secenek_3))
+            SettingsSection(stringResource(R.string.settings_section_learning))
+            SettingsCard { Column(Modifier.padding(6.dp)) {
+                SettingsRow(stringResource(R.string.ingilizce_seviyen),level,"study",TaleGreen,TaleOnGreen,open=="level") {toggle("level")}
+                if(open=="level") PreferenceChoices(listOf("A1","A2","B1"),level) {level=it}
+                SettingsDivider()
+                SettingsRow(stringResource(R.string.sevdigin_hikayeler),genreLabel(genre),"read",TalePurple,TaleOnPurple,open=="genre") {toggle("genre")}
+                if(open=="genre") PreferenceChoices(listOf("Günlük yaşam","Macera","Gizem"),genre,label={genreLabel(it)}) {genre=it}
+                SettingsDivider()
+                SettingsRow(stringResource(R.string.gunluk_hedefin),goalOptions[goal.coerceIn(1,3)-1],"streak",TaleOrange,TaleOnOrange,open=="goal") {toggle("goal")}
+                if(open=="goal") {
+                    PreferenceChoices(goalOptions,goalOptions[goal.coerceIn(1,3)-1]) {goal=goalOptions.indexOf(it)+1}
+                    Text(stringResource(R.string.bir_adim_tamamlanan_bir_hikaye),fontSize=12.sp,color=TaleMuted,modifier=Modifier.padding(horizontal=12.dp,vertical=8.dp))
+                }
                 SettingsDivider()
                 Row(Modifier.fillMaxWidth().heightIn(min=56.dp).clip(RoundedCornerShape(14.dp)).clickable(role=Role.Button) {placement=true}.padding(horizontal=12.dp),
                     verticalAlignment=Alignment.CenterVertically) {
                     Text(stringResource(R.string.placement_entry),fontSize=15.sp,fontWeight=FontWeight.ExtraBold,color=TaleBlue,modifier=Modifier.weight(1f))
                     ReferenceIcon("next",TaleBlue,Modifier.size(18.dp))
                 }
-            }
-            SettingsGroup(stringResource(R.string.sevdigin_hikayeler),"read",TalePurple,TaleOnPurple) {
-                PreferenceChoices(listOf("Günlük yaşam","Macera","Gizem"),genre,label={genreLabel(it)}) {genre=it}
-            }
-            SettingsGroup(stringResource(R.string.gunluk_hedefin),"streak",TaleOrange,TaleOnOrange) {
-                val goalOptions=listOf(stringResource(R.string.adim_secenek_1),stringResource(R.string.adim_secenek_2),stringResource(R.string.adim_secenek_3))
-                PreferenceChoices(goalOptions,goalOptions[goal.coerceIn(1,3)-1]) {goal=goalOptions.indexOf(it)+1}
-                Text(stringResource(R.string.bir_adim_tamamlanan_bir_hikaye),fontSize=12.sp,color=TaleMuted,modifier=Modifier.padding(horizontal=12.dp,vertical=8.dp))
-            }
+            } }
+            SettingsSection(stringResource(R.string.settings_section_reminders))
             SettingsCard { Column(Modifier.padding(12.dp)) { ReminderControls() } }
             SettingsCard { Column(Modifier.padding(12.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
                 com.yurken.englishtales.ads.AdPrivacyControls()
                 com.yurken.englishtales.analytics.AnalyticsControls()
             } }
+            SettingsSection(stringResource(R.string.settings_section_app))
             SettingsCard { Column(Modifier.padding(12.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
                 LanguageControls()
                 ThemeControls()
@@ -305,15 +329,28 @@ private fun PreferenceChoices(options: List<String>,selected: String,label: @Com
     } }
 }
 
-/** A settings group: its colored icon tile and title, then its rows on one white card. */
+/** A capitalised section name over a settings card, as in the design. */
 @Composable
-private fun SettingsGroup(title: String,icon: String,color: Color,onColor: Color,content: @Composable ColumnScope.()->Unit) {
-    Column(verticalArrangement=Arrangement.spacedBy(8.dp)) {
-        Row(verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(10.dp)) {
-            Box(Modifier.size(32.dp).background(color,RoundedCornerShape(10.dp)),contentAlignment=Alignment.Center) { ReferenceIcon(icon,onColor,Modifier.size(18.dp)) }
-            Text(title,fontFamily=TaleDisplay,fontSize=18.sp,lineHeight=22.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.weight(1f))
+private fun SettingsSection(title: String) {
+    Text(title.uppercase(AppLanguage.locale(LocalContext.current)),fontSize=12.sp,fontWeight=FontWeight.ExtraBold,letterSpacing=1.sp,color=TaleMuted,
+        modifier=Modifier.padding(start=4.dp,top=6.dp).semantics {heading()})
+}
+
+/** One settings row: a colored icon tile, the setting, its current value and a chevron that turns when the choices are open. */
+@Composable
+private fun SettingsRow(title: String,value: String,icon: String,color: Color,onColor: Color,expanded: Boolean,onClick: ()->Unit) {
+    val turn by animateFloatAsState(if(expanded) 90f else 0f,label="chevron")
+    Row(Modifier.fillMaxWidth().heightIn(min=60.dp).clip(RoundedCornerShape(14.dp)).clickable(role=Role.Button,onClick=onClick)
+        .semantics {stateDescription=value}.padding(horizontal=10.dp,vertical=8.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
+        Box(Modifier.size(36.dp).background(color,RoundedCornerShape(11.dp)),contentAlignment=Alignment.Center) { ReferenceIcon(icon,onColor,Modifier.size(20.dp)) }
+        // The value hides while its choices are open, so it is never shown twice; large text moves it under the title.
+        val stacked=LocalDensity.current.fontScale>1.4f
+        Column(Modifier.weight(1f)) {
+            Text(title,fontSize=15.sp,fontWeight=FontWeight.ExtraBold,color=TaleInk)
+            if(stacked && !expanded) Text(value,fontSize=14.sp,fontWeight=FontWeight.Bold,color=TaleMuted)
         }
-        SettingsCard { Column(Modifier.padding(6.dp),content=content) }
+        if(!stacked && !expanded) Text(value,fontSize=14.sp,fontWeight=FontWeight.Bold,color=TaleMuted,textAlign=TextAlign.End,modifier=Modifier.widthIn(max=120.dp))
+        ReferenceIcon("next",TaleMuted,Modifier.size(16.dp).graphicsLayer {rotationZ=turn})
     }
 }
 

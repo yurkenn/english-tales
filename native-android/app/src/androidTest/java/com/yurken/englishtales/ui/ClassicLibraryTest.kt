@@ -27,7 +27,7 @@ class ClassicLibraryTest {
         classics.forEach {assertTrue("Missing study words: ${it.id}",LearningContent.wordsForStory(it).size>=6)}
         var opened=""
         compose.setContent {EnglishTalesTheme {CatalogScreen(LearningSnapshot(),{opened=it},PaddingValues())}}
-        compose.onNodeWithText("Arama").performClick()
+        compose.onNodeWithText("Kitap ara").performClick()
         compose.onNode(hasSetTextAction()).performTextInput("Külkedisi")
         compose.onAllNodesWithText("Cinderella").onLast().assertIsDisplayed()
         screenshot("search")

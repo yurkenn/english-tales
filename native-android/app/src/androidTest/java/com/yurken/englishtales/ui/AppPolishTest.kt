@@ -52,7 +52,7 @@ class AppPolishTest {
 
     @Test fun emptySearchOffersToClearIt() {
         compose.setContent {EnglishTalesTheme {CatalogScreen(LearningSnapshot(),{},PaddingValues())}}
-        compose.onNodeWithText("Arama").performClick()
+        compose.onNodeWithText("Kitap ara").performClick()
         compose.onNode(hasSetTextAction()).performTextInput("zzqx")
         compose.onNodeWithText("Aramayı temizle").performClick()
         compose.onNodeWithText("Aramayı temizle").assertDoesNotExist()

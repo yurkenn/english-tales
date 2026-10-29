@@ -64,9 +64,6 @@
     <string name="sectigin_seviye_hikaye_onerileri_buna">المستوى الذي اخترته هو %1$s. تعتمد اقتراحات القصة على ذلك. يمكنك تغيير مستواك في ملف التعريف الخاص بي → الإعدادات.</string>
     <string name="calisma_serin">أيام التعلّم المتتالية</string>
     <string name="puanlarin">النقاط الخاصة بك</string>
-    <string name="okuma_aliskanligin_burada_baslar">عادة القراءة لديك تبدأ هنا</string>
-    <string name="bir_hikaye_nyeni_kelimeler">قصة واحدة، \n كلمات جديدة</string>
-    <string name="oku_dinle_ve_ogren">اقرأ واستمع وتعلم</string>
     <string name="okumaya_basla">ابدأ القراءة</string>
     <string name="senin_icin">لك</string>
     <string name="kelimelerim_kayitli_kelime">كلماتي · %1$s الكلمات المحفوظة</string>
@@ -228,7 +225,6 @@
     <string name="temizle">واضح</string>
     <string name="her_denemede_ogreniyoruz">كل محاولة تعلمنا شيئًا ما.</string>
     <string name="anladim_devam_et">فهمت، استمر</string>
-    <string name="harika_puan_kazandin">⭐ عظيم! لقد حصلت على نقاط %1$s!</string>
     <string name="calisma_tamamlandi">الممارسة كاملة</string>
     <string name="gunluk_hedefin_tamamlandi">هدفك اليومي كامل ✓</string>
     <string name="bugunku_hedef_adim">هدف اليوم: خطوات ⁦%1$s/%2$s⁩</string>

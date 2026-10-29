@@ -50,18 +50,19 @@ class DesignGalleryTest {
     @Test fun g02_welcome() = shot("02-karsilama") {WelcomeScreen(AccountState(),{},{},{})}
     @Test fun g03_level() = shot("03-seviye",tap=listOf(R.string.baslayalim)) {OnboardingScreen(analyticsControls={}) {_,_,_->}}
     @Test fun g04_placement() = shot("04-seviye-testi",tap=listOf(R.string.placement_start)) {PlacementScreen({},{})}
-    @Test fun g05_study() = shot("05-calis") {Scaffold(bottomBar={TalesBottomBar(0) {}}) {StudyScreen(snapshot,{},{},it,{},{})}}
+    @Test fun g05_study() = shot("05-calis") {Scaffold(bottomBar={TalesBottomBar(0) {}}) {StudyScreen(snapshot,{},{},it,{},{},onPlay={})}}
     @Test fun g06_library() = shot("06-oku") {Scaffold(bottomBar={TalesBottomBar(1) {}}) {CatalogScreen(snapshot,{},it)}}
     @Test fun g07_detail() = shot("07-hikaye") {StoryDetailScreen(story,42,{},{},{},{})}
     @Test fun g08_reader() = shot("08-okuyucu") {ReaderScreen(story,snapshot,onBack={},onSaveWord={},onProgress={_,_->},
         onComplete={},onHintDismiss={},sessionId="gallery",onCheckpoint={_,_->})}
     @Test fun g09_readingResult() = shot("09-okuma-sonucu") {ReadingResultScreen(story,snapshot,{},{})}
-    @Test fun g10_words() = shot("10-kelimelerim") {SavedWordsScreen(snapshot,{},{})}
-    @Test fun g11_play() = shot("11-oyna") {Scaffold(bottomBar={TalesBottomBar(2) {}}) {PracticeScreen(snapshot,{_,_,_,_,_->},{_,_->},it,{_,_,_->},{_,_->},{})}}
+    @Test fun g10_words() = shot("10-kelimelerim") {SavedWordsScreen(snapshot,{},{},onReview={})}
+    @Test fun g11_play() = shot("11-oyna") {Scaffold(bottomBar={TalesBottomBar(2) {}}) {PracticeScreen(snapshot,{_,_,_,_,_->},{_,_->},it,{_,_,_->},{_,_->},{},quests={m -> DailyQuestsCard(snapshot,ChestUi.Idle,{},{},m)})}}
     @Test fun g12_match() = shot("12-eslestir") {MatchingGame(words.take(5),1,snapshot.savedWordIds,PaddingValues(),{_,_->},{},{},{},snapshot)}
     @Test fun g13_cards() = shot("13-kartlar") {FlashcardGame(words,1,snapshot.savedWordIds,PaddingValues(),{_,_->},{},{},{},snapshot)}
     @Test fun g14_gameResult() = shot("14-oyun-sonucu") {GameResult("Eşleştirme",45,PaddingValues(),{},{},snapshot,9,10)}
-    @Test fun g15_profile() = shot("15-profil") {Scaffold(bottomBar={TalesBottomBar(3) {}}) {ProfileScreen(snapshot,{},it,{})}}
+    @Test fun g15_profile() = shot("15-profil") {Scaffold(bottomBar={TalesBottomBar(3) {}}) {ProfileScreen(snapshot,{},it,{},league={m -> LeagueCard(LeagueUi.Ready(LeagueStanding(2,"2026-10-26",System.currentTimeMillis()+3*86_400_000L,true,false,5,2,
+        listOf(LeagueMember(1,"Ayşe",620,false,"a"),LeagueMember(4,"Sen",480,true,"me")),null)),{},{},m)})}}
     @Test fun g16_league() = shot("16-lig") {
         val names=listOf("Ayşe" to 620,"Mert" to 540,"Deniz" to 515,"Sen" to 480,"Elif" to 470,"Can" to 120,"Zeynep" to 90)
         val members=names.mapIndexed {i,(name,xp) -> LeagueMember(i+1,name,xp,name=="Sen","m$i")}

@@ -244,7 +244,7 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
                 onSaveName={name -> viewModel.updatePreferences(snapshot.level,snapshot.preferredGenre,snapshot.dailyGoal,name)},
                 friends=friendState,friendActions=FriendActions({leagues.refreshFriends(leagueUser)},{leagues.createCode(leagueUser)},
                     {leagues.addFriend(leagueUser,it)},{leagues.removeFriend(leagueUser,it)},{leagues.reportName(leagueUser,it)}))}
-            composable("words") { SavedWordsScreen(snapshot,onBack={nav.popBackStack()},onRemoveWord=viewModel::removeWord,onBrowse={selectedTab=1;nav.popBackStack("main",false)}) }
+            composable("words") { SavedWordsScreen(snapshot,onBack={nav.popBackStack()},onRemoveWord=viewModel::removeWord,onBrowse={selectedTab=1;nav.popBackStack("main",false)},onReview=::practice) }
         }
     }
     }
@@ -260,8 +260,8 @@ internal fun MainTabs(snapshot: LearningSnapshot, selectedTab: Int, onTabSelecte
         TaleSwitch(selectedTab) { tab -> tabs.SaveableStateProvider(tab) { when(tab) {
             0 -> StudyScreen(snapshot,onOpenStory,onOpenWords,padding,onRead,onPractice,league,quests,onPlay={onTabSelected(2)})
             1 -> CatalogScreen(snapshot,onOpenStory,padding,library)
-            2 -> PracticeScreen(snapshot,onLessonComplete,onWordReviewed,padding,onSessionStart,onCheckpoint,onSessionAbandoned,onSessionActive={practicing=it},launchId=launchId,launchWordIds=launchWords,onLaunchConsumed=onLaunchConsumed,onDailyPlan=onDailyPlan,onCompletedExit=onCompletedExit)
-            else -> ProfileScreen(snapshot,onOpenWords,padding,onSettings,onAccount)
+            2 -> PracticeScreen(snapshot,onLessonComplete,onWordReviewed,padding,onSessionStart,onCheckpoint,onSessionAbandoned,onSessionActive={practicing=it},launchId=launchId,launchWordIds=launchWords,onLaunchConsumed=onLaunchConsumed,onDailyPlan=onDailyPlan,onCompletedExit=onCompletedExit,quests=quests)
+            else -> ProfileScreen(snapshot,onOpenWords,padding,onSettings,onAccount,league)
         } } }
     }
 }

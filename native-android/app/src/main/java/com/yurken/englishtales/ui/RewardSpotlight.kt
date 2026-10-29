@@ -4,6 +4,7 @@ import androidx.compose.animation.core.*
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
@@ -192,12 +193,40 @@ internal fun WeekFlames(week: List<DailyActivity>, frozenDays: Set<String>, modi
             val today = i == week.lastIndex
             val pop = remember { Animatable(if (still || !lit) 1f else 0.4f) }
             LaunchedEffect(lit) { if (lit && !still) { kotlinx.coroutines.delay(260L + i * 110L); pop.animateTo(1f, spring(dampingRatio = 0.4f, stiffness = Spring.StiffnessMedium)) } }
+            // The design's day rings: a lit day is an orange coin with a check, a frozen one ice blue, the rest an empty ring.
             Column(Modifier.weight(1f), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                Box(Modifier.size(32.dp).graphicsLayer { scaleX = pop.value; scaleY = pop.value }
+                    .background(if (lit) TaleOrange else if (frozen) Color(0xFFD6F4FB) else Color.Transparent, CircleShape)
+                    .then(if (!lit && !frozen) Modifier.border(2.dp, TaleLine, CircleShape) else Modifier), contentAlignment = Alignment.Center) {
+                    if (lit) Text("✓", fontSize = 16.sp, fontWeight = FontWeight.ExtraBold, color = TaleOnOrange)
+                    else if (frozen) Text("❄", fontSize = 16.sp, color = Color(0xFF1E8FA8))
+                }
                 Text(if (today) stringResource(R.string.weekly_today) else day.label, fontSize = 11.sp, maxLines = 1,
-                    color = if (today) TaleBlue else TaleMuted, fontWeight = if (today) FontWeight.Bold else FontWeight.Normal)
-                if (frozen && !lit) Text("❄", fontSize = 24.sp, color = Color(0xFF3FD0EE))
-                else ReferenceIcon("flame", if (lit) TaleWarm else TaleLine, Modifier.size(28.dp).graphicsLayer { scaleX = pop.value; scaleY = pop.value })
+                    color = if (today) TaleBlue else TaleMuted, fontWeight = FontWeight.Bold)
             }
         }
+    }
+}
+
+/** The streak hero of the design: a solid orange flame with the day count inside it. */
+@Composable
+internal fun StreakFlameHero(days: Int, modifier: Modifier = Modifier) {
+    Box(modifier.size(132.dp, 160.dp), contentAlignment = Alignment.Center) {
+        Canvas(Modifier.fillMaxSize()) {
+            fun flame(dy: Float) = Path().apply {
+                val w = size.width; val h = size.height - 8.dp.toPx()
+                moveTo(w * 0.52f, dy)
+                cubicTo(w * 0.62f, h * 0.22f + dy, w, h * 0.38f + dy, w, h * 0.64f + dy)
+                cubicTo(w, h * 0.86f + dy, w * 0.78f, h + dy, w * 0.5f, h + dy)
+                cubicTo(w * 0.22f, h + dy, 0f, h * 0.86f + dy, 0f, h * 0.64f + dy)
+                cubicTo(0f, h * 0.44f + dy, w * 0.18f, h * 0.34f + dy, w * 0.3f, h * 0.2f + dy)
+                cubicTo(w * 0.32f, h * 0.34f + dy, w * 0.4f, h * 0.4f + dy, w * 0.46f, h * 0.38f + dy)
+                cubicTo(w * 0.42f, h * 0.24f + dy, w * 0.44f, h * 0.1f + dy, w * 0.52f, dy)
+                close()
+            }
+            drawPath(flame(8.dp.toPx()), chunkEdge(TaleOrange))
+            drawPath(flame(0f), TaleOrange)
+        }
+        Text("$days", Modifier.padding(top = 40.dp), fontFamily = TaleDisplay, fontSize = 52.sp, lineHeight = 54.sp, fontWeight = FontWeight.ExtraBold, color = Color.White)
     }
 }

@@ -65,9 +65,6 @@
     <string name="sectigin_seviye_hikaye_onerileri_buna">Seçtiğin seviye %1$s. Hikâye önerileri buna göre hazırlanır. Seviyeni Profilim → Ayarlar ekranından değiştirebilirsin.</string>
     <string name="calisma_serin">Çalışma serin</string>
     <string name="puanlarin">Puanların</string>
-    <string name="okuma_aliskanligin_burada_baslar">okuma alışkanlığın burada başlar</string>
-    <string name="bir_hikaye_nyeni_kelimeler">Bir hikâye,\nyeni kelimeler</string>
-    <string name="oku_dinle_ve_ogren">Oku, dinle ve öğren</string>
     <string name="okumaya_basla">Okumaya başla</string>
     <string name="senin_icin">Senin için</string>
     <string name="kelimelerim_kayitli_kelime">Kelimelerim · %1$s kayıtlı kelime</string>
@@ -230,7 +227,6 @@
     <string name="temizle">Temizle</string>
     <string name="her_denemede_ogreniyoruz">Her denemede öğreniyoruz.</string>
     <string name="anladim_devam_et">Anladım, devam et</string>
-    <string name="harika_puan_kazandin">⭐  Harika! %1$s puan kazandın!</string>
     <string name="calisma_tamamlandi">Çalışma tamamlandı</string>
     <string name="gunluk_hedefin_tamamlandi">Günlük hedefin tamamlandı ✓</string>
     <string name="bugunku_hedef_adim">Bugünkü hedef: %1$s / %2$s adım</string>

@@ -63,9 +63,6 @@
     <string name="sectigin_seviye_hikaye_onerileri_buna">Your selected level is %1$s. Story suggestions are based on it. You can change your level in My profile → Settings.</string>
     <string name="calisma_serin">Your study streak</string>
     <string name="puanlarin">Your points</string>
-    <string name="okuma_aliskanligin_burada_baslar">your reading habit starts here</string>
-    <string name="bir_hikaye_nyeni_kelimeler">One story,\nnew words</string>
-    <string name="oku_dinle_ve_ogren">Read, listen and learn</string>
     <string name="okumaya_basla">Start reading</string>
     <string name="senin_icin">For you</string>
     <string name="kelimelerim_kayitli_kelime">My words · %1$s saved words</string>
@@ -227,7 +224,6 @@
     <string name="temizle">Clear</string>
     <string name="her_denemede_ogreniyoruz">Every try teaches us something.</string>
     <string name="anladim_devam_et">Got it, continue</string>
-    <string name="harika_puan_kazandin">⭐  Great! You earned %1$s points!</string>
     <string name="calisma_tamamlandi">Practice complete</string>
     <string name="gunluk_hedefin_tamamlandi">Your daily goal is complete ✓</string>
     <string name="bugunku_hedef_adim">Today\'s goal: %1$s / %2$s steps</string>

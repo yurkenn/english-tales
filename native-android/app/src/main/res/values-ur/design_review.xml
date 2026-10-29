@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="story_of_the_day">آج کی کہانی</string>
+    <string name="word_due_chip">دہرانے کا وقت</string>
+    <string name="settings_section_learning">سیکھنا</string>
+    <string name="settings_section_reminders">یاد دہانیاں اور رازداری</string>
+    <string name="settings_section_app">ایپ</string>
+</resources>

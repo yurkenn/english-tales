@@ -25,6 +25,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.platform.LocalDensity
 import androidx.activity.compose.BackHandler
 import androidx.compose.ui.res.painterResource
@@ -38,6 +39,7 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.res.stringResource
+import com.yurken.englishtales.AppLanguage
 import com.yurken.englishtales.data.ChestUi
 import com.yurken.englishtales.data.ReadingTime
 import com.yurken.englishtales.data.ReadingLength
@@ -82,15 +84,18 @@ fun GameStatsBar(snapshot: LearningSnapshot) {
 }
 
 @Composable
-private fun ChallengeBanner(onClick: () -> Unit) {
-    ChunkyBox(TaleYellow,Modifier.padding(horizontal=16.dp).fillMaxWidth().heightIn(min=132.dp),onClick=onClick) {
-        TalesMascot(MascotMood.Reading,Modifier.align(Alignment.BottomEnd).width(108.dp).height(128.dp),animate=true)
-        Column(Modifier.fillMaxWidth(if(LocalDensity.current.fontScale>=1.5f) 1f else 0.68f).padding(16.dp),verticalArrangement=Arrangement.spacedBy(6.dp)) {
-            Text(stringResource(R.string.okuma_aliskanligin_burada_baslar),fontSize=12.sp,fontWeight=FontWeight.ExtraBold,letterSpacing=0.6.sp,color=TaleOnYellow)
-            Text(stringResource(R.string.bir_hikaye_nyeni_kelimeler),fontFamily=TaleDisplay,fontSize=22.sp,lineHeight=25.sp,fontWeight=FontWeight.ExtraBold,color=TaleOnYellow)
-            Text(stringResource(R.string.oku_dinle_ve_ogren),fontSize=13.sp,lineHeight=18.sp,fontWeight=FontWeight.Bold,color=TaleOnYellow)
-            Text(stringResource(R.string.okumaya_basla),fontSize=13.sp,lineHeight=16.sp,color=TaleOnGreen,fontWeight=FontWeight.ExtraBold,
-                modifier=Modifier.padding(top=4.dp).background(TaleGreen,RoundedCornerShape(14.dp)).padding(horizontal=14.dp,vertical=7.dp))
+private fun StoryOfTheDay(story: Story,onClick: () -> Unit) {
+    val details=listOfNotNull(story.level,ReadingTime.minutes(story)?.let { stringResource(R.string.reading_minutes,it) },genreLabel(story.genre)).joinToString(" · ")
+    ChunkyBox(TaleYellow,Modifier.padding(horizontal=16.dp).fillMaxWidth().heightIn(min=150.dp),onClick=onClick) {
+        Row(Modifier.fillMaxWidth().padding(16.dp),horizontalArrangement=Arrangement.spacedBy(14.dp),verticalAlignment=Alignment.CenterVertically) {
+            Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(6.dp)) {
+                Text(stringResource(R.string.story_of_the_day).uppercase(AppLanguage.locale(LocalContext.current)),fontSize=12.sp,fontWeight=FontWeight.ExtraBold,letterSpacing=0.8.sp,color=TaleOnYellow)
+                Text(story.title,fontFamily=TaleDisplay,fontSize=22.sp,lineHeight=25.sp,fontWeight=FontWeight.ExtraBold,color=TaleOnYellow)
+                Text(details,fontSize=13.sp,lineHeight=18.sp,fontWeight=FontWeight.Bold,color=TaleOnYellow)
+                Text(stringResource(R.string.okumaya_basla),fontSize=13.sp,lineHeight=16.sp,color=TaleOnGreen,fontWeight=FontWeight.ExtraBold,
+                    modifier=Modifier.padding(top=4.dp).background(TaleGreen,RoundedCornerShape(14.dp)).padding(horizontal=14.dp,vertical=7.dp))
+            }
+            BookCover(story,Modifier.size(86.dp,124.dp).rotate(4f))
         }
     }
 }
@@ -173,19 +178,27 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
     Column(Modifier.fillMaxSize().padding(padding)) {
         if(listMode.isBlank()) {
             GameStatsBar(snapshot)
-            FlowRow(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=10.dp),horizontalArrangement=Arrangement.spacedBy(16.dp),verticalArrangement=Arrangement.spacedBy(10.dp),maxItemsInEachRow=sideBySide(2)) {
-                listOf(stringResource(R.string.arama) to "search",stringResource(R.string.kitaplarim) to "read").forEachIndexed { i,(label,icon) ->
-                    ChunkyBox(TaleSurface,Modifier.weight(1f).heightIn(min=52.dp),RoundedCornerShape(16.dp),depth=4.dp,border=TaleLine,contentAlignment=Alignment.Center,onClick={ listMode=if(i==0) "search" else "books" }) {
-                        Row(Modifier.padding(horizontal=12.dp,vertical=10.dp),horizontalArrangement=Arrangement.Center,verticalAlignment=Alignment.CenterVertically) {
-                            ReferenceIcon(icon,TaleBlue,Modifier.size(20.dp)); Spacer(Modifier.width(8.dp)); Text(label,fontSize=15.sp,fontWeight=FontWeight.ExtraBold)
-                        }
+            // The design's search field opens the search list; "my books" sits beside it as a square key.
+            Row(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=10.dp),horizontalArrangement=Arrangement.spacedBy(10.dp),verticalAlignment=Alignment.CenterVertically) {
+                ChunkyBox(TaleSurface,Modifier.weight(1f).heightIn(min=52.dp),RoundedCornerShape(16.dp),depth=4.dp,border=TaleLine,onClick={ listMode="search" }) {
+                    Row(Modifier.fillMaxWidth().padding(horizontal=14.dp,vertical=12.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(10.dp)) {
+                        ReferenceIcon("search",TaleMuted,Modifier.size(20.dp)); Text(stringResource(R.string.kitap_ara),fontSize=15.sp,fontWeight=FontWeight.Bold,color=TaleMuted)
                     }
+                }
+                ChunkyBox(TaleSurface,Modifier.size(52.dp,56.dp).contentLabel(stringResource(R.string.kitaplarim)),RoundedCornerShape(16.dp),depth=4.dp,border=TaleLine,contentAlignment=Alignment.Center,onClick={ listMode="books" }) {
+                    ReferenceIcon("read",TaleBlue,Modifier.size(22.dp))
                 }
             }
             PullToRefreshBox(isRefreshing=actions?.refreshing==true,onRefresh={actions?.onRefresh?.invoke()},modifier=Modifier.weight(1f)) {
             Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState())) {
                 Spacer(Modifier.height(20.dp))
-                if(stories.isNotEmpty()) ChallengeBanner { (stories.firstOrNull { it.level==snapshot.level } ?: stories.first()).let {onOpenStory(it.id)} }
+                if(stories.isNotEmpty()) {
+                    // One story a day at the learner's level, the same one all day.
+                    val today=remember { java.util.Calendar.getInstance().get(java.util.Calendar.DAY_OF_YEAR) }
+                    val pool=stories.filter { it.level==snapshot.level }.ifEmpty { stories }
+                    val daily=pool[today%pool.size]
+                    StoryOfTheDay(daily) { onOpenStory(daily.id) }
+                }
                 else Text(stringResource(R.string.su_anda_yayimlanmis_hikaye_yok),modifier=Modifier.padding(16.dp),color=TaleMuted)
                 Spacer(Modifier.height(38.dp))
                 BookShelf(stringResource(R.string.yeni_hikayeler),newest,onOpenStory) { listMode="new" }
@@ -370,7 +383,7 @@ private fun DetailAction(icon: String, label: String, face: Color, ink: Color, o
 }
 
 @Composable
-fun ProfileScreen(snapshot: LearningSnapshot, onOpenWords: () -> Unit, padding: PaddingValues, onSettings: ()->Unit,onAccount: ()->Unit={}) {
+fun ProfileScreen(snapshot: LearningSnapshot, onOpenWords: () -> Unit, padding: PaddingValues, onSettings: ()->Unit,onAccount: ()->Unit={},league: (@Composable (Modifier)->Unit)?=null) {
     val colors=LocalTaleColors.current
     // The design's blue header runs up under the status bar, so only the bottom inset pads the page.
     val headerFace=if(colors.dark) colors.tileBlue else colors.blue
@@ -419,7 +432,10 @@ fun ProfileScreen(snapshot: LearningSnapshot, onOpenWords: () -> Unit, padding: 
             ProfileStatTile(stringResource(R.string.puan),"${snapshot.points}",TaleYellow,TaleOnYellow,stringResource(R.string.puanlarin),pointsExplanation(snapshot),Modifier.weight(1f).appearIn(1))
             ProfileStatTile(stringResource(R.string.kelimeler),"${snapshot.knownWordCount}",TaleGreen,TaleOnGreen,stringResource(R.string.known_words_title),stringResource(R.string.known_words_explanation),Modifier.weight(1f).appearIn(1))
         }
+        // As in the design, the week's league standing and the earned badges come right after the numbers.
+        league?.invoke(Modifier.fillMaxWidth().appearIn(1))
         DetailAction("study",stringResource(R.string.kelimelerim),TaleBlue,TaleOnBlue,onOpenWords,Modifier.fillMaxWidth().appearIn(1))
+        EarnedBadges(snapshot)
         ChunkyBox(TaleSurface,Modifier.fillMaxWidth().heightIn(min=52.dp),RoundedCornerShape(16.dp),depth=4.dp,border=TaleLine,contentAlignment=Alignment.Center,onClick=onAccount) {
             Text(if(snapshot.ownerId=="guest") stringResource(R.string.hesabina_giris_yap) else stringResource(R.string.hesabini_yonet),Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=12.dp),
                 fontSize=16.sp,fontWeight=FontWeight.ExtraBold,textAlign=androidx.compose.ui.text.style.TextAlign.Center)
@@ -443,7 +459,6 @@ fun ProfileScreen(snapshot: LearningSnapshot, onOpenWords: () -> Unit, padding: 
             ProfilePanel(Modifier.weight(1f)) { Text(stringResource(R.string.alistirmalar),fontSize=12.sp,fontWeight=FontWeight.Bold); AnimatedCounter(snapshot.completedLessons,Modifier.padding(top=14.dp),style=LocalTextStyle.current.copy(fontSize=30.sp,fontWeight=FontWeight.Bold),color=TalePurple); Text(stringResource(R.string.tamamlandi),fontSize=12.sp,color=TaleMuted) }
         }
         WeeklyActivity(snapshot)
-        EarnedBadges(snapshot)
     }
     }
 
@@ -470,7 +485,7 @@ private fun ProfilePanel(modifier: Modifier = Modifier, index: Int = 0, content:
 }
 
 @Composable
-fun SavedWordsScreen(snapshot: LearningSnapshot, onBack: () -> Unit, onRemoveWord: (String) -> Unit, onBrowse: (() -> Unit)? = null) {
+fun SavedWordsScreen(snapshot: LearningSnapshot, onBack: () -> Unit, onRemoveWord: (String) -> Unit, onBrowse: (() -> Unit)? = null, onReview: ((List<String>) -> Unit)? = null) {
     var selectedStage by rememberSaveable { mutableStateOf("learning") }
     val stages=listOf(Triple("learning",stringResource(R.string.ogreniyorum),TaleBlue),Triple("reviewing",stringResource(R.string.tekrar_ediyorum),TaleGreen),Triple("known",stringResource(R.string.biliyorum),TalePurple))
     val words=snapshot.savedWordList().filter { (snapshot.wordStates[it.id]?:"learning")==selectedStage }
@@ -499,7 +514,7 @@ fun SavedWordsScreen(snapshot: LearningSnapshot, onBack: () -> Unit, onRemoveWor
         else Row(track.height(IntrinsicSize.Min),horizontalArrangement=Arrangement.spacedBy(4.dp)) { stages.forEach { (stage,label,color) -> stage(stage,label,color,Modifier.weight(1f).fillMaxHeight()) } }
         narrator.error?.let { Text(it,color=TaleMuted,fontSize=12.sp,modifier=Modifier.padding(horizontal=14.dp)) }
         Text(stringResource(R.string.kelime, words.size),fontFamily=TaleDisplay,fontSize=20.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.padding(horizontal=14.dp,vertical=6.dp))
-        LazyColumn(contentPadding=PaddingValues(12.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
+        LazyColumn(Modifier.weight(1f),contentPadding=PaddingValues(12.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
             items(words,key={it.id}) { word ->
                 ChunkyBox(TaleSurface,Modifier.fillMaxWidth().animateItem(),RoundedCornerShape(18.dp),depth=4.dp,border=TaleLine) {
                 Row(Modifier.fillMaxWidth().padding(start=10.dp,end=8.dp,top=10.dp,bottom=10.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
@@ -507,7 +522,15 @@ fun SavedWordsScreen(snapshot: LearningSnapshot, onBack: () -> Unit, onRemoveWor
                     ChunkyBox(TaleBlue,Modifier.size(48.dp).contentLabel(stringResource(R.string.kelimesini_dinle, word.word)),RoundedCornerShape(14.dp),depth=3.dp,contentAlignment=Alignment.Center,onClick={narrator.speak(word.word)}) {
                         ReferenceIcon("volume",TaleOnBlue,Modifier.size(22.dp))
                     }
-                    Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(3.dp)) { Text(word.word,fontFamily=TaleDisplay,fontSize=19.sp,fontWeight=FontWeight.ExtraBold); Text(word.translation,fontSize=14.sp,fontWeight=FontWeight.Bold,color=TaleMuted) }
+                    Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(3.dp)) {
+                        FlowRow(horizontalArrangement=Arrangement.spacedBy(8.dp),verticalArrangement=Arrangement.spacedBy(2.dp)) {
+                            Text(word.word,fontFamily=TaleDisplay,fontSize=19.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.align(Alignment.CenterVertically))
+                            if(word.id in snapshot.dueWordIds) Text(stringResource(R.string.word_due_chip),fontSize=11.sp,fontWeight=FontWeight.ExtraBold,color=TalePurple,
+                                modifier=Modifier.align(Alignment.CenterVertically).background(LocalTaleColors.current.tilePurple,RoundedCornerShape(8.dp)).padding(horizontal=8.dp,vertical=2.dp))
+                        }
+                        Text(word.translation,fontSize=14.sp,fontWeight=FontWeight.Bold,color=TaleMuted)
+                        MasteryBar(snapshot,word.id)
+                    }
                     TextButton(onClick={onRemoveWord(word.id);alerts.show(context.getString(R.string.alert_word_removed,word.word),TaleAlertKind.Info)},contentPadding=PaddingValues(4.dp)) { Text(stringResource(R.string.kaldir),fontSize=12.sp,fontWeight=FontWeight.Bold,color=TaleMuted) }
                 }
                 }
@@ -518,6 +541,21 @@ fun SavedWordsScreen(snapshot: LearningSnapshot, onBack: () -> Unit, onRemoveWor
                 else TaleEmptyState(stringResource(R.string.bu_asamada_henuz_kelime_yok))
             }
         }
+        // The design's purple key at the bottom: the words that are due, straight into a review.
+        if(onReview!=null && snapshot.dueWordIds.isNotEmpty()) {
+            val batch=snapshot.dueWordIds.take(5)
+            ChunkyButton(stringResource(R.string.kelimeyi_hatirla,batch.size),{onReview(batch)},Modifier.fillMaxWidth().padding(horizontal=14.dp,vertical=10.dp),color=TalePurple,onColor=TaleOnPurple)
+        }
+    }
+}
+
+/** Five short bars: how settled a word is, from just saved to known. */
+@Composable
+private fun MasteryBar(snapshot: LearningSnapshot,wordId: String) {
+    val stability=snapshot.wordStability[wordId] ?: 0.0
+    val filled=if(snapshot.wordStages[wordId]==WordStage.KNOWN) 5 else when {stability>=21 -> 4; stability>=7 -> 3; stability>=2 -> 2; else -> 1}
+    Row(Modifier.padding(top=3.dp).clearAndSetSemantics {},horizontalArrangement=Arrangement.spacedBy(4.dp)) {
+        repeat(5) { i -> Box(Modifier.size(16.dp,5.dp).background(if(i<filled) TaleGreen else TaleLine,RoundedCornerShape(3.dp))) }
     }
 }
 

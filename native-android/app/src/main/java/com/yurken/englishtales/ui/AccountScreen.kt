@@ -7,6 +7,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.platform.LocalContext
 import com.yurken.englishtales.AppLanguage
 import androidx.compose.ui.Modifier
@@ -29,6 +30,8 @@ fun AccountScreen(state: AccountState,onBack: ()->Unit,onSignIn: (String,String)
     var confirmation by remember {mutableStateOf("")}
     var code by remember {mutableStateOf("")}
     var mode by remember {mutableStateOf("signin")}
+    // A guest first sees the two ways to keep their progress; the e-mail form opens on request.
+    var emailOpen by rememberSaveable {mutableStateOf(false)}
     LaunchedEffect(state.emailAction,state.scope) {password="";confirmation="";code="";if(state.emailAction.isEmpty()) mode="signin"}
     var confirmExit by remember {mutableStateOf(false)}
     var confirmDelete by remember {mutableStateOf(false)}
@@ -110,6 +113,8 @@ fun AccountScreen(state: AccountState,onBack: ()->Unit,onSignIn: (String,String)
                     TextButton(onClick={password="";confirmation="";code="";onCancelCode()},enabled=!state.busy,modifier=Modifier.fillMaxWidth()) {Text(stringResource(R.string.giris_ekranina_don))}
                 } else {
                 GoogleSignInButton(!state.busy,onGoogle)
+                if(state.userId==null && !emailOpen) ChunkyButton(stringResource(R.string.e_posta_ile_giris_yap),{emailOpen=true},Modifier.fillMaxWidth(),color=TaleSurface,onColor=TaleInk,enabled=!state.busy,border=TaleLine)
+                else {
                 Text(when(mode) {"signup"->stringResource(R.string.e_posta_hesabi_olustur);"recovery"->stringResource(R.string.parolani_kurtar);else->stringResource(R.string.veya_e_posta_ile_giris)},color=TaleMuted,fontSize=13.sp)
                 OutlinedTextField(email,{email=it},label={Text(stringResource(R.string.e_posta))},singleLine=true,enabled=!state.busy,
                     keyboardOptions=KeyboardOptions(keyboardType=KeyboardType.Email),modifier=Modifier.fillMaxWidth())
@@ -125,6 +130,7 @@ fun AccountScreen(state: AccountState,onBack: ()->Unit,onSignIn: (String,String)
                     TextButton(onClick={password="";confirmation="";mode="signup"},enabled=!state.busy,modifier=Modifier.fillMaxWidth()) {Text(stringResource(R.string.yeni_hesap_olustur))}
                     TextButton(onClick={password="";confirmation="";mode="recovery"},enabled=!state.busy,modifier=Modifier.fillMaxWidth()) {Text(stringResource(R.string.parolami_unuttum))}
                 } else TextButton(onClick={password="";confirmation="";mode="signin"},enabled=!state.busy,modifier=Modifier.fillMaxWidth()) {Text(stringResource(R.string.giris_ekranina_don))}
+                }
                 }
                 if(state.userId==null) OutlinedButton(onClick=onGuest,enabled=!state.busy,modifier=Modifier.fillMaxWidth().heightIn(min=48.dp)) {Text(stringResource(R.string.misafir_olarak_devam_et))}
             }
