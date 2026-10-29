@@ -13,10 +13,6 @@ import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowForward
-import androidx.compose.material.icons.filled.Check
-import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -95,7 +91,7 @@ internal fun LanguageWelcomeScreen(
                     verticalArrangement = Arrangement.spacedBy(6.dp)) {
                     item {
                         if (onDismiss != null) Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.CenterEnd) {
-                            IconButton(onClick = onDismiss) { Icon(Icons.Default.Close, stringResource(R.string.kapat)) }
+                            IconButton(onClick = onDismiss) { ReferenceIcon("close", TaleMuted, Modifier.size(22.dp).contentLabel(stringResource(R.string.kapat))) }
                         }
                         // The mascot asks the question in a speech bubble, like the rest of the first launch.
                         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.Bottom, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -130,7 +126,7 @@ internal fun LanguageWelcomeScreen(
                                 Spacer(Modifier.width(12.dp))
                                 Box(Modifier.size(28.dp).then(if (active) Modifier.background(TaleBlue, CircleShape) else Modifier.border(2.dp, TaleLine, CircleShape)),
                                     contentAlignment = Alignment.Center) {
-                                    if (active) Icon(Icons.Default.Check, null, Modifier.size(18.dp), tint = TaleOnBlue)
+                                    if (active) ReferenceIcon("check", TaleOnBlue, Modifier.size(18.dp))
                                 }
                             }
                         }
@@ -145,7 +141,7 @@ internal fun LanguageWelcomeScreen(
                             Text(stringResource(R.string.first_language_continue, androidx.core.text.BidiFormatter.getInstance(previewConfiguration.layoutDirection == 1).unicodeWrap(name)),
                                 modifier = Modifier.weight(1f), color = TaleOnGreen, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.ExtraBold)
                             Spacer(Modifier.width(8.dp))
-                            Icon(Icons.AutoMirrored.Filled.ArrowForward, null, Modifier.size(20.dp), tint = TaleOnGreen)
+                            ReferenceIcon("forward", TaleOnGreen, Modifier.size(20.dp))
                         }
                     }
                     Text(stringResource(R.string.first_language_later), style = MaterialTheme.typography.bodySmall, color = TaleMuted)

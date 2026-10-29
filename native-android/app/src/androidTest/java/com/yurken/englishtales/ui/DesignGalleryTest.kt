@@ -74,10 +74,26 @@ class DesignGalleryTest {
     @Test fun g19_settings() = shot("19-ayarlar") {LearningSettingsScreen(snapshot,{},{_,_,_,_->})}
     @Test fun g20_account() = shot("20-hesap") {AccountScreen(AccountState(),{},{_,_->},{})}
     @Test fun g21_empty() = shot("21-bos-durum") {SavedWordsScreen(LearningSnapshot(),{},{},onBrowse={})}
+    // Tall twins of the screens that scroll, so what sits below the fold is compared too.
+    @Test fun g05_studyFull() = shot("05-calis-tam",height=2400) {Scaffold(bottomBar={TalesBottomBar(0) {}}) {StudyScreen(snapshot,{},{},it,{},{},onPlay={})}}
+    @Test fun g06_libraryFull() = shot("06-oku-tam",height=2400) {Scaffold(bottomBar={TalesBottomBar(1) {}}) {CatalogScreen(snapshot,{},it)}}
+    @Test fun g07_detailFull() = shot("07-hikaye-tam",height=2400) {StoryDetailScreen(story,42,{},{},{},{})}
+    @Test fun g09_readingResultFull() = shot("09-okuma-sonucu-tam",height=2400) {ReadingResultScreen(story,snapshot,{},{})}
+    @Test fun g10_wordsFull() = shot("10-kelimelerim-tam",height=2400) {SavedWordsScreen(snapshot,{},{},onReview={})}
+    @Test fun g11_playFull() = shot("11-oyna-tam",height=2400) {Scaffold(bottomBar={TalesBottomBar(2) {}}) {PracticeScreen(snapshot,{_,_,_,_,_->},{_,_->},it,{_,_,_->},{_,_->},{},quests={m -> DailyQuestsCard(snapshot,ChestUi.Idle,{},{},m)})}}
+    @Test fun g15_profileFull() = shot("15-profil-tam",height=2400) {Scaffold(bottomBar={TalesBottomBar(3) {}}) {ProfileScreen(snapshot,{},it,{},league={m -> LeagueCard(LeagueUi.Ready(LeagueStanding(2,"2026-10-26",System.currentTimeMillis()+3*86_400_000L,true,false,5,2,
+        listOf(LeagueMember(1,"Ayşe",620,false,"a"),LeagueMember(4,"Sen",480,true,"me")),null)),{},{},m)})}}
+    @Test fun g16_leagueFull() = shot("16-lig-tam",height=2400) {
+        val names=listOf("Ayşe" to 620,"Mert" to 540,"Deniz" to 515,"Sen" to 480,"Elif" to 470,"Can" to 120,"Zeynep" to 90)
+        val members=names.mapIndexed {i,(name,xp) -> LeagueMember(i+1,name,xp,name=="Sen","m$i")}
+        LeagueScreen(LeagueUi.Ready(LeagueStanding(2,"2026-10-26",System.currentTimeMillis()+3*86_400_000L,true,false,5,2,members,null)),"Oğuz",{},{},{},{})
+    }
+    @Test fun g19_settingsFull() = shot("19-ayarlar-tam",height=2400) {LearningSettingsScreen(snapshot,{},{_,_,_,_->})}
+    @Test fun g20_accountFull() = shot("20-hesap-tam",height=2400) {AccountScreen(AccountState(),{},{_,_->},{})}
 
-    private fun shot(name: String, tap: List<Int> = emptyList(), screen: @Composable () -> Unit) {
+    private fun shot(name: String, tap: List<Int> = emptyList(), height: Int = 844, screen: @Composable () -> Unit) {
         compose.setContent {
-            DeviceConfigurationOverride(DeviceConfigurationOverride.ForcedSize(DpSize(390.dp,844.dp))) {EnglishTalesTheme(dark=false) {screen()}}
+            DeviceConfigurationOverride(DeviceConfigurationOverride.ForcedSize(DpSize(390.dp,height.dp))) {EnglishTalesTheme(dark=false) {screen()}}
         }
         compose.waitForIdle()
         tap.forEach {compose.onNodeWithText(context.getString(it)).performScrollTo().performClick();compose.waitForIdle()}

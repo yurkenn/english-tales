@@ -71,15 +71,18 @@ fun StatsHeader(snapshot: LearningSnapshot) {
     }
 }
 
-/** The playful home header: level, streak and points as tappable pills. */
-@OptIn(ExperimentalLayoutApi::class)
+/** The playful home header: a level badge on the left, streak and points on the right, each a tappable pill. */
 @Composable
 fun GameStatsBar(snapshot: LearningSnapshot) {
-    FlowRow(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=8.dp),horizontalArrangement=Arrangement.spacedBy(8.dp),verticalArrangement=Arrangement.spacedBy(4.dp)) {
-        StatPill(snapshot.level,stringResource(R.string.ingilizce_seviyen),stringResource(R.string.sectigin_seviye_hikaye_onerileri_buna, snapshot.level),stringResource(R.string.stat_level)) {ReferenceIcon("study",TaleBlue,Modifier.size(20.dp))}
+    Row(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=8.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(8.dp)) {
+        StatPill(snapshot.level,stringResource(R.string.ingilizce_seviyen),stringResource(R.string.sectigin_seviye_hikaye_onerileri_buna, snapshot.level),stringResource(R.string.stat_level)) {
+            Box(Modifier.heightIn(min=22.dp).widthIn(min=22.dp).background(TaleBlue,RoundedCornerShape(6.dp)).padding(horizontal=3.dp),contentAlignment=Alignment.Center) {
+                Text(snapshot.level,color=TaleOnBlue,fontSize=11.sp,lineHeight=13.sp,fontWeight=FontWeight.ExtraBold,maxLines=1)
+            }
+        }
         Spacer(Modifier.weight(1f))
-        StatPill("${snapshot.streak}",stringResource(R.string.calisma_serin),streakExplanation(snapshot),stringResource(R.string.stat_streak)) {ReferenceIcon("streak",TaleWarm,Modifier.size(20.dp))}
-        StatPill("${snapshot.points}",stringResource(R.string.puanlarin),pointsExplanation(snapshot),stringResource(R.string.stat_points)) {ReferenceIcon("points",TalePurple,Modifier.size(20.dp))}
+        StatPill("${snapshot.streak}",stringResource(R.string.calisma_serin),streakExplanation(snapshot),"${snapshot.streak}") {ReferenceIcon("streak",TaleOrange,Modifier.size(18.dp))}
+        StatPill("${snapshot.points}",stringResource(R.string.puanlarin),pointsExplanation(snapshot),"${snapshot.points}") {ReferenceIcon("points",TalePurple,Modifier.size(18.dp))}
     }
 }
 

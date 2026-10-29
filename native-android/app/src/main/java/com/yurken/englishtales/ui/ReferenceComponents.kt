@@ -42,34 +42,25 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.sp
 
-/** App kind -> Phosphor icon. Feature icons are duotone, navigation glyphs regular, small status marks bold; a selected tab is drawn filled. */
-private val duotoneIcons = mapOf(
-    "study" to R.drawable.ic_ph_graduation_cap_duotone, "read" to R.drawable.ic_ph_book_open_text_duotone,
-    "play" to R.drawable.ic_ph_game_controller_duotone, "gamepad" to R.drawable.ic_ph_game_controller_duotone,
-    "letters" to R.drawable.ic_ph_text_aa_duotone, "profile" to R.drawable.ic_ph_user_circle_duotone,
-    "review" to R.drawable.ic_ph_arrows_clockwise_duotone, "headphones" to R.drawable.ic_ph_headphones_duotone,
-    "volume" to R.drawable.ic_ph_speaker_high_duotone, "translate" to R.drawable.ic_ph_translate_duotone,
-    "bookmark" to R.drawable.ic_ph_bookmark_simple_duotone, "cards" to R.drawable.ic_ph_cards_duotone,
-    "settings" to R.drawable.ic_ph_gear_six_duotone, "bolt" to R.drawable.ic_ph_lightning_duotone,
-    "streak" to R.drawable.ic_ph_fire_duotone, "flame" to R.drawable.ic_ph_fire_duotone,
-    "points" to R.drawable.ic_ph_star_four_duotone, "star" to R.drawable.ic_ph_star_duotone,
-    "lock" to R.drawable.ic_ph_lock_simple_duotone)
-private val regularIcons = mapOf(
-    "search" to R.drawable.ic_ph_magnifying_glass_regular, "back" to R.drawable.ic_ph_arrow_left_regular,
-    "share" to R.drawable.ic_ph_share_network_regular, "close" to R.drawable.ic_ph_x_bold,
-    "info" to R.drawable.ic_ph_info_bold, "warning" to R.drawable.ic_ph_exclamation_mark_bold,
-    "next" to R.drawable.ic_ph_caret_right_regular, "prev" to R.drawable.ic_ph_caret_left_regular,
-    "download" to R.drawable.ic_ph_download_simple_regular, "refresh" to R.drawable.ic_ph_arrow_clockwise_regular,
-    "play_arrow" to R.drawable.ic_ph_play_fill, "pause" to R.drawable.ic_ph_pause_fill)
-private val filledIcons = mapOf(
-    "study" to R.drawable.ic_ph_graduation_cap_fill, "read" to R.drawable.ic_ph_book_open_text_fill,
-    "play" to R.drawable.ic_ph_game_controller_fill, "profile" to R.drawable.ic_ph_user_circle_fill)
+/** App kind -> icon drawn from the B · Oyunlu canvas: round 2-2.6 strokes on a 24 grid, with the flame, star and media marks solid. */
+private val icons = mapOf(
+    "study" to R.drawable.ic_dc_study, "read" to R.drawable.ic_dc_read, "play" to R.drawable.ic_dc_gamepad, "gamepad" to R.drawable.ic_dc_gamepad,
+    "profile" to R.drawable.ic_dc_profile, "letters" to R.drawable.ic_dc_letters, "review" to R.drawable.ic_dc_review, "refresh" to R.drawable.ic_dc_review,
+    "headphones" to R.drawable.ic_dc_headphones, "volume" to R.drawable.ic_dc_volume, "translate" to R.drawable.ic_dc_translate,
+    "bookmark" to R.drawable.ic_dc_bookmark, "cards" to R.drawable.ic_dc_cards, "settings" to R.drawable.ic_dc_settings, "bolt" to R.drawable.ic_dc_bolt,
+    "streak" to R.drawable.ic_dc_flame, "flame" to R.drawable.ic_dc_flame, "points" to R.drawable.ic_dc_star, "star" to R.drawable.ic_dc_star,
+    "lock" to R.drawable.ic_dc_lock, "search" to R.drawable.ic_dc_search, "back" to R.drawable.ic_dc_back, "prev" to R.drawable.ic_dc_back,
+    "next" to R.drawable.ic_dc_next, "chevron" to R.drawable.ic_dc_next, "share" to R.drawable.ic_dc_share, "close" to R.drawable.ic_dc_close,
+    "info" to R.drawable.ic_dc_info, "warning" to R.drawable.ic_dc_warning, "download" to R.drawable.ic_dc_download,
+    "play_arrow" to R.drawable.ic_dc_play_arrow, "pause" to R.drawable.ic_dc_pause, "clock" to R.drawable.ic_dc_clock,
+    "language" to R.drawable.ic_dc_globe, "theme" to R.drawable.ic_dc_moon, "bell" to R.drawable.ic_dc_bell, "mail" to R.drawable.ic_dc_mail,
+    "heart" to R.drawable.ic_dc_heart, "forward" to R.drawable.ic_dc_forward)
 
 @Composable
-fun ReferenceIcon(kind: String, tint: Color = TaleBlue, modifier: Modifier = Modifier.size(23.dp), filled: Boolean = false) {
-    val icon = (if (filled) filledIcons[kind] else null) ?: duotoneIcons[kind] ?: regularIcons[kind] ?: R.drawable.ic_ph_check_bold
+fun ReferenceIcon(kind: String, tint: Color = TaleBlue, modifier: Modifier = Modifier.size(23.dp)) {
+    val icon = icons[kind] ?: R.drawable.ic_dc_check
     // Direction glyphs point the other way in Arabic and Urdu.
-    val mirror = androidx.compose.ui.platform.LocalLayoutDirection.current == androidx.compose.ui.unit.LayoutDirection.Rtl && kind in setOf("back", "next", "prev", "chevron")
+    val mirror = androidx.compose.ui.platform.LocalLayoutDirection.current == androidx.compose.ui.unit.LayoutDirection.Rtl && kind in setOf("back", "next", "prev", "chevron", "forward")
     Icon(painterResource(icon), contentDescription = null, tint = tint,
         modifier = if (mirror) modifier.then(Modifier.graphicsLayer { scaleX = -1f }) else modifier)
 }
@@ -114,9 +105,10 @@ fun TalesBottomBar(selected: Int, onSelect: (Int) -> Unit) {
                             CornerRadius(11.dp.toPx()),style=androidx.compose.ui.graphics.drawscope.Stroke(2.dp.toPx()))
                     }
                 }.popOn(pops),contentAlignment=Alignment.Center) {
-                    ReferenceIcon(kind,tint,Modifier.size(22.dp),filled=active)
+                    ReferenceIcon(kind,tint,Modifier.size(22.dp))
                 }
-                Text(label,color=tint,fontSize=11.sp,fontWeight=if(active) FontWeight.SemiBold else FontWeight.Normal)
+                // Every label is bold on the canvas; 11sp SemiBold is the widest that keeps "Profilim" on one line at double text size.
+                Text(label,color=tint,fontSize=11.sp,fontWeight=FontWeight.SemiBold)
             }
         }
     }
