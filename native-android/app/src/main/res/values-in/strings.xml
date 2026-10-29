@@ -64,9 +64,6 @@
     <string name="sectigin_seviye_hikaye_onerileri_buna">Level yang Anda pilih adalah %1$s. Saran cerita didasarkan pada itu. Anda dapat mengubah level Anda di Profil saya → Pengaturan.</string>
     <string name="calisma_serin">Prestasi belajarmu</string>
     <string name="puanlarin">Poin Anda</string>
-    <string name="okuma_aliskanligin_burada_baslar">kebiasaan membaca Anda dimulai di sini</string>
-    <string name="bir_hikaye_nyeni_kelimeler">Satu cerita,\nkata-kata baru</string>
-    <string name="oku_dinle_ve_ogren">Baca, dengar, dan pelajari</string>
     <string name="okumaya_basla">Mulailah membaca</string>
     <string name="senin_icin">Untukmu</string>
     <string name="kelimelerim_kayitli_kelime">Kata-kata saya · %1$s menyimpan kata-kata</string>
@@ -228,7 +225,6 @@
     <string name="temizle">Jernih</string>
     <string name="her_denemede_ogreniyoruz">Setiap percobaan mengajarkan kita sesuatu.</string>
     <string name="anladim_devam_et">Mengerti, lanjutkan</string>
-    <string name="harika_puan_kazandin">⭐ Hebat! Anda mendapatkan poin %1$s!</string>
     <string name="calisma_tamamlandi">Latihan selesai</string>
     <string name="gunluk_hedefin_tamamlandi">Tujuan harian Anda selesai ✓</string>
     <string name="bugunku_hedef_adim">Sasaran hari ini: langkah %1$s / %2$s</string>

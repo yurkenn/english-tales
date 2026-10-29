@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="story_of_the_day">เรื่องประจำวัน</string>
+    <string name="word_due_chip">ถึงเวลาทบทวน</string>
+    <string name="settings_section_learning">การเรียน</string>
+    <string name="settings_section_reminders">การแจ้งเตือนและความเป็นส่วนตัว</string>
+    <string name="settings_section_app">แอป</string>
+</resources>

@@ -119,8 +119,12 @@ private fun AnswerCard(label: String, selected: Boolean, modifier: Modifier = Mo
         .background(if(selected) TaleMint else TaleSurface,shape).border(2.dp,if(selected) TaleBlue else TaleLine,shape).clip(shape)
         .selectable(selected,role=Role.RadioButton,onClick=onClick).heightIn(min=64.dp).padding(horizontal=16.dp,vertical=14.dp),
         verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(14.dp)) {
-        if(badge!=null) Box(Modifier.size(46.dp).background(if(selected) TaleBlue else LocalTaleColors.current.tileBlue,RoundedCornerShape(14.dp)),contentAlignment=Alignment.Center) {
-            Text(badge,fontFamily=TaleDisplay,fontSize=18.sp,fontWeight=FontWeight.ExtraBold,color=if(selected) TaleOnBlue else TaleBlue)
+        // Each level keeps its own color, as in the design: A1 green, A2 blue, B1 purple.
+        if(badge!=null) {
+            val (face,ink)=when(badge) {"A1" -> TaleGreen to TaleOnGreen; "B1" -> TalePurple to TaleOnPurple; else -> TaleBlue to TaleOnBlue}
+            Box(Modifier.size(46.dp).background(face,RoundedCornerShape(14.dp)),contentAlignment=Alignment.Center) {
+                Text(badge,fontFamily=TaleDisplay,fontSize=18.sp,fontWeight=FontWeight.ExtraBold,color=ink)
+            }
         }
         Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(2.dp)) {
             Text(label,fontSize=16.sp,fontWeight=FontWeight.ExtraBold,color=TaleInk)

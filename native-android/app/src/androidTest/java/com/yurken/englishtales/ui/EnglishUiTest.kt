@@ -35,8 +35,11 @@ class EnglishUiTest {
             }
         }
         compose.onNodeWithText("Daily life").performScrollTo().assertIsDisplayed()
+        // Each setting opens its choices from its row.
+        compose.onNodeWithText("Stories you like").performScrollTo().performClick()
         compose.onNodeWithText("Mystery").performScrollTo().performClick()
         compose.onNodeWithText("Gizem").assertDoesNotExist()
+        compose.onNodeWithText("Your daily goal").performScrollTo().performClick()
         compose.onNode(hasText("1 step") and isSelectable()).performScrollTo().assertIsSelected()
         compose.onNode(hasText("2 steps") and isSelectable()).performScrollTo().performClick().assertIsSelected()
         compose.onNodeWithText("Save changes").performScrollTo().performClick()

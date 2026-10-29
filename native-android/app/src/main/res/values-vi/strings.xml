@@ -64,9 +64,6 @@
     <string name="sectigin_seviye_hikaye_onerileri_buna">Cấp độ bạn đã chọn là %1$s. Gợi ý câu chuyện dựa trên nó. Bạn có thể thay đổi cấp độ của mình trong Hồ sơ của tôi → Cài đặt.</string>
     <string name="calisma_serin">Chuỗi học tập của bạn</string>
     <string name="puanlarin">Điểm của bạn</string>
-    <string name="okuma_aliskanligin_burada_baslar">thói quen đọc sách của bạn bắt đầu từ đây</string>
-    <string name="bir_hikaye_nyeni_kelimeler">Một câu chuyện,\ntừ mới</string>
-    <string name="oku_dinle_ve_ogren">Đọc, nghe và học hỏi</string>
     <string name="okumaya_basla">Bắt đầu đọc</string>
     <string name="senin_icin">Dành cho bạn</string>
     <string name="kelimelerim_kayitli_kelime">Lời của tôi · Lời đã lưu %1$s</string>
@@ -228,7 +225,6 @@
     <string name="temizle">Thông thoáng</string>
     <string name="her_denemede_ogreniyoruz">Mỗi lần thử đều dạy chúng ta điều gì đó.</string>
     <string name="anladim_devam_et">Hiểu rồi, tiếp tục</string>
-    <string name="harika_puan_kazandin">⭐ Tuyệt vời! Bạn đã kiếm được điểm %1$s!</string>
     <string name="calisma_tamamlandi">Thực hành hoàn thành</string>
     <string name="gunluk_hedefin_tamamlandi">Mục tiêu hàng ngày của bạn đã hoàn thành ✓</string>
     <string name="bugunku_hedef_adim">Mục tiêu hôm nay: Các bước %1$s / %2$s</string>

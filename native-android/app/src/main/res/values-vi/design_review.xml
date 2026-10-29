@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="story_of_the_day">Truyện của ngày</string>
+    <string name="word_due_chip">đến lúc ôn</string>
+    <string name="settings_section_learning">Học tập</string>
+    <string name="settings_section_reminders">Nhắc nhở và quyền riêng tư</string>
+    <string name="settings_section_app">Ứng dụng</string>
+</resources>

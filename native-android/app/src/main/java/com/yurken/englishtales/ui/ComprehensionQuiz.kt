@@ -18,6 +18,7 @@ import androidx.compose.ui.semantics.liveRegion
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.yurken.englishtales.R
 import com.yurken.englishtales.data.ComprehensionResults
 import com.yurken.englishtales.data.QuizScore
@@ -35,9 +36,10 @@ internal fun ComprehensionQuiz(storyId: String, questions: List<StoryQuestion>, 
     var checked by rememberSaveable(storyId, attempt, index) { mutableStateOf(false) }
     var finished by rememberSaveable(storyId, attempt) { mutableStateOf(false) }
     var best by remember(storyId) { mutableStateOf(results.best(storyId)) }
-    Surface(modifier.fillMaxWidth(), shape = RoundedCornerShape(14.dp), color = TaleLine.copy(alpha = 0.5f)) {
+    // The design's white quiz card: a small blue heading, the question, chunky answers and a green check key.
+    ChunkyBox(TaleSurface, modifier.fillMaxWidth(), RoundedCornerShape(22.dp), depth = 5.dp, border = TaleLine) {
         Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-            Text(stringResource(R.string.quiz_title), style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
+            Text(stringResource(R.string.quiz_title), fontSize = 15.sp, fontWeight = FontWeight.ExtraBold, color = TaleBlue)
             if (finished) {
                 val alerts = LocalTaleAlerts.current
                 val perfect = stringResource(R.string.alert_quiz_perfect)
@@ -45,7 +47,7 @@ internal fun ComprehensionQuiz(storyId: String, questions: List<StoryQuestion>, 
                 Text(stringResource(R.string.quiz_result, correctCount, questions.size), style = MaterialTheme.typography.titleMedium,
                     modifier = Modifier.semantics { liveRegion = LiveRegionMode.Polite }.popOn(1))
                 best?.let { Text(stringResource(R.string.quiz_best, it.correct, it.total), color = TaleMuted) }
-                OutlinedButton(onClick = { attempt++ }, modifier = Modifier.fillMaxWidth()) { Text(stringResource(R.string.quiz_retry)) }
+                ChunkyButton(stringResource(R.string.quiz_retry), { attempt++ }, Modifier.fillMaxWidth(), color = TaleSurface, onColor = TaleInk, border = TaleLine)
                 return@Column
             }
             val question = questions[index]
@@ -53,7 +55,7 @@ internal fun ComprehensionQuiz(storyId: String, questions: List<StoryQuestion>, 
             Text(stringResource(R.string.quiz_progress, index + 1, questions.size) + " · " + stringResource(when (question.kind) {
                 "main" -> R.string.quiz_kind_main; "detail" -> R.string.quiz_kind_detail; else -> R.string.quiz_kind_inference }),
                 style = MaterialTheme.typography.labelMedium, color = TaleMuted)
-            Text(question.prompt, style = MaterialTheme.typography.titleMedium)
+            Text(question.prompt, fontFamily = TaleDisplay, fontSize = 18.sp, lineHeight = 23.sp, fontWeight = FontWeight.ExtraBold)
             Column(Modifier.selectableGroup(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 question.options.forEachIndexed { i, option ->
                     AnswerOption(option, selected == i, optionState(selected == i, checked, i == question.answer), !checked, { selected = i })
@@ -61,7 +63,7 @@ internal fun ComprehensionQuiz(storyId: String, questions: List<StoryQuestion>, 
             }
             AnswerFeedback(checked, selected == question.answer, if (selected == question.answer) stringResource(R.string.quiz_correct)
                 else stringResource(R.string.quiz_incorrect, englishArgument(question.options[question.answer])))
-            Button(enabled = selected != null, modifier = Modifier.fillMaxWidth(), onClick = {
+            ChunkyButton(stringResource(if (!checked) R.string.quiz_check else if (index == questions.lastIndex) R.string.quiz_finish else R.string.quiz_next), {
                 if (!checked) {
                     checked = true
                     if (selected == question.answer) correctCount++
@@ -69,7 +71,7 @@ internal fun ComprehensionQuiz(storyId: String, questions: List<StoryQuestion>, 
                     best = results.record(storyId, QuizScore(correctCount, questions.size))
                     finished = true
                 } else index++
-            }) { Text(stringResource(if (!checked) R.string.quiz_check else if (index == questions.lastIndex) R.string.quiz_finish else R.string.quiz_next)) }
+            }, Modifier.fillMaxWidth(), color = if (selected != null) TaleGreen else TaleLine, onColor = if (selected != null) TaleOnGreen else TaleMuted, enabled = selected != null)
         }
     }
 }

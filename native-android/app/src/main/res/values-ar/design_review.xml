@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="story_of_the_day">قصة اليوم</string>
+    <string name="word_due_chip">حان وقت المراجعة</string>
+    <string name="settings_section_learning">التعلّم</string>
+    <string name="settings_section_reminders">التذكيرات والخصوصية</string>
+    <string name="settings_section_app">التطبيق</string>
+</resources>

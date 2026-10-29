@@ -64,9 +64,6 @@
     <string name="sectigin_seviye_hikaye_onerileri_buna">Выбранный вами уровень — %1$s. На этом основаны предложения по историям. Вы можете изменить свой уровень в Мой профиль → Настройки.</string>
     <string name="calisma_serin">Дни занятий подряд</string>
     <string name="puanlarin">Ваши баллы</string>
-    <string name="okuma_aliskanligin_burada_baslar">твоя привычка к чтению начинается здесь</string>
-    <string name="bir_hikaye_nyeni_kelimeler">Одна история,\nновые слова</string>
-    <string name="oku_dinle_ve_ogren">Читайте, слушайте и учитесь</string>
     <string name="okumaya_basla">Начать читать</string>
     <string name="senin_icin">Для тебя</string>
     <string name="kelimelerim_kayitli_kelime">Мои слова · %1$s сохраненные слова</string>
@@ -228,7 +225,6 @@
     <string name="temizle">Прозрачный</string>
     <string name="her_denemede_ogreniyoruz">Каждая попытка нас чему-то учит.</string>
     <string name="anladim_devam_et">Понятно, продолжай</string>
-    <string name="harika_puan_kazandin">⭐ Отлично! Вы заработали очки %1$s!</string>
     <string name="calisma_tamamlandi">Практика завершена</string>
     <string name="gunluk_hedefin_tamamlandi">Ваша ежедневная цель достигнута ✓</string>
     <string name="bugunku_hedef_adim">Цель на сегодня: шаги %1$s / %2$s.</string>

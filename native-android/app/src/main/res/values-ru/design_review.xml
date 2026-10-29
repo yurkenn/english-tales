@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="story_of_the_day">История дня</string>
+    <string name="word_due_chip">пора повторить</string>
+    <string name="settings_section_learning">Обучение</string>
+    <string name="settings_section_reminders">Напоминания и конфиденциальность</string>
+    <string name="settings_section_app">Приложение</string>
+</resources>

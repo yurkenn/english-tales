@@ -64,9 +64,6 @@
     <string name="sectigin_seviye_hikaye_onerileri_buna">আপনার নির্বাচিত স্তর হল %1$s। গল্পের সাজেশন এর উপর ভিত্তি করে। আপনি আমার প্রোফাইল → সেটিংসে আপনার স্তর পরিবর্তন করতে পারেন।</string>
     <string name="calisma_serin">আপনার অধ্যয়ন স্ট্রীক</string>
     <string name="puanlarin">আপনার পয়েন্ট</string>
-    <string name="okuma_aliskanligin_burada_baslar">আপনার পড়ার অভ্যাস এখানে শুরু হয়</string>
-    <string name="bir_hikaye_nyeni_kelimeler">একটি গল্প, \nনতুন শব্দ</string>
-    <string name="oku_dinle_ve_ogren">পড়ুন, শুনুন এবং শিখুন</string>
     <string name="okumaya_basla">পড়া শুরু করুন</string>
     <string name="senin_icin">তোমার জন্য</string>
     <string name="kelimelerim_kayitli_kelime">আমার শব্দ · %1$s সংরক্ষিত শব্দ</string>
@@ -228,7 +225,6 @@
     <string name="temizle">পরিষ্কার</string>
     <string name="her_denemede_ogreniyoruz">প্রতিটি চেষ্টা আমাদের কিছু শেখায়।</string>
     <string name="anladim_devam_et">বুঝেছি, চালিয়ে যান</string>
-    <string name="harika_puan_kazandin">⭐ দারুণ! আপনি %1$s পয়েন্ট অর্জন করেছেন!</string>
     <string name="calisma_tamamlandi">অনুশীলন সম্পূর্ণ</string>
     <string name="gunluk_hedefin_tamamlandi">আপনার দৈনন্দিন লক্ষ্য সম্পূর্ণ ✓</string>
     <string name="bugunku_hedef_adim">আজকের লক্ষ্য: %1$s / %2$s ধাপ</string>

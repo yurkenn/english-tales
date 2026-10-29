@@ -64,9 +64,6 @@
     <string name="sectigin_seviye_hikaye_onerileri_buna">آپ کی منتخب کردہ سطح %1$s ہے۔ کہانی کی تجاویز اس پر مبنی ہیں۔ آپ میرا پروفائل → سیٹنگز میں اپنا لیول تبدیل کر سکتے ہیں۔</string>
     <string name="calisma_serin">مسلسل سیکھنے کے دن</string>
     <string name="puanlarin">آپ کے پوائنٹس</string>
-    <string name="okuma_aliskanligin_burada_baslar">آپ کی پڑھنے کی عادت یہاں سے شروع ہوتی ہے</string>
-    <string name="bir_hikaye_nyeni_kelimeler">ایک کہانی، \n نئے الفاظ</string>
-    <string name="oku_dinle_ve_ogren">پڑھیں، سنیں اور سیکھیں</string>
     <string name="okumaya_basla">پڑھنا شروع کریں</string>
     <string name="senin_icin">آپ کے لیے</string>
     <string name="kelimelerim_kayitli_kelime">میرے الفاظ · %1$s محفوظ کردہ الفاظ</string>
@@ -228,7 +225,6 @@
     <string name="temizle">صاف</string>
     <string name="her_denemede_ogreniyoruz">ہر کوشش ہمیں کچھ نہ کچھ سکھاتی ہے۔</string>
     <string name="anladim_devam_et">سمجھ گیا، جاری رکھیں</string>
-    <string name="harika_puan_kazandin">⭐ بہت اچھا! آپ نے %1$s پوائنٹس حاصل کیے!</string>
     <string name="calisma_tamamlandi">پریکٹس مکمل</string>
     <string name="gunluk_hedefin_tamamlandi">آپ کا یومیہ مقصد مکمل ہو گیا ہے ✓</string>
     <string name="bugunku_hedef_adim">آج کا مقصد: ⁦%1$s / %2$s⁩ اقدامات</string>

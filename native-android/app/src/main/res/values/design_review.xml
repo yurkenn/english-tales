@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="story_of_the_day">Günün hikâyesi</string>
+    <string name="word_due_chip">tekrar zamanı</string>
+    <string name="settings_section_learning">Öğrenme</string>
+    <string name="settings_section_reminders">Hatırlatıcı ve gizlilik</string>
+    <string name="settings_section_app">Uygulama</string>
+</resources>

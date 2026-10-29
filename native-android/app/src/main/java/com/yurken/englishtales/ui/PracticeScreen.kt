@@ -41,19 +41,19 @@ import kotlinx.coroutines.withContext
 private const val VOICE_PROBE_WAIT_MS=2_000L
 
 @Composable
-fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,String,Int,Long)->Unit,onWordReviewed: (String,Boolean)->Unit,padding: PaddingValues,onSessionStart: (String,String,Int)->Unit,onCheckpoint: (String,Long)->Unit,onSessionAbandoned: (String)->Unit,onSessionActive: (Boolean)->Unit={}, launchId: String?=null, launchWordIds: List<String> = emptyList(), onLaunchConsumed: ()->Unit={}, onDailyPlan: ()->Unit={},onCompletedExit: (String,()->Boolean,()->Unit)->Unit={_,active,next ->if(active()) next()}) {
+fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,String,Int,Long)->Unit,onWordReviewed: (String,Boolean)->Unit,padding: PaddingValues,onSessionStart: (String,String,Int)->Unit,onCheckpoint: (String,Long)->Unit,onSessionAbandoned: (String)->Unit,onSessionActive: (Boolean)->Unit={}, launchId: String?=null, launchWordIds: List<String> = emptyList(), onLaunchConsumed: ()->Unit={}, onDailyPlan: ()->Unit={},onCompletedExit: (String,()->Boolean,()->Unit)->Unit={_,active,next ->if(active()) next()},quests: (@Composable (Modifier)->Unit)?=null) {
     // One combo per session: games record their checked answers, the result screen and today's quest read the best run.
     val combo=rememberSaveable(saver=ComboState.Saver) {ComboState()}
     val context=androidx.compose.ui.platform.LocalContext.current
     LaunchedEffect(combo.best,snapshot.ownerId) {if(combo.best>0) GameRecords.noteCombo(context,snapshot.ownerId,combo.best)}
     CompositionLocalProvider(LocalCombo provides combo) {
-        PracticeSession(snapshot,onLessonComplete,onWordReviewed,padding,onSessionStart,onCheckpoint,onSessionAbandoned,onSessionActive,launchId,launchWordIds,onLaunchConsumed,onDailyPlan,onCompletedExit)
+        PracticeSession(snapshot,onLessonComplete,onWordReviewed,padding,onSessionStart,onCheckpoint,onSessionAbandoned,onSessionActive,launchId,launchWordIds,onLaunchConsumed,onDailyPlan,onCompletedExit,quests)
     }
 }
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-private fun PracticeSession(snapshot: LearningSnapshot,onLessonComplete: (Int,String,String,Int,Long)->Unit,onWordReviewed: (String,Boolean)->Unit,padding: PaddingValues,onSessionStart: (String,String,Int)->Unit,onCheckpoint: (String,Long)->Unit,onSessionAbandoned: (String)->Unit,onSessionActive: (Boolean)->Unit, launchId: String?, launchWordIds: List<String>, onLaunchConsumed: ()->Unit, onDailyPlan: ()->Unit,onCompletedExit: (String,()->Boolean,()->Unit)->Unit) {
+private fun PracticeSession(snapshot: LearningSnapshot,onLessonComplete: (Int,String,String,Int,Long)->Unit,onWordReviewed: (String,Boolean)->Unit,padding: PaddingValues,onSessionStart: (String,String,Int)->Unit,onCheckpoint: (String,Long)->Unit,onSessionAbandoned: (String)->Unit,onSessionActive: (Boolean)->Unit, launchId: String?, launchWordIds: List<String>, onLaunchConsumed: ()->Unit, onDailyPlan: ()->Unit,onCompletedExit: (String,()->Boolean,()->Unit)->Unit,quests: (@Composable (Modifier)->Unit)?) {
     val combo=LocalCombo.current
     val saved=snapshot.savedWordList()
     val supplemental=LearningContent.words.filter {it.id !in snapshot.savedWordIds}
@@ -165,6 +165,8 @@ private fun PracticeSession(snapshot: LearningSnapshot,onLessonComplete: (Int,St
             Text(if(saved.isEmpty()) stringResource(R.string.baslamak_icin_ornek_kelimeler_hazir) else stringResource(R.string.kelimenin_tekrar_zamani_geldi_2, snapshot.dueWordIds.size),fontSize=14.sp,fontWeight=FontWeight.Bold,color=TaleMuted,modifier=Modifier.padding(horizontal=16.dp))
             if(snapshot.weakWordIds.isNotEmpty()) Text(stringResource(R.string.weak_words_count, snapshot.weakWordIds.size),fontSize=14.sp,color=TaleMuted,modifier=Modifier.padding(horizontal=16.dp,vertical=4.dp))
             Spacer(Modifier.height(16.dp))
+            // Today's quests sit above the board, as in the design, since every game counts toward them.
+            quests?.let { it(Modifier.padding(start=16.dp,end=16.dp,bottom=16.dp)) }
             // Probes the device voice; listening games are offered only when English speech works.
             val voice=rememberNarrator()
             LaunchedEffect(voice.available) {voiceReady=voice.available==true;if(voice.available!=null) voiceProbed=true}
@@ -336,8 +338,8 @@ fun GameResult(subtitle: String,points: Int,padding: PaddingValues,onExit: ()->U
     val stars=if(correct!=null && total!=null) GameRewards.stars(correct,total) else null
     Box(Modifier.fillMaxSize()) {
     Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState()).padding(16.dp),horizontalAlignment=Alignment.CenterHorizontally) {
-        Text(stringResource(R.string.harika_puan_kazandin, points),color=TaleOnPurple,fontSize=15.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.fillMaxWidth().appearIn(0).background(chunkEdge(TalePurple),RoundedCornerShape(16.dp)).padding(bottom=4.dp).background(TalePurple,RoundedCornerShape(16.dp)).padding(14.dp))
-        Spacer(Modifier.height(20.dp))
+        // The design opens on the mascot and the stars; the points count up right under them.
+        Spacer(Modifier.height(12.dp))
         // A flawless session earns the trophy pose.
         TalesMascot(if(stars==3) MascotMood.Proud else MascotMood.Celebrate,Modifier.size(112.dp).appearIn(1),animate=true)
         // Stars land one by one after the mascot; a flawless session also gets its own line.
@@ -353,16 +355,17 @@ fun GameResult(subtitle: String,points: Int,padding: PaddingValues,onExit: ()->U
         Text(subtitle,fontSize=14.sp,color=TaleMuted,modifier=Modifier.padding(horizontal=12.dp,vertical=6.dp).appearIn(4))
         highlight?.let {Text(it,fontSize=15.sp,fontWeight=FontWeight.Bold,color=TaleBlue,modifier=Modifier.padding(bottom=6.dp).appearIn(4).popOn(1))}
         Row(Modifier.fillMaxWidth().padding(vertical=8.dp).appearIn(5),horizontalArrangement=Arrangement.spacedBy(8.dp)) {
-            if(correct!=null && total!=null && total>0) ResultStat(java.text.NumberFormat.getPercentInstance(androidx.compose.ui.platform.LocalConfiguration.current.locales[0]).format(correct.toDouble()/total),stringResource(R.string.result_accuracy),Modifier.weight(1f))
-            ResultStat("×$bestCombo",stringResource(R.string.result_best_combo),Modifier.weight(1f))
-            snapshot?.takeIf {it.streak>0}?.let {ResultStat("${it.streak}",stringResource(R.string.stat_streak),Modifier.weight(1f))}
+            if(correct!=null && total!=null && total>0) ResultStat(java.text.NumberFormat.getPercentInstance(androidx.compose.ui.platform.LocalConfiguration.current.locales[0]).format(correct.toDouble()/total),stringResource(R.string.result_accuracy),Modifier.weight(1f),TaleGreen,TaleOnGreen)
+            ResultStat("×$bestCombo",stringResource(R.string.result_best_combo),Modifier.weight(1f),TaleYellow,TaleOnYellow)
+            snapshot?.takeIf {it.streak>0}?.let {ResultStat("${it.streak}",stringResource(R.string.stat_streak),Modifier.weight(1f),TaleOrange,TaleOnOrange)}
         }
         snapshot?.let {
             Text(if(it.dailyGoalReached) stringResource(R.string.gunluk_hedefin_tamamlandi) else stringResource(R.string.bugunku_hedef_adim, it.todaySessions, it.dailyGoal),color=TaleBlue,fontSize=14.sp,modifier=Modifier.padding(12.dp))
             if(it.completedLessons==1 && !LearningReminders.enabled(androidx.compose.ui.platform.LocalContext.current)) ReminderControls()
         }
         ChunkyButton(stringResource(R.string.gunluk_planima_don),onExit,Modifier.fillMaxWidth().appearIn(6))
-        TextButton(onClick=onRestart,modifier=Modifier.heightIn(min=48.dp)) {Text(stringResource(R.string.yeniden_calis),fontSize=15.sp,fontWeight=FontWeight.ExtraBold)}
+        Spacer(Modifier.height(10.dp))
+        ChunkyButton(stringResource(R.string.yeniden_calis),onRestart,Modifier.fillMaxWidth().appearIn(6),color=TaleSurface,onColor=TaleInk,border=TaleLine)
     }
     ConfettiBurst(Modifier.fillMaxSize(),subtitle,pieces=if(stars==3) 120 else 70)
     }

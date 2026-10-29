@@ -64,9 +64,6 @@
     <string name="sectigin_seviye_hikaye_onerileri_buna">ระดับที่คุณเลือกคือ %1$s ข้อเสนอแนะเรื่องราวจะขึ้นอยู่กับมัน คุณสามารถเปลี่ยนระดับของคุณได้ในโปรไฟล์ของฉัน → การตั้งค่า</string>
     <string name="calisma_serin">แนวการศึกษาของคุณ</string>
     <string name="puanlarin">คะแนนของคุณ</string>
-    <string name="okuma_aliskanligin_burada_baslar">นิสัยการอ่านของคุณเริ่มต้นที่นี่</string>
-    <string name="bir_hikaye_nyeni_kelimeler">เรื่องหนึ่ง \n คำศัพท์ใหม่</string>
-    <string name="oku_dinle_ve_ogren">อ่านฟังและเรียนรู้</string>
     <string name="okumaya_basla">เริ่มอ่าน</string>
     <string name="senin_icin">สำหรับคุณ</string>
     <string name="kelimelerim_kayitli_kelime">คำพูดของฉัน · %1$s บันทึกคำแล้ว</string>
@@ -228,7 +225,6 @@
     <string name="temizle">ชัดเจน</string>
     <string name="her_denemede_ogreniyoruz">ความพยายามทุกครั้งจะสอนเราบางอย่าง</string>
     <string name="anladim_devam_et">เข้าใจแล้ว ดำเนินการต่อ</string>
-    <string name="harika_puan_kazandin">⭐ ปัง! คุณได้รับคะแนน %1$s!</string>
     <string name="calisma_tamamlandi">ฝึกเสร็จ</string>
     <string name="gunluk_hedefin_tamamlandi">เป้าหมายรายวันของคุณเสร็จสมบูรณ์แล้ว ✓</string>
     <string name="bugunku_hedef_adim">เป้าหมายวันนี้: ขั้น %1$s / %2$s</string>

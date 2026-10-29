@@ -64,9 +64,6 @@
     <string name="sectigin_seviye_hikaye_onerileri_buna">O nível selecionado é %1$s. As sugestões de histórias são baseadas nele. Você pode alterar seu nível em Meu perfil → Configurações.</string>
     <string name="calisma_serin">Sua sequência de estudos</string>
     <string name="puanlarin">Seus pontos</string>
-    <string name="okuma_aliskanligin_burada_baslar">seu hábito de leitura começa aqui</string>
-    <string name="bir_hikaye_nyeni_kelimeler">Uma história,\nnovas palavras</string>
-    <string name="oku_dinle_ve_ogren">Leia, ouça e aprenda</string>
     <string name="okumaya_basla">Comece a ler</string>
     <string name="senin_icin">Para você</string>
     <string name="kelimelerim_kayitli_kelime">Minhas palavras · %1$s palavras salvas</string>
@@ -228,7 +225,6 @@
     <string name="temizle">Claro</string>
     <string name="her_denemede_ogreniyoruz">Cada tentativa nos ensina algo.</string>
     <string name="anladim_devam_et">Entendi, continue</string>
-    <string name="harika_puan_kazandin">⭐ Ótimo! Você ganhou %1$s pontos!</string>
     <string name="calisma_tamamlandi">Prática concluída</string>
     <string name="gunluk_hedefin_tamamlandi">Sua meta diária foi concluída ✓</string>
     <string name="bugunku_hedef_adim">Meta de hoje: etapas %1$s / %2$s</string>

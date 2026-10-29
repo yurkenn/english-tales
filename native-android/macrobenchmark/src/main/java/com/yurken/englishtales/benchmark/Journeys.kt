@@ -82,8 +82,9 @@ internal fun MacrobenchmarkScope.prepareReturningGuest() {
 /** Shared between profile generation and frame measurement; real UI navigation. */
 internal fun MacrobenchmarkScope.browseTabs() {
     device.requireText("Oku").click()
-    device.requireText("Arama").click()
-    device.requireText("Kitap ara")
+    // The library's search field opens the search list, titled "Arama".
+    device.requireText("Kitap ara").click()
+    device.requireText("Arama")
     device.swipe(device.displayWidth / 2, device.displayHeight * 3 / 4,
         device.displayWidth / 2, device.displayHeight / 3, 20)
     device.pressBack()

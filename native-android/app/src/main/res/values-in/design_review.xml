@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="story_of_the_day">Cerita hari ini</string>
+    <string name="word_due_chip">waktunya mengulang</string>
+    <string name="settings_section_learning">Belajar</string>
+    <string name="settings_section_reminders">Pengingat dan privasi</string>
+    <string name="settings_section_app">Aplikasi</string>
+</resources>

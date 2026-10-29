@@ -191,14 +191,14 @@ private fun starPath(side: Float) = androidx.compose.ui.graphics.Path().apply {
     close()
 }
 
-/** A labelled number on the result screen. */
+/** A labelled number on the result screen: a bright chunky tile with its name over the value. */
 @Composable
-internal fun ResultStat(value: String, label: String, modifier: Modifier = Modifier) {
-    Column(modifier.background(TaleLine, RoundedCornerShape(16.dp)).padding(bottom = 4.dp).background(TaleSurface, RoundedCornerShape(16.dp))
-        .border(2.dp, TaleLine, RoundedCornerShape(16.dp)).padding(vertical = 10.dp, horizontal = 6.dp),
-        horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(2.dp)) {
-        Text(value, fontFamily = TaleDisplay, fontSize = 22.sp, fontWeight = FontWeight.ExtraBold, color = TaleInk, maxLines = 1)
-        Text(label, fontSize = 11.sp, fontWeight = FontWeight.Bold, color = TaleMuted, maxLines = 2, textAlign = androidx.compose.ui.text.style.TextAlign.Center)
+internal fun ResultStat(value: String, label: String, modifier: Modifier = Modifier, face: Color = TaleSurface, ink: Color = TaleInk) {
+    ChunkyBox(face, modifier, RoundedCornerShape(16.dp), depth = 4.dp, border = if (face == TaleSurface) TaleLine else null) {
+        Column(Modifier.fillMaxWidth().padding(vertical = 10.dp, horizontal = 6.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(2.dp)) {
+            Text(label.uppercase(androidx.compose.ui.platform.LocalConfiguration.current.locales[0]), fontSize = 11.sp, fontWeight = FontWeight.ExtraBold, color = ink, maxLines = 2, textAlign = androidx.compose.ui.text.style.TextAlign.Center, modifier = Modifier.fillMaxWidth())
+            Text(value, fontFamily = TaleDisplay, fontSize = 22.sp, fontWeight = FontWeight.ExtraBold, color = ink, maxLines = 1, textAlign = androidx.compose.ui.text.style.TextAlign.Center, modifier = Modifier.fillMaxWidth())
+        }
     }
 }
 
@@ -305,10 +305,7 @@ internal fun StreakMilestoneDialog(days: Int, week: List<com.yurken.englishtales
     RewardSpotlight(stringResource(R.string.streak_milestone_title, days), stringResource(R.string.streak_milestone_text), stringResource(R.string.reward_continue),
         glow = TaleWarm, onDismiss = onDismiss, confettiKey = "streak$days", inWindow = inWindow,
         extra = { if (week.isNotEmpty()) WeekFlames(week, frozenDays) }) {
-        Column(horizontalAlignment = Alignment.CenterHorizontally) {
-            ReferenceIcon("flame", TaleWarm, Modifier.size(120.dp).flicker(true))
-            AnimatedCounter(days, style = MaterialTheme.typography.displayMedium.copy(fontWeight = FontWeight.ExtraBold), color = TaleInk)
-        }
+        StreakFlameHero(days, Modifier.flicker(true))
     }
 }
 
