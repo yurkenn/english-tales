@@ -129,12 +129,13 @@ fun StudyScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, onOpe
         Spacer(Modifier.height(16.dp))
         // The weekly league sits right under the quests: its rank and gap are the daily reason to come back.
         league?.let {it(Modifier.padding(horizontal=16.dp).appearIn(2));Spacer(Modifier.height(16.dp))}
-        // A card-like row instead of a bare outlined button, with the count as a badge.
-        Row(Modifier.padding(horizontal=16.dp).fillMaxWidth().appearIn(2).heightIn(min=56.dp).background(TaleSurface,RoundedCornerShape(16.dp)).border(1.dp,TaleLine,RoundedCornerShape(16.dp))
-            .pressScale(onClick=onOpenWords).padding(horizontal=14.dp,vertical=10.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
-            Box(Modifier.size(36.dp).background(LocalTaleColors.current.tileBlue,RoundedCornerShape(10.dp)),contentAlignment=Alignment.Center) { ReferenceIcon("cards",TaleBlue,Modifier.size(20.dp)) }
-            Text(stringResource(R.string.kelimelerim_kayitli_kelime, snapshot.savedWordIds.size),Modifier.weight(1f),fontWeight=FontWeight.SemiBold,color=TaleInk)
-            ReferenceIcon("next",TaleMuted,Modifier.size(18.dp))
+        // A chunky white row like the canvas's cards, with the words tile on the left.
+        ChunkyBox(TaleSurface,Modifier.padding(horizontal=16.dp).fillMaxWidth().appearIn(2).heightIn(min=60.dp),RoundedCornerShape(20.dp),depth=4.dp,border=TaleLine,onClick=onOpenWords) {
+            Row(Modifier.fillMaxWidth().padding(horizontal=14.dp,vertical=10.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
+                Box(Modifier.size(38.dp).background(TalePurple,RoundedCornerShape(12.dp)),contentAlignment=Alignment.Center) { ReferenceIcon("cards",TaleOnPurple,Modifier.size(22.dp)) }
+                Text(stringResource(R.string.kelimelerim_kayitli_kelime, snapshot.savedWordIds.size),Modifier.weight(1f),fontWeight=FontWeight.ExtraBold,fontSize=15.sp,color=TaleInk)
+                ReferenceIcon("next",TaleMuted,Modifier.size(18.dp))
+            }
         }
         Box(Modifier.appearIn(3)) { WeeklyActivity(snapshot) }
         Spacer(Modifier.height(16.dp))
