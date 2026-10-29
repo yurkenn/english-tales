@@ -134,9 +134,9 @@ private fun ShortcutTile(color: Color,onColor: Color,title: String,subtitle: Str
 }
 
 @Composable
-fun WeeklyActivity(snapshot: LearningSnapshot) {
+fun WeeklyActivity(snapshot: LearningSnapshot, modifier: Modifier = Modifier.padding(horizontal=16.dp,vertical=12.dp)) {
     // The canvas's streak week: a white card, a square tile per day, a solid flame on the days practised and a dashed tile for today.
-    Column(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=12.dp).background(TaleSurface,RoundedCornerShape(22.dp))
+    Column(modifier.fillMaxWidth().background(TaleSurface,RoundedCornerShape(22.dp))
         .padding(horizontal=14.dp,vertical=12.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
         // The streak sits next to the week it comes from, and one line says what today still needs.
         Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.CenterVertically) {
@@ -305,9 +305,10 @@ fun LearningSettingsScreen(snapshot: LearningSnapshot,onBack: ()->Unit,onSave: (
                 com.yurken.englishtales.analytics.AnalyticsControls()
             } }
             SettingsSection(stringResource(R.string.settings_section_app))
-            SettingsCard { Column(Modifier.padding(12.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
-                LanguageControls()
-                ThemeControls()
+            SettingsCard { Column(Modifier.padding(8.dp)) {
+                LanguageControls(row=true)
+                SettingsDivider()
+                Box(Modifier.padding(horizontal=10.dp,vertical=8.dp)) { ThemeControls() }
             } }
             val alerts=LocalTaleAlerts.current
             val savedText=stringResource(R.string.alert_settings_saved)
@@ -344,9 +345,9 @@ private fun SettingsSection(title: String) {
 
 /** One settings row: a colored icon tile, the setting, its current value and a chevron that turns when the choices are open. */
 @Composable
-private fun SettingsRow(title: String,value: String,icon: String,color: Color,onColor: Color,expanded: Boolean,onClick: ()->Unit) {
+internal fun SettingsRow(title: String,value: String,icon: String,color: Color,onColor: Color,expanded: Boolean,modifier: Modifier=Modifier,onClick: ()->Unit) {
     val turn by animateFloatAsState(if(expanded) 90f else 0f,label="chevron")
-    Row(Modifier.fillMaxWidth().heightIn(min=60.dp).clip(RoundedCornerShape(14.dp)).clickable(role=Role.Button,onClick=onClick)
+    Row(modifier.fillMaxWidth().heightIn(min=60.dp).clip(RoundedCornerShape(14.dp)).clickable(role=Role.Button,onClick=onClick)
         .semantics {stateDescription=value}.padding(horizontal=10.dp,vertical=8.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
         Box(Modifier.size(36.dp).background(color,RoundedCornerShape(11.dp)),contentAlignment=Alignment.Center) { ReferenceIcon(icon,onColor,Modifier.size(20.dp)) }
         // The value hides while its choices are open, so it is never shown twice; large text moves it under the title.
