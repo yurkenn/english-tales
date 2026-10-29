@@ -302,6 +302,7 @@ fun LearningSettingsScreen(snapshot: LearningSnapshot,onBack: ()->Unit,onSave: (
             SettingsCard { Column(Modifier.padding(12.dp)) { ReminderControls() } }
             SettingsCard { Column(Modifier.padding(12.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
                 com.yurken.englishtales.ads.AdPrivacyControls()
+                Box(Modifier.fillMaxWidth().height(1.dp).background(TaleLine))
                 com.yurken.englishtales.analytics.AnalyticsControls()
             } }
             SettingsSection(stringResource(R.string.settings_section_app))

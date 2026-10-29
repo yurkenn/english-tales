@@ -9,7 +9,13 @@ import android.content.pm.PackageManager
 import android.os.Build
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -121,17 +127,27 @@ fun ReminderControls() {
     val permission=rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) {granted ->
         enabled=granted && LearningReminders.allowed(context);denied=!enabled;LearningReminders.configure(context,enabled,hour,minute);announce(enabled,denied)
     }
-    Column(Modifier.fillMaxWidth().padding(vertical=12.dp)) {
-        Text(stringResource(R.string.kendi_saatinde_hatirlat),fontSize=16.sp)
-        Text(stringResource(R.string.istege_baglidir_gunluk_hedefini_tamamladiysan),fontSize=12.sp,color=TaleMuted)
-        Row(Modifier.fillMaxWidth(),verticalAlignment=androidx.compose.ui.Alignment.CenterVertically) {
-            TextButton(onClick={TimePickerDialog(context,{_,h,m ->hour=h;minute=m;LearningReminders.configure(context,enabled,h,m);if(enabled) announce(true,false)},hour,minute,true).show()},modifier=Modifier.weight(1f)) {Text(String.format(Locale.getDefault(),"%02d:%02d",hour,minute))}
+    val time=String.format(Locale.getDefault(),"%02d:%02d",hour,minute)
+    // An orange bell tile, the title and the switch on one row; the time sits below as a tappable chip.
+    Column(Modifier.fillMaxWidth().padding(vertical=4.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
+        Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
+            Box(Modifier.size(36.dp).background(TaleOrange,RoundedCornerShape(11.dp)),contentAlignment=Alignment.Center) {ReferenceIcon("bell",TaleOnOrange,Modifier.size(20.dp))}
+            Column(Modifier.weight(1f)) {
+                Text(stringResource(R.string.kendi_saatinde_hatirlat),fontSize=15.sp,fontWeight=FontWeight.ExtraBold,color=TaleInk)
+                Text(stringResource(R.string.istege_baglidir_gunluk_hedefini_tamamladiysan),fontSize=12.sp,color=TaleMuted)
+            }
             Switch(checked=enabled,modifier=Modifier.contentLabel(stringResource(R.string.gunluk_hatirlatici)),onCheckedChange={value ->
                 denied=false
                 if(!value) {enabled=false;LearningReminders.configure(context,false);announce(false,false)}
                 else if(Build.VERSION.SDK_INT>=33 && context.checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS)!=PackageManager.PERMISSION_GRANTED) permission.launch(Manifest.permission.POST_NOTIFICATIONS)
                 else {enabled=LearningReminders.allowed(context);denied=!enabled;LearningReminders.configure(context,enabled,hour,minute);announce(enabled,denied)}
             })
+        }
+        Row(Modifier.padding(start=48.dp).heightIn(min=48.dp).background(LocalTaleColors.current.tileBlue,RoundedCornerShape(14.dp))
+            .clickable(role=Role.Button) {TimePickerDialog(context,{_,h,m ->hour=h;minute=m;LearningReminders.configure(context,enabled,h,m);if(enabled) announce(true,false)},hour,minute,true).show()}
+            .padding(horizontal=14.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(8.dp)) {
+            ReferenceIcon("clock",TaleBlue,Modifier.size(18.dp))
+            Text(time,fontSize=16.sp,fontWeight=FontWeight.ExtraBold,color=TaleBlue)
         }
         if(denied || (enabled && !LearningReminders.allowed(context))) {
             Text(stringResource(R.string.bildirim_izni_kapali_dilersen_cihaz),fontSize=12.sp,color=TaleMuted)

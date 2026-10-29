@@ -488,8 +488,8 @@ fun ProfileScreen(snapshot: LearningSnapshot, onOpenWords: () -> Unit, padding: 
             Text(stringResource(R.string.known_words_explanation),fontSize=12.sp,color=TaleMuted,modifier=Modifier.padding(top=6.dp))
         }
         FlowRow(horizontalArrangement=Arrangement.spacedBy(16.dp),verticalArrangement=Arrangement.spacedBy(16.dp),maxItemsInEachRow=sideBySide(2)) {
-            ProfilePanel(Modifier.weight(1f)) { Text(stringResource(R.string.hikayeler).uppercase(AppLanguage.locale(LocalContext.current)),fontSize=12.sp,letterSpacing=0.8.sp,fontWeight=FontWeight.ExtraBold,color=TaleMuted); AnimatedCounter(snapshot.storyProgress.count {it.value==100},Modifier.padding(top=14.dp),style=LocalTextStyle.current.copy(fontFamily=TaleDisplay,fontSize=32.sp,fontWeight=FontWeight.ExtraBold),color=TaleBlue); Text(stringResource(R.string.tamamlandi),fontSize=12.sp,color=TaleMuted) }
-            ProfilePanel(Modifier.weight(1f)) { Text(stringResource(R.string.alistirmalar).uppercase(AppLanguage.locale(LocalContext.current)),fontSize=12.sp,letterSpacing=0.8.sp,fontWeight=FontWeight.ExtraBold,color=TaleMuted); AnimatedCounter(snapshot.completedLessons,Modifier.padding(top=14.dp),style=LocalTextStyle.current.copy(fontFamily=TaleDisplay,fontSize=32.sp,fontWeight=FontWeight.ExtraBold),color=TalePurple); Text(stringResource(R.string.tamamlandi),fontSize=12.sp,color=TaleMuted) }
+            ProfilePanel(Modifier.weight(1f),color=LocalTaleColors.current.tileBlue) { Text(stringResource(R.string.hikayeler).uppercase(AppLanguage.locale(LocalContext.current)),fontSize=12.sp,letterSpacing=0.8.sp,fontWeight=FontWeight.ExtraBold,color=TaleMuted); AnimatedCounter(snapshot.storyProgress.count {it.value==100},Modifier.padding(top=14.dp),style=LocalTextStyle.current.copy(fontFamily=TaleDisplay,fontSize=32.sp,fontWeight=FontWeight.ExtraBold),color=TaleBlue); Text(stringResource(R.string.tamamlandi),fontSize=12.sp,color=TaleMuted) }
+            ProfilePanel(Modifier.weight(1f),color=LocalTaleColors.current.tilePurple) { Text(stringResource(R.string.alistirmalar).uppercase(AppLanguage.locale(LocalContext.current)),fontSize=12.sp,letterSpacing=0.8.sp,fontWeight=FontWeight.ExtraBold,color=TaleMuted); AnimatedCounter(snapshot.completedLessons,Modifier.padding(top=14.dp),style=LocalTextStyle.current.copy(fontFamily=TaleDisplay,fontSize=32.sp,fontWeight=FontWeight.ExtraBold),color=TalePurple); Text(stringResource(R.string.tamamlandi),fontSize=12.sp,color=TaleMuted) }
         }
         // The page already has its side margin, so the week card takes the full column.
         WeeklyActivity(snapshot,Modifier)
@@ -513,9 +513,9 @@ private fun ProfileStatTile(caption: String, value: String, color: Color, onColo
 }
 
 @Composable
-private fun ProfilePanel(modifier: Modifier = Modifier, index: Int = 0, content: @Composable ColumnScope.() -> Unit) {
-    // A white card on a lip, as in the playful look.
-    ChunkyBox(TaleSurface,modifier.fillMaxWidth().appearIn(index),RoundedCornerShape(20.dp),depth=5.dp,border=TaleLine) { Column(Modifier.fillMaxWidth().padding(16.dp),content=content) }
+private fun ProfilePanel(modifier: Modifier = Modifier, index: Int = 0, color: Color = TaleSurface, content: @Composable ColumnScope.() -> Unit) {
+    // A white (or tinted) card on a lip, as in the playful look.
+    ChunkyBox(color,modifier.fillMaxWidth().appearIn(index),RoundedCornerShape(20.dp),depth=5.dp,border=TaleLine) { Column(Modifier.fillMaxWidth().padding(16.dp),content=content) }
 }
 
 @Composable

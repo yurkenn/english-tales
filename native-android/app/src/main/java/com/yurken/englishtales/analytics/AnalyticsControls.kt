@@ -12,6 +12,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.compose.ui.text.font.FontWeight
+import com.yurken.englishtales.ui.TaleInk
+import com.yurken.englishtales.ui.TaleMuted
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -31,7 +35,7 @@ internal fun AnalyticsConsentControl(initialEnabled: Boolean, onChange: (Boolean
     val scope = rememberCoroutineScope()
     Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-            Text(stringResource(R.string.kullanim_istatistikleri), modifier = Modifier.weight(1f), style = MaterialTheme.typography.titleMedium)
+            Text(stringResource(R.string.kullanim_istatistikleri), modifier = Modifier.weight(1f), fontSize = 15.sp, fontWeight = FontWeight.ExtraBold, color = TaleInk)
             Switch(checked = enabled, enabled = !busy, onCheckedChange = { choice ->
                 busy = true
                 scope.launch {
@@ -42,7 +46,7 @@ internal fun AnalyticsConsentControl(initialEnabled: Boolean, onChange: (Boolean
                 }
             }, modifier = Modifier.contentLabel(stringResource(R.string.kullanim_istatistiklerini_paylas)))
         }
-        Text(stringResource(R.string.istege_baglidir_acarsan_hikaye_ve), style = MaterialTheme.typography.bodySmall)
+        Text(stringResource(R.string.istege_baglidir_acarsan_hikaye_ve), fontSize = 12.sp, color = TaleMuted)
         if (error) Text(stringResource(R.string.tercihin_kaydedilemedi_lutfen_tekrar_dene), color = MaterialTheme.colorScheme.error)
     }
 }
