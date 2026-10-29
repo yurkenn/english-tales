@@ -1,6 +1,7 @@
 package com.yurken.englishtales
 
 import android.database.sqlite.SQLiteDatabase
+import android.graphics.Bitmap
 import androidx.compose.ui.semantics.SemanticsActions
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createEmptyComposeRule
@@ -52,6 +53,18 @@ class FirstLaunchJourneyTest {
     }
     private fun waitForDb(timeout: Long=10_000,condition: ()->Boolean)=compose.waitUntil(timeout,condition)
 
+    private fun screenshot(name: String) {
+        compose.waitForIdle()
+        val instrumentation=InstrumentationRegistry.getInstrumentation()
+        val dir=InstrumentationRegistry.getArguments().getString("additionalTestOutputDir")?.let(::File)
+            ?: File(context.getExternalFilesDir(null),"first-launch")
+        val bitmap=checkNotNull(instrumentation.uiAutomation.takeScreenshot())
+        File(dir,"first-launch").apply {mkdirs()}.resolve("$name.png").outputStream().use {
+            bitmap.compress(Bitmap.CompressFormat.PNG,100,it)
+        }
+        bitmap.recycle()
+    }
+
     @Test fun guestReadsSavesAWordAndReviewsItOnAFreshInstall() {
         freshInstall()
         assertFalse("The fresh-install fixture must reset the device language gate",AppLanguage.hasConfirmedChoice(context))
@@ -61,10 +74,12 @@ class FirstLaunchJourneyTest {
             if(compose.onAllNodesWithContentDescription(text(R.string.yurken)).fetchSemanticsNodes().isNotEmpty())
                 compose.onNodeWithContentDescription(text(R.string.yurken)).performClick()
             waitFor(hasTestTag("language_continue"))
+            screenshot("01-language")
             compose.onNodeWithTag("language_continue").performClick()
             assertTrue(AppLanguage.hasConfirmedChoice(context))
             val guest=text(R.string.misafir_olarak_basla)
             waitFor(hasText(guest))
+            screenshot("02-welcome")
             compose.onNodeWithText(guest).performScrollTo().performClick()
 
             // Onboarding: A1, everyday life, one step a day.
@@ -75,10 +90,12 @@ class FirstLaunchJourneyTest {
             }
             val start=text(R.string.ilk_hikayeme_basla)
             waitFor(hasText(start))
+            screenshot("03-onboarding-ready")
             compose.onNodeWithText(start,useUnmergedTree=true).performScrollTo().performClick()
 
             // The recommended story's reader opens and the guest profile is saved.
             waitFor(hasContentDescription(text(R.string.kelimelerim_kayitli_kelime_2,0)))
+            screenshot("04-reader")
             waitForDb {scalar("SELECT onboarding_done FROM local_profile WHERE id=1")=="1" && scalar("SELECT last_story_id FROM local_profile WHERE id=1")!=null}
             assertEquals("A1",scalar("SELECT level FROM local_profile WHERE id=1"))
             assertEquals("Günlük yaşam",scalar("SELECT genre FROM local_profile WHERE id=1"))
@@ -101,6 +118,7 @@ class FirstLaunchJourneyTest {
             node.performTouchInput {click(bounds.center)}
             val learn=text(R.string.ogren_2)
             waitFor(hasText(learn))
+            screenshot("05-word-card")
             compose.onNodeWithText(learn).performClick()
             val wordId=match.word.id
             waitForDb {scalar("SELECT COUNT(*) FROM saved_words WHERE word_id=?",wordId)=="1"}
@@ -116,16 +134,19 @@ class FirstLaunchJourneyTest {
             compose.onAllNodesWithContentDescription(text(R.string.geri)).onFirst().performClick()
             val review=text(R.string.kelimeyi_hatirla,1)
             waitFor(hasText(review))
+            screenshot("06-study")
             compose.onNodeWithText(review).performScrollTo().performClick()
 
             // A new word starts on the recognise rung: pick its meaning.
             waitFor(hasText(text(R.string.bir_ceviri_secin)))
+            screenshot("07-review")
             compose.onNodeWithText(match.word.word).assertExists()
             compose.onNodeWithText(match.word.translation).apply {runCatching {performScrollTo()}}.performClick()
             waitForDb {scalar("SELECT correct_count FROM saved_words WHERE word_id=?",wordId)=="1"}
             assertNotNull(scalar("SELECT last_reviewed_at FROM saved_words WHERE word_id=?",wordId))
             assertNotEquals("learning",scalar("SELECT learning_state FROM saved_words WHERE word_id=?",wordId))
             waitFor(hasText(text(R.string.calisma_tamamlandi)))
+            screenshot("08-result")
             waitForDb {scalar("SELECT completed_lessons FROM learning_stats WHERE id=1")=="1"}
         } finally {scenario.close()}
     }

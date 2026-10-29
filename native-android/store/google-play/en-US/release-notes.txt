@@ -1,5 +1,4 @@
-• Tap any word in a story to see its meaning instantly.
-• New games, daily quests, a reward chest and streak freeze.
-• Optional weekly league and friend invite codes.
-• Longer stories, 17 new stories and a calmer reading screen.
-• Fixed sync getting stuck when switching accounts.
+• A fresh, playful look for the library, profile and games.
+• Redesigned reading controls and word cards.
+• Read with rounded or classic book fonts.
+• Clearer daily goals and rewards.
