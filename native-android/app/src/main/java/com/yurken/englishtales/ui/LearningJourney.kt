@@ -166,7 +166,7 @@ fun WeeklyActivity(snapshot: LearningSnapshot) {
                 val frozenLabel=stringResource(R.string.streak_freeze_day)
                 val dash=TaleBlue
                 Column(Modifier.weight(1f).appearIn(i),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(4.dp)) {
-                    Box(Modifier.size(32.dp).background(if(active) TaleOrange.copy(alpha=0.22f) else if(frozen) c.tileBlue else TaleLine.copy(alpha=0.6f),RoundedCornerShape(10.dp))
+                    Box(Modifier.size(32.dp).background(if(active) TaleOrange.copy(alpha=0.22f) else if(frozen) LocalTaleColors.current.tileBlue else TaleLine.copy(alpha=0.6f),RoundedCornerShape(10.dp))
                         .then(if(frozen) Modifier.contentLabel(frozenLabel) else Modifier)
                         .then(if(today && !active) Modifier.drawBehind {
                             val w=2.5.dp.toPx()
