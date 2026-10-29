@@ -47,13 +47,13 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     val context=androidx.compose.ui.platform.LocalContext.current
     LaunchedEffect(combo.best,snapshot.ownerId) {if(combo.best>0) GameRecords.noteCombo(context,snapshot.ownerId,combo.best)}
     CompositionLocalProvider(LocalCombo provides combo) {
-        PracticeSession(snapshot,onLessonComplete,onWordReviewed,padding,onSessionStart,onCheckpoint,onSessionAbandoned,onSessionActive,launchId,launchWordIds,onLaunchConsumed,onDailyPlan,onCompletedExit)
+        PracticeSession(snapshot,onLessonComplete,onWordReviewed,padding,onSessionStart,onCheckpoint,onSessionAbandoned,onSessionActive,launchId,launchWordIds,onLaunchConsumed,onDailyPlan,onCompletedExit,quests)
     }
 }
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-private fun PracticeSession(snapshot: LearningSnapshot,onLessonComplete: (Int,String,String,Int,Long)->Unit,onWordReviewed: (String,Boolean)->Unit,padding: PaddingValues,onSessionStart: (String,String,Int)->Unit,onCheckpoint: (String,Long)->Unit,onSessionAbandoned: (String)->Unit,onSessionActive: (Boolean)->Unit, launchId: String?, launchWordIds: List<String>, onLaunchConsumed: ()->Unit, onDailyPlan: ()->Unit,onCompletedExit: (String,()->Boolean,()->Unit)->Unit) {
+private fun PracticeSession(snapshot: LearningSnapshot,onLessonComplete: (Int,String,String,Int,Long)->Unit,onWordReviewed: (String,Boolean)->Unit,padding: PaddingValues,onSessionStart: (String,String,Int)->Unit,onCheckpoint: (String,Long)->Unit,onSessionAbandoned: (String)->Unit,onSessionActive: (Boolean)->Unit, launchId: String?, launchWordIds: List<String>, onLaunchConsumed: ()->Unit, onDailyPlan: ()->Unit,onCompletedExit: (String,()->Boolean,()->Unit)->Unit,quests: (@Composable (Modifier)->Unit)?) {
     val combo=LocalCombo.current
     val saved=snapshot.savedWordList()
     val supplemental=LearningContent.words.filter {it.id !in snapshot.savedWordIds}
