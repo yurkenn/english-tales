@@ -133,6 +133,7 @@ private fun ShortcutTile(color: Color,onColor: Color,title: String,subtitle: Str
     }
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun WeeklyActivity(snapshot: LearningSnapshot, modifier: Modifier = Modifier.padding(horizontal=16.dp,vertical=12.dp)) {
     // The canvas's streak week: a white card, a square tile per day, a solid flame on the days practised and a dashed tile for today.
@@ -158,7 +159,8 @@ fun WeeklyActivity(snapshot: LearningSnapshot, modifier: Modifier = Modifier.pad
             else -> stringResource(R.string.weekly_today_pending)
         }
         Text(todayText,fontSize=13.sp,color=if(snapshot.dailyGoalReached) TaleBlue else TaleMuted,fontWeight=if(snapshot.dailyGoalReached) FontWeight.SemiBold else FontWeight.Normal)
-        Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(4.dp)) {
+        FlowRow(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(4.dp),verticalArrangement=Arrangement.spacedBy(8.dp),
+            maxItemsInEachRow=if(androidx.compose.ui.platform.LocalDensity.current.fontScale>=1.5f) 4 else 7) {
             snapshot.weeklyActivity.forEachIndexed {i,day ->
                 val today=i==snapshot.weeklyActivity.lastIndex
                 val active=day.sessions>0

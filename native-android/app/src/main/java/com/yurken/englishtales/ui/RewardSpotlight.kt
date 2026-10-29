@@ -182,11 +182,13 @@ internal fun FreezeShield(modifier: Modifier = Modifier) {
 }
 
 /** The last seven days as flames: studied days light up one after another, a freeze day shows ice, the rest stay grey. */
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 internal fun WeekFlames(week: List<DailyActivity>, frozenDays: Set<String>, modifier: Modifier = Modifier) {
     val still = reduceMotion()
-    Row(modifier.fillMaxWidth().background(TaleSurface, RoundedCornerShape(20.dp)).border(1.dp, TaleLine, RoundedCornerShape(20.dp)).padding(horizontal = 12.dp, vertical = 14.dp),
-        horizontalArrangement = Arrangement.SpaceBetween) {
+    FlowRow(modifier.fillMaxWidth().background(TaleSurface, RoundedCornerShape(20.dp)).border(1.dp, TaleLine, RoundedCornerShape(20.dp)).padding(horizontal = 12.dp, vertical = 14.dp),
+        horizontalArrangement = Arrangement.SpaceBetween, verticalArrangement = Arrangement.spacedBy(8.dp),
+        maxItemsInEachRow = if (androidx.compose.ui.platform.LocalDensity.current.fontScale >= 1.5f) 4 else 7) {
         week.forEachIndexed { i, day ->
             val lit = day.sessions > 0
             val frozen = day.day in frozenDays

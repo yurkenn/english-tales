@@ -1,11 +1,13 @@
 package com.yurken.englishtales.ui
 
 import android.graphics.Bitmap
-import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.asAndroidBitmap
 import androidx.compose.ui.semantics.SemanticsActions
-import androidx.compose.ui.semantics.SemanticsProperties
 import androidx.compose.ui.semantics.getOrNull
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
@@ -38,7 +40,11 @@ class ReleaseUiLayoutTest {
             savedWordIds=words.map { it.id }.toSet(), readerHintSeen=true)
     }
 
-    @Test fun populatedWeek() = check("week") { WeeklyActivity(snapshot) }
+    @Test fun populatedWeek() = check("week") {
+        // The home owns scrolling; the weekly component itself is intentionally not scrollable.
+        Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState())) { WeeklyActivity(snapshot) }
+    }
+    @Test fun streakWeek() = check("streak-week") { WeekFlames(snapshot.weeklyActivity, emptySet()) }
     @Test fun matching() = check("matching") {
         MatchingGame(words, 1, snapshot.savedWordIds, PaddingValues(), {_,_->}, {}, {}, {}, snapshot)
     }
@@ -48,6 +54,8 @@ class ReleaseUiLayoutTest {
     @Test fun flashcardAnswer() = check("flashcard-answer", tap=R.string.ogren_2) {
         FlashcardGame(words, 1, snapshot.savedWordIds, PaddingValues(), {_,_->}, {}, {}, {}, snapshot)
     }
+    @Test fun longestFlashcardFront() = longCard(false)
+    @Test fun longestFlashcardAnswer() = longCard(true)
     @Test fun gameResult() = check("game-result") {
         GameResult("Eşleştirme", 45, PaddingValues(), {}, {}, snapshot, 9, 10)
     }
@@ -59,7 +67,20 @@ class ReleaseUiLayoutTest {
             true, false, 5, 2, listOf(LeagueMember(4, "Sen", 480, true, "me")), null)), {}, {})
     }
 
-    private fun check(name: String, tap: Int? = null, screen: @Composable () -> Unit) {
+    private fun longCard(reveal: Boolean) {
+        val word=LearningContent.words.maxBy { it.word.length }
+        check(if(reveal) "long-card-answer" else "long-card-front", tap=if(reveal) R.string.ogren_2 else null, after={
+            compose.onNodeWithContentDescription(context.getString(R.string.kelimesini_dinle,word.word))
+                .performScrollTo().assertIsDisplayed().assertHeightIsAtLeast(48.dp)
+            for(id in if(reveal) listOf(R.string.tekrar_et,R.string.hatirladim) else listOf(R.string.ogren_2)) {
+                compose.onNodeWithText(context.getString(id)).performScrollTo().assertIsDisplayed()
+            }
+        }) {
+            FlashcardGame(listOf(word), 1, setOf(word.id), PaddingValues(), {_,_->}, {}, {}, {}, snapshot)
+        }
+    }
+
+    private fun check(name: String, tap: Int? = null, after: () -> Unit = {}, screen: @Composable () -> Unit) {
         compose.setContent {
             DeviceConfigurationOverride(DeviceConfigurationOverride.FontScale(2f) then
                 DeviceConfigurationOverride.ForcedSize(DpSize(320.dp, 640.dp))) {
@@ -76,14 +97,14 @@ class ReleaseUiLayoutTest {
         File(dir, "release-ui").apply { mkdirs() }.resolve("$name.png").outputStream().use {
             root.captureToImage().asAndroidBitmap().compress(Bitmap.CompressFormat.PNG, 100, it)
         }
-        val problems = compose.onAllNodes(hasText("", substring=true)).fetchSemanticsNodes().flatMap { node ->
+        val problems = compose.onAllNodes(hasText("", substring=true),useUnmergedTree=true).fetchSemanticsNodes().flatMap { node ->
             val layouts = mutableListOf<TextLayoutResult>()
             node.config.getOrNull(SemanticsActions.GetTextLayoutResult)?.action?.invoke(layouts)
-            val text = node.config.getOrNull(SemanticsProperties.Text)?.joinToString { it.text }.orEmpty()
             layouts.filter { layout -> layout.didOverflowHeight || (0 until layout.lineCount).any {
                 layout.isLineEllipsized(it) || layout.getLineRight(it) > layout.size.width+1 || layout.getLineLeft(it) < -1
-            } }.map { "cut: $text" }
+            } }.map { "cut: ${it.layoutInput.text}" }
         }
         assertEquals("$name loses text at 200% on a 320dp phone", emptyList<String>(), problems)
+        after()
     }
 }
