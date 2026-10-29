@@ -176,16 +176,22 @@ private fun PracticeSession(snapshot: LearningSnapshot,onLessonComplete: (Int,St
                 ModeCard(stringResource(R.string.kelime_kartlari),stringResource(R.string.kelimeleri_tani_ve_dinle),R.drawable.game_cards,GameTint.Blue,index=1) {start("card")}
                 ModeCard(stringResource(R.string.ladder_mode),stringResource(R.string.ladder_subtitle),R.drawable.game_ladder,GameTint.Purple,index=2) {start("ladder")}
                 ModeCard(stringResource(R.string.bir_ceviri_sec),stringResource(R.string.dogru_anlami_bul),R.drawable.game_choice,GameTint.Orange,index=2) {start("choice")}
-                if(orderCandidates?.isEmpty()!=true) ModeCard(stringResource(R.string.order_mode),stringResource(R.string.order_subtitle),R.drawable.game_order,GameTint.Green,enabled=orderCandidates!=null,index=3) {start("order")}
-                ModeCard(stringResource(R.string.gap_mode),stringResource(R.string.gap_subtitle),R.drawable.game_gap,GameTint.Teal,enabled=gapPrompts?.isNotEmpty()==true,index=3) {start("cloze")}
-                if(voice.available!=false) ModeCard(stringResource(R.string.listen_mode),stringResource(R.string.listen_subtitle),R.drawable.game_listen,GameTint.Pink,enabled=voice.available==true,index=4) {start("listen")}
+                val showOrder=orderCandidates?.isEmpty()!=true
+                val showListen=voice.available!=false
+                val showDictation=voice.available==true && showOrder
+                // A game still loading or without sentences says so on its own tile instead of in a loose line under the board.
+                val gapNote=when {gapPrompts==null -> stringResource(R.string.gap_preparing); gapPrompts?.isEmpty()==true || gapUnavailable -> stringResource(R.string.gap_unavailable); else -> null}
+                if(showOrder) ModeCard(stringResource(R.string.order_mode),if(orderCandidates==null) stringResource(R.string.gap_preparing) else stringResource(R.string.order_subtitle),R.drawable.game_order,GameTint.Green,enabled=orderCandidates!=null,index=3) {start("order")}
+                ModeCard(stringResource(R.string.gap_mode),gapNote ?: stringResource(R.string.gap_subtitle),R.drawable.game_gap,GameTint.Teal,enabled=gapNote==null,index=3) {start("cloze")}
+                if(showListen) ModeCard(stringResource(R.string.listen_mode),if(voice.available==null) stringResource(R.string.listen_preparing) else stringResource(R.string.listen_subtitle),R.drawable.game_listen,GameTint.Pink,enabled=voice.available==true,index=4) {start("listen")}
                 // Dictation needs a voice too; it appears only once English speech is known to work.
-                if(voice.available==true && orderCandidates?.isEmpty()!=true) ModeCard(stringResource(R.string.dictation_mode),stringResource(R.string.dictation_subtitle),R.drawable.game_dictation,GameTint.Indigo,enabled=orderCandidates!=null,index=4) {start("dictation")}
+                if(showDictation) ModeCard(stringResource(R.string.dictation_mode),stringResource(R.string.dictation_subtitle),R.drawable.game_dictation,GameTint.Indigo,enabled=orderCandidates!=null,index=4) {start("dictation")}
                 ModeCard(stringResource(R.string.kelimeyi_olustur),stringResource(R.string.harfleri_dogru_siraya_koy),R.drawable.game_spell,GameTint.Amber,index=5) {start("spell")}
+                // An odd last tile keeps its half width, as on the canvas's two-column board, instead of stretching across.
+                val tiles=6+listOf(showOrder,showListen,showDictation).count {it}
+                if(sideBySide(2)==2 && tiles%2==1) Spacer(Modifier.weight(1f))
             }
-            if(gapPrompts==null || gapPrompts?.isEmpty()==true || gapUnavailable) Text(stringResource(if(gapPrompts==null) R.string.gap_preparing else R.string.gap_unavailable),
-                modifier=Modifier.padding(horizontal=16.dp,vertical=8.dp),style=MaterialTheme.typography.bodySmall,color=TaleMuted)
-            if(voice.available!=true) Text(stringResource(if(voice.available==null) R.string.listen_preparing else R.string.listen_unavailable),
+            if(voice.available==false) Text(stringResource(R.string.listen_unavailable),
                 modifier=Modifier.padding(horizontal=16.dp,vertical=8.dp),style=MaterialTheme.typography.bodySmall,color=TaleMuted)
             Spacer(Modifier.height(16.dp))
         }
