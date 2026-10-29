@@ -128,14 +128,15 @@ fun ReminderControls() {
         enabled=granted && LearningReminders.allowed(context);denied=!enabled;LearningReminders.configure(context,enabled,hour,minute);announce(enabled,denied)
     }
     val time=String.format(Locale.getDefault(),"%02d:%02d",hour,minute)
-    // An orange bell tile, the title and the switch on one row; the time sits below as a tappable chip.
+    val title=stringResource(R.string.kendi_saatinde_hatirlat)
+    val stacked=androidx.compose.ui.platform.LocalDensity.current.fontScale>1.4f
+    // An orange bell tile, the title and the switch on one row; the note and a tappable time chip sit below.
     Column(Modifier.fillMaxWidth().padding(vertical=4.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
         Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
             Box(Modifier.size(36.dp).background(TaleOrange,RoundedCornerShape(11.dp)),contentAlignment=Alignment.Center) {ReferenceIcon("bell",TaleOnOrange,Modifier.size(20.dp))}
-            Column(Modifier.weight(1f)) {
-                Text(stringResource(R.string.kendi_saatinde_hatirlat),fontSize=15.sp,fontWeight=FontWeight.ExtraBold,color=TaleInk)
-                Text(stringResource(R.string.istege_baglidir_gunluk_hedefini_tamamladiysan),fontSize=12.sp,color=TaleMuted)
-            }
+            // Large text moves the title under the tile row so long words never split beside the switch.
+            if(!stacked) Text(title,fontSize=15.sp,fontWeight=FontWeight.ExtraBold,color=TaleInk,modifier=Modifier.weight(1f))
+            else Spacer(Modifier.weight(1f))
             Switch(checked=enabled,modifier=Modifier.contentLabel(stringResource(R.string.gunluk_hatirlatici)),onCheckedChange={value ->
                 denied=false
                 if(!value) {enabled=false;LearningReminders.configure(context,false);announce(false,false)}
@@ -143,7 +144,9 @@ fun ReminderControls() {
                 else {enabled=LearningReminders.allowed(context);denied=!enabled;LearningReminders.configure(context,enabled,hour,minute);announce(enabled,denied)}
             })
         }
-        Row(Modifier.padding(start=48.dp).heightIn(min=48.dp).background(LocalTaleColors.current.tileBlue,RoundedCornerShape(14.dp))
+        if(stacked) Text(title,fontSize=15.sp,fontWeight=FontWeight.ExtraBold,color=TaleInk)
+        Text(stringResource(R.string.istege_baglidir_gunluk_hedefini_tamamladiysan),fontSize=12.sp,color=TaleMuted)
+        Row(Modifier.heightIn(min=48.dp).background(LocalTaleColors.current.tileBlue,RoundedCornerShape(14.dp))
             .clickable(role=Role.Button) {TimePickerDialog(context,{_,h,m ->hour=h;minute=m;LearningReminders.configure(context,enabled,h,m);if(enabled) announce(true,false)},hour,minute,true).show()}
             .padding(horizontal=14.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(8.dp)) {
             ReferenceIcon("clock",TaleBlue,Modifier.size(18.dp))
