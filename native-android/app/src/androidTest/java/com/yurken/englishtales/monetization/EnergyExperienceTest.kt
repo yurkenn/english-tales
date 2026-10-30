@@ -39,7 +39,9 @@ class EnergyExperienceTest {
         val file=File(context.filesDir,"energy-guest.json")
         val previous=if(file.exists()) file.readBytes() else null
         val now=System.currentTimeMillis()
-        EnergyDisk(context,"guest").write(JSONObject().put("legacySeeded",true).put("day",EnergyPolicy.day(now))
+        // Signed builds default to an inactive cached policy until a server policy is known.
+        // This fixture exercises a known-enabled policy without depending on live connectivity.
+        EnergyDisk(context,"guest").write(JSONObject().put("policyEnabled",true).put("legacySeeded",true).put("day",EnergyPolicy.day(now))
             .put("spent",3).put("lastClock",now).put("unlocked",JSONArray()))
         val scenario=ActivityScenario.launch(MainActivity::class.java)
         var opened=false
