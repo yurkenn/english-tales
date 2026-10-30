@@ -2,6 +2,7 @@ package com.yurken.englishtales
 
 import android.database.sqlite.SQLiteDatabase
 import android.graphics.Bitmap
+import androidx.compose.ui.graphics.asAndroidBitmap
 import androidx.compose.ui.semantics.SemanticsActions
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createEmptyComposeRule
@@ -58,7 +59,9 @@ class FirstLaunchJourneyTest {
         val instrumentation=InstrumentationRegistry.getInstrumentation()
         val dir=InstrumentationRegistry.getArguments().getString("additionalTestOutputDir")?.let(::File)
             ?: File(context.getExternalFilesDir(null),"first-launch")
-        val bitmap=checkNotNull(instrumentation.uiAutomation.takeScreenshot())
+        // PixelCopy waits for the Compose draw. UiAutomation can return the outgoing
+        // Activity frame immediately after navigation even when semantics are idle.
+        val bitmap=compose.onRoot().captureToImage().asAndroidBitmap()
         File(dir,"first-launch").apply {mkdirs()}.resolve("$name.png").outputStream().use {
             bitmap.compress(Bitmap.CompressFormat.PNG,100,it)
         }
