@@ -86,7 +86,7 @@ class ReleaseUiLayoutTest {
         purchasePending: Boolean=false, premium: Boolean=false) {
         val state=EnergyState(0,0,System.currentTimeMillis()+86_400_000L,
             premiumUntil=if(premium) System.currentTimeMillis()+86_400_000L else 0)
-        check(name, after={
+        check(name, dark=premium, after={
             compose.onNodeWithContentDescription(context.getString(R.string.energy_close))
                 .assertHeightIsAtLeast(48.dp).assertWidthIsAtLeast(48.dp)
             compose.onNodeWithText(context.getString(R.string.energy_retry_read))
@@ -103,6 +103,12 @@ class ReleaseUiLayoutTest {
         }
     }
 
+    @Test fun energyStatusAtLargeText() = check("energy-status", after={
+        compose.onNodeWithTag("energy_status").assertHasClickAction().assertHeightIsAtLeast(48.dp)
+    }) {
+        EnergyStatusContent(MonetizationUi(policyEnabled=true,energy=EnergyState(3,0,0)),{})
+    }
+
     private fun longCard(reveal: Boolean) {
         val word=LearningContent.words.maxBy { it.word.length }
         check(if(reveal) "long-card-answer" else "long-card-front", tap=if(reveal) R.string.ogren_2 else null, after={
@@ -116,13 +122,13 @@ class ReleaseUiLayoutTest {
         }
     }
 
-    private fun check(name: String, tap: Int? = null, after: (() -> Unit)? = null, screen: @Composable () -> Unit) {
+    private fun check(name: String, tap: Int? = null, dark: Boolean = false, after: (() -> Unit)? = null, screen: @Composable () -> Unit) {
         compose.setContent {
             DeviceConfigurationOverride(DeviceConfigurationOverride.FontScale(2f) then
                 DeviceConfigurationOverride.ForcedSize(DpSize(320.dp, 640.dp))) {
                 // Exercise a visible combo badge without inheriting another test's default combo.
                 CompositionLocalProvider(LocalCombo provides remember { ComboState(current=3,best=5) }) {
-                    EnglishTalesTheme(dark=false) { screen() }
+                    EnglishTalesTheme(dark=dark) { screen() }
                 }
             }
         }
