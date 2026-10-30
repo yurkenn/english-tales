@@ -21,6 +21,7 @@ import com.yurken.englishtales.R
 import com.yurken.englishtales.data.*
 import com.yurken.englishtales.monetization.*
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -105,8 +106,13 @@ class ReleaseUiLayoutTest {
 
     @Test fun energyStatusAtLargeText() = check("energy-status", after={
         compose.onNodeWithTag("energy_status").assertHasClickAction().assertHeightIsAtLeast(48.dp)
+        assertTrue("Energy header must leave room for tab content",
+            compose.onNodeWithTag("energy_status").getUnclippedBoundsInRoot().height <= 160.dp)
     }) {
-        EnergyStatusContent(MonetizationUi(policyEnabled=true,energy=EnergyState(3,0,0)),{})
+        // The real app places the header in a Column above weighted tab content.
+        Column(Modifier.fillMaxSize()) {
+            EnergyStatusContent(MonetizationUi(policyEnabled=true,energy=EnergyState(3,0,0)),{})
+        }
     }
 
     private fun longCard(reveal: Boolean) {
