@@ -1,4 +1,1 @@
-• Tampilan baru yang seru untuk perpustakaan, profil, dan permainan.
-• Kontrol membaca dan kartu kata diperbarui.
-• Baca dengan huruf membulat atau klasik.
-• Target harian dan hadiah lebih jelas.
+Tampilan baru untuk membaca dan permainan kata. Tata letak teks besar ditingkatkan, bahasa terjemahan terpisah dan lebih banyak cerita offline. Energi harian dan Premium opsional tersedia dalam kandidat uji internal; aktivasi produksi menunggu validasi.

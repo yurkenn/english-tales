@@ -1,4 +1,1 @@
-• Nuevo diseño divertido en la biblioteca, el perfil y los juegos.
-• Controles de lectura y tarjetas de palabras renovados.
-• Elige una letra redondeada o clásica para leer.
-• Metas diarias y premios más claros.
+Renovamos la lectura y los juegos de palabras. Mejoras para texto grande, idioma de traducción independiente y más historias sin conexión. Energía diaria y Premium opcional incluidos en la versión de prueba interna; su activación en producción está pendiente de validación.

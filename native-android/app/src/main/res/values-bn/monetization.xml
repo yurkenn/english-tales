@@ -1,0 +1,31 @@
+<resources>
+    <string name="energy_title">আপনার রিডিং পাস</string>
+    <string name="energy_balance">রিডিং পাস বাকি: %1$d</string>
+    <string name="energy_description">প্রতিদিন 3টি নতুন গল্প খুলুন। আনলক করা গল্প আবার খোলা, অনুবাদ ও শব্দভান্ডার রিভিউ বিনামূল্যে থাকবে।</string>
+    <string name="energy_reset">আপনার বিনামূল্যের পাস %1$s তারিখে আবার 3টি হবে।</string>
+    <string name="energy_empty">আপনি আজকের রিডিং পাস ব্যবহার করে ফেলেছেন</string>
+    <string name="energy_gate_description">আনলক করা গল্পে ফিরে যান, বিনামূল্যে রিফিলের জন্য অপেক্ষা করুন, অথবা পড়া চালিয়ে যাওয়ার একটি উপায় বেছে নিন।</string>
+    <string name="energy_watch">বিজ্ঞাপন দেখুন · +1 রিডিং পাস</string>
+    <string name="energy_reward_limit">আপনি দৈনিক 3টি বিজ্ঞাপন পুরস্কারের সবগুলো ব্যবহার করেছেন।</string>
+    <string name="energy_sign_in">অতিরিক্ত পাস বা Premium-এর জন্য সাইন ইন করুন</string>
+    <string name="energy_guest_note">অতিথি পাস এই ডিভাইসে সংরক্ষিত থাকে। বিজ্ঞাপন পুরস্কার পেতে বা কেনাকাটা করতে সাইন ইন করুন।</string>
+    <string name="energy_premium">Premium দিয়ে সীমাহীন পড়ুন</string>
+    <string name="energy_premium_active">Premium · সীমাহীন পড়া</string>
+    <string name="energy_premium_description">সীমাহীন গল্প ও বিজ্ঞাপনমুক্ত শেখা।</string>
+    <string name="energy_premium_end">Premium অ্যাক্সেস থাকবে: %1$s পর্যন্ত</string>
+    <string name="energy_unavailable">এই কাজটি সম্পন্ন করা যায়নি। আপনার আনলক করা গল্পগুলো নিরাপদ আছে। সংযোগ পরীক্ষা করে আবার চেষ্টা করুন।</string>
+    <string name="energy_pending">যাচাই এখনও বাকি। আবার দেখতে আপনার অ্যাকাউন্ট রিফ্রেশ করুন।</string>
+    <string name="energy_refresh">আবার দেখুন</string>
+    <string name="energy_restore">কেনাকাটা পুনরুদ্ধার করুন</string>
+    <string name="energy_monthly">%1$s / মাস</string>
+    <string name="energy_annual">%1$s / বছর</string>
+    <string name="energy_renewal">বাতিল না করা পর্যন্ত আপনার সাবস্ক্রিপশন নির্বাচিত মেয়াদের জন্য স্টোরে দেখানো দামে স্বয়ংক্রিয়ভাবে নবায়ন হয়। বাতিল করলে পরবর্তী নবায়ন বন্ধ হয়; আপনার বর্তমান অ্যাক্সেস চালু থাকে।</string>
+    <string name="energy_manage">সাবস্ক্রিপশন পরিচালনা করুন</string>
+    <string name="energy_close">ফিরে যান</string>
+    <string name="energy_offer_unavailable">Premium বিকল্পগুলো এখন পাওয়া যাচ্ছে না। আপনি বিনামূল্যে পড়া চালিয়ে যেতে পারেন।</string>
+    <string name="energy_retry_read">গল্পটি আবার খোলার চেষ্টা করুন</string>
+    <string name="energy_terms">সাবস্ক্রিপশনের শর্তাবলি</string>
+    <string name="energy_privacy">গোপনীয়তা</string>
+    <string name="energy_delete_warning">অ্যাকাউন্ট মুছলে Google Play সাবস্ক্রিপশন বাতিল হয় না। ভবিষ্যতের পেমেন্ট বন্ধ করতে প্রথমে আপনার Google Play সাবস্ক্রিপশন পরিচালনা করুন।</string>
+    <string name="energy_checking">আপনার রিডিং পাস যাচাই করা হচ্ছে…</string>
+</resources>

@@ -1,0 +1,63 @@
+{
+  "jvm": {
+    "tests": 157,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "lint": {
+    "Error": 0,
+    "Fatal": 0,
+    "Warning": 106
+  },
+  "device": {
+    "api": 36,
+    "emulator": "English_Tales_Completion_36",
+    "tests": 48,
+    "failures": 0,
+    "skipped": 0,
+    "classes": {
+      "com.yurken.englishtales.data.PublishedBundleTest": 6,
+      "com.yurken.englishtales.data.MultilingualContentTest": 5,
+      "com.yurken.englishtales.data.MultilingualDownloadTest": 6,
+      "com.yurken.englishtales.data.RemoteContentTest": 23,
+      "com.yurken.englishtales.data.LearningContentLoadTest": 1,
+      "com.yurken.englishtales.data.WordRevisionCacheTest": 4,
+      "com.yurken.englishtales.data.StoryPilotIntegrationTest": 3
+    }
+  },
+  "apk": {
+    "catalogSHA256": "b265a9783f2cd6d939fae515eb19d17e7436dbca53ccabac63f364dc22a7ad30",
+    "stories": 67,
+    "verifiedApkCovers": 67,
+    "historicalCatalogUnchanged": true
+  },
+  "build": "assembleDebug, assembleDebugAndroidTest, testDebugUnitTest, lintDebug passed",
+  "guards": "4 converter/parity tests passed within the final 244 backend tests",
+  "limits": [
+    "Production build and rollout not performed",
+    "Full CI recorded separately on the PR",
+    "Semantic/native-language approval remains open"
+  ],
+  "backend": {
+    "tests": 244,
+    "failures": 0,
+    "skipped": 0
+  },
+  "initialCi": {
+    "source": "cc64d2529fb060f248d92fae494e8998a5df6ed0",
+    "run": "https://github.com/yurkenn/english-tales/actions/runs/40735181745",
+    "appTests": 398,
+    "failures": 6,
+    "errors": 0,
+    "skipped": 0,
+    "disposition": "One canonical glossary homonym issue fixed; five v1-only test expectations updated without skips"
+  },
+  "repairDevice": {
+    "api": 36,
+    "tests": 42,
+    "failures": 0,
+    "skipped": 0,
+    "coverage": "All six initial CI failures; GlossaryAssetTest, LearningStoreTest, ClassicLibraryTest, ReadingHomeUxTest, PublishedBundleTest, MultilingualContentTest"
+  }
+}

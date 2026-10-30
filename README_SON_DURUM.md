@@ -1,3 +1,15 @@
+# 26 Ekim 2026 — Sandbox Premium satın alma doğrulandı
+
+RevenueCat'te sandbox erişimi yalnızca izinli uygulama hesaplarına açıkken liste boştu. Mevcut test hesabı bu listeye eklendi (1 kayıt); Play lisans/dahili test listesi 2 hesap olarak kaldı. Aylık 99,99 TL test satın alması, normal webhook üzerinden yenileme, sunucuda aktif Premium ve yeniden açılışta **Premium · Sınırsız okuma** doğrulandı. Yıllık 699,99 TL test satın alması, altı hızlı yenilemesi ve süre sonu da kayıtlarda mevcut. Geçici inceleme kodu geri alındı; iki staging fonksiyonu v5'te özgün entitlement doğrulamasını kullanıyor. Üretim binary/backend değişmedi. 26 Ekim 08:54 TRT kontrolünde süresi bitmiş aboneliğin geri yüklenmesi doğru ücretsiz durum verdi; aktif abonelik geri yüklemesi ayrı bekleniyor. Bekleyen işlem/iade/hesap geçişi ve gerçek birimle reklam izleme kabulü de ayrı. [Güncel durum](native-android/docs/MONETIZATION_SETUP_2026-10-24.md) · [PR #179](https://github.com/yurkenn/english-tales/pull/179).
+
+# 25 Ekim 2026 — Açık Premium testi ve bölgesel fiyatlar
+
+56 / 2.4.0-sandbox mevcut tek kişilik dahili grupta **Available to internal testers**. Enerji/Premium test ortamında açık; test reklamları ve lisans testi kullanılır. 19 ülkenin **38/38 aylık/yıllık fiyatı** Play'de kaydedildi, yeniden okundu; mevcut aboneler taşınmadı. Gizlilik/hesap silme/abonelik koşulları Hosting'de HTTP 200 ve kaynakla aynı. Kaynak CI: **383 cihaz + 3 açılış + 3 servis**, hata/atlama yok; 148 JVM ve 240 backend başarılı. AdMob ödülü 1 enerji ve staging SSV kaydedildi; Google imzalı Console testi tam 1 kredi verdi, tekrar aynı istekte ikinci ödül çıkmadı. Telefonda reklam izleme, gerçek Play lisans testi satın alması ve üretim binary açılışı henüz tamamlanmadı. [PR #179](https://github.com/yurkenn/english-tales/pull/179) · [Güncel durum](native-android/docs/MONETIZATION_SETUP_2026-10-24.md). Aşağıdaki kayıtlar tarihçedir.
+
+# 25 Ekim 2026 — Enerji ve Premium hazırlığı
+
+Özellik üretimde kapalıdır. 24 Ekim canlı Console kontrolü: 52 / 2.3.1 üretimde erişilebilir, %100 dağıtım. Aşağıdaki gönderim kayıtları tarihçedir. [Güncel monetization durumu](native-android/docs/MONETIZATION_SETUP_2026-10-24.md).
+
 # 24 Ekim 2026 — 52 üretim gönderimi
 
 52 / 2.3.1 dahili testte yayımlandı; aynı paket %100 üretim dağıtımı için Google incelemesine gönderildi. Play: **Changes in review**, hızlı kontroller sürüyor, gönderilmemiş değişiklik yok. Onaydan sonra otomatik yayım (managed publishing kapalı). Fiziksel cihaz/runtime/editör kabul eksikleri kapanmış sayılmaz. [Güncel yayın kaydı](native-android/docs/RELEASE_52_STATUS.md). Aşağıdaki eski durum kayıtları tarihsel kanıttır.
@@ -8,6 +20,11 @@ Son güncelleme: **24 Ekim 2026**.
 
 Gelecek işler ve öncelik sırası: [90 günlük yol haritası](native-android/docs/ROADMAP_2026_Q4.md).
 
+## Enerji ve Premium — 24 Ekim 2026
+
+Claude ile ortak plan ve uygulama `codex/energy-premium` dalında hazırlandı: günlük 3 hikâye hakkı, SSV doğrulamalı ödüllü reklam ve RevenueCat aylık/yıllık Premium. Özellik varsayılan kapalıdır. Supabase **test** ortamına migration ve üç fonksiyon uygulandı; üretim backend'i değiştirilmedi. RevenueCat yeni offering'i iki abonelikle hazır, eski offering geri alınabilir biçimde pasif. Türkiye hedef fiyatları aylık 99,99 TL / yıllık 699,99 TL; Play kaydı ayrıca doğrulanacak. 229 backend, 148 JVM ve hedefli 6 API36 cihaz testi geçti. [Plan, kanıtlar ve açık kabul kapıları](native-android/docs/MONETIZATION_SETUP_2026-10-24.md).
+
+Canlı Play Console kontrolünde **52 / 2.3.1 üretimde erişilebilir ve %100 dağıtımda** (24 Ekim). Önceki sürüm kayıtları aşağıda tarihçedir. Yeni 53 / 2.4.0 imzalı paket yalnız dahili test taslağı için hazırlandı; yeni özelliğin canlıya açıldığı anlamına gelmez.
 ## 52 devamı — 24 Ekim 2026
 
 51 yalnız dahili testte yayımlandı. Claude'un son incelemesinde, geciken eski hesap eşitlemesinin yeni hesabın sandık eşitlemesini yutabildiği durum cihaz testinde doğrulandı. Güncel owner'a damgalı tekrar deneme ile düzeltildi; hesap/sandık regresyonları 32/32 geçti. 52 / 2.3.1 imzalı paket, mapping ve 142 release testi doğrulandı; tam kaynak CI'ı 377 cihaz + 3 açılış + 3 servis testiyle hatasız/atlamasız geçti. Play yüklemesi kabul edildi. Mac ekran kilidi nedeniyle son dahili yayın onayı bekliyor; dahili 51, üretim 50'de. [Sorun, kanıt ve yayın takibi](native-android/docs/RELEASE_52_STATUS.md).

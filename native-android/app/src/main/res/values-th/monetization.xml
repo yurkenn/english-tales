@@ -1,0 +1,31 @@
+<resources>
+    <string name="energy_title">สิทธิ์อ่านของคุณ</string>
+    <string name="energy_balance">เหลือสิทธิ์อ่าน %1$d ครั้ง</string>
+    <string name="energy_description">เปิดเรื่องใหม่ได้วันละ 3 เรื่อง การเปิดเรื่องที่ปลดล็อกแล้วซ้ำ คำแปล และการทบทวนคำศัพท์ยังคงฟรี</string>
+    <string name="energy_reset">สิทธิ์ฟรีของคุณจะเติมกลับเป็น 3 ในวันที่ %1$s</string>
+    <string name="energy_empty">คุณใช้สิทธิ์อ่านของวันนี้หมดแล้ว</string>
+    <string name="energy_gate_description">กลับไปที่เรื่องที่ปลดล็อกแล้ว รอการเติมสิทธิ์ฟรี หรือเลือกวิธีอ่านต่อ</string>
+    <string name="energy_watch">ดูโฆษณา · +1 สิทธิ์อ่าน</string>
+    <string name="energy_reward_limit">คุณใช้รางวัลจากโฆษณาประจำวันครบทั้ง 3 ครั้งแล้ว</string>
+    <string name="energy_sign_in">ลงชื่อเข้าใช้เพื่อรับสิทธิ์เพิ่มหรือ Premium</string>
+    <string name="energy_guest_note">สิทธิ์ของผู้เยี่ยมชมจะเก็บไว้ในอุปกรณ์นี้ ลงชื่อเข้าใช้เพื่อรับรางวัลจากโฆษณาหรือซื้อสินค้า</string>
+    <string name="energy_premium">อ่านได้ไม่จำกัดด้วย Premium</string>
+    <string name="energy_premium_active">Premium · อ่านได้ไม่จำกัด</string>
+    <string name="energy_premium_description">เรื่องราวไม่จำกัดและเรียนรู้โดยไม่มีโฆษณา</string>
+    <string name="energy_premium_end">สิทธิ์เข้าถึง Premium ถึง: %1$s</string>
+    <string name="energy_unavailable">ไม่สามารถดำเนินการนี้ได้ เรื่องที่ปลดล็อกแล้วของคุณยังปลอดภัย โปรดตรวจสอบการเชื่อมต่อแล้วลองอีกครั้ง</string>
+    <string name="energy_pending">กำลังรอการยืนยัน รีเฟรชบัญชีของคุณเพื่อตรวจสอบอีกครั้ง</string>
+    <string name="energy_refresh">ตรวจสอบอีกครั้ง</string>
+    <string name="energy_restore">กู้คืนการซื้อ</string>
+    <string name="energy_monthly">%1$s / เดือน</string>
+    <string name="energy_annual">%1$s / ปี</string>
+    <string name="energy_renewal">การสมัครสมาชิกของคุณจะต่ออายุอัตโนมัติตามรอบที่เลือกในราคาที่สโตร์แสดงจนกว่าจะยกเลิก การยกเลิกจะหยุดการต่ออายุครั้งถัดไป สิทธิ์เข้าถึงปัจจุบันของคุณยังคงใช้ได้</string>
+    <string name="energy_manage">จัดการการสมัครสมาชิก</string>
+    <string name="energy_close">ย้อนกลับ</string>
+    <string name="energy_offer_unavailable">ขณะนี้ตัวเลือก Premium ไม่พร้อมใช้งาน คุณยังอ่านต่อได้ฟรี</string>
+    <string name="energy_retry_read">ลองเปิดเรื่องอีกครั้ง</string>
+    <string name="energy_terms">ข้อกำหนดการสมัครสมาชิก</string>
+    <string name="energy_privacy">ความเป็นส่วนตัว</string>
+    <string name="energy_delete_warning">การลบบัญชีไม่ได้ยกเลิกการสมัครสมาชิก Google Play โปรดจัดการการสมัครสมาชิก Google Play ก่อนเพื่อหยุดการชำระเงินในอนาคต</string>
+    <string name="energy_checking">กำลังตรวจสอบสิทธิ์อ่านของคุณ…</string>
+</resources>

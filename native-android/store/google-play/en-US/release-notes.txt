@@ -1,4 +1,1 @@
-• A fresh, playful look for the library, profile and games.
-• Redesigned reading controls and word cards.
-• Read with rounded or classic book fonts.
-• Clearer daily goals and rewards.
+A refreshed look for your reading journey and word games. Improved layouts for larger text, separate story translation language, and an expanded offline story collection. Daily energy and optional Premium are included in the internal test candidate; production activation is pending validation.

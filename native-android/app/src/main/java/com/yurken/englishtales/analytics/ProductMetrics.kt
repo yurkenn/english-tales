@@ -1,11 +1,20 @@
 package com.yurken.englishtales.analytics
 
-/** Only these seven names and four mode values can reach the analytics adapter. */
+/** Only these fixed event names and four practice modes can reach the analytics adapter. */
 internal enum class ProductEvent(val wireName: String) {
-    VISIT("learning_visit"), NEXT_DAY_RETURN("next_day_return"),
+    VISIT("learning_visit"), NEXT_DAY_RETURN("next_day_return"), SEVENTH_DAY_RETURN("seventh_day_return"),
     ONBOARDING_COMPLETED("learning_onboarding_completed"), STORY_STARTED("story_started"),
     STORY_COMPLETED("story_completed"), FIRST_STORY_COMPLETED("first_story_completed"),
-    PRACTICE_COMPLETED("practice_completed")
+    PRACTICE_COMPLETED("practice_completed"), WORD_SAVED("word_saved"),
+    ENERGY_LIMIT("energy_limit"), PAYWALL_VIEW("premium_view"),
+    REWARD_STARTED("energy_ad_started"), REWARD_COMPLETED("energy_ad_completed"), REWARD_VERIFIED("energy_ad_verified"),
+    PURCHASE_VERIFIED("premium_verified"), RESTORE_VERIFIED("premium_restored")
+}
+
+internal enum class MonetizationEvent(val event: ProductEvent) {
+    LIMIT(ProductEvent.ENERGY_LIMIT), PAYWALL(ProductEvent.PAYWALL_VIEW),
+    REWARD_START(ProductEvent.REWARD_STARTED), REWARD_COMPLETE(ProductEvent.REWARD_COMPLETED), REWARD_VERIFY(ProductEvent.REWARD_VERIFIED),
+    PURCHASE(ProductEvent.PURCHASE_VERIFIED), RESTORE(ProductEvent.RESTORE_VERIFIED)
 }
 
 internal enum class PracticeMode(val wireName: String) {
@@ -16,6 +25,7 @@ internal enum class PracticeMode(val wireName: String) {
 internal sealed interface LearningSignal {
     data object OnboardingCompleted : LearningSignal
     data object StoryStarted : LearningSignal
+    data object WordSaved : LearningSignal
     data class StoryCompleted(val firstForLearner: Boolean) : LearningSignal
     data class PracticeCompleted(val mode: PracticeMode) : LearningSignal
 }
@@ -25,7 +35,8 @@ internal data class MetricsState(
     val firstDay: Long? = null,
     val lastVisitDay: Long? = null,
     val nextDayReported: Boolean = false,
-    val firstStoryReported: Boolean = false
+    val firstStoryReported: Boolean = false,
+    val seventhDayReported: Boolean = false
 )
 
 internal interface MetricsStorage {
@@ -72,9 +83,13 @@ internal class ProductMetrics(
         if (state.lastVisitDay != null && day <= state.lastVisitDay!!) return
         val first = state.firstDay ?: day
         val nextDay = day == first + 1 && !state.nextDayReported
-        if (!save(state.copy(firstDay = first, lastVisitDay = day, nextDayReported = state.nextDayReported || nextDay))) return
+        val seventhDay = day == first + 7 && !state.seventhDayReported
+        if (!save(state.copy(firstDay = first, lastVisitDay = day,
+                nextDayReported = state.nextDayReported || nextDay,
+                seventhDayReported = state.seventhDayReported || seventhDay))) return
         emit(ProductEvent.VISIT)
         if (nextDay) emit(ProductEvent.NEXT_DAY_RETURN)
+        if (seventhDay) emit(ProductEvent.SEVENTH_DAY_RETURN)
     }
 
     @Synchronized fun record(signal: LearningSignal) {
@@ -82,6 +97,7 @@ internal class ProductMetrics(
         when (signal) {
             LearningSignal.OnboardingCompleted -> emit(ProductEvent.ONBOARDING_COMPLETED)
             LearningSignal.StoryStarted -> emit(ProductEvent.STORY_STARTED)
+            LearningSignal.WordSaved -> emit(ProductEvent.WORD_SAVED)
             is LearningSignal.PracticeCompleted -> emit(ProductEvent.PRACTICE_COMPLETED, signal.mode)
             is LearningSignal.StoryCompleted -> {
                 emit(ProductEvent.STORY_COMPLETED)
@@ -89,6 +105,10 @@ internal class ProductMetrics(
                     emit(ProductEvent.FIRST_STORY_COMPLETED)
             }
         }
+    }
+
+    @Synchronized fun monetization(event: MonetizationEvent) {
+        if(state.enabled) emit(event.event)
     }
 
     private fun save(next: MetricsState): Boolean {

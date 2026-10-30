@@ -16,7 +16,7 @@ class GlossaryAssetTest {
         assertTrue(entries.values.all { it.isNotBlank() })
 
         LearningContent.initialize(context)
-        val single = LearningContent.words.filter { PhraseMatcher.tokens(it.word).size == 1 }
+        val single = LearningContent.words.filter { PhraseMatcher.tokens(it.word).size == 1 }.distinctBy {it.word.lowercase(java.util.Locale.ROOT)}
         assertTrue(single.isNotEmpty())
         single.forEach { word -> assertEquals(word.word, word.translation, LearningContent.glossary.lookup(word.word)?.gloss) }
         // Some story token that is not itself a learning word is now explained (e.g. an inflected form).

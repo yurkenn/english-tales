@@ -311,6 +311,8 @@ fun LearningSettingsScreen(snapshot: LearningSnapshot,onBack: ()->Unit,onSave: (
             SettingsCard { Column(Modifier.padding(8.dp)) {
                 LanguageControls(row=true)
                 SettingsDivider()
+                Box(Modifier.padding(horizontal=10.dp,vertical=8.dp)) { TranslationLanguageControls() }
+                SettingsDivider()
                 Box(Modifier.padding(horizontal=10.dp,vertical=8.dp)) { ThemeControls() }
             } }
             val alerts=LocalTaleAlerts.current

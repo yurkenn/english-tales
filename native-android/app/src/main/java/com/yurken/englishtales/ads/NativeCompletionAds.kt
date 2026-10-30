@@ -9,6 +9,7 @@ import com.google.android.libraries.ads.mobile.sdk.MobileAds
 import com.google.android.libraries.ads.mobile.sdk.common.*
 import com.google.android.libraries.ads.mobile.sdk.initialization.InitializationConfig
 import com.google.android.libraries.ads.mobile.sdk.interstitial.*
+import com.google.android.libraries.ads.mobile.sdk.rewarded.*
 import com.google.android.ump.*
 import com.yurken.englishtales.BuildConfig
 import kotlinx.coroutines.CompletableDeferred
@@ -33,6 +34,7 @@ class NativeCompletionAds(private val activity: ComponentActivity): CompletionAd
     private var privacyBusy=false
     private var generation=0
     private var pendingContinue: (() -> Unit)?=null
+    private var cancelReward: (() -> Unit)?=null
 
     init {
         activity.lifecycleScope.launch(Dispatchers.IO) {for(command in commands) command()}
@@ -41,7 +43,7 @@ class NativeCompletionAds(private val activity: ComponentActivity): CompletionAd
                 pendingContinue?.let {pendingContinue=null;it()}
                 preload()
             }
-            if(event==Lifecycle.Event.ON_DESTROY) {generation++;ad=null;pendingContinue=null;commands.close()}
+            if(event==Lifecycle.Event.ON_DESTROY) {generation++;ad=null;pendingContinue=null;cancelReward?.invoke();cancelReward=null;commands.close()}
         })
         gatherConsent()
     }
@@ -110,6 +112,41 @@ class NativeCompletionAds(private val activity: ComponentActivity): CompletionAd
                 }}
             })
         } catch (_: Exception) {loading=false;ad=null}
+    }
+
+    /** Called only by the explicit reward button; server SSV grants the energy, never this callback. */
+    override fun canRewardEnergy()=BuildConfig.MONETIZATION_ENABLED && BuildConfig.ADMOB_REWARDED_ID.isNotBlank() &&
+        initialized && consent.canRequestAds() && !privacyBusy && !showing &&
+        activity.lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED)
+    override fun rewardEnergy(user: String, nonce: String, isCurrent: ()->Boolean, onFinished: (EnergyAdOutcome)->Unit) {
+        if(!BuildConfig.MONETIZATION_ENABLED || BuildConfig.ADMOB_REWARDED_ID.isBlank() || !initialized ||
+            !consent.canRequestAds() || privacyBusy || showing || !isCurrent()) {onFinished(EnergyAdOutcome.NoReward);return}
+        showing=true
+        val expected=generation
+        val finished=AtomicBoolean(false)
+        fun finish(outcome: EnergyAdOutcome) {activity.runOnUiThread {
+            if(finished.compareAndSet(false,true)) {
+                showing=false;cancelReward=null
+                if(isCurrent()) onFinished(outcome)
+            }
+        }}
+        var earned=false
+        cancelReward={finish(if(earned) EnergyAdOutcome.Completed else EnergyAdOutcome.Interrupted)}
+        try {
+            RewardedAd.load(AdRequest.Builder(BuildConfig.ADMOB_REWARDED_ID).build(), object: AdLoadCallback<RewardedAd> {
+                override fun onAdFailedToLoad(error: LoadAdError) {finish(EnergyAdOutcome.NoReward)}
+                override fun onAdLoaded(loaded: RewardedAd) {activity.runOnUiThread {
+                    if(expected!=generation || privacyBusy || !consent.canRequestAds() || !isCurrent() ||
+                        !activity.lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED)) {finish(EnergyAdOutcome.NoReward);return@runOnUiThread}
+                    loaded.setServerSideVerificationOptions(ServerSideVerificationOptions(user,nonce))
+                    loaded.adEventCallback=object: RewardedAdEventCallback {
+                        override fun onAdDismissedFullScreenContent() {finish(if(earned) EnergyAdOutcome.Completed else EnergyAdOutcome.NoReward)}
+                        override fun onAdFailedToShowFullScreenContent(error: FullScreenContentError) {finish(EnergyAdOutcome.NoReward)}
+                    }
+                    try {loaded.show(activity) {earned=true}} catch (_: Exception) {finish(EnergyAdOutcome.NoReward)}
+                }}
+            })
+        } catch (_: Exception) {finish(EnergyAdOutcome.NoReward)}
     }
 
     override fun recordCompletion(id: String) {

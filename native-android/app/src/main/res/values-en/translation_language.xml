@@ -1,0 +1,7 @@
+<resources>
+    <string name="translation_language_title">Translation language</string>
+    <string name="translation_language_current">Translation language: %1$s</string>
+    <string name="translation_language_follow">Follow app language (%1$s)</string>
+    <string name="translation_language_description">Choose a language for story translations and the dictionary. Menus stay the same. Applying a language reloads the screen; your progress is kept.</string>
+    <string name="translation_language_save_failed">Could not save the language. Try again.</string>
+</resources>

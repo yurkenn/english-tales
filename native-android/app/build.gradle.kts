@@ -30,6 +30,8 @@ val releaseSigning = Properties().apply {
     rootProject.file("signing.properties").takeIf {it.exists()}?.inputStream()?.use {load(it)}
 }
 val releaseRequested=gradle.startParameter.taskNames.any {it.contains("Release",ignoreCase=true)}
+val sandboxRequested=gradle.startParameter.taskNames.any {it.contains("Sandbox",ignoreCase=true)}
+val sandboxDeviceProbe=providers.gradleProperty("sandboxDeviceTest").orNull == "true"
 val releaseDeviceProbe=providers.gradleProperty("releaseDeviceTest").orNull == "true"
 val adDeviceProbe=providers.gradleProperty("adDeviceTest").orNull=="true"
 // Explicit, anonymous service checks use only the already-public mobile settings.
@@ -52,7 +54,19 @@ if(adsEnabled) {
     require(adsUnitId.matches(Regex("ca-app-pub-6012481599277383/[0-9]{10}")) && adsUnitId!="ca-app-pub-6012481599277383/6069329647") {"Configure a verified interstitial unit, not the old rewarded unit"}
     require(adsSettings.getProperty("PUBLICATION_READY")=="true") {"Verify AdMob consent, publisher site and Play privacy declarations before enabling production ads"}
 }
-if(releaseRequested) {
+val monetizationSettings=Properties().apply {rootProject.file("config/monetization.properties").inputStream().use {load(it)}}
+val legacyCutoff=monetizationSettings.getProperty("LEGACY_CUTOFF_EPOCH_MILLIS","0").toLong()
+val monetizationEnabled=monetizationSettings.getProperty("ENABLED","false")=="true"
+val monetizationPreview=providers.gradleProperty("monetizationPreview").orNull=="true"
+val revenueCatKey=monetizationSettings.getProperty("REVENUECAT_ANDROID_PUBLIC_KEY","")
+val rewardedUnit=monetizationSettings.getProperty("REWARDED_UNIT_ID","")
+require(revenueCatKey.isEmpty() || revenueCatKey.matches(Regex("(goog|test)_[A-Za-z0-9]+"))) {"Only a RevenueCat public Android SDK key is allowed"}
+if(monetizationEnabled) {
+    require(revenueCatKey.startsWith("goog_") && rewardedUnit.matches(Regex("ca-app-pub-[0-9]{16}/[0-9]{10}"))) {"Configure RevenueCat Android and a rewarded ad unit"}
+    require(legacyCutoff>0) {"Set the legacy progress cutoff before activation"}
+    require(adsEnabled && monetizationSettings.getProperty("PUBLICATION_READY")=="true") {"Monetization needs verified consent, SSV, Play products and sandbox acceptance"}
+}
+if(releaseRequested || sandboxRequested) {
     require(listOf("storeFile","storePassword","keyAlias","keyPassword").all {releaseSigning.getProperty(it).orEmpty().isNotBlank()}) {
         "Release signing is missing. Configure the private signing.properties file; debug signing is never used for release."
     }
@@ -64,9 +78,13 @@ if(releaseRequested) {
 }
 
 android {
-    testBuildType = if (releaseDeviceProbe) "release" else "debug"
+    require(!sandboxDeviceProbe || !releaseDeviceProbe) {"Run sandbox and release probes separately"}
+    testBuildType = if(sandboxDeviceProbe) "sandbox" else if (releaseDeviceProbe) "release" else "debug"
     if (releaseDeviceProbe) sourceSets.getByName("androidTest").java.setSrcDirs(listOf("src/releaseProbe/java"))
     if (serviceDeviceProbe) sourceSets.getByName("androidTest").java.setSrcDirs(listOf("src/serviceProbe/java"))
+    if (!sandboxDeviceProbe && !releaseDeviceProbe && !serviceDeviceProbe) {
+        sourceSets.getByName("androidTest").java.srcDir("src/visualProbe/java")
+    }
     if(adDeviceProbe) sourceSets.getByName("androidTest").java.srcDir("src/adProbe/java")
     namespace = "com.yurken.englishtales"
     compileSdk = 36
@@ -87,6 +105,11 @@ android {
         buildConfigField("String", "SUPABASE_URL", "\"${debugServiceSetting("SUPABASE_URL")}\"")
         buildConfigField("String", "SUPABASE_PUBLISHABLE_KEY", "\"${debugServiceSetting("SUPABASE_PUBLISHABLE_KEY")}\"")
         buildConfigField("String", "GOOGLE_WEB_CLIENT_ID", "\"${contentSetting("GOOGLE_WEB_CLIENT_ID")}\"")
+        buildConfigField("long","MONETIZATION_LEGACY_CUTOFF_MS","${legacyCutoff}L")
+        buildConfigField("boolean","MONETIZATION_ENABLED",monetizationPreview.toString())
+        buildConfigField("boolean","MONETIZATION_SANDBOX","false")
+        buildConfigField("String","REVENUECAT_PUBLIC_KEY","\"${if(monetizationPreview) revenueCatKey else ""}\"")
+        buildConfigField("String","ADMOB_REWARDED_ID","\"ca-app-pub-3940256099942544/5224354917\"")
         buildConfigField("boolean","ADS_ENABLED","true")
         buildConfigField("String","ADMOB_APP_ID","\"ca-app-pub-3940256099942544~3347511713\"")
         buildConfigField("String","ADMOB_INTERSTITIAL_ID","\"ca-app-pub-3940256099942544/1033173712\"")
@@ -107,6 +130,9 @@ android {
     }
     buildTypes {
         release {
+            buildConfigField("boolean","MONETIZATION_ENABLED",monetizationEnabled.toString())
+            buildConfigField("String","REVENUECAT_PUBLIC_KEY","\"$revenueCatKey\"")
+            buildConfigField("String","ADMOB_REWARDED_ID","\"$rewardedUnit\"")
             buildConfigField("boolean","ADS_ENABLED",adsEnabled.toString())
             buildConfigField("String","ADMOB_APP_ID","\"$adsAppId\"")
             buildConfigField("String","ADMOB_INTERSTITIAL_ID","\"$adsUnitId\"")
@@ -128,6 +154,30 @@ android {
         }
     }
 
+    // Explicit signed internal QA variant. Production release guards remain unchanged.
+    buildTypes.create("sandbox") {
+        initWith(buildTypes.getByName("release"))
+        matchingFallbacks += listOf("release")
+        isMinifyEnabled = false
+        isShrinkResources = false
+        isDebuggable = false
+        versionNameSuffix = "-sandbox"
+        buildConfigField("boolean", "MONETIZATION_ENABLED", "true")
+        buildConfigField("boolean", "MONETIZATION_SANDBOX", "true")
+        buildConfigField("long", "MONETIZATION_LEGACY_CUTOFF_MS", "0L")
+        buildConfigField("String", "SUPABASE_URL", "\"https://jukyylozahikjhtokayw.supabase.co\"")
+        buildConfigField("String", "SUPABASE_PUBLISHABLE_KEY", "\"sb_publishable_adEuVGN_gzyL78UpD76DyQ_Tw2e7snm\"")
+        buildConfigField("String", "GOOGLE_WEB_CLIENT_ID", "\"${productionSetting("GOOGLE_WEB_CLIENT_ID")}\"")
+        buildConfigField("String", "ADMOB_REWARDED_ID", "\"ca-app-pub-3940256099942544/5224354917\"")
+        buildConfigField("String", "ADMOB_INTERSTITIAL_ID", "\"ca-app-pub-3940256099942544/1033173712\"")
+        buildConfigField("String", "ADMOB_APP_ID", "\"ca-app-pub-3940256099942544~3347511713\"")
+        buildConfigField("boolean", "ADS_ENABLED", "true")
+        buildConfigField("boolean", "PRODUCT_ANALYTICS_AVAILABLE", "false")
+        manifestPlaceholders["admobAppId"] = "ca-app-pub-3940256099942544~3347511713"
+        manifestPlaceholders["crashReportsEnabled"] = "false"
+        manifestPlaceholders["analyticsDeactivated"] = "true"
+    }
+
     buildTypes.create("performance") {
         initWith(buildTypes.getByName("release"))
         applicationIdSuffix = ".benchmark"
@@ -136,6 +186,8 @@ android {
         matchingFallbacks += listOf("release")
         isDebuggable = false
         // Release optimization, isolated data, no production content traffic or telemetry.
+        buildConfigField("boolean", "MONETIZATION_ENABLED", "false")
+        buildConfigField("String", "REVENUECAT_PUBLIC_KEY", "\"\"")
         buildConfigField("boolean", "ADS_ENABLED", "false")
         buildConfigField("boolean", "PRODUCT_ANALYTICS_AVAILABLE", "false")
         listOf("SUPABASE_URL", "SUPABASE_PUBLISHABLE_KEY", "GOOGLE_WEB_CLIENT_ID").forEach {
@@ -175,6 +227,7 @@ room { schemaDirectory("$projectDir/schemas") }
 
 dependencies {
     add(configurations.maybeCreate("performanceBaselineProfile").name, project(":macrobenchmark"))
+    implementation("com.revenuecat.purchases:purchases:10.15.1")
     implementation("androidx.profileinstaller:profileinstaller:1.4.1")
     implementation("com.google.android.libraries.ads.mobile.sdk:ads-mobile-sdk:1.5.0")
     implementation("com.google.android.ump:user-messaging-platform:4.0.0")
@@ -213,5 +266,10 @@ dependencies {
         androidTestImplementation(composeBom)
         androidTestImplementation("androidx.compose.ui:ui-test-junit4")
         debugImplementation("androidx.compose.ui:ui-test-manifest")
+        // The operator SSV probe needs a host Activity in its signed target APK too.
+        // Ordinary sandbox/store builds do not include this opt-in test host.
+        if (sandboxDeviceProbe && adDeviceProbe) {
+            add("sandboxImplementation", "androidx.compose.ui:ui-test-manifest")
+        }
     }
 }

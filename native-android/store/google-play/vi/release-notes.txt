@@ -1,4 +1,1 @@
-• Giao diện mới vui nhộn cho thư viện, hồ sơ và trò chơi.
-• Làm mới nút điều khiển đọc và thẻ từ vựng.
-• Chọn phông chữ bo tròn hoặc cổ điển để đọc.
-• Mục tiêu hằng ngày và phần thưởng rõ ràng hơn.
+Diện mạo mới cho việc đọc và trò chơi từ vựng. Cải thiện chữ lớn, ngôn ngữ dịch riêng và thêm truyện ngoại tuyến. Năng lượng hằng ngày và Premium tùy chọn có trong bản thử nghiệm nội bộ; việc kích hoạt chính thức đang chờ xác minh.

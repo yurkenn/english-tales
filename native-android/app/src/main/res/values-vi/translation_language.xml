@@ -1,0 +1,7 @@
+<resources>
+    <string name="translation_language_title">Ngôn ngữ bản dịch</string>
+    <string name="translation_language_current">Ngôn ngữ bản dịch: %1$s</string>
+    <string name="translation_language_follow">Theo ngôn ngữ ứng dụng (%1$s)</string>
+    <string name="translation_language_description">Chọn ngôn ngữ cho bản dịch truyện và từ điển. Ngôn ngữ menu không đổi. Màn hình sẽ tải lại khi áp dụng; tiến độ được giữ nguyên.</string>
+    <string name="translation_language_save_failed">Không thể lưu ngôn ngữ. Hãy thử lại.</string>
+</resources>

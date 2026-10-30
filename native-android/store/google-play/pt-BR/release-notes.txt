@@ -1,4 +1,1 @@
-• Novo visual divertido na biblioteca, no perfil e nos jogos.
-• Controles de leitura e cartões de palavras renovados.
-• Leia com fontes arredondadas ou clássicas.
-• Metas diárias e recompensas mais claras.
+Novo visual para leitura e jogos de palavras. Layouts melhores para texto grande, idioma de tradução independente e mais histórias offline. Energia diária e Premium opcional incluídos no teste interno; a ativação em produção aguarda validação.

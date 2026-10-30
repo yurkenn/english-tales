@@ -8,14 +8,52 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-CATALOG = ROOT / 'native-android/app/src/main/assets/catalog/v1.json'
+CATALOG = ROOT / 'native-android/app/src/main/assets/catalog/v2.json'
 DRAFTS = ROOT / 'native-android/backend/content/translations'
 LANGUAGES = ('es-419', 'pt-BR', 'id', 'ar', 'vi', 'hi', 'ru', 'bn', 'ur', 'th')
+
+
+def validate_published(catalog):
+    """Published maps are source data; legacy Claude drafts must never overwrite them."""
+    assert catalog['schemaVersion'] == 2
+    assert catalog['legacyCatalog']['schemaVersion'] == 1
+    assert {w['id'] for w in catalog['legacyCatalog']['words']} <= {w['id'] for w in catalog['words']}
+    import uuid
+    from datetime import datetime
+    assert len({s['revisionId'] for s in catalog['stories']}) == len(catalog['stories'])
+    tags = {tag['id'] for tag in catalog['tags']}
+    for tag in catalog['tags']:
+        assert all(isinstance(tag['names'].get(lang), str) and tag['names'][lang].strip() for lang in (*LANGUAGES, 'tr'))
+    for stories in (catalog['stories'], catalog['legacyCatalog']['stories']):
+        assert len({s['id'] for s in stories}) == len(stories)
+        for story in stories:
+            maps = [story['descriptions'], *(s['translations'] for s in story['sentences']),
+                    *(w['translations'] for w in story.get('vocabulary', []))]
+            for values in maps:
+                for lang in LANGUAGES:
+                    value = values.get(lang)
+                    assert isinstance(value, str) and value.strip() and '\ufffd' not in value and '\x00' not in value
+            if 'revisionId' in story:
+                uuid.UUID(story['revisionId'])
+                assert datetime.fromisoformat(story['addedAt']).tzinfo is not None
+                assert story['coverAsset']['id'] and len(story['coverAsset']['sha256']) == 64
+                assert set(story['tags']) <= tags
+                sentences = {s['id'] for s in story['sentences']}
+                words = {w['id'] for w in story['vocabulary']}
+                assert len(sentences) == len(story['sentences']) and len(words) == len(story['vocabulary'])
+                assert set(story['sentenceWordIds']) == sentences
+                assert all(len(ids) == len(set(ids)) and set(ids) <= words for ids in story['sentenceWordIds'].values())
+    for word in catalog['words']:
+        assert all(isinstance(word['translations'].get(lang), str) and word['translations'][lang].strip() for lang in LANGUAGES)
 
 
 def build(catalog, drafts):
     # Deep copy so validation never partially mutates the caller's input.
     catalog = json.loads(json.dumps(catalog))
+    if catalog['schemaVersion'] == 2:
+        validate_published(catalog)
+        assert build(catalog['legacyCatalog'], drafts) == catalog['legacyCatalog'], 'Historical translation drafts changed'
+        return catalog
     words = {w['id']: w for w in catalog['words']}
     stories = {s['id']: s for s in catalog['stories']}
     tags = {t['id']: t for t in catalog['tags']}

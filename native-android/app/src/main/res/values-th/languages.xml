@@ -2,7 +2,7 @@
 <resources>
     <string name="content_untranslated_description">อ่านเรื่องราวภาษาอังกฤษนี้และฝึกฝนคำศัพท์</string>
     <string name="app_language_title">ภาษาของแอป</string>
-    <string name="app_language_description">เลือกอินเทอร์เฟซและภาษาการแปลเรื่องราว แอปจะรีสตาร์ทเมื่อภาษาเปลี่ยนไป ความคืบหน้าที่คุณบันทึกไว้จะถูกเก็บไว้</string>
+    <string name="app_language_description">เลือกภาษาของเมนู เรื่องราวยังเป็นภาษาอังกฤษ คุณเลือกภาษาแปลแยกต่างหากได้ในการตั้งค่า</string>
     <string name="app_language_system">ภาษาของระบบ</string>
     <string name="app_language_current">ภาษาแอป: %1$s</string>
     <string name="henuz_indirilen_hikaye_yok">ยังไม่มีเรื่องราวที่ดาวน์โหลด</string>

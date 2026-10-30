@@ -19,6 +19,7 @@ import androidx.compose.ui.unit.dp
 import androidx.test.platform.app.InstrumentationRegistry
 import com.yurken.englishtales.R
 import com.yurken.englishtales.data.*
+import com.yurken.englishtales.monetization.*
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
@@ -73,6 +74,32 @@ class ReleaseUiLayoutTest {
         Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState())) {
             LeagueCard(LeagueUi.Ready(LeagueStanding(2, "2026-10-26", System.currentTimeMillis()+3*86_400_000L,
                 true, false, 5, 2, listOf(LeagueMember(4, "Sen", 480, true, "me")), null)), {}, {})
+        }
+    }
+
+    @Test fun exhaustedGuestEnergy() = energy("energy-guest", guest=true)
+    @Test fun pendingAdEnergy() = energy("energy-ad-pending", adPending=true)
+    @Test fun pendingPurchaseEnergy() = energy("energy-purchase-pending", purchasePending=true)
+    @Test fun activePremiumEnergy() = energy("energy-premium", premium=true)
+
+    private fun energy(name: String, guest: Boolean=false, adPending: Boolean=false,
+        purchasePending: Boolean=false, premium: Boolean=false) {
+        val state=EnergyState(0,0,System.currentTimeMillis()+86_400_000L,
+            premiumUntil=if(premium) System.currentTimeMillis()+86_400_000L else 0)
+        check(name, after={
+            compose.onNodeWithContentDescription(context.getString(R.string.energy_close))
+                .assertHeightIsAtLeast(48.dp).assertWidthIsAtLeast(48.dp)
+            compose.onNodeWithText(context.getString(R.string.energy_retry_read))
+                .performScrollTo().apply {if(premium) assertIsEnabled() else assertIsNotEnabled()}
+            if(!guest && !premium) {
+                compose.onNodeWithText(context.getString(R.string.energy_watch)).performScrollTo().assertIsNotEnabled()
+                compose.onNodeWithText(context.getString(R.string.energy_offer_unavailable)).performScrollTo().assertIsDisplayed()
+            } else compose.onNodeWithText(context.getString(R.string.energy_watch)).assertDoesNotExist()
+            compose.onNodeWithText(context.getString(R.string.energy_terms)).performScrollTo().assertIsDisplayed()
+        }) {
+            EnergyScreenContent(MonetizationUi(policyEnabled=true,energy=state,
+                adPending=adPending,purchasePending=purchasePending,offersLoaded=true),guest,true,
+                EnergyScreenActions(onRead={}))
         }
     }
 

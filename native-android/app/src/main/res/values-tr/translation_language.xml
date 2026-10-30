@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <!-- Generated from values: python tooling/sync_turkish_resources.py -->
+    <string name="translation_language_title">Çeviri dili</string>
+    <string name="translation_language_current">Çeviri dili: %1$s</string>
+    <string name="translation_language_follow">Uygulama dilini takip et (%1$s)</string>
+    <string name="translation_language_description">Hikâye çevirileri ve sözlük için bir dil seç. Menüler değişmez. Dil uygulanınca ekran yenilenir; ilerlemen korunur.</string>
+    <string name="translation_language_save_failed">Dil kaydedilemedi. Tekrar dene.</string>
+</resources>

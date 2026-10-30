@@ -1,0 +1,7 @@
+<resources>
+    <string name="translation_language_title">Bahasa terjemahan</string>
+    <string name="translation_language_current">Bahasa terjemahan: %1$s</string>
+    <string name="translation_language_follow">Ikuti bahasa aplikasi (%1$s)</string>
+    <string name="translation_language_description">Pilih bahasa terjemahan cerita dan kamus. Bahasa menu tidak berubah. Layar dimuat ulang saat bahasa diterapkan; progres tetap tersimpan.</string>
+    <string name="translation_language_save_failed">Bahasa tidak dapat disimpan. Coba lagi.</string>
+</resources>
