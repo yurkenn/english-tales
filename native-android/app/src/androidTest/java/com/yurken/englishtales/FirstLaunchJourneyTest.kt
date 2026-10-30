@@ -2,7 +2,6 @@ package com.yurken.englishtales
 
 import android.database.sqlite.SQLiteDatabase
 import android.graphics.Bitmap
-import androidx.compose.ui.graphics.asAndroidBitmap
 import androidx.compose.ui.semantics.SemanticsActions
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createEmptyComposeRule
@@ -59,9 +58,12 @@ class FirstLaunchJourneyTest {
         val instrumentation=InstrumentationRegistry.getInstrumentation()
         val dir=InstrumentationRegistry.getArguments().getString("additionalTestOutputDir")?.let(::File)
             ?: File(context.getExternalFilesDir(null),"first-launch")
-        // PixelCopy waits for the Compose draw. UiAutomation can return the outgoing
-        // Activity frame immediately after navigation even when semantics are idle.
-        val bitmap=compose.onAllNodes(isRoot()).onLast().captureToImage().asAndroidBitmap()
+        // Settle navigation and window/accessibility events before capturing the whole
+        // display, including the separate dialog window used by the word card.
+        compose.mainClock.advanceTimeBy(1_000)
+        compose.waitForIdle()
+        instrumentation.uiAutomation.waitForIdle(500,5_000)
+        val bitmap=checkNotNull(instrumentation.uiAutomation.takeScreenshot())
         File(dir,"first-launch").apply {mkdirs()}.resolve("$name.png").outputStream().use {
             bitmap.compress(Bitmap.CompressFormat.PNG,100,it)
         }

@@ -55,9 +55,12 @@ class MultilingualUiTest {
 
     @Test fun everyLanguageFormatsAccountMessagesAndEveryPluralCategory() {
         val english = context("en")
+        val turkish = context("tr")
         for (tag in appLanguages.map { it.first }.filter { it !in listOf("en", "tr") }) {
             val localized = context(tag)
             assertNotEquals(tag, english.getString(R.string.ayarlar), localized.getString(R.string.ayarlar))
+            // A resource filter can drop es-419/pt-BR while the base Turkish fallback still formats.
+            assertNotEquals("$tag must not fall back to Turkish", turkish.getString(R.string.ayarlar), localized.getString(R.string.ayarlar))
             assertFalse(localized.getString(R.string.placement_progress, 1, 9).contains("%"))
             assertFalse(localized.getString(R.string.account_message_invalid_credentials).contains("%"))
             assertFalse(localized.getString(R.string.alert_word_saved, "quiet").contains("\\"))

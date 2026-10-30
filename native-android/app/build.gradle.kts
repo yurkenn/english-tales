@@ -98,7 +98,7 @@ android {
         minSdk = 24
         targetSdk = 36
         // Keep every supported UI language offline, without bundling unused SDK translations.
-        resourceConfigurations += listOf("tr", "en", "es", "pt", "in", "id", "ar", "vi", "hi", "ru", "bn", "ur", "th")
+        resourceConfigurations += listOf("tr", "en", "es", "b+es+419", "pt", "pt-rBR", "in", "id", "ar", "vi", "hi", "ru", "bn", "ur", "th")
         // Play Console checked 2026-10-29: production 52, highest uploaded code 56 (internal sandbox).
         // Recheck before upload; a local candidate does not reserve a version code in Play Console.
         // The release workflow passes -PreleaseVersionCode/-PreleaseVersionName.
