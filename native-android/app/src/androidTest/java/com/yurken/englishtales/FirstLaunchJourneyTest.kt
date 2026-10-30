@@ -61,7 +61,7 @@ class FirstLaunchJourneyTest {
             ?: File(context.getExternalFilesDir(null),"first-launch")
         // PixelCopy waits for the Compose draw. UiAutomation can return the outgoing
         // Activity frame immediately after navigation even when semantics are idle.
-        val bitmap=compose.onRoot().captureToImage().asAndroidBitmap()
+        val bitmap=compose.onAllNodes(isRoot()).onLast().captureToImage().asAndroidBitmap()
         File(dir,"first-launch").apply {mkdirs()}.resolve("$name.png").outputStream().use {
             bitmap.compress(Bitmap.CompressFormat.PNG,100,it)
         }
