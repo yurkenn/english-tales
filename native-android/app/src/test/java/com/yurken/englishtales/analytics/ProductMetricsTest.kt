@@ -27,7 +27,7 @@ class ProductMetricsTest {
 
     @Test fun noConsentMeansNoEventsOrCohortHistory() {
         val metrics = metrics()
-        metrics.onForeground(); metrics.record(LearningSignal.StoryCompleted(true))
+        metrics.onForeground(); metrics.record(LearningSignal.StoryCompleted(true)); metrics.record(LearningSignal.WordSaved)
         assertFalse(metrics.enabled); assertTrue(sink.events.isEmpty())
         assertEquals(MetricsState(), storage.state); assertEquals(listOf(false), sink.consent)
     }
@@ -38,7 +38,9 @@ class ProductMetricsTest {
         metrics.record(LearningSignal.StoryCompleted(true))
         metrics.record(LearningSignal.PracticeCompleted(PracticeMode.CHOICE))
         now += ProductMetrics.DAY_MS; metrics.onForeground()
-        assertEquals(ProductEvent.entries.toSet(), sink.events.map { it.first }.toSet())
+        assertEquals(setOf(ProductEvent.VISIT,ProductEvent.NEXT_DAY_RETURN,ProductEvent.ONBOARDING_COMPLETED,
+            ProductEvent.STORY_STARTED,ProductEvent.STORY_COMPLETED,ProductEvent.FIRST_STORY_COMPLETED,
+            ProductEvent.PRACTICE_COMPLETED), sink.events.map { it.first }.toSet())
         assertEquals(listOf(PracticeMode.CHOICE), sink.events.mapNotNull { it.second })
         assertTrue(sink.events.filter { it.first != ProductEvent.PRACTICE_COMPLETED }.all { it.second == null })
     }
@@ -119,5 +121,45 @@ class ProductMetricsTest {
         }
         val metrics = ProductMetrics(broken, sink) { now }
         metrics.onForeground(); assertFalse(metrics.enabled); assertTrue(sink.events.isEmpty())
+    }
+    @Test fun wordSavedHasNoParametersAndDoesNotReplayAfterOptIn() {
+        val metrics = metrics()
+        metrics.record(LearningSignal.WordSaved)
+        metrics.setConsent(true)
+        assertEquals(0, sink.count(ProductEvent.WORD_SAVED))
+        metrics.record(LearningSignal.WordSaved)
+        assertEquals(listOf(ProductEvent.WORD_SAVED to null), sink.events.filter { it.first == ProductEvent.WORD_SAVED })
+        metrics.setConsent(false); metrics.record(LearningSignal.WordSaved)
+        assertEquals(1, sink.count(ProductEvent.WORD_SAVED))
+    }
+    @Test fun seventhDayReturnIsExactUtcDayAndSurvivesRestartAndClockRollback() {
+        val metrics = metrics(); metrics.setConsent(true)
+        now += 7 * ProductMetrics.DAY_MS - 1
+        metrics.onForeground(); assertEquals(0, sink.count(ProductEvent.SEVENTH_DAY_RETURN))
+        now++
+        metrics().onForeground(); metrics().onForeground()
+        assertEquals(1, sink.count(ProductEvent.SEVENTH_DAY_RETURN))
+        assertEquals(0, sink.count(ProductEvent.NEXT_DAY_RETURN))
+        now -= ProductMetrics.DAY_MS; metrics().onForeground()
+        now += ProductMetrics.DAY_MS; metrics().onForeground()
+        assertEquals(1, sink.count(ProductEvent.SEVENTH_DAY_RETURN))
+    }
+    @Test fun eighthDayReturnDoesNotCountAsSeventhDay() {
+        val metrics = metrics(); metrics.setConsent(true)
+        now += 8 * ProductMetrics.DAY_MS; metrics.onForeground()
+        assertEquals(0, sink.count(ProductEvent.SEVENTH_DAY_RETURN))
+    }
+    @Test fun failedSeventhDayWriteCanRetryAndWithdrawalStartsANewCohort() {
+        val metrics = metrics(); metrics.setConsent(true)
+        now += 7 * ProductMetrics.DAY_MS; storage.fail = true; metrics.onForeground()
+        assertEquals(0, sink.count(ProductEvent.SEVENTH_DAY_RETURN))
+        storage.fail = false; metrics.onForeground(); metrics.onForeground()
+        assertEquals(1, sink.count(ProductEvent.SEVENTH_DAY_RETURN))
+        metrics.setConsent(false); metrics.setConsent(true)
+        assertFalse(storage.state.seventhDayReported)
+        now += ProductMetrics.DAY_MS; metrics.onForeground()
+        assertEquals(1, sink.count(ProductEvent.SEVENTH_DAY_RETURN))
+        now += 6 * ProductMetrics.DAY_MS; metrics.onForeground()
+        assertEquals(2, sink.count(ProductEvent.SEVENTH_DAY_RETURN))
     }
 }

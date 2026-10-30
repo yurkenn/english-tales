@@ -64,9 +64,35 @@ class ProductLearningSignalsTest {
     @Test fun deviceConsentSurvivesRestartAndClearsItsOwnMarkersOnly() {
         val storage = PreferenceMetricsStorage(context)
         assertFalse(storage.read().enabled)
-        val state = MetricsState(true, 1, 2, true, true)
+        val state = MetricsState(true, 1, 2, true, true, true)
         assertTrue(storage.write(state)); assertEquals(state, PreferenceMetricsStorage(context).read())
         assertTrue(storage.write(MetricsState())); assertEquals(MetricsState(), PreferenceMetricsStorage(context).read())
         store.completeLesson(2, "preserved"); assertEquals(1, store.snapshot().completedLessons)
+    }
+    @Test fun wordSavesEmitAfterCommitForBulkToggleExplicitAndPersonalPathsOnly() {
+        store.saveWords(listOf("quiet", "morning", "quiet"))
+        store.saveWords(listOf("quiet"))
+        store.setWordSaved("quiet", true)
+        assertEquals(2, events.size)
+        store.toggleWord("quiet") // Removal is not a save.
+        store.toggleWord("quiet")
+        store.setWordSaved("morning", false)
+        store.setWordSaved("morning", true)
+        val personal = com.yurken.englishtales.data.WordInfo("glossary:walk", "walk", "yürümek", "", "")
+        store.savePersonalWord(personal); store.savePersonalWord(personal)
+        assertEquals(List(5) { LearningSignal.WordSaved }, events)
+        assertTrue(store.isWordSaved(personal.id))
+    }
+    @Test fun failedWordBatchRollsBackWithoutSendingAnySaveSignals() {
+        assertTrue(runCatching { store.saveWords(listOf("quiet", "not-a-real-word")) }.isFailure)
+        assertFalse(store.isWordSaved("quiet")); assertTrue(events.isEmpty())
+        store.saveWords(listOf("quiet"))
+        assertEquals(listOf(LearningSignal.WordSaved), events)
+    }
+    @Test fun wordSignalFailureNeverRollsBackSavedWords() {
+        var calls = 0
+        store.onProductSignal = { calls++; error("offline") }
+        store.saveWords(listOf("quiet")); store.saveWords(listOf("quiet"))
+        assertTrue(store.isWordSaved("quiet")); assertEquals(1, calls)
     }
 }

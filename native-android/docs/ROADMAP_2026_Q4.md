@@ -1,5 +1,19 @@
 # Yurken Stories — önümüzdeki 90 gün
 
+## 27 Ekim tamamlama çalışması
+
+[Güncel sıralı plan ve kabul ölçütleri](COMPLETION_PLAN_2026-10-27.md). 52 / 2.3.1 üretimde kullanılabilir ve %100 dağıtımda doğrulandı. #180 çeviri dili kodu tam CI'dan geçti, ancak #179 üzerine kurulu ve henüz birleşmedi. Güncel anonim denetimde paket 50 hikâye/1.002 cümle, etkin canlı içerik 67 hikâye/2.839 cümle; 44 ortak hikâyede fark var. 67 kapak hash'i doğrulandı; 11 dilde yapısal çeviri eksiği yok. [İçerik kanıtı](release-evidence/2026-10-27-content-parity.json). Yapısal geçiş, anlamsal onay veya paket eşitliği değildir. Yeni ölçüm ve ödeme düzeltmeleri tamamlanma dalında doğrulanıyor; mağazaya taşınmış sayılmaz.
+
+## 27 Ekim bağımsız çeviri dili
+
+Ayarlar'daki çeviri dili seçimi `codex/translation-language` dalında uygulandı; arayüzden bağımsız 11 dil ve otomatik geri dönüş mevcut. Yerel 151 birim testi geçti; cihaz CI ve görsel kabul ayrı takip edilir. [İlerleme ve ürün öncelikleri](PRODUCT_GAPS_2026-10-26.md).
+
+## 26 Ekim ürün eksikleri denetimi
+
+[Kaynak ve CI üzerinden güncel öncelikler](PRODUCT_GAPS_2026-10-26.md): bağımsız çeviri dili, ilk öğrenme döngüsünün ölçümü, çalışma kelimeleri, paket/canlı karşılaştırması ve küçük kullanıcı pilotu. 52'nin son doğrulanmış durumu aşağıdaki eski “son yayın onayı bekliyor” ifadesinden ileridir: 24 Ekim'de Google incelemesine gönderildi; canlı sunum bu turda kontrol edilmedi. Enerji/Premium #179 test dalında; aktif geri yükleme ve izlenmiş reklam kabulü hâlâ açık.
+
+### Önceki tarihli ilerleme kayıtları
+
 
 ## 24 Ekim son eşitleme kontrolü
 
@@ -111,7 +125,7 @@
 - iOS: 90. gün değerlendirmesinde kullanıcı talebi, ortak API/veri kabulü ve bakım kapasitesiyle ayrı Swift/SwiftUI kapsamı.
 - AI sohbet, konuşma puanlama ve sosyal topluluk: ana okuma/tekrar döngüsünde çözülmemiş ihtiyaç olduğuna dair kanıttan sonra.
 - Kayıtlı/üretilmiş ses: mevcut TTS kararı sürer; cihaz sesiyle çözülemeyen ihtiyaç ölçülürse yeniden değerlendirilir.
-- Abonelik/premium, agresif reklam ve ücretli büyüme: mevcut ürün/gelir kararını değiştireceği için ayrı ürün kararı.
+- **24 Ekim sahibi kararı:** enerji + ödüllü reklam + RevenueCat premium geliştirmesi onaylandı; [uygulama planı](MONETIZATION_PLAN_2026-10-24.md). Fiyatlar, gerçek mağaza ürünleri, satın alma/SSV kabulü ve üretim açılışı ayrı doğrulanır. Ücretli kullanıcı kazanımı için kampanya açılmadı.
 
 ## İlk başlanacak somut paket
 

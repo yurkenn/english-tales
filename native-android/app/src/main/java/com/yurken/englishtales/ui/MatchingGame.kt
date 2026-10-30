@@ -68,10 +68,10 @@ fun MatchingGame(liveWords: List<WordInfo>,sessionId: Int,savedIds: Set<String>,
     // Completion counts only this board's words; after recreation the live list may have lost some, even a matched one.
     val done=words.all {it.id in matched}
     if(done) {LaunchedEffect(sessionId) {if(!finished) finish()};return}
-    GameViewport(padding) {
+    GameViewport(padding,growForContent=true) {
         // The design's race header: leave, the board's progress in green and the running clock.
         Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(10.dp)) {
-            Box(Modifier.size(48.dp).clickable(role=Role.Button,onClick=onExit).contentLabel(stringResource(R.string.alistirmadan_cik)),contentAlignment=Alignment.Center) { Text("×",fontSize=25.sp,color=TaleMuted) }
+            ReferenceIconButton("close",stringResource(R.string.alistirmadan_cik),onExit,TaleMuted)
             ReferenceProgress(words.count {it.id in matched}.toFloat()/words.size,Modifier.weight(1f),TaleGreen,height=14.dp)
             Row(verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(4.dp)) {
                 ReferenceIcon("bolt",TaleBlue,Modifier.size(16.dp))
@@ -118,6 +118,6 @@ private fun MatchCard(label: String,selected: Boolean,matched: Boolean,shakeTick
         // A card on a lip in its border color; a matched pair loses the lip and lies flat.
         .background(color,RoundedCornerShape(16.dp)).padding(bottom=if(matched) 0.dp else 4.dp)
         .background(fill,RoundedCornerShape(16.dp)).border(2.dp,color,RoundedCornerShape(16.dp)).padding(8.dp),contentAlignment=Alignment.Center) {
-        Text(label,fontSize=17.sp,fontWeight=FontWeight.ExtraBold,color=ink,textAlign=androidx.compose.ui.text.style.TextAlign.Center)
+        Text(label,modifier=Modifier.fillMaxWidth(),fontSize=17.sp,fontWeight=FontWeight.ExtraBold,color=ink,textAlign=androidx.compose.ui.text.style.TextAlign.Center)
     }
 }

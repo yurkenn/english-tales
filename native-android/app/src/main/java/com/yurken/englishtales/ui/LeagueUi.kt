@@ -61,6 +61,7 @@ private fun timeLeft(endsAt: Long): String {
 }
 
 /** The home screen's league line: rank, the gap to the next place and the time left bring learners back each day. */
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 internal fun LeagueCard(state: LeagueUi, onOpen: () -> Unit, onAccount: () -> Unit, modifier: Modifier = Modifier) {
     if (state == LeagueUi.Unavailable) return
@@ -72,9 +73,9 @@ internal fun LeagueCard(state: LeagueUi, onOpen: () -> Unit, onAccount: () -> Un
         verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(14.dp)) {
         LeagueBadge(tier, 48.dp)
         Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(3.dp)) {
-            Row(verticalAlignment = Alignment.CenterVertically) {
+            FlowRow(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(4.dp), maxItemsInEachRow = sideBySide(2)) {
                 Text(if (standing != null) leagueName(tier) else stringResource(R.string.league_title), fontFamily = TaleDisplay, fontSize = 19.sp, lineHeight = 23.sp,
-                    fontWeight = FontWeight.ExtraBold, modifier = Modifier.weight(1f), maxLines = 1, overflow = TextOverflow.Ellipsis)
+                    fontWeight = FontWeight.ExtraBold, modifier = Modifier.weight(1f), maxLines = if (sideBySide(2) == 1) Int.MAX_VALUE else 1, overflow = TextOverflow.Ellipsis)
                 if (standing?.joined == true) Text(timeLeft(standing.endsAt), color = TaleMuted, style = MaterialTheme.typography.labelMedium)
             }
             val me = standing?.me

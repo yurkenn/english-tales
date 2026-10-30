@@ -2,7 +2,7 @@
 <resources>
     <string name="content_untranslated_description">اقرأ هذه القصة الإنجليزية وتدرب على مفرداتها.</string>
     <string name="app_language_title">لغة التطبيق</string>
-    <string name="app_language_description">اختر الواجهة ولغة ترجمة القصة. تتم إعادة تشغيل التطبيق عندما تتغير اللغة. يتم الاحتفاظ بتقدمك المحفوظ.</string>
+    <string name="app_language_description">اختر لغة القوائم. تبقى القصص بالإنجليزية؛ يمكنك اختيار لغة ترجمة مستقلة من الإعدادات.</string>
     <string name="app_language_system">لغة النظام</string>
     <string name="app_language_current">لغة التطبيق: %1$s</string>
     <string name="henuz_indirilen_hikaye_yok">لم يتم تنزيل أي قصص حتى الآن.</string>

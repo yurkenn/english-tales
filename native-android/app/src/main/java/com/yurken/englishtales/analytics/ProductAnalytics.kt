@@ -13,7 +13,8 @@ internal class PreferenceMetricsStorage(context: Context) : MetricsStorage {
         firstDay = if (prefs.contains("first_day")) prefs.getLong("first_day", 0) else null,
         lastVisitDay = if (prefs.contains("last_visit_day")) prefs.getLong("last_visit_day", 0) else null,
         nextDayReported = prefs.getBoolean("next_day_reported", false),
-        firstStoryReported = prefs.getBoolean("first_story_reported", false)
+        firstStoryReported = prefs.getBoolean("first_story_reported", false),
+        seventhDayReported = prefs.getBoolean("seventh_day_reported", false)
     )
     @SuppressLint("UseKtx") // commit() Boolean is required: a failed consent write must never enable collection.
     override fun write(state: MetricsState): Boolean = prefs.edit().clear().apply {
@@ -22,6 +23,7 @@ internal class PreferenceMetricsStorage(context: Context) : MetricsStorage {
         state.lastVisitDay?.let { putLong("last_visit_day", it) }
         putBoolean("next_day_reported", state.nextDayReported)
         putBoolean("first_story_reported", state.firstStoryReported)
+        putBoolean("seventh_day_reported", state.seventhDayReported)
     }.commit()
 }
 

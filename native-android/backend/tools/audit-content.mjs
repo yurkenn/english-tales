@@ -28,6 +28,23 @@ export async function verifySnapshotMedia(snapshot,snapshotPath){
   return {status:'verified',assets:verified};
 }
 
+/** Validate the actual APK cover resources as well as their uncompressed source provenance. */
+export async function verifyBundleMedia(catalog){
+  if(catalog.schemaVersion!==2)return;
+  for(const story of catalog.stories){
+    const asset=story.coverAsset;
+    const resource=`app/src/main/res/drawable-nodpi/${story.coverKey}.webp`;
+    if(!/^cover_[a-z0-9_]+$/.test(story.coverKey)||asset?.resource!==resource)throw Error('Unsafe bundled cover');
+    const bytes=await readFile(path.join(root,'native-android',resource));
+    if(sha(bytes)!==asset.resourceSha256||bytes.length!==asset.resourceByteSize)throw Error(`Bundled cover checksum mismatch: ${story.id}`);
+    const source=asset.source;
+    if(source!==undefined&&source!==`backend/content/covers/${story.coverKey}.png`&&
+       source!==`art/published-covers/${story.coverKey}.webp`)throw Error('Unsafe cover source');
+    const original=source===undefined?bytes:await readFile(path.join(root,'native-android',source));
+    if(sha(original)!==asset.sha256||original.length!==asset.byteSize)throw Error(`Cover provenance mismatch: ${story.id}`);
+  }
+}
+
 export function revisionProposals(bundle,comparison){
   const docs=new Map(bundle.map(d=>[d.id,d]));
   return {format:1,purpose:'Review packet only. No draft created and no publication performed.',
@@ -98,12 +115,13 @@ export function renderReport(result){
 }
 
 export async function main(args=process.argv.slice(2),sources={}){
-  const options={output:path.join(root,'native-android/build/content-audit'),snapshot:null,skipMedia:false,requireParity:false,minCoverage:null,requireLang:null,minQuestions:null};
+  const options={output:path.join(root,'native-android/build/content-audit'),bundle:null,snapshot:null,skipMedia:false,requireParity:false,minCoverage:null,requireLang:null,minQuestions:null};
   for(let i=0;i<args.length;i++){
     const arg=args[i];
-    if(['--output','--snapshot','--min-coverage','--require-lang','--min-questions'].includes(arg)){
+    if(['--output','--bundle','--snapshot','--min-coverage','--require-lang','--min-questions'].includes(arg)){
       const value=args[++i];if(!value||value.startsWith('--'))throw Error(`Missing value: ${arg}`);
       if(arg==='--output')options.output=path.resolve(value);
+      if(arg==='--bundle')options.bundle=path.resolve(value);
       if(arg==='--snapshot')options.snapshot=path.resolve(value);
       if(arg==='--require-lang')options.requireLang=value;
       if(arg==='--min-questions')options.minQuestions=Number(value);
@@ -111,12 +129,13 @@ export async function main(args=process.argv.slice(2),sources={}){
     }else if(arg==='--require-parity')options.requireParity=true;
     else if(arg==='--skip-media')options.skipMedia=true;
     else if(arg==='--help'){
-      console.log('node tools/audit-content.mjs [--snapshot <backup/catalog.json>] [--output <directory>] [--require-parity] [--min-coverage <0..100>] [--skip-media] [--require-lang <lang>] [--min-questions <n>]');return;
+      console.log('node tools/audit-content.mjs [--bundle <catalog.json>] [--snapshot <backup/catalog.json>] [--output <directory>] [--require-parity] [--min-coverage <0..100>] [--skip-media] [--require-lang <lang>] [--min-questions <n>]');return;
     }else throw Error(`Unknown argument: ${arg}`);
   }
   if((options.requireParity||options.skipMedia)&&!options.snapshot)throw Error('--require-parity/--skip-media requires --snapshot');
-  const bundlePath=sources.bundlePath??path.join(root,'native-android/app/src/main/assets/catalog/v1.json');
+  const bundlePath=sources.bundlePath??options.bundle??path.join(root,'native-android/app/src/main/assets/catalog/v2.json');
   const bytes=await readFile(bundlePath),catalog=JSON.parse(bytes),docs=bundledDocuments(catalog);
+  await verifyBundleMedia(catalog);
   let sourceCommit=null,sourceDirty=null;
   try{
     sourceCommit=execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim();

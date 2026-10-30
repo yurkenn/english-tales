@@ -1,0 +1,32 @@
+<resources>
+    <string name="energy_title">Okuma hakların</string>
+    <string name="energy_balance">%1$d okuma hakkın var</string>
+    <string name="energy_description">Her gün 3 yeni hikâye aç. Açtığın hikâyeler, çeviriler ve kelime tekrarı her zaman ücretsiz.</string>
+    <string name="energy_reset">Ücretsiz hakların %1$s tarihinde 3’e tamamlanır.</string>
+    <string name="energy_empty">Bugünkü okuma haklarını kullandın</string>
+    <string name="energy_gate_description">Açtığın hikâyelere dön, yeni haklarını bekle veya bir seçenekle okumaya devam et.</string>
+    <string name="energy_watch">Reklam izle · +1 okuma hakkı</string>
+    <string name="energy_reward_limit">Günlük 3 reklam ödülünü kullandın.</string>
+    <string name="energy_sign_in">Ek hak veya Premium için giriş yap</string>
+    <string name="energy_guest_note">Misafir hakların bu cihazda saklanır. Reklam ödülü ve satın alma için hesabına giriş yap.</string>
+    <string name="energy_premium">Premium ile sınırsız oku</string>
+    <string name="energy_premium_active">Premium · Sınırsız okuma</string>
+    <string name="energy_premium_description">Sınırsız hikâye ve reklamsız öğrenme.</string>
+    <string name="energy_premium_end">Premium erişimin: %1$s</string>
+    <string name="energy_unavailable">Şu anda işlem tamamlanamadı. Açılmış hikâyelerin korunuyor. Bağlantını kontrol edip yeniden dene.</string>
+    <string name="energy_pending">Doğrulama bekleniyor. Hesabını yenileyerek tekrar kontrol edebilirsin.</string>
+    <string name="energy_refresh">Tekrar kontrol et</string>
+    <string name="energy_restore">Satın almaları geri yükle</string>
+    <string name="energy_monthly">%1$s / ay</string>
+    <string name="energy_annual">%1$s / yıl</string>
+    <string name="energy_renewal">Abonelik, iptal edilene kadar seçilen dönem ve mağazada gösterilen fiyatla otomatik yenilenir. İptal sonraki yenilemeyi durdurur; mevcut süren devam eder.</string>
+    <string name="energy_manage">Aboneliği yönet</string>
+    <string name="energy_close">Geri dön</string>
+    <string name="energy_offer_unavailable">Premium seçenekleri şu anda kullanılamıyor. Ücretsiz okumaya devam edebilirsin.</string>
+    <string name="energy_retry_read">Hikâyeyi yeniden aç</string>
+    <string name="energy_terms">Abonelik koşulları</string>
+    <string name="energy_privacy">Gizlilik</string>
+    <string name="energy_delete_warning">Hesabını silmek Google Play aboneliğini iptal etmez. Gelecek ödemeleri durdurmak için önce Google Play aboneliklerini yönet.</string>
+    <string name="energy_checking">Okuma hakkın kontrol ediliyor…</string>
+    <string name="sandbox_notice" translatable="false">TEST · Energy and Premium enabled · Use a Play license test account</string>
+</resources>

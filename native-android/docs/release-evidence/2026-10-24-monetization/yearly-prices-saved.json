@@ -1,0 +1,139 @@
+{
+  "status": "Saved and reloaded from Play",
+  "existingSubscribers": "Keep legacy price; not migrated",
+  "changes": [
+    {
+      "country": "Türkiye",
+      "currency": "TRY",
+      "before": "839.99",
+      "after": "699.99",
+      "verifiedSaved": "699.99"
+    },
+    {
+      "country": "United States",
+      "currency": "USD",
+      "before": "15.99",
+      "after": "24.99",
+      "verifiedSaved": "24.99"
+    },
+    {
+      "country": "United Kingdom",
+      "currency": "GBP",
+      "before": "14.49",
+      "after": "19.99",
+      "verifiedSaved": "19.99"
+    },
+    {
+      "country": "Canada",
+      "currency": "CAD",
+      "before": "21.99",
+      "after": "29.99",
+      "verifiedSaved": "29.99"
+    },
+    {
+      "country": "Australia",
+      "currency": "AUD",
+      "before": "26.99",
+      "after": "34.99",
+      "verifiedSaved": "34.99"
+    },
+    {
+      "country": "Germany",
+      "currency": "EUR",
+      "before": "15.99",
+      "after": "24.99",
+      "verifiedSaved": "24.99"
+    },
+    {
+      "country": "Spain",
+      "currency": "EUR",
+      "before": "16.99",
+      "after": "24.99",
+      "verifiedSaved": "24.99"
+    },
+    {
+      "country": "Portugal",
+      "currency": "EUR",
+      "before": "16.99",
+      "after": "19.99",
+      "verifiedSaved": "19.99"
+    },
+    {
+      "country": "Mexico",
+      "currency": "MXN",
+      "before": "339.00",
+      "after": "249.00",
+      "verifiedSaved": "249.00"
+    },
+    {
+      "country": "Brazil",
+      "currency": "BRL",
+      "before": "90.99",
+      "after": "59.99",
+      "verifiedSaved": "59.99"
+    },
+    {
+      "country": "India",
+      "currency": "INR",
+      "before": "1,750.00",
+      "after": "899.00",
+      "verifiedSaved": "899.00"
+    },
+    {
+      "country": "Bangladesh",
+      "currency": "BDT",
+      "before": "2,300.00",
+      "after": "899.00",
+      "verifiedSaved": "899.00"
+    },
+    {
+      "country": "Pakistan",
+      "currency": "PKR",
+      "before": "4,550.00",
+      "after": "2499.00",
+      "verifiedSaved": "2,499.00"
+    },
+    {
+      "country": "Indonesia",
+      "currency": "IDR",
+      "before": "269,000",
+      "after": "119900.00",
+      "verifiedSaved": "119,900"
+    },
+    {
+      "country": "Vietnam",
+      "currency": "VND",
+      "before": "428,000",
+      "after": "249000.00",
+      "verifiedSaved": "249,000"
+    },
+    {
+      "country": "Thailand",
+      "currency": "THB",
+      "before": "550.00",
+      "after": "349.00",
+      "verifiedSaved": "349.00"
+    },
+    {
+      "country": "Egypt",
+      "currency": "EGP",
+      "before": "889.99",
+      "after": "299.99",
+      "verifiedSaved": "299.99"
+    },
+    {
+      "country": "Saudi Arabia",
+      "currency": "SAR",
+      "before": "69.99",
+      "after": "59.99",
+      "verifiedSaved": "59.99"
+    },
+    {
+      "country": "United Arab Emirates",
+      "currency": "AED",
+      "before": "62.99",
+      "after": "59.99",
+      "verifiedSaved": "59.99"
+    }
+  ]
+}

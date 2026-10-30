@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-10-27T18:31:43.881065+00:00",
+  "source": "Live authenticated Google Play Console release details and dashboard via browser",
+  "releaseDetailsUrl": "https://play.google.com/console/u/0/developers/7726521495392867100/app/4972425450856153810/tracks/4697721590299684967/releases/22/details",
+  "versionCode": 52,
+  "versionName": "2.3.1",
+  "track": "Production",
+  "status": "Available on Google Play",
+  "rolloutPercent": 100,
+  "countriesAvailable": 178,
+  "countriesTotal": 178,
+  "unpublishedChanges": false,
+  "limits": [
+    "Console availability verified; no fresh physical-device Play install performed",
+    "Crash/ANR values unavailable, not zero",
+    "Monetization and translation-language PRs remain unmerged"
+  ]
+}

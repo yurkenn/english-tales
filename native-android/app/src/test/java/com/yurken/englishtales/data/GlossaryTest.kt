@@ -7,6 +7,17 @@ import org.junit.Test
 
 /** Q4.3a: every known word in a sentence can be looked up, without disturbing the learning-word links. */
 class GlossaryTest {
+    @org.junit.Test fun canonicalLearningMeaningWinsOverDraftsAndLaterHomonyms() {
+        val verb=WordInfo("smile", "smile", "gülümsemek", "", "")
+        val noun=WordInfo("smile-noun", "smile", "gülümseme", "", "")
+        val glossary=Glossary(mapOf("smile" to "draft"),emptyMap(),listOf(verb,noun))
+        org.junit.Assert.assertEquals("gülümsemek",glossary.lookup("smile")?.gloss)
+        org.junit.Assert.assertEquals("gülümseme",noun.translation)
+        LearningContent.initializeForTest(listOf(verb,noun),emptyList())
+        try {org.junit.Assert.assertEquals(verb,LearningContent.wordByText["smile"])}
+        finally {LearningContent.resetForTest()}
+    }
+
     private val walk = WordInfo("walk", "walk", "yürümek", "", "")
     private val story = WordInfo("story", "story", "hikâye", "", "")
     private val pickUp = WordInfo("pick-up", "picked up", "aldı", "", "")

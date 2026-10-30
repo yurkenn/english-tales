@@ -2,7 +2,11 @@ package com.yurken.englishtales.ads
 
 import androidx.compose.runtime.staticCompositionLocalOf
 
+enum class EnergyAdOutcome { Completed, NoReward, Interrupted }
+
 interface CompletionAds {
+    fun canRewardEnergy(): Boolean = false
+    fun rewardEnergy(user: String, nonce: String, isCurrent: ()->Boolean, onFinished: (EnergyAdOutcome)->Unit) { onFinished(EnergyAdOutcome.NoReward) }
     fun recordCompletion(id: String)
     fun afterCompletion(id: String, isCurrent: ()->Boolean, onContinue: ()->Unit)
     fun privacyOptions(onMessage: (String)->Unit)

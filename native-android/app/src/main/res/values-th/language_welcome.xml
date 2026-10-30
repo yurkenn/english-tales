@@ -1,7 +1,7 @@
 <resources>
     <string name="first_language_title">เริ่มต้นด้วยภาษาอะไรดี?</string>
-    <string name="first_language_description">เลือกภาษาของเมนูและคำแปล เรื่องราวจะยังคงเป็นภาษาอังกฤษ</string>
-    <string name="first_language_english_note">เมนูจะเป็นภาษาอังกฤษ ขณะนี้คำแปลเรื่องราวมีเฉพาะภาษาตุรกี</string>
+    <string name="first_language_description">เลือกภาษาของเมนู เรื่องราวยังเป็นภาษาอังกฤษ คุณเลือกภาษาแปลแยกต่างหากได้ในการตั้งค่า</string>
+    <string name="first_language_english_note">เมนูจะเป็นภาษาอังกฤษ คุณเลือกภาษาแปลเรื่องราวได้ในการตั้งค่า</string>
     <string name="first_language_continue">ดำเนินการต่อในภาษา %1$s</string>
     <string name="first_language_later">คุณเปลี่ยนภาษาได้ภายหลังในการตั้งค่า</string>
     <string name="first_language_suggested">ภาษาของอุปกรณ์คุณ</string>

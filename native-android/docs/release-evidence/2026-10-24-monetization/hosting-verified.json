@@ -1,0 +1,20 @@
+[
+  {
+    "route": "/privacy",
+    "http": 200,
+    "matchesSource": true,
+    "sha256": "7f1f347f2fb49db4b1d64d88bff7b0701587ae04dccada05be9c0b15b2720ff5"
+  },
+  {
+    "route": "/delete-account",
+    "http": 200,
+    "matchesSource": true,
+    "sha256": "1c2844a385e075b6f48716671e78b400bdcbc5f006a5a41c2657ee3e99bb08af"
+  },
+  {
+    "route": "/subscription-terms.html",
+    "http": 200,
+    "matchesSource": true,
+    "sha256": "4d070b3cae170b1a04e87fc38459bdce65ca881e0515fd1ddf64435d2d72697a"
+  }
+]

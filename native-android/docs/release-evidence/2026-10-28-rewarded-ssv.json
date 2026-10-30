@@ -1,0 +1,39 @@
+{
+  "recordedAt": "2026-10-28T16:53:15.443388Z",
+  "source": "3408f0843b1042172824d56bf0533eec7d7b0021",
+  "environment": "staging jukyylozahikjhtokayw; disposable English_Tales_Completion_36 API36 emulator",
+  "variant": "locally signed opt-in sandbox56/2.4.0; not the Play internal56 artifact",
+  "apkSha256": "18a2b14f0f4cea2f223f7b181b2ef58ff4853faaa9674ddeb0b28bbf8756b148",
+  "testApkSha256": "a7499eca44838be9a27340cc4fc81c19bb1f24642f0e254b55629a75b36a33d0",
+  "probe": "GoogleRewardedSsvProbe",
+  "instrumentation": {
+    "tests": 1,
+    "failures": 0,
+    "seconds": 92.871,
+    "result": "OK (1 test)"
+  },
+  "visual": "Test Ad label observed; reward granted label observed; close button used after reward; no advertiser interaction",
+  "screenshot": "2026-10-28-rewarded-test-ad.png",
+  "server": {
+    "creditedAt": "2026-10-28T16:52:36.541145Z",
+    "firstObservedAt": "2026-10-28T16:52:43.869730Z",
+    "secondObservedAt": "2026-10-28T16:53:15.443388Z",
+    "creditedTickets": 1,
+    "distinctTransactions": 1,
+    "adCredits": 1,
+    "startingWalletRows": 0,
+    "directCreditWrites": 0
+  },
+  "cleanup": {
+    "markerGuardedSyntheticUserRemoved": true,
+    "remainingUsers": 0,
+    "remainingWallets": 0,
+    "remainingTickets": 0
+  },
+  "limits": [
+    "No fresh replay of this signed callback; console replay evidence remains separate",
+    "Bypasses normal app entry and UMP; normal reward screen and consent acceptance remain open",
+    "No production deployment or Play internal binary update",
+    "System UI boot ANR dismissed with Wait before ad display; labelled ad and reward completed"
+  ]
+}

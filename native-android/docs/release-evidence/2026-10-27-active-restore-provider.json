@@ -1,0 +1,37 @@
+{
+  "checkedAt": "2026-10-27T19:02:23.490364+00:00",
+  "provider": "RevenueCat",
+  "httpStatus": 200,
+  "premium": {
+    "expiresAt": "2026-10-27T19:05:16Z",
+    "product": "monthly",
+    "purchaseDate": "2026-10-27T19:00:17Z"
+  },
+  "sandbox": true,
+  "store": "play_store",
+  "limits": [
+    "UI state is owner-reported, not an agent-captured screenshot",
+    "This is active restore only; pending payment, refund, cross-account transfer and production deployment remain separate"
+  ],
+  "afterRestore": {
+    "checkedAt": "2026-10-27T19:03:58.755030+00:00",
+    "httpStatus": 200,
+    "expiresAt": "2026-10-27T19:05:16Z",
+    "product": "monthly",
+    "sandbox": true,
+    "store": "play_store"
+  },
+  "serverBeforeRestore": {
+    "expires_at": "2026-10-27 19:05:16+00",
+    "checked_at": "2026-10-27 19:00:23.332+00"
+  },
+  "serverAfterRestore": {
+    "active": true,
+    "expires_at": "2026-10-27 19:05:16+00",
+    "checked_at": "2026-10-27 19:03:01.186+00",
+    "updated_at": "2026-10-27 19:03:01.483348+00",
+    "observed_at": "2026-10-27 19:03:29.336815+00"
+  },
+  "ownerReportedUi": "Owner explicitly confirmed pressing Restore purchases and Premium remained visible",
+  "result": "Active sandbox restore accepted: same account, unexpired provider entitlement, fresh server verification after the action, and owner-reported retained Premium"
+}

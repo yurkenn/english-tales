@@ -1,0 +1,45 @@
+{
+  "run": 40180493316,
+  "head": "0bfa294",
+  "xmlResults": {
+    "android-verification": {
+      "files": 0,
+      "tests": 0,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "android-device-tests": {
+      "files": 2,
+      "tests": 386,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "android-service-device-tests": {
+      "files": 1,
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "jvmHtml": {
+    "tests": 148,
+    "failures": 0,
+    "ignored": 0
+  },
+  "lint": {
+    "Fatal": 0,
+    "Error": 0,
+    "Warning": 109
+  },
+  "deviceBreakdown": {
+    "app": 383,
+    "startup": 3,
+    "service": 3,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  }
+}

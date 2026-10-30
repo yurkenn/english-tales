@@ -1,7 +1,7 @@
 <resources>
     <string name="first_language_title">Hangi dilde başlayalım?</string>
-    <string name="first_language_description">Menülerin ve hikâye çevirilerinin dilini seç. Okuyacağın hikâyeler İngilizce kalır.</string>
-    <string name="first_language_english_note">Menüler İngilizce olacak. Hikâye çevirileri şu an Türkçe sunuluyor.</string>
+    <string name="first_language_description">Menü dilini seç. Hikâyeler İngilizce kalır; çeviri dilini Ayarlar’dan ayrıca seçebilirsin.</string>
+    <string name="first_language_english_note">Menüler İngilizce olacak. Hikâye çevirilerinin dilini Ayarlar’dan seçebilirsin.</string>
     <string name="first_language_continue">%1$s ile devam et</string>
     <string name="first_language_later">Daha sonra Ayarlar’dan değiştirebilirsin.</string>
     <string name="first_language_suggested">Cihazının dili</string>

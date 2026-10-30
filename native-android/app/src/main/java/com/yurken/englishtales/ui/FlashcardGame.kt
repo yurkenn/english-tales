@@ -59,7 +59,7 @@ fun FlashcardGame(liveWords: List<WordInfo>,sessionId: Int,savedIds: Set<String>
         if(correct) remembered++
         if(index==words.lastIndex) {finished=true;onLessonComplete(remembered)} else {index++;revealed=false}
     }
-    GameViewport(padding,550.dp) {
+    GameViewport(padding,550.dp,growForContent=true) {
         // The design's game header: leave, the deck's progress in blue and the card count.
         Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(10.dp)) {
             ReferenceIconButton("back",stringResource(R.string.alistirmadan_cik),onExit,TaleMuted)
@@ -76,7 +76,7 @@ fun FlashcardGame(liveWords: List<WordInfo>,sessionId: Int,savedIds: Set<String>
         // Drops-style answer: once the meaning shows, the card can be flung right (remembered) or left (again).
         val drag=remember {Animatable(0f)}
         var cardWidth by remember {mutableIntStateOf(1)}
-        Box(Modifier.fillMaxWidth().height(360.dp).onSizeChanged {cardWidth=it.width.coerceAtLeast(1)}
+        Box(Modifier.fillMaxWidth().heightIn(min=360.dp).onSizeChanged {cardWidth=it.width.coerceAtLeast(1)}
             .graphicsLayer {translationX=drag.value;rotationZ=drag.value/cardWidth*14f}
             .pointerInput(revealed) {
                 if(revealed) detectHorizontalDragGestures(
@@ -88,14 +88,14 @@ fun FlashcardGame(liveWords: List<WordInfo>,sessionId: Int,savedIds: Set<String>
             }) {
         // A second card peeks out behind, tilted, so the deck reads as a pile.
         Box(Modifier.matchParentSize().padding(start=18.dp,end=18.dp,top=22.dp).graphicsLayer {rotationZ=4f}.background(TaleSurface,RoundedCornerShape(28.dp)).border(2.dp,TaleLine,RoundedCornerShape(28.dp)))
-        Column(Modifier.fillMaxSize().appearIn().graphicsLayer {rotationY=turn;cameraDistance=14f*density}
+        Column(Modifier.fillMaxWidth().heightIn(min=360.dp).appearIn().graphicsLayer {rotationY=turn;cameraDistance=14f*density}
             .background(TaleLine,RoundedCornerShape(28.dp)).padding(bottom=6.dp)
             .background(if(back) LocalTaleColors.current.tileBlue else TaleSurface,RoundedCornerShape(28.dp)).border(2.dp,if(back) TaleBlue.copy(alpha=0.4f) else TaleLine,RoundedCornerShape(28.dp))
             .clickable(role=Role.Button) {revealed=true}.graphicsLayer {rotationY=if(back) 180f else 0f}.padding(24.dp),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.Center) {
-            Text(word.word,fontFamily=TaleDisplay,fontSize=if(back) 20.sp else 40.sp,lineHeight=if(back) 24.sp else 44.sp,fontWeight=FontWeight.ExtraBold,color=if(back) TaleMuted else TaleInk,
+            Text(word.word,modifier=Modifier.fillMaxWidth(),fontFamily=TaleDisplay,fontSize=if(back) 20.sp else 40.sp,lineHeight=if(back) 24.sp else 44.sp,fontWeight=FontWeight.ExtraBold,color=if(back) TaleMuted else TaleInk,
                 textAlign=androidx.compose.ui.text.style.TextAlign.Center)
-            Text(word.pronunciation,fontSize=13.sp,color=TaleMuted,modifier=Modifier.padding(vertical=10.dp))
-            Text(if(revealed) word.translation else stringResource(R.string.anlami_gormek_icin_dokun),fontSize=if(revealed) 24.sp else 13.sp,fontWeight=if(revealed) FontWeight.Bold else FontWeight.Normal,color=if(revealed) TaleInk else TaleMuted)
+            Text(word.pronunciation,fontSize=13.sp,color=TaleMuted,textAlign=androidx.compose.ui.text.style.TextAlign.Center,modifier=Modifier.fillMaxWidth().padding(vertical=10.dp))
+            Text(if(revealed) word.translation else stringResource(R.string.anlami_gormek_icin_dokun),modifier=Modifier.fillMaxWidth(),textAlign=androidx.compose.ui.text.style.TextAlign.Center,fontSize=if(revealed) 24.sp else 13.sp,fontWeight=if(revealed) FontWeight.Bold else FontWeight.Normal,color=if(revealed) TaleInk else TaleMuted)
             Box(Modifier.padding(top=20.dp).size(56.dp).pulseWhile(narrator.speaking).contentLabel(if(narrator.speaking || narrator.preparing) stringResource(R.string.seslendirmeyi_durdur) else stringResource(R.string.kelimesini_dinle, word.word)).background(chunkEdge(TaleBlue),RoundedCornerShape(18.dp)).padding(bottom=4.dp).background(TaleBlue,RoundedCornerShape(18.dp)).clickable(role=Role.Button) {if(narrator.speaking || narrator.preparing) narrator.stop() else narrator.speak(word.word)},contentAlignment=Alignment.Center) {if(narrator.speaking || narrator.preparing) Text("Ⅱ",color=TaleOnBlue) else ReferenceIcon("volume",TaleOnBlue,Modifier.size(21.dp))}
         }
         SwipeStamp(drag.value/cardWidth)
@@ -108,7 +108,12 @@ fun FlashcardGame(liveWords: List<WordInfo>,sessionId: Int,savedIds: Set<String>
         Spacer(Modifier.height(24.dp))
         // The design's answer pair: red to see it again, green when it is known.
         if(revealed) {
-            FlowRow(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(12.dp),verticalArrangement=Arrangement.spacedBy(12.dp),maxItemsInEachRow=sideBySide(2)) {
+            // An explicit column reports both answer heights to the content-sized viewport.
+            // FlowRow's weighted intrinsic height could leave the second answer beyond its scroll range.
+            if(sideBySide(2)==1) Column(Modifier.fillMaxWidth(),verticalArrangement=Arrangement.spacedBy(12.dp)) {
+                ChunkyButton(stringResource(R.string.tekrar_et),{next(false)},Modifier.fillMaxWidth(),color=TaleRed,onColor=Color.White)
+                ChunkyButton(stringResource(R.string.hatirladim),{next(true)},Modifier.fillMaxWidth())
+            } else Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(12.dp)) {
                 ChunkyButton(stringResource(R.string.tekrar_et),{next(false)},Modifier.weight(1f),color=TaleRed,onColor=Color.White)
                 ChunkyButton(stringResource(R.string.hatirladim),{next(true)},Modifier.weight(1f))
             }
