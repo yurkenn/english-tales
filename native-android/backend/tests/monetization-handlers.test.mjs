@@ -70,11 +70,22 @@ test('signed callbacks with repeated parameters, wrong reward, wrong unit or sta
   const f=ssv();
   const base=Object.entries({ad_unit:'1234567890',custom_data:nonce,reward_amount:'1',reward_item:'energy',timestamp:String(NOW),transaction_id:'t',user_id:owner});
   assert.deepEqual(await f.get(callback([...base,['user_id',other]])),{status:400,code:'invalid_callback'});
-  for(const overrides of [{reward_amount:'2'},{reward_item:'coins'},{ad_unit:'999'},{custom_data:'not-a-uuid'},{user_id:'x'},{transaction_id:''},{transaction_id:'a b'}])
+  for(const overrides of [{reward_amount:'2'},{reward_item:'coins'},{custom_data:'not-a-uuid'},{user_id:'x'},{transaction_id:''},{transaction_id:'a b'}])
     assert.deepEqual(await f.get(callback(overrides)),{status:400,code:'invalid_reward'},JSON.stringify(overrides));
   for(const timestamp of [NOW-3600001,NOW+300001,'soon'])
     assert.deepEqual(await f.get(callback({timestamp:String(timestamp)})),{status:400,code:'stale_callback'});
   assert.equal(f.credits().length,0);
+});
+
+test('dashboard sample and foreign units are acknowledged only after signature and freshness checks, without credit',async()=>{
+  const f=ssv({adUnits:'ca-app-pub-6012481599277383/6069329647'});
+  for(const ad_unit of ['1234567890','999'])
+    assert.deepEqual(await f.get(callback({ad_unit,reward_item:'coins'})),{status:200,code:'reward_rejected'});
+  assert.equal((await f.get(callback({ad_unit:'1234567890'},{key:stranger.privateKey}))).status,400);
+  assert.equal((await f.get(callback({ad_unit:'1234567890',timestamp:String(NOW-3600001)}))).status,400);
+  assert.equal(f.credits().length,0);
+  assert.deepEqual(await f.get(callback({ad_unit:'6069329647'})),{status:200,code:'reward_credited'});
+  assert.equal(f.credits().length,1);
 });
 
 test('Google retries are acknowledged, refusals end retries and outages ask for a retry',async()=>{

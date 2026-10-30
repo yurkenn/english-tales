@@ -102,7 +102,11 @@ export function createAdmobSsvHandler({url,key,adUnits,rewardItem='energy',rewar
     const timestamp=p.get('timestamp');
     const age=now()-Number(timestamp);
     if(!/^\d{1,16}$/.test(timestamp)||age>3600000||age<-300000) return reply(400,'stale_callback');
-    if(!units.has(p.get('ad_unit'))||p.get('reward_item')!==rewardItem||p.get('reward_amount')!==rewardAmount)
+    // AdMob's dashboard verifier sends a sample unit, not the configured live unit.
+    // Acknowledge a fresh, genuinely signed foreign-unit delivery without touching
+    // the database. It must never grant a reward or expand the production allowlist.
+    if(!units.has(p.get('ad_unit'))) return reply(200,'reward_rejected');
+    if(p.get('reward_item')!==rewardItem||p.get('reward_amount')!==rewardAmount)
       return reply(400,'invalid_reward');
     const nonce=p.get('custom_data'),userId=p.get('user_id'),transaction=p.get('transaction_id');
     if(!uuidPattern.test(nonce||'')||!uuidPattern.test(userId||'')||!/^[\x21-\x7e]{1,200}$/.test(transaction||''))
