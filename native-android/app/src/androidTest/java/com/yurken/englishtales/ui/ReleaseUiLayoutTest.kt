@@ -106,8 +106,8 @@ class ReleaseUiLayoutTest {
 
     @Test fun energyStatusAtLargeText() = check("energy-status", after={
         compose.onNodeWithTag("energy_status").assertHasClickAction().assertHeightIsAtLeast(48.dp)
-        assertTrue("Energy header must leave room for tab content",
-            compose.onNodeWithTag("energy_status").getUnclippedBoundsInRoot().height <= 160.dp)
+        val bounds=compose.onNodeWithTag("energy_status").getUnclippedBoundsInRoot()
+        assertTrue("Energy header must leave room for tab content", bounds.bottom-bounds.top <= 160.dp)
     }) {
         // The real app places the header in a Column above weighted tab content.
         Column(Modifier.fillMaxSize()) {
