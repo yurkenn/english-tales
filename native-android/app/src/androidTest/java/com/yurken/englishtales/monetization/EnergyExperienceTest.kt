@@ -54,6 +54,9 @@ class EnergyExperienceTest {
             compose.onNodeWithText(context.getString(R.string.energy_sign_in)).assertExists()
             compose.onNodeWithText(context.getString(R.string.energy_retry_read)).assertIsNotEnabled()
             compose.waitForIdle();assertFalse(opened)
+            compose.mainClock.advanceTimeBy(1_000)
+            compose.waitForIdle()
+            instrumentation.uiAutomation.waitForIdle(500,5_000)
             val bitmap=instrumentation.uiAutomation.takeScreenshot()
             val output=File(context.getExternalFilesDir(null),"energy-exhausted.png")
             output.outputStream().use {bitmap.compress(android.graphics.Bitmap.CompressFormat.PNG,100,it)}

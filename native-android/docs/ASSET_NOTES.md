@@ -3,7 +3,7 @@
 ## 14 Ekim 2026 görsel yenilemesi
 
 - Araç: yerleşik `image_gen` / imagegen becerisi.
-- Dosya: `app/src/main/res/drawable-nodpi/reading_guide.png`.
+- Dosya: `artwork/reading_guide.png`.
 - Çıktı: 1086 × 1448 şeffaf PNG; mavi hırkalı, kahverengi topuzlu, mor kitap tutan kadın rehber.
 - Önceki kullanım: `WelcomeScreen` ve `OnboardingScreen`. Bu ekranlar artık kitap maskotunu kullanır; kadın rehber görseli geçmiş tasarım varlığı olarak tutulur.
 - `CatalogScreens:116` içindeki `ChallengeBanner { ... }` çağrısı aktiftir. Önceki “çağrısı yok” notu eksik aramaya dayanıyordu. Mağaza hazırlığında bu kart da kitap maskotuna geçirildi.
