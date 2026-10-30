@@ -9819,8 +9819,8 @@
         "sha256": "97e5be0a68f175eeab88d7cc12f244d09bdd68db830b8e3a8c46672b386a09c2",
         "byteSize": 2359321,
         "resource": "app/src/main/res/drawable-nodpi/cover_quiet_morning.webp",
-        "resourceSha256": "9c5bc20bcbdc0a7aa2efe818419ae019790950f159313dac8da30cb56f114dac",
-        "resourceByteSize": 60816,
+        "resourceSha256": "48393d882b21c0de745c7433a3e5f9749d7a2c0a3c21453e362de6f7096f3863",
+        "resourceByteSize": 43374,
         "source": "backend/content/covers/cover_quiet_morning.png"
       },
       "sentences": [
@@ -10568,8 +10568,8 @@
         "sha256": "2cd99498b0133bf02f93ff0666842fed1498aaae2edff555db24f64ffeb1af7b",
         "byteSize": 2579160,
         "resource": "app/src/main/res/drawable-nodpi/cover_paper_boat.webp",
-        "resourceSha256": "6b941adf177d3d1f1ef11903227418c5df46e125bef94a8a43222c948a788214",
-        "resourceByteSize": 78562,
+        "resourceSha256": "34fa836f39a974286f64b1934b88598526b98a0dda2b307ccc87c7dd7efb2dc2",
+        "resourceByteSize": 53788,
         "source": "backend/content/covers/cover_paper_boat.png"
       },
       "sentences": [
@@ -11418,8 +11418,8 @@
         "sha256": "3ee25abcb1bf30d263f72402c24bf29c4e3deebe5db90499e1e55d62d7112f92",
         "byteSize": 2834568,
         "resource": "app/src/main/res/drawable-nodpi/cover_lost_map.webp",
-        "resourceSha256": "4934a5ad5da03f937b54455fac42ee65c45a36cf023216cb395a1a3576118cbd",
-        "resourceByteSize": 96740,
+        "resourceSha256": "36ca1e9565043636d84d8490649824d59b2c23aec53081d16ea1379c6e58071c",
+        "resourceByteSize": 67664,
         "source": "backend/content/covers/cover_lost_map.png"
       },
       "sentences": [
@@ -11794,8 +11794,8 @@
         "sha256": "870e515d353a11a795cbe1ad947d30f7ab8201c6d5469f244ffee6cf2fa8e3a1",
         "byteSize": 2835747,
         "resource": "app/src/main/res/drawable-nodpi/cover_red_umbrella.webp",
-        "resourceSha256": "3cb0e7436bb77c01b82c7d91a19d42a0237ae3cc118f615b1736aff53f01fefe",
-        "resourceByteSize": 95558,
+        "resourceSha256": "c086109727e5f6980ecf578450f32183ea9a5218e45ba6a3a324d76f77e27fee",
+        "resourceByteSize": 67600,
         "source": "backend/content/covers/cover_red_umbrella.png"
       },
       "sentences": [
@@ -12397,8 +12397,8 @@
         "sha256": "ac1a56782106425b3351be7460e4b22e4ab69a30d973807f6d6c067fa0d38421",
         "byteSize": 2234184,
         "resource": "app/src/main/res/drawable-nodpi/cover_last_train.webp",
-        "resourceSha256": "c813231ef2f7091278239124180c2017937b7c7bb97d431ded6a2bac2edc4614",
-        "resourceByteSize": 63578,
+        "resourceSha256": "57ce3aa53c15f976d2f0d6e9a93586178608a798f943db01978f80e8d02bc827",
+        "resourceByteSize": 44240,
         "source": "backend/content/covers/cover_last_train.png"
       },
       "sentences": [
@@ -13261,8 +13261,8 @@
         "sha256": "7a277d276b06d267599c904832edab9ddab412d781077a97811bde477b9cda19",
         "byteSize": 2279387,
         "resource": "app/src/main/res/drawable-nodpi/cover_attic_letter.webp",
-        "resourceSha256": "99b5dbc0a4985df7a8b5aede0eb2e972466d76f65d3f1149480af8705c2d3756",
-        "resourceByteSize": 70706,
+        "resourceSha256": "34585530545c445a4b0e50b4dea16c37bf9176cd35252631cd8ec8c547186013",
+        "resourceByteSize": 50154,
         "source": "backend/content/covers/cover_attic_letter.png"
       },
       "sentences": [
@@ -13898,8 +13898,8 @@
         "sha256": "dd876dd7bcdabe6cb3888183d7da579b5e72b01379310824c566d6b936d32d64",
         "byteSize": 1166164,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_tortoise_hare.webp",
-        "resourceSha256": "7b905e6abf48c5c0f0c4e448783df817027fa5d154da9e40629e42434aaf948e",
-        "resourceByteSize": 83152,
+        "resourceSha256": "fa913f99f28adf48565359e8be09f627efcb67e492a012529e984d8c90c8e6e1",
+        "resourceByteSize": 63152,
         "source": "backend/content/covers/cover_classic_tortoise_hare.png"
       },
       "sentences": [
@@ -14746,8 +14746,8 @@
         "sha256": "8b6aecb6b0bcd466bbf00c27b58e109fecdf89ea45142125e5cd5473b4c70ba4",
         "byteSize": 383391,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_lion_mouse.webp",
-        "resourceSha256": "18963d0e057d2f412919ccd217a8ce208b91dc874be5bf27833709d3c031657d",
-        "resourceByteSize": 52840,
+        "resourceSha256": "ff840283e3e7d199b235bf6b547a9516b810b89e8dcf5a5d16a168f083ce2ff1",
+        "resourceByteSize": 40080,
         "source": "backend/content/covers/cover_classic_lion_mouse.png"
       },
       "sentences": [
@@ -15574,8 +15574,8 @@
         "sha256": "088729e3ae54b6f09faad898d2a9fce2625f00e3d70dc33de0364ffbc13f1419",
         "byteSize": 48781,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_fox_grapes.webp",
-        "resourceSha256": "5110234b698295e1271b501c967649c646d3472fbb7a62652c9590b5fd9f1984",
-        "resourceByteSize": 12318,
+        "resourceSha256": "52426daac4e842a94f3584d85210fe5070484af7bd53194345052988d32cea77",
+        "resourceByteSize": 12836,
         "source": "backend/content/covers/cover_classic_fox_grapes.png"
       },
       "sentences": [
@@ -16590,8 +16590,8 @@
         "sha256": "35dad3a75176a8ec44753b6239f5fa7a670ea2d4a9713ad69d3b8bb86dc787ff",
         "byteSize": 84731,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_ants_grasshopper.webp",
-        "resourceSha256": "1f429881b3fbb56231c0513a8bba62d667e6a8de702105d1a497108a4c8aa2de",
-        "resourceByteSize": 23998,
+        "resourceSha256": "b6facb00b897aa3494688eeec7842d2b1a808bf86ee62f086e8c2ea7cfd48a30",
+        "resourceByteSize": 17606,
         "source": "backend/content/covers/cover_classic_ants_grasshopper.png"
       },
       "sentences": [
@@ -17185,8 +17185,8 @@
         "sha256": "3e4243044fbc786aca0f2775679e25b4148a0d569c5f0d9e1bf84d44f4868a17",
         "byteSize": 110869,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_red_riding_hood.webp",
-        "resourceSha256": "c19a1a6e3003716be84ac58d292dc0b7542a7a6076c6845a38f171b9564991fd",
-        "resourceByteSize": 17158,
+        "resourceSha256": "a05d728848a451e8f48c378ae3c65c52281551aeee7addc7ac37f3687e5f9d6b",
+        "resourceByteSize": 11988,
         "source": "backend/content/covers/cover_classic_red_riding_hood.png"
       },
       "sentences": [
@@ -19073,8 +19073,8 @@
         "sha256": "7720bee19b152e477bdb09ffb33a66ea657d2191f0d73c675f4f2d3dcdcd6269",
         "byteSize": 178037,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_cinderella.webp",
-        "resourceSha256": "cd1d65ec6bc1f82b077a9f5b590b1282f443f46dfe7c8844018977cc0fd6063f",
-        "resourceByteSize": 32920,
+        "resourceSha256": "d787a140f1692ce45659dc6e840897e17aa48ae4ad72d095ec3888cdd593e35f",
+        "resourceByteSize": 21126,
         "source": "backend/content/covers/cover_classic_cinderella.png"
       },
       "sentences": [
@@ -20898,8 +20898,8 @@
         "sha256": "65e1033a6373ad895f49b2da65e58736815d14229129c96f43f7999122e4e0a7",
         "byteSize": 177600,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_bremen_musicians.webp",
-        "resourceSha256": "e4b4831e832c5dac4acee69dfe7f9ccdc75f49f8b27e3a6680e657325d785245",
-        "resourceByteSize": 32362,
+        "resourceSha256": "f594476da5e1bea4a8a006ad64676f0f0b9cbd6d9f3b4c03e58819955b591de7",
+        "resourceByteSize": 21668,
         "source": "backend/content/covers/cover_classic_bremen_musicians.png"
       },
       "sentences": [
@@ -21861,8 +21861,8 @@
         "sha256": "185aa0da7094338db37fcff938b80e62425e15032cad033857cfcc7211520770",
         "byteSize": 181503,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_hansel_gretel.webp",
-        "resourceSha256": "7081e52b22ac66381bb4e06431d3c6600aba979bcb413ac0613ad0a3c31143fd",
-        "resourceByteSize": 33940,
+        "resourceSha256": "4d6b2b1d9cfc30c72760b1166595651417967459e9511e9f0815fb1ce599a81e",
+        "resourceByteSize": 21738,
         "source": "backend/content/covers/cover_classic_hansel_gretel.png"
       },
       "sentences": [
@@ -23828,8 +23828,8 @@
         "sha256": "a3d461c45ae03679605e330edcb2815f191ca12626161497bfaf28a9b371a6db",
         "byteSize": 456466,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_happy_prince.webp",
-        "resourceSha256": "8cb096271399502cddb00ae7a3e19220f8988114f569a8fc44c970aef28f94d2",
-        "resourceByteSize": 50670,
+        "resourceSha256": "746f2a411cbbc63c10306778f781ba7196c7311464f7000e8fb4a50be9dcb81c",
+        "resourceByteSize": 29934,
         "source": "backend/content/covers/cover_classic_happy_prince.png"
       },
       "sentences": [
@@ -24951,8 +24951,8 @@
         "sha256": "0347d07340f77afc88a378b99aa639548fc78f9ff5afeeecbe33ffbfdb3e547e",
         "byteSize": 341154,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_selfish_giant.webp",
-        "resourceSha256": "b67ebb7abc5d875337ccf82145286a16db229bf84075279077d867e912edb58d",
-        "resourceByteSize": 30640,
+        "resourceSha256": "da25d755455ac976492ca46957b8878ee88ba77d126f4e1a54943c5dd3394416",
+        "resourceByteSize": 34078,
         "source": "backend/content/covers/cover_classic_selfish_giant.png"
       },
       "sentences": [
@@ -25986,8 +25986,8 @@
         "sha256": "8a2db50a7594cd69de0ef1cea4ed5bde7d9303cbbbb1a945bab420fce4c7e177",
         "byteSize": 35859,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_gift_magi.webp",
-        "resourceSha256": "2019011b9e6a66ae23c10892487bfacacf0d29aa45ee672c98de96947cedd2c8",
-        "resourceByteSize": 5684,
+        "resourceSha256": "63bfba4a1aae64f7b699f2fcb2afb7c3fdb722afd8ac91c0a902d15e876f8a63",
+        "resourceByteSize": 4574,
         "source": "backend/content/covers/cover_classic_gift_magi.png"
       },
       "sentences": [
@@ -26977,8 +26977,8 @@
         "sha256": "b030a3740534593b7b27fcab2548ab1c2e1f91bc2c2b8489497b8b1ede9ac88a",
         "byteSize": 31204,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_after_twenty_years.webp",
-        "resourceSha256": "6723f8cd9fbe6a5e3aef9791613d03cbc0c43ae1722809dbba7da375ca020c91",
-        "resourceByteSize": 3178,
+        "resourceSha256": "480149922e164d8cc87b87807c9ac052ad1837f2cef4869bdc2fb703cc8f0024",
+        "resourceByteSize": 2284,
         "source": "backend/content/covers/cover_classic_after_twenty_years.png"
       },
       "sentences": [
@@ -27950,8 +27950,8 @@
         "sha256": "e15e505269f9af0df887d82a7206af9b726d1369a043d85751e7aef723c8e870",
         "byteSize": 90708,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_crow_pitcher.webp",
-        "resourceSha256": "d9208eaeac42ebc19b61b6aab5afdd54aefa63d09fd2b02da01853b3dce3b8af",
-        "resourceByteSize": 18204,
+        "resourceSha256": "f3ad9c5a1521af62ad7cf8865a886cacf83ad4d086dd49ac5e02321d0a73f6e4",
+        "resourceByteSize": 14892,
         "source": "backend/content/covers/cover_classic_crow_pitcher.png"
       },
       "sentences": [
@@ -28892,8 +28892,8 @@
         "sha256": "8b6aecb6b0bcd466bbf00c27b58e109fecdf89ea45142125e5cd5473b4c70ba4",
         "byteSize": 383391,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_boy_cried_wolf.webp",
-        "resourceSha256": "18963d0e057d2f412919ccd217a8ce208b91dc874be5bf27833709d3c031657d",
-        "resourceByteSize": 52840,
+        "resourceSha256": "ff840283e3e7d199b235bf6b547a9516b810b89e8dcf5a5d16a168f083ce2ff1",
+        "resourceByteSize": 40080,
         "source": "backend/content/covers/cover_classic_boy_cried_wolf.png"
       },
       "sentences": [
@@ -29850,8 +29850,8 @@
         "sha256": "a82723fd0f19adf03a62b7de3b66e97933faffc1339095453f6eab844887824e",
         "byteSize": 120001,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_town_country_mouse.webp",
-        "resourceSha256": "53d07f87b65f77563b97c87532fe1bdf621e074fda885fefc21bc603e644ea0e",
-        "resourceByteSize": 30512,
+        "resourceSha256": "1e1efd86f280cee0ea4c5715c9b374bbff22bf89c8e42e1d60c4579eb8240494",
+        "resourceByteSize": 22748,
         "source": "backend/content/covers/cover_classic_town_country_mouse.png"
       },
       "sentences": [
@@ -30680,8 +30680,8 @@
         "sha256": "948f75d6673bf5a76f569e3d0a705e52e43ad62f0229e3770e8cee2eff8cab47",
         "byteSize": 304031,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_north_wind_sun.webp",
-        "resourceSha256": "6dac5df2cb10995304bd0f92c47afd0f158b530e016523d25a716569fca5c66d",
-        "resourceByteSize": 157612,
+        "resourceSha256": "a58cd8785cacef8213ddd1281753c84f202a721bc43b1147e7302213aa325763",
+        "resourceByteSize": 96916,
         "source": "backend/content/covers/cover_classic_north_wind_sun.png"
       },
       "sentences": [
@@ -31581,8 +31581,8 @@
         "sha256": "8b6aecb6b0bcd466bbf00c27b58e109fecdf89ea45142125e5cd5473b4c70ba4",
         "byteSize": 383391,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_golden_eggs.webp",
-        "resourceSha256": "18963d0e057d2f412919ccd217a8ce208b91dc874be5bf27833709d3c031657d",
-        "resourceByteSize": 52840,
+        "resourceSha256": "ff840283e3e7d199b235bf6b547a9516b810b89e8dcf5a5d16a168f083ce2ff1",
+        "resourceByteSize": 40080,
         "source": "backend/content/covers/cover_classic_golden_eggs.png"
       },
       "sentences": [
@@ -32325,8 +32325,8 @@
         "sha256": "4f1520f88b6edc291a63e99f73b1698ada08606885cf0b9bb9a632b269cad97e",
         "byteSize": 478551,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_dog_shadow.webp",
-        "resourceSha256": "8bbe3c347262066ed7f8f6d3559722d6fbbb585c3323281368e93f37416ee1b8",
-        "resourceByteSize": 94788,
+        "resourceSha256": "9c08035148c28898dc3233f95aae08e3e2a98ca68f74d52cdfdca2d2fd3aff4e",
+        "resourceByteSize": 65750,
         "source": "backend/content/covers/cover_classic_dog_shadow.png"
       },
       "sentences": [
@@ -33164,8 +33164,8 @@
         "sha256": "35e89e5a3582d4d1954cb7d6b3e61d9a34cf2565dbc8cbc3b642aae061625ade",
         "byteSize": 480183,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_fox_crow.webp",
-        "resourceSha256": "fc1c7d48e3b8c951418600276d13159007ca472db1c6e0d2f9e7257300ab7396",
-        "resourceByteSize": 89882,
+        "resourceSha256": "717144d6cdcc1389b8e834639039ec8196e84150161f840ae0576eb6e03e138a",
+        "resourceByteSize": 61036,
         "source": "backend/content/covers/cover_classic_fox_crow.png"
       },
       "sentences": [
@@ -34129,8 +34129,8 @@
         "sha256": "8b6aecb6b0bcd466bbf00c27b58e109fecdf89ea45142125e5cd5473b4c70ba4",
         "byteSize": 383391,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_ant_dove.webp",
-        "resourceSha256": "18963d0e057d2f412919ccd217a8ce208b91dc874be5bf27833709d3c031657d",
-        "resourceByteSize": 52840,
+        "resourceSha256": "ff840283e3e7d199b235bf6b547a9516b810b89e8dcf5a5d16a168f083ce2ff1",
+        "resourceByteSize": 40080,
         "source": "backend/content/covers/cover_classic_ant_dove.png"
       },
       "sentences": [
@@ -35091,8 +35091,8 @@
         "sha256": "8b6aecb6b0bcd466bbf00c27b58e109fecdf89ea45142125e5cd5473b4c70ba4",
         "byteSize": 383391,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_bundle_sticks.webp",
-        "resourceSha256": "18963d0e057d2f412919ccd217a8ce208b91dc874be5bf27833709d3c031657d",
-        "resourceByteSize": 52840,
+        "resourceSha256": "ff840283e3e7d199b235bf6b547a9516b810b89e8dcf5a5d16a168f083ce2ff1",
+        "resourceByteSize": 40080,
         "source": "backend/content/covers/cover_classic_bundle_sticks.png"
       },
       "sentences": [
@@ -35966,8 +35966,8 @@
         "sha256": "8b6aecb6b0bcd466bbf00c27b58e109fecdf89ea45142125e5cd5473b4c70ba4",
         "byteSize": 383391,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_milkmaid_pail.webp",
-        "resourceSha256": "18963d0e057d2f412919ccd217a8ce208b91dc874be5bf27833709d3c031657d",
-        "resourceByteSize": 52840,
+        "resourceSha256": "ff840283e3e7d199b235bf6b547a9516b810b89e8dcf5a5d16a168f083ce2ff1",
+        "resourceByteSize": 40080,
         "source": "backend/content/covers/cover_classic_milkmaid_pail.png"
       },
       "sentences": [
@@ -36501,8 +36501,8 @@
         "sha256": "78c816982a225f0befe4026476ddf3bb4dccf19376166c73890573fea77fea37",
         "byteSize": 139956,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_dog_manger.webp",
-        "resourceSha256": "77d01427c9e1bf313d3dbf68c8f4acd830145cf9a46807b24959ecf7ae27be96",
-        "resourceByteSize": 37062,
+        "resourceSha256": "10cdfdeeb70345e70735004d0b893aea86ed6e6df46e3013f0385a687b0343d5",
+        "resourceByteSize": 26618,
         "source": "backend/content/covers/cover_classic_dog_manger.png"
       },
       "sentences": [
@@ -36995,8 +36995,8 @@
         "sha256": "7e299c6edbee8eecb9bfb77538fbe1f3ae14f1e7f4b4c3cd4195c2698a8d3504",
         "byteSize": 364633,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_ass_lion_skin.webp",
-        "resourceSha256": "319689b3618f897ef0a49e27d3b561709462e96e4da53bd627b43d57180b81ad",
-        "resourceByteSize": 67618,
+        "resourceSha256": "eaa34ccdebec18c89ca214d6bf7ec43901bf185dc586b52e0713f77285d6b495",
+        "resourceByteSize": 46374,
         "source": "backend/content/covers/cover_classic_ass_lion_skin.png"
       },
       "sentences": [
@@ -37525,8 +37525,8 @@
         "sha256": "b177b7d6bb2f7ef5f98357c1d51cc76c65a7db2c97b7818158d786a90aa799e3",
         "byteSize": 805255,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_snow_white.webp",
-        "resourceSha256": "e5456dde3c48addd7b8ea6971fbaef89a426691f14c5a6e00c829a56370b7f82",
-        "resourceByteSize": 127988,
+        "resourceSha256": "3cee37e1cd2b543eed0a3ece817531b09de107183e243f23d119bd6850dffc2b",
+        "resourceByteSize": 84790,
         "source": "backend/content/covers/cover_classic_snow_white.png"
       },
       "sentences": [
@@ -38325,8 +38325,8 @@
         "sha256": "5e722d1500b0b11701a760733a5f07858e6b12a9f8a231b1b81a6dc506932cad",
         "byteSize": 786211,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_rapunzel.webp",
-        "resourceSha256": "4979f2af6da11d2f3fe96f8f0c3d8190ff33e6a37d97a63bc3109516b7c39394",
-        "resourceByteSize": 134264,
+        "resourceSha256": "ab06d5c1314e75206a6e68bc0ba1a6627889757fd9efeb065c6e68576e383ba4",
+        "resourceByteSize": 88178,
         "source": "backend/content/covers/cover_classic_rapunzel.png"
       },
       "sentences": [
@@ -39052,8 +39052,8 @@
         "sha256": "d209dd2eca30ff7454b9971020196eb0d97697e8fc8bf002bd1d830eb7c51dd8",
         "byteSize": 756562,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_sleeping_beauty.webp",
-        "resourceSha256": "65eab47d384362154b1fa4cfbe9e79f6ad303df23020887b5ca189a9c0d5b784",
-        "resourceByteSize": 109138,
+        "resourceSha256": "b69d0f1c61de7fed9baf0016708f5af4aa5f4af0ad8cb7aa4a6099a1c6575c97",
+        "resourceByteSize": 75340,
         "source": "backend/content/covers/cover_classic_sleeping_beauty.png"
       },
       "sentences": [
@@ -39789,8 +39789,8 @@
         "sha256": "c9f482f3e16d48314a9ceae19ad08fc73cae9d5cde0a651a7e7f9f9372f42c7b",
         "byteSize": 163350,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_frog_prince.webp",
-        "resourceSha256": "8ce1386c86e7e94891fc153d326158d5a9418987382c17003354883cdd9a2976",
-        "resourceByteSize": 25744,
+        "resourceSha256": "fe27b256a7865ed47665b18e444fe0f72542f61e9ec8bbf52097b14c98e359c9",
+        "resourceByteSize": 17514,
         "source": "backend/content/covers/cover_classic_frog_prince.png"
       },
       "sentences": [
@@ -40605,8 +40605,8 @@
         "sha256": "fac58bc6ac61711adf140a02251818d11a551ce1684ee7f00d3139cb38e93656",
         "byteSize": 174956,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_rumpelstiltskin.webp",
-        "resourceSha256": "655fbcaf3777891a73d63746b39b051fc9b9d1f92171c48fb613f8a58320fc66",
-        "resourceByteSize": 29310,
+        "resourceSha256": "0d1fdfbf9a05b5671a57d152653880aba4cac4d17933e7f48a1b7fa46acae527",
+        "resourceByteSize": 19638,
         "source": "backend/content/covers/cover_classic_rumpelstiltskin.png"
       },
       "sentences": [
@@ -41375,8 +41375,8 @@
         "sha256": "83ee146f2517eca8b7e409d2ac278c5492f40da2730a2d4fdad122429a7fa577",
         "byteSize": 174540,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_golden_goose.webp",
-        "resourceSha256": "40a1222a2ee76ee47dde7ba9e242bb610d7c1e4f6a42cdf8f409acd2f7dd9c6d",
-        "resourceByteSize": 31444,
+        "resourceSha256": "e1c885b7f035b50bdd48963d14fcea41b363a8b16cedda8f1305961904c5aade",
+        "resourceByteSize": 20376,
         "source": "backend/content/covers/cover_classic_golden_goose.png"
       },
       "sentences": [
@@ -42209,8 +42209,8 @@
         "sha256": "cb1d19341adc5ca60ad7ee4065908e84f6b0ea8e0efa567bcea4de9712c2c975",
         "byteSize": 173849,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_elves_shoemaker.webp",
-        "resourceSha256": "33fa33351072ccf9ff44080160ebdd64bf0f301d5c3e048d232d6a5d1c8a9411",
-        "resourceByteSize": 31410,
+        "resourceSha256": "ce8d264906c1d5febb198183f7fa179459b8639999291978e5bdff66ac794fa6",
+        "resourceByteSize": 20918,
         "source": "backend/content/covers/cover_classic_elves_shoemaker.png"
       },
       "sentences": [
@@ -42892,8 +42892,8 @@
         "sha256": "03ca5d1dcf86b287176a9db50ebffb00a236d06da7a3fcd5b6f7e0dd421f3d09",
         "byteSize": 170633,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_tom_thumb.webp",
-        "resourceSha256": "c3b4c3b036d271969989df1c0413d79c9d8f569e9ac89262a6ca3073ce530ede",
-        "resourceByteSize": 29796,
+        "resourceSha256": "e4499a62679b9e1db1f5a6b90dc533c3bbafb257ec32e26b4389a4e233920fdd",
+        "resourceByteSize": 20080,
         "source": "backend/content/covers/cover_classic_tom_thumb.png"
       },
       "sentences": [
@@ -43772,8 +43772,8 @@
         "sha256": "f60c040b50fd8e6a381c3e5076b3ace04f3c483e230a362860702b3da3c7c970",
         "byteSize": 166588,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_wolf_seven_kids.webp",
-        "resourceSha256": "a1e040057049e85ff05c4d1ea05fd66490643bd6feb4e3bca1141a6c45fb38c4",
-        "resourceByteSize": 26890,
+        "resourceSha256": "5cdcfa05ac56260cfaaa608388dd012e5363de30196a79cd124c73b8ba5aa58c",
+        "resourceByteSize": 18676,
         "source": "backend/content/covers/cover_classic_wolf_seven_kids.png"
       },
       "sentences": [
@@ -44522,8 +44522,8 @@
         "sha256": "85e02b892886ff3a8d3265d8582e30ec1c9d383b15b1ce57aa8ac69cc33c9e61",
         "byteSize": 606964,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_twelve_dancing_princesses.webp",
-        "resourceSha256": "cc2e4d2a7aa5d24f84459022a6c8f4507472e92db6ff5bd5eff2ef35e3189e01",
-        "resourceByteSize": 28892,
+        "resourceSha256": "2407b93a27edfa63e9b88702648e609fb3b52001ef24554211eabf5cbfafce4f",
+        "resourceByteSize": 18690,
         "source": "backend/content/covers/cover_classic_twelve_dancing_princesses.png"
       },
       "sentences": [
@@ -45339,8 +45339,8 @@
         "sha256": "f70e05d68f205556753ffa1574788c9784cd32665f654736362f99a78147ce0e",
         "byteSize": 172745,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_brave_little_tailor.webp",
-        "resourceSha256": "7fe61ae3131e40b81f6b7fc2c17e11aba07ca775e40c47debf441b1601c6c09b",
-        "resourceByteSize": 30254,
+        "resourceSha256": "f9384bf3b90ba5266b50d9146b16e35f7bd475e7f3a96ec1dbeaa86b38df8c62",
+        "resourceByteSize": 20418,
         "source": "backend/content/covers/cover_classic_brave_little_tailor.png"
       },
       "sentences": [
@@ -46136,8 +46136,8 @@
         "sha256": "4b83baab00a4f9d968f6d5ed61caf1c572edff78b545e2dc47fd35c0ee1e1726",
         "byteSize": 823839,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_goose_girl.webp",
-        "resourceSha256": "ec69022bd4516b61194d1676461d771f5fba95aa8d09c7ddc594ee98db29db78",
-        "resourceByteSize": 141602,
+        "resourceSha256": "c6b71a6b2e49d83c3365207c956f4be02df3b4063e2f6f3ec33929b0daa51107",
+        "resourceByteSize": 93406,
         "source": "backend/content/covers/cover_classic_goose_girl.png"
       },
       "sentences": [
@@ -47044,8 +47044,8 @@
         "sha256": "1e9cec68cbf4c7751cea327ded2017d36876409e2cf19002f5a8cb72afcf751f",
         "byteSize": 538823,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_ugly_duckling.webp",
-        "resourceSha256": "82c192dc2b4150d9c0745be2a5f057fd25563a20f94303f7b769611a8f71d07d",
-        "resourceByteSize": 59506,
+        "resourceSha256": "9b867570f6d10c47d1490e17d4edd44c44e6962daaa5aaad95069fb8654511d4",
+        "resourceByteSize": 37548,
         "source": "backend/content/covers/cover_classic_ugly_duckling.png"
       },
       "sentences": [
@@ -49490,8 +49490,8 @@
         "sha256": "12b0edafc788ca9c7be21fa1504734f95af4122bfd3c9f8f6f7d5ced7943d4bb",
         "byteSize": 730146,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_emperors_clothes.webp",
-        "resourceSha256": "c26f4f52a666e761d3d7ef38a559c32f74a96484cf6cb3c7ed881ed9c352f789",
-        "resourceByteSize": 49362,
+        "resourceSha256": "92cc6bf8feb9aae8fd8c901f186ab7f0c0a15e03bbe1d3c5364410c239b12935",
+        "resourceByteSize": 37068,
         "source": "backend/content/covers/cover_classic_emperors_clothes.png"
       },
       "sentences": [
@@ -50479,8 +50479,8 @@
         "sha256": "413319e7fff1957116617c7995836db0ce7b7110497e94f06a0763f635daf7ea",
         "byteSize": 271399,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_thumbelina.webp",
-        "resourceSha256": "f328a375d7a7cb089c2cb785170192dfee9b75272d48463860ff94f6a40dc9ee",
-        "resourceByteSize": 105700,
+        "resourceSha256": "d1c36397d982ab75f037cab41f728ec378be81330ca71097e3ac1dfc919fd5b2",
+        "resourceByteSize": 67976,
         "source": "backend/content/covers/cover_classic_thumbelina.png"
       },
       "sentences": [
@@ -51538,8 +51538,8 @@
         "sha256": "4306d8816977c1b413c077b2b9a4b71fa4fe0f4e624463a7c312d4d3e5c243ee",
         "byteSize": 751461,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_little_mermaid.webp",
-        "resourceSha256": "7d3e8c55746ac29540d4aea2842d00b06ce62f2f1ae7b80e51e8fe7b2b9a0c18",
-        "resourceByteSize": 56748,
+        "resourceSha256": "4a854949d48cf91d28fcbbeb595d24735291fdb038f669ca5656f53ff9cf49b5",
+        "resourceByteSize": 37214,
         "source": "backend/content/covers/cover_classic_little_mermaid.png"
       },
       "sentences": [
@@ -52620,8 +52620,8 @@
         "sha256": "45041aa73b2b004f61da4b26a14ea20d5c9a251efa2c141e83c5cd22a5d46c7a",
         "byteSize": 505580,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_snow_queen.webp",
-        "resourceSha256": "263e038c5cfd834d07928fb592e1ad7977929617028810fa7df3a25d65762c4a",
-        "resourceByteSize": 24894,
+        "resourceSha256": "739fa194fbfa1d4a15d3365d8ddc450b61bf9809d40c714a30a1ce5fb45049fd",
+        "resourceByteSize": 18028,
         "source": "backend/content/covers/cover_classic_snow_queen.png"
       },
       "sentences": [
@@ -53723,8 +53723,8 @@
         "sha256": "05eb3b59b237fd2a1ae61a65a57806a156d7a799c6aced357331d14404dec3f2",
         "byteSize": 411784,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_little_match_girl.webp",
-        "resourceSha256": "ed6a02f7e9563bb87b1316838da7d02f8ae9b13b23e88fe1f839dff83bfa92ce",
-        "resourceByteSize": 30624,
+        "resourceSha256": "1541fa18f924ac55047f2b8a8152ca7f27b98e5e25ed4e67cb7ed77fe4b077d1",
+        "resourceByteSize": 20524,
         "source": "backend/content/covers/cover_classic_little_match_girl.png"
       },
       "sentences": [
@@ -54687,8 +54687,8 @@
         "sha256": "c991e9dfa8ed5be003786d8d1da2f50fd815cca4b6e98edf8e5d558bb22be593",
         "byteSize": 557651,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_steadfast_tin_soldier.webp",
-        "resourceSha256": "fece286c75ad4ed335fe2ae3235f130769a9d03eb38c8898a51d33b0125f799e",
-        "resourceByteSize": 56902,
+        "resourceSha256": "3d520bf12564fed56dfad0b9786f7bf3662a35fda1f1a0ed145396701ac8865f",
+        "resourceByteSize": 35930,
         "source": "backend/content/covers/cover_classic_steadfast_tin_soldier.png"
       },
       "sentences": [
@@ -55714,8 +55714,8 @@
         "sha256": "d9dc75ff532ecae511b8b3ef7ec5ad1fca7fc03acee440fc48646fe6805f0497",
         "byteSize": 341455,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_wild_swans.webp",
-        "resourceSha256": "ba2ce4ebf95ee17abab3acebf539fb78597cd2e41563872ebb222e53dd896a42",
-        "resourceByteSize": 77616,
+        "resourceSha256": "fd7a52248bc1197647049f285383fa525fce027283bcf341b838d46aca165d3e",
+        "resourceByteSize": 47974,
         "source": "backend/content/covers/cover_classic_wild_swans.png"
       },
       "sentences": [
@@ -56888,8 +56888,8 @@
         "sha256": "ce653dc8204b4150eba969906433434c5cd45e619dde81aa5a0c11db0524a48a",
         "byteSize": 99818,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_dorian_gray.webp",
-        "resourceSha256": "ce653dc8204b4150eba969906433434c5cd45e619dde81aa5a0c11db0524a48a",
-        "resourceByteSize": 99818
+        "resourceSha256": "73a0c4d00cb8527dcf25eb1ee332364eaccccd812d432e872bc3da0864782057",
+        "resourceByteSize": 52708
       },
       "sentences": [
         {
@@ -59336,8 +59336,8 @@
         "sha256": "5339061632aa5ec7fe426a9da8c5aac28d5380ad45fa9564e46969627543b7e5",
         "byteSize": 106744,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_financier.webp",
-        "resourceSha256": "5339061632aa5ec7fe426a9da8c5aac28d5380ad45fa9564e46969627543b7e5",
-        "resourceByteSize": 106744
+        "resourceSha256": "7c3c094e736a4f6501c8e3f43da822266bcae802d53c985d7277de48ac866d87",
+        "resourceByteSize": 58084
       },
       "sentences": [
         {
@@ -61493,8 +61493,8 @@
         "sha256": "be035c1afaf61f4529f84d98b217ac8521d79fa68d7c7ec40da3931aa4a72a2b",
         "byteSize": 133318,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_goldilocks_three_bears.webp",
-        "resourceSha256": "be035c1afaf61f4529f84d98b217ac8521d79fa68d7c7ec40da3931aa4a72a2b",
-        "resourceByteSize": 133318
+        "resourceSha256": "675e89c23d8cad7e84db7e82d32177914aeadce77b8168f93c74eb6d4f5dfe26",
+        "resourceByteSize": 72534
       },
       "sentences": [
         {
@@ -62543,8 +62543,8 @@
         "sha256": "b1a991925f96929afae2f717be92b9afb7413856daa8d2e43227bb0aa1aa83a8",
         "byteSize": 106300,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_great_gatsby.webp",
-        "resourceSha256": "b1a991925f96929afae2f717be92b9afb7413856daa8d2e43227bb0aa1aa83a8",
-        "resourceByteSize": 106300
+        "resourceSha256": "bb6923cd7c1a8bc12e81e1f626957733a7af4ca6b320a768ca015cc525aaca02",
+        "resourceByteSize": 57742
       },
       "sentences": [
         {
@@ -64498,8 +64498,8 @@
         "sha256": "95b7574a539e5ed36d3cab835adf814bf3f7507fe1712942e7eb994dc5f444e6",
         "byteSize": 103294,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_hound_baskervilles.webp",
-        "resourceSha256": "95b7574a539e5ed36d3cab835adf814bf3f7507fe1712942e7eb994dc5f444e6",
-        "resourceByteSize": 103294
+        "resourceSha256": "afb3690c4db3b1d3babbb87ebdb628c0cf307f72ede654b9bdc27ed3a0071dfe",
+        "resourceByteSize": 54584
       },
       "sentences": [
         {
@@ -66802,8 +66802,8 @@
         "sha256": "b554a112e5462f8a1a210f18f2750d519a703e57169c7a5802b5b99058114b11",
         "byteSize": 112520,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_invisible_man.webp",
-        "resourceSha256": "b554a112e5462f8a1a210f18f2750d519a703e57169c7a5802b5b99058114b11",
-        "resourceByteSize": 112520
+        "resourceSha256": "539a7083dc1b4129afac8c0dc7ac00be91529a491d7e4ae2dabc224f11757a65",
+        "resourceByteSize": 59076
       },
       "sentences": [
         {
@@ -68886,8 +68886,8 @@
         "sha256": "f8e3e3f5014d2a10f7ecee7f56910a07082977deb89005a4e07acdd002df4c48",
         "byteSize": 143224,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_jane_eyre.webp",
-        "resourceSha256": "f8e3e3f5014d2a10f7ecee7f56910a07082977deb89005a4e07acdd002df4c48",
-        "resourceByteSize": 143224
+        "resourceSha256": "8e0f609a92ef19c3bd4b70db2cfea1abac22482c71f13ef7b69e8e519236684c",
+        "resourceByteSize": 73844
       },
       "sentences": [
         {
@@ -71348,8 +71348,8 @@
         "sha256": "9f78a1f9704bc2548daad6c61f640c19e3d253773201d754fa1484b07e7a7d7e",
         "byteSize": 128382,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_little_women.webp",
-        "resourceSha256": "9f78a1f9704bc2548daad6c61f640c19e3d253773201d754fa1484b07e7a7d7e",
-        "resourceByteSize": 128382
+        "resourceSha256": "256cc246ce65aa767e8934877dd7283fe0f0d007342a978644e2f471f53ed7e2",
+        "resourceByteSize": 71472
       },
       "sentences": [
         {
@@ -73978,8 +73978,8 @@
         "sha256": "658b6a0ade9b192cf2a156bed97522ebdad98d491b1b042fe1655c08ee5ada54",
         "byteSize": 147208,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_moby_dick.webp",
-        "resourceSha256": "658b6a0ade9b192cf2a156bed97522ebdad98d491b1b042fe1655c08ee5ada54",
-        "resourceByteSize": 147208
+        "resourceSha256": "0deb2bbab70b7dbc76c6e7d6a70f90c5da8c5dbd004fc7a939d82f355f61ba26",
+        "resourceByteSize": 76864
       },
       "sentences": [
         {
@@ -76053,8 +76053,8 @@
         "sha256": "6dbf7046a0613a370fb15b8a45f0db19d5d037d9f6307cd87c1a512d02bb5968",
         "byteSize": 96054,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_phantom_opera.webp",
-        "resourceSha256": "6dbf7046a0613a370fb15b8a45f0db19d5d037d9f6307cd87c1a512d02bb5968",
-        "resourceByteSize": 96054
+        "resourceSha256": "babfe57c381cd9940a19f75a11ca8c4219196d52b931c657baffc1d33823b5d0",
+        "resourceByteSize": 52640
       },
       "sentences": [
         {
@@ -78197,8 +78197,8 @@
         "sha256": "e07e3e96e9964fd1d7536470b76df421bf0921a924f35288089495f252723376",
         "byteSize": 145386,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_pride_prejudice.webp",
-        "resourceSha256": "e07e3e96e9964fd1d7536470b76df421bf0921a924f35288089495f252723376",
-        "resourceByteSize": 145386
+        "resourceSha256": "fad57cc7aba0160282806081713987886299dab0c5bf1c1fd441f50b344a4626",
+        "resourceByteSize": 77410
       },
       "sentences": [
         {
@@ -80752,8 +80752,8 @@
         "sha256": "571f000023f764c781d271c59ed5f915430bfd6c0e1cc98fe6ef20e610a0275c",
         "byteSize": 127884,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_romeo_juliet.webp",
-        "resourceSha256": "571f000023f764c781d271c59ed5f915430bfd6c0e1cc98fe6ef20e610a0275c",
-        "resourceByteSize": 127884
+        "resourceSha256": "09c8fba8dfa05ccbb0f2e002133f42c914e6e5e74861dfbd6099e17a663d59ef",
+        "resourceByteSize": 70084
       },
       "sentences": [
         {
@@ -83297,8 +83297,8 @@
         "sha256": "89d2bcc860da620f83616a7e85fb1d9b4a3c704d89e2f84581bfca2f81207460",
         "byteSize": 104332,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_scandal_bohemia.webp",
-        "resourceSha256": "89d2bcc860da620f83616a7e85fb1d9b4a3c704d89e2f84581bfca2f81207460",
-        "resourceByteSize": 104332
+        "resourceSha256": "31982a46ce574a42129cc806733e7862b4b75d764fef3bbe1967b7ee7279a01a",
+        "resourceByteSize": 55006
       },
       "sentences": [
         {
@@ -85603,8 +85603,8 @@
         "sha256": "12c024251819f9ff166ffcdf4fea86c5449a83d4118ad06cf94a708987117e37",
         "byteSize": 153950,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_three_little_pigs.webp",
-        "resourceSha256": "12c024251819f9ff166ffcdf4fea86c5449a83d4118ad06cf94a708987117e37",
-        "resourceByteSize": 153950
+        "resourceSha256": "2de07a5aae470585ef2aabbf261a9698e989493c865f99474da64ddcc4bfc5f0",
+        "resourceByteSize": 84106
       },
       "sentences": [
         {
@@ -86652,8 +86652,8 @@
         "sha256": "054d70df0a6dff39c111851e2e234712436b69695d57a3de15de3ad795efb877",
         "byteSize": 145160,
         "resource": "app/src/main/res/drawable-nodpi/cover_classic_woman_in_white.webp",
-        "resourceSha256": "054d70df0a6dff39c111851e2e234712436b69695d57a3de15de3ad795efb877",
-        "resourceByteSize": 145160
+        "resourceSha256": "017f44a01d732d75b94fffb963b2426fecb00f727126cfc672df0996c44c907b",
+        "resourceByteSize": 75336
       },
       "sentences": [
         {
@@ -88705,8 +88705,8 @@
         "sha256": "857b17d93b59012b27eb20935a71b08c3d29e3ebfc05cb40740d8f7df98a3738",
         "byteSize": 123268,
         "resource": "app/src/main/res/drawable-nodpi/cover_first_order.webp",
-        "resourceSha256": "857b17d93b59012b27eb20935a71b08c3d29e3ebfc05cb40740d8f7df98a3738",
-        "resourceByteSize": 123268
+        "resourceSha256": "8a4ef0b33f20b837fa4f12abb34b83665e3770f35d045676d62b46d29f303bca",
+        "resourceByteSize": 69132
       },
       "sentences": [
         {
@@ -89643,8 +89643,8 @@
         "sha256": "f917fd6e5b62b783e0b5031847fb5228a9dd5da5f9b27db5c8bd91a23060d448",
         "byteSize": 93968,
         "resource": "app/src/main/res/drawable-nodpi/cover_night_library.webp",
-        "resourceSha256": "f917fd6e5b62b783e0b5031847fb5228a9dd5da5f9b27db5c8bd91a23060d448",
-        "resourceByteSize": 93968
+        "resourceSha256": "830a8b9bce4c07227ebf60f1c8b6f06aed019f3c2052fe4205687bd0c2f16174",
+        "resourceByteSize": 50138
       },
       "sentences": [
         {

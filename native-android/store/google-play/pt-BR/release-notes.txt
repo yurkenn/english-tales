@@ -1,1 +1,1 @@
-Novo visual para leitura e jogos de palavras. Layouts melhores para texto grande, idioma de tradução independente e mais histórias offline. Energia diária e Premium opcional incluídos no teste interno; a ativação em produção aguarda validação.
+Visual renovado e melhor suporte a textos grandes. Receba 3 acessos diários a novas histórias ou escolha Premium para ler sem limites. Histórias offline, traduções e exercícios continuam disponíveis.

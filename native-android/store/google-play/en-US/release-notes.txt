@@ -1,1 +1,1 @@
-A refreshed look for your reading journey and word games. Improved layouts for larger text, separate story translation language, and an expanded offline story collection. Daily energy and optional Premium are included in the internal test candidate; production activation is pending validation.
+A refreshed design with better support for large text. Get 3 daily passes for new stories, or choose Premium for unlimited reading. Offline stories, translations and practice remain available.

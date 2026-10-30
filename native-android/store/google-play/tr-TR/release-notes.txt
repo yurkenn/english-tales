@@ -1,1 +1,1 @@
-Okuma yolculuğu ve kelime oyunları yenilendi. Büyük yazı düzenleri iyileştirildi; bağımsız hikâye çeviri dili ve genişletilmiş çevrimdışı koleksiyon eklendi. Günlük enerji ve isteğe bağlı Premium dahili test adayına dahildir; üretimde açılması doğrulama bekliyor.
+Yenilenen tasarım ve büyük yazı desteği. Yeni hikâyeler için günlük 3 okuma hakkını kullan veya sınırsız okuma için Premium’u seç. Çevrimdışı hikâyeler, çeviriler ve alıştırmalar kullanılmaya devam ediyor.

@@ -1,1 +1,1 @@
-Renovamos la lectura y los juegos de palabras. Mejoras para texto grande, idioma de traducción independiente y más historias sin conexión. Energía diaria y Premium opcional incluidos en la versión de prueba interna; su activación en producción está pendiente de validación.
+Diseño renovado y mejor compatibilidad con texto grande. Tienes 3 pases diarios para historias nuevas o Premium para leer sin límites. Siguen disponibles las historias sin conexión, las traducciones y la práctica.
