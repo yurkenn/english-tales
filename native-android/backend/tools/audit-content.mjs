@@ -38,8 +38,9 @@ export async function verifyBundleMedia(catalog){
     const bytes=await readFile(path.join(root,'native-android',resource));
     if(sha(bytes)!==asset.resourceSha256||bytes.length!==asset.resourceByteSize)throw Error(`Bundled cover checksum mismatch: ${story.id}`);
     const source=asset.source;
-    const original=source===undefined?bytes:await readFile(path.join(root,'native-android',`backend/content/covers/${story.coverKey}.png`));
-    if(source!==undefined&&source!==`backend/content/covers/${story.coverKey}.png`)throw Error('Unsafe cover source');
+    if(source!==undefined&&source!==`backend/content/covers/${story.coverKey}.png`&&
+       source!==`art/published-covers/${story.coverKey}.webp`)throw Error('Unsafe cover source');
+    const original=source===undefined?bytes:await readFile(path.join(root,'native-android',source));
     if(sha(original)!==asset.sha256||original.length!==asset.byteSize)throw Error(`Cover provenance mismatch: ${story.id}`);
   }
 }

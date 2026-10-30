@@ -50,3 +50,14 @@ test('every shipped published cover is physically verified and forged cover chec
  catalog.stories[0].coverAsset.resourceSha256='0'.repeat(64);
  await assert.rejects(verifyBundleMedia(catalog),/checksum mismatch/);
 });
+test('published WebP provenance rejects a forged original hash and unsafe source paths',async()=>{
+ const catalog=JSON.parse(await readFile(new URL('../../app/src/main/assets/catalog/v2.json',import.meta.url)));
+ const story=catalog.stories.find(s=>s.coverAsset.source?.startsWith('art/published-covers/'));
+ assert.ok(story);
+ const original=story.coverAsset.sha256;
+ story.coverAsset.sha256='0'.repeat(64);
+ await assert.rejects(verifyBundleMedia(catalog),/provenance mismatch/);
+ story.coverAsset.sha256=original;
+ story.coverAsset.source='../outside.webp';
+ await assert.rejects(verifyBundleMedia(catalog),/Unsafe cover source/);
+});

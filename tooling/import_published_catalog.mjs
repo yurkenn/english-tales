@@ -49,9 +49,12 @@ export async function importSnapshot(snapshotPath,previousPath,output){
     const resource=`app/src/main/res/drawable-nodpi/${key}.webp`,local=await readFile(path.join(root,'native-android',resource));
     const record={id:asset.id,sha256:asset.sha256,byteSize:Number(asset.byte_size),resource,resourceSha256:sha(local),resourceByteSize:local.length};
     if(sha(local)!==asset.sha256){
-      const source=`backend/content/covers/${key}.png`,original=await readFile(path.join(root,'native-android',source));
-      if(sha(original)!==asset.sha256||original.length!==Number(asset.byte_size))throw Error(`Cover source differs: ${doc.id}`);
-      record.source=source;
+      for(const source of [`backend/content/covers/${key}.png`,`art/published-covers/${key}.webp`]){
+        let original;
+        try{original=await readFile(path.join(root,'native-android',source));}catch(error){if(error.code==='ENOENT')continue;throw error;}
+        if(sha(original)===asset.sha256&&original.length===Number(asset.byte_size)){record.source=source;break;}
+      }
+      if(!record.source)throw Error(`Cover source differs: ${doc.id}`);
     }
     covers.set(doc.id,{key,asset:record});
   }

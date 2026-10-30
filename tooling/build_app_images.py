@@ -1,8 +1,8 @@
 """Build the app's WebP images from their PNG sources (requires cwebp; macOS sips for dimensions).
 
-Covers: backend/content/covers/*.png and art/covers/*.png -> drawable-nodpi/*.webp,
-fitted inside 420x618 px (the maximum 140x206 dp cover at xxhdpi). The PNGs stay the source for
-Storage uploads and checksums. Mascots are converted in place at their original size.
+Covers: backend/content/covers/*.png and art/published-covers/*.webp -> drawable-nodpi/*.webp,
+fitted inside 420x618 px (the maximum 140x206 dp cover at xxhdpi). Original published files
+stay intact for provenance checks. Mascots are converted in place at their original size.
 """
 import pathlib, subprocess, sys, tempfile, hashlib, json
 
@@ -24,7 +24,7 @@ def webp(source, target, quality, resize=None, alpha=False):
 
 def main():
     covers = sorted([*(root / 'backend/content/covers').glob('cover_*.png'),
-                     *(root / 'art/covers').glob('cover_*.png')])
+                     *(root / 'art/published-covers').glob('cover_*.webp')])
     if len({source.stem for source in covers}) != len(covers):
         sys.exit('Duplicate cover source names')
     if not covers: sys.exit('No cover sources found')
@@ -43,7 +43,7 @@ def main():
                     checked[digest] = output.read_bytes()
                 if (res / (source.stem + '.webp')).read_bytes() != checked[digest]:
                     sys.exit(f'Cover WebP differs from reproducible PNG conversion: {source.name}')
-        print(f'{len(covers)} PNG -> shipped WebP conversions verified')
+        print(f'{len(covers)} original -> shipped WebP conversions verified')
         return
     for source in covers:
         width, height = size(source)
