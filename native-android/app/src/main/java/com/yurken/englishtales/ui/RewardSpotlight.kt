@@ -182,11 +182,13 @@ internal fun FreezeShield(modifier: Modifier = Modifier) {
 }
 
 /** The last seven days as flames: studied days light up one after another, a freeze day shows ice, the rest stay grey. */
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 internal fun WeekFlames(week: List<DailyActivity>, frozenDays: Set<String>, modifier: Modifier = Modifier) {
     val still = reduceMotion()
-    Row(modifier.fillMaxWidth().background(TaleSurface, RoundedCornerShape(20.dp)).border(1.dp, TaleLine, RoundedCornerShape(20.dp)).padding(horizontal = 12.dp, vertical = 14.dp),
-        horizontalArrangement = Arrangement.SpaceBetween) {
+    FlowRow(modifier.fillMaxWidth().background(TaleSurface, RoundedCornerShape(20.dp)).border(1.dp, TaleLine, RoundedCornerShape(20.dp)).padding(horizontal = 12.dp, vertical = 14.dp),
+        horizontalArrangement = Arrangement.SpaceBetween, verticalArrangement = Arrangement.spacedBy(8.dp),
+        maxItemsInEachRow = if (androidx.compose.ui.platform.LocalDensity.current.fontScale >= 1.5f) 4 else 7) {
         week.forEachIndexed { i, day ->
             val lit = day.sessions > 0
             val frozen = day.day in frozenDays
@@ -198,7 +200,7 @@ internal fun WeekFlames(week: List<DailyActivity>, frozenDays: Set<String>, modi
                 Box(Modifier.size(32.dp).graphicsLayer { scaleX = pop.value; scaleY = pop.value }
                     .background(if (lit) TaleOrange else if (frozen) Color(0xFFD6F4FB) else Color.Transparent, CircleShape)
                     .then(if (!lit && !frozen) Modifier.border(2.dp, TaleLine, CircleShape) else Modifier), contentAlignment = Alignment.Center) {
-                    if (lit) Text("✓", fontSize = 16.sp, fontWeight = FontWeight.ExtraBold, color = TaleOnOrange)
+                    if (lit) ReferenceIcon("check", TaleOnOrange, Modifier.size(18.dp))
                     else if (frozen) Text("❄", fontSize = 16.sp, color = Color(0xFF1E8FA8))
                 }
                 Text(if (today) stringResource(R.string.weekly_today) else day.label, fontSize = 11.sp, maxLines = 1,

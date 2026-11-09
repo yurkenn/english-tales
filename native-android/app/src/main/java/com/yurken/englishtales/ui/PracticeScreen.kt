@@ -338,6 +338,7 @@ private fun FlowRowScope.ModeCard(title: String,subtitle: String,art: Int,tint: 
     }
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun GameResult(subtitle: String,points: Int,padding: PaddingValues,onExit: ()->Unit,onRestart: ()->Unit,snapshot: LearningSnapshot?=null,correct: Int?=null,total: Int?=null,highlight: String?=null) {
     val bestCombo=LocalCombo.current.best
@@ -360,7 +361,7 @@ fun GameResult(subtitle: String,points: Int,padding: PaddingValues,onExit: ()->U
         Text(stringResource(R.string.calisma_tamamlandi),fontFamily=TaleDisplay,fontSize=24.sp,lineHeight=28.sp,fontWeight=FontWeight.ExtraBold,textAlign=androidx.compose.ui.text.style.TextAlign.Center,modifier=Modifier.fillMaxWidth().appearIn(3))
         Text(subtitle,fontSize=14.sp,color=TaleMuted,modifier=Modifier.padding(horizontal=12.dp,vertical=6.dp).appearIn(4))
         highlight?.let {Text(it,fontSize=15.sp,fontWeight=FontWeight.Bold,color=TaleBlue,modifier=Modifier.padding(bottom=6.dp).appearIn(4).popOn(1))}
-        Row(Modifier.fillMaxWidth().padding(vertical=8.dp).appearIn(5),horizontalArrangement=Arrangement.spacedBy(8.dp)) {
+        FlowRow(Modifier.fillMaxWidth().padding(vertical=8.dp).appearIn(5),horizontalArrangement=Arrangement.spacedBy(8.dp),verticalArrangement=Arrangement.spacedBy(8.dp),maxItemsInEachRow=sideBySide(3)) {
             if(correct!=null && total!=null && total>0) ResultStat(java.text.NumberFormat.getPercentInstance(androidx.compose.ui.platform.LocalConfiguration.current.locales[0]).format(correct.toDouble()/total),stringResource(R.string.result_accuracy),Modifier.weight(1f),TaleGreen,TaleOnGreen)
             ResultStat("×$bestCombo",stringResource(R.string.result_best_combo),Modifier.weight(1f),TaleYellow,TaleOnYellow)
             snapshot?.takeIf {it.streak>0}?.let {ResultStat("${it.streak}",stringResource(R.string.stat_streak),Modifier.weight(1f),TaleOrange,TaleOnOrange)}

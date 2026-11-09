@@ -1,5 +1,7 @@
 # 52 / 2.3.1 — eşitleme devri düzeltmesi
 
+**27 Ekim güncellemesi:** Canlı Play Console sürüm ayrıntılarında **52 / 2.3.1 — Available on Google Play, Production, %100**, 178/178 ülke doğrulandı. Dashboard yayımlanmamış değişiklik olmadığını gösteriyor. Aşağıdaki 24 Ekim inceleme/gönderim açıklamaları tarihsel kayıttır; güncel inceleme bekleme durumu değildir. [Güncel kanıt](release-evidence/2026-10-27-play-production.json). Bu kontrol fiziksel telefondan yeni yükleme veya Analytics/Crashlytics kabulü değildir.
+
 24 Ekim 2026. Uygulama kaynak commit'i: `36b1015`.
 
 24 Ekim 2026 12:23 TRT: **52 / 2.3.1 üretim sürümü %100 dağıtım için gönderildi; Play Publishing overview üzerinde Changes in review doğrulandı.** Hızlı kontroller sürüyor. Managed publishing kapalı olduğundan onaydan sonra otomatik yayımlanacak; üretimde sunulan sürümün 52 olduğu henüz doğrulanmadı (önceki sürüm 50 / 2.2.0). 52 aynı gün 12:22 TRT itibarıyla dahili testte mevcut. Kullanıcı açık kabul eksikleri bildirildikten sonra yayına alma talimatı verdi. Fiziksel Play güncelleme, runtime ölçüm ve editör kabulü ayrıca açık.

@@ -1,0 +1,72 @@
+{
+  "recordedAt": "2026-10-27T18:42:28.598344+00:00",
+  "sourceBase": "e89f038ac8e27cd81dd23c3f824eb4621a33e6eb",
+  "scope": "Completion branch local validation; no provider/device acceptance implied",
+  "jvm": {
+    "tests": 156,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "lint": {
+    "errors": 0,
+    "warnings": 106
+  },
+  "debugBuild": "passed",
+  "androidTestBuild": "passed after visual host repair",
+  "device": {
+    "api": 36,
+    "emulator": "English_Tales_Completion_36",
+    "tests": 18,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "coverage": [
+      "ProductLearningSignalsTest: 7",
+      "TranslationLanguageVisualTest: 3",
+      "TranslationLanguageControlsTest: 1",
+      "TranslationLanguagePreferenceTest: 1",
+      "MultilingualDownloadTest: 6"
+    ],
+    "screenshots": "2026-10-27-translation-visual/",
+    "limits": "Picker component captures, not full app journey or physical device acceptance"
+  },
+  "limits": [
+    "No production rollout by this change",
+    "Firebase panel delivery not verified",
+    "Active sandbox restore accepted separately: owner-reported UI plus direct provider and same-account staging timestamp evidence",
+    "Watched-ad SSV requires separate result"
+  ],
+  "initialDeviceRun": "7 learning signal tests passed, then test screenshot host crashed from late applyOverrideConfiguration; repaired by configuring base context before Activity/dialog resource access",
+  "visualInspection": {
+    "originalScreenshots": 6,
+    "reviewed": 6,
+    "locales": [
+      "en",
+      "ar"
+    ],
+    "fontScales": [
+      1,
+      1.5
+    ],
+    "results": "Title and save/close actions visible; RTL radio alignment; last language reachable by scrolling; no dialog text/button truncation seen",
+    "limits": [
+      "Native-language correctness not approved",
+      "TalkBack focus/announcements not accepted",
+      "Full settings-to-reader journey not visually captured"
+    ]
+  },
+  "ci": {
+    "source": "3408f0843b1042172824d56bf0533eec7d7b0021",
+    "run": "https://github.com/yurkenn/english-tales/actions/runs/40564259744",
+    "conclusion": "success",
+    "jvm": 156,
+    "app": 392,
+    "startup": 3,
+    "service": 3,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "evidence": "Downloaded CI Android XML and JVM HTML reports; all five jobs success"
+  }
+}

@@ -1,7 +1,7 @@
 <resources>
     <string name="first_language_title">Choose your language</string>
-    <string name="first_language_description">Choose the language for menus and story translations. The stories stay in English.</string>
-    <string name="first_language_english_note">Menus will be in English. Story translations are currently in Turkish.</string>
+    <string name="first_language_description">Choose the menu language. Stories stay in English; you can choose a separate translation language in Settings.</string>
+    <string name="first_language_english_note">Menus will be in English. You can choose the story translation language in Settings.</string>
     <string name="first_language_continue">Continue in %1$s</string>
     <string name="first_language_later">You can change this later in Settings.</string>
     <string name="first_language_suggested">Your device language</string>

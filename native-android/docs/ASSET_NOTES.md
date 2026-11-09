@@ -3,7 +3,7 @@
 ## 14 Ekim 2026 görsel yenilemesi
 
 - Araç: yerleşik `image_gen` / imagegen becerisi.
-- Dosya: `app/src/main/res/drawable-nodpi/reading_guide.png`.
+- Dosya: `artwork/reading_guide.png`.
 - Çıktı: 1086 × 1448 şeffaf PNG; mavi hırkalı, kahverengi topuzlu, mor kitap tutan kadın rehber.
 - Önceki kullanım: `WelcomeScreen` ve `OnboardingScreen`. Bu ekranlar artık kitap maskotunu kullanır; kadın rehber görseli geçmiş tasarım varlığı olarak tutulur.
 - `CatalogScreens:116` içindeki `ChallengeBanner { ... }` çağrısı aktiftir. Önceki “çağrısı yok” notu eksik aramaya dayanıyordu. Mağaza hazırlığında bu kart da kitap maskotuna geçirildi.
@@ -33,3 +33,7 @@ Onaylanan tasarıma göre `ReferenceComponents.kt` Canvas çizimleri yenilendi: 
 - Elle çizilen Canvas ikonlarının yerine [Phosphor Icons](https://phosphoricons.com) 2.1.1 geldi (MIT lisansı, telif: Phosphor Icons). Ek kütüphane yok; kullanılan SVG'ler `res/drawable/ic_ph_*.xml` vektörlerine çevrildi.
 - Ağırlıklar: özellik ikonları duotone, yön ve araç ikonları regular, rozet içindeki küçük işaretler bold, seçili alt sekme fill.
 - Tek giriş noktası `ReferenceIcon(kind, …)`; yeni ikon için ilgili SVG aynı biçimde vektöre çevrilip eşlemeye eklenir.
+
+## 30 Ekim 2026 etkin uretim paketinin kapak butcesi
+
+Enerji/Premium acik paket ilk denemede 17.318.728 bayt ile 15 MiB hedefini asti. build_app_images.py artik backend/content/covers altindaki 50 PNG ve art/published-covers altindaki 17 ozgun WebP kaynagini en fazla 420×618 piksel, WebP kalite 82 ile uretir. Bu, 140×206 dp azami kapak icin xxhdpi cozunurlugudur; xxxhdpi cihazlarda hafif olcekleme vardir. Kaynak PNG ve hikaye/ceviri verisi degismez. Katalogda yalnizca paketlenmis kaynagin hash ve boyutu guncellenir. Alti temsilci kapak 140 dp gosterim boyutunda once/sonra karsilastirildi; 67 donusum tekrar uretilebilirlik kontrolune dahildir. Yeni fotografik kapak onerileri bu yayina dahil degildir.

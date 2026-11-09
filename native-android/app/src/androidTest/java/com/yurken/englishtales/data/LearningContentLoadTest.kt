@@ -29,7 +29,7 @@ class LearningContentLoadTest {
         }
         workers.forEach { it.join() }
         assertTrue(LearningContent.ready)
-        assertEquals(50, LearningContent.stories.size)
+        assertEquals(67, LearningContent.stories.size)
         assertTrue("every caller sees the same catalog", seen.all { it === LearningContent.stories })
     }
 }

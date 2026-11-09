@@ -18,7 +18,7 @@ import java.util.UUID
 
 class MultilingualContentTest {
     private val target get() = InstrumentationRegistry.getInstrumentation().targetContext
-    private val bundle by lazy { JSONObject(target.assets.open("catalog/v1.json").bufferedReader().use { it.readText() }) }
+    private val bundle by lazy { JSONObject(target.assets.open("catalog/v2.json").bufferedReader().use { it.readText() }) }
     private val directory by lazy { File(target.cacheDir, "languages-${UUID.randomUUID()}").apply { mkdirs() } }
     private fun context(tag: String): Context {
         val localized = target.createConfigurationContext(Configuration(target.resources.configuration).apply { setLocales(LocaleList.forLanguageTags(tag)) })
@@ -31,14 +31,22 @@ class MultilingualContentTest {
         for (lang in SupportLanguage.enabled) {
             LearningContent.initialize(context(lang))
             assertEquals(lang, SupportLanguage.code)
-            assertEquals(50, LearningContent.stories.size)
-            assertEquals(359, LearningContent.words.size)
+            assertEquals(67, LearningContent.stories.size)
+            assertEquals(503, LearningContent.words.size)
             val rawStories = bundle.getJSONArray("stories")
             for (i in 0 until rawStories.length()) {
                 val raw = rawStories.getJSONObject(i)
                 val story = LearningContent.storyById.getValue(raw.getString("id"))
                 val expectedDescription = if (lang == "tr") raw.getString("description") else raw.getJSONObject("descriptions").getString(lang)
                 assertEquals(expectedDescription, story.description)
+                assertEquals(raw.getString("revisionId"), story.revisionId)
+                val vocabulary = raw.getJSONArray("vocabulary")
+                assertEquals(vocabulary.length(), checkNotNull(story.vocabulary).size)
+                for (j in 0 until vocabulary.length()) {
+                    val word = vocabulary.getJSONObject(j)
+                    val actual = story.vocabulary!!.single {it.id == word.getString("id")}
+                    assertEquals(if(lang == "tr") word.getString("translation") else word.getJSONObject("translations").getString(lang), actual.translation)
+                }
                 val sentences = raw.getJSONArray("sentences")
                 for (j in 0 until sentences.length()) {
                     val sentence = sentences.getJSONObject(j)

@@ -1,0 +1,146 @@
+{
+  "recordedAt": "2026-10-28T17:18:19.430Z",
+  "sourceSnapshotSHA256": "0f837185da448ebef64fab7c306ddf2b8d09297ca1ad690eef00f47f4bb2beea",
+  "bundleSHA256": "b265a9783f2cd6d939fae515eb19d17e7436dbca53ccabac63f364dc22a7ad30",
+  "snapshotAt": "2026-10-28T17:00:26.284Z",
+  "stories": 67,
+  "sentences": 2839,
+  "dictionaryWords": 503,
+  "legacyRevisions": 50,
+  "originalSavedWordIdsPreserved": 359,
+  "activeVocabularyIds": 495,
+  "editorialLinks": 1868,
+  "comparison": {
+    "equal": true,
+    "missingStoryIds": [],
+    "extraStoryIds": [],
+    "summary": {
+      "comparedStories": 67,
+      "comparedCovers": 67,
+      "revisionDifferences": 0,
+      "metadataFieldDifferences": 0,
+      "sentenceDifferences": 0,
+      "missingRevisionWords": 0,
+      "extraRevisionWords": 0,
+      "modifiedRevisionWords": 0,
+      "questionDifferences": 0,
+      "tagDifferences": 0,
+      "translationChanges": 0,
+      "missingLinks": 0,
+      "extraLinks": 0,
+      "coverMismatches": 0
+    },
+    "missingVocabularyIds": [],
+    "extraVocabularyIds": [],
+    "differingStories": []
+  },
+  "media": {
+    "status": "verified",
+    "assets": 67
+  },
+  "translations": {
+    "ar": {
+      "missingSentences": 0,
+      "missingWords": 0,
+      "missingDescriptions": 0,
+      "complete": true
+    },
+    "bn": {
+      "missingSentences": 0,
+      "missingWords": 0,
+      "missingDescriptions": 0,
+      "complete": true
+    },
+    "es-419": {
+      "missingSentences": 0,
+      "missingWords": 0,
+      "missingDescriptions": 0,
+      "complete": true
+    },
+    "hi": {
+      "missingSentences": 0,
+      "missingWords": 0,
+      "missingDescriptions": 0,
+      "complete": true
+    },
+    "id": {
+      "missingSentences": 0,
+      "missingWords": 0,
+      "missingDescriptions": 0,
+      "complete": true
+    },
+    "pt-BR": {
+      "missingSentences": 0,
+      "missingWords": 0,
+      "missingDescriptions": 0,
+      "complete": true
+    },
+    "ru": {
+      "missingSentences": 0,
+      "missingWords": 0,
+      "missingDescriptions": 0,
+      "complete": true
+    },
+    "th": {
+      "missingSentences": 0,
+      "missingWords": 0,
+      "missingDescriptions": 0,
+      "complete": true
+    },
+    "tr": {
+      "missingSentences": 0,
+      "missingWords": 0,
+      "missingDescriptions": 0,
+      "complete": true
+    },
+    "ur": {
+      "missingSentences": 0,
+      "missingWords": 0,
+      "missingDescriptions": 0,
+      "complete": true
+    },
+    "vi": {
+      "missingSentences": 0,
+      "missingWords": 0,
+      "missingDescriptions": 0,
+      "complete": true
+    }
+  },
+  "acceptance": {
+    "passed": true,
+    "failures": []
+  },
+  "warnings": {
+    "live": 18,
+    "bundle": 26,
+    "retainedUnusedDictionaryIds": [
+      "kind",
+      "slow",
+      "step",
+      "catches",
+      "please",
+      "roars",
+      "unkind",
+      "wakes-up"
+    ]
+  },
+  "limits": [
+    "Snapshot parity is point-in-time, not a permanent live-content claim",
+    "Native-language and semantic review remain separate",
+    "Vocabulary density target is not met and was not loosened",
+    "No publication or production activation performed"
+  ],
+  "packagedApk": {
+    "catalogSHA256": "b265a9783f2cd6d939fae515eb19d17e7436dbca53ccabac63f364dc22a7ad30",
+    "stories": 67,
+    "verifiedApkCovers": 67,
+    "historicalCatalogUnchanged": true
+  },
+  "coverConversion": {
+    "tool": "cwebp",
+    "version": "1.6.0\nlibsharpyuv: 0.4.2",
+    "sourceToResourceMatches": 50,
+    "mismatches": [],
+    "directSnapshotWebpMatches": 17
+  }
+}

@@ -2,7 +2,7 @@
 <resources>
     <string name="content_untranslated_description">Bacalah cerita bahasa Inggris ini dan latih kosakatanya.</string>
     <string name="app_language_title">Bahasa aplikasi</string>
-    <string name="app_language_description">Pilih antarmuka dan bahasa terjemahan cerita. Aplikasi dimulai ulang ketika bahasa berubah; kemajuan Anda yang disimpan disimpan.</string>
+    <string name="app_language_description">Pilih bahasa menu. Cerita tetap dalam bahasa Inggris; bahasa terjemahan dapat dipilih secara terpisah di Pengaturan.</string>
     <string name="app_language_system">Bahasa sistem</string>
     <string name="app_language_current">Bahasa aplikasi: %1$s</string>
     <string name="henuz_indirilen_hikaye_yok">Belum ada cerita yang diunduh.</string>

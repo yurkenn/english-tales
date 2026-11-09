@@ -257,7 +257,7 @@ test('the actual audit CLI accepts a full bundled-catalog parity fixture, author
     for(const a of realManifest.assets)await writeFile(path.join(dir,'media',a.id),await readFile(new URL(`../../${a.source}`,import.meta.url)));
     const file=path.join(dir,'catalog.json');await writeFile(file,JSON.stringify(snapshot));
     assert.equal((await verifySnapshotMedia(snapshot,file)).status,'verified');
-    const run=spawnSync(process.execPath,[new URL('../tools/audit-content.mjs',import.meta.url).pathname,'--snapshot',file,
+    const run=spawnSync(process.execPath,[new URL('../tools/audit-content.mjs',import.meta.url).pathname,'--bundle',new URL('../../app/src/main/assets/catalog/v1.json',import.meta.url).pathname,'--snapshot',file,
       '--require-parity','--require-lang','tr','--output',path.join(dir,'audit')],{encoding:'utf8'});
     assert.equal(run.status,0,run.stderr+run.stdout);
     const report=JSON.parse(await readFile(path.join(dir,'audit/audit.json')));

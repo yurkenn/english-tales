@@ -18,7 +18,10 @@ import com.yurken.englishtales.ui.YurkenBrandIntro
 import androidx.compose.runtime.CompositionLocalProvider
 import com.yurken.englishtales.ads.*
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.Text
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -52,10 +55,14 @@ class MainActivity : ComponentActivity() {
             CompositionLocalProvider(LocalCompletionAds provides ads,LocalPlayStoreFeatures provides play) {EnglishTalesTheme {
                 // The theme's background fills the whole window, so the area behind the status bar matches the chosen theme.
                 Box(Modifier.fillMaxSize().background(com.yurken.englishtales.ui.TaleBackground)) {
-                    YurkenBrandIntro {
+                    Column(Modifier.fillMaxSize()) {
+                        if(BuildConfig.MONETIZATION_SANDBOX) Text(stringResource(R.string.sandbox_notice),
+                            modifier=Modifier.fillMaxWidth().statusBarsPadding().padding(8.dp),color=com.yurken.englishtales.ui.TaleInk)
+                        Box(Modifier.weight(1f)) {YurkenBrandIntro {
                         if(contentLoaded) TalesApp(dailyPlanRequest=dailyPlanRequest,storyLinkRequest=storyLinkRequest,onStoryLinkHandled={if(storyLinkRequest==it) storyLinkRequest=null})
                         else Box(Modifier.fillMaxSize().background(Color.Black))
                     }
+                    }}
                     if(play.updateReady) UpdateReadyBar(onRestart=play::completeUpdate,modifier=Modifier.align(Alignment.BottomCenter))
                 }
             }}

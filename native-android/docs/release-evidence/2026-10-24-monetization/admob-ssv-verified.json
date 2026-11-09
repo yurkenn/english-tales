@@ -1,0 +1,36 @@
+{
+  "verifiedAt": "2026-10-25T16:00:00Z",
+  "environment": "staging only",
+  "project": "jukyylozahikjhtokayw",
+  "adUnit": "ca-app-pub-6012481599277383/6069329647",
+  "reward": {
+    "item": "energy",
+    "amount": 1
+  },
+  "callbackUrl": "https://jukyylozahikjhtokayw.supabase.co/functions/v1/admob-ssv",
+  "settingsSavedAndReloaded": true,
+  "googleConsoleVerification": "Success! Your callback URL has been verified.",
+  "testUnitNumericId": "1234567890",
+  "testUnitScope": "staging allowlist only; never use this ID in production",
+  "signedCallbackResult": {
+    "walletAdCredits": 1,
+    "spent": 0,
+    "creditedTickets": 1
+  },
+  "replayResult": {
+    "code": "reward_acknowledged",
+    "walletAdCredits": 1,
+    "creditedTickets": 1
+  },
+  "fixtureCleanup": {
+    "users": 0,
+    "wallets": 0,
+    "tickets": 0
+  },
+  "limitations": [
+    "This proves Google console signed callback verification and exactly-once server credit, not a watched-ad SDK flow.",
+    "Internal sandbox 56 still uses Google sample ads; real-unit device test mode and a watched-ad SSV flow remain open.",
+    "Production callback and production backend are not activated."
+  ],
+  "reference": "https://developers.google.com/admob/android/ssv"
+}

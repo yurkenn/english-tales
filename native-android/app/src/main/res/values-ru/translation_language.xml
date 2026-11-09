@@ -1,0 +1,7 @@
+<resources>
+    <string name="translation_language_title">Язык перевода</string>
+    <string name="translation_language_current">Язык перевода: %1$s</string>
+    <string name="translation_language_follow">Как в приложении (%1$s)</string>
+    <string name="translation_language_description">Выберите язык перевода историй и словаря. Язык меню не изменится. При применении экран перезагрузится; прогресс сохранится.</string>
+    <string name="translation_language_save_failed">Не удалось сохранить язык. Попробуйте ещё раз.</string>
+</resources>

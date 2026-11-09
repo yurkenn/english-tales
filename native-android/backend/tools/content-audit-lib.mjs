@@ -30,8 +30,15 @@ const stats=group=>({stories:group.stories,uniqueTypes:group.types.size,coveredT
   tokenCoveragePercent:percent(group.coveredTokens,group.tokens)});
 
 export function bundledDocuments(catalog){
-  if(catalog.schemaVersion!==1||!Array.isArray(catalog.stories)||!Array.isArray(catalog.words)) throw Error('Unsupported bundled catalog');
+  if(![1,2].includes(catalog.schemaVersion)||!Array.isArray(catalog.stories)||!Array.isArray(catalog.words)) throw Error('Unsupported bundled catalog');
   return catalog.stories.map(story=>{
+    if(catalog.schemaVersion===2){
+      if(!Array.isArray(story.vocabulary)||!story.sentenceWordIds||!story.revisionId)throw Error('Missing explicit revision data');
+      return {...story,revisionId:story.revisionId,words:story.vocabulary,
+        sentences:story.sentences.map((s,i)=>({...s,position:i+1})),
+        links:Object.entries(story.sentenceWordIds).flatMap(([sentence_id,ids])=>ids.map(word_id=>({sentence_id,word_id}))),
+        questions:(story.questions??[]).map((q,i)=>({...q,position:i+1}))};
+    }
     const words=new Map(),links=[];
     const sentences=story.sentences.map((s,index)=>{
       const matched=matchSpans(s.english,catalog.words);
@@ -242,9 +249,9 @@ export function compareDocuments(bundle,live,{manifest,snapshot}={}){
     const sentenceMap=new Map(actual.sentences.map(s=>[s.id,s])),wordMap=new Map(actual.words.map(w=>[w.id,w]));
     const sentenceIds=new Set(expected.sentences.map(s=>s.id)),wordIds=new Set(expected.words.map(w=>w.id));
     const expectedLinks=new Set(expected.links.map(linkKey)),actualLinks=new Set(actual.links.map(linkKey));
-    const cover=manifest?.assets.find(a=>a.source.endsWith(`/${expected.coverKey}.png`));
+    const cover=expected.coverAsset??manifest?.assets.find(a=>a.source.endsWith(`/${expected.coverKey}.png`));
     const activeCover=assets.get(actual.cover_asset_id);
-    const diff={storyId:expected.id,liveRevisionId:actual.revisionId,metadataFields:fieldsChanged(expected,actual,fields),
+    const diff={storyId:expected.id,liveRevisionId:actual.revisionId,revisionChanges:expected.revisionId&&expected.revisionId!==actual.revisionId?[{expected:expected.revisionId,actual:actual.revisionId}]:[],metadataFields:fieldsChanged(expected,actual,fields),
       missingSentenceIds:expected.sentences.filter(s=>!sentenceMap.has(s.id)).map(s=>s.id),
       extraSentenceIds:actual.sentences.filter(s=>!sentenceIds.has(s.id)).map(s=>s.id),
       modifiedSentences:expected.sentences.filter(s=>sentenceMap.has(s.id)).map(s=>({id:s.id,fields:fieldsChanged(s,sentenceMap.get(s.id),['position','english','turkish'])})).filter(s=>s.fields.length),
@@ -262,6 +269,7 @@ export function compareDocuments(bundle,live,{manifest,snapshot}={}){
   const bundleWords=new Set(bundle.flatMap(d=>d.words.map(w=>w.id))),liveWords=new Set(live.flatMap(d=>d.words.map(w=>w.id)));
   return {equal:!differences.length&&!missingStoryIds.length&&!extraStoryIds.length,missingStoryIds,extraStoryIds,
     summary:{comparedStories:bundle.filter(d=>l.has(d.id)).length,comparedCovers:manifest&&snapshot?bundle.filter(d=>l.has(d.id)).length:0,
+      revisionDifferences:differences.filter(d=>d.revisionChanges.length).length,
       metadataFieldDifferences:differences.reduce((n,d)=>n+d.metadataFields.length,0),
       sentenceDifferences:differences.reduce((n,d)=>n+d.missingSentenceIds.length+d.extraSentenceIds.length+d.modifiedSentences.length,0),
       missingRevisionWords:differences.reduce((n,d)=>n+d.missingWordIds.length,0),extraRevisionWords:differences.reduce((n,d)=>n+d.extraWordIds.length,0),

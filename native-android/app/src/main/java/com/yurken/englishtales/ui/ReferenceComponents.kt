@@ -44,6 +44,7 @@ import androidx.compose.ui.unit.sp
 
 /** App kind -> icon drawn from the B · Oyunlu canvas: round 2-2.6 strokes on a 24 grid, with the flame, star and media marks solid. */
 private val icons = mapOf(
+    "check" to R.drawable.ic_dc_check,
     "study" to R.drawable.ic_dc_study, "read" to R.drawable.ic_dc_read, "play" to R.drawable.ic_dc_gamepad, "gamepad" to R.drawable.ic_dc_gamepad,
     "profile" to R.drawable.ic_dc_profile, "letters" to R.drawable.ic_dc_letters, "review" to R.drawable.ic_dc_review, "refresh" to R.drawable.ic_dc_review,
     "headphones" to R.drawable.ic_dc_headphones, "volume" to R.drawable.ic_dc_volume, "translate" to R.drawable.ic_dc_translate,
@@ -124,12 +125,15 @@ fun ReferenceIconButton(kind: String, label: String, onClick: () -> Unit, tint: 
 
 /** Keeps the reference layout on tall screens and makes short/large-text screens scrollable. */
 @Composable
-fun GameViewport(padding: PaddingValues, minimumHeight: Dp = 450.dp, content: @Composable ColumnScope.() -> Unit) {
+fun GameViewport(padding: PaddingValues, minimumHeight: Dp = 450.dp, growForContent: Boolean = false, content: @Composable ColumnScope.() -> Unit) {
     val textAllowance=150.dp*(LocalDensity.current.fontScale-1f).coerceAtLeast(0f)
     BoxWithConstraints(Modifier.fillMaxSize().padding(padding)) {
         val contentHeight=maxOf(maxHeight,minimumHeight+textAllowance)
         Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState())) {
-            Column(Modifier.fillMaxWidth().height(contentHeight).padding(horizontal=16.dp,vertical=6.dp),
+            // Decks and matching boards need their text's intrinsic height at large font scales.
+            // A fixed height made weighted cards shrink below the height of a wrapped translation.
+            val height=if(growForContent) Modifier.heightIn(min=contentHeight).height(IntrinsicSize.Min) else Modifier.height(contentHeight)
+            Column(Modifier.fillMaxWidth().then(height).padding(horizontal=16.dp,vertical=6.dp),
                 horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(12.dp),content=content)
         }
     }

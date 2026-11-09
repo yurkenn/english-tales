@@ -32,7 +32,7 @@ class RemoteContentTest {
         context=object: ContextWrapper(target) {override fun getFilesDir()=directory}
     }
     @After fun cleanup() = runBlocking<Unit> {
-        withContext(Dispatchers.Main) {LearningContent.install(original,originalWords)}
+        withContext(Dispatchers.Main) {LearningContent.resetForTest(); LearningContent.initialize(context)}
         directory.deleteRecursively()
         Unit
     }
@@ -117,6 +117,9 @@ class RemoteContentTest {
         }
     }
     @Test fun newerRevisionWithBundledTextStaysReadableOffline()=runBlocking {
+        // Exercise the historical schema-1 text-only optimization with a legacy fixture.
+        original = original.map {it.copy(revisionId=ContentRevisionIds.bundled(it.id),vocabulary=null,sentenceWordIds=null)}
+        LearningContent.initializeForTest(originalWords, original)
         val story=original.first(); val fixture=RevisionFixture(story)
         val repo=ContentRepository(context,fixture); repo.restore(); repo.refresh()
         val current=LearningContent.storyById.getValue(story.id)
@@ -127,6 +130,9 @@ class RemoteContentTest {
         assertEquals(story.sentences,LearningContent.storyById.getValue(story.id).sentences)
     }
     @Test fun newerRevisionWithChangedTextOrCoverNeedsDownload()=runBlocking {
+        // Exercise the historical schema-1 text-only optimization with a legacy fixture.
+        original = original.map {it.copy(revisionId=ContentRevisionIds.bundled(it.id),vocabulary=null,sentenceWordIds=null)}
+        LearningContent.initializeForTest(originalWords, original)
         for(fixture in listOf(RevisionFixture(original.first(),editedText=true),RevisionFixture(original.first(),newCover=true))) {
             File(directory,"published-content").deleteRecursively()
             val repo=ContentRepository(context,fixture); repo.restore(); repo.refresh()
@@ -135,6 +141,9 @@ class RemoteContentTest {
         }
     }
     @Test fun changedTextIsCheckedOnceAcrossRefreshesAndRestarts()=runBlocking {
+        // Exercise the historical schema-1 text-only optimization with a legacy fixture.
+        original = original.map {it.copy(revisionId=ContentRevisionIds.bundled(it.id),vocabulary=null,sentenceWordIds=null)}
+        LearningContent.initializeForTest(originalWords, original)
         val fixture=RevisionFixture(original.first(),editedText=true)
         val repo=ContentRepository(context,fixture); repo.restore(); repo.refresh()
         val checked=fixture.requests.getValue("story_sentences"); assertTrue(checked>0)

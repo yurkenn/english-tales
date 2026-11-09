@@ -1,0 +1,7 @@
+<resources>
+    <string name="translation_language_title">Idioma de traducción</string>
+    <string name="translation_language_current">Idioma de traducción: %1$s</string>
+    <string name="translation_language_follow">Seguir el idioma de la app (%1$s)</string>
+    <string name="translation_language_description">Elige el idioma de las traducciones y el diccionario. Los menús no cambian. Al aplicar el idioma, la pantalla se recarga y tu progreso se conserva.</string>
+    <string name="translation_language_save_failed">No se pudo guardar el idioma. Inténtalo de nuevo.</string>
+</resources>

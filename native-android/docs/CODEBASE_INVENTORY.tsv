@@ -71,7 +71,7 @@ android-resource	native-android/app/src/main/res/drawable-nodpi/cover_lost_map.p
 android-resource	native-android/app/src/main/res/drawable-nodpi/cover_paper_boat.png	binary	runtime-reference-mapped; binary-semantics-not-reviewed
 android-resource	native-android/app/src/main/res/drawable-nodpi/cover_quiet_morning.png	binary	runtime-reference-mapped; binary-semantics-not-reviewed
 android-resource	native-android/app/src/main/res/drawable-nodpi/cover_red_umbrella.png	binary	runtime-reference-mapped; binary-semantics-not-reviewed
-android-resource	native-android/app/src/main/res/drawable-nodpi/reading_guide.png	binary	runtime-reference-mapped; binary-semantics-not-reviewed
+source-artwork	native-android/artwork/reading_guide.png	binary	archived-source-artwork; not-runtime
 android-resource	native-android/app/src/main/res/drawable/google_g.png	binary	runtime-reference-mapped; binary-semantics-not-reviewed
 android-resource	native-android/app/src/main/res/drawable/ic_notification.xml	3	runtime-reference-mapped; binary-semantics-not-reviewed
 android-resource	native-android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml	5	runtime-reference-mapped; binary-semantics-not-reviewed

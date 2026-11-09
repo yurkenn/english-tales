@@ -1,0 +1,31 @@
+<resources>
+    <string name="energy_title">Tiket baca Anda</string>
+    <string name="energy_balance">Sisa %1$d tiket baca</string>
+    <string name="energy_description">Buka 3 cerita baru setiap hari. Membuka ulang cerita yang sudah terbuka, terjemahan, dan latihan kosakata tetap gratis.</string>
+    <string name="energy_reset">Tiket gratis Anda terisi kembali menjadi 3 pada %1$s.</string>
+    <string name="energy_empty">Anda sudah memakai tiket baca hari ini</string>
+    <string name="energy_gate_description">Kembali ke cerita yang sudah terbuka, tunggu pengisian ulang gratis, atau pilih cara lain untuk terus membaca.</string>
+    <string name="energy_watch">Tonton iklan · +1 tiket baca</string>
+    <string name="energy_reward_limit">Anda sudah memakai semua 3 hadiah iklan harian.</string>
+    <string name="energy_sign_in">Masuk untuk tiket tambahan atau Premium</string>
+    <string name="energy_guest_note">Tiket tamu disimpan di perangkat ini. Masuk untuk mendapatkan hadiah iklan atau melakukan pembelian.</string>
+    <string name="energy_premium">Baca tanpa batas dengan Premium</string>
+    <string name="energy_premium_active">Premium · Baca tanpa batas</string>
+    <string name="energy_premium_description">Cerita tanpa batas dan belajar tanpa iklan.</string>
+    <string name="energy_premium_end">Akses Premium hingga: %1$s</string>
+    <string name="energy_unavailable">Tindakan ini tidak dapat diselesaikan. Cerita yang sudah terbuka tetap aman. Periksa koneksi Anda dan coba lagi.</string>
+    <string name="energy_pending">Verifikasi masih tertunda. Muat ulang akun Anda untuk memeriksa lagi.</string>
+    <string name="energy_refresh">Periksa lagi</string>
+    <string name="energy_restore">Pulihkan pembelian</string>
+    <string name="energy_monthly">%1$s / bulan</string>
+    <string name="energy_annual">%1$s / tahun</string>
+    <string name="energy_renewal">Langganan Anda diperpanjang otomatis untuk periode yang dipilih dengan harga yang ditampilkan toko hingga dibatalkan. Pembatalan menghentikan perpanjangan berikutnya; akses Anda saat ini tetap berlanjut.</string>
+    <string name="energy_manage">Kelola langganan</string>
+    <string name="energy_close">Kembali</string>
+    <string name="energy_offer_unavailable">Opsi Premium saat ini tidak tersedia. Anda dapat terus membaca secara gratis.</string>
+    <string name="energy_retry_read">Coba buka cerita lagi</string>
+    <string name="energy_terms">Ketentuan langganan</string>
+    <string name="energy_privacy">Privasi</string>
+    <string name="energy_delete_warning">Menghapus akun tidak membatalkan langganan Google Play. Kelola langganan Google Play Anda terlebih dahulu untuk menghentikan pembayaran berikutnya.</string>
+    <string name="energy_checking">Memeriksa tiket baca Anda…</string>
+</resources>

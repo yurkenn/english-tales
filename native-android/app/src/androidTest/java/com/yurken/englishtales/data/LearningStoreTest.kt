@@ -35,7 +35,7 @@ class LearningStoreTest {
             val event=store.queuedOperations().first {it.rpc=="submit_learning_session"}
             assertEquals(old.revisionId,JSONObject(event.payload).getString("storyRevisionId"))
             store.updateProgress(updated.id,20,updated.sentences.first().id,updated)
-            assertEquals(20,store.snapshot().storyProgress.getValue(updated.id))
+            assertEquals(100,store.snapshot().storyProgress.getValue(updated.id))
             assertEquals(updated.revisionId,store.snapshot().readingPositions.getValue(updated.id).revisionId)
         } finally {LearningContent.install(stories)}
     }
@@ -276,7 +276,7 @@ class LearningStoreTest {
         assertEquals(3,before.size)
         assertEquals(setOf("save","review","remove"),before.map {JSONObject(it.payload).getString("action")}.toSet())
         assertTrue(before.all {it.ownerId=="guest" && it.state=="pending"})
-        assertEquals(ContentRevisionIds.bundled("quiet-morning"),JSONObject(before.first().payload).getString("storyRevisionId"))
+        assertEquals(LearningContent.storyById.getValue("quiet-morning").revisionId,JSONObject(before.first().payload).getString("storyRevisionId"))
         store.close();store=LearningStore(context) {now}
         assertEquals(before,store.queuedOperations());assertFalse(store.snapshot().savedWordIds.contains("quiet"))
         assertTrue(store.pendingUploads("guest").isEmpty());assertFalse(store.markDelivered(before.first().id,"guest"))

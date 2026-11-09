@@ -47,7 +47,7 @@ def main():
         print(f'{lang}: {len(actual)} UI resources, format arguments and plurals passed')
     catalog = json.loads(CATALOG.read_text('utf-8'))
     assert build(catalog, {lang: json.loads((DRAFTS / f'{lang}.json').read_text('utf-8')) for lang in LANGUAGES}) == catalog
-    print('All 10 content packs complete: 50 stories, 1002 sentences and 359 words per language')
+    print(f'All 10 content packs complete: {len(catalog["stories"])} stories, {sum(len(s["sentences"]) for s in catalog["stories"])} sentences and {len(catalog["words"])} dictionary words per language')
 
 
 if __name__ == '__main__':

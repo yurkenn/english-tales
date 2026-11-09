@@ -38,7 +38,8 @@ data class LearningSnapshot(
     /** Streak freezes banked for a missed day ([StreakFreeze]). */
     val streakFreezes: Int = 0,
     /** Recent missed days that a freeze covered, as day keys. */
-    val frozenDays: Set<String> = emptySet()
+    val frozenDays: Set<String> = emptySet(),
+    val storyUpdatedAt: Map<String,Long> = emptyMap()
 ) {
     val dailyGoalReached get() = todaySessions>=dailyGoal
     val knownWordCount get() = wordStages.count {it.value==WordStage.KNOWN}
@@ -93,9 +94,9 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
                 weeklyWords+=storyWordCounts.getOrPut(story.revisionId) {story.sentences.sumOf {s -> PhraseMatcher.tokens(s.english).count {t -> t.any(Char::isLetter)}}}
             }
         }
-        val progress=mutableMapOf<String,Int>();val positions=mutableMapOf<String,ReadingPosition>()
-        db.rawQuery("SELECT story_id,percent,revision_id,sentence_id FROM story_progress",null).use { c -> while(c.moveToNext()) {
-            progress[c.getString(0)]=c.getInt(1)
+        val progress=mutableMapOf<String,Int>();val progressTimes=mutableMapOf<String,Long>();val positions=mutableMapOf<String,ReadingPosition>()
+        db.rawQuery("SELECT story_id,percent,revision_id,sentence_id,updated_at FROM story_progress",null).use { c -> while(c.moveToNext()) {
+            progress[c.getString(0)]=c.getInt(1);progressTimes[c.getString(0)]=c.getLong(4)
             if(!c.isNull(2) && !c.isNull(3)) positions[c.getString(0)]=ReadingPosition(c.getString(2),c.getString(3))
         } }
         var points=0;var streak=0;var lessons=0
@@ -121,7 +122,7 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         val p=profile()
         return LearningSnapshot(saved,states,progress,points,streak,lessons,p.onboarding,p.level,p.genre,
             p.goal,days[today]?.first?:0,days[today]?.second?:0,due,nextDue,week,badges,p.lastStory,p.hintSeen,p.name,
-            positions,dao.activeSessions().associate {it.id to it.activeMillis},owner.id,weak,favorites,personal,stages,weeklyWords,stability,freeze.freezes,freeze.frozenDays)
+            positions,dao.activeSessions().associate {it.id to it.activeMillis},owner.id,weak,favorites,personal,stages,weeklyWords,stability,freeze.freezes,freeze.frozenDays,progressTimes)
     }
     fun completeOnboarding(level: String, genre: String, goal: Int) {
         var newlyCompleted=false
@@ -149,45 +150,59 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
     }
     fun dismissReaderHint() { writableDatabase.execSQL("UPDATE local_profile SET reader_hint_seen=1 WHERE id=1") }
     fun saveWords(ids: List<String>) {
+        var added = 0
         transaction {db ->
             ids.forEach {id ->
                 require(id in LearningContent.wordById)
                 if(db.insertWithOnConflict("saved_words",null,ContentValues().apply {put("word_id",id)},SQLiteDatabase.CONFLICT_IGNORE)!=-1L) {
                     recordEvent(db,"save:$id:${LearningPolicy.dayKey(clock())}","word_saved",clock())
                     enqueueWord(id,"save",null,clock())
+                    added++
                 }
             }
             unlockBadges(db,clock())
         }
+        repeat(added) { productSignal(LearningSignal.WordSaved) }
     }
     fun toggleWord(wordId: String) {
-        transaction {db -> setWordSaved(db,wordId,scalar(db,"SELECT COUNT(*) FROM saved_words WHERE word_id=?",arrayOf(wordId))==0)}
+        var added = false
+        transaction {db -> added = setWordSaved(db,wordId,scalar(db,"SELECT COUNT(*) FROM saved_words WHERE word_id=?",arrayOf(wordId))==0)}
+        if (added) productSignal(LearningSignal.WordSaved)
     }
     fun isWordSaved(wordId: String) = scalar(readableDatabase,"SELECT EXISTS(SELECT 1 FROM saved_words WHERE word_id=?)",arrayOf(wordId))==1
     fun isFavorite(storyId: String) = scalar(readableDatabase,"SELECT EXISTS(SELECT 1 FROM favorite_stories WHERE story_id=?)",arrayOf(storyId))==1
-    fun setWordSaved(wordId: String,saved: Boolean) = transaction {db ->setWordSaved(db,wordId,saved)}
-    /** Saves a glossary word with its meaning, so it can be practised like a learning word (Q4.3a). */
-    fun savePersonalWord(word: WordInfo) = transaction {db ->
-        require(Glossary.isLookupOnly(word) && word.word.isNotBlank() && word.translation.isNotBlank())
-        db.insert("personal_words",SQLiteDatabase.CONFLICT_IGNORE,ContentValues().apply {
-            put("word_id",word.id);put("word",word.word.take(100));put("gloss",word.translation.take(1000));put("added_at",clock())
-        })
-        setWordSaved(db,word.id,true)
+    fun setWordSaved(wordId: String,saved: Boolean) {
+        var added = false
+        transaction {db -> added = setWordSaved(db,wordId,saved)}
+        if (added) productSignal(LearningSignal.WordSaved)
     }
-    private fun setWordSaved(db: SupportSQLiteDatabase,wordId: String,saved: Boolean) {
+    /** Saves a glossary word with its meaning, so it can be practised like a learning word (Q4.3a). */
+    fun savePersonalWord(word: WordInfo) {
+        var added = false
+        transaction {db ->
+            require(Glossary.isLookupOnly(word) && word.word.isNotBlank() && word.translation.isNotBlank())
+            db.insert("personal_words",SQLiteDatabase.CONFLICT_IGNORE,ContentValues().apply {
+                put("word_id",word.id);put("word",word.word.take(100));put("gloss",word.translation.take(1000));put("added_at",clock())
+            })
+            added = setWordSaved(db,word.id,true)
+        }
+        if (added) productSignal(LearningSignal.WordSaved)
+    }
+    private fun setWordSaved(db: SupportSQLiteDatabase,wordId: String,saved: Boolean): Boolean {
         val personal=Glossary.isLookupOnly(wordId)
         require(if(personal) scalar(db,"SELECT COUNT(*) FROM personal_words WHERE word_id=?",arrayOf(wordId))>0 else wordId in LearningContent.wordById)
         if(saved) {
-            if(scalar(db,"SELECT COUNT(*) FROM saved_words WHERE word_id=?",arrayOf(wordId))>0) return
+            if(scalar(db,"SELECT COUNT(*) FROM saved_words WHERE word_id=?",arrayOf(wordId))>0) return false
             db.insert("saved_words",SQLiteDatabase.CONFLICT_ABORT,ContentValues().apply {put("word_id",wordId)})
             recordEvent(db,"save:$wordId:${LearningPolicy.dayKey(clock())}","word_saved",clock())
             enqueueWord(wordId,"save",null,clock())
         } else {
             if(personal) db.delete("personal_words","word_id=?",arrayOf(wordId))
-            if(db.delete("saved_words","word_id=?",arrayOf(wordId))==0) return
+            if(db.delete("saved_words","word_id=?",arrayOf(wordId))==0) return false
             enqueueWord(wordId,"remove",null,clock())
         }
         unlockBadges(db,clock())
+        return saved
     }
     /** Q5.5: the learner opened a word while reading; a single-word lookup keeps it out of "known" for now. */
     fun recordLookup(word: WordInfo) {
@@ -226,8 +241,9 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         val story=source?:checkNotNull(LearningContent.storyById[storyId])
         require(sentenceId==null || story.sentences.any {it.id==sentenceId})
         var previous=scalar(db,"SELECT percent FROM story_progress WHERE story_id=?",arrayOf(storyId))
-        db.rawQuery("SELECT revision_id FROM story_progress WHERE story_id=?",arrayOf(storyId)).use { c ->
-            if(c.moveToFirst() && !c.isNull(0) && c.getString(0)!=story.revisionId) previous=0
+        db.rawQuery("SELECT revision_id,sentence_id FROM story_progress WHERE story_id=?",arrayOf(storyId)).use { c ->
+            if(c.moveToFirst() && !c.isNull(0) && c.getString(0)!=story.revisionId &&
+                (c.isNull(1) || !ReadingPosition(c.getString(0),c.getString(1)).carriesTo(story))) previous=0
         }
         if(sentenceId!=null) {
             db.rawQuery("SELECT revision_id,sentence_id,percent FROM story_progress WHERE story_id=?",arrayOf(storyId)).use {c ->
@@ -239,7 +255,7 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
             put("percent",maxOf(previous,percent.coerceIn(0,100)))
             if(sentenceId!=null) {put("revision_id",story.revisionId);put("sentence_id",sentenceId);put("updated_at",clock())}
         },"story_id=?",arrayOf(storyId))
-        if(sentenceId!=null) {val id=UUID.randomUUID().toString();enqueue(id,"apply_progress_event",operations.progress(id,story,sentenceId,percent.coerceIn(0,100),clock()))}
+        if(sentenceId!=null) {val id=UUID.randomUUID().toString();enqueue(id,"apply_progress_event",operations.progress(id,story,sentenceId,maxOf(previous,percent.coerceIn(0,100)),clock()))}
     }
     fun completeReading(storyId: String,sessionId: String=UUID.randomUUID().toString(),activeMillis: Long=0,source: Story?=null) {
         val now=clock();val today=LearningPolicy.dayKey(now)

@@ -30,3 +30,15 @@ enable_anonymous_sign_ins = false
 [functions.delete-account]
 # The handler verifies the token with Auth and checks the live, recent session.
 verify_jwt = false
+
+[functions.admob-ssv]
+# Google calls without a Supabase token; the handler verifies Google's ECDSA signature.
+verify_jwt = false
+
+[functions.premium-sync]
+# The handler verifies the user token with Auth itself.
+verify_jwt = false
+
+[functions.revenuecat-webhook]
+# RevenueCat sends the configured Authorization value; the handler checks it.
+verify_jwt = false

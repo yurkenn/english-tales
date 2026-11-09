@@ -7,7 +7,7 @@
 - Karşılamanın son adımında ve Ayarlar → Kullanım istatistikleri bölümünde seçilebilir; yeni cihazda başlangıçta kapalı. Öğrenmek için açılması gerekmez. Tercih cihaz içindir, hesap tercihi olarak eşitlenmez.
 - Manifestte collection ve analytics/ad storage, ad user data, ad personalization varsayılanları kapalıdır. Açık katılımdan sonra yalnız analytics storage açılır; reklam rızaları kapalı kalır. Analytics reklam kimliği toplama ve otomatik ekran adı raporlama kapalıdır. Mevcut reklam SDK'sının kendi veri davranışı bu ayardan ayrıdır.
 - Debug/test paketinde Analytics kalıcı deactivated ve transport kapalıdır. Testler Firebase'e ölçüm göndermez. Release, mevcut özel `google-services.json` ile derlenir.
-- Uygulamanın yedi özel olayına ad/e-posta, hesap/kurulum/oturum kimliği, hikâye/kelime kimliği, metin, cevap, puan veya serbest özellik eklenmez. Tek özel parametre `practice_completed.mode`: `choice`, `card`, `match`, `spell`.
+- Uygulamanın izin verilen özel olaylarına ad/e-posta, hesap/kurulum/oturum kimliği, hikâye/kelime kimliği, metin, cevap, puan veya serbest özellik eklenmez. Tek özel parametre `practice_completed.mode`: `choice`, `card`, `match`, `spell`.
 - Bu, anonim veya kimliksiz SDK anlamına gelmez. Firebase kendi app-instance ID'sini, uygulama/cihaz/işletim sistemi bilgilerini, yaklaşık ülke/bölgeyi ve otomatik `first_open`, `session_start`, `user_engagement` gibi olayları işleyebilir. SDK oturum tanımlayıcıları ekleyebilir; uygulamanın öğrenme oturum kimlikleri gönderilmez. Gizlilik kaynağı bu farkı açıklar.
 - Analytics açıkken Firebase bu olay adlarını ve sınırlı parametreleri Crashlytics hata kayıtlarında breadcrumb olarak da kullanabilir. Otomatik ekran adı raporu kapalıdır; özel olayların payload sınırı burada da korunur. Önceden oluşturulmuş hata kayıtlarını katılım düğmesi silmez.
 - Kapatma, SDK collection'ı durdurur, consent'i reddeder ve `resetAnalyticsData` ile yerel SDK verisini sıfırlar. Yerel cohort işaretleri temizlenir; eski öğrenme geçmişi sonradan yeniden gönderilmez. Önceden sunucuya ulaşmış olaylar bu işlemle sunucudan silinmiş sayılmaz.
@@ -19,6 +19,8 @@
 |---|---|---|
 | `learning_visit` | Katılım verildiğinde ve uygulama ön plana döndüğünde | Katılımlı cihaz başına UTC gününde bir |
 | `next_day_return` | İlk katılımlı ziyaretin hemen sonraki UTC gününde ön plana dönüş | Katılım dönemi başına bir; D2/D7 dönüşü D1 sayılmaz |
+| `seventh_day_return` | İlk katılımlı ziyaretin tam 7 gün sonraki UTC gününde ön plana dönüş | Katılım dönemi başına bir; D6/D8 sayılmaz; yeniden açılışta kalıcı |
+| `word_saved` | Katalog veya kişisel sözlük kelimesinin başarıyla kaydedilmesi | Yeni eklenen kelime başına bir; toplu kayıtta her yeni kelime için olay; mevcut kaydı tekrarlama, silme ve rollback olay üretmez. Silip yeniden ekleme yeni kayıttır. Kimlik/metin/parametre yok |
 | `learning_onboarding_completed` | Başarılı onboarding kaydı | Yerel öğrenme sahibi başına mevcut kalıcı event anahtarı |
 | `story_started` | Başarılı okuma başlangıcı kaydı | Yerel sahip/hikâye/çalışma günü başına bir; hikâye bilgisi payload'a eklenmez |
 | `story_completed` | Başarılı okuma tamamlanması | Mevcut öğrenme kaydına uygun olarak sahip/hikâye/çalışma günü başına bir |
@@ -36,11 +38,13 @@ Analytics teslimatı en iyi çaba esaslıdır. Kalıcı öğrenme commit'i ile F
 - **İlk hikâye:** yeni onboarding olayını veren katılımlı app-instance cohort'unda `first_story_completed` dönüşümü. Mevcut kullanıcıları ve yeni cihazları kurulum sayısı gibi birleştirme.
 - **D1 dönüşü:** aynı UTC başlangıç cohort'undaki app-instance'ların `next_day_return` veren oranı. Standart GA kurulum retention'ı yerine bu ürün tanımını kullan; GA Explore cohort'unu ilk katılımlı `learning_visit` gününe göre kur.
 - **Çalışma:** `practice_completed` olay ve app-instance sayısı; `mode` ile kırılım. `mode` için event-scoped custom dimension, panelde veri gelmeden önce kaydedilmelidir.
+- **Kelime kaydı:** `word_saved` olay sayısı kayıt eylemleridir; benzersiz kelime veya kişi sayısı değildir. Kaydeden cihaz oranı app-instance düzeyinde hesaplanır. İlk tekrar için mevcut `practice_completed` kullanılır; yalnız zamanı gelen FSRS tekrarı ayrımı henüz yoktur.
+- **D7 dönüşü:** izin başlangıcından tam 7 UTC gün sonraki `seventh_day_return` oranı. D1'e gelmeyen cihaz D7'ye gelebilir. Mevcut izinli cihazların ilk günü korunur; yeni sürüm yüklenmeden geçmiş D7 günleri geriye dönük doldurulmaz.
 - SDK otomatik olaylarını özel olay sayısına ekleme; metriklerin kullanıcı mı olay mı saydığını belirt. Az veri / gecikmiş veri yüzde sıfır olarak raporlanmaz.
 
 ## Doğrulama
 
-- 12 yeni JVM testi: kapalı katılım, yedi olay/parametre sınırı, UTC D1, yeniden açılış, gecikmiş dönüş, saat geriye alma, ilk hikâye tekilleştirme, vazgeçme, başarısız tercih/ziyaret kaydı, başarısız geri çekmenin tekrar kaydedilmesi ve SDK arızası.
+- JVM testleri: kapalı katılım, olay/parametre sınırı, UTC D1, yeniden açılış, gecikmiş dönüş, saat geriye alma, ilk hikâye tekilleştirme, vazgeçme, başarısız tercih/ziyaret kaydı, başarısız geri çekmenin tekrar kaydedilmesi ve SDK arızası.
 - Cihaz testleri: commit sonrası sinyal, rollback/yeniden deneme, tamamlanma tekilleştirme, transport hatasında korunan öğrenme, cihaz tercihinin kalıcılığı, açık/kapalı Switch, kayıt hatası ve katılım zorunlu olmadan karşılamadan devam etme.
 - Manifest testi: debug'da SDK kapalı; default collection, reklam kimliği, ekran raporu ve tüm consent varsayılanları kapalı.
 - Güncel derleme/test kanıtları PR'a kaydedilir. Sahte transport testi canlı Firebase alımının kanıtı değildir.

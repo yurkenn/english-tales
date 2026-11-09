@@ -125,7 +125,7 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
     private val directory = File(context.filesDir, "published-content").apply { mkdirs() }
     private val index = AtomicFile(File(directory, "catalog.json"))
     private val lock = Mutex()
-    private val bundled = LearningContent.bundledStories.associateBy { it.revisionId }
+    private val bundled = LearningContent.bundledRevisions.associateBy { it.revisionId }
     private val bundledByStory = LearningContent.bundledStories.associateBy { it.id }
     /** Newer published revisions (immutable) whose text and cover match the bundled story; they still open offline. */
     private val bundledTextIndex = AtomicFile(File(directory, "bundled-text.index"))
@@ -190,8 +190,8 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
                 val doc = metadata.getJSONObject(i); val revision = doc.getString("id")
                 val remote = ContentCodec.story(doc)
                 downloaded[revision]?.let { it.copy(addedAt=remote.addedAt,tags=it.tags.ifEmpty { remote.tags }) }
-                    ?: (bundled[revision] ?: bundledByStory[remote.id]?.takeIf { bundledText[revision] == fingerprint(it) })
-                        ?.let { bundled -> remote.copy(sentences=bundled.sentences,coverKey=bundled.coverKey,vocabulary=null,sentenceWordIds=null,questions=bundled.questions,tags=remote.tags.ifEmpty { bundled.tags }) }
+                    ?: (bundled[revision] ?: bundledByStory[remote.id]?.takeIf { it.vocabulary == null && bundledText[revision] == fingerprint(it) })
+                        ?.let { bundled -> remote.copy(sentences=bundled.sentences,coverKey=bundled.coverKey,vocabulary=bundled.vocabulary,sentenceWordIds=bundled.sentenceWordIds,questions=bundled.questions,tags=remote.tags.ifEmpty { bundled.tags }) }
                     // An edited bundled story keeps its bundled cover until the new revision is downloaded, instead of a blank tile.
                     ?: bundledByStory[remote.id]?.let { remote.copy(coverKey=it.coverKey) }
                     ?: remote
@@ -273,7 +273,7 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
         var changed = bundledText.keys.retainAll(current)
         var missed = bundledMismatch.keys.retainAll(current)
         val candidates = docs.filter { doc -> val revision = doc.getString("id")
-            revision !in downloaded && revision !in bundled && revision !in bundledText && doc.getString("story_id") in bundledByStory &&
+            revision !in downloaded && revision !in bundled && revision !in bundledText && bundledByStory[doc.getString("story_id")]?.vocabulary == null && doc.getString("story_id") in bundledByStory &&
                 bundledMismatch[revision] != fingerprint(bundledByStory.getValue(doc.getString("story_id"))) }
         for (batch in candidates.chunked(50)) {
             val bundledIds = batch.map { ContentRevisionIds.bundled(it.getString("story_id")) }
