@@ -1,5 +1,9 @@
 # Google Play mağaza paketi
 
+## 9 Kasım 2026 — Türkçe başlık
+
+Türkçe mağaza başlığı Instagram sayfasıyla (@englishtales.app) aynı olacak şekilde **Masallarla İngilizce Öğren** yapıldı (`tr-TR/title.txt`, 26/30 karakter). Play Console’daki Türkçe girişe elle girilmesi gerekir; uygulamanın simge altındaki adı (`app_name`) değişmedi.
+
 ## 19 Ekim 2026 — Üretim başvurusu gönderildi
 
 Yeni varsayılan ad **Learn English: Yurken Stories**, Türkçe **İngilizce Hikâyeler: Yurken**. 13 mağaza dili, yeni EN/TR native ekran görüntüleri ve `feature-graphic-v50.jpg`, 50 / 2.2.0 üretim paketiyle birlikte **19:48 TRT’de** gönderildi. Console “Changes in review” gösteriyor; hızlı kontroller sürüyor. %100 dağıtım seçildi, yönetilen yayın kapalı. **Henüz canlı yayın doğrulanmadı.**
