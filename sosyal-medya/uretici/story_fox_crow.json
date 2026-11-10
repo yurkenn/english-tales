@@ -1,0 +1,267 @@
+{
+  "id": "fox-crow",
+  "title": "The Fox and the Crow",
+  "level": "A1",
+  "cover": "cover_classic_fox_crow.webp",
+  "voice": "af_heart",
+  "lang": "en-us",
+  "speed": 0.8,
+  "intro_shot": [
+    0.5,
+    0.4,
+    1.0
+  ],
+  "sentences": [
+    {
+      "en": "A crow sits on a branch with a piece of meat.",
+      "tr": "Bir karga, gagasında bir parça etle bir dalda oturur.",
+      "key": "branch",
+      "key_tr": "dal",
+      "shot": [
+        0.3,
+        0.17,
+        1.7
+      ]
+    },
+    {
+      "en": "A fox sees the meat and wants it.",
+      "tr": "Bir tilki eti görür ve onu ister.",
+      "key": "fox",
+      "key_tr": "tilki",
+      "shot": [
+        0.6,
+        0.7,
+        1.6
+      ]
+    },
+    {
+      "en": "He cannot climb up to take it.",
+      "tr": "Onu almak için yukarı tırmanamaz.",
+      "key": "climb",
+      "key_tr": "tırmanmak",
+      "shot": [
+        0.72,
+        0.52,
+        1.3
+      ]
+    },
+    {
+      "en": "So he begins to praise the crow.",
+      "tr": "Bu yüzden kargayı övmeye başlar.",
+      "key": "praise",
+      "key_tr": "övmek",
+      "shot": [
+        0.52,
+        0.45,
+        1.0
+      ]
+    },
+    {
+      "en": "“What beautiful feathers you have!” he says.",
+      "tr": "“Ne güzel tüylerin var!” der.",
+      "key": "feathers",
+      "key_tr": "tüyler",
+      "shot": [
+        0.27,
+        0.16,
+        1.8
+      ]
+    },
+    {
+      "en": "“You must have a beautiful voice, too.”",
+      "tr": "“Sesin de güzel olmalı.”",
+      "key": "voice",
+      "key_tr": "ses",
+      "shot": [
+        0.6,
+        0.67,
+        1.8
+      ]
+    },
+    {
+      "en": "The crow feels proud.",
+      "tr": "Karga gururlanır.",
+      "key": "proud",
+      "key_tr": "gururlu",
+      "shot": [
+        0.3,
+        0.15,
+        1.9
+      ]
+    },
+    {
+      "en": "She wants to show him her voice.",
+      "tr": "Ona sesini göstermek ister.",
+      "key": "show",
+      "key_tr": "göstermek",
+      "shot": [
+        0.42,
+        0.3,
+        1.3
+      ]
+    },
+    {
+      "en": "She opens her beak and makes a loud sound.",
+      "tr": "Gagasını açar ve yüksek bir ses çıkarır.",
+      "key": "beak",
+      "key_tr": "gaga",
+      "shot": [
+        0.36,
+        0.15,
+        2.0
+      ],
+      "shake": true
+    },
+    {
+      "en": "The meat falls to the ground.",
+      "tr": "Et yere düşer.",
+      "key": "ground",
+      "key_tr": "yer",
+      "shot": [
+        0.55,
+        0.74,
+        1.3
+      ],
+      "pan_from": [
+        0.38,
+        0.15,
+        1.6
+      ]
+    },
+    {
+      "en": "The fox picks it up and laughs.",
+      "tr": "Tilki onu alır ve güler.",
+      "key": "laughs",
+      "key_tr": "güler",
+      "shot": [
+        0.6,
+        0.7,
+        1.7
+      ]
+    },
+    {
+      "en": "“You have a voice, but you need more sense,” he says.",
+      "tr": "“Sesin var ama daha akıllı olman gerekiyor,” der.",
+      "key": "sense",
+      "key_tr": "akıl",
+      "shot": [
+        0.62,
+        0.66,
+        1.9
+      ]
+    },
+    {
+      "en": "The crow watches him leave with her meal.",
+      "tr": "Karga, tilkinin yemeğiyle uzaklaşmasını izler.",
+      "key": "meal",
+      "key_tr": "yemek",
+      "shot": [
+        0.33,
+        0.17,
+        1.6
+      ]
+    },
+    {
+      "en": "Flattery is not always friendship.",
+      "tr": "Pohpohlamak her zaman dostluk değildir.",
+      "key": "flattery",
+      "key_tr": "pohpohlama",
+      "shot": [
+        0.5,
+        0.5,
+        1.0
+      ],
+      "moral": true
+    }
+  ],
+  "parts": [
+    {
+      "from": 0,
+      "to": 5,
+      "say": "The Fox and the Crow. Part one.",
+      "hook": [
+        "Bu masalı İngilizce",
+        "anlayabilecek misin?"
+      ],
+      "quiz": {
+        "say": "What does praise mean?",
+        "q": "“praise” ne demek?",
+        "options": [
+          "övmek",
+          "uçmak",
+          "saklamak"
+        ],
+        "answer": 0
+      },
+      "next": {
+        "say": "What will the crow do? See you in part two!",
+        "lines": [
+          "Karga ne yapacak?",
+          "Devamı Part 2'de"
+        ]
+      },
+      "teaser": 4,
+      "hook_big": "Tilki eti nasıl çalacak?",
+      "hook_small": "Sonuna kadar anlayabilir misin?"
+    },
+    {
+      "from": 5,
+      "to": 10,
+      "say": "The Fox and the Crow. Part two.",
+      "hook": [
+        "Tilki kargayı",
+        "kandırabilecek mi?"
+      ],
+      "quiz": {
+        "say": "What does proud mean?",
+        "q": "“proud” ne demek?",
+        "options": [
+          "üzgün",
+          "gururlu",
+          "korkmuş"
+        ],
+        "answer": 1
+      },
+      "next": {
+        "say": "What will the fox say? See you in part three!",
+        "lines": [
+          "Tilki ne diyecek?",
+          "Final Part 3'te"
+        ]
+      },
+      "teaser": 5,
+      "hook_big": "Karga bu tuzağa düşecek mi?",
+      "hook_small": "Sonuna kadar anlayabilir misin?"
+    },
+    {
+      "from": 10,
+      "to": 14,
+      "say": "The Fox and the Crow. Part three.",
+      "hook": [
+        "Final!",
+        "Hikâyenin dersi ne?"
+      ],
+      "quiz": {
+        "say": "What does flattery mean?",
+        "q": "“flattery” ne demek?",
+        "options": [
+          "dostluk",
+          "pohpohlama",
+          "cesaret"
+        ],
+        "answer": 1
+      },
+      "cta_say": "Read more stories in English Tales. It's free!",
+      "teaser": 11,
+      "hook_big": "Tilkinin son sözü ne olacak?",
+      "hook_small": "Final! Dersi kaçırma."
+    }
+  ],
+  "hook_accent": [
+    "eti",
+    "tuzağa",
+    "son"
+  ],
+  "cutout": "cutout_fox_crow",
+  "hook_tr_voice": "fahrettin-medium"
+}
