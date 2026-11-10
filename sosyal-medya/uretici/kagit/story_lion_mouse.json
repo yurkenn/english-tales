@@ -1,0 +1,27 @@
+{
+  "id": "lion-mouse",
+  "slug": "aslan-ve-fare",
+  "title": "The Lion and the Mouse",
+  "title_tr": "Aslan ve Fare",
+  "level": "A1",
+  "voice": "af_heart",
+  "speed": 0.88,
+  "style": "Layered paper-craft illustration: cut paper collage with soft drop shadows between layers and visible paper fibre texture, warm muted palette (sage green, mustard yellow, terracotta, soft blue, cream), gentle children's storybook look. Vertical 9:16, 1080x1920. The top 22% is plain cream sky (only a paper sun and one small paper cloud) so a caption fits there. No text, no letters, no logos, no watermark.",
+  "characters": "LION: big, friendly-looking male lion, mustard-gold paper body, layered terracotta-orange paper mane, small round ears, dark brown nose. MOUSE: tiny grey paper mouse with big round pink ears, thin pink tail, small black eyes. Same savanna setting in every frame: one wide acacia tree, tall pale-yellow grass, soft blue distant hills.",
+  "sentences": [
+    {"en": "A big lion sleeps under a tree.", "tr": "Büyük bir aslan ağacın altında uyur.", "img": "01.png", "scene": "The lion sleeps peacefully under the acacia tree, eyes closed, head on his paws."},
+    {"en": "A little mouse runs on his paw.", "tr": "Küçük bir fare onun pençesinin üstünden koşar.", "img": "02.png", "scene": "Close view: the tiny mouse runs across the sleeping lion's big paw."},
+    {"en": "The lion wakes up. He is angry!", "tr": "Aslan uyanır. Çok kızgındır!", "img": "03.png", "scene": "The lion is awake and angry, holding the mouse by the tail under one paw; the mouse looks scared."},
+    {"en": "“Please, let me go!” says the mouse.", "tr": "“Lütfen, bırak beni!” der fare.", "img": "04.png", "scene": "The tiny mouse, held under the paw, puts its little hands together and begs the big lion."},
+    {"en": "“One day, I can help you.”", "tr": "“Bir gün sana yardım edebilirim.”", "img": "05.png", "scene": "The mouse points to itself proudly while the lion raises an eyebrow, doubtful."},
+    {"en": "The lion laughs and lets him go.", "tr": "Aslan güler ve onu bırakır.", "img": "06.png", "scene": "The lion laughs with his head back; the mouse runs away happily into the grass."},
+    {"en": "One day, the lion is in a net.", "tr": "Bir gün aslan bir ağa yakalanır.", "img": "07.png", "scene": "The lion is trapped in a big rope net under the acacia tree, looking worried."},
+    {"en": "“Help! Help!” he roars.", "tr": "“İmdat! İmdat!” diye kükrer.", "img": "08.png", "scene": "The lion, still in the net, roars loudly with mouth wide open; paper birds fly away from the tree."},
+    {"en": "The little mouse hears him.", "tr": "Küçük fare onu duyar.", "img": "09.png", "scene": "Far away in the tall grass, the tiny mouse stops and lifts its big ears, listening."},
+    {"en": "Bite, bite, bite! He bites the net.", "tr": "Kemir, kemir, kemir! Ağı kemirir.", "img": "10.png", "scene": "Close view: the tiny mouse bites through the thick ropes of the net; some ropes are broken."},
+    {"en": "The lion is free!", "tr": "Aslan özgürdür!", "img": "11.png", "scene": "The lion stands free and happy, the broken net on the ground; the mouse stands next to his paw."},
+    {"en": "Little friends can be great friends.", "tr": "Küçük dostlar büyük dostlar olabilir.", "img": "12.png", "scene": "The lion and the mouse sit together under the acacia tree at sunset, the mouse on the lion's head, both smiling."}
+  ],
+  "quiz": {"say": "What does free mean?", "q": "“free” ne demek?", "options": ["özgür", "kızgın", "küçük"], "answer": 0},
+  "cta_say": "Read more stories in English Tales. It's free!"
+}
