@@ -16,7 +16,7 @@ INK = (52, 38, 28); INK_SOFT = (120, 96, 74); CREAM = (250, 243, 228); GREEN = (
 GAP, TAIL, MIN_SCENE = 0.40, 0.35, 1.9
 
 def font(name, size): return ImageFont.truetype(os.path.join(RES, "font", name), size)
-F_EN = font("nunito_extrabold.ttf", 76); F_TR = font("nunito_bold.ttf", 44)
+F_EN = font("nunito_extrabold.ttf", 76); F_TR = font("nunito_bold.ttf", 50)
 F_Q = font("nunito_extrabold.ttf", 80); F_OPT = font("nunito_extrabold.ttf", 64); F_SMALL = font("nunito_bold.ttf", 40)
 
 def ease(t): t = max(0.0, min(1.0, t)); return 1 - (1 - t) ** 3
@@ -46,15 +46,15 @@ def fit(img):
 
 def caption_layer(en, tr):
     layer = Image.new("RGBA", (W, 640), (0, 0, 0, 0)); d = ImageDraw.Draw(layer)
-    lines = wrap(d, en, F_EN, 900); y = 190
+    lines = wrap(d, en, F_EN, 820); y = 190
     for ln in lines:
         d.text((W // 2, y), ln, font=F_EN, fill=INK, anchor="mt"); y += 92
     y += 14
-    for ln in wrap(d, tr, F_TR, 880):
-        d.text((W // 2, y), ln, font=F_TR, fill=INK_SOFT, anchor="mt"); y += 54
+    for ln in wrap(d, tr, F_TR, 820):
+        d.text((W // 2, y), ln, font=F_TR, fill=INK_SOFT, anchor="mt"); y += 60
     # soft cream halo so text stays readable if the art has detail behind it
     halo = layer.getchannel("A").filter(ImageFilter.MaxFilter(15)).filter(ImageFilter.GaussianBlur(14))
-    bg = Image.new("RGBA", layer.size, CREAM + (0,)); bg.putalpha(halo.point(lambda v: int(v * 0.75)))
+    bg = Image.new("RGBA", layer.size, CREAM + (0,)); bg.putalpha(halo.point(lambda v: int(v * 0.9)))
     return Image.alpha_composite(bg, layer)
 
 def scene_frames(img, cap, n):
@@ -82,7 +82,7 @@ def quiz_frames(bg, story, n_ask, n_reveal):
             y = 760 + k * 170; right = (k == q["answer"]) and i >= n_ask
             box = (190, y - 62, W - 190, y + 62)
             d.rounded_rectangle(box, radius=62, fill=(GREEN if right else (255, 252, 244)), outline=INK, width=4)
-            d.text((W // 2, y), opt + ("  ✓" if right else ""), font=F_OPT, fill=((255, 255, 255) if right else INK), anchor="mm")
+            d.text((W // 2, y), opt, font=F_OPT, fill=((255, 255, 255) if right else INK), anchor="mm")
         if i < 6:
             fr = Image.blend(bg.convert("RGBA"), fr, (i + 1) / 6)
         yield fr.convert("RGB")
