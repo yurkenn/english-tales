@@ -263,5 +263,7 @@
     "son"
   ],
   "cutout": "cutout_fox_crow",
-  "hook_tr_voice": "fahrettin-medium"
+  "hook_tr_voice": "fahrettin-medium",
+  "title_tr": "Tilki ve Karga",
+  "slug": "tilki-ve-karga"
 }
