@@ -1,0 +1,13 @@
+{
+  "reviewDate": "2026-10-26",
+  "scenario": "Owner-triggered restore after sandbox subscription expiry",
+  "ownerReportedRestoreCompleted": true,
+  "providerRequestUtc": "2026-10-26T05:54:51Z",
+  "providerPremiumExpiryUtc": "2026-10-25T21:56:03Z",
+  "serverCheckedUtc": "2026-10-26T05:54:13.525Z",
+  "serverPremiumExpiryUtc": "2026-10-25T21:56:03Z",
+  "serverPremiumActive": false,
+  "ui": "3 daily free reading passes, monthly/yearly purchase options shown; Premium inactive",
+  "result": "Expired restore preserves the true expiry and does not grant renewed Premium. Active-purchase restore remains pending; no new purchase was inferred from this restore.",
+  "privateIdentifiers": "omitted"
+}

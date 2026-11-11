@@ -1,0 +1,119 @@
+{
+  "status": "Historical unsaved snapshot; resolved by monthly-prices-saved.json",
+  "changes": [
+    {
+      "country": "T\u00fcrkiye",
+      "currency": "TRY",
+      "before": "82.99",
+      "after": "99.99"
+    },
+    {
+      "country": "United States",
+      "currency": "USD",
+      "before": "1.49",
+      "after": "3.99"
+    },
+    {
+      "country": "United Kingdom",
+      "currency": "GBP",
+      "before": "1.39",
+      "after": "2.99"
+    },
+    {
+      "country": "Canada",
+      "currency": "CAD",
+      "before": "2.19",
+      "after": "4.99"
+    },
+    {
+      "country": "Australia",
+      "currency": "AUD",
+      "before": "2.59",
+      "after": "5.99"
+    },
+    {
+      "country": "Germany",
+      "currency": "EUR",
+      "before": "1.59",
+      "after": "3.99"
+    },
+    {
+      "country": "Spain",
+      "currency": "EUR",
+      "before": "1.69",
+      "after": "3.99"
+    },
+    {
+      "country": "Portugal",
+      "currency": "EUR",
+      "before": "1.69",
+      "after": "2.99"
+    },
+    {
+      "country": "Mexico",
+      "currency": "MXN",
+      "before": "33.00",
+      "after": "39.00"
+    },
+    {
+      "country": "Brazil",
+      "currency": "BRL",
+      "before": "8.99",
+      "after": "9.99"
+    },
+    {
+      "country": "India",
+      "currency": "INR",
+      "before": "170.00",
+      "after": "149.00"
+    },
+    {
+      "country": "Bangladesh",
+      "currency": "BDT",
+      "before": "220.00",
+      "after": "149.00"
+    },
+    {
+      "country": "Pakistan",
+      "currency": "PKR",
+      "before": "450.00",
+      "after": "399.00"
+    },
+    {
+      "country": "Indonesia",
+      "currency": "IDR",
+      "before": "27,000",
+      "after": "19900.00"
+    },
+    {
+      "country": "Vietnam",
+      "currency": "VND",
+      "before": "42,000",
+      "after": "39000.00"
+    },
+    {
+      "country": "Thailand",
+      "currency": "THB",
+      "before": "54.00",
+      "after": "59.00"
+    },
+    {
+      "country": "Egypt",
+      "currency": "EGP",
+      "before": "86.99",
+      "after": "49.99"
+    },
+    {
+      "country": "Saudi Arabia",
+      "currency": "SAR",
+      "before": "6.89",
+      "after": "9.99"
+    }
+  ],
+  "pendingCountry": {
+    "country": "United Arab Emirates",
+    "currency": "AED",
+    "before": "6.19"
+  },
+  "remainingAmount": "9.99"
+}

@@ -1,0 +1,31 @@
+<resources>
+    <string name="energy_title">आपके रीडिंग पास</string>
+    <string name="energy_balance">%1$d रीडिंग पास बाकी</string>
+    <string name="energy_description">हर दिन 3 नई कहानियाँ खोलें। अनलॉक की गई कहानियाँ दोबारा खोलना, अनुवाद और शब्दावली दोहराना मुफ़्त रहते हैं।</string>
+    <string name="energy_reset">आपके मुफ़्त पास %1$s को फिर से 3 हो जाएँगे।</string>
+    <string name="energy_empty">आपने आज के रीडिंग पास इस्तेमाल कर लिए हैं</string>
+    <string name="energy_gate_description">अनलॉक की गई कहानियों पर लौटें, मुफ़्त रीफ़िल का इंतज़ार करें, या पढ़ते रहने का कोई तरीका चुनें।</string>
+    <string name="energy_watch">विज्ञापन देखें · +1 रीडिंग पास</string>
+    <string name="energy_reward_limit">आपने आज के सभी 3 विज्ञापन इनाम इस्तेमाल कर लिए हैं।</string>
+    <string name="energy_sign_in">अतिरिक्त पास या Premium के लिए साइन इन करें</string>
+    <string name="energy_guest_note">मेहमान पास इसी डिवाइस पर सेव रहते हैं। विज्ञापन इनाम पाने या खरीदारी करने के लिए साइन इन करें।</string>
+    <string name="energy_premium">Premium के साथ बिना सीमा पढ़ें</string>
+    <string name="energy_premium_active">Premium · असीमित पढ़ाई</string>
+    <string name="energy_premium_description">असीमित कहानियाँ और बिना विज्ञापन सीखना।</string>
+    <string name="energy_premium_end">Premium एक्सेस इस तारीख तक: %1$s</string>
+    <string name="energy_unavailable">यह काम पूरा नहीं हो सका। आपकी अनलॉक की गई कहानियाँ सुरक्षित हैं। अपना कनेक्शन जाँचें और फिर से कोशिश करें।</string>
+    <string name="energy_pending">सत्यापन लंबित है। दोबारा जाँचने के लिए अपना खाता रीफ़्रेश करें।</string>
+    <string name="energy_refresh">फिर से जाँचें</string>
+    <string name="energy_restore">खरीदारी रीस्टोर करें</string>
+    <string name="energy_monthly">%1$s / महीना</string>
+    <string name="energy_annual">%1$s / साल</string>
+    <string name="energy_renewal">आपकी सदस्यता रद्द किए जाने तक, चुनी गई अवधि के लिए स्टोर में दिखाई गई कीमत पर अपने-आप रिन्यू होती है। रद्द करने से अगला रिन्यूअल रुक जाता है; आपका मौजूदा एक्सेस जारी रहता है।</string>
+    <string name="energy_manage">सदस्यता प्रबंधित करें</string>
+    <string name="energy_close">वापस जाएँ</string>
+    <string name="energy_offer_unavailable">Premium विकल्प अभी उपलब्ध नहीं हैं। आप मुफ़्त में पढ़ना जारी रख सकते हैं।</string>
+    <string name="energy_retry_read">कहानी फिर से खोलकर देखें</string>
+    <string name="energy_terms">सदस्यता की शर्तें</string>
+    <string name="energy_privacy">गोपनीयता</string>
+    <string name="energy_delete_warning">अपना खाता हटाने से Google Play सदस्यता रद्द नहीं होती। आगे के भुगतान रोकने के लिए पहले अपनी Google Play सदस्यताएँ प्रबंधित करें।</string>
+    <string name="energy_checking">आपका रीडिंग पास जाँचा जा रहा है…</string>
+</resources>

@@ -1,0 +1,31 @@
+<resources>
+    <string name="energy_title">تذاكر القراءة لديك</string>
+    <string name="energy_balance">تذاكر القراءة المتبقية: %1$d</string>
+    <string name="energy_description">افتح 3 قصص جديدة كل يوم. تبقى إعادة فتح القصص المفتوحة والترجمات ومراجعة المفردات مجانية.</string>
+    <string name="energy_reset">تعود تذاكرك المجانية إلى 3 في %1$s.</string>
+    <string name="energy_empty">لقد استخدمت تذاكر القراءة لهذا اليوم</string>
+    <string name="energy_gate_description">عد إلى القصص المفتوحة، أو انتظر التجديد المجاني، أو اختر طريقة لمواصلة القراءة.</string>
+    <string name="energy_watch">شاهد إعلانًا · +1 تذكرة قراءة</string>
+    <string name="energy_reward_limit">لقد استخدمت جميع مكافآت الإعلانات اليومية وعددها 3.</string>
+    <string name="energy_sign_in">سجّل الدخول للحصول على تذاكر إضافية أو Premium</string>
+    <string name="energy_guest_note">تُحفظ تذاكر الضيف على هذا الجهاز. سجّل الدخول لكسب مكافآت الإعلانات أو لإجراء عملية شراء.</string>
+    <string name="energy_premium">اقرأ بلا حدود مع Premium</string>
+    <string name="energy_premium_active">Premium · قراءة غير محدودة</string>
+    <string name="energy_premium_description">قصص غير محدودة وتعلّم بلا إعلانات.</string>
+    <string name="energy_premium_end">الوصول إلى Premium حتى: %1$s</string>
+    <string name="energy_unavailable">تعذّر إكمال هذا الإجراء. قصصك المفتوحة في أمان. تحقّق من اتصالك وحاول مرة أخرى.</string>
+    <string name="energy_pending">التحقق قيد الانتظار. حدّث حسابك للتحقق مرة أخرى.</string>
+    <string name="energy_refresh">تحقّق مرة أخرى</string>
+    <string name="energy_restore">استعادة المشتريات</string>
+    <string name="energy_monthly">%1$s / شهر</string>
+    <string name="energy_annual">%1$s / سنة</string>
+    <string name="energy_renewal">يتجدد اشتراكك تلقائيًا للمدة المحددة بالسعر الذي يعرضه المتجر إلى أن تلغيه. يوقف الإلغاء التجديد التالي، ويستمر وصولك الحالي.</string>
+    <string name="energy_manage">إدارة الاشتراك</string>
+    <string name="energy_close">رجوع</string>
+    <string name="energy_offer_unavailable">خيارات Premium غير متاحة حاليًا. يمكنك مواصلة القراءة مجانًا.</string>
+    <string name="energy_retry_read">حاول فتح القصة مرة أخرى</string>
+    <string name="energy_terms">شروط الاشتراك</string>
+    <string name="energy_privacy">الخصوصية</string>
+    <string name="energy_delete_warning">حذف حسابك لا يلغي اشتراك Google Play. أدِر اشتراكاتك في Google Play أولًا لإيقاف المدفوعات المستقبلية.</string>
+    <string name="energy_checking">جارٍ التحقق من تذكرة القراءة…</string>
+</resources>

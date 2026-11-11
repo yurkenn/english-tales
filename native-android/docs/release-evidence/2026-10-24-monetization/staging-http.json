@@ -1,0 +1,26 @@
+[
+  {
+    "endpoint": "premium-sync",
+    "authorizedTest": false,
+    "status": 401,
+    "code": "sign_in_required"
+  },
+  {
+    "endpoint": "admob-ssv",
+    "authorizedTest": false,
+    "status": 400,
+    "code": "invalid_callback"
+  },
+  {
+    "endpoint": "revenuecat-webhook",
+    "authorizedTest": false,
+    "status": 401,
+    "code": "unauthorized"
+  },
+  {
+    "endpoint": "revenuecat-webhook",
+    "authorizedTest": true,
+    "status": 200,
+    "code": "ignored"
+  }
+]
