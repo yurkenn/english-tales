@@ -30,3 +30,8 @@ Model dosyaları büyük olduğu için repoda yok:
 - Türkçe Piper sesleri: github.com/k2-fsa/sherpa-onnx, release `tts-models` (`vits-piper-tr_TR-*-medium`)
 
 Kapak, maskot ve fontlar `native-android/app/src/main/res` klasöründen okunur (`ET_RES` ile değiştirilebilir). Yeni bir hikâye için kendi JSON'u, katman çokgenleri ve animasyon modülü gerekir.
+
+## Aslan ve Fare (kâğıt kesme, kelime kelime vurgu)
+
+- `videolar/aslan-ve-fare.mp4`: son sürüm. Görüntü HyperFrames ile Mac'te (`hyperframes/aslan-ve-fare/`, komutlar `tools/build.py` başında), kelime zamanlaması whisper. Hook'taki Türkçe soru sesi Piper (fahrettin-medium) ile bulutta eklendi: ilk 2,6 sn'nin sesi susturulup "Minik fare, aslanı kurtarabilir mi?" 0,35 sn'de başlıyor.
+- `uretici/kagit/make_paper.py`: aynı formatı Mac'siz üreten Python yolu (Kokoro + Piper, karaoke vurgu, Türkçe sesli hook). Kullanım dosyanın başında.

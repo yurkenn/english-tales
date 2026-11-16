@@ -11,6 +11,7 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 HERE = os.path.dirname(os.path.abspath(__file__))
 RES = os.environ.get("ET_RES", os.path.join(HERE, "..", "..", "..", "native-android", "app", "src", "main", "res"))
 KOKORO_DIR = os.environ.get("KOKORO_DIR", os.path.join(HERE, "..", "..", "kokoro"))
+TR_DIR = os.environ.get("TR_TTS_DIR", os.path.join(HERE, "..", "..", "trtts"))
 W, H, FPS, SR = 1080, 1920, 30, 24000
 INK = (52, 38, 28); INK_SOFT = (120, 96, 74); CREAM = (250, 243, 228); GREEN = (96, 140, 92); YELLOW = (240, 196, 72)
 GAP, TAIL, MIN_SCENE = 0.40, 0.35, 1.9
@@ -36,7 +37,31 @@ def synth(story):
         a, sr = k.create(text.replace("“", '"').replace("”", '"'), voice=story.get("voice", "af_heart"), speed=story.get("speed", 0.88), lang="en-us")
         idx = np.where(np.abs(a) > 0.01)[0]
         return a[max(0, idx[0] - 600): idx[-1] + 1200].astype(np.float32) if len(idx) else a
-    return [say(s["en"]) for s in story["sentences"]], say(story["quiz"]["say"]), say(story["cta_say"])
+    def timed(text):
+        """Audio plus (start, end) seconds for each word. Word ends come from synthesising each
+        prefix of the sentence: the prefix "w1 .. wk" lasts about as long as the first k words."""
+        a = say(text); words = text.split(); total = len(a) / SR
+        ends = [len(say(" ".join(words[:j]))) / SR - 0.05 for j in range(1, len(words))] + [total - 0.05]
+        ends = [min(max(e, 0.1), total) for e in ends]
+        for j in range(1, len(ends)): ends[j] = max(ends[j], ends[j - 1] + 0.08)
+        starts = [0.03] + ends[:-1]
+        return a, list(zip(starts, ends))
+    lines = [timed(s["en"]) for s in story["sentences"]]
+    return lines, say(story["quiz"]["say"]), say(story["cta_say"])
+
+def synth_tr(voice, text):
+    import wave, io
+    from piper import PiperVoice, SynthesisConfig
+    d = os.path.join(TR_DIR, f"vits-piper-tr_TR-{voice}")
+    v = PiperVoice.load(os.path.join(d, f"tr_TR-{voice}.onnx"), config_path=os.path.join(d, f"tr_TR-{voice}.onnx.json"))
+    buf = io.BytesIO()
+    with wave.open(buf, "wb") as w: v.synthesize_wav(text, w, syn_config=SynthesisConfig(length_scale=1.0))
+    buf.seek(0)
+    with wave.open(buf) as w: sr = w.getframerate(); a = np.frombuffer(w.readframes(w.getnframes()), np.int16).astype(np.float32) / 32768
+    if sr != SR:
+        a = np.interp(np.arange(0, len(a), sr / SR), np.arange(len(a)), a).astype(np.float32)
+    idx = np.where(np.abs(a) > 0.01)[0]
+    return a[max(0, idx[0] - 600): idx[-1] + 1200] if len(idx) else a
 
 def fit(img):
     s = max(W / img.width, H / img.height)
@@ -44,28 +69,75 @@ def fit(img):
     x, y = (img.width - W) // 2, (img.height - H) // 2
     return img.crop((x, y, x + W, y + H))
 
-def caption_layer(en, tr):
+UPCOMING = (168, 148, 126); HILITE = (255, 214, 92)
+F_HOOK = font("nunito_extrabold.ttf", 92); F_BADGE = font("nunito_extrabold.ttf", 42)
+
+def layout_words(en):
+    """Positions for each word of the English line: list of (word, x, y, width), centred lines."""
+    d = ImageDraw.Draw(Image.new("RGB", (1, 1)))
+    space = d.textlength(" ", font=F_EN); out = []; y = 190
+    for ln in wrap(d, en, F_EN, 820):
+        ws = ln.split(); widths = [d.textlength(w, font=F_EN) for w in ws]
+        x = W / 2 - (sum(widths) + space * (len(ws) - 1)) / 2
+        for w, wd in zip(ws, widths):
+            out.append((w, x, y, wd)); x += wd + space
+        y += 92
+    return out, y
+
+def caption_frame(words, ybottom, tr, times, t, alpha=1.0):
+    """Caption at time t (seconds from the start of the spoken line): spoken words dark,
+    the word being spoken on a yellow marker, the rest lighter; Turkish line below."""
     layer = Image.new("RGBA", (W, 640), (0, 0, 0, 0)); d = ImageDraw.Draw(layer)
-    lines = wrap(d, en, F_EN, 820); y = 190
-    for ln in lines:
-        d.text((W // 2, y), ln, font=F_EN, fill=INK, anchor="mt"); y += 92
-    y += 14
+    asc, desc = F_EN.getmetrics()
+    for i, (w, x, y, wd) in enumerate(words):
+        s0, s1 = times[i] if i < len(times) else (9e9, 9e9)
+        if s0 <= t < s1:
+            k = ease((t - s0) / 0.12)
+            pad = 10; d.rounded_rectangle((x - pad, y + 6, x + wd + pad, y + asc + desc - 8), radius=18, fill=HILITE + (int(255 * k),))
+            col = INK
+        else:
+            col = INK if t >= s1 else UPCOMING
+        d.text((x, y), w, font=F_EN, fill=col)
+    y = ybottom + 14
     for ln in wrap(d, tr, F_TR, 820):
         d.text((W // 2, y), ln, font=F_TR, fill=INK_SOFT, anchor="mt"); y += 60
-    # soft cream halo so text stays readable if the art has detail behind it
     halo = layer.getchannel("A").filter(ImageFilter.MaxFilter(15)).filter(ImageFilter.GaussianBlur(14))
     bg = Image.new("RGBA", layer.size, CREAM + (0,)); bg.putalpha(halo.point(lambda v: int(v * 0.9)))
-    return Image.alpha_composite(bg, layer)
+    out = Image.alpha_composite(bg, layer)
+    if alpha < 1: out.putalpha(out.getchannel("A").point(lambda v: int(v * alpha)))
+    return out
 
-def scene_frames(img, cap, n):
+def scene_frames(img, s, times, n, lead):
+    words, yb = layout_words(s["en"])
     for i in range(n):
-        t = i / max(1, n - 1); z = 1.0 + 0.04 * t
+        tt = i / FPS; z = 1.0 + 0.04 * (i / max(1, n - 1))
         w, h = round(W * z), round(H * z)
         fr = img.resize((w, h), Image.BICUBIC).crop(((w - W) // 2, (h - H) // 2, (w - W) // 2 + W, (h - H) // 2 + H)).convert("RGBA")
-        if i < 4:  # caption pops in over the first frames
-            c = cap.copy(); c.putalpha(c.getchannel("A").point(lambda v, a=(i + 1) / 4: int(v * a))); fr.alpha_composite(c, (0, 0))
-        else:
-            fr.alpha_composite(cap, (0, 0))
+        fr.alpha_composite(caption_frame(words, yb, s["tr"], times, tt - lead, min(1.0, (i + 1) / 4)), (0, 0))
+        yield fr.convert("RGB")
+
+def hook_frames(img, story, n):
+    hk = story["hook"]; d0 = ImageDraw.Draw(Image.new("RGB", (1, 1)))
+    lines = wrap(d0, hk["text"], F_HOOK, 860)
+    for i in range(n):
+        z = 1.06 - 0.03 * (i / max(1, n - 1)); w, h = round(W * z), round(H * z)
+        fr = img.resize((w, h), Image.BICUBIC).crop(((w - W) // 2, (h - H) // 2, (w - W) // 2 + W, (h - H) // 2 + H)).convert("RGBA")
+        layer = Image.new("RGBA", (W, 760), (0, 0, 0, 0)); d = ImageDraw.Draw(layer)
+        label = f'{story.get("title_tr", story["title"])} · {story.get("level", "A1")}'
+        tw = d.textlength(label, font=F_BADGE)
+        d.rounded_rectangle((W / 2 - tw / 2 - 30, 190, W / 2 + tw / 2 + 30, 262), radius=36, fill=HILITE)
+        d.text((W / 2, 226), label, font=F_BADGE, fill=INK, anchor="mm")
+        y = 300
+        for ln in lines:
+            ws = ln.split(); x = W / 2 - d.textlength(ln, font=F_HOOK) / 2
+            for j, wd in enumerate(ws):
+                t = wd + (" " if j < len(ws) - 1 else "")
+                col = (214, 96, 40) if hk.get("accent") and hk["accent"] in wd else INK
+                d.text((x, y), t, font=F_HOOK, fill=col); x += d.textlength(t, font=F_HOOK)
+            y += 104
+        halo = layer.getchannel("A").filter(ImageFilter.MaxFilter(21)).filter(ImageFilter.GaussianBlur(16))
+        bg = Image.new("RGBA", layer.size, CREAM + (0,)); bg.putalpha(halo.point(lambda v: int(v * 0.92)))
+        fr.alpha_composite(Image.alpha_composite(bg, layer), (0, 0))
         yield fr.convert("RGB")
 
 def quiz_frames(bg, story, n_ask, n_reveal):
@@ -106,12 +178,17 @@ def main():
     lines, quiz_a, cta_a = synth(story)
     imgs = [fit(Image.open(os.path.join(imgdir, s["img"])).convert("RGB")) for s in story["sentences"]]
     audio = []; plan = []
-    t = 0.25
-    audio.append(np.zeros(int(SR * 0.25), np.float32))
-    for i, a in enumerate(lines):
+    if story.get("hook"):
+        ha = synth_tr(story["hook"].get("voice", "fahrettin-medium"), story["hook"].get("say", story["hook"]["text"]))
+        hd = len(ha) / SR + 0.45
+        seg = np.zeros(int(SR * hd), np.float32); seg[int(SR * 0.05):int(SR * 0.05) + len(ha)] = ha
+        audio.append(seg); plan.append(("hook", hd))
+    lead0 = 0.25
+    for i, (a, times) in enumerate(lines):
+        lead = lead0 if i == 0 else 0.0
         dur = max(MIN_SCENE, len(a) / SR + GAP + TAIL)
-        seg = np.zeros(int(SR * dur), np.float32); seg[:len(a)] = a
-        audio.append(seg); plan.append(("scene", i, dur + (0.25 if i == 0 else 0)))
+        seg = np.zeros(int(SR * (dur + lead)), np.float32); seg[int(SR * lead):int(SR * lead) + len(a)] = a
+        audio.append(seg); plan.append(("scene", i, dur + lead, times, lead))
     qd_ask = len(quiz_a) / SR + 2.2; qd_rev = 1.6
     seg = np.zeros(int(SR * (qd_ask + qd_rev)), np.float32); s0 = int(SR * 0.5); seg[s0:s0 + len(quiz_a)] = quiz_a
     audio.append(seg); plan.append(("quiz", qd_ask, qd_rev))
@@ -127,10 +204,12 @@ def main():
                            "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", out], stdin=subprocess.PIPE)
     total_frames = 0
     for p in plan:
-        if p[0] == "scene":
-            _, i, dur = p; n = round(dur * FPS)
-            s = story["sentences"][i]
-            frames = scene_frames(imgs[i], caption_layer(s["en"], s["tr"]), n)
+        if p[0] == "hook":
+            n = round(p[1] * FPS)
+            frames = hook_frames(fit(Image.open(os.path.join(imgdir, story["hook"]["img"])).convert("RGB")), story, n)
+        elif p[0] == "scene":
+            _, i, dur, times, lead = p; n = round(dur * FPS)
+            frames = scene_frames(imgs[i], story["sentences"][i], times, n, lead)
         elif p[0] == "quiz":
             n = round((p[1] + p[2]) * FPS); frames = quiz_frames(imgs[-1], story, round(p[1] * FPS), round(p[2] * FPS))
         else:

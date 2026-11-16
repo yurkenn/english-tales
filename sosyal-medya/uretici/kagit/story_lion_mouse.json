@@ -92,5 +92,12 @@
     ],
     "answer": 0
   },
-  "cta_say": "Read more stories in English Tales. It's free!"
+  "cta_say": "Read more stories in English Tales. It's free!",
+  "hook": {
+    "img": "08.png",
+    "text": "Küçük fare aslanı kurtarabilir mi?",
+    "accent": "kurtarabilir",
+    "say": "Küçük fare, koca aslanı kurtarabilir mi?",
+    "voice": "fahrettin-medium"
+  }
 }
