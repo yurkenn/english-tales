@@ -33,5 +33,5 @@ Kapak, maskot ve fontlar `native-android/app/src/main/res` klasöründen okunur 
 
 ## Aslan ve Fare (kâğıt kesme, kelime kelime vurgu)
 
-- `videolar/aslan-ve-fare.mp4`: son sürüm. Görüntü HyperFrames ile Mac'te (`hyperframes/aslan-ve-fare/`, komutlar `tools/build.py` başında), kelime zamanlaması whisper. Hook'taki Türkçe soru sesi Piper (fahrettin-medium) ile bulutta eklendi: ilk 2,6 sn'nin sesi susturulup "Minik fare, aslanı kurtarabilir mi?" 0,35 sn'de başlıyor.
+- `videolar/aslan-ve-fare.mp4`: son sürüm. Görüntü HyperFrames ile Mac'te (`hyperframes/aslan-ve-fare/`, komutlar `tools/build.py` başında), kelime zamanlaması whisper. Hook'taki Türkçe soru sesi ElevenLabs kadın sesi "Su | Gentle & Expressive Storytelling" (voice_id i0MwGlmJMVRT2teAFS3N, eleven_multilingual_v2) ile bulutta eklendi: ilk 2,6 sn'nin sesi susturulup "Minik fare, aslanı kurtarabilir mi?" 0,15 sn'de başlıyor (ses-ornekleri/hook-aslan-ve-fare-elevenlabs-su.mp3). Türkçe seslendirmede bundan sonra bu ses kullanılıyor.
 - `uretici/kagit/make_paper.py`: aynı formatı Mac'siz üreten Python yolu (Kokoro + Piper, karaoke vurgu, Türkçe sesli hook). Kullanım dosyanın başında.
