@@ -113,12 +113,21 @@
   "text": "Karga bu tuzağa düşecek mi?",
   "accent": "tuzağa",
   "say": "Karga... bu tuzağa düşecek mi?!",
-  "sfx": "loud crow caw with a cinematic hit"
+  "sfx": "../../ses-ornekleri/karga-gaklama-sfx.mp3",
+  "audio": "../../ses-ornekleri/tk-hook-gulsu.mp3",
+  "voice_at": 0.5,
+  "sfx_gain": 0.55
  },
  "tr_voice": {
   "provider": "elevenlabs",
   "voice_id": "bGmbiluBMaeupKCFxoOk",
   "model": "eleven_v3",
   "tag": "[excited]"
+ },
+ "frame": {
+  "type": "card",
+  "band": 420,
+  "cap_y": 120,
+  "cap_w": 940
  }
 }

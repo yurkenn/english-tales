@@ -38,3 +38,9 @@ Kapak, maskot ve fontlar `native-android/app/src/main/res` klasöründen okunur 
 - Açılış: aslan kükremesi (ElevenLabs ses efekti) + 0,45 sn'de "Minik fare... aslanı kurtarabilir mi?!"; hook'un son karesi 0,4 sn bekletilip masal başlıyor.
 - Kapanış Türkçe: "Sence free ne demek?" sorusu, "Doğru cevap: özgür!", uygulamanın Türkçe adı "Masallarla İngilizce Öğren" ile CTA. `uretici/kagit/tr_tail.py` herhangi bir videonun quiz'den sonrasını bu Türkçe kapanışla değiştirir (kullanım dosyanın başında).
 - `uretici/kagit/make_paper.py`: aynı formatı Mac'siz üreten Python yolu (Kokoro + Piper, karaoke vurgu).
+
+## Tilki ve Karga (kâğıt kesme, tek video)
+
+- `videolar/tilki-ve-karga-kagit.mp4` (59 sn): görseller oguz'un ChatGPT ile ürettiği 14 kare (`uretici/kagit/tilki-ve-karga/`, promptlar `story_fox_crow_paper.json` sahnelerinden). Görsel "kart" düzeninde (`"frame": {"type": "card"}`): yazı üstteki krem bantta, görsel altında kâğıt kart gibi, karakterlerin üstüne yazı binmiyor.
+- Açılış karga gaklaması + Gülsu "Karga... bu tuzağa düşecek mi?!" (story JSON `hook.audio` / `hook.sfx`), İngilizce anlatım Kokoro + kelime kelime vurgu, kapanış `tr_tail.py` ile Türkçe.
+- Komut: `KOKORO_DIR=... python3 make_paper.py story_fox_crow_paper.json tilki-ve-karga base.mp4` (çıktıdaki `quiz_at` değerini) `python3 tr_tail.py story_fox_crow_paper.json tilki-ve-karga base.mp4 <quiz_at> ../../ses-ornekleri/tk-quiz-praise-gulsu.mp3 ../../ses-ornekleri/tk-cevap-ovmek-gulsu.mp3 ../../ses-ornekleri/kapanis-gulsu.mp3 out.mp4`

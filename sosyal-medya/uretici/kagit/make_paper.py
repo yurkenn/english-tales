@@ -63,7 +63,33 @@ def synth_tr(voice, text):
     idx = np.where(np.abs(a) > 0.01)[0]
     return a[max(0, idx[0] - 600): idx[-1] + 1200] if len(idx) else a
 
+def load_audio(path):
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", path, "-ac", "1", "-ar", str(SR), "-f", "f32le", "-"], capture_output=True, check=True).stdout
+    a = np.frombuffer(raw, np.float32).copy(); idx = np.where(np.abs(a) > 0.01)[0]
+    return a[max(0, idx[0] - 300): idx[-1] + 600] if len(idx) else a
+
+FRAME = {}   # story["frame"]: {"type": "card", "band": px of cream space on top for the caption, "cap_y": caption top, "cap_w": wrap width}
+CAP_Y, CAP_W = 190, 820
+
+def card(img):
+    """Image as a paper card below a caption band, over a soft blurred copy of itself."""
+    band = FRAME.get("band", 420); m = 28
+    s = min((H - band - m) / img.height, (W - 2 * 40) / img.width)
+    cw, ch = round(img.width * s), round(img.height * s)
+    bg = fit_cover(img).filter(ImageFilter.GaussianBlur(40))
+    bg = Image.blend(bg, Image.new("RGB", (W, H), CREAM), 0.72).convert("RGBA")
+    x, y = (W - cw) // 2, band
+    sh = Image.new("L", (W, H), 0); ImageDraw.Draw(sh).rounded_rectangle((x + 6, y + 14, x + cw + 6, y + ch + 14), radius=30, fill=110)
+    bg.paste((60, 40, 20, 255), (0, 0), sh.filter(ImageFilter.GaussianBlur(18)))
+    mask = Image.new("L", (cw, ch), 0); ImageDraw.Draw(mask).rounded_rectangle((0, 0, cw - 1, ch - 1), radius=30, fill=255)
+    bg.paste(img.resize((cw, ch), Image.LANCZOS), (x, y), mask)
+    return bg.convert("RGB")
+
 def fit(img):
+    if FRAME.get("type") == "card": return card(img)
+    return fit_cover(img)
+
+def fit_cover(img):
     s = max(W / img.width, H / img.height)
     img = img.resize((round(img.width * s), round(img.height * s)), Image.LANCZOS)
     x, y = (img.width - W) // 2, (img.height - H) // 2
@@ -75,8 +101,8 @@ F_HOOK = font("nunito_extrabold.ttf", 92); F_BADGE = font("nunito_extrabold.ttf"
 def layout_words(en):
     """Positions for each word of the English line: list of (word, x, y, width), centred lines."""
     d = ImageDraw.Draw(Image.new("RGB", (1, 1)))
-    space = d.textlength(" ", font=F_EN); out = []; y = 190
-    for ln in wrap(d, en, F_EN, 820):
+    space = d.textlength(" ", font=F_EN); out = []; y = CAP_Y
+    for ln in wrap(d, en, F_EN, CAP_W):
         ws = ln.split(); widths = [d.textlength(w, font=F_EN) for w in ws]
         x = W / 2 - (sum(widths) + space * (len(ws) - 1)) / 2
         for w, wd in zip(ws, widths):
@@ -99,7 +125,7 @@ def caption_frame(words, ybottom, tr, times, t, alpha=1.0):
             col = INK if t >= s1 else UPCOMING
         d.text((x, y), w, font=F_EN, fill=col)
     y = ybottom + 14
-    for ln in wrap(d, tr, F_TR, 820):
+    for ln in wrap(d, tr, F_TR, CAP_W):
         d.text((W // 2, y), ln, font=F_TR, fill=INK_SOFT, anchor="mt"); y += 60
     halo = layer.getchannel("A").filter(ImageFilter.MaxFilter(15)).filter(ImageFilter.GaussianBlur(14))
     bg = Image.new("RGBA", layer.size, CREAM + (0,)); bg.putalpha(halo.point(lambda v: int(v * 0.9)))
@@ -125,9 +151,9 @@ def hook_frames(img, story, n):
         layer = Image.new("RGBA", (W, 760), (0, 0, 0, 0)); d = ImageDraw.Draw(layer)
         label = f'{story.get("title_tr", story["title"])} · {story.get("level", "A1")}'
         tw = d.textlength(label, font=F_BADGE)
-        d.rounded_rectangle((W / 2 - tw / 2 - 30, 190, W / 2 + tw / 2 + 30, 262), radius=36, fill=HILITE)
-        d.text((W / 2, 226), label, font=F_BADGE, fill=INK, anchor="mm")
-        y = 300
+        by = CAP_Y; d.rounded_rectangle((W / 2 - tw / 2 - 30, by, W / 2 + tw / 2 + 30, by + 72), radius=36, fill=HILITE)
+        d.text((W / 2, by + 36), label, font=F_BADGE, fill=INK, anchor="mm")
+        y = by + 110
         for ln in lines:
             ws = ln.split(); x = W / 2 - d.textlength(ln, font=F_HOOK) / 2
             for j, wd in enumerate(ws):
@@ -175,13 +201,25 @@ def cta_frames(story, n):
 
 def main():
     story = json.load(open(sys.argv[1])); imgdir = sys.argv[2]; out = sys.argv[3]
+    global CAP_Y, CAP_W
+    FRAME.update(story.get("frame", {})); CAP_Y = FRAME.get("cap_y", CAP_Y); CAP_W = FRAME.get("cap_w", CAP_W)
     lines, quiz_a, cta_a = synth(story)
     imgs = [fit(Image.open(os.path.join(imgdir, s["img"])).convert("RGB")) for s in story["sentences"]]
     audio = []; plan = []
     if story.get("hook"):
-        ha = synth_tr(story["hook"].get("voice", "fahrettin-medium"), story["hook"].get("say", story["hook"]["text"]))
-        hd = len(ha) / SR + 0.45
-        seg = np.zeros(int(SR * hd), np.float32); seg[int(SR * 0.05):int(SR * 0.05) + len(ha)] = ha
+        hk = story["hook"]; here = os.path.dirname(os.path.abspath(sys.argv[1]))
+        if hk.get("audio"):   # pre-made voice clip (e.g. ElevenLabs), path relative to the story file
+            ha = load_audio(os.path.join(here, hk["audio"]))
+        else:
+            ha = synth_tr(hk.get("voice", "fahrettin-medium"), hk.get("say", hk["text"]))
+        at = hk.get("voice_at", 0.05)
+        hd = at + len(ha) / SR + 0.45
+        seg = np.zeros(int(SR * hd), np.float32); seg[int(SR * at):int(SR * at) + len(ha)] = ha
+        if hk.get("sfx"):
+            sx = load_audio(os.path.join(here, hk["sfx"])) * hk.get("sfx_gain", 0.5)
+            fade = int(SR * at); sx = sx[:len(seg)].copy()
+            if fade < len(sx): sx[fade:] *= np.linspace(1, 0, len(sx) - fade) ** 2
+            seg[:len(sx)] += sx
         audio.append(seg); plan.append(("hook", hd))
     lead0 = 0.25
     for i, (a, times) in enumerate(lines):
@@ -191,7 +229,7 @@ def main():
         audio.append(seg); plan.append(("scene", i, dur + lead, times, lead))
     qd_ask = len(quiz_a) / SR + 2.2; qd_rev = 1.6
     seg = np.zeros(int(SR * (qd_ask + qd_rev)), np.float32); s0 = int(SR * 0.5); seg[s0:s0 + len(quiz_a)] = quiz_a
-    audio.append(seg); plan.append(("quiz", qd_ask, qd_rev))
+    print("quiz_at", round(sum(len(x) for x in audio) / SR, 4)); audio.append(seg); plan.append(("quiz", qd_ask, qd_rev))
     cd = len(cta_a) / SR + 1.0
     seg = np.zeros(int(SR * cd), np.float32); seg[int(SR * 0.3):int(SR * 0.3) + len(cta_a)] = cta_a
     audio.append(seg); plan.append(("cta", cd))
