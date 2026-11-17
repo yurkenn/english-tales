@@ -1,8 +1,9 @@
 """Turkish ending (quiz + app CTA) for a paper-craft video, voiced with ElevenLabs clips.
 
-python3 tr_tail.py story.json images_dir head.mp4 cut_at quiz.mp3 reveal.mp3 cta.mp3 out.mp4
+python3 tr_tail.py story.json images_dir head.mp4 cut_at quiz.mp3 reveal.mp3 cta.mp3 out.mp4 [music.mp3]
   head.mp4  the video up to the quiz (e.g. the HyperFrames render); everything after cut_at is replaced
   *.mp3     Turkish voice lines: quiz question, "Doğru cevap: ...", app CTA (any format ffmpeg reads)
+music.mp3 (optional) soft background bed under the whole video, looped, ducked under the voice.
 App name shown and spoken is the Turkish store name (APP_NAME_TR).
 """
 import os, subprocess, sys, json
@@ -35,6 +36,7 @@ def cta_frames_tr(n):
 
 def main():
     story_p, imgdir, head, cut_at, q_a, r_a, c_a, out = sys.argv[1:9]
+    music = sys.argv[9] if len(sys.argv) > 9 else None
     story = json.load(open(story_p)); cut_at = float(cut_at)
     bg = m.fit(Image.open(os.path.join(imgdir, story["sentences"][-1]["img"])).convert("RGB"))
     q_d, r_d, c_d = dur(q_a), dur(r_a), dur(c_a)
@@ -54,8 +56,17 @@ def main():
           f"[3:a]aresample=48000,adelay={ms(t_rev + 0.2)}|{ms(t_rev + 0.2)}[r];"
           f"[4:a]aresample=48000,adelay={ms(t_cta + 0.3)}|{ms(t_cta + 0.3)}[c];"
           f"[q][r][c]amix=inputs=3:duration=longest:normalize=0,highpass=f=80[tv];"
-          f"[ha][tv]amix=inputs=2:duration=longest:normalize=0,loudnorm=I=-14:TP=-1.5,aresample=48000,apad=whole_dur={total:.3f},atrim=0:{total:.3f}[a]")
-    subprocess.check_call(["ffmpeg", "-y", "-v", "error", "-i", head, "-i", tmp, "-i", q_a, "-i", r_a, "-i", c_a, "-filter_complex", fc,
+          f"[ha][tv]amix=inputs=2:duration=longest:normalize=0,aresample=48000,apad=whole_dur={total:.3f},atrim=0:{total:.3f}[vo]")
+    ins = ["-i", head, "-i", tmp, "-i", q_a, "-i", r_a, "-i", c_a]
+    if music:   # quiet bed, pushed further down while someone speaks
+        ins += ["-stream_loop", "-1", "-i", music]
+        fc += (f";[vo]asplit=2[vo1][key];[5:a]aresample=48000,aformat=channel_layouts=stereo,atrim=0:{total:.3f},volume=0.22,"
+               f"afade=t=in:d=0.6,afade=t=out:st={total - 2:.3f}:d=2[mu];[mu][key]sidechaincompress=threshold=0.03:ratio=6:attack=40:release=500[mud];"
+               f"[vo1][mud]amix=inputs=2:duration=first:normalize=0[mix]")
+    else:
+        fc += ";[vo]anull[mix]"
+    fc += f";[mix]loudnorm=I=-14:TP=-1.5,aresample=48000,apad=whole_dur={total:.3f},atrim=0:{total:.3f}[a]"
+    subprocess.check_call(["ffmpeg", "-y", "-v", "error"] + ins + ["-filter_complex", fc,
                            "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-crf", "18", "-preset", "medium", "-pix_fmt", "yuv420p",
                            "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", out])
     os.remove(tmp); print(out, dur(out))

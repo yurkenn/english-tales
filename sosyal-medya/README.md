@@ -38,9 +38,12 @@ Kapak, maskot ve fontlar `native-android/app/src/main/res` klasöründen okunur 
 - Açılış: aslan kükremesi (ElevenLabs ses efekti) + 0,45 sn'de "Minik fare... aslanı kurtarabilir mi?!"; hook'un son karesi 0,4 sn bekletilip masal başlıyor.
 - Kapanış Türkçe: "Sence free ne demek?" sorusu, "Doğru cevap: özgür!", uygulamanın Türkçe adı "Masallarla İngilizce Öğren" ile CTA. `uretici/kagit/tr_tail.py` herhangi bir videonun quiz'den sonrasını bu Türkçe kapanışla değiştirir (kullanım dosyanın başında).
 - `uretici/kagit/make_paper.py`: aynı formatı Mac'siz üreten Python yolu (Kokoro + Piper, karaoke vurgu).
+- 2026-11-17 güncel sürüm make_paper.py ile bulutta üretildi: altyazı arka plansız konturlu yazı, görselin boş gökyüzünde (`"cap_y": 250`, üst menünün altında), Gülsu hook + kükreme, fon müziği.
 
 ## Tilki ve Karga (kâğıt kesme, tek video)
 
 - `videolar/tilki-ve-karga-kagit.mp4` (59 sn): görseller oguz'un ChatGPT ile ürettiği 14 kare (`uretici/kagit/tilki-ve-karga/`, promptlar `story_fox_crow_paper.json` sahnelerinden). Altyazı alt-orta güvenli alanda (Instagram/TikTok üst menü, alt açıklama şeridi ve sağ butonların dışında), arka plan kutusu yok: beyaz yazı + koyu kontur (`"frame": {"type": "cover", "cap_style": "outline", "cap_bottom": 1430, "cap_x": 485, "cap_w": 820, "hook_y": 1060}`). Kapanışta "Link profilde" yazar.
+- Fon müziği: `ses-ornekleri/fon-muzik-masal.mp3` (ElevenLabs Music, sözsüz, 70 sn). `tr_tail.py`'nin son argümanı olarak verilir; konuşma sırasında otomatik kısılır.
+- Altyazı kuralı: yazı görselin boş kalan yerine, Instagram/TikTok güvenli alanı içinde (üst 220 px, alt 450 px ve sağdaki butonlar dışı).
 - Açılış karga gaklaması + Gülsu "Karga... bu tuzağa düşecek mi?!" (story JSON `hook.audio` / `hook.sfx`), İngilizce anlatım Kokoro + kelime kelime vurgu, kapanış `tr_tail.py` ile Türkçe.
 - Komut: `KOKORO_DIR=... python3 make_paper.py story_fox_crow_paper.json tilki-ve-karga base.mp4` (çıktıdaki `quiz_at` değerini) `python3 tr_tail.py story_fox_crow_paper.json tilki-ve-karga base.mp4 <quiz_at> ../../ses-ornekleri/tk-quiz-praise-gulsu.mp3 ../../ses-ornekleri/tk-cevap-ovmek-gulsu.mp3 ../../ses-ornekleri/kapanis-gulsu.mp3 out.mp4`
