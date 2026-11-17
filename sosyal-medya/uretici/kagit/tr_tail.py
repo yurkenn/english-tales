@@ -13,7 +13,7 @@ from PIL import Image, ImageDraw
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import make_paper as m
 
-APP_NAME_TR = "Masallarla İngilizce Öğren"
+APP_NAME_TR = "Hikâyelerle İngilizce Öğren"
 
 def dur(p):
     return float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", p]))

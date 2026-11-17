@@ -36,7 +36,7 @@ Kapak, maskot ve fontlar `native-android/app/src/main/res` klasöründen okunur 
 - `videolar/aslan-ve-fare.mp4`: son sürüm (51 sn). Görüntü HyperFrames ile Mac'te (`hyperframes/aslan-ve-fare/`, komutlar `tools/build.py` başında), kelime zamanlaması whisper.
 - Türkçe sesler ElevenLabs, kadın sesi "Gülsu" (voice_id bGmbiluBMaeupKCFxoOk, model eleven_v3, `[excited]` etiketiyle). Dosyalar `ses-ornekleri/`.
 - Açılış: aslan kükremesi (ElevenLabs ses efekti) + 0,45 sn'de "Minik fare... aslanı kurtarabilir mi?!"; hook'un son karesi 0,4 sn bekletilip masal başlıyor.
-- Kapanış Türkçe: "Sence free ne demek?" sorusu, "Doğru cevap: özgür!", uygulamanın Türkçe adı "Masallarla İngilizce Öğren" ile CTA. `uretici/kagit/tr_tail.py` herhangi bir videonun quiz'den sonrasını bu Türkçe kapanışla değiştirir (kullanım dosyanın başında).
+- Kapanış Türkçe: "Sence free ne demek?" sorusu, "Doğru cevap: özgür!", uygulamanın Türkçe adı "Hikâyelerle İngilizce Öğren" ile CTA. `uretici/kagit/tr_tail.py` herhangi bir videonun quiz'den sonrasını bu Türkçe kapanışla değiştirir (kullanım dosyanın başında).
 - `uretici/kagit/make_paper.py`: aynı formatı Mac'siz üreten Python yolu (Kokoro + Piper, karaoke vurgu).
 - 2026-11-17 güncel sürüm make_paper.py ile bulutta üretildi: altyazı arka plansız konturlu yazı, görselin boş gökyüzünde (`"cap_y": 250`, üst menünün altında), Gülsu hook + kükreme, fon müziği.
 
