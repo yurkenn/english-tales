@@ -1,0 +1,75 @@
+{
+ "id": "fox-crow-p3",
+ "slug": "tilki-ve-karga-part-3",
+ "title": "The Fox and the Crow",
+ "title_tr": "Tilki ve Karga · Part 3",
+ "level": "A1",
+ "voice": "af_heart",
+ "speed": 0.78,
+ "style": "Layered paper-craft illustration: cut paper collage with soft drop shadows between layers and visible paper fibre texture, warm muted palette (sage green, mustard yellow, terracotta, soft blue, cream), gentle children's storybook look. Vertical 9:16, 1080x1920. The top 22% is plain cream sky (only a paper sun and one small paper cloud) so a caption fits there. No text, no letters, no logos, no watermark. Every frame uses the same wide camera angle and the same layout: one big oak tree on the left with a long branch reaching right, meadow with wildflowers, soft green hills behind, sun top right (unless the scene says close).",
+ "characters": "CROW: glossy blue-black paper crow with a yellow-grey beak and small shiny eyes, holding a pinkish-red piece of meat in her beak until it falls. FOX: slim orange-red paper fox with white chest and tail tip, black paws, pointed ears, clever friendly eyes. Same meadow setting in every frame.",
+ "sentences": [
+  {
+   "en": "The fox picks it up and laughs.",
+   "tr": "Tilki onu alır ve güler.",
+   "img": "11.png",
+   "scene": "Same wide view: the fox catches the meat in his mouth on the ground and laughs, eyes closed with joy; the crow stares from the branch."
+  },
+  {
+   "en": "“You have a voice, but you need more sense,” he says.",
+   "tr": "“Sesin var ama daha akıllı olman gerekiyor,” der.",
+   "img": "12.png",
+   "scene": "The fox looks up at the crow with the meat in his mouth, one paw raised like a teacher giving advice; the crow looks ashamed."
+  },
+  {
+   "en": "The crow watches him leave with her meal.",
+   "tr": "Karga, tilkinin yemeğiyle uzaklaşmasını izler.",
+   "img": "13.png",
+   "scene": "Same wide view: the fox trots away to the right with the meat; the crow watches sadly from the branch."
+  },
+  {
+   "en": "Flattery is not always friendship.",
+   "tr": "Pohpohlamak her zaman dostluk değildir.",
+   "img": "14.png",
+   "scene": "Calm wide view: the crow alone on the branch at sunset, thinking; one small paper leaf falls."
+  }
+ ],
+ "quiz": {
+  "say": "What does flattery mean?",
+  "q": "“flattery” ne demek?",
+  "options": [
+   "dostluk",
+   "pohpohlama",
+   "cesaret"
+  ],
+  "answer": 1
+ },
+ "cta_say": "Read more stories in English Tales. It's free!",
+ "cta_tr": "Masalın devamı ve altmıştan fazla masal, Hikâyelerle İngilizce Öğren uygulamasında. Hem de ücretsiz!",
+ "hook": {
+  "img": "12.png",
+  "text": "Final! Tilkinin son sözü ne?",
+  "accent": "Final!",
+  "say": "Final! Tilkinin son sözü ne?",
+  "audio": "../../ses-ornekleri/tk-p3-hook-gulsu.mp3",
+  "voice_at": 0.5,
+  "sfx": "../../ses-ornekleri/karga-gaklama-sfx.mp3",
+  "sfx_gain": 0.45
+ },
+ "tr_voice": {
+  "provider": "elevenlabs",
+  "voice_id": "bGmbiluBMaeupKCFxoOk",
+  "model": "eleven_v3",
+  "tag": "[excited]"
+ },
+ "frame": {
+  "type": "cover",
+  "cap_x": 485,
+  "cap_w": 820,
+  "cap_style": "outline",
+  "cap_bottom": 1430,
+  "cap_y": 1160,
+  "hook_y": 1060
+ },
+ "gap": 1.2
+}

@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Nunito"; src: url("assets/fonts/nunito_extrabold.ttf") format("truetype"); font-weight: 800; }
+      @font-face { font-family: "Nunito"; src: url("assets/fonts/nunito_bold.ttf") format("truetype"); font-weight: 700; }
+      :root { --ink:#34261C; --ink-soft:#78604A; --todo:#94806B; --cream:#FAF3E4; --mustard:#F0C448; --terracotta:#C8643C; }
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:var(--cream); }
+      body { font-family:"Nunito", sans-serif; }
+      .clip { position:absolute; inset:0; width:1080px; height:1920px; }
+      .scene { overflow:hidden; background:var(--cream); }
+      .cam { position:absolute; inset:0; transform-origin:540px 1150px; }
+      .cam img { position:absolute; inset:0; width:1080px; height:1920px; object-fit:cover; }
+      .cap { position:absolute; left:0; top:0; width:1080px; height:640px; padding:205px 80px 0; display:flex; flex-direction:column; align-items:center; gap:16px; text-align:center; }
+      .en { font-weight:800; font-size:76px; line-height:1.16; color:var(--todo); max-width:900px; opacity:0; }
+      .tr { font-weight:700; font-size:46px; line-height:1.25; color:var(--ink-soft); max-width:880px; opacity:0; }
+      .w, .hw { position:relative; display:inline-block; white-space:nowrap; }
+      .w .t, .hw .t { position:relative; z-index:1; }
+      .w .mk, .hw .mk { position:absolute; z-index:0; left:-8px; right:-8px; top:18%; bottom:2%; border-radius:14px; background:var(--mustard); opacity:.85; transform-origin:0 50%; }
+      .hookcap { padding-top:95px; gap:4px; }
+      .pill { font-weight:800; font-size:34px; letter-spacing:2px; color:var(--cream); background:var(--terracotta); padding:10px 26px; border-radius:40px; margin-bottom:22px; opacity:0; }
+      .hl { font-weight:800; font-size:96px; line-height:1.12; color:var(--ink); }
+      .hw { opacity:0; }
+      .hw .mk { opacity:.9; }
+      .vwrap { position:absolute; inset:0; }
+    </style>
+  </head>
+  <body>
+    <div id="main" data-composition-id="main" data-start="0" data-duration="42.4" data-width="1080" data-height="1920">
+
+    <div id="hook" class="clip scene" data-start="0" data-duration="2.6" data-track-index="1">
+      <div class="cam" id="cam-hook"><img src="assets/img/08.png" alt="" /></div>
+      <div class="cap hookcap">
+        <div class="pill" id="hook-pill">İNGİLİZCE MASAL · A1</div>
+        <div class="hl"><span class="hw" id="hw0_0"><span class="mk"></span><span class="t">Minik</span></span> <span class="hw mark" id="hw0_1"><span class="mk"></span><span class="t">fare</span></span> <span class="hw mark" id="hw0_2"><span class="mk"></span><span class="t">aslanı</span></span> </div><div class="hl"><span class="hw" id="hw1_0"><span class="mk"></span><span class="t">kurtarabilir</span></span> <span class="hw" id="hw1_1"><span class="mk"></span><span class="t">mi?</span></span> </div>
+      </div>
+    </div>
+    <div id="s0" class="clip scene" data-start="2.600" data-duration="2.9" data-track-index="1">
+      <div class="cam" id="cam0"><img src="assets/img/01.png" alt="" /></div>
+      <div class="cap">
+        <p class="en" id="en0"><span class="w" id="w0_0"><span class="mk"></span><span class="t">A</span></span> <span class="w" id="w0_1"><span class="mk"></span><span class="t">big</span></span> <span class="w" id="w0_2"><span class="mk"></span><span class="t">lion</span></span> <span class="w" id="w0_3"><span class="mk"></span><span class="t">sleeps</span></span> <span class="w" id="w0_4"><span class="mk"></span><span class="t">under</span></span> <span class="w" id="w0_5"><span class="mk"></span><span class="t">a</span></span> <span class="w" id="w0_6"><span class="mk"></span><span class="t">tree.</span></span> </p>
+        <p class="tr" id="tr0">Büyük bir aslan ağacın altında uyur.</p>
+      </div>
+    </div>
+    <div id="s1" class="clip scene" data-start="5.500" data-duration="2.533" data-track-index="1">
+      <div class="cam" id="cam1"><img src="assets/img/02.png" alt="" /></div>
+      <div class="cap">
+        <p class="en" id="en1"><span class="w" id="w1_0"><span class="mk"></span><span class="t">A</span></span> <span class="w" id="w1_1"><span class="mk"></span><span class="t">little</span></span> <span class="w" id="w1_2"><span class="mk"></span><span class="t">mouse</span></span> <span class="w" id="w1_3"><span class="mk"></span><span class="t">runs</span></span> <span class="w" id="w1_4"><span class="mk"></span><span class="t">on</span></span> <span class="w" id="w1_5"><span class="mk"></span><span class="t">his</span></span> <span class="w" id="w1_6"><span class="mk"></span><span class="t">paw.</span></span> </p>
+        <p class="tr" id="tr1">Küçük bir fare onun pençesinin üstünden koşar.</p>
+      </div>
+    </div>
+    <div id="s2" class="clip scene" data-start="8.033" data-duration="2.933" data-track-index="1">
+      <div class="cam" id="cam2"><img src="assets/img/03.png" alt="" /></div>
+      <div class="cap">
+        <p class="en" id="en2"><span class="w" id="w2_0"><span class="mk"></span><span class="t">The</span></span> <span class="w" id="w2_1"><span class="mk"></span><span class="t">lion</span></span> <span class="w" id="w2_2"><span class="mk"></span><span class="t">wakes</span></span> <span class="w" id="w2_3"><span class="mk"></span><span class="t">up.</span></span> <span class="w" id="w2_4"><span class="mk"></span><span class="t">He</span></span> <span class="w" id="w2_5"><span class="mk"></span><span class="t">is</span></span> <span class="w" id="w2_6"><span class="mk"></span><span class="t">angry!</span></span> </p>
+        <p class="tr" id="tr2">Aslan uyanır. Çok kızgındır!</p>
+      </div>
+    </div>
+    <div id="s3" class="clip scene" data-start="10.967" data-duration="2.933" data-track-index="1">
+      <div class="cam" id="cam3"><img src="assets/img/04.png" alt="" /></div>
+      <div class="cap">
+        <p class="en" id="en3"><span class="w" id="w3_0"><span class="mk"></span><span class="t">“Please,</span></span> <span class="w" id="w3_1"><span class="mk"></span><span class="t">let</span></span> <span class="w" id="w3_2"><span class="mk"></span><span class="t">me</span></span> <span class="w" id="w3_3"><span class="mk"></span><span class="t">go!”</span></span> <span class="w" id="w3_4"><span class="mk"></span><span class="t">says</span></span> <span class="w" id="w3_5"><span class="mk"></span><span class="t">the</span></span> <span class="w" id="w3_6"><span class="mk"></span><span class="t">mouse.</span></span> </p>
+        <p class="tr" id="tr3">“Lütfen, bırak beni!” der fare.</p>
+      </div>
+    </div>
+    <div id="s4" class="clip scene" data-start="13.900" data-duration="2.267" data-track-index="1">
+      <div class="cam" id="cam4"><img src="assets/img/05.png" alt="" /></div>
+      <div class="cap">
+        <p class="en" id="en4"><span class="w" id="w4_0"><span class="mk"></span><span class="t">“One</span></span> <span class="w" id="w4_1"><span class="mk"></span><span class="t">day,</span></span> <span class="w" id="w4_2"><span class="mk"></span><span class="t">I</span></span> <span class="w" id="w4_3"><span class="mk"></span><span class="t">can</span></span> <span class="w" id="w4_4"><span class="mk"></span><span class="t">help</span></span> <span class="w" id="w4_5"><span class="mk"></span><span class="t">you.”</span></span> </p>
+        <p class="tr" id="tr4">“Bir gün sana yardım edebilirim.”</p>
+      </div>
+    </div>
+    <div id="s5" class="clip scene" data-start="16.167" data-duration="2.667" data-track-index="1">
+      <div class="cam" id="cam5"><img src="assets/img/06.png" alt="" /></div>
+      <div class="cap">
+        <p class="en" id="en5"><span class="w" id="w5_0"><span class="mk"></span><span class="t">The</span></span> <span class="w" id="w5_1"><span class="mk"></span><span class="t">lion</span></span> <span class="w" id="w5_2"><span class="mk"></span><span class="t">laughs</span></span> <span class="w" id="w5_3"><span class="mk"></span><span class="t">and</span></span> <span class="w" id="w5_4"><span class="mk"></span><span class="t">lets</span></span> <span class="w" id="w5_5"><span class="mk"></span><span class="t">him</span></span> <span class="w" id="w5_6"><span class="mk"></span><span class="t">go.</span></span> </p>
+        <p class="tr" id="tr5">Aslan güler ve onu bırakır.</p>
+      </div>
+    </div>
+    <div id="s6" class="clip scene" data-start="18.833" data-duration="2.7" data-track-index="1">
+      <div class="cam" id="cam6"><img src="assets/img/07.png" alt="" /></div>
+      <div class="cap">
+        <p class="en" id="en6"><span class="w" id="w6_0"><span class="mk"></span><span class="t">One</span></span> <span class="w" id="w6_1"><span class="mk"></span><span class="t">day,</span></span> <span class="w" id="w6_2"><span class="mk"></span><span class="t">the</span></span> <span class="w" id="w6_3"><span class="mk"></span><span class="t">lion</span></span> <span class="w" id="w6_4"><span class="mk"></span><span class="t">is</span></span> <span class="w" id="w6_5"><span class="mk"></span><span class="t">in</span></span> <span class="w" id="w6_6"><span class="mk"></span><span class="t">a</span></span> <span class="w" id="w6_7"><span class="mk"></span><span class="t">net.</span></span> </p>
+        <p class="tr" id="tr6">Bir gün aslan bir ağa yakalanır.</p>
+      </div>
+    </div>
+    <div id="s7" class="clip scene" data-start="21.533" data-duration="2.3" data-track-index="1">
+      <div class="cam" id="cam7"><img src="assets/img/08.png" alt="" /></div>
+      <div class="cap">
+        <p class="en" id="en7"><span class="w" id="w7_0"><span class="mk"></span><span class="t">“Help!</span></span> <span class="w" id="w7_1"><span class="mk"></span><span class="t">Help!”</span></span> <span class="w" id="w7_2"><span class="mk"></span><span class="t">he</span></span> <span class="w" id="w7_3"><span class="mk"></span><span class="t">roars.</span></span> </p>
+        <p class="tr" id="tr7">“İmdat! İmdat!” diye kükrer.</p>
+      </div>
+    </div>
+    <div id="s8" class="clip scene" data-start="23.833" data-duration="2.067" data-track-index="1">
+      <div class="cam" id="cam8"><img src="assets/img/09.png" alt="" /></div>
+      <div class="cap">
+        <p class="en" id="en8"><span class="w" id="w8_0"><span class="mk"></span><span class="t">The</span></span> <span class="w" id="w8_1"><span class="mk"></span><span class="t">little</span></span> <span class="w" id="w8_2"><span class="mk"></span><span class="t">mouse</span></span> <span class="w" id="w8_3"><span class="mk"></span><span class="t">hears</span></span> <span class="w" id="w8_4"><span class="mk"></span><span class="t">him.</span></span> </p>
+        <p class="tr" id="tr8">Küçük fare onu duyar.</p>
+      </div>
+    </div>
+    <div id="s9" class="clip scene" data-start="25.900" data-duration="2.967" data-track-index="1">
+      <div class="cam" id="cam9"><img src="assets/img/10.png" alt="" /></div>
+      <div class="cap">
+        <p class="en" id="en9"><span class="w" id="w9_0"><span class="mk"></span><span class="t">Bite,</span></span> <span class="w" id="w9_1"><span class="mk"></span><span class="t">bite,</span></span> <span class="w" id="w9_2"><span class="mk"></span><span class="t">bite!</span></span> <span class="w" id="w9_3"><span class="mk"></span><span class="t">He</span></span> <span class="w" id="w9_4"><span class="mk"></span><span class="t">bites</span></span> <span class="w" id="w9_5"><span class="mk"></span><span class="t">the</span></span> <span class="w" id="w9_6"><span class="mk"></span><span class="t">net.</span></span> </p>
+        <p class="tr" id="tr9">Kemir, kemir, kemir! Ağı kemirir.</p>
+      </div>
+    </div>
+    <div id="s10" class="clip scene" data-start="28.867" data-duration="2.0" data-track-index="1">
+      <div class="cam" id="cam10"><img src="assets/img/11.png" alt="" /></div>
+      <div class="cap">
+        <p class="en" id="en10"><span class="w" id="w10_0"><span class="mk"></span><span class="t">The</span></span> <span class="w" id="w10_1"><span class="mk"></span><span class="t">lion</span></span> <span class="w" id="w10_2"><span class="mk"></span><span class="t">is</span></span> <span class="w" id="w10_3"><span class="mk"></span><span class="t">free!</span></span> </p>
+        <p class="tr" id="tr10">Aslan özgürdür!</p>
+      </div>
+    </div>
+    <div id="s11" class="clip scene" data-start="30.867" data-duration="2.7" data-track-index="1">
+      <div class="cam" id="cam11"><img src="assets/img/12.png" alt="" /></div>
+      <div class="cap">
+        <p class="en" id="en11"><span class="w" id="w11_0"><span class="mk"></span><span class="t">Little</span></span> <span class="w" id="w11_1"><span class="mk"></span><span class="t">friends</span></span> <span class="w" id="w11_2"><span class="mk"></span><span class="t">can</span></span> <span class="w" id="w11_3"><span class="mk"></span><span class="t">be</span></span> <span class="w" id="w11_4"><span class="mk"></span><span class="t">great</span></span> <span class="w" id="w11_5"><span class="mk"></span><span class="t">friends.</span></span> </p>
+        <p class="tr" id="tr11">Küçük dostlar büyük dostlar olabilir.</p>
+      </div>
+    </div>
+    <div class="vwrap"><video id="kapanis" class="clip" src="assets/kapanis.mp4" data-start="33.567" data-duration="8.833" data-track-index="2" muted playsinline></video></div>
+    <audio id="a-hook" src="assets/hook.wav" data-start="0.25" data-duration="1.22" data-track-index="5" data-volume="1"></audio>
+    <audio id="a-vo" src="assets/anlatim.wav" data-start="2.6" data-duration="39.8" data-track-index="6" data-volume="1"></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.to("#cam-hook", { scale: 1.06, duration: 2.6, ease: "power1.out" }, 0);
+      tl.set("#hook-pill", { y: -16 }, 0); tl.set("#hook .hw", { y: 30, scale: 0.8 }, 0); tl.set("#hook .mk", { scaleX: 0 }, 0);
+      tl.to("#hook-pill", { opacity: 1, y: 0, duration: 0.25, ease: "back.out(2)" }, 0.12);
+      tl.to("#hw0_0", { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "back.out(2.2)" }, 0.22);
+      tl.to("#hw0_1", { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "back.out(2.2)" }, 0.31);
+      tl.to("#hw0_1 .mk", { scaleX: 1, duration: 0.25, ease: "power2.out" }, 0.49);
+      tl.to("#hw0_2", { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "back.out(2.2)" }, 0.40);
+      tl.to("#hw0_2 .mk", { scaleX: 1, duration: 0.25, ease: "power2.out" }, 0.58);
+      tl.to("#hw1_0", { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "back.out(2.2)" }, 0.49);
+      tl.to("#hw1_1", { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "back.out(2.2)" }, 0.58);
+      tl.to("#cam-hook img", { x: 6, duration: 0.05, repeat: 7, yoyo: true, ease: "sine.inOut" }, 0.30);
+      tl.to("#cam0", { scale: 1.04, duration: 2.9, ease: "sine.inOut" }, 2.600);
+      tl.set("#en0", { y: 24 }, 2.600); tl.set("#tr0", { y: 14 }, 2.600); tl.set("#s0 .mk", { scaleX: 0 }, 2.600);
+      tl.to("#en0", { opacity: 1, y: 0, duration: 0.28, ease: "power3.out" }, 2.640);
+      tl.to("#tr0", { opacity: 1, y: 0, duration: 0.32, ease: "power2.out" }, 2.740);
+      tl.to("#w0_0 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 2.845);
+      tl.to("#w0_0 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 2.845);
+      tl.to("#w0_0", { y: -6, duration: 0.10, ease: "power2.out" }, 2.845);
+      tl.to("#w0_0 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 3.072);
+      tl.to("#w0_0", { y: 0, duration: 0.12, ease: "power1.inOut" }, 3.072);
+      tl.to("#w0_1 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 3.082);
+      tl.to("#w0_1 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 3.082);
+      tl.to("#w0_1", { y: -6, duration: 0.10, ease: "power2.out" }, 3.082);
+      tl.to("#w0_1 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 3.192);
+      tl.to("#w0_1", { y: 0, duration: 0.12, ease: "power1.inOut" }, 3.192);
+      tl.to("#w0_2 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 3.135);
+      tl.to("#w0_2 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 3.135);
+      tl.to("#w0_2", { y: -6, duration: 0.10, ease: "power2.out" }, 3.135);
+      tl.to("#w0_2 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 3.416);
+      tl.to("#w0_2", { y: 0, duration: 0.12, ease: "power1.inOut" }, 3.416);
+      tl.to("#w0_3 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 3.426);
+      tl.to("#w0_3 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 3.426);
+      tl.to("#w0_3", { y: -6, duration: 0.10, ease: "power2.out" }, 3.426);
+      tl.to("#w0_3 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 3.891);
+      tl.to("#w0_3", { y: 0, duration: 0.12, ease: "power1.inOut" }, 3.891);
+      tl.to("#w0_4 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 3.901);
+      tl.to("#w0_4 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 3.901);
+      tl.to("#w0_4", { y: -6, duration: 0.10, ease: "power2.out" }, 3.901);
+      tl.to("#w0_4 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 4.208);
+      tl.to("#w0_4", { y: 0, duration: 0.12, ease: "power1.inOut" }, 4.208);
+      tl.to("#w0_5 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 4.218);
+      tl.to("#w0_5 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 4.218);
+      tl.to("#w0_5", { y: -6, duration: 0.10, ease: "power2.out" }, 4.218);
+      tl.to("#w0_5 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 4.328);
+      tl.to("#w0_5", { y: 0, duration: 0.12, ease: "power1.inOut" }, 4.328);
+      tl.to("#w0_6 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 4.288);
+      tl.to("#w0_6 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 4.288);
+      tl.to("#w0_6", { y: -6, duration: 0.10, ease: "power2.out" }, 4.288);
+      tl.to("#w0_6 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 5.025);
+      tl.to("#w0_6", { y: 0, duration: 0.12, ease: "power1.inOut" }, 5.025);
+      tl.to("#cam1", { scale: 1.04, duration: 2.533, ease: "sine.inOut" }, 5.500);
+      tl.set("#en1", { y: 24 }, 5.500); tl.set("#tr1", { y: 14 }, 5.500); tl.set("#s1 .mk", { scaleX: 0 }, 5.500);
+      tl.to("#en1", { opacity: 1, y: 0, duration: 0.28, ease: "power3.out" }, 5.540);
+      tl.to("#tr1", { opacity: 1, y: 0, duration: 0.32, ease: "power2.out" }, 5.640);
+      tl.to("#w1_0 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 5.493);
+      tl.to("#w1_0 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 5.493);
+      tl.to("#w1_0", { y: -6, duration: 0.10, ease: "power2.out" }, 5.493);
+      tl.to("#w1_0 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 5.666);
+      tl.to("#w1_0", { y: 0, duration: 0.12, ease: "power1.inOut" }, 5.666);
+      tl.to("#w1_1 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 5.676);
+      tl.to("#w1_1 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 5.676);
+      tl.to("#w1_1", { y: -6, duration: 0.10, ease: "power2.out" }, 5.676);
+      tl.to("#w1_1 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 5.925);
+      tl.to("#w1_1", { y: 0, duration: 0.12, ease: "power1.inOut" }, 5.925);
+      tl.to("#w1_2 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 5.935);
+      tl.to("#w1_2 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 5.935);
+      tl.to("#w1_2", { y: -6, duration: 0.10, ease: "power2.out" }, 5.935);
+      tl.to("#w1_2 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 6.244);
+      tl.to("#w1_2", { y: 0, duration: 0.12, ease: "power1.inOut" }, 6.244);
+      tl.to("#w1_3 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 6.254);
+      tl.to("#w1_3 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 6.254);
+      tl.to("#w1_3", { y: -6, duration: 0.10, ease: "power2.out" }, 6.254);
+      tl.to("#w1_3 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 6.496);
+      tl.to("#w1_3", { y: 0, duration: 0.12, ease: "power1.inOut" }, 6.496);
+      tl.to("#w1_4 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 6.506);
+      tl.to("#w1_4 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 6.506);
+      tl.to("#w1_4", { y: -6, duration: 0.10, ease: "power2.out" }, 6.506);
+      tl.to("#w1_4 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 6.619);
+      tl.to("#w1_4", { y: 0, duration: 0.12, ease: "power1.inOut" }, 6.619);
+      tl.to("#w1_5 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 6.629);
+      tl.to("#w1_5 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 6.629);
+      tl.to("#w1_5", { y: -6, duration: 0.10, ease: "power2.out" }, 6.629);
+      tl.to("#w1_5 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 6.809);
+      tl.to("#w1_5", { y: 0, duration: 0.12, ease: "power1.inOut" }, 6.809);
+      tl.to("#w1_6 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 6.819);
+      tl.to("#w1_6 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 6.819);
+      tl.to("#w1_6", { y: -6, duration: 0.10, ease: "power2.out" }, 6.819);
+      tl.to("#w1_6 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 7.560);
+      tl.to("#w1_6", { y: 0, duration: 0.12, ease: "power1.inOut" }, 7.560);
+      tl.to("#cam2", { scale: 1.04, duration: 2.933, ease: "sine.inOut" }, 8.033);
+      tl.set("#en2", { y: 24 }, 8.033); tl.set("#tr2", { y: 14 }, 8.033); tl.set("#s2 .mk", { scaleX: 0 }, 8.033);
+      tl.to("#en2", { opacity: 1, y: 0, duration: 0.28, ease: "power3.out" }, 8.073);
+      tl.to("#tr2", { opacity: 1, y: 0, duration: 0.32, ease: "power2.out" }, 8.173);
+      tl.to("#w2_0 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 8.026);
+      tl.to("#w2_0 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 8.026);
+      tl.to("#w2_0", { y: -6, duration: 0.10, ease: "power2.out" }, 8.026);
+      tl.to("#w2_0 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 8.136);
+      tl.to("#w2_0", { y: 0, duration: 0.12, ease: "power1.inOut" }, 8.136);
+      tl.to("#w2_1 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 8.058);
+      tl.to("#w2_1 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 8.058);
+      tl.to("#w2_1", { y: -6, duration: 0.10, ease: "power2.out" }, 8.058);
+      tl.to("#w2_1 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 8.373);
+      tl.to("#w2_1", { y: 0, duration: 0.12, ease: "power1.inOut" }, 8.373);
+      tl.to("#w2_2 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 8.383);
+      tl.to("#w2_2 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 8.383);
+      tl.to("#w2_2", { y: -6, duration: 0.10, ease: "power2.out" }, 8.383);
+      tl.to("#w2_2 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 8.786);
+      tl.to("#w2_2", { y: 0, duration: 0.12, ease: "power1.inOut" }, 8.786);
+      tl.to("#w2_3 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 8.796);
+      tl.to("#w2_3 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 8.796);
+      tl.to("#w2_3", { y: -6, duration: 0.10, ease: "power2.out" }, 8.796);
+      tl.to("#w2_3 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 9.336);
+      tl.to("#w2_3", { y: 0, duration: 0.12, ease: "power1.inOut" }, 9.336);
+      tl.to("#w2_4 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 9.346);
+      tl.to("#w2_4 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 9.346);
+      tl.to("#w2_4", { y: -6, duration: 0.10, ease: "power2.out" }, 9.346);
+      tl.to("#w2_4 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 9.466);
+      tl.to("#w2_4", { y: 0, duration: 0.12, ease: "power1.inOut" }, 9.466);
+      tl.to("#w2_5 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 9.476);
+      tl.to("#w2_5 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 9.476);
+      tl.to("#w2_5", { y: -6, duration: 0.10, ease: "power2.out" }, 9.476);
+      tl.to("#w2_5 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 9.589);
+      tl.to("#w2_5", { y: 0, duration: 0.12, ease: "power1.inOut" }, 9.589);
+      tl.to("#w2_6 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 9.599);
+      tl.to("#w2_6 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 9.599);
+      tl.to("#w2_6", { y: -6, duration: 0.10, ease: "power2.out" }, 9.599);
+      tl.to("#w2_6 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 10.516);
+      tl.to("#w2_6", { y: 0, duration: 0.12, ease: "power1.inOut" }, 10.516);
+      tl.to("#cam3", { scale: 1.04, duration: 2.933, ease: "sine.inOut" }, 10.967);
+      tl.set("#en3", { y: 24 }, 10.967); tl.set("#tr3", { y: 14 }, 10.967); tl.set("#s3 .mk", { scaleX: 0 }, 10.967);
+      tl.to("#en3", { opacity: 1, y: 0, duration: 0.28, ease: "power3.out" }, 11.007);
+      tl.to("#tr3", { opacity: 1, y: 0, duration: 0.32, ease: "power2.out" }, 11.107);
+      tl.to("#w3_0 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 10.970);
+      tl.to("#w3_0 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 10.970);
+      tl.to("#w3_0", { y: -6, duration: 0.10, ease: "power2.out" }, 10.970);
+      tl.to("#w3_0 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 11.284);
+      tl.to("#w3_0", { y: 0, duration: 0.12, ease: "power1.inOut" }, 11.284);
+      tl.to("#w3_1 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 11.294);
+      tl.to("#w3_1 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 11.294);
+      tl.to("#w3_1", { y: -6, duration: 0.10, ease: "power2.out" }, 11.294);
+      tl.to("#w3_1 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 11.524);
+      tl.to("#w3_1", { y: 0, duration: 0.12, ease: "power1.inOut" }, 11.524);
+      tl.to("#w3_2 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 11.534);
+      tl.to("#w3_2 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 11.534);
+      tl.to("#w3_2", { y: -6, duration: 0.10, ease: "power2.out" }, 11.534);
+      tl.to("#w3_2 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 11.700);
+      tl.to("#w3_2", { y: 0, duration: 0.12, ease: "power1.inOut" }, 11.700);
+      tl.to("#w3_3 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 11.710);
+      tl.to("#w3_3 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 11.710);
+      tl.to("#w3_3", { y: -6, duration: 0.10, ease: "power2.out" }, 11.710);
+      tl.to("#w3_3 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 12.316);
+      tl.to("#w3_3", { y: 0, duration: 0.12, ease: "power1.inOut" }, 12.316);
+      tl.to("#w3_4 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 12.326);
+      tl.to("#w3_4 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 12.326);
+      tl.to("#w3_4", { y: -6, duration: 0.10, ease: "power2.out" }, 12.326);
+      tl.to("#w3_4 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 12.516);
+      tl.to("#w3_4", { y: 0, duration: 0.12, ease: "power1.inOut" }, 12.516);
+      tl.to("#w3_5 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 12.526);
+      tl.to("#w3_5 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 12.526);
+      tl.to("#w3_5", { y: -6, duration: 0.10, ease: "power2.out" }, 12.526);
+      tl.to("#w3_5 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 12.664);
+      tl.to("#w3_5", { y: 0, duration: 0.12, ease: "power1.inOut" }, 12.664);
+      tl.to("#w3_6 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 12.674);
+      tl.to("#w3_6 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 12.674);
+      tl.to("#w3_6", { y: -6, duration: 0.10, ease: "power2.out" }, 12.674);
+      tl.to("#w3_6 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 13.438);
+      tl.to("#w3_6", { y: 0, duration: 0.12, ease: "power1.inOut" }, 13.438);
+      tl.to("#cam4", { scale: 1.04, duration: 2.267, ease: "sine.inOut" }, 13.900);
+      tl.set("#en4", { y: 24 }, 13.900); tl.set("#tr4", { y: 14 }, 13.900); tl.set("#s4 .mk", { scaleX: 0 }, 13.900);
+      tl.to("#en4", { opacity: 1, y: 0, duration: 0.28, ease: "power3.out" }, 13.940);
+      tl.to("#tr4", { opacity: 1, y: 0, duration: 0.32, ease: "power2.out" }, 14.040);
+      tl.to("#w4_0 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 13.910);
+      tl.to("#w4_0 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 13.910);
+      tl.to("#w4_0", { y: -6, duration: 0.10, ease: "power2.out" }, 13.910);
+      tl.to("#w4_0 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 14.020);
+      tl.to("#w4_0", { y: 0, duration: 0.12, ease: "power1.inOut" }, 14.020);
+      tl.to("#w4_1 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 13.967);
+      tl.to("#w4_1 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 13.967);
+      tl.to("#w4_1", { y: -6, duration: 0.10, ease: "power2.out" }, 13.967);
+      tl.to("#w4_1 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 14.233);
+      tl.to("#w4_1", { y: 0, duration: 0.12, ease: "power1.inOut" }, 14.233);
+      tl.to("#w4_2 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 14.243);
+      tl.to("#w4_2 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 14.243);
+      tl.to("#w4_2", { y: -6, duration: 0.10, ease: "power2.out" }, 14.243);
+      tl.to("#w4_2 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 14.353);
+      tl.to("#w4_2", { y: 0, duration: 0.12, ease: "power1.inOut" }, 14.353);
+      tl.to("#w4_3 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 14.333);
+      tl.to("#w4_3 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 14.333);
+      tl.to("#w4_3", { y: -6, duration: 0.10, ease: "power2.out" }, 14.333);
+      tl.to("#w4_3 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 14.599);
+      tl.to("#w4_3", { y: 0, duration: 0.12, ease: "power1.inOut" }, 14.599);
+      tl.to("#w4_4 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 14.609);
+      tl.to("#w4_4 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 14.609);
+      tl.to("#w4_4", { y: -6, duration: 0.10, ease: "power2.out" }, 14.609);
+      tl.to("#w4_4 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 14.965);
+      tl.to("#w4_4", { y: 0, duration: 0.12, ease: "power1.inOut" }, 14.965);
+      tl.to("#w4_5 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 14.975);
+      tl.to("#w4_5 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 14.975);
+      tl.to("#w4_5", { y: -6, duration: 0.10, ease: "power2.out" }, 14.975);
+      tl.to("#w4_5 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 15.722);
+      tl.to("#w4_5", { y: 0, duration: 0.12, ease: "power1.inOut" }, 15.722);
+      tl.to("#cam5", { scale: 1.04, duration: 2.667, ease: "sine.inOut" }, 16.167);
+      tl.set("#en5", { y: 24 }, 16.167); tl.set("#tr5", { y: 14 }, 16.167); tl.set("#s5 .mk", { scaleX: 0 }, 16.167);
+      tl.to("#en5", { opacity: 1, y: 0, duration: 0.28, ease: "power3.out" }, 16.207);
+      tl.to("#tr5", { opacity: 1, y: 0, duration: 0.32, ease: "power2.out" }, 16.307);
+      tl.to("#w5_0 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 16.183);
+      tl.to("#w5_0 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 16.183);
+      tl.to("#w5_0", { y: -6, duration: 0.10, ease: "power2.out" }, 16.183);
+      tl.to("#w5_0 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 16.293);
+      tl.to("#w5_0", { y: 0, duration: 0.12, ease: "power1.inOut" }, 16.293);
+      tl.to("#w5_1 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 16.190);
+      tl.to("#w5_1 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 16.190);
+      tl.to("#w5_1", { y: -6, duration: 0.10, ease: "power2.out" }, 16.190);
+      tl.to("#w5_1 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 16.470);
+      tl.to("#w5_1", { y: 0, duration: 0.12, ease: "power1.inOut" }, 16.470);
+      tl.to("#w5_2 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 16.480);
+      tl.to("#w5_2 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 16.480);
+      tl.to("#w5_2", { y: -6, duration: 0.10, ease: "power2.out" }, 16.480);
+      tl.to("#w5_2 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 16.909);
+      tl.to("#w5_2", { y: 0, duration: 0.12, ease: "power1.inOut" }, 16.909);
+      tl.to("#w5_3 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 16.919);
+      tl.to("#w5_3 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 16.919);
+      tl.to("#w5_3", { y: -6, duration: 0.10, ease: "power2.out" }, 16.919);
+      tl.to("#w5_3 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 17.128);
+      tl.to("#w5_3", { y: 0, duration: 0.12, ease: "power1.inOut" }, 17.128);
+      tl.to("#w5_4 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 17.138);
+      tl.to("#w5_4 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 17.138);
+      tl.to("#w5_4", { y: -6, duration: 0.10, ease: "power2.out" }, 17.138);
+      tl.to("#w5_4 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 17.418);
+      tl.to("#w5_4", { y: 0, duration: 0.12, ease: "power1.inOut" }, 17.418);
+      tl.to("#w5_5 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 17.428);
+      tl.to("#w5_5 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 17.428);
+      tl.to("#w5_5", { y: -6, duration: 0.10, ease: "power2.out" }, 17.428);
+      tl.to("#w5_5 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 17.778);
+      tl.to("#w5_5", { y: 0, duration: 0.12, ease: "power1.inOut" }, 17.778);
+      tl.to("#w5_6 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 17.788);
+      tl.to("#w5_6 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 17.788);
+      tl.to("#w5_6", { y: -6, duration: 0.10, ease: "power2.out" }, 17.788);
+      tl.to("#w5_6 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 18.379);
+      tl.to("#w5_6", { y: 0, duration: 0.12, ease: "power1.inOut" }, 18.379);
+      tl.to("#cam6", { scale: 1.04, duration: 2.7, ease: "sine.inOut" }, 18.833);
+      tl.set("#en6", { y: 24 }, 18.833); tl.set("#tr6", { y: 14 }, 18.833); tl.set("#s6 .mk", { scaleX: 0 }, 18.833);
+      tl.to("#en6", { opacity: 1, y: 0, duration: 0.28, ease: "power3.out" }, 18.873);
+      tl.to("#tr6", { opacity: 1, y: 0, duration: 0.32, ease: "power2.out" }, 18.973);
+      tl.to("#w6_0 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 18.836);
+      tl.to("#w6_0 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 18.836);
+      tl.to("#w6_0", { y: -6, duration: 0.10, ease: "power2.out" }, 18.836);
+      tl.to("#w6_0 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 18.946);
+      tl.to("#w6_0", { y: 0, duration: 0.12, ease: "power1.inOut" }, 18.946);
+      tl.to("#w6_1 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 18.883);
+      tl.to("#w6_1 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 18.883);
+      tl.to("#w6_1", { y: -6, duration: 0.10, ease: "power2.out" }, 18.883);
+      tl.to("#w6_1 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 19.130);
+      tl.to("#w6_1", { y: 0, duration: 0.12, ease: "power1.inOut" }, 19.130);
+      tl.to("#w6_2 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 19.140);
+      tl.to("#w6_2 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 19.140);
+      tl.to("#w6_2", { y: -6, duration: 0.10, ease: "power2.out" }, 19.140);
+      tl.to("#w6_2 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 19.387);
+      tl.to("#w6_2", { y: 0, duration: 0.12, ease: "power1.inOut" }, 19.387);
+      tl.to("#w6_3 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 19.397);
+      tl.to("#w6_3 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 19.397);
+      tl.to("#w6_3", { y: -6, duration: 0.10, ease: "power2.out" }, 19.397);
+      tl.to("#w6_3 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 19.730);
+      tl.to("#w6_3", { y: 0, duration: 0.12, ease: "power1.inOut" }, 19.730);
+      tl.to("#w6_4 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 19.740);
+      tl.to("#w6_4 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 19.740);
+      tl.to("#w6_4", { y: -6, duration: 0.10, ease: "power2.out" }, 19.740);
+      tl.to("#w6_4 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 19.902);
+      tl.to("#w6_4", { y: 0, duration: 0.12, ease: "power1.inOut" }, 19.902);
+      tl.to("#w6_5 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 19.912);
+      tl.to("#w6_5 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 19.912);
+      tl.to("#w6_5", { y: -6, duration: 0.10, ease: "power2.out" }, 19.912);
+      tl.to("#w6_5 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 20.073);
+      tl.to("#w6_5", { y: 0, duration: 0.12, ease: "power1.inOut" }, 20.073);
+      tl.to("#w6_6 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 20.083);
+      tl.to("#w6_6 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 20.083);
+      tl.to("#w6_6", { y: -6, duration: 0.10, ease: "power2.out" }, 20.083);
+      tl.to("#w6_6 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 20.193);
+      tl.to("#w6_6", { y: 0, duration: 0.12, ease: "power1.inOut" }, 20.193);
+      tl.to("#w6_7 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 20.169);
+      tl.to("#w6_7 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 20.169);
+      tl.to("#w6_7", { y: -6, duration: 0.10, ease: "power2.out" }, 20.169);
+      tl.to("#w6_7 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 21.055);
+      tl.to("#w6_7", { y: 0, duration: 0.12, ease: "power1.inOut" }, 21.055);
+      tl.to("#cam7", { scale: 1.04, duration: 2.3, ease: "sine.inOut" }, 21.533);
+      tl.set("#en7", { y: 24 }, 21.533); tl.set("#tr7", { y: 14 }, 21.533); tl.set("#s7 .mk", { scaleX: 0 }, 21.533);
+      tl.to("#en7", { opacity: 1, y: 0, duration: 0.28, ease: "power3.out" }, 21.573);
+      tl.to("#tr7", { opacity: 1, y: 0, duration: 0.32, ease: "power2.out" }, 21.673);
+      tl.to("#w7_0 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 21.513);
+      tl.to("#w7_0 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 21.513);
+      tl.to("#w7_0", { y: -6, duration: 0.10, ease: "power2.out" }, 21.513);
+      tl.to("#w7_0 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 21.797);
+      tl.to("#w7_0", { y: 0, duration: 0.12, ease: "power1.inOut" }, 21.797);
+      tl.to("#w7_1 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 21.807);
+      tl.to("#w7_1 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 21.807);
+      tl.to("#w7_1", { y: -6, duration: 0.10, ease: "power2.out" }, 21.807);
+      tl.to("#w7_1 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 22.312);
+      tl.to("#w7_1", { y: 0, duration: 0.12, ease: "power1.inOut" }, 22.312);
+      tl.to("#w7_2 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 22.322);
+      tl.to("#w7_2 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 22.322);
+      tl.to("#w7_2", { y: -6, duration: 0.10, ease: "power2.out" }, 22.322);
+      tl.to("#w7_2 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 22.483);
+      tl.to("#w7_2", { y: 0, duration: 0.12, ease: "power1.inOut" }, 22.483);
+      tl.to("#w7_3 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 22.493);
+      tl.to("#w7_3 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 22.493);
+      tl.to("#w7_3", { y: -6, duration: 0.10, ease: "power2.out" }, 22.493);
+      tl.to("#w7_3 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 23.340);
+      tl.to("#w7_3", { y: 0, duration: 0.12, ease: "power1.inOut" }, 23.340);
+      tl.to("#cam8", { scale: 1.04, duration: 2.067, ease: "sine.inOut" }, 23.833);
+      tl.set("#en8", { y: 24 }, 23.833); tl.set("#tr8", { y: 14 }, 23.833); tl.set("#s8 .mk", { scaleX: 0 }, 23.833);
+      tl.to("#en8", { opacity: 1, y: 0, duration: 0.28, ease: "power3.out" }, 23.873);
+      tl.to("#tr8", { opacity: 1, y: 0, duration: 0.32, ease: "power2.out" }, 23.973);
+      tl.to("#w8_0 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 23.817);
+      tl.to("#w8_0 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 23.817);
+      tl.to("#w8_0", { y: -6, duration: 0.10, ease: "power2.out" }, 23.817);
+      tl.to("#w8_0 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 24.084);
+      tl.to("#w8_0", { y: 0, duration: 0.12, ease: "power1.inOut" }, 24.084);
+      tl.to("#w8_1 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 24.094);
+      tl.to("#w8_1 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 24.094);
+      tl.to("#w8_1", { y: -6, duration: 0.10, ease: "power2.out" }, 24.094);
+      tl.to("#w8_1 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 24.339);
+      tl.to("#w8_1", { y: 0, duration: 0.12, ease: "power1.inOut" }, 24.339);
+      tl.to("#w8_2 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 24.349);
+      tl.to("#w8_2 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 24.349);
+      tl.to("#w8_2", { y: -6, duration: 0.10, ease: "power2.out" }, 24.349);
+      tl.to("#w8_2 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 24.600);
+      tl.to("#w8_2", { y: 0, duration: 0.12, ease: "power1.inOut" }, 24.600);
+      tl.to("#w8_3 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 24.610);
+      tl.to("#w8_3 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 24.610);
+      tl.to("#w8_3", { y: -6, duration: 0.10, ease: "power2.out" }, 24.610);
+      tl.to("#w8_3 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 24.794);
+      tl.to("#w8_3", { y: 0, duration: 0.12, ease: "power1.inOut" }, 24.794);
+      tl.to("#w8_4 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 24.804);
+      tl.to("#w8_4 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 24.804);
+      tl.to("#w8_4", { y: -6, duration: 0.10, ease: "power2.out" }, 24.804);
+      tl.to("#w8_4 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 25.432);
+      tl.to("#w8_4", { y: 0, duration: 0.12, ease: "power1.inOut" }, 25.432);
+      tl.to("#cam9", { scale: 1.04, duration: 2.967, ease: "sine.inOut" }, 25.900);
+      tl.set("#en9", { y: 24 }, 25.900); tl.set("#tr9", { y: 14 }, 25.900); tl.set("#s9 .mk", { scaleX: 0 }, 25.900);
+      tl.to("#en9", { opacity: 1, y: 0, duration: 0.28, ease: "power3.out" }, 25.940);
+      tl.to("#tr9", { opacity: 1, y: 0, duration: 0.32, ease: "power2.out" }, 26.040);
+      tl.to("#w9_0 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 25.890);
+      tl.to("#w9_0 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 25.890);
+      tl.to("#w9_0", { y: -6, duration: 0.10, ease: "power2.out" }, 25.890);
+      tl.to("#w9_0 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 26.074);
+      tl.to("#w9_0", { y: 0, duration: 0.12, ease: "power1.inOut" }, 26.074);
+      tl.to("#w9_1 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 26.084);
+      tl.to("#w9_1 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 26.084);
+      tl.to("#w9_1", { y: -6, duration: 0.10, ease: "power2.out" }, 26.084);
+      tl.to("#w9_1 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 26.486);
+      tl.to("#w9_1", { y: 0, duration: 0.12, ease: "power1.inOut" }, 26.486);
+      tl.to("#w9_2 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 26.496);
+      tl.to("#w9_2 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 26.496);
+      tl.to("#w9_2", { y: -6, duration: 0.10, ease: "power2.out" }, 26.496);
+      tl.to("#w9_2 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 26.898);
+      tl.to("#w9_2", { y: 0, duration: 0.12, ease: "power1.inOut" }, 26.898);
+      tl.to("#w9_3 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 26.908);
+      tl.to("#w9_3 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 26.908);
+      tl.to("#w9_3", { y: -6, duration: 0.10, ease: "power2.out" }, 26.908);
+      tl.to("#w9_3 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 27.059);
+      tl.to("#w9_3", { y: 0, duration: 0.12, ease: "power1.inOut" }, 27.059);
+      tl.to("#w9_4 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 27.069);
+      tl.to("#w9_4 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 27.069);
+      tl.to("#w9_4", { y: -6, duration: 0.10, ease: "power2.out" }, 27.069);
+      tl.to("#w9_4 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 27.342);
+      tl.to("#w9_4", { y: 0, duration: 0.12, ease: "power1.inOut" }, 27.342);
+      tl.to("#w9_5 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 27.352);
+      tl.to("#w9_5 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 27.352);
+      tl.to("#w9_5", { y: -6, duration: 0.10, ease: "power2.out" }, 27.352);
+      tl.to("#w9_5 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 27.592);
+      tl.to("#w9_5", { y: 0, duration: 0.12, ease: "power1.inOut" }, 27.592);
+      tl.to("#w9_6 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 27.602);
+      tl.to("#w9_6 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 27.602);
+      tl.to("#w9_6", { y: -6, duration: 0.10, ease: "power2.out" }, 27.602);
+      tl.to("#w9_6 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 28.402);
+      tl.to("#w9_6", { y: 0, duration: 0.12, ease: "power1.inOut" }, 28.402);
+      tl.to("#cam10", { scale: 1.04, duration: 2.0, ease: "sine.inOut" }, 28.867);
+      tl.set("#en10", { y: 24 }, 28.867); tl.set("#tr10", { y: 14 }, 28.867); tl.set("#s10 .mk", { scaleX: 0 }, 28.867);
+      tl.to("#en10", { opacity: 1, y: 0, duration: 0.28, ease: "power3.out" }, 28.907);
+      tl.to("#tr10", { opacity: 1, y: 0, duration: 0.32, ease: "power2.out" }, 29.007);
+      tl.to("#w10_0 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 28.869);
+      tl.to("#w10_0 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 28.869);
+      tl.to("#w10_0", { y: -6, duration: 0.10, ease: "power2.out" }, 28.869);
+      tl.to("#w10_0 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 28.979);
+      tl.to("#w10_0", { y: 0, duration: 0.12, ease: "power1.inOut" }, 28.979);
+      tl.to("#w10_1 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 28.939);
+      tl.to("#w10_1 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 28.939);
+      tl.to("#w10_1", { y: -6, duration: 0.10, ease: "power2.out" }, 28.939);
+      tl.to("#w10_1 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 29.277);
+      tl.to("#w10_1", { y: 0, duration: 0.12, ease: "power1.inOut" }, 29.277);
+      tl.to("#w10_2 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 29.287);
+      tl.to("#w10_2 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 29.287);
+      tl.to("#w10_2", { y: -6, duration: 0.10, ease: "power2.out" }, 29.287);
+      tl.to("#w10_2 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 29.451);
+      tl.to("#w10_2", { y: 0, duration: 0.12, ease: "power1.inOut" }, 29.451);
+      tl.to("#w10_3 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 29.461);
+      tl.to("#w10_3 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 29.461);
+      tl.to("#w10_3", { y: -6, duration: 0.10, ease: "power2.out" }, 29.461);
+      tl.to("#w10_3 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 30.400);
+      tl.to("#w10_3", { y: 0, duration: 0.12, ease: "power1.inOut" }, 30.400);
+      tl.to("#cam11", { scale: 1.04, duration: 2.7, ease: "sine.inOut" }, 30.867);
+      tl.set("#en11", { y: 24 }, 30.867); tl.set("#tr11", { y: 14 }, 30.867); tl.set("#s11 .mk", { scaleX: 0 }, 30.867);
+      tl.to("#en11", { opacity: 1, y: 0, duration: 0.28, ease: "power3.out" }, 30.907);
+      tl.to("#tr11", { opacity: 1, y: 0, duration: 0.32, ease: "power2.out" }, 31.007);
+      tl.to("#w11_0 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 30.866);
+      tl.to("#w11_0 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 30.866);
+      tl.to("#w11_0", { y: -6, duration: 0.10, ease: "power2.out" }, 30.866);
+      tl.to("#w11_0 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 31.064);
+      tl.to("#w11_0", { y: 0, duration: 0.12, ease: "power1.inOut" }, 31.064);
+      tl.to("#w11_1 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 31.074);
+      tl.to("#w11_1 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 31.074);
+      tl.to("#w11_1", { y: -6, duration: 0.10, ease: "power2.out" }, 31.074);
+      tl.to("#w11_1 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 31.493);
+      tl.to("#w11_1", { y: 0, duration: 0.12, ease: "power1.inOut" }, 31.493);
+      tl.to("#w11_2 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 31.503);
+      tl.to("#w11_2 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 31.503);
+      tl.to("#w11_2", { y: -6, duration: 0.10, ease: "power2.out" }, 31.503);
+      tl.to("#w11_2 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 31.676);
+      tl.to("#w11_2", { y: 0, duration: 0.12, ease: "power1.inOut" }, 31.676);
+      tl.to("#w11_3 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 31.686);
+      tl.to("#w11_3 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 31.686);
+      tl.to("#w11_3", { y: -6, duration: 0.10, ease: "power2.out" }, 31.686);
+      tl.to("#w11_3 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 31.796);
+      tl.to("#w11_3", { y: 0, duration: 0.12, ease: "power1.inOut" }, 31.796);
+      tl.to("#w11_4 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 31.806);
+      tl.to("#w11_4 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 31.806);
+      tl.to("#w11_4", { y: -6, duration: 0.10, ease: "power2.out" }, 31.806);
+      tl.to("#w11_4 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 32.527);
+      tl.to("#w11_4", { y: 0, duration: 0.12, ease: "power1.inOut" }, 32.527);
+      tl.to("#w11_5 .t", { color: "#34261C", duration: 0.06, ease: "none" }, 32.537);
+      tl.to("#w11_5 .mk", { scaleX: 1, duration: 0.12, ease: "power2.out" }, 32.537);
+      tl.to("#w11_5", { y: -6, duration: 0.10, ease: "power2.out" }, 32.537);
+      tl.to("#w11_5 .mk", { opacity: 0, duration: 0.12, ease: "power1.in" }, 33.104);
+      tl.to("#w11_5", { y: 0, duration: 0.12, ease: "power1.inOut" }, 33.104);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

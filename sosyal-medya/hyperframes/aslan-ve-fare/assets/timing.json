@@ -1,0 +1,563 @@
+{
+ "hook": 2.6,
+ "sentences": [
+  {
+   "en": "A big lion sleeps under a tree.",
+   "tr": "Büyük bir aslan ağacın altında uyur.",
+   "img": "01.png",
+   "start": 0.0,
+   "end": 2.9,
+   "words": [
+    {
+     "t": "A",
+     "s": 0.275,
+     "e": 0.345,
+     "heard": "A"
+    },
+    {
+     "t": "big",
+     "s": 0.512,
+     "e": 0.565,
+     "heard": "big"
+    },
+    {
+     "t": "lion",
+     "s": 0.565,
+     "e": 0.856,
+     "heard": "lion"
+    },
+    {
+     "t": "sleeps",
+     "s": 0.856,
+     "e": 1.234,
+     "heard": "sleeps"
+    },
+    {
+     "t": "under",
+     "s": 1.331,
+     "e": 1.648,
+     "heard": "under"
+    },
+    {
+     "t": "a",
+     "s": 1.648,
+     "e": 1.718,
+     "heard": "a"
+    },
+    {
+     "t": "tree.",
+     "s": 1.718,
+     "e": 2.115,
+     "heard": "tree."
+    }
+   ]
+  },
+  {
+   "en": "A little mouse runs on his paw.",
+   "tr": "Küçük bir fare onun pençesinin üstünden koşar.",
+   "img": "02.png",
+   "start": 2.9,
+   "end": 5.4333,
+   "words": [
+    {
+     "t": "A",
+     "s": 2.923,
+     "e": 2.984,
+     "heard": "A"
+    },
+    {
+     "t": "little",
+     "s": 3.106,
+     "e": 3.365,
+     "heard": "little"
+    },
+    {
+     "t": "mouse",
+     "s": 3.365,
+     "e": 3.671,
+     "heard": "mouse"
+    },
+    {
+     "t": "runs",
+     "s": 3.684,
+     "e": 3.936,
+     "heard": "runs"
+    },
+    {
+     "t": "on",
+     "s": 3.936,
+     "e": 4.059,
+     "heard": "on"
+    },
+    {
+     "t": "his",
+     "s": 4.059,
+     "e": 4.249,
+     "heard": "his"
+    },
+    {
+     "t": "paw.",
+     "s": 4.249,
+     "e": 4.65,
+     "heard": "paw."
+    }
+   ]
+  },
+  {
+   "en": "The lion wakes up. He is angry!",
+   "tr": "Aslan uyanır. Çok kızgındır!",
+   "img": "03.png",
+   "start": 5.4333,
+   "end": 8.3667,
+   "words": [
+    {
+     "t": "The",
+     "s": 5.456,
+     "e": 5.488,
+     "heard": "The"
+    },
+    {
+     "t": "lion",
+     "s": 5.488,
+     "e": 5.813,
+     "heard": "lion"
+    },
+    {
+     "t": "wakes",
+     "s": 5.813,
+     "e": 6.226,
+     "heard": "wakes"
+    },
+    {
+     "t": "up.",
+     "s": 6.226,
+     "e": 6.543,
+     "heard": "up,"
+    },
+    {
+     "t": "He",
+     "s": 6.776,
+     "e": 6.886,
+     "heard": "he"
+    },
+    {
+     "t": "is",
+     "s": 6.906,
+     "e": 7.029,
+     "heard": "is"
+    },
+    {
+     "t": "angry!",
+     "s": 7.029,
+     "e": 7.606,
+     "heard": "angry."
+    }
+   ]
+  },
+  {
+   "en": "“Please, let me go!” says the mouse.",
+   "tr": "“Lütfen, bırak beni!” der fare.",
+   "img": "04.png",
+   "start": 8.3667,
+   "end": 11.3,
+   "words": [
+    {
+     "t": "“Please,",
+     "s": 8.4,
+     "e": 8.668,
+     "heard": "Please"
+    },
+    {
+     "t": "let",
+     "s": 8.724,
+     "e": 8.964,
+     "heard": "let"
+    },
+    {
+     "t": "me",
+     "s": 8.964,
+     "e": 9.112,
+     "heard": "me"
+    },
+    {
+     "t": "go!”",
+     "s": 9.14,
+     "e": 9.491,
+     "heard": "go,"
+    },
+    {
+     "t": "says",
+     "s": 9.756,
+     "e": 9.94,
+     "heard": "says"
+    },
+    {
+     "t": "the",
+     "s": 9.956,
+     "e": 10.078,
+     "heard": "the"
+    },
+    {
+     "t": "mouse.",
+     "s": 10.104,
+     "e": 10.528,
+     "heard": "mouse."
+    }
+   ]
+  },
+  {
+   "en": "“One day, I can help you.”",
+   "tr": "“Bir gün sana yardım edebilirim.”",
+   "img": "05.png",
+   "start": 11.3,
+   "end": 13.5667,
+   "words": [
+    {
+     "t": "“One",
+     "s": 11.34,
+     "e": 11.397,
+     "heard": "One"
+    },
+    {
+     "t": "day,",
+     "s": 11.397,
+     "e": 11.673,
+     "heard": "day"
+    },
+    {
+     "t": "I",
+     "s": 11.673,
+     "e": 11.763,
+     "heard": "I"
+    },
+    {
+     "t": "can",
+     "s": 11.763,
+     "e": 11.999,
+     "heard": "can"
+    },
+    {
+     "t": "help",
+     "s": 12.039,
+     "e": 12.405,
+     "heard": "help"
+    },
+    {
+     "t": "you.”",
+     "s": 12.405,
+     "e": 12.812,
+     "heard": "you."
+    }
+   ]
+  },
+  {
+   "en": "The lion laughs and lets him go.",
+   "tr": "Aslan güler ve onu bırakır.",
+   "img": "06.png",
+   "start": 13.5667,
+   "end": 16.2333,
+   "words": [
+    {
+     "t": "The",
+     "s": 13.613,
+     "e": 13.62,
+     "heard": "The"
+    },
+    {
+     "t": "lion",
+     "s": 13.62,
+     "e": 13.91,
+     "heard": "lion"
+    },
+    {
+     "t": "laughs",
+     "s": 13.91,
+     "e": 14.349,
+     "heard": "laughs"
+    },
+    {
+     "t": "and",
+     "s": 14.349,
+     "e": 14.568,
+     "heard": "and"
+    },
+    {
+     "t": "lets",
+     "s": 14.568,
+     "e": 14.858,
+     "heard": "lets"
+    },
+    {
+     "t": "him",
+     "s": 14.858,
+     "e": 15.03,
+     "heard": "him"
+    },
+    {
+     "t": "go.",
+     "s": 15.218,
+     "e": 15.469,
+     "heard": "go."
+    }
+   ]
+  },
+  {
+   "en": "One day, the lion is in a net.",
+   "tr": "Bir gün aslan bir ağa yakalanır.",
+   "img": "07.png",
+   "start": 16.2333,
+   "end": 18.9333,
+   "words": [
+    {
+     "t": "One",
+     "s": 16.266,
+     "e": 16.313,
+     "heard": "One"
+    },
+    {
+     "t": "day,",
+     "s": 16.313,
+     "e": 16.57,
+     "heard": "day"
+    },
+    {
+     "t": "the",
+     "s": 16.57,
+     "e": 16.827,
+     "heard": "the"
+    },
+    {
+     "t": "lion",
+     "s": 16.827,
+     "e": 17.17,
+     "heard": "lion"
+    },
+    {
+     "t": "is",
+     "s": 17.17,
+     "e": 17.342,
+     "heard": "is"
+    },
+    {
+     "t": "in",
+     "s": 17.342,
+     "e": 17.513,
+     "heard": "in"
+    },
+    {
+     "t": "a",
+     "s": 17.513,
+     "e": 17.599,
+     "heard": "a"
+    },
+    {
+     "t": "net.",
+     "s": 17.599,
+     "e": 18.145,
+     "heard": "net."
+    }
+   ]
+  },
+  {
+   "en": "“Help! Help!” he roars.",
+   "tr": "“İmdat! İmdat!” diye kükrer.",
+   "img": "08.png",
+   "start": 18.9333,
+   "end": 21.2333,
+   "words": [
+    {
+     "t": "“Help!",
+     "s": 18.943,
+     "e": 19.237,
+     "heard": "Help,"
+    },
+    {
+     "t": "Help!”",
+     "s": 19.237,
+     "e": 19.752,
+     "heard": "help,"
+    },
+    {
+     "t": "he",
+     "s": 19.752,
+     "e": 19.923,
+     "heard": "he"
+    },
+    {
+     "t": "roars.",
+     "s": 19.923,
+     "e": 20.43,
+     "heard": "roars."
+    }
+   ]
+  },
+  {
+   "en": "The little mouse hears him.",
+   "tr": "Küçük fare onu duyar.",
+   "img": "09.png",
+   "start": 21.2333,
+   "end": 23.3,
+   "words": [
+    {
+     "t": "The",
+     "s": 21.247,
+     "e": 21.524,
+     "heard": "The"
+    },
+    {
+     "t": "little",
+     "s": 21.524,
+     "e": 21.779,
+     "heard": "little"
+    },
+    {
+     "t": "mouse",
+     "s": 21.779,
+     "e": 21.973,
+     "heard": "mouse"
+    },
+    {
+     "t": "hears",
+     "s": 22.04,
+     "e": 22.234,
+     "heard": "hears"
+    },
+    {
+     "t": "him.",
+     "s": 22.234,
+     "e": 22.522,
+     "heard": "him."
+    }
+   ]
+  },
+  {
+   "en": "Bite, bite, bite! He bites the net.",
+   "tr": "Kemir, kemir, kemir! Ağı kemirir.",
+   "img": "10.png",
+   "start": 23.3,
+   "end": 26.2667,
+   "words": [
+    {
+     "t": "Bite,",
+     "s": 23.32,
+     "e": 23.514,
+     "heard": "Bite,"
+    },
+    {
+     "t": "bite,",
+     "s": 23.514,
+     "e": 23.926,
+     "heard": "bite,"
+    },
+    {
+     "t": "bite!",
+     "s": 23.926,
+     "e": 24.338,
+     "heard": "bite,"
+    },
+    {
+     "t": "He",
+     "s": 24.338,
+     "e": 24.459,
+     "heard": "he"
+    },
+    {
+     "t": "bites",
+     "s": 24.499,
+     "e": 24.782,
+     "heard": "bites"
+    },
+    {
+     "t": "the",
+     "s": 24.782,
+     "e": 25.032,
+     "heard": "the"
+    },
+    {
+     "t": "net.",
+     "s": 25.032,
+     "e": 25.492,
+     "heard": "net."
+    }
+   ]
+  },
+  {
+   "en": "The lion is free!",
+   "tr": "Aslan özgürdür!",
+   "img": "11.png",
+   "start": 26.2667,
+   "end": 28.2667,
+   "words": [
+    {
+     "t": "The",
+     "s": 26.299,
+     "e": 26.369,
+     "heard": "The"
+    },
+    {
+     "t": "lion",
+     "s": 26.369,
+     "e": 26.717,
+     "heard": "lion"
+    },
+    {
+     "t": "is",
+     "s": 26.717,
+     "e": 26.884,
+     "heard": "is"
+    },
+    {
+     "t": "free!",
+     "s": 26.891,
+     "e": 27.49,
+     "heard": "free."
+    }
+   ]
+  },
+  {
+   "en": "Little friends can be great friends.",
+   "tr": "Küçük dostlar büyük dostlar olabilir.",
+   "img": "12.png",
+   "start": 28.2667,
+   "end": 30.9667,
+   "words": [
+    {
+     "t": "Little",
+     "s": 28.296,
+     "e": 28.479,
+     "heard": "Little"
+    },
+    {
+     "t": "friends",
+     "s": 28.504,
+     "e": 28.933,
+     "heard": "friends"
+    },
+    {
+     "t": "can",
+     "s": 28.933,
+     "e": 29.116,
+     "heard": "can"
+    },
+    {
+     "t": "be",
+     "s": 29.116,
+     "e": 29.236,
+     "heard": "be"
+    },
+    {
+     "t": "great",
+     "s": 29.236,
+     "e": 29.437,
+     "heard": "great"
+    },
+    {
+     "t": "friends.",
+     "s": 29.967,
+     "e": 30.194,
+     "heard": "friends."
+    }
+   ]
+  }
+ ]
+}

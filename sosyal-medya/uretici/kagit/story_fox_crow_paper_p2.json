@@ -1,0 +1,81 @@
+{
+ "id": "fox-crow-p2",
+ "slug": "tilki-ve-karga-part-2",
+ "title": "The Fox and the Crow",
+ "title_tr": "Tilki ve Karga · Part 2",
+ "level": "A1",
+ "voice": "af_heart",
+ "speed": 0.78,
+ "style": "Layered paper-craft illustration: cut paper collage with soft drop shadows between layers and visible paper fibre texture, warm muted palette (sage green, mustard yellow, terracotta, soft blue, cream), gentle children's storybook look. Vertical 9:16, 1080x1920. The top 22% is plain cream sky (only a paper sun and one small paper cloud) so a caption fits there. No text, no letters, no logos, no watermark. Every frame uses the same wide camera angle and the same layout: one big oak tree on the left with a long branch reaching right, meadow with wildflowers, soft green hills behind, sun top right (unless the scene says close).",
+ "characters": "CROW: glossy blue-black paper crow with a yellow-grey beak and small shiny eyes, holding a pinkish-red piece of meat in her beak until it falls. FOX: slim orange-red paper fox with white chest and tail tip, black paws, pointed ears, clever friendly eyes. Same meadow setting in every frame.",
+ "sentences": [
+  {
+   "en": "“You must have a beautiful voice, too.”",
+   "tr": "“Sesin de güzel olmalı.”",
+   "img": "06.png",
+   "scene": "Same wide view: the fox puts a paw on his chest and points up at the crow with a charming smile; paper music notes float near the crow."
+  },
+  {
+   "en": "The crow feels proud.",
+   "tr": "Karga gururlanır.",
+   "img": "07.png",
+   "scene": "The crow on the branch puffs up her chest proudly, eyes half closed, head held high, still holding the meat."
+  },
+  {
+   "en": "She wants to show him her voice.",
+   "tr": "Ona sesini göstermek ister.",
+   "img": "08.png",
+   "scene": "The crow spreads her wings a little and lifts her head, ready to sing, the meat still in her beak; the fox watches eagerly below."
+  },
+  {
+   "en": "She opens her beak and makes a loud sound.",
+   "tr": "Gagasını açar ve yüksek bir ses çıkarır.",
+   "img": "09.png",
+   "scene": "The crow opens her beak wide and caws loudly; big paper sound waves come out; the meat starts to slip from her beak."
+  },
+  {
+   "en": "The meat falls to the ground.",
+   "tr": "Et yere düşer.",
+   "img": "10.png",
+   "scene": "Same wide view: the piece of meat falls through the air toward the ground; the crow looks shocked, beak open."
+  }
+ ],
+ "quiz": {
+  "say": "What does proud mean?",
+  "q": "“proud” ne demek?",
+  "options": [
+   "üzgün",
+   "gururlu",
+   "korkmuş"
+  ],
+  "answer": 1
+ },
+ "cta_say": "Read more stories in English Tales. It's free!",
+ "cta_tr": "Masalın devamı ve altmıştan fazla masal, Hikâyelerle İngilizce Öğren uygulamasında. Hem de ücretsiz!",
+ "hook": {
+  "img": "09.png",
+  "text": "Karga bu tuzağa düşecek mi?",
+  "accent": "tuzağa",
+  "say": "Karga bu tuzağa düşecek mi?",
+  "audio": "../../ses-ornekleri/tk-hook-gulsu.mp3",
+  "voice_at": 0.5,
+  "sfx": "../../ses-ornekleri/karga-gaklama-sfx.mp3",
+  "sfx_gain": 0.45
+ },
+ "tr_voice": {
+  "provider": "elevenlabs",
+  "voice_id": "bGmbiluBMaeupKCFxoOk",
+  "model": "eleven_v3",
+  "tag": "[excited]"
+ },
+ "frame": {
+  "type": "cover",
+  "cap_x": 485,
+  "cap_w": 820,
+  "cap_style": "outline",
+  "cap_bottom": 1430,
+  "cap_y": 1160,
+  "hook_y": 1060
+ },
+ "gap": 1.2
+}
