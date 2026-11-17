@@ -241,6 +241,7 @@ def main():
     global CAP_X, CAP_BOX
     CAP_X = FRAME.get("cap_x", CAP_X); CAP_BOX = FRAME.get("cap_box", CAP_BOX)
     global OUTLINE; OUTLINE = FRAME.get("cap_style") == "outline"
+    global GAP; GAP = story.get("gap", GAP)   # pause after each sentence (longer for beginners)
     lines, quiz_a, cta_a = synth(story)
     imgs = [fit(Image.open(os.path.join(imgdir, s["img"])).convert("RGB")) for s in story["sentences"]]
     audio = []; plan = []

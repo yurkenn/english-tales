@@ -47,3 +47,10 @@ Kapak, maskot ve fontlar `native-android/app/src/main/res` klasöründen okunur 
 - Altyazı kuralı: yazı görselin boş kalan yerine, Instagram/TikTok güvenli alanı içinde (üst 220 px, alt 450 px ve sağdaki butonlar dışı).
 - Açılış karga gaklaması + Gülsu "Karga... bu tuzağa düşecek mi?!" (story JSON `hook.audio` / `hook.sfx`), İngilizce anlatım Kokoro + kelime kelime vurgu, kapanış `tr_tail.py` ile Türkçe.
 - Komut: `KOKORO_DIR=... python3 make_paper.py story_fox_crow_paper.json tilki-ve-karga base.mp4` (çıktıdaki `quiz_at` değerini) `python3 tr_tail.py story_fox_crow_paper.json tilki-ve-karga base.mp4 <quiz_at> ../../ses-ornekleri/tk-quiz-praise-gulsu.mp3 ../../ses-ornekleri/tk-cevap-ovmek-gulsu.mp3 ../../ses-ornekleri/kapanis-gulsu.mp3 out.mp4`
+
+## Tilki ve Karga kâğıt, 3 part (yavaş tempo)
+
+- `videolar/tilki-ve-karga-kagit/part-1..3.mp4` (38 / 32 / 36 sn). Aynı 14 görsel, eski serinin bölümlemesiyle (5 + 5 + 4 cümle).
+- Yeni başlayanlar için yavaş: `"speed": 0.78`, her cümleden sonra `"gap": 1.2` sn durak (story JSON).
+- Her partın kendi Gülsu hook'u ve quiz'i var (praise / proud / flattery). Part 1-2 "Devamı Part 2'de" kartıyla biter: `tr_tail.py ... --next "Karga ne yapacak?|Devamı Part 2'de"` (cta.mp3 yerine `tk-p1-devam-gulsu.mp3`). Part 3 uygulama kapanışıyla biter.
+- Dosyalar: `uretici/kagit/story_fox_crow_paper_p1..3.json`, sesler `ses-ornekleri/tk-p*-gulsu.mp3`, `tk-quiz-*`, `tk-cevap-*`.
