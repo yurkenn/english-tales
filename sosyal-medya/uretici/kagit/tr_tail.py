@@ -23,13 +23,14 @@ def cta_frames_tr(n):
     f_name = m.font("nunito_extrabold.ttf", size)
     for i in range(n):
         fr = Image.new("RGBA", (m.W, m.H), m.CREAM + (255,)); d = ImageDraw.Draw(fr)
-        k = m.ease(i / 12); my = 420 + round(60 * (1 - k))
+        k = m.ease(i / 12); my = 340 + round(60 * (1 - k))
         mm = mascot.copy(); mm.putalpha(mm.getchannel("A").point(lambda v: int(v * k))); fr.alpha_composite(mm, ((m.W - mm.width) // 2, my))
-        d.text((m.W // 2, 1120), "Masalın devamı ve 60+ masal", font=m.F_TR, fill=m.INK_SOFT, anchor="mm")
-        d.text((m.W // 2, 1210), APP_NAME_TR, font=f_name, fill=m.INK, anchor="mm")
-        box = (250, 1300, m.W - 250, 1420)
+        d.text((m.W // 2, 1040), "Masalın devamı ve 60+ masal", font=m.F_TR, fill=m.INK_SOFT, anchor="mm")
+        d.text((m.W // 2, 1130), APP_NAME_TR, font=f_name, fill=m.INK, anchor="mm")
+        box = (250, 1220, m.W - 250, 1340)
         d.rounded_rectangle(box, radius=60, fill=m.YELLOW, outline=m.INK, width=4)
-        d.text((m.W // 2, 1360), "Google Play'de ücretsiz", font=m.F_SMALL, fill=m.INK, anchor="mm")
+        d.text((m.W // 2, 1280), "Google Play'de ücretsiz", font=m.F_SMALL, fill=m.INK, anchor="mm")
+        d.text((m.W // 2, 1410), "Link profilde", font=m.F_TR, fill=m.INK, anchor="mm")
         yield fr.convert("RGB")
 
 def main():

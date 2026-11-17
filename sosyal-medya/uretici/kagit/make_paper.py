@@ -69,7 +69,8 @@ def load_audio(path):
     return a[max(0, idx[0] - 300): idx[-1] + 600] if len(idx) else a
 
 FRAME = {}   # story["frame"]: {"type": "card", "band": px of cream space on top for the caption, "cap_y": caption top, "cap_w": wrap width}
-CAP_Y, CAP_W = 190, 820
+CAP_Y, CAP_W, CAP_X, CAP_BOX = 190, 820, 540, False
+OUTLINE = False   # frame "cap_style": "outline"
 
 def card(img):
     """Image as a paper card below a caption band, over a soft blurred copy of itself."""
@@ -98,13 +99,17 @@ def fit_cover(img):
 UPCOMING = (168, 148, 126); HILITE = (255, 214, 92)
 F_HOOK = font("nunito_extrabold.ttf", 92); F_BADGE = font("nunito_extrabold.ttf", 42)
 
-def layout_words(en):
-    """Positions for each word of the English line: list of (word, x, y, width), centred lines."""
+def layout_words(en, tr=None):
+    """Positions for each word of the English line: list of (word, x, y, width), centred lines.
+    With frame "cap_bottom" the whole caption (EN + TR) is lifted so it ends at that y."""
     d = ImageDraw.Draw(Image.new("RGB", (1, 1)))
-    space = d.textlength(" ", font=F_EN); out = []; y = CAP_Y
-    for ln in wrap(d, en, F_EN, CAP_W):
+    space = d.textlength(" ", font=F_EN) + (10 if OUTLINE else 0); out = []; y = CAP_Y
+    en_lines = wrap(d, en, F_EN, CAP_W)
+    if FRAME.get("cap_bottom") and tr is not None:
+        y = FRAME["cap_bottom"] - (92 * len(en_lines) + 14 + 60 * len(wrap(d, tr, F_TR, CAP_W)))
+    for ln in en_lines:
         ws = ln.split(); widths = [d.textlength(w, font=F_EN) for w in ws]
-        x = W / 2 - (sum(widths) + space * (len(ws) - 1)) / 2
+        x = CAP_X - (sum(widths) + space * (len(ws) - 1)) / 2
         for w, wd in zip(ws, widths):
             out.append((w, x, y, wd)); x += wd + space
         y += 92
@@ -113,7 +118,7 @@ def layout_words(en):
 def caption_frame(words, ybottom, tr, times, t, alpha=1.0):
     """Caption at time t (seconds from the start of the spoken line): spoken words dark,
     the word being spoken on a yellow marker, the rest lighter; Turkish line below."""
-    layer = Image.new("RGBA", (W, 640), (0, 0, 0, 0)); d = ImageDraw.Draw(layer)
+    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(layer)
     asc, desc = F_EN.getmetrics()
     for i, (w, x, y, wd) in enumerate(words):
         s0, s1 = times[i] if i < len(times) else (9e9, 9e9)
@@ -123,18 +128,38 @@ def caption_frame(words, ybottom, tr, times, t, alpha=1.0):
             col = INK
         else:
             col = INK if t >= s1 else UPCOMING
-        d.text((x, y), w, font=F_EN, fill=col)
+        if OUTLINE:   # no box: white letters with a dark paper-brown stroke, readable on any art
+            on = s0 <= t < s1
+            col = INK if on else ((255, 255, 255) if t >= s1 else (214, 204, 188))
+            d.text((x, y), w, font=F_EN, fill=col, stroke_width=0 if on else 7, stroke_fill=(52, 34, 22))
+        else:
+            d.text((x, y), w, font=F_EN, fill=col)
     y = ybottom + 14
     for ln in wrap(d, tr, F_TR, CAP_W):
-        d.text((W // 2, y), ln, font=F_TR, fill=INK_SOFT, anchor="mt"); y += 60
-    halo = layer.getchannel("A").filter(ImageFilter.MaxFilter(15)).filter(ImageFilter.GaussianBlur(14))
-    bg = Image.new("RGBA", layer.size, CREAM + (0,)); bg.putalpha(halo.point(lambda v: int(v * 0.9)))
+        if OUTLINE:
+            d.text((CAP_X, y), ln, font=F_TR, fill=(255, 241, 205), anchor="mt", stroke_width=5, stroke_fill=(52, 34, 22)); y += 60
+        else:
+            d.text((CAP_X, y), ln, font=F_TR, fill=INK_SOFT, anchor="mt"); y += 60
+    if OUTLINE:   # soft shadow under the letters only
+        sh = layer.getchannel("A").filter(ImageFilter.GaussianBlur(10)).point(lambda v: int(v * 0.45))
+        bg = Image.new("RGBA", layer.size, (30, 18, 10, 0)); bg.putalpha(sh)
+    elif CAP_BOX:   # paper card behind the caption, for captions that sit over busy art
+        bg = Image.new("RGBA", layer.size, (0, 0, 0, 0)); bd = ImageDraw.Draw(bg)
+        x0 = min(w[1] for w in words) - 34; x1 = max(w[1] + w[3] for w in words) + 34
+        x0 = min(x0, CAP_X - CAP_W / 2 - 20); x1 = max(x1, CAP_X + CAP_W / 2 + 20)
+        box = (x0, words[0][2] - 22, x1, y + 14)
+        sh = Image.new("L", layer.size, 0); ImageDraw.Draw(sh).rounded_rectangle((box[0] + 4, box[1] + 10, box[2] + 4, box[3] + 10), radius=34, fill=90)
+        bg.paste((60, 40, 20, 255), (0, 0), sh.filter(ImageFilter.GaussianBlur(14)))
+        bd.rounded_rectangle(box, radius=34, fill=CREAM + (238,))
+    else:
+        halo = layer.getchannel("A").filter(ImageFilter.MaxFilter(15)).filter(ImageFilter.GaussianBlur(14))
+        bg = Image.new("RGBA", layer.size, CREAM + (0,)); bg.putalpha(halo.point(lambda v: int(v * 0.9)))
     out = Image.alpha_composite(bg, layer)
     if alpha < 1: out.putalpha(out.getchannel("A").point(lambda v: int(v * alpha)))
     return out
 
 def scene_frames(img, s, times, n, lead):
-    words, yb = layout_words(s["en"])
+    words, yb = layout_words(s["en"], s["tr"])
     for i in range(n):
         tt = i / FPS; z = 1.0 + 0.04 * (i / max(1, n - 1))
         w, h = round(W * z), round(H * z)
@@ -144,25 +169,35 @@ def scene_frames(img, s, times, n, lead):
 
 def hook_frames(img, story, n):
     hk = story["hook"]; d0 = ImageDraw.Draw(Image.new("RGB", (1, 1)))
-    lines = wrap(d0, hk["text"], F_HOOK, 860)
+    lines = wrap(d0, hk["text"], F_HOOK, min(860, CAP_W)); hx = CAP_X
     for i in range(n):
         z = 1.06 - 0.03 * (i / max(1, n - 1)); w, h = round(W * z), round(H * z)
         fr = img.resize((w, h), Image.BICUBIC).crop(((w - W) // 2, (h - H) // 2, (w - W) // 2 + W, (h - H) // 2 + H)).convert("RGBA")
-        layer = Image.new("RGBA", (W, 760), (0, 0, 0, 0)); d = ImageDraw.Draw(layer)
+        layer = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(layer)
         label = f'{story.get("title_tr", story["title"])} · {story.get("level", "A1")}'
         tw = d.textlength(label, font=F_BADGE)
-        by = CAP_Y; d.rounded_rectangle((W / 2 - tw / 2 - 30, by, W / 2 + tw / 2 + 30, by + 72), radius=36, fill=HILITE)
-        d.text((W / 2, by + 36), label, font=F_BADGE, fill=INK, anchor="mm")
+        by = FRAME.get("hook_y", CAP_Y); d.rounded_rectangle((hx - tw / 2 - 30, by, hx + tw / 2 + 30, by + 72), radius=36, fill=HILITE)
+        d.text((hx, by + 36), label, font=F_BADGE, fill=INK, anchor="mm")
         y = by + 110
         for ln in lines:
-            ws = ln.split(); x = W / 2 - d.textlength(ln, font=F_HOOK) / 2
+            ws = ln.split(); x = hx - d.textlength(ln, font=F_HOOK) / 2
             for j, wd in enumerate(ws):
                 t = wd + (" " if j < len(ws) - 1 else "")
                 col = (214, 96, 40) if hk.get("accent") and hk["accent"] in wd else INK
-                d.text((x, y), t, font=F_HOOK, fill=col); x += d.textlength(t, font=F_HOOK)
+                if OUTLINE: d.text((x, y), t, font=F_HOOK, fill=((255, 190, 60) if col != INK else (255, 255, 255)), stroke_width=8, stroke_fill=(52, 34, 22))
+                else: d.text((x, y), t, font=F_HOOK, fill=col)
+                x += d.textlength(t, font=F_HOOK)
             y += 104
-        halo = layer.getchannel("A").filter(ImageFilter.MaxFilter(21)).filter(ImageFilter.GaussianBlur(16))
-        bg = Image.new("RGBA", layer.size, CREAM + (0,)); bg.putalpha(halo.point(lambda v: int(v * 0.92)))
+        if OUTLINE:
+            sh = layer.getchannel("A").filter(ImageFilter.GaussianBlur(10)).point(lambda v: int(v * 0.45))
+            bg = Image.new("RGBA", layer.size, (30, 18, 10, 0)); bg.putalpha(sh)
+        elif CAP_BOX:   # same paper card as the captions
+            bg = Image.new("RGBA", layer.size, (0, 0, 0, 0)); bd = ImageDraw.Draw(bg)
+            hw = max(d.textlength(ln, font=F_HOOK) for ln in lines) / 2 + 40
+            bd.rounded_rectangle((hx - hw, by + 92, hx + hw, y + 10), radius=34, fill=CREAM + (238,))
+        else:
+            halo = layer.getchannel("A").filter(ImageFilter.MaxFilter(21)).filter(ImageFilter.GaussianBlur(16))
+            bg = Image.new("RGBA", layer.size, CREAM + (0,)); bg.putalpha(halo.point(lambda v: int(v * 0.92)))
         fr.alpha_composite(Image.alpha_composite(bg, layer), (0, 0))
         yield fr.convert("RGB")
 
@@ -203,6 +238,9 @@ def main():
     story = json.load(open(sys.argv[1])); imgdir = sys.argv[2]; out = sys.argv[3]
     global CAP_Y, CAP_W
     FRAME.update(story.get("frame", {})); CAP_Y = FRAME.get("cap_y", CAP_Y); CAP_W = FRAME.get("cap_w", CAP_W)
+    global CAP_X, CAP_BOX
+    CAP_X = FRAME.get("cap_x", CAP_X); CAP_BOX = FRAME.get("cap_box", CAP_BOX)
+    global OUTLINE; OUTLINE = FRAME.get("cap_style") == "outline"
     lines, quiz_a, cta_a = synth(story)
     imgs = [fit(Image.open(os.path.join(imgdir, s["img"])).convert("RGB")) for s in story["sentences"]]
     audio = []; plan = []

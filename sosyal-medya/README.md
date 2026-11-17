@@ -41,6 +41,6 @@ Kapak, maskot ve fontlar `native-android/app/src/main/res` klasöründen okunur 
 
 ## Tilki ve Karga (kâğıt kesme, tek video)
 
-- `videolar/tilki-ve-karga-kagit.mp4` (59 sn): görseller oguz'un ChatGPT ile ürettiği 14 kare (`uretici/kagit/tilki-ve-karga/`, promptlar `story_fox_crow_paper.json` sahnelerinden). Görsel "kart" düzeninde (`"frame": {"type": "card"}`): yazı üstteki krem bantta, görsel altında kâğıt kart gibi, karakterlerin üstüne yazı binmiyor.
+- `videolar/tilki-ve-karga-kagit.mp4` (59 sn): görseller oguz'un ChatGPT ile ürettiği 14 kare (`uretici/kagit/tilki-ve-karga/`, promptlar `story_fox_crow_paper.json` sahnelerinden). Altyazı alt-orta güvenli alanda (Instagram/TikTok üst menü, alt açıklama şeridi ve sağ butonların dışında), arka plan kutusu yok: beyaz yazı + koyu kontur (`"frame": {"type": "cover", "cap_style": "outline", "cap_bottom": 1430, "cap_x": 485, "cap_w": 820, "hook_y": 1060}`). Kapanışta "Link profilde" yazar.
 - Açılış karga gaklaması + Gülsu "Karga... bu tuzağa düşecek mi?!" (story JSON `hook.audio` / `hook.sfx`), İngilizce anlatım Kokoro + kelime kelime vurgu, kapanış `tr_tail.py` ile Türkçe.
 - Komut: `KOKORO_DIR=... python3 make_paper.py story_fox_crow_paper.json tilki-ve-karga base.mp4` (çıktıdaki `quiz_at` değerini) `python3 tr_tail.py story_fox_crow_paper.json tilki-ve-karga base.mp4 <quiz_at> ../../ses-ornekleri/tk-quiz-praise-gulsu.mp3 ../../ses-ornekleri/tk-cevap-ovmek-gulsu.mp3 ../../ses-ornekleri/kapanis-gulsu.mp3 out.mp4`

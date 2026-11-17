@@ -125,9 +125,12 @@
   "tag": "[excited]"
  },
  "frame": {
-  "type": "card",
-  "band": 420,
-  "cap_y": 120,
-  "cap_w": 940
+  "type": "cover",
+  "cap_x": 485,
+  "cap_w": 820,
+  "cap_style": "outline",
+  "cap_bottom": 1430,
+  "cap_y": 1160,
+  "hook_y": 1060
  }
 }
