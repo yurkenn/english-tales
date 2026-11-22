@@ -44,8 +44,10 @@ internal fun ChunkyBox(color: Color, modifier: Modifier = Modifier, shape: Shape
     val source = remember { MutableInteractionSource() }
     val pressed by source.collectIsPressedAsState()
     val still = reduceMotion()
-    val sink by animateDpAsState(if (pressed && onClick != null && enabled) depth * 0.8f else 0.dp,
+    val animatedSink by animateDpAsState(if (pressed && onClick != null && enabled) depth * 0.8f else 0.dp,
         if (still) spring(stiffness = Spring.StiffnessHigh) else spring(dampingRatio = 0.6f, stiffness = Spring.StiffnessMedium), label = "sink")
+    // The spring can overshoot its target, but both padding values must stay non-negative.
+    val sink = animatedSink.coerceIn(0.dp, depth)
     val clickable = onClick?.let { Modifier.clickable(interactionSource = source, indication = LocalIndication.current, enabled = enabled, role = Role.Button, onClick = it) } ?: Modifier
     Box(modifier.then(clickable), propagateMinConstraints = true) {
         Box(Modifier.matchParentSize().padding(top = depth).background(edge, shape))
