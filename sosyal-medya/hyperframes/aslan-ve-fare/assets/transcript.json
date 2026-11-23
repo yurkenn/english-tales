@@ -1,0 +1,524 @@
+[
+  {
+    "text": "A",
+    "start": 0,
+    "end": 0.08,
+    "id": "w0"
+  },
+  {
+    "text": "big",
+    "start": 0.27,
+    "end": 0.33,
+    "id": "w1"
+  },
+  {
+    "text": "lion",
+    "start": 0.33,
+    "end": 0.66,
+    "id": "w2"
+  },
+  {
+    "text": "sleeps",
+    "start": 0.66,
+    "end": 1.09,
+    "id": "w3"
+  },
+  {
+    "text": "under",
+    "start": 1.2,
+    "end": 1.56,
+    "id": "w4"
+  },
+  {
+    "text": "a",
+    "start": 1.56,
+    "end": 1.64,
+    "id": "w5"
+  },
+  {
+    "text": "tree.",
+    "start": 1.64,
+    "end": 2.09,
+    "id": "w6"
+  },
+  {
+    "text": "A",
+    "start": 2.82,
+    "end": 2.91,
+    "id": "w7"
+  },
+  {
+    "text": "little",
+    "start": 3.09,
+    "end": 3.47,
+    "id": "w8"
+  },
+  {
+    "text": "mouse",
+    "start": 3.47,
+    "end": 3.92,
+    "id": "w9"
+  },
+  {
+    "text": "runs",
+    "start": 3.94,
+    "end": 4.31,
+    "id": "w10"
+  },
+  {
+    "text": "on",
+    "start": 4.31,
+    "end": 4.49,
+    "id": "w11"
+  },
+  {
+    "text": "his",
+    "start": 4.49,
+    "end": 4.77,
+    "id": "w12"
+  },
+  {
+    "text": "paw.",
+    "start": 4.77,
+    "end": 5.36,
+    "id": "w13"
+  },
+  {
+    "text": "The",
+    "start": 5.63,
+    "end": 5.67,
+    "id": "w14"
+  },
+  {
+    "text": "lion",
+    "start": 5.67,
+    "end": 6.08,
+    "id": "w15"
+  },
+  {
+    "text": "wakes",
+    "start": 6.08,
+    "end": 6.6,
+    "id": "w16"
+  },
+  {
+    "text": "up,",
+    "start": 6.6,
+    "end": 7,
+    "id": "w17"
+  },
+  {
+    "text": "he",
+    "start": 7,
+    "end": 7.17,
+    "id": "w18"
+  },
+  {
+    "text": "is",
+    "start": 7.2,
+    "end": 7.39,
+    "id": "w19"
+  },
+  {
+    "text": "angry.",
+    "start": 7.39,
+    "end": 8.28,
+    "id": "w20"
+  },
+  {
+    "text": "Please",
+    "start": 8.55,
+    "end": 8.84,
+    "id": "w21"
+  },
+  {
+    "text": "let",
+    "start": 8.9,
+    "end": 9.16,
+    "id": "w22"
+  },
+  {
+    "text": "me",
+    "start": 9.16,
+    "end": 9.32,
+    "id": "w23"
+  },
+  {
+    "text": "go,",
+    "start": 9.35,
+    "end": 9.73,
+    "id": "w24"
+  },
+  {
+    "text": "says",
+    "start": 9.73,
+    "end": 10.09,
+    "id": "w25"
+  },
+  {
+    "text": "the",
+    "start": 10.12,
+    "end": 10.36,
+    "id": "w26"
+  },
+  {
+    "text": "mouse.",
+    "start": 10.41,
+    "end": 11.24,
+    "id": "w27"
+  },
+  {
+    "text": "One",
+    "start": 11.51,
+    "end": 11.58,
+    "id": "w28"
+  },
+  {
+    "text": "day",
+    "start": 11.58,
+    "end": 11.92,
+    "id": "w29"
+  },
+  {
+    "text": "I",
+    "start": 11.92,
+    "end": 12.03,
+    "id": "w30"
+  },
+  {
+    "text": "can",
+    "start": 12.03,
+    "end": 12.32,
+    "id": "w31"
+  },
+  {
+    "text": "help",
+    "start": 12.37,
+    "end": 12.82,
+    "id": "w32"
+  },
+  {
+    "text": "you.",
+    "start": 12.82,
+    "end": 13.32,
+    "id": "w33"
+  },
+  {
+    "text": "The",
+    "start": 13.79,
+    "end": 13.8,
+    "id": "w34"
+  },
+  {
+    "text": "lion",
+    "start": 13.8,
+    "end": 14.17,
+    "id": "w35"
+  },
+  {
+    "text": "laughs",
+    "start": 14.17,
+    "end": 14.73,
+    "id": "w36"
+  },
+  {
+    "text": "and",
+    "start": 14.73,
+    "end": 15.01,
+    "id": "w37"
+  },
+  {
+    "text": "lets",
+    "start": 15.01,
+    "end": 15.38,
+    "id": "w38"
+  },
+  {
+    "text": "him",
+    "start": 15.38,
+    "end": 15.6,
+    "id": "w39"
+  },
+  {
+    "text": "go.",
+    "start": 15.84,
+    "end": 16.16,
+    "id": "w40"
+  },
+  {
+    "text": "One",
+    "start": 16.43,
+    "end": 16.49,
+    "id": "w41"
+  },
+  {
+    "text": "day",
+    "start": 16.49,
+    "end": 16.82,
+    "id": "w42"
+  },
+  {
+    "text": "the",
+    "start": 16.82,
+    "end": 17.15,
+    "id": "w43"
+  },
+  {
+    "text": "lion",
+    "start": 17.15,
+    "end": 17.59,
+    "id": "w44"
+  },
+  {
+    "text": "is",
+    "start": 17.59,
+    "end": 17.81,
+    "id": "w45"
+  },
+  {
+    "text": "in",
+    "start": 17.81,
+    "end": 18.03,
+    "id": "w46"
+  },
+  {
+    "text": "a",
+    "start": 18.03,
+    "end": 18.14,
+    "id": "w47"
+  },
+  {
+    "text": "net.",
+    "start": 18.14,
+    "end": 18.84,
+    "id": "w48"
+  },
+  {
+    "text": "Help,",
+    "start": 19.11,
+    "end": 19.47,
+    "id": "w49"
+  },
+  {
+    "text": "help,",
+    "start": 19.47,
+    "end": 20.1,
+    "id": "w50"
+  },
+  {
+    "text": "he",
+    "start": 20.1,
+    "end": 20.31,
+    "id": "w51"
+  },
+  {
+    "text": "roars.",
+    "start": 20.31,
+    "end": 20.93,
+    "id": "w52"
+  },
+  {
+    "text": "The",
+    "start": 20.93,
+    "end": 21.43,
+    "id": "w53"
+  },
+  {
+    "text": "little",
+    "start": 21.43,
+    "end": 21.89,
+    "id": "w54"
+  },
+  {
+    "text": "mouse",
+    "start": 21.89,
+    "end": 22.24,
+    "id": "w55"
+  },
+  {
+    "text": "hears",
+    "start": 22.36,
+    "end": 22.71,
+    "id": "w56"
+  },
+  {
+    "text": "him.",
+    "start": 22.71,
+    "end": 23.23,
+    "id": "w57"
+  },
+  {
+    "text": "Bite,",
+    "start": 23.51,
+    "end": 23.75,
+    "id": "w58"
+  },
+  {
+    "text": "bite,",
+    "start": 23.75,
+    "end": 24.26,
+    "id": "w59"
+  },
+  {
+    "text": "bite,",
+    "start": 24.26,
+    "end": 24.77,
+    "id": "w60"
+  },
+  {
+    "text": "he",
+    "start": 24.77,
+    "end": 24.92,
+    "id": "w61"
+  },
+  {
+    "text": "bites",
+    "start": 24.97,
+    "end": 25.32,
+    "id": "w62"
+  },
+  {
+    "text": "the",
+    "start": 25.32,
+    "end": 25.63,
+    "id": "w63"
+  },
+  {
+    "text": "net.",
+    "start": 25.63,
+    "end": 26.2,
+    "id": "w64"
+  },
+  {
+    "text": "The",
+    "start": 26.47,
+    "end": 26.57,
+    "id": "w65"
+  },
+  {
+    "text": "lion",
+    "start": 26.57,
+    "end": 27.07,
+    "id": "w66"
+  },
+  {
+    "text": "is",
+    "start": 27.07,
+    "end": 27.31,
+    "id": "w67"
+  },
+  {
+    "text": "free.",
+    "start": 27.32,
+    "end": 28.18,
+    "id": "w68"
+  },
+  {
+    "text": "Little",
+    "start": 28.47,
+    "end": 28.76,
+    "id": "w69"
+  },
+  {
+    "text": "friends",
+    "start": 28.8,
+    "end": 29.48,
+    "id": "w70"
+  },
+  {
+    "text": "can",
+    "start": 29.48,
+    "end": 29.77,
+    "id": "w71"
+  },
+  {
+    "text": "be",
+    "start": 29.77,
+    "end": 29.96,
+    "id": "w72"
+  },
+  {
+    "text": "great",
+    "start": 29.96,
+    "end": 30.28,
+    "id": "w73"
+  },
+  {
+    "text": "friends.",
+    "start": 31.12,
+    "end": 31.48,
+    "id": "w74"
+  },
+  {
+    "text": "What",
+    "start": 31.48,
+    "end": 31.75,
+    "id": "w75"
+  },
+  {
+    "text": "does",
+    "start": 31.75,
+    "end": 31.86,
+    "id": "w76"
+  },
+  {
+    "text": "free",
+    "start": 31.92,
+    "end": 32.11,
+    "id": "w77"
+  },
+  {
+    "text": "mean?",
+    "start": 32.11,
+    "end": 32.52,
+    "id": "w78"
+  },
+  {
+    "text": "Read",
+    "start": 32.52,
+    "end": 33.488,
+    "id": "w79"
+  },
+  {
+    "text": "more",
+    "start": 33.488,
+    "end": 34.455,
+    "id": "w80"
+  },
+  {
+    "text": "stories",
+    "start": 34.455,
+    "end": 35.423,
+    "id": "w81"
+  },
+  {
+    "text": "in",
+    "start": 35.423,
+    "end": 36.39,
+    "id": "w82"
+  },
+  {
+    "text": "English",
+    "start": 36.39,
+    "end": 36.9,
+    "id": "w83"
+  },
+  {
+    "text": "Tales.",
+    "start": 36.9,
+    "end": 38.2,
+    "id": "w84"
+  },
+  {
+    "text": "It's",
+    "start": 38.67,
+    "end": 39.14,
+    "id": "w85"
+  },
+  {
+    "text": "free.",
+    "start": 39.14,
+    "end": 40.43,
+    "id": "w86"
+  }
+]

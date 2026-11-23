@@ -1,0 +1,136 @@
+{
+ "id": "fox-crow",
+ "slug": "tilki-ve-karga",
+ "title": "The Fox and the Crow",
+ "title_tr": "Tilki ve Karga",
+ "level": "A1",
+ "voice": "af_heart",
+ "speed": 0.88,
+ "style": "Layered paper-craft illustration: cut paper collage with soft drop shadows between layers and visible paper fibre texture, warm muted palette (sage green, mustard yellow, terracotta, soft blue, cream), gentle children's storybook look. Vertical 9:16, 1080x1920. The top 22% is plain cream sky (only a paper sun and one small paper cloud) so a caption fits there. No text, no letters, no logos, no watermark. Every frame uses the same wide camera angle and the same layout: one big oak tree on the left with a long branch reaching right, meadow with wildflowers, soft green hills behind, sun top right (unless the scene says close).",
+ "characters": "CROW: glossy blue-black paper crow with a yellow-grey beak and small shiny eyes, holding a pinkish-red piece of meat in her beak until it falls. FOX: slim orange-red paper fox with white chest and tail tip, black paws, pointed ears, clever friendly eyes. Same meadow setting in every frame.",
+ "sentences": [
+  {
+   "en": "A crow sits on a branch with a piece of meat.",
+   "tr": "Bir karga, gagasında bir parça etle bir dalda oturur.",
+   "img": "01.png",
+   "scene": "Wide view: the black crow sits on a high branch of the oak tree holding a piece of meat in her beak; the fox is not there yet."
+  },
+  {
+   "en": "A fox sees the meat and wants it.",
+   "tr": "Bir tilki eti görür ve onu ister.",
+   "img": "02.png",
+   "scene": "Same wide view: the orange fox stands at the foot of the oak tree, looking up hungrily at the crow and the meat."
+  },
+  {
+   "en": "He cannot climb up to take it.",
+   "tr": "Onu almak için yukarı tırmanamaz.",
+   "img": "03.png",
+   "scene": "Same wide view: the fox stands on his hind legs with front paws on the tree trunk, trying to climb, but the branch is far too high."
+  },
+  {
+   "en": "So he begins to praise the crow.",
+   "tr": "Bu yüzden kargayı övmeye başlar.",
+   "img": "04.png",
+   "scene": "Same wide view: the fox sits below the tree, smiling sweetly up at the crow, one paw raised as if giving a compliment."
+  },
+  {
+   "en": "“What beautiful feathers you have!” he says.",
+   "tr": "“Ne güzel tüylerin var!” der.",
+   "img": "05.png",
+   "scene": "Close on the crow on the branch, the fox's admiring face small below; little paper sparkles around the crow's glossy blue-black feathers."
+  },
+  {
+   "en": "“You must have a beautiful voice, too.”",
+   "tr": "“Sesin de güzel olmalı.”",
+   "img": "06.png",
+   "scene": "Same wide view: the fox puts a paw on his chest and points up at the crow with a charming smile; paper music notes float near the crow."
+  },
+  {
+   "en": "The crow feels proud.",
+   "tr": "Karga gururlanır.",
+   "img": "07.png",
+   "scene": "The crow on the branch puffs up her chest proudly, eyes half closed, head held high, still holding the meat."
+  },
+  {
+   "en": "She wants to show him her voice.",
+   "tr": "Ona sesini göstermek ister.",
+   "img": "08.png",
+   "scene": "The crow spreads her wings a little and lifts her head, ready to sing, the meat still in her beak; the fox watches eagerly below."
+  },
+  {
+   "en": "She opens her beak and makes a loud sound.",
+   "tr": "Gagasını açar ve yüksek bir ses çıkarır.",
+   "img": "09.png",
+   "scene": "The crow opens her beak wide and caws loudly; big paper sound waves come out; the meat starts to slip from her beak."
+  },
+  {
+   "en": "The meat falls to the ground.",
+   "tr": "Et yere düşer.",
+   "img": "10.png",
+   "scene": "Same wide view: the piece of meat falls through the air toward the ground; the crow looks shocked, beak open."
+  },
+  {
+   "en": "The fox picks it up and laughs.",
+   "tr": "Tilki onu alır ve güler.",
+   "img": "11.png",
+   "scene": "Same wide view: the fox catches the meat in his mouth on the ground and laughs, eyes closed with joy; the crow stares from the branch."
+  },
+  {
+   "en": "“You have a voice, but you need more sense,” he says.",
+   "tr": "“Sesin var ama daha akıllı olman gerekiyor,” der.",
+   "img": "12.png",
+   "scene": "The fox looks up at the crow with the meat in his mouth, one paw raised like a teacher giving advice; the crow looks ashamed."
+  },
+  {
+   "en": "The crow watches him leave with her meal.",
+   "tr": "Karga, tilkinin yemeğiyle uzaklaşmasını izler.",
+   "img": "13.png",
+   "scene": "Same wide view: the fox trots away to the right with the meat; the crow watches sadly from the branch."
+  },
+  {
+   "en": "Flattery is not always friendship.",
+   "tr": "Pohpohlamak her zaman dostluk değildir.",
+   "img": "14.png",
+   "scene": "Calm wide view: the crow alone on the branch at sunset, thinking; one small paper leaf falls."
+  }
+ ],
+ "quiz": {
+  "say": "What does praise mean?",
+  "q": "“praise” ne demek?",
+  "options": [
+   "övmek",
+   "uçmak",
+   "saklamak"
+  ],
+  "answer": 0,
+  "say_tr": "Sence “praise” ne demek? Övmek mi, uçmak mı, saklamak mı?",
+  "reveal_tr": "Doğru cevap: övmek!"
+ },
+ "cta_say": "Read more stories in English Tales. It's free!",
+ "cta_tr": "Masalın devamı ve altmıştan fazla masal, Hikâyelerle İngilizce Öğren uygulamasında. Hem de ücretsiz!",
+ "hook": {
+  "img": "09.png",
+  "text": "Karga bu tuzağa düşecek mi?",
+  "accent": "tuzağa",
+  "say": "Karga... bu tuzağa düşecek mi?!",
+  "sfx": "../../ses-ornekleri/karga-gaklama-sfx.mp3",
+  "audio": "../../ses-ornekleri/tk-hook-gulsu.mp3",
+  "voice_at": 0.5,
+  "sfx_gain": 0.55
+ },
+ "tr_voice": {
+  "provider": "elevenlabs",
+  "voice_id": "bGmbiluBMaeupKCFxoOk",
+  "model": "eleven_v3",
+  "tag": "[excited]"
+ },
+ "frame": {
+  "type": "cover",
+  "cap_x": 485,
+  "cap_w": 820,
+  "cap_style": "outline",
+  "cap_bottom": 1430,
+  "cap_y": 1160,
+  "hook_y": 1060
+ }
+}
