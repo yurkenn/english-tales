@@ -1,6 +1,6 @@
 # Flow videoları (Google Flow / Veo)
 
-Bu dal yalnızca Google Flow ile üretilen videoların takibi içindir (Yalancı Çoban, Kuzu Postundaki Kurt). **Uygulama koduna dokunmaz, master'a birleştirilmez.**
+Bu dal yalnızca Google Flow ile üretilen videoların takibi içindir (Yalancı Çoban, Kuzu Postundaki Kurt, Aslan Postundaki Eşek). **Uygulama koduna dokunmaz, master'a birleştirilmez.**
 
 - `hooks.json`: her video için 5 hook (Claude + Codex yazar, kör oylama), açıklama metni, durum ve izlenme.
 - Videolar ve kapaklar git'te tutulmaz; kaynakları `icerik/seriler/english-tales-studio/output/<hikaye>/trials/` altındadır.
